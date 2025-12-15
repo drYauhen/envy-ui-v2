@@ -1,0 +1,16 @@
+{
+  "color": {
+    "semantic": {
+      "button": {
+        "primary": {
+          "bg": {
+            "default": { "$value": "{color.brand.primary}", "$type": "color" }
+          },
+          "text": {
+            "default": { "$value": "{color.primitives.neutral.0}", "$type": "color" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "color": {
+    "brand": {
+      "primary": { "$value": "{color.primitives.blue.700}", "$type": "color" },
+      "accent":  { "$value": "{color.primitives.blue.600}", "$type": "color" }
+    }
+  }
+}

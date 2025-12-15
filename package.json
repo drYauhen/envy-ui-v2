@@ -1,0 +1,13 @@
+{
+  "name": "envy-ui-v2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "check:zone": "find . -name '*:Zone.Identifier'",
+    "clean:zone": "find . -name '*:Zone.Identifier' -delete"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

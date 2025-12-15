@@ -1,0 +1,11 @@
+{
+  "color": {
+    "primitives": {
+      "blue": {
+        "500": { "$value": "#007fa2", "$type": "color" },
+        "600": { "$value": "#007ca0", "$type": "color" },
+        "700": { "$value": "#066a8d", "$type": "color" }
+      }
+    }
+  }
+}
