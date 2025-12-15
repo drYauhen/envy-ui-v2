@@ -4,10 +4,15 @@
   "main": "index.js",
   "scripts": {
     "check:zone": "find . -name '*:Zone.Identifier'",
-    "clean:zone": "find . -name '*:Zone.Identifier' -delete"
+    "clean:zone": "find . -name '*:Zone.Identifier' -delete",
+    "tokens:build": "style-dictionary build --config style-dictionary/config.js",
+    "support:zip": "zip -r envy-ui-v2-support.zip . -x 'node_modules/*' 'build/*' '.git/*' '*:Zone.Identifier' '*.DS_Store' 'envy-ui-v2-support.zip'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "style-dictionary": "^5.1.1"
+  }
 }
