@@ -1,5 +1,9 @@
-# Envy UI v2 — React Aria Usage Intention
+# ADR-0001: React Aria as Headless Accessibility Foundation
 
+**Status:** Accepted
+**Date:** 2025-12-15
+
+---
 ## Purpose of This Document
 
 This document captures an **architectural intention** for how React Aria is used in Envy UI v2.
