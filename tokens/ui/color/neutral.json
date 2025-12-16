@@ -1,0 +1,14 @@
+{
+  "ui": {
+    "color": {
+      "neutral": {
+        "white": { "$value": "{ui.color.primitives.neutral.white}", "$type": "color" },
+        "900": { "$value": "{ui.color.primitives.neutral.900}", "$type": "color" },
+        "700": { "$value": "{ui.color.primitives.neutral.700}", "$type": "color" },
+        "500": { "$value": "{ui.color.primitives.neutral.500}", "$type": "color" },
+        "300": { "$value": "{ui.color.primitives.neutral.300}", "$type": "color" },
+        "100": { "$value": "{ui.color.primitives.neutral.100}", "$type": "color" }
+      }
+    }
+  }
+}

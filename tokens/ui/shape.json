@@ -1,0 +1,7 @@
+{
+  "ui": {
+    "radius": {
+      "pill": { "$value": "999px", "$type": "dimension" }
+    }
+  }
+}

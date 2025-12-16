@@ -1,0 +1,9 @@
+{
+  "ui": {
+    "color": {
+      "brand": {
+        "primary": { "$value": "{ui.color.primitives.blue.700}", "$type": "color" }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "ui": {
+    "focus": {
+      "ring": {
+        "width": {
+          "base": { "$value": "2px", "$type": "dimension" },
+          "accessible": { "$value": "3px", "$type": "dimension" }
+        }
+      }
+    }
+  }
+}

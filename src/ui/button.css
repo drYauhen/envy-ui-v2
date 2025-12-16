@@ -1,0 +1,97 @@
+[data-ui-context] {
+  --ui-button-size-md-height: 40px;
+  --ui-button-size-md-padding-inline: 20px;
+  --ui-button-size-md-font-size: 0.95rem;
+  --ui-button-size-md-font-weight: 600;
+  --ui-button-shape-pill-radius: var(--env2-ui-radius-pill, 999px);
+  --ui-button-focus-color: var(--env2-ui-color-brand-primary, #066a8d);
+}
+
+[data-ui-context] .ui-button {
+  --ui-button-bg-base: transparent;
+  --ui-button-label-base: currentColor;
+  --ui-button-border-base: transparent;
+  --ui-button-height: var(--ui-button-size-md-height);
+  --ui-button-padding-inline: var(--ui-button-size-md-padding-inline);
+  --ui-button-font-size: var(--ui-button-size-md-font-size);
+  --ui-button-font-weight: var(--ui-button-size-md-font-weight);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: var(--ui-button-height);
+  min-width: var(--ui-button-height);
+  padding-inline: var(--ui-button-padding-inline);
+  border-radius: var(--ui-button-shape-pill-radius);
+  border: 1px solid var(--ui-button-border-base, transparent);
+  background-color: var(--ui-button-bg-base);
+  color: var(--ui-button-label-base);
+  font-size: var(--ui-button-font-size);
+  font-weight: var(--ui-button-font-weight);
+  font-family: inherit;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+  outline: none;
+}
+
+[data-ui-context] .ui-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+  background-color: color-mix(in srgb, var(--ui-button-bg-base), var(--env2-ui-color-neutral-300, #cccccc) 35%);
+  color: color-mix(in srgb, var(--ui-button-label-base), var(--env2-ui-color-neutral-500, #757575) 40%);
+  border-color: color-mix(in srgb, var(--ui-button-border-base, transparent), var(--env2-ui-color-neutral-300, #cccccc) 35%);
+}
+
+[data-ui-context] .ui-button:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--ui-button-bg-base), white 8%);
+  border-color: color-mix(in srgb, var(--ui-button-border-base, transparent), white 8%);
+}
+
+[data-ui-context] .ui-button:not(:disabled):active {
+  background-color: color-mix(in srgb, var(--ui-button-bg-base), black 8%);
+  border-color: color-mix(in srgb, var(--ui-button-border-base, transparent), black 12%);
+  transform: translateY(1px);
+}
+
+[data-ui-context] .ui-button:focus {
+  box-shadow: 0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 40%);
+}
+
+[data-ui-context] .ui-button:focus-visible {
+  box-shadow: 0 0 0 var(--env2-ui-focus-ring-width-accessible, 3px) color-mix(in srgb, var(--ui-button-focus-color), transparent 25%);
+}
+
+[data-ui-context] .ui-button:focus:not(:focus-visible) {
+  box-shadow: 0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 55%);
+}
+
+[data-ui-context] .ui-button[data-ui-intent='primary'] {
+  --ui-button-bg-base: var(--env2-ui-button-primary-background-base, var(--env2-ui-color-brand-primary));
+  --ui-button-label-base: var(--env2-ui-button-primary-label-base, var(--env2-ui-color-neutral-white));
+}
+
+[data-ui-context] .ui-button[data-ui-intent='secondary'] {
+  --ui-button-bg-base: var(--env2-ui-button-secondary-background-base, var(--env2-ui-color-neutral-white));
+  --ui-button-label-base: var(--env2-ui-button-secondary-label-base, var(--env2-ui-color-neutral-900));
+  --ui-button-border-base: var(--env2-ui-button-secondary-border-base, var(--env2-ui-color-neutral-300));
+}
+
+[data-ui-context] .ui-button[data-ui-shape='round'] {
+  border-radius: var(--ui-button-shape-pill-radius);
+}
+
+[data-ui-context] .ui-button[data-ui-shape='circle'] {
+  width: var(--ui-button-height);
+  padding-inline: 0;
+  border-radius: 50%;
+}
+
+[data-ui-context] .ui-button[data-ui-size='md'] {
+  --ui-button-height: var(--ui-button-size-md-height);
+  --ui-button-padding-inline: var(--ui-button-size-md-padding-inline);
+  --ui-button-font-size: var(--ui-button-size-md-font-size);
+  --ui-button-font-weight: var(--ui-button-size-md-font-weight);
+}

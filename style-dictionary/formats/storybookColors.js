@@ -45,11 +45,11 @@ module.exports = function registerStorybookColorsFormat(StyleDictionary) {
       };
 
       dictionary.allTokens
-        .filter((token) => token?.path?.[0] === 'color')
+        .filter((token) => token?.path?.[0] === 'ui' && token?.path?.[1] === 'color')
         .forEach((token) => {
-          const groupId = token.path[1] || 'color';
+          const groupId = token.path[2] || 'color';
           const group = ensureGroup(groupId);
-          const detailSegments = token.path.slice(2);
+          const detailSegments = token.path.slice(3);
           const labelSegments = detailSegments.length > 0 ? detailSegments : token.path.slice(1);
           const tokenId = slugFromSegments(labelSegments);
 

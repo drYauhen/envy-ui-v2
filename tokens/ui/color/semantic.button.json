@@ -1,0 +1,30 @@
+{
+  "ui": {
+    "button": {
+      "states": {
+        "hover": { "effect": "emphasize" },
+        "active": { "effect": "press" },
+        "disabled": { "effect": "mute" }
+      },
+      "primary": {
+        "background": {
+          "base": { "$value": "{ui.color.brand.primary}", "$type": "color" }
+        },
+        "label": {
+          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" }
+        }
+      },
+      "secondary": {
+        "background": {
+          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" }
+        },
+        "label": {
+          "base": { "$value": "{ui.color.neutral.900}", "$type": "color" }
+        },
+        "border": {
+          "base": { "$value": "{ui.color.neutral.300}", "$type": "color" }
+        }
+      }
+    }
+  }
+}
