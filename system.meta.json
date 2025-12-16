@@ -1,0 +1,11 @@
+{
+  "system": {
+    "id": "envy-ui-v2",
+    "version": "0.1.0"
+  },
+
+  "tokens": {
+    "standard": "DTCG",
+    "prefix": "env2"
+  }
+}

@@ -6,13 +6,27 @@
     "check:zone": "find . -name '*:Zone.Identifier'",
     "clean:zone": "find . -name '*:Zone.Identifier' -delete",
     "tokens:build": "style-dictionary build --config style-dictionary/config.js",
-    "support:zip": "zip -r envy-ui-v2-support.zip . -x 'node_modules/*' 'build/*' '.git/*' '*:Zone.Identifier' '*.DS_Store' 'envy-ui-v2-support.zip'"
+    "support:zip": "git ls-files --cached --others --exclude-standard | zip envy-ui-v2-support.zip -@",
+    "storybook": "npm run tokens:build && storybook dev -p 6006",
+    "build-storybook": "npm run tokens:build && storybook build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "style-dictionary": "^5.1.1"
+    "@storybook/addon-a11y": "^10.1.9",
+    "@storybook/addon-docs": "^10.1.9",
+    "@storybook/react-vite": "^10.1.9",
+    "@types/node": "^25.0.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "storybook": "^10.1.9",
+    "style-dictionary": "^5.1.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   }
 }

@@ -1,3 +1,13 @@
+# Build outputs
+build/
+storybook-static/
+
+# Support artifacts
+*.zip
+
+# Node / tooling
 node_modules/
+
+# OS garbage
+*.DS_Store
 *:Zone.Identifier
-.DS_Store
