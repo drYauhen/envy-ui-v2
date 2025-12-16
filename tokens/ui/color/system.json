@@ -1,0 +1,9 @@
+{
+  "ui": {
+    "color": {
+      "system": {
+        "focus": { "$value": "#ff4d00", "$type": "color" }
+      }
+    }
+  }
+}

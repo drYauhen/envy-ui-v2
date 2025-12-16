@@ -1,0 +1,3 @@
+[data-ui-focus-policy='system'] [data-ui-context] {
+  --ui-button-focus-color: var(--env2-ui-focus-ring-color-system, var(--env2-ui-color-primitives-blue-500, #007fa2));
+}

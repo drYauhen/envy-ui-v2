@@ -3,6 +3,12 @@
  */
 
 :root {
+  --env2-ui-button-focus-ring-color-derived: #066a8d;
+  --env2-ui-button-primary-background-base: #066a8d;
+  --env2-ui-button-primary-label-base: #ffffff;
+  --env2-ui-button-secondary-background-base: #ffffff;
+  --env2-ui-button-secondary-label-base: #1b1b1b;
+  --env2-ui-button-secondary-border-base: #cccccc;
   --env2-ui-color-brand-primary: #066a8d;
   --env2-ui-color-neutral-100: #f1f2f7;
   --env2-ui-color-neutral-300: #cccccc;
@@ -19,11 +25,8 @@
   --env2-ui-color-primitives-neutral-700: #404040;
   --env2-ui-color-primitives-neutral-900: #1b1b1b;
   --env2-ui-color-primitives-neutral-white: #ffffff;
-  --env2-ui-button-primary-background-base: #066a8d;
-  --env2-ui-button-primary-label-base: #ffffff;
-  --env2-ui-button-secondary-background-base: #ffffff;
-  --env2-ui-button-secondary-label-base: #1b1b1b;
-  --env2-ui-button-secondary-border-base: #cccccc;
+  --env2-ui-color-system-focus: #ff4d00;
+  --env2-ui-focus-ring-color-system: #ff4d00;
   --env2-ui-focus-ring-width-base: 2px;
   --env2-ui-focus-ring-width-accessible: 3px;
   --env2-ui-radius-pill: 999px;

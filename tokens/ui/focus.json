@@ -2,6 +2,9 @@
   "ui": {
     "focus": {
       "ring": {
+        "color": {
+          "system": { "$value": "{ui.color.system.focus}", "$type": "color" }
+        },
         "width": {
           "base": { "$value": "2px", "$type": "dimension" },
           "accessible": { "$value": "3px", "$type": "dimension" }

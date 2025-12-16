@@ -4,7 +4,7 @@
   --ui-button-size-md-font-size: 0.95rem;
   --ui-button-size-md-font-weight: 600;
   --ui-button-shape-pill-radius: var(--env2-ui-radius-pill, 999px);
-  --ui-button-focus-color: var(--env2-ui-color-brand-primary, #066a8d);
+  --ui-button-focus-color: var(--env2-ui-button-focus-ring-color-derived, var(--env2-ui-color-brand-primary, #066a8d));
 }
 
 [data-ui-context] .ui-button {

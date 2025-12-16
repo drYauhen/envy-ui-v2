@@ -1,0 +1,13 @@
+{
+  "ui": {
+    "button": {
+      "focus": {
+        "ring": {
+          "color": {
+            "derived": { "$value": "{ui.color.brand.primary}", "$type": "color" }
+          }
+        }
+      }
+    }
+  }
+}
