@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Envy UI Tokens Adapter</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #0f172a;
+        color: #f8fafc;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 180px;
+        border-radius: 8px;
+        border: none;
+        padding: 12px;
+        font-family: 'JetBrains Mono', Consolas, monospace;
+        font-size: 12px;
+        resize: vertical;
+      }
+
+      button,
+      label {
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button {
+        border: none;
+        background: #10b981;
+        color: #041421;
+        padding: 10px 16px;
+      }
+
+      button.secondary {
+        background: transparent;
+        color: #cbd5f5;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .status {
+        font-size: 12px;
+        color: #cbd5f5;
+        min-height: 18px;
+      }
+
+      input[type='file'] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Import adapter JSON</h1>
+    <p style="margin: 0; font-size: 12px; color: #cbd5f5;">
+      Paste the contents of <code>build/figma/variables.adapter.json</code> or load it from disk.
+    </p>
+    <textarea id="adapterInput" placeholder="{\n  \"collections\": []\n}"></textarea>
+    <div class="actions">
+      <label class="secondary">
+        <input type="file" id="fileInput" accept="application/json" />
+        Load JSON file
+      </label>
+      <button id="importButton">Prepare import</button>
+      <button id="confirmButton" class="secondary" disabled>Apply changes</button>
+      <button id="closeButton" class="secondary">Close</button>
+    </div>
+    <div class="status" id="status"></div>
+
+    <script>
+      const input = document.getElementById('adapterInput');
+      const fileInput = document.getElementById('fileInput');
+      const importButton = document.getElementById('importButton');
+      const confirmButton = document.getElementById('confirmButton');
+      const closeButton = document.getElementById('closeButton');
+      const status = document.getElementById('status');
+      let lastPayload = null;
+
+      fileInput.addEventListener('change', (event) => {
+        const file = event.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          input.value = reader.result;
+          status.textContent = `Loaded ${file.name}`;
+          confirmButton.disabled = true;
+          lastPayload = null;
+        };
+        reader.readAsText(file);
+      });
+
+      input.addEventListener('input', () => {
+        confirmButton.disabled = true;
+        lastPayload = null;
+      });
+
+      importButton.addEventListener('click', () => {
+        try {
+          const payload = JSON.parse(input.value);
+          lastPayload = payload;
+          confirmButton.disabled = true;
+          status.textContent = 'Preparing summary...';
+          parent.postMessage({ pluginMessage: { type: 'prepare-import', payload } }, '*');
+        } catch (error) {
+          status.textContent = 'Invalid JSON';
+        }
+      });
+
+      confirmButton.addEventListener('click', () => {
+        if (!lastPayload) {
+          status.textContent = 'No prepared import to apply.';
+          return;
+        }
+        status.textContent = 'Applying changes...';
+        parent.postMessage({ pluginMessage: { type: 'execute-import', payload: lastPayload } }, '*');
+        confirmButton.disabled = true;
+      });
+
+      closeButton.addEventListener('click', () => {
+        parent.postMessage({ pluginMessage: { type: 'close-plugin' } }, '*');
+      });
+
+      window.onmessage = (event) => {
+        const message = event.data.pluginMessage || {};
+        if (message.type === 'import-summary') {
+          const payload = message.payload || {};
+          confirmButton.disabled = false;
+          status.textContent = formatSummary(payload);
+        } else if (message.type === 'import-complete') {
+          const payload = message.payload || {};
+          const debug = payload.debug || {};
+          const summaryText = payload.summary ? formatSummary(payload.summary) : 'Import complete';
+          status.textContent = `${summaryText} • Color vars: ${
+            typeof debug.colorVariablesCount === 'number' ? debug.colorVariablesCount : 0
+          }`;
+        } else if (message.type === 'import-error') {
+          status.textContent = `Error: ${message.payload}`;
+        }
+      };
+
+      function formatSummary(summary) {
+        const totals = summary?.totals || {};
+        const collectionsCreate = totals.collectionsToCreate ?? 0;
+        const collectionsReuse = totals.collectionsToReuse ?? 0;
+        const variablesCreate = totals.variablesToCreate ?? 0;
+        const variablesUpdate = totals.variablesToUpdate ?? 0;
+        return `Collections: +${collectionsCreate} / reuse ${collectionsReuse} • Variables: +${variablesCreate} / update ${variablesUpdate}`;
+      }
+    </script>
+  </body>
+</html>

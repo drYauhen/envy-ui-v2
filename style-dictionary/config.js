@@ -3,8 +3,10 @@ const StyleDictionary = require('style-dictionary').default;
 const repoRoot = path.resolve(__dirname, '..');
 const systemMeta = require('../system.meta.json');
 const registerStorybookColorsFormat = require('./formats/storybookColors');
+const registerFigmaAdapterFormat = require('./formats/figmaAdapter');
 
 registerStorybookColorsFormat(StyleDictionary);
+registerFigmaAdapterFormat(StyleDictionary);
 
 module.exports = {
   usesDtcg: true,
@@ -49,6 +51,17 @@ module.exports = {
         {
           destination: 'colors.json',
           format: 'json/storybook-colors'
+        }
+      ]
+    },
+
+    figma: {
+      transformGroup: 'js',
+      buildPath: path.join(repoRoot, 'build', 'figma') + path.sep,
+      files: [
+        {
+          destination: 'variables.adapter.json',
+          format: 'figma/adapter'
         }
       ]
     }

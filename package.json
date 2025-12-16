@@ -8,19 +8,22 @@
     "tokens:build": "style-dictionary build --config style-dictionary/config.js",
     "support:zip": "git ls-files --cached --others --exclude-standard | zip envy-ui-v2-support.zip -@",
     "storybook": "npm run tokens:build && storybook dev -p 6006",
-    "build-storybook": "npm run tokens:build && storybook build"
+    "build-storybook": "npm run tokens:build && storybook build",
+    "figma:build": "esbuild figma-plugin/code.ts --bundle --format=iife --platform=browser --target=es2017 --outfile=figma-plugin/dist/code.js --loader:.html=text"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@figma/plugin-typings": "^1.121.0",
     "@storybook/addon-a11y": "^10.1.9",
     "@storybook/addon-docs": "^10.1.9",
     "@storybook/react-vite": "^10.1.9",
     "@types/node": "^25.0.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "esbuild": "^0.27.1",
     "storybook": "^10.1.9",
     "style-dictionary": "^5.1.1",
     "typescript": "^5.9.3"
