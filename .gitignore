@@ -11,3 +11,6 @@ node_modules/
 # OS garbage
 *.DS_Store
 *:Zone.Identifier
+
+# Local handoff / chat context
+NEXT_STEP.md
