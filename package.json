@@ -5,6 +5,8 @@
   "scripts": {
     "check:zone": "find . -name '*:Zone.Identifier'",
     "clean:zone": "find . -name '*:Zone.Identifier' -delete",
+    "clean:zip": "rm -f envy-ui-v2-support.zip",
+    "clean:repo": "npm run clean:zone && npm run clean:zip",
     "tokens:build": "style-dictionary build --config style-dictionary/config.js",
     "support:zip": "git ls-files --cached --others --exclude-standard | zip envy-ui-v2-support.zip -@",
     "storybook": "npm run tokens:build && storybook dev -p 6006",
