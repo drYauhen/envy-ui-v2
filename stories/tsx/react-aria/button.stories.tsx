@@ -10,7 +10,7 @@ type ButtonStoryProps = {
 };
 
 const meta: Meta<ButtonStoryProps> = {
-  title: 'TSX/React Aria/Components/Button',
+  title: 'TSX + React Aria/Components/Button',
   tags: ['autodocs'],
   argTypes: {
     intent: {

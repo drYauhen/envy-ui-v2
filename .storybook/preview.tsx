@@ -39,7 +39,7 @@ export const parameters: Preview['parameters'] = {
   layout: 'fullscreen',
   options: {
     storySort: {
-      order: ['Tokens', 'CSS', 'TSX']
+      order: ['Tokens', 'HTML + CSS', 'TSX', 'TSX + React Aria']
     }
   },
   controls: {
