@@ -1,4 +1,4 @@
-# ADR-0002: Data-Driven Storybook Pipeline via Style Dictionary
+# ADR-0003: Data-Driven Storybook Pipeline via Style Dictionary
 
 **Status:** Accepted  
 **Date:** 2025-12-15  
