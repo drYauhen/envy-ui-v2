@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-type ButtonIntent = 'primary' | 'secondary';
-type ButtonShape = 'round' | 'circle';
+import { Button } from '../../../src/ui';
+import type { ButtonIntent, ButtonShape } from '../../../src/ui';
 
 type ButtonStoryProps = {
   intent: ButtonIntent;
@@ -11,7 +10,7 @@ type ButtonStoryProps = {
 };
 
 const meta: Meta<ButtonStoryProps> = {
-  title: 'CSS/Components/Button',
+  title: 'TSX/React Aria/Components/Button',
   tags: ['autodocs'],
   argTypes: {
     intent: {
@@ -43,16 +42,9 @@ type Story = StoryObj<ButtonStoryProps>;
 
 const ButtonPreview = ({ intent, shape, disabled, label }: ButtonStoryProps) => (
   <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
-    <button
-      type="button"
-      className="ui-button"
-      data-ui-intent={intent}
-      data-ui-size="md"
-      data-ui-shape={shape}
-      disabled={disabled}
-    >
+    <Button intent={intent} size="md" shape={shape} disabled={disabled}>
       {shape === 'circle' ? label.slice(0, 1) : label}
-    </button>
+    </Button>
   </div>
 );
 
@@ -87,17 +79,9 @@ export const KeyboardFocus: Story = {
     return (
       <div data-ui-context="app" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
         {buttons.map((button) => (
-          <button
-            key={button.label}
-            type="button"
-            className="ui-button"
-            data-ui-intent={button.intent}
-            data-ui-size="md"
-            data-ui-shape={shape}
-            disabled={disabled}
-          >
+          <Button key={button.label} intent={button.intent} size="md" shape={shape} disabled={disabled}>
             {button.label}
-          </button>
+          </Button>
         ))}
         <p style={{ margin: 0, fontSize: '0.85rem', color: '#475569' }}>
           Press Tab to move focus. Use the toolbar “Focus policy” to switch derived vs system focus.

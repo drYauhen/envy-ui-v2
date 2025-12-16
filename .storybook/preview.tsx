@@ -37,6 +37,11 @@ export const globalTypes: Preview['globalTypes'] = {
 
 export const parameters: Preview['parameters'] = {
   layout: 'fullscreen',
+  options: {
+    storySort: {
+      order: ['Tokens', 'CSS', 'TSX']
+    }
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
