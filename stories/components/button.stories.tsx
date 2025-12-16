@@ -61,7 +61,7 @@ export const Primary: Story = {
     intent: 'primary',
     label: 'Primary action'
   },
-  render: (props) => <ButtonPreview {...props} />
+  render: (props: ButtonStoryProps) => <ButtonPreview {...props} />
 };
 
 export const Secondary: Story = {
@@ -69,7 +69,7 @@ export const Secondary: Story = {
     intent: 'secondary',
     label: 'Secondary action'
   },
-  render: (props) => <ButtonPreview {...props} />
+  render: (props: ButtonStoryProps) => <ButtonPreview {...props} />
 };
 
 export const KeyboardFocus: Story = {
@@ -78,7 +78,7 @@ export const KeyboardFocus: Story = {
     shape: 'round',
     label: 'Focusable button'
   },
-  render: ({ shape, disabled }) => {
+  render: ({ shape, disabled }: ButtonStoryProps) => {
     const buttons: Array<{ label: string; intent: ButtonIntent }> = [
       { label: 'First', intent: 'primary' },
       { label: 'Second', intent: 'secondary' }
@@ -99,7 +99,9 @@ export const KeyboardFocus: Story = {
             {button.label}
           </button>
         ))}
-        <p style={{ margin: 0, fontSize: '0.85rem', color: '#475569' }}>Press Tab to move focus.</p>
+        <p style={{ margin: 0, fontSize: '0.85rem', color: '#475569' }}>
+          Press Tab to move focus. Use the toolbar “Focus policy” to switch derived vs system focus.
+        </p>
       </div>
     );
   }
