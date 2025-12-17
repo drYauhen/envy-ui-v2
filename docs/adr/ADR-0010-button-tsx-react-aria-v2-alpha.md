@@ -2,6 +2,8 @@
 
 **Status:** Accepted (Alpha)  
 **Date:** 2025-12-16  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)  
 
 **Related:**  
 - ADR-0001 — React Aria as Headless Accessibility Foundation  
@@ -14,7 +16,7 @@
 ## 1. Context
 
 - The token + CSS layer for Button is established and used as the visual contract.  
-- We need an accessibility-first TSX implementation that consumes the token/CSS contract without encoding visuals.  
+- I need an accessibility-first TSX implementation that consumes the token/CSS contract without encoding visuals.  
 - A single “smart” Button should cover application usage (button, link, proxy/asChild) while old/new systems coexist.  
 - This ADR captures the architecture for Button TSX + React Aria v2 (alpha) to evaluate complexity, ergonomics, and composability.
 

@@ -1,13 +1,15 @@
 # ADR-0005: Canonical UI Namespace and Button v1 Baseline
 
-**Status:** Accepted
-
-**Date:** 2025-12-15
+**Status:** Accepted  
+**Date:** 2025-12-15  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related:**
 
 * ADR-0001: React Aria as Headless Accessibility Foundation
-* ADR-0002/3: Data-Driven Token and Visualization Pipelines
+* ADR-0002: Data-Driven Storybook Pipeline via Style Dictionary
+* ADR-0003: Data-Driven Figma Variables Pipeline via Adapter JSON
 * ADR-0004: Context-Aware UI Components and Projection Model
 
 ---
@@ -16,7 +18,7 @@
 
 This ADR formally records the outcomes of the **Button v1 exploration phase** and the associated **namespacing and layering decisions**.
 
-We confirm:
+I confirm:
 
 1. A **single canonical namespace (`ui`)** is used across the system.
 2. Semantic tokens and runtime aliases are **logically separated but not namespaced separately**.
@@ -43,7 +45,7 @@ These questions required resolution before continuing with further components or
 
 ### 3.1 Decision
 
-We adopt **`ui` as the single canonical namespace** for:
+I adopt **`ui` as the single canonical namespace** for:
 
 * Semantic design tokens
 * Runtime CSS variables

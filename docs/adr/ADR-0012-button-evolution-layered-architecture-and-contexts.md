@@ -2,6 +2,8 @@
 
 **Status:** Proposed (Exploratory)  
 **Date:** 2025-12-16  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)  
 
 **Related:**  
 - ADR-0001 — React Aria as Headless Accessibility Foundation  

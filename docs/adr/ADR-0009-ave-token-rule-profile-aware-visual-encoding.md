@@ -2,6 +2,8 @@
 
 **Status:** Accepted (Architectural Rule)  
 **Date:** 2025-12-16  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)  
 
 **Related:**  
 - ADR-0005 — Canonical UI Namespace and Button v1 Baseline  
@@ -11,7 +13,7 @@
 
 ## 1. Decision Summary
 
-We adopt the **AVE Token Rule** (Profile-Aware Visual Encoding) as an architectural constraint: component tokens must flow through profile-level base tokens before reaching primitives. Visual appearance is determined by profiles (color, decoration, density), not by component tokens directly referencing primitives.
+I adopt the **AVE Token Rule** (Profile-Aware Visual Encoding) as an architectural constraint: component tokens must flow through profile-level base tokens before reaching primitives. Visual appearance is determined by profiles (color, decoration, density), not by component tokens directly referencing primitives.
 
 ---
 

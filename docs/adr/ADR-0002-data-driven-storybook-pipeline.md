@@ -2,6 +2,8 @@
 
 **Status:** Accepted  
 **Date:** 2025-12-15  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:** ADR-0001 (Headless / React Aria strategy)
 
 ---
@@ -26,7 +28,7 @@ These issues made the system harder to evolve and increased the risk of inconsis
 
 I decided to treat **Storybook as a dumb renderer** and move all token knowledge into a **data preparation layer** built with **Style Dictionary**.
 
-The following architectural decisions were made:
+I made the following architectural decisions:
 
 1. **Style Dictionary prepares Storybook-ready data**
    - Token filtering (e.g. colors only)
@@ -92,5 +94,3 @@ These trade-offs are accepted in favor of long-term maintainability and system c
 
 This decision establishes a repeatable pattern for future system layers
 (e.g. spacing, typography, motion) and for additional consumers beyond Storybook.
-
-

@@ -1,7 +1,9 @@
 # ADR-0006: Focus Policy Architecture Driven with System Focus
 
 **Status:** Accepted  
-**Date:** 2025-12-15
+**Date:** 2025-12-15  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related ADRs:**  
 - ADR-0003 — Context-Aware UI Components and Projection Model  

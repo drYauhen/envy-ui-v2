@@ -1,7 +1,9 @@
 # ADR-0001: React Aria as Headless Accessibility Foundation
 
-**Status:** Accepted
-**Date:** 2025-12-15
+**Status:** Accepted  
+**Date:** 2025-12-15  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)
 
 ---
 ## Purpose of This Document
@@ -20,9 +22,9 @@ This is **not an API specification** and **not an implementation guide**. It is 
 
 ## Core Position
 
-**Envy UI v2 uses React Aria as an accessibility engine, not as a UI kit.**
+**I use React Aria as an accessibility engine for Envy UI v2, not as a UI kit.**
 
-We deliberately:
+I deliberately:
 
 * do not use React Spectrum,
 * do not use React Aria high-level components (Table, Calendar, etc.),
@@ -113,7 +115,7 @@ Notes:
 
 ### High-Level React Aria Components
 
-We explicitly do **not** use:
+I explicitly do **not** use:
 
 * `Table`
 * `Calendar`

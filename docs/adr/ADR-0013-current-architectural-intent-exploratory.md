@@ -1,13 +1,15 @@
-# EDR-0001: Current Architectural Intent (Exploratory) — Envy UI v2
+# ADR-0013: Current Architectural Intent (Exploratory) — Envy UI v2
 
-**Status:** Exploratory (not accepted)  
+**Status:** Proposed (Exploratory)  
 **Date:** 2025-12-16  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)  
 
 ---
 
 ## 1. Purpose and Scope (Exploratory, not final)
 
-This record captures the **current architectural intent** of Envy UI v2. It is deliberately exploratory and aims to share thinking, assumptions, and open questions. Nothing in this EDR should be treated as a final or accepted decision.
+This record captures the **current architectural intent** of Envy UI v2. It is deliberately exploratory and aims to share thinking, assumptions, and open questions. Nothing here should be treated as a final or accepted decision.
 
 Audience and scope notes:
 - Envy UI v2 is a **specialized internal UI system**, not a broadly public design system.
@@ -18,7 +20,7 @@ Audience and scope notes:
 
 ## 2. ADR cleanup background
 
-Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsistently numbered** (ADR-0002/0003 variants). Cleanup to restore a single canonical ADR per pipeline is underway so historical ambiguity is removed. This EDR does not change those decisions; it only notes the temporary inconsistency and ongoing remediation.
+Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsistently numbered** (ADR-0002/0003 variants). Cleanup to restore a single canonical ADR per pipeline is underway so historical ambiguity is removed. This ADR does not change those decisions; it only notes the temporary inconsistency and ongoing remediation.
 
 ---
 
@@ -66,7 +68,7 @@ Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsi
 
 ---
 
-## 8. Explicit non-goals (for this EDR)
+## 8. Explicit non-goals
 
 - Do **not** define a final token schema.
 - Do **not** declare any architecture as accepted or frozen.
@@ -75,7 +77,7 @@ Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsi
 
 ---
 
-## 9. Open questions (intentionally unresolved)
+## 9. Open questions
 
 - When and how to formalize `system.meta.json` (versioning, schema, public surface, location).
 - Where the stable boundary between tokens and templates should eventually settle.
@@ -85,6 +87,6 @@ Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsi
 
 ---
 
-## 10. How to read this EDR
+## 10. How to read this ADR
 
-Treat this document as a **snapshot of intent and exploration**, not a commitment. Future ADRs will supersede parts of this EDR as decisions harden. Until then, assume boundaries are fluid by design.
+Treat this document as a **snapshot of intent and exploration**, not a commitment. Future ADRs will supersede parts of this ADR as decisions harden. Until then, assume boundaries are fluid by design.

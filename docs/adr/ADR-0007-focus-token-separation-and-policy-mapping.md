@@ -1,7 +1,9 @@
 # ADR-0007: Focus Token Separation and Policy Mapping
 
 **Status:** Accepted  
-**Date:** 2025-12-16
+**Date:** 2025-12-16  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related ADRs:**  
 - [ADR-0005](./ADR-0005-canonical-ui-namespace-and-button-v1-baseline.md)  
@@ -23,7 +25,7 @@ This ADR defines how **system focus** vs **component-derived focus** is represen
 
 Per [ADR-0006](./ADR-0006-focus-policy-architecture.md), keyboard focus behavior must be configurable at the system/application level, and components must not decide the active focus policy.
 
-During Button v1 work, we needed to:
+During Button v1 work, I needed to:
 - make the **system focus color** clearly distinct from component styling
 - ensure tokens are placed in the correct conceptual hierarchy (global vs component)
 - apply the policy consistently in Storybook and runtime
@@ -92,4 +94,3 @@ This preserves the separation of responsibilities:
 ## 7. Status
 
 Accepted and implemented for the Button v1 baseline + Storybook policy toggle.
-

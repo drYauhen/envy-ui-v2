@@ -2,6 +2,8 @@
 
 **Status:** Accepted (Exploratory)  
 **Date:** 2025-12-16  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)  
 
 **Related:**  
 - ADR-0001 — React Aria as Headless Accessibility Foundation  
@@ -22,7 +24,7 @@
 
 ## 2. Decision
 
-Introduce a **custom token → contract generator** that reads DTCG-compatible token JSON and emits TypeScript contracts (literal arrays + union types). For v1 the contract surface is intentionally broad (Graceful Degradation):  
+I introduce a **custom token → contract generator** that reads DTCG-compatible token JSON and emits TypeScript contracts (literal arrays + union types). For v1 the contract surface is intentionally broad (Graceful Degradation):  
 - **Intent, Size, Shape** — from component tokens.  
 - **States** — enumerable states from tokens (even if runtime-derived).  
 - **Slots** — semantic structure (label, startIcon, endIcon) as static values.  

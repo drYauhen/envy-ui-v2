@@ -1,8 +1,9 @@
 # ADR-0004: Context-Aware UI Components and Projection Model
 
-**Status:** Accepted (Conceptual)
-
-**Date:** 2025-12-15
+**Status:** Accepted (Conceptual)  
+**Date:** 2025-12-15  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related:**
 
@@ -14,7 +15,7 @@
 
 ## 1. Decision Statement
 
-We adopt a **context-aware projection model** for UI components, where:
+I adopt a **context-aware projection model** for UI components, where:
 
 * UI components (e.g. Button, Card) are **semantic invariants**.
 * Visual appearance is a **projection** determined by rendering context and scheme.

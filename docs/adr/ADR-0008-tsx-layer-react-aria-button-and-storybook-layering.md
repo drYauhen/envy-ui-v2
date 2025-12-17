@@ -2,6 +2,8 @@
 
 **Status:** Accepted  
 **Date:** 2025-12-16  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)  
 
 **Related ADRs:**  
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
@@ -19,7 +21,7 @@ This ADR records the initial implementation of the **TSX component layer** for E
 Decisions:
 
 1. The first TSX baseline component is **`Button`**, implemented with **React Aria hooks** and **custom rendering**.
-2. We start with **meta-packages** (`react-aria`, `react-stately`) rather than granular packages; granular adoption is deferred.
+2. I start with **meta-packages** (`react-aria`, `react-stately`) rather than granular packages; granular adoption is deferred.
 3. The component API is **DOM-blessed** (e.g. `disabled`, `onClick`) while also supporting React Aria interaction (`onPress`) for future migration.
 4. The TSX layer preserves the existing CSS contract (`class="ui-button"` + `data-ui-*` axes) and additionally exposes optional `data-ui-*` interaction state attributes so CSS can remain independent.
 5. Storybook is layered and sorted as: **Tokens → CSS → TSX**, with TSX further grouped under **TSX/React Aria/** to keep accessibility engines swappable in the future.
@@ -30,7 +32,7 @@ Decisions:
 
 Button v1 existed as a CSS-driven baseline rendered via raw HTML in Storybook.
 
-We need a TSX component layer that:
+I need a TSX component layer that:
 
 - uses React Aria as a headless accessibility engine (per ADR-0001),
 - keeps the token/CSS layer independent of implementation details,
@@ -121,4 +123,3 @@ Story order is enforced as: `Tokens` → `CSS` → `TSX`.
 ## 7. Status
 
 Accepted and implemented for the Button v1 TSX baseline + Storybook layering.
-

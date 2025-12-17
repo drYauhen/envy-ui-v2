@@ -1,7 +1,9 @@
 # ADR-0003: Data-Driven Figma Variables Pipeline via Adapter JSON
 
-**Status:** Accepted
-**Date:** 2025-12-15
+**Status:** Accepted  
+**Date:** 2025-12-15  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Related:** ADR-0001 (Headless / React Aria strategy), ADR-0002 (Data-Driven Storybook Pipeline)
 
 ---
@@ -26,7 +28,7 @@ Without a clear strategy, Figma risked becoming an uncontrolled source of truth 
 
 I decided to treat **Figma as a downstream, stateful consumer** of the Envy UI v2 token system, using a **data-driven adapter pipeline**.
 
-The following architectural decisions were made:
+I made the following architectural decisions:
 
 1. **JSON tokens remain the sole source of truth**
 
