@@ -1,14 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { CSSProperties, ReactNode } from 'react';
-import colorsData from '../../build/storybook/colors.json';
-import manifest from '../../system.manifest.json';
+import type { CSSProperties } from 'react';
+import semanticButton from '../../tokens/ui/color/semantic.button.json';
+import focusTokens from '../../tokens/ui/button/focus.json';
 
 type Story = StoryObj;
+
+type TokenRef = {
+  path: string;
+  ref: string;
+  type?: string;
+};
 
 const pageStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
-  gap: '1.5rem',
+  gap: '1rem',
   padding: '1.5rem',
   background: '#f8fafc',
   color: '#0f172a'
@@ -23,47 +29,59 @@ const sectionStyle: CSSProperties = {
 };
 
 const headingStyle: CSSProperties = {
-  margin: '0 0 0.5rem',
+  margin: '0 0 0.35rem',
   fontSize: '1rem',
-  fontWeight: 700,
-  letterSpacing: '0.02em',
-  color: '#0f172a'
+  fontWeight: 700
 };
 
-const subtextStyle: CSSProperties = {
+const textStyle: CSSProperties = {
   margin: 0,
-  fontSize: '0.9rem',
+  fontSize: '0.92rem',
   color: '#475569',
   lineHeight: 1.5
 };
 
-const badge = (label: string, tone: 'success' | 'planned' | 'warning' = 'planned'): ReactNode => {
-  const colors: Record<typeof tone, { bg: string; fg: string }> = {
-    success: { bg: '#e0f2fe', fg: '#0ea5e9' },
-    planned: { bg: '#fef3c7', fg: '#d97706' },
-    warning: { bg: '#fee2e2', fg: '#b91c1c' }
-  };
-  const palette = colors[tone];
-
-  return (
-    <span
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '0.35rem',
-        padding: '0.25rem 0.55rem',
-        borderRadius: '999px',
-        background: palette.bg,
-        color: palette.fg,
-        fontSize: '0.8rem',
-        fontWeight: 700,
-        letterSpacing: '0.01em'
-      }}
-    >
-      {label}
-    </span>
-  );
+const tableStyle: CSSProperties = {
+  width: '100%',
+  borderCollapse: 'collapse',
+  fontSize: '0.92rem'
 };
+
+const thStyle: CSSProperties = {
+  textAlign: 'left',
+  padding: '0.5rem',
+  background: '#f1f5f9',
+  color: '#0f172a',
+  borderBottom: '1px solid #e2e8f0',
+  fontWeight: 700
+};
+
+const tdStyle: CSSProperties = {
+  padding: '0.5rem',
+  borderBottom: '1px solid #e2e8f0',
+  color: '#0f172a'
+};
+
+const collectRefs = (node: unknown, path: string[] = []): TokenRef[] => {
+  if (!node || typeof node !== 'object' || Array.isArray(node)) return [];
+
+  const obj = node as Record<string, unknown>;
+  const refs: TokenRef[] = [];
+
+  if (typeof obj.$value === 'string') {
+    refs.push({ path: path.join('.'), ref: obj.$value, type: typeof obj.$type === 'string' ? obj.$type : undefined });
+  }
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (key === '$value' || key === '$type') continue;
+    refs.push(...collectRefs(value, [...path, key]));
+  }
+
+  return refs;
+};
+
+const colorRefs = collectRefs((semanticButton as any)?.ui?.button ?? {});
+const focusRefs = collectRefs((focusTokens as any)?.ui?.button ?? {});
 
 const meta: Meta = {
   title: 'Tokens/Button',
@@ -75,84 +93,68 @@ const meta: Meta = {
 
 export default meta;
 
-const buttonConfig = manifest.components?.button;
-const tokenAggregation = buttonConfig?.tokenAggregation ?? {};
-const manifestTokensLayerStatus = manifest.layers?.tokens?.status ?? 'planned';
-
-const ColorGrid = () => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem' }}>
-    {(colorsData.groups ?? []).map((group) => (
-      <article key={group.id} style={{ ...sectionStyle, padding: '0.75rem' }}>
-        <p style={{ ...headingStyle, fontSize: '0.95rem', marginBottom: '0.4rem' }}>{group.title}</p>
-        <div style={{ display: 'grid', gap: '0.65rem' }}>
-          {group.tokens.map((token) => (
-            <div key={token.id} style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '0.65rem', alignItems: 'center' }}>
-              <div
-                style={{
-                  width: '56px',
-                  height: '40px',
-                  borderRadius: '0.5rem',
-                  border: '1px solid #e2e8f0',
-                  background: `var(${token.cssVar})`
-                }}
-              />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                <span style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a' }}>{token.label ?? token.id}</span>
-                <span style={{ fontSize: '0.8rem', color: '#475569' }}>{token.cssVar}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </article>
-    ))}
-  </div>
-);
-
-const Placeholder = ({ title, status }: { title: string; status: string }) => (
+const Table = ({ title, refs, emptyMessage }: { title: string; refs: TokenRef[]; emptyMessage: string }) => (
   <div style={sectionStyle}>
     <p style={headingStyle}>{title}</p>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      {badge(status === 'implemented' ? 'Implemented' : 'Planned', status === 'implemented' ? 'success' : 'planned')}
-      <p style={{ ...subtextStyle, margin: 0 }}>No token aggregation available yet for this category.</p>
-    </div>
+    {refs.length === 0 ? (
+      <p style={textStyle}>{emptyMessage}</p>
+    ) : (
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Token path</th>
+            <th style={thStyle}>References</th>
+            <th style={thStyle}>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {refs.map((token) => (
+            <tr key={token.path}>
+              <td style={tdStyle}>{token.path}</td>
+              <td style={tdStyle}>{token.ref}</td>
+              <td style={tdStyle}>{token.type ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
   </div>
 );
 
 export const Button: Story = {
   name: 'Button',
-  render: () => {
-    const hasColors = tokenAggregation.colors === true && (colorsData.groups?.length ?? 0) > 0;
-
-    return (
-      <div style={pageStyle}>
-        <div style={sectionStyle}>
-          <p style={headingStyle}>Overview</p>
-          <p style={subtextStyle}>
-            Aggregated token view for <strong>Button</strong>. Tokens remain defined by abstraction (colors, shape, states, sizes);
-            this view is for inspection and reasoning only. The manifest marks the tokens layer as <strong>{manifestTokensLayerStatus}</strong>;
-            categories not yet implemented are shown as planned placeholders.
-          </p>
-        </div>
-
-        {hasColors ? (
-          <div style={sectionStyle}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-              <p style={{ ...headingStyle, margin: 0 }}>Colors</p>
-              {badge('Implemented', 'success')}
-              <p style={{ ...subtextStyle, margin: 0 }}>
-                Rendering available color tokens; no button-specific subset is defined in the manifest.
-              </p>
-            </div>
-            <ColorGrid />
-          </div>
-        ) : (
-          <Placeholder title="Colors" status="planned" />
-        )}
-
-        <Placeholder title="States" status={tokenAggregation.states ? 'planned' : 'planned'} />
-        <Placeholder title="Sizes" status={tokenAggregation.sizes ? 'planned' : 'planned'} />
-        <Placeholder title="Shape" status={tokenAggregation.shape ? 'planned' : 'planned'} />
+  render: () => (
+    <div style={pageStyle}>
+      <div style={sectionStyle}>
+        <p style={headingStyle}>Overview</p>
+        <p style={textStyle}>
+          Button token slice (v0.1) aggregated from existing semantic files. Values shown are aliases/references only; no new
+          tokens were added. Categories without explicit tokens are shown as placeholders.
+        </p>
       </div>
-    );
-  }
+
+      <Table
+        title="Colors"
+        refs={colorRefs.filter((token) => token.path.startsWith('ui.button'))}
+        emptyMessage="No Button color tokens found."
+      />
+
+      <Table
+        title="States"
+        refs={colorRefs.filter((token) => token.path.startsWith('ui.button.states'))}
+        emptyMessage="No explicit state tokens defined yet."
+      />
+
+      <Table
+        title="Focus"
+        refs={focusRefs.filter((token) => token.path.startsWith('ui.button.focus'))}
+        emptyMessage="No focus tokens found."
+      />
+
+      <div style={sectionStyle}>
+        <p style={headingStyle}>Shape</p>
+        <p style={textStyle}>No button-specific shape tokens defined yet.</p>
+      </div>
+    </div>
+  )
 };
