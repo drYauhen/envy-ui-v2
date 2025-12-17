@@ -1,0 +1,51 @@
+{
+  "status": "exploratory",
+  "schemaVersion": "0.1",
+  "notes": [
+    "Describes structural intent for Storybook, generators, and token aggregation.",
+    "Not a replacement for tokens or Storybook config; may change or be superseded."
+  ],
+  "layers": {
+    "tokens": {
+      "status": "planned",
+      "purpose": "Component-level aggregation of relevant token categories for inspection.",
+      "implementation": "Tokens remain defined by abstraction (color, shape, etc.); this layer aggregates for Storybook."
+    },
+    "html-css": {
+      "status": "implemented",
+      "purpose": "Rendered DOM + styling only; base class plus data-* modifiers; no JS or accessibility logic."
+    },
+    "tsx": {
+      "status": "planned",
+      "purpose": "Base programmatic abstraction without accessibility layer."
+    },
+    "tsx-react-aria": {
+      "status": "implemented",
+      "purpose": "Accessibility and interaction layer using React Aria on top of TSX."
+    }
+  },
+  "components": {
+    "button": {
+      "status": "active",
+      "layers": {
+        "tokens": { "status": "planned" },
+        "html-css": { "status": "implemented" },
+        "tsx": { "status": "planned" },
+        "tsx-react-aria": { "status": "implemented" }
+      },
+      "tokenAggregation": {
+        "colors": true,
+        "states": true,
+        "sizes": true,
+        "shape": true
+      }
+    }
+  },
+  "storybook": {
+    "navigationOrder": ["Tokens", "HTML + CSS", "TSX", "TSX + React Aria"],
+    "notes": [
+      "Storybook should be layer-first; tokens layer may be placeholder until implemented.",
+      "Agents should read this manifest to add or adjust stories instead of inferring structure."
+    ]
+  }
+}
