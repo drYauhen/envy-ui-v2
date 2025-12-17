@@ -2,12 +2,21 @@ import type { Meta, StoryObj } from '@storybook/react';
 import type { CSSProperties } from 'react';
 import semanticButton from '../../tokens/ui/color/semantic.button.json';
 import focusTokens from '../../tokens/ui/button/focus.json';
+import colorPrimitives from '../../tokens/ui/color/primitives.json';
+import colorBrand from '../../tokens/ui/color/brand.json';
+import colorNeutral from '../../tokens/ui/color/neutral.json';
+import colorSystem from '../../tokens/ui/color/system.json';
 
 type Story = StoryObj;
 
 type TokenRef = {
   path: string;
   ref: string;
+  type?: string;
+};
+
+type FlatToken = {
+  value: string;
   type?: string;
 };
 
@@ -62,6 +71,67 @@ const tdStyle: CSSProperties = {
   color: '#0f172a'
 };
 
+const ColorSwatch = ({ reference }: { reference: string }) => {
+  const resolved = resolveAlias(reference, flatColorMap);
+  const size = 28;
+
+  const style: CSSProperties = {
+    width: size,
+    height: size,
+    borderRadius: 6,
+    border: '1px solid #e2e8f0',
+    background:
+      resolved && resolved.startsWith('#')
+        ? resolved
+        : 'repeating-linear-gradient(45deg, #e2e8f0, #e2e8f0 8px, #ffffff 8px, #ffffff 16px)'
+  };
+
+  return (
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+      <span style={style} aria-label={resolved ?? 'Unresolved color'} />
+      <span style={{ fontSize: '0.82rem', color: '#475569' }}>{resolved ?? '—'}</span>
+    </div>
+  );
+};
+
+const flattenTokens = (node: unknown, path: string[] = [], acc: Record<string, FlatToken> = {}): Record<string, FlatToken> => {
+  if (!node || typeof node !== 'object' || Array.isArray(node)) return acc;
+
+  const obj = node as Record<string, unknown>;
+  if (typeof obj.$value === 'string') {
+    acc[path.join('.')] = { value: obj.$value, type: typeof obj.$type === 'string' ? obj.$type : undefined };
+  }
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (key === '$value' || key === '$type') continue;
+    flattenTokens(value, [...path, key], acc);
+  }
+
+  return acc;
+};
+
+const flatColorMap: Record<string, FlatToken> = flattenTokens(colorPrimitives);
+flattenTokens(colorBrand, [], flatColorMap);
+flattenTokens(colorNeutral, [], flatColorMap);
+flattenTokens(colorSystem, [], flatColorMap);
+flattenTokens(semanticButton, [], flatColorMap);
+flattenTokens(focusTokens, [], flatColorMap);
+
+const resolveAlias = (ref: string, map: Record<string, FlatToken>, seen: Set<string> = new Set()): string | null => {
+  const match = ref.match(/^\{(.+)\}$/);
+  const key = match ? match[1] : null;
+  if (!key) return ref.startsWith('#') ? ref : null;
+  if (seen.has(key)) return null;
+  seen.add(key);
+
+  const target = map[key];
+  if (!target) return null;
+  if (target.value.startsWith('{')) {
+    return resolveAlias(target.value, map, seen);
+  }
+  return target.value;
+};
+
 const collectRefs = (node: unknown, path: string[] = []): TokenRef[] => {
   if (!node || typeof node !== 'object' || Array.isArray(node)) return [];
 
@@ -113,6 +183,7 @@ const Table = ({ title, refs, emptyMessage }: { title: string; refs: TokenRef[];
           <tr>
             <th style={thStyle}>Token path</th>
             <th style={thStyle}>References</th>
+            <th style={thStyle}>Preview</th>
             <th style={thStyle}>Type</th>
           </tr>
         </thead>
@@ -121,6 +192,9 @@ const Table = ({ title, refs, emptyMessage }: { title: string; refs: TokenRef[];
             <tr key={token.path}>
               <td style={tdStyle}>{token.path}</td>
               <td style={tdStyle}>{token.ref}</td>
+              <td style={tdStyle}>
+                <ColorSwatch reference={token.ref} />
+              </td>
               <td style={tdStyle}>{token.type ?? '—'}</td>
             </tr>
           ))}
