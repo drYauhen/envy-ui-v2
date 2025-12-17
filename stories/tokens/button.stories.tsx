@@ -80,8 +80,17 @@ const collectRefs = (node: unknown, path: string[] = []): TokenRef[] => {
   return refs;
 };
 
-const colorRefs = collectRefs((semanticButton as any)?.ui?.button ?? {});
-const focusRefs = collectRefs((focusTokens as any)?.ui?.button ?? {});
+const allRefs: TokenRef[] = [
+  ...collectRefs((semanticButton as any)?.ui?.button ?? {}, ['ui', 'button']),
+  ...collectRefs((focusTokens as any)?.ui?.button ?? {}, ['ui', 'button'])
+];
+
+const byPrefix = (prefix: string) => allRefs.filter((token) => token.path.startsWith(prefix));
+const colorRefs = byPrefix('ui.button.').filter(
+  (token) => !token.path.startsWith('ui.button.states') && !token.path.startsWith('ui.button.focus')
+);
+const stateRefs = byPrefix('ui.button.states');
+const focusRefs = byPrefix('ui.button.focus');
 
 const meta: Meta = {
   title: 'Tokens/Button',
