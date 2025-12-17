@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../../../src/ui';
-import type { ButtonIntent, ButtonShape } from '../../../src/ui';
+import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../src/ui';
 
 type ButtonStoryProps = {
   intent: ButtonIntent;
   shape: ButtonShape;
+  size: ButtonSize;
   disabled?: boolean;
+  loading?: boolean;
   label: string;
 };
 
@@ -18,10 +20,17 @@ const meta: Meta<ButtonStoryProps> = {
       control: { type: 'radio' }
     },
     shape: {
-      options: ['round', 'circle'],
+      options: ['default', 'round', 'circle'],
+      control: { type: 'radio' }
+    },
+    size: {
+      options: ['sm', 'md', 'lg'],
       control: { type: 'radio' }
     },
     disabled: {
+      control: { type: 'boolean' }
+    },
+    loading: {
       control: { type: 'boolean' }
     },
     label: {
@@ -30,8 +39,10 @@ const meta: Meta<ButtonStoryProps> = {
   },
   args: {
     intent: 'primary',
-    shape: 'round',
+    shape: 'default',
+    size: 'md',
     disabled: false,
+    loading: false,
     label: 'Action'
   }
 };
@@ -42,7 +53,7 @@ type Story = StoryObj<ButtonStoryProps>;
 
 const ButtonPreview = ({ intent, shape, disabled, label }: ButtonStoryProps) => (
   <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
-    <Button intent={intent} size="md" shape={shape} disabled={disabled}>
+    <Button intent={intent} size="md" shape={shape} isDisabled={disabled}>
       {shape === 'circle' ? label.slice(0, 1) : label}
     </Button>
   </div>
@@ -67,7 +78,7 @@ export const Secondary: Story = {
 export const KeyboardFocus: Story = {
   args: {
     intent: 'primary',
-    shape: 'round',
+    shape: 'default',
     label: 'Focusable button'
   },
   render: ({ shape, disabled }: ButtonStoryProps) => {
@@ -79,7 +90,7 @@ export const KeyboardFocus: Story = {
     return (
       <div data-ui-context="app" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
         {buttons.map((button) => (
-          <Button key={button.label} intent={button.intent} size="md" shape={shape} disabled={disabled}>
+          <Button key={button.label} intent={button.intent} size="md" shape={shape} isDisabled={disabled}>
             {button.label}
           </Button>
         ))}
@@ -89,4 +100,73 @@ export const KeyboardFocus: Story = {
       </div>
     );
   }
+};
+
+export const LinkButton: Story = {
+  name: 'Link host',
+  args: {
+    intent: 'primary',
+    shape: 'default',
+    size: 'md',
+    label: 'Open docs'
+  },
+  render: ({ intent, shape, size, disabled, loading, label }: ButtonStoryProps) => (
+    <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+      <Button intent={intent} shape={shape} size={size} href="https://example.com" isDisabled={disabled} isLoading={loading}>
+        {label}
+      </Button>
+    </div>
+  )
+};
+
+export const AsChildButton: Story = {
+  name: 'asChild proxy',
+  args: {
+    intent: 'secondary',
+    shape: 'round',
+    size: 'md',
+    label: 'Card slot'
+  },
+  render: ({ intent, shape, size, disabled, loading, label }: ButtonStoryProps) => (
+    <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+      <Button intent={intent} shape={shape} size={size} asChild isDisabled={disabled} isLoading={loading}>
+        <div
+          style={{
+            padding: '12px 16px',
+            border: '1px dashed #94a3b8',
+            borderRadius: '12px',
+            background: '#f8fafc'
+          }}
+        >
+          {label} (div host)
+        </div>
+      </Button>
+    </div>
+  )
+};
+
+export const LoadingAndIcons: Story = {
+  name: 'Loading + icons',
+  args: {
+    intent: 'primary',
+    shape: 'round',
+    size: 'md',
+    label: 'Processing',
+    loading: true
+  },
+  render: ({ intent, shape, size, disabled, loading, label }: ButtonStoryProps) => (
+    <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+      <Button
+        intent={intent}
+        shape={shape}
+        size={size}
+        isDisabled={disabled}
+        isLoading={loading}
+        startIcon={<span aria-hidden="true">⏳</span>}
+        endIcon={<span aria-hidden="true">→</span>}
+      >
+        {label}
+      </Button>
+    </div>
+  )
 };
