@@ -1,0 +1,90 @@
+{
+  "ui": {
+    "button": {
+      "group": {
+        "orientation": {
+          "horizontal": { "$value": "horizontal", "$type": "string" },
+          "vertical": { "$value": "vertical", "$type": "string" }
+        },
+        "position": {
+          "single": {
+            "shape": {
+              "corner": {
+                "topLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                "topRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                "bottomRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                "bottomLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" }
+              }
+            }
+          },
+          "first": {
+            "shape": {
+              "orientation": {
+                "horizontal": {
+                  "corner": {
+                    "topLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                    "topRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" }
+                  }
+                },
+                "vertical": {
+                  "corner": {
+                    "topLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                    "topRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                    "bottomRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                  }
+                }
+              }
+            }
+          },
+          "middle": {
+            "shape": {
+              "orientation": {
+                "horizontal": {
+                  "corner": {
+                    "topLeft": { "$value": "0px", "$type": "dimension" },
+                    "topRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                  }
+                },
+                "vertical": {
+                  "corner": {
+                    "topLeft": { "$value": "0px", "$type": "dimension" },
+                    "topRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                  }
+                }
+              }
+            }
+          },
+          "last": {
+            "shape": {
+              "orientation": {
+                "horizontal": {
+                  "corner": {
+                    "topLeft": { "$value": "0px", "$type": "dimension" },
+                    "topRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                    "bottomRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                  }
+                },
+                "vertical": {
+                  "corner": {
+                    "topLeft": { "$value": "0px", "$type": "dimension" },
+                    "topRight": { "$value": "0px", "$type": "dimension" },
+                    "bottomRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
+                    "bottomLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

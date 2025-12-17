@@ -8,6 +8,10 @@
 }
 
 [data-ui-context] .ui-button {
+  --ui-button-corner-top-left: var(--env2-ui-button-shape-default-radius, 8px);
+  --ui-button-corner-top-right: var(--env2-ui-button-shape-default-radius, 8px);
+  --ui-button-corner-bottom-right: var(--env2-ui-button-shape-default-radius, 8px);
+  --ui-button-corner-bottom-left: var(--env2-ui-button-shape-default-radius, 8px);
   --ui-button-bg-base: transparent;
   --ui-button-label-base: currentColor;
   --ui-button-border-base: transparent;
@@ -23,7 +27,7 @@
   height: var(--ui-button-height);
   min-width: var(--ui-button-height);
   padding-inline: var(--ui-button-padding-inline);
-  border-radius: var(--ui-button-shape-pill-radius);
+  border-radius: var(--ui-button-corner-top-left) var(--ui-button-corner-top-right) var(--ui-button-corner-bottom-right) var(--ui-button-corner-bottom-left);
   border: 1px solid var(--ui-button-border-base, transparent);
   background-color: var(--ui-button-bg-base);
   color: var(--ui-button-label-base);
@@ -71,6 +75,7 @@
 [data-ui-context] .ui-button[data-ui-intent='primary'] {
   --ui-button-bg-base: var(--env2-ui-button-primary-background-base, var(--env2-ui-color-brand-primary));
   --ui-button-label-base: var(--env2-ui-button-primary-label-base, var(--env2-ui-color-neutral-white));
+  --ui-button-border-base: var(--env2-ui-button-primary-border-base, transparent);
 }
 
 [data-ui-context] .ui-button[data-ui-intent='secondary'] {
@@ -79,14 +84,91 @@
   --ui-button-border-base: var(--env2-ui-button-secondary-border-base, var(--env2-ui-color-neutral-300));
 }
 
+[data-ui-context] .ui-button[data-selected][data-ui-intent='primary'] {
+  --ui-button-bg-base: var(--env2-ui-button-primary-background-selected, var(--env2-ui-color-brand-primary));
+  --ui-button-label-base: var(--env2-ui-button-primary-label-selected, var(--env2-ui-color-neutral-white));
+  --ui-button-border-base: var(--env2-ui-button-primary-border-selected, transparent);
+}
+
+[data-ui-context] .ui-button[data-selected][data-ui-intent='secondary'] {
+  --ui-button-bg-base: var(--env2-ui-button-secondary-background-selected, var(--env2-ui-color-neutral-white));
+  --ui-button-label-base: var(--env2-ui-button-secondary-label-selected, var(--env2-ui-color-neutral-900));
+  --ui-button-border-base: var(--env2-ui-button-secondary-border-selected, var(--env2-ui-color-neutral-300));
+}
+
 [data-ui-context] .ui-button[data-ui-shape='round'] {
-  border-radius: var(--ui-button-shape-pill-radius);
+  --ui-button-corner-top-left: var(--ui-button-shape-pill-radius);
+  --ui-button-corner-top-right: var(--ui-button-shape-pill-radius);
+  --ui-button-corner-bottom-right: var(--ui-button-shape-pill-radius);
+  --ui-button-corner-bottom-left: var(--ui-button-shape-pill-radius);
 }
 
 [data-ui-context] .ui-button[data-ui-shape='circle'] {
   width: var(--ui-button-height);
   padding-inline: 0;
   border-radius: 50%;
+}
+
+[data-ui-context] .ui-button[data-group-position] {
+  margin: 0;
+  border-radius: var(--ui-button-corner-top-left) var(--ui-button-corner-top-right) var(--ui-button-corner-bottom-right) var(--ui-button-corner-bottom-left);
+}
+
+[data-ui-context] .ui-button[data-group-orientation='vertical'] {
+  width: 100%;
+}
+
+[data-ui-context] .ui-button[data-group-position='single'] {
+  --ui-button-corner-top-left: var(--env2-ui-button-group-position-single-corner-top-left, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-top-right: var(--env2-ui-button-group-position-single-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-single-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-single-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
+}
+
+[data-ui-context] .ui-button[data-group-position='first'][data-group-orientation='horizontal'],
+[data-ui-context] .ui-button[data-group-position='first']:not([data-group-orientation]),
+[data-ui-context] .ui-button[data-group-position='first'][data-group-orientation='horizontal'] {
+  --ui-button-corner-top-left: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-top-left, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-top-right: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-top-right, 0px);
+  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-bottom-right, 0px);
+  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
+}
+
+[data-ui-context] .ui-button[data-group-position='middle'][data-group-orientation='horizontal'],
+[data-ui-context] .ui-button[data-group-position='middle']:not([data-group-orientation]) {
+  --ui-button-corner-top-left: 0px;
+  --ui-button-corner-top-right: 0px;
+  --ui-button-corner-bottom-right: 0px;
+  --ui-button-corner-bottom-left: 0px;
+}
+
+[data-ui-context] .ui-button[data-group-position='last'][data-group-orientation='horizontal'],
+[data-ui-context] .ui-button[data-group-position='last']:not([data-group-orientation]) {
+  --ui-button-corner-top-left: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-top-left, 0px);
+  --ui-button-corner-top-right: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-bottom-left, 0px);
+}
+
+[data-ui-context] .ui-button[data-group-position='first'][data-group-orientation='vertical'] {
+  --ui-button-corner-top-left: var(--env2-ui-button-group-position-first-orientation-vertical-corner-top-left, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-top-right: var(--env2-ui-button-group-position-first-orientation-vertical-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-first-orientation-vertical-corner-bottom-right, 0px);
+  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-first-orientation-vertical-corner-bottom-left, 0px);
+}
+
+[data-ui-context] .ui-button[data-group-position='middle'][data-group-orientation='vertical'] {
+  --ui-button-corner-top-left: 0px;
+  --ui-button-corner-top-right: 0px;
+  --ui-button-corner-bottom-right: 0px;
+  --ui-button-corner-bottom-left: 0px;
+}
+
+[data-ui-context] .ui-button[data-group-position='last'][data-group-orientation='vertical'] {
+  --ui-button-corner-top-left: var(--env2-ui-button-group-position-last-orientation-vertical-corner-top-left, 0px);
+  --ui-button-corner-top-right: var(--env2-ui-button-group-position-last-orientation-vertical-corner-top-right, 0px);
+  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-last-orientation-vertical-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
+  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-last-orientation-vertical-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
 }
 
 [data-ui-context] .ui-button[data-ui-size='md'] {

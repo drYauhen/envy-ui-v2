@@ -16,7 +16,7 @@ export type ButtonSize = (typeof ButtonSize)[number];
 export const ButtonShape = ['circle', 'default', 'round'] as const;
 export type ButtonShape = (typeof ButtonShape)[number];
 
-export const ButtonStates = ['active', 'disabled', 'hover'] as const;
+export const ButtonStates = ['active', 'disabled', 'hover', 'selected'] as const;
 export type ButtonStates = (typeof ButtonStates)[number];
 
 export const ButtonSlots = ['endIcon', 'label', 'startIcon'] as const;
