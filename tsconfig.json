@@ -12,5 +12,5 @@
     "resolveJsonModule": true,
     "types": ["node"]
   },
-  "include": ["src", "stories", ".storybook", "build/storybook/**/*.json"]
+  "include": ["src", "stories", ".storybook", "contracts", "build/storybook/**/*.json"]
 }

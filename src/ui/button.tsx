@@ -1,12 +1,8 @@
 import * as React from 'react';
 import { mergeProps, useButton, useFocusRing, useHover } from 'react-aria';
 import type { AriaButtonProps, PressEvent } from 'react-aria';
-
-type HTMLElementTagName = keyof HTMLElementTagNameMap;
-
-export type ButtonIntent = 'primary' | 'secondary';
-export type ButtonShape = 'default' | 'round' | 'circle';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+import type { ButtonIntent, ButtonShape, ButtonSize } from '../../contracts/button.contract';
+export type { ButtonIntent, ButtonShape, ButtonSize } from '../../contracts/button.contract';
 
 type HostButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 type HostLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -75,10 +71,7 @@ const isAnchorLike = (el: React.ReactElement) => {
   return tag === 'a';
 };
 
-export const Button = React.forwardRef<HTMLElement, ButtonProps>(function Button(
-  props,
-  forwardedRef
-) {
+export const Button = React.forwardRef<HTMLElement, ButtonProps>(function Button(props, forwardedRef) {
   const {
     intent = 'primary',
     size = 'md',
