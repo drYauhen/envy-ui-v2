@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import type { CSSProperties } from 'react';
 import semanticButton from '../../tokens/ui/color/semantic.button.json';
 import focusTokens from '../../tokens/ui/button/focus.json';
+import sizeTokens from '../../tokens/ui/button/size.json';
+import shapeTokens from '../../tokens/ui/button/shape.json';
 import colorPrimitives from '../../tokens/ui/color/primitives.json';
 import colorBrand from '../../tokens/ui/color/brand.json';
 import colorNeutral from '../../tokens/ui/color/neutral.json';
@@ -116,6 +118,8 @@ flattenTokens(colorNeutral, [], flatColorMap);
 flattenTokens(colorSystem, [], flatColorMap);
 flattenTokens(semanticButton, [], flatColorMap);
 flattenTokens(focusTokens, [], flatColorMap);
+flattenTokens(sizeTokens, [], flatColorMap);
+flattenTokens(shapeTokens, [], flatColorMap);
 
 const resolveAlias = (ref: string, map: Record<string, FlatToken>, seen: Set<string> = new Set()): string | null => {
   const match = ref.match(/^\{(.+)\}$/);
@@ -152,15 +156,23 @@ const collectRefs = (node: unknown, path: string[] = []): TokenRef[] => {
 
 const allRefs: TokenRef[] = [
   ...collectRefs((semanticButton as any)?.ui?.button ?? {}, ['ui', 'button']),
-  ...collectRefs((focusTokens as any)?.ui?.button ?? {}, ['ui', 'button'])
+  ...collectRefs((focusTokens as any)?.ui?.button ?? {}, ['ui', 'button']),
+  ...collectRefs((sizeTokens as any)?.ui?.button ?? {}, ['ui', 'button']),
+  ...collectRefs((shapeTokens as any)?.ui?.button ?? {}, ['ui', 'button'])
 ];
 
 const byPrefix = (prefix: string) => allRefs.filter((token) => token.path.startsWith(prefix));
 const colorRefs = byPrefix('ui.button.').filter(
-  (token) => !token.path.startsWith('ui.button.states') && !token.path.startsWith('ui.button.focus')
+  (token) =>
+    !token.path.startsWith('ui.button.states') &&
+    !token.path.startsWith('ui.button.focus') &&
+    !token.path.startsWith('ui.button.size') &&
+    !token.path.startsWith('ui.button.shape')
 );
 const stateRefs = byPrefix('ui.button.states');
 const focusRefs = byPrefix('ui.button.focus');
+const sizeRefs = byPrefix('ui.button.size');
+const shapeRefs = byPrefix('ui.button.shape');
 
 const meta: Meta = {
   title: 'Tokens/Button',
@@ -224,7 +236,7 @@ export const Button: Story = {
 
       <Table
         title="States"
-        refs={colorRefs.filter((token) => token.path.startsWith('ui.button.states'))}
+        refs={stateRefs.filter((token) => token.path.startsWith('ui.button.states'))}
         emptyMessage="No explicit state tokens defined yet."
       />
 
@@ -234,10 +246,9 @@ export const Button: Story = {
         emptyMessage="No focus tokens found."
       />
 
-      <div style={sectionStyle}>
-        <p style={headingStyle}>Shape</p>
-        <p style={textStyle}>No button-specific shape tokens defined yet.</p>
-      </div>
+      <Table title="Size" refs={sizeRefs} emptyMessage="No size tokens found." />
+
+      <Table title="Shape" refs={shapeRefs} emptyMessage="No button-specific shape tokens defined yet." />
     </div>
   )
 };

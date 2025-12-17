@@ -2,27 +2,42 @@
   "ui": {
     "button": {
       "states": {
-        "hover": { "effect": "emphasize" },
-        "active": { "effect": "press" },
-        "disabled": { "effect": "mute" }
+        "hover": { "$value": "emphasize", "$type": "stateEffect" },
+        "active": { "$value": "press", "$type": "stateEffect" },
+        "disabled": { "$value": "mute", "$type": "stateEffect" }
       },
       "primary": {
         "background": {
-          "base": { "$value": "{ui.color.brand.primary}", "$type": "color" }
+          "base": { "$value": "{ui.color.brand.primary}", "$type": "color" },
+          "hover": { "$value": "{ui.color.brand.primary}", "$type": "color" },
+          "active": { "$value": "{ui.color.brand.primary}", "$type": "color" },
+          "disabled": { "$value": "{ui.color.neutral.300}", "$type": "color" }
         },
         "label": {
-          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" }
+          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" },
+          "hover": { "$value": "{ui.color.neutral.white}", "$type": "color" },
+          "active": { "$value": "{ui.color.neutral.white}", "$type": "color" },
+          "disabled": { "$value": "{ui.color.neutral.500}", "$type": "color" }
         }
       },
       "secondary": {
         "background": {
-          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" }
+          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" },
+          "hover": { "$value": "{ui.color.neutral.white}", "$type": "color" },
+          "active": { "$value": "{ui.color.neutral.white}", "$type": "color" },
+          "disabled": { "$value": "{ui.color.neutral.100}", "$type": "color" }
         },
         "label": {
-          "base": { "$value": "{ui.color.neutral.900}", "$type": "color" }
+          "base": { "$value": "{ui.color.neutral.900}", "$type": "color" },
+          "hover": { "$value": "{ui.color.neutral.900}", "$type": "color" },
+          "active": { "$value": "{ui.color.neutral.900}", "$type": "color" },
+          "disabled": { "$value": "{ui.color.neutral.500}", "$type": "color" }
         },
         "border": {
-          "base": { "$value": "{ui.color.neutral.300}", "$type": "color" }
+          "base": { "$value": "{ui.color.neutral.300}", "$type": "color" },
+          "hover": { "$value": "{ui.color.neutral.300}", "$type": "color" },
+          "active": { "$value": "{ui.color.neutral.300}", "$type": "color" },
+          "disabled": { "$value": "{ui.color.neutral.300}", "$type": "color" }
         }
       }
     }
