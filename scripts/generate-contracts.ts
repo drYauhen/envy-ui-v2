@@ -17,20 +17,20 @@ const COMPONENTS = {
   button: {
     axes: {
       intent: {
-        sources: ['tokens/ui/color/semantic.button.json'],
+        sources: ['tokens/components/button/colors.json'],
         path: ['ui', 'button'],
         excludeKeys: ['states']
       },
       size: {
-        sources: ['tokens/ui/button/size.json'],
+        sources: ['tokens/components/button/size.json'],
         path: ['ui', 'button', 'size']
       },
       shape: {
-        sources: ['tokens/ui/button/shape.json'],
+        sources: ['tokens/components/button/shape.json'],
         path: ['ui', 'button', 'shape']
       },
       states: {
-        sources: ['tokens/ui/color/semantic.button.json'],
+        sources: ['tokens/components/button/colors.json'],
         path: ['ui', 'button', 'states']
       },
       slots: {

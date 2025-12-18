@@ -1,0 +1,12 @@
+{
+  "ui": {
+    "color": {
+      "border": {
+        "default": { "$value": "{ui.color.neutral.300}", "$type": "color" },
+        "subtle": { "$value": "{ui.color.neutral.200}", "$type": "color" },
+        "strong": { "$value": "{ui.color.neutral.400}", "$type": "color" },
+        "inverse": { "$value": "{ui.color.neutral.800}", "$type": "color" }
+      }
+    }
+  }
+}

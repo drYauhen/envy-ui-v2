@@ -1,0 +1,13 @@
+{
+  "ui": {
+    "color": {
+      "text": {
+        "primary": { "$value": "{ui.color.neutral.900}", "$type": "color" },
+        "muted": { "$value": "{ui.color.neutral.700}", "$type": "color" },
+        "subtle": { "$value": "{ui.color.neutral.600}", "$type": "color" },
+        "inverse": { "$value": "{ui.color.neutral.white}", "$type": "color" },
+        "disabled": { "$value": "{ui.color.neutral.500}", "$type": "color" }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "ui": {
+    "color": {
+      "focus": {
+        "ring": { "$value": "{ui.color.signal.keyboardFocus}", "$type": "color" }
+      },
+      "system": {
+        "focus": { "$value": "{ui.color.focus.ring}", "$type": "color" }
+      }
+    },
+    "focus": {
+      "ring": {
+        "width": {
+          "base": { "$value": "2px", "$type": "dimension" },
+          "accessible": { "$value": "3px", "$type": "dimension" }
+        }
+      }
+    }
+  }
+}

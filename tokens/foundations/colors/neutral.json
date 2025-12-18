@@ -1,0 +1,19 @@
+{
+  "ui": {
+    "color": {
+      "neutral": {
+        "white": { "$value": "#ffffff", "$type": "color" },
+        "50": { "$value": "#f8fafc", "$type": "color" },
+        "100": { "$value": "#f1f2f7", "$type": "color" },
+        "200": { "$value": "#e5e7eb", "$type": "color" },
+        "300": { "$value": "#cccccc", "$type": "color" },
+        "400": { "$value": "#a3a3a3", "$type": "color" },
+        "500": { "$value": "#757575", "$type": "color" },
+        "600": { "$value": "#525252", "$type": "color" },
+        "700": { "$value": "#404040", "$type": "color" },
+        "800": { "$value": "#262626", "$type": "color" },
+        "900": { "$value": "#1b1b1b", "$type": "color" }
+      }
+    }
+  }
+}

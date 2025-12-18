@@ -1,9 +1,15 @@
 const systemMeta = require('../../system.meta.json');
 
 const DEFAULT_GROUPS = [
-  { id: 'primitives', title: 'Color Primitives' },
-  { id: 'brand', title: 'Color Brand' },
-  { id: 'semantic', title: 'Color Semantic' }
+  { id: 'neutral', title: 'Foundation Neutral' },
+  { id: 'brand', title: 'Foundation Brand' },
+  { id: 'accent', title: 'Foundation Accent' },
+  { id: 'signal', title: 'Signal' },
+  { id: 'status', title: 'Status' },
+  { id: 'text', title: 'Semantic Text' },
+  { id: 'background', title: 'Semantic Background' },
+  { id: 'border', title: 'Semantic Border' },
+  { id: 'focus', title: 'Semantic Focus' }
 ];
 
 const toTitleCase = (value = '') =>

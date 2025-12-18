@@ -1,0 +1,12 @@
+{
+  "ui": {
+    "color": {
+      "status": {
+        "success": { "$value": "#22c55e", "$type": "color" },
+        "warning": { "$value": "#f59e0b", "$type": "color" },
+        "error": { "$value": "#ef4444", "$type": "color" },
+        "info": { "$value": "#0ea5e9", "$type": "color" }
+      }
+    }
+  }
+}

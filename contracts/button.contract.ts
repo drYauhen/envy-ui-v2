@@ -3,7 +3,7 @@
 // Contract scope: component API literal unions derived from tokens (DTCG-compatible).
 /**
  * How this file was produced:
- * - Source tokens: tokens/ui/color/semantic.button.json, tokens/ui/button/size.json, tokens/ui/button/shape.json, tokens/ui/color/semantic.button.json
+ * - Source tokens: tokens/components/button/colors.json, tokens/components/button/size.json, tokens/components/button/shape.json, tokens/components/button/colors.json
  * - Axes derived by reading keys at configured JSON paths (or staticValues when provided).
  * - No primitives resolved; only literal keys are emitted.
  */

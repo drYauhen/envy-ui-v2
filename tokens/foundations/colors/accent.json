@@ -1,0 +1,18 @@
+{
+  "ui": {
+    "color": {
+      "accent": {
+        "50": { "$value": "#f1f8ff", "$type": "color" },
+        "100": { "$value": "#dceeff", "$type": "color" },
+        "200": { "$value": "#b7dbff", "$type": "color" },
+        "300": { "$value": "#8ac4ff", "$type": "color" },
+        "400": { "$value": "#55a7ff", "$type": "color" },
+        "500": { "$value": "#1e8bff", "$type": "color" },
+        "600": { "$value": "#0b75e6", "$type": "color" },
+        "700": { "$value": "#0a5ec0", "$type": "color" },
+        "800": { "$value": "#0a4c99", "$type": "color" },
+        "900": { "$value": "#083a73", "$type": "color" }
+      }
+    }
+  }
+}

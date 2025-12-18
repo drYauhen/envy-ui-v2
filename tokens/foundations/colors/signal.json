@@ -1,0 +1,13 @@
+{
+  "ui": {
+    "color": {
+      "signal": {
+        "keyboardFocus": {
+          "$value": "#ff4d00",
+          "$type": "color",
+          "description": "Keyboard-only focus ring (a11y)"
+        }
+      }
+    }
+  }
+}

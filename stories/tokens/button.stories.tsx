@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { CSSProperties } from 'react';
-import semanticButton from '../../tokens/ui/color/semantic.button.json';
-import focusTokens from '../../tokens/ui/button/focus.json';
-import sizeTokens from '../../tokens/ui/button/size.json';
-import shapeTokens from '../../tokens/ui/button/shape.json';
-import colorPrimitives from '../../tokens/ui/color/primitives.json';
-import colorBrand from '../../tokens/ui/color/brand.json';
-import colorNeutral from '../../tokens/ui/color/neutral.json';
-import colorSystem from '../../tokens/ui/color/system.json';
+import semanticButton from '../../tokens/components/button/colors.json';
+import focusTokens from '../../tokens/components/button/focus.json';
+import sizeTokens from '../../tokens/components/button/size.json';
+import shapeTokens from '../../tokens/components/button/shape.json';
+import semanticBackground from '../../tokens/semantic/colors/background.json';
+import semanticFocus from '../../tokens/semantic/colors/focus.json';
+import foundationBrand from '../../tokens/foundations/colors/brand.json';
+import foundationNeutral from '../../tokens/foundations/colors/neutral.json';
+import foundationAccent from '../../tokens/foundations/colors/accent.json';
 
 type Story = StoryObj;
 
@@ -112,10 +113,12 @@ const flattenTokens = (node: unknown, path: string[] = [], acc: Record<string, F
   return acc;
 };
 
-const flatColorMap: Record<string, FlatToken> = flattenTokens(colorPrimitives);
-flattenTokens(colorBrand, [], flatColorMap);
-flattenTokens(colorNeutral, [], flatColorMap);
-flattenTokens(colorSystem, [], flatColorMap);
+const flatColorMap: Record<string, FlatToken> = {};
+flattenTokens(foundationBrand, [], flatColorMap);
+flattenTokens(foundationNeutral, [], flatColorMap);
+flattenTokens(foundationAccent, [], flatColorMap);
+flattenTokens(semanticBackground, [], flatColorMap);
+flattenTokens(semanticFocus, [], flatColorMap);
 flattenTokens(semanticButton, [], flatColorMap);
 flattenTokens(focusTokens, [], flatColorMap);
 flattenTokens(sizeTokens, [], flatColorMap);
@@ -175,7 +178,7 @@ const sizeRefs = byPrefix('ui.button.size');
 const shapeRefs = byPrefix('ui.button.shape');
 
 const meta: Meta = {
-  title: 'Tokens/Button',
+  title: 'Tokens/Components/Button/Colors',
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen'
