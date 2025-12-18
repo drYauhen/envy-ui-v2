@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { ButtonIntent, ButtonShape, ButtonSize } from '../../contracts/button.contract';
+import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../contracts/button.contract';
 
 export type ButtonCleanProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   intent?: ButtonIntent;
@@ -34,4 +34,3 @@ export const ButtonClean = React.forwardRef<HTMLButtonElement, ButtonCleanProps>
     </button>
   );
 });
-
