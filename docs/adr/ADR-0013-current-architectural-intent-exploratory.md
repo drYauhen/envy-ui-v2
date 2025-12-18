@@ -33,7 +33,11 @@ Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsi
 
 ---
 
-## 4. BATN (Button) — architectural probe, not final component
+## 4. BATN (Behavioral Action Token Node) — architectural probe, not final component
+
+### Terminology Note: BATN
+
+BATN stands for **Behavioral Action Token Node** and represents a pre-component architectural abstraction from which concrete UI components (such as Button implementations) are derived. BATN is intentionally not equivalent to a rendered Button. It captures action semantics, behavioral states, token-driven configuration, and compositional structure. Concrete components (HTML, TSX, TSX + React Aria, etc.) are treated as render targets of a BATN, not as its definition.
 
 - BATN is a **canonical architectural probe**, not a production-final component.
 - It exercises the full pipeline end-to-end: tokens → generators → templates → Storybook → runtime bindings.
