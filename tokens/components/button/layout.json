@@ -1,0 +1,27 @@
+{
+  "ui": {
+    "button": {
+      "layout": {
+        "stack": {
+          "internalBorder": {
+            "horizontal": { "$value": "none", "$type": "string" },
+            "vertical": { "$value": "none", "$type": "string" }
+          },
+          "perimeterBorder": { "$value": "preserve", "$type": "string" },
+          "separator": {
+            "inset": { "$value": "{ui.button.separator.inset}", "$type": "dimension" },
+            "thickness": { "$value": "{ui.button.separator.thickness}", "$type": "dimension" }
+          }
+        },
+        "default": {
+          "flex": {
+            "grow": { "$value": "0", "$type": "string" },
+            "shrink": { "$value": "0", "$type": "string" },
+            "basis": { "$value": "auto", "$type": "string" }
+          },
+          "whiteSpace": { "$value": "nowrap", "$type": "string" }
+        }
+      }
+    }
+  }
+}

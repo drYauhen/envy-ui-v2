@@ -3,6 +3,8 @@
  */
 
 :root {
+  --env2-ui-button-border-width: 1px;
+  --env2-ui-button-border-style: solid;
   --env2-ui-button-states-hover: emphasize;
   --env2-ui-button-states-active: press;
   --env2-ui-button-states-disabled: mute;
@@ -66,6 +68,17 @@
   --env2-ui-button-group-position-last-shape-orientation-vertical-corner-top-right: 0px;
   --env2-ui-button-group-position-last-shape-orientation-vertical-corner-bottom-right: 8px;
   --env2-ui-button-group-position-last-shape-orientation-vertical-corner-bottom-left: 8px;
+  --env2-ui-button-layout-stack-internal-border-horizontal: none;
+  --env2-ui-button-layout-stack-internal-border-vertical: none;
+  --env2-ui-button-layout-stack-perimeter-border: preserve;
+  --env2-ui-button-layout-stack-separator-inset: 6px;
+  --env2-ui-button-layout-stack-separator-thickness: 1px;
+  --env2-ui-button-layout-default-flex-grow: 0;
+  --env2-ui-button-layout-default-flex-shrink: 0;
+  --env2-ui-button-layout-default-flex-basis: auto;
+  --env2-ui-button-layout-default-white-space: nowrap;
+  --env2-ui-button-separator-inset: 6px;
+  --env2-ui-button-separator-thickness: 1px;
   --env2-ui-button-shape-default-radius: 8px;
   --env2-ui-button-shape-round-radius: 999px;
   --env2-ui-button-shape-circle-radius: 50%;

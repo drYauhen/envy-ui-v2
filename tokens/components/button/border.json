@@ -1,0 +1,10 @@
+{
+  "ui": {
+    "button": {
+      "border": {
+        "width": { "$value": "1px", "$type": "dimension" },
+        "style": { "$value": "solid", "$type": "string" }
+      }
+    }
+  }
+}

@@ -15,6 +15,16 @@
   --ui-button-bg-base: transparent;
   --ui-button-label-base: currentColor;
   --ui-button-border-base: transparent;
+  --ui-button-border-visible: var(--ui-button-border-base, var(--env2-ui-color-neutral-200, #e5e7eb));
+  --ui-button-separator-color: color-mix(in srgb, var(--ui-button-border-visible), transparent 55%);
+  --ui-button-separator-inset: var(--env2-ui-button-separator-inset, 6px);
+  --ui-button-separator-thickness: var(--env2-ui-button-separator-thickness, 1px);
+  --ui-button-border-width: var(--env2-ui-button-border-width, 1px);
+  --ui-button-border-style: var(--env2-ui-button-border-style, solid);
+  --ui-button-flex-grow: var(--env2-ui-button-layout-default-flex-grow, 0);
+  --ui-button-flex-shrink: var(--env2-ui-button-layout-default-flex-shrink, 0);
+  --ui-button-flex-basis: var(--env2-ui-button-layout-default-flex-basis, auto);
+  --ui-button-white-space: var(--env2-ui-button-layout-default-whiteSpace, nowrap);
   --ui-button-height: var(--ui-button-size-md-height);
   --ui-button-padding-inline: var(--ui-button-size-md-padding-inline);
   --ui-button-font-size: var(--ui-button-size-md-font-size);
@@ -27,8 +37,10 @@
   height: var(--ui-button-height);
   min-width: var(--ui-button-height);
   padding-inline: var(--ui-button-padding-inline);
+  flex: var(--ui-button-flex-grow) var(--ui-button-flex-shrink) var(--ui-button-flex-basis);
+  white-space: var(--ui-button-white-space);
   border-radius: var(--ui-button-corner-top-left) var(--ui-button-corner-top-right) var(--ui-button-corner-bottom-right) var(--ui-button-corner-bottom-left);
-  border: 1px solid var(--ui-button-border-base, transparent);
+  border: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-base, transparent);
   background-color: var(--ui-button-bg-base);
   color: var(--ui-button-label-base);
   font-size: var(--ui-button-font-size);
@@ -39,6 +51,8 @@
   cursor: pointer;
   transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
   outline: none;
+  position: relative;
+  z-index: 0;
 }
 
 [data-ui-context] .ui-button:disabled {
@@ -61,15 +75,21 @@
 }
 
 [data-ui-context] .ui-button:focus {
-  box-shadow: 0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 40%);
+  box-shadow:
+    0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 40%);
+  z-index: 1;
 }
 
 [data-ui-context] .ui-button:focus-visible {
-  box-shadow: 0 0 0 var(--env2-ui-focus-ring-width-accessible, 3px) color-mix(in srgb, var(--ui-button-focus-color), transparent 25%);
+  box-shadow:
+    0 0 0 var(--env2-ui-focus-ring-width-accessible, 3px) color-mix(in srgb, var(--ui-button-focus-color), transparent 25%);
+  z-index: 1;
 }
 
 [data-ui-context] .ui-button:focus:not(:focus-visible) {
-  box-shadow: 0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 55%);
+  box-shadow:
+    0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 55%);
+  z-index: 1;
 }
 
 [data-ui-context] .ui-button[data-ui-intent='primary'] {
@@ -112,6 +132,87 @@
 [data-ui-context] .ui-button[data-group-position] {
   margin: 0;
   border-radius: var(--ui-button-corner-top-left) var(--ui-button-corner-top-right) var(--ui-button-corner-bottom-right) var(--ui-button-corner-bottom-left);
+  border-color: var(--ui-button-border-visible);
+}
+
+.ui-button-group {
+  display: inline-flex;
+  isolation: isolate;
+  position: relative;
+  gap: 0;
+}
+
+.ui-button-group[data-orientation='vertical'] {
+  flex-direction: column;
+  width: max-content;
+}
+
+.ui-button-group .ui-button {
+  z-index: 0;
+}
+
+.ui-button-group .ui-button:focus,
+.ui-button-group .ui-button:focus-visible,
+.ui-button-group .ui-button:active {
+  z-index: 1;
+}
+
+.ui-button-group:not([data-orientation='vertical']) .ui-button {
+  border-top: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+  border-bottom: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+  border-left: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+  border-right: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+}
+
+.ui-button-group[data-orientation='vertical'] .ui-button {
+  border-left: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+  border-right: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+  border-top: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+  border-bottom: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+}
+
+.ui-button-group .ui-button::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background: var(--ui-button-separator-color);
+  opacity: 1;
+}
+
+.ui-button-group:not([data-orientation='vertical']) .ui-button:not(:first-child) {
+  border-left: 0;
+}
+
+.ui-button-group:not([data-orientation='vertical']) .ui-button:not(:last-child) {
+  border-right: 0;
+}
+
+.ui-button-group:not([data-orientation='vertical']) .ui-button:not(:first-child)::after {
+  left: 0;
+  top: var(--ui-button-separator-inset);
+  bottom: var(--ui-button-separator-inset);
+  width: var(--ui-button-separator-thickness);
+  transform: translateX(-50%);
+}
+
+.ui-button-group[data-orientation='vertical'] .ui-button:not(:first-child)::after {
+  top: 0;
+  left: var(--ui-button-separator-inset);
+  right: var(--ui-button-separator-inset);
+  height: var(--ui-button-separator-thickness);
+  transform: translateY(-50%);
+}
+
+.ui-button-group[data-orientation='vertical'] .ui-button:not(:first-child) {
+  border-top: 0;
+}
+
+.ui-button-group[data-orientation='vertical'] .ui-button:not(:last-child) {
+  border-bottom: 0;
+}
+
+.ui-button-group .ui-button[data-group-position]:active {
+  transform: none;
 }
 
 [data-ui-context] .ui-button[data-group-orientation='vertical'] {
@@ -132,6 +233,8 @@
   --ui-button-corner-top-right: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-top-right, 0px);
   --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-bottom-right, 0px);
   --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
+  border-right-color: transparent;
+  --ui-button-layered-shadow: inset -1px 0 0 var(--ui-button-separator-color);
 }
 
 [data-ui-context] .ui-button[data-group-position='middle'][data-group-orientation='horizontal'],
@@ -140,6 +243,9 @@
   --ui-button-corner-top-right: 0px;
   --ui-button-corner-bottom-right: 0px;
   --ui-button-corner-bottom-left: 0px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  --ui-button-layered-shadow: inset 1px 0 0 var(--ui-button-separator-color), inset -1px 0 0 var(--ui-button-separator-color);
 }
 
 [data-ui-context] .ui-button[data-group-position='last'][data-group-orientation='horizontal'],
@@ -148,6 +254,8 @@
   --ui-button-corner-top-right: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
   --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
   --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-bottom-left, 0px);
+  border-left-color: transparent;
+  --ui-button-layered-shadow: inset 1px 0 0 var(--ui-button-separator-color);
 }
 
 [data-ui-context] .ui-button[data-group-position='first'][data-group-orientation='vertical'] {
@@ -155,6 +263,8 @@
   --ui-button-corner-top-right: var(--env2-ui-button-group-position-first-orientation-vertical-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
   --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-first-orientation-vertical-corner-bottom-right, 0px);
   --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-first-orientation-vertical-corner-bottom-left, 0px);
+  border-bottom-color: transparent;
+  --ui-button-layered-shadow: inset 0 -1px 0 var(--ui-button-separator-color);
 }
 
 [data-ui-context] .ui-button[data-group-position='middle'][data-group-orientation='vertical'] {
@@ -162,6 +272,9 @@
   --ui-button-corner-top-right: 0px;
   --ui-button-corner-bottom-right: 0px;
   --ui-button-corner-bottom-left: 0px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  --ui-button-layered-shadow: inset 0 1px 0 var(--ui-button-separator-color), inset 0 -1px 0 var(--ui-button-separator-color);
 }
 
 [data-ui-context] .ui-button[data-group-position='last'][data-group-orientation='vertical'] {
@@ -169,6 +282,8 @@
   --ui-button-corner-top-right: var(--env2-ui-button-group-position-last-orientation-vertical-corner-top-right, 0px);
   --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-last-orientation-vertical-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
   --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-last-orientation-vertical-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
+  border-top-color: transparent;
+  --ui-button-layered-shadow: inset 0 1px 0 var(--ui-button-separator-color);
 }
 
 [data-ui-context] .ui-button[data-ui-size='md'] {

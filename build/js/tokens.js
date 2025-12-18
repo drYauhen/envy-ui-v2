@@ -2,6 +2,8 @@
  * Do not edit directly, this file was auto-generated.
  */
 
+export const Env2UiButtonBorderWidth = "1px";
+export const Env2UiButtonBorderStyle = "solid";
 export const Env2UiButtonStatesHover = "emphasize";
 export const Env2UiButtonStatesActive = "press";
 export const Env2UiButtonStatesDisabled = "mute";
@@ -89,6 +91,17 @@ export const Env2UiButtonGroupPositionLastShapeOrientationVerticalCornerBottomRi
   "8px";
 export const Env2UiButtonGroupPositionLastShapeOrientationVerticalCornerBottomLeft =
   "8px";
+export const Env2UiButtonLayoutStackInternalBorderHorizontal = "none";
+export const Env2UiButtonLayoutStackInternalBorderVertical = "none";
+export const Env2UiButtonLayoutStackPerimeterBorder = "preserve";
+export const Env2UiButtonLayoutStackSeparatorInset = "6px";
+export const Env2UiButtonLayoutStackSeparatorThickness = "1px";
+export const Env2UiButtonLayoutDefaultFlexGrow = "0";
+export const Env2UiButtonLayoutDefaultFlexShrink = "0";
+export const Env2UiButtonLayoutDefaultFlexBasis = "auto";
+export const Env2UiButtonLayoutDefaultWhiteSpace = "nowrap";
+export const Env2UiButtonSeparatorInset = "6px";
+export const Env2UiButtonSeparatorThickness = "1px";
 export const Env2UiButtonShapeDefaultRadius = "8px";
 export const Env2UiButtonShapeRoundRadius = "999px";
 export const Env2UiButtonShapeCircleRadius = "50%";

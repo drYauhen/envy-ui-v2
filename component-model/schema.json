@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Renderer-agnostic Component Model",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Component identifier (e.g., button, input)" },
+    "anatomy": {
+      "type": "object",
+      "description": "Declarative parts/slots with ownership and optionality",
+      "properties": {
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "required": { "type": "boolean" },
+              "description": { "type": "string" },
+              "owns": {
+                "type": "array",
+                "description": "Parts logically owned by this part (e.g., separator owned by next segment)",
+                "items": { "type": "string" }
+              }
+            },
+            "required": ["id"]
+          }
+        }
+      },
+      "required": ["parts"]
+    },
+    "geometry": {
+      "type": "object",
+      "description": "Token references that define stable geometry",
+      "properties": {
+        "dimensions": { "type": "object" },
+        "spacing": { "type": "object" },
+        "radii": { "type": "object" },
+        "borders": { "type": "object" },
+        "dividers": { "type": "object" }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "description": "Variant axes with allowed values",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["exclusive", "combinable"] },
+          "values": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["id", "type", "values"]
+      }
+    },
+    "rules": {
+      "type": "array",
+      "description": "Declarative, renderer-independent rules",
+      "items": {
+        "type": "object",
+        "properties": {
+          "when": { "type": "object", "description": "Variant conditions" },
+          "then": { "type": "object", "description": "Outcome on parts/geometry/visibility" },
+          "description": { "type": "string" }
+        },
+        "required": ["when", "then"]
+      }
+    }
+  },
+  "required": ["name", "anatomy", "geometry", "variants", "rules"]
+}

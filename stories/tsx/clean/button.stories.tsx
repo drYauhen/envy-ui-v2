@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonClean } from '../../../packages/tsx';
+import { ButtonClean, ButtonGroup } from '../../../packages/tsx';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../contracts/button.contract';
 
 type ButtonStoryProps = {
@@ -72,7 +72,7 @@ export const Grouped: Story = {
   name: 'Grouped (visual)',
   args: { intent: 'secondary', shape: 'default', size: 'md' },
   render: ({ intent, shape, size }) => (
-    <div data-ui-context="app" style={{ display: 'flex', gap: '0px' }}>
+    <ButtonGroup data-ui-context="app">
       <ButtonClean intent={intent} shape={shape} size={size} data-group-position="first" aria-label="First">
         One
       </ButtonClean>
@@ -82,7 +82,7 @@ export const Grouped: Story = {
       <ButtonClean intent={intent} shape={shape} size={size} data-group-position="last" aria-label="Last" selected>
         Three
       </ButtonClean>
-    </div>
+    </ButtonGroup>
   )
 };
 
@@ -90,7 +90,7 @@ export const GroupedVertical: Story = {
   name: 'Grouped vertical (visual)',
   args: { intent: 'secondary', shape: 'default', size: 'md' },
   render: ({ intent, shape, size }) => (
-    <div data-ui-context="app" style={{ display: 'inline-flex', flexDirection: 'column', gap: '0px', width: '180px' }}>
+    <ButtonGroup data-ui-context="app" data-orientation="vertical" style={{ width: '180px' }}>
       <ButtonClean
         intent={intent}
         shape={shape}
@@ -122,7 +122,6 @@ export const GroupedVertical: Story = {
       >
         Three
       </ButtonClean>
-    </div>
+    </ButtonGroup>
   )
 };
-

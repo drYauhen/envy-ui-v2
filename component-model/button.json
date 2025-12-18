@@ -1,0 +1,104 @@
+{
+  "$schema": "./schema.json",
+  "name": "button",
+  "anatomy": {
+    "parts": [
+      { "id": "root", "required": true, "description": "Interactive surface that owns layout and focus" },
+      { "id": "content", "required": true, "description": "Label container" },
+      { "id": "startIcon", "required": false },
+      { "id": "endIcon", "required": false },
+      { "id": "separator", "required": false, "description": "Owned by the following segment in a stack", "owns": [] }
+    ]
+  },
+  "geometry": {
+    "dimensions": {
+      "height": {
+        "sm": "{ui.button.size.sm.height}",
+        "md": "{ui.button.size.md.height}",
+        "lg": "{ui.button.size.lg.height}"
+      }
+    },
+    "spacing": {
+      "paddingInline": {
+        "sm": "{ui.button.size.sm.padding.inline}",
+        "md": "{ui.button.size.md.padding.inline}",
+        "lg": "{ui.button.size.lg.padding.inline}"
+      },
+      "gap": {
+        "sm": "{ui.button.size.sm.gap}",
+        "md": "{ui.button.size.md.gap}",
+        "lg": "{ui.button.size.lg.gap}"
+      }
+    },
+    "radii": {
+      "shape": {
+        "default": "{ui.button.shape.default.radius}",
+        "round": "{ui.button.shape.round.radius}",
+        "circle": "{ui.button.shape.circle.radius}"
+      }
+    },
+    "borders": {
+      "width": "{ui.button.border.width}",
+      "style": "{ui.button.border.style}",
+      "color": {
+        "primary": "{ui.button.primary.border.base}",
+        "secondary": "{ui.button.secondary.border.base}"
+      }
+    },
+    "dividers": {
+      "separator": {
+        "inset": "{ui.button.separator.inset}",
+        "thickness": "{ui.button.separator.thickness}",
+        "ownership": "next"
+      }
+    }
+  },
+  "variants": [
+    { "id": "intent", "type": "exclusive", "values": ["primary", "secondary"] },
+    { "id": "size", "type": "exclusive", "values": ["sm", "md", "lg"] },
+    { "id": "shape", "type": "exclusive", "values": ["default", "round", "circle"] },
+    { "id": "stacked", "type": "exclusive", "values": ["none", "horizontal", "vertical"] }
+  ],
+  "rules": [
+    {
+      "description": "Stacked buttons remove internal borders; outer perimeter stays",
+      "when": { "stacked": ["horizontal", "vertical"] },
+      "then": {
+        "parts": {
+          "root": {
+            "borders": {
+              "internalAxis": "none",
+              "perimeter": "preserve"
+            },
+            "dividers": {
+              "separator": { "visible": true, "owner": "next", "inset": "{ui.button.separator.inset}", "thickness": "{ui.button.separator.thickness}" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "Separator is rendered by the subsequent button",
+      "when": { "stacked": ["horizontal", "vertical"] },
+      "then": {
+        "parts": {
+          "separator": {
+            "owner": "next",
+            "placement": "between",
+            "offset": "halfThickness"
+          }
+        }
+      }
+    },
+    {
+      "description": "Default layout contract: do not grow, do not shrink, no wrapping",
+      "when": {},
+      "then": {
+        "layout": {
+          "flex": { "grow": "{ui.button.layout.default.flex.grow}", "shrink": "{ui.button.layout.default.flex.shrink}", "basis": "{ui.button.layout.default.flex.basis}" },
+          "whiteSpace": "{ui.button.layout.default.whiteSpace}"
+        }
+      }
+    }
+  ]
+}
