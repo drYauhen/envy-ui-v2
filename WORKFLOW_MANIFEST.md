@@ -1,86 +1,135 @@
-# WORKFLOW_MANIFEST.md — UI Design System Handoff and Decision Records
+WORKFLOW_MANIFEST.md — UI Design System Handoff & Decision Workflow
 
-This repository uses lightweight, versioned documents to keep architecture decisions, implementation milestones, and “handoff context” consistent across machines and chat sessions.
+This document defines how architectural intent, decisions, and handoff context are maintained across development sessions, machines, and AI-assisted workflows.
 
----
+It is intentionally lightweight and delegates detailed structure to canonical templates where applicable.
 
-## 1. Document Types
+⸻
 
-### 1.1 ADR / EDR (Decision Records)
+1. Decision Records (ADR)
 
-We use **ADR-style Engineering Decision Records** (EDRs) to capture architectural decisions. In this repository they are stored as **ADR-XXXX** files.
+All architectural decisions are captured as Architectural Decision Records (ADR).
 
-**Location**
-- `adr/` (canonical folder)
+Canonical Rules
+	•	Single document type: ADR (no EDR or alternative record types)
+	•	Canonical folder: docs/adr/
+	•	Canonical template: docs/adr/ADR-TEMPLATE.md
 
-**Filename format**
-- `adr/ADR-0006-focus-policy-architecture.md`
-- Pattern: `ADR-<4 digits>-<kebab-case-title>.md`
+The ADR template is the single source of truth for:
+	•	required metadata fields
+	•	document structure
+	•	tone and authorship conventions
 
-**Numbering rules**
-- Numbers are **monotonic** and **never reused**.
-- If a decision changes, create a new ADR that **supersedes** the old one (do not renumber existing ADRs).
+This workflow manifest intentionally does not duplicate ADR structure details.
 
-**Required header fields**
-- `Status:` Proposed | Accepted | Deprecated | Superseded
-- `Date:` YYYY-MM-DD
-- `Related:` list of ADR references
+Naming & Numbering
+	•	Filename format: ADR-<4 digits>-<kebab-case-title>.md
+	•	Numbers are monotonic and never reused
+	•	Changed decisions require a new ADR that supersedes the old one
 
-**Minimum recommended structure**
-1. Decision Summary
-2. Problem Statement / Context
-3. Decision
-4. Alternatives Considered (optional but recommended)
-5. Consequences (positive + trade-offs)
-6. Non-Goals / Deferred Items (explicitly)
-7. Status
+Linking
+	•	Always reference ADRs by number (e.g. ADR-0007)
+	•	Use relative links inside docs/adr/
 
-**Linking convention**
-- Prefer relative links with the filename, for example (inside `adr/`):
-  - `[ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md)`
-- When referencing ADRs in prose, always use the ADR number (`ADR-0006`) to avoid ambiguity.
+⸻
 
----
+2. NEXT_STEP.md — Session Bootstrap
 
-### 1.2 NEXT_STEP.md (Session Handoff)
+NEXT_STEP.md is a committed handoff file used to bootstrap a new chat or work session.
 
-`NEXT_STEP.md` is a **committed** handoff document used to start a new chat session on any machine.
+Purpose
+	•	Define the current baseline
+	•	Summarize what changed last
+	•	Explicitly state what to work on next
 
-**Purpose**
-- Provide an unambiguous “start point” for a new chat session.
-- List the current baseline, what changed last, and what to do next.
+Rules
+	•	Updated at the end of a meaningful session
+	•	Concise and operational
+	•	References ADRs instead of restating decisions
 
-**Rules**
-- `NEXT_STEP.md` is committed and updated at the end of a working session.
-- It should be concise and operational.
-- It must reference ADRs as the source of truth for decisions.
+⸻
 
----
+3. Canonical Inputs for New Sessions
 
-## 2. How the Assistant Should Generate ADRs
+A typical session bootstrap relies on:
+	1.	Tokens (tokens/)
+	•	Token-first system (DTCG-aligned)
+	•	Source of truth for UI semantics and variation axes
+	2.	ADR documents (docs/adr/)
+	•	Historical record of architectural intent
+	•	Directional, not necessarily reflecting latest implementation details
+	3.	NEXT_STEP.md
+	•	Immediate execution context
+	4.	Pipeline & generators (e.g. Style Dictionary configs)
+	•	Reference implementations for consistency
 
-When generating a new ADR, the assistant must provide:
+⸻
 
-1. **Exact filename** to use (e.g. `adr/ADR-0007-<title>.md`)
-2. The **full Markdown content**, matching the structure above
-3. If needed, a **downloadable `.md` file** for direct drop-in
-4. Update guidance for references (e.g., which ADRs should link to the new ADR)
+4. Assistant Expectations
 
----
+When assisting with architecture or implementation, the assistant must:
+	•	Treat tokens as the primary semantic source
+	•	Follow ADR-TEMPLATE.md when drafting ADRs
+	•	Avoid restating template rules inside ADR content
+	•	Assume decisions are owner-driven and AI-assisted
 
-## 3. Repository Baseline Assumptions (Stable)
+⸻
 
-- Token-first system aligned to **DTCG / Style Dictionary**
-- Canonical namespace: **`ui`**
-- Axis separation is enforced conceptually:
-  - Component / Intent / Context / State / Scheme
-- Context-aware projection model is adopted (see ADRs)
+5. Session Bootstrap Protocol
 
----
+To ensure reliable continuity across chat sessions and machines, this project uses a two-artifact bootstrap protocol.
 
-## 4. ADR Index (Optional but Recommended)
+Canonical Bootstrap Artifacts
 
-If this repository grows, introduce a simple index:
-- `adr/README.md` listing ADRs in order with one-line summaries.
+Each new session must start with exactly two inputs:
+	1.	NEXT_STEP.md
+	2.	A Bootstrap ZIP archive (generated at the end of the previous session)
 
-(For now, `NEXT_STEP.md` plus filenames in `adr/` is sufficient.)
+No other files are assumed to be present by default.
+
+Responsibilities
+
+NEXT_STEP.md
+	•	Acts as the session controller
+	•	Describes current state, recent changes, and immediate goals
+	•	Instructs how to unpack and interpret the Bootstrap ZIP
+	•	References ADRs for architectural intent
+
+Bootstrap ZIP
+	•	Contains the minimal technical context required to continue work
+	•	Must not include build artifacts, dependencies, or generated output
+	•	Is treated as an implementation snapshot, not a release artifact
+
+Canonical ZIP Contents (Default Case)
+
+A typical Bootstrap ZIP includes:
+	•	tokens/ (entire directory; token-first source of truth)
+	•	docs/adr/ (ADR history + ADR-TEMPLATE.md)
+	•	WORKFLOW_MANIFEST.md
+	•	Style Dictionary configs and custom transformers (if relevant)
+	•	Reference components (e.g. packages/tsx/button/)
+	•	Supporting scripts used in the current workflow
+
+The exact contents may vary for specialized sessions (e.g. Figma-only work), but this default applies to most development phases.
+
+Execution Order
+
+When starting a new session:
+	1.	Read NEXT_STEP.md
+	2.	Unpack the Bootstrap ZIP
+	3.	Review WORKFLOW_MANIFEST.md for workflow rules
+	4.	Treat tokens/ as the primary semantic source
+	5.	Use ADRs for historical and directional context
+
+⸻
+
+6. Scope & Evolution
+
+This manifest defines workflow, not product architecture.
+
+It should remain:
+	•	concise
+	•	referential
+	•	stable across sessions
+
+Architectural intent always lives in ADRs; implementation details may evolve independently.
