@@ -256,31 +256,17 @@ async function expandVariants(payload: any) {
   if (node.type === 'COMPONENT_SET') {
     figma.ui.postMessage({
       type: 'mapping-error',
-      payload: 'Select a single variant (Component) or base Frame/Rectangle.'
+      payload: 'This component is already expanded. Select a variant (Component) inside the set.'
     });
     return;
   }
-  if (!['RECTANGLE', 'FRAME', 'COMPONENT'].includes(node.type)) {
-    figma.ui.postMessage({ type: 'mapping-error', payload: 'Selection must be Rectangle/Frame/Component.' });
+  if (node.type !== 'COMPONENT') {
+    figma.ui.postMessage({ type: 'mapping-error', payload: 'Selection must be a Component.' });
     return;
   }
 
-  const baseComponent =
-    node.type === 'COMPONENT'
-      ? node
-      : (node as any).convertToComponent
-      ? (node as any).convertToComponent()
-      : null;
-  if (!baseComponent) {
-    console.error('[Expand] convertToComponent failed');
-    figma.ui.postMessage({ type: 'mapping-error', payload: 'Cannot convert selection to component' });
-    return;
-  }
+  const baseComponent = node;
   console.log('[Expand] baseComponent', baseComponent?.id, baseComponent?.type);
-  if (!baseComponent || baseComponent.type !== 'COMPONENT') {
-    figma.ui.postMessage({ type: 'mapping-error', payload: 'Could not convert to component.' });
-    return;
-  }
 
   const axisSample = axisBindings[0];
   const collectionId = axisSample.collectionId as string;
@@ -300,29 +286,24 @@ async function expandVariants(payload: any) {
   }
   console.log('[Expand] variables count', variables.length);
 
-  const originalSet = baseComponent.parent && baseComponent.parent.type === 'COMPONENT_SET' ? (baseComponent.parent as ComponentSetNode) : null;
-  const targetParent =
-    baseComponent.parent && baseComponent.parent.type === 'COMPONENT_SET'
-      ? baseComponent.parent.parent ?? figma.currentPage
-      : baseComponent.parent ?? figma.currentPage;
-  console.log('[Expand] targetParent', targetParent?.id, (targetParent as SceneNode | null)?.type);
-
-  const detachedBase =
-    baseComponent.parent && baseComponent.parent.type === 'COMPONENT_SET'
-      ? ((baseComponent.clone() as ComponentNode) as ComponentNode)
-      : baseComponent;
-  if (detachedBase.parent !== targetParent) {
-    (targetParent as any).appendChild(detachedBase);
+  const parent = baseComponent.parent;
+  console.log('[Expand] parent', parent?.id, (parent as SceneNode | null)?.type);
+  if (!parent || parent.type === 'COMPONENT_SET') {
+    figma.ui.postMessage({
+      type: 'mapping-error',
+      payload: 'Place the component on a Page or Frame before expanding.'
+    });
+    return;
   }
 
   const variants: ComponentNode[] = [];
   variables.forEach((variable, idx) => {
     console.log('[Expand] creating variant', idx, variable.name);
-    const variant = idx === 0 ? detachedBase : (detachedBase.clone() as ComponentNode);
-    if (variant.parent !== targetParent) {
-      (targetParent as any).appendChild(variant);
+    const variant = idx === 0 ? baseComponent : (baseComponent.clone() as ComponentNode);
+    if (variant.parent !== parent) {
+      (parent as any).appendChild(variant);
     }
-    const appliedCount = applyAxisBindings(variant, detachedBase, axisBindings, variable.id);
+    const appliedCount = applyAxisBindings(variant, baseComponent, axisBindings, variable.id);
     const leafName = variable.name.split('/').pop() ?? variable.name;
     variant.name = `${baseComponent.name} / ${leafName}`;
     console.log('[Applicator][Expand:apply]', `variable=${variable.name}`, `bindingsApplied=${appliedCount}`);
@@ -334,8 +315,8 @@ async function expandVariants(payload: any) {
   console.log('[Expand] combining variants');
   let componentSet: ComponentSetNode | null = null;
   try {
-    componentSet = figma.combineAsVariants(variants, targetParent as any);
-    console.log('[Expand] componentSet created', componentSet.id);
+    componentSet = figma.combineAsVariants(variants, parent as any);
+    console.log('[Expand] componentSet created', componentSet.id, 'parent', (parent as SceneNode).id);
   } catch (e) {
     console.error(
       '[Expand] combineAsVariants failed',
@@ -345,7 +326,7 @@ async function expandVariants(payload: any) {
       'variant ids',
       variants.map((v) => v.id),
       'parent',
-      targetParent?.id
+      parent?.id
     );
     figma.ui.postMessage({ type: 'mapping-error', payload: 'Failed to combine variants.' });
     return;
@@ -357,11 +338,6 @@ async function expandVariants(payload: any) {
   variants.forEach((variant, idx) => (variant.variantProperties = { [propName]: values[idx] }));
 
   console.log('[Applicator][Expand:done]', `variants=${variants.length}`, `componentSet=${componentSet.id}`);
-
-  if (originalSet) {
-    componentSet.x = originalSet.x + originalSet.width + 80;
-    componentSet.y = originalSet.y;
-  }
   figma.ui.postMessage({ type: 'mapping-preview', payload: `Expanded ${variants.length} variants by ${collection.name}` });
 }
 
