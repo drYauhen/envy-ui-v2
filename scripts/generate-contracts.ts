@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const REPO_ROOT = path.resolve(__dirname, '..');
-const CONTRACTS_DIR = path.join(REPO_ROOT, 'contracts');
+const CONTRACTS_DIR = path.join(REPO_ROOT, 'generated', 'contracts');
 
 /**
  * Component → axes configuration.

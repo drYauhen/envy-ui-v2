@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonClean, ButtonGroup } from '../../../packages/tsx';
-import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../contracts/button.contract';
+import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../generated/contracts/button.contract';
 
 type ButtonStoryProps = {
   intent: ButtonIntent;

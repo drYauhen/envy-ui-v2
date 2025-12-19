@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mergeProps, useButton, useFocusRing, useHover } from 'react-aria';
 import type { AriaButtonProps, PressEvent } from 'react-aria';
-import type { ButtonIntent, ButtonShape, ButtonSize } from '../../contracts/button.contract';
-export type { ButtonIntent, ButtonShape, ButtonSize } from '../../contracts/button.contract';
+import type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/contracts/button.contract';
+export type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/contracts/button.contract';
 
 type HostButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 type HostLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
