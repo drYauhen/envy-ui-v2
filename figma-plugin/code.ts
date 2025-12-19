@@ -52,6 +52,7 @@ interface ExistingData {
 }
 
 figma.showUI(uiHtml, { width: 420, height: 520 });
+figma.ui.postMessage({ type: 'PLUGIN_RELOADED', payload: { timestamp: formatReloadTimestamp(new Date()) } });
 
 figma.ui.onmessage = async (message) => {
   if (message.type === 'prepare-import') {
@@ -79,6 +80,8 @@ figma.ui.onmessage = async (message) => {
     }
   } else if (['request-selection', 'save-mapping', 'preview-mapping'].includes(message.type)) {
     applicatorHandleMessage(message);
+  } else if (message.type === 'request-timestamp') {
+    figma.ui.postMessage({ type: 'PLUGIN_RELOADED', payload: { timestamp: formatReloadTimestamp(new Date()) } });
   } else if (message.type === 'close-plugin') {
     figma.closePlugin();
   }
@@ -295,6 +298,13 @@ function formatError(error: unknown): string {
     return error.message;
   }
   return 'Unknown error importing variables';
+}
+
+function formatReloadTimestamp(date: Date): string {
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(
+    date.getMinutes()
+  )}`;
 }
 
 async function generateButtonStructure(payload: any) {

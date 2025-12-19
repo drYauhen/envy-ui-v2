@@ -78,12 +78,18 @@
         background: #10b981;
         color: #041421;
         padding: 10px 16px;
+        transition: opacity 120ms ease;
       }
 
       button.secondary {
         background: transparent;
         color: #cbd5f5;
         border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
       }
 
       .actions {
@@ -101,6 +107,15 @@
       input[type='file'] {
         display: none;
       }
+
+      .reload-strip {
+        font-size: 11px;
+        color: #94a3b8;
+        padding: 4px 8px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        align-self: flex-start;
+      }
     </style>
   </head>
   <body>
@@ -109,6 +124,7 @@
       <button class="tab" data-tab="structures">Structures</button>
       <button class="tab" data-tab="applicator">Applicator</button>
     </div>
+    <div id="reloadTimestamp" class="reload-strip"></div>
 
     <div id="variablesPanel" class="panel active">
       <h1>Import adapter JSON</h1>
@@ -187,6 +203,9 @@
       <p style="margin: 4px 0 0; font-size: 12px; color: #cbd5f5;">
         Coming next: batch-apply variables + expand variants from a seed component.
       </p>
+      <h2 style="font-size: 13px; margin: 12px 0 4px;">Detected Variable Axes</h2>
+      <div id="axesList" style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #cbd5f5;"></div>
+      <div id="axesStatusLine" style="font-size: 11px; color: #94a3b8; min-height: 14px;">Axes detected: 0 | Selected axis: — | Bindings used: 0</div>
     </div>
 
     <script>
@@ -228,9 +247,20 @@
       const roleLabel = document.getElementById('roleLabel');
       const roleBorder = document.getElementById('roleBorder');
       const roleIcon = document.getElementById('roleIcon');
+      const axesList = document.getElementById('axesList');
+      const expandVariantsBtn = document.getElementById('expandVariants');
+      const saveMappingBtn = document.getElementById('saveMapping');
+      const applyTokensBtn = document.getElementById('applyTokens');
       let lastPayload = null;
       let structuresPayload = null;
       let latestSelection = null;
+      let selectedAxis = null;
+      let selectedAxisId = null;
+      let hasAxesCached = false;
+      let axesBindingsCount = 0;
+
+      // Request timestamp in case the message arrives before UI initialization.
+      parent.postMessage({ pluginMessage: { type: 'request-timestamp' } }, '*');
 
       fileInput.addEventListener('change', (event) => {
         const file = event.target.files?.[0];
@@ -301,6 +331,56 @@
         parent.postMessage({ pluginMessage: { type: 'generate-structures', payload: structuresPayload } }, '*');
       });
 
+      expandVariantsBtn?.addEventListener('click', () => {
+        console.log('[Applicator][Expand:ui]', 'click', { selectedAxis, selectedAxisId, selection: latestSelection?.id });
+        if (!selectedAxis || !latestSelection?.id) {
+          if (applicatorStatus) applicatorStatus.textContent = 'Select an axis and a node first.';
+          return;
+        }
+        const filteredBindings = (latestSelection?.bindings || []).filter(
+          (b) => `${b.property}|${b.collectionId}` === selectedAxis.id
+        );
+        console.log('[Applicator][Expand:ui]', 'bindingsFiltered', filteredBindings.length);
+        parent.postMessage(
+          {
+            pluginMessage: {
+              type: 'expand-variants',
+              payload: { nodeId: latestSelection.id, axisBindings: filteredBindings }
+            }
+          },
+          '*'
+        );
+      });
+
+      saveMappingBtn?.addEventListener('click', () => {
+        if (!latestSelection?.id) return;
+        const mapping = {
+          background: roleBackground?.value || '',
+          label: roleLabel?.value || '',
+          border: roleBorder?.value || '',
+          icon: roleIcon?.value || ''
+        };
+        parent.postMessage({ pluginMessage: { type: 'save-mapping', payload: { nodeId: latestSelection.id, mapping } } }, '*');
+      });
+
+      roleBackground?.addEventListener('change', () =>
+        updateButtonsState(latestSelection?.status === 'ok', requiredRolesMapped(), hasAxesCached, Boolean(selectedAxis))
+      );
+      roleLabel?.addEventListener('change', () =>
+        updateButtonsState(latestSelection?.status === 'ok', requiredRolesMapped(), hasAxesCached, Boolean(selectedAxis))
+      );
+      roleBorder?.addEventListener('change', () =>
+        updateButtonsState(latestSelection?.status === 'ok', requiredRolesMapped(), hasAxesCached, Boolean(selectedAxis))
+      );
+      roleIcon?.addEventListener('change', () =>
+        updateButtonsState(latestSelection?.status === 'ok', requiredRolesMapped(), hasAxesCached, Boolean(selectedAxis))
+      );
+
+      if (applyTokensBtn) {
+        applyTokensBtn.disabled = true;
+        applyTokensBtn.title = 'Reserved for semantic token application (future)';
+      }
+
       window.onmessage = (event) => {
         const message = event.data.pluginMessage || {};
         if (message.type === 'import-summary') {
@@ -323,6 +403,16 @@
         } else if (message.type === 'selection-data') {
           latestSelection = message.payload;
           renderSelection(latestSelection);
+          const selectionOk = latestSelection?.status === 'ok';
+          updateButtonsState(selectionOk, requiredRolesMapped(), hasAxesCached, Boolean(selectedAxis));
+        } else if (message.type === 'mapping-saved') {
+          if (applicatorStatus) applicatorStatus.textContent = 'Mapping saved.';
+        } else if (message.type === 'mapping-error') {
+          if (applicatorStatus) applicatorStatus.textContent = `Error: ${message.payload}`;
+        } else if (message.type === 'PLUGIN_RELOADED') {
+          const ts = message.payload?.timestamp;
+          const tsEl = document.getElementById('reloadTimestamp');
+          if (ts && tsEl) tsEl.textContent = ts;
         }
       };
 
@@ -331,12 +421,33 @@
         parent.postMessage({ pluginMessage: { type: 'request-selection' } }, '*');
       });
 
+      function updateButtonsState(selectionOk, requiredRolesMapped, hasAxes, axisSelected) {
+        const saveEnabled = selectionOk && requiredRolesMapped;
+        const applyEnabled = false; // not implemented yet
+        const expandEnabled = selectionOk && hasAxes && axisSelected;
+        if (saveMappingBtn) saveMappingBtn.disabled = !saveEnabled;
+        if (applyTokensBtn) applyTokensBtn.disabled = !applyEnabled;
+        if (expandVariantsBtn) expandVariantsBtn.disabled = !expandEnabled;
+        console.log('[Applicator][UI]', 'buttons', { saveEnabled, applyEnabled, expandEnabled, hasAxes, axisSelected });
+      }
+
+      function requiredRolesMapped() {
+        return Boolean(roleBackground?.value) && Boolean(roleLabel?.value);
+      }
+
       function renderSelection(selection) {
         if (!selection || selection.status !== 'ok') {
           if (applicatorStatus) applicatorStatus.textContent = selection?.message || 'Select a Frame/Component in Figma to start.';
           selectionDetails.style.display = 'none';
           layersList.style.display = 'none';
           roleMapping.style.display = 'none';
+          hasAxesCached = false;
+          selectedAxis = null;
+          selectedAxisId = null;
+          axesBindingsCount = 0;
+          if (axesList) axesList.innerHTML = '';
+          updateAxisStatus(0, null, 0);
+          updateButtonsState(false, false, false, false);
           return;
         }
 
@@ -367,6 +478,10 @@
         populateRoleSelect(roleLabel, layers, (layer) => layer.type === 'TEXT');
         populateRoleSelect(roleBorder, layers, (layer) => layer.type === 'RECTANGLE');
         populateRoleSelect(roleIcon, layers, () => true);
+
+        applyMappingToSelects(selection.mapping);
+        renderAxes(selection.bindings || []);
+        updateButtonsState(true, requiredRolesMapped(), hasAxesCached, Boolean(selectedAxis));
       }
 
       function populateRoleSelect(selectEl, layers, predicate) {
@@ -385,6 +500,86 @@
           }
           selectEl.appendChild(opt);
         });
+      }
+
+      function applyMappingToSelects(mapping) {
+        if (!mapping) return;
+        if (roleBackground) roleBackground.value = mapping.background || '';
+        if (roleLabel) roleLabel.value = mapping.label || '';
+        if (roleBorder) roleBorder.value = mapping.border || '';
+        if (roleIcon) roleIcon.value = mapping.icon || '';
+      }
+
+      function renderAxes(bindings) {
+        if (!axesList) return;
+        axesList.innerHTML = '';
+        selectedAxis = null;
+        selectedAxisId = null;
+        axesBindingsCount = bindings.length || 0;
+        hasAxesCached = false;
+        updateButtonsState(latestSelection?.status === 'ok', requiredRolesMapped(), hasAxesCached, false);
+
+        if (!bindings.length) {
+          const note = document.createElement('div');
+          note.style.fontSize = '12px';
+          note.style.color = '#cbd5f5';
+          note.textContent = 'No variable bindings detected on selection.';
+          axesList.appendChild(note);
+          updateAxisStatus(0, null, 0);
+          return;
+        }
+
+        const grouped = {};
+        bindings.forEach((b) => {
+          const key = `${b.property}|${b.collectionId}`;
+          if (!grouped[key])
+            grouped[key] = {
+              id: key,
+              property: b.property,
+              collectionName: b.collectionName,
+              collectionId: b.collectionId,
+              count: 0,
+              sample: b,
+              bindings: []
+            };
+          grouped[key].count += 1;
+          grouped[key].bindings.push(b);
+        });
+
+        Object.values(grouped).forEach((axis) => {
+          const row = document.createElement('label');
+          row.style.display = 'flex';
+          row.style.alignItems = 'center';
+          row.style.gap = '8px';
+          row.style.fontSize = '12px';
+          row.style.color = '#cbd5f5';
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = 'axis';
+          input.value = axis.id;
+          input.addEventListener('change', () => {
+            selectedAxis = axis;
+            selectedAxisId = axis.id;
+            console.log('[Applicator][Axis]', 'selected', axis.id);
+            updateButtonsState(latestSelection?.status === 'ok', requiredRolesMapped(), true, true);
+            updateAxisStatus(Object.keys(grouped).length, axis, axis.bindings.length);
+          });
+          const label = document.createElement('span');
+          label.textContent = `${axis.property} • ${axis.collectionName} (${axis.count} bindings)`;
+          row.appendChild(input);
+          row.appendChild(label);
+          axesList.appendChild(row);
+        });
+        hasAxesCached = Object.keys(grouped).length > 0;
+        updateButtonsState(latestSelection?.status === 'ok', requiredRolesMapped(), hasAxesCached, Boolean(selectedAxis));
+        updateAxisStatus(Object.keys(grouped).length, selectedAxis, selectedAxis?.bindings?.length ?? 0);
+      }
+
+      function updateAxisStatus(axisCount, axis, bindingsUsed) {
+        const statusEl = document.getElementById('axesStatusLine');
+        if (!statusEl) return;
+        const axisLabel = axis ? `${axis.property} • ${axis.collectionName}` : '—';
+        statusEl.textContent = `Axes detected: ${axisCount || 0} | Selected axis: ${axisLabel} | Bindings used: ${bindingsUsed || 0}`;
       }
 
       function formatSummary(summary) {
