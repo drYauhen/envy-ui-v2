@@ -1,0 +1,328 @@
+{
+  "system": {
+    "id": "envy-ui-v2",
+    "version": "0.1.0"
+  },
+  "collections": [
+    {
+      "name": "envy-ui-v2 • Colors / Accent",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.accent.100",
+          "type": "COLOR",
+          "value": "#dceeff"
+        },
+        {
+          "path": "ui.color.accent.200",
+          "type": "COLOR",
+          "value": "#b7dbff"
+        },
+        {
+          "path": "ui.color.accent.300",
+          "type": "COLOR",
+          "value": "#8ac4ff"
+        },
+        {
+          "path": "ui.color.accent.400",
+          "type": "COLOR",
+          "value": "#55a7ff"
+        },
+        {
+          "path": "ui.color.accent.50",
+          "type": "COLOR",
+          "value": "#f1f8ff"
+        },
+        {
+          "path": "ui.color.accent.500",
+          "type": "COLOR",
+          "value": "#1e8bff"
+        },
+        {
+          "path": "ui.color.accent.600",
+          "type": "COLOR",
+          "value": "#0b75e6"
+        },
+        {
+          "path": "ui.color.accent.700",
+          "type": "COLOR",
+          "value": "#0a5ec0"
+        },
+        {
+          "path": "ui.color.accent.800",
+          "type": "COLOR",
+          "value": "#0a4c99"
+        },
+        {
+          "path": "ui.color.accent.900",
+          "type": "COLOR",
+          "value": "#083a73"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Brand",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.brand.100",
+          "type": "COLOR",
+          "value": "#c9edf7"
+        },
+        {
+          "path": "ui.color.brand.200",
+          "type": "COLOR",
+          "value": "#9ad8ee"
+        },
+        {
+          "path": "ui.color.brand.300",
+          "type": "COLOR",
+          "value": "#63c0e2"
+        },
+        {
+          "path": "ui.color.brand.400",
+          "type": "COLOR",
+          "value": "#2ea7d1"
+        },
+        {
+          "path": "ui.color.brand.50",
+          "type": "COLOR",
+          "value": "#e6f6fb"
+        },
+        {
+          "path": "ui.color.brand.500",
+          "type": "COLOR",
+          "value": "#007fa2"
+        },
+        {
+          "path": "ui.color.brand.600",
+          "type": "COLOR",
+          "value": "#007ca0"
+        },
+        {
+          "path": "ui.color.brand.700",
+          "type": "COLOR",
+          "value": "#066a8d"
+        },
+        {
+          "path": "ui.color.brand.800",
+          "type": "COLOR",
+          "value": "#055973"
+        },
+        {
+          "path": "ui.color.brand.900",
+          "type": "COLOR",
+          "value": "#043c55"
+        },
+        {
+          "path": "ui.color.brand.primary",
+          "type": "COLOR",
+          "value": "#066a8d"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Neutral",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.neutral.100",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "ui.color.neutral.200",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "ui.color.neutral.300",
+          "type": "COLOR",
+          "value": "#cccccc"
+        },
+        {
+          "path": "ui.color.neutral.400",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "ui.color.neutral.50",
+          "type": "COLOR",
+          "value": "#f8fafc"
+        },
+        {
+          "path": "ui.color.neutral.500",
+          "type": "COLOR",
+          "value": "#757575"
+        },
+        {
+          "path": "ui.color.neutral.600",
+          "type": "COLOR",
+          "value": "#525252"
+        },
+        {
+          "path": "ui.color.neutral.700",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "ui.color.neutral.800",
+          "type": "COLOR",
+          "value": "#262626"
+        },
+        {
+          "path": "ui.color.neutral.900",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "ui.color.neutral.white",
+          "type": "COLOR",
+          "value": "#ffffff"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Signal",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.signal.keyboardFocus",
+          "type": "COLOR",
+          "value": "#ff4d00"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Status",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.status.error",
+          "type": "COLOR",
+          "value": "#ef4444"
+        },
+        {
+          "path": "ui.color.status.info",
+          "type": "COLOR",
+          "value": "#0ea5e9"
+        },
+        {
+          "path": "ui.color.status.success",
+          "type": "COLOR",
+          "value": "#22c55e"
+        },
+        {
+          "path": "ui.color.status.warning",
+          "type": "COLOR",
+          "value": "#f59e0b"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Background",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.background.inverse",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "ui.color.background.muted",
+          "type": "COLOR",
+          "value": "#f8fafc"
+        },
+        {
+          "path": "ui.color.background.subtle",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "ui.color.background.surface",
+          "type": "COLOR",
+          "value": "#ffffff"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Border",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.border.default",
+          "type": "COLOR",
+          "value": "#cccccc"
+        },
+        {
+          "path": "ui.color.border.inverse",
+          "type": "COLOR",
+          "value": "#262626"
+        },
+        {
+          "path": "ui.color.border.strong",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "ui.color.border.subtle",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Focus",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.focus.ring",
+          "type": "COLOR",
+          "value": "#ff4d00"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / System",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.system.focus",
+          "type": "COLOR",
+          "value": "#ff4d00"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Text",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "ui.color.text.disabled",
+          "type": "COLOR",
+          "value": "#757575"
+        },
+        {
+          "path": "ui.color.text.inverse",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "ui.color.text.muted",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "ui.color.text.primary",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "ui.color.text.subtle",
+          "type": "COLOR",
+          "value": "#525252"
+        }
+      ]
+    }
+  ]
+}

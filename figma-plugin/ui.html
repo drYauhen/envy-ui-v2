@@ -21,6 +21,39 @@
         margin: 0;
       }
 
+      .tabs {
+        display: inline-flex;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .tab {
+        background: transparent;
+        color: #cbd5f5;
+        padding: 10px 14px;
+        border: none;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 120ms ease, color 120ms ease;
+      }
+
+      .tab.active {
+        background: rgba(255, 255, 255, 0.1);
+        color: #f8fafc;
+      }
+
+      .panel {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .panel.active {
+        display: flex;
+      }
+
       textarea {
         width: 100%;
         min-height: 180px;
@@ -71,30 +104,133 @@
     </style>
   </head>
   <body>
-    <h1>Import adapter JSON</h1>
-    <p style="margin: 0; font-size: 12px; color: #cbd5f5;">
-      Paste the contents of <code>build/figma/variables.adapter.json</code> or load it from disk.
-    </p>
-    <textarea id="adapterInput" placeholder="{\n  \"collections\": []\n}"></textarea>
-    <div class="actions">
-      <label class="secondary">
-        <input type="file" id="fileInput" accept="application/json" />
-        Load JSON file
-      </label>
-      <button id="importButton">Prepare import</button>
-      <button id="confirmButton" class="secondary" disabled>Apply changes</button>
-      <button id="closeButton" class="secondary">Close</button>
+    <div class="tabs">
+      <button class="tab active" data-tab="variables">Variables</button>
+      <button class="tab" data-tab="structures">Structures</button>
+      <button class="tab" data-tab="applicator">Applicator</button>
     </div>
-    <div class="status" id="status"></div>
+
+    <div id="variablesPanel" class="panel active">
+      <h1>Import adapter JSON</h1>
+      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">
+        Paste the contents of <code>build/figma/variables.adapter.json</code> or load it from disk.
+      </p>
+      <textarea id="adapterInput" placeholder="{\n  \"collections\": []\n}"></textarea>
+      <div class="actions">
+        <label class="secondary">
+          <input type="file" id="fileInput" accept="application/json" />
+          Load JSON file
+        </label>
+        <button id="importButton">Prepare import</button>
+        <button id="confirmButton" class="secondary" disabled>Apply changes</button>
+        <button id="closeButton" class="secondary">Close</button>
+      </div>
+      <div class="status" id="status"></div>
+    </div>
+
+    <div id="structuresPanel" class="panel">
+      <h1>Component / Structure Generator</h1>
+      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">Generate ui.button structure from tokens.</p>
+      <label class="secondary">
+        <input type="file" id="structuresFile" accept="application/json" />
+        Load structures JSON
+      </label>
+      <button id="generateStructures">Generate ui.button</button>
+      <div class="status" id="structuresStatus"></div>
+    </div>
+
+    <div id="applicatorPanel" class="panel">
+      <h1>Applicator</h1>
+      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">Map layers to semantic roles. No changes applied.</p>
+      <button id="refreshSelection">Refresh selection</button>
+      <div class="status" id="applicatorStatus" style="min-height: 18px;"></div>
+
+      <div id="selectionDetails" style="display: none; font-size: 12px; color: #cbd5f5; gap: 4px; flex-direction: column;">
+        <div><strong>Selection:</strong> <span id="selType"></span></div>
+        <div><strong>Name:</strong> <span id="selName"></span></div>
+        <div><strong>ID:</strong> <span id="selId"></span></div>
+        <div><strong>Children:</strong> <span id="selChildCount"></span></div>
+      </div>
+
+      <div id="layersList" style="display: none;">
+        <h2 style="font-size: 13px; margin: 12px 0 4px;">Layers</h2>
+        <div id="layersTable" style="display: flex; flex-direction: column; gap: 4px;"></div>
+      </div>
+
+      <div id="roleMapping" style="display: none;">
+        <h2 style="font-size: 13px; margin: 12px 0 4px;">Semantic roles</h2>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label style="display: flex; flex-direction: column; gap: 4px;">
+            <span>Background (Rectangle)</span>
+            <select id="roleBackground"></select>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 4px;">
+            <span>Label (Text)</span>
+            <select id="roleLabel"></select>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 4px;">
+            <span>Border (optional)</span>
+            <select id="roleBorder"></select>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 4px;">
+            <span>Icon (optional)</span>
+            <select id="roleIcon"></select>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+        <button id="saveMapping" disabled>Save Mapping</button>
+        <button id="applyTokens" disabled>Apply Tokens</button>
+        <button id="expandVariants" disabled>Expand Variants</button>
+      </div>
+      <p style="margin: 4px 0 0; font-size: 12px; color: #cbd5f5;">
+        Coming next: batch-apply variables + expand variants from a seed component.
+      </p>
+    </div>
 
     <script>
+      const tabs = Array.from(document.querySelectorAll('.tab'));
+      const variablesPanel = document.getElementById('variablesPanel');
+      const structuresPanel = document.getElementById('structuresPanel');
+      const applicatorPanel = document.getElementById('applicatorPanel');
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-tab');
+          tabs.forEach((t) => t.classList.toggle('active', t === tab));
+          variablesPanel.classList.toggle('active', target === 'variables');
+          structuresPanel.classList.toggle('active', target === 'structures');
+          applicatorPanel.classList.toggle('active', target === 'applicator');
+        });
+      });
+
       const input = document.getElementById('adapterInput');
       const fileInput = document.getElementById('fileInput');
       const importButton = document.getElementById('importButton');
       const confirmButton = document.getElementById('confirmButton');
       const closeButton = document.getElementById('closeButton');
       const status = document.getElementById('status');
+      const structuresStatus = document.getElementById('structuresStatus');
+      const generateStructures = document.getElementById('generateStructures');
+      const structuresFile = document.getElementById('structuresFile');
+      const refreshSelection = document.getElementById('refreshSelection');
+      const applicatorStatus = document.getElementById('applicatorStatus');
+      const selectionDetails = document.getElementById('selectionDetails');
+      const layersList = document.getElementById('layersList');
+      const layersTable = document.getElementById('layersTable');
+      const roleMapping = document.getElementById('roleMapping');
+      const selType = document.getElementById('selType');
+      const selName = document.getElementById('selName');
+      const selId = document.getElementById('selId');
+      const selChildCount = document.getElementById('selChildCount');
+      const roleBackground = document.getElementById('roleBackground');
+      const roleLabel = document.getElementById('roleLabel');
+      const roleBorder = document.getElementById('roleBorder');
+      const roleIcon = document.getElementById('roleIcon');
       let lastPayload = null;
+      let structuresPayload = null;
+      let latestSelection = null;
 
       fileInput.addEventListener('change', (event) => {
         const file = event.target.files?.[0];
@@ -140,6 +276,31 @@
         parent.postMessage({ pluginMessage: { type: 'close-plugin' } }, '*');
       });
 
+      structuresFile?.addEventListener('change', (event) => {
+        const file = event.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            structuresPayload = JSON.parse(reader.result);
+            if (structuresStatus) structuresStatus.textContent = `Loaded ${file.name}`;
+          } catch (e) {
+            structuresPayload = null;
+            if (structuresStatus) structuresStatus.textContent = 'Invalid structures JSON';
+          }
+        };
+        reader.readAsText(file);
+      });
+
+      generateStructures?.addEventListener('click', () => {
+        if (!structuresPayload) {
+          if (structuresStatus) structuresStatus.textContent = 'Load structures JSON first.';
+          return;
+        }
+        structuresStatus.textContent = 'Generating...';
+        parent.postMessage({ pluginMessage: { type: 'generate-structures', payload: structuresPayload } }, '*');
+      });
+
       window.onmessage = (event) => {
         const message = event.data.pluginMessage || {};
         if (message.type === 'import-summary') {
@@ -155,8 +316,76 @@
           }`;
         } else if (message.type === 'import-error') {
           status.textContent = `Error: ${message.payload}`;
+        } else if (message.type === 'structures-complete') {
+          if (structuresStatus) structuresStatus.textContent = 'Generated ui.button structure.';
+        } else if (message.type === 'structures-error') {
+          if (structuresStatus) structuresStatus.textContent = `Error: ${message.payload}`;
+        } else if (message.type === 'selection-data') {
+          latestSelection = message.payload;
+          renderSelection(latestSelection);
         }
       };
+
+      refreshSelection?.addEventListener('click', () => {
+        if (applicatorStatus) applicatorStatus.textContent = 'Reading selection...';
+        parent.postMessage({ pluginMessage: { type: 'request-selection' } }, '*');
+      });
+
+      function renderSelection(selection) {
+        if (!selection || selection.status !== 'ok') {
+          if (applicatorStatus) applicatorStatus.textContent = selection?.message || 'Select a Frame/Component in Figma to start.';
+          selectionDetails.style.display = 'none';
+          layersList.style.display = 'none';
+          roleMapping.style.display = 'none';
+          return;
+        }
+
+        if (applicatorStatus) applicatorStatus.textContent = 'Selection ready.';
+        selectionDetails.style.display = 'flex';
+        layersList.style.display = 'block';
+        roleMapping.style.display = 'block';
+
+        selType.textContent = selection.nodeType;
+        selName.textContent = selection.name;
+        selId.textContent = selection.id || '—';
+        selChildCount.textContent = (selection.children || []).length;
+
+        const layers = selection.children || [];
+        layersTable.innerHTML = '';
+        layers.forEach((layer) => {
+          const row = document.createElement('div');
+          row.style.display = 'flex';
+          row.style.justifyContent = 'space-between';
+          row.style.gap = '8px';
+          row.style.fontSize = '12px';
+          row.style.color = '#cbd5f5';
+          row.innerHTML = `<span>${layer.name}</span><span>${layer.type}</span><span>${layer.visible ? 'visible' : 'hidden'}${layer.locked ? ' • locked' : ''}</span>`;
+          layersTable.appendChild(row);
+        });
+
+        populateRoleSelect(roleBackground, layers, (layer) => layer.type === 'RECTANGLE');
+        populateRoleSelect(roleLabel, layers, (layer) => layer.type === 'TEXT');
+        populateRoleSelect(roleBorder, layers, (layer) => layer.type === 'RECTANGLE');
+        populateRoleSelect(roleIcon, layers, () => true);
+      }
+
+      function populateRoleSelect(selectEl, layers, predicate) {
+        if (!selectEl) return;
+        selectEl.innerHTML = '';
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = '—';
+        selectEl.appendChild(defaultOption);
+        layers.forEach((layer) => {
+          const opt = document.createElement('option');
+          opt.value = layer.id;
+          opt.textContent = `${layer.name} (${layer.type})`;
+          if (predicate(layer) && !selectEl.value) {
+            opt.selected = true;
+          }
+          selectEl.appendChild(opt);
+        });
+      }
 
       function formatSummary(summary) {
         const totals = summary?.totals || {};

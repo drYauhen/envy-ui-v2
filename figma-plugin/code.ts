@@ -1,4 +1,5 @@
 import uiHtml from './ui.html';
+import { applicatorHandleMessage } from './applicator';
 
 interface AdapterVariable {
   path: string;
@@ -69,6 +70,15 @@ figma.ui.onmessage = async (message) => {
     } catch (error) {
       figma.ui.postMessage({ type: 'import-error', payload: formatError(error) });
     }
+  } else if (message.type === 'generate-structures') {
+    try {
+      await generateButtonStructure(message.payload);
+      figma.ui.postMessage({ type: 'structures-complete' });
+    } catch (error) {
+      figma.ui.postMessage({ type: 'structures-error', payload: formatError(error) });
+    }
+  } else if (['request-selection', 'save-mapping', 'preview-mapping'].includes(message.type)) {
+    applicatorHandleMessage(message);
   } else if (message.type === 'close-plugin') {
     figma.closePlugin();
   }
@@ -285,4 +295,91 @@ function formatError(error: unknown): string {
     return error.message;
   }
   return 'Unknown error importing variables';
+}
+
+async function generateButtonStructure(payload: any) {
+  const buttonTokens = payload?.ui?.button;
+  if (!buttonTokens) {
+    throw new Error('No ui.button data found in structures payload.');
+  }
+  const page = getOrCreatePage('Generated / Structures');
+  figma.currentPage = page;
+  await ensureTextFont();
+
+  const rootFrame = figma.createFrame();
+  rootFrame.name = 'ui.button';
+  rootFrame.layoutMode = 'VERTICAL';
+  rootFrame.itemSpacing = 12;
+  rootFrame.paddingLeft = 12;
+  rootFrame.paddingRight = 12;
+  rootFrame.paddingTop = 12;
+  rootFrame.paddingBottom = 12;
+  rootFrame.counterAxisSizingMode = 'AUTO';
+  rootFrame.primaryAxisSizingMode = 'AUTO';
+
+  const groups = Object.entries(buttonTokens).filter(([key, value]) => value && typeof value === 'object');
+  for (const [groupKey, groupValue] of groups) {
+    const groupFrame = figma.createFrame();
+    groupFrame.name = `ui.button.${groupKey}`;
+    groupFrame.layoutMode = 'VERTICAL';
+    groupFrame.itemSpacing = 8;
+    groupFrame.paddingLeft = 8;
+    groupFrame.paddingRight = 8;
+    groupFrame.paddingTop = 8;
+    groupFrame.paddingBottom = 8;
+    groupFrame.counterAxisSizingMode = 'AUTO';
+    groupFrame.primaryAxisSizingMode = 'AUTO';
+    await renderTokenTree(groupFrame, groupValue as any, [`ui`, `button`, groupKey]);
+    rootFrame.appendChild(groupFrame);
+  }
+
+  page.appendChild(rootFrame);
+  rootFrame.x = 40;
+  rootFrame.y = 40;
+}
+
+async function renderTokenTree(container: FrameNode, node: any, path: string[]) {
+  if (!node || typeof node !== 'object') return;
+  if ('$value' in node && '$type' in node) {
+    const tokenName = path.join('.');
+    if (node.$type === 'color') {
+      const rect = figma.createRectangle();
+      rect.name = tokenName;
+      rect.resize(120, 32);
+      rect.fills = [{ type: 'SOLID', color: { r: 0.7, g: 0.7, b: 0.7 } }];
+      container.appendChild(rect);
+    } else {
+      const text = figma.createText();
+      text.name = tokenName;
+      text.characters = `${tokenName}\n${String(node.$value)}`;
+      text.fontSize = 12;
+      container.appendChild(text);
+    }
+    return;
+  }
+
+  for (const [key, value] of Object.entries(node)) {
+    if (!value || typeof value !== 'object') continue;
+    await renderTokenTree(container, value, [...path, key]);
+  }
+}
+
+let textFontLoaded = false;
+async function ensureTextFont() {
+  if (textFontLoaded) return;
+  try {
+    await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+    textFontLoaded = true;
+  } catch {
+    await figma.loadFontAsync({ family: 'Roboto', style: 'Regular' });
+    textFontLoaded = true;
+  }
+}
+
+function getOrCreatePage(name: string): PageNode {
+  const existing = figma.root.children.find((page) => page.name === name);
+  if (existing && existing.type === 'PAGE') return existing;
+  const page = figma.createPage();
+  page.name = name;
+  return page;
 }
