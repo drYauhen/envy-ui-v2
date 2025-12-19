@@ -1,53 +1,60 @@
-WORKFLOW_MANIFEST.md — UI Design System Handoff & Decision Workflow
-
-This document defines how architectural intent, decisions, and handoff context are maintained across development sessions, machines, and AI-assisted workflows.
-
-It is intentionally lightweight and delegates detailed structure to canonical templates where applicable.
-
-⸻
-
 1. Decision Records (ADR)
 
-All architectural decisions are captured as Architectural Decision Records (ADR).
+Architectural Decision Records (ADR) capture the history of architectural reasoning and decision-making over time.
+
+They reflect how thinking evolved at specific moments and are not guaranteed to describe the current or final state of the system.
+An individual ADR may become partially outdated, fully superseded, or even represent a direction that was later intentionally reversed.
+
+ADR documents therefore serve as:
+	•	a historical record of architectural thinking
+	•	context for understanding why certain approaches were explored
+	•	reference material for reflection and analysis
+
+ADR documents are NOT:
+	•	current system documentation
+	•	an authoritative description of the present architecture
+	•	executable instructions for implementation
 
 Canonical Rules
-	•	Single document type: ADR (no EDR or alternative record types)
+	•	Single document type: ADR (Architectural Decision Record)
 	•	Canonical folder: docs/adr/
 	•	Canonical template: docs/adr/ADR-TEMPLATE.md
+	•	Any change in architectural direction MUST be captured as a new ADR
 
-The ADR template is the single source of truth for:
-	•	required metadata fields
-	•	document structure
-	•	tone and authorship conventions
+Interpretation Rules
+	•	ADRs may contradict each other over time.
+	•	Newer ADRs do not automatically invalidate older ones.
+	•	User instructions always take precedence over ADR content.
 
-This workflow manifest intentionally does not duplicate ADR structure details.
+Assistant Behavior
+	•	The assistant may consult ADRs for background context only.
+	•	The assistant MUST NOT treat ADRs as authoritative or up-to-date specifications.
+	•	If user intent conflicts with ADR content, the assistant must follow user intent.
+	•	If uncertainty remains, the assistant must stop and ask for clarification.
 
-Naming & Numbering
-	•	Filename format: ADR-<4 digits>-<kebab-case-title>.md
-	•	Numbers are monotonic and never reused
-	•	Changed decisions require a new ADR that supersedes the old one
 
-Linking
-	•	Always reference ADRs by number (e.g. ADR-0007)
-	•	Use relative links inside docs/adr/
+2. LAST_STEP.md — Optional Session Context
 
-⸻
+LAST_STEP.md is an optional, free-form context file that may be present at the project root.
 
-2. NEXT_STEP.md — Session Bootstrap
+Its purpose is to capture high-level context at the end of a working session when no ADR is warranted.
 
-NEXT_STEP.md is a committed handoff file used to bootstrap a new chat or work session.
-
-Purpose
-	•	Define the current baseline
-	•	Summarize what changed last
-	•	Explicitly state what to work on next
+Typical content may include:
+	•	What was done during the last session
+	•	Why the work matters in the broader project context
+	•	Loose or tentative intentions for future work
 
 Rules
-	•	Updated at the end of a meaningful session
-	•	Concise and operational
-	•	References ADRs instead of restating decisions
+	•	Optional; absence is acceptable
+	•	No fixed template
+	•	No required structure
+	•	Informational only; never prescriptive
+	•	Must not be treated as an instruction set or task list
 
-⸻
+Agent Guidance
+	•	The assistant may read LAST_STEP.md for orientation only.
+	•	LAST_STEP.md must not override user instructions or ADRs.
+	•	If LAST_STEP.md conflicts with current user intent, it must be ignored.
 
 3. Canonical Inputs for New Sessions
 
@@ -58,78 +65,96 @@ A typical session bootstrap relies on:
 	2.	ADR documents (docs/adr/)
 	•	Historical record of architectural intent
 	•	Directional, not necessarily reflecting latest implementation details
-	3.	NEXT_STEP.md
-	•	Immediate execution context
+	3.	LAST_STEP.md (optional)
+	•	Free-form summary of the last completed session
+	•	May describe what was done, why it matters, and any open context
+	•	May include tentative intentions, but is not a task list or commitment
+	•	Informational only; never authoritative
 	4.	Pipeline & generators (e.g. Style Dictionary configs)
 	•	Reference implementations for consistency
 
 ⸻
 
-4. Assistant Expectations
+4. Project Structure & Generation Model
 
-When assisting with architecture or implementation, the assistant must:
-	•	Treat tokens as the primary semantic source
-	•	Follow ADR-TEMPLATE.md when drafting ADRs
-	•	Avoid restating template rules inside ADR content
-	•	Assume decisions are owner-driven and AI-assisted
+This project uses a strict separation between source code, generated artifacts, and build outputs.
 
-⸻
+Canonical Rules
 
-5. Session Bootstrap Protocol
+	•	generated/ is the single canonical location for all pipeline-generated artifacts.
+	•	generated artifacts are human-readable and treated as part of the system contract.
+	•	Build outputs (dist/, storybook-static/, previews) are technical artifacts and not part of the pipeline contract.
 
-To ensure reliable continuity across chat sessions and machines, this project uses a two-artifact bootstrap protocol.
+Directory Mirroring Rule
 
-Canonical Bootstrap Artifacts
+	•	Any top-level module that participates in generation MUST have a mirrored directory inside generated/.
+	•	The mirrored directory name MUST exactly match the source module directory name.
+	•	This rule is mandatory and non-optional.
 
-Each new session must start with exactly two inputs:
-	1.	NEXT_STEP.md
-	2.	A Bootstrap ZIP archive (generated at the end of the previous session)
+Example
 
-No other files are assumed to be present by default.
+	•	Source: figma-plugin/
+	•	Generated: generated/figma-plugin/
 
-Responsibilities
-
-NEXT_STEP.md
-	•	Acts as the session controller
-	•	Describes current state, recent changes, and immediate goals
-	•	Instructs how to unpack and interpret the Bootstrap ZIP
-	•	References ADRs for architectural intent
-
-Bootstrap ZIP
-	•	Contains the minimal technical context required to continue work
-	•	Must not include build artifacts, dependencies, or generated output
-	•	Is treated as an implementation snapshot, not a release artifact
-
-Canonical ZIP Contents (Default Case)
-
-A typical Bootstrap ZIP includes:
-	•	tokens/ (entire directory; token-first source of truth)
-	•	docs/adr/ (ADR history + ADR-TEMPLATE.md)
-	•	WORKFLOW_MANIFEST.md
-	•	Style Dictionary configs and custom transformers (if relevant)
-	•	Reference components (e.g. packages/tsx/button/)
-	•	Supporting scripts used in the current workflow
-
-The exact contents may vary for specialized sessions (e.g. Figma-only work), but this default applies to most development phases.
-
-Execution Order
-
-When starting a new session:
-	1.	Read NEXT_STEP.md
-	2.	Unpack the Bootstrap ZIP
-	3.	Review WORKFLOW_MANIFEST.md for workflow rules
-	4.	Treat tokens/ as the primary semantic source
-	5.	Use ADRs for historical and directional context
+If a module does not produce generated artifacts, no mirrored directory is created.
 
 ⸻
 
-6. Scope & Evolution
+5. Canonical Terminology & Error Handling
 
-This manifest defines workflow, not product architecture.
+This project uses strict canonical terminology for architectural decision records,
+while remaining permissive toward explanatory and supportive documentation.
 
-It should remain:
-	•	concise
-	•	referential
-	•	stable across sessions
+Canonical Rules
 
-Architectural intent always lives in ADRs; implementation details may evolve independently.
+	•	Architectural decisions are documented ONLY as ADR (Architectural Decision Records).
+	•	EDR, EDR-like, or alternative architectural record types are invalid and must not be created.
+	•	This restriction applies only to architectural decision records,
+		not to README files or other explanatory documentation.
+
+Documentation Guidance
+
+	•	README.md files and other explanatory documents are allowed and encouraged.
+	•	README files are especially appropriate when:
+		–	introducing a new directory or module
+		–	adding a new conceptual layer (tokens, adapters, generators, etc.)
+		–	changing an existing structure in a non-obvious way
+
+	•	Explanatory documentation must reflect the current state of the system.
+	•	Outdated, misleading, or abandoned documentation is considered an error
+		and should be updated or removed.
+
+Assistant Behavior
+
+	•	The assistant must enforce ADR as the only architectural decision record type.
+	•	The assistant must not interpret this restriction as a ban on README or other documentation.
+	•	When creating or modifying structure, the assistant is encouraged to add or update README files
+		to explain intent and structure in human-readable terms.
+
+⸻
+
+6. Assistant Expectations
+
+When assisting with architecture, structure, or implementation, the assistant must:
+
+	•	Treat this WORKFLOW_MANIFEST.md as the primary operational source of truth.
+	•	Follow ADR-TEMPLATE.md exactly when drafting architectural decisions.
+	•	Never invent new document types, workflows, or directory conventions.
+	•	Respect the Project Structure & Generation Model.
+	•	Enforce the Directory Mirroring Rule for generated artifacts.
+	•	Assume consistency and discipline are more important than convenience.
+
+⸻
+
+7. Scope & Evolution
+
+This manifest defines operational workflow, structural rules, and canonical conventions.
+
+It is intended to be:
+	•	stable
+	•	minimal
+	•	enforced
+
+Architectural intent lives in ADRs.
+Implementation details may evolve.
+Structural rules defined here must remain consistent.
