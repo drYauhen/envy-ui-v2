@@ -4,9 +4,11 @@ const repoRoot = path.resolve(__dirname, '..');
 const systemMeta = require('../system.meta.json');
 const registerStorybookColorsFormat = require('./formats/storybookColors');
 const registerFigmaAdapterFormat = require('./formats/figmaAdapter');
+const registerTokenStudioFormat = require('./formats/tokenStudio');
 
 registerStorybookColorsFormat(StyleDictionary);
 registerFigmaAdapterFormat(StyleDictionary);
+registerTokenStudioFormat(StyleDictionary);
 
 module.exports = {
   usesDtcg: true,
@@ -62,6 +64,17 @@ module.exports = {
         {
           destination: 'variables.adapter.json',
           format: 'figma/adapter'
+        }
+      ]
+    },
+
+    tokenstudio: {
+      transformGroup: 'js',
+      buildPath: path.join(repoRoot, 'build') + path.sep,
+      files: [
+        {
+          destination: 'tokenstudio.json',
+          format: 'json/token-studio'
         }
       ]
     }
