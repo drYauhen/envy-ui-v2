@@ -1,8 +1,8 @@
 {
   "repo": "drYauhen/envy-ui-v2",
   "branch": "feature/scripts-structure",
-  "count": 89,
-  "generatedAt": "2025-12-19T22:49:14.177Z",
+  "count": 93,
+  "generatedAt": "2025-12-19T23:35:11.401Z",
   "files": [
     {
       "path": ".gitignore",
@@ -51,14 +51,6 @@
     {
       "path": "component-model/schema.json",
       "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/component-model/schema.json"
-    },
-    {
-      "path": "contracts/README.md",
-      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/contracts/README.md"
-    },
-    {
-      "path": "contracts/button.contract.ts",
-      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/contracts/button.contract.ts"
     },
     {
       "path": "docs/adr/ADR-0001-react-aria-headless.md",
@@ -161,6 +153,30 @@
       "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/figma-plugin/variables.tokens.json"
     },
     {
+      "path": "generated/README.md",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/generated/README.md"
+    },
+    {
+      "path": "generated/contracts/README.md",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/generated/contracts/README.md"
+    },
+    {
+      "path": "generated/contracts/button.contract.ts",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/generated/contracts/button.contract.ts"
+    },
+    {
+      "path": "generated/personal/README.md",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/generated/personal/README.md"
+    },
+    {
+      "path": "generated/personal/local-files.json",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/generated/personal/local-files.json"
+    },
+    {
+      "path": "generated/personal/raw-links.json",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/generated/personal/raw-links.json"
+    },
+    {
       "path": "package-lock.json",
       "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/package-lock.json"
     },
@@ -189,12 +205,12 @@
       "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/packages/tsx/index.ts"
     },
     {
-      "path": "scripts/export-local-files.js",
-      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/scripts/export-local-files.js"
+      "path": "personal/export-local-files.js",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/personal/export-local-files.js"
     },
     {
-      "path": "scripts/export-raw-links.js",
-      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/scripts/export-raw-links.js"
+      "path": "personal/export-raw-links.js",
+      "raw": "https://raw.githubusercontent.com/drYauhen/envy-ui-v2/feature/scripts-structure/personal/export-raw-links.js"
     },
     {
       "path": "scripts/generate-contracts.ts",

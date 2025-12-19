@@ -1,4 +1,4 @@
-# generated/personal/
+# personal/generated/
 
 This directory contains artifacts produced by personal utilities in `personal/`.
 These outputs are for developer convenience and inspection, not the core pipeline.

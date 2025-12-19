@@ -5,7 +5,7 @@ const path = require('path');
 const ignore = require('ignore');
 
 const ROOT = process.cwd();
-const OUTPUT = path.join(ROOT, 'generated', 'personal', 'local-files.json');
+const OUTPUT = path.join(ROOT, 'personal', 'generated', 'local-files.json');
 
 function loadGitignore(root) {
   const ig = ignore();
