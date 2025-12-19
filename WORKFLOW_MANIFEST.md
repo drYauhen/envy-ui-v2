@@ -77,6 +77,15 @@ A typical session bootstrap relies on:
 
 4. Project Structure & Generation Model
 
+This project is token-driven and generative by design.
+
+Design tokens form the foundational layer of the system and represent the primary source of UI semantics.
+The project is TypeScript-oriented, reflecting the current company stack,
+but is intentionally designed to avoid tight coupling to any single technology.
+
+Platform-specific implementations (e.g. CSS, Figma, React) are treated as destinations of the generative pipeline,
+not as the core of the system.
+
 This project uses a strict separation between source code, generated artifacts, and build outputs.
 
 Canonical Rules
