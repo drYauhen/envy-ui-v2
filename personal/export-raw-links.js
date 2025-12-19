@@ -3,7 +3,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const ROOT = process.cwd();
-const OUTPUT = path.join(ROOT, 'build', 'raw-links.json');
+const OUTPUT = path.join(ROOT, 'generated', 'personal', 'raw-links.json');
 
 function log(...args) {
   console.log('[export-raw-links]', ...args);

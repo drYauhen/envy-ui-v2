@@ -98,6 +98,7 @@ Directory Mirroring Rule
 
 	•	Any top-level module that participates in generation MUST have a mirrored directory inside generated/.
 	•	The mirrored directory name MUST exactly match the source module directory name.
+	•	If a module does not produce generated artifacts, no mirrored directory is created.
 	•	This rule is mandatory and non-optional.
 
 Example
@@ -105,7 +106,22 @@ Example
 	•	Source: figma-plugin/
 	•	Generated: generated/figma-plugin/
 
-If a module does not produce generated artifacts, no mirrored directory is created.
+
+generated/ Documentation Requirements
+
+	•	The root `generated/` directory MUST contain a `README.md` describing:
+		–	the purpose of `generated/` as a whole
+		–	how its structure maps to source modules (Directory Mirroring Rule)
+		–	what qualifies as a generated artifact versus a build output
+
+	•	Each first-level directory under `generated/` (e.g. `generated/figma-plugin/`, `generated/personal/`) MUST contain a `README.md` describing:
+		–	which source module or workflow produces these artifacts
+		–	what artifacts are expected to appear here
+		–	how to regenerate or refresh the artifacts (high level)
+
+	•	Whenever the assistant introduces, removes, renames, or materially reorganizes directories or files under `generated/`,
+		the assistant MUST update the relevant `README.md` files so that they reflect the current state.
+		Stale or misleading `generated/` documentation is considered an error.
 
 ⸻
 
