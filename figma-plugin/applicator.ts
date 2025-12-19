@@ -265,8 +265,8 @@ async function expandVariants(payload: any) {
     return;
   }
 
-  const baseComponent = node;
-  console.log('[Expand] baseComponent', baseComponent?.id, baseComponent?.type);
+  const sourceComponent = node;
+  console.log('[Expand] baseComponent', sourceComponent?.id, sourceComponent?.type);
 
   const axisSample = axisBindings[0];
   const collectionId = axisSample.collectionId as string;
@@ -286,37 +286,42 @@ async function expandVariants(payload: any) {
   }
   console.log('[Expand] variables count', variables.length);
 
-  const parent = baseComponent.parent;
-  console.log('[Expand] parent', parent?.id, (parent as SceneNode | null)?.type);
-  if (!parent || parent.type === 'COMPONENT_SET') {
-    figma.ui.postMessage({
-      type: 'mapping-error',
-      payload: 'Place the component on a Page or Frame before expanding.'
-    });
-    return;
+  const parentCandidate = sourceComponent.parent;
+  let targetParent: PageNode | FrameNode = figma.currentPage;
+  if (parentCandidate && parentCandidate.type === 'FRAME') {
+    targetParent = parentCandidate as FrameNode;
+  } else if (parentCandidate && parentCandidate.type === 'PAGE') {
+    targetParent = parentCandidate as PageNode;
   }
+  console.log('[Expand] targetParent', targetParent?.id, targetParent?.type);
 
+  const clones: ComponentNode[] = [];
   const variants: ComponentNode[] = [];
   variables.forEach((variable, idx) => {
     console.log('[Expand] creating variant', idx, variable.name);
-    const variant = idx === 0 ? baseComponent : (baseComponent.clone() as ComponentNode);
-    if (variant.parent !== parent) {
-      (parent as any).appendChild(variant);
+    const clone = sourceComponent.clone() as ComponentNode;
+    if (clone.parent && clone.parent !== targetParent) {
+      clone.remove();
     }
-    const appliedCount = applyAxisBindings(variant, baseComponent, axisBindings, variable.id);
+    if (clone.parent !== targetParent) {
+      targetParent.appendChild(clone);
+    }
+    const appliedCount = applyAxisBindings(clone, sourceComponent, axisBindings, variable.id);
     const leafName = variable.name.split('/').pop() ?? variable.name;
-    variant.name = `${baseComponent.name} / ${leafName}`;
+    clone.name = `${sourceComponent.name} / ${leafName}`;
     console.log('[Applicator][Expand:apply]', `variable=${variable.name}`, `bindingsApplied=${appliedCount}`);
-    variants.push(variant);
+    clones.push(clone);
+    variants.push(clone);
   });
+  console.log('[Expand] clone count', clones.length);
   console.log('[Expand] variants total', variants.length);
   console.log('[Expand] variants parents', variants.map((v) => `${v.parent?.id}:${(v.parent as SceneNode | null)?.type}`));
 
   console.log('[Expand] combining variants');
   let componentSet: ComponentSetNode | null = null;
   try {
-    componentSet = figma.combineAsVariants(variants, parent as any);
-    console.log('[Expand] componentSet created', componentSet.id, 'parent', (parent as SceneNode).id);
+    componentSet = figma.combineAsVariants(variants, targetParent as any);
+    console.log('[Expand] componentSet created', componentSet.id, 'parent', targetParent.id);
   } catch (e) {
     console.error(
       '[Expand] combineAsVariants failed',
@@ -326,7 +331,7 @@ async function expandVariants(payload: any) {
       'variant ids',
       variants.map((v) => v.id),
       'parent',
-      parent?.id
+      targetParent?.id
     );
     figma.ui.postMessage({ type: 'mapping-error', payload: 'Failed to combine variants.' });
     return;
