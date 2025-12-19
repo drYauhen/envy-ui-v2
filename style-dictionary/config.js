@@ -5,10 +5,14 @@ const systemMeta = require('../system.meta.json');
 const registerStorybookColorsFormat = require('./formats/storybookColors');
 const registerFigmaAdapterFormat = require('./formats/figmaAdapter');
 const registerTokenStudioFormat = require('./formats/tokenStudio');
+const registerFullVariablesFormat = require('./formats/variablesFull');
+const registerScopedFigmaVariablesFormat = require('./formats/figmaVariablesScoped');
 
 registerStorybookColorsFormat(StyleDictionary);
 registerFigmaAdapterFormat(StyleDictionary);
 registerTokenStudioFormat(StyleDictionary);
+registerFullVariablesFormat(StyleDictionary);
+registerScopedFigmaVariablesFormat(StyleDictionary);
 
 module.exports = {
   usesDtcg: true,
@@ -75,6 +79,28 @@ module.exports = {
         {
           destination: 'tokenstudio.json',
           format: 'json/token-studio'
+        }
+      ]
+    },
+
+    pluginVariables: {
+      transformGroup: 'js',
+      buildPath: path.join(repoRoot, 'build') + path.sep,
+      files: [
+        {
+          destination: 'variables.tokens.json',
+          format: 'figma/variables-full'
+        }
+      ]
+    },
+
+    figmaScoped: {
+      transformGroup: 'js',
+      buildPath: path.join(repoRoot, 'build', 'figma') + path.sep,
+      files: [
+        {
+          destination: 'variables.tokens.json',
+          format: 'figma/variables-scoped'
         }
       ]
     }
