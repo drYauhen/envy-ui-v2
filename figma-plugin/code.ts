@@ -3,8 +3,8 @@ import { applicatorHandleMessage } from './applicator';
 
 interface AdapterVariable {
   path: string;
-  type: 'COLOR';
-  value: string;
+  type: 'COLOR' | 'FLOAT';
+  value: string | number;
 }
 
 interface AdapterCollection {
@@ -142,8 +142,7 @@ async function importCollections(payload: AdapterPayload): Promise<ImportResult>
       if (
         !variableData ||
         !variableData.path ||
-        variableData.type !== 'COLOR' ||
-        typeof variableData.value !== 'string'
+        !['COLOR', 'FLOAT'].includes(variableData.type)
       ) {
         continue;
       }
@@ -151,33 +150,48 @@ async function importCollections(payload: AdapterPayload): Promise<ImportResult>
       const variableName = normalizeVariableName(variableData.path);
       const existingVariable = variableMap.get(variableName);
 
+      const isColor = variableData.type === 'COLOR';
+      const targetType: VariableResolvedDataType = isColor ? 'COLOR' : 'FLOAT';
+      const value =
+        isColor && typeof variableData.value === 'string'
+          ? hexToPaint(variableData.value)
+          : typeof variableData.value === 'number'
+          ? variableData.value
+          : typeof variableData.value === 'string'
+          ? parseFloat(variableData.value)
+          : undefined;
+
+      if (value === undefined || (targetType === 'FLOAT' && typeof value !== 'number')) {
+        continue;
+      }
+
       if (existingVariable) {
         existingVariable.description = variableData.path;
-        existingVariable.setValueForMode(collection.defaultModeId, hexToPaint(variableData.value));
+        existingVariable.setValueForMode(collection.defaultModeId, value as any);
         continue;
       }
 
       let variable: Variable;
       try {
-        variable = figma.variables.createVariable(variableName, collection, 'COLOR');
+        variable = figma.variables.createVariable(variableName, collection, targetType);
       } catch (error) {
         throw new Error(`createVariable failed for ${variableName}: ${String(error)}`);
       }
 
       variable.description = variableData.path;
-      variable.setValueForMode(collection.defaultModeId, hexToPaint(variableData.value));
+      variable.setValueForMode(collection.defaultModeId, value as any);
       variableMap.set(variableName, variable);
     }
   }
 
   const localCollections = figma.variables.getLocalVariableCollections();
-  const localColors = figma.variables.getLocalVariables('COLOR');
+  const localColors = figma.variables.getLocalVariables();
 
   console.log(
     'Local collections:',
     localCollections.map((collectionEntry) => ({ name: collectionEntry.name, id: collectionEntry.id }))
   );
-  console.log('Local color variables count:', localColors.length);
+  console.log('Local variables count:', localColors.length);
 
   figma.notify('Figma variables imported', { timeout: 1200 });
 
@@ -214,7 +228,7 @@ function computeImportSummary(payload: AdapterPayload, existingData: ExistingDat
     let updateCount = 0;
 
     for (const variableData of collectionData.variables) {
-      if (!variableData || !variableData.path || variableData.type !== 'COLOR') {
+      if (!variableData || !variableData.path || !['COLOR', 'FLOAT'].includes(variableData.type)) {
         continue;
       }
 
@@ -252,7 +266,7 @@ function gatherExistingData(api: VariablesAPI): ExistingData {
   const collections = api.getLocalVariableCollections();
   const collectionMap = new Map(collections.map((collectionEntry) => [collectionEntry.name, collectionEntry]));
 
-  const variables = api.getLocalVariables('COLOR');
+  const variables = api.getLocalVariables();
   const variablesMap = new Map<string, Map<string, Variable>>();
   for (const variable of variables) {
     const collectionId = variable.variableCollectionId;
