@@ -125,6 +125,25 @@ generated/ Documentation Requirements
 
 ⸻
 
+Personal Sandbox (Explicit Exception)
+
+The `personal/` directory is an explicitly isolated sandbox.
+
+It is not part of the project architecture, generative pipeline, or system contract.
+Its contents may include personal utilities, experimental scripts, temporary files,
+or workflow-specific helpers that are not intended to be part of the project itself.
+
+The rules defined in this manifest do NOT apply to the `personal/` directory,
+with the following single, explicit exception:
+
+	•	Any generated output produced by tools or scripts located inside `personal/`
+		MUST be written to `personal/generated/`.
+
+The root-level `generated/` directory is reserved exclusively for
+project-level, pipeline-generated artifacts.
+
+Outputs originating from `personal/` MUST NOT be written into the root `generated/` directory.
+
 5. Canonical Terminology & Error Handling
 
 This project uses strict canonical terminology for architectural decision records,
