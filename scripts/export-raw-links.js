@@ -54,29 +54,25 @@ try {
 } catch {}
 log('Branch:', branch);
 
-// 3. Walk files
-function walk(dir, acc = []) {
-  for (const entry of fs.readdirSync(dir)) {
-    if (['.git', 'node_modules', 'build'].includes(entry)) continue;
+// 3. Read tracked files from git (HEAD)
+log('Reading tracked files from git (HEAD)...');
 
-    const full = path.join(dir, entry);
-    const stat = fs.statSync(full);
-    const rel = path.relative(ROOT, full).replace(/\\/g, '/');
-
-    if (stat.isDirectory()) {
-      walk(full, acc);
-    } else {
-      acc.push({
-        path: rel,
-        raw: `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${rel}`
-      });
-    }
-  }
-  return acc;
+let trackedFiles = [];
+try {
+  trackedFiles = execSync('git ls-files', { encoding: 'utf8' })
+    .split('\n')
+    .map(f => f.trim())
+    .filter(Boolean);
+} catch {
+  console.error('[export-raw-links] Failed to read tracked files from git');
+  process.exit(1);
 }
 
-log('Scanning repository files...');
-const files = walk(ROOT);
+const files = trackedFiles.map(rel => ({
+  path: rel,
+  raw: `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${rel}`
+}));
+
 log('Files found:', files.length);
 
 // 4. Output
