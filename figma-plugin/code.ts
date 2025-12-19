@@ -55,6 +55,7 @@ figma.showUI(uiHtml, { width: 420, height: 520 });
 figma.ui.postMessage({ type: 'PLUGIN_RELOADED', payload: { timestamp: formatReloadTimestamp(new Date()) } });
 
 figma.ui.onmessage = async (message) => {
+  console.log('[code.ts][onmessage]', message.type);
   if (message.type === 'prepare-import') {
     try {
       const summary = calculateImportSummary(message.payload as AdapterPayload);
@@ -78,7 +79,7 @@ figma.ui.onmessage = async (message) => {
     } catch (error) {
       figma.ui.postMessage({ type: 'structures-error', payload: formatError(error) });
     }
-  } else if (['request-selection', 'save-mapping', 'preview-mapping'].includes(message.type)) {
+  } else if (['request-selection', 'save-mapping', 'preview-mapping', 'expand-variants'].includes(message.type)) {
     applicatorHandleMessage(message);
   } else if (message.type === 'request-timestamp') {
     figma.ui.postMessage({ type: 'PLUGIN_RELOADED', payload: { timestamp: formatReloadTimestamp(new Date()) } });

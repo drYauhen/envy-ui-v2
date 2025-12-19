@@ -61,6 +61,12 @@ function readSelection(): ApplicatorSelection {
 
   const node = selection[0];
   console.log('[Applicator][Selection]', `node={ id:${node.id}, name:${node.name}, type:${node.type} }`);
+  if (node.type === 'COMPONENT_SET') {
+    return {
+      status: 'error',
+      message: 'Select a specific variant (Component) inside the set, not the Component Set itself.'
+    };
+  }
   if (!['FRAME', 'COMPONENT', 'RECTANGLE'].includes(node.type)) {
     return { status: 'error', message: 'Selection must be a Rectangle, Frame or Component.' };
   }

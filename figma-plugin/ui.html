@@ -79,12 +79,17 @@
         color: #041421;
         padding: 10px 16px;
         transition: opacity 120ms ease;
+        cursor: pointer;
       }
 
       button.secondary {
         background: transparent;
         color: #cbd5f5;
         border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      button:not(:disabled):hover {
+        filter: brightness(1.06);
       }
 
       button:disabled {
