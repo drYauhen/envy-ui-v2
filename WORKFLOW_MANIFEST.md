@@ -88,13 +88,15 @@ but is intentionally designed to avoid tight coupling to any single technology o
 
 Generated Directory Model (Platform-Oriented)
 
-	•	The first-level directories under `generated/` represent PLATFORM / RUNTIME / DESTINATION layers
-		(e.g. figma, tsx, css), not source modules and not artifact types.
+	•	The first-level directories under `generated/` represent PLATFORM / DESTINATION layers
+		(e.g. figma, css, js, tsx), not source modules and not artifact types.
 	•	A platform directory groups all artifacts consumed by that platform or runtime.
-	•	Artifact types (e.g. components, contracts, variables, structures) belong INSIDE a platform directory.
+	•	Artifact types (e.g. tokens, adapters, contracts, structures, components) belong INSIDE a platform directory,
+		not as first-level directories.
 	•	Artifact-type subdirectories are OPTIONAL and must be introduced only when they improve clarity
 		or become necessary due to scale.
 	•	Flat structures are acceptable when the number of artifacts is small.
+	•	Platforms may represent combinations of technologies (e.g. tsx-react-aria).
 
 	•	The directory structure must reflect conceptual intent, not internal tooling implementation details.
 
@@ -111,35 +113,45 @@ The authoritative rules for structure and organization are defined exclusively i
 
 Examples
 
-	•	Figma outputs:
-		generated/figma/
-			– variables.adapter.json
-			– variables.tokens.json
-			– structures.ui.button.json
+• Figma outputs:
+  generated/figma/
+    tokens/
+      variables.tokens.full.json
+      variables.tokens.scoped.json
+    adapter/
+      variables.adapter.json
+    structures/
+      structures.ui.button.json
 
-	•	TypeScript / TSX outputs (small scale):
-		generated/tsx/
-			– button.tsx
-			– button.contract.ts
+• CSS outputs:
+  generated/css/
+    variables.css
+    variables-dark.css
 
-	•	TypeScript / TSX outputs (grown structure):
-		generated/tsx/
-			components/
-				button/
-					button.tsx
-					button.contract.ts
+• TypeScript / TSX outputs (small scale):
+  generated/tsx/
+    button.tsx
+    button.contract.ts
+
+• TypeScript / TSX outputs (grown structure):
+  generated/tsx/
+    components/
+      button/
+        button.tsx
+        button.contract.ts
 
 generated/ Documentation Requirements
 
 	•	The root `generated/` directory MUST contain a `README.md` describing:
 		–	the purpose of `generated/` as a whole
-		–	how its structure maps to source modules (Directory Mirroring Rule)
+		–	how to interpret first-level platform directories
 		–	what qualifies as a generated artifact versus a build output
 
-	•	Each first-level directory under `generated/` (e.g. `generated/figma-plugin/`, `generated/personal/`) MUST contain a `README.md` describing:
-		–	which source module or workflow produces these artifacts
+	•	Each first-level directory under `generated/` (platform/destination directory) MUST contain a `README.md` describing:
+		–	which source modules or workflows produce these artifacts (provenance)
 		–	what artifacts are expected to appear here
 		–	how to regenerate or refresh the artifacts (high level)
+		–	the intended consumers/destinations
 
 	•	Whenever the assistant introduces, removes, renames, or materially reorganizes directories or files under `generated/`,
 		the assistant MUST update the relevant `README.md` files so that they reflect the current state.
@@ -223,7 +235,7 @@ When assisting with architecture, structure, or implementation, the assistant mu
 	•	Follow ADR-TEMPLATE.md exactly when drafting architectural decisions.
 	•	Never invent new document types, workflows, or directory conventions.
 	•	Respect the Project Structure & Generation Model.
-	•	Enforce the Directory Mirroring Rule for generated artifacts.
+	•	Enforce the platform-oriented `generated/` model for pipeline artifacts.
 	•	Assume consistency and discipline are more important than convenience.
 
 Version Control Behavior
