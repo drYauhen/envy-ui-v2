@@ -14,12 +14,14 @@ const registerFigmaAdapterFormat = require('./formats/figmaAdapter.js');
 const registerTokenStudioFormat = require('./formats/tokenStudio.js');
 const registerFullVariablesFormat = require('./formats/variablesFull.js');
 const registerScopedFigmaVariablesFormat = require('./formats/figmaVariablesScoped.js');
+const registerCssVariablesThemedFormat = require('./formats/cssVariablesThemed.js');
 
 registerStorybookColorsFormat(StyleDictionary);
 registerFigmaAdapterFormat(StyleDictionary);
 registerTokenStudioFormat(StyleDictionary);
 registerFullVariablesFormat(StyleDictionary);
 registerScopedFigmaVariablesFormat(StyleDictionary);
+registerCssVariablesThemedFormat(StyleDictionary);
 
 export default {
   usesDtcg: true,
@@ -37,7 +39,7 @@ export default {
       files: [
         {
           destination: 'tokens.css',
-          format: 'css/variables'
+          format: 'css/variables-themed'
         }
       ]
     },

@@ -1,0 +1,44 @@
+{
+  "eui": {
+    "color": {
+      "border": {
+        "default": {
+          "$value": "{eui.color.neutral.600}",
+          "$type": "color",
+          "$description": "Stronger border color for better contrast in accessibility theme"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{eui.color.neutral.900}",
+          "$type": "color",
+          "$description": "Maximum contrast text for accessibility"
+        },
+        "disabled": {
+          "$value": "{eui.color.neutral.700}",
+          "$type": "color",
+          "$description": "More visible disabled text (was 500, now 700 for better contrast)"
+        }
+      },
+      "background": {
+        "muted": {
+          "$value": "{eui.color.neutral.200}",
+          "$type": "color",
+          "$description": "More visible muted background (was 50, now 200 for better contrast)"
+        }
+      }
+    },
+    "button": {
+      "shape": {
+        "default": {
+          "radius": {
+            "$value": "8px",
+            "$type": "dimension",
+            "$description": "More rounded corners for accessibility theme (default is 4px)"
+          }
+        }
+      }
+    }
+  }
+}
+

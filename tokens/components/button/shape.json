@@ -4,7 +4,7 @@
       "shape": {
         "default": {
           "radius": {
-            "$value": "8px",
+            "$value": "4px",
             "$type": "dimension"
           }
         },

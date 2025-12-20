@@ -34,7 +34,7 @@
             "$type": "color"
           },
           "disabled": {
-            "$value": "{eui.color.neutral.300}",
+            "$value": "{eui.color.background.muted}",
             "$type": "color"
           },
           "selected": {
@@ -44,23 +44,23 @@
         },
         "label": {
           "base": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.text.inverse}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.text.inverse}",
             "$type": "color"
           },
           "active": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.text.inverse}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{eui.color.neutral.500}",
+            "$value": "{eui.color.text.disabled}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.text.inverse}",
             "$type": "color"
           }
         }
@@ -68,67 +68,67 @@
       "secondary": {
         "background": {
           "base": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.background.surface}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.background.surface}",
             "$type": "color"
           },
           "active": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.background.surface}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{eui.color.neutral.100}",
+            "$value": "{eui.color.background.muted}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.background.surface}",
             "$type": "color"
           }
         },
         "label": {
           "base": {
-            "$value": "{eui.color.neutral.900}",
+            "$value": "{eui.color.text.primary}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{eui.color.neutral.900}",
+            "$value": "{eui.color.text.primary}",
             "$type": "color"
           },
           "active": {
-            "$value": "{eui.color.neutral.900}",
+            "$value": "{eui.color.text.primary}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{eui.color.neutral.500}",
+            "$value": "{eui.color.text.disabled}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{eui.color.neutral.900}",
+            "$value": "{eui.color.text.primary}",
             "$type": "color"
           }
         },
         "border": {
           "base": {
-            "$value": "{eui.color.neutral.300}",
+            "$value": "{eui.color.border.default}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{eui.color.neutral.300}",
+            "$value": "{eui.color.border.default}",
             "$type": "color"
           },
           "active": {
-            "$value": "{eui.color.neutral.300}",
+            "$value": "{eui.color.border.default}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{eui.color.neutral.300}",
+            "$value": "{eui.color.border.default}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{eui.color.neutral.300}",
+            "$value": "{eui.color.border.default}",
             "$type": "color"
           }
         }

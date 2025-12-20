@@ -7,9 +7,16 @@ import './preview.css';
 
 const withPreviewLayout: Decorator = (Story, context) => {
   const focusPolicy = context.globals.focusPolicy ?? 'derived';
+  const contextValue = context.globals.context ?? 'app';
+  const theme = context.globals.theme ?? 'default';
 
   return (
-    <div className="sb-preview-wrapper" data-eui-focus-policy={focusPolicy}>
+    <div 
+      className="sb-preview-wrapper" 
+      data-eui-focus-policy={focusPolicy}
+      data-eui-context={contextValue}
+      data-eui-theme={theme}
+    >
       <div className="sb-preview-region">
         <Story />
       </div>
@@ -20,6 +27,35 @@ const withPreviewLayout: Decorator = (Story, context) => {
 export const decorators: Preview['decorators'] = [withPreviewLayout];
 
 export const globalTypes: Preview['globalTypes'] = {
+  context: {
+    name: 'Context',
+    description: 'Select rendering context',
+    defaultValue: 'app',
+    toolbar: {
+      icon: 'folder',
+      items: [
+        { value: 'app', title: 'Application' },
+        { value: 'site', title: 'Website/CMS', disabled: true },
+        { value: 'report', title: 'Report', disabled: true }
+      ],
+      dynamicTitle: true
+    }
+  },
+  
+  theme: {
+    name: 'Theme',
+    description: 'Select theme within context',
+    defaultValue: 'default',
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'default', title: 'Default' },
+        { value: 'accessibility', title: 'Accessibility' }
+      ],
+      dynamicTitle: true
+    }
+  },
+  
   focusPolicy: {
     name: 'Focus policy',
     description: 'Select focus styling: Derived (brand color) or System (high accessibility orange).',
