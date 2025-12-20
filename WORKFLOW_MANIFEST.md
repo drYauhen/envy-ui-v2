@@ -80,32 +80,42 @@ A typical session bootstrap relies on:
 This project is token-driven and generative by design.
 
 Design tokens form the foundational layer of the system and represent the primary source of UI semantics.
+All other layers (components, contracts, adapters, platform outputs) are derived from tokens through
+explicit generative pipelines.
+
 The project is TypeScript-oriented, reflecting the current company stack,
-but is intentionally designed to avoid tight coupling to any single technology.
+but is intentionally designed to avoid tight coupling to any single technology or runtime.
 
-Platform-specific implementations (e.g. CSS, Figma, React) are treated as destinations of the generative pipeline,
-not as the core of the system.
+Generated Directory Model (Platform-Oriented)
 
-This project uses a strict separation between source code, generated artifacts, and build outputs.
+	•	The first-level directories under `generated/` represent PLATFORM / RUNTIME / DESTINATION layers
+		(e.g. figma, tsx, css), not source modules and not artifact types.
+	•	A platform directory groups all artifacts consumed by that platform or runtime.
+	•	Artifact types (e.g. components, contracts, variables, structures) belong INSIDE a platform directory.
+	•	Artifact-type subdirectories are OPTIONAL and must be introduced only when they improve clarity
+		or become necessary due to scale.
+	•	Flat structures are acceptable when the number of artifacts is small.
+	•	The directory structure must reflect conceptual intent, not internal tooling implementation details.
 
-Canonical Rules
+Examples
 
-	•	generated/ is the single canonical location for all pipeline-generated artifacts.
-	•	generated artifacts are human-readable and treated as part of the system contract.
-	•	Build outputs (dist/, storybook-static/, previews) are technical artifacts and not part of the pipeline contract.
+	•	Figma outputs:
+		generated/figma/
+			– variables.adapter.json
+			– variables.tokens.json
+			– structures.ui.button.json
 
-Directory Mirroring Rule
+	•	TypeScript / TSX outputs (small scale):
+		generated/tsx/
+			– button.tsx
+			– button.contract.ts
 
-	•	Any top-level module that participates in generation MUST have a mirrored directory inside generated/.
-	•	The mirrored directory name MUST exactly match the source module directory name.
-	•	If a module does not produce generated artifacts, no mirrored directory is created.
-	•	This rule is mandatory and non-optional.
-
-Example
-
-	•	Source: figma-plugin/
-	•	Generated: generated/figma-plugin/
-
+	•	TypeScript / TSX outputs (grown structure):
+		generated/tsx/
+			components/
+				button/
+					button.tsx
+					button.contract.ts
 
 generated/ Documentation Requirements
 
@@ -122,6 +132,11 @@ generated/ Documentation Requirements
 	•	Whenever the assistant introduces, removes, renames, or materially reorganizes directories or files under `generated/`,
 		the assistant MUST update the relevant `README.md` files so that they reflect the current state.
 		Stale or misleading `generated/` documentation is considered an error.
+
+	•	README.md files are REQUIRED at:
+		–	the root `generated/` directory
+		–	each first-level platform directory under `generated/`
+	•	Deeper README.md files are OPTIONAL and should be added only when they improve understanding.
 
 ⸻
 
@@ -174,6 +189,16 @@ Assistant Behavior
 	•	The assistant must not interpret this restriction as a ban on README or other documentation.
 	•	When creating or modifying structure, the assistant is encouraged to add or update README files
 		to explain intent and structure in human-readable terms.
+
+Canonical README Header (Required)
+
+	•	Every README.md file under `generated/` MUST start with a canonical header describing:
+		–	the purpose of the directory or artifact group
+		–	the relationship to source modules or workflows
+		–	the intended consumers or destinations
+		–	the artifact types and their roles
+
+The header documents provenance and intent; directory structure documents destination and semantics.
 
 ⸻
 
