@@ -14,7 +14,7 @@ Expected artifacts
 - `adapter/variables.adapter.json` (adapter payload used by the Figma plugin import UI)
 - `tokens/variables.tokens.full.json` (full variables payload)
 - `tokens/variables.tokens.scoped.json` (scoped variables payload)
-- `structures/structures.ui.button.json` (structures payload for UI generation)
+- `structures/structures.eui.button.json` (structures payload for UI generation)
 
 Regeneration
 - `./node_modules/.bin/style-dictionary build --config style-dictionary/config.js --platform figma`

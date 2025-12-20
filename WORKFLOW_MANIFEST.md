@@ -133,7 +133,7 @@ Examples
     adapter/
       variables.adapter.json
     structures/
-      structures.ui.button.json
+      structures.eui.button.json
 
 • CSS outputs:
   generated/css/

@@ -20,7 +20,7 @@ This ADR formally records the outcomes of the **Button v1 exploration phase** an
 
 I confirm:
 
-1. A **single canonical namespace (`ui`)** is used across the system.
+1. A **single canonical namespace (`eui`)** is used across the system.
 2. Semantic tokens and runtime aliases are **logically separated but not namespaced separately**.
 3. Button v1 is accepted as a **baseline reference component**, not a final implementation.
 4. Context-aware rendering is mandatory, with `app` as the initial explicit context.
@@ -45,7 +45,7 @@ These questions required resolution before continuing with further components or
 
 ### 3.1 Decision
 
-I adopt **`ui` as the single canonical namespace** for:
+I adopt **`eui` as the single canonical namespace** for:
 
 * Semantic design tokens
 * Runtime CSS variables
