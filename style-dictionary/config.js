@@ -28,7 +28,7 @@ module.exports = {
   platforms: {
     css: {
       transformGroup: 'css',
-      buildPath: path.join(repoRoot, 'build', 'css') + path.sep,
+      buildPath: path.join(repoRoot, 'generated', 'css') + path.sep,
       prefix: systemMeta?.tokens?.prefix,
       files: [
         {
@@ -40,7 +40,7 @@ module.exports = {
 
     js: {
       transformGroup: 'js',
-      buildPath: path.join(repoRoot, 'build', 'js') + path.sep,
+      buildPath: path.join(repoRoot, 'generated', 'js') + path.sep,
       prefix: systemMeta?.tokens?.prefix,
       files: [
         {
@@ -52,7 +52,7 @@ module.exports = {
 
     storybook: {
       transformGroup: 'css',
-      buildPath: path.join(repoRoot, 'build', 'storybook') + path.sep,
+      buildPath: path.join(repoRoot, 'generated', 'storybook') + path.sep,
       files: [
         {
           destination: 'colors.json',
@@ -74,7 +74,7 @@ module.exports = {
 
     tokenstudio: {
       transformGroup: 'js',
-      buildPath: path.join(repoRoot, 'build') + path.sep,
+      buildPath: path.join(repoRoot, 'generated', 'tokenstudio') + path.sep,
       files: [
         {
           destination: 'tokenstudio.json',

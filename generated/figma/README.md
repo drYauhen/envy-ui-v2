@@ -1,7 +1,9 @@
 # generated/figma/
 
-Token-derived artifacts for Figma workflows live here. These outputs are produced
-from `tokens/` via Style Dictionary and are treated as pipeline-generated data.
+Purpose: Figma platform artifacts derived from tokens.
+Source/workflow: `style-dictionary/config.js` platforms `figma`, `figmaScoped`, `pluginVariables`.
+Consumers/destinations: Figma plugin workflows and Figma Variables import.
+Artifact types/roles: Adapter payloads and variables payloads for Figma.
 
 Producers
 - `style-dictionary/config.js` platform `figma` (format `figma/adapter`)

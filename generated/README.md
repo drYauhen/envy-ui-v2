@@ -1,14 +1,14 @@
 # generated/
 
-This directory contains all human-readable generated artifacts produced by the project.
-It is the canonical location for generated outputs and is separate from build outputs
-(e.g. dist/, storybook-static/, previews), which are not part of the pipeline contract.
+Purpose: Canonical location for human-readable pipeline artifacts derived from tokens.
+Source/workflow: Produced by explicit generators (e.g. Style Dictionary, contract scripts) reading `tokens/`.
+Consumers/destinations: Platform/runtime layers that consume generated artifacts (e.g. figma, tsx, css, js).
+Artifact types/roles: Contracts, variables, adapters, and other platform-specific outputs.
 
 Structure
-- Each first-level directory mirrors a source module or workflow.
-- If a module/workflow produces generated artifacts, it must have a matching directory here.
+- First-level directories represent platform/runtime destinations.
+- Artifact types live inside platform directories (flat or subdivided as needed).
 - Personal utilities write outputs to `personal/generated/`, not this directory.
 
 Regeneration
-- Regenerate artifacts by running the producing pipeline or utility for the specific
-  generated area (see each subdirectory README for details).
+- Run the producing pipeline for the specific platform directory (see subdirectory READMEs).
