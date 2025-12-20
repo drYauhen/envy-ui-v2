@@ -56,6 +56,14 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
       });
 
       // Second pass: collect base tokens (excluding those from themes/contexts)
+      // Collect token names that are defined in themes/contexts to avoid duplicates
+      const themeDefinedTokenNames = new Set();
+      themeTokens.forEach((tokens) => {
+        tokens.forEach((token) => {
+          themeDefinedTokenNames.add(token.name || (token.path || []).join('.'));
+        });
+      });
+      
       dictionary.allTokens.forEach((token) => {
         const filePath = token.filePath || '';
         const tokenName = token.name || (token.path || []).join('.');
@@ -66,6 +74,8 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         }
 
         // Add to base tokens (these are foundations, semantic base, components)
+        // Important: Include semantic tokens in :root even if they're overridden in themes
+        // Themes will override them in their selectors, providing CSS cascade fallback
         baseTokens.push(token);
       });
 

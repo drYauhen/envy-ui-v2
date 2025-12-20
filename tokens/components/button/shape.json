@@ -4,8 +4,9 @@
       "shape": {
         "default": {
           "radius": {
-            "$value": "4px",
-            "$type": "dimension"
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Button uses default radius. In application context (app), this ensures compatibility with other stackable form components (input, select, etc.) when composed together. All stackable components in app context must use {eui.radius.default} to maintain visual cohesion. In other contexts (site, report), components may use different radius levels based on visual design goals."
           }
         },
         "round": {

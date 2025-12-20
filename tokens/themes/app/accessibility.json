@@ -28,15 +28,34 @@
         }
       }
     },
-    "button": {
-      "shape": {
-        "default": {
-          "radius": {
-            "$value": "8px",
-            "$type": "dimension",
-            "$description": "More rounded corners for accessibility theme (default is 4px)"
-          }
-        }
+    "radius": {
+      "none": {
+        "$value": "0px",
+        "$type": "dimension"
+      },
+      "small": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "Smaller than default. Still visible but more subtle than baseline in friendly theme."
+      },
+      "default": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$description": "Baseline for accessibility theme. Shifted up from minimal (4px) for softer, friendlier aesthetic. Standard components use this."
+      },
+      "large": {
+        "$value": "10px",
+        "$type": "dimension",
+        "$description": "Larger than default. Used for cards, panels. Hierarchical: default (8px) < large (10px) for nested aesthetics."
+      },
+      "extra-large": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "Much larger than default. Used for modals, dialogs. Clear hierarchy: default (8px) < large (10px) < extra-large (12px)."
+      },
+      "full": {
+        "$value": "{eui.radius.pill}",
+        "$type": "dimension"
       }
     }
   }

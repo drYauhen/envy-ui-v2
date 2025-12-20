@@ -4,10 +4,10 @@
 }
 
 [data-eui-context] .eui-button {
-  --eui-button-corner-top-left: var(--eui-button-shape-default-radius);
-  --eui-button-corner-top-right: var(--eui-button-shape-default-radius);
-  --eui-button-corner-bottom-right: var(--eui-button-shape-default-radius);
-  --eui-button-corner-bottom-left: var(--eui-button-shape-default-radius);
+  --eui-button-corner-top-left: var(--eui-radius-default);
+  --eui-button-corner-top-right: var(--eui-radius-default);
+  --eui-button-corner-bottom-right: var(--eui-radius-default);
+  --eui-button-corner-bottom-left: var(--eui-radius-default);
   --eui-button-bg-base: var(--eui-button-primary-background-base);
   --eui-button-label-base: var(--eui-button-primary-label-base);
   --eui-button-border-base: transparent;

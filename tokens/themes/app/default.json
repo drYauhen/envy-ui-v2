@@ -1,0 +1,35 @@
+{
+  "eui": {
+    "radius": {
+      "none": {
+        "$value": "0px",
+        "$type": "dimension"
+      },
+      "small": {
+        "$value": "2px",
+        "$type": "dimension",
+        "$description": "Smaller than default. Minimal theme keeps this subtle for compact layouts."
+      },
+      "default": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "Baseline for minimal theme. All standard components use this value for consistent, stackable design."
+      },
+      "large": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "In minimal theme, same as default for consistency. Still stackable, no visual hierarchy needed."
+      },
+      "extra-large": {
+        "$value": "6px",
+        "$type": "dimension",
+        "$description": "Slightly more than default even in minimal theme, for modals and prominent containers."
+      },
+      "full": {
+        "$value": "{eui.radius.pill}",
+        "$type": "dimension"
+      }
+    }
+  }
+}
+

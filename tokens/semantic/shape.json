@@ -1,0 +1,37 @@
+{
+  "eui": {
+    "radius": {
+      "none": {
+        "$value": "0px",
+        "$type": "dimension",
+        "$description": "No rounding. Used for strict grids, tables, square elements."
+      },
+      "small": {
+        "$value": "2px",
+        "$type": "dimension",
+        "$description": "Smaller than default. Used for compact components or tighter layouts."
+      },
+      "default": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "Baseline radius. Center point of the scale. In application context (app), used by all stackable form components (button, input, select, textarea) to ensure visual compatibility when composed together (e.g., input + button). In other contexts (site, report), components may use different radius levels based on visual hierarchy. Theme can shift this value (minimal=4px, friendly=8px), but all stackable components shift together, maintaining compatibility."
+      },
+      "large": {
+        "$value": "6px",
+        "$type": "dimension",
+        "$description": "Larger than default. Used for cards, panels, containers that need more visual weight."
+      },
+      "extra-large": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$description": "Much larger than default. Used for modals, dialogs, prominent containers."
+      },
+      "full": {
+        "$value": "{eui.radius.pill}",
+        "$type": "dimension",
+        "$description": "Maximum rounding (pill shape). Used for badges, chips, full-rounded buttons."
+      }
+    }
+  }
+}
+
