@@ -9,7 +9,7 @@
 
 ## Context
 
-The system supports a prefixing scheme across CSS variables, data attributes, and contracts. Multiple active prefixes (for example, env2-ui and ui) are now creating unnecessary surface area and friction without clear benefit at the current scale. The token semantic root and emitted prefix also diverged, creating risk for non–Style Dictionary generators and ad hoc tooling.
+The system supports a prefixing scheme across CSS variables, data attributes, and contracts. Multiple active prefixes (for example, env2-ui and ui) are now creating unnecessary surface area and friction without clear benefit at the current scale. The token semantic root and emitted prefix also diverged, creating risk for non–Style Dictionary generators and ad hoc tooling. Divergence between System Prefix and token root is unsafe because it splits semantic vs runtime flows and creates hidden coupling.
 
 ## Decision
 
