@@ -1,6 +1,6 @@
 import type { Decorator, Preview } from '@storybook/react';
 import React from 'react';
-import '../build/css/tokens.css';
+import '../generated/css/tokens.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/button.css';
 import './preview.css';
