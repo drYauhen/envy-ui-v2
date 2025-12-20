@@ -1,11 +1,19 @@
-const path = require('path');
-const StyleDictionary = require('style-dictionary').default;
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
+import StyleDictionary from 'style-dictionary';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const require = createRequire(import.meta.url);
 const repoRoot = path.resolve(__dirname, '..');
-const registerStorybookColorsFormat = require('./formats/storybookColors');
-const registerFigmaAdapterFormat = require('./formats/figmaAdapter');
-const registerTokenStudioFormat = require('./formats/tokenStudio');
-const registerFullVariablesFormat = require('./formats/variablesFull');
-const registerScopedFigmaVariablesFormat = require('./formats/figmaVariablesScoped');
+
+// Import CommonJS formats using createRequire
+const registerStorybookColorsFormat = require('./formats/storybookColors.js');
+const registerFigmaAdapterFormat = require('./formats/figmaAdapter.js');
+const registerTokenStudioFormat = require('./formats/tokenStudio.js');
+const registerFullVariablesFormat = require('./formats/variablesFull.js');
+const registerScopedFigmaVariablesFormat = require('./formats/figmaVariablesScoped.js');
 
 registerStorybookColorsFormat(StyleDictionary);
 registerFigmaAdapterFormat(StyleDictionary);
@@ -13,12 +21,10 @@ registerTokenStudioFormat(StyleDictionary);
 registerFullVariablesFormat(StyleDictionary);
 registerScopedFigmaVariablesFormat(StyleDictionary);
 
-module.exports = {
+export default {
   usesDtcg: true,
 
-  source: [
-    path.join(repoRoot, 'tokens', '**', '*.json')
-  ],
+  source: [path.join(repoRoot, 'tokens', '**', '*.json')],
 
   log: {
     verbosity: 'verbose'
@@ -103,3 +109,4 @@ module.exports = {
     }
   }
 };
+

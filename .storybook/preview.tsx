@@ -9,7 +9,7 @@ const withPreviewLayout: Decorator = (Story, context) => {
   const focusPolicy = context.globals.focusPolicy ?? 'derived';
 
   return (
-    <div className="sb-preview-wrapper" data-ui-focus-policy={focusPolicy}>
+    <div className="sb-preview-wrapper" data-eui-focus-policy={focusPolicy}>
       <div className="sb-preview-region">
         <Story />
       </div>
@@ -22,13 +22,13 @@ export const decorators: Preview['decorators'] = [withPreviewLayout];
 export const globalTypes: Preview['globalTypes'] = {
   focusPolicy: {
     name: 'Focus policy',
-    description: 'Select derived vs system focus styling.',
+    description: 'Select focus styling: Derived (brand color) or System (high accessibility orange).',
     defaultValue: 'derived',
     toolbar: {
       icon: 'circlehollow',
       items: [
-        { value: 'derived', title: 'Derived' },
-        { value: 'system', title: 'System' }
+        { value: 'derived', title: 'Focus: Derived' },
+        { value: 'system', title: 'Focus: System' }
       ],
       dynamicTitle: true
     }
