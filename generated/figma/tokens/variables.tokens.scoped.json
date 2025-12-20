@@ -9,7 +9,7 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.button.border.width",
+          "path": "eui.button.border.width",
           "type": "FLOAT",
           "value": 1,
           "scopes": [
@@ -17,7 +17,7 @@
           ]
         },
         {
-          "path": "ui.button.focus.ring.offset.base",
+          "path": "eui.button.focus.ring.offset.base",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -25,7 +25,7 @@
           ]
         },
         {
-          "path": "ui.button.focus.ring.width.accessible",
+          "path": "eui.button.focus.ring.width.accessible",
           "type": "FLOAT",
           "value": 3,
           "scopes": [
@@ -33,7 +33,7 @@
           ]
         },
         {
-          "path": "ui.button.focus.ring.width.base",
+          "path": "eui.button.focus.ring.width.base",
           "type": "FLOAT",
           "value": 2,
           "scopes": [
@@ -41,7 +41,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft",
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -49,7 +49,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.horizontal.corner.bottomRight",
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -57,7 +57,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.horizontal.corner.topLeft",
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topLeft",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -65,7 +65,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.horizontal.corner.topRight",
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -73,7 +73,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.vertical.corner.bottomLeft",
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.bottomLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -81,7 +81,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.vertical.corner.bottomRight",
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.bottomRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -89,7 +89,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.vertical.corner.topLeft",
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topLeft",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -97,7 +97,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.first.shape.orientation.vertical.corner.topRight",
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topRight",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -105,7 +105,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft",
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -113,7 +113,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight",
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -121,7 +121,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.horizontal.corner.topLeft",
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -129,7 +129,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.horizontal.corner.topRight",
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topRight",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -137,7 +137,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft",
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -145,7 +145,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.vertical.corner.bottomRight",
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomRight",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -153,7 +153,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.vertical.corner.topLeft",
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.topLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -161,7 +161,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.last.shape.orientation.vertical.corner.topRight",
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.topRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -169,7 +169,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.horizontal.corner.bottomLeft",
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -177,7 +177,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.horizontal.corner.bottomRight",
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -185,7 +185,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.horizontal.corner.topLeft",
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.topLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -193,7 +193,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.horizontal.corner.topRight",
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.topRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -201,7 +201,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.vertical.corner.bottomLeft",
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -209,7 +209,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.vertical.corner.bottomRight",
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -217,7 +217,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.vertical.corner.topLeft",
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.topLeft",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -225,7 +225,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.middle.shape.orientation.vertical.corner.topRight",
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.topRight",
           "type": "FLOAT",
           "value": 0,
           "scopes": [
@@ -233,7 +233,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.single.shape.corner.bottomLeft",
+          "path": "eui.button.group.position.single.shape.corner.bottomLeft",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -241,7 +241,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.single.shape.corner.bottomRight",
+          "path": "eui.button.group.position.single.shape.corner.bottomRight",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -249,7 +249,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.single.shape.corner.topLeft",
+          "path": "eui.button.group.position.single.shape.corner.topLeft",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -257,7 +257,7 @@
           ]
         },
         {
-          "path": "ui.button.group.position.single.shape.corner.topRight",
+          "path": "eui.button.group.position.single.shape.corner.topRight",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -265,7 +265,7 @@
           ]
         },
         {
-          "path": "ui.button.layout.stack.separator.inset",
+          "path": "eui.button.layout.stack.separator.inset",
           "type": "FLOAT",
           "value": 6,
           "scopes": [
@@ -273,7 +273,7 @@
           ]
         },
         {
-          "path": "ui.button.layout.stack.separator.thickness",
+          "path": "eui.button.layout.stack.separator.thickness",
           "type": "FLOAT",
           "value": 1,
           "scopes": [
@@ -281,7 +281,7 @@
           ]
         },
         {
-          "path": "ui.button.separator.inset",
+          "path": "eui.button.separator.inset",
           "type": "FLOAT",
           "value": 6,
           "scopes": [
@@ -289,7 +289,7 @@
           ]
         },
         {
-          "path": "ui.button.separator.thickness",
+          "path": "eui.button.separator.thickness",
           "type": "FLOAT",
           "value": 1,
           "scopes": [
@@ -297,7 +297,7 @@
           ]
         },
         {
-          "path": "ui.button.shape.circle.radius",
+          "path": "eui.button.shape.circle.radius",
           "type": "FLOAT",
           "value": 50,
           "scopes": [
@@ -305,7 +305,7 @@
           ]
         },
         {
-          "path": "ui.button.shape.default.radius",
+          "path": "eui.button.shape.default.radius",
           "type": "FLOAT",
           "value": 8,
           "scopes": [
@@ -313,7 +313,7 @@
           ]
         },
         {
-          "path": "ui.button.shape.round.radius",
+          "path": "eui.button.shape.round.radius",
           "type": "FLOAT",
           "value": 999,
           "scopes": [
@@ -321,7 +321,7 @@
           ]
         },
         {
-          "path": "ui.button.size.lg.gap",
+          "path": "eui.button.size.lg.gap",
           "type": "FLOAT",
           "value": 0.45,
           "scopes": [
@@ -329,7 +329,7 @@
           ]
         },
         {
-          "path": "ui.button.size.lg.height",
+          "path": "eui.button.size.lg.height",
           "type": "FLOAT",
           "value": 48,
           "scopes": [
@@ -337,7 +337,7 @@
           ]
         },
         {
-          "path": "ui.button.size.lg.padding.inline",
+          "path": "eui.button.size.lg.padding.inline",
           "type": "FLOAT",
           "value": 24,
           "scopes": [
@@ -345,7 +345,7 @@
           ]
         },
         {
-          "path": "ui.button.size.md.gap",
+          "path": "eui.button.size.md.gap",
           "type": "FLOAT",
           "value": 0.4,
           "scopes": [
@@ -353,7 +353,7 @@
           ]
         },
         {
-          "path": "ui.button.size.md.height",
+          "path": "eui.button.size.md.height",
           "type": "FLOAT",
           "value": 40,
           "scopes": [
@@ -361,7 +361,7 @@
           ]
         },
         {
-          "path": "ui.button.size.md.padding.inline",
+          "path": "eui.button.size.md.padding.inline",
           "type": "FLOAT",
           "value": 20,
           "scopes": [
@@ -369,7 +369,7 @@
           ]
         },
         {
-          "path": "ui.button.size.sm.gap",
+          "path": "eui.button.size.sm.gap",
           "type": "FLOAT",
           "value": 0.35,
           "scopes": [
@@ -377,7 +377,7 @@
           ]
         },
         {
-          "path": "ui.button.size.sm.height",
+          "path": "eui.button.size.sm.height",
           "type": "FLOAT",
           "value": 36,
           "scopes": [
@@ -385,7 +385,7 @@
           ]
         },
         {
-          "path": "ui.button.size.sm.padding.inline",
+          "path": "eui.button.size.sm.padding.inline",
           "type": "FLOAT",
           "value": 16,
           "scopes": [
@@ -399,52 +399,52 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.button.primary.background.active",
+          "path": "eui.button.primary.background.active",
           "type": "COLOR",
           "value": "#066a8d"
         },
         {
-          "path": "ui.button.primary.background.base",
+          "path": "eui.button.primary.background.base",
           "type": "COLOR",
           "value": "#066a8d"
         },
         {
-          "path": "ui.button.primary.background.disabled",
+          "path": "eui.button.primary.background.disabled",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.button.primary.background.hover",
+          "path": "eui.button.primary.background.hover",
           "type": "COLOR",
           "value": "#066a8d"
         },
         {
-          "path": "ui.button.primary.background.selected",
+          "path": "eui.button.primary.background.selected",
           "type": "COLOR",
           "value": "#066a8d"
         },
         {
-          "path": "ui.button.primary.label.active",
+          "path": "eui.button.primary.label.active",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.button.primary.label.base",
+          "path": "eui.button.primary.label.base",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.button.primary.label.disabled",
+          "path": "eui.button.primary.label.disabled",
           "type": "COLOR",
           "value": "#757575"
         },
         {
-          "path": "ui.button.primary.label.hover",
+          "path": "eui.button.primary.label.hover",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.button.primary.label.selected",
+          "path": "eui.button.primary.label.selected",
           "type": "COLOR",
           "value": "#ffffff"
         }
@@ -455,77 +455,77 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.button.secondary.background.active",
+          "path": "eui.button.secondary.background.active",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.button.secondary.background.base",
+          "path": "eui.button.secondary.background.base",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.button.secondary.background.disabled",
+          "path": "eui.button.secondary.background.disabled",
           "type": "COLOR",
           "value": "#f1f2f7"
         },
         {
-          "path": "ui.button.secondary.background.hover",
+          "path": "eui.button.secondary.background.hover",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.button.secondary.background.selected",
+          "path": "eui.button.secondary.background.selected",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.button.secondary.border.active",
+          "path": "eui.button.secondary.border.active",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.button.secondary.border.base",
+          "path": "eui.button.secondary.border.base",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.button.secondary.border.disabled",
+          "path": "eui.button.secondary.border.disabled",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.button.secondary.border.hover",
+          "path": "eui.button.secondary.border.hover",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.button.secondary.border.selected",
+          "path": "eui.button.secondary.border.selected",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.button.secondary.label.active",
+          "path": "eui.button.secondary.label.active",
           "type": "COLOR",
           "value": "#1b1b1b"
         },
         {
-          "path": "ui.button.secondary.label.base",
+          "path": "eui.button.secondary.label.base",
           "type": "COLOR",
           "value": "#1b1b1b"
         },
         {
-          "path": "ui.button.secondary.label.disabled",
+          "path": "eui.button.secondary.label.disabled",
           "type": "COLOR",
           "value": "#757575"
         },
         {
-          "path": "ui.button.secondary.label.hover",
+          "path": "eui.button.secondary.label.hover",
           "type": "COLOR",
           "value": "#1b1b1b"
         },
         {
-          "path": "ui.button.secondary.label.selected",
+          "path": "eui.button.secondary.label.selected",
           "type": "COLOR",
           "value": "#1b1b1b"
         }
@@ -536,12 +536,12 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.button.focus.ring.color.derived",
+          "path": "eui.button.focus.ring.color.derived",
           "type": "COLOR",
           "value": "#066a8d"
         },
         {
-          "path": "ui.color.focus.ring",
+          "path": "eui.color.focus.ring",
           "type": "COLOR",
           "value": "#ff4d00"
         }
@@ -552,52 +552,52 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.accent.100",
+          "path": "eui.color.accent.100",
           "type": "COLOR",
           "value": "#dceeff"
         },
         {
-          "path": "ui.color.accent.200",
+          "path": "eui.color.accent.200",
           "type": "COLOR",
           "value": "#b7dbff"
         },
         {
-          "path": "ui.color.accent.300",
+          "path": "eui.color.accent.300",
           "type": "COLOR",
           "value": "#8ac4ff"
         },
         {
-          "path": "ui.color.accent.400",
+          "path": "eui.color.accent.400",
           "type": "COLOR",
           "value": "#55a7ff"
         },
         {
-          "path": "ui.color.accent.50",
+          "path": "eui.color.accent.50",
           "type": "COLOR",
           "value": "#f1f8ff"
         },
         {
-          "path": "ui.color.accent.500",
+          "path": "eui.color.accent.500",
           "type": "COLOR",
           "value": "#1e8bff"
         },
         {
-          "path": "ui.color.accent.600",
+          "path": "eui.color.accent.600",
           "type": "COLOR",
           "value": "#0b75e6"
         },
         {
-          "path": "ui.color.accent.700",
+          "path": "eui.color.accent.700",
           "type": "COLOR",
           "value": "#0a5ec0"
         },
         {
-          "path": "ui.color.accent.800",
+          "path": "eui.color.accent.800",
           "type": "COLOR",
           "value": "#0a4c99"
         },
         {
-          "path": "ui.color.accent.900",
+          "path": "eui.color.accent.900",
           "type": "COLOR",
           "value": "#083a73"
         }
@@ -608,57 +608,57 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.brand.100",
+          "path": "eui.color.brand.100",
           "type": "COLOR",
           "value": "#c9edf7"
         },
         {
-          "path": "ui.color.brand.200",
+          "path": "eui.color.brand.200",
           "type": "COLOR",
           "value": "#9ad8ee"
         },
         {
-          "path": "ui.color.brand.300",
+          "path": "eui.color.brand.300",
           "type": "COLOR",
           "value": "#63c0e2"
         },
         {
-          "path": "ui.color.brand.400",
+          "path": "eui.color.brand.400",
           "type": "COLOR",
           "value": "#2ea7d1"
         },
         {
-          "path": "ui.color.brand.50",
+          "path": "eui.color.brand.50",
           "type": "COLOR",
           "value": "#e6f6fb"
         },
         {
-          "path": "ui.color.brand.500",
+          "path": "eui.color.brand.500",
           "type": "COLOR",
           "value": "#007fa2"
         },
         {
-          "path": "ui.color.brand.600",
+          "path": "eui.color.brand.600",
           "type": "COLOR",
           "value": "#007ca0"
         },
         {
-          "path": "ui.color.brand.700",
+          "path": "eui.color.brand.700",
           "type": "COLOR",
           "value": "#066a8d"
         },
         {
-          "path": "ui.color.brand.800",
+          "path": "eui.color.brand.800",
           "type": "COLOR",
           "value": "#055973"
         },
         {
-          "path": "ui.color.brand.900",
+          "path": "eui.color.brand.900",
           "type": "COLOR",
           "value": "#043c55"
         },
         {
-          "path": "ui.color.brand.primary",
+          "path": "eui.color.brand.primary",
           "type": "COLOR",
           "value": "#066a8d"
         }
@@ -669,57 +669,57 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.neutral.100",
+          "path": "eui.color.neutral.100",
           "type": "COLOR",
           "value": "#f1f2f7"
         },
         {
-          "path": "ui.color.neutral.200",
+          "path": "eui.color.neutral.200",
           "type": "COLOR",
           "value": "#e5e7eb"
         },
         {
-          "path": "ui.color.neutral.300",
+          "path": "eui.color.neutral.300",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.color.neutral.400",
+          "path": "eui.color.neutral.400",
           "type": "COLOR",
           "value": "#a3a3a3"
         },
         {
-          "path": "ui.color.neutral.50",
+          "path": "eui.color.neutral.50",
           "type": "COLOR",
           "value": "#f8fafc"
         },
         {
-          "path": "ui.color.neutral.500",
+          "path": "eui.color.neutral.500",
           "type": "COLOR",
           "value": "#757575"
         },
         {
-          "path": "ui.color.neutral.600",
+          "path": "eui.color.neutral.600",
           "type": "COLOR",
           "value": "#525252"
         },
         {
-          "path": "ui.color.neutral.700",
+          "path": "eui.color.neutral.700",
           "type": "COLOR",
           "value": "#404040"
         },
         {
-          "path": "ui.color.neutral.800",
+          "path": "eui.color.neutral.800",
           "type": "COLOR",
           "value": "#262626"
         },
         {
-          "path": "ui.color.neutral.900",
+          "path": "eui.color.neutral.900",
           "type": "COLOR",
           "value": "#1b1b1b"
         },
         {
-          "path": "ui.color.neutral.white",
+          "path": "eui.color.neutral.white",
           "type": "COLOR",
           "value": "#ffffff"
         }
@@ -730,7 +730,7 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.signal.keyboardFocus",
+          "path": "eui.color.signal.keyboardFocus",
           "type": "COLOR",
           "value": "#ff4d00"
         }
@@ -741,22 +741,22 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.status.error",
+          "path": "eui.color.status.error",
           "type": "COLOR",
           "value": "#ef4444"
         },
         {
-          "path": "ui.color.status.info",
+          "path": "eui.color.status.info",
           "type": "COLOR",
           "value": "#0ea5e9"
         },
         {
-          "path": "ui.color.status.success",
+          "path": "eui.color.status.success",
           "type": "COLOR",
           "value": "#22c55e"
         },
         {
-          "path": "ui.color.status.warning",
+          "path": "eui.color.status.warning",
           "type": "COLOR",
           "value": "#f59e0b"
         }
@@ -767,22 +767,22 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.background.inverse",
+          "path": "eui.color.background.inverse",
           "type": "COLOR",
           "value": "#1b1b1b"
         },
         {
-          "path": "ui.color.background.muted",
+          "path": "eui.color.background.muted",
           "type": "COLOR",
           "value": "#f8fafc"
         },
         {
-          "path": "ui.color.background.subtle",
+          "path": "eui.color.background.subtle",
           "type": "COLOR",
           "value": "#f1f2f7"
         },
         {
-          "path": "ui.color.background.surface",
+          "path": "eui.color.background.surface",
           "type": "COLOR",
           "value": "#ffffff"
         }
@@ -793,22 +793,22 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.border.default",
+          "path": "eui.color.border.default",
           "type": "COLOR",
           "value": "#cccccc"
         },
         {
-          "path": "ui.color.border.inverse",
+          "path": "eui.color.border.inverse",
           "type": "COLOR",
           "value": "#262626"
         },
         {
-          "path": "ui.color.border.strong",
+          "path": "eui.color.border.strong",
           "type": "COLOR",
           "value": "#a3a3a3"
         },
         {
-          "path": "ui.color.border.subtle",
+          "path": "eui.color.border.subtle",
           "type": "COLOR",
           "value": "#e5e7eb"
         }
@@ -819,7 +819,7 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.system.focus",
+          "path": "eui.color.system.focus",
           "type": "COLOR",
           "value": "#ff4d00"
         }
@@ -830,27 +830,27 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.color.text.disabled",
+          "path": "eui.color.text.disabled",
           "type": "COLOR",
           "value": "#757575"
         },
         {
-          "path": "ui.color.text.inverse",
+          "path": "eui.color.text.inverse",
           "type": "COLOR",
           "value": "#ffffff"
         },
         {
-          "path": "ui.color.text.muted",
+          "path": "eui.color.text.muted",
           "type": "COLOR",
           "value": "#404040"
         },
         {
-          "path": "ui.color.text.primary",
+          "path": "eui.color.text.primary",
           "type": "COLOR",
           "value": "#1b1b1b"
         },
         {
-          "path": "ui.color.text.subtle",
+          "path": "eui.color.text.subtle",
           "type": "COLOR",
           "value": "#525252"
         }
@@ -861,7 +861,7 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.radius.pill",
+          "path": "eui.radius.pill",
           "type": "FLOAT",
           "value": 999
         }
@@ -872,7 +872,7 @@
       "mode": "default",
       "variables": [
         {
-          "path": "ui.focus.ring.width.accessible",
+          "path": "eui.focus.ring.width.accessible",
           "type": "FLOAT",
           "value": 3,
           "scopes": [
@@ -880,7 +880,7 @@
           ]
         },
         {
-          "path": "ui.focus.ring.width.base",
+          "path": "eui.focus.ring.width.base",
           "type": "FLOAT",
           "value": 2,
           "scopes": [

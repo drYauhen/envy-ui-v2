@@ -1,598 +1,598 @@
 {
-  "ui.button.border.width": {
+  "eui.button.border.width": {
     "$value": "1px",
     "$type": "dimension"
   },
-  "ui.button.border.style": {
+  "eui.button.border.style": {
     "$value": "solid",
     "$type": "string"
   },
-  "ui.button.states.hover": {
+  "eui.button.states.hover": {
     "$value": "emphasize",
     "$type": "stateEffect"
   },
-  "ui.button.states.active": {
+  "eui.button.states.active": {
     "$value": "press",
     "$type": "stateEffect"
   },
-  "ui.button.states.disabled": {
+  "eui.button.states.disabled": {
     "$value": "mute",
     "$type": "stateEffect"
   },
-  "ui.button.states.selected": {
+  "eui.button.states.selected": {
     "$value": "select",
     "$type": "stateEffect"
   },
-  "ui.button.primary.background.base": {
+  "eui.button.primary.background.base": {
     "$value": "#066a8d",
     "$type": "color"
   },
-  "ui.button.primary.background.hover": {
+  "eui.button.primary.background.hover": {
     "$value": "#066a8d",
     "$type": "color"
   },
-  "ui.button.primary.background.active": {
+  "eui.button.primary.background.active": {
     "$value": "#066a8d",
     "$type": "color"
   },
-  "ui.button.primary.background.disabled": {
+  "eui.button.primary.background.disabled": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.button.primary.background.selected": {
+  "eui.button.primary.background.selected": {
     "$value": "#066a8d",
     "$type": "color"
   },
-  "ui.button.primary.label.base": {
+  "eui.button.primary.label.base": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.primary.label.hover": {
+  "eui.button.primary.label.hover": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.primary.label.active": {
+  "eui.button.primary.label.active": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.primary.label.disabled": {
+  "eui.button.primary.label.disabled": {
     "$value": "#757575",
     "$type": "color"
   },
-  "ui.button.primary.label.selected": {
+  "eui.button.primary.label.selected": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.secondary.background.base": {
+  "eui.button.secondary.background.base": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.secondary.background.hover": {
+  "eui.button.secondary.background.hover": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.secondary.background.active": {
+  "eui.button.secondary.background.active": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.secondary.background.disabled": {
+  "eui.button.secondary.background.disabled": {
     "$value": "#f1f2f7",
     "$type": "color"
   },
-  "ui.button.secondary.background.selected": {
+  "eui.button.secondary.background.selected": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.button.secondary.label.base": {
+  "eui.button.secondary.label.base": {
     "$value": "#1b1b1b",
     "$type": "color"
   },
-  "ui.button.secondary.label.hover": {
+  "eui.button.secondary.label.hover": {
     "$value": "#1b1b1b",
     "$type": "color"
   },
-  "ui.button.secondary.label.active": {
+  "eui.button.secondary.label.active": {
     "$value": "#1b1b1b",
     "$type": "color"
   },
-  "ui.button.secondary.label.disabled": {
+  "eui.button.secondary.label.disabled": {
     "$value": "#757575",
     "$type": "color"
   },
-  "ui.button.secondary.label.selected": {
+  "eui.button.secondary.label.selected": {
     "$value": "#1b1b1b",
     "$type": "color"
   },
-  "ui.button.secondary.border.base": {
+  "eui.button.secondary.border.base": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.button.secondary.border.hover": {
+  "eui.button.secondary.border.hover": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.button.secondary.border.active": {
+  "eui.button.secondary.border.active": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.button.secondary.border.disabled": {
+  "eui.button.secondary.border.disabled": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.button.secondary.border.selected": {
+  "eui.button.secondary.border.selected": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.button.focus.ring.color.derived": {
+  "eui.button.focus.ring.color.derived": {
     "$value": "#066a8d",
     "$type": "color"
   },
-  "ui.button.focus.ring.width.base": {
+  "eui.button.focus.ring.width.base": {
     "$value": "2px",
     "$type": "dimension"
   },
-  "ui.button.focus.ring.width.accessible": {
+  "eui.button.focus.ring.width.accessible": {
     "$value": "3px",
     "$type": "dimension"
   },
-  "ui.button.focus.ring.offset.base": {
+  "eui.button.focus.ring.offset.base": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.orientation.horizontal": {
+  "eui.button.group.orientation.horizontal": {
     "$value": "horizontal",
     "$type": "string"
   },
-  "ui.button.group.orientation.vertical": {
+  "eui.button.group.orientation.vertical": {
     "$value": "vertical",
     "$type": "string"
   },
-  "ui.button.group.position.single.shape.corner.topLeft": {
+  "eui.button.group.position.single.shape.corner.topLeft": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.single.shape.corner.topRight": {
+  "eui.button.group.position.single.shape.corner.topRight": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.single.shape.corner.bottomRight": {
+  "eui.button.group.position.single.shape.corner.bottomRight": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.single.shape.corner.bottomLeft": {
+  "eui.button.group.position.single.shape.corner.bottomLeft": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.horizontal.corner.topLeft": {
+  "eui.button.group.position.first.shape.orientation.horizontal.corner.topLeft": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.horizontal.corner.topRight": {
+  "eui.button.group.position.first.shape.orientation.horizontal.corner.topRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.horizontal.corner.bottomRight": {
+  "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft": {
+  "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.vertical.corner.topLeft": {
+  "eui.button.group.position.first.shape.orientation.vertical.corner.topLeft": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.vertical.corner.topRight": {
+  "eui.button.group.position.first.shape.orientation.vertical.corner.topRight": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.vertical.corner.bottomRight": {
+  "eui.button.group.position.first.shape.orientation.vertical.corner.bottomRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.first.shape.orientation.vertical.corner.bottomLeft": {
+  "eui.button.group.position.first.shape.orientation.vertical.corner.bottomLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.horizontal.corner.topLeft": {
+  "eui.button.group.position.middle.shape.orientation.horizontal.corner.topLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.horizontal.corner.topRight": {
+  "eui.button.group.position.middle.shape.orientation.horizontal.corner.topRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.horizontal.corner.bottomRight": {
+  "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.horizontal.corner.bottomLeft": {
+  "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.vertical.corner.topLeft": {
+  "eui.button.group.position.middle.shape.orientation.vertical.corner.topLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.vertical.corner.topRight": {
+  "eui.button.group.position.middle.shape.orientation.vertical.corner.topRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.vertical.corner.bottomRight": {
+  "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.middle.shape.orientation.vertical.corner.bottomLeft": {
+  "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.horizontal.corner.topLeft": {
+  "eui.button.group.position.last.shape.orientation.horizontal.corner.topLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.horizontal.corner.topRight": {
+  "eui.button.group.position.last.shape.orientation.horizontal.corner.topRight": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight": {
+  "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft": {
+  "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.vertical.corner.topLeft": {
+  "eui.button.group.position.last.shape.orientation.vertical.corner.topLeft": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.vertical.corner.topRight": {
+  "eui.button.group.position.last.shape.orientation.vertical.corner.topRight": {
     "$value": "0px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.vertical.corner.bottomRight": {
+  "eui.button.group.position.last.shape.orientation.vertical.corner.bottomRight": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft": {
+  "eui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.layout.stack.internalBorder.horizontal": {
+  "eui.button.layout.stack.internalBorder.horizontal": {
     "$value": "none",
     "$type": "string"
   },
-  "ui.button.layout.stack.internalBorder.vertical": {
+  "eui.button.layout.stack.internalBorder.vertical": {
     "$value": "none",
     "$type": "string"
   },
-  "ui.button.layout.stack.perimeterBorder": {
+  "eui.button.layout.stack.perimeterBorder": {
     "$value": "preserve",
     "$type": "string"
   },
-  "ui.button.layout.stack.separator.inset": {
+  "eui.button.layout.stack.separator.inset": {
     "$value": "6px",
     "$type": "dimension"
   },
-  "ui.button.layout.stack.separator.thickness": {
+  "eui.button.layout.stack.separator.thickness": {
     "$value": "1px",
     "$type": "dimension"
   },
-  "ui.button.layout.default.flex.grow": {
+  "eui.button.layout.default.flex.grow": {
     "$value": "0",
     "$type": "string"
   },
-  "ui.button.layout.default.flex.shrink": {
+  "eui.button.layout.default.flex.shrink": {
     "$value": "0",
     "$type": "string"
   },
-  "ui.button.layout.default.flex.basis": {
+  "eui.button.layout.default.flex.basis": {
     "$value": "auto",
     "$type": "string"
   },
-  "ui.button.layout.default.whiteSpace": {
+  "eui.button.layout.default.whiteSpace": {
     "$value": "nowrap",
     "$type": "string"
   },
-  "ui.button.separator.inset": {
+  "eui.button.separator.inset": {
     "$value": "6px",
     "$type": "dimension"
   },
-  "ui.button.separator.thickness": {
+  "eui.button.separator.thickness": {
     "$value": "1px",
     "$type": "dimension"
   },
-  "ui.button.shape.default.radius": {
+  "eui.button.shape.default.radius": {
     "$value": "8px",
     "$type": "dimension"
   },
-  "ui.button.shape.round.radius": {
+  "eui.button.shape.round.radius": {
     "$value": "999px",
     "$type": "dimension"
   },
-  "ui.button.shape.circle.radius": {
+  "eui.button.shape.circle.radius": {
     "$value": "50%",
     "$type": "dimension"
   },
-  "ui.button.size.sm.height": {
+  "eui.button.size.sm.height": {
     "$value": "36px",
     "$type": "dimension"
   },
-  "ui.button.size.sm.padding.inline": {
+  "eui.button.size.sm.padding.inline": {
     "$value": "16px",
     "$type": "dimension"
   },
-  "ui.button.size.sm.font.size": {
+  "eui.button.size.sm.font.size": {
     "$value": "0.9rem",
     "$type": "fontSize"
   },
-  "ui.button.size.sm.font.weight": {
+  "eui.button.size.sm.font.weight": {
     "$value": "600",
     "$type": "fontWeight"
   },
-  "ui.button.size.sm.gap": {
+  "eui.button.size.sm.gap": {
     "$value": "0.35rem",
     "$type": "dimension"
   },
-  "ui.button.size.md.height": {
+  "eui.button.size.md.height": {
     "$value": "40px",
     "$type": "dimension"
   },
-  "ui.button.size.md.padding.inline": {
+  "eui.button.size.md.padding.inline": {
     "$value": "20px",
     "$type": "dimension"
   },
-  "ui.button.size.md.font.size": {
+  "eui.button.size.md.font.size": {
     "$value": "0.95rem",
     "$type": "fontSize"
   },
-  "ui.button.size.md.font.weight": {
+  "eui.button.size.md.font.weight": {
     "$value": "600",
     "$type": "fontWeight"
   },
-  "ui.button.size.md.gap": {
+  "eui.button.size.md.gap": {
     "$value": "0.4rem",
     "$type": "dimension"
   },
-  "ui.button.size.lg.height": {
+  "eui.button.size.lg.height": {
     "$value": "48px",
     "$type": "dimension"
   },
-  "ui.button.size.lg.padding.inline": {
+  "eui.button.size.lg.padding.inline": {
     "$value": "24px",
     "$type": "dimension"
   },
-  "ui.button.size.lg.font.size": {
+  "eui.button.size.lg.font.size": {
     "$value": "1rem",
     "$type": "fontSize"
   },
-  "ui.button.size.lg.font.weight": {
+  "eui.button.size.lg.font.weight": {
     "$value": "600",
     "$type": "fontWeight"
   },
-  "ui.button.size.lg.gap": {
+  "eui.button.size.lg.gap": {
     "$value": "0.45rem",
     "$type": "dimension"
   },
-  "ui.color.accent.50": {
+  "eui.color.accent.50": {
     "$value": "#f1f8ff",
     "$type": "color"
   },
-  "ui.color.accent.100": {
+  "eui.color.accent.100": {
     "$value": "#dceeff",
     "$type": "color"
   },
-  "ui.color.accent.200": {
+  "eui.color.accent.200": {
     "$value": "#b7dbff",
     "$type": "color"
   },
-  "ui.color.accent.300": {
+  "eui.color.accent.300": {
     "$value": "#8ac4ff",
     "$type": "color"
   },
-  "ui.color.accent.400": {
+  "eui.color.accent.400": {
     "$value": "#55a7ff",
     "$type": "color"
   },
-  "ui.color.accent.500": {
+  "eui.color.accent.500": {
     "$value": "#1e8bff",
     "$type": "color"
   },
-  "ui.color.accent.600": {
+  "eui.color.accent.600": {
     "$value": "#0b75e6",
     "$type": "color"
   },
-  "ui.color.accent.700": {
+  "eui.color.accent.700": {
     "$value": "#0a5ec0",
     "$type": "color"
   },
-  "ui.color.accent.800": {
+  "eui.color.accent.800": {
     "$value": "#0a4c99",
     "$type": "color"
   },
-  "ui.color.accent.900": {
+  "eui.color.accent.900": {
     "$value": "#083a73",
     "$type": "color"
   },
-  "ui.color.brand.50": {
+  "eui.color.brand.50": {
     "$value": "#e6f6fb",
     "$type": "color"
   },
-  "ui.color.brand.100": {
+  "eui.color.brand.100": {
     "$value": "#c9edf7",
     "$type": "color"
   },
-  "ui.color.brand.200": {
+  "eui.color.brand.200": {
     "$value": "#9ad8ee",
     "$type": "color"
   },
-  "ui.color.brand.300": {
+  "eui.color.brand.300": {
     "$value": "#63c0e2",
     "$type": "color"
   },
-  "ui.color.brand.400": {
+  "eui.color.brand.400": {
     "$value": "#2ea7d1",
     "$type": "color"
   },
-  "ui.color.brand.500": {
+  "eui.color.brand.500": {
     "$value": "#007fa2",
     "$type": "color"
   },
-  "ui.color.brand.600": {
+  "eui.color.brand.600": {
     "$value": "#007ca0",
     "$type": "color"
   },
-  "ui.color.brand.700": {
+  "eui.color.brand.700": {
     "$value": "#066a8d",
     "$type": "color"
   },
-  "ui.color.brand.800": {
+  "eui.color.brand.800": {
     "$value": "#055973",
     "$type": "color"
   },
-  "ui.color.brand.900": {
+  "eui.color.brand.900": {
     "$value": "#043c55",
     "$type": "color"
   },
-  "ui.color.brand.primary": {
+  "eui.color.brand.primary": {
     "$value": "#066a8d",
     "$type": "color"
   },
-  "ui.color.neutral.50": {
+  "eui.color.neutral.50": {
     "$value": "#f8fafc",
     "$type": "color"
   },
-  "ui.color.neutral.100": {
+  "eui.color.neutral.100": {
     "$value": "#f1f2f7",
     "$type": "color"
   },
-  "ui.color.neutral.200": {
+  "eui.color.neutral.200": {
     "$value": "#e5e7eb",
     "$type": "color"
   },
-  "ui.color.neutral.300": {
+  "eui.color.neutral.300": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.color.neutral.400": {
+  "eui.color.neutral.400": {
     "$value": "#a3a3a3",
     "$type": "color"
   },
-  "ui.color.neutral.500": {
+  "eui.color.neutral.500": {
     "$value": "#757575",
     "$type": "color"
   },
-  "ui.color.neutral.600": {
+  "eui.color.neutral.600": {
     "$value": "#525252",
     "$type": "color"
   },
-  "ui.color.neutral.700": {
+  "eui.color.neutral.700": {
     "$value": "#404040",
     "$type": "color"
   },
-  "ui.color.neutral.800": {
+  "eui.color.neutral.800": {
     "$value": "#262626",
     "$type": "color"
   },
-  "ui.color.neutral.900": {
+  "eui.color.neutral.900": {
     "$value": "#1b1b1b",
     "$type": "color"
   },
-  "ui.color.neutral.white": {
+  "eui.color.neutral.white": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.color.signal.keyboardFocus": {
+  "eui.color.signal.keyboardFocus": {
     "$value": "#ff4d00",
     "$type": "color",
     "$description": "Keyboard-only focus ring (a11y)"
   },
-  "ui.color.status.success": {
+  "eui.color.status.success": {
     "$value": "#22c55e",
     "$type": "color"
   },
-  "ui.color.status.warning": {
+  "eui.color.status.warning": {
     "$value": "#f59e0b",
     "$type": "color"
   },
-  "ui.color.status.error": {
+  "eui.color.status.error": {
     "$value": "#ef4444",
     "$type": "color"
   },
-  "ui.color.status.info": {
+  "eui.color.status.info": {
     "$value": "#0ea5e9",
     "$type": "color"
   },
-  "ui.color.background.surface": {
+  "eui.color.background.surface": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.color.background.muted": {
+  "eui.color.background.muted": {
     "$value": "#f8fafc",
     "$type": "color"
   },
-  "ui.color.background.subtle": {
+  "eui.color.background.subtle": {
     "$value": "#f1f2f7",
     "$type": "color"
   },
-  "ui.color.background.inverse": {
+  "eui.color.background.inverse": {
     "$value": "#1b1b1b",
     "$type": "color"
   },
-  "ui.color.border.default": {
+  "eui.color.border.default": {
     "$value": "#cccccc",
     "$type": "color"
   },
-  "ui.color.border.subtle": {
+  "eui.color.border.subtle": {
     "$value": "#e5e7eb",
     "$type": "color"
   },
-  "ui.color.border.strong": {
+  "eui.color.border.strong": {
     "$value": "#a3a3a3",
     "$type": "color"
   },
-  "ui.color.border.inverse": {
+  "eui.color.border.inverse": {
     "$value": "#262626",
     "$type": "color"
   },
-  "ui.color.focus.ring": {
+  "eui.color.focus.ring": {
     "$value": "#ff4d00",
     "$type": "color"
   },
-  "ui.color.system.focus": {
+  "eui.color.system.focus": {
     "$value": "#ff4d00",
     "$type": "color"
   },
-  "ui.color.text.primary": {
+  "eui.color.text.primary": {
     "$value": "#1b1b1b",
     "$type": "color"
   },
-  "ui.color.text.muted": {
+  "eui.color.text.muted": {
     "$value": "#404040",
     "$type": "color"
   },
-  "ui.color.text.subtle": {
+  "eui.color.text.subtle": {
     "$value": "#525252",
     "$type": "color"
   },
-  "ui.color.text.inverse": {
+  "eui.color.text.inverse": {
     "$value": "#ffffff",
     "$type": "color"
   },
-  "ui.color.text.disabled": {
+  "eui.color.text.disabled": {
     "$value": "#757575",
     "$type": "color"
   },
-  "ui.radius.pill": {
+  "eui.radius.pill": {
     "$value": "999px",
     "$type": "dimension"
   },
-  "ui.focus.ring.width.base": {
+  "eui.focus.ring.width.base": {
     "$value": "2px",
     "$type": "dimension"
   },
-  "ui.focus.ring.width.accessible": {
+  "eui.focus.ring.width.accessible": {
     "$value": "3px",
     "$type": "dimension"
   }

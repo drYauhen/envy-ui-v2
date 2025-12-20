@@ -1,5 +1,5 @@
 {
-  "ui": {
+  "eui": {
     "button": {
       "states": {
         "hover": {
@@ -22,45 +22,45 @@
       "primary": {
         "background": {
           "base": {
-            "$value": "{ui.color.brand.primary}",
+            "$value": "{eui.color.brand.primary}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{ui.color.brand.primary}",
+            "$value": "{eui.color.brand.primary}",
             "$type": "color"
           },
           "active": {
-            "$value": "{ui.color.brand.primary}",
+            "$value": "{eui.color.brand.primary}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{ui.color.neutral.300}",
+            "$value": "{eui.color.neutral.300}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{ui.color.brand.primary}",
+            "$value": "{eui.color.brand.primary}",
             "$type": "color"
           }
         },
         "label": {
           "base": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           },
           "active": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{ui.color.neutral.500}",
+            "$value": "{eui.color.neutral.500}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           }
         }
@@ -68,67 +68,67 @@
       "secondary": {
         "background": {
           "base": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           },
           "active": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{ui.color.neutral.100}",
+            "$value": "{eui.color.neutral.100}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{ui.color.neutral.white}",
+            "$value": "{eui.color.neutral.white}",
             "$type": "color"
           }
         },
         "label": {
           "base": {
-            "$value": "{ui.color.neutral.900}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{ui.color.neutral.900}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           },
           "active": {
-            "$value": "{ui.color.neutral.900}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{ui.color.neutral.500}",
+            "$value": "{eui.color.neutral.500}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{ui.color.neutral.900}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           }
         },
         "border": {
           "base": {
-            "$value": "{ui.color.neutral.300}",
+            "$value": "{eui.color.neutral.300}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{ui.color.neutral.300}",
+            "$value": "{eui.color.neutral.300}",
             "$type": "color"
           },
           "active": {
-            "$value": "{ui.color.neutral.300}",
+            "$value": "{eui.color.neutral.300}",
             "$type": "color"
           },
           "disabled": {
-            "$value": "{ui.color.neutral.300}",
+            "$value": "{eui.color.neutral.300}",
             "$type": "color"
           },
           "selected": {
-            "$value": "{ui.color.neutral.300}",
+            "$value": "{eui.color.neutral.300}",
             "$type": "color"
           }
         }
@@ -137,17 +137,17 @@
         "ring": {
           "color": {
             "derived": {
-              "$value": "{ui.color.brand.primary}",
+              "$value": "{eui.color.brand.primary}",
               "$type": "color"
             }
           },
           "width": {
             "base": {
-              "$value": "{ui.focus.ring.width.base}",
+              "$value": "{eui.focus.ring.width.base}",
               "$type": "dimension"
             },
             "accessible": {
-              "$value": "{ui.focus.ring.width.accessible}",
+              "$value": "{eui.focus.ring.width.accessible}",
               "$type": "dimension"
             }
           },
@@ -175,19 +175,19 @@
             "shape": {
               "corner": {
                 "topLeft": {
-                  "$value": "{ui.button.shape.default.radius}",
+                  "$value": "{eui.button.shape.default.radius}",
                   "$type": "dimension"
                 },
                 "topRight": {
-                  "$value": "{ui.button.shape.default.radius}",
+                  "$value": "{eui.button.shape.default.radius}",
                   "$type": "dimension"
                 },
                 "bottomRight": {
-                  "$value": "{ui.button.shape.default.radius}",
+                  "$value": "{eui.button.shape.default.radius}",
                   "$type": "dimension"
                 },
                 "bottomLeft": {
-                  "$value": "{ui.button.shape.default.radius}",
+                  "$value": "{eui.button.shape.default.radius}",
                   "$type": "dimension"
                 }
               }
@@ -199,7 +199,7 @@
                 "horizontal": {
                   "corner": {
                     "topLeft": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     },
                     "topRight": {
@@ -211,7 +211,7 @@
                       "$type": "dimension"
                     },
                     "bottomLeft": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     }
                   }
@@ -219,11 +219,11 @@
                 "vertical": {
                   "corner": {
                     "topLeft": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     },
                     "topRight": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     },
                     "bottomRight": {
@@ -295,11 +295,11 @@
                       "$type": "dimension"
                     },
                     "topRight": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     },
                     "bottomRight": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     },
                     "bottomLeft": {
@@ -319,11 +319,11 @@
                       "$type": "dimension"
                     },
                     "bottomRight": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     },
                     "bottomLeft": {
-                      "$value": "{ui.button.shape.default.radius}",
+                      "$value": "{eui.button.shape.default.radius}",
                       "$type": "dimension"
                     }
                   }
@@ -351,11 +351,11 @@
           },
           "separator": {
             "inset": {
-              "$value": "{ui.button.separator.inset}",
+              "$value": "{eui.button.separator.inset}",
               "$type": "dimension"
             },
             "thickness": {
-              "$value": "{ui.button.separator.thickness}",
+              "$value": "{eui.button.separator.thickness}",
               "$type": "dimension"
             }
           }
@@ -390,7 +390,7 @@
         },
         "round": {
           "radius": {
-            "$value": "{ui.radius.pill}",
+            "$value": "{eui.radius.pill}",
             "$type": "dimension"
           }
         },

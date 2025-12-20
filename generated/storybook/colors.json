@@ -7,78 +7,78 @@
         {
           "id": "100",
           "label": "100",
-          "path": "ui.color.neutral.100",
-          "cssVar": "--env2-ui-color-neutral-100",
+          "path": "eui.color.neutral.100",
+          "cssVar": "--eui-color-neutral-100",
           "value": "#f1f2f7"
         },
         {
           "id": "200",
           "label": "200",
-          "path": "ui.color.neutral.200",
-          "cssVar": "--env2-ui-color-neutral-200",
+          "path": "eui.color.neutral.200",
+          "cssVar": "--eui-color-neutral-200",
           "value": "#e5e7eb"
         },
         {
           "id": "300",
           "label": "300",
-          "path": "ui.color.neutral.300",
-          "cssVar": "--env2-ui-color-neutral-300",
+          "path": "eui.color.neutral.300",
+          "cssVar": "--eui-color-neutral-300",
           "value": "#cccccc"
         },
         {
           "id": "400",
           "label": "400",
-          "path": "ui.color.neutral.400",
-          "cssVar": "--env2-ui-color-neutral-400",
+          "path": "eui.color.neutral.400",
+          "cssVar": "--eui-color-neutral-400",
           "value": "#a3a3a3"
         },
         {
           "id": "50",
           "label": "50",
-          "path": "ui.color.neutral.50",
-          "cssVar": "--env2-ui-color-neutral-50",
+          "path": "eui.color.neutral.50",
+          "cssVar": "--eui-color-neutral-50",
           "value": "#f8fafc"
         },
         {
           "id": "500",
           "label": "500",
-          "path": "ui.color.neutral.500",
-          "cssVar": "--env2-ui-color-neutral-500",
+          "path": "eui.color.neutral.500",
+          "cssVar": "--eui-color-neutral-500",
           "value": "#757575"
         },
         {
           "id": "600",
           "label": "600",
-          "path": "ui.color.neutral.600",
-          "cssVar": "--env2-ui-color-neutral-600",
+          "path": "eui.color.neutral.600",
+          "cssVar": "--eui-color-neutral-600",
           "value": "#525252"
         },
         {
           "id": "700",
           "label": "700",
-          "path": "ui.color.neutral.700",
-          "cssVar": "--env2-ui-color-neutral-700",
+          "path": "eui.color.neutral.700",
+          "cssVar": "--eui-color-neutral-700",
           "value": "#404040"
         },
         {
           "id": "800",
           "label": "800",
-          "path": "ui.color.neutral.800",
-          "cssVar": "--env2-ui-color-neutral-800",
+          "path": "eui.color.neutral.800",
+          "cssVar": "--eui-color-neutral-800",
           "value": "#262626"
         },
         {
           "id": "900",
           "label": "900",
-          "path": "ui.color.neutral.900",
-          "cssVar": "--env2-ui-color-neutral-900",
+          "path": "eui.color.neutral.900",
+          "cssVar": "--eui-color-neutral-900",
           "value": "#1b1b1b"
         },
         {
           "id": "white",
           "label": "White",
-          "path": "ui.color.neutral.white",
-          "cssVar": "--env2-ui-color-neutral-white",
+          "path": "eui.color.neutral.white",
+          "cssVar": "--eui-color-neutral-white",
           "value": "#ffffff"
         }
       ]
@@ -90,78 +90,78 @@
         {
           "id": "100",
           "label": "100",
-          "path": "ui.color.brand.100",
-          "cssVar": "--env2-ui-color-brand-100",
+          "path": "eui.color.brand.100",
+          "cssVar": "--eui-color-brand-100",
           "value": "#c9edf7"
         },
         {
           "id": "200",
           "label": "200",
-          "path": "ui.color.brand.200",
-          "cssVar": "--env2-ui-color-brand-200",
+          "path": "eui.color.brand.200",
+          "cssVar": "--eui-color-brand-200",
           "value": "#9ad8ee"
         },
         {
           "id": "300",
           "label": "300",
-          "path": "ui.color.brand.300",
-          "cssVar": "--env2-ui-color-brand-300",
+          "path": "eui.color.brand.300",
+          "cssVar": "--eui-color-brand-300",
           "value": "#63c0e2"
         },
         {
           "id": "400",
           "label": "400",
-          "path": "ui.color.brand.400",
-          "cssVar": "--env2-ui-color-brand-400",
+          "path": "eui.color.brand.400",
+          "cssVar": "--eui-color-brand-400",
           "value": "#2ea7d1"
         },
         {
           "id": "50",
           "label": "50",
-          "path": "ui.color.brand.50",
-          "cssVar": "--env2-ui-color-brand-50",
+          "path": "eui.color.brand.50",
+          "cssVar": "--eui-color-brand-50",
           "value": "#e6f6fb"
         },
         {
           "id": "500",
           "label": "500",
-          "path": "ui.color.brand.500",
-          "cssVar": "--env2-ui-color-brand-500",
+          "path": "eui.color.brand.500",
+          "cssVar": "--eui-color-brand-500",
           "value": "#007fa2"
         },
         {
           "id": "600",
           "label": "600",
-          "path": "ui.color.brand.600",
-          "cssVar": "--env2-ui-color-brand-600",
+          "path": "eui.color.brand.600",
+          "cssVar": "--eui-color-brand-600",
           "value": "#007ca0"
         },
         {
           "id": "700",
           "label": "700",
-          "path": "ui.color.brand.700",
-          "cssVar": "--env2-ui-color-brand-700",
+          "path": "eui.color.brand.700",
+          "cssVar": "--eui-color-brand-700",
           "value": "#066a8d"
         },
         {
           "id": "800",
           "label": "800",
-          "path": "ui.color.brand.800",
-          "cssVar": "--env2-ui-color-brand-800",
+          "path": "eui.color.brand.800",
+          "cssVar": "--eui-color-brand-800",
           "value": "#055973"
         },
         {
           "id": "900",
           "label": "900",
-          "path": "ui.color.brand.900",
-          "cssVar": "--env2-ui-color-brand-900",
+          "path": "eui.color.brand.900",
+          "cssVar": "--eui-color-brand-900",
           "value": "#043c55"
         },
         {
           "id": "primary",
           "label": "Primary",
-          "path": "ui.color.brand.primary",
-          "cssVar": "--env2-ui-color-brand-primary",
+          "path": "eui.color.brand.primary",
+          "cssVar": "--eui-color-brand-primary",
           "value": "#066a8d"
         }
       ]
@@ -173,71 +173,71 @@
         {
           "id": "100",
           "label": "100",
-          "path": "ui.color.accent.100",
-          "cssVar": "--env2-ui-color-accent-100",
+          "path": "eui.color.accent.100",
+          "cssVar": "--eui-color-accent-100",
           "value": "#dceeff"
         },
         {
           "id": "200",
           "label": "200",
-          "path": "ui.color.accent.200",
-          "cssVar": "--env2-ui-color-accent-200",
+          "path": "eui.color.accent.200",
+          "cssVar": "--eui-color-accent-200",
           "value": "#b7dbff"
         },
         {
           "id": "300",
           "label": "300",
-          "path": "ui.color.accent.300",
-          "cssVar": "--env2-ui-color-accent-300",
+          "path": "eui.color.accent.300",
+          "cssVar": "--eui-color-accent-300",
           "value": "#8ac4ff"
         },
         {
           "id": "400",
           "label": "400",
-          "path": "ui.color.accent.400",
-          "cssVar": "--env2-ui-color-accent-400",
+          "path": "eui.color.accent.400",
+          "cssVar": "--eui-color-accent-400",
           "value": "#55a7ff"
         },
         {
           "id": "50",
           "label": "50",
-          "path": "ui.color.accent.50",
-          "cssVar": "--env2-ui-color-accent-50",
+          "path": "eui.color.accent.50",
+          "cssVar": "--eui-color-accent-50",
           "value": "#f1f8ff"
         },
         {
           "id": "500",
           "label": "500",
-          "path": "ui.color.accent.500",
-          "cssVar": "--env2-ui-color-accent-500",
+          "path": "eui.color.accent.500",
+          "cssVar": "--eui-color-accent-500",
           "value": "#1e8bff"
         },
         {
           "id": "600",
           "label": "600",
-          "path": "ui.color.accent.600",
-          "cssVar": "--env2-ui-color-accent-600",
+          "path": "eui.color.accent.600",
+          "cssVar": "--eui-color-accent-600",
           "value": "#0b75e6"
         },
         {
           "id": "700",
           "label": "700",
-          "path": "ui.color.accent.700",
-          "cssVar": "--env2-ui-color-accent-700",
+          "path": "eui.color.accent.700",
+          "cssVar": "--eui-color-accent-700",
           "value": "#0a5ec0"
         },
         {
           "id": "800",
           "label": "800",
-          "path": "ui.color.accent.800",
-          "cssVar": "--env2-ui-color-accent-800",
+          "path": "eui.color.accent.800",
+          "cssVar": "--eui-color-accent-800",
           "value": "#0a4c99"
         },
         {
           "id": "900",
           "label": "900",
-          "path": "ui.color.accent.900",
-          "cssVar": "--env2-ui-color-accent-900",
+          "path": "eui.color.accent.900",
+          "cssVar": "--eui-color-accent-900",
           "value": "#083a73"
         }
       ]
@@ -249,8 +249,8 @@
         {
           "id": "keyboardfocus",
           "label": "KeyboardFocus",
-          "path": "ui.color.signal.keyboardFocus",
-          "cssVar": "--env2-ui-color-signal-keyboard-focus",
+          "path": "eui.color.signal.keyboardFocus",
+          "cssVar": "--eui-color-signal-keyboard-focus",
           "value": "#ff4d00"
         }
       ]
@@ -262,29 +262,29 @@
         {
           "id": "error",
           "label": "Error",
-          "path": "ui.color.status.error",
-          "cssVar": "--env2-ui-color-status-error",
+          "path": "eui.color.status.error",
+          "cssVar": "--eui-color-status-error",
           "value": "#ef4444"
         },
         {
           "id": "info",
           "label": "Info",
-          "path": "ui.color.status.info",
-          "cssVar": "--env2-ui-color-status-info",
+          "path": "eui.color.status.info",
+          "cssVar": "--eui-color-status-info",
           "value": "#0ea5e9"
         },
         {
           "id": "success",
           "label": "Success",
-          "path": "ui.color.status.success",
-          "cssVar": "--env2-ui-color-status-success",
+          "path": "eui.color.status.success",
+          "cssVar": "--eui-color-status-success",
           "value": "#22c55e"
         },
         {
           "id": "warning",
           "label": "Warning",
-          "path": "ui.color.status.warning",
-          "cssVar": "--env2-ui-color-status-warning",
+          "path": "eui.color.status.warning",
+          "cssVar": "--eui-color-status-warning",
           "value": "#f59e0b"
         }
       ]
@@ -296,36 +296,36 @@
         {
           "id": "disabled",
           "label": "Disabled",
-          "path": "ui.color.text.disabled",
-          "cssVar": "--env2-ui-color-text-disabled",
+          "path": "eui.color.text.disabled",
+          "cssVar": "--eui-color-text-disabled",
           "value": "#757575"
         },
         {
           "id": "inverse",
           "label": "Inverse",
-          "path": "ui.color.text.inverse",
-          "cssVar": "--env2-ui-color-text-inverse",
+          "path": "eui.color.text.inverse",
+          "cssVar": "--eui-color-text-inverse",
           "value": "#ffffff"
         },
         {
           "id": "muted",
           "label": "Muted",
-          "path": "ui.color.text.muted",
-          "cssVar": "--env2-ui-color-text-muted",
+          "path": "eui.color.text.muted",
+          "cssVar": "--eui-color-text-muted",
           "value": "#404040"
         },
         {
           "id": "primary",
           "label": "Primary",
-          "path": "ui.color.text.primary",
-          "cssVar": "--env2-ui-color-text-primary",
+          "path": "eui.color.text.primary",
+          "cssVar": "--eui-color-text-primary",
           "value": "#1b1b1b"
         },
         {
           "id": "subtle",
           "label": "Subtle",
-          "path": "ui.color.text.subtle",
-          "cssVar": "--env2-ui-color-text-subtle",
+          "path": "eui.color.text.subtle",
+          "cssVar": "--eui-color-text-subtle",
           "value": "#525252"
         }
       ]
@@ -337,29 +337,29 @@
         {
           "id": "inverse",
           "label": "Inverse",
-          "path": "ui.color.background.inverse",
-          "cssVar": "--env2-ui-color-background-inverse",
+          "path": "eui.color.background.inverse",
+          "cssVar": "--eui-color-background-inverse",
           "value": "#1b1b1b"
         },
         {
           "id": "muted",
           "label": "Muted",
-          "path": "ui.color.background.muted",
-          "cssVar": "--env2-ui-color-background-muted",
+          "path": "eui.color.background.muted",
+          "cssVar": "--eui-color-background-muted",
           "value": "#f8fafc"
         },
         {
           "id": "subtle",
           "label": "Subtle",
-          "path": "ui.color.background.subtle",
-          "cssVar": "--env2-ui-color-background-subtle",
+          "path": "eui.color.background.subtle",
+          "cssVar": "--eui-color-background-subtle",
           "value": "#f1f2f7"
         },
         {
           "id": "surface",
           "label": "Surface",
-          "path": "ui.color.background.surface",
-          "cssVar": "--env2-ui-color-background-surface",
+          "path": "eui.color.background.surface",
+          "cssVar": "--eui-color-background-surface",
           "value": "#ffffff"
         }
       ]
@@ -371,29 +371,29 @@
         {
           "id": "default",
           "label": "Default",
-          "path": "ui.color.border.default",
-          "cssVar": "--env2-ui-color-border-default",
+          "path": "eui.color.border.default",
+          "cssVar": "--eui-color-border-default",
           "value": "#cccccc"
         },
         {
           "id": "inverse",
           "label": "Inverse",
-          "path": "ui.color.border.inverse",
-          "cssVar": "--env2-ui-color-border-inverse",
+          "path": "eui.color.border.inverse",
+          "cssVar": "--eui-color-border-inverse",
           "value": "#262626"
         },
         {
           "id": "strong",
           "label": "Strong",
-          "path": "ui.color.border.strong",
-          "cssVar": "--env2-ui-color-border-strong",
+          "path": "eui.color.border.strong",
+          "cssVar": "--eui-color-border-strong",
           "value": "#a3a3a3"
         },
         {
           "id": "subtle",
           "label": "Subtle",
-          "path": "ui.color.border.subtle",
-          "cssVar": "--env2-ui-color-border-subtle",
+          "path": "eui.color.border.subtle",
+          "cssVar": "--eui-color-border-subtle",
           "value": "#e5e7eb"
         }
       ]
@@ -405,8 +405,8 @@
         {
           "id": "ring",
           "label": "Ring",
-          "path": "ui.color.focus.ring",
-          "cssVar": "--env2-ui-color-focus-ring",
+          "path": "eui.color.focus.ring",
+          "cssVar": "--eui-color-focus-ring",
           "value": "#ff4d00"
         }
       ]
@@ -418,8 +418,8 @@
         {
           "id": "focus",
           "label": "Focus",
-          "path": "ui.color.system.focus",
-          "cssVar": "--env2-ui-color-system-focus",
+          "path": "eui.color.system.focus",
+          "cssVar": "--eui-color-system-focus",
           "value": "#ff4d00"
         }
       ]
