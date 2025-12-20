@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
+import { Highlight, themes, type Language } from 'prism-react-renderer';
 
 const markupExample = `<button
   class="ui-button"
@@ -82,72 +84,167 @@ export default meta;
 
 type Story = StoryObj;
 
-const Preview = () => (
-  <div style={{ display: 'grid', gap: '1.5rem' }}>
-    <style>{cssSource}</style>
+const viewerLayoutStyle = {
+  display: 'grid',
+  gap: '1.5rem'
+} as const;
 
-    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
-      <button className="ui-button" data-variant="primary" data-size="md">
-        Primary
-      </button>
-      <button className="ui-button" data-variant="secondary" data-size="md">
-        Secondary
-      </button>
-      <button className="ui-button" data-variant="primary" data-size="md" data-state="hover" aria-label="Hover sample">
-        Hover (sample)
-      </button>
-      <button className="ui-button" data-variant="primary" data-size="md" data-state="active" aria-label="Active sample">
-        Active (sample)
-      </button>
-      <button
-        className="ui-button"
-        data-variant="secondary"
-        data-size="md"
-        data-state="disabled"
-        disabled
-        aria-label="Disabled sample"
-      >
-        Disabled
-      </button>
+const codePanelStyle = {
+  borderRadius: '8px',
+  border: '1px solid #e2e8f0',
+  background: '#f8fafc',
+  color: '#0f172a'
+} as const;
+
+const summaryStyle = {
+  cursor: 'pointer',
+  fontWeight: 400,
+  padding: '0.75rem 1rem',
+  borderBottom: '1px solid #e2e8f0',
+  background: '#f1f5f9',
+  color: '#64748b'
+} as const;
+
+const tabsStyle = {
+  display: 'flex',
+  gap: '0.5rem',
+  padding: '0.5rem 0.75rem',
+  borderBottom: '1px solid #e2e8f0',
+  background: '#f8fafc'
+} as const;
+
+const tabStyle = (active: boolean) =>
+  ({
+    appearance: 'none',
+    border: `1px solid ${active ? '#cbd5e1' : 'transparent'}`,
+    borderRadius: '6px',
+    background: active ? '#ffffff' : 'transparent',
+    color: '#0f172a',
+    fontSize: '0.75rem',
+    fontWeight: 600,
+    padding: '0.25rem 0.6rem',
+    cursor: 'pointer'
+  }) as const;
+
+const codeWrapStyle = {
+  padding: '0.75rem 1rem 1rem',
+  fontFamily:
+    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  fontSize: '0.78rem',
+  lineHeight: 1.6,
+  margin: 0,
+  whiteSpace: 'pre-wrap',
+  wordBreak: 'break-word',
+  overflowX: 'hidden'
+} as const;
+
+type HtmlCssCodeTabsViewerProps = {
+  preview: JSX.Element;
+  markup: string;
+  css: string;
+  styleText?: string;
+};
+
+const HtmlCssCodeTabsViewer = ({ preview, markup, css, styleText }: HtmlCssCodeTabsViewerProps) => {
+  const [activeTab, setActiveTab] = useState<'html' | 'css'>('html');
+  const code = activeTab === 'html' ? markup : css;
+  const language = (activeTab === 'html' ? 'markup' : 'css') as Language;
+  const label = activeTab === 'html' ? 'HTML' : 'CSS';
+  const htmlTabId = 'html-css-button-code-html';
+  const cssTabId = 'html-css-button-code-css';
+  const panelId = 'html-css-button-code-panel';
+
+  return (
+    <div style={viewerLayoutStyle}>
+      {styleText ? <style>{styleText}</style> : null}
+      {preview}
+      <details style={codePanelStyle} className="html-css-code-viewer">
+        <summary style={summaryStyle}>Expand to inspect code</summary>
+        <div role="tablist" aria-label="Code tabs" style={tabsStyle}>
+          <button
+            type="button"
+            role="tab"
+            id={htmlTabId}
+            aria-selected={activeTab === 'html'}
+            aria-controls={panelId}
+            onClick={() => setActiveTab('html')}
+            style={tabStyle(activeTab === 'html')}
+          >
+            HTML
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id={cssTabId}
+            aria-selected={activeTab === 'css'}
+            aria-controls={panelId}
+            onClick={() => setActiveTab('css')}
+            style={tabStyle(activeTab === 'css')}
+          >
+            CSS
+          </button>
+        </div>
+        <Highlight code={code} language={language} theme={themes.vsLight}>
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <pre
+              id={panelId}
+              role="tabpanel"
+              aria-labelledby={activeTab === 'html' ? htmlTabId : cssTabId}
+              aria-label={`${label} code`}
+              className={className}
+              style={{ ...style, ...codeWrapStyle, background: 'transparent' }}
+            >
+              {tokens.map((line, lineIndex) => (
+                <div key={lineIndex} {...getLineProps({ line })}>
+                  {line.map((token, tokenIndex) => (
+                    <span key={tokenIndex} {...getTokenProps({ token })} />
+                  ))}
+                </div>
+              ))}
+            </pre>
+          )}
+        </Highlight>
+      </details>
     </div>
+  );
+};
 
-    <div style={{ display: 'grid', gap: '0.75rem' }}>
-      <div>
-        <p style={{ margin: '0 0 0.35rem', fontWeight: 600 }}>Markup (HTML)</p>
-        <pre
-          style={{
-            background: '#0f172a',
-            color: '#e2e8f0',
-            padding: '12px',
-            borderRadius: '8px',
-            overflowX: 'auto',
-            fontSize: '0.9rem'
-          }}
-        >
-          <code>{markupExample}</code>
-        </pre>
-      </div>
-
-      <div>
-        <p style={{ margin: '0 0 0.35rem', fontWeight: 600 }}>CSS</p>
-        <pre
-          style={{
-            background: '#0f172a',
-            color: '#e2e8f0',
-            padding: '12px',
-            borderRadius: '8px',
-            overflowX: 'auto',
-            fontSize: '0.9rem'
-          }}
-        >
-          <code>{cssSource}</code>
-        </pre>
-      </div>
-    </div>
+const preview = (
+  <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    <button className="ui-button" data-variant="primary" data-size="md">
+      Primary
+    </button>
+    <button className="ui-button" data-variant="secondary" data-size="md">
+      Secondary
+    </button>
+    <button className="ui-button" data-variant="primary" data-size="md" data-state="hover" aria-label="Hover sample">
+      Hover (sample)
+    </button>
+    <button className="ui-button" data-variant="primary" data-size="md" data-state="active" aria-label="Active sample">
+      Active (sample)
+    </button>
+    <button
+      className="ui-button"
+      data-variant="secondary"
+      data-size="md"
+      data-state="disabled"
+      disabled
+      aria-label="Disabled sample"
+    >
+      Disabled
+    </button>
   </div>
 );
 
 export const Button: Story = {
   name: 'Button (HTML + CSS)',
-  render: () => <Preview />
+  parameters: {
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false
+    }
+  },
+  render: () => (
+    <HtmlCssCodeTabsViewer preview={preview} markup={markupExample} css={cssSource} styleText={cssSource} />
+  )
 };
