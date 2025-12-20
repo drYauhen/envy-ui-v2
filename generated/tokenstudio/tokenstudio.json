@@ -123,6 +123,46 @@
     "$value": "#525252",
     "$type": "color"
   },
+  "eui.button.accent.background.base": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.button.accent.background.hover": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.button.accent.background.active": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.button.accent.background.disabled": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.button.accent.background.selected": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.button.accent.label.base": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.button.accent.label.hover": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.button.accent.label.active": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.button.accent.label.disabled": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.button.accent.label.selected": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
   "eui.button.focus.ring.color.derived": {
     "$value": "#066a8d",
     "$type": "color"
@@ -396,23 +436,27 @@
     "$type": "color"
   },
   "eui.color.accent.500": {
-    "$value": "#1e8bff",
+    "$value": "#3db0ff",
     "$type": "color"
   },
   "eui.color.accent.600": {
-    "$value": "#0b75e6",
+    "$value": "#35a8f8",
     "$type": "color"
   },
   "eui.color.accent.700": {
-    "$value": "#0a5ec0",
+    "$value": "#2d98e8",
     "$type": "color"
   },
   "eui.color.accent.800": {
-    "$value": "#0a4c99",
+    "$value": "#2588d8",
     "$type": "color"
   },
   "eui.color.accent.900": {
-    "$value": "#083a73",
+    "$value": "#1e78c8",
+    "$type": "color"
+  },
+  "eui.color.accent.primary": {
+    "$value": "#2d98e8",
     "$type": "color"
   },
   "eui.color.brand.50": {

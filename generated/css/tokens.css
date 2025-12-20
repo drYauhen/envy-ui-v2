@@ -34,6 +34,16 @@
   --eui-button-secondary-border-active: #525252;
   --eui-button-secondary-border-disabled: #525252;
   --eui-button-secondary-border-selected: #525252;
+  --eui-button-accent-background-base: #2d98e8;
+  --eui-button-accent-background-hover: #2d98e8;
+  --eui-button-accent-background-active: #2d98e8;
+  --eui-button-accent-background-disabled: #e5e7eb;
+  --eui-button-accent-background-selected: #2d98e8;
+  --eui-button-accent-label-base: #ffffff;
+  --eui-button-accent-label-hover: #ffffff;
+  --eui-button-accent-label-active: #ffffff;
+  --eui-button-accent-label-disabled: #404040;
+  --eui-button-accent-label-selected: #ffffff;
   --eui-button-focus-ring-color-derived: #066a8d;
   --eui-button-focus-ring-width-base: 2px;
   --eui-button-focus-ring-width-accessible: 3px;
@@ -102,11 +112,12 @@
   --eui-color-accent-200: #b7dbff;
   --eui-color-accent-300: #8ac4ff;
   --eui-color-accent-400: #55a7ff;
-  --eui-color-accent-500: #1e8bff;
-  --eui-color-accent-600: #0b75e6;
-  --eui-color-accent-700: #0a5ec0;
-  --eui-color-accent-800: #0a4c99;
-  --eui-color-accent-900: #083a73;
+  --eui-color-accent-500: #3db0ff;
+  --eui-color-accent-600: #35a8f8;
+  --eui-color-accent-700: #2d98e8;
+  --eui-color-accent-800: #2588d8;
+  --eui-color-accent-900: #1e78c8;
+  --eui-color-accent-primary: #2d98e8;
   --eui-color-brand-50: #e6f6fb;
   --eui-color-brand-100: #c9edf7;
   --eui-color-brand-200: #9ad8ee;
@@ -155,12 +166,6 @@
   --eui-color-border-default: #525252;
   --eui-color-text-primary: #1b1b1b;
   --eui-color-text-disabled: #404040;
-  --eui-radius-none: 0px;
-  --eui-radius-small: 4px;
-  --eui-radius-default: 8px;
-  --eui-radius-large: 10px;
-  --eui-radius-extra-large: 12px;
-  --eui-radius-full: 999px;
 }
 
 [data-eui-context="app"][data-eui-theme="default"] {

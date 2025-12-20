@@ -210,35 +210,42 @@
           "label": "500",
           "path": "eui.color.accent.500",
           "cssVar": "--eui-color-accent-500",
-          "value": "#1e8bff"
+          "value": "#3db0ff"
         },
         {
           "id": "600",
           "label": "600",
           "path": "eui.color.accent.600",
           "cssVar": "--eui-color-accent-600",
-          "value": "#0b75e6"
+          "value": "#35a8f8"
         },
         {
           "id": "700",
           "label": "700",
           "path": "eui.color.accent.700",
           "cssVar": "--eui-color-accent-700",
-          "value": "#0a5ec0"
+          "value": "#2d98e8"
         },
         {
           "id": "800",
           "label": "800",
           "path": "eui.color.accent.800",
           "cssVar": "--eui-color-accent-800",
-          "value": "#0a4c99"
+          "value": "#2588d8"
         },
         {
           "id": "900",
           "label": "900",
           "path": "eui.color.accent.900",
           "cssVar": "--eui-color-accent-900",
-          "value": "#083a73"
+          "value": "#1e78c8"
+        },
+        {
+          "id": "primary",
+          "label": "Primary",
+          "path": "eui.color.accent.primary",
+          "cssVar": "--eui-color-accent-primary",
+          "value": "#2d98e8"
         }
       ]
     },

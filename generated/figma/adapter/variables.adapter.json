@@ -36,27 +36,32 @@
         {
           "path": "eui.color.accent.500",
           "type": "COLOR",
-          "value": "#1e8bff"
+          "value": "#3db0ff"
         },
         {
           "path": "eui.color.accent.600",
           "type": "COLOR",
-          "value": "#0b75e6"
+          "value": "#35a8f8"
         },
         {
           "path": "eui.color.accent.700",
           "type": "COLOR",
-          "value": "#0a5ec0"
+          "value": "#2d98e8"
         },
         {
           "path": "eui.color.accent.800",
           "type": "COLOR",
-          "value": "#0a4c99"
+          "value": "#2588d8"
         },
         {
           "path": "eui.color.accent.900",
           "type": "COLOR",
-          "value": "#083a73"
+          "value": "#1e78c8"
+        },
+        {
+          "path": "eui.color.accent.primary",
+          "type": "COLOR",
+          "value": "#2d98e8"
         }
       ]
     },
