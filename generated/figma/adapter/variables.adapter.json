@@ -231,7 +231,7 @@
         {
           "path": "eui.color.background.muted",
           "type": "COLOR",
-          "value": "#f8fafc"
+          "value": "#e5e7eb"
         },
         {
           "path": "eui.color.background.subtle",
@@ -252,7 +252,7 @@
         {
           "path": "eui.color.border.default",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "path": "eui.color.border.inverse",
@@ -300,7 +300,7 @@
         {
           "path": "eui.color.text.disabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "#404040"
         },
         {
           "path": "eui.color.text.inverse",

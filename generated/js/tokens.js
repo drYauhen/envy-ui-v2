@@ -11,50 +11,50 @@ export const EuiButtonStatesSelected = "select";
 export const EuiButtonPrimaryBackgroundBase = "#066a8d";
 export const EuiButtonPrimaryBackgroundHover = "#066a8d";
 export const EuiButtonPrimaryBackgroundActive = "#066a8d";
-export const EuiButtonPrimaryBackgroundDisabled = "#cccccc";
+export const EuiButtonPrimaryBackgroundDisabled = "#e5e7eb";
 export const EuiButtonPrimaryBackgroundSelected = "#066a8d";
 export const EuiButtonPrimaryLabelBase = "#ffffff";
 export const EuiButtonPrimaryLabelHover = "#ffffff";
 export const EuiButtonPrimaryLabelActive = "#ffffff";
-export const EuiButtonPrimaryLabelDisabled = "#757575";
+export const EuiButtonPrimaryLabelDisabled = "#404040";
 export const EuiButtonPrimaryLabelSelected = "#ffffff";
 export const EuiButtonSecondaryBackgroundBase = "#ffffff";
 export const EuiButtonSecondaryBackgroundHover = "#ffffff";
 export const EuiButtonSecondaryBackgroundActive = "#ffffff";
-export const EuiButtonSecondaryBackgroundDisabled = "#f1f2f7";
+export const EuiButtonSecondaryBackgroundDisabled = "#e5e7eb";
 export const EuiButtonSecondaryBackgroundSelected = "#ffffff";
 export const EuiButtonSecondaryLabelBase = "#1b1b1b";
 export const EuiButtonSecondaryLabelHover = "#1b1b1b";
 export const EuiButtonSecondaryLabelActive = "#1b1b1b";
-export const EuiButtonSecondaryLabelDisabled = "#757575";
+export const EuiButtonSecondaryLabelDisabled = "#404040";
 export const EuiButtonSecondaryLabelSelected = "#1b1b1b";
-export const EuiButtonSecondaryBorderBase = "#cccccc";
-export const EuiButtonSecondaryBorderHover = "#cccccc";
-export const EuiButtonSecondaryBorderActive = "#cccccc";
-export const EuiButtonSecondaryBorderDisabled = "#cccccc";
-export const EuiButtonSecondaryBorderSelected = "#cccccc";
+export const EuiButtonSecondaryBorderBase = "#525252";
+export const EuiButtonSecondaryBorderHover = "#525252";
+export const EuiButtonSecondaryBorderActive = "#525252";
+export const EuiButtonSecondaryBorderDisabled = "#525252";
+export const EuiButtonSecondaryBorderSelected = "#525252";
 export const EuiButtonFocusRingColorDerived = "#066a8d";
 export const EuiButtonFocusRingWidthBase = "2px";
 export const EuiButtonFocusRingWidthAccessible = "3px";
 export const EuiButtonFocusRingOffsetBase = "0px";
 export const EuiButtonGroupOrientationHorizontal = "horizontal";
 export const EuiButtonGroupOrientationVertical = "vertical";
-export const EuiButtonGroupPositionSingleShapeCornerTopLeft = "8px";
-export const EuiButtonGroupPositionSingleShapeCornerTopRight = "8px";
-export const EuiButtonGroupPositionSingleShapeCornerBottomRight = "8px";
-export const EuiButtonGroupPositionSingleShapeCornerBottomLeft = "8px";
+export const EuiButtonGroupPositionSingleShapeCornerTopLeft = "4px";
+export const EuiButtonGroupPositionSingleShapeCornerTopRight = "4px";
+export const EuiButtonGroupPositionSingleShapeCornerBottomRight = "4px";
+export const EuiButtonGroupPositionSingleShapeCornerBottomLeft = "4px";
 export const EuiButtonGroupPositionFirstShapeOrientationHorizontalCornerTopLeft =
-  "8px";
+  "4px";
 export const EuiButtonGroupPositionFirstShapeOrientationHorizontalCornerTopRight =
   "0px";
 export const EuiButtonGroupPositionFirstShapeOrientationHorizontalCornerBottomRight =
   "0px";
 export const EuiButtonGroupPositionFirstShapeOrientationHorizontalCornerBottomLeft =
-  "8px";
+  "4px";
 export const EuiButtonGroupPositionFirstShapeOrientationVerticalCornerTopLeft =
-  "8px";
+  "4px";
 export const EuiButtonGroupPositionFirstShapeOrientationVerticalCornerTopRight =
-  "8px";
+  "4px";
 export const EuiButtonGroupPositionFirstShapeOrientationVerticalCornerBottomRight =
   "0px";
 export const EuiButtonGroupPositionFirstShapeOrientationVerticalCornerBottomLeft =
@@ -78,9 +78,9 @@ export const EuiButtonGroupPositionMiddleShapeOrientationVerticalCornerBottomLef
 export const EuiButtonGroupPositionLastShapeOrientationHorizontalCornerTopLeft =
   "0px";
 export const EuiButtonGroupPositionLastShapeOrientationHorizontalCornerTopRight =
-  "8px";
+  "4px";
 export const EuiButtonGroupPositionLastShapeOrientationHorizontalCornerBottomRight =
-  "8px";
+  "4px";
 export const EuiButtonGroupPositionLastShapeOrientationHorizontalCornerBottomLeft =
   "0px";
 export const EuiButtonGroupPositionLastShapeOrientationVerticalCornerTopLeft =
@@ -88,9 +88,9 @@ export const EuiButtonGroupPositionLastShapeOrientationVerticalCornerTopLeft =
 export const EuiButtonGroupPositionLastShapeOrientationVerticalCornerTopRight =
   "0px";
 export const EuiButtonGroupPositionLastShapeOrientationVerticalCornerBottomRight =
-  "8px";
+  "4px";
 export const EuiButtonGroupPositionLastShapeOrientationVerticalCornerBottomLeft =
-  "8px";
+  "4px";
 export const EuiButtonLayoutStackInternalBorderHorizontal = "none";
 export const EuiButtonLayoutStackInternalBorderVertical = "none";
 export const EuiButtonLayoutStackPerimeterBorder = "preserve";
@@ -102,7 +102,7 @@ export const EuiButtonLayoutDefaultFlexBasis = "auto";
 export const EuiButtonLayoutDefaultWhiteSpace = "nowrap";
 export const EuiButtonSeparatorInset = "6px";
 export const EuiButtonSeparatorThickness = "1px";
-export const EuiButtonShapeDefaultRadius = "8px";
+export const EuiButtonShapeDefaultRadius = "4px"; // Button uses default radius. In application context (app), this ensures compatibility with other stackable form components (input, select, etc.) when composed together. All stackable components in app context must use 4px to maintain visual cohesion. In other contexts (site, report), components may use different radius levels based on visual design goals.
 export const EuiButtonShapeRoundRadius = "999px";
 export const EuiButtonShapeCircleRadius = "50%";
 export const EuiButtonSizeSmHeight = "36px";
@@ -158,20 +158,26 @@ export const EuiColorStatusWarning = "#f59e0b";
 export const EuiColorStatusError = "#ef4444";
 export const EuiColorStatusInfo = "#0ea5e9";
 export const EuiColorBackgroundSurface = "#ffffff";
-export const EuiColorBackgroundMuted = "#f8fafc";
+export const EuiColorBackgroundMuted = "#e5e7eb"; // More visible muted background (was 50, now 200 for better contrast)
 export const EuiColorBackgroundSubtle = "#f1f2f7";
 export const EuiColorBackgroundInverse = "#1b1b1b";
-export const EuiColorBorderDefault = "#cccccc";
+export const EuiColorBorderDefault = "#525252"; // Stronger border color for better contrast in accessibility theme
 export const EuiColorBorderSubtle = "#e5e7eb";
 export const EuiColorBorderStrong = "#a3a3a3";
 export const EuiColorBorderInverse = "#262626";
 export const EuiColorFocusRing = "#ff4d00";
 export const EuiColorSystemFocus = "#ff4d00";
-export const EuiColorTextPrimary = "#1b1b1b";
+export const EuiColorTextPrimary = "#1b1b1b"; // Maximum contrast text for accessibility
 export const EuiColorTextMuted = "#404040";
 export const EuiColorTextSubtle = "#525252";
 export const EuiColorTextInverse = "#ffffff";
-export const EuiColorTextDisabled = "#757575";
+export const EuiColorTextDisabled = "#404040"; // More visible disabled text (was 500, now 700 for better contrast)
 export const EuiRadiusPill = "999px";
+export const EuiRadiusNone = "0px";
+export const EuiRadiusSmall = "2px"; // Smaller than default. Minimal theme keeps this subtle for compact layouts.
+export const EuiRadiusDefault = "4px"; // Baseline for minimal theme. All standard components use this value for consistent, stackable design.
+export const EuiRadiusLarge = "4px"; // In minimal theme, same as default for consistency. Still stackable, no visual hierarchy needed.
+export const EuiRadiusExtraLarge = "6px"; // Slightly more than default even in minimal theme, for modals and prominent containers.
+export const EuiRadiusFull = "999px";
 export const EuiFocusRingWidthBase = "2px";
 export const EuiFocusRingWidthAccessible = "3px";

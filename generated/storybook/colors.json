@@ -298,7 +298,7 @@
           "label": "Disabled",
           "path": "eui.color.text.disabled",
           "cssVar": "--eui-color-text-disabled",
-          "value": "#757575"
+          "value": "#404040"
         },
         {
           "id": "inverse",
@@ -346,7 +346,7 @@
           "label": "Muted",
           "path": "eui.color.background.muted",
           "cssVar": "--eui-color-background-muted",
-          "value": "#f8fafc"
+          "value": "#e5e7eb"
         },
         {
           "id": "subtle",
@@ -373,7 +373,7 @@
           "label": "Default",
           "path": "eui.color.border.default",
           "cssVar": "--eui-color-border-default",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "id": "inverse",

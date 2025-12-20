@@ -36,7 +36,7 @@
     "$type": "color"
   },
   "eui.button.primary.background.disabled": {
-    "$value": "#cccccc",
+    "$value": "#e5e7eb",
     "$type": "color"
   },
   "eui.button.primary.background.selected": {
@@ -56,7 +56,7 @@
     "$type": "color"
   },
   "eui.button.primary.label.disabled": {
-    "$value": "#757575",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.button.primary.label.selected": {
@@ -76,7 +76,7 @@
     "$type": "color"
   },
   "eui.button.secondary.background.disabled": {
-    "$value": "#f1f2f7",
+    "$value": "#e5e7eb",
     "$type": "color"
   },
   "eui.button.secondary.background.selected": {
@@ -96,7 +96,7 @@
     "$type": "color"
   },
   "eui.button.secondary.label.disabled": {
-    "$value": "#757575",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.button.secondary.label.selected": {
@@ -104,23 +104,23 @@
     "$type": "color"
   },
   "eui.button.secondary.border.base": {
-    "$value": "#cccccc",
+    "$value": "#525252",
     "$type": "color"
   },
   "eui.button.secondary.border.hover": {
-    "$value": "#cccccc",
+    "$value": "#525252",
     "$type": "color"
   },
   "eui.button.secondary.border.active": {
-    "$value": "#cccccc",
+    "$value": "#525252",
     "$type": "color"
   },
   "eui.button.secondary.border.disabled": {
-    "$value": "#cccccc",
+    "$value": "#525252",
     "$type": "color"
   },
   "eui.button.secondary.border.selected": {
-    "$value": "#cccccc",
+    "$value": "#525252",
     "$type": "color"
   },
   "eui.button.focus.ring.color.derived": {
@@ -148,23 +148,23 @@
     "$type": "string"
   },
   "eui.button.group.position.single.shape.corner.topLeft": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.single.shape.corner.topRight": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.single.shape.corner.bottomRight": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.single.shape.corner.bottomLeft": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.first.shape.orientation.horizontal.corner.topLeft": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.first.shape.orientation.horizontal.corner.topRight": {
@@ -176,15 +176,15 @@
     "$type": "dimension"
   },
   "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.first.shape.orientation.vertical.corner.topLeft": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.first.shape.orientation.vertical.corner.topRight": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.first.shape.orientation.vertical.corner.bottomRight": {
@@ -232,11 +232,11 @@
     "$type": "dimension"
   },
   "eui.button.group.position.last.shape.orientation.horizontal.corner.topRight": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft": {
@@ -252,11 +252,11 @@
     "$type": "dimension"
   },
   "eui.button.group.position.last.shape.orientation.vertical.corner.bottomRight": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.layout.stack.internalBorder.horizontal": {
@@ -304,7 +304,7 @@
     "$type": "dimension"
   },
   "eui.button.shape.default.radius": {
-    "$value": "8px",
+    "$value": "4px",
     "$type": "dimension"
   },
   "eui.button.shape.round.radius": {
@@ -529,7 +529,7 @@
     "$type": "color"
   },
   "eui.color.background.muted": {
-    "$value": "#f8fafc",
+    "$value": "#e5e7eb",
     "$type": "color"
   },
   "eui.color.background.subtle": {
@@ -541,7 +541,7 @@
     "$type": "color"
   },
   "eui.color.border.default": {
-    "$value": "#cccccc",
+    "$value": "#525252",
     "$type": "color"
   },
   "eui.color.border.subtle": {
@@ -581,10 +581,34 @@
     "$type": "color"
   },
   "eui.color.text.disabled": {
-    "$value": "#757575",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.radius.pill": {
+    "$value": "999px",
+    "$type": "dimension"
+  },
+  "eui.radius.none": {
+    "$value": "0px",
+    "$type": "dimension"
+  },
+  "eui.radius.small": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.radius.default": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.radius.large": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.radius.extra-large": {
+    "$value": "6px",
+    "$type": "dimension"
+  },
+  "eui.radius.full": {
     "$value": "999px",
     "$type": "dimension"
   },

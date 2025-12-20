@@ -31,7 +31,7 @@
         {
           "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomRight",
@@ -41,7 +41,7 @@
         {
           "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topLeft",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topRight",
@@ -61,12 +61,12 @@
         {
           "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topLeft",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topRight",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft",
@@ -76,7 +76,7 @@
         {
           "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topLeft",
@@ -86,17 +86,17 @@
         {
           "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topRight",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomRight",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.last.shape.orientation.vertical.corner.topLeft",
@@ -151,22 +151,22 @@
         {
           "path": "eui.button.group.position.single.shape.corner.bottomLeft",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.single.shape.corner.bottomRight",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.single.shape.corner.topLeft",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.group.position.single.shape.corner.topRight",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.layout.stack.separator.inset",
@@ -196,7 +196,7 @@
         {
           "path": "eui.button.shape.default.radius",
           "type": "FLOAT",
-          "value": 8
+          "value": 4
         },
         {
           "path": "eui.button.shape.round.radius",
@@ -267,7 +267,7 @@
         {
           "path": "eui.button.primary.background.disabled",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#e5e7eb"
         },
         {
           "path": "eui.button.primary.background.hover",
@@ -292,7 +292,7 @@
         {
           "path": "eui.button.primary.label.disabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "#404040"
         },
         {
           "path": "eui.button.primary.label.hover",
@@ -323,7 +323,7 @@
         {
           "path": "eui.button.secondary.background.disabled",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "#e5e7eb"
         },
         {
           "path": "eui.button.secondary.background.hover",
@@ -338,27 +338,27 @@
         {
           "path": "eui.button.secondary.border.active",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "path": "eui.button.secondary.border.base",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "path": "eui.button.secondary.border.disabled",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "path": "eui.button.secondary.border.hover",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "path": "eui.button.secondary.border.selected",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "path": "eui.button.secondary.label.active",
@@ -373,7 +373,7 @@
         {
           "path": "eui.button.secondary.label.disabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "#404040"
         },
         {
           "path": "eui.button.secondary.label.hover",
@@ -630,7 +630,7 @@
         {
           "path": "eui.color.background.muted",
           "type": "COLOR",
-          "value": "#f8fafc"
+          "value": "#e5e7eb"
         },
         {
           "path": "eui.color.background.subtle",
@@ -651,7 +651,7 @@
         {
           "path": "eui.color.border.default",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#525252"
         },
         {
           "path": "eui.color.border.inverse",
@@ -688,7 +688,7 @@
         {
           "path": "eui.color.text.disabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "#404040"
         },
         {
           "path": "eui.color.text.inverse",
@@ -717,9 +717,39 @@
       "mode": "default",
       "variables": [
         {
+          "path": "eui.radius.default",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.radius.extra-large",
+          "type": "FLOAT",
+          "value": 6
+        },
+        {
+          "path": "eui.radius.full",
+          "type": "FLOAT",
+          "value": 999
+        },
+        {
+          "path": "eui.radius.large",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.radius.none",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
           "path": "eui.radius.pill",
           "type": "FLOAT",
           "value": 999
+        },
+        {
+          "path": "eui.radius.small",
+          "type": "FLOAT",
+          "value": 2
         }
       ]
     },
