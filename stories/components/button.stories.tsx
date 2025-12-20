@@ -11,22 +11,24 @@ const markupExample = `<button
 </button>`;
 
 const cssSource = `.eui-button {
-  --eui-button-height: 40px;
-  --eui-button-padding-inline: 20px;
-  --eui-button-font-size: 0.95rem;
-  --eui-button-font-weight: 600;
+  --eui-button-height: var(--eui-button-size-md-height);
+  --eui-button-padding-inline: var(--eui-button-size-md-padding-inline);
+  --eui-button-font-size: var(--eui-button-size-md-font-size);
+  --eui-button-font-weight: var(--eui-button-size-md-font-weight);
+  --eui-button-gap: var(--eui-button-size-md-gap);
+  --eui-button-focus-color: var(--eui-button-focus-ring-color-derived);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: var(--eui-button-gap);
   height: var(--eui-button-height);
   min-width: var(--eui-button-height);
   padding-inline: var(--eui-button-padding-inline);
-  border-radius: var(--eui-radius-pill, 999px);
-  border: 1px solid transparent;
-  background-color: transparent;
-  color: inherit;
+  border-radius: var(--eui-button-shape-round-radius);
+  border: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-base);
+  background-color: var(--eui-button-bg-base);
+  color: var(--eui-button-label-base);
   font-size: var(--eui-button-font-size);
   font-weight: var(--eui-button-font-weight);
   font-family: inherit;
@@ -38,21 +40,22 @@ const cssSource = `.eui-button {
 }
 
 .eui-button[data-size="md"] {
-  --eui-button-height: 40px;
-  --eui-button-padding-inline: 20px;
-  --eui-button-font-size: 0.95rem;
-  --eui-button-font-weight: 600;
+  --eui-button-height: var(--eui-button-size-md-height);
+  --eui-button-padding-inline: var(--eui-button-size-md-padding-inline);
+  --eui-button-font-size: var(--eui-button-size-md-font-size);
+  --eui-button-font-weight: var(--eui-button-size-md-font-weight);
+  --eui-button-gap: var(--eui-button-size-md-gap);
 }
 
 .eui-button[data-variant="primary"] {
-  background-color: var(--eui-button-primary-background-base, var(--eui-color-brand-primary, #066a8d));
-  color: var(--eui-button-primary-label-base, var(--eui-color-neutral-white, #ffffff));
+  --eui-button-bg-base: var(--eui-button-primary-background-base);
+  --eui-button-label-base: var(--eui-button-primary-label-base);
 }
 
 .eui-button[data-variant="secondary"] {
-  background-color: var(--eui-button-secondary-background-base, #ffffff);
-  color: var(--eui-button-secondary-label-base, var(--eui-color-neutral-900, #0f172a));
-  border-color: var(--eui-button-secondary-border-base, var(--eui-color-neutral-300, #cbd5e1));
+  --eui-button-bg-base: var(--eui-button-secondary-background-base);
+  --eui-button-label-base: var(--eui-button-secondary-label-base);
+  --eui-button-border-base: var(--eui-button-secondary-border-base);
 }
 
 .eui-button[data-state="hover"] {
@@ -66,7 +69,7 @@ const cssSource = `.eui-button {
 }
 
 .eui-button[data-state="focus-visible"] {
-  box-shadow: 0 0 0 3px color-mix(in srgb, currentColor, transparent 25%);
+  box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) color-mix(in srgb, var(--eui-button-focus-color), transparent 25%);
 }
 
 .eui-button[data-state="disabled"],

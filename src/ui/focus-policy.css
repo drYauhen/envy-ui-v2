@@ -1,3 +1,3 @@
 [data-eui-focus-policy='system'] [data-eui-context] {
-  --eui-button-focus-color: var(--eui-focus-ring-color-system, var(--eui-color-primitives-blue-500, #007fa2));
+  --eui-button-focus-color: var(--eui-color-system-focus);
 }
