@@ -10,10 +10,22 @@ ADR documents therefore serve as:
 	•	context for understanding why certain approaches were explored
 	•	reference material for reflection and analysis
 
+
 ADR documents are NOT:
 	•	current system documentation
 	•	an authoritative description of the present architecture
 	•	executable instructions for implementation
+
+Clarification
+
+The restriction to ADR applies exclusively to architectural decision records.
+
+Other architectural or system documentation (e.g. rules, invariants, operational architecture,
+current system constraints, or explanatory reference material) MAY exist outside `docs/adr/`
+as long as it does NOT capture decisions, alternatives, or historical reasoning.
+
+Such documents are explanatory in nature, must not be treated as ADRs,
+and must not replace, duplicate, or compete with architectural decision records.
 
 Canonical Rules
 	•	Single document type: ADR (Architectural Decision Record)
