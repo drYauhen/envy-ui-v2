@@ -95,7 +95,19 @@ Generated Directory Model (Platform-Oriented)
 	•	Artifact-type subdirectories are OPTIONAL and must be introduced only when they improve clarity
 		or become necessary due to scale.
 	•	Flat structures are acceptable when the number of artifacts is small.
+
 	•	The directory structure must reflect conceptual intent, not internal tooling implementation details.
+
+Soft Orienters (Non-Canonical)
+
+Storybook and Style Dictionary serve as *soft orienters* for understanding the system, not as sources of truth.
+
+• Style Dictionary indicates how artifacts are generated, but does not dictate the final structure of `generated/`.
+• Storybook reflects how the system is presented and understood by humans, but does not define or enforce directory structure.
+• Changes in Storybook MUST NOT automatically trigger structural changes in `generated/`.
+
+These tools provide directional guidance only.
+The authoritative rules for structure and organization are defined exclusively in this manifest.
 
 Examples
 
@@ -190,7 +202,7 @@ Assistant Behavior
 	•	When creating or modifying structure, the assistant is encouraged to add or update README files
 		to explain intent and structure in human-readable terms.
 
-Canonical README Header (Required)
+Recommended README Header (Required)
 
 	•	Every README.md file under `generated/` MUST start with a canonical header describing:
 		–	the purpose of the directory or artifact group
@@ -198,7 +210,8 @@ Canonical README Header (Required)
 		–	the intended consumers or destinations
 		–	the artifact types and their roles
 
-The header documents provenance and intent; directory structure documents destination and semantics.
+The header documents provenance, intent, and context; directory structure documents destination and semantics.  
+The header is mandatory, while the remaining README content is flexible and may evolve.
 
 ⸻
 
