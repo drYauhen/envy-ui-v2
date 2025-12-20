@@ -63,7 +63,7 @@ module.exports = {
 
     figma: {
       transformGroup: 'js',
-      buildPath: path.join(repoRoot, 'build', 'figma') + path.sep,
+      buildPath: path.join(repoRoot, 'generated', 'figma') + path.sep,
       files: [
         {
           destination: 'variables.adapter.json',
@@ -85,7 +85,7 @@ module.exports = {
 
     pluginVariables: {
       transformGroup: 'js',
-      buildPath: path.join(repoRoot, 'build') + path.sep,
+      buildPath: path.join(repoRoot, 'generated', 'figma', 'full') + path.sep,
       files: [
         {
           destination: 'variables.tokens.json',
@@ -96,7 +96,7 @@ module.exports = {
 
     figmaScoped: {
       transformGroup: 'js',
-      buildPath: path.join(repoRoot, 'build', 'figma') + path.sep,
+      buildPath: path.join(repoRoot, 'generated', 'figma', 'scoped') + path.sep,
       files: [
         {
           destination: 'variables.tokens.json',
