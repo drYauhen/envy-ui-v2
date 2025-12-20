@@ -1,49 +1,136 @@
 {
-  "ui": {
+  "eui": {
     "button": {
       "states": {
-        "hover": { "$value": "emphasize", "$type": "stateEffect" },
-        "active": { "$value": "press", "$type": "stateEffect" },
-        "disabled": { "$value": "mute", "$type": "stateEffect" },
-        "selected": { "$value": "select", "$type": "stateEffect" }
+        "hover": {
+          "$value": "emphasize",
+          "$type": "stateEffect"
+        },
+        "active": {
+          "$value": "press",
+          "$type": "stateEffect"
+        },
+        "disabled": {
+          "$value": "mute",
+          "$type": "stateEffect"
+        },
+        "selected": {
+          "$value": "select",
+          "$type": "stateEffect"
+        }
       },
       "primary": {
         "background": {
-          "base": { "$value": "{ui.color.brand.primary}", "$type": "color" },
-          "hover": { "$value": "{ui.color.brand.primary}", "$type": "color" },
-          "active": { "$value": "{ui.color.brand.primary}", "$type": "color" },
-          "disabled": { "$value": "{ui.color.neutral.300}", "$type": "color" },
-          "selected": { "$value": "{ui.color.brand.primary}", "$type": "color" }
+          "base": {
+            "$value": "{eui.color.brand.primary}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.brand.primary}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.brand.primary}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.brand.primary}",
+            "$type": "color"
+          }
         },
         "label": {
-          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" },
-          "hover": { "$value": "{ui.color.neutral.white}", "$type": "color" },
-          "active": { "$value": "{ui.color.neutral.white}", "$type": "color" },
-          "disabled": { "$value": "{ui.color.neutral.500}", "$type": "color" },
-          "selected": { "$value": "{ui.color.neutral.white}", "$type": "color" }
+          "base": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          }
         }
       },
       "secondary": {
         "background": {
-          "base": { "$value": "{ui.color.neutral.white}", "$type": "color" },
-          "hover": { "$value": "{ui.color.neutral.white}", "$type": "color" },
-          "active": { "$value": "{ui.color.neutral.white}", "$type": "color" },
-          "disabled": { "$value": "{ui.color.neutral.100}", "$type": "color" },
-          "selected": { "$value": "{ui.color.neutral.white}", "$type": "color" }
+          "base": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.100}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color"
+          }
         },
         "label": {
-          "base": { "$value": "{ui.color.neutral.900}", "$type": "color" },
-          "hover": { "$value": "{ui.color.neutral.900}", "$type": "color" },
-          "active": { "$value": "{ui.color.neutral.900}", "$type": "color" },
-          "disabled": { "$value": "{ui.color.neutral.500}", "$type": "color" },
-          "selected": { "$value": "{ui.color.neutral.900}", "$type": "color" }
+          "base": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color"
+          }
         },
         "border": {
-          "base": { "$value": "{ui.color.neutral.300}", "$type": "color" },
-          "hover": { "$value": "{ui.color.neutral.300}", "$type": "color" },
-          "active": { "$value": "{ui.color.neutral.300}", "$type": "color" },
-          "disabled": { "$value": "{ui.color.neutral.300}", "$type": "color" },
-          "selected": { "$value": "{ui.color.neutral.300}", "$type": "color" }
+          "base": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color"
+          }
         }
       }
     }

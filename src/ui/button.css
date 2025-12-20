@@ -1,50 +1,50 @@
-[data-ui-context] {
-  --ui-button-size-md-height: 40px;
-  --ui-button-size-md-padding-inline: 20px;
-  --ui-button-size-md-font-size: 0.95rem;
-  --ui-button-size-md-font-weight: 600;
-  --ui-button-shape-pill-radius: var(--env2-ui-radius-pill, 999px);
-  --ui-button-focus-color: var(--env2-ui-button-focus-ring-color-derived, var(--env2-ui-color-brand-primary, #066a8d));
+[data-eui-context] {
+  --eui-button-size-md-height: 40px;
+  --eui-button-size-md-padding-inline: 20px;
+  --eui-button-size-md-font-size: 0.95rem;
+  --eui-button-size-md-font-weight: 600;
+  --eui-button-shape-pill-radius: var(--eui-radius-pill, 999px);
+  --eui-button-focus-color: var(--eui-button-focus-ring-color-derived, var(--eui-color-brand-primary, #066a8d));
 }
 
-[data-ui-context] .ui-button {
-  --ui-button-corner-top-left: var(--env2-ui-button-shape-default-radius, 8px);
-  --ui-button-corner-top-right: var(--env2-ui-button-shape-default-radius, 8px);
-  --ui-button-corner-bottom-right: var(--env2-ui-button-shape-default-radius, 8px);
-  --ui-button-corner-bottom-left: var(--env2-ui-button-shape-default-radius, 8px);
-  --ui-button-bg-base: transparent;
-  --ui-button-label-base: currentColor;
-  --ui-button-border-base: transparent;
-  --ui-button-border-visible: var(--ui-button-border-base, var(--env2-ui-color-neutral-200, #e5e7eb));
-  --ui-button-separator-color: color-mix(in srgb, var(--ui-button-border-visible), transparent 55%);
-  --ui-button-separator-inset: var(--env2-ui-button-separator-inset, 6px);
-  --ui-button-separator-thickness: var(--env2-ui-button-separator-thickness, 1px);
-  --ui-button-border-width: var(--env2-ui-button-border-width, 1px);
-  --ui-button-border-style: var(--env2-ui-button-border-style, solid);
-  --ui-button-flex-grow: var(--env2-ui-button-layout-default-flex-grow, 0);
-  --ui-button-flex-shrink: var(--env2-ui-button-layout-default-flex-shrink, 0);
-  --ui-button-flex-basis: var(--env2-ui-button-layout-default-flex-basis, auto);
-  --ui-button-white-space: var(--env2-ui-button-layout-default-whiteSpace, nowrap);
-  --ui-button-height: var(--ui-button-size-md-height);
-  --ui-button-padding-inline: var(--ui-button-size-md-padding-inline);
-  --ui-button-font-size: var(--ui-button-size-md-font-size);
-  --ui-button-font-weight: var(--ui-button-size-md-font-weight);
+[data-eui-context] .eui-button {
+  --eui-button-corner-top-left: var(--eui-button-shape-default-radius, 8px);
+  --eui-button-corner-top-right: var(--eui-button-shape-default-radius, 8px);
+  --eui-button-corner-bottom-right: var(--eui-button-shape-default-radius, 8px);
+  --eui-button-corner-bottom-left: var(--eui-button-shape-default-radius, 8px);
+  --eui-button-bg-base: transparent;
+  --eui-button-label-base: currentColor;
+  --eui-button-border-base: transparent;
+  --eui-button-border-visible: var(--eui-button-border-base, var(--eui-color-neutral-200, #e5e7eb));
+  --eui-button-separator-color: color-mix(in srgb, var(--eui-button-border-visible), transparent 55%);
+  --eui-button-separator-inset: var(--eui-button-separator-inset, 6px);
+  --eui-button-separator-thickness: var(--eui-button-separator-thickness, 1px);
+  --eui-button-border-width: var(--eui-button-border-width, 1px);
+  --eui-button-border-style: var(--eui-button-border-style, solid);
+  --eui-button-flex-grow: var(--eui-button-layout-default-flex-grow, 0);
+  --eui-button-flex-shrink: var(--eui-button-layout-default-flex-shrink, 0);
+  --eui-button-flex-basis: var(--eui-button-layout-default-flex-basis, auto);
+  --eui-button-white-space: var(--eui-button-layout-default-whiteSpace, nowrap);
+  --eui-button-height: var(--eui-button-size-md-height);
+  --eui-button-padding-inline: var(--eui-button-size-md-padding-inline);
+  --eui-button-font-size: var(--eui-button-size-md-font-size);
+  --eui-button-font-weight: var(--eui-button-size-md-font-weight);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  height: var(--ui-button-height);
-  min-width: var(--ui-button-height);
-  padding-inline: var(--ui-button-padding-inline);
-  flex: var(--ui-button-flex-grow) var(--ui-button-flex-shrink) var(--ui-button-flex-basis);
-  white-space: var(--ui-button-white-space);
-  border-radius: var(--ui-button-corner-top-left) var(--ui-button-corner-top-right) var(--ui-button-corner-bottom-right) var(--ui-button-corner-bottom-left);
-  border: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-base, transparent);
-  background-color: var(--ui-button-bg-base);
-  color: var(--ui-button-label-base);
-  font-size: var(--ui-button-font-size);
-  font-weight: var(--ui-button-font-weight);
+  height: var(--eui-button-height);
+  min-width: var(--eui-button-height);
+  padding-inline: var(--eui-button-padding-inline);
+  flex: var(--eui-button-flex-grow) var(--eui-button-flex-shrink) var(--eui-button-flex-basis);
+  white-space: var(--eui-button-white-space);
+  border-radius: var(--eui-button-corner-top-left) var(--eui-button-corner-top-right) var(--eui-button-corner-bottom-right) var(--eui-button-corner-bottom-left);
+  border: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-base, transparent);
+  background-color: var(--eui-button-bg-base);
+  color: var(--eui-button-label-base);
+  font-size: var(--eui-button-font-size);
+  font-weight: var(--eui-button-font-weight);
   font-family: inherit;
   line-height: 1;
   letter-spacing: 0.01em;
@@ -55,240 +55,240 @@
   z-index: 0;
 }
 
-[data-ui-context] .ui-button:disabled {
+[data-eui-context] .eui-button:disabled {
   cursor: not-allowed;
   opacity: 0.8;
-  background-color: color-mix(in srgb, var(--ui-button-bg-base), var(--env2-ui-color-neutral-300, #cccccc) 35%);
-  color: color-mix(in srgb, var(--ui-button-label-base), var(--env2-ui-color-neutral-500, #757575) 40%);
-  border-color: color-mix(in srgb, var(--ui-button-border-base, transparent), var(--env2-ui-color-neutral-300, #cccccc) 35%);
+  background-color: color-mix(in srgb, var(--eui-button-bg-base), var(--eui-color-neutral-300, #cccccc) 35%);
+  color: color-mix(in srgb, var(--eui-button-label-base), var(--eui-color-neutral-500, #757575) 40%);
+  border-color: color-mix(in srgb, var(--eui-button-border-base, transparent), var(--eui-color-neutral-300, #cccccc) 35%);
 }
 
-[data-ui-context] .ui-button:not(:disabled):hover {
-  background-color: color-mix(in srgb, var(--ui-button-bg-base), white 8%);
-  border-color: color-mix(in srgb, var(--ui-button-border-base, transparent), white 8%);
+[data-eui-context] .eui-button:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--eui-button-bg-base), white 8%);
+  border-color: color-mix(in srgb, var(--eui-button-border-base, transparent), white 8%);
 }
 
-[data-ui-context] .ui-button:not(:disabled):active {
-  background-color: color-mix(in srgb, var(--ui-button-bg-base), black 8%);
-  border-color: color-mix(in srgb, var(--ui-button-border-base, transparent), black 12%);
+[data-eui-context] .eui-button:not(:disabled):active {
+  background-color: color-mix(in srgb, var(--eui-button-bg-base), black 8%);
+  border-color: color-mix(in srgb, var(--eui-button-border-base, transparent), black 12%);
   transform: translateY(1px);
 }
 
-[data-ui-context] .ui-button:focus {
+[data-eui-context] .eui-button:focus {
   box-shadow:
-    0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 40%);
+    0 0 0 var(--eui-focus-ring-width-base, 2px) color-mix(in srgb, var(--eui-button-focus-color), transparent 40%);
   z-index: 1;
 }
 
-[data-ui-context] .ui-button:focus-visible {
+[data-eui-context] .eui-button:focus-visible {
   box-shadow:
-    0 0 0 var(--env2-ui-focus-ring-width-accessible, 3px) color-mix(in srgb, var(--ui-button-focus-color), transparent 25%);
+    0 0 0 var(--eui-focus-ring-width-accessible, 3px) color-mix(in srgb, var(--eui-button-focus-color), transparent 25%);
   z-index: 1;
 }
 
-[data-ui-context] .ui-button:focus:not(:focus-visible) {
+[data-eui-context] .eui-button:focus:not(:focus-visible) {
   box-shadow:
-    0 0 0 var(--env2-ui-focus-ring-width-base, 2px) color-mix(in srgb, var(--ui-button-focus-color), transparent 55%);
+    0 0 0 var(--eui-focus-ring-width-base, 2px) color-mix(in srgb, var(--eui-button-focus-color), transparent 55%);
   z-index: 1;
 }
 
-[data-ui-context] .ui-button[data-ui-intent='primary'] {
-  --ui-button-bg-base: var(--env2-ui-button-primary-background-base, var(--env2-ui-color-brand-primary));
-  --ui-button-label-base: var(--env2-ui-button-primary-label-base, var(--env2-ui-color-neutral-white));
-  --ui-button-border-base: var(--env2-ui-button-primary-border-base, transparent);
+[data-eui-context] .eui-button[data-eui-intent='primary'] {
+  --eui-button-bg-base: var(--eui-button-primary-background-base, var(--eui-color-brand-primary));
+  --eui-button-label-base: var(--eui-button-primary-label-base, var(--eui-color-neutral-white));
+  --eui-button-border-base: var(--eui-button-primary-border-base, transparent);
 }
 
-[data-ui-context] .ui-button[data-ui-intent='secondary'] {
-  --ui-button-bg-base: var(--env2-ui-button-secondary-background-base, var(--env2-ui-color-neutral-white));
-  --ui-button-label-base: var(--env2-ui-button-secondary-label-base, var(--env2-ui-color-neutral-900));
-  --ui-button-border-base: var(--env2-ui-button-secondary-border-base, var(--env2-ui-color-neutral-300));
+[data-eui-context] .eui-button[data-eui-intent='secondary'] {
+  --eui-button-bg-base: var(--eui-button-secondary-background-base, var(--eui-color-neutral-white));
+  --eui-button-label-base: var(--eui-button-secondary-label-base, var(--eui-color-neutral-900));
+  --eui-button-border-base: var(--eui-button-secondary-border-base, var(--eui-color-neutral-300));
 }
 
-[data-ui-context] .ui-button[data-selected][data-ui-intent='primary'] {
-  --ui-button-bg-base: var(--env2-ui-button-primary-background-selected, var(--env2-ui-color-brand-primary));
-  --ui-button-label-base: var(--env2-ui-button-primary-label-selected, var(--env2-ui-color-neutral-white));
-  --ui-button-border-base: var(--env2-ui-button-primary-border-selected, transparent);
+[data-eui-context] .eui-button[data-selected][data-eui-intent='primary'] {
+  --eui-button-bg-base: var(--eui-button-primary-background-selected, var(--eui-color-brand-primary));
+  --eui-button-label-base: var(--eui-button-primary-label-selected, var(--eui-color-neutral-white));
+  --eui-button-border-base: var(--eui-button-primary-border-selected, transparent);
 }
 
-[data-ui-context] .ui-button[data-selected][data-ui-intent='secondary'] {
-  --ui-button-bg-base: var(--env2-ui-button-secondary-background-selected, var(--env2-ui-color-neutral-white));
-  --ui-button-label-base: var(--env2-ui-button-secondary-label-selected, var(--env2-ui-color-neutral-900));
-  --ui-button-border-base: var(--env2-ui-button-secondary-border-selected, var(--env2-ui-color-neutral-300));
+[data-eui-context] .eui-button[data-selected][data-eui-intent='secondary'] {
+  --eui-button-bg-base: var(--eui-button-secondary-background-selected, var(--eui-color-neutral-white));
+  --eui-button-label-base: var(--eui-button-secondary-label-selected, var(--eui-color-neutral-900));
+  --eui-button-border-base: var(--eui-button-secondary-border-selected, var(--eui-color-neutral-300));
 }
 
-[data-ui-context] .ui-button[data-ui-shape='round'] {
-  --ui-button-corner-top-left: var(--ui-button-shape-pill-radius);
-  --ui-button-corner-top-right: var(--ui-button-shape-pill-radius);
-  --ui-button-corner-bottom-right: var(--ui-button-shape-pill-radius);
-  --ui-button-corner-bottom-left: var(--ui-button-shape-pill-radius);
+[data-eui-context] .eui-button[data-eui-shape='round'] {
+  --eui-button-corner-top-left: var(--eui-button-shape-pill-radius);
+  --eui-button-corner-top-right: var(--eui-button-shape-pill-radius);
+  --eui-button-corner-bottom-right: var(--eui-button-shape-pill-radius);
+  --eui-button-corner-bottom-left: var(--eui-button-shape-pill-radius);
 }
 
-[data-ui-context] .ui-button[data-ui-shape='circle'] {
-  width: var(--ui-button-height);
+[data-eui-context] .eui-button[data-eui-shape='circle'] {
+  width: var(--eui-button-height);
   padding-inline: 0;
   border-radius: 50%;
 }
 
-[data-ui-context] .ui-button[data-group-position] {
+[data-eui-context] .eui-button[data-group-position] {
   margin: 0;
-  border-radius: var(--ui-button-corner-top-left) var(--ui-button-corner-top-right) var(--ui-button-corner-bottom-right) var(--ui-button-corner-bottom-left);
-  border-color: var(--ui-button-border-visible);
+  border-radius: var(--eui-button-corner-top-left) var(--eui-button-corner-top-right) var(--eui-button-corner-bottom-right) var(--eui-button-corner-bottom-left);
+  border-color: var(--eui-button-border-visible);
 }
 
-.ui-button-group {
+.eui-button-group {
   display: inline-flex;
   isolation: isolate;
   position: relative;
   gap: 0;
 }
 
-.ui-button-group[data-orientation='vertical'] {
+.eui-button-group[data-orientation='vertical'] {
   flex-direction: column;
   width: max-content;
 }
 
-.ui-button-group .ui-button {
+.eui-button-group .eui-button {
   z-index: 0;
 }
 
-.ui-button-group .ui-button:focus,
-.ui-button-group .ui-button:focus-visible,
-.ui-button-group .ui-button:active {
+.eui-button-group .eui-button:focus,
+.eui-button-group .eui-button:focus-visible,
+.eui-button-group .eui-button:active {
   z-index: 1;
 }
 
-.ui-button-group:not([data-orientation='vertical']) .ui-button {
-  border-top: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
-  border-bottom: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
-  border-left: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
-  border-right: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+.eui-button-group:not([data-orientation='vertical']) .eui-button {
+  border-top: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
+  border-bottom: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
+  border-left: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
+  border-right: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
 }
 
-.ui-button-group[data-orientation='vertical'] .ui-button {
-  border-left: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
-  border-right: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
-  border-top: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
-  border-bottom: var(--ui-button-border-width) var(--ui-button-border-style) var(--ui-button-border-visible);
+.eui-button-group[data-orientation='vertical'] .eui-button {
+  border-left: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
+  border-right: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
+  border-top: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
+  border-bottom: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
 }
 
-.ui-button-group .ui-button::after {
+.eui-button-group .eui-button::after {
   content: '';
   position: absolute;
   pointer-events: none;
-  background: var(--ui-button-separator-color);
+  background: var(--eui-button-separator-color);
   opacity: 1;
 }
 
-.ui-button-group:not([data-orientation='vertical']) .ui-button:not(:first-child) {
+.eui-button-group:not([data-orientation='vertical']) .eui-button:not(:first-child) {
   border-left: 0;
 }
 
-.ui-button-group:not([data-orientation='vertical']) .ui-button:not(:last-child) {
+.eui-button-group:not([data-orientation='vertical']) .eui-button:not(:last-child) {
   border-right: 0;
 }
 
-.ui-button-group:not([data-orientation='vertical']) .ui-button:not(:first-child)::after {
+.eui-button-group:not([data-orientation='vertical']) .eui-button:not(:first-child)::after {
   left: 0;
-  top: var(--ui-button-separator-inset);
-  bottom: var(--ui-button-separator-inset);
-  width: var(--ui-button-separator-thickness);
+  top: var(--eui-button-separator-inset);
+  bottom: var(--eui-button-separator-inset);
+  width: var(--eui-button-separator-thickness);
   transform: translateX(-50%);
 }
 
-.ui-button-group[data-orientation='vertical'] .ui-button:not(:first-child)::after {
+.eui-button-group[data-orientation='vertical'] .eui-button:not(:first-child)::after {
   top: 0;
-  left: var(--ui-button-separator-inset);
-  right: var(--ui-button-separator-inset);
-  height: var(--ui-button-separator-thickness);
+  left: var(--eui-button-separator-inset);
+  right: var(--eui-button-separator-inset);
+  height: var(--eui-button-separator-thickness);
   transform: translateY(-50%);
 }
 
-.ui-button-group[data-orientation='vertical'] .ui-button:not(:first-child) {
+.eui-button-group[data-orientation='vertical'] .eui-button:not(:first-child) {
   border-top: 0;
 }
 
-.ui-button-group[data-orientation='vertical'] .ui-button:not(:last-child) {
+.eui-button-group[data-orientation='vertical'] .eui-button:not(:last-child) {
   border-bottom: 0;
 }
 
-.ui-button-group .ui-button[data-group-position]:active {
+.eui-button-group .eui-button[data-group-position]:active {
   transform: none;
 }
 
-[data-ui-context] .ui-button[data-group-orientation='vertical'] {
+[data-eui-context] .eui-button[data-group-orientation='vertical'] {
   width: 100%;
 }
 
-[data-ui-context] .ui-button[data-group-position='single'] {
-  --ui-button-corner-top-left: var(--env2-ui-button-group-position-single-corner-top-left, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-top-right: var(--env2-ui-button-group-position-single-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-single-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-single-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
+[data-eui-context] .eui-button[data-group-position='single'] {
+  --eui-button-corner-top-left: var(--eui-button-group-position-single-corner-top-left, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-top-right: var(--eui-button-group-position-single-corner-top-right, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-bottom-right: var(--eui-button-group-position-single-corner-bottom-right, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-bottom-left: var(--eui-button-group-position-single-corner-bottom-left, var(--eui-button-shape-default-radius, 8px));
 }
 
-[data-ui-context] .ui-button[data-group-position='first'][data-group-orientation='horizontal'],
-[data-ui-context] .ui-button[data-group-position='first']:not([data-group-orientation]),
-[data-ui-context] .ui-button[data-group-position='first'][data-group-orientation='horizontal'] {
-  --ui-button-corner-top-left: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-top-left, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-top-right: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-top-right, 0px);
-  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-bottom-right, 0px);
-  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-first-orientation-horizontal-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
+[data-eui-context] .eui-button[data-group-position='first'][data-group-orientation='horizontal'],
+[data-eui-context] .eui-button[data-group-position='first']:not([data-group-orientation]),
+[data-eui-context] .eui-button[data-group-position='first'][data-group-orientation='horizontal'] {
+  --eui-button-corner-top-left: var(--eui-button-group-position-first-orientation-horizontal-corner-top-left, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-top-right: var(--eui-button-group-position-first-orientation-horizontal-corner-top-right, 0px);
+  --eui-button-corner-bottom-right: var(--eui-button-group-position-first-orientation-horizontal-corner-bottom-right, 0px);
+  --eui-button-corner-bottom-left: var(--eui-button-group-position-first-orientation-horizontal-corner-bottom-left, var(--eui-button-shape-default-radius, 8px));
   border-right-color: transparent;
-  --ui-button-layered-shadow: inset -1px 0 0 var(--ui-button-separator-color);
+  --eui-button-layered-shadow: inset -1px 0 0 var(--eui-button-separator-color);
 }
 
-[data-ui-context] .ui-button[data-group-position='middle'][data-group-orientation='horizontal'],
-[data-ui-context] .ui-button[data-group-position='middle']:not([data-group-orientation]) {
-  --ui-button-corner-top-left: 0px;
-  --ui-button-corner-top-right: 0px;
-  --ui-button-corner-bottom-right: 0px;
-  --ui-button-corner-bottom-left: 0px;
+[data-eui-context] .eui-button[data-group-position='middle'][data-group-orientation='horizontal'],
+[data-eui-context] .eui-button[data-group-position='middle']:not([data-group-orientation]) {
+  --eui-button-corner-top-left: 0px;
+  --eui-button-corner-top-right: 0px;
+  --eui-button-corner-bottom-right: 0px;
+  --eui-button-corner-bottom-left: 0px;
   border-left-color: transparent;
   border-right-color: transparent;
-  --ui-button-layered-shadow: inset 1px 0 0 var(--ui-button-separator-color), inset -1px 0 0 var(--ui-button-separator-color);
+  --eui-button-layered-shadow: inset 1px 0 0 var(--eui-button-separator-color), inset -1px 0 0 var(--eui-button-separator-color);
 }
 
-[data-ui-context] .ui-button[data-group-position='last'][data-group-orientation='horizontal'],
-[data-ui-context] .ui-button[data-group-position='last']:not([data-group-orientation]) {
-  --ui-button-corner-top-left: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-top-left, 0px);
-  --ui-button-corner-top-right: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-last-orientation-horizontal-corner-bottom-left, 0px);
+[data-eui-context] .eui-button[data-group-position='last'][data-group-orientation='horizontal'],
+[data-eui-context] .eui-button[data-group-position='last']:not([data-group-orientation]) {
+  --eui-button-corner-top-left: var(--eui-button-group-position-last-orientation-horizontal-corner-top-left, 0px);
+  --eui-button-corner-top-right: var(--eui-button-group-position-last-orientation-horizontal-corner-top-right, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-bottom-right: var(--eui-button-group-position-last-orientation-horizontal-corner-bottom-right, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-bottom-left: var(--eui-button-group-position-last-orientation-horizontal-corner-bottom-left, 0px);
   border-left-color: transparent;
-  --ui-button-layered-shadow: inset 1px 0 0 var(--ui-button-separator-color);
+  --eui-button-layered-shadow: inset 1px 0 0 var(--eui-button-separator-color);
 }
 
-[data-ui-context] .ui-button[data-group-position='first'][data-group-orientation='vertical'] {
-  --ui-button-corner-top-left: var(--env2-ui-button-group-position-first-orientation-vertical-corner-top-left, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-top-right: var(--env2-ui-button-group-position-first-orientation-vertical-corner-top-right, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-first-orientation-vertical-corner-bottom-right, 0px);
-  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-first-orientation-vertical-corner-bottom-left, 0px);
+[data-eui-context] .eui-button[data-group-position='first'][data-group-orientation='vertical'] {
+  --eui-button-corner-top-left: var(--eui-button-group-position-first-orientation-vertical-corner-top-left, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-top-right: var(--eui-button-group-position-first-orientation-vertical-corner-top-right, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-bottom-right: var(--eui-button-group-position-first-orientation-vertical-corner-bottom-right, 0px);
+  --eui-button-corner-bottom-left: var(--eui-button-group-position-first-orientation-vertical-corner-bottom-left, 0px);
   border-bottom-color: transparent;
-  --ui-button-layered-shadow: inset 0 -1px 0 var(--ui-button-separator-color);
+  --eui-button-layered-shadow: inset 0 -1px 0 var(--eui-button-separator-color);
 }
 
-[data-ui-context] .ui-button[data-group-position='middle'][data-group-orientation='vertical'] {
-  --ui-button-corner-top-left: 0px;
-  --ui-button-corner-top-right: 0px;
-  --ui-button-corner-bottom-right: 0px;
-  --ui-button-corner-bottom-left: 0px;
+[data-eui-context] .eui-button[data-group-position='middle'][data-group-orientation='vertical'] {
+  --eui-button-corner-top-left: 0px;
+  --eui-button-corner-top-right: 0px;
+  --eui-button-corner-bottom-right: 0px;
+  --eui-button-corner-bottom-left: 0px;
   border-top-color: transparent;
   border-bottom-color: transparent;
-  --ui-button-layered-shadow: inset 0 1px 0 var(--ui-button-separator-color), inset 0 -1px 0 var(--ui-button-separator-color);
+  --eui-button-layered-shadow: inset 0 1px 0 var(--eui-button-separator-color), inset 0 -1px 0 var(--eui-button-separator-color);
 }
 
-[data-ui-context] .ui-button[data-group-position='last'][data-group-orientation='vertical'] {
-  --ui-button-corner-top-left: var(--env2-ui-button-group-position-last-orientation-vertical-corner-top-left, 0px);
-  --ui-button-corner-top-right: var(--env2-ui-button-group-position-last-orientation-vertical-corner-top-right, 0px);
-  --ui-button-corner-bottom-right: var(--env2-ui-button-group-position-last-orientation-vertical-corner-bottom-right, var(--env2-ui-button-shape-default-radius, 8px));
-  --ui-button-corner-bottom-left: var(--env2-ui-button-group-position-last-orientation-vertical-corner-bottom-left, var(--env2-ui-button-shape-default-radius, 8px));
+[data-eui-context] .eui-button[data-group-position='last'][data-group-orientation='vertical'] {
+  --eui-button-corner-top-left: var(--eui-button-group-position-last-orientation-vertical-corner-top-left, 0px);
+  --eui-button-corner-top-right: var(--eui-button-group-position-last-orientation-vertical-corner-top-right, 0px);
+  --eui-button-corner-bottom-right: var(--eui-button-group-position-last-orientation-vertical-corner-bottom-right, var(--eui-button-shape-default-radius, 8px));
+  --eui-button-corner-bottom-left: var(--eui-button-group-position-last-orientation-vertical-corner-bottom-left, var(--eui-button-shape-default-radius, 8px));
   border-top-color: transparent;
-  --ui-button-layered-shadow: inset 0 1px 0 var(--ui-button-separator-color);
+  --eui-button-layered-shadow: inset 0 1px 0 var(--eui-button-separator-color);
 }
 
-[data-ui-context] .ui-button[data-ui-size='md'] {
-  --ui-button-height: var(--ui-button-size-md-height);
-  --ui-button-padding-inline: var(--ui-button-size-md-padding-inline);
-  --ui-button-font-size: var(--ui-button-size-md-font-size);
-  --ui-button-font-weight: var(--ui-button-size-md-font-weight);
+[data-eui-context] .eui-button[data-eui-size='md'] {
+  --eui-button-height: var(--eui-button-size-md-height);
+  --eui-button-padding-inline: var(--eui-button-size-md-padding-inline);
+  --eui-button-font-size: var(--eui-button-size-md-font-size);
+  --eui-button-font-weight: var(--eui-button-size-md-font-weight);
 }

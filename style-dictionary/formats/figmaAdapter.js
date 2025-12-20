@@ -14,7 +14,7 @@ module.exports = function registerFigmaAdapterFormat(StyleDictionary) {
       const collectionsMap = new Map();
 
       dictionary.allTokens
-        .filter((token) => token?.path?.[0] === 'ui' && token?.path?.[1] === 'color')
+        .filter((token) => token?.path?.[0] === 'eui' && token?.path?.[1] === 'color')
         .forEach((token) => {
           const groupId = token.path[2] || 'base';
           const collectionName = `${systemMeta?.system?.id ?? 'System'} • Colors / ${toTitleCase(groupId)}`;

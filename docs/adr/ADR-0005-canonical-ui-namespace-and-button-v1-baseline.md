@@ -109,7 +109,7 @@ It is **not** considered production-final.
 
 Context is a **first-class axis**, separate from intent, theme, and state.
 
-* Context is applied externally (e.g. via `data-ui-context="app"`).
+* Context is applied externally (e.g. via `data-eui-context="app"`).
 * Components do not encode or assume their rendering context.
 * Multiple contexts may coexist on a single screen.
 

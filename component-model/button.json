@@ -13,42 +13,42 @@
   "geometry": {
     "dimensions": {
       "height": {
-        "sm": "{ui.button.size.sm.height}",
-        "md": "{ui.button.size.md.height}",
-        "lg": "{ui.button.size.lg.height}"
+        "sm": "{eui.button.size.sm.height}",
+        "md": "{eui.button.size.md.height}",
+        "lg": "{eui.button.size.lg.height}"
       }
     },
     "spacing": {
       "paddingInline": {
-        "sm": "{ui.button.size.sm.padding.inline}",
-        "md": "{ui.button.size.md.padding.inline}",
-        "lg": "{ui.button.size.lg.padding.inline}"
+        "sm": "{eui.button.size.sm.padding.inline}",
+        "md": "{eui.button.size.md.padding.inline}",
+        "lg": "{eui.button.size.lg.padding.inline}"
       },
       "gap": {
-        "sm": "{ui.button.size.sm.gap}",
-        "md": "{ui.button.size.md.gap}",
-        "lg": "{ui.button.size.lg.gap}"
+        "sm": "{eui.button.size.sm.gap}",
+        "md": "{eui.button.size.md.gap}",
+        "lg": "{eui.button.size.lg.gap}"
       }
     },
     "radii": {
       "shape": {
-        "default": "{ui.button.shape.default.radius}",
-        "round": "{ui.button.shape.round.radius}",
-        "circle": "{ui.button.shape.circle.radius}"
+        "default": "{eui.button.shape.default.radius}",
+        "round": "{eui.button.shape.round.radius}",
+        "circle": "{eui.button.shape.circle.radius}"
       }
     },
     "borders": {
-      "width": "{ui.button.border.width}",
-      "style": "{ui.button.border.style}",
+      "width": "{eui.button.border.width}",
+      "style": "{eui.button.border.style}",
       "color": {
-        "primary": "{ui.button.primary.border.base}",
-        "secondary": "{ui.button.secondary.border.base}"
+        "primary": "{eui.button.primary.border.base}",
+        "secondary": "{eui.button.secondary.border.base}"
       }
     },
     "dividers": {
       "separator": {
-        "inset": "{ui.button.separator.inset}",
-        "thickness": "{ui.button.separator.thickness}",
+        "inset": "{eui.button.separator.inset}",
+        "thickness": "{eui.button.separator.thickness}",
         "ownership": "next"
       }
     }
@@ -71,7 +71,7 @@
               "perimeter": "preserve"
             },
             "dividers": {
-              "separator": { "visible": true, "owner": "next", "inset": "{ui.button.separator.inset}", "thickness": "{ui.button.separator.thickness}" }
+              "separator": { "visible": true, "owner": "next", "inset": "{eui.button.separator.inset}", "thickness": "{eui.button.separator.thickness}" }
             }
           }
         }
@@ -95,8 +95,8 @@
       "when": {},
       "then": {
         "layout": {
-          "flex": { "grow": "{ui.button.layout.default.flex.grow}", "shrink": "{ui.button.layout.default.flex.shrink}", "basis": "{ui.button.layout.default.flex.basis}" },
-          "whiteSpace": "{ui.button.layout.default.whiteSpace}"
+          "flex": { "grow": "{eui.button.layout.default.flex.grow}", "shrink": "{eui.button.layout.default.flex.shrink}", "basis": "{eui.button.layout.default.flex.basis}" },
+          "whiteSpace": "{eui.button.layout.default.whiteSpace}"
         }
       }
     }

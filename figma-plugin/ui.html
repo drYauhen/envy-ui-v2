@@ -151,12 +151,12 @@
 
     <div id="structuresPanel" class="panel">
       <h1>Component / Structure Generator</h1>
-      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">Generate ui.button structure from tokens.</p>
+      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">Generate eui.button structure from tokens.</p>
       <label class="secondary">
         <input type="file" id="structuresFile" accept="application/json" />
         Load structures JSON
       </label>
-      <button id="generateStructures">Generate ui.button</button>
+      <button id="generateStructures">Generate eui.button</button>
       <div class="status" id="structuresStatus"></div>
     </div>
 
@@ -402,7 +402,7 @@
         } else if (message.type === 'import-error') {
           status.textContent = `Error: ${message.payload}`;
         } else if (message.type === 'structures-complete') {
-          if (structuresStatus) structuresStatus.textContent = 'Generated ui.button structure.';
+          if (structuresStatus) structuresStatus.textContent = 'Generated eui.button structure.';
         } else if (message.type === 'structures-error') {
           if (structuresStatus) structuresStatus.textContent = `Error: ${message.payload}`;
         } else if (message.type === 'selection-data') {

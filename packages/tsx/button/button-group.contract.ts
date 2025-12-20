@@ -1,3 +1,5 @@
+import systemMeta from '../../../system.meta.json';
+
 export type ButtonGroupContract = {
   classNames: {
     root: string;
@@ -13,7 +15,7 @@ export type ButtonGroupContract = {
 
 export const buttonGroupContract: ButtonGroupContract = {
   classNames: {
-    root: 'ui-button-group'
+    root: `${systemMeta?.tokens?.prefix ?? 'eui'}-button-group`
   },
   dataAttributes: {
     orientation: 'data-orientation',

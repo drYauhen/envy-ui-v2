@@ -32,7 +32,7 @@
 
 ### C. Visual Boundary
 - TSX encodes **no visual values** (no colors/sizes/radii).  
-- Styling is via a single base class (`ui-button`) plus data-* attributes; visuals remain in tokens/CSS.
+- Styling is via a single base class (`eui-button`) plus data-* attributes; visuals remain in tokens/CSS.
 
 ### D. Composition Model (Orthogonal Axes)
 - Axes: **intent × size × shape**.  
@@ -45,9 +45,9 @@
 - `href + asChild` warns if child is non-anchor-like; forms default to `<button>`.
 
 ### F. State Mapping Contract (CSS Interface)
-- Axes: `data-intent`, `data-size`, `data-shape` (also `data-ui-*` for legacy compatibility).  
-- States: `data-hovered`, `data-pressed`, `data-focus-visible`, `data-disabled`, `data-loading` (plus `data-ui-*` parallels).  
-- One base class: `ui-button`.
+- Axes: `data-intent`, `data-size`, `data-shape` (also `data-eui-*` for legacy compatibility).  
+- States: `data-hovered`, `data-pressed`, `data-focus-visible`, `data-disabled`, `data-loading` (plus `data-eui-*` parallels).  
+- One base class: `eui-button`.
 
 ### G. Loading Semantics
 - `isLoading` blocks press, sets `aria-busy="true"`, and sets `data-loading`.  
@@ -83,7 +83,7 @@
 - Code: `src/ui/button.tsx` — host-flexible React Aria button with axes/states surfaced via data-attributes; no visual tokens inside TSX.  
 - Stories: `stories/tsx/react-aria/button.stories.tsx` — demonstrates default button, link host, `asChild` proxy, loading + icons, and keyboard focus.  
 - Icons: optional `startIcon`/`endIcon` slots wrapped in data-marked spans; no styling imposed.  
-- Edge cases deferred: stricter `asChild` validation, richer link-child semantics, and removal of legacy `data-ui-*` once CSS is updated.
+- Edge cases deferred: stricter `asChild` validation, richer link-child semantics, and removal of legacy `data-eui-*` once CSS is updated.
 
 ---
 

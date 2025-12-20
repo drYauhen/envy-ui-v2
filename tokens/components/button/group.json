@@ -1,19 +1,37 @@
 {
-  "ui": {
+  "eui": {
     "button": {
       "group": {
         "orientation": {
-          "horizontal": { "$value": "horizontal", "$type": "string" },
-          "vertical": { "$value": "vertical", "$type": "string" }
+          "horizontal": {
+            "$value": "horizontal",
+            "$type": "string"
+          },
+          "vertical": {
+            "$value": "vertical",
+            "$type": "string"
+          }
         },
         "position": {
           "single": {
             "shape": {
               "corner": {
-                "topLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                "topRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                "bottomRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                "bottomLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" }
+                "topLeft": {
+                  "$value": "{eui.button.shape.default.radius}",
+                  "$type": "dimension"
+                },
+                "topRight": {
+                  "$value": "{eui.button.shape.default.radius}",
+                  "$type": "dimension"
+                },
+                "bottomRight": {
+                  "$value": "{eui.button.shape.default.radius}",
+                  "$type": "dimension"
+                },
+                "bottomLeft": {
+                  "$value": "{eui.button.shape.default.radius}",
+                  "$type": "dimension"
+                }
               }
             }
           },
@@ -22,18 +40,42 @@
               "orientation": {
                 "horizontal": {
                   "corner": {
-                    "topLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                    "topRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" }
+                    "topLeft": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    },
+                    "topRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomLeft": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    }
                   }
                 },
                 "vertical": {
                   "corner": {
-                    "topLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                    "topRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                    "bottomRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                    "topLeft": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    },
+                    "topRight": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    },
+                    "bottomRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    }
                   }
                 }
               }
@@ -44,18 +86,42 @@
               "orientation": {
                 "horizontal": {
                   "corner": {
-                    "topLeft": { "$value": "0px", "$type": "dimension" },
-                    "topRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                    "topLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "topRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    }
                   }
                 },
                 "vertical": {
                   "corner": {
-                    "topLeft": { "$value": "0px", "$type": "dimension" },
-                    "topRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                    "topLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "topRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    }
                   }
                 }
               }
@@ -66,18 +132,42 @@
               "orientation": {
                 "horizontal": {
                   "corner": {
-                    "topLeft": { "$value": "0px", "$type": "dimension" },
-                    "topRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                    "bottomRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                    "bottomLeft": { "$value": "0px", "$type": "dimension" }
+                    "topLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "topRight": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    },
+                    "bottomRight": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    },
+                    "bottomLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    }
                   }
                 },
                 "vertical": {
                   "corner": {
-                    "topLeft": { "$value": "0px", "$type": "dimension" },
-                    "topRight": { "$value": "0px", "$type": "dimension" },
-                    "bottomRight": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" },
-                    "bottomLeft": { "$value": "{ui.button.shape.default.radius}", "$type": "dimension" }
+                    "topLeft": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "topRight": {
+                      "$value": "0px",
+                      "$type": "dimension"
+                    },
+                    "bottomRight": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    },
+                    "bottomLeft": {
+                      "$value": "{eui.button.shape.default.radius}",
+                      "$type": "dimension"
+                    }
                   }
                 }
               }

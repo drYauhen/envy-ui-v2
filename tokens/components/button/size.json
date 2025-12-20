@@ -1,39 +1,84 @@
 {
-  "ui": {
+  "eui": {
     "button": {
       "size": {
         "sm": {
-          "height": { "$value": "36px", "$type": "dimension" },
+          "height": {
+            "$value": "36px",
+            "$type": "dimension"
+          },
           "padding": {
-            "inline": { "$value": "16px", "$type": "dimension" }
+            "inline": {
+              "$value": "16px",
+              "$type": "dimension"
+            }
           },
           "font": {
-            "size": { "$value": "0.9rem", "$type": "fontSize" },
-            "weight": { "$value": "600", "$type": "fontWeight" }
+            "size": {
+              "$value": "0.9rem",
+              "$type": "fontSize"
+            },
+            "weight": {
+              "$value": "600",
+              "$type": "fontWeight"
+            }
           },
-          "gap": { "$value": "0.35rem", "$type": "dimension" }
+          "gap": {
+            "$value": "0.35rem",
+            "$type": "dimension"
+          }
         },
         "md": {
-          "height": { "$value": "40px", "$type": "dimension" },
+          "height": {
+            "$value": "40px",
+            "$type": "dimension"
+          },
           "padding": {
-            "inline": { "$value": "20px", "$type": "dimension" }
+            "inline": {
+              "$value": "20px",
+              "$type": "dimension"
+            }
           },
           "font": {
-            "size": { "$value": "0.95rem", "$type": "fontSize" },
-            "weight": { "$value": "600", "$type": "fontWeight" }
+            "size": {
+              "$value": "0.95rem",
+              "$type": "fontSize"
+            },
+            "weight": {
+              "$value": "600",
+              "$type": "fontWeight"
+            }
           },
-          "gap": { "$value": "0.4rem", "$type": "dimension" }
+          "gap": {
+            "$value": "0.4rem",
+            "$type": "dimension"
+          }
         },
         "lg": {
-          "height": { "$value": "48px", "$type": "dimension" },
+          "height": {
+            "$value": "48px",
+            "$type": "dimension"
+          },
           "padding": {
-            "inline": { "$value": "24px", "$type": "dimension" }
+            "inline": {
+              "$value": "24px",
+              "$type": "dimension"
+            }
           },
           "font": {
-            "size": { "$value": "1rem", "$type": "fontSize" },
-            "weight": { "$value": "600", "$type": "fontWeight" }
+            "size": {
+              "$value": "1rem",
+              "$type": "fontSize"
+            },
+            "weight": {
+              "$value": "600",
+              "$type": "fontWeight"
+            }
           },
-          "gap": { "$value": "0.45rem", "$type": "dimension" }
+          "gap": {
+            "$value": "0.45rem",
+            "$type": "dimension"
+          }
         }
       }
     }

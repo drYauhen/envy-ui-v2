@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../generated/tsx/button.contract';
+import systemMeta from '../../../system.meta.json';
 
 export type ButtonCleanProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   intent?: ButtonIntent;
@@ -9,6 +10,8 @@ export type ButtonCleanProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const dataAttr = (value: boolean | undefined) => (value ? '' : undefined);
+const SYSTEM_PREFIX = systemMeta?.tokens?.prefix ?? 'eui';
+const prefixedDataAttr = (name: string) => `data-${SYSTEM_PREFIX}-${name}`;
 
 export const ButtonClean = React.forwardRef<HTMLButtonElement, ButtonCleanProps>(function ButtonClean(
   { intent = 'primary', size = 'md', shape = 'default', selected, className, disabled, children, ...rest },
@@ -17,16 +20,17 @@ export const ButtonClean = React.forwardRef<HTMLButtonElement, ButtonCleanProps>
   return (
     <button
       ref={forwardedRef}
-      className={['ui-button', className].filter(Boolean).join(' ')}
+      className={[`${SYSTEM_PREFIX}-button`, className].filter(Boolean).join(' ')}
       data-intent={intent}
       data-size={size}
       data-shape={shape}
       data-selected={dataAttr(selected)}
       data-disabled={dataAttr(disabled)}
-      // Legacy compatibility for existing CSS selectors
-      data-ui-intent={intent}
-      data-ui-size={size}
-      data-ui-shape={shape}
+      {...{
+        [prefixedDataAttr('intent')]: intent,
+        [prefixedDataAttr('size')]: size,
+        [prefixedDataAttr('shape')]: shape
+      }}
       disabled={disabled}
       {...rest}
     >

@@ -29,24 +29,24 @@ flattenTokens(shapeTokens, [], flatColorMap);
 const resolveReference = (ref: string) => resolveAlias(ref, flatColorMap);
 
 const allRefs: TokenRef[] = [
-  ...collectRefs((semanticButton as any)?.ui?.button ?? {}, ['ui', 'button']),
-  ...collectRefs((focusTokens as any)?.ui?.button ?? {}, ['ui', 'button']),
-  ...collectRefs((sizeTokens as any)?.ui?.button ?? {}, ['ui', 'button']),
-  ...collectRefs((shapeTokens as any)?.ui?.button ?? {}, ['ui', 'button'])
+  ...collectRefs((semanticButton as any)?.eui?.button ?? {}, ['eui', 'button']),
+  ...collectRefs((focusTokens as any)?.eui?.button ?? {}, ['eui', 'button']),
+  ...collectRefs((sizeTokens as any)?.eui?.button ?? {}, ['eui', 'button']),
+  ...collectRefs((shapeTokens as any)?.eui?.button ?? {}, ['eui', 'button'])
 ];
 
 const byPrefix = (prefix: string) => allRefs.filter((token) => token.path.startsWith(prefix));
-const colorRefs = byPrefix('ui.button.').filter(
+const colorRefs = byPrefix('eui.button.').filter(
   (token) =>
-    !token.path.startsWith('ui.button.states') &&
-    !token.path.startsWith('ui.button.focus') &&
-    !token.path.startsWith('ui.button.size') &&
-    !token.path.startsWith('ui.button.shape')
+    !token.path.startsWith('eui.button.states') &&
+    !token.path.startsWith('eui.button.focus') &&
+    !token.path.startsWith('eui.button.size') &&
+    !token.path.startsWith('eui.button.shape')
 );
-const stateRefs = byPrefix('ui.button.states');
-const focusRefs = byPrefix('ui.button.focus');
-const sizeRefs = byPrefix('ui.button.size');
-const shapeRefs = byPrefix('ui.button.shape');
+const stateRefs = byPrefix('eui.button.states');
+const focusRefs = byPrefix('eui.button.focus');
+const sizeRefs = byPrefix('eui.button.size');
+const shapeRefs = byPrefix('eui.button.shape');
 
 const meta: Meta = {
   title: 'Tokens/Components/Button/Colors',
@@ -75,7 +75,7 @@ export const Button: Story = {
 
       <TokenRefTable
         title="Colors"
-        refs={colorRefs.filter((token) => token.path.startsWith('ui.button'))}
+        refs={colorRefs.filter((token) => token.path.startsWith('eui.button'))}
         emptyMessage="No Button color tokens found."
         renderPreview={renderPreview}
         tokenLabel="Token path"
@@ -85,7 +85,7 @@ export const Button: Story = {
 
       <TokenRefTable
         title="States"
-        refs={stateRefs.filter((token) => token.path.startsWith('ui.button.states'))}
+        refs={stateRefs.filter((token) => token.path.startsWith('eui.button.states'))}
         emptyMessage="No explicit state tokens defined yet."
         renderPreview={renderPreview}
         tokenLabel="Token path"
@@ -95,7 +95,7 @@ export const Button: Story = {
 
       <TokenRefTable
         title="Focus"
-        refs={focusRefs.filter((token) => token.path.startsWith('ui.button.focus'))}
+        refs={focusRefs.filter((token) => token.path.startsWith('eui.button.focus'))}
         emptyMessage="No focus tokens found."
         renderPreview={renderPreview}
         tokenLabel="Token path"

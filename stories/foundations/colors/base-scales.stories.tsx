@@ -15,9 +15,9 @@ const meta: Meta = {
 export default meta;
 
 const scales: Record<string, Record<string, { $value: string }>> = {
-  neutral: (neutral as any).ui.color.neutral,
-  brand: (brand as any).ui.color.brand,
-  accent: (accent as any).ui.color.accent
+  neutral: (neutral as any).eui.color.neutral,
+  brand: (brand as any).eui.color.brand,
+  accent: (accent as any).eui.color.accent
 };
 
 const steps = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];

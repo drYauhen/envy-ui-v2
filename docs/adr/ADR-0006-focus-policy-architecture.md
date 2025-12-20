@@ -129,8 +129,8 @@ The architecture distinguishes between two conceptual token groups:
 ### Component-Level Focus Tokens
 
 Examples:
-- `ui.button.focus.ring.color.derived`
-- `ui.button.focus.ring.width.derived`
+- `eui.button.focus.ring.color.derived`
+- `eui.button.focus.ring.width.derived`
 
 These tokens may depend on intent, scheme, or component-specific rules.
 
@@ -139,9 +139,9 @@ These tokens may depend on intent, scheme, or component-specific rules.
 ### System-Level Focus Tokens
 
 Examples:
-- `ui.focus.ring.color.system`
-- `ui.focus.ring.width.accessible`
-- `ui.focus.ring.offset.accessible`
+- `eui.focus.ring.color.system`
+- `eui.focus.ring.width.accessible`
+- `eui.focus.ring.offset.accessible`
 
 These tokens are global and must not depend on component intent or theme.
 

@@ -1,5 +1,3 @@
-const systemMeta = require('../../system.meta.json');
-
 const DEFAULT_GROUPS = [
   { id: 'neutral', title: 'Foundation Neutral' },
   { id: 'brand', title: 'Foundation Brand' },
@@ -32,7 +30,6 @@ module.exports = function registerStorybookColorsFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'json/storybook-colors',
     format({ dictionary }) {
-      const prefix = systemMeta?.tokens?.prefix ? `${systemMeta.tokens.prefix}-` : '';
       const groupsMap = new Map();
 
       const ensureGroup = (groupId) => {
@@ -51,7 +48,7 @@ module.exports = function registerStorybookColorsFormat(StyleDictionary) {
       };
 
       dictionary.allTokens
-        .filter((token) => token?.path?.[0] === 'ui' && token?.path?.[1] === 'color')
+        .filter((token) => token?.path?.[0] === 'eui' && token?.path?.[1] === 'color')
         .forEach((token) => {
           const groupId = token.path[2] || 'color';
           const group = ensureGroup(groupId);
@@ -63,7 +60,7 @@ module.exports = function registerStorybookColorsFormat(StyleDictionary) {
             id: tokenId,
             label: formatLabel(labelSegments),
             path: token.path.join('.'),
-            cssVar: `--${prefix}${token.name}`,
+            cssVar: `--${token.name}`,
             value: token.$value ?? token.value ?? token.original?.value ?? ''
           });
         });

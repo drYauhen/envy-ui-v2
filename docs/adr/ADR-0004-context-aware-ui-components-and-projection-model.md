@@ -95,12 +95,12 @@ Context is applied **externally**, not on the component itself.
 Example:
 
 ```html
-<div data-ui-context="app">
-  <button class="ui-button" data-ui-intent="primary">Submit</button>
+<div data-eui-context="app">
+  <button class="eui-button" data-eui-intent="primary">Submit</button>
 </div>
 
-<div data-ui-context="site">
-  <button class="ui-button" data-ui-intent="primary">Submit</button>
+<div data-eui-context="site">
+  <button class="eui-button" data-eui-intent="primary">Submit</button>
 </div>
 ```
 

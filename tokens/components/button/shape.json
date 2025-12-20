@@ -1,15 +1,24 @@
 {
-  "ui": {
+  "eui": {
     "button": {
       "shape": {
         "default": {
-          "radius": { "$value": "8px", "$type": "dimension" }
+          "radius": {
+            "$value": "8px",
+            "$type": "dimension"
+          }
         },
         "round": {
-          "radius": { "$value": "{ui.radius.pill}", "$type": "dimension" }
+          "radius": {
+            "$value": "{eui.radius.pill}",
+            "$type": "dimension"
+          }
         },
         "circle": {
-          "radius": { "$value": "50%", "$type": "dimension" }
+          "radius": {
+            "$value": "50%",
+            "$type": "dimension"
+          }
         }
       }
     }

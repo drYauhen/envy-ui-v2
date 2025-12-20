@@ -23,7 +23,7 @@ Decisions:
 1. The first TSX baseline component is **`Button`**, implemented with **React Aria hooks** and **custom rendering**.
 2. I start with **meta-packages** (`react-aria`, `react-stately`) rather than granular packages; granular adoption is deferred.
 3. The component API is **DOM-blessed** (e.g. `disabled`, `onClick`) while also supporting React Aria interaction (`onPress`) for future migration.
-4. The TSX layer preserves the existing CSS contract (`class="ui-button"` + `data-ui-*` axes) and additionally exposes optional `data-ui-*` interaction state attributes so CSS can remain independent.
+4. The TSX layer preserves the existing CSS contract (`class="eui-button"` + `data-eui-*` axes) and additionally exposes optional `data-eui-*` interaction state attributes so CSS can remain independent.
 5. Storybook is layered and sorted as: **Tokens → CSS → TSX**, with TSX further grouped under **TSX/React Aria/** to keep accessibility engines swappable in the future.
 
 ---
@@ -36,7 +36,7 @@ I need a TSX component layer that:
 
 - uses React Aria as a headless accessibility engine (per ADR-0001),
 - keeps the token/CSS layer independent of implementation details,
-- preserves the context-aware projection model (ADR-0004) by continuing to rely on external context (`data-ui-context`) rather than component-internal assumptions,
+- preserves the context-aware projection model (ADR-0004) by continuing to rely on external context (`data-eui-context`) rather than component-internal assumptions,
 - can evolve toward granular dependency usage and/or alternative accessibility engines later.
 
 ---
@@ -63,10 +63,10 @@ I need a TSX component layer that:
 The TSX `Button`:
 
 - preserves the existing styling contract:
-  - `className="ui-button"`
-  - `data-ui-intent`, `data-ui-size`, `data-ui-shape`
+  - `className="eui-button"`
+  - `data-eui-intent`, `data-eui-size`, `data-eui-shape`
 - additionally provides optional interaction state attributes:
-  - `data-ui-hovered`, `data-ui-pressed`, `data-ui-focused`, `data-ui-focus-visible`
+  - `data-eui-hovered`, `data-eui-pressed`, `data-eui-focused`, `data-eui-focus-visible`
 
 CSS may use pseudo-classes and/or these data attributes; the TSX layer must not require changing the CSS layer.
 
@@ -115,7 +115,7 @@ Story order is enforced as: `Tokens` → `CSS` → `TSX`.
 
 - Switching to granular React Aria packages.
 - Adding additional components beyond Button.
-- Refactoring CSS to rely exclusively on `data-ui-*` state attributes.
+- Refactoring CSS to rely exclusively on `data-eui-*` state attributes.
 - Build-time generation of TSX component wrappers or token bindings.
 
 ---

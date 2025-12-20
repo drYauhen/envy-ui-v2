@@ -1,14 +1,29 @@
 {
-  "ui": {
+  "eui": {
     "color": {
       "background": {
-        "surface": { "$value": "{ui.color.neutral.white}", "$type": "color" },
-        "muted": { "$value": "{ui.color.neutral.50}", "$type": "color" },
-        "subtle": { "$value": "{ui.color.neutral.100}", "$type": "color" },
-        "inverse": { "$value": "{ui.color.neutral.900}", "$type": "color" }
+        "surface": {
+          "$value": "{eui.color.neutral.white}",
+          "$type": "color"
+        },
+        "muted": {
+          "$value": "{eui.color.neutral.50}",
+          "$type": "color"
+        },
+        "subtle": {
+          "$value": "{eui.color.neutral.100}",
+          "$type": "color"
+        },
+        "inverse": {
+          "$value": "{eui.color.neutral.900}",
+          "$type": "color"
+        }
       },
       "brand": {
-        "primary": { "$value": "{ui.color.brand.700}", "$type": "color" }
+        "primary": {
+          "$value": "{eui.color.brand.700}",
+          "$type": "color"
+        }
       }
     }
   }

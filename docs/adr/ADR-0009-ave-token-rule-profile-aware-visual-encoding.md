@@ -35,8 +35,8 @@ Component token → profile base token → primitive.
 Example (Decoration / Radius):
 
 ```
-ui.button.shape.default.radius
-  → ui.profile.decorative.default.radius.base
+eui.button.shape.default.radius
+  → eui.profile.decorative.default.radius.base
     → 4px
 ```
 
@@ -59,7 +59,7 @@ Profiles are orthogonal and composable across axes:
 
 Two acceptable paths:
 - **Option A (Rule First, recommended):** keep existing tokens as-is; apply the routing rule incrementally to new/touched tokens.  
-- **Option B (Immediate Alignment):** update existing component tokens to route through `ui.profile.*` for faster clarity, at the cost of upfront effort.
+- **Option B (Immediate Alignment):** update existing component tokens to route through `eui.profile.*` for faster clarity, at the cost of upfront effort.
 
 Violations are tolerated temporarily during exploration; treat this rule as lint-level guidance.
 
@@ -82,7 +82,7 @@ Violations are tolerated temporarily during exploration; treat this rule as lint
 
 ### Trade-offs
 - Adds indirection; may feel heavier during early exploration.  
-- Requires discipline to route through `ui.profile.*` instead of primitives.
+- Requires discipline to route through `eui.profile.*` instead of primitives.
 
 ---
 
@@ -97,4 +97,4 @@ Violations are tolerated temporarily during exploration; treat this rule as lint
 
 ## 9. Status and Next Steps
 
-Rule is **accepted**. Implementation can follow Option A (incremental) or Option B (immediate alignment) depending on momentum and cleanliness priorities. Future ADRs may define concrete `ui.profile.*` structures and migration steps.
+Rule is **accepted**. Implementation can follow Option A (incremental) or Option B (immediate alignment) depending on momentum and cleanliness priorities. Future ADRs may define concrete `eui.profile.*` structures and migration steps.

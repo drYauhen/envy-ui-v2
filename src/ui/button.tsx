@@ -3,6 +3,7 @@ import { mergeProps, useButton, useFocusRing, useHover } from 'react-aria';
 import type { AriaButtonProps, PressEvent } from 'react-aria';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/tsx/button.contract';
 export type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/tsx/button.contract';
+import systemMeta from '../../system.meta.json';
 
 type HostButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 type HostLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -65,6 +66,8 @@ type AsChildProps = {
 export type ButtonProps = BaseProps & (ButtonHostProps | AsChildProps);
 
 const dataAttr = (value: boolean) => (value ? '' : undefined);
+const SYSTEM_PREFIX = systemMeta?.tokens?.prefix ?? 'eui';
+const prefixedDataAttr = (name: string) => `data-${SYSTEM_PREFIX}-${name}`;
 
 const isAnchorLike = (el: React.ReactElement) => {
   const tag = typeof el.type === 'string' ? el.type : null;
@@ -125,6 +128,16 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>(function Button
   const { hoverProps, isHovered } = useHover({ isDisabled: resolvedDisabled });
   const { focusProps, isFocusVisible, isFocused } = useFocusRing();
 
+  const prefixedAttributes: Record<string, string | undefined> = {
+    [prefixedDataAttr('intent')]: intent,
+    [prefixedDataAttr('size')]: size,
+    [prefixedDataAttr('shape')]: shape,
+    [prefixedDataAttr('hovered')]: dataAttr(isHovered),
+    [prefixedDataAttr('pressed')]: dataAttr(isPressed),
+    [prefixedDataAttr('focused')]: dataAttr(isFocused),
+    [prefixedDataAttr('focus-visible')]: dataAttr(isFocusVisible)
+  };
+
   const dataAttributes = {
     'data-intent': intent,
     'data-size': size,
@@ -134,18 +147,11 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>(function Button
     'data-focus-visible': dataAttr(isFocusVisible),
     'data-disabled': dataAttr(resolvedDisabled),
     'data-loading': dataAttr(Boolean(isLoading)),
-    // Backward compatibility with existing CSS selectors
-    'data-ui-intent': intent,
-    'data-ui-size': size,
-    'data-ui-shape': shape,
-    'data-ui-hovered': dataAttr(isHovered),
-    'data-ui-pressed': dataAttr(isPressed),
-    'data-ui-focused': dataAttr(isFocused),
-    'data-ui-focus-visible': dataAttr(isFocusVisible)
+    ...prefixedAttributes
   };
 
   const baseProps = mergeProps(buttonProps, hoverProps, focusProps, {
-    className: ['ui-button', className].filter(Boolean).join(' '),
+    className: [`${SYSTEM_PREFIX}-button`, className].filter(Boolean).join(' '),
     'aria-busy': isLoading ? 'true' : undefined,
     ...(resolvedType && elementType === 'button' ? { type: resolvedType } : null),
     ...(onClick ? { onClick } : null),

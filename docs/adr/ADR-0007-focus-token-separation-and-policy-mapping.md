@@ -15,9 +15,9 @@
 
 This ADR defines how **system focus** vs **component-derived focus** is represented in tokens and how the active focus mode is applied at runtime.
 
-- **System focus** tokens are **global** and live under `ui.color.system` and `ui.focus.*`.
-- **Component-derived focus** tokens live under the component namespace (e.g. `ui.button.*`).
-- Runtime selects the active focus behavior via **system-level policy** (e.g. `data-ui-focus-policy="system"`), without component logic selecting modes.
+- **System focus** tokens are **global** and live under `eui.color.system` and `eui.focus.*`.
+- **Component-derived focus** tokens live under the component namespace (e.g. `eui.button.*`).
+- Runtime selects the active focus behavior via **system-level policy** (e.g. `data-eui-focus-policy="system"`), without component logic selecting modes.
 
 ---
 
@@ -37,19 +37,19 @@ During Button v1 work, I needed to:
 ### 3.1 Token Placement
 
 **System-level**
-- `ui.color.system.focus` — a unique system focus color (intentionally not reused as a brand/semantic component color)
-- `ui.focus.ring.color.system` — references `ui.color.system.focus`
-- `ui.focus.ring.width.*` — global focus ring widths (already present)
+- `eui.color.system.focus` — a unique system focus color (intentionally not reused as a brand/semantic component color)
+- `eui.focus.ring.color.system` — references `eui.color.system.focus`
+- `eui.focus.ring.width.*` — global focus ring widths (already present)
 
 **Component-level (derived)**
-- `ui.button.focus.ring.color.derived` — the button’s derived focus ring color (may reference brand/semantic button tokens)
+- `eui.button.focus.ring.color.derived` — the button’s derived focus ring color (may reference brand/semantic button tokens)
 
 ### 3.2 Runtime Mapping
 
-Components render focus using a component-local CSS variable (e.g. `--ui-button-focus-color`) that defaults to the component-derived token.
+Components render focus using a component-local CSS variable (e.g. `--eui-button-focus-color`) that defaults to the component-derived token.
 
 The system focus policy overrides that variable at a higher level, for example:
-- when `data-ui-focus-policy="system"` is active, map `--ui-button-focus-color` to `ui.focus.ring.color.system`
+- when `data-eui-focus-policy="system"` is active, map `--eui-button-focus-color` to `eui.focus.ring.color.system`
 
 This preserves the separation of responsibilities:
 - **components** define derived focus styles and expose tokens
@@ -59,8 +59,8 @@ This preserves the separation of responsibilities:
 
 ## 4. Alternatives Considered
 
-1. **Hardcode system focus color directly in `ui.focus.*`**
-   - Rejected: colors belong in `ui.color.*` so they can be reused, audited, and managed consistently.
+1. **Hardcode system focus color directly in `eui.focus.*`**
+   - Rejected: colors belong in `eui.color.*` so they can be reused, audited, and managed consistently.
 
 2. **Store both derived and system focus tokens inside the component namespace**
    - Rejected: system focus must be independent of component intent/styling and globally consistent.

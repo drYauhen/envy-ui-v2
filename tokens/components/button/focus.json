@@ -1,17 +1,29 @@
 {
-  "ui": {
+  "eui": {
     "button": {
       "focus": {
         "ring": {
           "color": {
-            "derived": { "$value": "{ui.color.brand.primary}", "$type": "color" }
+            "derived": {
+              "$value": "{eui.color.brand.primary}",
+              "$type": "color"
+            }
           },
           "width": {
-            "base": { "$value": "{ui.focus.ring.width.base}", "$type": "dimension" },
-            "accessible": { "$value": "{ui.focus.ring.width.accessible}", "$type": "dimension" }
+            "base": {
+              "$value": "{eui.focus.ring.width.base}",
+              "$type": "dimension"
+            },
+            "accessible": {
+              "$value": "{eui.focus.ring.width.accessible}",
+              "$type": "dimension"
+            }
           },
           "offset": {
-            "base": { "$value": "0px", "$type": "dimension" }
+            "base": {
+              "$value": "0px",
+              "$type": "dimension"
+            }
           }
         }
       }

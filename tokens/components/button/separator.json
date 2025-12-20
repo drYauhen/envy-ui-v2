@@ -1,9 +1,15 @@
 {
-  "ui": {
+  "eui": {
     "button": {
       "separator": {
-        "inset": { "$value": "6px", "$type": "dimension" },
-        "thickness": { "$value": "1px", "$type": "dimension" }
+        "inset": {
+          "$value": "6px",
+          "$type": "dimension"
+        },
+        "thickness": {
+          "$value": "1px",
+          "$type": "dimension"
+        }
       }
     }
   }

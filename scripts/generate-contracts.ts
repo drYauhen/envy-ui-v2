@@ -18,20 +18,20 @@ const COMPONENTS = {
     axes: {
       intent: {
         sources: ['tokens/components/button/colors.json'],
-        path: ['ui', 'button'],
+        path: ['eui', 'button'],
         excludeKeys: ['states']
       },
       size: {
         sources: ['tokens/components/button/size.json'],
-        path: ['ui', 'button', 'size']
+        path: ['eui', 'button', 'size']
       },
       shape: {
         sources: ['tokens/components/button/shape.json'],
-        path: ['ui', 'button', 'shape']
+        path: ['eui', 'button', 'shape']
       },
       states: {
         sources: ['tokens/components/button/colors.json'],
-        path: ['ui', 'button', 'states']
+        path: ['eui', 'button', 'states']
       },
       slots: {
         staticValues: ['label', 'startIcon', 'endIcon']

@@ -323,16 +323,16 @@ function formatReloadTimestamp(date: Date): string {
 }
 
 async function generateButtonStructure(payload: any) {
-  const buttonTokens = payload?.ui?.button;
+  const buttonTokens = payload?.eui?.button;
   if (!buttonTokens) {
-    throw new Error('No ui.button data found in structures payload.');
+    throw new Error('No eui.button data found in structures payload.');
   }
   const page = getOrCreatePage('Generated / Structures');
   figma.currentPage = page;
   await ensureTextFont();
 
   const rootFrame = figma.createFrame();
-  rootFrame.name = 'ui.button';
+  rootFrame.name = 'eui.button';
   rootFrame.layoutMode = 'VERTICAL';
   rootFrame.itemSpacing = 12;
   rootFrame.paddingLeft = 12;
@@ -345,7 +345,7 @@ async function generateButtonStructure(payload: any) {
   const groups = Object.entries(buttonTokens).filter(([key, value]) => value && typeof value === 'object');
   for (const [groupKey, groupValue] of groups) {
     const groupFrame = figma.createFrame();
-    groupFrame.name = `ui.button.${groupKey}`;
+    groupFrame.name = `eui.button.${groupKey}`;
     groupFrame.layoutMode = 'VERTICAL';
     groupFrame.itemSpacing = 8;
     groupFrame.paddingLeft = 8;
@@ -354,7 +354,7 @@ async function generateButtonStructure(payload: any) {
     groupFrame.paddingBottom = 8;
     groupFrame.counterAxisSizingMode = 'AUTO';
     groupFrame.primaryAxisSizingMode = 'AUTO';
-    await renderTokenTree(groupFrame, groupValue as any, [`ui`, `button`, groupKey]);
+    await renderTokenTree(groupFrame, groupValue as any, [`eui`, `button`, groupKey]);
     rootFrame.appendChild(groupFrame);
   }
 

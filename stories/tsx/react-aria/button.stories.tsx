@@ -52,7 +52,7 @@ export default meta;
 type Story = StoryObj<ButtonStoryProps>;
 
 const ButtonPreview = ({ intent, shape, disabled, label }: ButtonStoryProps) => (
-  <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+  <div data-eui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
     <Button intent={intent} size="md" shape={shape} isDisabled={disabled}>
       {shape === 'circle' ? label.slice(0, 1) : label}
     </Button>
@@ -88,7 +88,7 @@ export const KeyboardFocus: Story = {
     ];
 
     return (
-      <div data-ui-context="app" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      <div data-eui-context="app" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
         {buttons.map((button) => (
           <Button key={button.label} intent={button.intent} size="md" shape={shape} isDisabled={disabled}>
             {button.label}
@@ -111,7 +111,7 @@ export const LinkButton: Story = {
     label: 'Open docs'
   },
   render: ({ intent, shape, size, disabled, loading, label }: ButtonStoryProps) => (
-    <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+    <div data-eui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
       <Button intent={intent} shape={shape} size={size} href="https://example.com" isDisabled={disabled} isLoading={loading}>
         {label}
       </Button>
@@ -128,7 +128,7 @@ export const AsChildButton: Story = {
     label: 'Card slot'
   },
   render: ({ intent, shape, size, disabled, loading, label }: ButtonStoryProps) => (
-    <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+    <div data-eui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
       <Button intent={intent} shape={shape} size={size} asChild isDisabled={disabled} isLoading={loading}>
         <div
           style={{
@@ -155,7 +155,7 @@ export const LoadingAndIcons: Story = {
     loading: true
   },
   render: ({ intent, shape, size, disabled, loading, label }: ButtonStoryProps) => (
-    <div data-ui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+    <div data-eui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
       <Button
         intent={intent}
         shape={shape}

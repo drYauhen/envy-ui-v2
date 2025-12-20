@@ -1,7 +1,6 @@
 const path = require('path');
 const StyleDictionary = require('style-dictionary').default;
 const repoRoot = path.resolve(__dirname, '..');
-const systemMeta = require('../system.meta.json');
 const registerStorybookColorsFormat = require('./formats/storybookColors');
 const registerFigmaAdapterFormat = require('./formats/figmaAdapter');
 const registerTokenStudioFormat = require('./formats/tokenStudio');
@@ -29,7 +28,6 @@ module.exports = {
     css: {
       transformGroup: 'css',
       buildPath: path.join(repoRoot, 'generated', 'css') + path.sep,
-      prefix: systemMeta?.tokens?.prefix,
       files: [
         {
           destination: 'tokens.css',
@@ -41,7 +39,6 @@ module.exports = {
     js: {
       transformGroup: 'js',
       buildPath: path.join(repoRoot, 'generated', 'js') + path.sep,
-      prefix: systemMeta?.tokens?.prefix,
       files: [
         {
           destination: 'tokens.js',
