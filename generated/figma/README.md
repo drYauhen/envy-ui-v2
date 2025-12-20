@@ -1,9 +1,9 @@
 # generated/figma/
 
-Purpose: Figma platform artifacts derived from tokens.
-Source/workflow: `style-dictionary/config.js` platforms `figma`, `figmaScoped`, `pluginVariables`.
+Purpose: Figma platform artifacts derived from tokens and platform structures.
+Source/workflow: Style Dictionary platforms `figma`, `figmaScoped`, `pluginVariables`; structures currently curated manually.
 Consumers/destinations: Figma plugin workflows and Figma Variables import.
-Artifact types/roles: Adapter payloads and variables payloads for Figma.
+Artifact types/roles: Adapter payloads, variables payloads, and structures for Figma.
 
 Producers
 - `style-dictionary/config.js` platform `figma` (format `figma/adapter`)
@@ -11,9 +11,10 @@ Producers
 - `style-dictionary/config.js` platform `pluginVariables` (format `figma/variables-full`)
 
 Expected artifacts
-- `variables.adapter.json` (adapter payload used by the Figma plugin import UI)
-- `full/variables.tokens.json` (full variables payload)
-- `scoped/variables.tokens.json` (scoped variables payload)
+- `adapter/variables.adapter.json` (adapter payload used by the Figma plugin import UI)
+- `tokens/variables.tokens.full.json` (full variables payload)
+- `tokens/variables.tokens.scoped.json` (scoped variables payload)
+- `structures/structures.ui.button.json` (structures payload for UI generation)
 
 Regeneration
 - `./node_modules/.bin/style-dictionary build --config style-dictionary/config.js --platform figma`
