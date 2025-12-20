@@ -188,6 +188,16 @@ When assisting with architecture, structure, or implementation, the assistant mu
 	•	Enforce the Directory Mirroring Rule for generated artifacts.
 	•	Assume consistency and discipline are more important than convenience.
 
+Version Control Behavior
+
+	•	By default, the assistant MUST NOT create git commits.
+	•	The assistant may modify files, run generators, and restructure the repository,
+		but all changes must remain uncommitted unless explicitly instructed otherwise.
+	•	The assistant is allowed to create a git commit ONLY when the task explicitly
+		states that committing changes is permitted.
+	•	If committing is not explicitly authorized, the assistant must stop after
+		preparing changes and report what was modified.
+
 ⸻
 
 7. Scope & Evolution
