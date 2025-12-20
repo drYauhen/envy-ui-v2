@@ -16,7 +16,7 @@ const meta: Meta<ButtonStoryProps> = {
   tags: ['autodocs'],
   argTypes: {
     intent: {
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'accent'],
       control: { type: 'radio' }
     },
     shape: {
@@ -75,6 +75,14 @@ export const Secondary: Story = {
   render: (props: ButtonStoryProps) => <ButtonPreview {...props} />
 };
 
+export const Accent: Story = {
+  args: {
+    intent: 'accent',
+    label: 'Accent action'
+  },
+  render: (props: ButtonStoryProps) => <ButtonPreview {...props} />
+};
+
 export const KeyboardFocus: Story = {
   args: {
     intent: 'primary',
@@ -84,7 +92,8 @@ export const KeyboardFocus: Story = {
   render: ({ shape, disabled }: ButtonStoryProps) => {
     const buttons: Array<{ label: string; intent: ButtonIntent }> = [
       { label: 'First', intent: 'primary' },
-      { label: 'Second', intent: 'secondary' }
+      { label: 'Second', intent: 'secondary' },
+      { label: 'Third', intent: 'accent' }
     ];
 
     return (

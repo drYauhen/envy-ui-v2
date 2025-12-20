@@ -96,6 +96,11 @@
   --eui-button-border-base: var(--eui-button-secondary-border-base);
 }
 
+[data-eui-context] .eui-button[data-eui-intent='accent'] {
+  --eui-button-bg-base: var(--eui-button-accent-background-base);
+  --eui-button-label-base: var(--eui-button-accent-label-base);
+}
+
 [data-eui-context] .eui-button[data-selected][data-eui-intent='primary'] {
   --eui-button-bg-base: var(--eui-button-primary-background-selected);
   --eui-button-label-base: var(--eui-button-primary-label-selected);
@@ -105,6 +110,11 @@
   --eui-button-bg-base: var(--eui-button-secondary-background-selected);
   --eui-button-label-base: var(--eui-button-secondary-label-selected);
   --eui-button-border-base: var(--eui-button-secondary-border-selected);
+}
+
+[data-eui-context] .eui-button[data-selected][data-eui-intent='accent'] {
+  --eui-button-bg-base: var(--eui-button-accent-background-selected);
+  --eui-button-label-base: var(--eui-button-accent-label-selected);
 }
 
 [data-eui-context] .eui-button[data-eui-shape='round'] {

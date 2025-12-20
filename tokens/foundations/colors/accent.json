@@ -23,24 +23,29 @@
           "$type": "color"
         },
         "500": {
-          "$value": "#1e8bff",
-          "$type": "color"
+          "$value": "#3db0ff",
+          "$type": "color",
+          "$description": "Base accent color - lighter, more cyan-blue. Used for highlights and expressive elements."
         },
         "600": {
-          "$value": "#0b75e6",
-          "$type": "color"
+          "$value": "#35a8f8",
+          "$type": "color",
+          "$description": "Slightly darker than base, compressed scale keeps it close to 500"
         },
         "700": {
-          "$value": "#0a5ec0",
-          "$type": "color"
+          "$value": "#2d98e8",
+          "$type": "color",
+          "$description": "Used for accent buttons - compressed scale, lighter and more expressive"
         },
         "800": {
-          "$value": "#0a4c99",
-          "$type": "color"
+          "$value": "#2588d8",
+          "$type": "color",
+          "$description": "Medium shade, compressed scale keeps it relatively light"
         },
         "900": {
-          "$value": "#083a73",
-          "$type": "color"
+          "$value": "#1e78c8",
+          "$type": "color",
+          "$description": "Darkest accent - compressed scale keeps it light for highlights. Good contrast with both white and dark text."
         }
       }
     }

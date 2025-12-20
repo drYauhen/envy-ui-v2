@@ -24,6 +24,12 @@
           "$value": "{eui.color.brand.700}",
           "$type": "color"
         }
+      },
+      "accent": {
+        "primary": {
+          "$value": "{eui.color.accent.700}",
+          "$type": "color"
+        }
       }
     }
   }

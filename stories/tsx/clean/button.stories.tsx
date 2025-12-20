@@ -15,7 +15,7 @@ const meta: Meta<ButtonStoryProps> = {
   title: 'TSX (Clean)/Components/Button',
   tags: ['autodocs'],
   argTypes: {
-    intent: { options: ['primary', 'secondary'], control: { type: 'radio' } },
+    intent: { options: ['primary', 'secondary', 'accent'], control: { type: 'radio' } },
     shape: { options: ['default', 'round', 'circle'], control: { type: 'radio' } },
     size: { options: ['sm', 'md', 'lg'], control: { type: 'radio' } },
     disabled: { control: { type: 'boolean' } },

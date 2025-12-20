@@ -7,7 +7,7 @@
  * - Axes derived by reading keys at configured JSON paths (or staticValues when provided).
  * - No primitives resolved; only literal keys are emitted.
  */
-export const ButtonIntent = ['primary', 'secondary'] as const;
+export const ButtonIntent = ['accent', 'primary', 'secondary'] as const;
 export type ButtonIntent = (typeof ButtonIntent)[number];
 
 export const ButtonSize = ['lg', 'md', 'sm'] as const;

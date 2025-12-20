@@ -38,6 +38,11 @@ export const Button: Story = {
         description="Secondary button with all states"
       />
       <ButtonStatesViewer
+        config={{ intent: 'accent', size: 'md', shape: 'default', label: 'Button' }}
+        title="Accent"
+        description="Accent button with all states"
+      />
+      <ButtonStatesViewer
         config={{ intent: 'primary', size: 'md', shape: 'round', label: 'Button' }}
         title="Primary Round"
         description="Primary button with round shape"

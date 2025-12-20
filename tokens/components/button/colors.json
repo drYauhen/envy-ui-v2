@@ -132,6 +132,52 @@
             "$type": "color"
           }
         }
+      },
+      "accent": {
+        "background": {
+          "base": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color"
+          }
+        },
+        "label": {
+          "base": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.text.disabled}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color"
+          }
+        }
       }
     }
   }
