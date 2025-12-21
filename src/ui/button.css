@@ -1,6 +1,8 @@
 [data-eui-context] {
   --eui-button-shape-pill-radius: var(--eui-button-shape-round-radius);
-  --eui-button-focus-color: var(--eui-button-focus-ring-color-derived);
+  /* Focus ring colors: base (less prominent) for mouse focus, accessible (more prominent) for keyboard focus */
+  --eui-button-focus-color-base: var(--eui-button-focus-ring-color-derived-base);
+  --eui-button-focus-color-accessible: var(--eui-button-focus-ring-color-derived-accessible);
 }
 
 [data-eui-context] .eui-button {
@@ -68,21 +70,21 @@
   transform: translateY(1px);
 }
 
+/* Focus ring: solid colors (no transparency) for consistent appearance on any background */
 [data-eui-context] .eui-button:focus {
-  box-shadow:
-    0 0 0 var(--eui-button-focus-ring-width-base) color-mix(in srgb, var(--eui-button-focus-color), transparent 40%);
+  box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base) var(--eui-button-focus-color-base);
   z-index: 1;
 }
 
+/* Keyboard focus: more prominent solid color for high accessibility contrast */
 [data-eui-context] .eui-button:focus-visible {
-  box-shadow:
-    0 0 0 var(--eui-button-focus-ring-width-accessible) color-mix(in srgb, var(--eui-button-focus-color), transparent 25%);
+  box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) var(--eui-button-focus-color-accessible);
   z-index: 1;
 }
 
+/* Mouse focus (not keyboard): less prominent solid color */
 [data-eui-context] .eui-button:focus:not(:focus-visible) {
-  box-shadow:
-    0 0 0 var(--eui-button-focus-ring-width-base) color-mix(in srgb, var(--eui-button-focus-color), transparent 55%);
+  box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base) var(--eui-button-focus-color-base);
   z-index: 1;
 }
 
@@ -196,19 +198,17 @@
 }
 
 .eui-button-group:not([data-orientation='vertical']) .eui-button:not(:first-child)::after {
-  left: 0;
+  left: calc(var(--eui-button-separator-thickness) * -0.5);
   top: var(--eui-button-separator-inset);
   bottom: var(--eui-button-separator-inset);
   width: var(--eui-button-separator-thickness);
-  transform: translateX(-50%);
 }
 
 .eui-button-group[data-orientation='vertical'] .eui-button:not(:first-child)::after {
-  top: 0;
+  top: calc(var(--eui-button-separator-thickness) * -0.5);
   left: var(--eui-button-separator-inset);
   right: var(--eui-button-separator-inset);
   height: var(--eui-button-separator-thickness);
-  transform: translateY(-50%);
 }
 
 .eui-button-group[data-orientation='vertical'] .eui-button:not(:first-child) {

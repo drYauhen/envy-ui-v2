@@ -1,3 +1,5 @@
+/* System focus policy: use solid system focus color (high accessibility orange) for keyboard focus */
 [data-eui-focus-policy='system'] [data-eui-context] {
-  --eui-button-focus-color: var(--eui-color-system-focus);
+  --eui-button-focus-color-accessible: var(--eui-color-system-focus);
+  /* Base focus (mouse) can remain brand color, or use system if desired */
 }
