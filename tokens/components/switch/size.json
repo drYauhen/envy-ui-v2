@@ -1,0 +1,87 @@
+{
+  "eui": {
+    "switch": {
+      "size": {
+        "sm": {
+          "track": {
+            "width": {
+              "$value": "34px",
+              "$type": "dimension",
+              "$description": "Track width for small switch"
+            },
+            "height": {
+              "$value": "18px",
+              "$type": "dimension",
+              "$description": "Track height for small switch"
+            }
+          },
+          "thumb": {
+            "size": {
+              "$value": "12px",
+              "$type": "dimension",
+              "$description": "Thumb diameter for small switch"
+            },
+            "offset": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Thumb offset from track edge for small switch. Equal spacing on all sides."
+            }
+          }
+        },
+        "md": {
+          "track": {
+            "width": {
+              "$value": "40px",
+              "$type": "dimension",
+              "$description": "Track width for medium (default) switch. Reduced from previous medium size to be more compact."
+            },
+            "height": {
+              "$value": "22px",
+              "$type": "dimension",
+              "$description": "Track height for medium switch"
+            }
+          },
+          "thumb": {
+            "size": {
+              "$value": "16px",
+              "$type": "dimension",
+              "$description": "Thumb diameter for medium switch"
+            },
+            "offset": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Thumb offset from track edge for medium switch. Equal spacing on all sides."
+            }
+          }
+        },
+        "lg": {
+          "track": {
+            "width": {
+              "$value": "52px",
+              "$type": "dimension",
+              "$description": "Track width for large switch"
+            },
+            "height": {
+              "$value": "28px",
+              "$type": "dimension",
+              "$description": "Track height for large switch"
+            }
+          },
+          "thumb": {
+            "size": {
+              "$value": "22px",
+              "$type": "dimension",
+              "$description": "Thumb diameter for large switch"
+            },
+            "offset": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Thumb offset from track edge for large switch. Equal spacing on all sides."
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

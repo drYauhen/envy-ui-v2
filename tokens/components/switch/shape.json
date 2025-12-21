@@ -1,0 +1,21 @@
+{
+  "eui": {
+    "switch": {
+      "shape": {
+        "radius": {
+          "track": {
+            "$value": "{eui.radius.pill}",
+            "$type": "dimension",
+            "$description": "Track border radius. Uses pill (fully rounded) for switch track."
+          },
+          "thumb": {
+            "$value": "{eui.radius.pill}",
+            "$type": "dimension",
+            "$description": "Thumb border radius. Always fully rounded (circle)."
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,230 @@
+/* Switch Component Styles */
+
+[data-eui-context] .eui-switch-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--eui-checkbox-layout-gap, 0.5em);
+  cursor: pointer;
+}
+
+/* Base switch styles - styled input with track and thumb via pseudo-elements */
+[data-eui-context] .eui-switch {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  outline: none;
+  
+  /* Size - default to md */
+  width: var(--eui-switch-size-md-track-width);
+  height: var(--eui-switch-size-md-track-height);
+  
+  /* Track styling via ::before */
+}
+
+/* Track (background) via ::before */
+[data-eui-context] .eui-switch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--eui-switch-track-background-off);
+  border: var(--eui-switch-track-border-width) var(--eui-switch-track-border-style) var(--eui-switch-track-border-off);
+  border-radius: var(--eui-switch-shape-radius-track);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Thumb (slider) via ::after */
+[data-eui-context] .eui-switch::after {
+  content: '';
+  position: absolute;
+  top: var(--eui-switch-size-md-thumb-offset);
+  left: var(--eui-switch-size-md-thumb-offset);
+  width: var(--eui-switch-size-md-thumb-size);
+  height: var(--eui-switch-size-md-thumb-size);
+  background-color: var(--eui-switch-thumb-background-base);
+  border: none;
+  border-radius: var(--eui-switch-shape-radius-thumb);
+  transition: left 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-sizing: border-box;
+}
+
+/* Checked state - move thumb and change track color */
+[data-eui-context] .eui-switch:checked::before {
+  background-color: var(--eui-switch-track-background-on);
+  border-color: var(--eui-switch-track-border-on);
+}
+
+[data-eui-context] .eui-switch:checked::after {
+  left: calc(var(--eui-switch-size-md-track-width) - var(--eui-switch-size-md-thumb-size) - var(--eui-switch-size-md-thumb-offset));
+}
+
+/* Sizes */
+[data-eui-context] .eui-switch[data-eui-size="sm"] {
+  width: var(--eui-switch-size-sm-track-width);
+  height: var(--eui-switch-size-sm-track-height);
+}
+
+[data-eui-context] .eui-switch[data-eui-size="sm"]::after {
+  top: var(--eui-switch-size-sm-thumb-offset);
+  left: var(--eui-switch-size-sm-thumb-offset);
+  width: var(--eui-switch-size-sm-thumb-size);
+  height: var(--eui-switch-size-sm-thumb-size);
+  border: none;
+  box-sizing: border-box;
+}
+
+[data-eui-context] .eui-switch[data-eui-size="sm"]:checked::after {
+  left: calc(var(--eui-switch-size-sm-track-width) - var(--eui-switch-size-sm-thumb-size) - var(--eui-switch-size-sm-thumb-offset));
+}
+
+[data-eui-context] .eui-switch[data-eui-size="md"] {
+  width: var(--eui-switch-size-md-track-width);
+  height: var(--eui-switch-size-md-track-height);
+}
+
+[data-eui-context] .eui-switch[data-eui-size="md"]::after {
+  top: var(--eui-switch-size-md-thumb-offset);
+  left: var(--eui-switch-size-md-thumb-offset);
+  width: var(--eui-switch-size-md-thumb-size);
+  height: var(--eui-switch-size-md-thumb-size);
+  border: none;
+  box-sizing: border-box;
+}
+
+[data-eui-context] .eui-switch[data-eui-size="md"]:checked::after {
+  left: calc(var(--eui-switch-size-md-track-width) - var(--eui-switch-size-md-thumb-size) - var(--eui-switch-size-md-thumb-offset));
+}
+
+[data-eui-context] .eui-switch[data-eui-size="lg"] {
+  width: var(--eui-switch-size-lg-track-width);
+  height: var(--eui-switch-size-lg-track-height);
+}
+
+[data-eui-context] .eui-switch[data-eui-size="lg"]::after {
+  top: var(--eui-switch-size-lg-thumb-offset);
+  left: var(--eui-switch-size-lg-thumb-offset);
+  width: var(--eui-switch-size-lg-thumb-size);
+  height: var(--eui-switch-size-lg-thumb-size);
+  border: none;
+  box-sizing: border-box;
+}
+
+[data-eui-context] .eui-switch[data-eui-size="lg"]:checked::after {
+  left: calc(var(--eui-switch-size-lg-track-width) - var(--eui-switch-size-lg-thumb-size) - var(--eui-switch-size-lg-thumb-offset));
+}
+
+/* Disabled state */
+[data-eui-context="app"] .eui-switch:disabled,
+[data-eui-context="site"] .eui-switch:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+[data-eui-context="app"] .eui-switch:disabled::before,
+[data-eui-context="site"] .eui-switch:disabled::before {
+  background-color: var(--eui-switch-track-background-disabled);
+  border-color: var(--eui-switch-track-border-disabled);
+}
+
+[data-eui-context="app"] .eui-switch:disabled:checked::before,
+[data-eui-context="site"] .eui-switch:disabled:checked::before {
+  background-color: var(--eui-switch-track-background-disabled-on);
+  border-color: var(--eui-switch-track-border-disabled);
+}
+
+[data-eui-context="app"] .eui-switch:disabled::after,
+[data-eui-context="site"] .eui-switch:disabled::after {
+  background-color: var(--eui-switch-thumb-background-disabled);
+  border: var(--eui-switch-thumb-border-width) var(--eui-switch-thumb-border-style) var(--eui-switch-thumb-border-disabled);
+  box-shadow: none;
+  /* Position remains the same as enabled state - offset is consistent */
+}
+
+/* Ensure disabled unchecked state has correct positioning (same as enabled unchecked) */
+[data-eui-context="app"] .eui-switch:disabled:not(:checked)[data-eui-size="sm"]::after,
+[data-eui-context="site"] .eui-switch:disabled:not(:checked)[data-eui-size="sm"]::after {
+  top: var(--eui-switch-size-sm-thumb-offset);
+  left: var(--eui-switch-size-sm-thumb-offset);
+}
+
+[data-eui-context="app"] .eui-switch:disabled:not(:checked)[data-eui-size="md"]::after,
+[data-eui-context="site"] .eui-switch:disabled:not(:checked)[data-eui-size="md"]::after {
+  top: var(--eui-switch-size-md-thumb-offset);
+  left: var(--eui-switch-size-md-thumb-offset);
+}
+
+[data-eui-context="app"] .eui-switch:disabled:not(:checked)[data-eui-size="lg"]::after,
+[data-eui-context="site"] .eui-switch:disabled:not(:checked)[data-eui-size="lg"]::after {
+  top: var(--eui-switch-size-lg-thumb-offset);
+  left: var(--eui-switch-size-lg-thumb-offset);
+}
+
+/* Ensure disabled checked state has correct positioning */
+[data-eui-context="app"] .eui-switch:disabled:checked[data-eui-size="sm"]::after,
+[data-eui-context="site"] .eui-switch:disabled:checked[data-eui-size="sm"]::after {
+  left: calc(var(--eui-switch-size-sm-track-width) - var(--eui-switch-size-sm-thumb-size) - var(--eui-switch-size-sm-thumb-offset));
+}
+
+[data-eui-context="app"] .eui-switch:disabled:checked[data-eui-size="md"]::after,
+[data-eui-context="site"] .eui-switch:disabled:checked[data-eui-size="md"]::after {
+  left: calc(var(--eui-switch-size-md-track-width) - var(--eui-switch-size-md-thumb-size) - var(--eui-switch-size-md-thumb-offset));
+}
+
+[data-eui-context="app"] .eui-switch:disabled:checked[data-eui-size="lg"]::after,
+[data-eui-context="site"] .eui-switch:disabled:checked[data-eui-size="lg"]::after {
+  left: calc(var(--eui-switch-size-lg-track-width) - var(--eui-switch-size-lg-thumb-size) - var(--eui-switch-size-lg-thumb-offset));
+}
+
+/* Focus states */
+[data-eui-context="app"] .eui-switch:focus,
+[data-eui-context="site"] .eui-switch:focus {
+  outline: none;
+}
+
+[data-eui-context="app"] .eui-switch:focus::before,
+[data-eui-context="site"] .eui-switch:focus::before {
+  box-shadow: 0 0 0 var(--eui-switch-focus-ring-width-base) var(--eui-switch-focus-ring-color-derived-base);
+}
+
+[data-eui-context="app"] .eui-switch:focus-visible::before,
+[data-eui-context="site"] .eui-switch:focus-visible::before {
+  box-shadow: 0 0 0 var(--eui-switch-focus-ring-width-accessible) var(--eui-switch-focus-ring-color-derived-accessible);
+}
+
+/* Wrapper disabled state - label styling handled by universal label.css */
+[data-eui-context="app"] .eui-switch-wrapper:has(.eui-switch:disabled),
+[data-eui-context="site"] .eui-switch-wrapper:has(.eui-switch:disabled) {
+  cursor: not-allowed;
+}
+
+/* Report context - print styles */
+[data-eui-context="report"] .eui-switch {
+  cursor: default;
+  pointer-events: none;
+}
+
+[data-eui-context="report"] .eui-switch::before {
+  /* Print style - simplified visual */
+  border: 1px solid var(--eui-color-border-default);
+  background-color: transparent;
+}
+
+[data-eui-context="report"] .eui-switch:checked::before {
+  background-color: var(--eui-color-border-default);
+}
+
+[data-eui-context="report"] .eui-switch::after {
+  /* Hide thumb in print */
+  display: none;
+}
+
+[data-eui-context="report"] .eui-switch:disabled::before {
+  border-style: dashed;
+}
+

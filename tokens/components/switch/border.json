@@ -1,0 +1,33 @@
+{
+  "eui": {
+    "switch": {
+      "track": {
+        "border": {
+          "width": {
+            "$value": "1px",
+            "$type": "dimension",
+            "$description": "Track border width. 1px for subtle definition, lighter than secondary button."
+          },
+          "style": {
+            "$value": "solid",
+            "$type": "string"
+          }
+        }
+      },
+      "thumb": {
+        "border": {
+          "width": {
+            "$value": "1px",
+            "$type": "dimension",
+            "$description": "Thumb border width for disabled state. 1px for subtle definition."
+          },
+          "style": {
+            "$value": "solid",
+            "$type": "string"
+          }
+        }
+      }
+    }
+  }
+}
+

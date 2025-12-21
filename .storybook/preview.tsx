@@ -6,6 +6,7 @@ import '../src/ui/label.css';
 import '../src/ui/button.css';
 import '../src/ui/card.css';
 import '../src/ui/checkbox.css';
+import '../src/ui/switch.css';
 import '../src/ui/input.css';
 import '../src/ui/textarea.css';
 import '../src/ui/select.css';

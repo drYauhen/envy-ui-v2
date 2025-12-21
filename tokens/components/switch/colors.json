@@ -1,0 +1,69 @@
+{
+  "eui": {
+    "switch": {
+      "track": {
+        "background": {
+          "off": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color",
+            "$description": "Track background color when switch is off (unchecked)"
+          },
+          "on": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color",
+            "$description": "Track background color when switch is on (checked). Uses accent primary for status indication."
+          },
+          "disabled": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Track background color when switch is disabled"
+          },
+          "disabledOn": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Track background color when switch is disabled and on"
+          }
+        },
+        "border": {
+          "off": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Track border color when switch is off (unchecked). One step darker than background (neutral.300) for subtle definition. Lighter than secondary button border."
+          },
+          "on": {
+            "$value": "transparent",
+            "$type": "color",
+            "$description": "Track border color when switch is on (checked). Transparent when on."
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Track border color when switch is disabled"
+          }
+        }
+      },
+      "thumb": {
+        "background": {
+          "base": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Thumb (slider) background color"
+          },
+          "disabled": {
+            "$value": "transparent",
+            "$type": "color",
+            "$description": "Thumb background color when switch is disabled. Transparent with border for subtle disabled appearance."
+          }
+        },
+        "border": {
+          "disabled": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Thumb border color when switch is disabled. Light border for visibility on transparent background."
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -81,14 +81,14 @@ export const FormExample: Story = {
           <h3 style={sectionTitleStyle}>Preferences</h3>
           
           <div style={formGroupStyle}>
-            <label className="eui-checkbox-wrapper">
-              <input type="checkbox" className="eui-checkbox" defaultChecked />
+            <label className="eui-switch-wrapper">
+              <input type="checkbox" className="eui-switch" defaultChecked />
               <span className="eui-label">Email notifications</span>
             </label>
             
-            <label className="eui-checkbox-wrapper">
-              <input type="checkbox" className="eui-checkbox" />
-              <span className="eui-label">SMS notifications</span>
+            <label className="eui-switch-wrapper">
+              <input type="checkbox" className="eui-switch" />
+              <span className="eui-label">Push notifications</span>
             </label>
             
             <label className="eui-checkbox-wrapper">
@@ -96,8 +96,8 @@ export const FormExample: Story = {
               <span className="eui-label">Marketing emails</span>
             </label>
             
-            <label className="eui-checkbox-wrapper">
-              <input type="checkbox" className="eui-checkbox" disabled />
+            <label className="eui-switch-wrapper">
+              <input type="checkbox" className="eui-switch" disabled />
               <span className="eui-label">Beta features (disabled)</span>
             </label>
           </div>
