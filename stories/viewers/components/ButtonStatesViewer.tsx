@@ -291,8 +291,7 @@ export const ButtonStatesViewer = ({ config, title, description }: ButtonStatesV
             transform: translateY(1px);
           }
           [data-eui-context] .eui-button[data-state='focus'] {
-            box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible)
-              color-mix(in srgb, var(--eui-button-focus-color), transparent 25%);
+            box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) var(--eui-button-focus-color-accessible);
             z-index: 1;
           }
         `
