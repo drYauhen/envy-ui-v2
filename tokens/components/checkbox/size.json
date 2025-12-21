@@ -1,0 +1,30 @@
+{
+  "eui": {
+    "checkbox": {
+      "size": {
+        "md": {
+          "size": {
+            "$value": "1.25em",
+            "$type": "dimension",
+            "$description": "Medium checkbox size (default). ~20px at 16px base font, ~22.5px at 18px base font. Adapts to typography scale."
+          }
+        },
+        "sm": {
+          "size": {
+            "$value": "1em",
+            "$type": "dimension",
+            "$description": "Small checkbox size. ~16px at 16px base font, ~18px at 18px base font. Relative to default (md)."
+          }
+        },
+        "lg": {
+          "size": {
+            "$value": "1.5em",
+            "$type": "dimension",
+            "$description": "Large checkbox size. ~24px at 16px base font, ~27px at 18px base font. Relative to default (md)."
+          }
+        }
+      }
+    }
+  }
+}
+

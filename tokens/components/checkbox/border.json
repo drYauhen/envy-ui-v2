@@ -1,0 +1,18 @@
+{
+  "eui": {
+    "checkbox": {
+      "border": {
+        "width": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Border width for checkbox. Matches secondary button border width (1px) for consistency."
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "string"
+        }
+      }
+    }
+  }
+}
+

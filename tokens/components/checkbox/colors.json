@@ -1,0 +1,123 @@
+{
+  "eui": {
+    "checkbox": {
+      "background": {
+        "base": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color for unchecked checkbox"
+        },
+        "checked": {
+          "$value": "{eui.color.accent.primary}",
+          "$type": "color",
+          "$description": "Background color for checked checkbox. Follows accent button logic for status indication."
+        },
+        "disabled": {
+          "$value": "{eui.color.background.muted}",
+          "$type": "color",
+          "$description": "Background color for disabled checkbox"
+        },
+        "checkedDisabled": {
+          "$value": "{eui.color.background.muted}",
+          "$type": "color",
+          "$description": "Background color for checked and disabled checkbox"
+        },
+        "hover": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color on hover (unchecked)"
+        },
+        "checkedHover": {
+          "$value": "{eui.color.accent.primary}",
+          "$type": "color",
+          "$description": "Background color on hover (checked)"
+        },
+        "indeterminate": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color for indeterminate checkbox. Same as unchecked for visual similarity."
+        },
+        "indeterminateHover": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color on hover (indeterminate). Same as unchecked."
+        },
+        "indeterminateDisabled": {
+          "$value": "{eui.color.background.muted}",
+          "$type": "color",
+          "$description": "Background color for indeterminate and disabled checkbox"
+        }
+      },
+      "border": {
+        "base": {
+          "$value": "{eui.color.neutral.400}",
+          "$type": "color",
+          "$description": "Border color for unchecked checkbox. More contrast than default border (neutral.300) - uses neutral.400 for better visibility on small checkbox element."
+        },
+        "checked": {
+          "$value": "{eui.color.accent.800}",
+          "$type": "color",
+          "$description": "Border color for checked checkbox. One shade darker than checked background (accent.700) for visual consistency and size parity with unchecked state."
+        },
+        "disabled": {
+          "$value": "{eui.color.neutral.500}",
+          "$type": "color",
+          "$description": "Border color for disabled checkbox. More visible than base (neutral.400) but still clearly disabled state."
+        },
+        "checkedDisabled": {
+          "$value": "{eui.color.neutral.500}",
+          "$type": "color",
+          "$description": "Border color for checked and disabled checkbox. Same as disabled for consistent visibility."
+        },
+        "hover": {
+          "$value": "{eui.color.neutral.400}",
+          "$type": "color",
+          "$description": "Border color on hover (unchecked). Same as base for consistency."
+        },
+        "checkedHover": {
+          "$value": "{eui.color.accent.800}",
+          "$type": "color",
+          "$description": "Border color on hover (checked). Same as checked for consistency."
+        },
+        "indeterminate": {
+          "$value": "{eui.color.neutral.400}",
+          "$type": "color",
+          "$description": "Border color for indeterminate checkbox. Same as unchecked for visual similarity."
+        },
+        "indeterminateHover": {
+          "$value": "{eui.color.neutral.400}",
+          "$type": "color",
+          "$description": "Border color on hover (indeterminate). Same as unchecked."
+        },
+        "indeterminateDisabled": {
+          "$value": "{eui.color.neutral.500}",
+          "$type": "color",
+          "$description": "Border color for indeterminate and disabled checkbox. Same as disabled for consistency."
+        }
+      },
+      "checkmark": {
+        "base": {
+          "$value": "{eui.color.text.inverse}",
+          "$type": "color",
+          "$description": "Checkmark color (white/light for contrast on brand background)"
+        },
+        "disabled": {
+          "$value": "{eui.color.neutral.500}",
+          "$type": "color",
+          "$description": "Checkmark color for disabled checkbox. Matches border color for consistency."
+        },
+        "indeterminate": {
+          "$value": "{eui.color.accent.400}",
+          "$type": "color",
+          "$description": "Indeterminate mark color (square inside). Lighter accent color (accent.400) than checked background (accent.700) to indicate partial selection."
+        },
+        "indeterminateDisabled": {
+          "$value": "{eui.color.neutral.500}",
+          "$type": "color",
+          "$description": "Indeterminate mark color for disabled checkbox. Matches border color for consistency."
+        }
+      }
+    }
+  }
+}
+

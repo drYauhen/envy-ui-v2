@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "checkbox": {
+      "shape": {
+        "radius": {
+          "$value": "{eui.radius.small}",
+          "$type": "dimension",
+          "$description": "Checkbox border radius. Uses small radius for subtle rounding. Small radius (typically 2-4px) is appropriate for form elements like checkboxes."
+        }
+      }
+    }
+  }
+}
+

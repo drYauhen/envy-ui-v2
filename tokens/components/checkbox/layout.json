@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "checkbox": {
+      "layout": {
+        "gap": {
+          "$value": "0.5em",
+          "$type": "dimension",
+          "$description": "Gap between checkbox and label. In EMs to adapt to typography scale."
+        }
+      }
+    }
+  }
+}
+
