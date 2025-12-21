@@ -503,9 +503,14 @@
       "mode": "default",
       "variables": [
         {
-          "path": "eui.button.focus.ring.color.derived",
+          "path": "eui.button.focus.ring.color.derived.accessible",
           "type": "COLOR",
           "value": "#066a8d"
+        },
+        {
+          "path": "eui.button.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "#2ea7d1"
         },
         {
           "path": "eui.color.focus.ring",

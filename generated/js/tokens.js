@@ -43,7 +43,8 @@ export const EuiButtonAccentLabelHover = "#ffffff";
 export const EuiButtonAccentLabelActive = "#ffffff";
 export const EuiButtonAccentLabelDisabled = "#404040";
 export const EuiButtonAccentLabelSelected = "#ffffff";
-export const EuiButtonFocusRingColorDerived = "#066a8d";
+export const EuiButtonFocusRingColorDerivedBase = "#2ea7d1"; // Less prominent focus ring color for mouse/pointer focus. Solid color (no transparency) for consistent appearance on any background.
+export const EuiButtonFocusRingColorDerivedAccessible = "#066a8d"; // More prominent focus ring color for keyboard focus (focus-visible). Solid color (no transparency) for high accessibility contrast.
 export const EuiButtonFocusRingWidthBase = "2px";
 export const EuiButtonFocusRingWidthAccessible = "3px";
 export const EuiButtonFocusRingOffsetBase = "0px";
@@ -192,3 +193,11 @@ export const EuiRadiusExtraLarge = "6px"; // Slightly more than default even in 
 export const EuiRadiusFull = "999px";
 export const EuiFocusRingWidthBase = "2px";
 export const EuiFocusRingWidthAccessible = "3px";
+export const EuiShadowNone = "none"; // No shadow. Used for flat elements like buttons, inputs, and elements that should appear flush with their container.
+export const EuiShadowSmall = "0 1px 2px rgba(0, 0, 0, 0.05)"; // Subtle elevation. Used for cards and containers that need minimal depth separation from background.
+export const EuiShadowDefault =
+  "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)"; // Standard elevation. Baseline for cards, panels, and standard containers. Provides clear but not prominent depth.
+export const EuiShadowLarge =
+  "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"; // Prominent elevation. Used for modals, dialogs, dropdowns, and floating elements that need clear separation and focus.
+export const EuiShadowExtraLarge =
+  "0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)"; // Maximum elevation. Used for high-priority modals, tooltips, and elements that need maximum visual separation and prominence.
