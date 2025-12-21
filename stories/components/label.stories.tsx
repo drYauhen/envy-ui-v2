@@ -40,21 +40,6 @@ const formGroupStyle = {
   gap: '0.5rem'
 } as const;
 
-const inputStyle = {
-  padding: '0.5rem 0.75rem',
-  border: '1px solid #a3a3a3',
-  borderRadius: '4px',
-  fontSize: '1rem',
-  fontFamily: 'inherit',
-  backgroundColor: '#ffffff'
-} as const;
-
-const inputDisabledStyle = {
-  ...inputStyle,
-  backgroundColor: '#f3f4f6',
-  color: '#9ca3af',
-  cursor: 'not-allowed'
-} as const;
 
 export const FormExample: Story = {
   name: 'Label Usage in Forms',
@@ -73,21 +58,21 @@ export const FormExample: Story = {
           <div style={formGroupStyle}>
             <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <span className="eui-label">Email address</span>
-              <input type="email" placeholder="your.email@example.com" style={inputStyle} />
+              <input type="email" className="eui-input" placeholder="your.email@example.com" />
             </label>
           </div>
           
           <div style={formGroupStyle}>
             <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <span className="eui-label">Full name</span>
-              <input type="text" placeholder="John Doe" style={inputStyle} />
+              <input type="text" className="eui-input" placeholder="John Doe" />
             </label>
           </div>
           
           <div style={formGroupStyle}>
             <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <span className="eui-label">Phone number (disabled)</span>
-              <input type="tel" placeholder="+1 234 567 8900" disabled style={inputDisabledStyle} />
+              <input type="tel" className="eui-input" placeholder="+1 234 567 8900" disabled />
             </label>
           </div>
         </div>
@@ -114,6 +99,27 @@ export const FormExample: Story = {
             <label className="eui-checkbox-wrapper">
               <input type="checkbox" className="eui-checkbox" disabled />
               <span className="eui-label">Beta features (disabled)</span>
+            </label>
+          </div>
+        </div>
+
+        <div style={formSectionStyle}>
+          <h3 style={sectionTitleStyle}>Additional Information</h3>
+          
+          <div style={formGroupStyle}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <span className="eui-label">Country</span>
+              <select className="eui-select">
+                <option value="">Select country</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+              </select>
+            </label>
+            
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <span className="eui-label">Bio</span>
+              <textarea className="eui-textarea" placeholder="Tell us about yourself" rows={3} />
             </label>
           </div>
         </div>

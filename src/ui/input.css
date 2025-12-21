@@ -6,7 +6,8 @@
   -webkit-appearance: none;
   margin: 0;
   padding: 0 var(--eui-input-size-md-padding-inline);
-  border: var(--eui-input-border-width) var(--eui-input-border-style) var(--eui-input-border-base);
+  /* Border color references semantic token directly so it updates with theme changes */
+  border: var(--eui-input-border-width) var(--eui-input-border-style) var(--eui-color-border-default);
   background-color: var(--eui-input-background-base);
   color: var(--eui-input-text-base);
   cursor: text;
@@ -56,7 +57,7 @@
 /* Hover state */
 [data-eui-context="app"] .eui-input:not(:disabled):not(:focus):hover,
 [data-eui-context="site"] .eui-input:not(:disabled):not(:focus):hover {
-  border-color: var(--eui-input-border-hover);
+  border-color: var(--eui-color-border-strong);
 }
 
 /* Focus states */
@@ -97,7 +98,7 @@
 
 /* Report context - print styles */
 [data-eui-context="report"] .eui-input {
-  border-color: var(--eui-input-border-base);
+  border-color: var(--eui-color-border-default);
   background-color: transparent;
   cursor: default;
 }
