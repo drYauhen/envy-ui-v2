@@ -177,35 +177,46 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         }
       });
       
-      // Ensure semantic/shape.json tokens are included in base tokens with original values
-      // Read semantic/shape.json directly to get original values (before collision resolution)
+      // Ensure semantic tokens are included in base tokens with original values
+      // Read semantic JSON files directly to get original values (before collision resolution)
       // This ensures base values are in :root even if themes override them
-      const semanticShapePath = path.join(tokensRoot, 'semantic', 'shape.json');
-      if (fs.existsSync(semanticShapePath)) {
-        try {
-          const semanticShapeData = JSON.parse(fs.readFileSync(semanticShapePath, 'utf8'));
-          // Extract tokens starting from eui.radius path to get correct names with eui- prefix
-          const euiData = semanticShapeData.eui || semanticShapeData;
-          if (euiData.radius) {
-            const shapeTokens = extractTokensFromJson(euiData.radius, ['eui', 'radius']);
-            shapeTokens.forEach(({ name, path: tokenPath, value }) => {
-              const tokenPathStr = tokenPath.join('.');
-              // Remove existing token from baseTokens if it exists (may have wrong value due to collisions)
-              const existingIndex = baseTokens.findIndex(t => (t.path || []).join('.') === tokenPathStr);
-              if (existingIndex >= 0) {
-                baseTokens.splice(existingIndex, 1);
-              }
-              // Add token with original value from semantic/shape.json
-              baseTokens.push({ name, value, path: tokenPath });
-              if (!baseTokenPaths.has(tokenPathStr)) {
-                baseTokenPaths.add(tokenPathStr);
-              }
-            });
+      const semanticFilesToProcess = [
+        { file: 'semantic/shape.json', pathPrefix: ['eui', 'radius'] },
+        { file: 'semantic/colors/border.json', pathPrefix: ['eui', 'color', 'border'] }
+      ];
+      
+      semanticFilesToProcess.forEach(({ file, pathPrefix }) => {
+        const semanticFilePath = path.join(tokensRoot, file);
+        if (fs.existsSync(semanticFilePath)) {
+          try {
+            const semanticData = JSON.parse(fs.readFileSync(semanticFilePath, 'utf8'));
+            const euiData = semanticData.eui || semanticData;
+            // Navigate to the nested structure (e.g., eui.color.border or eui.radius)
+            let targetData = euiData;
+            for (let i = 1; i < pathPrefix.length; i++) {
+              targetData = targetData?.[pathPrefix[i]];
+            }
+            if (targetData) {
+              const semanticTokens = extractTokensFromJson(targetData, pathPrefix);
+              semanticTokens.forEach(({ name, path: tokenPath, value }) => {
+                const tokenPathStr = tokenPath.join('.');
+                // Remove existing token from baseTokens if it exists (may have wrong value due to collisions)
+                const existingIndex = baseTokens.findIndex(t => (t.path || []).join('.') === tokenPathStr);
+                if (existingIndex >= 0) {
+                  baseTokens.splice(existingIndex, 1);
+                }
+                // Add token with original value from semantic file
+                baseTokens.push({ name, value, path: tokenPath });
+                if (!baseTokenPaths.has(tokenPathStr)) {
+                  baseTokenPaths.add(tokenPathStr);
+                }
+              });
+            }
+          } catch (e) {
+            console.warn(`Warning: Could not read ${file}: ${e.message}`);
           }
-        } catch (e) {
-          console.warn(`Warning: Could not read semantic/shape.json: ${e.message}`);
         }
-      }
+      });
 
       let output = '/**\n * Do not edit directly, this file was auto-generated.\n */\n\n';
 
