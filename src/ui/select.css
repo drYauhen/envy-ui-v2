@@ -1,0 +1,115 @@
+/* Select Component Styles */
+/* Extends input base styles for trigger, adds select-specific properties */
+
+[data-eui-context] .eui-select {
+  /* Inherit all input base styles */
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0 var(--eui-input-size-md-padding-inline);
+  padding-right: calc(var(--eui-input-size-md-padding-inline) + 20px);
+  /* Border color references semantic token directly so it updates with theme changes */
+  border: var(--eui-input-border-width) var(--eui-input-border-style) var(--eui-color-border-default);
+  background-color: var(--eui-select-trigger-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M 4 6 L 8 10 L 12 6' stroke='%23525252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--eui-input-size-md-padding-inline) center;
+  background-size: 16px 16px;
+  color: var(--eui-input-text-base);
+  cursor: pointer;
+  position: relative;
+  
+  /* Size - default to md */
+  height: var(--eui-input-size-md-height);
+  font-family: var(--eui-input-typography-font-family, inherit);
+  font-size: var(--eui-input-size-md-font-size);
+  font-weight: var(--eui-input-typography-font-weight);
+  line-height: var(--eui-input-typography-line-height);
+  
+  border-radius: var(--eui-input-shape-radius);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sizes */
+[data-eui-context] .eui-select[data-eui-size="sm"] {
+  height: var(--eui-input-size-sm-height);
+  padding-left: var(--eui-input-size-sm-padding-inline);
+  padding-right: calc(var(--eui-input-size-sm-padding-inline) + 20px);
+  font-size: var(--eui-input-size-sm-font-size);
+  background-position: right var(--eui-input-size-sm-padding-inline) center;
+}
+
+[data-eui-context] .eui-select[data-eui-size="md"] {
+  height: var(--eui-input-size-md-height);
+  padding-left: var(--eui-input-size-md-padding-inline);
+  padding-right: calc(var(--eui-input-size-md-padding-inline) + 20px);
+  font-size: var(--eui-input-size-md-font-size);
+  background-position: right var(--eui-input-size-md-padding-inline) center;
+}
+
+[data-eui-context] .eui-select[data-eui-size="lg"] {
+  height: var(--eui-input-size-lg-height);
+  padding-left: var(--eui-input-size-lg-padding-inline);
+  padding-right: calc(var(--eui-input-size-lg-padding-inline) + 20px);
+  font-size: var(--eui-input-size-lg-font-size);
+  background-position: right var(--eui-input-size-lg-padding-inline) center;
+}
+
+/* Hover state */
+[data-eui-context="app"] .eui-select:not(:disabled):not(:focus):hover,
+[data-eui-context="site"] .eui-select:not(:disabled):not(:focus):hover {
+  border-color: var(--eui-color-border-strong);
+}
+
+/* Focus states */
+[data-eui-context="app"] .eui-select:focus,
+[data-eui-context="site"] .eui-select:focus {
+  border-color: var(--eui-input-border-focus);
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+  z-index: 1;
+}
+
+[data-eui-context="app"] .eui-select:focus-visible,
+[data-eui-context="site"] .eui-select:focus-visible {
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-accessible) var(--eui-input-focus-ring-color-derived-accessible);
+  z-index: 1;
+}
+
+/* Disabled state */
+[data-eui-context="app"] .eui-select:disabled,
+[data-eui-context="site"] .eui-select:disabled {
+  background-color: var(--eui-input-background-disabled);
+  border-color: var(--eui-input-border-disabled);
+  color: var(--eui-input-text-disabled);
+  cursor: not-allowed;
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M 4 6 L 8 10 L 12 6' stroke='%23404040' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Error state */
+[data-eui-context="app"] .eui-select[data-eui-state="error"],
+[data-eui-context="site"] .eui-select[data-eui-state="error"] {
+  border-color: var(--eui-input-border-error);
+}
+
+[data-eui-context="app"] .eui-select[data-eui-state="error"]:focus,
+[data-eui-context="site"] .eui-select[data-eui-state="error"]:focus {
+  border-color: var(--eui-input-border-error);
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+}
+
+/* Report context - print styles */
+[data-eui-context="report"] .eui-select {
+  border-color: var(--eui-color-border-default);
+  background-color: transparent;
+  cursor: default;
+  background-image: none;
+}
+
+[data-eui-context="report"] .eui-select:disabled {
+  border-style: dashed;
+}
+

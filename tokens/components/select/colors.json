@@ -1,0 +1,31 @@
+{
+  "eui": {
+    "select": {
+      "trigger": {
+        "background": {
+          "$value": "{eui.input.background.base}",
+          "$type": "color",
+          "$description": "Background color for select trigger. Matches input for visual consistency."
+        },
+        "border": {
+          "$value": "{eui.input.border.base}",
+          "$type": "color",
+          "$description": "Border color for select trigger. Matches input for visual consistency."
+        }
+      },
+      "icon": {
+        "color": {
+          "$value": "{eui.color.text.subtle}",
+          "$type": "color",
+          "$description": "Color for dropdown chevron icon"
+        },
+        "disabled": {
+          "$value": "{eui.color.text.disabled}",
+          "$type": "color",
+          "$description": "Color for dropdown chevron icon when disabled"
+        }
+      }
+    }
+  }
+}
+
