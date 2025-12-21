@@ -96,7 +96,8 @@
 [data-eui-context] .eui-button[data-eui-intent='secondary'] {
   --eui-button-bg-base: var(--eui-button-secondary-background-base);
   --eui-button-label-base: var(--eui-button-secondary-label-base);
-  --eui-button-border-base: var(--eui-button-secondary-border-base);
+  /* Border color references semantic token directly so it updates with theme changes */
+  --eui-button-border-base: var(--eui-color-border-default);
   --eui-button-border-visible: var(--eui-button-border-base);
   /* Separator color for secondary: lighter than border (less prominent, closer to background) */
   --eui-button-separator-color: color-mix(in srgb, var(--eui-button-border-visible), white 55%);
@@ -118,7 +119,8 @@
 [data-eui-context] .eui-button[data-selected][data-eui-intent='secondary'] {
   --eui-button-bg-base: var(--eui-button-secondary-background-selected);
   --eui-button-label-base: var(--eui-button-secondary-label-selected);
-  --eui-button-border-base: var(--eui-button-secondary-border-selected);
+  /* Border color references semantic token directly so it updates with theme changes */
+  --eui-button-border-base: var(--eui-color-border-default);
 }
 
 [data-eui-context] .eui-button[data-selected][data-eui-intent='accent'] {
