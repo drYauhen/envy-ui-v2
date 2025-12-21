@@ -380,7 +380,7 @@
           "label": "Default",
           "path": "eui.color.border.default",
           "cssVar": "--eui-color-border-default",
-          "value": "#525252"
+          "value": "#cccccc"
         },
         {
           "id": "inverse",

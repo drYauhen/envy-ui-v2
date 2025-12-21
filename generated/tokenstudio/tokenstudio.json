@@ -104,23 +104,23 @@
     "$type": "color"
   },
   "eui.button.secondary.border.base": {
-    "$value": "#525252",
+    "$value": "#cccccc",
     "$type": "color"
   },
   "eui.button.secondary.border.hover": {
-    "$value": "#525252",
+    "$value": "#cccccc",
     "$type": "color"
   },
   "eui.button.secondary.border.active": {
-    "$value": "#525252",
+    "$value": "#cccccc",
     "$type": "color"
   },
   "eui.button.secondary.border.disabled": {
-    "$value": "#525252",
+    "$value": "#cccccc",
     "$type": "color"
   },
   "eui.button.secondary.border.selected": {
-    "$value": "#525252",
+    "$value": "#cccccc",
     "$type": "color"
   },
   "eui.button.accent.background.base": {
@@ -419,6 +419,78 @@
     "$value": "0.45rem",
     "$type": "dimension"
   },
+  "eui.card.variant.elevated.shadow": {
+    "$value": "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
+    "$type": "boxShadow"
+  },
+  "eui.card.variant.elevated.border.width": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.card.variant.elevated.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
+  "eui.card.variant.elevated.border.color": {
+    "$value": "#cccccc",
+    "$type": "color"
+  },
+  "eui.card.variant.elevated.background": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.card.variant.elevated.radius": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.variant.flat.shadow": {
+    "$value": "none",
+    "$type": "boxShadow"
+  },
+  "eui.card.variant.flat.border.width": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.card.variant.flat.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
+  "eui.card.variant.flat.border.color": {
+    "$value": "#cccccc",
+    "$type": "color"
+  },
+  "eui.card.variant.flat.background": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.card.variant.flat.radius": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.variant.strong.shadow": {
+    "$value": "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)",
+    "$type": "boxShadow"
+  },
+  "eui.card.variant.strong.border.width": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.card.variant.strong.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
+  "eui.card.variant.strong.border.color": {
+    "$value": "#cccccc",
+    "$type": "color"
+  },
+  "eui.card.variant.strong.background": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.card.variant.strong.radius": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
   "eui.color.accent.50": {
     "$value": "#f1f8ff",
     "$type": "color"
@@ -589,7 +661,7 @@
     "$type": "color"
   },
   "eui.color.border.default": {
-    "$value": "#525252",
+    "$value": "#cccccc",
     "$type": "color"
   },
   "eui.color.border.subtle": {

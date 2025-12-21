@@ -338,27 +338,27 @@
         {
           "path": "eui.button.secondary.border.active",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "#cccccc"
         },
         {
           "path": "eui.button.secondary.border.base",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "#cccccc"
         },
         {
           "path": "eui.button.secondary.border.disabled",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "#cccccc"
         },
         {
           "path": "eui.button.secondary.border.hover",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "#cccccc"
         },
         {
           "path": "eui.button.secondary.border.selected",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "#cccccc"
         },
         {
           "path": "eui.button.secondary.label.active",
@@ -516,6 +516,78 @@
           "path": "eui.color.focus.ring",
           "type": "COLOR",
           "value": "#ff4d00"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Card",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.card.variant.elevated.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.card.variant.elevated.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.variant.flat.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.card.variant.flat.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.variant.strong.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.card.variant.strong.radius",
+          "type": "FLOAT",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Variant",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.card.variant.elevated.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.card.variant.elevated.border.color",
+          "type": "COLOR",
+          "value": "#cccccc"
+        },
+        {
+          "path": "eui.card.variant.flat.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.card.variant.flat.border.color",
+          "type": "COLOR",
+          "value": "#cccccc"
+        },
+        {
+          "path": "eui.card.variant.strong.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.card.variant.strong.border.color",
+          "type": "COLOR",
+          "value": "#cccccc"
         }
       ]
     },
@@ -711,7 +783,7 @@
         {
           "path": "eui.color.border.default",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "#cccccc"
         },
         {
           "path": "eui.color.border.inverse",

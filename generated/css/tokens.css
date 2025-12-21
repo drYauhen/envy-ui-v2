@@ -29,11 +29,11 @@
   --eui-button-secondary-label-active: #1b1b1b;
   --eui-button-secondary-label-disabled: #404040;
   --eui-button-secondary-label-selected: #1b1b1b;
-  --eui-button-secondary-border-base: #525252;
-  --eui-button-secondary-border-hover: #525252;
-  --eui-button-secondary-border-active: #525252;
-  --eui-button-secondary-border-disabled: #525252;
-  --eui-button-secondary-border-selected: #525252;
+  --eui-button-secondary-border-base: #cccccc;
+  --eui-button-secondary-border-hover: #cccccc;
+  --eui-button-secondary-border-active: #cccccc;
+  --eui-button-secondary-border-disabled: #cccccc;
+  --eui-button-secondary-border-selected: #cccccc;
   --eui-button-accent-background-base: #2d98e8;
   --eui-button-accent-background-hover: #2d98e8;
   --eui-button-accent-background-active: #2d98e8;
@@ -108,6 +108,24 @@
   --eui-button-size-lg-font-size: 1rem;
   --eui-button-size-lg-font-weight: 600;
   --eui-button-size-lg-gap: 0.45rem;
+  --eui-card-variant-elevated-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --eui-card-variant-elevated-border-width: 1px;
+  --eui-card-variant-elevated-border-style: solid;
+  --eui-card-variant-elevated-border-color: #cccccc;
+  --eui-card-variant-elevated-background: #ffffff;
+  --eui-card-variant-elevated-radius: 4px;
+  --eui-card-variant-flat-shadow: none;
+  --eui-card-variant-flat-border-width: 1px;
+  --eui-card-variant-flat-border-style: solid;
+  --eui-card-variant-flat-border-color: #cccccc;
+  --eui-card-variant-flat-background: #ffffff;
+  --eui-card-variant-flat-radius: 4px;
+  --eui-card-variant-strong-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --eui-card-variant-strong-border-width: 1px;
+  --eui-card-variant-strong-border-style: solid;
+  --eui-card-variant-strong-border-color: #cccccc;
+  --eui-card-variant-strong-background: #ffffff;
+  --eui-card-variant-strong-radius: 4px;
   --eui-color-accent-50: #f1f8ff;
   --eui-color-accent-100: #dceeff;
   --eui-color-accent-200: #b7dbff;
@@ -149,9 +167,6 @@
   --eui-color-background-surface: #ffffff;
   --eui-color-background-subtle: #f1f2f7;
   --eui-color-background-inverse: #1b1b1b;
-  --eui-color-border-subtle: #e5e7eb;
-  --eui-color-border-strong: #a3a3a3;
-  --eui-color-border-inverse: #262626;
   --eui-color-focus-ring: #ff4d00;
   --eui-color-system-focus: #ff4d00;
   --eui-color-text-muted: #404040;
@@ -171,11 +186,15 @@
   --eui-radius-large: 6px;
   --eui-radius-extra-large: 8px;
   --eui-radius-full: 999px;
+  --eui-color-border-default: #cccccc;
+  --eui-color-border-subtle: #e5e7eb;
+  --eui-color-border-strong: #a3a3a3;
+  --eui-color-border-inverse: #262626;
 }
 
 [data-eui-context="app"][data-eui-theme="accessibility"] {
   --eui-color-background-muted: #e5e7eb;
-  --eui-color-border-default: #525252;
+  --eui-color-border-default: #404040;
   --eui-color-text-disabled: #404040;
   --eui-color-text-primary: #1b1b1b;
   --eui-radius-default: 8px;
@@ -187,6 +206,7 @@
 }
 
 [data-eui-context="app"][data-eui-theme="default"] {
+  --eui-color-border-default: #cccccc;
   --eui-radius-default: 4px;
   --eui-radius-extra-large: 6px;
   --eui-radius-full: 999px;
