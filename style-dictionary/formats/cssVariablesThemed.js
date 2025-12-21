@@ -98,6 +98,53 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         }
       });
 
+      // Helper function to resolve a token value using Style Dictionary's resolved tokens
+      const resolveTokenValue = (tokenPath, rawValue) => {
+        // If it's already a resolved value (not a reference), return as-is
+        if (typeof rawValue === 'string' && !rawValue.startsWith('{') && !rawValue.endsWith('}')) {
+          return rawValue;
+        }
+        
+        // If it's a reference (e.g., {eui.radius.pill}), extract the path and resolve
+        if (typeof rawValue === 'string' && rawValue.startsWith('{') && rawValue.endsWith('}')) {
+          const referenceStr = rawValue.slice(1, -1); // eui.radius.pill
+          const referencePath = referenceStr.split('.'); // ['eui', 'radius', 'pill']
+          
+          // Try to find the token in dictionary by path (exact match)
+          const resolvedToken = dictionary.allTokens.find(t => {
+            const tPath = t.path || [];
+            if (tPath.length !== referencePath.length) return false;
+            return tPath.every((seg, i) => seg === referencePath[i]);
+          });
+          
+          if (resolvedToken && (resolvedToken.value || resolvedToken.$value)) {
+            return resolvedToken.value || resolvedToken.$value;
+          }
+        }
+        
+        // Fallback to raw value
+        return rawValue;
+      };
+      
+      // Helper function to recursively extract tokens from JSON object
+      const extractTokensFromJson = (obj, prefix = []) => {
+        const tokens = [];
+        for (const [key, value] of Object.entries(obj)) {
+          const path = [...prefix, key];
+          if (value && typeof value === 'object' && '$value' in value) {
+            // This is a token definition
+            // Build token name from full path, ensuring eui prefix is preserved
+            const tokenName = path.map(s => s.replace(/\./g, '-')).join('-');
+            const resolvedValue = resolveTokenValue(path, value.$value);
+            tokens.push({ name: tokenName, path: path, value: resolvedValue });
+          } else if (value && typeof value === 'object' && !Array.isArray(value)) {
+            // Recurse into nested objects (skip arrays)
+            tokens.push(...extractTokensFromJson(value, path));
+          }
+        }
+        return tokens;
+      };
+      
       // Second pass: collect base tokens (excluding those from themes/contexts)
       // Collect token names that are defined in themes/contexts to avoid duplicates
       const themeDefinedTokenNames = new Set();
@@ -107,9 +154,13 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         });
       });
       
+      // Track which base tokens we've added (by path) to avoid duplicates
+      const baseTokenPaths = new Set();
+      
       dictionary.allTokens.forEach((token) => {
         const filePath = token.filePath || '';
         const tokenName = token.name || (token.path || []).join('.');
+        const tokenPath = (token.path || []).join('.');
 
         // Skip tokens from themes/contexts files - they're already in themeTokens
         if (filePath.includes('/themes/') || filePath.includes('/contexts/')) {
@@ -119,8 +170,42 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         // Add to base tokens (these are foundations, semantic base, components)
         // Important: Include semantic tokens in :root even if they're overridden in themes
         // Themes will override them in their selectors, providing CSS cascade fallback
-        baseTokens.push(token);
+        // Use token path to avoid duplicates (Style Dictionary may have multiple entries for same path due to collisions)
+        if (!baseTokenPaths.has(tokenPath)) {
+          baseTokens.push(token);
+          baseTokenPaths.add(tokenPath);
+        }
       });
+      
+      // Ensure semantic/shape.json tokens are included in base tokens with original values
+      // Read semantic/shape.json directly to get original values (before collision resolution)
+      // This ensures base values are in :root even if themes override them
+      const semanticShapePath = path.join(tokensRoot, 'semantic', 'shape.json');
+      if (fs.existsSync(semanticShapePath)) {
+        try {
+          const semanticShapeData = JSON.parse(fs.readFileSync(semanticShapePath, 'utf8'));
+          // Extract tokens starting from eui.radius path to get correct names with eui- prefix
+          const euiData = semanticShapeData.eui || semanticShapeData;
+          if (euiData.radius) {
+            const shapeTokens = extractTokensFromJson(euiData.radius, ['eui', 'radius']);
+            shapeTokens.forEach(({ name, path: tokenPath, value }) => {
+              const tokenPathStr = tokenPath.join('.');
+              // Remove existing token from baseTokens if it exists (may have wrong value due to collisions)
+              const existingIndex = baseTokens.findIndex(t => (t.path || []).join('.') === tokenPathStr);
+              if (existingIndex >= 0) {
+                baseTokens.splice(existingIndex, 1);
+              }
+              // Add token with original value from semantic/shape.json
+              baseTokens.push({ name, value, path: tokenPath });
+              if (!baseTokenPaths.has(tokenPathStr)) {
+                baseTokenPaths.add(tokenPathStr);
+              }
+            });
+          }
+        } catch (e) {
+          console.warn(`Warning: Could not read semantic/shape.json: ${e.message}`);
+        }
+      }
 
       let output = '/**\n * Do not edit directly, this file was auto-generated.\n */\n\n';
 
@@ -134,64 +219,6 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         });
         output += '}\n\n';
       }
-
-      // Helper function to resolve a token value using Style Dictionary's resolved tokens
-      const resolveTokenValue = (tokenPath, rawValue) => {
-        // If it's already a resolved value (not a reference), return as-is
-        if (typeof rawValue === 'string' && !rawValue.startsWith('{') && !rawValue.endsWith('}')) {
-          return rawValue;
-        }
-        
-        // If it's a reference (e.g., {eui.color.neutral.200}), extract the path and resolve
-        if (typeof rawValue === 'string' && rawValue.startsWith('{') && rawValue.endsWith('}')) {
-          const referenceStr = rawValue.slice(1, -1); // eui.color.neutral.200
-          const referencePath = referenceStr.split('.'); // ['eui', 'color', 'neutral', '200']
-          
-          // Try to find the token in dictionary by path (exact match)
-          const resolvedToken = dictionary.allTokens.find(t => {
-            const tPath = t.path || [];
-            if (tPath.length !== referencePath.length) return false;
-            return tPath.every((seg, i) => seg === referencePath[i]);
-          });
-          
-          if (resolvedToken && resolvedToken.value) {
-            return resolvedToken.value;
-          }
-        }
-        
-        // For non-reference values, try to find by token's own path
-        const ownToken = dictionary.allTokens.find(t => {
-          const tPath = t.path || [];
-          if (tPath.length !== tokenPath.length) return false;
-          return tPath.every((seg, i) => seg === tokenPath[i]);
-        });
-        
-        if (ownToken && ownToken.value) {
-          return ownToken.value;
-        }
-        
-        // Fallback to raw value
-        return rawValue;
-      };
-
-      // Helper function to recursively extract tokens from JSON object
-      const extractTokensFromJson = (obj, prefix = []) => {
-        const tokens = [];
-        for (const [key, value] of Object.entries(obj)) {
-          const path = [...prefix, key];
-          if (value && typeof value === 'object' && '$value' in value) {
-            // This is a token definition
-            const tokenName = path.map(s => s.replace(/\./g, '-')).join('-');
-            const resolvedValue = resolveTokenValue(path, value.$value);
-            tokens.push({ name: tokenName, value: resolvedValue });
-          } else if (value && typeof value === 'object' && !Array.isArray(value)) {
-            // Recurse into nested objects (skip arrays)
-            tokens.push(...extractTokensFromJson(value, path));
-          }
-        }
-        return tokens;
-      };
-      
 
       // Generate theme tokens from directly read JSON files (bypassing collision resolution)
       themeFiles.forEach(({ data }, selector) => {
