@@ -104,23 +104,23 @@
     "$type": "color"
   },
   "eui.button.secondary.border.base": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.button.secondary.border.hover": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.button.secondary.border.active": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.button.secondary.border.disabled": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.button.secondary.border.selected": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.button.accent.background.base": {
@@ -432,7 +432,7 @@
     "$type": "string"
   },
   "eui.card.variant.elevated.border.color": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.card.variant.elevated.background": {
@@ -456,7 +456,7 @@
     "$type": "string"
   },
   "eui.card.variant.flat.border.color": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.card.variant.flat.background": {
@@ -480,7 +480,7 @@
     "$type": "string"
   },
   "eui.card.variant.strong.border.color": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.card.variant.strong.background": {
@@ -490,6 +490,270 @@
   "eui.card.variant.strong.radius": {
     "$value": "4px",
     "$type": "dimension"
+  },
+  "eui.checkbox.border.width": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.checkbox.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
+  "eui.checkbox.border.base": {
+    "$value": "#a3a3a3",
+    "$type": "color"
+  },
+  "eui.checkbox.border.checked": {
+    "$value": "#2588d8",
+    "$type": "color"
+  },
+  "eui.checkbox.border.disabled": {
+    "$value": "#757575",
+    "$type": "color"
+  },
+  "eui.checkbox.border.checkedDisabled": {
+    "$value": "#757575",
+    "$type": "color"
+  },
+  "eui.checkbox.border.hover": {
+    "$value": "#a3a3a3",
+    "$type": "color"
+  },
+  "eui.checkbox.border.checkedHover": {
+    "$value": "#2588d8",
+    "$type": "color"
+  },
+  "eui.checkbox.border.indeterminate": {
+    "$value": "#a3a3a3",
+    "$type": "color"
+  },
+  "eui.checkbox.border.indeterminateHover": {
+    "$value": "#a3a3a3",
+    "$type": "color"
+  },
+  "eui.checkbox.border.indeterminateDisabled": {
+    "$value": "#757575",
+    "$type": "color"
+  },
+  "eui.checkbox.background.base": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.checkbox.background.checked": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.checkbox.background.disabled": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.checkbox.background.checkedDisabled": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.checkbox.background.hover": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.checkbox.background.checkedHover": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.checkbox.background.indeterminate": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.checkbox.background.indeterminateHover": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.checkbox.background.indeterminateDisabled": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.checkbox.checkmark.base": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.checkbox.checkmark.disabled": {
+    "$value": "#757575",
+    "$type": "color"
+  },
+  "eui.checkbox.checkmark.indeterminate": {
+    "$value": "#55a7ff",
+    "$type": "color"
+  },
+  "eui.checkbox.checkmark.indeterminateDisabled": {
+    "$value": "#757575",
+    "$type": "color"
+  },
+  "eui.checkbox.focus.ring.color.derived.base": {
+    "$value": "#2ea7d1",
+    "$type": "color"
+  },
+  "eui.checkbox.focus.ring.color.derived.accessible": {
+    "$value": "#066a8d",
+    "$type": "color"
+  },
+  "eui.checkbox.focus.ring.width.base": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.checkbox.focus.ring.width.accessible": {
+    "$value": "3px",
+    "$type": "dimension"
+  },
+  "eui.checkbox.focus.ring.offset": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.checkbox.layout.gap": {
+    "$value": "0.5em",
+    "$type": "dimension"
+  },
+  "eui.checkbox.shape.radius": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.checkbox.size.md.size": {
+    "$value": "1.25em",
+    "$type": "dimension"
+  },
+  "eui.checkbox.size.sm.size": {
+    "$value": "1em",
+    "$type": "dimension"
+  },
+  "eui.checkbox.size.lg.size": {
+    "$value": "1.5em",
+    "$type": "dimension"
+  },
+  "eui.input.border.width": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.input.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
+  "eui.input.border.base": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.input.border.hover": {
+    "$value": "#a3a3a3",
+    "$type": "color"
+  },
+  "eui.input.border.focus": {
+    "$value": "#066a8d",
+    "$type": "color"
+  },
+  "eui.input.border.disabled": {
+    "$value": "#a3a3a3",
+    "$type": "color"
+  },
+  "eui.input.border.error": {
+    "$value": "#ef4444",
+    "$type": "color"
+  },
+  "eui.input.background.base": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.input.background.hover": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.input.background.focus": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.input.background.disabled": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.input.text.base": {
+    "$value": "#1b1b1b",
+    "$type": "color"
+  },
+  "eui.input.text.placeholder": {
+    "$value": "#525252",
+    "$type": "color"
+  },
+  "eui.input.text.disabled": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.input.focus.ring.color.derived.base": {
+    "$value": "#2ea7d1",
+    "$type": "color"
+  },
+  "eui.input.focus.ring.color.derived.accessible": {
+    "$value": "#066a8d",
+    "$type": "color"
+  },
+  "eui.input.focus.ring.width.base": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.input.focus.ring.width.accessible": {
+    "$value": "3px",
+    "$type": "dimension"
+  },
+  "eui.input.focus.ring.offset": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.input.shape.radius": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.input.size.sm.height": {
+    "$value": "36px",
+    "$type": "dimension"
+  },
+  "eui.input.size.sm.padding.inline": {
+    "$value": "12px",
+    "$type": "dimension"
+  },
+  "eui.input.size.sm.font.size": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.input.size.md.height": {
+    "$value": "40px",
+    "$type": "dimension"
+  },
+  "eui.input.size.md.padding.inline": {
+    "$value": "12px",
+    "$type": "dimension"
+  },
+  "eui.input.size.md.font.size": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.input.size.lg.height": {
+    "$value": "44px",
+    "$type": "dimension"
+  },
+  "eui.input.size.lg.padding.inline": {
+    "$value": "14px",
+    "$type": "dimension"
+  },
+  "eui.input.size.lg.font.size": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.input.typography.font.family": {
+    "$value": "inherit",
+    "$type": "fontFamily"
+  },
+  "eui.input.typography.font.weight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.input.typography.line.height": {
+    "$value": "1.5",
+    "$type": "lineHeight"
   },
   "eui.color.accent.50": {
     "$value": "#f1f8ff",
@@ -661,7 +925,7 @@
     "$type": "color"
   },
   "eui.color.border.default": {
-    "$value": "#cccccc",
+    "$value": "#404040",
     "$type": "color"
   },
   "eui.color.border.subtle": {

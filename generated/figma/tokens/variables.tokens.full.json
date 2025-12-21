@@ -338,27 +338,27 @@
         {
           "path": "eui.button.secondary.border.active",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.button.secondary.border.base",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.button.secondary.border.disabled",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.button.secondary.border.hover",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.button.secondary.border.selected",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.button.secondary.label.active",
@@ -513,9 +513,29 @@
           "value": "#2ea7d1"
         },
         {
+          "path": "eui.checkbox.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "#066a8d"
+        },
+        {
+          "path": "eui.checkbox.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "#2ea7d1"
+        },
+        {
           "path": "eui.color.focus.ring",
           "type": "COLOR",
           "value": "#ff4d00"
+        },
+        {
+          "path": "eui.input.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "#066a8d"
+        },
+        {
+          "path": "eui.input.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "#2ea7d1"
         }
       ]
     },
@@ -567,7 +587,7 @@
         {
           "path": "eui.card.variant.elevated.border.color",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.card.variant.flat.background",
@@ -577,7 +597,7 @@
         {
           "path": "eui.card.variant.flat.border.color",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.card.variant.strong.background",
@@ -587,7 +607,378 @@
         {
           "path": "eui.card.variant.strong.border.color",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Checkbox",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.checkbox.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.checkbox.focus.ring.offset",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.checkbox.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.checkbox.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.checkbox.layout.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.checkbox.shape.radius",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.checkbox.size.lg.size",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.checkbox.size.md.size",
+          "type": "FLOAT",
+          "value": 1.25
+        },
+        {
+          "path": "eui.checkbox.size.sm.size",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Border",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.checkbox.border.base",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.checkbox.border.checked",
+          "type": "COLOR",
+          "value": "#2588d8"
+        },
+        {
+          "path": "eui.checkbox.border.checkedDisabled",
+          "type": "COLOR",
+          "value": "#757575"
+        },
+        {
+          "path": "eui.checkbox.border.checkedHover",
+          "type": "COLOR",
+          "value": "#2588d8"
+        },
+        {
+          "path": "eui.checkbox.border.disabled",
+          "type": "COLOR",
+          "value": "#757575"
+        },
+        {
+          "path": "eui.checkbox.border.hover",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.checkbox.border.indeterminate",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.checkbox.border.indeterminateDisabled",
+          "type": "COLOR",
+          "value": "#757575"
+        },
+        {
+          "path": "eui.checkbox.border.indeterminateHover",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.color.border.default",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.color.border.inverse",
+          "type": "COLOR",
+          "value": "#262626"
+        },
+        {
+          "path": "eui.color.border.strong",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.color.border.subtle",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.input.border.base",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.input.border.disabled",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.input.border.error",
+          "type": "COLOR",
+          "value": "#ef4444"
+        },
+        {
+          "path": "eui.input.border.focus",
+          "type": "COLOR",
+          "value": "#066a8d"
+        },
+        {
+          "path": "eui.input.border.hover",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Background",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.checkbox.background.base",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.checkbox.background.checked",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.checkbox.background.checkedDisabled",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.checkbox.background.checkedHover",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.checkbox.background.disabled",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.checkbox.background.hover",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.checkbox.background.indeterminate",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.checkbox.background.indeterminateDisabled",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.checkbox.background.indeterminateHover",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.color.background.inverse",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.color.background.muted",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.color.background.subtle",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.color.background.surface",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.input.background.base",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.input.background.disabled",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.input.background.focus",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.input.background.hover",
+          "type": "COLOR",
+          "value": "#ffffff"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Checkmark",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.checkbox.checkmark.base",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.checkbox.checkmark.disabled",
+          "type": "COLOR",
+          "value": "#757575"
+        },
+        {
+          "path": "eui.checkbox.checkmark.indeterminate",
+          "type": "COLOR",
+          "value": "#55a7ff"
+        },
+        {
+          "path": "eui.checkbox.checkmark.indeterminateDisabled",
+          "type": "COLOR",
+          "value": "#757575"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Input",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.input.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.input.focus.ring.offset",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.input.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.input.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.input.shape.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.input.size.lg.height",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.input.size.lg.padding.inline",
+          "type": "FLOAT",
+          "value": 14
+        },
+        {
+          "path": "eui.input.size.md.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.input.size.md.padding.inline",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.input.size.sm.height",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.input.size.sm.padding.inline",
+          "type": "FLOAT",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Text",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.text.disabled",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.color.text.inverse",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.color.text.muted",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.color.text.primary",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.color.text.subtle",
+          "type": "COLOR",
+          "value": "#525252"
+        },
+        {
+          "path": "eui.input.text.base",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.input.text.disabled",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.input.text.placeholder",
+          "type": "COLOR",
+          "value": "#525252"
         }
       ]
     },
@@ -751,58 +1142,6 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Background",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.background.inverse",
-          "type": "COLOR",
-          "value": "#1b1b1b"
-        },
-        {
-          "path": "eui.color.background.muted",
-          "type": "COLOR",
-          "value": "#e5e7eb"
-        },
-        {
-          "path": "eui.color.background.subtle",
-          "type": "COLOR",
-          "value": "#f1f2f7"
-        },
-        {
-          "path": "eui.color.background.surface",
-          "type": "COLOR",
-          "value": "#ffffff"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Border",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.border.default",
-          "type": "COLOR",
-          "value": "#cccccc"
-        },
-        {
-          "path": "eui.color.border.inverse",
-          "type": "COLOR",
-          "value": "#262626"
-        },
-        {
-          "path": "eui.color.border.strong",
-          "type": "COLOR",
-          "value": "#a3a3a3"
-        },
-        {
-          "path": "eui.color.border.subtle",
-          "type": "COLOR",
-          "value": "#e5e7eb"
-        }
-      ]
-    },
-    {
       "name": "envy-ui-v2 • Colors / System",
       "mode": "default",
       "variables": [
@@ -810,37 +1149,6 @@
           "path": "eui.color.system.focus",
           "type": "COLOR",
           "value": "#ff4d00"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Text",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.text.disabled",
-          "type": "COLOR",
-          "value": "#404040"
-        },
-        {
-          "path": "eui.color.text.inverse",
-          "type": "COLOR",
-          "value": "#ffffff"
-        },
-        {
-          "path": "eui.color.text.muted",
-          "type": "COLOR",
-          "value": "#404040"
-        },
-        {
-          "path": "eui.color.text.primary",
-          "type": "COLOR",
-          "value": "#1b1b1b"
-        },
-        {
-          "path": "eui.color.text.subtle",
-          "type": "COLOR",
-          "value": "#525252"
         }
       ]
     },

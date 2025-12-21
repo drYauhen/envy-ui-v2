@@ -257,7 +257,7 @@
         {
           "path": "eui.color.border.default",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "#404040"
         },
         {
           "path": "eui.color.border.inverse",
