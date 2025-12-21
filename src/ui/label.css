@@ -1,0 +1,34 @@
+/* Universal Label Component Styles */
+
+[data-eui-context] .eui-label {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  /* Label inherits color from parent/context, can be overridden by component-specific rules */
+}
+
+/* Label associated with disabled form element */
+/* Works when label wraps input (common pattern: <label><input><span class="eui-label">) */
+[data-eui-context="app"] label:has(input:disabled) .eui-label,
+[data-eui-context="app"] label:has(.eui-checkbox:disabled) .eui-label,
+[data-eui-context="app"] label:has(.eui-switch:disabled) .eui-label,
+[data-eui-context="site"] label:has(input:disabled) .eui-label,
+[data-eui-context="site"] label:has(.eui-checkbox:disabled) .eui-label,
+[data-eui-context="site"] label:has(.eui-switch:disabled) .eui-label,
+/* Works when label is sibling of disabled input (pattern: <label class="eui-label"><input>) */
+[data-eui-context="app"] label:has(> input:disabled),
+[data-eui-context="app"] label:has(> .eui-checkbox:disabled),
+[data-eui-context="app"] label:has(> .eui-switch:disabled),
+[data-eui-context="site"] label:has(> input:disabled),
+[data-eui-context="site"] label:has(> .eui-checkbox:disabled),
+[data-eui-context="site"] label:has(> .eui-switch:disabled) {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Report context - labels are not interactive */
+[data-eui-context="report"] .eui-label {
+  cursor: default;
+  pointer-events: none;
+}
+
