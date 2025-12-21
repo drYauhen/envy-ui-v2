@@ -680,6 +680,16 @@
           "path": "eui.input.focus.ring.color.derived.base",
           "type": "COLOR",
           "value": "#2ea7d1"
+        },
+        {
+          "path": "eui.switch.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "#066a8d"
+        },
+        {
+          "path": "eui.switch.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "#2ea7d1"
         }
       ]
     },
@@ -1209,6 +1219,202 @@
           "path": "eui.select.icon.disabled",
           "type": "COLOR",
           "value": "#404040"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Switch",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.switch.focus.ring.offset",
+          "type": "FLOAT",
+          "value": 2,
+          "scopes": [
+            "PADDING_HORIZONTAL"
+          ]
+        },
+        {
+          "path": "eui.switch.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3,
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.switch.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2,
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.switch.shape.radius.thumb",
+          "type": "FLOAT",
+          "value": 999
+        },
+        {
+          "path": "eui.switch.shape.radius.track",
+          "type": "FLOAT",
+          "value": 999
+        },
+        {
+          "path": "eui.switch.size.lg.thumb.offset",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.switch.size.lg.thumb.size",
+          "type": "FLOAT",
+          "value": 22
+        },
+        {
+          "path": "eui.switch.size.lg.track.height",
+          "type": "FLOAT",
+          "value": 28,
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.switch.size.lg.track.width",
+          "type": "FLOAT",
+          "value": 52,
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.switch.size.md.thumb.offset",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.switch.size.md.thumb.size",
+          "type": "FLOAT",
+          "value": 16
+        },
+        {
+          "path": "eui.switch.size.md.track.height",
+          "type": "FLOAT",
+          "value": 22,
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.switch.size.md.track.width",
+          "type": "FLOAT",
+          "value": 40,
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.switch.size.sm.thumb.offset",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.switch.size.sm.thumb.size",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.switch.size.sm.track.height",
+          "type": "FLOAT",
+          "value": 18,
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.switch.size.sm.track.width",
+          "type": "FLOAT",
+          "value": 34,
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.switch.thumb.border.width",
+          "type": "FLOAT",
+          "value": 1,
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.switch.track.border.width",
+          "type": "FLOAT",
+          "value": 1,
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Track",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.switch.track.background.disabled",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.switch.track.background.disabledOn",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.switch.track.background.off",
+          "type": "COLOR",
+          "value": "#cccccc"
+        },
+        {
+          "path": "eui.switch.track.background.on",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.switch.track.border.disabled",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.switch.track.border.off",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.switch.track.border.on",
+          "type": "COLOR",
+          "value": "#00000000"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Thumb",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.switch.thumb.background.base",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.switch.thumb.background.disabled",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.switch.thumb.border.disabled",
+          "type": "COLOR",
+          "value": "#a3a3a3"
         }
       ]
     },
