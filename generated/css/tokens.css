@@ -159,16 +159,22 @@
   --eui-radius-pill: 999px;
   --eui-focus-ring-width-base: 2px;
   --eui-focus-ring-width-accessible: 3px;
+  --eui-radius-none: 0px;
+  --eui-radius-small: 2px;
+  --eui-radius-default: 4px;
+  --eui-radius-large: 6px;
+  --eui-radius-extra-large: 8px;
+  --eui-radius-full: 999px;
 }
 
 [data-eui-context="app"][data-eui-theme="accessibility"] {
-  --eui-color-background-muted: {eui.color.neutral.200};
-  --eui-color-border-default: {eui.color.neutral.600};
-  --eui-color-text-disabled: {eui.color.neutral.700};
-  --eui-color-text-primary: {eui.color.neutral.900};
+  --eui-color-background-muted: #e5e7eb;
+  --eui-color-border-default: #525252;
+  --eui-color-text-disabled: #404040;
+  --eui-color-text-primary: #1b1b1b;
   --eui-radius-default: 8px;
   --eui-radius-extra-large: 12px;
-  --eui-radius-full: {eui.radius.pill};
+  --eui-radius-full: 999px;
   --eui-radius-large: 10px;
   --eui-radius-none: 0px;
   --eui-radius-small: 4px;
@@ -177,7 +183,7 @@
 [data-eui-context="app"][data-eui-theme="default"] {
   --eui-radius-default: 4px;
   --eui-radius-extra-large: 6px;
-  --eui-radius-full: {eui.radius.pill};
+  --eui-radius-full: 999px;
   --eui-radius-large: 4px;
   --eui-radius-none: 0px;
   --eui-radius-small: 2px;
