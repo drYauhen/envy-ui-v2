@@ -155,7 +155,7 @@ ${buttons
   </div>`;
   };
 
-  const htmlCode = `<div data-eui-context="app">
+  const htmlCode = `<div>
 ${generateHtmlForGroup(groups2)}
 
 ${generateHtmlForGroup(groups3)}
@@ -200,7 +200,7 @@ ${generateHtmlForGroup(groups4)}
       )}
 
       <div style={previewStyle}>
-        <div data-eui-context="app" style={contextContainerStyle}>
+        <div style={contextContainerStyle}>
           {/* 2 buttons group */}
           <div style={groupWrapperStyle}>
             <div className="eui-button-group" data-orientation={orientation === 'vertical' ? 'vertical' : undefined}>

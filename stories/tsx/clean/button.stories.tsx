@@ -38,7 +38,7 @@ type Story = StoryObj<ButtonStoryProps>;
 
 export const Default: Story = {
   render: ({ intent, shape, size, disabled, selected, label }) => (
-    <div data-eui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+    <div style={{ display: 'inline-flex', gap: '1rem' }}>
       <ButtonClean intent={intent} shape={shape} size={size} disabled={disabled} selected={selected}>
         {shape === 'circle' ? label.slice(0, 1) : label}
       </ButtonClean>
@@ -49,7 +49,7 @@ export const Default: Story = {
 export const Selected: Story = {
   args: { selected: true, label: 'Selected' },
   render: ({ intent, shape, size, disabled, selected, label }) => (
-    <div data-eui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+    <div style={{ display: 'inline-flex', gap: '1rem' }}>
       <ButtonClean intent={intent} shape={shape} size={size} disabled={disabled} selected={selected}>
         {label}
       </ButtonClean>
@@ -60,7 +60,7 @@ export const Selected: Story = {
 export const Disabled: Story = {
   args: { disabled: true, label: 'Disabled' },
   render: ({ intent, shape, size, disabled, selected, label }) => (
-    <div data-eui-context="app" style={{ display: 'inline-flex', gap: '1rem' }}>
+    <div style={{ display: 'inline-flex', gap: '1rem' }}>
       <ButtonClean intent={intent} shape={shape} size={size} disabled={disabled} selected={selected}>
         {label}
       </ButtonClean>
@@ -72,7 +72,7 @@ export const Grouped: Story = {
   name: 'Grouped (visual)',
   args: { intent: 'secondary', shape: 'default', size: 'md' },
   render: ({ intent, shape, size }) => (
-    <ButtonGroup data-eui-context="app">
+    <ButtonGroup>
       <ButtonClean intent={intent} shape={shape} size={size} data-group-position="first" aria-label="First">
         One
       </ButtonClean>
@@ -90,7 +90,7 @@ export const GroupedVertical: Story = {
   name: 'Grouped vertical (visual)',
   args: { intent: 'secondary', shape: 'default', size: 'md' },
   render: ({ intent, shape, size }) => (
-    <ButtonGroup data-eui-context="app" data-orientation="vertical" style={{ width: '180px' }}>
+    <ButtonGroup data-orientation="vertical" style={{ width: '180px' }}>
       <ButtonClean
         intent={intent}
         shape={shape}

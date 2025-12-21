@@ -3,12 +3,13 @@ import React from 'react';
 import '../generated/css/tokens.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/button.css';
+import '../src/ui/card.css';
 import './preview.css';
 
 const withPreviewLayout: Decorator = (Story, context) => {
-  const focusPolicy = context.globals.focusPolicy ?? 'derived';
-  const contextValue = context.globals.context ?? 'app';
-  const theme = context.globals.theme ?? 'default';
+  const focusPolicy = context.globals.focusPolicy === '_reset' ? 'derived' : (context.globals.focusPolicy ?? 'derived');
+  const contextValue = context.globals.context === '_reset' ? 'app' : (context.globals.context ?? 'app');
+  const theme = context.globals.theme === '_reset' ? 'default' : (context.globals.theme ?? 'default');
 
   return (
     <div 

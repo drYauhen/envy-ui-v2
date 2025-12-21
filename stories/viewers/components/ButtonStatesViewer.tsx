@@ -271,7 +271,7 @@ export const ButtonStatesViewer = ({ config, title, description }: ButtonStatesV
       )}
 
       {/* Button States Display Section */}
-      <div data-eui-context="app">
+      <div>
         {/* 
           Storybook-only CSS for state simulation
           These styles simulate hover/active/focus states via data-state attributes
