@@ -1,0 +1,108 @@
+/* Input Component Styles */
+
+/* Base input styles */
+[data-eui-context] .eui-input {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0 var(--eui-input-size-md-padding-inline);
+  border: var(--eui-input-border-width) var(--eui-input-border-style) var(--eui-input-border-base);
+  background-color: var(--eui-input-background-base);
+  color: var(--eui-input-text-base);
+  cursor: text;
+  position: relative;
+  
+  /* Size - default to md */
+  height: var(--eui-input-size-md-height);
+  font-family: var(--eui-input-typography-font-family, inherit);
+  font-size: var(--eui-input-size-md-font-size);
+  font-weight: var(--eui-input-typography-font-weight);
+  line-height: var(--eui-input-typography-line-height);
+  
+  border-radius: var(--eui-input-shape-radius);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+[data-eui-context] .eui-input::placeholder {
+  color: var(--eui-input-text-placeholder);
+  opacity: 1;
+}
+
+/* Sizes */
+[data-eui-context] .eui-input[data-eui-size="sm"] {
+  height: var(--eui-input-size-sm-height);
+  padding-left: var(--eui-input-size-sm-padding-inline);
+  padding-right: var(--eui-input-size-sm-padding-inline);
+  font-size: var(--eui-input-size-sm-font-size);
+}
+
+[data-eui-context] .eui-input[data-eui-size="md"] {
+  height: var(--eui-input-size-md-height);
+  padding-left: var(--eui-input-size-md-padding-inline);
+  padding-right: var(--eui-input-size-md-padding-inline);
+  font-size: var(--eui-input-size-md-font-size);
+}
+
+[data-eui-context] .eui-input[data-eui-size="lg"] {
+  height: var(--eui-input-size-lg-height);
+  padding-left: var(--eui-input-size-lg-padding-inline);
+  padding-right: var(--eui-input-size-lg-padding-inline);
+  font-size: var(--eui-input-size-lg-font-size);
+}
+
+/* Hover state */
+[data-eui-context="app"] .eui-input:not(:disabled):not(:focus):hover,
+[data-eui-context="site"] .eui-input:not(:disabled):not(:focus):hover {
+  border-color: var(--eui-input-border-hover);
+}
+
+/* Focus states */
+[data-eui-context="app"] .eui-input:focus,
+[data-eui-context="site"] .eui-input:focus {
+  border-color: var(--eui-input-border-focus);
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+  z-index: 1;
+}
+
+[data-eui-context="app"] .eui-input:focus-visible,
+[data-eui-context="site"] .eui-input:focus-visible {
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-accessible) var(--eui-input-focus-ring-color-derived-accessible);
+  z-index: 1;
+}
+
+/* Disabled state */
+[data-eui-context="app"] .eui-input:disabled,
+[data-eui-context="site"] .eui-input:disabled {
+  background-color: var(--eui-input-background-disabled);
+  border-color: var(--eui-input-border-disabled);
+  color: var(--eui-input-text-disabled);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* Error state */
+[data-eui-context="app"] .eui-input[data-eui-state="error"],
+[data-eui-context="site"] .eui-input[data-eui-state="error"] {
+  border-color: var(--eui-input-border-error);
+}
+
+[data-eui-context="app"] .eui-input[data-eui-state="error"]:focus,
+[data-eui-context="site"] .eui-input[data-eui-state="error"]:focus {
+  border-color: var(--eui-input-border-error);
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+}
+
+/* Report context - print styles */
+[data-eui-context="report"] .eui-input {
+  border-color: var(--eui-input-border-base);
+  background-color: transparent;
+  cursor: default;
+}
+
+[data-eui-context="report"] .eui-input:disabled {
+  border-style: dashed;
+}
+

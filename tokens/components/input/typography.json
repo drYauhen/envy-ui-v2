@@ -1,0 +1,28 @@
+{
+  "eui": {
+    "input": {
+      "typography": {
+        "font": {
+          "family": {
+            "$value": "inherit",
+            "$type": "fontFamily",
+            "$description": "Font family for input text. Inherits from parent for consistency."
+          },
+          "weight": {
+            "$value": "400",
+            "$type": "fontWeight",
+            "$description": "Font weight for input text"
+          }
+        },
+        "line": {
+          "height": {
+            "$value": "1.5",
+            "$type": "lineHeight",
+            "$description": "Line height for input text"
+          }
+        }
+      }
+    }
+  }
+}
+

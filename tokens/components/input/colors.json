@@ -1,0 +1,73 @@
+{
+  "eui": {
+    "input": {
+      "background": {
+        "base": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color for input field"
+        },
+        "hover": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color on hover"
+        },
+        "focus": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color on focus"
+        },
+        "disabled": {
+          "$value": "{eui.color.background.muted}",
+          "$type": "color",
+          "$description": "Background color for disabled input"
+        }
+      },
+      "border": {
+        "base": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Border color for input field. Uses semantic border.default for consistency."
+        },
+        "hover": {
+          "$value": "{eui.color.border.strong}",
+          "$type": "color",
+          "$description": "Border color on hover. Slightly stronger for better feedback."
+        },
+        "focus": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Border color on focus. Uses brand primary for clear focus indication."
+        },
+        "disabled": {
+          "$value": "{eui.color.neutral.400}",
+          "$type": "color",
+          "$description": "Border color for disabled input"
+        },
+        "error": {
+          "$value": "{eui.color.status.error}",
+          "$type": "color",
+          "$description": "Border color for error state"
+        }
+      },
+      "text": {
+        "base": {
+          "$value": "{eui.color.text.primary}",
+          "$type": "color",
+          "$description": "Text color for input field"
+        },
+        "placeholder": {
+          "$value": "{eui.color.text.subtle}",
+          "$type": "color",
+          "$description": "Placeholder text color"
+        },
+        "disabled": {
+          "$value": "{eui.color.text.disabled}",
+          "$type": "color",
+          "$description": "Text color for disabled input"
+        }
+      }
+    }
+  }
+}
+

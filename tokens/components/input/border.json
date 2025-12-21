@@ -1,0 +1,18 @@
+{
+  "eui": {
+    "input": {
+      "border": {
+        "width": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Border width for input field. Matches button border width for stackable compatibility."
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "string"
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,69 @@
+{
+  "eui": {
+    "input": {
+      "size": {
+        "sm": {
+          "height": {
+            "$value": "36px",
+            "$type": "dimension",
+            "$description": "Height for small input. Matches button small height for stackable compatibility."
+          },
+          "padding": {
+            "inline": {
+              "$value": "12px",
+              "$type": "dimension",
+              "$description": "Horizontal padding for small input"
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "0.875rem",
+              "$type": "fontSize"
+            }
+          }
+        },
+        "md": {
+          "height": {
+            "$value": "40px",
+            "$type": "dimension",
+            "$description": "Height for medium (default) input. Matches button medium height for stackable compatibility."
+          },
+          "padding": {
+            "inline": {
+              "$value": "12px",
+              "$type": "dimension",
+              "$description": "Horizontal padding for medium input"
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "1rem",
+              "$type": "fontSize"
+            }
+          }
+        },
+        "lg": {
+          "height": {
+            "$value": "44px",
+            "$type": "dimension",
+            "$description": "Height for large input. Matches button large height for stackable compatibility."
+          },
+          "padding": {
+            "inline": {
+              "$value": "14px",
+              "$type": "dimension",
+              "$description": "Horizontal padding for large input"
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "1rem",
+              "$type": "fontSize"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

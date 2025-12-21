@@ -1,0 +1,42 @@
+{
+  "eui": {
+    "input": {
+      "focus": {
+        "ring": {
+          "color": {
+            "derived": {
+              "base": {
+                "$value": "{eui.color.brand.400}",
+                "$type": "color",
+                "$description": "Less prominent focus ring color for mouse/pointer focus. Solid color (no transparency) for consistent appearance on any background."
+              },
+              "accessible": {
+                "$value": "{eui.color.brand.700}",
+                "$type": "color",
+                "$description": "More prominent focus ring color for keyboard focus (focus-visible). Solid color (no transparency) for high accessibility contrast."
+              }
+            }
+          },
+          "width": {
+            "base": {
+              "$value": "{eui.focus.ring.width.base}",
+              "$type": "dimension",
+              "$description": "Focus ring width for mouse/pointer focus"
+            },
+            "accessible": {
+              "$value": "{eui.focus.ring.width.accessible}",
+              "$type": "dimension",
+              "$description": "Focus ring width for keyboard focus (focus-visible)"
+            }
+          },
+          "offset": {
+            "$value": "2px",
+            "$type": "dimension",
+            "$description": "Focus ring offset from input border"
+          }
+        }
+      }
+    }
+  }
+}
+

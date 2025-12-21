@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "input": {
+      "shape": {
+        "radius": {
+          "$value": "{eui.radius.default}",
+          "$type": "dimension",
+          "$description": "Border radius for input field. Uses default radius for stackable compatibility with buttons and other form elements."
+        }
+      }
+    }
+  }
+}
+
