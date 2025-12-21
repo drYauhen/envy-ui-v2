@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "color": {
+      "border": {
+        "default": {
+          "$value": "{eui.color.neutral.700}",
+          "$type": "color",
+          "$description": "Screen-optimized border color for report context."
+        }
+      }
+    }
+  }
+}
+

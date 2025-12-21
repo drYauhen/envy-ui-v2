@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "color": {
+      "border": {
+        "default": {
+          "$value": "{eui.color.neutral.900}",
+          "$type": "color",
+          "$description": "Print-optimized border color. Dark for maximum contrast in print."
+        }
+      }
+    }
+  }
+}
+

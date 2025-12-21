@@ -2,8 +2,11 @@ import type { Decorator, Preview } from '@storybook/react';
 import React from 'react';
 import '../generated/css/tokens.css';
 import '../src/ui/focus-policy.css';
+import '../src/ui/label.css';
 import '../src/ui/button.css';
 import '../src/ui/card.css';
+import '../src/ui/checkbox.css';
+import '../src/ui/input.css';
 import './preview.css';
 
 const withPreviewLayout: Decorator = (Story, context) => {
@@ -37,36 +40,41 @@ export const globalTypes: Preview['globalTypes'] = {
       items: [
         { value: 'app', title: 'Application' },
         { value: 'site', title: 'Website/CMS', disabled: true },
-        { value: 'report', title: 'Report', disabled: true }
+        { value: 'report', title: 'Report' }
       ],
+      showName: true,
       dynamicTitle: true
     }
   },
   
   theme: {
     name: 'Theme',
-    description: 'Select theme within context',
+    description: 'Select theme',
     defaultValue: 'default',
     toolbar: {
       icon: 'paintbrush',
       items: [
         { value: 'default', title: 'Default' },
-        { value: 'accessibility', title: 'Accessibility' }
+        { value: 'accessibility', title: 'Accessibility' },
+        { value: 'print', title: 'Print' },
+        { value: 'screen', title: 'Screen' }
       ],
+      showName: true,
       dynamicTitle: true
     }
   },
   
   focusPolicy: {
-    name: 'Focus policy',
+    name: 'Focus Policy',
     description: 'Select focus styling: Derived (brand color) or System (high accessibility orange).',
     defaultValue: 'derived',
     toolbar: {
       icon: 'circlehollow',
       items: [
-        { value: 'derived', title: 'Focus: Derived' },
-        { value: 'system', title: 'Focus: System' }
+        { value: 'derived', title: 'Derived' },
+        { value: 'system', title: 'System' }
       ],
+      showName: true,
       dynamicTitle: true
     }
   }
