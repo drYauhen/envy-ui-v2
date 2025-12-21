@@ -1,0 +1,93 @@
+/* Textarea Component Styles */
+/* Extends input base styles, adds textarea-specific properties */
+
+[data-eui-context] .eui-textarea {
+  /* Inherit all input base styles */
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: var(--eui-textarea-size-padding-vertical) var(--eui-textarea-size-padding-inline);
+  /* Border color references semantic token directly so it updates with theme changes */
+  border: var(--eui-input-border-width) var(--eui-input-border-style) var(--eui-color-border-default);
+  background-color: var(--eui-input-background-base);
+  color: var(--eui-input-text-base);
+  cursor: text;
+  position: relative;
+  
+  /* Textarea-specific: variable height */
+  min-height: var(--eui-textarea-size-min-height);
+  height: auto;
+  font-family: var(--eui-input-typography-font-family, inherit);
+  font-size: var(--eui-input-size-md-font-size);
+  font-weight: var(--eui-input-typography-font-weight);
+  line-height: var(--eui-textarea-typography-line-height);
+  
+  border-radius: var(--eui-input-shape-radius);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+[data-eui-context] .eui-textarea::placeholder {
+  color: var(--eui-input-text-placeholder);
+  opacity: 1;
+}
+
+/* Hover state */
+[data-eui-context="app"] .eui-textarea:not(:disabled):not(:focus):hover,
+[data-eui-context="site"] .eui-textarea:not(:disabled):not(:focus):hover {
+  border-color: var(--eui-color-border-strong);
+}
+
+/* Focus states */
+[data-eui-context="app"] .eui-textarea:focus,
+[data-eui-context="site"] .eui-textarea:focus {
+  border-color: var(--eui-input-border-focus);
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+  z-index: 1;
+}
+
+[data-eui-context="app"] .eui-textarea:focus-visible,
+[data-eui-context="site"] .eui-textarea:focus-visible {
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-accessible) var(--eui-input-focus-ring-color-derived-accessible);
+  z-index: 1;
+}
+
+/* Disabled state */
+[data-eui-context="app"] .eui-textarea:disabled,
+[data-eui-context="site"] .eui-textarea:disabled {
+  background-color: var(--eui-input-background-disabled);
+  border-color: var(--eui-input-border-disabled);
+  color: var(--eui-input-text-disabled);
+  cursor: not-allowed;
+  opacity: 1;
+  resize: none;
+}
+
+/* Error state */
+[data-eui-context="app"] .eui-textarea[data-eui-state="error"],
+[data-eui-context="site"] .eui-textarea[data-eui-state="error"] {
+  border-color: var(--eui-input-border-error);
+}
+
+[data-eui-context="app"] .eui-textarea[data-eui-state="error"]:focus,
+[data-eui-context="site"] .eui-textarea[data-eui-state="error"]:focus {
+  border-color: var(--eui-input-border-error);
+  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+}
+
+/* Report context - print styles */
+[data-eui-context="report"] .eui-textarea {
+  border-color: var(--eui-color-border-default);
+  background-color: transparent;
+  cursor: default;
+  resize: none;
+}
+
+[data-eui-context="report"] .eui-textarea:disabled {
+  border-style: dashed;
+}
+

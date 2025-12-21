@@ -1,0 +1,33 @@
+{
+  "eui": {
+    "textarea": {
+      "size": {
+        "min": {
+          "height": {
+            "$value": "80px",
+            "$type": "dimension",
+            "$description": "Minimum height for textarea. Allows for 3-4 lines of text."
+          },
+          "rows": {
+            "$value": "3",
+            "$type": "number",
+            "$description": "Default number of rows for textarea"
+          }
+        },
+        "padding": {
+          "vertical": {
+            "$value": "8px",
+            "$type": "dimension",
+            "$description": "Vertical padding for textarea. More than input to accommodate multi-line text."
+          },
+          "inline": {
+            "$value": "{eui.input.size.md.padding.inline}",
+            "$type": "dimension",
+            "$description": "Horizontal padding for textarea. Matches input for consistency."
+          }
+        }
+      }
+    }
+  }
+}
+

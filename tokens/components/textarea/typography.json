@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "textarea": {
+      "typography": {
+        "line": {
+          "height": {
+            "$value": "1.5",
+            "$type": "lineHeight",
+            "$description": "Line height for textarea. Same as input for consistency."
+          }
+        }
+      }
+    }
+  }
+}
+
