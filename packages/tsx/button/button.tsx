@@ -21,15 +21,12 @@ export const ButtonClean = React.forwardRef<HTMLButtonElement, ButtonCleanProps>
     <button
       ref={forwardedRef}
       className={[`${SYSTEM_PREFIX}-button`, className].filter(Boolean).join(' ')}
-      data-intent={intent}
-      data-size={size}
-      data-shape={shape}
-      data-selected={dataAttr(selected)}
-      data-disabled={dataAttr(disabled)}
       {...{
         [prefixedDataAttr('intent')]: intent,
         [prefixedDataAttr('size')]: size,
-        [prefixedDataAttr('shape')]: shape
+        [prefixedDataAttr('shape')]: shape,
+        [prefixedDataAttr('selected')]: dataAttr(selected),
+        [prefixedDataAttr('disabled')]: dataAttr(disabled)
       }}
       disabled={disabled}
       {...rest}

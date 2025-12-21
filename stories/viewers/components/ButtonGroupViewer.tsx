@@ -140,7 +140,7 @@ export function ButtonGroupViewer({ config, title, description }: ButtonGroupVie
 
   // Generate HTML code for all three variants (2, 3, 4 buttons)
   const generateHtmlForGroup = (buttons: Array<{ label: string; position: 'first' | 'middle' | 'last' }>) => {
-    const orientationAttr = orientation === 'vertical' ? ' data-orientation="vertical"' : '';
+    const orientationAttr = orientation === 'vertical' ? ' data-eui-orientation="vertical"' : '';
     const intentAttr = intent ? ` data-eui-intent="${intent}"` : '';
     const sizeAttr = size ? ` data-eui-size="${size}"` : '';
     const shapeAttr = shape ? ` data-eui-shape="${shape}"` : '';
@@ -148,8 +148,8 @@ export function ButtonGroupViewer({ config, title, description }: ButtonGroupVie
     return `  <div class="eui-button-group"${orientationAttr}>
 ${buttons
   .map((btn) => {
-    const orientationDataAttr = orientation === 'vertical' ? ' data-group-orientation="vertical"' : '';
-    return `    <button class="eui-button" data-group-position="${btn.position}"${orientationDataAttr}${intentAttr}${sizeAttr}${shapeAttr}>${btn.label}</button>`;
+    const orientationDataAttr = orientation === 'vertical' ? ' data-eui-group-orientation="vertical"' : '';
+    return `    <button class="eui-button" data-eui-group-position="${btn.position}"${orientationDataAttr}${intentAttr}${sizeAttr}${shapeAttr}>${btn.label}</button>`;
   })
   .join('\n')}
   </div>`;
@@ -203,13 +203,13 @@ ${generateHtmlForGroup(groups4)}
         <div style={contextContainerStyle}>
           {/* 2 buttons group */}
           <div style={groupWrapperStyle}>
-            <div className="eui-button-group" data-orientation={orientation === 'vertical' ? 'vertical' : undefined}>
+            <div className="eui-button-group" data-eui-orientation={orientation === 'vertical' ? 'vertical' : undefined}>
               {groups2.map((btn, idx) => (
                 <button
                   key={`2-${idx}`}
                   className="eui-button"
-                  data-group-position={btn.position}
-                  data-group-orientation={orientation === 'vertical' ? 'vertical' : undefined}
+                  data-eui-group-position={btn.position}
+                  data-eui-group-orientation={orientation === 'vertical' ? 'vertical' : undefined}
                   data-eui-intent={intent}
                   data-eui-size={size}
                   data-eui-shape={shape}
@@ -222,13 +222,13 @@ ${generateHtmlForGroup(groups4)}
 
           {/* 3 buttons group */}
           <div style={groupWrapperStyle}>
-            <div className="eui-button-group" data-orientation={orientation === 'vertical' ? 'vertical' : undefined}>
+            <div className="eui-button-group" data-eui-orientation={orientation === 'vertical' ? 'vertical' : undefined}>
               {groups3.map((btn, idx) => (
                 <button
                   key={`3-${idx}`}
                   className="eui-button"
-                  data-group-position={btn.position}
-                  data-group-orientation={orientation === 'vertical' ? 'vertical' : undefined}
+                  data-eui-group-position={btn.position}
+                  data-eui-group-orientation={orientation === 'vertical' ? 'vertical' : undefined}
                   data-eui-intent={intent}
                   data-eui-size={size}
                   data-eui-shape={shape}
@@ -241,13 +241,13 @@ ${generateHtmlForGroup(groups4)}
 
           {/* 4 buttons group */}
           <div style={groupWrapperStyle}>
-            <div className="eui-button-group" data-orientation={orientation === 'vertical' ? 'vertical' : undefined}>
+            <div className="eui-button-group" data-eui-orientation={orientation === 'vertical' ? 'vertical' : undefined}>
               {groups4.map((btn, idx) => (
                 <button
                   key={`4-${idx}`}
                   className="eui-button"
-                  data-group-position={btn.position}
-                  data-group-orientation={orientation === 'vertical' ? 'vertical' : undefined}
+                  data-eui-group-position={btn.position}
+                  data-eui-group-orientation={orientation === 'vertical' ? 'vertical' : undefined}
                   data-eui-intent={intent}
                   data-eui-size={size}
                   data-eui-shape={shape}

@@ -111,19 +111,19 @@
   --eui-button-separator-color: color-mix(in srgb, var(--eui-button-bg-base), white 35%);
 }
 
-[data-eui-context] .eui-button[data-selected][data-eui-intent='primary'] {
+[data-eui-context] .eui-button[data-eui-selected][data-eui-intent='primary'] {
   --eui-button-bg-base: var(--eui-button-primary-background-selected);
   --eui-button-label-base: var(--eui-button-primary-label-selected);
 }
 
-[data-eui-context] .eui-button[data-selected][data-eui-intent='secondary'] {
+[data-eui-context] .eui-button[data-eui-selected][data-eui-intent='secondary'] {
   --eui-button-bg-base: var(--eui-button-secondary-background-selected);
   --eui-button-label-base: var(--eui-button-secondary-label-selected);
   /* Border color references semantic token directly so it updates with theme changes */
   --eui-button-border-base: var(--eui-color-border-default);
 }
 
-[data-eui-context] .eui-button[data-selected][data-eui-intent='accent'] {
+[data-eui-context] .eui-button[data-eui-selected][data-eui-intent='accent'] {
   --eui-button-bg-base: var(--eui-button-accent-background-selected);
   --eui-button-label-base: var(--eui-button-accent-label-selected);
 }
@@ -141,7 +141,7 @@
   border-radius: var(--eui-button-shape-circle-radius);
 }
 
-[data-eui-context] .eui-button[data-group-position] {
+[data-eui-context] .eui-button[data-eui-group-position] {
   margin: 0;
   border-radius: var(--eui-button-corner-top-left) var(--eui-button-corner-top-right) var(--eui-button-corner-bottom-right) var(--eui-button-corner-bottom-left);
   border-color: var(--eui-button-border-visible);
@@ -154,7 +154,7 @@
   gap: 0;
 }
 
-.eui-button-group[data-orientation='vertical'] {
+.eui-button-group[data-eui-orientation='vertical'] {
   flex-direction: column;
   width: max-content;
 }
@@ -169,14 +169,14 @@
   z-index: 1;
 }
 
-.eui-button-group:not([data-orientation='vertical']) .eui-button {
+.eui-button-group:not([data-eui-orientation='vertical']) .eui-button {
   border-top: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
   border-bottom: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
   border-left: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
   border-right: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
 }
 
-.eui-button-group[data-orientation='vertical'] .eui-button {
+.eui-button-group[data-eui-orientation='vertical'] .eui-button {
   border-left: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
   border-right: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
   border-top: var(--eui-button-border-width) var(--eui-button-border-style) var(--eui-button-border-visible);
@@ -191,54 +191,54 @@
   opacity: 1;
 }
 
-.eui-button-group:not([data-orientation='vertical']) .eui-button:not(:first-child) {
+.eui-button-group:not([data-eui-orientation='vertical']) .eui-button:not(:first-child) {
   border-left: 0;
 }
 
-.eui-button-group:not([data-orientation='vertical']) .eui-button:not(:last-child) {
+.eui-button-group:not([data-eui-orientation='vertical']) .eui-button:not(:last-child) {
   border-right: 0;
 }
 
-.eui-button-group:not([data-orientation='vertical']) .eui-button:not(:first-child)::after {
+.eui-button-group:not([data-eui-orientation='vertical']) .eui-button:not(:first-child)::after {
   left: calc(var(--eui-button-separator-thickness) * -0.5);
   top: var(--eui-button-separator-inset);
   bottom: var(--eui-button-separator-inset);
   width: var(--eui-button-separator-thickness);
 }
 
-.eui-button-group[data-orientation='vertical'] .eui-button:not(:first-child)::after {
+.eui-button-group[data-eui-orientation='vertical'] .eui-button:not(:first-child)::after {
   top: calc(var(--eui-button-separator-thickness) * -0.5);
   left: var(--eui-button-separator-inset);
   right: var(--eui-button-separator-inset);
   height: var(--eui-button-separator-thickness);
 }
 
-.eui-button-group[data-orientation='vertical'] .eui-button:not(:first-child) {
+.eui-button-group[data-eui-orientation='vertical'] .eui-button:not(:first-child) {
   border-top: 0;
 }
 
-.eui-button-group[data-orientation='vertical'] .eui-button:not(:last-child) {
+.eui-button-group[data-eui-orientation='vertical'] .eui-button:not(:last-child) {
   border-bottom: 0;
 }
 
-.eui-button-group .eui-button[data-group-position]:active {
+.eui-button-group .eui-button[data-eui-group-position]:active {
   transform: none;
 }
 
-[data-eui-context] .eui-button[data-group-orientation='vertical'] {
+[data-eui-context] .eui-button[data-eui-group-orientation='vertical'] {
   width: 100%;
 }
 
-[data-eui-context] .eui-button[data-group-position='single'] {
+[data-eui-context] .eui-button[data-eui-group-position='single'] {
   --eui-button-corner-top-left: var(--eui-button-group-position-single-shape-corner-top-left);
   --eui-button-corner-top-right: var(--eui-button-group-position-single-shape-corner-top-right);
   --eui-button-corner-bottom-right: var(--eui-button-group-position-single-shape-corner-bottom-right);
   --eui-button-corner-bottom-left: var(--eui-button-group-position-single-shape-corner-bottom-left);
 }
 
-[data-eui-context] .eui-button[data-group-position='first'][data-group-orientation='horizontal'],
-[data-eui-context] .eui-button[data-group-position='first']:not([data-group-orientation]),
-[data-eui-context] .eui-button[data-group-position='first'][data-group-orientation='horizontal'] {
+[data-eui-context] .eui-button[data-eui-group-position='first'][data-eui-group-orientation='horizontal'],
+[data-eui-context] .eui-button[data-eui-group-position='first']:not([data-eui-group-orientation]),
+[data-eui-context] .eui-button[data-eui-group-position='first'][data-eui-group-orientation='horizontal'] {
   --eui-button-corner-top-left: var(--eui-button-group-position-first-shape-orientation-horizontal-corner-top-left);
   --eui-button-corner-top-right: var(--eui-button-group-position-first-shape-orientation-horizontal-corner-top-right);
   --eui-button-corner-bottom-right: var(--eui-button-group-position-first-shape-orientation-horizontal-corner-bottom-right);
@@ -247,8 +247,8 @@
   --eui-button-layered-shadow: inset calc(var(--eui-button-separator-thickness) * -1) 0 0 var(--eui-button-separator-color);
 }
 
-[data-eui-context] .eui-button[data-group-position='middle'][data-group-orientation='horizontal'],
-[data-eui-context] .eui-button[data-group-position='middle']:not([data-group-orientation]) {
+[data-eui-context] .eui-button[data-eui-group-position='middle'][data-eui-group-orientation='horizontal'],
+[data-eui-context] .eui-button[data-eui-group-position='middle']:not([data-eui-group-orientation]) {
   --eui-button-corner-top-left: var(--eui-button-group-position-middle-shape-orientation-horizontal-corner-top-left);
   --eui-button-corner-top-right: var(--eui-button-group-position-middle-shape-orientation-horizontal-corner-top-right);
   --eui-button-corner-bottom-right: var(--eui-button-group-position-middle-shape-orientation-horizontal-corner-bottom-right);
@@ -259,8 +259,8 @@
     inset calc(var(--eui-button-separator-thickness) * -1) 0 0 var(--eui-button-separator-color);
 }
 
-[data-eui-context] .eui-button[data-group-position='last'][data-group-orientation='horizontal'],
-[data-eui-context] .eui-button[data-group-position='last']:not([data-group-orientation]) {
+[data-eui-context] .eui-button[data-eui-group-position='last'][data-eui-group-orientation='horizontal'],
+[data-eui-context] .eui-button[data-eui-group-position='last']:not([data-eui-group-orientation]) {
   --eui-button-corner-top-left: var(--eui-button-group-position-last-shape-orientation-horizontal-corner-top-left);
   --eui-button-corner-top-right: var(--eui-button-group-position-last-shape-orientation-horizontal-corner-top-right);
   --eui-button-corner-bottom-right: var(--eui-button-group-position-last-shape-orientation-horizontal-corner-bottom-right);
@@ -269,7 +269,7 @@
   --eui-button-layered-shadow: inset var(--eui-button-separator-thickness) 0 0 var(--eui-button-separator-color);
 }
 
-[data-eui-context] .eui-button[data-group-position='first'][data-group-orientation='vertical'] {
+[data-eui-context] .eui-button[data-eui-group-position='first'][data-eui-group-orientation='vertical'] {
   --eui-button-corner-top-left: var(--eui-button-group-position-first-shape-orientation-vertical-corner-top-left);
   --eui-button-corner-top-right: var(--eui-button-group-position-first-shape-orientation-vertical-corner-top-right);
   --eui-button-corner-bottom-right: var(--eui-button-group-position-first-shape-orientation-vertical-corner-bottom-right);
@@ -278,7 +278,7 @@
   --eui-button-layered-shadow: inset 0 calc(var(--eui-button-separator-thickness) * -1) 0 var(--eui-button-separator-color);
 }
 
-[data-eui-context] .eui-button[data-group-position='middle'][data-group-orientation='vertical'] {
+[data-eui-context] .eui-button[data-eui-group-position='middle'][data-eui-group-orientation='vertical'] {
   --eui-button-corner-top-left: var(--eui-button-group-position-middle-shape-orientation-vertical-corner-top-left);
   --eui-button-corner-top-right: var(--eui-button-group-position-middle-shape-orientation-vertical-corner-top-right);
   --eui-button-corner-bottom-right: var(--eui-button-group-position-middle-shape-orientation-vertical-corner-bottom-right);
@@ -289,7 +289,7 @@
     inset 0 calc(var(--eui-button-separator-thickness) * -1) 0 var(--eui-button-separator-color);
 }
 
-[data-eui-context] .eui-button[data-group-position='last'][data-group-orientation='vertical'] {
+[data-eui-context] .eui-button[data-eui-group-position='last'][data-eui-group-orientation='vertical'] {
   --eui-button-corner-top-left: var(--eui-button-group-position-last-shape-orientation-vertical-corner-top-left);
   --eui-button-corner-top-right: var(--eui-button-group-position-last-shape-orientation-vertical-corner-top-right);
   --eui-button-corner-bottom-right: var(--eui-button-group-position-last-shape-orientation-vertical-corner-bottom-right);

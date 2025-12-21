@@ -138,15 +138,10 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>(function Button
     [prefixedDataAttr('focus-visible')]: dataAttr(isFocusVisible)
   };
 
+  // Only use prefixed attributes for our system attributes
+  // React Aria may add its own data attributes via buttonProps, hoverProps, focusProps
   const dataAttributes = {
-    'data-intent': intent,
-    'data-size': size,
-    'data-shape': shape,
-    'data-hovered': dataAttr(isHovered),
-    'data-pressed': dataAttr(isPressed),
-    'data-focus-visible': dataAttr(isFocusVisible),
-    'data-disabled': dataAttr(resolvedDisabled),
-    'data-loading': dataAttr(Boolean(isLoading)),
+    [prefixedDataAttr('loading')]: dataAttr(Boolean(isLoading)),
     ...prefixedAttributes
   };
 
@@ -160,9 +155,9 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>(function Button
 
   const content = (
     <>
-      {startIcon ? <span data-slot="start-icon">{startIcon}</span> : null}
-      <span data-slot="label">{children}</span>
-      {endIcon ? <span data-slot="end-icon">{endIcon}</span> : null}
+      {startIcon ? <span data-eui-slot="start-icon">{startIcon}</span> : null}
+      <span data-eui-slot="label">{children}</span>
+      {endIcon ? <span data-eui-slot="end-icon">{endIcon}</span> : null}
     </>
   );
 

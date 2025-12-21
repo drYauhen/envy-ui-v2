@@ -18,7 +18,7 @@ export const buttonGroupContract: ButtonGroupContract = {
     root: `${systemMeta?.tokens?.prefix ?? 'eui'}-button-group`
   },
   dataAttributes: {
-    orientation: 'data-orientation',
+    orientation: 'data-eui-orientation',
     orientationValues: {
       horizontal: undefined,
       vertical: 'vertical'
