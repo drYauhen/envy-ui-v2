@@ -83,7 +83,7 @@ export const parameters: Preview['parameters'] = {
       color: /(background|color)$/i,
       date: /Date$/i
     }
-  }
+  },
 };
 
 const preview: Preview = { decorators, parameters };

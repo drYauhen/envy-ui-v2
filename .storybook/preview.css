@@ -21,8 +21,13 @@ body,
   min-height: 0 !important;
 }
 
+.sbdocs.sbdocs-preview.sb-unstyled {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .sbdocs-preview .docs-story {
-  padding: 24px;
+  padding: 24px 0; /* Keep top/bottom padding, remove left/right padding */
 }
 
 .ui-button {

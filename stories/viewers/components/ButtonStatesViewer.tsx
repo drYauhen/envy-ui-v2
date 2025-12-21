@@ -13,7 +13,7 @@ const buttonCssReference = `/* Full CSS available at: src/ui/button.css */
  * Defines which button variant to display with all its states
  */
 type ButtonConfig = {
-  intent?: 'primary' | 'secondary';
+  intent?: 'primary' | 'secondary' | 'accent';
   size?: 'sm' | 'md' | 'lg';
   shape?: 'default' | 'round' | 'circle';
   label?: string;
@@ -90,6 +90,11 @@ const stateLabelStyle: CSSProperties = {
 // ============================================================================
 // Expandable code panel container (details/summary element)
 const codePanelStyle: CSSProperties = {
+  /* Original: padding: 1.5rem; */
+  padding: '1rem', /* Reduced to save space */
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.75rem',
   borderRadius: '8px',
   border: '1px solid #e2e8f0',
   background: '#f8fafc',
