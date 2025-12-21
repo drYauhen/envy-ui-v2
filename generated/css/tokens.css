@@ -192,6 +192,15 @@
   --eui-input-typography-font-family: inherit;
   --eui-input-typography-font-weight: 400;
   --eui-input-typography-line-height: 1.5;
+  --eui-select-trigger-background: #ffffff;
+  --eui-select-trigger-border: #404040;
+  --eui-select-icon-color: #525252;
+  --eui-select-icon-disabled: #404040;
+  --eui-textarea-size-min-height: 80px;
+  --eui-textarea-size-min-rows: 3;
+  --eui-textarea-size-padding-vertical: 8px;
+  --eui-textarea-size-padding-inline: 12px;
+  --eui-textarea-typography-line-height: 1.5;
   --eui-color-accent-50: #f1f8ff;
   --eui-color-accent-100: #dceeff;
   --eui-color-accent-200: #b7dbff;

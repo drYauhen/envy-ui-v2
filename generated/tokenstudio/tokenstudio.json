@@ -755,6 +755,42 @@
     "$value": "1.5",
     "$type": "lineHeight"
   },
+  "eui.select.trigger.background": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.select.trigger.border": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.select.icon.color": {
+    "$value": "#525252",
+    "$type": "color"
+  },
+  "eui.select.icon.disabled": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.textarea.size.min.height": {
+    "$value": "80px",
+    "$type": "dimension"
+  },
+  "eui.textarea.size.min.rows": {
+    "$value": "3",
+    "$type": "number"
+  },
+  "eui.textarea.size.padding.vertical": {
+    "$value": "8px",
+    "$type": "dimension"
+  },
+  "eui.textarea.size.padding.inline": {
+    "$value": "12px",
+    "$type": "dimension"
+  },
+  "eui.textarea.typography.line.height": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
   "eui.color.accent.50": {
     "$value": "#f1f8ff",
     "$type": "color"

@@ -983,6 +983,64 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Colors / Trigger",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.trigger.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.select.trigger.border",
+          "type": "COLOR",
+          "value": "#404040"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Icon",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.icon.color",
+          "type": "COLOR",
+          "value": "#525252"
+        },
+        {
+          "path": "eui.select.icon.disabled",
+          "type": "COLOR",
+          "value": "#404040"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Textarea",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.textarea.size.min.height",
+          "type": "FLOAT",
+          "value": 80
+        },
+        {
+          "path": "eui.textarea.size.min.rows",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.textarea.size.padding.inline",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.textarea.size.padding.vertical",
+          "type": "FLOAT",
+          "value": 8
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Brand",
       "mode": "default",
       "variables": [
