@@ -1,5 +1,14 @@
 {
   "eui": {
+    "color": {
+      "border": {
+        "default": {
+          "$value": "{eui.color.neutral.300}",
+          "$type": "color",
+          "$description": "Subtle border color for default theme. More visible than neutral.200 but still minimal. Less prominent than accessibility theme."
+        }
+      }
+    },
     "radius": {
       "none": {
         "$value": "0px",

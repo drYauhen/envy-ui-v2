@@ -3,9 +3,9 @@
     "color": {
       "border": {
         "default": {
-          "$value": "{eui.color.neutral.600}",
+          "$value": "{eui.color.neutral.700}",
           "$type": "color",
-          "$description": "Stronger border color for better contrast in accessibility theme"
+          "$description": "Strong border color for maximum contrast in accessibility theme. Dark and highly visible for accessibility needs."
         }
       },
       "text": {
