@@ -7,6 +7,8 @@ import '../src/ui/button.css';
 import '../src/ui/card.css';
 import '../src/ui/checkbox.css';
 import '../src/ui/input.css';
+import '../src/ui/textarea.css';
+import '../src/ui/select.css';
 import './preview.css';
 
 const withPreviewLayout: Decorator = (Story, context) => {
