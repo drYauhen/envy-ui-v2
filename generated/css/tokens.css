@@ -44,7 +44,8 @@
   --eui-button-accent-label-active: #ffffff;
   --eui-button-accent-label-disabled: #404040;
   --eui-button-accent-label-selected: #ffffff;
-  --eui-button-focus-ring-color-derived: #066a8d;
+  --eui-button-focus-ring-color-derived-base: #2ea7d1;
+  --eui-button-focus-ring-color-derived-accessible: #066a8d;
   --eui-button-focus-ring-width-base: 2px;
   --eui-button-focus-ring-width-accessible: 3px;
   --eui-button-focus-ring-offset-base: 0px;
@@ -159,6 +160,11 @@
   --eui-radius-pill: 999px;
   --eui-focus-ring-width-base: 2px;
   --eui-focus-ring-width-accessible: 3px;
+  --eui-shadow-none: none;
+  --eui-shadow-small: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --eui-shadow-default: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --eui-shadow-large: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --eui-shadow-extra-large: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   --eui-radius-none: 0px;
   --eui-radius-small: 2px;
   --eui-radius-default: 4px;
