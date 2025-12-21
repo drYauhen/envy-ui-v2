@@ -1,0 +1,99 @@
+{
+  "eui": {
+    "card": {
+      "variant": {
+        "elevated": {
+          "shadow": {
+            "$value": "{eui.shadow.default}",
+            "$type": "boxShadow",
+            "$description": "Standard elevation shadow for cards. Default variant."
+          },
+          "border": {
+            "width": {
+              "$value": "1px",
+              "$type": "dimension"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string"
+            },
+            "color": {
+              "$value": "{eui.color.border.default}",
+              "$type": "color"
+            }
+          },
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color"
+          },
+          "radius": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference."
+          }
+        },
+        "flat": {
+          "shadow": {
+            "$value": "none",
+            "$type": "boxShadow",
+            "$description": "No shadow. Flat card variant."
+          },
+          "border": {
+            "width": {
+              "$value": "1px",
+              "$type": "dimension"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string"
+            },
+            "color": {
+              "$value": "{eui.color.border.default}",
+              "$type": "color"
+            }
+          },
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color"
+          },
+          "radius": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference."
+          }
+        },
+        "strong": {
+          "shadow": {
+            "$value": "{eui.shadow.large}",
+            "$type": "boxShadow",
+            "$description": "Stronger elevation shadow for prominent cards."
+          },
+          "border": {
+            "width": {
+              "$value": "1px",
+              "$type": "dimension"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string"
+            },
+            "color": {
+              "$value": "{eui.color.border.default}",
+              "$type": "color"
+            }
+          },
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color"
+          },
+          "radius": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference."
+          }
+        }
+      }
+    }
+  }
+}
+

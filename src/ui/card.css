@@ -1,0 +1,56 @@
+/* ============================================================================
+   Card Component
+   ============================================================================ */
+
+[data-eui-context] .eui-card {
+  /* Base card properties - radius comes from theme (same as buttons) */
+  --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
+  --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
+  --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
+  /* Border color references semantic token directly so it updates with theme changes */
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-elevated-background);
+  /* Radius is determined by theme: default theme = 4px, accessibility theme = 8px */
+  --eui-card-radius: var(--eui-radius-default);
+
+  display: block;
+  border-radius: var(--eui-card-radius);
+  border-width: var(--eui-card-border-width);
+  border-style: var(--eui-card-border-style);
+  border-color: var(--eui-card-border-color);
+  background-color: var(--eui-card-background);
+  box-shadow: var(--eui-card-shadow);
+}
+
+/* Variant: Elevated (default) */
+/* Note: Always specify data-eui-variant explicitly, even for default variant.
+   Base styles default to elevated for robustness, but explicit specification is required in practice. */
+[data-eui-context] .eui-card[data-eui-variant='elevated'] {
+  --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
+  --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
+  --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
+  /* Border color references semantic token directly so it updates with theme changes */
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-elevated-background);
+}
+
+/* Variant: Flat (no shadow) */
+[data-eui-context] .eui-card[data-eui-variant='flat'] {
+  --eui-card-shadow: var(--eui-card-variant-flat-shadow);
+  --eui-card-border-width: var(--eui-card-variant-flat-border-width);
+  --eui-card-border-style: var(--eui-card-variant-flat-border-style);
+  /* Border color references semantic token directly so it updates with theme changes */
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-flat-background);
+}
+
+/* Variant: Strong (prominent shadow) */
+[data-eui-context] .eui-card[data-eui-variant='strong'] {
+  --eui-card-shadow: var(--eui-card-variant-strong-shadow);
+  --eui-card-border-width: var(--eui-card-variant-strong-border-width);
+  --eui-card-border-style: var(--eui-card-variant-strong-border-style);
+  /* Border color references semantic token directly so it updates with theme changes */
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-strong-background);
+}
+
