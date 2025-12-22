@@ -20,6 +20,11 @@ interface MenuContextValue {
   placement: 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end';
   triggerRef: React.RefObject<HTMLElement>;
   listRef: React.RefObject<HTMLUListElement>;
+  triggerCallbackRef: (node: HTMLElement | null) => void;
+  referenceRef: ((node: HTMLElement | null) => void) | null;
+  floatingRef: ((node: HTMLElement | null) => void) | null;
+  floatingStyles: React.CSSProperties;
+  getFloatingProps: (props?: React.HTMLAttributes<HTMLElement>) => React.HTMLAttributes<HTMLElement>;
 }
 
 const MenuContext = React.createContext<MenuContextValue | null>(null);
@@ -62,12 +67,39 @@ export function Menu({ children, isOpen: controlledIsOpen, onOpenChange, placeme
     selectionMode: 'none'
   });
 
+  // Use Floating UI for positioning (called at Menu level to share refs)
+  const { referenceRef, floatingRef, floatingStyles, getFloatingProps } = useFloatingPosition({
+    isOpen: menuTriggerState.isOpen,
+    onOpenChange: menuTriggerState.setOpen,
+    placement: placement,
+    offset: 8,
+    clickOutsideToClose: true,
+    escapeKeyToClose: true,
+    clickToToggle: false // MenuList doesn't toggle, trigger does
+  });
+
+  // Connect trigger ref to Floating UI reference
+  // Use callback ref to ensure referenceRef is called when trigger mounts
+  const triggerCallbackRef = React.useCallback((node: HTMLElement | null) => {
+    if (node) {
+      triggerRef.current = node;
+      if (referenceRef) {
+        referenceRef(node);
+      }
+    }
+  }, [referenceRef]);
+
   const contextValue: MenuContextValue = {
     menuTriggerState,
     treeState,
     placement,
     triggerRef,
-    listRef
+    listRef,
+    triggerCallbackRef,
+    referenceRef,
+    floatingRef,
+    floatingStyles,
+    getFloatingProps
   };
 
   return (
@@ -90,14 +122,23 @@ export interface MenuTriggerProps {
 export function MenuTrigger({ children, asChild = false }: MenuTriggerProps) {
   const context = useMenuContext();
   const triggerRef = context.triggerRef;
+  const triggerCallbackRef = context.triggerCallbackRef;
 
   const { menuTriggerProps } = useMenuTrigger({}, context.menuTriggerState, triggerRef);
+
+  // Combine refs: use callback ref to connect both triggerRef and Floating UI referenceRef
+  const combinedRef = React.useCallback((node: HTMLElement | null) => {
+    triggerCallbackRef(node);
+    if (node && triggerRef) {
+      (triggerRef as React.MutableRefObject<HTMLElement | null>).current = node;
+    }
+  }, [triggerCallbackRef, triggerRef]);
 
   // Merge menu trigger props with child props (asChild pattern)
   if (asChild && React.isValidElement(children)) {
     return React.cloneElement(children, {
       ...mergeProps(menuTriggerProps, children.props),
-      ref: triggerRef
+      ref: combinedRef
     } as any);
   }
 
@@ -109,7 +150,7 @@ export function MenuTrigger({ children, asChild = false }: MenuTriggerProps) {
   return (
     <button
       {...mergeProps(buttonProps, hoverProps, focusProps)}
-      ref={triggerRef as React.RefObject<HTMLButtonElement>}
+      ref={combinedRef as React.RefObject<HTMLButtonElement>}
       className={`${SYSTEM_PREFIX}-button`}
       data-eui-intent="secondary"
       data-eui-hovered={dataAttr(isHovered)}
@@ -130,23 +171,12 @@ export function MenuList({ children, className }: MenuListProps) {
   const context = useMenuContext();
   const listRef = context.listRef;
 
-  // Use Floating UI for positioning
-  const { floatingRef, floatingStyles, getFloatingProps } = useFloatingPosition({
-    isOpen: context.menuTriggerState.isOpen,
-    onOpenChange: context.menuTriggerState.setOpen,
-    placement: context.placement,
-    offset: 8,
-    clickOutsideToClose: true,
-    escapeKeyToClose: true,
-    clickToToggle: false // MenuList doesn't toggle, trigger does
-  });
-
-  // Combine refs
+  // Connect list ref to Floating UI floating (refs come from Menu context)
   React.useEffect(() => {
-    if (listRef.current && floatingRef) {
-      (floatingRef as any)(listRef.current);
+    if (listRef.current && context.floatingRef) {
+      context.floatingRef(listRef.current);
     }
-  }, [floatingRef, listRef]);
+  }, [context.floatingRef, listRef]);
 
   // Use menu with tree state
   // Note: useMenu requires treeState with proper structure
@@ -170,8 +200,8 @@ export function MenuList({ children, className }: MenuListProps) {
       ref={listRef}
       className={[`${SYSTEM_PREFIX}-menu-list`, className].filter(Boolean).join(' ')}
       role="menu"
-      style={floatingStyles}
-      {...mergeProps(menuProps, getFloatingProps())}
+      style={context.floatingStyles}
+      {...mergeProps(menuProps, context.getFloatingProps())}
     >
       {children}
     </ul>
