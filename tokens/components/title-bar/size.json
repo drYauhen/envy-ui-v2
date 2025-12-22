@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "title-bar": {
+      "size": {
+        "height": {
+          "$value": "48px",
+          "$type": "dimension",
+          "$description": "Height of title bar (both global and contextual)."
+        }
+      }
+    }
+  }
+}
+

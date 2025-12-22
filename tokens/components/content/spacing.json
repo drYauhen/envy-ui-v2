@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "content": {
+      "spacing": {
+        "padding": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Padding for main content area."
+        }
+      }
+    }
+  }
+}
+

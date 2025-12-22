@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "header": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Header background color. White surface for clean appearance."
+        },
+        "text": {
+          "$value": "{eui.color.text.primary}",
+          "$type": "color",
+          "$description": "Header text color. Primary text for readability."
+        },
+        "border": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Header border color. Bottom border to separate from content."
+        }
+      }
+    }
+  }
+}
+

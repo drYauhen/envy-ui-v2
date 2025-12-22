@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "detail-panel": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Detail panel background color. White surface for content area."
+        },
+        "text": {
+          "$value": "{eui.color.text.primary}",
+          "$type": "color",
+          "$description": "Detail panel text color. Primary text for readability."
+        },
+        "border": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Detail panel border color. Left border to separate from main content."
+        }
+      }
+    }
+  }
+}
+

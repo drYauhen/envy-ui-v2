@@ -1,0 +1,29 @@
+/* Sidebar Component Styles */
+
+[data-eui-context] .eui-sidebar {
+  grid-area: sidebar;
+  background-color: var(--eui-sidebar-colors-background);
+  color: var(--eui-sidebar-colors-text);
+  border-right: 1px solid var(--eui-sidebar-colors-border);
+  padding: var(--eui-sidebar-spacing-padding);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width var(--eui-sidebar-animation-duration) var(--eui-sidebar-animation-easing);
+  width: var(--eui-sidebar-size-expanded-width);
+}
+
+/* Collapsed state */
+[data-eui-context] .eui-sidebar[data-eui-collapsed="true"] {
+  width: var(--eui-sidebar-size-collapsed-width);
+}
+
+/* Expanded state (explicit) */
+[data-eui-context] .eui-sidebar[data-eui-collapsed="false"] {
+  width: var(--eui-sidebar-size-expanded-width);
+}
+
+/* Navigation items spacing */
+[data-eui-context] .eui-sidebar > * + * {
+  margin-top: var(--eui-sidebar-spacing-item-gap);
+}
+

@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "sidebar": {
+      "animation": {
+        "duration": {
+          "$value": "200ms",
+          "$type": "duration",
+          "$description": "Transition duration for sidebar expand/collapse animation."
+        },
+        "easing": {
+          "$value": "ease-in-out",
+          "$type": "string",
+          "$description": "Easing function for sidebar expand/collapse animation."
+        }
+      }
+    }
+  }
+}
+

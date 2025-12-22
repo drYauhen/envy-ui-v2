@@ -1,0 +1,12 @@
+/* Content Component Styles */
+
+[data-eui-context] .eui-content {
+  grid-area: content;
+  background-color: var(--eui-content-colors-background);
+  color: var(--eui-content-colors-text);
+  padding: var(--eui-content-spacing-padding);
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+

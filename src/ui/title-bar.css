@@ -1,0 +1,28 @@
+/* TitleBar Component Styles */
+
+[data-eui-context] .eui-title-bar {
+  background-color: var(--eui-title-bar-colors-background);
+  color: var(--eui-title-bar-colors-text);
+  border-bottom: 1px solid var(--eui-title-bar-colors-border);
+  padding: var(--eui-title-bar-spacing-padding-vertical) var(--eui-title-bar-spacing-padding-horizontal);
+  height: var(--eui-title-bar-size-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+[data-eui-context] .eui-title-bar > * + * {
+  margin-left: var(--eui-title-bar-spacing-gap);
+}
+
+/* Global title bar */
+[data-eui-context] .eui-title-bar--global {
+  grid-area: global-title-bar;
+}
+
+/* Contextual title bar */
+[data-eui-context] .eui-title-bar--contextual {
+  grid-area: contextual-title-bar;
+}
+

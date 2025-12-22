@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "sidebar": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Sidebar background color. Brand primary for brand identity in default theme."
+        },
+        "text": {
+          "$value": "{eui.color.text.inverse}",
+          "$type": "color",
+          "$description": "Sidebar text color. Inverse (white) for contrast on brand background."
+        },
+        "border": {
+          "$value": "transparent",
+          "$type": "color",
+          "$description": "Sidebar border color. Transparent as sidebar has brand background."
+        }
+      }
+    }
+  }
+}
+

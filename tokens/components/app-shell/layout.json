@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "app-shell": {
+      "layout": {
+        "grid-template-areas": {
+          "$value": "\"header header header\" \"sidebar global-title-bar detail-panel\" \"sidebar contextual-title-bar detail-panel\" \"sidebar content detail-panel\"",
+          "$type": "string",
+          "$description": "CSS Grid template areas for application shell layout."
+        }
+      }
+    }
+  }
+}
+

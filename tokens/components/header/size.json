@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "header": {
+      "size": {
+        "height": {
+          "$value": "56px",
+          "$type": "dimension",
+          "$description": "Height of application header."
+        }
+      }
+    }
+  }
+}
+

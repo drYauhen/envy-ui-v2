@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "sidebar": {
+      "spacing": {
+        "padding": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Padding for sidebar content."
+        },
+        "item-gap": {
+          "$value": "0.5rem",
+          "$type": "dimension",
+          "$description": "Gap between navigation items in sidebar."
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "detail-panel": {
+      "shadow": {
+        "left": {
+          "$value": "-4px 0 8px rgba(0, 0, 0, 0.1)",
+          "$type": "boxShadow",
+          "$description": "Left-side shadow for detail panel elevation. Negative X offset creates shadow on left side to show elevation relative to main content."
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "detail-panel": {
+      "size": {
+        "width": {
+          "$value": "400px",
+          "$type": "dimension",
+          "$description": "Width of detail panel when open."
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "eui": {
+    "sidebar": {
+      "size": {
+        "expanded": {
+          "width": {
+            "$value": "240px",
+            "$type": "dimension",
+            "$description": "Width of sidebar when expanded. Shows icons and labels."
+          }
+        },
+        "collapsed": {
+          "width": {
+            "$value": "64px",
+            "$type": "dimension",
+            "$description": "Width of sidebar when collapsed. Shows icons only."
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "content": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Content background color. White surface for content area."
+        },
+        "text": {
+          "$value": "{eui.color.text.primary}",
+          "$type": "color",
+          "$description": "Content text color. Primary text for readability."
+        }
+      }
+    }
+  }
+}
+

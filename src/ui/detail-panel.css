@@ -1,0 +1,25 @@
+/* DetailPanel Component Styles */
+
+[data-eui-context] .eui-detail-panel {
+  grid-area: detail-panel;
+  background-color: var(--eui-detail-panel-colors-background);
+  color: var(--eui-detail-panel-colors-text);
+  border-left: 1px solid var(--eui-detail-panel-colors-border);
+  box-shadow: var(--eui-detail-panel-shadow-left);
+  padding: var(--eui-detail-panel-spacing-padding);
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: var(--eui-detail-panel-size-width);
+}
+
+/* Hidden state (default and explicit) */
+[data-eui-context] .eui-detail-panel:not([data-eui-open="true"]),
+[data-eui-context] .eui-detail-panel[data-eui-open="false"] {
+  display: none;
+}
+
+/* Open state */
+[data-eui-context] .eui-detail-panel[data-eui-open="true"] {
+  display: block;
+}
+

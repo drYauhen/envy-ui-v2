@@ -1,0 +1,26 @@
+{
+  "eui": {
+    "title-bar": {
+      "spacing": {
+        "padding": {
+          "horizontal": {
+            "$value": "1.5rem",
+            "$type": "dimension",
+            "$description": "Horizontal padding for title bar content."
+          },
+          "vertical": {
+            "$value": "0.75rem",
+            "$type": "dimension",
+            "$description": "Vertical padding for title bar content."
+          }
+        },
+        "gap": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Gap between title bar elements."
+        }
+      }
+    }
+  }
+}
+
