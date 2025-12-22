@@ -1,0 +1,33 @@
+{
+  "eui": {
+    "skeleton": {
+      "colors": {
+        "background": {
+          "base": {
+            "$value": "{eui.color.neutral.200}",
+            "$type": "color",
+            "$description": "Base background color for skeleton. Light gray (neutral.200) for subtle, non-intrusive appearance."
+          }
+        },
+        "shimmer": {
+          "start": {
+            "$value": "rgba(0, 0, 0, 0)",
+            "$type": "color",
+            "$description": "Shimmer gradient start color (transparent)"
+          },
+          "mid": {
+            "$value": "rgba(255, 255, 255, 0.4)",
+            "$type": "color",
+            "$description": "Shimmer gradient middle color (semi-opaque white for shimmer effect)"
+          },
+          "end": {
+            "$value": "rgba(0, 0, 0, 0)",
+            "$type": "color",
+            "$description": "Shimmer gradient end color (transparent)"
+          }
+        }
+      }
+    }
+  }
+}
+

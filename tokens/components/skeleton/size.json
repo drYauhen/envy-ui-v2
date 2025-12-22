@@ -1,0 +1,30 @@
+{
+  "eui": {
+    "skeleton": {
+      "size": {
+        "text": {
+          "lineHeight": {
+            "$value": "1.25rem",
+            "$type": "dimension",
+            "$description": "Height for text skeleton lines. Matches typical line-height for body text."
+          }
+        },
+        "rectangular": {
+          "defaultHeight": {
+            "$value": "1rem",
+            "$type": "dimension",
+            "$description": "Default height for rectangular skeleton variant."
+          }
+        },
+        "circular": {
+          "defaultDiameter": {
+            "$value": "40px",
+            "$type": "dimension",
+            "$description": "Default diameter for circular skeleton variant (e.g., for avatars)."
+          }
+        }
+      }
+    }
+  }
+}
+

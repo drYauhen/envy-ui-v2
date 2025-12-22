@@ -1,0 +1,182 @@
+/* Skeleton Component Styles */
+
+[data-eui-context] .eui-skeleton {
+  background-color: var(--eui-skeleton-colors-background-base);
+  border-radius: var(--eui-skeleton-shape-rectangular-radius);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Text variant - no radius, full width */
+[data-eui-context] .eui-skeleton[data-eui-variant="text"] {
+  border-radius: var(--eui-skeleton-shape-text-radius);
+  height: var(--eui-skeleton-size-text-line-height);
+  width: 100%;
+  display: block;
+}
+
+/* Rectangular variant - flexible sizing */
+[data-eui-context] .eui-skeleton[data-eui-variant="rectangular"] {
+  border-radius: var(--eui-skeleton-shape-rectangular-radius);
+  height: var(--eui-skeleton-size-rectangular-default-height);
+  width: 100%;
+}
+
+/* Circular variant - square aspect ratio */
+[data-eui-context] .eui-skeleton[data-eui-variant="circular"] {
+  border-radius: var(--eui-skeleton-shape-circular-radius);
+  width: var(--eui-skeleton-size-circular-default-diameter);
+  height: var(--eui-skeleton-size-circular-default-diameter);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+/* Shimmer animation - default for app and site contexts */
+[data-eui-context="app"] .eui-skeleton[data-eui-animation="shimmer"]::after,
+[data-eui-context="site"] .eui-skeleton[data-eui-animation="shimmer"]::after,
+[data-eui-context="app"] .eui-skeleton:not([data-eui-animation])::after,
+[data-eui-context="site"] .eui-skeleton:not([data-eui-animation])::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    var(--eui-skeleton-colors-shimmer-start),
+    var(--eui-skeleton-colors-shimmer-mid),
+    var(--eui-skeleton-colors-shimmer-end)
+  );
+  background-size: var(--eui-skeleton-animation-shimmer-width) 100%;
+  animation: skeleton-shimmer var(--eui-skeleton-animation-duration) infinite var(--eui-skeleton-animation-easing);
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Wave animation - truly unsynchronized effect using varied durations and negative delays */
+/* Each element has different animation duration and starts at different phase */
+/* This creates a truly organic, non-synchronized shimmer effect */
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    var(--eui-skeleton-colors-shimmer-start),
+    var(--eui-skeleton-colors-shimmer-mid),
+    var(--eui-skeleton-colors-shimmer-end)
+  );
+  background-size: var(--eui-skeleton-animation-shimmer-width) 100%;
+  animation: skeleton-shimmer var(--eui-skeleton-animation-duration) infinite var(--eui-skeleton-animation-easing);
+}
+
+/* Vary animation duration and delay for each element to create unsynchronized effect */
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(1)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(1)::after {
+  animation-duration: 1.5s;
+  animation-delay: 0ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(2)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(2)::after {
+  animation-duration: 1.6s;
+  animation-delay: -200ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(3)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(3)::after {
+  animation-duration: 1.4s;
+  animation-delay: -400ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(4)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(4)::after {
+  animation-duration: 1.7s;
+  animation-delay: 100ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(5)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(5)::after {
+  animation-duration: 1.3s;
+  animation-delay: -300ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(6)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(6)::after {
+  animation-duration: 1.8s;
+  animation-delay: 200ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(7)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(7)::after {
+  animation-duration: 1.5s;
+  animation-delay: -500ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(8)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(8)::after {
+  animation-duration: 1.6s;
+  animation-delay: -100ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(9)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(9)::after {
+  animation-duration: 1.4s;
+  animation-delay: 300ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(10)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(10)::after {
+  animation-duration: 1.7s;
+  animation-delay: -600ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(11)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(11)::after {
+  animation-duration: 1.3s;
+  animation-delay: 150ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(12)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(12)::after {
+  animation-duration: 1.9s;
+  animation-delay: -250ms;
+}
+
+/* For elements beyond 12, cycle through the pattern */
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(13)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(13)::after {
+  animation-duration: 1.5s;
+  animation-delay: -350ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(14)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(14)::after {
+  animation-duration: 1.6s;
+  animation-delay: 50ms;
+}
+
+[data-eui-context="app"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(n+15)::after,
+[data-eui-context="site"] .eui-skeleton-group[data-eui-animation="wave"] .eui-skeleton:nth-child(n+15)::after {
+  animation-duration: 1.5s;
+  animation-delay: 0ms;
+}
+
+/* Report context - no animations */
+[data-eui-context="report"] .eui-skeleton::after {
+  display: none;
+}
+

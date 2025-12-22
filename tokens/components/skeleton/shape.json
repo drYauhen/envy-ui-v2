@@ -1,0 +1,30 @@
+{
+  "eui": {
+    "skeleton": {
+      "shape": {
+        "text": {
+          "radius": {
+            "$value": "0px",
+            "$type": "dimension",
+            "$description": "Border radius for text skeleton variant (rectangular, no rounding)."
+          }
+        },
+        "rectangular": {
+          "radius": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Border radius for rectangular skeleton variant. Matches card/container radius."
+          }
+        },
+        "circular": {
+          "radius": {
+            "$value": "50%",
+            "$type": "dimension",
+            "$description": "Border radius for circular skeleton variant (full circle for avatars)."
+          }
+        }
+      }
+    }
+  }
+}
+

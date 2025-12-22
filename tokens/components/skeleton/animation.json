@@ -1,0 +1,38 @@
+{
+  "eui": {
+    "skeleton": {
+      "animation": {
+        "duration": {
+          "$value": "1.5s",
+          "$type": "duration",
+          "$description": "Shimmer animation duration. Smooth, not too fast or slow."
+        },
+        "easing": {
+          "$value": "linear",
+          "$type": "string",
+          "$description": "Animation easing function. Linear for consistent shimmer movement."
+        },
+        "shimmer": {
+          "width": {
+            "$value": "200%",
+            "$type": "dimension",
+            "$description": "Width of shimmer gradient. 200% ensures smooth transition across element."
+          }
+        },
+        "stagger": {
+          "step": {
+            "$value": "100ms",
+            "$type": "duration",
+            "$description": "Delay step between consecutive skeletons in a wave animation group. Creates sequential shimmer effect."
+          },
+          "max": {
+            "$value": "800ms",
+            "$type": "duration",
+            "$description": "Maximum stagger delay. Prevents too long delays for elements beyond 8th position."
+          }
+        }
+      }
+    }
+  }
+}
+
