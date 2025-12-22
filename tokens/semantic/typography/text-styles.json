@@ -1,0 +1,229 @@
+{
+  "eui": {
+    "typography": {
+      "textStyle": {
+        "heading": {
+          "1": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.6xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 1 - Page title, hero heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Bold weight for heading 1"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 1"
+            }
+          },
+          "2": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.5xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 2 - Section heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Bold weight for heading 2"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 2"
+            }
+          },
+          "3": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.4xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 3 - Subsection heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Bold weight for heading 3"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 3"
+            }
+          },
+          "4": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.3xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 4 - Card title, medium heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Bold weight for heading 4"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 4"
+            }
+          },
+          "5": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.2xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 5 - Small heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Bold weight for heading 5"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 5"
+            }
+          },
+          "6": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 6 - Smallest heading, emphasized text"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Semi-bold weight for heading 6"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 6"
+            }
+          }
+        },
+        "body": {
+          "large": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.md}",
+              "$type": "fontSize",
+              "$description": "Large body text - emphasized content"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for large body"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for large body"
+            }
+          },
+          "base": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.base}",
+              "$type": "fontSize",
+              "$description": "Base body text - default for application UI"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for body text"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for body text"
+            }
+          },
+          "small": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Small body text - helper text, secondary content"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for small body"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for small body"
+            }
+          }
+        },
+        "caption": {
+          "fontSize": {
+            "$value": "{eui.typography.fontSize.xs}",
+            "$type": "fontSize",
+            "$description": "Caption text - labels, metadata, counters in buttons"
+          },
+          "fontWeight": {
+            "$value": "{eui.typography.fontWeight.normal}",
+            "$type": "fontWeight",
+            "$description": "Normal weight for caption"
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.lineHeight.normal}",
+            "$type": "lineHeight",
+            "$description": "Normal line height for caption"
+          }
+        },
+        "code": {
+          "base": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Code inline text - default size"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for code"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for code"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.monospace}",
+              "$type": "fontFamily",
+              "$description": "Monospace font for code"
+            }
+          },
+          "small": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.xs}",
+              "$type": "fontSize",
+              "$description": "Small code text"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for small code"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for small code"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.monospace}",
+              "$type": "fontFamily",
+              "$description": "Monospace font for small code"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

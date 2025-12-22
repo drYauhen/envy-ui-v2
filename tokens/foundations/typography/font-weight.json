@@ -1,0 +1,34 @@
+{
+  "eui": {
+    "typography": {
+      "fontWeight": {
+        "light": {
+          "$value": "300",
+          "$type": "fontWeight",
+          "$description": "Light weight - rarely used in UI, for subtle emphasis"
+        },
+        "normal": {
+          "$value": "400",
+          "$type": "fontWeight",
+          "$description": "Regular weight - default for body text"
+        },
+        "medium": {
+          "$value": "500",
+          "$type": "fontWeight",
+          "$description": "Medium weight - subtle emphasis, some UI elements"
+        },
+        "semibold": {
+          "$value": "600",
+          "$type": "fontWeight",
+          "$description": "Semi-bold - buttons, labels, emphasis, UI elements"
+        },
+        "bold": {
+          "$value": "700",
+          "$type": "fontWeight",
+          "$description": "Bold - headings, strong emphasis"
+        }
+      }
+    }
+  }
+}
+

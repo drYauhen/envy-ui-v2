@@ -1,5 +1,14 @@
 {
   "eui": {
+    "typography": {
+      "base": {
+        "fontSize": {
+          "$value": "16px",
+          "$type": "fontSize",
+          "$description": "Base font size for accessibility theme. Larger size for better readability and accessibility compliance."
+        }
+      }
+    },
     "color": {
       "border": {
         "default": {

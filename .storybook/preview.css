@@ -2,10 +2,11 @@
 body,
 #storybook-root,
 .sbdocs-wrapper {
-  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--eui-typography-font-family-ui, 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  font-size: var(--eui-typography-base-fontSize, 14px);
   background-color: #f6f7fb;
   color: #0f172a;
-  font-weight: 400;
+  font-weight: var(--eui-typography-font-weight-normal, 400);
 }
 
 .sbdocs-content,

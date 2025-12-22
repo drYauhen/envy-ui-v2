@@ -1,0 +1,64 @@
+{
+  "eui": {
+    "typography": {
+      "fontSize": {
+        "xs": {
+          "$value": "0.75rem",
+          "$type": "fontSize",
+          "$description": "12px at 14px base (0.857rem at 16px base). For captions, labels, badges, counters inside buttons."
+        },
+        "sm": {
+          "$value": "0.875rem",
+          "$type": "fontSize",
+          "$description": "14px at 16px base (1rem at 14px base). Base size for application UI. For body text, buttons, inputs."
+        },
+        "base": {
+          "$value": "1rem",
+          "$type": "fontSize",
+          "$description": "14px at 14px base (16px at 16px base). Base body text size. Adapts to context base font size."
+        },
+        "md": {
+          "$value": "1.125rem",
+          "$type": "fontSize",
+          "$description": "16px at 14px base (18px at 16px base). Slightly larger body text, emphasized content."
+        },
+        "lg": {
+          "$value": "1.25rem",
+          "$type": "fontSize",
+          "$description": "17.5px at 14px base (20px at 16px base). Large body text, subheadings."
+        },
+        "xl": {
+          "$value": "1.5rem",
+          "$type": "fontSize",
+          "$description": "21px at 14px base (24px at 16px base). Heading level 6, card titles."
+        },
+        "2xl": {
+          "$value": "1.875rem",
+          "$type": "fontSize",
+          "$description": "26.25px at 14px base (30px at 16px base). Heading level 5."
+        },
+        "3xl": {
+          "$value": "2.25rem",
+          "$type": "fontSize",
+          "$description": "31.5px at 14px base (36px at 16px base). Heading level 4."
+        },
+        "4xl": {
+          "$value": "3rem",
+          "$type": "fontSize",
+          "$description": "42px at 14px base (48px at 16px base). Heading level 3."
+        },
+        "5xl": {
+          "$value": "3.75rem",
+          "$type": "fontSize",
+          "$description": "52.5px at 14px base (60px at 16px base). Heading level 2."
+        },
+        "6xl": {
+          "$value": "4.5rem",
+          "$type": "fontSize",
+          "$description": "63px at 14px base (72px at 16px base). Heading level 1, hero text."
+        }
+      }
+    }
+  }
+}
+
