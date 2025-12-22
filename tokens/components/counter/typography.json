@@ -9,9 +9,26 @@
             "$description": "Font family for counter. Inherits from parent for consistency."
           },
           "weight": {
-            "$value": "600",
+            "$value": "{eui.typography.fontWeight.normal}",
             "$type": "fontWeight",
-            "$description": "Font weight for counter. Semi-bold for better visibility."
+            "$description": "Font weight for counter. Normal weight (not bold)."
+          },
+          "size": {
+            "text": {
+              "$value": "{eui.typography.textStyle.body.base.fontSize}",
+              "$type": "fontSize",
+              "$description": "Font size for text variant (standalone). Uses body base size (1rem)."
+            },
+            "pill": {
+              "$value": "{eui.typography.textStyle.body.small.fontSize}",
+              "$type": "fontSize",
+              "$description": "Font size for pill variant (button-oriented). Uses body small size (0.875rem), one step down from body base."
+            },
+            "filter": {
+              "$value": "{eui.typography.textStyle.body.small.fontSize}",
+              "$type": "fontSize",
+              "$description": "Font size for filter variant. Same as pill variant (0.875rem)."
+            }
           }
         },
         "line": {

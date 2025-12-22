@@ -5,9 +5,9 @@
         "pill": {
           "default": {
             "background": {
-              "$value": "{eui.color.neutral.200}",
+              "$value": "{eui.color.accent.100}",
               "$type": "color",
-              "$description": "Default pill background (standalone or light contexts like secondary button)"
+              "$description": "Default pill background. Brighter with accent hint (accent.100) for better visibility and pop. Used for neutral/standalone pill counters."
             },
             "color": {
               "$value": "{eui.color.text.primary}",
@@ -58,9 +58,9 @@
         "text": {
           "default": {
             "color": {
-              "$value": "{eui.color.text.subtle}",
+              "$value": "{eui.color.text.primary}",
               "$type": "color",
-              "$description": "Default text variant color (standalone)"
+              "$description": "Default text variant color (standalone). Uses body text color for consistency."
             }
           },
           "inverse": {
@@ -80,9 +80,9 @@
         },
         "filter": {
           "background": {
-            "$value": "{eui.color.accent.100}",
+            "$value": "{eui.color.accent.200}",
             "$type": "color",
-            "$description": "Filter variant background (accent light for filter indicator)"
+            "$description": "Filter variant background. Brighter accent (accent.200, 1-2 steps up from accent.100) for better visibility and pop."
           },
           "color": {
             "$value": "{eui.color.accent.700}",

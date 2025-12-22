@@ -7,10 +7,14 @@
   position: relative;
   flex-shrink: 0;
   
-  /* Typography */
+  /* Typography - base styles */
   font-family: var(--eui-counter-typography-font-family, inherit);
   font-weight: var(--eui-counter-typography-font-weight);
   line-height: var(--eui-counter-typography-line-height);
+  
+  /* Set font-size on component root (best practice for EM units) */
+  /* Default: text variant uses body base size */
+  font-size: var(--eui-counter-typography-font-size-text);
   
   /* Transitions */
   transition: transform 200ms ease,
@@ -18,9 +22,6 @@
               color 200ms ease,
               opacity 200ms ease,
               box-shadow 200ms ease;
-  
-  /* Default size - md */
-  font-size: var(--eui-counter-size-md-font-size);
 }
 
 /* ============================================
@@ -42,6 +43,8 @@
 
 [data-eui-context] .eui-counter[data-eui-variant="pill"] {
   /* Pill variant - background, padding, rounded */
+  /* Font-size: body.small (one step down from body base) */
+  font-size: var(--eui-counter-typography-font-size-pill);
   background-color: var(--eui-counter-colors-pill-default-background);
   color: var(--eui-counter-colors-pill-default-color);
   border: 1px solid var(--eui-counter-colors-pill-default-border);
@@ -57,6 +60,8 @@
 
 [data-eui-context] .eui-counter[data-eui-variant="filter"] {
   /* Filter variant - accent colors, always shows icon */
+  /* Font-size: same as pill variant (body.small) */
+  font-size: var(--eui-counter-typography-font-size-filter);
   background-color: var(--eui-counter-colors-filter-background);
   color: var(--eui-counter-colors-filter-color);
   border: 1px solid var(--eui-counter-colors-filter-border);
@@ -102,9 +107,12 @@
    Sizes
    ============================================ */
 
-[data-eui-context] .eui-counter[data-eui-size="sm"] {
-  font-size: var(--eui-counter-size-sm-font-size);
-}
+/* Note: Font-size is now variant-specific (text/pill/filter), not size-specific.
+   Sizes (sm/md/lg) only affect height and padding, not font-size.
+   Font-size variants:
+   - text: body.base (1rem) - for standalone counters
+   - pill/filter: body.small (0.875rem) - for button-oriented counters
+*/
 
 [data-eui-context] .eui-counter[data-eui-size="sm"][data-eui-variant="pill"],
 [data-eui-context] .eui-counter[data-eui-size="sm"][data-eui-variant="filter"] {
@@ -119,10 +127,6 @@
   height: var(--eui-counter-spacing-icon-size-sm);
 }
 
-[data-eui-context] .eui-counter[data-eui-size="md"] {
-  font-size: var(--eui-counter-size-md-font-size);
-}
-
 [data-eui-context] .eui-counter[data-eui-size="md"][data-eui-variant="pill"],
 [data-eui-context] .eui-counter[data-eui-size="md"][data-eui-variant="filter"] {
   height: var(--eui-counter-size-md-height);
@@ -134,10 +138,6 @@
 [data-eui-context] .eui-counter[data-eui-size="md"][data-eui-variant="filter"]::before {
   width: var(--eui-counter-spacing-icon-size-md);
   height: var(--eui-counter-spacing-icon-size-md);
-}
-
-[data-eui-context] .eui-counter[data-eui-size="lg"] {
-  font-size: var(--eui-counter-size-lg-font-size);
 }
 
 [data-eui-context] .eui-counter[data-eui-size="lg"][data-eui-variant="pill"],

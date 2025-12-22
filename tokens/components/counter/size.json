@@ -19,13 +19,6 @@
               "$type": "dimension",
               "$description": "Vertical padding for small counter (pill variant)"
             }
-          },
-          "font": {
-            "size": {
-              "$value": "0.7rem",
-              "$type": "fontSize",
-              "$description": "Font size for small counter"
-            }
           }
         },
         "md": {
@@ -45,13 +38,6 @@
               "$type": "dimension",
               "$description": "Vertical padding for medium counter (pill variant). Reduced proportionally."
             }
-          },
-          "font": {
-            "size": {
-              "$value": "0.75rem",
-              "$type": "fontSize",
-              "$description": "Font size for medium counter. Reduced from 0.875rem for better proportion."
-            }
           }
         },
         "lg": {
@@ -70,13 +56,6 @@
               "$value": "3px",
               "$type": "dimension",
               "$description": "Vertical padding for large counter (pill variant)"
-            }
-          },
-          "font": {
-            "size": {
-              "$value": "0.875rem",
-              "$type": "fontSize",
-              "$description": "Font size for large counter"
             }
           }
         }
