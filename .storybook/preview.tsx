@@ -10,6 +10,10 @@ import '../src/ui/switch.css';
 import '../src/ui/input.css';
 import '../src/ui/textarea.css';
 import '../src/ui/select.css';
+import '../src/ui/avatar.css';
+import '../src/ui/avatar-group.css';
+import '../src/ui/counter.css';
+import '../src/ui/related-group.css';
 import './preview.css';
 
 const withPreviewLayout: Decorator = (Story, context) => {
