@@ -1,0 +1,44 @@
+{
+  "eui": {
+    "modal": {
+      "size": {
+        "sm": {
+          "maxWidth": {
+            "$value": "400px",
+            "$type": "dimension",
+            "$description": "Small modal width. Used for simple confirmations or small forms."
+          }
+        },
+        "md": {
+          "maxWidth": {
+            "$value": "500px",
+            "$type": "dimension",
+            "$description": "Medium modal width. Default size for most modals."
+          }
+        },
+        "lg": {
+          "maxWidth": {
+            "$value": "600px",
+            "$type": "dimension",
+            "$description": "Large modal width. Used for forms or content with more fields."
+          }
+        },
+        "xl": {
+          "maxWidth": {
+            "$value": "800px",
+            "$type": "dimension",
+            "$description": "Extra large modal width. Used for complex forms or detailed content."
+          }
+        },
+        "full": {
+          "maxWidth": {
+            "$value": "100vw",
+            "$type": "dimension",
+            "$description": "Full screen modal. Used on mobile devices or for immersive experiences."
+          }
+        }
+      }
+    }
+  }
+}
+

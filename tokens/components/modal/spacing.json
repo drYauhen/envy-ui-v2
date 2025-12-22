@@ -1,0 +1,49 @@
+{
+  "eui": {
+    "modal": {
+      "spacing": {
+        "header": {
+          "padding": {
+            "vertical": {
+              "$value": "1rem",
+              "$type": "dimension",
+              "$description": "Vertical padding for modal header."
+            },
+            "horizontal": {
+              "$value": "1.5rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for modal header. Larger for better spacing."
+            }
+          }
+        },
+        "body": {
+          "padding": {
+            "$value": "1.5rem",
+            "$type": "dimension",
+            "$description": "Padding for modal body content."
+          }
+        },
+        "footer": {
+          "padding": {
+            "vertical": {
+              "$value": "1rem",
+              "$type": "dimension",
+              "$description": "Vertical padding for modal footer."
+            },
+            "horizontal": {
+              "$value": "1.5rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for modal footer. Matches header padding for visual balance."
+            }
+          }
+        },
+        "gap": {
+          "$value": "0.5rem",
+          "$type": "dimension",
+          "$description": "Gap between buttons in footer."
+        }
+      }
+    }
+  }
+}
+

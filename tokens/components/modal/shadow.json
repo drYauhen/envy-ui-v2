@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "modal": {
+      "shadow": {
+        "elevation": {
+          "$value": "{eui.shadow.large}",
+          "$type": "boxShadow",
+          "$description": "Shadow elevation for modal. Large shadow for clear separation from background."
+        }
+      }
+    }
+  }
+}
+

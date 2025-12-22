@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "modal": {
+      "backdrop": {
+        "color": {
+          "$value": "rgba(0, 0, 0, 0.5)",
+          "$type": "color",
+          "$description": "Backdrop overlay color. Semi-transparent black to dim background content."
+        },
+        "blur": {
+          "$value": "none",
+          "$type": "string",
+          "$description": "Backdrop blur effect. None by default, can be set to 'blur(4px)' for glassmorphism effect if needed."
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "modal": {
+      "shape": {
+        "radius": {
+          "$value": "{eui.radius.extra-large}",
+          "$type": "dimension",
+          "$description": "Border radius for modal. Uses extra-large for prominent, elevated appearance."
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,174 @@
+/* Modal Component Styles */
+
+/* Base modal styles - native <dialog> element */
+[data-eui-context] .eui-modal {
+  border: none;
+  border-radius: var(--eui-modal-shape-radius);
+  background-color: var(--eui-modal-colors-body-background);
+  box-shadow: var(--eui-modal-shadow-elevation);
+  padding: 0;
+  max-width: var(--eui-modal-size-md-max-width);
+  width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+/* Backdrop overlay */
+[data-eui-context] .eui-modal::backdrop {
+  background-color: var(--eui-modal-backdrop-color);
+  backdrop-filter: var(--eui-modal-backdrop-blur, none);
+}
+
+/* Sizes */
+[data-eui-context] .eui-modal[data-eui-size="sm"] {
+  max-width: var(--eui-modal-size-sm-max-width);
+}
+
+[data-eui-context] .eui-modal[data-eui-size="md"] {
+  max-width: var(--eui-modal-size-md-max-width);
+}
+
+[data-eui-context] .eui-modal[data-eui-size="lg"] {
+  max-width: var(--eui-modal-size-lg-max-width);
+}
+
+[data-eui-context] .eui-modal[data-eui-size="xl"] {
+  max-width: var(--eui-modal-size-xl-max-width);
+}
+
+[data-eui-context] .eui-modal[data-eui-size="full"] {
+  max-width: var(--eui-modal-size-full-max-width);
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+/* Header - Brand colored, inverse text */
+[data-eui-context] .eui-modal-header {
+  padding: var(--eui-modal-spacing-header-padding-vertical) var(--eui-modal-spacing-header-padding-horizontal);
+  background-color: var(--eui-modal-colors-header-background);
+  color: var(--eui-modal-colors-header-text);
+  border-bottom: 1px solid var(--eui-modal-colors-header-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+[data-eui-context] .eui-modal-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--eui-modal-colors-header-text);
+  line-height: 1.5;
+}
+
+/* Close button */
+[data-eui-context] .eui-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--eui-modal-colors-close-color);
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--eui-radius-default);
+  transition: background-color 0.15s ease;
+}
+
+[data-eui-context] .eui-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--eui-modal-colors-close-hover);
+}
+
+[data-eui-context] .eui-modal-close:focus {
+  outline: 2px solid var(--eui-color-focus-ring-default);
+  outline-offset: 2px;
+}
+
+/* Body - White background */
+[data-eui-context] .eui-modal-body {
+  padding: var(--eui-modal-spacing-body-padding);
+  background-color: var(--eui-modal-colors-body-background);
+  color: var(--eui-modal-colors-body-text);
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Footer - Subtle gray background */
+/* Button order: Primary (main action) first, Secondary (cancel) second */
+/* Buttons aligned to the right side of footer */
+/* This follows internal application standards: Primary first, Secondary second, both right-aligned */
+[data-eui-context] .eui-modal-footer {
+  padding: var(--eui-modal-spacing-footer-padding-vertical) var(--eui-modal-spacing-footer-padding-horizontal);
+  background-color: var(--eui-modal-colors-footer-background);
+  color: var(--eui-modal-colors-footer-text);
+  border-top: 1px solid var(--eui-modal-colors-footer-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--eui-modal-spacing-gap);
+  flex-shrink: 0;
+}
+
+/* Mobile responsiveness - full screen on small devices */
+@media (max-width: 768px) {
+  [data-eui-context] .eui-modal {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+/* Report context - no backdrop, static appearance */
+[data-eui-context="report"] .eui-modal::backdrop {
+  display: none;
+}
+
+[data-eui-context="report"] .eui-modal {
+  position: static;
+  box-shadow: none;
+  border: 1px solid var(--eui-color-border-default);
+}
+
+/* Animation for open/close (optional, can be enhanced) */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes backdrop-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[data-eui-context="app"] .eui-modal[open],
+[data-eui-context="site"] .eui-modal[open] {
+  animation: modal-fade-in 0.2s ease-out;
+}
+
+[data-eui-context="app"] .eui-modal[open]::backdrop,
+[data-eui-context="site"] .eui-modal[open]::backdrop {
+  animation: backdrop-fade-in 0.2s ease-out;
+}
+

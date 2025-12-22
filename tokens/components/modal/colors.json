@@ -1,0 +1,72 @@
+{
+  "eui": {
+    "modal": {
+      "colors": {
+        "header": {
+          "background": {
+            "$value": "{eui.color.brand.primary}",
+            "$type": "color",
+            "$description": "Header background color. Brand primary for brand identity and visual prominence."
+          },
+          "text": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Header text color. Inverse (white) for contrast on brand background."
+          },
+          "border": {
+            "$value": "transparent",
+            "$type": "color",
+            "$description": "Header border color. Transparent as header has brand background."
+          }
+        },
+        "body": {
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Body background color. White surface for content area."
+          },
+          "text": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Body text color. Primary text color for readability."
+          },
+          "border": {
+            "$value": "transparent",
+            "$type": "color",
+            "$description": "Body border color. Transparent as body is separated by header/footer borders."
+          }
+        },
+        "footer": {
+          "background": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Footer background color. Subtle gray (neutral.100) for visual separation from body."
+          },
+          "text": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Footer text color. Primary text color for readability."
+          },
+          "border": {
+            "$value": "{eui.color.border.default}",
+            "$type": "color",
+            "$description": "Footer border color. Default border to separate footer from body."
+          }
+        },
+        "close": {
+          "color": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Close button color. Inverse (white) to match header text."
+          },
+          "hover": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Close button hover color. Slightly lighter or with opacity for hover state."
+          }
+        }
+      }
+    }
+  }
+}
+
