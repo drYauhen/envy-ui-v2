@@ -64,6 +64,25 @@
   border-color: color-mix(in srgb, var(--eui-button-border-base), white 8%);
 }
 
+/* Secondary Button: Hover uses very light accent background */
+[data-eui-context] .eui-button[data-eui-intent="secondary"]:not(:disabled):hover {
+  background-color: var(--eui-color-accent-50);
+  border-color: var(--eui-color-border-default);
+}
+
+/* Secondary Button: Focus uses same as hover (very light accent background) */
+[data-eui-context] .eui-button[data-eui-intent="secondary"]:not(:disabled):focus {
+  background-color: var(--eui-color-accent-50);
+  border-color: var(--eui-color-border-default);
+}
+
+/* Secondary Button: Active uses slightly more intense accent background */
+[data-eui-context] .eui-button[data-eui-intent="secondary"]:not(:disabled):active {
+  background-color: var(--eui-color-accent-100);
+  border-color: var(--eui-color-border-default);
+  transform: translateY(1px);
+}
+
 [data-eui-context] .eui-button:not(:disabled):active {
   background-color: color-mix(in srgb, var(--eui-button-bg-base), black 8%);
   border-color: color-mix(in srgb, var(--eui-button-border-base), black 12%);
@@ -73,19 +92,16 @@
 /* Focus ring: solid colors (no transparency) for consistent appearance on any background */
 [data-eui-context] .eui-button:focus {
   box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base) var(--eui-button-focus-color-base);
-  z-index: 1;
 }
 
 /* Keyboard focus: more prominent solid color for high accessibility contrast */
 [data-eui-context] .eui-button:focus-visible {
   box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) var(--eui-button-focus-color-accessible);
-  z-index: 1;
 }
 
 /* Mouse focus (not keyboard): less prominent solid color */
 [data-eui-context] .eui-button:focus:not(:focus-visible) {
   box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base) var(--eui-button-focus-color-base);
-  z-index: 1;
 }
 
 [data-eui-context] .eui-button[data-eui-intent='primary'] {
