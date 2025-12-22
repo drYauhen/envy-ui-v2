@@ -1,0 +1,119 @@
+/* AvatarGroup Component Styles */
+
+[data-eui-context] .eui-avatar-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+/* Overlap avatars using negative margin */
+[data-eui-context] .eui-avatar-group .eui-avatar {
+  margin-left: calc(-1 * var(--eui-avatar-group-layout-overlap));
+  transition: transform var(--eui-avatar-group-layout-hover-duration) var(--eui-avatar-group-layout-hover-easing),
+              z-index var(--eui-avatar-group-layout-hover-duration) var(--eui-avatar-group-layout-hover-easing);
+  position: relative;
+  z-index: 1;
+}
+
+/* First avatar has no negative margin */
+[data-eui-context] .eui-avatar-group .eui-avatar:first-child {
+  margin-left: 0;
+}
+
+/* Hover animation: spread neighbors and scale hovered avatar */
+/* When hovering over a specific avatar, scale it up and spread neighbors */
+[data-eui-context="app"] .eui-avatar-group .eui-avatar:hover,
+[data-eui-context="site"] .eui-avatar-group .eui-avatar:hover {
+  transform: scale(var(--eui-avatar-group-layout-hover-scale));
+  z-index: 10;
+}
+
+/* Spread right neighbors (avatars after hovered) - move them to the right */
+[data-eui-context="app"] .eui-avatar-group .eui-avatar:hover ~ .eui-avatar,
+[data-eui-context="site"] .eui-avatar-group .eui-avatar:hover ~ .eui-avatar {
+  transform: translateX(var(--eui-avatar-group-layout-hover-spread));
+}
+
+/* Spread left neighbors (avatars before hovered) - move them to the left */
+/* Using :has() selector for better browser support (modern browsers) */
+[data-eui-context="app"] .eui-avatar-group .eui-avatar:has(+ .eui-avatar:hover),
+[data-eui-context="site"] .eui-avatar-group .eui-avatar:has(+ .eui-avatar:hover) {
+  transform: translateX(calc(-1 * var(--eui-avatar-group-layout-hover-spread)));
+}
+
+/* Counter in AvatarGroup - matches avatar styling for text variant */
+[data-eui-context] .eui-avatar-group .eui-counter[data-eui-variant="text"] {
+  margin-left: calc(-1 * var(--eui-avatar-group-layout-overlap));
+  width: var(--eui-avatar-size-md-diameter);
+  height: var(--eui-avatar-size-md-diameter);
+  border-radius: var(--eui-avatar-shape-circle-radius);
+  border: var(--eui-avatar-border-width) var(--eui-avatar-border-style) var(--eui-avatar-border-color);
+  background-color: var(--eui-avatar-background-fallback);
+  color: var(--eui-avatar-text-fallback);
+  font-family: var(--eui-avatar-typography-font-family, inherit);
+  font-weight: var(--eui-avatar-typography-font-weight);
+  font-size: var(--eui-avatar-typography-font-size-md);
+  line-height: var(--eui-avatar-typography-line-height);
+  padding: 0;
+  min-width: var(--eui-avatar-size-md-diameter);
+}
+
+/* Counter sizes in AvatarGroup */
+[data-eui-context] .eui-avatar-group[data-eui-size="sm"] .eui-counter[data-eui-variant="text"] {
+  width: var(--eui-avatar-size-sm-diameter);
+  height: var(--eui-avatar-size-sm-diameter);
+  font-size: var(--eui-avatar-typography-font-size-sm);
+  min-width: var(--eui-avatar-size-sm-diameter);
+}
+
+[data-eui-context] .eui-avatar-group[data-eui-size="md"] .eui-counter[data-eui-variant="text"] {
+  width: var(--eui-avatar-size-md-diameter);
+  height: var(--eui-avatar-size-md-diameter);
+  font-size: var(--eui-avatar-typography-font-size-md);
+  min-width: var(--eui-avatar-size-md-diameter);
+}
+
+[data-eui-context] .eui-avatar-group[data-eui-size="lg"] .eui-counter[data-eui-variant="text"] {
+  width: var(--eui-avatar-size-lg-diameter);
+  height: var(--eui-avatar-size-lg-diameter);
+  font-size: var(--eui-avatar-typography-font-size-lg);
+  min-width: var(--eui-avatar-size-lg-diameter);
+}
+
+/* Counter hover in AvatarGroup - also spreads neighbors */
+[data-eui-context="app"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover,
+[data-eui-context="site"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover {
+  transform: scale(var(--eui-avatar-group-layout-hover-scale));
+  z-index: 10;
+}
+
+[data-eui-context="app"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover ~ .eui-avatar,
+[data-eui-context="site"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover ~ .eui-avatar {
+  transform: translateX(var(--eui-avatar-group-layout-hover-spread));
+}
+
+[data-eui-context="app"] .eui-avatar-group .eui-avatar:has(+ .eui-counter:hover),
+[data-eui-context="site"] .eui-avatar-group .eui-avatar:has(+ .eui-counter:hover) {
+  transform: translateX(calc(-1 * var(--eui-avatar-group-layout-hover-spread)));
+}
+
+/* Report context - no hover animations, static overlap */
+[data-eui-context="report"] .eui-avatar-group .eui-avatar {
+  transition: none;
+}
+
+[data-eui-context="report"] .eui-avatar-group .eui-avatar:hover {
+  transform: none;
+  z-index: 1;
+}
+
+[data-eui-context="report"] .eui-avatar-group .eui-counter[data-eui-variant="text"] {
+  transition: none;
+}
+
+[data-eui-context="report"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover {
+  transform: none;
+  z-index: 1;
+}
+

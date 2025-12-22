@@ -1,0 +1,28 @@
+{
+  "eui": {
+    "counter": {
+      "typography": {
+        "font": {
+          "family": {
+            "$value": "inherit",
+            "$type": "fontFamily",
+            "$description": "Font family for counter. Inherits from parent for consistency."
+          },
+          "weight": {
+            "$value": "600",
+            "$type": "fontWeight",
+            "$description": "Font weight for counter. Semi-bold for better visibility."
+          }
+        },
+        "line": {
+          "height": {
+            "$value": "1",
+            "$type": "lineHeight",
+            "$description": "Line height for counter. Tight line height for compact display."
+          }
+        }
+      }
+    }
+  }
+}
+

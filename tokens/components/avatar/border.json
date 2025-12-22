@@ -1,0 +1,23 @@
+{
+  "eui": {
+    "avatar": {
+      "border": {
+        "width": {
+          "$value": "2px",
+          "$type": "dimension",
+          "$description": "Border width for avatar. 2px provides clear visual separation when avatars overlap in groups."
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "string"
+        },
+        "color": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Border color for avatar. Uses background surface color (typically white) for visual separation when overlapping."
+        }
+      }
+    }
+  }
+}
+

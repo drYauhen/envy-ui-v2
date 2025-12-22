@@ -1,0 +1,91 @@
+/* Related Group Component Styles */
+
+[data-eui-context] .eui-related-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* ============================================
+   Relation Type: Avatar
+   ============================================ */
+
+/* When AvatarGroup is hovered, highlight related Counter */
+[data-eui-context="app"] .eui-related-group[data-eui-relation-type="avatar"]:has(.eui-avatar-group:hover)
+  .eui-counter[data-eui-related],
+[data-eui-context="site"] .eui-related-group[data-eui-relation-type="avatar"]:has(.eui-avatar-group:hover)
+  .eui-counter[data-eui-related] {
+  transform: scale(1.05);
+  opacity: 1;
+  /* Text variant - subtle background highlight */
+  background-color: var(--eui-color-neutral-300);
+}
+
+[data-eui-context="app"] .eui-related-group[data-eui-relation-type="avatar"]:has(.eui-avatar-group:hover)
+  .eui-counter[data-eui-variant="text"][data-eui-related],
+[data-eui-context="site"] .eui-related-group[data-eui-relation-type="avatar"]:has(.eui-avatar-group:hover)
+  .eui-counter[data-eui-variant="text"][data-eui-related] {
+  /* Text variant - subtle color change */
+  color: var(--eui-color-text-primary);
+}
+
+/* ============================================
+   Relation Type: Button
+   ============================================ */
+
+/* When Button is hovered, highlight related Counter */
+[data-eui-context="app"] .eui-related-group[data-eui-relation-type="button"]:has(.eui-button:hover)
+  .eui-counter[data-eui-related],
+[data-eui-context="site"] .eui-related-group[data-eui-relation-type="button"]:has(.eui-button:hover)
+  .eui-counter[data-eui-related] {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   Relation Type: Tag
+   ============================================ */
+
+/* When TagGroup is hovered, highlight related Counter */
+[data-eui-context="app"] .eui-related-group[data-eui-relation-type="tag"]:has(.eui-tag-group:hover)
+  .eui-counter[data-eui-related],
+[data-eui-context="site"] .eui-related-group[data-eui-relation-type="tag"]:has(.eui-tag-group:hover)
+  .eui-counter[data-eui-related] {
+  transform: scale(1.05);
+  background-color: var(--eui-color-neutral-300);
+}
+
+/* ============================================
+   Relation Type: Filter
+   ============================================ */
+
+/* When related element is hovered, highlight filter Counter */
+[data-eui-context="app"] .eui-related-group[data-eui-relation-type="filter"]:has(.eui-avatar-group:hover)
+  .eui-counter[data-eui-related],
+[data-eui-context="app"] .eui-related-group[data-eui-relation-type="filter"]:has(.eui-tag-group:hover)
+  .eui-counter[data-eui-related],
+[data-eui-context="site"] .eui-related-group[data-eui-relation-type="filter"]:has(.eui-avatar-group:hover)
+  .eui-counter[data-eui-related],
+[data-eui-context="site"] .eui-related-group[data-eui-relation-type="filter"]:has(.eui-tag-group:hover)
+  .eui-counter[data-eui-related] {
+  transform: scale(1.05);
+  background-color: var(--eui-color-accent-200);
+  border-color: var(--eui-color-accent-400);
+}
+
+/* ============================================
+   Report Context - No Hover Animations
+   ============================================ */
+
+[data-eui-context="report"] .eui-related-group {
+  /* Static - no hover effects */
+}
+
+[data-eui-context="report"] .eui-related-group:has(.eui-avatar-group:hover)
+  .eui-counter[data-eui-related],
+[data-eui-context="report"] .eui-related-group:has(.eui-button:hover)
+  .eui-counter[data-eui-related] {
+  transform: none;
+}
+

@@ -1,0 +1,87 @@
+{
+  "eui": {
+    "counter": {
+      "size": {
+        "sm": {
+          "height": {
+            "$value": "14px",
+            "$type": "dimension",
+            "$description": "Height for small counter (pill variant). Reduced proportionally relative to medium."
+          },
+          "padding": {
+            "inline": {
+              "$value": "5px",
+              "$type": "dimension",
+              "$description": "Horizontal padding for small counter (pill variant)"
+            },
+            "vertical": {
+              "$value": "2px",
+              "$type": "dimension",
+              "$description": "Vertical padding for small counter (pill variant)"
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "0.7rem",
+              "$type": "fontSize",
+              "$description": "Font size for small counter"
+            }
+          }
+        },
+        "md": {
+          "height": {
+            "$value": "15px",
+            "$type": "dimension",
+            "$description": "Height for medium (default) counter (pill variant). Reduced by ~25% from 20px for better proportion inside buttons."
+          },
+          "padding": {
+            "inline": {
+              "$value": "6px",
+              "$type": "dimension",
+              "$description": "Horizontal padding for medium counter (pill variant). Reduced proportionally."
+            },
+            "vertical": {
+              "$value": "2px",
+              "$type": "dimension",
+              "$description": "Vertical padding for medium counter (pill variant). Reduced proportionally."
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "0.75rem",
+              "$type": "fontSize",
+              "$description": "Font size for medium counter. Reduced from 0.875rem for better proportion."
+            }
+          }
+        },
+        "lg": {
+          "height": {
+            "$value": "18px",
+            "$type": "dimension",
+            "$description": "Height for large counter (pill variant). Reduced proportionally relative to medium."
+          },
+          "padding": {
+            "inline": {
+              "$value": "8px",
+              "$type": "dimension",
+              "$description": "Horizontal padding for large counter (pill variant)"
+            },
+            "vertical": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Vertical padding for large counter (pill variant)"
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "0.875rem",
+              "$type": "fontSize",
+              "$description": "Font size for large counter"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

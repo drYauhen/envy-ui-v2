@@ -1,0 +1,109 @@
+{
+  "eui": {
+    "counter": {
+      "colors": {
+        "pill": {
+          "default": {
+            "background": {
+              "$value": "{eui.color.neutral.200}",
+              "$type": "color",
+              "$description": "Default pill background (standalone or light contexts like secondary button)"
+            },
+            "color": {
+              "$value": "{eui.color.text.primary}",
+              "$type": "color",
+              "$description": "Default pill text color (dark text for light background)"
+            },
+            "border": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Default pill border"
+            }
+          },
+          "inverse": {
+            "background": {
+              "$value": "rgba(255, 255, 255, 0.2)",
+              "$type": "color",
+              "$description": "Inverse pill background (for dark contexts like primary/accent buttons). Semi-transparent white works on any dark color."
+            },
+            "color": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Inverse pill text color (white/light for dark backgrounds)"
+            },
+            "border": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Inverse pill border"
+            }
+          },
+          "disabled": {
+            "background": {
+              "$value": "{eui.color.neutral.300}",
+              "$type": "color",
+              "$description": "Disabled pill background. Lighter than default for disabled appearance."
+            },
+            "color": {
+              "$value": "{eui.color.text.disabled}",
+              "$type": "color",
+              "$description": "Disabled pill text color"
+            },
+            "border": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Disabled pill border"
+            }
+          }
+        },
+        "text": {
+          "default": {
+            "color": {
+              "$value": "{eui.color.text.subtle}",
+              "$type": "color",
+              "$description": "Default text variant color (standalone)"
+            }
+          },
+          "inverse": {
+            "color": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Inverse text variant color (for dark contexts like primary/accent buttons)"
+            }
+          },
+          "disabled": {
+            "color": {
+              "$value": "{eui.color.text.disabled}",
+              "$type": "color",
+              "$description": "Disabled text variant color"
+            }
+          }
+        },
+        "filter": {
+          "background": {
+            "$value": "{eui.color.accent.100}",
+            "$type": "color",
+            "$description": "Filter variant background (accent light for filter indicator)"
+          },
+          "color": {
+            "$value": "{eui.color.accent.700}",
+            "$type": "color",
+            "$description": "Filter variant text color (accent dark for contrast)"
+          },
+          "border": {
+            "$value": "transparent",
+            "$type": "color",
+            "$description": "Filter variant border"
+          },
+          "icon": {
+            "color": {
+              "$value": "{eui.color.accent.600}",
+              "$type": "color",
+              "$description": "Filter icon color (accent medium for visibility)"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

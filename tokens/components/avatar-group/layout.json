@@ -1,0 +1,41 @@
+{
+  "eui": {
+    "avatarGroup": {
+      "layout": {
+        "overlap": {
+          "$value": "8px",
+          "$type": "dimension",
+          "$description": "Overlap amount between avatars in a group. Negative margin-left value. Standard overlap for 40px avatar is 8px (20% of diameter)."
+        },
+        "maxVisible": {
+          "$value": "4",
+          "$type": "number",
+          "$description": "Maximum number of avatars to display before showing a count indicator. This is a reference value for component logic (not used in CSS). Component should use this as default max prop value. After this number, show first N avatars + count indicator."
+        },
+        "hover": {
+          "spread": {
+            "$value": "12px",
+            "$type": "dimension",
+            "$description": "Additional spacing when hovering over an avatar. Neighbors spread out by this amount for better visibility."
+          },
+          "scale": {
+            "$value": "1.1",
+            "$type": "number",
+            "$description": "Scale factor for hovered avatar. Slightly enlarges the hovered avatar for emphasis."
+          },
+          "duration": {
+            "$value": "200ms",
+            "$type": "duration",
+            "$description": "Animation duration for hover spread effect."
+          },
+          "easing": {
+            "$value": "ease-out",
+            "$type": "string",
+            "$description": "Animation easing function for hover spread effect."
+          }
+        }
+      }
+    }
+  }
+}
+

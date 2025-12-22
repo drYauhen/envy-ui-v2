@@ -1,0 +1,33 @@
+{
+  "eui": {
+    "counter": {
+      "spacing": {
+        "icon": {
+          "gap": {
+            "$value": "0.25rem",
+            "$type": "dimension",
+            "$description": "Gap between filter icon and counter value"
+          },
+          "size": {
+            "sm": {
+              "$value": "12px",
+              "$type": "dimension",
+              "$description": "Filter icon size for small counter"
+            },
+            "md": {
+              "$value": "14px",
+              "$type": "dimension",
+              "$description": "Filter icon size for medium counter"
+            },
+            "lg": {
+              "$value": "16px",
+              "$type": "dimension",
+              "$description": "Filter icon size for large counter"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

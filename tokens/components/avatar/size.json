@@ -1,0 +1,30 @@
+{
+  "eui": {
+    "avatar": {
+      "size": {
+        "sm": {
+          "diameter": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$description": "Diameter for small avatar. Used in compact lists and secondary contexts."
+          }
+        },
+        "md": {
+          "diameter": {
+            "$value": "40px",
+            "$type": "dimension",
+            "$description": "Diameter for medium (default) avatar. Standard size for most use cases."
+          }
+        },
+        "lg": {
+          "diameter": {
+            "$value": "48px",
+            "$type": "dimension",
+            "$description": "Diameter for large avatar. Used for prominent display and featured contexts."
+          }
+        }
+      }
+    }
+  }
+}
+

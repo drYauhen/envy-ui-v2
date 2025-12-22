@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "avatar": {
+      "shape": {
+        "circle": {
+          "radius": {
+            "$value": "50%",
+            "$type": "dimension",
+            "$description": "Circular avatar shape. Standard shape for avatars in most design systems."
+          }
+        }
+      }
+    }
+  }
+}
+

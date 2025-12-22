@@ -1,0 +1,246 @@
+/* Counter Component Styles */
+
+[data-eui-context] .eui-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  
+  /* Typography */
+  font-family: var(--eui-counter-typography-font-family, inherit);
+  font-weight: var(--eui-counter-typography-font-weight);
+  line-height: var(--eui-counter-typography-line-height);
+  
+  /* Transitions */
+  transition: transform 200ms ease,
+              background-color 200ms ease,
+              color 200ms ease,
+              opacity 200ms ease,
+              box-shadow 200ms ease;
+  
+  /* Default size - md */
+  font-size: var(--eui-counter-size-md-font-size);
+}
+
+/* ============================================
+   Variant: Text
+   ============================================ */
+
+[data-eui-context] .eui-counter[data-eui-variant="text"] {
+  /* Text variant - no background, just text */
+  background-color: transparent;
+  border: none;
+  color: var(--eui-counter-colors-text-default-color);
+  border-radius: var(--eui-counter-shape-text-radius);
+  padding: 0;
+}
+
+/* ============================================
+   Variant: Pill
+   ============================================ */
+
+[data-eui-context] .eui-counter[data-eui-variant="pill"] {
+  /* Pill variant - background, padding, rounded */
+  background-color: var(--eui-counter-colors-pill-default-background);
+  color: var(--eui-counter-colors-pill-default-color);
+  border: 1px solid var(--eui-counter-colors-pill-default-border);
+  border-radius: var(--eui-counter-shape-pill-radius);
+  height: var(--eui-counter-size-md-height);
+  padding: var(--eui-counter-size-md-padding-vertical) var(--eui-counter-size-md-padding-inline);
+  min-width: var(--eui-counter-size-md-height); /* Ensure square when just number */
+}
+
+/* ============================================
+   Variant: Filter
+   ============================================ */
+
+[data-eui-context] .eui-counter[data-eui-variant="filter"] {
+  /* Filter variant - accent colors, always shows icon */
+  background-color: var(--eui-counter-colors-filter-background);
+  color: var(--eui-counter-colors-filter-color);
+  border: 1px solid var(--eui-counter-colors-filter-border);
+  border-radius: var(--eui-counter-shape-filter-radius);
+  height: var(--eui-counter-size-md-height);
+  padding: var(--eui-counter-size-md-padding-vertical) var(--eui-counter-size-md-padding-inline);
+  min-width: var(--eui-counter-size-md-height);
+}
+
+/* ============================================
+   Filter Icon via ::before
+   ============================================ */
+
+/* Filter icon - shown when data-eui-filtered="true" or variant="filter" */
+[data-eui-context] .eui-counter[data-eui-filtered="true"]::before,
+[data-eui-context] .eui-counter[data-eui-variant="filter"]::before {
+  content: '';
+  display: inline-block;
+  width: var(--eui-counter-spacing-icon-size-md);
+  height: var(--eui-counter-spacing-icon-size-md);
+  margin-right: var(--eui-counter-spacing-icon-gap);
+  flex-shrink: 0;
+  
+  /* SVG filter icon via CSS mask - inherits text color via currentColor */
+  /* Using mask allows the icon to use currentColor for proper color inheritance */
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M2 4h10M4 7h6M6 10h2' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M2 4h10M4 7h6M6 10h2' stroke='black' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+/* Hide icon when not filtered (except filter variant) */
+[data-eui-context] .eui-counter:not([data-eui-filtered="true"]):not([data-eui-variant="filter"])::before {
+  display: none;
+}
+
+/* ============================================
+   Sizes
+   ============================================ */
+
+[data-eui-context] .eui-counter[data-eui-size="sm"] {
+  font-size: var(--eui-counter-size-sm-font-size);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="sm"][data-eui-variant="pill"],
+[data-eui-context] .eui-counter[data-eui-size="sm"][data-eui-variant="filter"] {
+  height: var(--eui-counter-size-sm-height);
+  padding: var(--eui-counter-size-sm-padding-vertical) var(--eui-counter-size-sm-padding-inline);
+  min-width: var(--eui-counter-size-sm-height);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="sm"][data-eui-filtered="true"]::before,
+[data-eui-context] .eui-counter[data-eui-size="sm"][data-eui-variant="filter"]::before {
+  width: var(--eui-counter-spacing-icon-size-sm);
+  height: var(--eui-counter-spacing-icon-size-sm);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="md"] {
+  font-size: var(--eui-counter-size-md-font-size);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="md"][data-eui-variant="pill"],
+[data-eui-context] .eui-counter[data-eui-size="md"][data-eui-variant="filter"] {
+  height: var(--eui-counter-size-md-height);
+  padding: var(--eui-counter-size-md-padding-vertical) var(--eui-counter-size-md-padding-inline);
+  min-width: var(--eui-counter-size-md-height);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="md"][data-eui-filtered="true"]::before,
+[data-eui-context] .eui-counter[data-eui-size="md"][data-eui-variant="filter"]::before {
+  width: var(--eui-counter-spacing-icon-size-md);
+  height: var(--eui-counter-spacing-icon-size-md);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="lg"] {
+  font-size: var(--eui-counter-size-lg-font-size);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="lg"][data-eui-variant="pill"],
+[data-eui-context] .eui-counter[data-eui-size="lg"][data-eui-variant="filter"] {
+  height: var(--eui-counter-size-lg-height);
+  padding: var(--eui-counter-size-lg-padding-vertical) var(--eui-counter-size-lg-padding-inline);
+  min-width: var(--eui-counter-size-lg-height);
+}
+
+[data-eui-context] .eui-counter[data-eui-size="lg"][data-eui-filtered="true"]::before,
+[data-eui-context] .eui-counter[data-eui-size="lg"][data-eui-variant="filter"]::before {
+  width: var(--eui-counter-spacing-icon-size-lg);
+  height: var(--eui-counter-spacing-icon-size-lg);
+}
+
+/* ============================================
+   Counter in Button Context
+   ============================================ */
+
+/* Primary Button - sets inverse colors for Counter */
+[data-eui-context] .eui-button[data-eui-intent="primary"] {
+  --eui-counter-context-background: var(--eui-counter-colors-pill-inverse-background);
+  --eui-counter-context-color: var(--eui-counter-colors-pill-inverse-color);
+  --eui-counter-context-border: var(--eui-counter-colors-pill-inverse-border);
+  --eui-counter-context-text-color: var(--eui-counter-colors-text-inverse-color);
+}
+
+/* Secondary Button - sets default colors for Counter */
+[data-eui-context] .eui-button[data-eui-intent="secondary"] {
+  --eui-counter-context-background: var(--eui-counter-colors-pill-default-background);
+  --eui-counter-context-color: var(--eui-counter-colors-pill-default-color);
+  --eui-counter-context-border: var(--eui-counter-colors-pill-default-border);
+  --eui-counter-context-text-color: var(--eui-counter-colors-text-default-color);
+}
+
+/* Accent Button - sets inverse colors for Counter */
+[data-eui-context] .eui-button[data-eui-intent="accent"] {
+  --eui-counter-context-background: var(--eui-counter-colors-pill-inverse-background);
+  --eui-counter-context-color: var(--eui-counter-colors-pill-inverse-color);
+  --eui-counter-context-border: var(--eui-counter-colors-pill-inverse-border);
+  --eui-counter-context-text-color: var(--eui-counter-colors-text-inverse-color);
+}
+
+/* Counter inside Button uses Button's context colors */
+[data-eui-context] .eui-button .eui-counter[data-eui-variant="pill"] {
+  background-color: var(--eui-counter-context-background, var(--eui-counter-colors-pill-default-background));
+  color: var(--eui-counter-context-color, var(--eui-counter-colors-pill-default-color));
+  border-color: var(--eui-counter-context-border, var(--eui-counter-colors-pill-default-border));
+}
+
+/* Text variant in Button */
+[data-eui-context] .eui-button .eui-counter[data-eui-variant="text"] {
+  color: var(--eui-counter-context-text-color, var(--eui-counter-colors-text-default-color));
+  background-color: transparent;
+}
+
+/* Disabled Button - Counter also disabled */
+[data-eui-context] .eui-button:disabled .eui-counter[data-eui-variant="pill"] {
+  background-color: var(--eui-counter-colors-pill-disabled-background);
+  color: var(--eui-counter-colors-pill-disabled-color);
+  border-color: var(--eui-counter-colors-pill-disabled-border);
+  opacity: 0.7;
+}
+
+[data-eui-context] .eui-button:disabled .eui-counter[data-eui-variant="text"] {
+  color: var(--eui-counter-colors-text-disabled-color);
+  opacity: 0.7;
+}
+
+/* ============================================
+   Disabled State
+   ============================================ */
+
+[data-eui-context] .eui-counter[data-eui-variant="pill"]:disabled,
+[data-eui-context] .eui-counter[data-eui-variant="filter"]:disabled {
+  background-color: var(--eui-counter-colors-pill-disabled-background);
+  color: var(--eui-counter-colors-pill-disabled-color);
+  border-color: var(--eui-counter-colors-pill-disabled-border);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+[data-eui-context] .eui-counter[data-eui-variant="text"]:disabled {
+  color: var(--eui-counter-colors-text-disabled-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ============================================
+   Report Context
+   ============================================ */
+
+[data-eui-context="report"] .eui-counter {
+  /* Print styles - simplified */
+}
+
+[data-eui-context="report"] .eui-counter[data-eui-variant="pill"] {
+  border: 1px solid var(--eui-color-border-default);
+  background-color: transparent;
+  color: var(--eui-color-text-primary);
+}
+
+[data-eui-context="report"] .eui-counter[data-eui-variant="text"] {
+  color: var(--eui-color-text-primary);
+}
+

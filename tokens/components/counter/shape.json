@@ -1,0 +1,30 @@
+{
+  "eui": {
+    "counter": {
+      "shape": {
+        "text": {
+          "radius": {
+            "$value": "0px",
+            "$type": "dimension",
+            "$description": "Border radius for text variant (no rounding)"
+          }
+        },
+        "pill": {
+          "radius": {
+            "$value": "{eui.radius.full}",
+            "$type": "dimension",
+            "$description": "Border radius for pill variant (fully rounded)"
+          }
+        },
+        "filter": {
+          "radius": {
+            "$value": "{eui.radius.full}",
+            "$type": "dimension",
+            "$description": "Border radius for filter variant (fully rounded, same as pill)"
+          }
+        }
+      }
+    }
+  }
+}
+
