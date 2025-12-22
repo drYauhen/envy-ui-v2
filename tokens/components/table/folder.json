@@ -1,0 +1,40 @@
+{
+  "eui": {
+    "table": {
+      "folder": {
+        "icon": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$description": "Size of folder expand/collapse icon."
+          },
+          "gap": {
+            "$value": "0.5rem",
+            "$type": "dimension",
+            "$description": "Gap between folder icon and folder label."
+          }
+        },
+        "indent": {
+          "level": {
+            "$value": "1.5rem",
+            "$type": "dimension",
+            "$description": "Indentation per folder nesting level."
+          }
+        },
+        "animation": {
+          "duration": {
+            "$value": "200ms",
+            "$type": "duration",
+            "$description": "Transition duration for folder expand/collapse animation."
+          },
+          "easing": {
+            "$value": "ease-in-out",
+            "$type": "string",
+            "$description": "Easing function for folder expand/collapse animation."
+          }
+        }
+      }
+    }
+  }
+}
+

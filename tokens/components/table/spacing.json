@@ -1,0 +1,44 @@
+{
+  "eui": {
+    "table": {
+      "spacing": {
+        "cell": {
+          "padding": {
+            "horizontal": {
+              "$value": "1rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for table cells."
+            },
+            "vertical": {
+              "$value": "0.75rem",
+              "$type": "dimension",
+              "$description": "Vertical padding for table cells."
+            }
+          }
+        },
+        "header": {
+          "padding": {
+            "horizontal": {
+              "$value": "1rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for table header cells."
+            },
+            "vertical": {
+              "$value": "0.75rem",
+              "$type": "dimension",
+              "$description": "Vertical padding for table header cells."
+            }
+          }
+        },
+        "row": {
+          "gap": {
+            "$value": "0",
+            "$type": "dimension",
+            "$description": "Gap between table rows (typically 0 for border-based separation)."
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,57 @@
+{
+  "eui": {
+    "table": {
+      "expandable-cell": {
+        "panel": {
+          "max-width": {
+            "$value": "400px",
+            "$type": "dimension",
+            "$description": "Maximum width of expandable cell panel."
+          },
+          "max-height": {
+            "$value": "300px",
+            "$type": "dimension",
+            "$description": "Maximum height of expandable cell panel."
+          },
+          "z-index": {
+            "$value": "100",
+            "$type": "number",
+            "$description": "Z-index for expandable cell panel (should appear above table)."
+          }
+        },
+        "shadow": {
+          "$value": "{eui.shadow.large}",
+          "$type": "boxShadow",
+          "$description": "Shadow for expandable cell panel. Large shadow for elevation."
+        },
+        "border": {
+          "radius": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Border radius for expandable cell panel."
+          }
+        },
+        "spacing": {
+          "padding": {
+            "$value": "1rem",
+            "$type": "dimension",
+            "$description": "Padding for expandable cell panel content."
+          }
+        },
+        "animation": {
+          "duration": {
+            "$value": "200ms",
+            "$type": "duration",
+            "$description": "Transition duration for expandable cell panel animation."
+          },
+          "easing": {
+            "$value": "ease-in-out",
+            "$type": "string",
+            "$description": "Easing function for expandable cell panel animation."
+          }
+        }
+      }
+    }
+  }
+}
+

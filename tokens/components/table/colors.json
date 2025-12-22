@@ -1,0 +1,57 @@
+{
+  "eui": {
+    "table": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Table background color. White surface for clean appearance."
+        },
+        "border": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Table border color. Default border for cell separation."
+        },
+        "header": {
+          "background": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Table header background color. Subtle gray for header distinction."
+          },
+          "text": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Table header text color. Primary text for readability."
+          }
+        },
+        "row": {
+          "background": {
+            "default": {
+              "$value": "{eui.color.background.surface}",
+              "$type": "color",
+              "$description": "Default row background color."
+            },
+            "hover": {
+              "$value": "{eui.color.background.subtle}",
+              "$type": "color",
+              "$description": "Row background color on hover."
+            },
+            "selected": {
+              "$value": "{eui.color.background.muted}",
+              "$type": "color",
+              "$description": "Selected row background color."
+            }
+          }
+        },
+        "cell": {
+          "text": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Cell text color. Primary text for readability."
+          }
+        }
+      }
+    }
+  }
+}
+

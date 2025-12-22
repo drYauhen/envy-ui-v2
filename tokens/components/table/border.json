@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "table": {
+      "border": {
+        "width": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Border width for table cells and table itself."
+        },
+        "radius": {
+          "$value": "0px",
+          "$type": "dimension",
+          "$description": "Border radius for table (typically 0 for standard table appearance)."
+        }
+      }
+    }
+  }
+}
+
