@@ -1,0 +1,42 @@
+{
+  "eui": {
+    "menu": {
+      "spacing": {
+        "list": {
+          "padding": {
+            "$value": "0.5rem",
+            "$type": "dimension",
+            "$description": "Padding for menu list container."
+          }
+        },
+        "item": {
+          "padding": {
+            "horizontal": {
+              "$value": "0.75rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for menu items."
+            },
+            "vertical": {
+              "$value": "0.5rem",
+              "$type": "dimension",
+              "$description": "Vertical padding for menu items."
+            }
+          },
+          "gap": {
+            "$value": "0.25rem",
+            "$type": "dimension",
+            "$description": "Gap between menu items."
+          }
+        },
+        "divider": {
+          "margin": {
+            "$value": "0.25rem 0",
+            "$type": "dimension",
+            "$description": "Margin for divider in menu context."
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,53 @@
+{
+  "eui": {
+    "menu": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Menu background color. White surface for clean appearance."
+        },
+        "border": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Menu border color. Default border for separation."
+        },
+        "item": {
+          "background": {
+            "default": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Default menu item background (transparent)."
+            },
+            "hover": {
+              "$value": "{eui.color.background.subtle}",
+              "$type": "color",
+              "$description": "Menu item background on hover."
+            },
+            "focus": {
+              "$value": "{eui.color.background.subtle}",
+              "$type": "color",
+              "$description": "Menu item background on focus."
+            },
+            "selected": {
+              "$value": "{eui.color.background.muted}",
+              "$type": "color",
+              "$description": "Selected menu item background."
+            }
+          },
+          "text": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Menu item text color. Primary text for readability."
+          },
+          "text-disabled": {
+            "$value": "{eui.color.text.disabled}",
+            "$type": "color",
+            "$description": "Disabled menu item text color."
+          }
+        }
+      }
+    }
+  }
+}
+

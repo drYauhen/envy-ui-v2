@@ -1,0 +1,70 @@
+/* Menu Component Styles */
+
+/* MenuList container */
+[data-eui-context] .eui-menu-list {
+  background-color: var(--eui-menu-colors-background);
+  border: 1px solid var(--eui-menu-colors-border);
+  border-radius: var(--eui-menu-shape-radius);
+  box-shadow: var(--eui-menu-shadow);
+  padding: var(--eui-menu-spacing-list-padding);
+  min-width: var(--eui-menu-size-min-width);
+  max-width: var(--eui-menu-size-max-width);
+  max-height: var(--eui-menu-size-max-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-menu-spacing-item-gap);
+}
+
+/* MenuItem */
+[data-eui-context] .eui-menu-item {
+  padding: var(--eui-menu-spacing-item-padding-vertical) var(--eui-menu-spacing-item-padding-horizontal);
+  background-color: var(--eui-menu-colors-item-background-default);
+  color: var(--eui-menu-colors-item-text);
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--eui-radius-default);
+  transition: background-color 0.15s ease;
+}
+
+[data-eui-context] .eui-menu-item:hover {
+  background-color: var(--eui-menu-colors-item-background-hover);
+}
+
+[data-eui-context] .eui-menu-item:focus {
+  outline: 2px solid var(--eui-color-focus-ring-default);
+  outline-offset: -2px;
+  background-color: var(--eui-menu-colors-item-background-focus);
+}
+
+[data-eui-context] .eui-menu-item[data-eui-selected="true"] {
+  background-color: var(--eui-menu-colors-item-background-selected);
+}
+
+[data-eui-context] .eui-menu-item[data-eui-disabled="true"],
+[data-eui-context] .eui-menu-item:disabled {
+  color: var(--eui-menu-colors-item-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+[data-eui-context] .eui-menu-item[data-eui-disabled="true"]:hover,
+[data-eui-context] .eui-menu-item:disabled:hover {
+  background-color: var(--eui-menu-colors-item-background-default);
+}
+
+/* Divider in Menu context */
+[data-eui-context] .eui-menu-list .eui-divider {
+  margin: var(--eui-menu-spacing-divider-margin);
+}
+

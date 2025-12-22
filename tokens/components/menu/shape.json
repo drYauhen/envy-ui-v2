@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "menu": {
+      "shape": {
+        "radius": {
+          "$value": "{eui.radius.default}",
+          "$type": "dimension",
+          "$description": "Border radius for menu list. Matches default component radius."
+        }
+      }
+    }
+  }
+}
+

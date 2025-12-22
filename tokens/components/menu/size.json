@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "menu": {
+      "size": {
+        "min-width": {
+          "$value": "200px",
+          "$type": "dimension",
+          "$description": "Minimum width for menu list."
+        },
+        "max-width": {
+          "$value": "400px",
+          "$type": "dimension",
+          "$description": "Maximum width for menu list."
+        },
+        "max-height": {
+          "$value": "300px",
+          "$type": "dimension",
+          "$description": "Maximum height for menu list before scrolling."
+        }
+      }
+    }
+  }
+}
+

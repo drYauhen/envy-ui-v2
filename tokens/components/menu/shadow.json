@@ -1,0 +1,12 @@
+{
+  "eui": {
+    "menu": {
+      "shadow": {
+        "$value": "{eui.shadow.large}",
+        "$type": "boxShadow",
+        "$description": "Shadow for menu list. Large shadow for elevation above content."
+      }
+    }
+  }
+}
+
