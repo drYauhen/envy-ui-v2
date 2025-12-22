@@ -77,10 +77,12 @@ export function useFloatingPosition(
     middleware: [
       offset(offsetValue),
       flip({
-        fallbackAxisSideDirection: 'start'
+        fallbackAxisSideDirection: 'start',
+        fallbackPlacements: ['top-start', 'top-end', 'bottom-start', 'bottom-end', 'left-start', 'right-start']
       }),
       shift({
-        padding: 8
+        padding: 8,
+        crossAxis: true
       })
     ],
     whileElementsMounted: autoUpdate
