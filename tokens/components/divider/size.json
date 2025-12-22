@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "divider": {
+      "size": {
+        "thickness": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Thickness of divider line."
+        }
+      }
+    }
+  }
+}
+

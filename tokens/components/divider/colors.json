@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "divider": {
+      "colors": {
+        "default": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Divider color. Default border color for separation."
+        }
+      }
+    }
+  }
+}
+

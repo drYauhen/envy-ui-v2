@@ -1,0 +1,23 @@
+/* Divider Component Styles */
+
+[data-eui-context] .eui-divider {
+  border: none;
+  background-color: var(--eui-divider-colors-default);
+  flex-shrink: 0;
+}
+
+/* Horizontal (default) */
+[data-eui-context] .eui-divider[data-eui-orientation="horizontal"],
+[data-eui-context] .eui-divider:not([data-eui-orientation]) {
+  height: var(--eui-divider-size-thickness);
+  width: 100%;
+  margin: var(--eui-divider-spacing-margin-vertical) 0;
+}
+
+/* Vertical */
+[data-eui-context] .eui-divider[data-eui-orientation="vertical"] {
+  width: var(--eui-divider-size-thickness);
+  height: 100%;
+  margin: 0 var(--eui-divider-spacing-margin-horizontal);
+}
+

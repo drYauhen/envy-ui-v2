@@ -1,0 +1,21 @@
+{
+  "eui": {
+    "divider": {
+      "spacing": {
+        "margin": {
+          "vertical": {
+            "$value": "0.5rem",
+            "$type": "dimension",
+            "$description": "Vertical margin for horizontal divider."
+          },
+          "horizontal": {
+            "$value": "0.5rem",
+            "$type": "dimension",
+            "$description": "Horizontal margin for vertical divider."
+          }
+        }
+      }
+    }
+  }
+}
+
