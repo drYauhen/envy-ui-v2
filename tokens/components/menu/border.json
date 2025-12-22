@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "menu": {
+      "border": {
+        "width": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Border width for menu list. Same as card border."
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "string",
+          "$description": "Border style for menu list. Same as card border."
+        },
+        "color": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Border color for menu list. Same as card border."
+        }
+      }
+    }
+  }
+}
+

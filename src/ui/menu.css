@@ -3,7 +3,7 @@
 /* MenuList container */
 [data-eui-context] .eui-menu-list {
   background-color: var(--eui-menu-colors-background);
-  border: 1px solid var(--eui-menu-colors-border);
+  border: var(--eui-menu-border-width) var(--eui-menu-border-style) var(--eui-menu-border-color);
   border-radius: var(--eui-menu-shape-radius);
   box-shadow: var(--eui-menu-shadow);
   padding: var(--eui-menu-spacing-list-padding);
