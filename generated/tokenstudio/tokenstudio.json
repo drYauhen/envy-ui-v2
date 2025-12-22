@@ -1,4 +1,104 @@
 {
+  "eui.avatarGroup.layout.overlap": {
+    "$value": "8px",
+    "$type": "dimension"
+  },
+  "eui.avatarGroup.layout.maxVisible": {
+    "$value": "4",
+    "$type": "number"
+  },
+  "eui.avatarGroup.layout.hover.spread": {
+    "$value": "12px",
+    "$type": "dimension"
+  },
+  "eui.avatarGroup.layout.hover.scale": {
+    "$value": "1.1",
+    "$type": "number"
+  },
+  "eui.avatarGroup.layout.hover.duration": {
+    "$value": "200ms",
+    "$type": "duration"
+  },
+  "eui.avatarGroup.layout.hover.easing": {
+    "$value": "ease-out",
+    "$type": "string"
+  },
+  "eui.avatar.border.width": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.avatar.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
+  "eui.avatar.border.color": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.avatar.background.fallback": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.avatar.background.fallbackVariant1": {
+    "$value": "#35a8f8",
+    "$type": "color"
+  },
+  "eui.avatar.background.fallbackVariant2": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.avatar.background.fallbackVariant3": {
+    "$value": "#757575",
+    "$type": "color"
+  },
+  "eui.avatar.background.fallbackVariant4": {
+    "$value": "#525252",
+    "$type": "color"
+  },
+  "eui.avatar.text.fallback": {
+    "$value": "#757575",
+    "$type": "color"
+  },
+  "eui.avatar.shape.circle.radius": {
+    "$value": "50%",
+    "$type": "dimension"
+  },
+  "eui.avatar.size.sm.diameter": {
+    "$value": "32px",
+    "$type": "dimension"
+  },
+  "eui.avatar.size.md.diameter": {
+    "$value": "40px",
+    "$type": "dimension"
+  },
+  "eui.avatar.size.lg.diameter": {
+    "$value": "48px",
+    "$type": "dimension"
+  },
+  "eui.avatar.typography.font.family": {
+    "$value": "inherit",
+    "$type": "fontFamily"
+  },
+  "eui.avatar.typography.font.size.sm": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.avatar.typography.font.size.md": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.avatar.typography.font.size.lg": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.avatar.typography.font.weight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.avatar.typography.line.height": {
+    "$value": "1",
+    "$type": "lineHeight"
+  },
   "eui.button.border.width": {
     "$value": "1px",
     "$type": "dimension"
@@ -627,6 +727,158 @@
     "$value": "1.5em",
     "$type": "dimension"
   },
+  "eui.counter.colors.pill.default.background": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.default.color": {
+    "$value": "#1b1b1b",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.default.border": {
+    "$value": "#00000000",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.inverse.background": {
+    "$value": "#ffffff33",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.inverse.color": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.inverse.border": {
+    "$value": "#00000000",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.disabled.background": {
+    "$value": "#cccccc",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.disabled.color": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.counter.colors.pill.disabled.border": {
+    "$value": "#00000000",
+    "$type": "color"
+  },
+  "eui.counter.colors.text.default.color": {
+    "$value": "#525252",
+    "$type": "color"
+  },
+  "eui.counter.colors.text.inverse.color": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.counter.colors.text.disabled.color": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.counter.colors.filter.background": {
+    "$value": "#dceeff",
+    "$type": "color"
+  },
+  "eui.counter.colors.filter.color": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.counter.colors.filter.border": {
+    "$value": "#00000000",
+    "$type": "color"
+  },
+  "eui.counter.colors.filter.icon.color": {
+    "$value": "#35a8f8",
+    "$type": "color"
+  },
+  "eui.counter.shape.text.radius": {
+    "$value": "0px",
+    "$type": "dimension"
+  },
+  "eui.counter.shape.pill.radius": {
+    "$value": "999px",
+    "$type": "dimension"
+  },
+  "eui.counter.shape.filter.radius": {
+    "$value": "999px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.sm.height": {
+    "$value": "14px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.sm.padding.inline": {
+    "$value": "5px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.sm.padding.vertical": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.sm.font.size": {
+    "$value": "0.7rem",
+    "$type": "fontSize"
+  },
+  "eui.counter.size.md.height": {
+    "$value": "15px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.md.padding.inline": {
+    "$value": "6px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.md.padding.vertical": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.md.font.size": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.counter.size.lg.height": {
+    "$value": "18px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.lg.padding.inline": {
+    "$value": "8px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.lg.padding.vertical": {
+    "$value": "3px",
+    "$type": "dimension"
+  },
+  "eui.counter.size.lg.font.size": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.counter.spacing.icon.gap": {
+    "$value": "0.25rem",
+    "$type": "dimension"
+  },
+  "eui.counter.spacing.icon.size.sm": {
+    "$value": "12px",
+    "$type": "dimension"
+  },
+  "eui.counter.spacing.icon.size.md": {
+    "$value": "14px",
+    "$type": "dimension"
+  },
+  "eui.counter.spacing.icon.size.lg": {
+    "$value": "16px",
+    "$type": "dimension"
+  },
+  "eui.counter.typography.font.family": {
+    "$value": "inherit",
+    "$type": "fontFamily"
+  },
+  "eui.counter.typography.font.weight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.counter.typography.line.height": {
+    "$value": "1",
+    "$type": "lineHeight"
+  },
   "eui.input.border.width": {
     "$value": "1px",
     "$type": "dimension"
@@ -1163,6 +1415,254 @@
   "eui.radius.full": {
     "$value": "999px",
     "$type": "dimension"
+  },
+  "eui.typography.fontFamily.ui": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.fontFamily.monospace": {
+    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
+    "$type": "fontFamily"
+  },
+  "eui.typography.fontSize.xs": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.sm": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.base": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.md": {
+    "$value": "1.125rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.lg": {
+    "$value": "1.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.xl": {
+    "$value": "1.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.2xl": {
+    "$value": "1.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.3xl": {
+    "$value": "2.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.4xl": {
+    "$value": "3rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.5xl": {
+    "$value": "3.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.6xl": {
+    "$value": "4.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontWeight.light": {
+    "$value": "300",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.normal": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.medium": {
+    "$value": "500",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.semibold": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.bold": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.lineHeight.none": {
+    "$value": "1",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.tight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.normal": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.relaxed": {
+    "$value": "1.75",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.loose": {
+    "$value": "2",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.1.fontSize": {
+    "$value": "4.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.1.fontWeight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.1.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.2.fontSize": {
+    "$value": "3.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.2.fontWeight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.2.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.3.fontSize": {
+    "$value": "3rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.3.fontWeight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.3.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.4.fontSize": {
+    "$value": "2.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.4.fontWeight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.4.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.5.fontSize": {
+    "$value": "1.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.5.fontWeight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.5.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.6.fontSize": {
+    "$value": "1.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.6.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.6.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.body.large.fontSize": {
+    "$value": "1.125rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.body.large.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.body.large.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.body.base.fontSize": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.body.base.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.body.base.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.body.small.fontSize": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.body.small.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.body.small.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.caption.fontSize": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.caption.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.caption.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.code.base.fontSize": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.code.base.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.code.base.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.code.base.fontFamily": {
+    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.code.small.fontSize": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.code.small.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.code.small.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.code.small.fontFamily": {
+    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
+    "$type": "fontFamily"
+  },
+  "eui.typography.base.fontSize": {
+    "$value": "14px",
+    "$type": "fontSize"
   },
   "eui.focus.ring.width.base": {
     "$value": "2px",
