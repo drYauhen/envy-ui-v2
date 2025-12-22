@@ -6,26 +6,6 @@
           "$value": "{eui.color.neutral.200}",
           "$type": "color",
           "$description": "Background color for avatar when no image is provided (initials fallback). Light gray for subtle, non-intrusive appearance."
-        },
-        "fallbackVariant1": {
-          "$value": "{eui.color.accent.600}",
-          "$type": "color",
-          "$description": "Alternative background color for avatar initials. Used for visual variety in avatar groups."
-        },
-        "fallbackVariant2": {
-          "$value": "{eui.color.accent.700}",
-          "$type": "color",
-          "$description": "Alternative background color for avatar initials. Used for visual variety in avatar groups."
-        },
-        "fallbackVariant3": {
-          "$value": "{eui.color.neutral.500}",
-          "$type": "color",
-          "$description": "Alternative background color for avatar initials. Neutral option for variety."
-        },
-        "fallbackVariant4": {
-          "$value": "{eui.color.neutral.600}",
-          "$type": "color",
-          "$description": "Alternative background color for avatar initials. Neutral option for variety."
         }
       },
       "text": {

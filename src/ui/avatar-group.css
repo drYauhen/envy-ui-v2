@@ -21,6 +21,16 @@
   margin-left: 0;
 }
 
+/* When lead avatar is present, all avatars after it use tighter overlap (creates cohesive subgroup) */
+[data-eui-context] .eui-avatar-group .eui-avatar[data-eui-role="lead"] ~ .eui-avatar {
+  margin-left: calc(-1 * var(--eui-avatar-group-layout-overlap-tight));
+}
+
+/* The avatar immediately after lead uses smaller overlap (larger gap for visual separation from lead) */
+[data-eui-context] .eui-avatar-group .eui-avatar[data-eui-role="lead"] + .eui-avatar {
+  margin-left: calc(-1 * var(--eui-avatar-group-layout-overlap-lead));
+}
+
 /* Hover animation: spread neighbors and scale hovered avatar */
 /* When hovering over a specific avatar, scale it up and spread neighbors */
 [data-eui-context="app"] .eui-avatar-group .eui-avatar:hover,
@@ -42,50 +52,22 @@
   transform: translateX(calc(-1 * var(--eui-avatar-group-layout-hover-spread)));
 }
 
-/* Counter in AvatarGroup - matches avatar styling for text variant */
+/* Counter in AvatarGroup - text variant only, positioned after the group (no overlap) */
 [data-eui-context] .eui-avatar-group .eui-counter[data-eui-variant="text"] {
-  margin-left: calc(-1 * var(--eui-avatar-group-layout-overlap));
-  width: var(--eui-avatar-size-md-diameter);
-  height: var(--eui-avatar-size-md-diameter);
-  border-radius: var(--eui-avatar-shape-circle-radius);
-  border: var(--eui-avatar-border-width) var(--eui-avatar-border-style) var(--eui-avatar-border-color);
-  background-color: var(--eui-avatar-background-fallback);
-  color: var(--eui-avatar-text-fallback);
-  font-family: var(--eui-avatar-typography-font-family, inherit);
-  font-weight: var(--eui-avatar-typography-font-weight);
-  font-size: var(--eui-avatar-typography-font-size-md);
-  line-height: var(--eui-avatar-typography-line-height);
-  padding: 0;
-  min-width: var(--eui-avatar-size-md-diameter);
+  margin-left: 0.5rem; /* Small gap after the avatar group, no overlap */
+  position: relative;
+  z-index: 1; /* Same as avatars, no need for higher z-index since no overlap */
+  transition: color var(--eui-avatar-group-layout-hover-duration) var(--eui-avatar-group-layout-hover-easing);
+  /* Keep only text styling, no width/height/border/background */
+  /* Counter's base text variant styles apply automatically */
 }
 
-/* Counter sizes in AvatarGroup */
-[data-eui-context] .eui-avatar-group[data-eui-size="sm"] .eui-counter[data-eui-variant="text"] {
-  width: var(--eui-avatar-size-sm-diameter);
-  height: var(--eui-avatar-size-sm-diameter);
-  font-size: var(--eui-avatar-typography-font-size-sm);
-  min-width: var(--eui-avatar-size-sm-diameter);
-}
-
-[data-eui-context] .eui-avatar-group[data-eui-size="md"] .eui-counter[data-eui-variant="text"] {
-  width: var(--eui-avatar-size-md-diameter);
-  height: var(--eui-avatar-size-md-diameter);
-  font-size: var(--eui-avatar-typography-font-size-md);
-  min-width: var(--eui-avatar-size-md-diameter);
-}
-
-[data-eui-context] .eui-avatar-group[data-eui-size="lg"] .eui-counter[data-eui-variant="text"] {
-  width: var(--eui-avatar-size-lg-diameter);
-  height: var(--eui-avatar-size-lg-diameter);
-  font-size: var(--eui-avatar-typography-font-size-lg);
-  min-width: var(--eui-avatar-size-lg-diameter);
-}
-
-/* Counter hover in AvatarGroup - also spreads neighbors */
+/* Counter hover in AvatarGroup - also spreads neighbors and changes color to accent */
 [data-eui-context="app"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover,
 [data-eui-context="site"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover {
   transform: scale(var(--eui-avatar-group-layout-hover-scale));
   z-index: 10;
+  color: var(--eui-color-accent-primary);
 }
 
 [data-eui-context="app"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover ~ .eui-avatar,
@@ -96,6 +78,12 @@
 [data-eui-context="app"] .eui-avatar-group .eui-avatar:has(+ .eui-counter:hover),
 [data-eui-context="site"] .eui-avatar-group .eui-avatar:has(+ .eui-counter:hover) {
   transform: translateX(calc(-1 * var(--eui-avatar-group-layout-hover-spread)));
+}
+
+/* Counter changes to accent color when any avatar in the group is hovered */
+[data-eui-context="app"] .eui-avatar-group:has(.eui-avatar:hover) .eui-counter[data-eui-variant="text"],
+[data-eui-context="site"] .eui-avatar-group:has(.eui-avatar:hover) .eui-counter[data-eui-variant="text"] {
+  color: var(--eui-color-accent-primary);
 }
 
 /* Report context - no hover animations, static overlap */

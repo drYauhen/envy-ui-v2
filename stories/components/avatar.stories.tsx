@@ -90,7 +90,7 @@ export const AvatarWithInitials: Story = {
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Avatar with Initials (Fallback)</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          When no image is available, avatars display initials extracted from the user's name. Different background colors can be used for visual variety.
+          When no image is available, avatars display initials extracted from the user's name on a light gray background.
         </p>
         <div style={sectionStyle}>
           <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Default Color</h4>
@@ -103,23 +103,6 @@ export const AvatarWithInitials: Story = {
             </div>
             <div className="eui-avatar" data-eui-size="lg">
               <span className="eui-avatar-initials">{getInitials('Bob Johnson')}</span>
-            </div>
-          </div>
-        </div>
-        <div style={sectionStyle}>
-          <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Color Variants</h4>
-          <div style={rowStyle}>
-            <div className="eui-avatar" data-eui-size="md" data-eui-fallback-color="variant1">
-              <span className="eui-avatar-initials">{getInitials('Alice Brown')}</span>
-            </div>
-            <div className="eui-avatar" data-eui-size="md" data-eui-fallback-color="variant2">
-              <span className="eui-avatar-initials">{getInitials('Charlie Wilson')}</span>
-            </div>
-            <div className="eui-avatar" data-eui-size="md" data-eui-fallback-color="variant3">
-              <span className="eui-avatar-initials">{getInitials('Diana Lee')}</span>
-            </div>
-            <div className="eui-avatar" data-eui-size="md" data-eui-fallback-color="variant4">
-              <span className="eui-avatar-initials">{getInitials('Edward Chen')}</span>
             </div>
           </div>
         </div>
@@ -141,26 +124,26 @@ export const AvatarSizes: Story = {
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Avatar Sizes</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          Avatars come in three sizes: small (32px), medium (40px, default), and large (48px).
+          Avatars come in three sizes: small (28px), medium (32px, default), and large (40px).
         </p>
         <div style={rowStyle}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
             <div className="eui-avatar" data-eui-size="sm">
-              <img src="https://i.pravatar.cc/150?img=10" alt="User" />
+              <img src="https://i.pravatar.cc/150?img=1" alt="User" />
             </div>
-            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Small (32px)</span>
+            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Small (28px)</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
             <div className="eui-avatar" data-eui-size="md">
-              <img src="https://i.pravatar.cc/150?img=11" alt="User" />
+              <img src="https://i.pravatar.cc/150?img=2" alt="User" />
             </div>
-            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Medium (40px)</span>
+            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Medium (32px)</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
             <div className="eui-avatar" data-eui-size="lg">
-              <img src="https://i.pravatar.cc/150?img=12" alt="User" />
+              <img src="https://i.pravatar.cc/150?img=3" alt="User" />
             </div>
-            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Large (48px)</span>
+            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Large (40px)</span>
           </div>
         </div>
       </div>
@@ -185,19 +168,19 @@ export const AvatarMixed: Story = {
         </p>
         <div style={rowStyle}>
           <div className="eui-avatar" data-eui-size="md">
-            <img src="https://i.pravatar.cc/150?img=20" alt="User" />
+            <img src="https://i.pravatar.cc/150?img=4" alt="User" />
           </div>
           <div className="eui-avatar" data-eui-size="md">
             <span className="eui-avatar-initials">{getInitials('Sarah Connor')}</span>
           </div>
           <div className="eui-avatar" data-eui-size="md">
-            <img src="https://i.pravatar.cc/150?img=21" alt="User" />
+            <img src="https://i.pravatar.cc/150?img=5" alt="User" />
           </div>
-          <div className="eui-avatar" data-eui-size="md" data-eui-fallback-color="variant1">
+          <div className="eui-avatar" data-eui-size="md">
             <span className="eui-avatar-initials">{getInitials('Mike Taylor')}</span>
           </div>
           <div className="eui-avatar" data-eui-size="md">
-            <img src="https://i.pravatar.cc/150?img=22" alt="User" />
+            <img src="https://i.pravatar.cc/150?img=6" alt="User" />
           </div>
         </div>
       </div>
@@ -224,7 +207,7 @@ export const AvatarContexts: Story = {
           <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Application Context (app)</h4>
           <div style={rowStyle}>
             <div className="eui-avatar" data-eui-size="md">
-              <img src="https://i.pravatar.cc/150?img=30" alt="User" />
+              <img src="https://i.pravatar.cc/150?img=7" alt="User" />
             </div>
             <div className="eui-avatar" data-eui-size="md">
               <span className="eui-avatar-initials">{getInitials('App User')}</span>
@@ -238,7 +221,7 @@ export const AvatarContexts: Story = {
           </p>
           <div style={rowStyle}>
             <div className="eui-avatar" data-eui-size="md">
-              <img src="https://i.pravatar.cc/150?img=31" alt="User" />
+              <img src="https://i.pravatar.cc/150?img=8" alt="User" />
             </div>
             <div className="eui-avatar" data-eui-size="md">
               <span className="eui-avatar-initials">{getInitials('Report User')}</span>

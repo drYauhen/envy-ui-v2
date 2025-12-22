@@ -10,19 +10,19 @@
           },
           "size": {
             "sm": {
-              "$value": "0.75rem",
+              "$value": "0.6875rem",
               "$type": "fontSize",
-              "$description": "Font size for initials in small avatar"
+              "$description": "Font size for initials in small avatar (11px)"
             },
             "md": {
-              "$value": "0.875rem",
+              "$value": "0.75rem",
               "$type": "fontSize",
-              "$description": "Font size for initials in medium avatar"
+              "$description": "Font size for initials in medium avatar (12px)"
             },
             "lg": {
-              "$value": "1rem",
+              "$value": "0.875rem",
               "$type": "fontSize",
-              "$description": "Font size for initials in large avatar"
+              "$description": "Font size for initials in large avatar (14px)"
             }
           },
           "weight": {

@@ -15,6 +15,11 @@
           "$value": "{eui.color.background.surface}",
           "$type": "color",
           "$description": "Border color for avatar. Uses background surface color (typically white) for visual separation when overlapping."
+        },
+        "colorLead": {
+          "$value": "{eui.color.accent.primary}",
+          "$type": "color",
+          "$description": "Border color for lead avatar. Uses accent primary color to visually emphasize the lead avatar's role in a group."
         }
       }
     }

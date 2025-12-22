@@ -3,9 +3,19 @@
     "avatarGroup": {
       "layout": {
         "overlap": {
-          "$value": "8px",
+          "$value": "12px",
           "$type": "dimension",
-          "$description": "Overlap amount between avatars in a group. Negative margin-left value. Standard overlap for 40px avatar is 8px (20% of diameter)."
+          "$description": "Overlap amount between avatars in a group. Negative margin-left value. Set to 12px (37.5% of 32px avatar diameter) for tight, cohesive grouping."
+        },
+        "overlapLead": {
+          "$value": "6px",
+          "$type": "dimension",
+          "$description": "Overlap amount between lead avatar and the next group. Smaller than standard overlap to create visual separation, emphasizing the lead avatar's role. 6px (18.75% of 32px avatar diameter) provides clear distinction."
+        },
+        "overlapTight": {
+          "$value": "16px",
+          "$type": "dimension",
+          "$description": "Tighter overlap amount between avatars in a group when a lead avatar is present. Used for avatars after the lead to create a more cohesive subgroup. 16px (50% of 32px avatar diameter) creates tighter grouping."
         },
         "maxVisible": {
           "$value": "4",

@@ -74,21 +74,10 @@
   font-size: var(--eui-avatar-typography-font-size-lg);
 }
 
-/* Fallback background color variants */
-[data-eui-context] .eui-avatar[data-eui-fallback-color="variant1"] {
-  background-color: var(--eui-avatar-background-fallback-variant1);
-}
 
-[data-eui-context] .eui-avatar[data-eui-fallback-color="variant2"] {
-  background-color: var(--eui-avatar-background-fallback-variant2);
-}
-
-[data-eui-context] .eui-avatar[data-eui-fallback-color="variant3"] {
-  background-color: var(--eui-avatar-background-fallback-variant3);
-}
-
-[data-eui-context] .eui-avatar[data-eui-fallback-color="variant4"] {
-  background-color: var(--eui-avatar-background-fallback-variant4);
+/* Lead avatar - accent border to emphasize role */
+[data-eui-context] .eui-avatar[data-eui-role="lead"] {
+  border-color: var(--eui-avatar-border-color-lead);
 }
 
 /* Report context - print styles */
