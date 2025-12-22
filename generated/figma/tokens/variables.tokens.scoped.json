@@ -26,7 +26,17 @@
         {
           "path": "eui.avatarGroup.layout.overlap",
           "type": "FLOAT",
-          "value": 8
+          "value": 12
+        },
+        {
+          "path": "eui.avatarGroup.layout.overlapLead",
+          "type": "FLOAT",
+          "value": 6
+        },
+        {
+          "path": "eui.avatarGroup.layout.overlapTight",
+          "type": "FLOAT",
+          "value": 16
         }
       ]
     },
@@ -53,17 +63,17 @@
         {
           "path": "eui.avatar.size.lg.diameter",
           "type": "FLOAT",
-          "value": 48
+          "value": 40
         },
         {
           "path": "eui.avatar.size.md.diameter",
           "type": "FLOAT",
-          "value": 40
+          "value": 32
         },
         {
           "path": "eui.avatar.size.sm.diameter",
           "type": "FLOAT",
-          "value": 32
+          "value": 28
         }
       ]
     },
@@ -75,6 +85,11 @@
           "path": "eui.avatar.border.color",
           "type": "COLOR",
           "value": "#ffffff"
+        },
+        {
+          "path": "eui.avatar.border.colorLead",
+          "type": "COLOR",
+          "value": "#2d98e8"
         },
         {
           "path": "eui.checkbox.border.base",
@@ -176,26 +191,6 @@
           "path": "eui.avatar.background.fallback",
           "type": "COLOR",
           "value": "#e5e7eb"
-        },
-        {
-          "path": "eui.avatar.background.fallbackVariant1",
-          "type": "COLOR",
-          "value": "#35a8f8"
-        },
-        {
-          "path": "eui.avatar.background.fallbackVariant2",
-          "type": "COLOR",
-          "value": "#2d98e8"
-        },
-        {
-          "path": "eui.avatar.background.fallbackVariant3",
-          "type": "COLOR",
-          "value": "#757575"
-        },
-        {
-          "path": "eui.avatar.background.fallbackVariant4",
-          "type": "COLOR",
-          "value": "#525252"
         },
         {
           "path": "eui.checkbox.background.base",
@@ -1202,9 +1197,19 @@
       "mode": "default",
       "variables": [
         {
+          "path": "eui.content.colors.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.content.colors.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
           "path": "eui.counter.colors.filter.background",
           "type": "COLOR",
-          "value": "#dceeff"
+          "value": "#b7dbff"
         },
         {
           "path": "eui.counter.colors.filter.border",
@@ -1224,7 +1229,7 @@
         {
           "path": "eui.counter.colors.pill.default.background",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "#dceeff"
         },
         {
           "path": "eui.counter.colors.pill.default.border",
@@ -1269,7 +1274,7 @@
         {
           "path": "eui.counter.colors.text.default.color",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "#1b1b1b"
         },
         {
           "path": "eui.counter.colors.text.disabled.color",
@@ -1280,6 +1285,237 @@
           "path": "eui.counter.colors.text.inverse.color",
           "type": "COLOR",
           "value": "#ffffff"
+        },
+        {
+          "path": "eui.detail-panel.colors.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.detail-panel.colors.border",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.detail-panel.colors.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.divider.colors.default",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.header.colors.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.header.colors.border",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.header.colors.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.menu.colors.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.menu.colors.border",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.menu.colors.item.background.default",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.menu.colors.item.background.focus",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.menu.colors.item.background.hover",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.menu.colors.item.background.selected",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.menu.colors.item.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.menu.colors.item.text-disabled",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.modal.colors.body.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.modal.colors.body.border",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.modal.colors.body.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.modal.colors.close.color",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.modal.colors.close.hover",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.modal.colors.footer.background",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.modal.colors.footer.border",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.modal.colors.footer.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.modal.colors.header.background",
+          "type": "COLOR",
+          "value": "#066a8d"
+        },
+        {
+          "path": "eui.modal.colors.header.border",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.modal.colors.header.text",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.sidebar.colors.background",
+          "type": "COLOR",
+          "value": "#066a8d"
+        },
+        {
+          "path": "eui.sidebar.colors.border",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.sidebar.colors.text",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.skeleton.colors.background.base",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.skeleton.colors.shimmer.end",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.skeleton.colors.shimmer.mid",
+          "type": "COLOR",
+          "value": "#ffffff66"
+        },
+        {
+          "path": "eui.skeleton.colors.shimmer.start",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.table.colors.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.table.colors.border",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.table.colors.cell.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.table.colors.header.background",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.table.colors.header.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.table.colors.row.background.default",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.table.colors.row.background.hover",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.table.colors.row.background.selected",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.title-bar.colors.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.title-bar.colors.border",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.title-bar.colors.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Content",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.content.spacing.padding",
+          "type": "FLOAT",
+          "value": 1.5
         }
       ]
     },
@@ -1391,6 +1627,72 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Detail Panel",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.detail-panel.size.width",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.detail-panel.spacing.padding",
+          "type": "FLOAT",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.divider.size.thickness",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.divider.spacing.margin.horizontal",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.divider.spacing.margin.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Header",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.header.size.height",
+          "type": "FLOAT",
+          "value": 56
+        },
+        {
+          "path": "eui.header.spacing.gap",
+          "type": "FLOAT",
+          "value": 1,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.header.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.header.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.75
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Dimensions / Input",
       "mode": "default",
       "variables": [
@@ -1482,6 +1784,140 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Menu",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.menu.shape.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.menu.size.max-height",
+          "type": "FLOAT",
+          "value": 300
+        },
+        {
+          "path": "eui.menu.size.max-width",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.menu.size.min-width",
+          "type": "FLOAT",
+          "value": 200
+        },
+        {
+          "path": "eui.menu.spacing.divider.margin",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.menu.spacing.item.gap",
+          "type": "FLOAT",
+          "value": 0.25,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.menu.spacing.item.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.menu.spacing.item.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.menu.spacing.list.padding",
+          "type": "FLOAT",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Backdrop",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.modal.backdrop.color",
+          "type": "COLOR",
+          "value": "#00000080"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Modal",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.modal.shape.radius",
+          "type": "FLOAT",
+          "value": 6
+        },
+        {
+          "path": "eui.modal.size.full.maxWidth",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.modal.size.lg.maxWidth",
+          "type": "FLOAT",
+          "value": 600
+        },
+        {
+          "path": "eui.modal.size.md.maxWidth",
+          "type": "FLOAT",
+          "value": 500
+        },
+        {
+          "path": "eui.modal.size.sm.maxWidth",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.modal.size.xl.maxWidth",
+          "type": "FLOAT",
+          "value": 800
+        },
+        {
+          "path": "eui.modal.spacing.body.padding",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.modal.spacing.footer.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.modal.spacing.footer.padding.vertical",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.modal.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.5,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.modal.spacing.header.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.modal.spacing.header.padding.vertical",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Trigger",
       "mode": "default",
       "variables": [
@@ -1510,6 +1946,79 @@
           "path": "eui.select.icon.disabled",
           "type": "COLOR",
           "value": "#404040"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Sidebar",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.sidebar.size.collapsed.width",
+          "type": "FLOAT",
+          "value": 64,
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.sidebar.size.expanded.width",
+          "type": "FLOAT",
+          "value": 240,
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.sidebar.spacing.item-gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.sidebar.spacing.padding",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Skeleton",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.skeleton.animation.shimmer.width",
+          "type": "FLOAT",
+          "value": 200
+        },
+        {
+          "path": "eui.skeleton.shape.circular.radius",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.skeleton.shape.rectangular.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.skeleton.shape.text.radius",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.skeleton.size.circular.defaultDiameter",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.skeleton.size.rectangular.defaultHeight",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.skeleton.size.text.lineHeight",
+          "type": "FLOAT",
+          "value": 1.25
         }
       ]
     },
@@ -1710,6 +2219,96 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Table",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.table.border.radius",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.table.border.width",
+          "type": "FLOAT",
+          "value": 1,
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.table.expandable-cell.border.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.table.expandable-cell.panel.max-height",
+          "type": "FLOAT",
+          "value": 300
+        },
+        {
+          "path": "eui.table.expandable-cell.panel.max-width",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.table.expandable-cell.panel.z-index",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.table.expandable-cell.spacing.padding",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.table.folder.icon.gap",
+          "type": "FLOAT",
+          "value": 0.5,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.table.folder.icon.size",
+          "type": "FLOAT",
+          "value": 16
+        },
+        {
+          "path": "eui.table.folder.indent.level",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.table.spacing.cell.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.table.spacing.cell.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.table.spacing.header.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.table.spacing.header.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.table.spacing.row.gap",
+          "type": "FLOAT",
+          "value": 0,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Dimensions / Textarea",
       "mode": "default",
       "variables": [
@@ -1738,6 +2337,35 @@
           "path": "eui.textarea.size.padding.vertical",
           "type": "FLOAT",
           "value": 8
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Title Bar",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.title-bar.size.height",
+          "type": "FLOAT",
+          "value": 48
+        },
+        {
+          "path": "eui.title-bar.spacing.gap",
+          "type": "FLOAT",
+          "value": 1,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.75
         }
       ]
     },
