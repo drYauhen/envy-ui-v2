@@ -188,6 +188,24 @@
   border-color: var(--eui-counter-context-border, var(--eui-counter-colors-pill-default-border));
 }
 
+/* Counter interactive states inside Button - increase contrast on button hover/focus/active */
+/* Secondary Button: Counter background moves up one step in accent scale (accent.100 → accent.200) */
+[data-eui-context] .eui-button[data-eui-intent="secondary"]:not(:disabled):hover .eui-counter[data-eui-variant="pill"],
+[data-eui-context] .eui-button[data-eui-intent="secondary"]:not(:disabled):focus .eui-counter[data-eui-variant="pill"],
+[data-eui-context] .eui-button[data-eui-intent="secondary"]:not(:disabled):active .eui-counter[data-eui-variant="pill"] {
+  background-color: var(--eui-color-accent-200);
+}
+
+/* Primary/Accent Button: Counter background becomes lighter (more contrast on dark background) */
+[data-eui-context] .eui-button[data-eui-intent="primary"]:not(:disabled):hover .eui-counter[data-eui-variant="pill"],
+[data-eui-context] .eui-button[data-eui-intent="primary"]:not(:disabled):focus .eui-counter[data-eui-variant="pill"],
+[data-eui-context] .eui-button[data-eui-intent="primary"]:not(:disabled):active .eui-counter[data-eui-variant="pill"],
+[data-eui-context] .eui-button[data-eui-intent="accent"]:not(:disabled):hover .eui-counter[data-eui-variant="pill"],
+[data-eui-context] .eui-button[data-eui-intent="accent"]:not(:disabled):focus .eui-counter[data-eui-variant="pill"],
+[data-eui-context] .eui-button[data-eui-intent="accent"]:not(:disabled):active .eui-counter[data-eui-variant="pill"] {
+  background-color: color-mix(in srgb, var(--eui-counter-context-background), white 30%);
+}
+
 /* Text variant in Button */
 [data-eui-context] .eui-button .eui-counter[data-eui-variant="text"] {
   color: var(--eui-counter-context-text-color, var(--eui-counter-colors-text-default-color));
