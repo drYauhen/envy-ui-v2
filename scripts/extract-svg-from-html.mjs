@@ -23,13 +23,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
 
-// Output directory for extracted SVG files
-const OUTPUT_DIR = path.join(REPO_ROOT, 'assets', 'icons', 'extracted');
-
-// Ensure output directory exists
-if (!fs.existsSync(OUTPUT_DIR)) {
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-}
+// Output directory for extracted SVG files (can be overridden via --output flag)
+const DEFAULT_OUTPUT_DIR = path.join(REPO_ROOT, 'assets', 'icons', 'extracted');
+const PERSONAL_OUTPUT_DIR = path.join(REPO_ROOT, 'personal', 'extracted');
 
 /**
  * Extract icon name from various sources (data attributes, classes, etc.)
@@ -157,38 +153,35 @@ function extractSvgsFromHtml(htmlContent) {
 }
 
 /**
- * Main function
+ * Process a single HTML file
  */
-function main() {
-  const htmlFilePath = process.argv[2];
-  
-  if (!htmlFilePath) {
-    console.error('Usage: node scripts/extract-svg-from-html.mjs <html-file>');
-    console.error('Example: node scripts/extract-svg-from-html.mjs icons.html');
-    process.exit(1);
-  }
-  
+function processHtmlFile(htmlFilePath, outputDir) {
   const fullPath = path.isAbsolute(htmlFilePath) 
     ? htmlFilePath 
     : path.join(process.cwd(), htmlFilePath);
   
   if (!fs.existsSync(fullPath)) {
-    console.error(`File not found: ${fullPath}`);
-    process.exit(1);
+    console.error(`❌ File not found: ${fullPath}`);
+    return { success: false, count: 0 };
   }
   
-  console.log(`Reading HTML from: ${fullPath}`);
+  // Ensure output directory exists
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+  
+  console.log(`\n📄 Reading HTML from: ${fullPath}`);
   const htmlContent = fs.readFileSync(fullPath, 'utf-8');
   
-  console.log('Extracting SVG elements...');
+  console.log('🔍 Extracting SVG elements...');
   const svgs = extractSvgsFromHtml(htmlContent);
   
   if (svgs.length === 0) {
-    console.warn('No SVG elements found in HTML. Make sure SVG tags are present.');
-    process.exit(1);
+    console.warn('⚠️  No SVG elements found in HTML');
+    return { success: false, count: 0 };
   }
   
-  console.log(`Found ${svgs.length} SVG element(s)`);
+  console.log(`   Found ${svgs.length} SVG element(s)`);
   
   // Save each SVG to a file
   let savedCount = 0;
@@ -207,18 +200,88 @@ function main() {
     const cleanedSvg = cleanSvg(svg.content);
     
     // Save to file
-    const filePath = path.join(OUTPUT_DIR, `${filename}.svg`);
+    const filePath = path.join(outputDir, `${filename}.svg`);
     fs.writeFileSync(filePath, cleanedSvg, 'utf-8');
     
-    console.log(`  ✓ Saved: ${filename}.svg`);
+    console.log(`   ✓ Saved: ${filename}.svg`);
     savedCount++;
   }
   
-  console.log(`\n✅ Successfully extracted ${savedCount} SVG file(s) to: ${OUTPUT_DIR}`);
-  console.log(`\nNext steps:`);
-  console.log(`  1. Review extracted SVG files`);
-  console.log(`  2. Normalize them using scripts/normalize-icons.mjs (if you create it)`);
-  console.log(`  3. Move to assets/icons/source/ for icon generation`);
+  return { success: true, count: savedCount };
+}
+
+/**
+ * Main function
+ */
+function main() {
+  const args = process.argv.slice(2);
+  
+  // Determine output directory (default to personal/extracted for multiple files)
+  let outputDir = DEFAULT_OUTPUT_DIR;
+  let htmlFiles = [];
+  
+  // Parse arguments
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--output' || args[i] === '-o') {
+      outputDir = args[++i] || outputDir;
+    } else if (args[i] === '--personal') {
+      outputDir = PERSONAL_OUTPUT_DIR;
+    } else if (!args[i].startsWith('--')) {
+      htmlFiles.push(args[i]);
+    }
+  }
+  
+  // If no files specified, check for ehome*.html in personal/
+  if (htmlFiles.length === 0) {
+    const personalDir = path.join(REPO_ROOT, 'personal');
+    const ehomeFiles = ['ehome.html', 'ehome2.html', 'ehome3.html'];
+    
+    for (const file of ehomeFiles) {
+      const fullPath = path.join(personalDir, file);
+      if (fs.existsSync(fullPath)) {
+        htmlFiles.push(fullPath);
+      }
+    }
+    
+    // Default to personal/extracted if processing ehome files
+    if (htmlFiles.length > 0 && outputDir === DEFAULT_OUTPUT_DIR) {
+      outputDir = PERSONAL_OUTPUT_DIR;
+    }
+  }
+  
+  if (htmlFiles.length === 0) {
+    console.error('Usage: node scripts/extract-svg-from-html.mjs [options] <html-file1> [html-file2] ...');
+    console.error('Options:');
+    console.error('  --output, -o <dir>  Output directory (default: assets/icons/extracted)');
+    console.error('  --personal          Use personal/extracted as output directory');
+    console.error('\nExample:');
+    console.error('  node scripts/extract-svg-from-html.mjs --personal personal/ehome.html');
+    console.error('  node scripts/extract-svg-from-html.mjs personal/ehome*.html --output personal/extracted');
+    process.exit(1);
+  }
+  
+  console.log(`📦 Extracting SVG icons to: ${outputDir}`);
+  console.log(`📁 Processing ${htmlFiles.length} HTML file(s)...\n`);
+  
+  let totalSaved = 0;
+  const allSavedNames = new Set();
+  
+  for (const htmlFile of htmlFiles) {
+    const result = processHtmlFile(htmlFile, outputDir);
+    if (result.success) {
+      totalSaved += result.count;
+    }
+  }
+  
+  if (totalSaved > 0) {
+    console.log(`\n✅ Successfully extracted ${totalSaved} SVG file(s) to: ${outputDir}`);
+    console.log(`\nNext steps:`);
+    console.log(`  1. Review extracted SVG files`);
+    console.log(`  2. Normalize them using: npm run icons:normalize`);
+    console.log(`  3. Move to personal/svg/icon-source/ for processing`);
+  } else {
+    console.log(`\n⚠️  No SVG files were extracted`);
+  }
 }
 
 main();
