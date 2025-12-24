@@ -8,9 +8,10 @@
     "clean:repo": "npm run clean:zone",
     "tokens:build": "style-dictionary build --config style-dictionary/config.mjs",
     "tokens:build:tokenstudio": "style-dictionary build --config style-dictionary/config.mjs --platform tokenstudio",
-    "storybook": "npm run tokens:build && storybook dev -p 6006",
+    "docs:copy": "node scripts/copy-docs-to-public.mjs",
+    "storybook": "npm run tokens:build && npm run docs:copy && storybook dev -p 6006",
     "build-storybook": "npm run storybook:build",
-    "storybook:build": "npm run tokens:build && storybook build",
+    "storybook:build": "npm run tokens:build && npm run docs:copy && storybook build",
     "figma:build": "esbuild figma-plugin/code.ts --bundle --format=iife --platform=browser --target=es2017 --outfile=figma-plugin/dist/code.js --loader:.html=text --loader:.json=json",
     "icons:normalize": "node scripts/normalize-svg-icons.mjs",
     "icons:generate": "node scripts/generate-icons.mjs",
@@ -49,7 +50,9 @@
     "react": "^19.2.3",
     "react-aria": "^3.45.0",
     "react-dom": "^19.2.3",
-    "react-stately": "^3.43.0"
+    "react-markdown": "^10.1.0",
+    "react-stately": "^3.43.0",
+    "remark-gfm": "^4.0.1"
   },
   "msw": {
     "workerDirectory": [
