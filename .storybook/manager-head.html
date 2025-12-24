@@ -1,0 +1,99 @@
+<style>
+  /* Storybook Sidebar Navigation - First Level Styling */
+  /* Target first level items - they are div.sidebar-subheading[data-nodetype="root"] */
+  
+  /* Primary selector - sidebar subheading with root nodetype (first level) */
+  .sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"],
+  div.sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"] {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #066a8d !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    letter-spacing: 0 !important;
+  }
+  
+  /* Alternative selector - just the button if needed */
+  button[data-action="collapse-root"] {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #066a8d !important;
+    letter-spacing: 0 !important;
+  }
+  
+  /* Override any CSS-in-JS classes that might be applied */
+  button.css-1ew0vvb[data-action="collapse-root"],
+  .sidebar-subheading.css-1s12khg[data-nodetype="root"] > button[data-action="collapse-root"],
+  .sidebar-subheading[data-item-id][data-nodetype="root"] > button[data-action="collapse-root"],
+  div.sidebar-subheading.css-1s12khg[data-nodetype="root"] > button.css-1ew0vvb[data-action="collapse-root"] {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #066a8d !important;
+    letter-spacing: 0 !important;
+  }
+  
+  /* Hover state for first level */
+  .sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"]:hover,
+  button[data-action="collapse-root"]:hover {
+    color: #055973 !important;
+    background-color: rgba(6, 106, 141, 0.05) !important;
+  }
+  
+  /* Active/selected state for first level */
+  .sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"]:active,
+  button[data-action="collapse-root"]:active {
+    color: #043c55 !important;
+    background-color: rgba(6, 106, 141, 0.1) !important;
+  }
+  
+  /* Focus state for accessibility */
+  .sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"]:focus-visible,
+  button[data-action="collapse-root"]:focus-visible {
+    outline: 2px solid #2ea7d1 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Storybook Sidebar Navigation - Second Level Styling */
+  /* Target ONLY second level items - direct children of root items, not nested third level */
+  
+  /* Second level items - using data-parent-id to identify direct children of root items */
+  .sidebar-item[data-parent-id="tokens"][data-nodetype="group"] > button,
+  .sidebar-item[data-parent-id="tokens"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="html-css"][data-nodetype="group"] > button,
+  .sidebar-item[data-parent-id="html-css"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="tsx-clean"][data-nodetype="group"] > button,
+  .sidebar-item[data-parent-id="tsx-clean"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="tsx-react-aria"][data-nodetype="group"] > button,
+  .sidebar-item[data-parent-id="tsx-react-aria"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="architecture"][data-nodetype="group"] > button,
+  .sidebar-item[data-parent-id="architecture"][data-nodetype="component"] > button {
+    font-weight: 600 !important;
+  }
+  
+  /* Override CSS-in-JS classes for second level only */
+  .sidebar-item.css-1mjja44[data-parent-id="tokens"][data-nodetype="group"] > button.css-tgyyuz,
+  .sidebar-item.css-1mjja44[data-parent-id="html-css"][data-nodetype="group"] > button.css-tgyyuz,
+  .sidebar-item.css-1mjja44[data-parent-id="tsx-clean"][data-nodetype="group"] > button.css-tgyyuz,
+  .sidebar-item.css-1mjja44[data-parent-id="tsx-react-aria"][data-nodetype="group"] > button.css-tgyyuz,
+  .sidebar-item.css-1mjja44[data-parent-id="architecture"][data-nodetype="group"] > button.css-tgyyuz,
+  .sidebar-item.css-1mjja44[data-parent-id="html-css"][data-nodetype="component"] > button.css-7ry0rg,
+  .sidebar-item.css-1mjja44[data-parent-id="html-css"][data-nodetype="component"] > button.css-tgyyuz {
+    font-weight: 600 !important;
+  }
+  
+  /* Explicitly reset third level items (nested inside second level) to normal weight */
+  /* Third level has data-parent-id pointing to a group/component, not root */
+  .sidebar-item[data-parent-id="html-css-components"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="tokens-foundations"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="tokens-components"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="tokens-semantic"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="tsx-clean-components"][data-nodetype="component"] > button,
+  .sidebar-item[data-parent-id="tsx-react-aria-components"][data-nodetype="component"] > button,
+  /* General rule: any sidebar-item nested inside another sidebar-item */
+  .sidebar-item .sidebar-item[data-nodetype="component"] > button,
+  .sidebar-item .sidebar-item[data-nodetype="group"] > button {
+    font-weight: normal !important;
+  }
+
+</style>
+
