@@ -1,0 +1,124 @@
+/* FormSection Component - Groups related form fields */
+
+[data-eui-context] .eui-form-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--eui-form-spacing-section-gap-external);
+}
+
+/* Section Header */
+[data-eui-context] .eui-form-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--eui-form-spacing-section-header-padding);
+  background: transparent;
+  border: none;
+  text-align: left;
+  gap: var(--eui-spacing-md);
+  cursor: pointer;
+}
+
+/* Non-collapsible section - header is not clickable */
+[data-eui-context] .eui-form-section[data-eui-collapsible="false"] .eui-form-section-header,
+[data-eui-context] .eui-form-section:not([data-eui-collapsible]) .eui-form-section-header {
+  cursor: default;
+  pointer-events: none;
+  padding: 0;
+}
+
+/* Header Content Area */
+[data-eui-context] .eui-form-section-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  gap: var(--eui-spacing-sm);
+}
+
+/* Section Title */
+[data-eui-context] .eui-form-section-title {
+  margin: 0;
+  font-size: var(--eui-typography-heading-size-md);
+  font-weight: var(--eui-typography-weight-semibold);
+  color: var(--eui-color-text-primary);
+}
+
+/* Section Subtitle */
+[data-eui-context] .eui-form-section-subtitle {
+  margin: 0;
+  font-size: var(--eui-typography-body-size-base);
+  color: var(--eui-color-text-secondary);
+}
+
+/* Optional: Additional header elements (avatar, badges, metrics) */
+[data-eui-context] .eui-form-section-header-extra {
+  display: flex;
+  align-items: center;
+  gap: var(--eui-spacing-xs);
+  flex-shrink: 0;
+}
+
+/* Chevron Icon */
+[data-eui-context] .eui-form-section-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--eui-color-text-secondary);
+  transition: transform var(--eui-form-animation-duration) var(--eui-form-animation-easing);
+}
+
+/* Hide chevron when not collapsible */
+[data-eui-context] .eui-form-section[data-eui-collapsible="false"] .eui-form-section-chevron,
+[data-eui-context] .eui-form-section:not([data-eui-collapsible]) .eui-form-section-chevron {
+  display: none;
+}
+
+/* Rotate chevron when expanded */
+[data-eui-context] .eui-form-section[data-eui-expanded="true"] .eui-form-section-chevron {
+  transform: rotate(180deg);
+}
+
+/* Section Content Area */
+[data-eui-context] .eui-form-section-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--eui-form-animation-duration) var(--eui-form-animation-easing);
+  overflow: hidden;
+}
+
+[data-eui-context] .eui-form-section-content > * {
+  overflow: hidden;
+}
+
+/* Expanded State */
+[data-eui-context] .eui-form-section[data-eui-expanded="true"] .eui-form-section-content {
+  grid-template-rows: 1fr;
+  margin-top: var(--eui-form-spacing-section-gap-title);
+}
+
+/* Collapsed State */
+[data-eui-context] .eui-form-section[data-eui-expanded="false"] .eui-form-section-content {
+  grid-template-rows: 0fr;
+  margin-top: 0;
+}
+
+/* Non-collapsible sections - always show content */
+[data-eui-context] .eui-form-section[data-eui-collapsible="false"] .eui-form-section-content,
+[data-eui-context] .eui-form-section:not([data-eui-collapsible]) .eui-form-section-content {
+  grid-template-rows: 1fr;
+  margin-top: var(--eui-form-spacing-section-gap-title);
+}
+
+/* Section Content - fields container */
+[data-eui-context] .eui-form-section-content [data-eui-slot="content"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-form-spacing-section-gap-internal);
+}
+
+

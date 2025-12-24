@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "alert-banner": {
+      "spacing": {
+        "padding": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Padding for alert banner content"
+        },
+        "gap": {
+          "content": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Gap between icon and message in alert banner"
+          },
+          "actions": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Gap between action buttons in alert banner"
+          }
+        },
+        "height": {
+          "min": {
+            "$value": "auto",
+            "$type": "dimension",
+            "$description": "Minimum height of alert banner (auto for flexible content)"
+          }
+        }
+      }
+    }
+  }
+}
+
+

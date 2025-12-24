@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "alert-banner": {
+      "colors": {
+        "background": {
+          "info": {
+            "$value": "{eui.color.status.info}10",
+            "$type": "color",
+            "$description": "Background color for info variant (light tint)"
+          },
+          "warning": {
+            "$value": "{eui.color.status.warning}15",
+            "$type": "color",
+            "$description": "Background color for warning variant (light tint)"
+          },
+          "error": {
+            "$value": "{eui.color.status.error}10",
+            "$type": "color",
+            "$description": "Background color for error variant (light tint)"
+          },
+          "success": {
+            "$value": "{eui.color.status.success}10",
+            "$type": "color",
+            "$description": "Background color for success variant (light tint)"
+          }
+        },
+        "border": {
+          "info": {
+            "$value": "{eui.color.status.info}",
+            "$type": "color",
+            "$description": "Border color for info variant"
+          },
+          "warning": {
+            "$value": "{eui.color.status.warning}",
+            "$type": "color",
+            "$description": "Border color for warning variant"
+          },
+          "error": {
+            "$value": "{eui.color.status.error}",
+            "$type": "color",
+            "$description": "Border color for error variant"
+          },
+          "success": {
+            "$value": "{eui.color.status.success}",
+            "$type": "color",
+            "$description": "Border color for success variant"
+          }
+        },
+        "text": {
+          "info": {
+            "$value": "{eui.color.status.info}",
+            "$type": "color",
+            "$description": "Text color for info variant"
+          },
+          "warning": {
+            "$value": "{eui.color.status.warning}",
+            "$type": "color",
+            "$description": "Text color for warning variant"
+          },
+          "error": {
+            "$value": "{eui.color.status.error}",
+            "$type": "color",
+            "$description": "Text color for error variant"
+          },
+          "success": {
+            "$value": "{eui.color.status.success}",
+            "$type": "color",
+            "$description": "Text color for success variant"
+          }
+        }
+      }
+    }
+  }
+}
+
+

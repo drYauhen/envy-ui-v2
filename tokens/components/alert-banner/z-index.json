@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "alert-banner": {
+      "z-index": {
+        "$value": "10000",
+        "$type": "number",
+        "$description": "Z-index to ensure alert banner appears above all content, including modals"
+      }
+    }
+  }
+}
+
+

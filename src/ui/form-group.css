@@ -1,0 +1,41 @@
+/* FormGroup Component - Groups related fields that share a label */
+
+[data-eui-context] .eui-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-form-spacing-group-gap);
+  margin-bottom: var(--eui-form-spacing-field-gap-external);
+}
+
+/* Horizontal orientation */
+[data-eui-context] .eui-form-group[data-eui-orientation="horizontal"] {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Group Label */
+[data-eui-context] .eui-form-group-label {
+  margin-bottom: var(--eui-form-spacing-field-gap-internal);
+  font-size: var(--eui-typography-body-size-base);
+  font-weight: var(--eui-typography-weight-medium);
+  color: var(--eui-color-text-primary);
+}
+
+[data-eui-context] .eui-form-group[data-eui-orientation="horizontal"] .eui-form-group-label {
+  width: 100%;
+  margin-bottom: var(--eui-form-spacing-group-gap);
+}
+
+/* Group Items Container */
+[data-eui-context] .eui-form-group-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-form-spacing-group-gap);
+}
+
+[data-eui-context] .eui-form-group[data-eui-orientation="horizontal"] .eui-form-group-items {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+

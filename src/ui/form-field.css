@@ -1,0 +1,67 @@
+/* FormField Component - Wrapper for single form field */
+
+[data-eui-context] .eui-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-form-spacing-field-gap-internal);
+  margin-bottom: var(--eui-form-spacing-field-gap-external);
+}
+
+/* Label position: top (default) */
+[data-eui-context] .eui-form-field[data-eui-label-position="top"] {
+  flex-direction: column;
+}
+
+/* Label position: left */
+[data-eui-context] .eui-form-field[data-eui-label-position="left"] {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--eui-spacing-md);
+}
+
+[data-eui-context] .eui-form-field[data-eui-label-position="left"] [data-eui-slot="label"] {
+  width: var(--eui-form-field-label-width, 120px);
+  flex-shrink: 0;
+  padding-top: var(--eui-form-field-input-padding-top, 0.5rem);
+}
+
+/* Label position: inline (for checkboxes/switches) */
+[data-eui-context] .eui-form-field[data-eui-label-position="inline"] {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--eui-checkbox-layout-gap);
+}
+
+/* FormField slots */
+[data-eui-context] .eui-form-field [data-eui-slot="label"] {
+  flex-shrink: 0;
+}
+
+[data-eui-context] .eui-form-field [data-eui-slot="input"] {
+  flex: 1 1 auto;
+}
+
+[data-eui-context] .eui-form-field [data-eui-slot="helper-text"],
+[data-eui-context] .eui-form-field [data-eui-slot="error-text"] {
+  font-size: var(--eui-typography-body-size-sm);
+  margin-top: calc(var(--eui-form-spacing-field-gap-internal) * -1);
+}
+
+[data-eui-context] .eui-form-field [data-eui-slot="helper-text"] {
+  color: var(--eui-color-text-secondary);
+}
+
+[data-eui-context] .eui-form-field [data-eui-slot="error-text"] {
+  color: var(--eui-color-status-error);
+}
+
+/* Error state - show error text, hide helper text */
+[data-eui-context] .eui-form-field[data-eui-error="true"] [data-eui-slot="helper-text"] {
+  display: none;
+}
+
+[data-eui-context] .eui-form-field[data-eui-error="true"] [data-eui-slot="error-text"] {
+  display: block;
+}
+
+

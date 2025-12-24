@@ -13,9 +13,9 @@
           "$description": "Border style for menu list. Same as card border."
         },
         "color": {
-          "$value": "{eui.color.border.default}",
+          "$value": "{eui.color.border.subtle}",
           "$type": "color",
-          "$description": "Border color for menu list. Same as card border."
+          "$description": "Border color for menu list. Subtle border for floating elements (less aggressive than card border)."
         }
       }
     }

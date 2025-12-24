@@ -1,0 +1,27 @@
+/* FormRow Component - Horizontal layout for side-by-side fields */
+
+[data-eui-context] .eui-form-row {
+  display: grid;
+  grid-template-columns: repeat(var(--eui-form-row-columns, 1), 1fr);
+  gap: var(--eui-form-spacing-row-gap);
+  margin-bottom: var(--eui-form-spacing-field-gap-external);
+}
+
+/* Responsive columns (if needed in future) */
+[data-eui-context] .eui-form-row[data-eui-columns="1"] {
+  --eui-form-row-columns: 1;
+}
+
+[data-eui-context] .eui-form-row[data-eui-columns="2"] {
+  --eui-form-row-columns: 2;
+}
+
+[data-eui-context] .eui-form-row[data-eui-columns="3"] {
+  --eui-form-row-columns: 3;
+}
+
+[data-eui-context] .eui-form-row[data-eui-columns="4"] {
+  --eui-form-row-columns: 4;
+}
+
+

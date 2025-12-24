@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "alert-banner": {
+      "border": {
+        "width": {
+          "$value": "1px",
+          "$type": "borderWidth",
+          "$description": "Bottom border width for alert banner"
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "borderStyle",
+          "$description": "Border style for alert banner"
+        }
+      }
+    }
+  }
+}
+
+

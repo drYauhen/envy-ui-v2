@@ -144,6 +144,19 @@
   --eui-button-label-base: var(--eui-button-accent-label-selected);
 }
 
+/* Icon slots styling */
+[data-eui-context] .eui-button [data-eui-slot="start-icon"],
+[data-eui-context] .eui-button [data-eui-slot="end-icon"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-eui-context] .eui-button [data-eui-slot="label"] {
+  flex: 1 1 auto;
+}
+
 [data-eui-context] .eui-button[data-eui-shape='round'] {
   --eui-button-corner-top-left: var(--eui-button-shape-pill-radius);
   --eui-button-corner-top-right: var(--eui-button-shape-pill-radius);

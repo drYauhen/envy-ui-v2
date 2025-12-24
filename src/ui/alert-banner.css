@@ -1,0 +1,162 @@
+/* Alert Banner Component - System-wide announcements above application */
+
+[data-eui-context] .eui-alert-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--eui-alert-banner-z-index);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--eui-alert-banner-spacing-padding);
+  background-color: var(--eui-alert-banner-colors-background-info);
+  border-bottom: var(--eui-alert-banner-border-width) var(--eui-alert-banner-border-style) var(--eui-alert-banner-colors-border-info);
+  color: var(--eui-alert-banner-colors-text-info);
+  gap: var(--eui-spacing-md);
+  min-height: var(--eui-alert-banner-spacing-height-min);
+}
+
+/* Hide when dismissed */
+[data-eui-context] .eui-alert-banner[data-eui-dismissed="true"] {
+  display: none;
+}
+
+/* Content area - flexible layout for any content */
+[data-eui-context] .eui-alert-banner-content {
+  display: flex;
+  align-items: center;
+  gap: var(--eui-alert-banner-spacing-gap-content);
+  flex: 1 1 auto;
+  min-width: 0; /* Allow flex children to shrink */
+}
+
+/* Icon - supports both default structure and slots */
+[data-eui-context] .eui-alert-banner-icon,
+[data-eui-context] .eui-alert-banner-content [data-eui-slot="icon"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Message area - supports both default structure and slots */
+[data-eui-context] .eui-alert-banner-message,
+[data-eui-context] .eui-alert-banner-content [data-eui-slot="content"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-spacing-xs);
+  flex: 1 1 auto;
+  min-width: 0; /* Allow flex children to shrink and wrap */
+}
+
+[data-eui-context] .eui-alert-banner-text {
+  margin: 0;
+  font-size: var(--eui-typography-body-size-base);
+  font-weight: var(--eui-typography-weight-normal);
+  line-height: var(--eui-typography-line-height-base);
+  color: inherit;
+}
+
+[data-eui-context] .eui-alert-banner-link {
+  color: inherit;
+  text-decoration: underline;
+  font-size: var(--eui-typography-body-size-sm);
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+[data-eui-context] .eui-alert-banner-link:hover {
+  opacity: 1;
+}
+
+/* Actions area - supports custom actions via slot */
+[data-eui-context] .eui-alert-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--eui-alert-banner-spacing-gap-actions);
+  flex-shrink: 0;
+}
+
+[data-eui-context] .eui-alert-banner-actions [data-eui-slot="actions"] {
+  display: flex;
+  align-items: center;
+  gap: var(--eui-spacing-sm);
+}
+
+/* Dismiss button */
+[data-eui-context] .eui-alert-banner-dismiss {
+  background: transparent;
+  border: none;
+  padding: var(--eui-spacing-xs);
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+[data-eui-context] .eui-alert-banner-dismiss:hover {
+  opacity: 1;
+}
+
+[data-eui-context] .eui-alert-banner-dismiss:focus-visible {
+  outline: 2px solid var(--eui-color-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--eui-radius-small);
+}
+
+/* Don't show again button */
+[data-eui-context] .eui-alert-banner-dont-show {
+  background: transparent;
+  border: none;
+  padding: var(--eui-spacing-xs) var(--eui-spacing-sm);
+  cursor: pointer;
+  color: inherit;
+  font-size: var(--eui-typography-body-size-sm);
+  text-decoration: underline;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+[data-eui-context] .eui-alert-banner-dont-show:hover {
+  opacity: 1;
+}
+
+[data-eui-context] .eui-alert-banner-dont-show:focus-visible {
+  outline: 2px solid var(--eui-color-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--eui-radius-small);
+}
+
+/* Variants */
+[data-eui-context] .eui-alert-banner[data-eui-variant="info"] {
+  background-color: var(--eui-alert-banner-colors-background-info);
+  border-color: var(--eui-alert-banner-colors-border-info);
+  color: var(--eui-alert-banner-colors-text-info);
+}
+
+[data-eui-context] .eui-alert-banner[data-eui-variant="warning"] {
+  background-color: var(--eui-alert-banner-colors-background-warning);
+  border-color: var(--eui-alert-banner-colors-border-warning);
+  color: var(--eui-alert-banner-colors-text-warning);
+}
+
+[data-eui-context] .eui-alert-banner[data-eui-variant="error"] {
+  background-color: var(--eui-alert-banner-colors-background-error);
+  border-color: var(--eui-alert-banner-colors-border-error);
+  color: var(--eui-alert-banner-colors-text-error);
+}
+
+[data-eui-context] .eui-alert-banner[data-eui-variant="success"] {
+  background-color: var(--eui-alert-banner-colors-background-success);
+  border-color: var(--eui-alert-banner-colors-border-success);
+  color: var(--eui-alert-banner-colors-text-success);
+}
+

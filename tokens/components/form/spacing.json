@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "form": {
+      "spacing": {
+        "field": {
+          "gap": {
+            "internal": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Gap between label, input, helper text within a field"
+            },
+            "external": {
+              "$value": "{eui.spacing.md}",
+              "$type": "dimension",
+              "$description": "Margin-bottom between form fields"
+            }
+          }
+        },
+        "section": {
+          "gap": {
+            "internal": {
+              "$value": "{eui.spacing.md}",
+              "$type": "dimension",
+              "$description": "Gap between fields within a section"
+            },
+            "external": {
+              "$value": "{eui.spacing.lg}",
+              "$type": "dimension",
+              "$description": "Margin-bottom between form sections"
+            },
+            "title": {
+              "$value": "{eui.spacing.md}",
+              "$type": "dimension",
+              "$description": "Margin-bottom between section title and first field"
+            }
+          },
+          "header": {
+            "padding": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Padding for collapsible section header"
+            }
+          }
+        },
+        "group": {
+          "gap": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Gap between items in a form group (checkboxes, radios)"
+          }
+        },
+        "row": {
+          "gap": {
+            "$value": "{eui.spacing.md}",
+            "$type": "dimension",
+            "$description": "Gap between columns in a form row"
+          }
+        }
+      },
+      "animation": {
+        "duration": {
+          "$value": "0.2s",
+          "$type": "duration",
+          "$description": "Animation duration for expand/collapse"
+        },
+        "easing": {
+          "$value": "ease-in-out",
+          "$type": "cubic-bezier",
+          "$description": "Animation easing function"
+        }
+      }
+    }
+  }
+}
+
+
