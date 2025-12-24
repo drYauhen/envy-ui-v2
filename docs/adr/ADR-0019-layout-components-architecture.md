@@ -14,7 +14,7 @@
 
 ## 1. Context
 
-The application requires global layout containers to structure the overall application shell. Based on the application structure, we need:
+The application requires global layout containers to structure the overall application shell. Based on the application structure, the system requires:
 
 - **Left vertical navigation sidebar** - Expandable/collapsible, brand-colored background
 - **Top application header** - Global header with user info, help, impersonation banner

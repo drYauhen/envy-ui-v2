@@ -51,7 +51,7 @@ I need a TSX component layer that:
 ### 3.2 Dependency strategy
 
 - Install `react-aria` and `react-stately` as meta-packages initially.
-- Defer granular packages until we have multiple components and a clearer bundle/ownership boundary.
+- Defer granular packages until I have multiple components and a clearer bundle/ownership boundary.
 
 ### 3.3 Component API strategy
 
@@ -91,7 +91,7 @@ Story order is enforced as: `Tokens` → `CSS` → `TSX`.
    - Rejected: the system should feel like a normal React component library first; DOM conventions are the current standard for consumers.
 
 3. **Do not emit state data attributes**
-   - Rejected: we want the CSS layer to be able to style based on either pseudo-classes or state attrs (and support non-standard rendering contexts later).
+   - Rejected: I want the CSS layer to be able to style based on either pseudo-classes or state attrs (and support non-standard rendering contexts later).
 
 ---
 
@@ -107,7 +107,7 @@ Story order is enforced as: `Tokens` → `CSS` → `TSX`.
 ### Trade-offs
 
 - Supporting both DOM and React Aria interaction props introduces short-term surface area.
-- Meta-packages may include more than we need; bundling concerns are deferred.
+- Meta-packages may include more than needed; bundling concerns are deferred.
 
 ---
 

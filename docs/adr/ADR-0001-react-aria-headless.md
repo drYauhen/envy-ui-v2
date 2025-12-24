@@ -70,7 +70,7 @@ React Aria is a strong fit for this model.
 
 ---
 
-## What We Use From React Aria
+## What I Use From React Aria
 
 ### Level 1 — Low-Level Primitives (Mandatory)
 
@@ -111,7 +111,7 @@ Notes:
 
 ---
 
-## What We Explicitly Do NOT Use
+## What I Explicitly Do NOT Use
 
 ### High-Level React Aria Components
 

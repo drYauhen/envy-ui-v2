@@ -15,7 +15,7 @@
 
 Elevation (shadows and visual depth) is a key tool for creating visual hierarchy in interfaces. Different components (Cards, Menus, Modals, Dropdowns, Tooltips) require different elevation levels for proper visual separation and functional hierarchy.
 
-**Problem:** We need to determine:
+**Problem:** The system needs to determine:
 - How to organize the elevation token system
 - Which elevation levels to use for different components
 - How elevation correlates with z-index

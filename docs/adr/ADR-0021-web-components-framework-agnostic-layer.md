@@ -31,7 +31,7 @@ The system's core principle is **token-first architecture**: design tokens (DTCG
 **Motivation:**
 Envy UI v2 is built with a **long-term perspective**: all architectural and design decisions must be **technology-agnostic and future-proof**. Business and design decisions should not be tied to any specific technology stack and should not become obsolete when that stack evolves or is replaced.
 
-To further validate the framework-agnostic nature of the system and demonstrate that tokens can project into **any** runtime environment, we are exploring **Web Components** as an additional implementation layer. This is a **long-term proof of concept** that:
+To further validate the framework-agnostic nature of the system and demonstrate that tokens can project into **any** runtime environment, I am exploring **Web Components** as an additional implementation layer. This is a **long-term proof of concept** that:
 
 1. Proves that the token system is truly technology-agnostic and will survive technology stack changes
 2. Ensures design decisions are decoupled from implementation frameworks
@@ -137,7 +137,7 @@ This demonstrates that Web Components are a **viable, enterprise-grade solution*
 
 **Ecosystem:**
 - Active ecosystem with libraries like Lit, Stencil, and others
-- However, vanilla Web Components (without libraries) are sufficient for our proof-of-concept
+- However, vanilla Web Components (without libraries) are sufficient for this proof-of-concept
 - Growing community and resources for Web Components development
 
 ### Technical Feasibility
@@ -182,7 +182,7 @@ const theme = this.closest('[data-eui-theme]')?.getAttribute('data-eui-theme');
 **3. SSR Considerations**
 - Shadow DOM requires JavaScript to render
 - **Modern solution:** Declarative Shadow DOM provides SSR support (growing browser support)
-- **Fallback:** For static HTML+CSS use cases, HTML+CSS layer remains the solution (as intended in our layered architecture)
+- **Fallback:** For static HTML+CSS use cases, HTML+CSS layer remains the solution (as intended in the layered architecture)
 
 **4. Framework Integration**
 - Some frameworks (especially React) require specific patterns for Web Components integration
@@ -193,7 +193,7 @@ const theme = this.closest('[data-eui-theme]')?.getAttribute('data-eui-theme');
 - Web Components are **established standard** for framework-agnostic design systems
 - **Proven track record:** Used in production by Microsoft, Adobe, Salesforce, Google
 - **Growing ecosystem:** Active development, improving tooling, and expanding community
-- **For our use case:** Aligning with industry leaders validates our framework-agnostic architecture approach
+- **For this use case:** Aligning with industry leaders validates the framework-agnostic architecture approach
 
 ---
 

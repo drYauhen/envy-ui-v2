@@ -80,7 +80,7 @@ Different layers suit different contexts; the system is intentionally **not tied
 
 ---
 
-## 7. What We’re Trying to Learn
+## 7. What I'm Trying to Learn
 
 - Can a token-driven model support semantic state (selected) and compositional grouping without entangling behavior?  
 - Do parallel layers meaningfully reduce coupling to any single stack (React Aria, etc.)?  
