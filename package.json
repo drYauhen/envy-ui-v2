@@ -11,7 +11,10 @@
     "storybook": "npm run tokens:build && storybook dev -p 6006",
     "build-storybook": "npm run storybook:build",
     "storybook:build": "npm run tokens:build && storybook build",
-    "figma:build": "esbuild figma-plugin/code.ts --bundle --format=iife --platform=browser --target=es2017 --outfile=figma-plugin/dist/code.js --loader:.html=text --loader:.json=json"
+    "figma:build": "esbuild figma-plugin/code.ts --bundle --format=iife --platform=browser --target=es2017 --outfile=figma-plugin/dist/code.js --loader:.html=text --loader:.json=json",
+    "icons:normalize": "node scripts/normalize-svg-icons.mjs",
+    "icons:generate": "node scripts/generate-icons.mjs",
+    "icons:process": "npm run icons:normalize && npm run icons:generate"
   },
   "keywords": [],
   "author": "",
@@ -25,14 +28,19 @@
     "@storybook/addon-a11y": "^10.1.9",
     "@storybook/addon-docs": "^10.1.9",
     "@storybook/react-vite": "^10.1.9",
+    "@svgr/core": "^8.1.0",
+    "@tanstack/react-query": "^5.90.12",
     "@types/node": "^25.0.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "cheerio": "^1.1.2",
     "esbuild": "^0.27.1",
     "ignore": "^7.0.5",
+    "msw": "^2.12.4",
     "prism-react-renderer": "^2.4.1",
     "storybook": "^10.1.9",
     "style-dictionary": "^5.1.1",
+    "svg-path-parser": "^1.1.0",
     "typescript": "^5.9.3",
     "vite-plugin-svgr": "^4.5.0"
   },
@@ -42,5 +50,10 @@
     "react-aria": "^3.45.0",
     "react-dom": "^19.2.3",
     "react-stately": "^3.43.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
