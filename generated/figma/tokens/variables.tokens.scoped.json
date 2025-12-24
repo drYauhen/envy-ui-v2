@@ -69,6 +69,121 @@
           "value": "#f59e0b"
         },
         {
+          "path": "eui.calendar.colors.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.active",
+          "type": "COLOR",
+          "value": "#f1f8ff"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.default",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.disabled",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.hover",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.outsideMonth",
+          "type": "COLOR",
+          "value": "#f8fafc"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.selected",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.selectedHover",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.calendar.colors.day.background.today",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.calendar.colors.day.border.default",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.calendar.colors.day.border.selected",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.calendar.colors.day.text.default",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.calendar.colors.day.text.disabled",
+          "type": "COLOR",
+          "value": "#a3a3a3"
+        },
+        {
+          "path": "eui.calendar.colors.day.text.outsideMonth",
+          "type": "COLOR",
+          "value": "#525252"
+        },
+        {
+          "path": "eui.calendar.colors.day.text.selected",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.calendar.colors.day.text.today",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.calendar.colors.header.background",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.calendar.colors.header.button.hover.background",
+          "type": "COLOR",
+          "value": "#f1f2f7"
+        },
+        {
+          "path": "eui.calendar.colors.header.button.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.calendar.colors.header.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.calendar.colors.range.background",
+          "type": "COLOR",
+          "value": "#f1f8ff"
+        },
+        {
+          "path": "eui.calendar.colors.range.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.calendar.colors.weekday.text",
+          "type": "COLOR",
+          "value": "#525252"
+        },
+        {
           "path": "eui.content.colors.background",
           "type": "COLOR",
           "value": "#ffffff"
@@ -331,7 +446,7 @@
         {
           "path": "eui.table.colors.border",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "#cccccc"
         },
         {
           "path": "eui.table.colors.cell.text",
@@ -356,12 +471,22 @@
         {
           "path": "eui.table.colors.row.background.hover",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "#e5e7eb"
         },
         {
           "path": "eui.table.colors.row.background.selected",
           "type": "COLOR",
+          "value": "#f1f8ff"
+        },
+        {
+          "path": "eui.table.colors.subheader.background",
+          "type": "COLOR",
           "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.table.colors.subheader.text",
+          "type": "COLOR",
+          "value": "#1b1b1b"
         },
         {
           "path": "eui.title-bar.colors.background",
@@ -1423,6 +1548,125 @@
           "path": "eui.switch.focus.ring.color.derived.base",
           "type": "COLOR",
           "value": "#2ea7d1"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Calendar",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.calendar.border.radius.calendar",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.calendar.border.radius.day",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.calendar.border.width",
+          "type": "FLOAT",
+          "value": 1,
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.calendar.size.day.aspectRatio",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.calendar.size.day.minHeight",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.calendar.size.day.width",
+          "type": "FLOAT",
+          "value": 14.285714286,
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.calendar.size.minWidth",
+          "type": "FLOAT",
+          "value": 250
+        },
+        {
+          "path": "eui.calendar.size.weekday.width",
+          "type": "FLOAT",
+          "value": 14.285714286,
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.calendar.size.width",
+          "type": "FLOAT",
+          "value": 280
+        },
+        {
+          "path": "eui.calendar.spacing.day.margin.overlap",
+          "type": "FLOAT",
+          "value": -1
+        },
+        {
+          "path": "eui.calendar.spacing.day.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.calendar.spacing.day.padding.vertical",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.calendar.spacing.grid.gap",
+          "type": "FLOAT",
+          "value": 0,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.calendar.spacing.header.gap",
+          "type": "FLOAT",
+          "value": 0.5,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.calendar.spacing.header.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.calendar.spacing.header.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.calendar.spacing.padding",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.calendar.spacing.weekday.gap",
+          "type": "FLOAT",
+          "value": 0,
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.calendar.spacing.weekday.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
         }
       ]
     },
@@ -2739,12 +2983,20 @@
         {
           "path": "eui.table.spacing.cell.padding.horizontal",
           "type": "FLOAT",
-          "value": 1
+          "value": 0
         },
         {
-          "path": "eui.table.spacing.cell.padding.vertical",
+          "path": "eui.table.spacing.cell.padding.right",
           "type": "FLOAT",
-          "value": 0.75
+          "value": 10,
+          "scopes": [
+            "PADDING_HORIZONTAL"
+          ]
+        },
+        {
+          "path": "eui.table.spacing.header.height",
+          "type": "FLOAT",
+          "value": 50
         },
         {
           "path": "eui.table.spacing.header.padding.horizontal",
@@ -2754,7 +3006,7 @@
         {
           "path": "eui.table.spacing.header.padding.vertical",
           "type": "FLOAT",
-          "value": 0.75
+          "value": 5
         },
         {
           "path": "eui.table.spacing.row.gap",
@@ -2763,6 +3015,21 @@
           "scopes": [
             "ITEM_SPACING"
           ]
+        },
+        {
+          "path": "eui.table.spacing.row.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.table.spacing.subheader.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.table.spacing.subheader.padding.vertical",
+          "type": "FLOAT",
+          "value": 5
         }
       ]
     },
