@@ -107,3 +107,65 @@
   border-style: dashed;
 }
 
+/* ============================================================================
+   Input in Group (bare variant - no border, transparent background)
+   ============================================================================ */
+
+/* When input is inside InputGroup, remove border and background */
+[data-eui-context] .eui-input-group .eui-input {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Restore padding for input in group */
+[data-eui-context] .eui-input-group .eui-input {
+  padding-left: var(--eui-input-size-md-padding-inline);
+  padding-right: var(--eui-input-size-md-padding-inline);
+}
+
+/* Size-specific padding for input in group */
+[data-eui-context] .eui-input-group .eui-input[data-eui-size="sm"] {
+  padding-left: var(--eui-input-size-sm-padding-inline);
+  padding-right: var(--eui-input-size-sm-padding-inline);
+}
+
+[data-eui-context] .eui-input-group .eui-input[data-eui-size="md"] {
+  padding-left: var(--eui-input-size-md-padding-inline);
+  padding-right: var(--eui-input-size-md-padding-inline);
+}
+
+[data-eui-context] .eui-input-group .eui-input[data-eui-size="lg"] {
+  padding-left: var(--eui-input-size-lg-padding-inline);
+  padding-right: var(--eui-input-size-lg-padding-inline);
+}
+
+/* Adjust padding when prefix/suffix present */
+[data-eui-context] .eui-input-group:has(.eui-input-prefix) .eui-input {
+  padding-left: var(--eui-input-group-spacing-input-padding-left);
+}
+
+[data-eui-context] .eui-input-group:has(.eui-input-suffix) .eui-input {
+  padding-right: var(--eui-input-group-spacing-input-padding-right);
+}
+
+/* Focus states for input in group - no box-shadow, handled by group */
+[data-eui-context] .eui-input-group .eui-input:focus,
+[data-eui-context] .eui-input-group .eui-input:focus-visible {
+  box-shadow: none;
+  z-index: 1;
+}
+
+/* Disabled state - handled by group */
+[data-eui-context] .eui-input-group .eui-input:disabled {
+  background-color: transparent;
+  border: none;
+}
+
+/* Error state - handled by group */
+[data-eui-context] .eui-input-group .eui-input[data-eui-state="error"] {
+  border: none;
+}
+
