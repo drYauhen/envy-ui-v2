@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "select": {
+      "primitive": {
+        "trigger": {
+          "spacing": {
+            "gap": {
+              "$value": "{eui.spacing.xs}",
+              "$type": "dimension",
+              "$description": "Gap between trigger content elements (value and chevron)"
+            }
+          }
+        },
+        "popover": {
+          "spacing": {
+            "padding": {
+              "$value": "{eui.menu.spacing.list.padding}",
+              "$type": "dimension",
+              "$description": "Padding inside popover container. Matches menu for consistency."
+            }
+          },
+          "size": {
+            "min-width": {
+              "$value": "100%",
+              "$type": "dimension",
+              "$description": "Minimum width of popover (matches trigger width)"
+            },
+            "max-height": {
+              "$value": "300px",
+              "$type": "dimension",
+              "$description": "Maximum height before scrolling"
+            }
+          }
+        },
+        "listbox": {
+          "spacing": {
+            "gap": {
+              "$value": "{eui.menu.spacing.item.gap}",
+              "$type": "dimension",
+              "$description": "Gap between options. Matches menu for consistency."
+            }
+          }
+        },
+        "option": {
+          "spacing": {
+            "padding": {
+              "horizontal": {
+                "$value": "{eui.menu.spacing.item.padding.horizontal}",
+                "$type": "dimension",
+                "$description": "Horizontal padding for option. Matches menu item for consistency."
+              },
+              "vertical": {
+                "$value": "{eui.menu.spacing.item.padding.vertical}",
+                "$type": "dimension",
+                "$description": "Vertical padding for option. Matches menu item for consistency."
+              }
+            }
+          },
+          "shape": {
+            "radius": {
+              "$value": "{eui.radius.default}",
+              "$type": "dimension",
+              "$description": "Border radius for option. Matches menu item for consistency."
+            }
+          }
+        },
+        "badge": {
+          "spacing": {
+            "gap": {
+              "$value": "{eui.spacing.xs}",
+              "$type": "dimension",
+              "$description": "Gap between badges in MultiSelect trigger"
+            },
+            "padding": {
+              "horizontal": {
+                "$value": "{eui.spacing.xs}",
+                "$type": "dimension",
+                "$description": "Horizontal padding for badge"
+              },
+              "vertical": {
+                "$value": "2px",
+                "$type": "dimension",
+                "$description": "Vertical padding for badge"
+              }
+            }
+          },
+          "shape": {
+            "radius": {
+              "$value": "{eui.radius.small}",
+              "$type": "dimension",
+              "$description": "Border radius for badge"
+            }
+          },
+          "colors": {
+            "background": {
+              "$value": "{eui.color.background.subtle}",
+              "$type": "color",
+              "$description": "Background color for badge"
+            },
+            "text": {
+              "$value": "{eui.color.text.primary}",
+              "$type": "color",
+              "$description": "Text color for badge"
+            },
+            "remove": {
+              "icon": {
+                "$value": "{eui.color.text.subtle}",
+                "$type": "color",
+                "$description": "Color for remove icon in badge"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

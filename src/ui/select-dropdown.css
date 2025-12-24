@@ -1,0 +1,129 @@
+/* Select Dropdown Component - Custom dropdown for TSX + React Aria layer */
+
+/* Dropdown container (Popover) */
+[data-eui-context] .eui-select-popover {
+  position: absolute;
+  z-index: var(--eui-select-dropdown-z-index);
+  background-color: var(--eui-select-dropdown-background);
+  border: var(--eui-select-dropdown-border-width) var(--eui-select-dropdown-border-style) var(--eui-select-dropdown-border-color);
+  border-radius: var(--eui-select-dropdown-radius);
+  box-shadow: var(--eui-select-dropdown-shadow);
+  padding: var(--eui-select-dropdown-padding);
+  min-width: 100%;
+  max-height: var(--eui-select-dropdown-max-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ListBox container */
+[data-eui-context] .eui-select-listbox {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/* Option item */
+[data-eui-context] .eui-select-option {
+  display: flex;
+  align-items: center;
+  padding: var(--eui-select-option-padding-vertical) var(--eui-select-option-padding-horizontal);
+  cursor: pointer;
+  color: var(--eui-select-option-color-default);
+  background-color: var(--eui-select-option-background-default);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  outline: none;
+  user-select: none;
+  border-radius: var(--eui-radius-default);
+}
+
+/* Option hover state */
+[data-eui-context] .eui-select-option:hover:not([aria-disabled="true"]) {
+  background-color: var(--eui-select-option-background-hover);
+}
+
+/* Option focused state */
+[data-eui-context] .eui-select-option[data-eui-focused="true"] {
+  background-color: var(--eui-select-option-background-focused);
+}
+
+/* Option selected state */
+[data-eui-context] .eui-select-option[data-eui-selected="true"] {
+  background-color: var(--eui-select-option-background-selected);
+  font-weight: var(--eui-typography-weight-medium);
+}
+
+/* Option selected + focused state */
+[data-eui-context] .eui-select-option[data-eui-selected="true"][data-eui-focused="true"] {
+  background-color: var(--eui-select-option-background-selected);
+}
+
+/* Option disabled state */
+[data-eui-context] .eui-select-option[aria-disabled="true"] {
+  color: var(--eui-select-option-color-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Select trigger (button) - extends input styles */
+[data-eui-context] .eui-select-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  gap: var(--eui-spacing-xs);
+  /* Remove native browser select arrow - we use our own Icon */
+  background-image: none !important;
+  padding-right: var(--eui-input-size-md-padding-inline) !important;
+}
+
+/* Size variants for trigger padding */
+[data-eui-context] .eui-select-trigger[data-eui-size="sm"] {
+  padding-right: var(--eui-input-size-sm-padding-inline) !important;
+}
+
+[data-eui-context] .eui-select-trigger[data-eui-size="md"] {
+  padding-right: var(--eui-input-size-md-padding-inline) !important;
+}
+
+[data-eui-context] .eui-select-trigger[data-eui-size="lg"] {
+  padding-right: var(--eui-input-size-lg-padding-inline) !important;
+}
+
+[data-eui-context] .eui-select-trigger[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Selected value display */
+[data-eui-context] .eui-select-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-eui-context] .eui-select-value[data-placeholder="true"] {
+  color: var(--eui-color-text-secondary);
+}
+
+/* Chevron icon */
+[data-eui-context] .eui-select-chevron {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: var(--eui-color-text-secondary);
+}
+
+[data-eui-context] .eui-select-trigger[aria-expanded="true"] .eui-select-chevron {
+  transform: rotate(180deg);
+}
+
+/* Select wrapper */
+[data-eui-context] .eui-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+

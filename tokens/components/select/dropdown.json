@@ -1,0 +1,110 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "select": {
+      "dropdown": {
+        "background": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color for select dropdown"
+        },
+        "border": {
+          "width": {
+            "$value": "1px",
+            "$type": "borderWidth",
+            "$description": "Border width for select dropdown"
+          },
+          "style": {
+            "$value": "solid",
+            "$type": "borderStyle",
+            "$description": "Border style for select dropdown"
+          },
+          "color": {
+            "$value": "{eui.color.border.subtle}",
+            "$type": "color",
+            "$description": "Border color for select dropdown. Subtle border for floating elements (less aggressive than card border)."
+          }
+        },
+        "shadow": {
+          "$value": "{eui.shadow.large}",
+          "$type": "shadow",
+          "$description": "Shadow for select dropdown (elevation)"
+        },
+        "radius": {
+          "$value": "{eui.radius.default}",
+          "$type": "dimension",
+          "$description": "Border radius for select dropdown"
+        },
+        "padding": {
+          "$value": "{eui.menu.spacing.list.padding}",
+          "$type": "dimension",
+          "$description": "Padding inside dropdown container. Matches menu list padding for consistency."
+        },
+        "max-height": {
+          "$value": "300px",
+          "$type": "dimension",
+          "$description": "Maximum height of dropdown before scrolling"
+        },
+        "z-index": {
+          "$value": "1000",
+          "$type": "number",
+          "$description": "Z-index for dropdown overlay"
+        }
+      },
+      "option": {
+        "padding": {
+          "horizontal": {
+            "$value": "{eui.menu.spacing.item.padding.horizontal}",
+            "$type": "dimension",
+            "$description": "Horizontal padding for select option. Matches menu item padding for consistency."
+          },
+          "vertical": {
+            "$value": "{eui.menu.spacing.item.padding.vertical}",
+            "$type": "dimension",
+            "$description": "Vertical padding for select option. Matches menu item padding for consistency."
+          }
+        },
+        "background": {
+          "default": {
+            "$value": "transparent",
+            "$type": "color",
+            "$description": "Default background for option"
+          },
+          "hover": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Background for option on hover"
+          },
+          "focused": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Background for option when focused"
+          },
+          "selected": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Background for selected option. Matches menu item selected background for consistency."
+          },
+          "selected-focused": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Background for selected option when focused. Matches menu item selected background for consistency."
+          }
+        },
+        "color": {
+          "default": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Text color for option"
+          },
+          "disabled": {
+            "$value": "{eui.color.text.disabled}",
+            "$type": "color",
+            "$description": "Text color for disabled option"
+          }
+        }
+      }
+    }
+  }
+}
+

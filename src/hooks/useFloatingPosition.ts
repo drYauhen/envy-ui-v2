@@ -19,7 +19,7 @@
 
 import { useFloating, autoUpdate, offset, flip, shift, Placement } from '@floating-ui/react';
 import { useClick, useDismiss, useInteractions } from '@floating-ui/react';
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export interface UseFloatingPositionOptions {
   /** Whether the floating element is open */
@@ -36,6 +36,8 @@ export interface UseFloatingPositionOptions {
   escapeKeyToClose?: boolean;
   /** Whether clicking the reference toggles the floating element */
   clickToToggle?: boolean;
+  /** External reference ref (if provided, will be used instead of internal ref) */
+  referenceRef?: React.RefObject<HTMLElement> | ((node: HTMLElement | null) => void);
 }
 
 export interface UseFloatingPositionReturn {
@@ -67,7 +69,8 @@ export function useFloatingPosition(
     offset: offsetValue = 8,
     clickOutsideToClose = true,
     escapeKeyToClose = true,
-    clickToToggle = true
+    clickToToggle = true,
+    referenceRef: externalReferenceRef
   } = options;
 
   const { refs, floatingStyles, context } = useFloating({
@@ -84,17 +87,57 @@ export function useFloatingPosition(
         padding: 8,
         crossAxis: true
       })
-    ],
-    whileElementsMounted: autoUpdate
+    ]
   });
 
+  // Sync external referenceRef with Floating UI's internal ref
+  // Use useLayoutEffect to sync synchronously before paint
+  React.useLayoutEffect(() => {
+    if (externalReferenceRef && typeof externalReferenceRef !== 'function') {
+      // If it's a RefObject, sync its current value with Floating UI
+      if (externalReferenceRef.current) {
+        refs.setReference(externalReferenceRef.current);
+      }
+    }
+  }, [externalReferenceRef, refs.setReference, isOpen]);
+
+  // Create a callback ref that syncs both external and internal refs
+  // This is used when externalReferenceRef is provided as a callback or RefObject
+  const syncReferenceRef = React.useCallback((node: HTMLElement | null) => {
+    // Set Floating UI's internal ref
+    refs.setReference(node);
+    
+    // Also sync with external ref if provided
+    if (externalReferenceRef) {
+      if (typeof externalReferenceRef === 'function') {
+        externalReferenceRef(node);
+      } else {
+        // For RefObject, update its current value
+        (externalReferenceRef as React.MutableRefObject<HTMLElement | null>).current = node;
+      }
+    }
+  }, [externalReferenceRef, refs.setReference]);
+
+  // Enable autoUpdate when both refs are available
+  useEffect(() => {
+    if (!isOpen || !refs.reference.current || !refs.floating.current) {
+      return;
+    }
+
+    const cleanup = autoUpdate(refs.reference.current, refs.floating.current, () => {
+      context.update();
+    });
+
+    return cleanup;
+  }, [isOpen, refs.reference, refs.floating, context]);
+
+  // Enable interactions
   const click = useClick(context, {
     enabled: clickToToggle
   });
 
   const dismiss = useDismiss(context, {
     enabled: clickOutsideToClose || escapeKeyToClose,
-    outsidePress: clickOutsideToClose,
     escapeKey: escapeKeyToClose
   });
 
@@ -104,7 +147,7 @@ export function useFloatingPosition(
   ]);
 
   return {
-    referenceRef: refs.setReference,
+    referenceRef: externalReferenceRef ? syncReferenceRef : refs.setReference,
     floatingRef: refs.setFloating,
     floatingStyles,
     getReferenceProps,

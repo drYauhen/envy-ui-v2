@@ -1,0 +1,222 @@
+/* Select Primitives - Shared building blocks for Select components */
+
+/* ============================================================================
+   SelectTrigger - Button/input that opens the dropdown
+   ============================================================================ */
+
+[data-eui-context] .eui-select-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  gap: var(--eui-select-primitive-trigger-spacing-gap);
+  /* Remove native browser select arrow - we use our own Icon */
+  background-image: none !important;
+  padding-right: var(--eui-input-size-md-padding-inline) !important;
+}
+
+/* Size variants for trigger padding */
+[data-eui-context] .eui-select-trigger[data-eui-size="sm"] {
+  padding-right: var(--eui-input-size-sm-padding-inline) !important;
+}
+
+[data-eui-context] .eui-select-trigger[data-eui-size="md"] {
+  padding-right: var(--eui-input-size-md-padding-inline) !important;
+}
+
+[data-eui-context] .eui-select-trigger[data-eui-size="lg"] {
+  padding-right: var(--eui-input-size-lg-padding-inline) !important;
+}
+
+[data-eui-context] .eui-select-trigger[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Selected value display */
+[data-eui-context] .eui-select-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-eui-context] .eui-select-value[data-placeholder="true"] {
+  color: var(--eui-color-text-subtle);
+}
+
+/* Chevron icon */
+[data-eui-context] .eui-select-chevron {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: var(--eui-color-text-subtle);
+}
+
+[data-eui-context] .eui-select-trigger[aria-expanded="true"] .eui-select-chevron {
+  transform: rotate(180deg);
+}
+
+/* ============================================================================
+   SelectPopover - Dropdown container
+   ============================================================================ */
+
+[data-eui-context] .eui-select-popover {
+  position: absolute;
+  z-index: var(--eui-select-dropdown-z-index);
+  background-color: var(--eui-select-dropdown-background);
+  border: var(--eui-select-dropdown-border-width) var(--eui-select-dropdown-border-style) var(--eui-select-dropdown-border-color);
+  border-radius: var(--eui-select-dropdown-radius);
+  box-shadow: var(--eui-select-dropdown-shadow);
+  padding: var(--eui-select-primitive-popover-spacing-padding);
+  min-width: var(--eui-select-primitive-popover-size-min-width);
+  max-height: var(--eui-select-primitive-popover-size-max-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ============================================================================
+   SelectListBox - List container
+   ============================================================================ */
+
+[data-eui-context] .eui-select-listbox {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-select-primitive-listbox-spacing-gap);
+}
+
+/* ============================================================================
+   SelectOption - Individual option item
+   ============================================================================ */
+
+[data-eui-context] .eui-select-option {
+  display: flex;
+  align-items: center;
+  padding: var(--eui-select-primitive-option-spacing-padding-vertical) var(--eui-select-primitive-option-spacing-padding-horizontal);
+  cursor: pointer;
+  color: var(--eui-select-option-color-default);
+  background-color: var(--eui-select-option-background-default);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  outline: none;
+  user-select: none;
+  border-radius: var(--eui-select-primitive-option-shape-radius);
+}
+
+/* Option hover state */
+[data-eui-context] .eui-select-option:hover:not([aria-disabled="true"]) {
+  background-color: var(--eui-select-option-background-hover);
+}
+
+/* Option focused state */
+[data-eui-context] .eui-select-option[data-eui-focused="true"] {
+  background-color: var(--eui-select-option-background-focused);
+}
+
+/* Option selected state */
+[data-eui-context] .eui-select-option[data-eui-selected="true"] {
+  background-color: var(--eui-select-option-background-selected);
+  font-weight: var(--eui-typography-weight-medium);
+}
+
+/* Option selected + focused state */
+[data-eui-context] .eui-select-option[data-eui-selected="true"][data-eui-focused="true"] {
+  background-color: var(--eui-select-option-background-selected-focused);
+}
+
+/* Option disabled state */
+[data-eui-context] .eui-select-option[aria-disabled="true"] {
+  color: var(--eui-select-option-color-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Empty state (no results found) */
+[data-eui-context] .eui-select-option[data-eui-state="empty"] {
+  color: var(--eui-color-text-subtle);
+  cursor: default;
+  font-style: italic;
+  text-align: center;
+  padding: var(--eui-spacing-md);
+  background-color: transparent;
+}
+
+/* Option with checkbox (for MultiSelect) */
+[data-eui-context] .eui-select-option-checkbox {
+  margin-right: var(--eui-spacing-sm);
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   SelectBadge - Badge for selected items in MultiSelect
+   ============================================================================ */
+
+[data-eui-context] .eui-select-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--eui-spacing-xs);
+  padding: var(--eui-select-primitive-badge-spacing-padding-vertical) var(--eui-select-primitive-badge-spacing-padding-horizontal);
+  background-color: var(--eui-select-primitive-badge-colors-background);
+  color: var(--eui-select-primitive-badge-colors-text);
+  border-radius: var(--eui-select-primitive-badge-shape-radius);
+  font-size: var(--eui-typography-body-size-sm);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+[data-eui-context] .eui-select-badge-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--eui-select-primitive-badge-colors-remove-icon);
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+  padding: 0;
+  background: none;
+  border: none;
+  margin-left: var(--eui-spacing-xs);
+  line-height: 1;
+}
+
+[data-eui-context] .eui-select-badge-remove:hover {
+  opacity: 1;
+}
+
+[data-eui-context] .eui-select-badge-remove:focus-visible {
+  outline: 2px solid var(--eui-color-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--eui-radius-small);
+}
+
+/* Badge container (for multiple badges) */
+[data-eui-context] .eui-select-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--eui-select-primitive-badge-spacing-gap);
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Badge count (for "+N" indicator) */
+[data-eui-context] .eui-select-badge-count {
+  color: var(--eui-color-text-subtle);
+  font-size: var(--eui-typography-body-size-sm);
+  line-height: 1;
+}
+
+/* ============================================================================
+   SelectWrapper - Container for select component
+   ============================================================================ */
+
+[data-eui-context] .eui-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
