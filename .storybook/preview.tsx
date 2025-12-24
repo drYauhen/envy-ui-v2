@@ -131,6 +131,10 @@ export const parameters: Preview['parameters'] = {
             { components: ["Select", "MultiSelect", "SearchableSelect"] }
           ],
           otherComponents: ["AlertBanner", "Button", "FormLayout", "Icon", "Menu"]
+        },
+        "Web Components": {
+          componentGroups: [],
+          otherComponents: ["Button"]
         }
       };
       
@@ -141,7 +145,7 @@ export const parameters: Preview['parameters'] = {
       const aSection = aParts[0] || '';
       const bSection = bParts[0] || '';
       
-      const sectionOrder = ['Tokens', 'HTML + CSS', 'TSX (Clean)', 'TSX', 'TSX + React Aria', 'Architecture'];
+      const sectionOrder = ['Docs', 'Tokens', 'HTML + CSS', 'TSX (Clean)', 'TSX', 'TSX + React Aria', 'Web Components', 'Architecture'];
       const aSectionIndex = sectionOrder.indexOf(aSection);
       const bSectionIndex = sectionOrder.indexOf(bSection);
       

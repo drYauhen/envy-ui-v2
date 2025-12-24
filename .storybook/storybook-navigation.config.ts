@@ -58,6 +58,13 @@ export default {
         "Icon",
         "Menu"
       ]
+    },
+    "Web Components": {
+      path: "Web Components/Components",
+      componentGroups: [],
+      otherComponents: [
+        "Button"
+      ]
     }
   }
 } as const;

@@ -26,6 +26,16 @@ const config: StorybookConfig = {
         },
       })
     );
+    
+    // Ensure static files from docs/ are served
+    // This allows fetch() to load markdown files
+    if (config.server) {
+      config.server.fs = {
+        ...config.server.fs,
+        allow: ['..']
+      };
+    }
+    
     return config;
   },
 };
