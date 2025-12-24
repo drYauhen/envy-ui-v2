@@ -5,12 +5,17 @@
         "width": {
           "$value": "1px",
           "$type": "dimension",
-          "$description": "Border width for table cells and table itself."
+          "$description": "Border width for horizontal separators only (header, subheader, rows). No vertical borders between cells."
         },
         "radius": {
           "$value": "0px",
           "$type": "dimension",
           "$description": "Border radius for table (typically 0 for standard table appearance)."
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "string",
+          "$description": "Border style for table separators."
         }
       }
     }

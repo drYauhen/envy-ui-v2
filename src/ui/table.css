@@ -1,11 +1,11 @@
 /* Table Component Styles */
+/* Based on old system: flexbox layout, only horizontal borders (no vertical dividers between cells) */
 
 [data-eui-context] .eui-table {
   width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
+  display: flex;
+  flex-direction: column;
   background-color: var(--eui-table-colors-background);
-  border: var(--eui-table-border-width) solid var(--eui-table-colors-border);
   border-radius: var(--eui-table-border-radius);
   overflow: hidden;
 }
@@ -13,19 +13,29 @@
 /* Table Header */
 [data-eui-context] .eui-table thead {
   background-color: var(--eui-table-colors-header-background);
+  border-top: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
+  border-bottom: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
+}
+
+[data-eui-context] .eui-table thead tr {
+  display: flex;
+  height: var(--eui-table-spacing-header-height);
+  flex: 0 0 var(--eui-table-spacing-header-height);
+  padding: var(--eui-table-spacing-header-padding-vertical) 0;
+  overflow: hidden;
 }
 
 [data-eui-context] .eui-table th {
-  padding: var(--eui-table-spacing-header-padding-vertical) var(--eui-table-spacing-header-padding-horizontal);
+  padding: 0 var(--eui-table-spacing-header-padding-horizontal);
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
   text-align: left;
   font-weight: 600;
   color: var(--eui-table-colors-header-text);
-  border-bottom: var(--eui-table-border-width) solid var(--eui-table-colors-border);
-  border-right: var(--eui-table-border-width) solid var(--eui-table-colors-border);
-}
-
-[data-eui-context] .eui-table th:last-child {
-  border-right: none;
+  overflow: hidden;
+  line-height: normal;
 }
 
 /* Table Body */
@@ -34,24 +44,25 @@
 }
 
 [data-eui-context] .eui-table td {
-  padding: var(--eui-table-spacing-cell-padding-vertical) var(--eui-table-spacing-cell-padding-horizontal);
+  padding: 0 var(--eui-table-spacing-cell-padding-horizontal);
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
   color: var(--eui-table-colors-cell-text);
-  border-bottom: var(--eui-table-border-width) solid var(--eui-table-colors-border);
-  border-right: var(--eui-table-border-width) solid var(--eui-table-colors-border);
-  vertical-align: top;
-}
-
-[data-eui-context] .eui-table td:last-child {
-  border-right: none;
-}
-
-[data-eui-context] .eui-table tbody tr:last-child td {
-  border-bottom: none;
+  overflow: hidden;
+  line-height: normal;
 }
 
 /* Table Row States */
 [data-eui-context] .eui-table tbody tr {
+  display: flex;
   background-color: var(--eui-table-colors-row-background-default);
+  border-bottom: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
+  height: var(--eui-table-spacing-row-height);
+  flex: 0 0 var(--eui-table-spacing-row-height);
+  overflow: hidden;
+  max-width: 100%;
   transition: background-color 0.15s ease;
 }
 
@@ -63,54 +74,19 @@
   background-color: var(--eui-table-colors-row-background-selected);
 }
 
-/* Folder Rows (Collapsible) */
-[data-eui-context] .eui-table tbody tr[data-eui-folder="true"] {
-  cursor: pointer;
+/* Subheader Styles */
+[data-eui-context] .eui-table tbody tr[data-eui-subheader="true"] {
+  display: flex;
+  background-color: var(--eui-table-colors-subheader-background);
+  border-bottom: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
+  flex: 0 0 auto;
+  padding: var(--eui-table-spacing-subheader-padding-vertical) 0;
+  overflow: hidden;
 }
 
-[data-eui-context] .eui-table tbody tr[data-eui-folder="true"] td:first-child {
-  position: relative;
-  padding-left: calc(var(--eui-table-spacing-cell-padding-horizontal) + var(--eui-table-folder-icon-size) + var(--eui-table-folder-icon-gap));
-}
-
-/* Folder Icon */
-[data-eui-context] .eui-table tbody tr[data-eui-folder="true"] td:first-child::before {
-  content: '';
-  position: absolute;
-  left: var(--eui-table-spacing-cell-padding-horizontal);
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--eui-table-folder-icon-size);
-  height: var(--eui-table-folder-icon-size);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23666' d='M6 4l-4 4 4 4 1.41-1.41L4.83 8l2.58-2.59L6 4z'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform var(--eui-table-folder-animation-duration) var(--eui-table-folder-animation-easing);
-}
-
-[data-eui-context] .eui-table tbody tr[data-eui-folder="true"][data-eui-expanded="true"] td:first-child::before {
-  transform: translateY(-50%) rotate(90deg);
-}
-
-/* Nested Folder Rows (Indentation) */
-[data-eui-context] .eui-table tbody tr[data-eui-folder-level="1"] td:first-child {
-  padding-left: calc(var(--eui-table-spacing-cell-padding-horizontal) + var(--eui-table-folder-icon-size) + var(--eui-table-folder-icon-gap) + var(--eui-table-folder-indent-level));
-}
-
-[data-eui-context] .eui-table tbody tr[data-eui-folder-level="2"] td:first-child {
-  padding-left: calc(var(--eui-table-spacing-cell-padding-horizontal) + var(--eui-table-folder-icon-size) + var(--eui-table-folder-icon-gap) + var(--eui-table-folder-indent-level) * 2);
-}
-
-[data-eui-context] .eui-table tbody tr[data-eui-folder-level="3"] td:first-child {
-  padding-left: calc(var(--eui-table-spacing-cell-padding-horizontal) + var(--eui-table-folder-icon-size) + var(--eui-table-folder-icon-gap) + var(--eui-table-folder-indent-level) * 3);
-}
-
-/* Collapsed Folder Children (Hidden) */
-/* Note: This is handled by React/JS logic - CSS only provides visual styling */
-/* When a folder is collapsed, child rows should not be rendered or should have display: none */
-[data-eui-context] .eui-table tbody tr[data-eui-folder-parent-collapsed="true"] {
-  display: none;
+[data-eui-context] .eui-table tbody tr[data-eui-subheader="true"] td {
+  font-weight: 600;
+  color: var(--eui-table-colors-subheader-text);
 }
 
 /* Expandable Cell */

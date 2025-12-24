@@ -5,18 +5,23 @@
         "cell": {
           "padding": {
             "horizontal": {
-              "$value": "1rem",
+              "$value": "0",
               "$type": "dimension",
-              "$description": "Horizontal padding for table cells."
+              "$description": "Left padding for table cells (from old system: handled by flex classes)."
             },
-            "vertical": {
-              "$value": "0.75rem",
+            "right": {
+              "$value": "10px",
               "$type": "dimension",
-              "$description": "Vertical padding for table cells."
+              "$description": "Right padding for table cell content (from old system: padding-right: 10px)."
             }
           }
         },
         "header": {
+          "height": {
+            "$value": "50px",
+            "$type": "dimension",
+            "$description": "Fixed height for table header row (from old system)."
+          },
           "padding": {
             "horizontal": {
               "$value": "1rem",
@@ -24,13 +29,32 @@
               "$description": "Horizontal padding for table header cells."
             },
             "vertical": {
-              "$value": "0.75rem",
+              "$value": "5px",
               "$type": "dimension",
-              "$description": "Vertical padding for table header cells."
+              "$description": "Vertical padding for table header cells (from old system: 5px 0)."
+            }
+          }
+        },
+        "subheader": {
+          "padding": {
+            "horizontal": {
+              "$value": "1rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for table subheader cells."
+            },
+            "vertical": {
+              "$value": "5px",
+              "$type": "dimension",
+              "$description": "Vertical padding for table subheader cells (from old system: 5px 0)."
             }
           }
         },
         "row": {
+          "height": {
+            "$value": "40px",
+            "$type": "dimension",
+            "$description": "Fixed height for table rows (from old system)."
+          },
           "gap": {
             "$value": "0",
             "$type": "dimension",
