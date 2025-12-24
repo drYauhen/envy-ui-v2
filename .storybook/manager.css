@@ -1,0 +1,52 @@
+/* Storybook Sidebar Navigation - First Level Styling */
+/* Target first level items - they are div.sidebar-subheading[data-nodetype="root"] */
+
+/* Primary selector - sidebar subheading with root nodetype (first level) */
+/* Using high specificity to override CSS-in-JS styles */
+.sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"],
+div.sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"] {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #066a8d !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+/* Alternative selector - just the button if needed (lower specificity fallback) */
+button[data-action="collapse-root"] {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #066a8d !important;
+}
+
+/* Override any CSS-in-JS classes that might be applied */
+button.css-1ew0vvb[data-action="collapse-root"],
+.sidebar-subheading.css-1s12khg[data-nodetype="root"] > button[data-action="collapse-root"],
+/* Alternative: target by data-item-id (more stable than CSS-in-JS classes) */
+.sidebar-subheading[data-item-id][data-nodetype="root"] > button[data-action="collapse-root"] {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #066a8d !important;
+}
+
+/* Hover state for first level */
+.sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"]:hover,
+button[data-action="collapse-root"]:hover {
+  color: #055973 !important;
+  background-color: rgba(6, 106, 141, 0.05) !important;
+}
+
+/* Active/selected state for first level */
+.sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"]:active,
+button[data-action="collapse-root"]:active {
+  color: #043c55 !important;
+  background-color: rgba(6, 106, 141, 0.1) !important;
+}
+
+/* Focus state for accessibility */
+.sidebar-subheading[data-nodetype="root"] > button[data-action="collapse-root"]:focus-visible,
+button[data-action="collapse-root"]:focus-visible {
+  outline: 2px solid #2ea7d1 !important;
+  outline-offset: 2px !important;
+}
+
