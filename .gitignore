@@ -40,3 +40,9 @@ build/
 .tmp/
 .temp/
 .cache/
+
+# ===============================
+# Reference files (old system)
+# ===============================
+# Uncomment if you want to exclude reference files from git:
+# reference/old-system/
