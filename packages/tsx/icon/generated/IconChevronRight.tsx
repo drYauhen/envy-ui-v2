@@ -1,0 +1,21 @@
+import React from 'react';
+import { IconProps } from '../icon.contract';
+
+export const IconChevronRight = ({ 
+  size = 16, 
+  color = 'currentColor',
+  className,
+  ...props 
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill={color}
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path fill={color} d="M 6.821484 1.709297 L 6.490031 2.040703 C 6.270375 2.260359 6.270375 2.616516 6.490031 2.836219 L 15.653766 12 L 6.490031 21.163781 C 6.270375 21.383438 6.270375 21.739594 6.490031 21.959297 L 6.821484 22.290703 C 7.041141 22.510359 7.397297 22.510359 7.616953 22.290703 L 17.509969 12.397734 C 17.729625 12.178078 17.729625 11.821922 17.509969 11.602219 L 7.616953 1.709297 C 7.397297 1.489594 7.041141 1.489594 6.821484 1.709297 Z"></path>
+  </svg>
+);
