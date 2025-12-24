@@ -2,3 +2,4 @@ export { ButtonClean } from './button';
 export { ButtonGroup } from './button';
 export type { ButtonCleanProps } from './button';
 export * from './menu';
+export * from './icon';
