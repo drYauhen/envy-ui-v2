@@ -1,0 +1,75 @@
+{
+  "eui": {
+    "calendar": {
+      "spacing": {
+        "padding": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Calendar container padding."
+        },
+        "header": {
+          "padding": {
+            "vertical": {
+              "$value": "0.5rem",
+              "$type": "dimension",
+              "$description": "Calendar header vertical padding."
+            },
+            "horizontal": {
+              "$value": "0.5rem",
+              "$type": "dimension",
+              "$description": "Calendar header horizontal padding."
+            }
+          },
+          "gap": {
+            "$value": "0.5rem",
+            "$type": "dimension",
+            "$description": "Gap between header elements (month label and navigation buttons)."
+          }
+        },
+        "weekday": {
+          "padding": {
+            "vertical": {
+              "$value": "0.5rem",
+              "$type": "dimension",
+              "$description": "Weekday labels vertical padding."
+            }
+          },
+          "gap": {
+            "$value": "0",
+            "$type": "dimension",
+            "$description": "Gap between weekday labels."
+          }
+        },
+        "grid": {
+          "gap": {
+            "$value": "0",
+            "$type": "dimension",
+            "$description": "Gap between day cells (negative margin used for border overlap)."
+          }
+        },
+        "day": {
+          "padding": {
+            "vertical": {
+              "$value": "4%",
+              "$type": "dimension",
+              "$description": "Day cell vertical padding (percentage-based for responsive sizing, from old system)."
+            },
+            "horizontal": {
+              "$value": "0",
+              "$type": "dimension",
+              "$description": "Day cell horizontal padding (none, centered content)."
+            }
+          },
+          "margin": {
+            "overlap": {
+              "$value": "-1px",
+              "$type": "dimension",
+              "$description": "Negative margin to overlap borders between day cells (from old system)."
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

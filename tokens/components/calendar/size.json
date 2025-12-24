@@ -1,0 +1,55 @@
+{
+  "eui": {
+    "calendar": {
+      "size": {
+        "width": {
+          "$value": "280px",
+          "$type": "dimension",
+          "$description": "Calendar container width (updated from old system 250px for better spacing)."
+        },
+        "minWidth": {
+          "$value": "250px",
+          "$type": "dimension",
+          "$description": "Minimum calendar width."
+        },
+        "header": {
+          "height": {
+            "$value": "auto",
+            "$type": "dimension",
+            "$description": "Calendar header height (auto for flexible content)."
+          }
+        },
+        "day": {
+          "width": {
+            "$value": "14.285714286%",
+            "$type": "dimension",
+            "$description": "Day cell width (1/7 = 14.285714286% for 7-day week grid)."
+          },
+          "minHeight": {
+            "$value": "36px",
+            "$type": "dimension",
+            "$description": "Minimum day cell height for touch targets."
+          },
+          "aspectRatio": {
+            "$value": "1",
+            "$type": "number",
+            "$description": "Aspect ratio for square day cells (1:1)."
+          }
+        },
+        "weekday": {
+          "width": {
+            "$value": "14.285714286%",
+            "$type": "dimension",
+            "$description": "Weekday label width (matches day cell width)."
+          },
+          "height": {
+            "$value": "auto",
+            "$type": "dimension",
+            "$description": "Weekday label height (auto for flexible content)."
+          }
+        }
+      }
+    }
+  }
+}
+

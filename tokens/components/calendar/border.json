@@ -1,0 +1,26 @@
+{
+  "eui": {
+    "calendar": {
+      "border": {
+        "width": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Border width for calendar container and day cells."
+        },
+        "radius": {
+          "calendar": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Calendar container border radius (matches button/select for consistency)."
+          },
+          "day": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "Day cell border radius. Each cell is a mini-button with 4px radius (matches button/select for consistency)."
+          }
+        }
+      }
+    }
+  }
+}
+

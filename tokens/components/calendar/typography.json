@@ -1,0 +1,56 @@
+{
+  "eui": {
+    "calendar": {
+      "typography": {
+        "header": {
+          "font": {
+            "size": {
+              "$value": "1rem",
+              "$type": "fontSize",
+              "$description": "Calendar header (month/year) font size."
+            },
+            "weight": {
+              "$value": "600",
+              "$type": "fontWeight",
+              "$description": "Calendar header font weight."
+            }
+          }
+        },
+        "weekday": {
+          "font": {
+            "size": {
+              "$value": "0.75rem",
+              "$type": "fontSize",
+              "$description": "Weekday labels font size."
+            },
+            "weight": {
+              "$value": "600",
+              "$type": "fontWeight",
+              "$description": "Weekday labels font weight."
+            }
+          }
+        },
+        "day": {
+          "font": {
+            "size": {
+              "$value": "0.875rem",
+              "$type": "fontSize",
+              "$description": "Day cell font size."
+            },
+            "weight": {
+              "$value": "400",
+              "$type": "fontWeight",
+              "$description": "Day cell font weight."
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "lineHeight",
+            "$description": "Day cell line height (from old system: line-height: 1)."
+          }
+        }
+      }
+    }
+  }
+}
+
