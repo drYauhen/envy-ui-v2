@@ -1,0 +1,81 @@
+{
+  "search": {
+    "category": "ui",
+    "subcategory": "navigation",
+    "tags": ["search", "find", "magnify", "magnifying-glass"],
+    "description": "Search icon for search inputs and actions"
+  },
+  "ellipsis-v": {
+    "category": "ui",
+    "subcategory": "actions",
+    "tags": ["ellipsis", "menu", "more", "vertical", "dots", "options"],
+    "description": "Vertical ellipsis icon for menu actions and options"
+  },
+  "chevron-right": {
+    "category": "ui",
+    "subcategory": "navigation",
+    "tags": ["chevron", "arrow", "right", "next", "forward", "expand"],
+    "description": "Right-pointing chevron for navigation, expansion, and forward movement"
+  },
+  "chevron-down": {
+    "category": "ui",
+    "subcategory": "navigation",
+    "tags": ["chevron", "arrow", "down", "expand", "collapse", "disclosure"],
+    "description": "Down-pointing chevron for collapsible sections and disclosure patterns"
+  },
+  "clock": {
+    "category": "ui",
+    "subcategory": "status",
+    "tags": ["clock", "time", "timer", "schedule", "deadline"],
+    "description": "Clock icon for time-related information and scheduling"
+  },
+  "cog": {
+    "category": "ui",
+    "subcategory": "actions",
+    "tags": ["cog", "settings", "gear", "configuration", "preferences"],
+    "description": "Cog/gear icon for settings and configuration actions"
+  },
+  "expand-all": {
+    "category": "ui",
+    "subcategory": "actions",
+    "tags": ["expand", "unfold", "open", "reveal", "show-all"],
+    "description": "Expand all icon for revealing all collapsed items or sections"
+  },
+  "external-link": {
+    "category": "ui",
+    "subcategory": "navigation",
+    "tags": ["external", "link", "outbound", "new-window", "open"],
+    "description": "External link icon indicating a link opens in a new window or external site"
+  },
+  "plus-circle": {
+    "category": "ui",
+    "subcategory": "actions",
+    "tags": ["plus", "add", "create", "new", "circle"],
+    "description": "Plus circle icon for add and create actions"
+  },
+  "trash": {
+    "category": "ui",
+    "subcategory": "actions",
+    "tags": ["trash", "delete", "remove", "bin", "garbage"],
+    "description": "Trash icon for delete and remove actions"
+  },
+  "info-circle": {
+    "category": "ui",
+    "subcategory": "status",
+    "tags": ["info", "information", "circle", "notice"],
+    "description": "Info circle icon for informational messages and notices"
+  },
+  "check-circle": {
+    "category": "ui",
+    "subcategory": "status",
+    "tags": ["check", "success", "circle", "complete", "done"],
+    "description": "Check circle icon for success states and completed actions"
+  },
+  "exclamation-circle": {
+    "category": "ui",
+    "subcategory": "status",
+    "tags": ["exclamation", "warning", "alert", "error", "circle"],
+    "description": "Exclamation circle icon for warnings and error states"
+  }
+}
+
