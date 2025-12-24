@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../../../src/ui';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../src/ui';
+import { Icon } from '../../../packages/tsx/icon';
 
 type ButtonStoryProps = {
   intent: ButtonIntent;
@@ -154,6 +155,70 @@ export const AsChildButton: Story = {
   )
 };
 
+export const WithIcons: Story = {
+  name: 'With icons',
+  args: {
+    intent: 'primary',
+    shape: 'default',
+    size: 'md',
+    label: 'Search'
+  },
+  render: ({ intent, shape, size, disabled, label }: ButtonStoryProps) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <div style={{ display: 'inline-flex', gap: '1rem', alignItems: 'center' }}>
+        <Button
+          intent={intent}
+          shape={shape}
+          size={size}
+          isDisabled={disabled}
+          startIcon={<Icon name="plus-circle" size={16} />}
+        >
+          {label}
+        </Button>
+        <Button
+          intent={intent}
+          shape={shape}
+          size={size}
+          isDisabled={disabled}
+          endIcon={<Icon name="external-link" size={16} />}
+        >
+          {label}
+        </Button>
+        <Button
+          intent={intent}
+          shape={shape}
+          size={size}
+          isDisabled={disabled}
+          startIcon={<Icon name="plus-circle" size={16} />}
+          endIcon={<Icon name="external-link" size={16} />}
+        >
+          {label}
+        </Button>
+      </div>
+      <div style={{ display: 'inline-flex', gap: '1rem', alignItems: 'center' }}>
+        <Button
+          intent="secondary"
+          shape={shape}
+          size={size}
+          isDisabled={disabled}
+          startIcon={<Icon name="plus-circle" size={16} />}
+        >
+          {label}
+        </Button>
+        <Button
+          intent="accent"
+          shape={shape}
+          size={size}
+          isDisabled={disabled}
+          startIcon={<Icon name="plus-circle" size={16} />}
+        >
+          {label}
+        </Button>
+      </div>
+    </div>
+  )
+};
+
 export const LoadingAndIcons: Story = {
   name: 'Loading + icons',
   args: {
@@ -171,8 +236,8 @@ export const LoadingAndIcons: Story = {
         size={size}
         isDisabled={disabled}
         isLoading={loading}
-        startIcon={<span aria-hidden="true">⏳</span>}
-        endIcon={<span aria-hidden="true">→</span>}
+        startIcon={<Icon name="plus-circle" size={16} />}
+        endIcon={<Icon name="external-link" size={16} />}
       >
         {label}
       </Button>

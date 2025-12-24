@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonGroupViewer } from '../viewers/components/ButtonGroupViewer';
 
 const meta: Meta = {
-  title: 'HTML + CSS/Components/Button Group',
+  title: 'HTML + CSS/Components/ButtonGroup',
   tags: ['autodocs']
 };
 

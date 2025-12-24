@@ -69,39 +69,6 @@ export const InputStates: Story = {
   )
 };
 
-export const InputSizes: Story = {
-  name: 'Sizes',
-  parameters: {
-    docs: {
-      canvas: { sourceState: 'none' },
-      codePanel: false
-    }
-  },
-  render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Input Sizes</h3>
-        <div style={formGroupStyle}>
-          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <span className="eui-label">Small</span>
-            <input type="text" className="eui-input" data-eui-size="sm" placeholder="Small input" />
-          </label>
-          
-          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <span className="eui-label">Medium (default)</span>
-            <input type="text" className="eui-input" data-eui-size="md" placeholder="Medium input" />
-          </label>
-          
-          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <span className="eui-label">Large</span>
-            <input type="text" className="eui-input" data-eui-size="lg" placeholder="Large input" />
-          </label>
-        </div>
-      </div>
-    </div>
-  )
-};
-
 export const InputTypes: Story = {
   name: 'Input Types',
   parameters: {
@@ -171,6 +138,45 @@ export const InputContexts: Story = {
           <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <span className="eui-label">Static input (print)</span>
             <input type="text" className="eui-input" defaultValue="Printed value" disabled />
+          </label>
+        </div>
+      </div>
+    </div>
+  )
+};
+
+export const InputSizes: Story = {
+  name: 'Sizes (Future Compatibility)',
+  parameters: {
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false,
+      description: {
+        story: 'Different sizes are provided for future compatibility and potential use cases (e.g., compact themes, button alignment). The standard and default size is **medium** - use it for all regular input fields.'
+      }
+    }
+  },
+  render: () => (
+    <div style={containerStyle}>
+      <div style={sectionStyle}>
+        <h3 style={sectionTitleStyle}>Input Sizes</h3>
+        <p style={{ margin: '0 0 1rem 0', fontSize: '0.875rem', color: '#64748b' }}>
+          <strong>Note:</strong> Different sizes are provided for future compatibility and potential development needs (e.g., compact themes, button alignment). The standard and default size is <strong>medium</strong> - use it for all regular input fields.
+        </p>
+        <div style={formGroupStyle}>
+          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <span className="eui-label">Small</span>
+            <input type="text" className="eui-input" data-eui-size="sm" placeholder="Small input" />
+          </label>
+          
+          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <span className="eui-label">Medium (default)</span>
+            <input type="text" className="eui-input" data-eui-size="md" placeholder="Medium input" />
+          </label>
+          
+          <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <span className="eui-label">Large</span>
+            <input type="text" className="eui-input" data-eui-size="lg" placeholder="Large input" />
           </label>
         </div>
       </div>

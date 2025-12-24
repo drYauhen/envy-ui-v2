@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
-  title: 'HTML + CSS/Components/Form Elements - Context & Theme Test',
+  title: 'HTML + CSS/Components/FormElementsContextThemeTest',
   tags: ['autodocs']
 };
 
