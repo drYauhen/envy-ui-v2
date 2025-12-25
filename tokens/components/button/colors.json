@@ -178,6 +178,52 @@
             "$type": "color"
           }
         }
+      },
+      "accent-finished": {
+        "background": {
+          "base": {
+            "$value": "{eui.color.accent.200}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.accent.200}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.accent.200}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.accent.200}",
+            "$type": "color"
+          }
+        },
+        "label": {
+          "base": {
+            "$value": "{eui.color.accent.700}",
+            "$type": "color"
+          },
+          "hover": {
+            "$value": "{eui.color.accent.700}",
+            "$type": "color"
+          },
+          "active": {
+            "$value": "{eui.color.accent.700}",
+            "$type": "color"
+          },
+          "disabled": {
+            "$value": "{eui.color.text.disabled}",
+            "$type": "color"
+          },
+          "selected": {
+            "$value": "{eui.color.accent.700}",
+            "$type": "color"
+          }
+        }
       }
     }
   }
