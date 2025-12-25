@@ -1,0 +1,35 @@
+{
+  "eui": {
+    "color": {
+      "text": {
+        "primary": {
+          "$value": "{eui.color.neutral.900}",
+          "$type": "color",
+          "$description": "Primary text color for website context. Dark for light backgrounds."
+        },
+        "muted": {
+          "$value": "{eui.color.neutral.700}",
+          "$type": "color",
+          "$description": "Muted text color for website context (used for subheadings, descriptions)."
+        }
+      },
+      "background": {
+        "base": {
+          "$value": "{eui.color.neutral.white}",
+          "$type": "color",
+          "$description": "Base background color for website context."
+        }
+      }
+    },
+    "typography": {
+      "base": {
+        "fontSize": {
+          "$value": "16px",
+          "$type": "fontSize",
+          "$description": "Base font size for website context. Larger than app for better readability on marketing sites."
+        }
+      }
+    }
+  }
+}
+

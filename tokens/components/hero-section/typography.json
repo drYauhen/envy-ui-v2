@@ -1,0 +1,71 @@
+{
+  "eui": {
+    "hero-section": {
+      "typography": {
+        "heading": {
+          "mobile": {
+            "font-size": {
+              "$value": "2rem",
+              "$type": "fontSize",
+              "$description": "Font size for hero heading on mobile"
+            },
+            "line-height": {
+              "$value": "1.2",
+              "$type": "lineHeight",
+              "$description": "Line height for hero heading on mobile"
+            },
+            "font-weight": {
+              "$value": "700",
+              "$type": "fontWeight",
+              "$description": "Font weight for hero heading"
+            }
+          },
+          "desktop": {
+            "font-size": {
+              "$value": "3rem",
+              "$type": "fontSize",
+              "$description": "Font size for hero heading on desktop"
+            },
+            "line-height": {
+              "$value": "1.2",
+              "$type": "lineHeight",
+              "$description": "Line height for hero heading on desktop"
+            },
+            "font-weight": {
+              "$value": "700",
+              "$type": "fontWeight",
+              "$description": "Font weight for hero heading"
+            }
+          }
+        },
+        "subheading": {
+          "mobile": {
+            "font-size": {
+              "$value": "1rem",
+              "$type": "fontSize",
+              "$description": "Font size for hero subheading on mobile"
+            },
+            "line-height": {
+              "$value": "1.6",
+              "$type": "lineHeight",
+              "$description": "Line height for hero subheading on mobile"
+            }
+          },
+          "desktop": {
+            "font-size": {
+              "$value": "1.25rem",
+              "$type": "fontSize",
+              "$description": "Font size for hero subheading on desktop"
+            },
+            "line-height": {
+              "$value": "1.6",
+              "$type": "lineHeight",
+              "$description": "Line height for hero subheading on desktop"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

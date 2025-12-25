@@ -1,0 +1,216 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hero Section Template Configuration",
+  "description": "Configuration schema for CMS Hero Section templates",
+  "type": "object",
+  "properties": {
+    "templateId": {
+      "type": "string",
+      "description": "Unique identifier for the template (e.g., 'hero-centered-v1', 'hero-split-v1')"
+    },
+    "templateName": {
+      "type": "string",
+      "description": "Human-readable name for the template"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["centered", "split", "minimal", "full-width", "video", "gradient"],
+      "description": "Category/type of hero section"
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["centered", "left-aligned", "right-aligned", "split", "full-width", "minimal"]
+        },
+        "mediaPosition": {
+          "type": "string",
+          "enum": ["none", "left", "right", "top", "bottom", "background"]
+        },
+        "contentAlignment": {
+          "type": "string",
+          "enum": ["left", "center", "right"]
+        }
+      },
+      "required": ["variant"]
+    },
+    "background": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["solid", "gradient", "image", "video", "pattern"]
+        },
+        "color": {
+          "type": "string",
+          "description": "Solid color (token reference or hex)"
+        },
+        "gradient": {
+          "type": "object",
+          "properties": {
+            "direction": {
+              "type": "string",
+              "enum": ["to-right", "to-left", "to-bottom", "to-top", "diagonal"]
+            },
+            "stops": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "color": { "type": "string" },
+                  "position": { "type": "number", "minimum": 0, "maximum": 100 }
+                }
+              }
+            }
+          }
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "url": { "type": "string" },
+            "alt": { "type": "string" },
+            "position": {
+              "type": "string",
+              "enum": ["center", "top", "bottom", "left", "right"]
+            },
+            "size": {
+              "type": "string",
+              "enum": ["cover", "contain", "auto"]
+            }
+          }
+        },
+        "video": {
+          "type": "object",
+          "properties": {
+            "url": { "type": "string" },
+            "poster": { "type": "string" },
+            "autoplay": { "type": "boolean" },
+            "loop": { "type": "boolean" },
+            "muted": { "type": "boolean" }
+          }
+        },
+        "overlay": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "type": {
+              "type": "string",
+              "enum": ["dark", "light", "gradient", "custom"]
+            },
+            "opacity": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      },
+      "required": ["type"]
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "heading": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "level": { "type": "number", "enum": [1, 2, 3] },
+            "maxWidth": { "type": "string" }
+          },
+          "required": ["text"]
+        },
+        "subheading": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "maxWidth": { "type": "string" }
+          }
+        },
+        "ctaPrimary": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "href": { "type": "string" },
+            "intent": {
+              "type": "string",
+              "enum": ["primary", "secondary", "accent"]
+            },
+            "size": {
+              "type": "string",
+              "enum": ["sm", "md", "lg"]
+            }
+          }
+        },
+        "ctaSecondary": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "href": { "type": "string" },
+            "intent": {
+              "type": "string",
+              "enum": ["primary", "secondary", "accent"]
+            },
+            "size": {
+              "type": "string",
+              "enum": ["sm", "md", "lg"]
+            }
+          }
+        }
+      }
+    },
+    "navigation": {
+      "type": "object",
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["none", "overlay", "integrated", "sticky"]
+        },
+        "position": {
+          "type": "string",
+          "enum": ["top", "bottom"]
+        },
+        "transparent": { "type": "boolean" }
+      }
+    },
+    "responsive": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "object",
+          "properties": {
+            "minHeight": { "type": "string" },
+            "layout": { "type": "string", "enum": ["stacked", "centered"] },
+            "hideMedia": { "type": "boolean" }
+          }
+        },
+        "tablet": {
+          "type": "object",
+          "properties": {
+            "minHeight": { "type": "string" },
+            "layout": { "type": "string" }
+          }
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "minHeight": { "type": "string" },
+            "layout": { "type": "string" }
+          }
+        }
+      }
+    },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "context": {
+          "type": "string",
+          "enum": ["website"],
+          "default": "website"
+        },
+        "themeName": {
+          "type": "string",
+          "description": "Theme name from tokens/themes/website/"
+        }
+      }
+    }
+  },
+  "required": ["templateId", "templateName", "category", "layout", "background"]
+}
+

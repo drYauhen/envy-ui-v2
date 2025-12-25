@@ -1,0 +1,71 @@
+{
+  "templateId": "hero-centered-v1",
+  "templateName": "Centered Hero",
+  "category": "centered",
+  "layout": {
+    "variant": "centered",
+    "mediaPosition": "none",
+    "contentAlignment": "center"
+  },
+  "background": {
+    "type": "gradient",
+    "gradient": {
+      "direction": "to-bottom",
+      "stops": [
+        { "color": "var(--eui-color-brand-primary-base)", "position": 0 },
+        { "color": "var(--eui-color-brand-primary-dark)", "position": 100 }
+      ]
+    },
+    "overlay": {
+      "enabled": false
+    }
+  },
+  "content": {
+    "heading": {
+      "text": "Welcome to Our Platform",
+      "level": 1,
+      "maxWidth": "800px"
+    },
+    "subheading": {
+      "text": "Build amazing experiences with our design system",
+      "maxWidth": "600px"
+    },
+    "ctaPrimary": {
+      "text": "Get Started",
+      "href": "#",
+      "intent": "accent",
+      "size": "lg"
+    },
+    "ctaSecondary": {
+      "text": "Learn More",
+      "href": "#",
+      "intent": "secondary",
+      "size": "lg"
+    }
+  },
+  "navigation": {
+    "style": "overlay",
+    "position": "top",
+    "transparent": true
+  },
+  "responsive": {
+    "mobile": {
+      "minHeight": "400px",
+      "layout": "stacked",
+      "hideMedia": false
+    },
+    "tablet": {
+      "minHeight": "500px",
+      "layout": "centered"
+    },
+    "desktop": {
+      "minHeight": "600px",
+      "layout": "centered"
+    }
+  },
+  "theme": {
+    "context": "website",
+    "themeName": "default"
+  }
+}
+

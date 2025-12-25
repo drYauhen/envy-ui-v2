@@ -1,0 +1,40 @@
+{
+  "eui": {
+    "hero-section": {
+      "colors": {
+        "background": {
+          "base": {
+            "$value": "{eui.color.background.base}",
+            "$type": "color",
+            "$description": "Base background color for hero section. Can be overridden by template configuration (gradient, image, etc.)"
+          },
+          "overlay": {
+            "dark": {
+              "$value": "rgba(0, 0, 0, 0.4)",
+              "$type": "color",
+              "$description": "Dark overlay for hero background (when using image/video)"
+            },
+            "light": {
+              "$value": "rgba(255, 255, 255, 0.2)",
+              "$type": "color",
+              "$description": "Light overlay for hero background"
+            }
+          }
+        },
+        "text": {
+          "heading": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Text color for hero heading"
+          },
+          "subheading": {
+            "$value": "{eui.color.text.muted}",
+            "$type": "color",
+            "$description": "Text color for hero subheading. Uses semantic text.muted token which adapts to theme."
+          }
+        }
+      }
+    }
+  }
+}
+

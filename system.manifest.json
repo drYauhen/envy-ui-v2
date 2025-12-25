@@ -46,11 +46,44 @@
       }
     }
   },
+  "templates": {
+    "heroSection": {
+      "status": "exploratory",
+      "purpose": "Reusable Hero Section templates for CMS websites. Templates are JSON-configurable and integrate with token system for theming.",
+      "location": "templates/",
+      "schema": "templates/hero-section-schema.json",
+      "componentModel": "component-model/hero-section.json",
+      "variants": [
+        {
+          "id": "hero-centered-v1",
+          "name": "Centered Hero",
+          "category": "centered",
+          "file": "templates/hero-centered-v1.json"
+        },
+        {
+          "id": "hero-split-v1",
+          "name": "Split Hero",
+          "category": "split",
+          "file": "templates/hero-split-v1.json"
+        }
+      ],
+      "features": [
+        "JSON-based configuration",
+        "Responsive breakpoints (mobile/tablet/desktop)",
+        "Theme integration (website context)",
+        "Multiple layout variants",
+        "Background types (solid/gradient/image/video)",
+        "Navigation style options",
+        "Component integration (eui-button, etc.)"
+      ]
+    }
+  },
   "storybook": {
-    "navigationOrder": ["Tokens", "HTML + CSS", "TSX", "TSX + React Aria", "Web Components"],
+    "navigationOrder": ["Tokens", "HTML + CSS", "TSX", "TSX + React Aria", "Web Components", "Templates"],
     "notes": [
       "Storybook should be layer-first; tokens layer may be placeholder until implemented.",
-      "Agents should read this manifest to add or adjust stories instead of inferring structure."
+      "Agents should read this manifest to add or adjust stories instead of inferring structure.",
+      "Templates section demonstrates CMS-ready Hero Section variants."
     ]
   }
 }

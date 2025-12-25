@@ -1,0 +1,67 @@
+{
+  "templateId": "hero-split-v1",
+  "templateName": "Split Hero",
+  "category": "split",
+  "layout": {
+    "variant": "split",
+    "mediaPosition": "right",
+    "contentAlignment": "left"
+  },
+  "background": {
+    "type": "solid",
+    "color": "var(--eui-color-background-base)"
+  },
+  "content": {
+    "heading": {
+      "text": "Transform Your Business",
+      "level": 1,
+      "maxWidth": "600px"
+    },
+    "subheading": {
+      "text": "Powerful tools and insights to help you grow",
+      "maxWidth": "500px"
+    },
+    "ctaPrimary": {
+      "text": "Start Free Trial",
+      "href": "#",
+      "intent": "primary",
+      "size": "lg"
+    },
+    "ctaSecondary": {
+      "text": "View Demo",
+      "href": "#",
+      "intent": "secondary",
+      "size": "lg"
+    }
+  },
+  "media": {
+    "type": "image",
+    "url": "/placeholder-hero-image.jpg",
+    "alt": "Hero illustration"
+  },
+  "navigation": {
+    "style": "integrated",
+    "position": "top",
+    "transparent": false
+  },
+  "responsive": {
+    "mobile": {
+      "minHeight": "500px",
+      "layout": "stacked",
+      "hideMedia": false
+    },
+    "tablet": {
+      "minHeight": "550px",
+      "layout": "split"
+    },
+    "desktop": {
+      "minHeight": "600px",
+      "layout": "split"
+    }
+  },
+  "theme": {
+    "context": "website",
+    "themeName": "default"
+  }
+}
+

@@ -1,0 +1,64 @@
+{
+  "eui": {
+    "hero-section": {
+      "spacing": {
+        "padding": {
+          "mobile": {
+            "inline": {
+              "$value": "{eui.spacing.md}",
+              "$type": "dimension",
+              "$description": "Horizontal padding for hero section on mobile"
+            },
+            "block": {
+              "$value": "{eui.spacing.xl}",
+              "$type": "dimension",
+              "$description": "Vertical padding for hero section on mobile"
+            }
+          },
+          "tablet": {
+            "inline": {
+              "$value": "{eui.spacing.xl}",
+              "$type": "dimension",
+              "$description": "Horizontal padding for hero section on tablet"
+            },
+            "block": {
+              "$value": "{eui.spacing.2xl}",
+              "$type": "dimension",
+              "$description": "Vertical padding for hero section on tablet"
+            }
+          },
+          "desktop": {
+            "inline": {
+              "$value": "{eui.spacing.2xl}",
+              "$type": "dimension",
+              "$description": "Horizontal padding for hero section on desktop"
+            },
+            "block": {
+              "$value": "4rem",
+              "$type": "dimension",
+              "$description": "Vertical padding for hero section on desktop"
+            }
+          }
+        },
+        "gap": {
+          "content": {
+            "$value": "{eui.spacing.lg}",
+            "$type": "dimension",
+            "$description": "Gap between content elements (heading, subheading, CTAs)"
+          },
+          "cta": {
+            "$value": "{eui.spacing.md}",
+            "$type": "dimension",
+            "$description": "Gap between primary and secondary CTA buttons"
+          },
+          "media": {
+            "$value": "{eui.spacing.xl}",
+            "$type": "dimension",
+            "$description": "Gap between content and media in split layout"
+          }
+        }
+      }
+    }
+  }
+}
+

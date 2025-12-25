@@ -1,0 +1,191 @@
+{
+  "$schema": "./schema.json",
+  "name": "hero-section",
+  "description": "Hero Section template component for CMS websites",
+  "anatomy": {
+    "parts": [
+      {
+        "id": "root",
+        "required": true,
+        "description": "Container for the entire hero section"
+      },
+      {
+        "id": "background",
+        "required": false,
+        "description": "Background layer (image, video, gradient, or solid color)"
+      },
+      {
+        "id": "overlay",
+        "required": false,
+        "description": "Overlay layer for background (gradient, darkening, etc.)"
+      },
+      {
+        "id": "content",
+        "required": true,
+        "description": "Main content container (text, CTA, etc.)"
+      },
+      {
+        "id": "heading",
+        "required": true,
+        "description": "Main heading text"
+      },
+      {
+        "id": "subheading",
+        "required": false,
+        "description": "Subheading or description text"
+      },
+      {
+        "id": "cta-primary",
+        "required": false,
+        "description": "Primary call-to-action button"
+      },
+      {
+        "id": "cta-secondary",
+        "required": false,
+        "description": "Secondary call-to-action button"
+      },
+      {
+        "id": "media",
+        "required": false,
+        "description": "Media content (image, video, illustration)"
+      },
+      {
+        "id": "navigation",
+        "required": false,
+        "description": "Navigation menu (if included in hero)"
+      }
+    ]
+  },
+  "geometry": {
+    "dimensions": {
+      "min-height": {
+        "$type": "dimension",
+        "$description": "Minimum height of hero section",
+        "responsive": true
+      },
+      "max-width": {
+        "$type": "dimension",
+        "$description": "Maximum width of content container",
+        "responsive": true
+      }
+    },
+    "spacing": {
+      "padding": {
+        "$type": "spacing",
+        "$description": "Padding around hero content",
+        "responsive": true
+      },
+      "gap": {
+        "$type": "spacing",
+        "$description": "Gap between content elements",
+        "responsive": true
+      }
+    }
+  },
+  "variants": [
+    {
+      "id": "layout",
+      "type": "exclusive",
+      "values": [
+        "centered",
+        "left-aligned",
+        "right-aligned",
+        "split",
+        "full-width",
+        "minimal"
+      ],
+      "description": "Layout arrangement of content and media"
+    },
+    {
+      "id": "background-type",
+      "type": "exclusive",
+      "values": [
+        "solid",
+        "gradient",
+        "image",
+        "video",
+        "pattern"
+      ],
+      "description": "Type of background for hero section"
+    },
+    {
+      "id": "navigation-style",
+      "type": "exclusive",
+      "values": [
+        "none",
+        "overlay",
+        "integrated",
+        "sticky"
+      ],
+      "description": "Navigation menu style within hero"
+    },
+    {
+      "id": "media-position",
+      "type": "exclusive",
+      "values": [
+        "none",
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "background"
+      ],
+      "description": "Position of media relative to content"
+    }
+  ],
+  "rules": [
+    {
+      "condition": "layout === 'split'",
+      "behavior": "Content and media are side-by-side on desktop, stacked on mobile"
+    },
+    {
+      "condition": "background-type === 'video'",
+      "behavior": "Video plays muted and loops, overlay applied for text readability"
+    },
+    {
+      "condition": "navigation-style === 'overlay'",
+      "behavior": "Navigation appears above hero background with transparency"
+    },
+    {
+      "condition": "media-position === 'background'",
+      "behavior": "Media serves as background, content overlays on top"
+    }
+  ],
+  "responsive": {
+    "breakpoints": {
+      "mobile": {
+        "$type": "dimension",
+        "$value": "640px",
+        "$description": "Mobile breakpoint"
+      },
+      "tablet": {
+        "$type": "dimension",
+        "$value": "768px",
+        "$description": "Tablet breakpoint"
+      },
+      "desktop": {
+        "$type": "dimension",
+        "$value": "1024px",
+        "$description": "Desktop breakpoint"
+      },
+      "wide": {
+        "$type": "dimension",
+        "$value": "1280px",
+        "$description": "Wide desktop breakpoint"
+      }
+    },
+    "behaviors": [
+      {
+        "breakpoint": "mobile",
+        "layout": "stacked",
+        "description": "Content and media stack vertically on mobile"
+      },
+      {
+        "breakpoint": "tablet",
+        "layout": "adaptive",
+        "description": "Layout adapts based on variant settings"
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,46 @@
+{
+  "eui": {
+    "hero-section": {
+      "size": {
+        "min-height": {
+          "mobile": {
+            "$value": "400px",
+            "$type": "dimension",
+            "$description": "Minimum height for hero section on mobile devices (< 640px)"
+          },
+          "tablet": {
+            "$value": "500px",
+            "$type": "dimension",
+            "$description": "Minimum height for hero section on tablet devices (640px - 1024px)"
+          },
+          "desktop": {
+            "$value": "600px",
+            "$type": "dimension",
+            "$description": "Minimum height for hero section on desktop devices (> 1024px)"
+          },
+          "wide": {
+            "$value": "700px",
+            "$type": "dimension",
+            "$description": "Minimum height for hero section on wide desktop devices (> 1280px)"
+          }
+        },
+        "content-max-width": {
+          "$value": "1200px",
+          "$type": "dimension",
+          "$description": "Maximum width for hero content container"
+        },
+        "heading-max-width": {
+          "$value": "800px",
+          "$type": "dimension",
+          "$description": "Maximum width for hero heading text"
+        },
+        "subheading-max-width": {
+          "$value": "600px",
+          "$type": "dimension",
+          "$description": "Maximum width for hero subheading text"
+        }
+      }
+    }
+  }
+}
+
