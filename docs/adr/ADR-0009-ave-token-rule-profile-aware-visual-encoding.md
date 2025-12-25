@@ -6,8 +6,8 @@
 **Assistance:** AI-assisted drafting (human-reviewed)  
 
 **Related:**  
-- ADR-0005 — Canonical UI Namespace and Button v1 Baseline  
-- ADR-0008 — TSX Layer (React Aria) Button v1 and Storybook Layering  
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-button-v1-baseline.md) — Canonical UI Namespace and Button v1 Baseline  
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-button-and-storybook-layering.md) — TSX Layer (React Aria) Button v1 and Storybook Layering  
 
 ---
 

@@ -7,9 +7,9 @@
 
 **Related:**
 
-* ADR-0001: React Aria as Headless Accessibility Foundation
-* ADR-0002: Data-Driven Storybook Pipeline via Style Dictionary
-* ADR-0003: Data-Driven Figma Variables Pipeline via Adapter JSON
+* [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+* [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
+* [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 
 ---
 

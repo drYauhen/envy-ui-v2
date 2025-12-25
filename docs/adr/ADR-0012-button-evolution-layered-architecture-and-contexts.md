@@ -6,12 +6,12 @@
 **Assistance:** AI-assisted drafting (human-reviewed)  
 
 **Related:**  
-- ADR-0001 — React Aria as Headless Accessibility Foundation  
-- ADR-0005 — Canonical UI Namespace and Button v1 Baseline  
-- ADR-0008 — TSX Layer (React Aria) Button v1 and Storybook Layering  
-- ADR-0009 — AVE Token Rule (Profile-Aware Visual Encoding)  
-- ADR-0010 — Button TSX + React Aria v2 (Alpha)  
-- ADR-0011 — Token-Driven Button Contracts (v1, Exploratory)  
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-button-v1-baseline.md) — Canonical UI Namespace and Button v1 Baseline  
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-button-and-storybook-layering.md) — TSX Layer (React Aria) Button v1 and Storybook Layering  
+- [ADR-0009](./ADR-0009-ave-token-rule-profile-aware-visual-encoding.md) — AVE Token Rule (Profile-Aware Visual Encoding)  
+- [ADR-0010](./ADR-0010-button-tsx-react-aria-v2-alpha.md) — Button TSX + React Aria v2 (Alpha)  
+- [ADR-0011](./ADR-0011-token-driven-button-contracts-v1-exploratory.md) — Token-Driven Button Contracts (v1, Exploratory)  
 
 ---
 

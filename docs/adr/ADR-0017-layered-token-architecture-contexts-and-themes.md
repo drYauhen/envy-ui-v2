@@ -5,8 +5,8 @@
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
-- ADR-0014 — Color Model, Tonal Scales, and Contextual Architecture  
-- ADR-0015 — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
+- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 
 ---
 

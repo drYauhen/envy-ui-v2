@@ -6,9 +6,9 @@
 **Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related:**
-- ADR-0001 — React Aria as Headless Accessibility Foundation
-- ADR-0004 — Context-Aware UI Components and Projection Model
-- ADR-0017 — Layered Token Architecture for Contexts and Themes
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
+- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 
 ---
 
@@ -98,7 +98,7 @@ I adopt a **component-based layout architecture** using:
 - Consistent with existing component architecture
 - Themeable (context + theme combinations)
 - Maintainable (change tokens, not CSS)
-- Aligns with ADR-0017 (Layered Token Architecture)
+- Aligns with [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) (Layered Token Architecture)
 
 ### E. Right Panel Elevation
 
@@ -274,9 +274,9 @@ I adopt a **component-based layout architecture** using:
 
 ## 6. Related Decisions
 
-- **ADR-0001:** React Aria for interactive elements (not layout)
-- **ADR-0004:** Context-aware components (layout adapts to context)
-- **ADR-0017:** Token architecture (layout uses tokens for styling)
+- **[ADR-0001](./ADR-0001-react-aria-headless.md):** React Aria for interactive elements (not layout)
+- **[ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md):** Context-aware components (layout adapts to context)
+- **[ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md):** Token architecture (layout uses tokens for styling)
 
 ---
 

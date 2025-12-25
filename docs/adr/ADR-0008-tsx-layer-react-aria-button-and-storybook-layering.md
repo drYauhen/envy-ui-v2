@@ -34,9 +34,9 @@ Button v1 existed as a CSS-driven baseline rendered via raw HTML in Storybook.
 
 I need a TSX component layer that:
 
-- uses React Aria as a headless accessibility engine (per ADR-0001),
+- uses React Aria as a headless accessibility engine (per [ADR-0001](./ADR-0001-react-aria-headless.md)),
 - keeps the token/CSS layer independent of implementation details,
-- preserves the context-aware projection model (ADR-0004) by continuing to rely on external context (`data-eui-context`) rather than component-internal assumptions,
+- preserves the context-aware projection model ([ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md)) by continuing to rely on external context (`data-eui-context`) rather than component-internal assumptions,
 - can evolve toward granular dependency usage and/or alternative accessibility engines later.
 
 ---

@@ -5,10 +5,10 @@
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
-- ADR-0001 — React Aria as Headless Accessibility Foundation  
-- ADR-0012 — Button Evolution, Layered Architecture and Contexts  
-- ADR-0015 — Token-First Contract Layer and Renderer-Agnostic Model  
-- ADR-0017 — Layered Token Architecture for Contexts and Themes
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
+- [ADR-0012](./ADR-0012-button-evolution-layered-architecture-and-contexts.md) — Button Evolution, Layered Architecture and Contexts  
+- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model  
+- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 
 ---
 
@@ -104,7 +104,7 @@ I decided to **explore Web Components as a long-term proof-of-concept implementa
 **5. Proof of Architectural Flexibility and Long-term Viability**
 - Demonstrates that tokens are the true source of truth, independent of any technology stack
 - Shows that implementation layers are projections, not transformations
-- Validates the renderer-agnostic model (ADR-0015)
+- Validates the renderer-agnostic model ([ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
 - Strengthens the system's positioning as a universal, long-term design system
 - **Proves future-proofing:** If React or any framework becomes obsolete, the design system survives
 - **Ensures design decisions are preserved:** Business and design choices are not lost when technology stacks change
@@ -217,7 +217,7 @@ const theme = this.closest('[data-eui-theme]')?.getAttribute('data-eui-theme');
 **Presentation/Demo Value:**
 - Shows the system's flexibility and universality
 - Demonstrates token-driven architecture across multiple runtimes
-- Validates the architectural decisions in ADR-0015 and ADR-0017
+- Validates the architectural decisions in [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) and [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md)
 
 ### Trade-offs
 

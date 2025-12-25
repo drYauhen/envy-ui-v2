@@ -7,10 +7,10 @@
 
 **Related:**
 
-* ADR-0001: React Aria as Headless Accessibility Foundation
-* ADR-0002: Data-Driven Storybook Pipeline via Style Dictionary
-* ADR-0003: Data-Driven Figma Variables Pipeline via Adapter JSON
-* ADR-0004: Context-Aware UI Components and Projection Model
+* [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+* [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
+* [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
+* [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
 
 ---
 
@@ -113,7 +113,7 @@ Context is a **first-class axis**, separate from intent, theme, and state.
 * Components do not encode or assume their rendering context.
 * Multiple contexts may coexist on a single screen.
 
-This follows the model established in ADR-0003.
+This follows the model established in [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md).
 
 ---
 

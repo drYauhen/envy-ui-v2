@@ -209,22 +209,40 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                 }} {...props} />
               ),
               // Кастомизация ссылок
-              a: ({node, ...props}) => (
-                <a style={{ 
-                  color: '#066a8d',
-                  textDecoration: 'none',
-                  fontWeight: 500,
-                  borderBottom: '1px solid transparent',
-                  transition: 'border-color 0.2s'
-                }} 
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderBottomColor = '#066a8d';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderBottomColor = 'transparent';
-                }}
-                {...props} />
-              ),
+              a: ({node, href, ...props}: any) => {
+                // Convert ADR file links to Storybook story links
+                let storybookHref = href;
+                if (href && typeof href === 'string') {
+                  // Match links to ADR files: ./ADR-XXXX-*.md or ADR-XXXX-*.md
+                  const adrMatch = href.match(/ADR-(\d{4})[^/]*\.md$/);
+                  if (adrMatch) {
+                    const adrNumber = adrMatch[1];
+                    // Remove leading zeros: 0001 -> 1, 0010 -> 10, 0021 -> 21
+                    const adrId = adrNumber.replace(/^0+/, '') || '0';
+                    storybookHref = `?path=/story/docs-adr-adr-${adrId}--default`;
+                  }
+                }
+                
+                return (
+                  <a 
+                    href={storybookHref}
+                    style={{ 
+                      color: '#066a8d',
+                      textDecoration: 'none',
+                      fontWeight: 500,
+                      borderBottom: '1px solid transparent',
+                      transition: 'border-color 0.2s'
+                    }} 
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderBottomColor = '#066a8d';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderBottomColor = 'transparent';
+                    }}
+                    {...props} 
+                  />
+                );
+              },
               // Кастомизация кода
               code: ({node, inline, ...props}: any) => {
                 if (inline) {
