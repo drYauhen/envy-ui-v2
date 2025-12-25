@@ -1,0 +1,481 @@
+/* ============================================================================
+   Celebration Effect
+   ============================================================================ */
+
+/* Base celebration effect - activated via data attribute */
+[data-eui-context] .eui-celebration[data-eui-celebration="active"] {
+  position: relative;
+  overflow: visible !important;
+  display: inline-block;
+  animation: celebration-lift var(--eui-celebration-animation-duration) var(--eui-celebration-animation-easing);
+}
+
+/* Shine/shimmer effect */
+[data-eui-context] .eui-celebration[data-eui-celebration="active"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: var(--eui-celebration-animation-shine-width);
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--eui-celebration-colors-shine-start) 0%,
+    var(--eui-celebration-colors-shine-start) 20%,
+    var(--eui-celebration-colors-shine-mid) 50%,
+    var(--eui-celebration-colors-shine-end) 80%,
+    var(--eui-celebration-colors-shine-end) 100%
+  );
+  transform: skewX(-20deg);
+  animation: celebration-shine var(--eui-celebration-animation-shine-duration) var(--eui-celebration-animation-shine-easing);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Sparkle effect - Phase 1: Top-right corner using ::after */
+[data-eui-context] .eui-celebration[data-eui-celebration="active"]::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  overflow: visible;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z' fill='%23f59e0b'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 3;
+  opacity: 0;
+  animation: celebration-sparkle-top-right-1 1.5s ease-out 0.5s;
+  animation-iteration-count: 1;
+}
+
+/* Sparkle wrapper for Phase 1: Top-right corner (additional sparkles) */
+[data-eui-context] .eui-celebration-sparkle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 3;
+}
+
+[data-eui-context] .eui-celebration-sparkle::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z' fill='%23ec4899'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scaleX(1.3) scaleY(0.8);
+  opacity: 0;
+  animation: celebration-sparkle-top-right-2 0.75s ease-out 0.3s;
+  animation-iteration-count: 1;
+}
+
+[data-eui-context] .eui-celebration-sparkle::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -4px;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z' fill='%233b82f6'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scaleX(0.8) scaleY(1.4);
+  opacity: 0;
+  animation: celebration-sparkle-top-right-3 0.5s ease-out 0.5s;
+  animation-iteration-count: 1;
+}
+
+/* Keyframes */
+@keyframes celebration-shine {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4; /* Reduced from 1 to make it less explicit */
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
+
+/* Sparkle flash animation - Phase 1: Top-right corner */
+@keyframes celebration-sparkle-top-right-1 {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.2) rotate(0deg);
+    filter: hue-rotate(60deg);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(120deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.9) rotate(0deg);
+    filter: hue-rotate(180deg);
+  }
+  70% {
+    opacity: 0.4;
+    transform: scale(0.6) rotate(0deg);
+    filter: hue-rotate(240deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3) rotate(0deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes celebration-sparkle-top-right-2 {
+  0% {
+    opacity: 0;
+    transform: scale(0) scaleX(1.3) scaleY(0.8) rotate(0deg);
+    filter: hue-rotate(120deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.1) scaleX(1.3) scaleY(0.8) rotate(0deg);
+    filter: hue-rotate(180deg);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1) scaleX(1.3) scaleY(0.8) rotate(0deg);
+    filter: hue-rotate(240deg);
+  }
+  55% {
+    opacity: 0;
+    transform: scale(0.85) scaleX(1.3) scaleY(0.8) rotate(0deg);
+    filter: hue-rotate(300deg);
+  }
+  75% {
+    opacity: 0;
+    transform: scale(0.5) scaleX(1.3) scaleY(0.8) rotate(0deg);
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) scaleX(1.3) scaleY(0.8) rotate(0deg);
+    filter: hue-rotate(420deg);
+  }
+}
+
+@keyframes celebration-sparkle-top-right-3 {
+  0% {
+    opacity: 0;
+    transform: scale(0) scaleX(0.8) scaleY(1.4) rotate(0deg);
+    filter: hue-rotate(240deg);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.15) scaleX(0.8) scaleY(1.4) rotate(0deg);
+    filter: hue-rotate(300deg);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(1) scaleX(0.8) scaleY(1.4) rotate(0deg);
+    filter: hue-rotate(360deg);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(0.8) scaleX(0.8) scaleY(1.4) rotate(0deg);
+    filter: hue-rotate(60deg);
+  }
+  80% {
+    opacity: 0.2;
+    transform: scale(0.4) scaleX(0.8) scaleY(1.4) rotate(0deg);
+    filter: hue-rotate(120deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.15) scaleX(0.8) scaleY(1.4) rotate(0deg);
+    filter: hue-rotate(180deg);
+  }
+}
+
+@keyframes celebration-sparkle-corners {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
+  65% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+@keyframes celebration-lift {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+    box-shadow: var(--eui-celebration-animation-lift-shadow-base);
+  }
+  25% {
+    transform: translateY(var(--eui-celebration-animation-lift-max-translate-y)) scale(var(--eui-celebration-animation-lift-max-scale));
+    filter: brightness(1.1);
+    box-shadow: var(--eui-celebration-animation-lift-shadow-peak);
+  }
+  50% {
+    transform: translateY(calc(var(--eui-celebration-animation-lift-max-translate-y) * 0.67)) scale(calc(var(--eui-celebration-animation-lift-max-scale) * 0.99));
+    filter: brightness(1.05);
+    box-shadow: var(--eui-celebration-animation-lift-shadow-peak);
+  }
+  75% {
+    transform: translateY(calc(var(--eui-celebration-animation-lift-max-translate-y) * 0.33)) scale(calc(var(--eui-celebration-animation-lift-max-scale) * 0.98));
+    filter: brightness(1.02);
+    box-shadow: var(--eui-celebration-animation-lift-shadow-base);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+    box-shadow: var(--eui-celebration-animation-lift-shadow-base);
+  }
+}
+
+/* Delay variants */
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="short"] {
+  animation-delay: var(--eui-celebration-animation-delay-short);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="short"]::before {
+  animation-delay: var(--eui-celebration-animation-delay-short);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="short"]::after {
+  animation-delay: var(--eui-celebration-animation-delay-short);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="medium"] {
+  animation-delay: var(--eui-celebration-animation-delay-medium);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="medium"]::before {
+  animation-delay: var(--eui-celebration-animation-delay-medium);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="medium"]::after {
+  animation-delay: var(--eui-celebration-animation-delay-medium);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="long"] {
+  animation-delay: var(--eui-celebration-animation-delay-long);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="long"]::before {
+  animation-delay: var(--eui-celebration-animation-delay-long);
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-delay="long"]::after {
+  animation-delay: var(--eui-celebration-animation-delay-long);
+}
+
+/* Color-focused animation variants - no jumping/lifting */
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-pulse"] {
+  animation: celebration-color-pulse 1.s ease-in-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-pulse"]::before {
+  animation: celebration-shine 1.2s ease-in-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-glow"] {
+  animation: celebration-color-glow 1.8s ease-in-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-glow"]::before {
+  animation: celebration-shine 1.2s ease-in-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-wave"] {
+  animation: celebration-color-wave 2s ease-in-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-wave"]::before {
+  animation: celebration-shine 1.2s ease-in-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-particles"] {
+  animation: celebration-color-particles 1.8s ease-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-particles"]::before {
+  animation: celebration-shine 1.2s ease-in-out;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-gradient"] {
+  animation: celebration-color-gradient 2s ease-in-out;
+  background: linear-gradient(90deg, var(--eui-button-accent-background-base), var(--eui-button-accent-background-base));
+  background-size: 200% 100%;
+}
+
+[data-eui-context] .eui-celebration[data-eui-celebration-variant="color-gradient"]::before {
+  animation: celebration-shine 1.2s ease-in-out;
+}
+
+/* Color animation keyframes */
+@keyframes celebration-color-pulse {
+  0%, 100% {
+    filter: brightness(1) saturate(1);
+  }
+  25% {
+    filter: brightness(1.3) saturate(1.5);
+  }
+  50% {
+    filter: brightness(1.4) saturate(1.8);
+  }
+  75% {
+    filter: brightness(1.2) saturate(1.3);
+  }
+}
+
+@keyframes celebration-color-glow {
+  0%, 100% {
+    filter: brightness(1) saturate(1);
+    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+  }
+  30% {
+    filter: brightness(1.25) saturate(1.6);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), 0 0 40px rgba(245, 158, 11, 0.2);
+  }
+  60% {
+    filter: brightness(1.15) saturate(1.4);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 0 0 30px rgba(245, 158, 11, 0.15);
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes celebration-color-wave {
+  0%, 100% {
+    filter: brightness(1) saturate(1) hue-rotate(0deg);
+  }
+  20% {
+    filter: brightness(1.2) saturate(1.4) hue-rotate(5deg);
+  }
+  40% {
+    filter: brightness(1.35) saturate(1.7) hue-rotate(10deg);
+  }
+  60% {
+    filter: brightness(1.25) saturate(1.5) hue-rotate(8deg);
+  }
+  80% {
+    filter: brightness(1.1) saturate(1.2) hue-rotate(3deg);
+  }
+}
+
+@keyframes celebration-color-particles {
+  0%, 100% {
+    filter: brightness(1) saturate(1);
+    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+  }
+  15% {
+    filter: brightness(1.2) saturate(1.4);
+    box-shadow: 
+      -3px -3px 0 2px rgba(245, 158, 11, 0.6),
+      3px -3px 0 2px rgba(245, 158, 11, 0.6),
+      -3px 3px 0 2px rgba(245, 158, 11, 0.6),
+      3px 3px 0 2px rgba(245, 158, 11, 0.6);
+  }
+  30% {
+    filter: brightness(1.3) saturate(1.6);
+    box-shadow: 
+      -5px -5px 0 3px rgba(245, 158, 11, 0.8),
+      5px -5px 0 3px rgba(245, 158, 11, 0.8),
+      -5px 5px 0 3px rgba(245, 158, 11, 0.8),
+      5px 5px 0 3px rgba(245, 158, 11, 0.8),
+      -8px -8px 0 2px rgba(249, 115, 22, 0.6),
+      8px -8px 0 2px rgba(249, 115, 22, 0.6),
+      -8px 8px 0 2px rgba(249, 115, 22, 0.6),
+      8px 8px 0 2px rgba(249, 115, 22, 0.6);
+  }
+  50% {
+    filter: brightness(1.25) saturate(1.5);
+    box-shadow: 
+      -4px -4px 0 2px rgba(245, 158, 11, 0.5),
+      4px -4px 0 2px rgba(245, 158, 11, 0.5),
+      -4px 4px 0 2px rgba(245, 158, 11, 0.5),
+      4px 4px 0 2px rgba(245, 158, 11, 0.5);
+  }
+  70% {
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow: 
+      -2px -2px 0 1px rgba(245, 158, 11, 0.3),
+      2px -2px 0 1px rgba(245, 158, 11, 0.3),
+      -2px 2px 0 1px rgba(245, 158, 11, 0.3),
+      2px 2px 0 1px rgba(245, 158, 11, 0.3);
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+    box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes celebration-color-gradient {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(1) saturate(1);
+  }
+  25% {
+    background-position: 100% 50%;
+    filter: brightness(1.2) saturate(1.4);
+  }
+  50% {
+    background-position: 0% 50%;
+    filter: brightness(1.3) saturate(1.6);
+  }
+  75% {
+    background-position: 100% 50%;
+    filter: brightness(1.15) saturate(1.3);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: brightness(1) saturate(1);
+  }
+}
+

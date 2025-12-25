@@ -1,0 +1,43 @@
+{
+  "eui": {
+    "celebration": {
+      "colors": {
+        "shine": {
+          "start": {
+            "$value": "rgba(255, 255, 255, 0)",
+            "$type": "color",
+            "$description": "Start color of shine gradient (transparent)."
+          },
+              "mid": {
+                "$value": "rgba(255, 255, 255, 0.3)",
+                "$type": "color",
+                "$description": "Peak color of shine gradient (subtle white)."
+              },
+          "end": {
+            "$value": "rgba(255, 255, 255, 0)",
+            "$type": "color",
+            "$description": "End color of shine gradient (transparent)."
+          }
+        },
+        "sparkle": {
+          "base": {
+            "$value": "rgba(255, 255, 255, 1)",
+            "$type": "color",
+            "$description": "Base color of sparkle particles (bright white)."
+          },
+          "bright": {
+            "$value": "rgba(255, 255, 255, 0.9)",
+            "$type": "color",
+            "$description": "Bright sparkle particle color."
+          },
+          "dim": {
+            "$value": "rgba(255, 255, 255, 0.7)",
+            "$type": "color",
+            "$description": "Dim sparkle particle color."
+          }
+        }
+      }
+    }
+  }
+}
+
