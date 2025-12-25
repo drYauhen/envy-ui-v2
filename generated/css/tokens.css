@@ -88,6 +88,16 @@
   --eui-button-accent-label-active: #ffffff;
   --eui-button-accent-label-disabled: #404040;
   --eui-button-accent-label-selected: #ffffff;
+  --eui-button-accent-finished-background-base: #b7dbff;
+  --eui-button-accent-finished-background-hover: #b7dbff;
+  --eui-button-accent-finished-background-active: #b7dbff;
+  --eui-button-accent-finished-background-disabled: #e5e7eb;
+  --eui-button-accent-finished-background-selected: #b7dbff;
+  --eui-button-accent-finished-label-base: #2d98e8;
+  --eui-button-accent-finished-label-hover: #2d98e8;
+  --eui-button-accent-finished-label-active: #2d98e8;
+  --eui-button-accent-finished-label-disabled: #404040;
+  --eui-button-accent-finished-label-selected: #2d98e8;
   --eui-button-focus-ring-color-derived-base: #2ea7d1;
   --eui-button-focus-ring-color-derived-accessible: #066a8d;
   --eui-button-focus-ring-width-base: 2px;
@@ -221,6 +231,27 @@
   --eui-card-variant-strong-border-color: #404040;
   --eui-card-variant-strong-background: #ffffff;
   --eui-card-variant-strong-radius: 4px;
+  --eui-celebration-animation-duration: 1.8s;
+  --eui-celebration-animation-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --eui-celebration-animation-shine-duration: 1.2s;
+  --eui-celebration-animation-shine-easing: ease-in-out;
+  --eui-celebration-animation-shine-width: 50%;
+  --eui-celebration-animation-sparkle-duration: 1.5s;
+  --eui-celebration-animation-sparkle-easing: ease-out;
+  --eui-celebration-animation-sparkle-particle-size: 2px;
+  --eui-celebration-animation-lift-max-translate-y: -6px;
+  --eui-celebration-animation-lift-max-scale: 1.03;
+  --eui-celebration-animation-lift-shadow-base: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --eui-celebration-animation-lift-shadow-peak: 0 12px 24px rgba(0, 0, 0, 0.18);
+  --eui-celebration-animation-delay-short: 200ms;
+  --eui-celebration-animation-delay-medium: 500ms;
+  --eui-celebration-animation-delay-long: 1000ms;
+  --eui-celebration-colors-shine-start: rgba(255, 255, 255, 0);
+  --eui-celebration-colors-shine-mid: rgba(255, 255, 255, 0.3);
+  --eui-celebration-colors-shine-end: rgba(255, 255, 255, 0);
+  --eui-celebration-colors-sparkle-base: #ffffff;
+  --eui-celebration-colors-sparkle-bright: rgba(255, 255, 255, 0.9);
+  --eui-celebration-colors-sparkle-dim: rgba(255, 255, 255, 0.7);
   --eui-checkbox-border-width: 1px;
   --eui-checkbox-border-style: solid;
   --eui-checkbox-border-base: #a3a3a3;
@@ -323,6 +354,37 @@
   --eui-header-spacing-padding-horizontal: 1.5rem;
   --eui-header-spacing-padding-vertical: 0.75rem;
   --eui-header-spacing-gap: 1rem;
+  --eui-hero-section-colors-background-base: #ffffff;
+  --eui-hero-section-colors-background-overlay-dark: rgba(0, 0, 0, 0.4);
+  --eui-hero-section-colors-background-overlay-light: rgba(255, 255, 255, 0.2);
+  --eui-hero-section-colors-text-heading: #1b1b1b;
+  --eui-hero-section-colors-text-subheading: #404040;
+  --eui-hero-section-size-min-height-mobile: 400px;
+  --eui-hero-section-size-min-height-tablet: 500px;
+  --eui-hero-section-size-min-height-desktop: 600px;
+  --eui-hero-section-size-min-height-wide: 700px;
+  --eui-hero-section-size-content-max-width: 1200px;
+  --eui-hero-section-size-heading-max-width: 800px;
+  --eui-hero-section-size-subheading-max-width: 600px;
+  --eui-hero-section-spacing-padding-mobile-inline: 1rem;
+  --eui-hero-section-spacing-padding-mobile-block: 2rem;
+  --eui-hero-section-spacing-padding-tablet-inline: 2rem;
+  --eui-hero-section-spacing-padding-tablet-block: 3rem;
+  --eui-hero-section-spacing-padding-desktop-inline: 3rem;
+  --eui-hero-section-spacing-padding-desktop-block: 4rem;
+  --eui-hero-section-spacing-gap-content: 1.5rem;
+  --eui-hero-section-spacing-gap-cta: 1rem;
+  --eui-hero-section-spacing-gap-media: 2rem;
+  --eui-hero-section-typography-heading-mobile-font-size: 2rem;
+  --eui-hero-section-typography-heading-mobile-line-height: 1.2;
+  --eui-hero-section-typography-heading-mobile-font-weight: 700;
+  --eui-hero-section-typography-heading-desktop-font-size: 3rem;
+  --eui-hero-section-typography-heading-desktop-line-height: 1.2;
+  --eui-hero-section-typography-heading-desktop-font-weight: 700;
+  --eui-hero-section-typography-subheading-mobile-font-size: 1rem;
+  --eui-hero-section-typography-subheading-mobile-line-height: 1.6;
+  --eui-hero-section-typography-subheading-desktop-font-size: 1.25rem;
+  --eui-hero-section-typography-subheading-desktop-line-height: 1.6;
   --eui-input-border-width: 1px;
   --eui-input-border-style: solid;
   --eui-input-border-base: #404040;
@@ -606,7 +668,6 @@
   --eui-color-background-inverse: #1b1b1b;
   --eui-color-focus-ring: #ff4d00;
   --eui-color-system-focus: #ff4d00;
-  --eui-color-text-muted: #404040;
   --eui-color-text-subtle: #525252;
   --eui-color-text-inverse: #ffffff;
   --eui-radius-pill: 999px;
@@ -727,5 +788,18 @@
 
 [data-eui-context="report"][data-eui-theme="screen"] {
   --eui-color-border-default: #404040;
+}
+
+[data-eui-context="website"][data-eui-theme="dark"] {
+  --eui-color-background-base: #1b1b1b;
+  --eui-color-text-muted: #cccccc;
+  --eui-color-text-primary: #ffffff;
+}
+
+[data-eui-context="website"][data-eui-theme="default"] {
+  --eui-color-background-base: #ffffff;
+  --eui-color-text-muted: #404040;
+  --eui-color-text-primary: #1b1b1b;
+  --eui-typography-base-fontSize: 16px;
 }
 

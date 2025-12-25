@@ -339,6 +339,46 @@
     "$value": "#ffffff",
     "$type": "color"
   },
+  "eui.button.accent-finished.background.base": {
+    "$value": "#b7dbff",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.background.hover": {
+    "$value": "#b7dbff",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.background.active": {
+    "$value": "#b7dbff",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.background.disabled": {
+    "$value": "#e5e7eb",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.background.selected": {
+    "$value": "#b7dbff",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.label.base": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.label.hover": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.label.active": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.label.disabled": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.button.accent-finished.label.selected": {
+    "$value": "#2d98e8",
+    "$type": "color"
+  },
   "eui.button.focus.ring.color.derived.base": {
     "$value": "#2ea7d1",
     "$type": "color"
@@ -871,6 +911,90 @@
     "$value": "4px",
     "$type": "dimension"
   },
+  "eui.celebration.animation.duration": {
+    "$value": "1.8s",
+    "$type": "duration"
+  },
+  "eui.celebration.animation.easing": {
+    "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+    "$type": "string"
+  },
+  "eui.celebration.animation.shine.duration": {
+    "$value": "1.2s",
+    "$type": "duration"
+  },
+  "eui.celebration.animation.shine.easing": {
+    "$value": "ease-in-out",
+    "$type": "string"
+  },
+  "eui.celebration.animation.shine.width": {
+    "$value": "50%",
+    "$type": "dimension"
+  },
+  "eui.celebration.animation.sparkle.duration": {
+    "$value": "1.5s",
+    "$type": "duration"
+  },
+  "eui.celebration.animation.sparkle.easing": {
+    "$value": "ease-out",
+    "$type": "string"
+  },
+  "eui.celebration.animation.sparkle.particle.size": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.celebration.animation.lift.max.translateY": {
+    "$value": "-6px",
+    "$type": "dimension"
+  },
+  "eui.celebration.animation.lift.max.scale": {
+    "$value": "1.03",
+    "$type": "number"
+  },
+  "eui.celebration.animation.lift.shadow.base": {
+    "$value": "0 1px 3px rgba(0, 0, 0, 0.12)",
+    "$type": "boxShadow"
+  },
+  "eui.celebration.animation.lift.shadow.peak": {
+    "$value": "0 12px 24px rgba(0, 0, 0, 0.18)",
+    "$type": "boxShadow"
+  },
+  "eui.celebration.animation.delay.short": {
+    "$value": "200ms",
+    "$type": "duration"
+  },
+  "eui.celebration.animation.delay.medium": {
+    "$value": "500ms",
+    "$type": "duration"
+  },
+  "eui.celebration.animation.delay.long": {
+    "$value": "1000ms",
+    "$type": "duration"
+  },
+  "eui.celebration.colors.shine.start": {
+    "$value": "#ffffff00",
+    "$type": "color"
+  },
+  "eui.celebration.colors.shine.mid": {
+    "$value": "#ffffff4d",
+    "$type": "color"
+  },
+  "eui.celebration.colors.shine.end": {
+    "$value": "#ffffff00",
+    "$type": "color"
+  },
+  "eui.celebration.colors.sparkle.base": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.celebration.colors.sparkle.bright": {
+    "$value": "#ffffffe6",
+    "$type": "color"
+  },
+  "eui.celebration.colors.sparkle.dim": {
+    "$value": "#ffffffb3",
+    "$type": "color"
+  },
   "eui.checkbox.border.width": {
     "$value": "1px",
     "$type": "dimension"
@@ -1278,6 +1402,130 @@
   "eui.header.spacing.gap": {
     "$value": "1rem",
     "$type": "dimension"
+  },
+  "eui.hero-section.colors.background.base": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
+  "eui.hero-section.colors.background.overlay.dark": {
+    "$value": "#00000066",
+    "$type": "color"
+  },
+  "eui.hero-section.colors.background.overlay.light": {
+    "$value": "#ffffff33",
+    "$type": "color"
+  },
+  "eui.hero-section.colors.text.heading": {
+    "$value": "#1b1b1b",
+    "$type": "color"
+  },
+  "eui.hero-section.colors.text.subheading": {
+    "$value": "#404040",
+    "$type": "color"
+  },
+  "eui.hero-section.size.min-height.mobile": {
+    "$value": "400px",
+    "$type": "dimension"
+  },
+  "eui.hero-section.size.min-height.tablet": {
+    "$value": "500px",
+    "$type": "dimension"
+  },
+  "eui.hero-section.size.min-height.desktop": {
+    "$value": "600px",
+    "$type": "dimension"
+  },
+  "eui.hero-section.size.min-height.wide": {
+    "$value": "700px",
+    "$type": "dimension"
+  },
+  "eui.hero-section.size.content-max-width": {
+    "$value": "1200px",
+    "$type": "dimension"
+  },
+  "eui.hero-section.size.heading-max-width": {
+    "$value": "800px",
+    "$type": "dimension"
+  },
+  "eui.hero-section.size.subheading-max-width": {
+    "$value": "600px",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.padding.mobile.inline": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.padding.mobile.block": {
+    "$value": "2rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.padding.tablet.inline": {
+    "$value": "2rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.padding.tablet.block": {
+    "$value": "3rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.padding.desktop.inline": {
+    "$value": "3rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.padding.desktop.block": {
+    "$value": "4rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.gap.content": {
+    "$value": "1.5rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.gap.cta": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.spacing.gap.media": {
+    "$value": "2rem",
+    "$type": "dimension"
+  },
+  "eui.hero-section.typography.heading.mobile.font-size": {
+    "$value": "2rem",
+    "$type": "fontSize"
+  },
+  "eui.hero-section.typography.heading.mobile.line-height": {
+    "$value": "1.2",
+    "$type": "lineHeight"
+  },
+  "eui.hero-section.typography.heading.mobile.font-weight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.hero-section.typography.heading.desktop.font-size": {
+    "$value": "3rem",
+    "$type": "fontSize"
+  },
+  "eui.hero-section.typography.heading.desktop.line-height": {
+    "$value": "1.2",
+    "$type": "lineHeight"
+  },
+  "eui.hero-section.typography.heading.desktop.font-weight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.hero-section.typography.subheading.mobile.font-size": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.hero-section.typography.subheading.mobile.line-height": {
+    "$value": "1.6",
+    "$type": "lineHeight"
+  },
+  "eui.hero-section.typography.subheading.desktop.font-size": {
+    "$value": "1.25rem",
+    "$type": "fontSize"
+  },
+  "eui.hero-section.typography.subheading.desktop.line-height": {
+    "$value": "1.6",
+    "$type": "lineHeight"
   },
   "eui.input.border.width": {
     "$value": "1px",
@@ -2408,6 +2656,10 @@
     "$value": "#1b1b1b",
     "$type": "color"
   },
+  "eui.color.background.base": {
+    "$value": "#ffffff",
+    "$type": "color"
+  },
   "eui.color.border.default": {
     "$value": "#404040",
     "$type": "color"
@@ -2749,7 +3001,7 @@
     "$type": "fontFamily"
   },
   "eui.typography.base.fontSize": {
-    "$value": "14px",
+    "$value": "16px",
     "$type": "fontSize"
   },
   "eui.focus.ring.width.base": {

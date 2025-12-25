@@ -342,6 +342,13 @@
       "title": "Semantic Background",
       "tokens": [
         {
+          "id": "base",
+          "label": "Base",
+          "path": "eui.color.background.base",
+          "cssVar": "--eui-color-background-base",
+          "value": "#ffffff"
+        },
+        {
           "id": "inverse",
           "label": "Inverse",
           "path": "eui.color.background.inverse",

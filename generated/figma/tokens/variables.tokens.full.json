@@ -184,6 +184,36 @@
           "value": "#525252"
         },
         {
+          "path": "eui.celebration.colors.shine.end",
+          "type": "COLOR",
+          "value": "#ffffff00"
+        },
+        {
+          "path": "eui.celebration.colors.shine.mid",
+          "type": "COLOR",
+          "value": "#ffffff4d"
+        },
+        {
+          "path": "eui.celebration.colors.shine.start",
+          "type": "COLOR",
+          "value": "#ffffff00"
+        },
+        {
+          "path": "eui.celebration.colors.sparkle.base",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.celebration.colors.sparkle.bright",
+          "type": "COLOR",
+          "value": "#ffffffe6"
+        },
+        {
+          "path": "eui.celebration.colors.sparkle.dim",
+          "type": "COLOR",
+          "value": "#ffffffb3"
+        },
+        {
           "path": "eui.content.colors.background",
           "type": "COLOR",
           "value": "#ffffff"
@@ -307,6 +337,31 @@
           "path": "eui.header.colors.text",
           "type": "COLOR",
           "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.hero-section.colors.background.base",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.hero-section.colors.background.overlay.dark",
+          "type": "COLOR",
+          "value": "#00000066"
+        },
+        {
+          "path": "eui.hero-section.colors.background.overlay.light",
+          "type": "COLOR",
+          "value": "#ffffff33"
+        },
+        {
+          "path": "eui.hero-section.colors.text.heading",
+          "type": "COLOR",
+          "value": "#1b1b1b"
+        },
+        {
+          "path": "eui.hero-section.colors.text.subheading",
+          "type": "COLOR",
+          "value": "#404040"
         },
         {
           "path": "eui.menu.colors.background",
@@ -760,6 +815,11 @@
         },
         {
           "path": "eui.checkbox.background.indeterminateHover",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
+          "path": "eui.color.background.base",
           "type": "COLOR",
           "value": "#ffffff"
         },
@@ -1351,6 +1411,62 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Colors / Accent Finished",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.button.accent-finished.background.active",
+          "type": "COLOR",
+          "value": "#b7dbff"
+        },
+        {
+          "path": "eui.button.accent-finished.background.base",
+          "type": "COLOR",
+          "value": "#b7dbff"
+        },
+        {
+          "path": "eui.button.accent-finished.background.disabled",
+          "type": "COLOR",
+          "value": "#e5e7eb"
+        },
+        {
+          "path": "eui.button.accent-finished.background.hover",
+          "type": "COLOR",
+          "value": "#b7dbff"
+        },
+        {
+          "path": "eui.button.accent-finished.background.selected",
+          "type": "COLOR",
+          "value": "#b7dbff"
+        },
+        {
+          "path": "eui.button.accent-finished.label.active",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.button.accent-finished.label.base",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.button.accent-finished.label.disabled",
+          "type": "COLOR",
+          "value": "#404040"
+        },
+        {
+          "path": "eui.button.accent-finished.label.hover",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        },
+        {
+          "path": "eui.button.accent-finished.label.selected",
+          "type": "COLOR",
+          "value": "#2d98e8"
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Focus",
       "mode": "default",
       "variables": [
@@ -1571,6 +1687,32 @@
           "path": "eui.card.variant.strong.border.color",
           "type": "COLOR",
           "value": "#404040"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Celebration",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.celebration.animation.lift.max.scale",
+          "type": "FLOAT",
+          "value": 1.03
+        },
+        {
+          "path": "eui.celebration.animation.lift.max.translateY",
+          "type": "FLOAT",
+          "value": -6
+        },
+        {
+          "path": "eui.celebration.animation.shine.width",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.celebration.animation.sparkle.particle.size",
+          "type": "FLOAT",
+          "value": 2
         }
       ]
     },
@@ -1854,6 +1996,92 @@
           "path": "eui.header.spacing.padding.vertical",
           "type": "FLOAT",
           "value": 0.75
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Hero Section",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.hero-section.size.content-max-width",
+          "type": "FLOAT",
+          "value": 1200
+        },
+        {
+          "path": "eui.hero-section.size.heading-max-width",
+          "type": "FLOAT",
+          "value": 800
+        },
+        {
+          "path": "eui.hero-section.size.min-height.desktop",
+          "type": "FLOAT",
+          "value": 600
+        },
+        {
+          "path": "eui.hero-section.size.min-height.mobile",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.hero-section.size.min-height.tablet",
+          "type": "FLOAT",
+          "value": 500
+        },
+        {
+          "path": "eui.hero-section.size.min-height.wide",
+          "type": "FLOAT",
+          "value": 700
+        },
+        {
+          "path": "eui.hero-section.size.subheading-max-width",
+          "type": "FLOAT",
+          "value": 600
+        },
+        {
+          "path": "eui.hero-section.spacing.gap.content",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.hero-section.spacing.gap.cta",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.hero-section.spacing.gap.media",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.desktop.block",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.desktop.inline",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.mobile.block",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.mobile.inline",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.tablet.block",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.tablet.inline",
+          "type": "FLOAT",
+          "value": 2
         }
       ]
     },

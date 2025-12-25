@@ -229,6 +229,11 @@
       "mode": "default",
       "variables": [
         {
+          "path": "eui.color.background.base",
+          "type": "COLOR",
+          "value": "#ffffff"
+        },
+        {
           "path": "eui.color.background.inverse",
           "type": "COLOR",
           "value": "#1b1b1b"
