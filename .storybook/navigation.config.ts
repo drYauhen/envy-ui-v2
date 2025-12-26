@@ -15,6 +15,7 @@ export const navigationConfig = {
     "TSX",
     "TSX + React Aria",
     "Web Components",
+    "Tailwind",
     "Templates",
     "Architecture"
   ] as const,
