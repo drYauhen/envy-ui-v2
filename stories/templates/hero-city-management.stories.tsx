@@ -393,12 +393,12 @@ const renderHeroSection = (config: any) => {
 };
 
 const meta: Meta = {
-  title: 'Templates/Hero Section/City Management',
+  title: 'Templates/City Management/Hero Section',
   tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
-        component: 'Hero Section templates for city management products. Includes visualizations of networks, infrastructure, and communities.'
+        component: 'Hero Section template for city management products with centered layout.'
       }
     }
   }
@@ -408,175 +408,8 @@ export default meta;
 
 type Story = StoryObj;
 
-export const CityManagementSplit: Story = {
-  name: 'City Management (Split Layout)',
-  render: () => renderHeroSection(cityManagementConfig)
-};
-
-export const CityManagementCentered: Story = {
-  name: 'City Management (Centered Layout)',
+export const ManagementCentered: Story = {
+  name: 'Management-Centered Layout',
   render: () => renderHeroSection(cityManagementCenteredConfig)
-};
-
-// Variant with video background
-const cityManagementVideoConfig = {
-  ...cityManagementConfig,
-  templateId: "hero-city-management-video-v1",
-  templateName: "City Management Hero (Video Background)",
-  media: {
-    type: "video",
-    url: "https://videos.pexels.com/video-files/2491284/2491284-hd_1920_1080_25fps.mp4",
-    autoplay: true,
-    loop: true,
-    muted: true,
-    position: "center"
-  }
-};
-
-// Variant with GIF animation
-const cityManagementGifConfig = {
-  ...cityManagementConfig,
-  templateId: "hero-city-management-gif-v1",
-  templateName: "City Management Hero (GIF Animation)",
-  media: {
-    type: "gif",
-    url: "https://media.giphy.com/media/3o7aD2saQqLEoe2X4s/giphy.gif",
-    alt: "Community park animation",
-    position: "center"
-  }
-};
-
-// Variant with different city image - park scene
-const cityManagementImageConfig = {
-  ...cityManagementConfig,
-  templateId: "hero-city-management-image-v1",
-  templateName: "City Management Hero (Park Scene)",
-  media: {
-    type: "image",
-    url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&h=750&fit=crop&q=80",
-    alt: "Community park with people",
-    position: "center"
-  }
-};
-
-// Variant with small town street
-const cityManagementStreetConfig = {
-  ...cityManagementConfig,
-  templateId: "hero-city-management-street-v1",
-  templateName: "City Management Hero (Town Street)",
-  media: {
-    type: "image",
-    url: "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1000&h=750&fit=crop&q=80",
-    alt: "Small town street with community",
-    position: "center"
-  }
-};
-
-// Variant with community gathering
-const cityManagementCommunityConfig = {
-  ...cityManagementConfig,
-  templateId: "hero-city-management-community-v1",
-  templateName: "City Management Hero (Community)",
-  media: {
-    type: "image",
-    url: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1000&h=750&fit=crop&q=80",
-    alt: "Community gathering in public space",
-    position: "center"
-  }
-};
-
-export const CityManagementWithVideo: Story = {
-  name: 'City Management (Video Background)',
-  render: () => renderHeroSection(cityManagementVideoConfig)
-};
-
-export const CityManagementWithGif: Story = {
-  name: 'City Management (GIF Animation)',
-  render: () => renderHeroSection(cityManagementGifConfig)
-};
-
-export const CityManagementWithImage: Story = {
-  name: 'City Management (Park Scene)',
-  render: () => renderHeroSection(cityManagementImageConfig)
-};
-
-export const CityManagementStreet: Story = {
-  name: 'City Management (Town Street)',
-  render: () => renderHeroSection(cityManagementStreetConfig)
-};
-
-export const CityManagementCommunity: Story = {
-  name: 'City Management (Community Gathering)',
-  render: () => renderHeroSection(cityManagementCommunityConfig)
-};
-
-// Variant with video background (centered layout) - small town
-const cityManagementVideoBackgroundConfig = {
-  ...cityManagementCenteredConfig,
-  templateId: "hero-city-management-video-bg-v1",
-  templateName: "City Management Hero (Video Background)",
-  background: {
-    type: "video",
-    video: {
-      url: "https://videos.pexels.com/video-files/2491284/2491284-hd_1920_1080_25fps.mp4",
-      poster: "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1920&h=1080&fit=crop&q=80",
-      autoplay: true,
-      loop: true,
-      muted: true,
-      position: "center"
-    },
-    overlay: {
-      enabled: true,
-      type: "dark",
-      opacity: 0.7
-    }
-  }
-};
-
-export const CityManagementVideoBackground: Story = {
-  name: 'City Management (Video Background - Centered)',
-  render: () => renderHeroSection(cityManagementVideoBackgroundConfig)
-};
-
-export const VisualConcepts: Story = {
-  name: 'Visual Concepts',
-  render: () => (
-    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }} data-eui-context="website">
-      <h2 style={{ marginBottom: '2rem' }}>Recommended Visual Concepts</h2>
-      
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--eui-color-background-elevated)', borderRadius: '8px' }}>
-          <h3 style={{ marginTop: 0 }}>1. Networks and Connections</h3>
-          <p>Abstract visualization of communication and transportation networks connecting different parts of the city.</p>
-          <p><strong>Style:</strong> Minimalist, lines and nodes, emphasis on connections</p>
-        </div>
-        
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--eui-color-background-elevated)', borderRadius: '8px' }}>
-          <h3 style={{ marginTop: 0 }}>2. Urban Infrastructure</h3>
-          <p>Modern buildings, roads, parks - elements of urban environment unified into a single system.</p>
-          <p><strong>Style:</strong> Photorealistic or isometric, emphasis on architecture</p>
-        </div>
-        
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--eui-color-background-elevated)', borderRadius: '8px' }}>
-          <h3 style={{ marginTop: 0 }}>3. Communities and People</h3>
-          <p>People interacting with urban environment, public spaces, city life.</p>
-          <p><strong>Style:</strong> Illustrative, friendly, emphasis on human factor</p>
-        </div>
-        
-        <div style={{ padding: '1.5rem', backgroundColor: 'var(--eui-color-background-elevated)', borderRadius: '8px' }}>
-          <h3 style={{ marginTop: 0 }}>4. Smart City</h3>
-          <p>Technology, data, analytics - digital solutions for city management.</p>
-          <p><strong>Style:</strong> Technological, futuristic, emphasis on innovation</p>
-        </div>
-      </div>
-      
-      <div style={{ marginTop: '2rem', padding: '1.5rem', backgroundColor: 'var(--eui-color-background-elevated)', borderRadius: '8px' }}>
-        <h3>Example SVG Illustration (embedded in template)</h3>
-        <div style={{ width: '100%', height: '300px', marginTop: '1rem' }}>
-          <CityNetworkSVG />
-        </div>
-      </div>
-    </div>
-  )
 };
 
