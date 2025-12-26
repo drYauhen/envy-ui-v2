@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0014',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const ColorModelTonalScalesandContextualArchitecture: Story = {
-  name: 'Color Model, Tonal Scales, and Contextual Architecture',
+  name: 'ADR-0014 Color Model, Tonal Scales, and Contextual Architecture',
   render: () => (
     <AdrViewer
       adrNumber="0014"

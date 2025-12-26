@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0001',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const ReactAriaasHeadlessAccessibilityFoundation: Story = {
-  name: 'React Aria as Headless Accessibility Foundation',
+  name: 'ADR-0001 React Aria as Headless Accessibility Foundation',
   render: () => (
     <AdrViewer
       adrNumber="0001"
@@ -22,4 +21,3 @@ export const ReactAriaasHeadlessAccessibilityFoundation: Story = {
     />
   )
 };
-

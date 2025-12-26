@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0002',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const DataDrivenStorybookPipelineviaStyleDictionary: Story = {
-  name: 'Data-Driven Storybook Pipeline via Style Dictionary',
+  name: 'ADR-0002 Data-Driven Storybook Pipeline via Style Dictionary',
   render: () => (
     <AdrViewer
       adrNumber="0002"

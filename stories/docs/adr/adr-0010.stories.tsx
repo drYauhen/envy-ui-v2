@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0010',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const ButtonTSXReactAriav2Alpha: Story = {
-  name: 'Button TSX + React Aria v2 (Alpha)',
+  name: 'ADR-0010 Button TSX + React Aria v2 (Alpha)',
   render: () => (
     <AdrViewer
       adrNumber="0010"

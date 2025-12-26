@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0011',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const TokenDrivenButtonContractsv1Exploratory: Story = {
-  name: 'Token-Driven Button Contracts (v1, Exploratory)',
+  name: 'ADR-0011 Token-Driven Button Contracts (v1, Exploratory)',
   render: () => (
     <AdrViewer
       adrNumber="0011"

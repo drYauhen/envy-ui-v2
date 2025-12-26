@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0016',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const PrefixUnificationtoeui: Story = {
-  name: 'Prefix Unification to eui',
+  name: 'ADR-0016 Prefix Unification to eui',
   render: () => (
     <AdrViewer
       adrNumber="0016"

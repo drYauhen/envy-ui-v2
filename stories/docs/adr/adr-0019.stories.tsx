@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0019',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const LayoutComponentsArchitecture: Story = {
-  name: 'Layout Components Architecture',
+  name: 'ADR-0019 Layout Components Architecture',
   render: () => (
     <AdrViewer
       adrNumber="0019"

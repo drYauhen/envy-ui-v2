@@ -23,21 +23,26 @@ try {
     console.log(`Created directory: ${targetDir}`);
   }
 
-    // Copy all .md files from docs/adr/ to public/docs/adr/
+    // Copy all .md files and images from docs/adr/ to public/docs/adr/
     if (existsSync(sourceDir)) {
       const { readdirSync } = await import('fs');
       const files = readdirSync(sourceDir);
-      let copiedCount = 0;
+      let copiedMdCount = 0;
+      let copiedImageCount = 0;
       let shortNameCount = 0;
 
+      // Image extensions to copy
+      const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
+
       for (const file of files) {
+        const sourceFile = join(sourceDir, file);
+        const targetFile = join(targetDir, file);
+        
+        // Copy markdown files
         if (file.endsWith('.md') && file.startsWith('ADR-')) {
-          const sourceFile = join(sourceDir, file);
-          const targetFile = join(targetDir, file);
-          
           // Copy with original name
           cpSync(sourceFile, targetFile, { overwrite: true });
-          copiedCount++;
+          copiedMdCount++;
           
           // Also create a short name version (ADR-XXXX.md) for easier fetch access
           // Extract ADR number (e.g., "0019" from "ADR-0019-layout-components-architecture.md")
@@ -54,9 +59,19 @@ try {
             }
           }
         }
+        
+        // Copy image files (any file with image extension)
+        const isImage = imageExtensions.some(ext => file.toLowerCase().endsWith(ext));
+        if (isImage) {
+          cpSync(sourceFile, targetFile, { overwrite: true });
+          copiedImageCount++;
+        }
       }
 
-      console.log(`✓ Copied ${copiedCount} ADR markdown files to public/docs/adr/`);
+      console.log(`✓ Copied ${copiedMdCount} ADR markdown files to public/docs/adr/`);
+      if (copiedImageCount > 0) {
+        console.log(`✓ Copied ${copiedImageCount} image files to public/docs/adr/`);
+      }
       if (shortNameCount > 0) {
         console.log(`✓ Created ${shortNameCount} short-name aliases (ADR-XXXX.md) for fetch access`);
       }

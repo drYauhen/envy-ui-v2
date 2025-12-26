@@ -28,15 +28,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-${number}',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const ${storyName}: Story = {
-  name: '${title}',
+  name: 'ADR-${number} ${title}',
   render: () => (
     <AdrViewer
       adrNumber="${number}"

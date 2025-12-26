@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0021',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const WebComponentsasFrameworkAgnosticImplementationLayer: Story = {
-  name: 'Web Components as Framework-Agnostic Implementation Layer',
+  name: 'ADR-0021 Web Components as Framework-Agnostic Implementation Layer',
   render: () => (
     <AdrViewer
       adrNumber="0021"
@@ -22,4 +21,3 @@ export const WebComponentsasFrameworkAgnosticImplementationLayer: Story = {
     />
   )
 };
-

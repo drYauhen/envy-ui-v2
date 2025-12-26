@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0012',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const ButtonEvolutionLayeredArchitectureandContextsExploratorySnapshot: Story = {
-  name: 'Button Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)',
+  name: 'ADR-0012 Button Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)',
   render: () => (
     <AdrViewer
       adrNumber="0012"

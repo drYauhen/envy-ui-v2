@@ -97,6 +97,73 @@ const linkStyle: CSSProperties = {
   fontWeight: 500
 };
 
+// Helper function to convert ADR title to Storybook story slug
+// Storybook converts export names (camelCase/PascalCase) to kebab-case slugs
+// The generator script creates story names by removing all non-alphanumeric chars and spaces
+// Example: "Data-Driven Figma Variables Pipeline via Adapter JSON"
+//   -> Story name: "DataDrivenFigmaVariablesPipelineviaAdapterJSON"
+//   -> Storybook slug: "data-driven-figma-variables-pipeline-via-adapter-j-s-o-n"
+//
+// The problem is that Storybook splits on capital letters, so "JSON" becomes "j-s-o-n"
+// and "Pipelinevia" becomes "pipeline-via" (which is actually correct)
+//
+// We need to match Storybook's exact behavior: insert dash before each capital letter
+// (except the first one), then convert to lowercase
+const titleToStorySlug = (title: string): string => {
+  // Generate story name the same way as the generator script
+  // This removes all non-alphanumeric chars and spaces
+  const storyName = title.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
+  
+  // Storybook's slug conversion: insert dash before each capital letter (except first)
+  // Then convert to lowercase
+  const slug = storyName
+    .replace(/([a-z])([A-Z])/g, '$1-$2') // Insert dash between lowercase and uppercase
+    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2') // Insert dash between uppercase groups and following word
+    .toLowerCase();
+  
+  return slug;
+};
+
+// Helper function to convert ADR number to Storybook story path
+// This function fetches the story file to extract the actual export name and generate the correct slug
+const adrNumberToStoryPath = async (adrNumber: string): Promise<string> => {
+  try {
+    // First, try to fetch the story file to get the actual export name
+    const storyResponse = await fetch(`/stories/docs/adr/adr-${adrNumber}.stories.tsx`);
+    if (storyResponse.ok) {
+      const storyText = await storyResponse.text();
+      // Extract export name: export const ExportName: Story
+      const exportMatch = storyText.match(/export const (\w+):\s*Story/);
+      if (exportMatch) {
+        const exportName = exportMatch[1];
+        // Convert export name to slug (Storybook's behavior)
+        const slug = exportName
+          .replace(/([a-z])([A-Z])/g, '$1-$2')
+          .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+          .toLowerCase();
+        return `?path=/story/docs-adr--${slug}`;
+      }
+    }
+    
+    // Fallback: fetch the ADR file to get the title
+    const response = await fetch(`/docs/adr/ADR-${adrNumber}.md`);
+    if (!response.ok) {
+      throw new Error(`Failed to load ADR-${adrNumber}`);
+    }
+    const text = await response.text();
+    const titleMatch = text.match(/^# ADR-\d+:\s*(.+)$/m);
+    if (titleMatch) {
+      const title = titleMatch[1].trim();
+      const storySlug = titleToStorySlug(title);
+      return `?path=/story/docs-adr--${storySlug}`;
+    }
+  } catch (err) {
+    console.warn(`Could not load ADR-${adrNumber} for link generation:`, err);
+  }
+  // This fallback should rarely be used
+  return '';
+};
+
 export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) => {
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
@@ -209,23 +276,71 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                 }} {...props} />
               ),
               // Кастомизация ссылок
-              a: ({node, href, ...props}: any) => {
+              a: ({node, href, children, ...props}: any) => {
                 // Convert ADR file links to Storybook story links
                 let storybookHref = href;
+                let targetAdrNumber: string | null = null;
+                
                 if (href && typeof href === 'string') {
                   // Match links to ADR files: ./ADR-XXXX-*.md or ADR-XXXX-*.md
                   const adrMatch = href.match(/ADR-(\d{4})[^/]*\.md$/);
                   if (adrMatch) {
-                    const adrNumber = adrMatch[1];
-                    // Remove leading zeros: 0001 -> 1, 0010 -> 10, 0021 -> 21
-                    const adrId = adrNumber.replace(/^0+/, '') || '0';
-                    storybookHref = `?path=/story/docs-adr-adr-${adrId}--default`;
+                    targetAdrNumber = adrMatch[1];
+                    
+                    // Try to extract title from link text
+                    // Format: "ADR-XXXX Title" or "Title" (after —)
+                    const linkText = typeof children === 'string' ? children : 
+                                    (Array.isArray(children) ? children.map(c => 
+                                      typeof c === 'string' ? c : 
+                                      (typeof c === 'object' && c?.props?.children ? String(c.props.children) : '')
+                                    ).join('') : '');
+                    
+                    let storySlug = '';
+                    if (linkText) {
+                      // Try to extract title after "—" or ":" separator
+                      const titleMatch = linkText.match(/[—:]\s*(.+)$/) || 
+                                        linkText.match(/ADR-\d+[:\s]+(.+)$/) ||
+                                        linkText.match(/^(.+)$/);
+                      if (titleMatch) {
+                        const title = titleMatch[1].trim();
+                        // Remove ADR-XXXX prefix if present
+                        const cleanTitle = title.replace(/^ADR-\d+\s*/, '').trim();
+                        if (cleanTitle) {
+                          storySlug = titleToStorySlug(cleanTitle);
+                        }
+                      }
+                    }
+                    
+                    if (storySlug) {
+                      storybookHref = `?path=/story/docs-adr--${storySlug}`;
+                    } else {
+                      // If we can't extract title from link text, fetch the ADR file asynchronously
+                      // Start fetching immediately and update the link when ready
+                      storybookHref = `#`; // Temporary placeholder
+                      adrNumberToStoryPath(targetAdrNumber).then(path => {
+                        if (path) {
+                          // Find and update all links that point to this ADR
+                          // We use a data attribute to track which ADR this link refers to
+                          const linkElements = document.querySelectorAll(`a[data-adr-link="${targetAdrNumber}"]`);
+                          linkElements.forEach(link => {
+                            link.setAttribute('href', path);
+                            link.removeAttribute('data-adr-link');
+                          });
+                        }
+                      }).catch(() => {
+                        console.warn(`Could not resolve ADR-${targetAdrNumber} link`);
+                      });
+                    }
                   }
                 }
+                
+                // Add data attribute for async link resolution
+                const dataAttr = storybookHref === '#' && targetAdrNumber ? { 'data-adr-link': targetAdrNumber } : {};
                 
                 return (
                   <a 
                     href={storybookHref}
+                    {...dataAttr}
                     style={{ 
                       color: '#066a8d',
                       textDecoration: 'none',
@@ -240,7 +355,9 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                       e.currentTarget.style.borderBottomColor = 'transparent';
                     }}
                     {...props} 
-                  />
+                  >
+                    {children}
+                  </a>
                 );
               },
               // Кастомизация кода

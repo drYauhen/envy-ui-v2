@@ -4,15 +4,14 @@ import { AdrViewer } from '../../viewers/docs/AdrViewer';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/ADR/ADR-0006',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const FocusPolicyArchitectureDrivenwithSystemFocus: Story = {
-  name: 'Focus Policy Architecture Driven with System Focus',
+  name: 'ADR-0006 Focus Policy Architecture Driven with System Focus',
   render: () => (
     <AdrViewer
       adrNumber="0006"
