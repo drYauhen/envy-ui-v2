@@ -63,10 +63,18 @@ Rules
 	•	Informational only; never prescriptive
 	•	Must not be treated as an instruction set or task list
 
+History Preservation
+	•	When LAST_STEP.md is updated, the previous version MUST be archived to `docs/steps/`
+	•	Archived files are named using the date from the "Last updated" field: `YYYY-MM-DD-step.md`
+	•	Example: If LAST_STEP.md has "Last updated: 2025-12-20", archive it as `docs/steps/2025-12-20-step.md`
+	•	The root LAST_STEP.md always contains the most recent session snapshot
+	•	This preserves development history as a sequence of dated files
+
 Agent Guidance
 	•	The assistant may read LAST_STEP.md for orientation only.
 	•	LAST_STEP.md must not override user instructions or ADRs.
 	•	If LAST_STEP.md conflicts with current user intent, it must be ignored.
+	•	When updating LAST_STEP.md, the assistant MUST archive the previous version to `docs/steps/` before making changes.
 
 3. Canonical Inputs for New Sessions
 
@@ -82,6 +90,7 @@ A typical session bootstrap relies on:
 	•	May describe what was done, why it matters, and any open context
 	•	May include tentative intentions, but is not a task list or commitment
 	•	Informational only; never authoritative
+	•	Historical versions are preserved in `docs/steps/` as dated files
 	4.	Pipeline & generators (e.g. Style Dictionary configs)
 	•	Reference implementations for consistency
 
