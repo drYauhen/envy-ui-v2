@@ -56,33 +56,13 @@ none → small → default → large → extra-large
 
 **Component Mapping:**
 
-```
-┌─────────────────────────────────────────────┐
-│ none (0dp)                                  │
-│  • Buttons (default state)                 │
-│  • Inputs                                   │
-│  • Flat cards                               │
-├─────────────────────────────────────────────┤
-│ small (1-2dp)                                │
-│  • Cards (subtle variant)                   │
-│  • Panels                                   │
-├─────────────────────────────────────────────┤
-│ default (2-4dp)                             │
-│  • Cards (elevated variant, default)        │
-│  • Standard containers                      │
-├─────────────────────────────────────────────┤
-│ large (8-12dp)                              │
-│  • Menus                                    │
-│  • Dropdowns                                │
-│  • Popovers                                 │
-│  • Modals (standard)                         │
-│  • Cards (strong variant)                    │
-├─────────────────────────────────────────────┤
-│ extra-large (16-24dp)                       │
-│  • Tooltips                                 │
-│  • Highest priority modals                   │
-└─────────────────────────────────────────────┘
-```
+| Elevation Level | Depth      | Components                                    |
+| --------------- | ---------- | --------------------------------------------- |
+| none            | 0dp        | Buttons (default state), Inputs, Flat cards   |
+| small           | 1-2dp      | Cards (subtle variant), Panels                |
+| default         | 2-4dp      | Cards (elevated variant, default), Standard containers |
+| large           | 8-12dp     | Menus, Dropdowns, Popovers, Modals (standard), Cards (strong variant) |
+| extra-large     | 16-24dp    | Tooltips, Highest priority modals             |
 
 **Specific Rules:**
 
@@ -119,13 +99,13 @@ none → small → default → large → extra-large
 
 **Correlation Rule:**
 
-```
-z-index: 0-100    → elevation: none/small/default (content layer)
-z-index: 200       → elevation: small/default (interactive layer)
-z-index: 300       → elevation: large (floating layer: menus, dropdowns)
-z-index: 400       → elevation: large/extra-large (overlay layer: modals)
-z-index: 500       → elevation: extra-large (top layer: tooltips)
-```
+| Z-Index Range | Elevation Level | Layer Description                    |
+| ------------- | --------------- | ------------------------------------ |
+| 0-100         | none/small/default | Content layer                        |
+| 200           | small/default | Interactive layer                    |
+| 300           | large         | Floating layer (menus, dropdowns)    |
+| 400           | large/extra-large | Overlay layer (modals)                |
+| 500           | extra-large    | Top layer (tooltips)                  |
 
 **Rationale:**
 - Explicit correlation prevents visual inconsistencies
@@ -242,13 +222,7 @@ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
 ---
 
-## 5. References
-
-- `docs/dirty/ELEVATION_SYSTEM_INDUSTRY_STANDARDS.md` — Detailed analysis of industry standards
-
----
-
-## 6. Alternatives Considered
+## 5. Alternatives Considered
 
 ### Alternative 1: Numeric Levels
 
@@ -279,7 +253,7 @@ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
 ---
 
-## 7. Notes
+## 6. Notes
 
 - Current system is already well-structured and aligns with industry standards
 - Detail Panel uses custom left-side shadow — this is the correct approach for contextual cases
