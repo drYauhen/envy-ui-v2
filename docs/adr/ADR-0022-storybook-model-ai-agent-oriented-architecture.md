@@ -35,11 +35,11 @@ Envy UI v2 uses Storybook as both **documentation layer** and **test layer** —
    - Which Envy UI components to use for demonstration structure
    - What to do when a needed component doesn't exist
    - Whether inline styles are acceptable and in what cases
-4. **Lack of Separation of Concerns:** Component model (`component-model/`) is renderer-agnostic and doesn't contain Storybook-specific concerns (helpers, demonstration patterns, story rules)
+4. **Lack of Separation of Concerns:** Component model (`component-model/`) is renderer-agnostic and doesn't contain Storybook-specific concerns (helpers, demonstration patterns, story rules). This requires a separate layer for Storybook-specific configuration.
 
 **Motivation:**
 
-Envy UI v2 is designed for **AI-agent-oriented development** — the system should be predictable and self-documenting for both human developers and AI agents. Storybook stories must:
+Envy UI v2 aims to be predictable and self-documenting for both human developers and AI agents. Storybook stories must:
 
 - Use only Envy UI components for structure (no inline styles for layout/spacing)
 - Follow consistent patterns across all components
@@ -48,16 +48,9 @@ Envy UI v2 is designed for **AI-agent-oriented development** — the system shou
 
 This requires a **separate Storybook Model layer** that extends the component model with Storybook-specific concerns while maintaining separation from renderer-agnostic component definitions.
 
-**Long-term Vision — Generative Design Foundation:**
+**Future Considerations:**
 
-The Storybook Model represents a **low-level foundation** for future system evolution toward **generative design**. While the current implementation focuses on Storybook story generation, this architecture serves as a foundational layer for:
-
-- **Higher-level token system expansion:** Moving beyond technical design tokens to UX tokens, design principles tokens (e.g., Pareto Principles, Gestalt effects), and semantic design rules
-- **Generative design capabilities:** Enabling AI/LLM models to generate design solutions using Envy UI as a design system foundation
-- **Specialized engine integration:** Connecting specialized design engines and LLM models that understand design principles, UX patterns, and user experience rules
-- **Beyond Storybook:** Extending the model-driven approach to full generative design workflows, where the system can generate complete UI solutions based on requirements, constraints, and design principles
-
-The current Storybook Model is a **primitive first step** — a proof of concept that establishes patterns, structure, and AI-agent interaction models. It serves as a **foundation for understanding** how to evolve the system toward true generative design capabilities, where Envy UI becomes not just a component library, but a generative design system powered by AI.
+The Storybook Model establishes patterns and structure that may inform future system evolution. The architecture could potentially support extension beyond technical tokens to UX tokens and design principles, and may facilitate AI-assisted workflows. These are exploratory directions, not current commitments.
 
 ---
 
@@ -129,9 +122,8 @@ A global `storybook.manifest.json` defines:
 - This separation maintains the component model's universality while providing Storybook-specific guidance
 
 **2. Predictability for AI Agents**
-- AI agents need **explicit rules** about which Envy UI components to use
-- Component model doesn't (and shouldn't) contain Storybook-specific information
-- Storybook model provides **declarative configuration** that agents can read and follow
+- Storybook model provides **declarative configuration** with explicit rules about which Envy UI components to use
+- This makes story generation predictable and unambiguous for AI agents
 
 **3. Scalability**
 - As the system grows, Storybook-specific patterns can evolve independently from component model
@@ -160,8 +152,7 @@ A global `storybook.manifest.json` defines:
 - Stories serve as both documentation and test layer — they should use real components
 
 **4. AI Agent Predictability**
-- Clear rule: "Use Envy UI components, no inline styles" is easy for agents to follow
-- Ambiguous rules ("sometimes inline styles are OK") lead to inconsistent behavior
+- Clear, unambiguous rules prevent inconsistent behavior
 
 ### Why Require Asking User When Component Missing?
 
@@ -174,8 +165,7 @@ A global `storybook.manifest.json` defines:
 - Missing components indicate gap in system that should be addressed, not worked around
 
 **3. AI Agent Clarity**
-- Clear error handling: "Component missing → ask user" is unambiguous
-- Prevents agents from making architectural decisions (creating workarounds)
+- Unambiguous error handling prevents agents from making architectural decisions
 
 ### Examples of the Problem and Solution
 
@@ -254,23 +244,18 @@ A global `storybook.manifest.json` defines:
 ### Benefits
 
 **1. Predictability for AI Agents**
-- Clear rules and structure make story generation predictable
-- Agents can read storybook-model and follow explicit guidelines
-- Error handling is unambiguous (ask user, don't create workarounds)
+- Declarative configuration with explicit rules makes story generation predictable
+- Unambiguous error handling guides agent behavior
 
 **2. Consistency Across Stories**
-- All stories use Envy UI components for structure
-- Consistent spacing, typography, and layout patterns
-- Stories serve as both documentation and validation
+- All stories use Envy UI components for structure, ensuring consistent spacing, typography, and layout patterns
 
 **3. Maintainability**
 - Changes to design system propagate automatically through Envy UI components
-- No need to update multiple inline style instances
-- Clear separation of concerns (component-model vs storybook-model)
+- Clear separation of concerns simplifies maintenance
 
 **4. System Integrity**
-- Stories validate that components work together correctly
-- No temporary solutions that duplicate functionality
+- Stories validate component integration
 - Missing components are identified and addressed, not worked around
 
 **5. Scalability**
@@ -333,7 +318,6 @@ A global `storybook.manifest.json` defines:
    - Automated detection of inline styles (except allowed exceptions)
 
 **2. Story Generation**
-   - AI agents can generate stories from storybook-model
    - Automated story creation based on component-model + storybook-model
    - Validation that generated stories follow rules
 
@@ -342,18 +326,9 @@ A global `storybook.manifest.json` defines:
    - Clear examples of how to structure stories for each component
    - Guidelines for creating new storybook-model files
 
-**4. Generative Design Evolution**
-   - **Current State:** Storybook Model is a low-level foundation for predictable AI-agent interaction
-   - **Future Expansion:** Extend token system to higher-level UX tokens and design principles:
-     - UX tokens (user experience patterns, interaction models)
-     - Design principles tokens (Pareto Principles, Gestalt effects, accessibility rules)
-     - Semantic design rules (composition rules, layout principles, visual hierarchy)
-   - **Generative Design Integration:**
-     - Connect specialized design engines and LLM models
-     - Enable AI-driven design generation using Envy UI as foundation
-     - Move beyond Storybook to full generative design workflows
-     - Generate complete UI solutions based on requirements, constraints, and design principles
-   - **Architectural Foundation:** The patterns, structure, and AI-agent interaction models established in Storybook Model serve as the foundation for understanding how to evolve the system toward true generative design capabilities
+**4. Potential Future Evolution**
+
+The structured patterns established in Storybook Model may inform future system expansion, potentially supporting extension beyond technical tokens to UX tokens and design principles, and facilitating AI-assisted workflows. These are exploratory considerations, not current commitments.
 
 ---
 
@@ -382,7 +357,6 @@ This document should:
 
 The storybook-model is not a replacement for component-model — it extends it with Storybook-specific concerns while maintaining clear separation of concerns. Both layers work together: component-model defines what the component is, storybook-model defines how to demonstrate it in Storybook.
 
-**Evolution and Changes:** This initial model serves as a starting point. As the storybook-model is implemented and used, improvements are expected to be discovered, rules refined, helper patterns adjusted, and the structure evolved. Changes are not only expected but encouraged as the system matures and learnings from practice inform what works best.
+**Evolution and Changes:** This initial model serves as a starting point. Changes and refinements are expected as the system matures and learnings from practice inform what works best.
 
-**Foundation for Generative Design:** The Storybook Model is not just about Storybook — it represents the first primitive steps toward establishing a foundation for generative design. The patterns, structure, and AI-agent interaction models developed here will inform how the system evolves beyond technical design tokens to higher-level UX tokens, design principles, and ultimately, true generative design capabilities where Envy UI serves as a foundation for AI-driven design generation.
 
