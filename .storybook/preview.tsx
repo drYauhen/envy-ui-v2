@@ -1,6 +1,5 @@
 import type { Decorator, Preview } from '@storybook/react';
 import React from 'react';
-import navigationConfig from './storybook-navigation.config';
 import '../generated/css/tokens.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/label.css';
@@ -114,9 +113,37 @@ export const parameters: Preview['parameters'] = {
   layout: 'fullscreen',
   options: {
     // Custom story sorting function with config embedded inline
+    // Note: All values must be embedded directly (not via closure) because Storybook serializes this function
     storySort: (a, b) => {
-      // Embedded navigation config to avoid closure issues
-      const navConfig = {
+      // IMPORTANT: Due to Storybook serialization, we cannot use imports in this function.
+      // All configuration must be embedded directly here.
+      // 
+      // Configuration source: .storybook/navigation.config.ts
+      // To change navigation order:
+      //   1. Edit .storybook/navigation.config.ts
+      //   2. Run: npm run storybook:sync-config
+      //   3. Or manually copy values from navigation.config.ts to this function
+      // 
+      // Section order (from navigation.config.ts -> sectionOrder)
+                  const sectionOrder = [
+        "Docs",
+        "Tokens",
+        "HTML + CSS",
+        "TSX (Clean)",
+        "TSX",
+        "TSX + React Aria",
+        "Web Components",
+        "Templates",
+        "Architecture"
+      ];
+      
+      // Special rules (from navigation.config.ts)
+                  const specialRules = {
+        "Docs/ADR": { firstItem: "ADR Overview" }
+      };
+      
+      // Section configs (from navigation.config.ts)
+                  const sectionConfigs = {
         "HTML + CSS": {
           componentGroups: [
             { components: ["Avatar", "AvatarGroup"] },
@@ -139,14 +166,15 @@ export const parameters: Preview['parameters'] = {
         }
       };
       
-      const aTitle = a[1]?.title || a[1]?.kind || '';
-      const bTitle = b[1]?.title || b[1]?.kind || '';
+      // Extract story paths
+      const aTitle = (a[1] && a[1].title) || (a[1] && a[1].kind) || '';
+      const bTitle = (b[1] && b[1].title) || (b[1] && b[1].kind) || '';
       const aParts = aTitle.split('/');
       const bParts = bTitle.split('/');
       const aSection = aParts[0] || '';
       const bSection = bParts[0] || '';
       
-      const sectionOrder = ['Docs', 'Tokens', 'HTML + CSS', 'TSX (Clean)', 'TSX', 'TSX + React Aria', 'Web Components', 'Architecture'];
+      // Compare sections
       const aSectionIndex = sectionOrder.indexOf(aSection);
       const bSectionIndex = sectionOrder.indexOf(bSection);
       
@@ -156,7 +184,20 @@ export const parameters: Preview['parameters'] = {
         return aSectionIndex - bSectionIndex;
       }
       
-      const sectionConfig = navConfig[aSection];
+      // Apply special rules
+      const aPath = aParts.slice(0, 2).join('/');
+      const bPath = bParts.slice(0, 2).join('/');
+      const specialRule = specialRules[aPath] || specialRules[bPath];
+      
+      if (specialRule && specialRule.firstItem) {
+        const aName = (a[1] && a[1].name) || '';
+        const bName = (b[1] && b[1].name) || '';
+        if (aName === specialRule.firstItem) return -1;
+        if (bName === specialRule.firstItem) return 1;
+      }
+      
+      // Compare components within section
+      const sectionConfig = sectionConfigs[aSection];
       if (!sectionConfig || aParts.length < 3 || bParts.length < 3) {
         return aTitle.localeCompare(bTitle);
       }
@@ -181,8 +222,8 @@ export const parameters: Preview['parameters'] = {
       if (aGroupIndex !== -1) return -1;
       if (bGroupIndex !== -1) return 1;
       
-      const aOtherIndex = sectionConfig.otherComponents?.indexOf(aComponentName) ?? -1;
-      const bOtherIndex = sectionConfig.otherComponents?.indexOf(bComponentName) ?? -1;
+      const aOtherIndex = sectionConfig.otherComponents ? sectionConfig.otherComponents.indexOf(aComponentName) : -1;
+      const bOtherIndex = sectionConfig.otherComponents ? sectionConfig.otherComponents.indexOf(bComponentName) : -1;
       if (aOtherIndex !== -1 && bOtherIndex !== -1) {
         return aOtherIndex - bOtherIndex;
       }
