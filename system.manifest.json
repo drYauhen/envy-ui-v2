@@ -79,11 +79,12 @@
     }
   },
   "storybook": {
-    "navigationOrder": ["Tokens", "HTML + CSS", "TSX", "TSX + React Aria", "Web Components", "Templates"],
     "notes": [
       "Storybook should be layer-first; tokens layer may be placeholder until implemented.",
       "Agents should read this manifest to add or adjust stories instead of inferring structure.",
-      "Templates section demonstrates CMS-ready Hero Section variants."
+      "Docs section contains architectural documentation. ADR stories are automatically grouped under 'Docs/ADR' in Storybook navigation, with 'ADR Overview' appearing first.",
+      "Templates section contains reusable templates for different use cases. City Management templates are available under Templates/City Management.",
+      "Top-level section order in Storybook sidebar is defined in .storybook/preview.tsx in the storySort function's sectionOrder array. To reorder sections, edit that file directly."
     ]
   }
 }
