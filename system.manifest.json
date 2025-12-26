@@ -26,6 +26,11 @@
     "web-components": {
       "status": "exploratory",
       "purpose": "Framework-agnostic implementation layer using W3C Web Components standards. Integrates with token system via CSS custom properties that penetrate Shadow DOM boundaries."
+    },
+    "tailwind": {
+      "status": "exploratory",
+      "purpose": "Utility-first CSS implementation using Tailwind CSS. Components use Tailwind utility classes generated from tokens, supporting context/theme system via data attributes.",
+      "location": "packages/tailwind/"
     }
   },
   "components": {

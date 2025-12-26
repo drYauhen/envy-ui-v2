@@ -27,6 +27,42 @@ const config: StorybookConfig = {
       })
     );
     
+    // Add PostCSS support for Tailwind
+    // Use createRequire for CommonJS compatibility
+    const { createRequire } = await import('module');
+    const { resolve } = await import('path');
+    const { fileURLToPath } = await import('url');
+    const require = createRequire(import.meta.url);
+    const tailwindcss = require('tailwindcss');
+    const autoprefixer = require('autoprefixer');
+    const tailwindConfigModule = await import('../packages/tailwind/config/tailwind.config.js');
+    const tailwindConfig = tailwindConfigModule.default || tailwindConfigModule;
+    
+    // Resolve content paths relative to project root
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = resolve(__filename, '..');
+    const projectRoot = resolve(__dirname, '..');
+    
+    const tailwindConfigWithPaths = {
+      ...tailwindConfig,
+      // Resolve content paths to absolute paths
+      content: tailwindConfig.content.map((path: string) => {
+        // Resolve relative to project root
+        if (path.startsWith('./')) {
+          return resolve(projectRoot, path.slice(2));
+        }
+        return resolve(projectRoot, path);
+      }),
+    };
+    
+    config.css = config.css || {};
+    config.css.postcss = {
+      plugins: [
+        tailwindcss(tailwindConfigWithPaths),
+        autoprefixer(),
+      ],
+    };
+    
     // Ensure static files from docs/ are served
     // This allows fetch() to load markdown files
     if (config.server) {
