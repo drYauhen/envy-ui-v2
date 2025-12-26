@@ -9,6 +9,8 @@
     "tokens:build": "style-dictionary build --config style-dictionary/config.mjs",
     "tokens:build:tokenstudio": "style-dictionary build --config style-dictionary/config.mjs --platform tokenstudio",
     "docs:copy": "node scripts/copy-docs-to-public.mjs",
+    "storybook:sync-nav": "node scripts/sync-navigation-order.mjs",
+    "storybook:sync-config": "node scripts/sync-navigation-config.mjs",
     "storybook": "npm run tokens:build && npm run docs:copy && storybook dev -p 6006",
     "build-storybook": "npm run storybook:build",
     "storybook:build": "npm run tokens:build && npm run docs:copy && storybook build",
