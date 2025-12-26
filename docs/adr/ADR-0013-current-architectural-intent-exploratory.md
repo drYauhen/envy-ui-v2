@@ -18,13 +18,7 @@ Audience and scope notes:
 
 ---
 
-## 2. ADR cleanup background
-
-Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsistently numbered** (ADR-0002/0003 variants). Cleanup to restore a single canonical ADR per pipeline is underway so historical ambiguity is removed. This ADR does not change those decisions; it only notes the temporary inconsistency and ongoing remediation.
-
----
-
-## 3. `system.meta.json` — current stance
+## 2. `system.meta.json` — current stance
 
 - Exists at the repository root and is **not a temporary artifact**.
 - Used today as **internal metadata** for pipelines (naming, prefixing, system identification).
@@ -33,7 +27,7 @@ Earlier ADRs for the Storybook and Figma pipelines were **duplicated and inconsi
 
 ---
 
-## 4. BATN (Behavioral Action Token Node) — architectural probe, not final component
+## 3. BATN (Behavioral Action Token Node) — architectural probe, not final component
 
 ### Terminology Note: BATN
 
@@ -46,7 +40,7 @@ BATN stands for **Behavioral Action Token Node** and represents a pre-component 
 
 ---
 
-## 5. Tokens vs. technology-specific templates (fluid boundary)
+## 4. Tokens vs. technology-specific templates (fluid boundary)
 
 - The boundary between **token system (JSON / DTCG-like)** and **technology-specific templates** (e.g., React Aria TSX) is **intentionally fluid**.
 - Decisions may move **from tokens → templates** or **templates → tokens** as the system matures.
@@ -55,7 +49,7 @@ BATN stands for **Behavioral Action Token Node** and represents a pre-component 
 
 ---
 
-## 6. Bias toward graceful degradation
+## 5. Bias toward graceful degradation
 
 - The system currently favors **graceful degradation** over early restriction.
 - It is acceptable to begin with expressiveness or complexity and later remove what proves unnecessary.
@@ -63,7 +57,7 @@ BATN stands for **Behavioral Action Token Node** and represents a pre-component 
 
 ---
 
-## 7. Storybook’s dual role (permitted to grow)
+## 6. Storybook's dual role (permitted to grow)
 
 - Storybook may serve **both** verification and documentation roles:
   - **Verification:** validate token projections, visualize states/variants/matrices.
@@ -72,7 +66,7 @@ BATN stands for **Behavioral Action Token Node** and represents a pre-component 
 
 ---
 
-## 8. Explicit non-goals
+## 7. Explicit non-goals
 
 - Do **not** define a final token schema.
 - Do **not** declare any architecture as accepted or frozen.
@@ -81,7 +75,7 @@ BATN stands for **Behavioral Action Token Node** and represents a pre-component 
 
 ---
 
-## 9. Open questions
+## 8. Open questions
 
 - When and how to formalize `system.meta.json` (versioning, schema, public surface, location).
 - Where the stable boundary between tokens and templates should eventually settle.
@@ -91,6 +85,6 @@ BATN stands for **Behavioral Action Token Node** and represents a pre-component 
 
 ---
 
-## 10. How to read this ADR
+## 9. How to read this ADR
 
 Treat this document as a **snapshot of intent and exploration**, not a commitment. Future ADRs will supersede parts of this ADR as decisions harden. Until then, assume boundaries are fluid by design.

@@ -23,19 +23,8 @@ Envy UI v2 uses Storybook as both **documentation layer** and **test layer** —
 
 **Current State:**
 - Storybook stories exist for multiple components across different layers
-- Stories use a mix of approaches: some use Envy UI components, others use inline styles for layout/structure
-- Temporary solutions (e.g., `eui-switch-wrapper`, `eui-checkbox-wrapper`) were created when universal form structures didn't exist
-- No clear rules for AI agents when creating stories — leading to inconsistent patterns and workarounds
-
-**Problem Statement:**
-
-1. **Inconsistent Story Structure:** Stories use inline styles for layout, spacing, and structure instead of Envy UI components, creating technical debt and inconsistency
-2. **Temporary Solutions Proliferation:** Component-specific wrappers (e.g., `eui-switch-wrapper`) duplicate functionality that should be provided by universal form structures (e.g., `eui-form-field`)
-3. **Unpredictable AI Agent Behavior:** When AI agents create stories, there are no clear rules about:
-   - Which Envy UI components to use for demonstration structure
-   - What to do when a needed component doesn't exist
-   - Whether inline styles are acceptable and in what cases
-4. **Lack of Separation of Concerns:** Component model (`component-model/`) is renderer-agnostic and doesn't contain Storybook-specific concerns (helpers, demonstration patterns, story rules). This requires a separate layer for Storybook-specific configuration.
+- All story elements must use Envy UI components for structure, layout, and styling
+- Component model (`component-model/`) is renderer-agnostic and doesn't contain Storybook-specific concerns (helpers, demonstration patterns, story rules). This requires a separate layer for Storybook-specific configuration.
 
 **Motivation:**
 
@@ -138,17 +127,14 @@ A global `storybook.manifest.json` defines:
 ### Why Prohibit Inline Styles?
 
 **1. Consistency**
-- Inline styles create inconsistency — different stories use different approaches
 - Envy UI components ensure consistent spacing, typography, and layout across all stories
 
-**2. Technical Debt**
-- Inline styles are hard to maintain and update
-- Changes to design system require updating multiple inline style instances
+**2. Maintainability**
 - Envy UI components centralize styling through tokens
+- Changes to design system propagate automatically through components
 
 **3. Validation**
 - Stories using Envy UI components validate that components work together correctly
-- Stories with inline styles don't validate component integration
 - Stories serve as both documentation and test layer — they should use real components
 
 **4. AI Agent Predictability**
@@ -156,31 +142,17 @@ A global `storybook.manifest.json` defines:
 
 ### Why Require Asking User When Component Missing?
 
-**1. Prevents Technical Debt**
-- Creating inline styles as workaround accumulates technical debt
-- Asking user ensures proper solution (create component or skip demonstration)
-
-**2. Maintains System Integrity**
+**1. Maintains System Integrity**
 - System should use only Envy UI components — no exceptions
-- Missing components indicate gap in system that should be addressed, not worked around
+- Missing components indicate gap in system that should be addressed
 
-**3. AI Agent Clarity**
+**2. AI Agent Clarity**
 - Unambiguous error handling prevents agents from making architectural decisions
 
-### Examples of the Problem and Solution
+### Examples
 
 **Example 1: Switch with Label**
 
-**Problem (Current):**
-```tsx
-// Temporary solution - duplicates form-field functionality
-<label className="eui-switch-wrapper">
-  <input type="checkbox" className="eui-switch" />
-  <span className="eui-label">Label</span>
-</label>
-```
-
-**Solution (With Storybook Model):**
 ```tsx
 // Uses universal form structure
 <div className="eui-form-field" data-eui-label-position="inline">
@@ -197,7 +169,7 @@ A global `storybook.manifest.json` defines:
     "wrapper": {
       "component": "eui-form-field",
       "variant": "inline",
-      "description": "Use eui-form-field with data-eui-label-position='inline' for switch with label. DO NOT use eui-switch-wrapper (deprecated)."
+      "description": "Use eui-form-field with data-eui-label-position='inline' for switch with label"
     }
   }
 }
@@ -205,15 +177,6 @@ A global `storybook.manifest.json` defines:
 
 **Example 2: Skeleton in Card**
 
-**Problem (Current):**
-```tsx
-// Inline styles for layout
-<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1.5rem' }}>
-  <div className="eui-skeleton" data-eui-variant="text"></div>
-</div>
-```
-
-**Solution (With Storybook Model):**
 ```tsx
 // Uses Envy UI components
 <div className="eui-card" data-eui-variant="elevated">
@@ -274,10 +237,9 @@ A global `storybook.manifest.json` defines:
 - Prohibition of inline styles may require creating helper components that might not be needed otherwise
 - Some edge cases might require exceptions (handled through explicit rules and comments)
 
-**3. Migration Effort**
-- Existing stories with inline styles need to be migrated
-- Temporary solutions (wrappers) need to be removed and replaced with universal structures
-- This is a one-time effort that improves long-term maintainability
+**3. Initial Setup Effort**
+   - Storybook model files need to be created for each component
+   - This is a one-time effort that improves long-term maintainability
 
 ### Next Steps (Exploratory Phase)
 
@@ -294,9 +256,8 @@ A global `storybook.manifest.json` defines:
 
 **3. Validate Approach**
    - Rewrite `stories/components/switch.stories.tsx` using storybook-model
-   - Remove `eui-switch-wrapper` (deprecated)
    - Use `eui-form-field` with inline label position
-   - Remove all inline styles for layout/spacing
+   - Ensure all structure uses Envy UI components
 
 **4. Iterate and Improve**
    - Test approach with Switch
@@ -307,8 +268,7 @@ A global `storybook.manifest.json` defines:
 **5. Scale to Other Components**
    - Apply validated patterns to other components
    - Create storybook-model files for each component
-   - Migrate existing stories to use storybook-model
-   - Remove temporary solutions across the system
+   - Ensure all stories use storybook-model patterns
 
 ### Future Considerations
 
@@ -353,7 +313,6 @@ This document should:
 - Guide decisions about storybook-model structure and rules
 - Serve as reference for understanding AI-agent-oriented architecture goals
 - Be updated when storybook-model moves from exploratory to implemented status
-- Inform migration strategy for existing stories with inline styles
 
 The storybook-model is not a replacement for component-model — it extends it with Storybook-specific concerns while maintaining clear separation of concerns. Both layers work together: component-model defines what the component is, storybook-model defines how to demonstrate it in Storybook.
 

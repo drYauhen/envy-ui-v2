@@ -85,7 +85,7 @@ These trade-offs are accepted in favor of long-term maintainability and system c
 
 - Storybook must not encode token taxonomy, grouping, or naming logic
 - All token semantics live in the build pipeline
-- Derived artifacts (build outputs, static Storybook builds, ZIP files) are not committed to Git
+- Derived artifacts (build outputs, static Storybook builds) are not committed to Git
 - Git history and ADRs are used to document architectural evolution
 
 ---

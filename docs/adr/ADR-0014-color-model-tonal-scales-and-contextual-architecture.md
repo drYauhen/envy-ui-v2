@@ -17,7 +17,7 @@ I treated RGB as a distribution format only, not the conceptual source of truth.
 
 ## Decision: Tonal Scale and Gradation
 
-I introduced a canonical tonal scale with steps 50, 100, 200, 300, 400, 500, 600, 700, 800, 900. I treat 500 as the reference/base tone for each family. The scale expresses relative tonal positions, not strict linear mathematical steps, and it remains intentionally non-dogmatic so spacing can be adjusted over time without changing token shape.
+I introduced a canonical tonal scale with steps 50, 100, 200, 300, 400, 500, 600, 700, 800, 900. I treat 500 as the reference/base tone for each family. The scale **expresses relative tonal positions, not strict linear mathematical steps**, and it remains intentionally non-dogmatic so spacing can be adjusted over time without changing token shape.
 
 ## Decision: Layering and Aliasing
 
