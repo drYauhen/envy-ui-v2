@@ -1,6 +1,7 @@
 import type { Decorator, Preview } from '@storybook/react';
 import React from 'react';
 import '../generated/css/tokens.css';
+import '../packages/tailwind/tailwind.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/label.css';
 import '../src/ui/button.css';
@@ -125,7 +126,7 @@ export const parameters: Preview['parameters'] = {
       //   3. Or manually copy values from navigation.config.ts to this function
       // 
       // Section order (from navigation.config.ts -> sectionOrder)
-                  const sectionOrder = [
+                        const sectionOrder = [
         "Docs",
         "Tokens",
         "HTML + CSS",
@@ -133,17 +134,18 @@ export const parameters: Preview['parameters'] = {
         "TSX",
         "TSX + React Aria",
         "Web Components",
+        "Tailwind",
         "Templates",
         "Architecture"
       ];
       
       // Special rules (from navigation.config.ts)
-                  const specialRules = {
+                        const specialRules = {
         "Docs/ADR": { firstItem: "ADR Overview" }
       };
       
       // Section configs (from navigation.config.ts)
-                  const sectionConfigs = {
+                        const sectionConfigs = {
         "HTML + CSS": {
           componentGroups: [
             { components: ["Avatar", "AvatarGroup"] },

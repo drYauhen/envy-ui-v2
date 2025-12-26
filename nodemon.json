@@ -1,0 +1,24 @@
+{
+  "watch": [
+    ".storybook/**/*.{ts,tsx,js,jsx,json}",
+    "system.manifest.json",
+    "package.json",
+    "docs/adr/**/*.md"
+  ],
+  "ignore": [
+    "node_modules",
+    "storybook-static",
+    "dist",
+    "generated",
+    ".cache",
+    "*.log",
+    "public"
+  ],
+  "ext": "ts,tsx,js,jsx,json,md",
+  "exec": "npm run storybook:restart",
+  "delay": 2000,
+  "verbose": true,
+  "signal": "SIGTERM",
+  "restartable": "rs"
+}
+
