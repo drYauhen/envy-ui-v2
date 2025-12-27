@@ -6,31 +6,34 @@
           "color": {
             "derived": {
               "base": {
-                "$value": "{eui.color.brand.400}",
+                "$value": "{eui.color.border.default}",
                 "$type": "color",
-                "$description": "Less prominent focus ring color for mouse/pointer focus. Solid color (no transparency) for consistent appearance on any background."
+                "$description": "Less prominent focus ring color for mouse/pointer focus. Matches button border color for visual consistency."
               },
               "accessible": {
-                "$value": "{eui.color.brand.700}",
+                "$value": "{eui.color.border.default}",
                 "$type": "color",
-                "$description": "More prominent focus ring color for keyboard focus (focus-visible). Solid color (no transparency) for high accessibility contrast."
+                "$description": "More prominent focus ring color for keyboard focus (focus-visible). Matches button border color for visual consistency."
               }
             }
           },
           "width": {
             "base": {
-              "$value": "{eui.focus.ring.width.base}",
-              "$type": "dimension"
+              "$value": "2px",
+              "$type": "dimension",
+              "$description": "Focus ring width for mouse/pointer focus"
             },
             "accessible": {
-              "$value": "{eui.focus.ring.width.accessible}",
-              "$type": "dimension"
+              "$value": "2px",
+              "$type": "dimension",
+              "$description": "Focus ring width for keyboard focus (focus-visible)"
             }
           },
           "offset": {
             "base": {
-              "$value": "0px",
-              "$type": "dimension"
+              "$value": "1px",
+              "$type": "dimension",
+              "$description": "Focus ring offset from button border"
             }
           }
         }
