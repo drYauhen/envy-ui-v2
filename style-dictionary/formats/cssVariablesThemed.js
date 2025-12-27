@@ -28,6 +28,24 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         }
       }
       
+      // Read context JSON files directly
+      const contextFiles = new Map(); // Map<context, {filePath, data}>
+      const contextsDir = path.join(tokensRoot, 'contexts');
+      if (fs.existsSync(contextsDir)) {
+        fs.readdirSync(contextsDir)
+          .filter(f => f.endsWith('.json'))
+          .forEach(contextFile => {
+            const context = path.basename(contextFile, '.json');
+            const filePath = path.join(contextsDir, contextFile);
+            try {
+              const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+              contextFiles.set(context, { filePath, data });
+            } catch (e) {
+              console.warn(`Warning: Could not read context file ${filePath}:`, e.message);
+            }
+          });
+      }
+      
       // Read theme JSON files directly to get all values (bypassing Style Dictionary collision resolution)
       const themeFiles = new Map(); // Map<selector, {filePath, data}>
       
@@ -83,8 +101,8 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
             themeTokenNames.add(tokenName);
           }
         } else if (isContextToken) {
-          // Parse context path: tokens/contexts/app/semantic.json
-          const contextMatch = filePath.match(/contexts\/([^/]+)\/semantic\.json$/);
+          // Parse context path: tokens/contexts/app.json
+          const contextMatch = filePath.match(/contexts\/([^/]+)\.json$/);
           if (contextMatch) {
             const context = contextMatch[1];
             const selector = `[data-eui-context="${context}"]`;
@@ -230,6 +248,22 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         });
         output += '}\n\n';
       }
+
+      // Generate context tokens from directly read JSON files
+      contextFiles.forEach(({ data }, context) => {
+        const contextTokenList = extractTokensFromJson(data);
+        if (contextTokenList.length > 0) {
+          const selector = `[data-eui-context="${context}"]`;
+          output += `${selector} {\n`;
+          contextTokenList.sort((a, b) => a.name.localeCompare(b.name));
+          contextTokenList.forEach(({ name, value }) => {
+            if (value) {
+              output += `  --${name}: ${value};\n`;
+            }
+          });
+          output += '}\n\n';
+        }
+      });
 
       // Generate theme tokens from directly read JSON files (bypassing collision resolution)
       themeFiles.forEach(({ data }, selector) => {
