@@ -3,6 +3,7 @@
   /* Focus ring colors: base (less prominent) for mouse focus, accessible (more prominent) for keyboard focus */
   --eui-button-focus-color-base: var(--eui-button-focus-ring-color-derived-base);
   --eui-button-focus-color-accessible: var(--eui-button-focus-ring-color-derived-accessible);
+  /* Focus ring offset is already defined in :root from tokens.css, no need to redefine */
 }
 
 [data-eui-context] .eui-button {
@@ -91,13 +92,18 @@
 }
 
 /* Focus ring: solid colors (no transparency) for consistent appearance on any background */
+/* Uses double box-shadow: first creates visual gap using page background, second creates the ring */
 [data-eui-context] .eui-button:focus {
-  box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base) var(--eui-button-focus-color-base);
+  box-shadow: 
+    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-base)) var(--eui-button-focus-color-base);
 }
 
 /* Keyboard focus: more prominent solid color for high accessibility contrast */
 [data-eui-context] .eui-button:focus-visible {
-  box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) var(--eui-button-focus-color-accessible);
+  box-shadow: 
+    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-focus-color-accessible);
 }
 
 /* Override focus ring during finish animation - используем те же цвета, что и background */
@@ -112,7 +118,9 @@
 
 /* Mouse focus (not keyboard): less prominent solid color */
 [data-eui-context] .eui-button:focus:not(:focus-visible) {
-  box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base) var(--eui-button-focus-color-base);
+  box-shadow: 
+    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-base)) var(--eui-button-focus-color-base);
 }
 
 [data-eui-context] .eui-button[data-eui-intent='primary'] {
@@ -195,7 +203,9 @@
 
 @keyframes button-finish-focus-ring {
   0% {
-    box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) var(--eui-button-accent-background-base);
+    box-shadow: 
+      0 0 0 var(--eui-button-focus-ring-offset-base) transparent,
+      0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-accent-background-base);
   }
   10% {
     box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.3) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%),
@@ -235,7 +245,9 @@
     box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.1) color-mix(in srgb, var(--eui-button-accent-background-base) 95%, var(--eui-button-accent-finished-background-base) 5%);
   }
   100% {
-    box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) var(--eui-button-accent-finished-background-base);
+    box-shadow: 
+      0 0 0 var(--eui-button-focus-ring-offset-base) transparent,
+      0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-accent-finished-background-base);
   }
 }
 
