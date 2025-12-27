@@ -233,12 +233,17 @@ export const parameters: Preview['parameters'] = {
       return aComponentName.localeCompare(bComponentName);
     }
   },
+  // Disable addon panels for Docs/ADR stories
+  // This is applied globally, but can be overridden per-story
   controls: {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/i
     }
   },
+  // Apply parameters based on story title
+  // Stories with title starting with "Docs/ADR" will have panels disabled
+  // (This is handled in individual story files via meta.parameters)
 };
 
 const preview: Preview = { decorators, parameters };
