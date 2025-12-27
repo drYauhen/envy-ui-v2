@@ -1,20 +1,11 @@
 {
   "eui": {
-    "typography": {
-      "base": {
-        "fontSize": {
-          "$value": "14px",
-          "$type": "fontSize",
-          "$description": "Base font size for default theme. Dense UI design for application context."
-        }
-      }
-    },
     "color": {
       "border": {
         "default": {
           "$value": "{eui.color.neutral.300}",
           "$type": "color",
-          "$description": "Subtle border color for default theme. More visible than neutral.200 but still minimal. Less prominent than accessibility theme."
+          "$description": "Subtle border color for default theme in app context. More visible than neutral.200 but still minimal. Less prominent than accessibility theme."
         }
       }
     },

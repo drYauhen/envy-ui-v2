@@ -5,7 +5,7 @@
         "fontSize": {
           "$value": "16px",
           "$type": "fontSize",
-          "$description": "Base font size for accessibility theme. Larger size for better readability and accessibility compliance."
+          "$description": "Base font size for accessibility theme. Overrides app context default (14px) with larger size for better readability and accessibility compliance."
         }
       }
     },

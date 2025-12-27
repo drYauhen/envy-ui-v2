@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "typography": {
+      "base": {
+        "fontSize": {
+          "$value": "14px",
+          "$type": "fontSize",
+          "$description": "Base font size for app context. Dense UI design for application shell."
+        }
+      }
+    }
+  }
+}
+
