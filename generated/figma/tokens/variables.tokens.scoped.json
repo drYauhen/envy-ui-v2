@@ -11,22 +11,22 @@
         {
           "path": "eui.alert-banner.colors.background.error",
           "type": "COLOR",
-          "value": "#ef444410"
+          "value": "oklch(60% 0.22 25 / 0.1)"
         },
         {
           "path": "eui.alert-banner.colors.background.info",
           "type": "COLOR",
-          "value": "#0ea5e910"
+          "value": "oklch(65% 0.18 240 / 0.1)"
         },
         {
           "path": "eui.alert-banner.colors.background.success",
           "type": "COLOR",
-          "value": "#22c55e10"
+          "value": "oklch(65% 0.20 145 / 0.1)"
         },
         {
           "path": "eui.alert-banner.colors.background.warning",
           "type": "COLOR",
-          "value": "#f59e0b15"
+          "value": "oklch(75% 0.15 75 / 0.15)"
         },
         {
           "path": "eui.alert-banner.colors.border.error",
@@ -71,117 +71,117 @@
         {
           "path": "eui.calendar.colors.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.calendar.colors.day.background.active",
           "type": "COLOR",
-          "value": "#f1f8ff"
+          "value": "oklch(100% 0.06 251)"
         },
         {
           "path": "eui.calendar.colors.day.background.default",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.calendar.colors.day.background.disabled",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.calendar.colors.day.background.hover",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.background.outsideMonth",
           "type": "COLOR",
-          "value": "#f8fafc"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.background.selected",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.calendar.colors.day.background.selectedHover",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.calendar.colors.day.background.today",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.calendar.colors.day.border.default",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.border.selected",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.calendar.colors.day.text.default",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.text.disabled",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.text.outsideMonth",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.text.selected",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.calendar.colors.day.text.today",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.header.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.calendar.colors.header.button.hover.background",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.header.button.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.header.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.range.background",
           "type": "COLOR",
-          "value": "#f1f8ff"
+          "value": "oklch(100% 0.06 251)"
         },
         {
           "path": "eui.calendar.colors.range.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.weekday.text",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         },
         {
           "path": "eui.celebration.colors.shine.end",
@@ -216,17 +216,17 @@
         {
           "path": "eui.content.colors.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.content.colors.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.filter.background",
           "type": "COLOR",
-          "value": "#b7dbff"
+          "value": "oklch(95% 0.15 251)"
         },
         {
           "path": "eui.counter.colors.filter.border",
@@ -236,17 +236,17 @@
         {
           "path": "eui.counter.colors.filter.color",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.counter.colors.filter.icon.color",
           "type": "COLOR",
-          "value": "#35a8f8"
+          "value": "oklch(60% 0.19 250)"
         },
         {
           "path": "eui.counter.colors.pill.default.background",
           "type": "COLOR",
-          "value": "#dceeff"
+          "value": "oklch(98% 0.11 251)"
         },
         {
           "path": "eui.counter.colors.pill.default.border",
@@ -256,12 +256,12 @@
         {
           "path": "eui.counter.colors.pill.default.color",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.pill.disabled.background",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "oklch(80% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.pill.disabled.border",
@@ -271,7 +271,7 @@
         {
           "path": "eui.counter.colors.pill.disabled.color",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.pill.inverse.background",
@@ -286,62 +286,62 @@
         {
           "path": "eui.counter.colors.pill.inverse.color",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.counter.colors.text.default.color",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.text.disabled.color",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.text.inverse.color",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.detail-panel.colors.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.detail-panel.colors.border",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.detail-panel.colors.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.divider.colors.default",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.header.colors.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.header.colors.border",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.header.colors.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.hero-section.colors.background.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.hero-section.colors.background.overlay.dark",
@@ -356,22 +356,22 @@
         {
           "path": "eui.hero-section.colors.text.heading",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.hero-section.colors.text.subheading",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.menu.colors.border",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.background.default",
@@ -381,32 +381,32 @@
         {
           "path": "eui.menu.colors.item.background.focus",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.background.hover",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.background.selected",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.text-disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.body.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.modal.colors.body.border",
@@ -416,37 +416,37 @@
         {
           "path": "eui.modal.colors.body.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.close.color",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.modal.colors.close.hover",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.modal.colors.footer.background",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.footer.border",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.footer.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.header.background",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.modal.colors.header.border",
@@ -456,12 +456,12 @@
         {
           "path": "eui.modal.colors.header.text",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.sidebar.colors.background",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.sidebar.colors.border",
@@ -471,12 +471,12 @@
         {
           "path": "eui.sidebar.colors.text",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.skeleton.colors.background.base",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.skeleton.colors.shimmer.end",
@@ -496,67 +496,67 @@
         {
           "path": "eui.table.colors.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.table.colors.border",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "oklch(80% 0.00 0)"
         },
         {
           "path": "eui.table.colors.cell.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.table.colors.header.background",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.table.colors.header.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.table.colors.row.background.default",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.table.colors.row.background.hover",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.table.colors.row.background.selected",
           "type": "COLOR",
-          "value": "#f1f8ff"
+          "value": "oklch(100% 0.06 251)"
         },
         {
           "path": "eui.table.colors.subheader.background",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.table.colors.subheader.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.title-bar.colors.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.title-bar.colors.border",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.title-bar.colors.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         }
       ]
     },
@@ -666,87 +666,87 @@
         {
           "path": "eui.avatar.border.color",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.avatar.border.colorLead",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.checkbox.border.base",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.checkbox.border.checked",
           "type": "COLOR",
-          "value": "#2588d8"
+          "value": "oklch(45% 0.15 251)"
         },
         {
           "path": "eui.checkbox.border.checkedDisabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "oklch(65% 0.00 0)"
         },
         {
           "path": "eui.checkbox.border.checkedHover",
           "type": "COLOR",
-          "value": "#2588d8"
+          "value": "oklch(45% 0.15 251)"
         },
         {
           "path": "eui.checkbox.border.disabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "oklch(65% 0.00 0)"
         },
         {
           "path": "eui.checkbox.border.hover",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.checkbox.border.indeterminate",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.checkbox.border.indeterminateDisabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "oklch(65% 0.00 0)"
         },
         {
           "path": "eui.checkbox.border.indeterminateHover",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.color.border.default",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.color.border.inverse",
           "type": "COLOR",
-          "value": "#262626"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.color.border.strong",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.color.border.subtle",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.input.border.base",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.input.border.disabled",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.input.border.error",
@@ -756,17 +756,17 @@
         {
           "path": "eui.input.border.focus",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.input.border.hover",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.menu.border.color",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         }
       ]
     },
@@ -777,97 +777,97 @@
         {
           "path": "eui.avatar.background.fallback",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.checkbox.background.checked",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.checkbox.background.checkedDisabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.checkedHover",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.checkbox.background.disabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.hover",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.checkbox.background.indeterminate",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.checkbox.background.indeterminateDisabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.indeterminateHover",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.color.background.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.color.background.inverse",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.color.background.muted",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.color.background.subtle",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.color.background.surface",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.input.background.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.input.background.disabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.input.background.focus",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.input.background.hover",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         }
       ]
     },
@@ -878,47 +878,47 @@
         {
           "path": "eui.avatar.text.fallback",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "oklch(65% 0.00 0)"
         },
         {
           "path": "eui.color.text.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.color.text.inverse",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.color.text.muted",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.color.text.primary",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.color.text.subtle",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         },
         {
           "path": "eui.input.text.base",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.input.text.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.input.text.placeholder",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         }
       ]
     },
@@ -937,7 +937,7 @@
         {
           "path": "eui.button.focus.ring.offset.base",
           "type": "FLOAT",
-          "value": 0,
+          "value": 1,
           "scopes": [
             "PADDING_HORIZONTAL"
           ]
@@ -945,7 +945,7 @@
         {
           "path": "eui.button.focus.ring.width.accessible",
           "type": "FLOAT",
-          "value": 3,
+          "value": 2,
           "scopes": [
             "STROKE_WEIGHT"
           ]
@@ -1319,52 +1319,52 @@
         {
           "path": "eui.button.primary.background.active",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.button.primary.background.base",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.button.primary.background.disabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.button.primary.background.hover",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.button.primary.background.selected",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.button.primary.label.active",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.primary.label.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.primary.label.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.primary.label.hover",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.primary.label.selected",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         }
       ]
     },
@@ -1375,77 +1375,77 @@
         {
           "path": "eui.button.secondary.background.active",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.secondary.background.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.secondary.background.disabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.background.hover",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.secondary.background.selected",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.secondary.border.active",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.base",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.hover",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.selected",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.active",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.base",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.hover",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.selected",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         }
       ]
     },
@@ -1456,107 +1456,107 @@
         {
           "path": "eui.button.accent.background.active",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.button.accent.background.base",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.button.accent.background.disabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.button.accent.background.hover",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.button.accent.background.selected",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.button.accent.label.active",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.accent.label.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.accent.label.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.accent.label.hover",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.button.accent.label.selected",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.color.accent.100",
           "type": "COLOR",
-          "value": "#dceeff"
+          "value": "oklch(98% 0.11 251)"
         },
         {
           "path": "eui.color.accent.200",
           "type": "COLOR",
-          "value": "#b7dbff"
+          "value": "oklch(95% 0.15 251)"
         },
         {
           "path": "eui.color.accent.300",
           "type": "COLOR",
-          "value": "#8ac4ff"
+          "value": "oklch(90% 0.18 250)"
         },
         {
           "path": "eui.color.accent.400",
           "type": "COLOR",
-          "value": "#55a7ff"
+          "value": "oklch(80% 0.19 250)"
         },
         {
           "path": "eui.color.accent.50",
           "type": "COLOR",
-          "value": "#f1f8ff"
+          "value": "oklch(100% 0.06 251)"
         },
         {
           "path": "eui.color.accent.500",
           "type": "COLOR",
-          "value": "#3db0ff"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.color.accent.600",
           "type": "COLOR",
-          "value": "#35a8f8"
+          "value": "oklch(60% 0.19 250)"
         },
         {
           "path": "eui.color.accent.700",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.color.accent.800",
           "type": "COLOR",
-          "value": "#2588d8"
+          "value": "oklch(45% 0.15 251)"
         },
         {
           "path": "eui.color.accent.900",
           "type": "COLOR",
-          "value": "#1e78c8"
+          "value": "oklch(42% 0.11 251)"
         },
         {
           "path": "eui.color.accent.primary",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         }
       ]
     },
@@ -1567,52 +1567,52 @@
         {
           "path": "eui.button.accent-finished.background.active",
           "type": "COLOR",
-          "value": "#b7dbff"
+          "value": "oklch(95% 0.15 251)"
         },
         {
           "path": "eui.button.accent-finished.background.base",
           "type": "COLOR",
-          "value": "#b7dbff"
+          "value": "oklch(95% 0.15 251)"
         },
         {
           "path": "eui.button.accent-finished.background.disabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.button.accent-finished.background.hover",
           "type": "COLOR",
-          "value": "#b7dbff"
+          "value": "oklch(95% 0.15 251)"
         },
         {
           "path": "eui.button.accent-finished.background.selected",
           "type": "COLOR",
-          "value": "#b7dbff"
+          "value": "oklch(95% 0.15 251)"
         },
         {
           "path": "eui.button.accent-finished.label.active",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.button.accent-finished.label.base",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.button.accent-finished.label.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.accent-finished.label.hover",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         },
         {
           "path": "eui.button.accent-finished.label.selected",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(50% 0.18 250)"
         }
       ]
     },
@@ -1623,22 +1623,22 @@
         {
           "path": "eui.button.focus.ring.color.derived.accessible",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.button.focus.ring.color.derived.base",
           "type": "COLOR",
-          "value": "#2ea7d1"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.checkbox.focus.ring.color.derived.accessible",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(40% 0.18 221)"
         },
         {
           "path": "eui.checkbox.focus.ring.color.derived.base",
           "type": "COLOR",
-          "value": "#2ea7d1"
+          "value": "oklch(60% 0.19 220)"
         },
         {
           "path": "eui.color.focus.ring",
@@ -1648,22 +1648,22 @@
         {
           "path": "eui.input.focus.ring.color.derived.accessible",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(40% 0.18 221)"
         },
         {
           "path": "eui.input.focus.ring.color.derived.base",
           "type": "COLOR",
-          "value": "#2ea7d1"
+          "value": "oklch(60% 0.19 220)"
         },
         {
           "path": "eui.switch.focus.ring.color.derived.accessible",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(40% 0.18 221)"
         },
         {
           "path": "eui.switch.focus.ring.color.derived.base",
           "type": "COLOR",
-          "value": "#2ea7d1"
+          "value": "oklch(60% 0.19 220)"
         }
       ]
     },
@@ -1838,32 +1838,32 @@
         {
           "path": "eui.card.variant.elevated.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.card.variant.elevated.border.color",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.card.variant.flat.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.card.variant.flat.border.color",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.card.variant.strong.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.card.variant.strong.border.color",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         }
       ]
     },
@@ -1966,22 +1966,22 @@
         {
           "path": "eui.checkbox.checkmark.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.checkbox.checkmark.disabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "oklch(65% 0.00 0)"
         },
         {
           "path": "eui.checkbox.checkmark.indeterminate",
           "type": "COLOR",
-          "value": "#55a7ff"
+          "value": "oklch(80% 0.19 250)"
         },
         {
           "path": "eui.checkbox.checkmark.indeterminateDisabled",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "oklch(65% 0.00 0)"
         }
       ]
     },
@@ -2513,12 +2513,12 @@
         {
           "path": "eui.input.group.colors.prefix.text",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         },
         {
           "path": "eui.input.group.colors.suffix.text",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         }
       ]
     },
@@ -2671,12 +2671,12 @@
         {
           "path": "eui.select.trigger.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.select.trigger.border",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         }
       ]
     },
@@ -2687,12 +2687,12 @@
         {
           "path": "eui.select.icon.color",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         },
         {
           "path": "eui.select.icon.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         }
       ]
     },
@@ -2703,12 +2703,12 @@
         {
           "path": "eui.select.dropdown.background",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.select.dropdown.border.color",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         }
       ]
     },
@@ -2829,32 +2829,32 @@
         {
           "path": "eui.select.option.background.focused",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.select.option.background.hover",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.select.option.background.selected",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.select.option.background.selected-focused",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.select.option.color.default",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.select.option.color.disabled",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         }
       ]
     },
@@ -2865,17 +2865,17 @@
         {
           "path": "eui.select.primitive.badge.colors.background",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.select.primitive.badge.colors.remove.icon",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         },
         {
           "path": "eui.select.primitive.badge.colors.text",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         }
       ]
     },
@@ -3093,32 +3093,32 @@
         {
           "path": "eui.switch.track.background.disabled",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.switch.track.background.disabledOn",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.switch.track.background.off",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "oklch(80% 0.00 0)"
         },
         {
           "path": "eui.switch.track.background.on",
           "type": "COLOR",
-          "value": "#2d98e8"
+          "value": "oklch(70% 0.20 250)"
         },
         {
           "path": "eui.switch.track.border.disabled",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.switch.track.border.off",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.switch.track.border.on",
@@ -3134,7 +3134,7 @@
         {
           "path": "eui.switch.thumb.background.base",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.switch.thumb.background.disabled",
@@ -3144,7 +3144,7 @@
         {
           "path": "eui.switch.thumb.border.disabled",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         }
       ]
     },
@@ -3329,57 +3329,57 @@
         {
           "path": "eui.color.brand.100",
           "type": "COLOR",
-          "value": "#c9edf7"
+          "value": "oklch(85% 0.11 222)"
         },
         {
           "path": "eui.color.brand.200",
           "type": "COLOR",
-          "value": "#9ad8ee"
+          "value": "oklch(80% 0.15 221)"
         },
         {
           "path": "eui.color.brand.300",
           "type": "COLOR",
-          "value": "#63c0e2"
+          "value": "oklch(70% 0.18 221)"
         },
         {
           "path": "eui.color.brand.400",
           "type": "COLOR",
-          "value": "#2ea7d1"
+          "value": "oklch(60% 0.19 220)"
         },
         {
           "path": "eui.color.brand.50",
           "type": "COLOR",
-          "value": "#e6f6fb"
+          "value": "oklch(90% 0.06 222)"
         },
         {
           "path": "eui.color.brand.500",
           "type": "COLOR",
-          "value": "#007fa2"
+          "value": "oklch(50% 0.20 220)"
         },
         {
           "path": "eui.color.brand.600",
           "type": "COLOR",
-          "value": "#007ca0"
+          "value": "oklch(45% 0.19 220)"
         },
         {
           "path": "eui.color.brand.700",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(40% 0.18 221)"
         },
         {
           "path": "eui.color.brand.800",
           "type": "COLOR",
-          "value": "#055973"
+          "value": "oklch(37% 0.15 221)"
         },
         {
           "path": "eui.color.brand.900",
           "type": "COLOR",
-          "value": "#043c55"
+          "value": "oklch(35% 0.11 222)"
         },
         {
           "path": "eui.color.brand.primary",
           "type": "COLOR",
-          "value": "#066a8d"
+          "value": "oklch(50% 0.20 220)"
         }
       ]
     },
@@ -3390,57 +3390,57 @@
         {
           "path": "eui.color.neutral.100",
           "type": "COLOR",
-          "value": "#f1f2f7"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.200",
           "type": "COLOR",
-          "value": "#e5e7eb"
+          "value": "oklch(85% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.300",
           "type": "COLOR",
-          "value": "#cccccc"
+          "value": "oklch(80% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.400",
           "type": "COLOR",
-          "value": "#a3a3a3"
+          "value": "oklch(73% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.50",
           "type": "COLOR",
-          "value": "#f8fafc"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.500",
           "type": "COLOR",
-          "value": "#757575"
+          "value": "oklch(65% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.600",
           "type": "COLOR",
-          "value": "#525252"
+          "value": "oklch(50% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.700",
           "type": "COLOR",
-          "value": "#404040"
+          "value": "oklch(35% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.800",
           "type": "COLOR",
-          "value": "#262626"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.900",
           "type": "COLOR",
-          "value": "#1b1b1b"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.white",
           "type": "COLOR",
-          "value": "#ffffff"
+          "value": "oklch(100% 0 0)"
         }
       ]
     },

@@ -8,19 +8,19 @@
     "$type": "borderStyle"
   },
   "eui.alert-banner.colors.background.info": {
-    "$value": "#0ea5e910",
+    "$value": "oklch(65% 0.18 240 / 0.1)",
     "$type": "color"
   },
   "eui.alert-banner.colors.background.warning": {
-    "$value": "#f59e0b15",
+    "$value": "oklch(75% 0.15 75 / 0.15)",
     "$type": "color"
   },
   "eui.alert-banner.colors.background.error": {
-    "$value": "#ef444410",
+    "$value": "oklch(60% 0.22 25 / 0.1)",
     "$type": "color"
   },
   "eui.alert-banner.colors.background.success": {
-    "$value": "#22c55e10",
+    "$value": "oklch(65% 0.20 145 / 0.1)",
     "$type": "color"
   },
   "eui.alert-banner.colors.border.info": {
@@ -120,19 +120,19 @@
     "$type": "string"
   },
   "eui.avatar.border.color": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.avatar.border.colorLead": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.avatar.background.fallback": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.avatar.text.fallback": {
-    "$value": "#757575",
+    "$value": "oklch(65% 0.00 0)",
     "$type": "color"
   },
   "eui.avatar.shape.circle.radius": {
@@ -200,191 +200,191 @@
     "$type": "stateEffect"
   },
   "eui.button.primary.background.base": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.button.primary.background.hover": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.button.primary.background.active": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.button.primary.background.disabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.button.primary.background.selected": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.button.primary.label.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.primary.label.hover": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.primary.label.active": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.primary.label.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.primary.label.selected": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.background.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.background.hover": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.background.active": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.background.disabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.background.selected": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.base": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.hover": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.active": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.selected": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.base": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.hover": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.active": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.selected": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent.background.base": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.button.accent.background.hover": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.button.accent.background.active": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.button.accent.background.disabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent.background.selected": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.button.accent.label.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.accent.label.hover": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.accent.label.active": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.accent.label.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent.label.selected": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.base": {
-    "$value": "#b7dbff",
+    "$value": "oklch(95% 0.15 251)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.hover": {
-    "$value": "#b7dbff",
+    "$value": "oklch(95% 0.15 251)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.active": {
-    "$value": "#b7dbff",
+    "$value": "oklch(95% 0.15 251)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.disabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.selected": {
-    "$value": "#b7dbff",
+    "$value": "oklch(95% 0.15 251)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.base": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.hover": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.active": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.selected": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.button.focus.ring.color.derived.base": {
-    "$value": "#2ea7d1",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.focus.ring.color.derived.accessible": {
-    "$value": "#066a8d",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.button.focus.ring.width.base": {
@@ -392,11 +392,11 @@
     "$type": "dimension"
   },
   "eui.button.focus.ring.width.accessible": {
-    "$value": "3px",
+    "$value": "2px",
     "$type": "dimension"
   },
   "eui.button.focus.ring.offset.base": {
-    "$value": "0px",
+    "$value": "1px",
     "$type": "dimension"
   },
   "eui.button.group.orientation.horizontal": {
@@ -648,95 +648,95 @@
     "$type": "dimension"
   },
   "eui.calendar.colors.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.header.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.header.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.header.button.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.header.button.hover.background": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.weekday.text": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.default": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.hover": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selected": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selectedHover": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.active": {
-    "$value": "#f1f8ff",
+    "$value": "oklch(100% 0.06 251)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.today": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.disabled": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.outsideMonth": {
-    "$value": "#f8fafc",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.default": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.selected": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.disabled": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.outsideMonth": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.today": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.border.default": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.border.selected": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.calendar.colors.range.background": {
-    "$value": "#f1f8ff",
+    "$value": "oklch(100% 0.06 251)",
     "$type": "color"
   },
   "eui.calendar.colors.range.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.size.width": {
@@ -852,11 +852,11 @@
     "$type": "string"
   },
   "eui.card.variant.elevated.border.color": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.card.variant.elevated.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.card.variant.elevated.radius": {
@@ -876,11 +876,11 @@
     "$type": "string"
   },
   "eui.card.variant.flat.border.color": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.card.variant.flat.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.card.variant.flat.radius": {
@@ -900,11 +900,11 @@
     "$type": "string"
   },
   "eui.card.variant.strong.border.color": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.card.variant.strong.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.card.variant.strong.radius": {
@@ -1004,99 +1004,99 @@
     "$type": "string"
   },
   "eui.checkbox.border.base": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.checked": {
-    "$value": "#2588d8",
+    "$value": "oklch(45% 0.15 251)",
     "$type": "color"
   },
   "eui.checkbox.border.disabled": {
-    "$value": "#757575",
+    "$value": "oklch(65% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.checkedDisabled": {
-    "$value": "#757575",
+    "$value": "oklch(65% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.hover": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.checkedHover": {
-    "$value": "#2588d8",
+    "$value": "oklch(45% 0.15 251)",
     "$type": "color"
   },
   "eui.checkbox.border.indeterminate": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.indeterminateHover": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.indeterminateDisabled": {
-    "$value": "#757575",
+    "$value": "oklch(65% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.background.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.checkbox.background.checked": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.checkbox.background.disabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.background.checkedDisabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.background.hover": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.checkbox.background.checkedHover": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.checkbox.background.indeterminate": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.checkbox.background.indeterminateHover": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.checkbox.background.indeterminateDisabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.disabled": {
-    "$value": "#757575",
+    "$value": "oklch(65% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminate": {
-    "$value": "#55a7ff",
+    "$value": "oklch(80% 0.19 250)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminateDisabled": {
-    "$value": "#757575",
+    "$value": "oklch(65% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.focus.ring.color.derived.base": {
-    "$value": "#2ea7d1",
+    "$value": "oklch(60% 0.19 220)",
     "$type": "color"
   },
   "eui.checkbox.focus.ring.color.derived.accessible": {
-    "$value": "#066a8d",
+    "$value": "oklch(40% 0.18 221)",
     "$type": "color"
   },
   "eui.checkbox.focus.ring.width.base": {
@@ -1132,11 +1132,11 @@
     "$type": "dimension"
   },
   "eui.content.colors.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.content.colors.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.content.spacing.padding": {
@@ -1144,11 +1144,11 @@
     "$type": "dimension"
   },
   "eui.counter.colors.pill.default.background": {
-    "$value": "#dceeff",
+    "$value": "oklch(98% 0.11 251)",
     "$type": "color"
   },
   "eui.counter.colors.pill.default.color": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.pill.default.border": {
@@ -1160,7 +1160,7 @@
     "$type": "color"
   },
   "eui.counter.colors.pill.inverse.color": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.counter.colors.pill.inverse.border": {
@@ -1168,11 +1168,11 @@
     "$type": "color"
   },
   "eui.counter.colors.pill.disabled.background": {
-    "$value": "#cccccc",
+    "$value": "oklch(80% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.pill.disabled.color": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.pill.disabled.border": {
@@ -1180,23 +1180,23 @@
     "$type": "color"
   },
   "eui.counter.colors.text.default.color": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.text.inverse.color": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.counter.colors.text.disabled.color": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.filter.background": {
-    "$value": "#b7dbff",
+    "$value": "oklch(95% 0.15 251)",
     "$type": "color"
   },
   "eui.counter.colors.filter.color": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.counter.colors.filter.border": {
@@ -1204,7 +1204,7 @@
     "$type": "color"
   },
   "eui.counter.colors.filter.icon.color": {
-    "$value": "#35a8f8",
+    "$value": "oklch(60% 0.19 250)",
     "$type": "color"
   },
   "eui.counter.shape.text.radius": {
@@ -1296,15 +1296,15 @@
     "$type": "lineHeight"
   },
   "eui.detail-panel.colors.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.detail-panel.colors.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.detail-panel.colors.border": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.detail-panel.shadow.left": {
@@ -1320,7 +1320,7 @@
     "$type": "dimension"
   },
   "eui.divider.colors.default": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.divider.size.thickness": {
@@ -1376,15 +1376,15 @@
     "$type": "cubic-bezier"
   },
   "eui.header.colors.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.header.colors.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.header.colors.border": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.header.size.height": {
@@ -1404,7 +1404,7 @@
     "$type": "dimension"
   },
   "eui.hero-section.colors.background.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.hero-section.colors.background.overlay.dark": {
@@ -1416,11 +1416,11 @@
     "$type": "color"
   },
   "eui.hero-section.colors.text.heading": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.hero-section.colors.text.subheading": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.hero-section.size.min-height.mobile": {
@@ -1536,19 +1536,19 @@
     "$type": "string"
   },
   "eui.input.border.base": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.input.border.hover": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.input.border.focus": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.input.border.disabled": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.input.border.error": {
@@ -1556,39 +1556,39 @@
     "$type": "color"
   },
   "eui.input.background.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.input.background.hover": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.input.background.focus": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.input.background.disabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.input.text.base": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.input.text.placeholder": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.input.text.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.input.focus.ring.color.derived.base": {
-    "$value": "#2ea7d1",
+    "$value": "oklch(60% 0.19 220)",
     "$type": "color"
   },
   "eui.input.focus.ring.color.derived.accessible": {
-    "$value": "#066a8d",
+    "$value": "oklch(40% 0.18 221)",
     "$type": "color"
   },
   "eui.input.focus.ring.width.base": {
@@ -1676,11 +1676,11 @@
     "$type": "dimension"
   },
   "eui.input.group.colors.prefix.text": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.input.group.colors.suffix.text": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.input.shape.radius": {
@@ -1744,15 +1744,15 @@
     "$type": "string"
   },
   "eui.menu.border.color": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.menu.colors.border": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.background.default": {
@@ -1760,23 +1760,23 @@
     "$type": "color"
   },
   "eui.menu.colors.item.background.hover": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.background.focus": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.background.selected": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.text-disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.shadow": {
@@ -1828,11 +1828,11 @@
     "$type": "string"
   },
   "eui.modal.colors.header.background": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.modal.colors.header.text": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.modal.colors.header.border": {
@@ -1840,11 +1840,11 @@
     "$type": "color"
   },
   "eui.modal.colors.body.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.modal.colors.body.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.modal.colors.body.border": {
@@ -1852,23 +1852,23 @@
     "$type": "color"
   },
   "eui.modal.colors.footer.background": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.modal.colors.footer.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.modal.colors.footer.border": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.modal.colors.close.color": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.modal.colors.close.hover": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.modal.shadow.elevation": {
@@ -1924,23 +1924,23 @@
     "$type": "dimension"
   },
   "eui.select.trigger.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.select.trigger.border": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.select.icon.color": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.select.icon.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.select.dropdown.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.select.dropdown.border.width": {
@@ -1952,7 +1952,7 @@
     "$type": "borderStyle"
   },
   "eui.select.dropdown.border.color": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.select.dropdown.shadow": {
@@ -1988,27 +1988,27 @@
     "$type": "color"
   },
   "eui.select.option.background.hover": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.background.focused": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.background.selected": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.background.selected-focused": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.color.default": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.color.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.select.primitive.trigger.spacing.gap": {
@@ -2060,15 +2060,15 @@
     "$type": "dimension"
   },
   "eui.select.primitive.badge.colors.background": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.select.primitive.badge.colors.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.select.primitive.badge.colors.remove.icon": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.sidebar.animation.duration": {
@@ -2080,11 +2080,11 @@
     "$type": "string"
   },
   "eui.sidebar.colors.background": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.sidebar.colors.text": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.sidebar.colors.border": {
@@ -2128,7 +2128,7 @@
     "$type": "duration"
   },
   "eui.skeleton.colors.background.base": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.skeleton.colors.shimmer.start": {
@@ -2176,7 +2176,7 @@
     "$type": "string"
   },
   "eui.switch.track.border.off": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.border.on": {
@@ -2184,23 +2184,23 @@
     "$type": "color"
   },
   "eui.switch.track.border.disabled": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.background.off": {
-    "$value": "#cccccc",
+    "$value": "oklch(80% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.background.on": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.switch.track.background.disabled": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.background.disabledOn": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.thumb.border.width": {
@@ -2212,11 +2212,11 @@
     "$type": "string"
   },
   "eui.switch.thumb.border.disabled": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.thumb.background.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.switch.thumb.background.disabled": {
@@ -2224,11 +2224,11 @@
     "$type": "color"
   },
   "eui.switch.focus.ring.color.derived.base": {
-    "$value": "#2ea7d1",
+    "$value": "oklch(60% 0.19 220)",
     "$type": "color"
   },
   "eui.switch.focus.ring.color.derived.accessible": {
-    "$value": "#066a8d",
+    "$value": "oklch(40% 0.18 221)",
     "$type": "color"
   },
   "eui.switch.focus.ring.width.base": {
@@ -2312,43 +2312,43 @@
     "$type": "string"
   },
   "eui.table.colors.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.table.colors.border": {
-    "$value": "#cccccc",
+    "$value": "oklch(80% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.header.background": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.header.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.subheader.background": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.subheader.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.row.background.default": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.table.colors.row.background.hover": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.row.background.selected": {
-    "$value": "#f1f8ff",
+    "$value": "oklch(100% 0.06 251)",
     "$type": "color"
   },
   "eui.table.colors.cell.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.table.expandable-cell.panel.max-width": {
@@ -2460,15 +2460,15 @@
     "$type": "lineHeight"
   },
   "eui.title-bar.colors.background": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.title-bar.colors.text": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.title-bar.colors.border": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.title-bar.size.height": {
@@ -2488,135 +2488,135 @@
     "$type": "dimension"
   },
   "eui.color.accent.50": {
-    "$value": "#f1f8ff",
+    "$value": "oklch(100% 0.06 251)",
     "$type": "color"
   },
   "eui.color.accent.100": {
-    "$value": "#dceeff",
+    "$value": "oklch(98% 0.11 251)",
     "$type": "color"
   },
   "eui.color.accent.200": {
-    "$value": "#b7dbff",
+    "$value": "oklch(95% 0.15 251)",
     "$type": "color"
   },
   "eui.color.accent.300": {
-    "$value": "#8ac4ff",
+    "$value": "oklch(90% 0.18 250)",
     "$type": "color"
   },
   "eui.color.accent.400": {
-    "$value": "#55a7ff",
+    "$value": "oklch(80% 0.19 250)",
     "$type": "color"
   },
   "eui.color.accent.500": {
-    "$value": "#3db0ff",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.color.accent.600": {
-    "$value": "#35a8f8",
+    "$value": "oklch(60% 0.19 250)",
     "$type": "color"
   },
   "eui.color.accent.700": {
-    "$value": "#2d98e8",
+    "$value": "oklch(50% 0.18 250)",
     "$type": "color"
   },
   "eui.color.accent.800": {
-    "$value": "#2588d8",
+    "$value": "oklch(45% 0.15 251)",
     "$type": "color"
   },
   "eui.color.accent.900": {
-    "$value": "#1e78c8",
+    "$value": "oklch(42% 0.11 251)",
     "$type": "color"
   },
   "eui.color.accent.primary": {
-    "$value": "#2d98e8",
+    "$value": "oklch(70% 0.20 250)",
     "$type": "color"
   },
   "eui.color.brand.50": {
-    "$value": "#e6f6fb",
+    "$value": "oklch(90% 0.06 222)",
     "$type": "color"
   },
   "eui.color.brand.100": {
-    "$value": "#c9edf7",
+    "$value": "oklch(85% 0.11 222)",
     "$type": "color"
   },
   "eui.color.brand.200": {
-    "$value": "#9ad8ee",
+    "$value": "oklch(80% 0.15 221)",
     "$type": "color"
   },
   "eui.color.brand.300": {
-    "$value": "#63c0e2",
+    "$value": "oklch(70% 0.18 221)",
     "$type": "color"
   },
   "eui.color.brand.400": {
-    "$value": "#2ea7d1",
+    "$value": "oklch(60% 0.19 220)",
     "$type": "color"
   },
   "eui.color.brand.500": {
-    "$value": "#007fa2",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.color.brand.600": {
-    "$value": "#007ca0",
+    "$value": "oklch(45% 0.19 220)",
     "$type": "color"
   },
   "eui.color.brand.700": {
-    "$value": "#066a8d",
+    "$value": "oklch(40% 0.18 221)",
     "$type": "color"
   },
   "eui.color.brand.800": {
-    "$value": "#055973",
+    "$value": "oklch(37% 0.15 221)",
     "$type": "color"
   },
   "eui.color.brand.900": {
-    "$value": "#043c55",
+    "$value": "oklch(35% 0.11 222)",
     "$type": "color"
   },
   "eui.color.brand.primary": {
-    "$value": "#066a8d",
+    "$value": "oklch(50% 0.20 220)",
     "$type": "color"
   },
   "eui.color.neutral.50": {
-    "$value": "#f8fafc",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.100": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.200": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.300": {
-    "$value": "#cccccc",
+    "$value": "oklch(80% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.400": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.500": {
-    "$value": "#757575",
+    "$value": "oklch(65% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.600": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.700": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.800": {
-    "$value": "#262626",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.900": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.white": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.color.signal.keyboardFocus": {
@@ -2641,39 +2641,39 @@
     "$type": "color"
   },
   "eui.color.background.surface": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.color.background.muted": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.color.background.subtle": {
-    "$value": "#f1f2f7",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.color.background.inverse": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.color.background.base": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.color.border.default": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.color.border.subtle": {
-    "$value": "#e5e7eb",
+    "$value": "oklch(85% 0.00 0)",
     "$type": "color"
   },
   "eui.color.border.strong": {
-    "$value": "#a3a3a3",
+    "$value": "oklch(73% 0.00 0)",
     "$type": "color"
   },
   "eui.color.border.inverse": {
-    "$value": "#262626",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.color.focus.ring": {
@@ -2685,23 +2685,23 @@
     "$type": "color"
   },
   "eui.color.text.primary": {
-    "$value": "#1b1b1b",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.color.text.muted": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.color.text.subtle": {
-    "$value": "#525252",
+    "$value": "oklch(50% 0.00 0)",
     "$type": "color"
   },
   "eui.color.text.inverse": {
-    "$value": "#ffffff",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.color.text.disabled": {
-    "$value": "#404040",
+    "$value": "oklch(35% 0.00 0)",
     "$type": "color"
   },
   "eui.radius.pill": {
