@@ -5,24 +5,24 @@
       "colors": {
         "background": {
           "info": {
-            "$value": "{eui.color.status.info}10",
+            "$value": "oklch(65% 0.18 240 / 0.1)",
             "$type": "color",
-            "$description": "Background color for info variant (light tint)"
+            "$description": "Background color for info variant (light tint with 10% opacity)"
           },
           "warning": {
-            "$value": "{eui.color.status.warning}15",
+            "$value": "oklch(75% 0.15 75 / 0.15)",
             "$type": "color",
-            "$description": "Background color for warning variant (light tint)"
+            "$description": "Background color for warning variant (light tint with 15% opacity)"
           },
           "error": {
-            "$value": "{eui.color.status.error}10",
+            "$value": "oklch(60% 0.22 25 / 0.1)",
             "$type": "color",
-            "$description": "Background color for error variant (light tint)"
+            "$description": "Background color for error variant (light tint with 10% opacity)"
           },
           "success": {
-            "$value": "{eui.color.status.success}10",
+            "$value": "oklch(65% 0.20 145 / 0.1)",
             "$type": "color",
-            "$description": "Background color for success variant (light tint)"
+            "$description": "Background color for success variant (light tint with 10% opacity)"
           }
         },
         "border": {
@@ -73,6 +73,3 @@
     }
   }
 }
-
-
-

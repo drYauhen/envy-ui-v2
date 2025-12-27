@@ -3,44 +3,54 @@
     "color": {
       "brand": {
         "50": {
-          "$value": "#e6f6fb",
-          "$type": "color"
+          "$value": "oklch(90% 0.06 222)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "100": {
-          "$value": "#c9edf7",
-          "$type": "color"
+          "$value": "oklch(85% 0.11 222)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "200": {
-          "$value": "#9ad8ee",
-          "$type": "color"
+          "$value": "oklch(80% 0.15 221)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "300": {
-          "$value": "#63c0e2",
-          "$type": "color"
+          "$value": "oklch(70% 0.18 221)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "400": {
-          "$value": "#2ea7d1",
-          "$type": "color"
+          "$value": "oklch(60% 0.19 220)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "500": {
-          "$value": "#007fa2",
-          "$type": "color"
+          "$value": "oklch(50% 0.20 220)",
+          "$type": "color",
+          "$description": "Base brand color - reference tone"
         },
         "600": {
-          "$value": "#007ca0",
-          "$type": "color"
+          "$value": "oklch(45% 0.19 220)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "700": {
-          "$value": "#066a8d",
-          "$type": "color"
+          "$value": "oklch(40% 0.18 221)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "800": {
-          "$value": "#055973",
-          "$type": "color"
+          "$value": "oklch(37% 0.15 221)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "900": {
-          "$value": "#043c55",
-          "$type": "color"
+          "$value": "oklch(35% 0.11 222)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         }
       }
     }

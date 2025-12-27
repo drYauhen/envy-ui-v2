@@ -3,49 +3,54 @@
     "color": {
       "accent": {
         "50": {
-          "$value": "#f1f8ff",
-          "$type": "color"
+          "$value": "oklch(100% 0.06 251)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "100": {
-          "$value": "#dceeff",
-          "$type": "color"
+          "$value": "oklch(98% 0.11 251)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "200": {
-          "$value": "#b7dbff",
-          "$type": "color"
+          "$value": "oklch(95% 0.15 251)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "300": {
-          "$value": "#8ac4ff",
-          "$type": "color"
+          "$value": "oklch(90% 0.18 250)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "400": {
-          "$value": "#55a7ff",
-          "$type": "color"
+          "$value": "oklch(80% 0.19 250)",
+          "$type": "color",
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "500": {
-          "$value": "#3db0ff",
+          "$value": "oklch(70% 0.20 250)",
           "$type": "color",
-          "$description": "Base accent color - lighter, more cyan-blue. Used for highlights and expressive elements."
+          "$description": "Base accent color - reference tone"
         },
         "600": {
-          "$value": "#35a8f8",
+          "$value": "oklch(60% 0.19 250)",
           "$type": "color",
-          "$description": "Slightly darker than base, compressed scale keeps it close to 500"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "700": {
-          "$value": "#2d98e8",
+          "$value": "oklch(50% 0.18 250)",
           "$type": "color",
-          "$description": "Used for accent buttons - compressed scale, lighter and more expressive"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "800": {
-          "$value": "#2588d8",
+          "$value": "oklch(45% 0.15 251)",
           "$type": "color",
-          "$description": "Medium shade, compressed scale keeps it relatively light"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         },
         "900": {
-          "$value": "#1e78c8",
+          "$value": "oklch(42% 0.11 251)",
           "$type": "color",
-          "$description": "Darkest accent - compressed scale keeps it light for highlights. Good contrast with both white and dark text."
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
         }
       }
     }
