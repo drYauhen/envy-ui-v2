@@ -260,15 +260,15 @@
     "$type": "color"
   },
   "eui.button.secondary.label.base": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.hover": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.active": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.disabled": {
@@ -276,7 +276,7 @@
     "$type": "color"
   },
   "eui.button.secondary.label.selected": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.base": {
@@ -656,11 +656,11 @@
     "$type": "color"
   },
   "eui.calendar.colors.header.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.header.button.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.header.button.hover.background": {
@@ -704,7 +704,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.text.default": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.selected": {
@@ -720,7 +720,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.text.today": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.border.default": {
@@ -736,7 +736,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.range.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.calendar.size.width": {
@@ -1136,7 +1136,7 @@
     "$type": "color"
   },
   "eui.content.colors.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.content.spacing.padding": {
@@ -1148,7 +1148,7 @@
     "$type": "color"
   },
   "eui.counter.colors.pill.default.color": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.counter.colors.pill.default.border": {
@@ -1180,7 +1180,7 @@
     "$type": "color"
   },
   "eui.counter.colors.text.default.color": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.counter.colors.text.inverse.color": {
@@ -1300,7 +1300,7 @@
     "$type": "color"
   },
   "eui.detail-panel.colors.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.detail-panel.colors.border": {
@@ -1380,7 +1380,7 @@
     "$type": "color"
   },
   "eui.header.colors.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.header.colors.border": {
@@ -1404,7 +1404,7 @@
     "$type": "dimension"
   },
   "eui.hero-section.colors.background.base": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(17% 0.00 0)",
     "$type": "color"
   },
   "eui.hero-section.colors.background.overlay.dark": {
@@ -1416,11 +1416,11 @@
     "$type": "color"
   },
   "eui.hero-section.colors.text.heading": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.hero-section.colors.text.subheading": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(80% 0.00 0)",
     "$type": "color"
   },
   "eui.hero-section.size.min-height.mobile": {
@@ -1572,7 +1572,7 @@
     "$type": "color"
   },
   "eui.input.text.base": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.input.text.placeholder": {
@@ -1772,7 +1772,7 @@
     "$type": "color"
   },
   "eui.menu.colors.item.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.text-disabled": {
@@ -1844,7 +1844,7 @@
     "$type": "color"
   },
   "eui.modal.colors.body.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.modal.colors.body.border": {
@@ -1856,7 +1856,7 @@
     "$type": "color"
   },
   "eui.modal.colors.footer.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.modal.colors.footer.border": {
@@ -2004,7 +2004,7 @@
     "$type": "color"
   },
   "eui.select.option.color.default": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.select.option.color.disabled": {
@@ -2064,7 +2064,7 @@
     "$type": "color"
   },
   "eui.select.primitive.badge.colors.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.select.primitive.badge.colors.remove.icon": {
@@ -2324,7 +2324,7 @@
     "$type": "color"
   },
   "eui.table.colors.header.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.table.colors.subheader.background": {
@@ -2332,7 +2332,7 @@
     "$type": "color"
   },
   "eui.table.colors.subheader.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.table.colors.row.background.default": {
@@ -2348,7 +2348,7 @@
     "$type": "color"
   },
   "eui.table.colors.cell.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.table.expandable-cell.panel.max-width": {
@@ -2464,7 +2464,7 @@
     "$type": "color"
   },
   "eui.title-bar.colors.text": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.title-bar.colors.border": {
@@ -2487,274 +2487,9 @@
     "$value": "1rem",
     "$type": "dimension"
   },
-  "eui.color.accent.50": {
-    "$value": "oklch(100% 0.06 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.100": {
-    "$value": "oklch(98% 0.11 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.200": {
-    "$value": "oklch(95% 0.15 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.300": {
-    "$value": "oklch(90% 0.18 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.400": {
-    "$value": "oklch(80% 0.19 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.500": {
-    "$value": "oklch(70% 0.20 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.600": {
-    "$value": "oklch(60% 0.19 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.700": {
-    "$value": "oklch(50% 0.18 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.800": {
-    "$value": "oklch(45% 0.15 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.900": {
-    "$value": "oklch(42% 0.11 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.primary": {
-    "$value": "oklch(70% 0.20 250)",
-    "$type": "color"
-  },
-  "eui.color.brand.50": {
-    "$value": "oklch(90% 0.06 222)",
-    "$type": "color"
-  },
-  "eui.color.brand.100": {
-    "$value": "oklch(85% 0.11 222)",
-    "$type": "color"
-  },
-  "eui.color.brand.200": {
-    "$value": "oklch(80% 0.15 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.300": {
-    "$value": "oklch(70% 0.18 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.400": {
-    "$value": "oklch(60% 0.19 220)",
-    "$type": "color"
-  },
-  "eui.color.brand.500": {
-    "$value": "oklch(50% 0.20 220)",
-    "$type": "color"
-  },
-  "eui.color.brand.600": {
-    "$value": "oklch(45% 0.19 220)",
-    "$type": "color"
-  },
-  "eui.color.brand.700": {
-    "$value": "oklch(40% 0.18 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.800": {
-    "$value": "oklch(37% 0.15 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.900": {
-    "$value": "oklch(35% 0.11 222)",
-    "$type": "color"
-  },
-  "eui.color.brand.primary": {
-    "$value": "oklch(50% 0.20 220)",
-    "$type": "color"
-  },
-  "eui.color.neutral.50": {
-    "$value": "oklch(90% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.100": {
-    "$value": "oklch(88% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.200": {
-    "$value": "oklch(85% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.300": {
-    "$value": "oklch(80% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.400": {
-    "$value": "oklch(73% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.500": {
-    "$value": "oklch(65% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.600": {
-    "$value": "oklch(50% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.700": {
-    "$value": "oklch(35% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.800": {
-    "$value": "oklch(25% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.900": {
-    "$value": "oklch(17% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.white": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.signal.keyboardFocus": {
-    "$value": "#ff4d00",
-    "$type": "color",
-    "$description": "Keyboard-only focus ring (a11y)"
-  },
-  "eui.color.status.success": {
-    "$value": "#22c55e",
-    "$type": "color"
-  },
-  "eui.color.status.warning": {
-    "$value": "#f59e0b",
-    "$type": "color"
-  },
-  "eui.color.status.error": {
-    "$value": "#ef4444",
-    "$type": "color"
-  },
-  "eui.color.status.info": {
-    "$value": "#0ea5e9",
-    "$type": "color"
-  },
-  "eui.color.background.surface": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.background.muted": {
-    "$value": "oklch(85% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.background.subtle": {
-    "$value": "oklch(88% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.background.inverse": {
-    "$value": "oklch(17% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.background.base": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.border.default": {
-    "$value": "oklch(35% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.border.subtle": {
-    "$value": "oklch(85% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.border.strong": {
-    "$value": "oklch(73% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.border.inverse": {
-    "$value": "oklch(25% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.focus.ring": {
-    "$value": "#ff4d00",
-    "$type": "color"
-  },
-  "eui.color.system.focus": {
-    "$value": "#ff4d00",
-    "$type": "color"
-  },
-  "eui.color.text.primary": {
-    "$value": "oklch(17% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.text.muted": {
-    "$value": "oklch(35% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.text.subtle": {
-    "$value": "oklch(50% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.text.inverse": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.text.disabled": {
-    "$value": "oklch(35% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.radius.pill": {
-    "$value": "999px",
-    "$type": "dimension"
-  },
-  "eui.radius.none": {
-    "$value": "0px",
-    "$type": "dimension"
-  },
-  "eui.radius.small": {
-    "$value": "2px",
-    "$type": "dimension"
-  },
-  "eui.radius.default": {
-    "$value": "4px",
-    "$type": "dimension"
-  },
-  "eui.radius.large": {
-    "$value": "4px",
-    "$type": "dimension"
-  },
-  "eui.radius.extra-large": {
-    "$value": "6px",
-    "$type": "dimension"
-  },
-  "eui.radius.full": {
-    "$value": "999px",
-    "$type": "dimension"
-  },
-  "eui.spacing.xs": {
-    "$value": "0.25rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.sm": {
-    "$value": "0.5rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.md": {
-    "$value": "1rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.lg": {
-    "$value": "1.5rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.xl": {
-    "$value": "2rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.2xl": {
-    "$value": "3rem",
-    "$type": "dimension"
+  "eui.typography.base.fontSize": {
+    "$value": "16px",
+    "$type": "fontSize"
   },
   "eui.typography.fontFamily.ui": {
     "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -3000,9 +2735,274 @@
     "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
     "$type": "fontFamily"
   },
-  "eui.typography.base.fontSize": {
-    "$value": "16px",
-    "$type": "fontSize"
+  "eui.color.text.primary": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.text.muted": {
+    "$value": "oklch(80% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.text.subtle": {
+    "$value": "oklch(50% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.text.inverse": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.text.disabled": {
+    "$value": "oklch(35% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.base": {
+    "$value": "oklch(17% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.surface": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.background.muted": {
+    "$value": "oklch(85% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.subtle": {
+    "$value": "oklch(88% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.inverse": {
+    "$value": "oklch(17% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.accent.50": {
+    "$value": "oklch(100% 0.06 251)",
+    "$type": "color"
+  },
+  "eui.color.accent.100": {
+    "$value": "oklch(98% 0.11 251)",
+    "$type": "color"
+  },
+  "eui.color.accent.200": {
+    "$value": "oklch(95% 0.15 251)",
+    "$type": "color"
+  },
+  "eui.color.accent.300": {
+    "$value": "oklch(90% 0.18 250)",
+    "$type": "color"
+  },
+  "eui.color.accent.400": {
+    "$value": "oklch(80% 0.19 250)",
+    "$type": "color"
+  },
+  "eui.color.accent.500": {
+    "$value": "oklch(70% 0.20 250)",
+    "$type": "color"
+  },
+  "eui.color.accent.600": {
+    "$value": "oklch(60% 0.19 250)",
+    "$type": "color"
+  },
+  "eui.color.accent.700": {
+    "$value": "oklch(50% 0.18 250)",
+    "$type": "color"
+  },
+  "eui.color.accent.800": {
+    "$value": "oklch(45% 0.15 251)",
+    "$type": "color"
+  },
+  "eui.color.accent.900": {
+    "$value": "oklch(42% 0.11 251)",
+    "$type": "color"
+  },
+  "eui.color.accent.primary": {
+    "$value": "oklch(70% 0.20 250)",
+    "$type": "color"
+  },
+  "eui.color.brand.50": {
+    "$value": "oklch(90% 0.06 222)",
+    "$type": "color"
+  },
+  "eui.color.brand.100": {
+    "$value": "oklch(85% 0.11 222)",
+    "$type": "color"
+  },
+  "eui.color.brand.200": {
+    "$value": "oklch(80% 0.15 221)",
+    "$type": "color"
+  },
+  "eui.color.brand.300": {
+    "$value": "oklch(70% 0.18 221)",
+    "$type": "color"
+  },
+  "eui.color.brand.400": {
+    "$value": "oklch(60% 0.19 220)",
+    "$type": "color"
+  },
+  "eui.color.brand.500": {
+    "$value": "oklch(50% 0.20 220)",
+    "$type": "color"
+  },
+  "eui.color.brand.600": {
+    "$value": "oklch(45% 0.19 220)",
+    "$type": "color"
+  },
+  "eui.color.brand.700": {
+    "$value": "oklch(40% 0.18 221)",
+    "$type": "color"
+  },
+  "eui.color.brand.800": {
+    "$value": "oklch(37% 0.15 221)",
+    "$type": "color"
+  },
+  "eui.color.brand.900": {
+    "$value": "oklch(35% 0.11 222)",
+    "$type": "color"
+  },
+  "eui.color.brand.primary": {
+    "$value": "oklch(50% 0.20 220)",
+    "$type": "color"
+  },
+  "eui.color.neutral.50": {
+    "$value": "oklch(90% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.100": {
+    "$value": "oklch(88% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.200": {
+    "$value": "oklch(85% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.300": {
+    "$value": "oklch(80% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.400": {
+    "$value": "oklch(73% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.500": {
+    "$value": "oklch(65% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.600": {
+    "$value": "oklch(50% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.700": {
+    "$value": "oklch(35% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.800": {
+    "$value": "oklch(25% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.900": {
+    "$value": "oklch(17% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.white": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.signal.keyboardFocus": {
+    "$value": "#ff4d00",
+    "$type": "color",
+    "$description": "Keyboard-only focus ring (a11y)"
+  },
+  "eui.color.status.success": {
+    "$value": "#22c55e",
+    "$type": "color"
+  },
+  "eui.color.status.warning": {
+    "$value": "#f59e0b",
+    "$type": "color"
+  },
+  "eui.color.status.error": {
+    "$value": "#ef4444",
+    "$type": "color"
+  },
+  "eui.color.status.info": {
+    "$value": "#0ea5e9",
+    "$type": "color"
+  },
+  "eui.color.border.default": {
+    "$value": "oklch(35% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.border.subtle": {
+    "$value": "oklch(85% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.border.strong": {
+    "$value": "oklch(73% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.border.inverse": {
+    "$value": "oklch(25% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.focus.ring": {
+    "$value": "#ff4d00",
+    "$type": "color"
+  },
+  "eui.color.system.focus": {
+    "$value": "#ff4d00",
+    "$type": "color"
+  },
+  "eui.radius.pill": {
+    "$value": "999px",
+    "$type": "dimension"
+  },
+  "eui.radius.none": {
+    "$value": "0px",
+    "$type": "dimension"
+  },
+  "eui.radius.small": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.radius.default": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.radius.large": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.radius.extra-large": {
+    "$value": "6px",
+    "$type": "dimension"
+  },
+  "eui.radius.full": {
+    "$value": "999px",
+    "$type": "dimension"
+  },
+  "eui.spacing.xs": {
+    "$value": "0.25rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.sm": {
+    "$value": "0.5rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.md": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.lg": {
+    "$value": "1.5rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.xl": {
+    "$value": "2rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.2xl": {
+    "$value": "3rem",
+    "$type": "dimension"
   },
   "eui.focus.ring.width.base": {
     "$value": "2px",

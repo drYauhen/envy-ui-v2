@@ -319,14 +319,14 @@
           "label": "Muted",
           "path": "eui.color.text.muted",
           "cssVar": "--eui-color-text-muted",
-          "value": "oklch(35% 0.00 0)"
+          "value": "oklch(80% 0.00 0)"
         },
         {
           "id": "primary",
           "label": "Primary",
           "path": "eui.color.text.primary",
           "cssVar": "--eui-color-text-primary",
-          "value": "oklch(17% 0.00 0)"
+          "value": "oklch(100% 0 0)"
         },
         {
           "id": "subtle",
@@ -346,7 +346,7 @@
           "label": "Base",
           "path": "eui.color.background.base",
           "cssVar": "--eui-color-background-base",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(17% 0.00 0)"
         },
         {
           "id": "inverse",
