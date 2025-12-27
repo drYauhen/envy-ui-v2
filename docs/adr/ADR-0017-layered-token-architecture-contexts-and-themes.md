@@ -2,6 +2,7 @@
 
 **Status:** Accepted  
 **Date:** 2025-12-20  
+**Last Updated:** 2025-12-26  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
@@ -36,14 +37,14 @@ Foundation → Semantic → Context → Theme → Component
 **Structure:**
 - **Foundations** - Base color scales, dimensions (neutral, brand, accent families). Shared across all contexts, context-agnostic.
 - **Semantic** - Semantic tokens (text, background, border, focus) that reference foundations. Define "what" not "where".
-- **Contexts** - Context-specific overrides of semantic tokens:
-  - `app/` - Application shell semantic overrides
-  - `website/` - Website/CMS semantic overrides  
-  - `report/` - Report semantic overrides
+- **Contexts** - Context-specific overrides of semantic tokens (environment defaults):
+  - `contexts/app.json` - Application shell semantic overrides (e.g., fontSize: 14px)
+  - `contexts/website.json` - Website/CMS semantic overrides (e.g., fontSize: 16px)
+  - `contexts/report.json` - Report semantic overrides
 - **Themes** - Theme-specific overrides within a context (only override what changes):
-  - `app/default.json`, `app/dark.json`
-  - `website/brand-a.json`, `website/brand-b.json`
-  - `report/print.json`, `report/screen.json`
+  - `themes/app/default.json`, `themes/app/accessibility.json`
+  - `themes/website/default.json`, `themes/website/dark.json`
+  - `themes/report/print.json`, `themes/report/screen.json`
 - **Components** - Component tokens reference semantic tokens, may have context-specific variants if needed.
 
 **Resolution Priority:**
@@ -107,12 +108,26 @@ This ensures that:
 - Theme files may become large if many semantic tokens need overrides
 - Build pipeline needs to handle context/theme resolution
 
-**Next Steps:**
-- Design token file structure for contexts and themes
-- Define resolution/merge strategy for Style Dictionary
-- Implement CSS variable injection based on `[data-eui-context]` and `[data-eui-theme]`
-- Create Storybook examples showing same component in different context+theme combinations
-- Document token override patterns and best practices
+**Implementation Details:**
+
+**CSS Generation:**
+- Base tokens (foundations, semantic, components) are output to `:root`
+- Context tokens are output to `[data-eui-context="app"]`, `[data-eui-context="website"]`, etc.
+- Theme tokens are output to `[data-eui-context="app"][data-eui-theme="default"]`, etc.
+- Nested contexts are supported via CSS cascade: inner context selectors have higher specificity and override outer contexts
+
+**Figma Variables Export:**
+- Each context+theme combination is exported as a separate mode (e.g., `app-default`, `website-dark`)
+- Variables use `valuesByMode` structure with values for each mode
+- Base tokens (foundations, semantic) are included in all modes
+- Context tokens apply to all themes within that context
+- Theme tokens apply only to their specific context+theme combination
+
+**Token Resolution:**
+- Style Dictionary resolves tokens in order: Foundation → Semantic → Context → Theme → Component
+- Context tokens override semantic defaults for that environment
+- Theme tokens override context defaults within that context
+- Missing values inherit from previous layer
 
 **Future Considerations:**
 - May need component-level context overrides if semantic layer isn't sufficient
