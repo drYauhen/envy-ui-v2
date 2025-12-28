@@ -1,0 +1,39 @@
+{
+  "eui": {
+    "typography": {
+      "letterSpacing": {
+        "tighter": {
+          "$value": "-0.05em",
+          "$type": "letterSpacing",
+          "$description": "Tighter letter spacing - for compact text, headings"
+        },
+        "tight": {
+          "$value": "-0.025em",
+          "$type": "letterSpacing",
+          "$description": "Tight letter spacing - for headings, labels"
+        },
+        "normal": {
+          "$value": "0",
+          "$type": "letterSpacing",
+          "$description": "Normal letter spacing - default for body text"
+        },
+        "wide": {
+          "$value": "0.01em",
+          "$type": "letterSpacing",
+          "$description": "Wide letter spacing - for buttons, UI elements"
+        },
+        "wider": {
+          "$value": "0.025em",
+          "$type": "letterSpacing",
+          "$description": "Wider letter spacing - for emphasis, uppercase text"
+        },
+        "widest": {
+          "$value": "0.05em",
+          "$type": "letterSpacing",
+          "$description": "Widest letter spacing - for decorative text, large headings"
+        }
+      }
+    }
+  }
+}
+

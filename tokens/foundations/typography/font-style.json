@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "typography": {
+      "fontStyle": {
+        "normal": {
+          "$value": "normal",
+          "$type": "fontStyle",
+          "$description": "Normal font style - default for all text"
+        },
+        "italic": {
+          "$value": "italic",
+          "$type": "fontStyle",
+          "$description": "Italic font style - for emphasis, quotes, citations"
+        },
+        "oblique": {
+          "$value": "oblique",
+          "$type": "fontStyle",
+          "$description": "Oblique font style - slanted text (fallback if italic not available)"
+        }
+      }
+    }
+  }
+}
+

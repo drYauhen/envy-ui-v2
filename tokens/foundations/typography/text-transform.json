@@ -1,0 +1,29 @@
+{
+  "eui": {
+    "typography": {
+      "textTransform": {
+        "none": {
+          "$value": "none",
+          "$type": "textTransform",
+          "$description": "No text transformation - default, preserves original casing"
+        },
+        "uppercase": {
+          "$value": "uppercase",
+          "$type": "textTransform",
+          "$description": "Uppercase transformation - for buttons, labels, navigation"
+        },
+        "lowercase": {
+          "$value": "lowercase",
+          "$type": "textTransform",
+          "$description": "Lowercase transformation - for specific styling needs"
+        },
+        "capitalize": {
+          "$value": "capitalize",
+          "$type": "textTransform",
+          "$description": "Capitalize transformation - first letter of each word uppercase"
+        }
+      }
+    }
+  }
+}
+

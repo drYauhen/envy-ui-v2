@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "typography": {
+      "textDecoration": {
+        "none": {
+          "$value": "none",
+          "$type": "textDecoration",
+          "$description": "No text decoration - default for most text, links without underline"
+        },
+        "underline": {
+          "$value": "underline",
+          "$type": "textDecoration",
+          "$description": "Underline decoration - for links, emphasis in content"
+        },
+        "line-through": {
+          "$value": "line-through",
+          "$type": "textDecoration",
+          "$description": "Line-through decoration - for deleted text, strikethrough"
+        }
+      }
+    }
+  }
+}
+
