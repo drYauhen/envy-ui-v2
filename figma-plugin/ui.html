@@ -99,8 +99,22 @@
 
       .actions {
         display: flex;
+        flex-direction: column;
         gap: 8px;
-        flex-wrap: wrap;
+      }
+
+      .actions-row {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .actions-row button {
+        flex: 1;
+      }
+
+      .actions-row button.full-width {
+        width: 100%;
       }
 
       .status {
@@ -132,19 +146,22 @@
     <div id="reloadTimestamp" class="reload-strip"></div>
 
     <div id="variablesPanel" class="panel active">
-      <h1>Import adapter JSON</h1>
+      <h1>Import variables JSON</h1>
       <p style="margin: 0; font-size: 12px; color: #cbd5f5;">
-        Paste the contents of <code>generated/figma/adapter/variables.adapter.json</code> or load it from disk.
+        Paste the contents of <code>generated/figma/tokens/variables.tokens.scoped.json</code> (new format with modes) or <code>generated/figma/adapter/variables.adapter.json</code> (old format) or load it from disk.
       </p>
       <textarea id="adapterInput" placeholder="{\n  \"collections\": []\n}"></textarea>
       <div class="actions">
-        <label class="secondary">
-          <input type="file" id="fileInput" accept="application/json" />
-          Load JSON file
-        </label>
-        <button id="importButton">Prepare import</button>
-        <button id="confirmButton" class="secondary" disabled>Apply changes</button>
-        <button id="closeButton" class="secondary">Close</button>
+        <div class="actions-row">
+          <button id="loadJsonButton" class="secondary full-width">
+            Load JSON file
+          </button>
+          <input type="file" id="fileInput" accept="application/json" style="display: none;" />
+        </div>
+        <div class="actions-row">
+          <button id="importButton" disabled>Prepare import</button>
+          <button id="confirmButton" class="secondary" disabled>Apply changes</button>
+        </div>
       </div>
       <div class="status" id="status"></div>
     </div>
@@ -231,9 +248,9 @@
 
       const input = document.getElementById('adapterInput');
       const fileInput = document.getElementById('fileInput');
+      const loadJsonButton = document.getElementById('loadJsonButton');
       const importButton = document.getElementById('importButton');
       const confirmButton = document.getElementById('confirmButton');
-      const closeButton = document.getElementById('closeButton');
       const status = document.getElementById('status');
       const structuresStatus = document.getElementById('structuresStatus');
       const generateStructures = document.getElementById('generateStructures');
@@ -267,6 +284,17 @@
       // Request timestamp in case the message arrives before UI initialization.
       parent.postMessage({ pluginMessage: { type: 'request-timestamp' } }, '*');
 
+      // Function to check if input has content and enable/disable Prepare import button
+      function updateImportButtonState() {
+        const hasContent = input.value.trim().length > 0;
+        importButton.disabled = !hasContent;
+      }
+
+      // Load JSON button click handler
+      loadJsonButton.addEventListener('click', () => {
+        fileInput.click();
+      });
+
       fileInput.addEventListener('change', (event) => {
         const file = event.target.files?.[0];
         if (!file) return;
@@ -276,6 +304,7 @@
           status.textContent = `Loaded ${file.name}`;
           confirmButton.disabled = true;
           lastPayload = null;
+          updateImportButtonState();
         };
         reader.readAsText(file);
       });
@@ -283,7 +312,11 @@
       input.addEventListener('input', () => {
         confirmButton.disabled = true;
         lastPayload = null;
+        updateImportButtonState();
       });
+
+      // Initialize button state
+      updateImportButtonState();
 
       importButton.addEventListener('click', () => {
         try {
@@ -305,10 +338,6 @@
         status.textContent = 'Applying changes...';
         parent.postMessage({ pluginMessage: { type: 'execute-import', payload: lastPayload } }, '*');
         confirmButton.disabled = true;
-      });
-
-      closeButton.addEventListener('click', () => {
-        parent.postMessage({ pluginMessage: { type: 'close-plugin' } }, '*');
       });
 
       structuresFile?.addEventListener('change', (event) => {
@@ -593,7 +622,12 @@
         const collectionsReuse = totals.collectionsToReuse ?? 0;
         const variablesCreate = totals.variablesToCreate ?? 0;
         const variablesUpdate = totals.variablesToUpdate ?? 0;
-        return `Collections: +${collectionsCreate} / reuse ${collectionsReuse} • Variables: +${variablesCreate} / update ${variablesUpdate}`;
+        const modesCount = totals.modesToCreate ?? 0;
+        let result = `Collections: +${collectionsCreate} / reuse ${collectionsReuse} • Variables: +${variablesCreate} / update ${variablesUpdate}`;
+        if (modesCount > 0) {
+          result += ` • Modes: ${modesCount}`;
+        }
+        return result;
       }
     </script>
   </body>

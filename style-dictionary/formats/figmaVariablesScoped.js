@@ -1,7 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const { converter } = require('culori');
 const systemMeta = require('../../system.meta.json');
 const { deriveFigmaScopes } = require('../figma/figma-scope-rules');
+
+// Setup culori converters
+const toRgb = converter('rgb');
 
 const toTitleCase = (value = '') =>
   value
@@ -30,7 +34,38 @@ function resolveNumericValue(token) {
 
 function resolveColorValue(token) {
   const raw = token.value ?? token.$value ?? token.original?.value;
-  return typeof raw === 'string' ? raw : null;
+  if (typeof raw !== 'string') return null;
+  
+  // For Figma, convert OKLCH to RGB format
+  // Figma Variables API requires RGB/RGBA format (values 0-1)
+  if (raw.startsWith('oklch(') || raw.startsWith('OKLCH(')) {
+    try {
+      const rgb = toRgb(raw);
+      if (rgb && typeof rgb.r === 'number' && typeof rgb.g === 'number' && typeof rgb.b === 'number') {
+        // Clamp RGB values to [0, 1] range (some colors may be outside sRGB gamut)
+        // Figma Variables API requires values in 0-1 range
+        const r = Math.max(0, Math.min(1, rgb.r));
+        const g = Math.max(0, Math.min(1, rgb.g));
+        const b = Math.max(0, Math.min(1, rgb.b));
+        const a = rgb.alpha !== undefined ? Math.max(0, Math.min(1, rgb.alpha)) : 1;
+        
+        // Return as RGBA object format for Figma Variables API (values 0-1)
+        return {
+          r,
+          g,
+          b,
+          a
+        };
+      }
+    } catch (error) {
+      console.warn(`Failed to convert OKLCH to RGB for token ${token.path?.join('.')}: ${raw}`, error);
+      // Fallback to original value (will be handled by plugin's convertColorToRGB)
+      return raw;
+    }
+  }
+  
+  // If already RGB/HEX, return as-is (will be handled by convertColorToRGB in plugin as fallback)
+  return raw;
 }
 
 function resolveCollectionName(token, variableType) {
@@ -185,6 +220,7 @@ module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
         if (value !== null && value !== undefined) {
           const variable = variablesMap.get(tokenPath);
           modes.forEach(mode => {
+            // Store value as-is (RGB object for colors, or string/number for others)
             variable.valuesByMode[mode] = value;
           });
         }
