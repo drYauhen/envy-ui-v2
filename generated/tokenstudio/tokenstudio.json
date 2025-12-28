@@ -2543,6 +2543,18 @@
     "$value": "4.5rem",
     "$type": "fontSize"
   },
+  "eui.typography.fontStyle.normal": {
+    "$value": "normal",
+    "$type": "fontStyle"
+  },
+  "eui.typography.fontStyle.italic": {
+    "$value": "italic",
+    "$type": "fontStyle"
+  },
+  "eui.typography.fontStyle.oblique": {
+    "$value": "oblique",
+    "$type": "fontStyle"
+  },
   "eui.typography.fontWeight.light": {
     "$value": "300",
     "$type": "fontWeight"
@@ -2563,6 +2575,30 @@
     "$value": "700",
     "$type": "fontWeight"
   },
+  "eui.typography.letterSpacing.tighter": {
+    "$value": "-0.05em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.tight": {
+    "$value": "-0.025em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.normal": {
+    "$value": "0",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.wide": {
+    "$value": "0.01em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.wider": {
+    "$value": "0.025em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.widest": {
+    "$value": "0.05em",
+    "$type": "letterSpacing"
+  },
   "eui.typography.lineHeight.none": {
     "$value": "1",
     "$type": "lineHeight"
@@ -2582,6 +2618,34 @@
   "eui.typography.lineHeight.loose": {
     "$value": "2",
     "$type": "lineHeight"
+  },
+  "eui.typography.textDecoration.none": {
+    "$value": "none",
+    "$type": "textDecoration"
+  },
+  "eui.typography.textDecoration.underline": {
+    "$value": "underline",
+    "$type": "textDecoration"
+  },
+  "eui.typography.textDecoration.line-through": {
+    "$value": "line-through",
+    "$type": "textDecoration"
+  },
+  "eui.typography.textTransform.none": {
+    "$value": "none",
+    "$type": "textTransform"
+  },
+  "eui.typography.textTransform.uppercase": {
+    "$value": "uppercase",
+    "$type": "textTransform"
+  },
+  "eui.typography.textTransform.lowercase": {
+    "$value": "lowercase",
+    "$type": "textTransform"
+  },
+  "eui.typography.textTransform.capitalize": {
+    "$value": "capitalize",
+    "$type": "textTransform"
   },
   "eui.typography.textStyle.heading.1.fontSize": {
     "$value": "4.5rem",
