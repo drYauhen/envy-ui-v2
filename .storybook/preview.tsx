@@ -1,5 +1,6 @@
 import type { Decorator, Preview } from '@storybook/react';
 import React from 'react';
+import './mermaid.css';
 import '../generated/css/tokens.css';
 import '../packages/tailwind/tailwind.css';
 import '../src/ui/focus-policy.css';
