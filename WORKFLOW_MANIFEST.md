@@ -216,6 +216,15 @@ Canonical Rules
 	•	This restriction applies only to architectural decision records,
 		not to README files or other explanatory documentation.
 
+ADR Diagram Principles
+
+	•	Mermaid diagrams in ADRs MUST use vertical orientation (`graph TD`, not `graph LR`).
+	•	Diagram font size MUST match document body text size (14px).
+	•	Node sizes MUST be compact, not oversized or dominating the page.
+	•	Diagrams MUST integrate seamlessly with surrounding text.
+	•	Font sizes, node padding, and spacing are automatically optimized for readability.
+	•	See `docs/adr/README.md` for detailed diagram guidelines and best practices.
+
 Documentation Guidance
 
 	•	README.md files and other explanatory documents are allowed and encouraged.

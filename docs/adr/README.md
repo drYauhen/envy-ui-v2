@@ -157,6 +157,81 @@ You can include images in ADR documents. Images are stored alongside the markdow
 
 **Note:** You don't need to embed images directly in Storybook stories. Simply reference them in the markdown file, and they will be displayed automatically when the ADR is viewed.
 
+## Mermaid Diagrams in ADRs
+
+ADRs can include Mermaid diagrams for visualizing architecture, flows, and relationships. Follow these principles to ensure diagrams are readable and consistent with document text.
+
+### Diagram Orientation
+
+**Always use vertical orientation (top-to-bottom):**
+- Use `graph TD` (Top Down) instead of `graph LR` (Left Right)
+- Vertical diagrams are more readable in narrow windows and on screens
+- They align better with document flow (reading top-to-bottom)
+
+**Example:**
+```mermaid
+graph TD
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+
+### Font and Node Sizing Principles
+
+**Diagrams must match document text size:**
+- Font size: **14px** (matches document body text)
+- Node sizes should be compact, not oversized
+- Diagrams should integrate seamlessly with surrounding text
+- Avoid giant blocks that dominate the page
+
+**Guidelines:**
+- Keep node labels concise (prefer short text over long descriptions)
+- Use `<br/>` for line breaks within nodes if needed, but keep total height reasonable
+- Node padding is automatically reduced for compact appearance
+- Spacing between nodes is optimized for readability without excessive whitespace
+
+### Diagram Styling
+
+**Use consistent color scheme:**
+- Foundation/Semantic: `#e1f5ff` (light blue)
+- Context: `#fff3e0` (light orange) or `#e8f5e9` (light green)
+- Theme: `#f3e8ff` (light purple)
+- Component: `#fce7f3` (light pink)
+
+**Example with styling:**
+```mermaid
+graph TD
+    A[Foundation] --> B[Semantic]
+    B --> C[Context]
+    
+    style A fill:#e1f5ff,stroke:#0ea5e9
+    style B fill:#e8f5e9,stroke:#22c55e
+    style C fill:#fff3e0,stroke:#f59e0b
+```
+
+### Diagram Types
+
+**Supported diagram types:**
+- `graph TD` - Flowcharts (vertical, preferred)
+- `sequenceDiagram` - Sequence diagrams
+- `stateDiagram-v2` - State diagrams
+- Other Mermaid diagram types as needed
+
+### Best Practices
+
+1. **Keep diagrams focused**: One diagram per concept or relationship
+2. **Use descriptive labels**: But keep them concise
+3. **Center diagrams**: They are automatically centered in the document
+4. **Test readability**: Ensure diagrams are readable at document text size
+5. **Avoid over-styling**: Use colors purposefully, not decoratively
+
+### Technical Details
+
+- Diagrams are rendered using Mermaid.js
+- Font size is automatically set to 14px to match document text
+- Node sizes are optimized for compact appearance
+- Diagrams are responsive and adapt to container width
+- SVG output ensures crisp rendering at any zoom level
+
 ## ADR Status Values
 
 Common status values:
@@ -185,4 +260,10 @@ When creating a new ADR:
 7. Add the ADR to the list in `00-adr-overview.stories.tsx` (if not using the script)
 8. Ensure status badge styling exists for the status used
 9. **For images:** Place image files in `docs/adr/` and reference them with relative paths in markdown (e.g., `![alt](./ADR-XXXX-image.png)`)
+10. **For Mermaid diagrams:**
+    - Always use `graph TD` (vertical orientation) instead of `graph LR`
+    - Keep font sizes and node sizes compact to match document text (14px)
+    - Use consistent color scheme for visual consistency
+    - Keep node labels concise
+    - Test readability at document text size
 
