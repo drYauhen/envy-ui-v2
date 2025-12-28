@@ -56,8 +56,6 @@ If a token name is wrong, fix the reference. Do not add a literal fallback.
 ## Exceptions (Temporary Gaps)
 
 The following values may currently have no tokens:
-- letter-spacing
-- line-height
 - motion / transition durations
 - press translation (e.g. translateY)
 - opacity used for interaction states
