@@ -140,7 +140,7 @@
 [data-eui-context] .eui-select-option[data-eui-state="empty"] {
   color: var(--eui-color-text-subtle);
   cursor: default;
-  font-style: italic;
+  font-style: var(--eui-typography-font-style-italic);
   text-align: center;
   padding: var(--eui-spacing-md);
   background-color: transparent;

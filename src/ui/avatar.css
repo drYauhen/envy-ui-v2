@@ -42,7 +42,7 @@
   font-weight: var(--eui-avatar-typography-font-weight);
   font-size: var(--eui-avatar-typography-font-size-md);
   line-height: var(--eui-avatar-typography-line-height);
-  text-transform: uppercase;
+  text-transform: var(--eui-typography-text-transform-uppercase);
   user-select: none;
 }
 

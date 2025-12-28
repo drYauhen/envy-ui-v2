@@ -74,7 +74,7 @@ export class EuiButton extends HTMLElement {
           font-weight: var(--eui-button-font-weight, var(--eui-button-size-md-font-weight));
           font-family: inherit;
           line-height: 1;
-          letter-spacing: 0.01em;
+          letter-spacing: var(--eui-typography-letter-spacing-wide);
           cursor: pointer;
           transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
           outline: none;
