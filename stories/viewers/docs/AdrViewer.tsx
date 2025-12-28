@@ -111,9 +111,15 @@ const linkStyle: CSSProperties = {
 // We need to match Storybook's exact behavior: insert dash before each capital letter
 // (except the first one), then convert to lowercase
 const titleToStorySlug = (title: string): string => {
+  // First, replace dashes/em-dashes with spaces to preserve word boundaries
+  // This ensures "Context - Theme" becomes "Context  Theme" (double space) which will be collapsed
+  // This is important because the generator removes all non-alphanumeric chars, so we need to
+  // preserve word separation before removing them
+  let normalized = title.replace(/[-—–]/g, ' ');
+  
   // Generate story name the same way as the generator script
-  // This removes all non-alphanumeric chars and spaces
-  const storyName = title.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
+  // This removes all non-alphanumeric chars and spaces (collapsing multiple spaces)
+  const storyName = normalized.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
   
   // Storybook's slug conversion: insert dash before each capital letter (except first)
   // Then convert to lowercase

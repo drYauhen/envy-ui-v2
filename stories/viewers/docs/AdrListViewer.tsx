@@ -16,9 +16,15 @@ import {
 // Helper function to convert ADR title to Storybook story slug
 // This matches the logic in AdrViewer.tsx
 const titleToStorySlug = (title: string): string => {
+  // First, replace dashes/em-dashes with spaces to preserve word boundaries
+  // This ensures "Context - Theme" becomes "Context  Theme" (double space) which will be collapsed
+  // This is important because the generator removes all non-alphanumeric chars, so we need to
+  // preserve word separation before removing them
+  let normalized = title.replace(/[-—–]/g, ' ');
+  
   // Generate story name the same way as the generator script
-  // This removes all non-alphanumeric chars and spaces
-  const storyName = title.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
+  // This removes all non-alphanumeric chars and spaces (collapsing multiple spaces)
+  const storyName = normalized.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
   
   // Storybook's slug conversion: insert dash before each capital letter (except first)
   // Then convert to lowercase
@@ -76,8 +82,18 @@ export const AdrListViewer: React.FC<AdrListViewerProps> = ({
       </div>
       <ul style={docsListStyle}>
         {adrsList.map((adr) => {
-          // Convert title to story slug (same logic as AdrViewer.tsx)
-          const storySlug = titleToStorySlug(adr.title);
+          // Use exportName if provided, otherwise generate from title
+          let storySlug: string;
+          if (adr.exportName) {
+            // Convert export name to slug (Storybook's behavior)
+            storySlug = adr.exportName
+              .replace(/([a-z])([A-Z])/g, '$1-$2') // Insert dash between lowercase and uppercase
+              .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2') // Insert dash between uppercase groups and following word
+              .toLowerCase();
+          } else {
+            // Convert title to story slug (same logic as AdrViewer.tsx)
+            storySlug = titleToStorySlug(adr.title);
+          }
           const storyPath = `?path=/story/docs-adr--${storySlug}`;
           return (
             <li key={adr.number} style={docsListItemStyle}>
