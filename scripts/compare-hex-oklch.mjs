@@ -87,3 +87,4 @@ console.log('  • Precise conversion would use culori library (now available)')
 console.log('  • Brand 600 was manually fixed to be visually distinct from 500');
 console.log('  • For production, use precise conversion script');
 
+

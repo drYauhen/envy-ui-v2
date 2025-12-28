@@ -66,3 +66,4 @@ Object.entries(neutralColors).forEach(([key, value]) => {
 console.log("\n✓ OKLCH color values prepared");
 console.log("Note: These are approximate values. For production, use precise conversion tools.");
 
+
