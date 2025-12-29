@@ -3,9 +3,9 @@
     "avatar": {
       "background": {
         "fallback": {
-          "$value": "{eui.color.neutral.200}",
+          "$value": "{eui.color.background.subtle}",
           "$type": "color",
-          "$description": "Background color for avatar when no image is provided (initials fallback). Light gray for subtle, non-intrusive appearance."
+          "$description": "Background color for avatar when no image is provided (initials fallback). Uses semantic background.subtle token for proper theme adaptation."
         }
       },
       "text": {

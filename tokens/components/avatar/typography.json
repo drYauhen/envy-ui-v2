@@ -37,6 +37,11 @@
             "$type": "lineHeight",
             "$description": "Line height for avatar initials. Tight line height for centered single-line text."
           }
+        },
+        "textTransform": {
+          "$value": "{eui.typography.textTransform.uppercase}",
+          "$type": "textTransform",
+          "$description": "Text transform for avatar initials. Uppercase for visual consistency and to ensure all initials display in the same case regardless of input data."
         }
       }
     }
