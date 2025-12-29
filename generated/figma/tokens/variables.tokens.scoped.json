@@ -6494,12 +6494,12 @@
           "path": "eui.button.shape.round.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 999,
-            "app-default": 999,
-            "report-print": 999,
-            "report-screen": 999,
-            "website-dark": 999,
-            "website-default": 999
+            "app-accessibility": 9999,
+            "app-default": 9999,
+            "report-print": 9999,
+            "report-screen": 9999,
+            "website-dark": 9999,
+            "website-default": 9999
           },
           "scopes": [
             "CORNER_RADIUS"
@@ -9696,12 +9696,12 @@
           "path": "eui.card.variant.elevated.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 4,
-            "app-default": 4,
-            "report-print": 4,
-            "report-screen": 4,
-            "website-dark": 4,
-            "website-default": 4
+            "app-accessibility": 8,
+            "app-default": 8,
+            "report-print": 8,
+            "report-screen": 8,
+            "website-dark": 8,
+            "website-default": 8
           }
         },
         {
@@ -9723,12 +9723,12 @@
           "path": "eui.card.variant.flat.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 4,
-            "app-default": 4,
-            "report-print": 4,
-            "report-screen": 4,
-            "website-dark": 4,
-            "website-default": 4
+            "app-accessibility": 8,
+            "app-default": 8,
+            "report-print": 8,
+            "report-screen": 8,
+            "website-dark": 8,
+            "website-default": 8
           }
         },
         {
@@ -9750,12 +9750,12 @@
           "path": "eui.card.variant.strong.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 4,
-            "app-default": 4,
-            "report-print": 4,
-            "report-screen": 4,
-            "website-dark": 4,
-            "website-default": 4
+            "app-accessibility": 8,
+            "app-default": 8,
+            "report-print": 8,
+            "report-screen": 8,
+            "website-dark": 8,
+            "website-default": 8
           }
         }
       ]
@@ -10443,24 +10443,24 @@
           "path": "eui.counter.shape.filter.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 999,
-            "app-default": 999,
-            "report-print": 999,
-            "report-screen": 999,
-            "website-dark": 999,
-            "website-default": 999
+            "app-accessibility": 9999,
+            "app-default": 9999,
+            "report-print": 9999,
+            "report-screen": 9999,
+            "website-dark": 9999,
+            "website-default": 9999
           }
         },
         {
           "path": "eui.counter.shape.pill.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 999,
-            "app-default": 999,
-            "report-print": 999,
-            "report-screen": 999,
-            "website-dark": 999,
-            "website-default": 999
+            "app-accessibility": 9999,
+            "app-default": 9999,
+            "report-print": 9999,
+            "report-screen": 9999,
+            "website-dark": 9999,
+            "website-default": 9999
           }
         },
         {
@@ -11660,12 +11660,12 @@
           "path": "eui.menu.shape.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 4,
-            "app-default": 4,
-            "report-print": 4,
-            "report-screen": 4,
-            "website-dark": 4,
-            "website-default": 4
+            "app-accessibility": 8,
+            "app-default": 8,
+            "report-print": 8,
+            "report-screen": 8,
+            "website-dark": 8,
+            "website-default": 8
           }
         },
         {
@@ -11809,12 +11809,12 @@
           "path": "eui.modal.shape.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 6,
-            "app-default": 6,
-            "report-print": 6,
-            "report-screen": 6,
-            "website-dark": 6,
-            "website-default": 6
+            "app-accessibility": 12,
+            "app-default": 12,
+            "report-print": 12,
+            "report-screen": 12,
+            "website-dark": 12,
+            "website-default": 12
           }
         },
         {
@@ -12284,12 +12284,12 @@
           "path": "eui.select.dropdown.radius",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 4,
-            "app-default": 4,
-            "report-print": 4,
-            "report-screen": 4,
-            "website-dark": 4,
-            "website-default": 4
+            "app-accessibility": 8,
+            "app-default": 8,
+            "report-print": 8,
+            "report-screen": 8,
+            "website-dark": 8,
+            "website-default": 8
           }
         },
         {
@@ -13123,24 +13123,24 @@
           "path": "eui.switch.shape.radius.thumb",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 999,
-            "app-default": 999,
-            "report-print": 999,
-            "report-screen": 999,
-            "website-dark": 999,
-            "website-default": 999
+            "app-accessibility": 9999,
+            "app-default": 9999,
+            "report-print": 9999,
+            "report-screen": 9999,
+            "website-dark": 9999,
+            "website-default": 9999
           }
         },
         {
           "path": "eui.switch.shape.radius.track",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 999,
-            "app-default": 999,
-            "report-print": 999,
-            "report-screen": 999,
-            "website-dark": 999,
-            "website-default": 999
+            "app-accessibility": 9999,
+            "app-default": 9999,
+            "report-print": 9999,
+            "report-screen": 9999,
+            "website-dark": 9999,
+            "website-default": 9999
           }
         },
         {
@@ -15190,21 +15190,21 @@
           "path": "eui.radius.extra-large",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-default": 6
+            "app-default": 12
           }
         },
         {
           "path": "eui.radius.full",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-default": 999
+            "app-default": 9999
           }
         },
         {
           "path": "eui.radius.large",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-default": 4
+            "app-default": 8
           }
         },
         {
@@ -15218,12 +15218,12 @@
           "path": "eui.radius.pill",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 999,
-            "app-default": 999,
-            "report-print": 999,
-            "report-screen": 999,
-            "website-dark": 999,
-            "website-default": 999
+            "app-accessibility": 9999,
+            "app-default": 9999,
+            "report-print": 9999,
+            "report-screen": 9999,
+            "website-dark": 9999,
+            "website-default": 9999
           }
         },
         {

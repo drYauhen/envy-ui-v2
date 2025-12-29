@@ -172,7 +172,7 @@ export const EuiButtonLayoutDefaultWhiteSpace = "nowrap";
 export const EuiButtonSeparatorInset = "6px";
 export const EuiButtonSeparatorThickness = "1px";
 export const EuiButtonShapeDefaultRadius = "4px"; // Button uses default radius. In application context (app), this ensures compatibility with other stackable form components (input, select, etc.) when composed together. All stackable components in app context must use 4px to maintain visual cohesion. In other contexts (site, report), components may use different radius levels based on visual design goals.
-export const EuiButtonShapeRoundRadius = "999px";
+export const EuiButtonShapeRoundRadius = "9999px";
 export const EuiButtonShapeCircleRadius = "50%";
 export const EuiButtonSizeSmHeight = "36px";
 export const EuiButtonSizeSmPaddingInline = "16px";
@@ -243,25 +243,25 @@ export const EuiCalendarTypographyDayFontSize = "0.875rem"; // Day cell font siz
 export const EuiCalendarTypographyDayFontWeight = "400"; // Day cell font weight.
 export const EuiCalendarTypographyDayLineHeight = "1"; // Day cell line height (from old system: line-height: 1).
 export const EuiCardVariantElevatedShadow =
-  "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)"; // Standard elevation shadow for cards. Default variant.
+  "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)"; // Standard elevation shadow for cards. Default variant.
 export const EuiCardVariantElevatedBorderWidth = "1px";
 export const EuiCardVariantElevatedBorderStyle = "solid";
 export const EuiCardVariantElevatedBorderColor = "oklch(48% 0.00 0)";
 export const EuiCardVariantElevatedBackground = "oklch(100% 0 0)";
-export const EuiCardVariantElevatedRadius = "4px"; // Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference.
+export const EuiCardVariantElevatedRadius = "8px"; // Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs.
 export const EuiCardVariantFlatShadow = "none"; // No shadow. Flat card variant.
 export const EuiCardVariantFlatBorderWidth = "1px";
 export const EuiCardVariantFlatBorderStyle = "solid";
 export const EuiCardVariantFlatBorderColor = "oklch(48% 0.00 0)";
 export const EuiCardVariantFlatBackground = "oklch(100% 0 0)";
-export const EuiCardVariantFlatRadius = "4px"; // Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference.
+export const EuiCardVariantFlatRadius = "8px"; // Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs.
 export const EuiCardVariantStrongShadow =
-  "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"; // Stronger elevation shadow for prominent cards.
+  "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"; // Stronger elevation shadow for prominent cards.
 export const EuiCardVariantStrongBorderWidth = "1px";
 export const EuiCardVariantStrongBorderStyle = "solid";
 export const EuiCardVariantStrongBorderColor = "oklch(48% 0.00 0)";
 export const EuiCardVariantStrongBackground = "oklch(100% 0 0)";
-export const EuiCardVariantStrongRadius = "4px"; // Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference.
+export const EuiCardVariantStrongRadius = "8px"; // Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs.
 export const EuiCelebrationAnimationDuration = "1.8s"; // Total duration of celebration effect animation including lift, shine, and sparkle.
 export const EuiCelebrationAnimationEasing =
   "cubic-bezier(0.34, 1.56, 0.64, 1)"; // Easing function for celebration lift animation. Creates bouncy, playful effect.
@@ -340,8 +340,8 @@ export const EuiCounterColorsFilterColor = "oklch(65% 0.15 232)"; // Filter vari
 export const EuiCounterColorsFilterBorder = "#00000000"; // Filter variant border
 export const EuiCounterColorsFilterIconColor = "oklch(70% 0.13 225)"; // Filter icon color (accent medium for visibility)
 export const EuiCounterShapeTextRadius = "0px"; // Border radius for text variant (no rounding)
-export const EuiCounterShapePillRadius = "999px"; // Border radius for pill variant (fully rounded)
-export const EuiCounterShapeFilterRadius = "999px"; // Border radius for filter variant (fully rounded, same as pill)
+export const EuiCounterShapePillRadius = "9999px"; // Border radius for pill variant (fully rounded)
+export const EuiCounterShapeFilterRadius = "9999px"; // Border radius for filter variant (fully rounded, same as pill)
 export const EuiCounterSizeSmHeight = "14px"; // Height for small counter (pill variant). Reduced proportionally relative to medium.
 export const EuiCounterSizeSmPaddingInline = "5px"; // Horizontal padding for small counter (pill variant)
 export const EuiCounterSizeSmPaddingVertical = "2px"; // Vertical padding for small counter (pill variant)
@@ -483,8 +483,8 @@ export const EuiMenuColorsItemBackgroundSelected = "oklch(94% 0.00 0)"; // Selec
 export const EuiMenuColorsItemText = "oklch(100% 0 0)"; // Menu item text color. Primary text for readability.
 export const EuiMenuColorsItemTextDisabled = "oklch(48% 0.00 0)"; // Disabled menu item text color.
 export const EuiMenuShadow =
-  "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"; // Shadow for menu list. Large shadow for elevation above content.
-export const EuiMenuShapeRadius = "4px"; // Border radius for menu list. Matches default component radius.
+  "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"; // Shadow for menu list. Large shadow for elevation above content.
+export const EuiMenuShapeRadius = "8px"; // Border radius for menu list. Uses large radius (8px in default theme) for visual hierarchy above control elements, matching dropdowns and cards.
 export const EuiMenuSizeMinWidth = "200px"; // Minimum width for menu list.
 export const EuiMenuSizeMaxWidth = "400px"; // Maximum width for menu list.
 export const EuiMenuSizeMaxHeight = "300px"; // Maximum height for menu list before scrolling.
@@ -507,8 +507,8 @@ export const EuiModalColorsFooterBorder = "oklch(48% 0.00 0)"; // Footer border 
 export const EuiModalColorsCloseColor = "oklch(100% 0 0)"; // Close button color. Inverse (white) to match header text.
 export const EuiModalColorsCloseHover = "oklch(100% 0 0)"; // Close button hover color. Slightly lighter or with opacity for hover state.
 export const EuiModalShadowElevation =
-  "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"; // Shadow elevation for modal. Large shadow for clear separation from background.
-export const EuiModalShapeRadius = "6px"; // Border radius for modal. Uses extra-large for prominent, elevated appearance.
+  "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"; // Shadow elevation for modal. Large shadow for clear separation from background.
+export const EuiModalShapeRadius = "12px"; // Border radius for modal. Uses extra-large for prominent, elevated appearance.
 export const EuiModalSizeSmMaxWidth = "400px"; // Small modal width. Used for simple confirmations or small forms.
 export const EuiModalSizeMdMaxWidth = "500px"; // Medium modal width. Default size for most modals.
 export const EuiModalSizeLgMaxWidth = "600px"; // Large modal width. Used for forms or content with more fields.
@@ -529,8 +529,8 @@ export const EuiSelectDropdownBorderWidth = "1px"; // Border width for select dr
 export const EuiSelectDropdownBorderStyle = "solid"; // Border style for select dropdown
 export const EuiSelectDropdownBorderColor = "oklch(94% 0.00 0)"; // Border color for select dropdown. Subtle border for floating elements (less aggressive than card border).
 export const EuiSelectDropdownShadow =
-  "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"; // Shadow for select dropdown (elevation)
-export const EuiSelectDropdownRadius = "4px"; // Border radius for select dropdown
+  "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"; // Shadow for select dropdown (elevation)
+export const EuiSelectDropdownRadius = "8px"; // Border radius for select dropdown. Uses large radius (8px in default theme) for visual hierarchy above control elements, matching cards and panels.
 export const EuiSelectDropdownPadding = "0.5rem"; // Padding inside dropdown container. Matches menu list padding for consistency.
 export const EuiSelectDropdownMaxHeight = "300px"; // Maximum height of dropdown before scrolling
 export const EuiSelectDropdownZIndex = "1000"; // Z-index for dropdown overlay
@@ -601,8 +601,8 @@ export const EuiSwitchFocusRingColorDerivedAccessible = "oklch(49% 0.10 230)"; /
 export const EuiSwitchFocusRingWidthBase = "2px"; // Focus ring width for mouse/pointer focus
 export const EuiSwitchFocusRingWidthAccessible = "3px"; // Focus ring width for keyboard focus (focus-visible)
 export const EuiSwitchFocusRingOffset = "2px"; // Focus ring offset from switch track border
-export const EuiSwitchShapeRadiusTrack = "999px"; // Track border radius. Uses pill (fully rounded) for switch track.
-export const EuiSwitchShapeRadiusThumb = "999px"; // Thumb border radius. Always fully rounded (circle).
+export const EuiSwitchShapeRadiusTrack = "9999px"; // Track border radius. Uses pill (fully rounded) for switch track.
+export const EuiSwitchShapeRadiusThumb = "9999px"; // Thumb border radius. Always fully rounded (circle).
 export const EuiSwitchSizeSmTrackWidth = "34px"; // Track width for small switch
 export const EuiSwitchSizeSmTrackHeight = "18px"; // Track height for small switch
 export const EuiSwitchSizeSmThumbSize = "12px"; // Thumb diameter for small switch
@@ -632,7 +632,7 @@ export const EuiTableExpandableCellPanelMaxWidth = "400px"; // Maximum width of 
 export const EuiTableExpandableCellPanelMaxHeight = "300px"; // Maximum height of expandable cell panel.
 export const EuiTableExpandableCellPanelZIndex = "100"; // Z-index for expandable cell panel (should appear above table).
 export const EuiTableExpandableCellShadow =
-  "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"; // Shadow for expandable cell panel. Large shadow for elevation.
+  "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"; // Shadow for expandable cell panel. Large shadow for elevation.
 export const EuiTableExpandableCellBorderRadius = "4px"; // Border radius for expandable cell panel.
 export const EuiTableExpandableCellSpacingPadding = "1rem"; // Padding for expandable cell panel content.
 export const EuiTableExpandableCellAnimationDuration = "200ms"; // Transition duration for expandable cell panel animation.
@@ -799,13 +799,13 @@ export const EuiColorBorderStrong = "oklch(84% 0.00 0)"; // Strong border color 
 export const EuiColorBorderInverse = "oklch(33% 0.00 0)"; // Inverse border color for use on dark backgrounds. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorFocusRing = "#ff4d00"; // Focus ring color for keyboard navigation. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorSystemFocus = "#ff4d00"; // System focus color (high accessibility). Optimized for app-default context/theme. Other contexts/themes may override this value.
-export const EuiRadiusPill = "999px";
+export const EuiRadiusPill = "9999px";
 export const EuiRadiusNone = "0px";
 export const EuiRadiusSmall = "2px"; // Smaller than default. Minimal theme keeps this subtle for compact layouts.
 export const EuiRadiusDefault = "4px"; // Baseline for minimal theme. All standard components use this value for consistent, stackable design.
-export const EuiRadiusLarge = "4px"; // In minimal theme, same as default for consistency. Still stackable, no visual hierarchy needed.
-export const EuiRadiusExtraLarge = "6px"; // Slightly more than default even in minimal theme, for modals and prominent containers.
-export const EuiRadiusFull = "999px";
+export const EuiRadiusLarge = "8px"; // Used for cards, panels, dropdowns. Provides visual hierarchy above control elements (buttons, inputs).
+export const EuiRadiusExtraLarge = "12px"; // Used for modals, sheets, prominent containers. Maximum rounding for overlay elements.
+export const EuiRadiusFull = "9999px";
 export const EuiSpacingXs = "0.25rem"; // Extra small spacing (4px)
 export const EuiSpacingSm = "0.5rem"; // Small spacing (8px)
 export const EuiSpacingMd = "1rem"; // Medium spacing (16px)
@@ -817,8 +817,8 @@ export const EuiFocusRingWidthAccessible = "3px"; // Accessible focus ring width
 export const EuiShadowNone = "none"; // No shadow. Used for flat elements like buttons, inputs, and elements that should appear flush with their container.
 export const EuiShadowSmall = "0 1px 2px rgba(0, 0, 0, 0.05)"; // Subtle elevation. Used for cards and containers that need minimal depth separation from background.
 export const EuiShadowDefault =
-  "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)"; // Standard elevation. Baseline for cards, panels, and standard containers. Provides clear but not prominent depth.
+  "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)"; // Standard elevation. Baseline for cards, panels, and standard containers. Provides subtle, elegant depth without overwhelming content. Used for elevated cards. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiShadowLarge =
-  "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"; // Prominent elevation. Used for modals, dialogs, dropdowns, and floating elements that need clear separation and focus.
+  "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"; // Prominent elevation. Used for strong cards, modals, dialogs, dropdowns, and floating elements that need clear separation and focus. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiShadowExtraLarge =
   "0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)"; // Maximum elevation. Used for high-priority modals, tooltips, and elements that need maximum visual separation and prominence.

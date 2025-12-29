@@ -1113,7 +1113,7 @@
         {
           "path": "eui.button.shape.round.radius",
           "type": "FLOAT",
-          "value": 999
+          "value": 9999
         },
         {
           "path": "eui.button.size.lg.gap",
@@ -1630,7 +1630,7 @@
         {
           "path": "eui.card.variant.elevated.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.card.variant.flat.border.width",
@@ -1640,7 +1640,7 @@
         {
           "path": "eui.card.variant.flat.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.card.variant.strong.border.width",
@@ -1650,7 +1650,7 @@
         {
           "path": "eui.card.variant.strong.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         }
       ]
     },
@@ -1811,12 +1811,12 @@
         {
           "path": "eui.counter.shape.filter.radius",
           "type": "FLOAT",
-          "value": 999
+          "value": 9999
         },
         {
           "path": "eui.counter.shape.pill.radius",
           "type": "FLOAT",
-          "value": 999
+          "value": 9999
         },
         {
           "path": "eui.counter.shape.text.radius",
@@ -2264,7 +2264,7 @@
         {
           "path": "eui.menu.shape.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.menu.size.max-height",
@@ -2326,7 +2326,7 @@
         {
           "path": "eui.modal.shape.radius",
           "type": "FLOAT",
-          "value": 6
+          "value": 12
         },
         {
           "path": "eui.modal.size.full.maxWidth",
@@ -2450,7 +2450,7 @@
         {
           "path": "eui.select.dropdown.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.select.dropdown.z-index",
@@ -2680,12 +2680,12 @@
         {
           "path": "eui.switch.shape.radius.thumb",
           "type": "FLOAT",
-          "value": 999
+          "value": 9999
         },
         {
           "path": "eui.switch.shape.radius.track",
           "type": "FLOAT",
-          "value": 999
+          "value": 9999
         },
         {
           "path": "eui.switch.size.lg.thumb.offset",
@@ -3156,17 +3156,17 @@
         {
           "path": "eui.radius.extra-large",
           "type": "FLOAT",
-          "value": 6
+          "value": 12
         },
         {
           "path": "eui.radius.full",
           "type": "FLOAT",
-          "value": 999
+          "value": 9999
         },
         {
           "path": "eui.radius.large",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.radius.none",
@@ -3176,7 +3176,7 @@
         {
           "path": "eui.radius.pill",
           "type": "FLOAT",
-          "value": 999
+          "value": 9999
         },
         {
           "path": "eui.radius.small",

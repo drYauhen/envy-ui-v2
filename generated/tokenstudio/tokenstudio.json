@@ -572,7 +572,7 @@
     "$type": "dimension"
   },
   "eui.button.shape.round.radius": {
-    "$value": "999px",
+    "$value": "9999px",
     "$type": "dimension"
   },
   "eui.button.shape.circle.radius": {
@@ -844,7 +844,7 @@
     "$type": "lineHeight"
   },
   "eui.card.variant.elevated.shadow": {
-    "$value": "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
+    "$value": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)",
     "$type": "boxShadow"
   },
   "eui.card.variant.elevated.border.width": {
@@ -864,7 +864,7 @@
     "$type": "color"
   },
   "eui.card.variant.elevated.radius": {
-    "$value": "4px",
+    "$value": "8px",
     "$type": "dimension"
   },
   "eui.card.variant.flat.shadow": {
@@ -888,11 +888,11 @@
     "$type": "color"
   },
   "eui.card.variant.flat.radius": {
-    "$value": "4px",
+    "$value": "8px",
     "$type": "dimension"
   },
   "eui.card.variant.strong.shadow": {
-    "$value": "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)",
+    "$value": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)",
     "$type": "boxShadow"
   },
   "eui.card.variant.strong.border.width": {
@@ -912,7 +912,7 @@
     "$type": "color"
   },
   "eui.card.variant.strong.radius": {
-    "$value": "4px",
+    "$value": "8px",
     "$type": "dimension"
   },
   "eui.celebration.animation.duration": {
@@ -1216,11 +1216,11 @@
     "$type": "dimension"
   },
   "eui.counter.shape.pill.radius": {
-    "$value": "999px",
+    "$value": "9999px",
     "$type": "dimension"
   },
   "eui.counter.shape.filter.radius": {
-    "$value": "999px",
+    "$value": "9999px",
     "$type": "dimension"
   },
   "eui.counter.size.sm.height": {
@@ -1784,11 +1784,11 @@
     "$type": "color"
   },
   "eui.menu.shadow": {
-    "$value": "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)",
+    "$value": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)",
     "$type": "boxShadow"
   },
   "eui.menu.shape.radius": {
-    "$value": "4px",
+    "$value": "8px",
     "$type": "dimension"
   },
   "eui.menu.size.min-width": {
@@ -1876,11 +1876,11 @@
     "$type": "color"
   },
   "eui.modal.shadow.elevation": {
-    "$value": "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)",
+    "$value": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)",
     "$type": "boxShadow"
   },
   "eui.modal.shape.radius": {
-    "$value": "6px",
+    "$value": "12px",
     "$type": "dimension"
   },
   "eui.modal.size.sm.maxWidth": {
@@ -1960,11 +1960,11 @@
     "$type": "color"
   },
   "eui.select.dropdown.shadow": {
-    "$value": "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)",
+    "$value": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)",
     "$type": "shadow"
   },
   "eui.select.dropdown.radius": {
-    "$value": "4px",
+    "$value": "8px",
     "$type": "dimension"
   },
   "eui.select.dropdown.padding": {
@@ -2248,11 +2248,11 @@
     "$type": "dimension"
   },
   "eui.switch.shape.radius.track": {
-    "$value": "999px",
+    "$value": "9999px",
     "$type": "dimension"
   },
   "eui.switch.shape.radius.thumb": {
-    "$value": "999px",
+    "$value": "9999px",
     "$type": "dimension"
   },
   "eui.switch.size.sm.track.width": {
@@ -2368,7 +2368,7 @@
     "$type": "number"
   },
   "eui.table.expandable-cell.shadow": {
-    "$value": "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)",
+    "$value": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)",
     "$type": "boxShadow"
   },
   "eui.table.expandable-cell.border.radius": {
@@ -3021,7 +3021,7 @@
     "$type": "color"
   },
   "eui.radius.pill": {
-    "$value": "999px",
+    "$value": "9999px",
     "$type": "dimension"
   },
   "eui.radius.none": {
@@ -3037,15 +3037,15 @@
     "$type": "dimension"
   },
   "eui.radius.large": {
-    "$value": "4px",
+    "$value": "8px",
     "$type": "dimension"
   },
   "eui.radius.extra-large": {
-    "$value": "6px",
+    "$value": "12px",
     "$type": "dimension"
   },
   "eui.radius.full": {
-    "$value": "999px",
+    "$value": "9999px",
     "$type": "dimension"
   },
   "eui.spacing.xs": {
@@ -3089,11 +3089,11 @@
     "$type": "boxShadow"
   },
   "eui.shadow.default": {
-    "$value": "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
+    "$value": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)",
     "$type": "boxShadow"
   },
   "eui.shadow.large": {
-    "$value": "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)",
+    "$value": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)",
     "$type": "boxShadow"
   },
   "eui.shadow.extra-large": {
