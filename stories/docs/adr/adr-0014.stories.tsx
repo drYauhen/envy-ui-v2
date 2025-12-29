@@ -29,8 +29,8 @@ export const ColorModelTonalScalesandContextualArchitecture: Story = {
     <AdrViewer
       adrNumber="0014"
       title="Color Model, Tonal Scales, and Contextual Architecture"
-      status="Unknown"
-      date="Unknown"
+      status="Accepted"
+      date="2025-12-18"
     />
   )
 };
