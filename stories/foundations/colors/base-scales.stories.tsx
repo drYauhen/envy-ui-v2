@@ -9,7 +9,26 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Tokens/Foundations/Colors',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' }
+  parameters: { 
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component: `
+Base color scales (foundations) are **context-agnostic** and shared across all contexts (app, website, report).
+
+Semantic tokens reference these scales and are optimized for **app-default** context/theme by default. 
+Other contexts/themes may override semantic values as needed.
+
+**Current Context/Theme:** Use the Storybook toolbar to switch between contexts and themes.
+The default view shows colors in **app-default** context/theme.
+
+**Anchor Colors:**
+- **Brand-700** is the canonical brand anchor color (perceptually dark, suitable for primary actions)
+- **Accent-600** is the canonical accent anchor color (Viking Blue, suitable for interactive elements)
+        `
+      }
+    }
+  }
 };
 
 export default meta;
