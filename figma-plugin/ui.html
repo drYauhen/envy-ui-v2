@@ -162,6 +162,14 @@
           <button id="importButton" disabled>Prepare import</button>
           <button id="confirmButton" class="secondary" disabled>Apply changes</button>
         </div>
+        <div id="defaultModeSelector" style="display: none; flex-direction: column; gap: 8px;">
+          <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #cbd5f5;">
+            <span>Default mode (will be mode 0 in Figma):</span>
+            <select id="defaultModeSelect" style="padding: 8px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.05); color: #f8fafc; font-size: 13px;">
+              <option value="">Select default mode...</option>
+            </select>
+          </label>
+        </div>
       </div>
       <div class="status" id="status"></div>
     </div>
@@ -324,6 +332,53 @@
           lastPayload = payload;
           confirmButton.disabled = true;
           status.textContent = 'Preparing summary...';
+          
+          // Извлечь все уникальные моды из всех коллекций
+          const allModes = new Set();
+          if (payload.collections) {
+            payload.collections.forEach(collection => {
+              if (collection.modes && Array.isArray(collection.modes)) {
+                collection.modes.forEach(mode => allModes.add(mode));
+              }
+            });
+          }
+          
+          console.log('[UI] Found modes:', Array.from(allModes));
+          
+          // Показать дропдаун и заполнить опциями
+          const defaultModeSelector = document.getElementById('defaultModeSelector');
+          const defaultModeSelect = document.getElementById('defaultModeSelect');
+          
+          console.log('[UI] defaultModeSelector:', defaultModeSelector);
+          console.log('[UI] defaultModeSelect:', defaultModeSelect);
+          
+          if (allModes.size > 0 && defaultModeSelector && defaultModeSelect) {
+            // Очистить старые опции (кроме первой пустой)
+            defaultModeSelect.innerHTML = '<option value="">Select default mode...</option>';
+            
+            // Добавить опции для каждого мода
+            Array.from(allModes).sort().forEach(mode => {
+              const option = document.createElement('option');
+              option.value = mode;
+              option.textContent = mode;
+              // По умолчанию выбрать app-default, если он есть
+              if (mode === 'app-default') {
+                option.selected = true;
+              }
+              defaultModeSelect.appendChild(option);
+            });
+            
+            defaultModeSelector.style.display = 'flex';
+            console.log('[UI] Showing default mode selector with', allModes.size, 'modes');
+          } else {
+            console.warn('[UI] Cannot show default mode selector:', {
+              modesCount: allModes.size,
+              selectorExists: !!defaultModeSelector,
+              selectExists: !!defaultModeSelect
+            });
+            if (defaultModeSelector) defaultModeSelector.style.display = 'none';
+          }
+          
           parent.postMessage({ pluginMessage: { type: 'prepare-import', payload } }, '*');
         } catch (error) {
           status.textContent = 'Invalid JSON';
@@ -335,8 +390,18 @@
           status.textContent = 'No prepared import to apply.';
           return;
         }
+        
+        const defaultModeSelect = document.getElementById('defaultModeSelect');
+        const selectedDefaultMode = defaultModeSelect?.value || null;
+        
         status.textContent = 'Applying changes...';
-        parent.postMessage({ pluginMessage: { type: 'execute-import', payload: lastPayload } }, '*');
+        parent.postMessage({ 
+          pluginMessage: { 
+            type: 'execute-import', 
+            payload: lastPayload,
+            defaultMode: selectedDefaultMode
+          } 
+        }, '*');
         confirmButton.disabled = true;
       });
 

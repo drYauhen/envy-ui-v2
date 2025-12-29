@@ -70,7 +70,8 @@ figma.ui.onmessage = async (message) => {
   } else if (message.type === 'execute-import') {
     try {
       const payload = message.payload as AdapterPayload;
-      const result = await importCollections(payload);
+      const defaultMode = (message as any).defaultMode as string | null;
+      const result = await importCollections(payload, defaultMode);
       figma.ui.postMessage({ type: 'import-complete', payload: result });
       figma.closePlugin();
     } catch (error) {
@@ -105,7 +106,7 @@ function calculateImportSummary(payload: AdapterPayload): ImportSummary {
   return computeImportSummary(payload, existingData);
 }
 
-async function importCollections(payload: AdapterPayload): Promise<ImportResult> {
+async function importCollections(payload: AdapterPayload, defaultMode: string | null = null): Promise<ImportResult> {
   if (!payload || !payload.collections || !payload.collections.length) {
     throw new Error('No collections found in adapter payload.');
   }
@@ -132,23 +133,30 @@ async function importCollections(payload: AdapterPayload): Promise<ImportResult>
     existingData.collectionsByName.set(collectionData.name, collection);
 
     // Handle modes: support both old format (mode) and new format (modes[])
-    const modesToCreate = collectionData.modes || (collectionData.mode ? [collectionData.mode] : ['default']);
+    let modesToCreate = collectionData.modes || (collectionData.mode ? [collectionData.mode] : ['default']);
+    
+    // Если указан дефолтный мод, переупорядочить массив так, чтобы он был первым
+    if (defaultMode && modesToCreate.includes(defaultMode)) {
+      modesToCreate = [defaultMode, ...modesToCreate.filter(m => m !== defaultMode)];
+    }
     
     // Create or update modes in collection
-    const modeMap = new Map<string, VariableMode>();
+    const modeMap = new Map<string, { modeId: string; name: string }>();
     for (const modeName of modesToCreate) {
       // Find existing mode with this name
       let mode = collection.modes.find(m => m.name === modeName);
       if (!mode) {
         // Create new mode
-        mode = collection.addMode(modeName);
+        mode = collection.addMode(modeName) as unknown as { modeId: string; name: string };
       }
-      modeMap.set(modeName, mode);
+      if (mode) {
+        modeMap.set(modeName, mode);
+      }
     }
     
     // If collection has no modes yet, ensure at least one exists
     if (collection.modes.length === 0 && modesToCreate.length > 0) {
-      const firstMode = collection.addMode(modesToCreate[0]);
+      const firstMode = collection.addMode(modesToCreate[0]) as unknown as { modeId: string; name: string };
       modeMap.set(modesToCreate[0], firstMode);
     }
 
