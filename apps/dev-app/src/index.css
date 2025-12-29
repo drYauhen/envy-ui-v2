@@ -1,0 +1,19 @@
+/* Global styles only - CSS imports are done via JavaScript in main.tsx */
+
+/* Global styles */
+:root,
+body,
+#root {
+  font-family: var(--eui-typography-font-family-ui, 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  font-size: var(--eui-typography-base-fontSize, 14px);
+  background-color: var(--eui-color-background-base, #ffffff);
+  color: var(--eui-color-text-primary, #0f172a);
+  font-weight: var(--eui-typography-font-weight-normal, 400);
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
