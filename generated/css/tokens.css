@@ -35,7 +35,7 @@
   --eui-avatar-border-style: solid;
   --eui-avatar-border-color: oklch(100% 0 0);
   --eui-avatar-border-color-lead: oklch(70% 0.20 250);
-  --eui-avatar-background-fallback: oklch(85% 0.00 0);
+  --eui-avatar-background-fallback: oklch(88% 0.00 0);
   --eui-avatar-text-fallback: oklch(65% 0.00 0);
   --eui-avatar-shape-circle-radius: 50%;
   --eui-avatar-size-sm-diameter: 28px;
@@ -47,6 +47,7 @@
   --eui-avatar-typography-font-size-lg: 0.875rem;
   --eui-avatar-typography-font-weight: 600;
   --eui-avatar-typography-line-height: 1;
+  --eui-avatar-typography-text-transform: uppercase;
   --eui-button-border-width: 1px;
   --eui-button-border-style: solid;
   --eui-button-states-hover: emphasize;

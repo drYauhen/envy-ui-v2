@@ -771,7 +771,7 @@
         {
           "path": "eui.avatar.background.fallback",
           "type": "COLOR",
-          "value": "oklch(85% 0.00 0)"
+          "value": "oklch(88% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.base",

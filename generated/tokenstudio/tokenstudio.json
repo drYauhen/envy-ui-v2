@@ -128,7 +128,7 @@
     "$type": "color"
   },
   "eui.avatar.background.fallback": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(88% 0.00 0)",
     "$type": "color"
   },
   "eui.avatar.text.fallback": {
@@ -174,6 +174,10 @@
   "eui.avatar.typography.line.height": {
     "$value": "1",
     "$type": "lineHeight"
+  },
+  "eui.avatar.typography.textTransform": {
+    "$value": "uppercase",
+    "$type": "textTransform"
   },
   "eui.button.border.width": {
     "$value": "1px",
