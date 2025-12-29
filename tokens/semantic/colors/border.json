@@ -4,19 +4,23 @@
       "border": {
         "default": {
           "$value": "{eui.color.neutral.300}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Default border color. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "subtle": {
           "$value": "{eui.color.neutral.200}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Subtle border color for minimal separation. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "strong": {
           "$value": "{eui.color.neutral.400}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Strong border color for emphasized separation. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "inverse": {
           "$value": "{eui.color.neutral.800}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Inverse border color for use on dark backgrounds. Optimized for app-default context/theme. Other contexts/themes may override this value."
         }
       }
     }

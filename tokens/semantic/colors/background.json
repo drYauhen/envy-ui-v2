@@ -4,31 +4,37 @@
       "background": {
         "surface": {
           "$value": "{eui.color.neutral.white}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Surface background color. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "muted": {
           "$value": "{eui.color.neutral.50}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Muted background color for subtle surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "subtle": {
           "$value": "{eui.color.neutral.100}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Subtle background color for slightly emphasized surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "inverse": {
           "$value": "{eui.color.neutral.900}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Inverse background color for dark surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value."
         }
       },
       "brand": {
         "primary": {
           "$value": "{eui.color.brand.700}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Primary brand color. Optimized for app-default context/theme. Uses Brand-700 as the canonical anchor color. Other contexts/themes may override this value."
         }
       },
       "accent": {
         "primary": {
           "$value": "{eui.color.accent.600}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Primary accent color. Optimized for app-default context/theme. Uses Accent-600 (Viking Blue) as the canonical anchor color. Other contexts/themes may override this value."
         }
       }
     }

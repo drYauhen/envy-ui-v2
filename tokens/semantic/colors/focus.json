@@ -4,13 +4,15 @@
       "focus": {
         "ring": {
           "$value": "{eui.color.signal.keyboardFocus}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Focus ring color for keyboard navigation. Optimized for app-default context/theme. Other contexts/themes may override this value."
         }
       },
       "system": {
         "focus": {
           "$value": "{eui.color.focus.ring}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "System focus color (high accessibility). Optimized for app-default context/theme. Other contexts/themes may override this value."
         }
       }
     },
@@ -19,11 +21,13 @@
         "width": {
           "base": {
             "$value": "2px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$description": "Base focus ring width. Optimized for app-default context/theme. Other contexts/themes may override this value."
           },
           "accessible": {
             "$value": "3px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$description": "Accessible focus ring width for high contrast. Optimized for app-default context/theme. Other contexts/themes may override this value."
           }
         }
       }

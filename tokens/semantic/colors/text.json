@@ -4,23 +4,28 @@
       "text": {
         "primary": {
           "$value": "{eui.color.neutral.900}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Primary text color. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "muted": {
           "$value": "{eui.color.neutral.700}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Muted text color for secondary content. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "subtle": {
           "$value": "{eui.color.neutral.600}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Subtle text color for tertiary content. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "inverse": {
           "$value": "{eui.color.neutral.white}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Inverse text color for use on dark backgrounds. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "disabled": {
           "$value": "{eui.color.neutral.500}",
-          "$type": "color"
+          "$type": "color",
+          "$description": "Disabled text color for inactive elements. Optimized for app-default context/theme. Other contexts/themes may override this value."
         }
       }
     }
