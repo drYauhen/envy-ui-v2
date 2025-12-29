@@ -3,54 +3,54 @@
     "color": {
       "accent": {
         "50": {
-          "$value": "oklch(100% 0.06 251)",
+          "$value": "oklch(97% 0.03 200)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, lightness and chroma adjusted for less intense, more subtle pastel appearance)"
         },
         "100": {
-          "$value": "oklch(98% 0.11 251)",
+          "$value": "oklch(96% 0.05 200)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, chroma adjusted for less intense, more subtle pastel appearance)"
         },
         "200": {
-          "$value": "oklch(95% 0.15 251)",
+          "$value": "oklch(91% 0.07 215)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, chroma increased for more vibrant pastel appearance)"
         },
         "300": {
-          "$value": "oklch(90% 0.18 250)",
+          "$value": "oklch(85% 0.08 220)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, chroma increased for more vibrant pastel appearance)"
         },
         "400": {
-          "$value": "oklch(80% 0.19 250)",
+          "$value": "oklch(80% 0.09 230)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution)"
         },
         "500": {
-          "$value": "oklch(70% 0.20 250)",
+          "$value": "oklch(76% 0.10 230)",
           "$type": "color",
-          "$description": "Base accent color - reference tone"
+          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution)"
         },
         "600": {
-          "$value": "oklch(60% 0.19 250)",
+          "$value": "oklch(70% 0.13 225)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Viking Blue from Envy UI v1 - anchor for accent scale (hue adjusted towards blue, lightness adjusted closer to 700, chroma slightly reduced for less intense appearance on background)"
         },
         "700": {
-          "$value": "oklch(50% 0.18 250)",
+          "$value": "oklch(65% 0.15 232)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale - dark shade (chroma increased for vibrant, slightly more intense appearance)"
         },
         "800": {
-          "$value": "oklch(45% 0.15 251)",
+          "$value": "oklch(60% 0.14 232)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale - dark shade (chroma increased for vibrant, slightly more intense appearance)"
         },
         "900": {
-          "$value": "oklch(42% 0.11 251)",
+          "$value": "oklch(57% 0.13 233)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 600 using OKLCH tonal scale - dark shade (chroma increased for vibrant, slightly more intense appearance)"
         }
       }
     }
