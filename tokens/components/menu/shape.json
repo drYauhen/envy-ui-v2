@@ -3,9 +3,9 @@
     "menu": {
       "shape": {
         "radius": {
-          "$value": "{eui.radius.default}",
+          "$value": "{eui.radius.large}",
           "$type": "dimension",
-          "$description": "Border radius for menu list. Matches default component radius."
+          "$description": "Border radius for menu list. Uses large radius (8px in default theme) for visual hierarchy above control elements, matching dropdowns and cards."
         }
       }
     }

@@ -31,9 +31,9 @@
           "$description": "Shadow for select dropdown (elevation)"
         },
         "radius": {
-          "$value": "{eui.radius.default}",
+          "$value": "{eui.radius.large}",
           "$type": "dimension",
-          "$description": "Border radius for select dropdown"
+          "$description": "Border radius for select dropdown. Uses large radius (8px in default theme) for visual hierarchy above control elements, matching cards and panels."
         },
         "padding": {
           "$value": "{eui.menu.spacing.list.padding}",

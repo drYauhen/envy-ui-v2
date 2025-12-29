@@ -27,9 +27,9 @@
             "$type": "color"
           },
           "radius": {
-            "$value": "{eui.radius.default}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
-            "$description": "Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference."
+            "$description": "Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs."
           }
         },
         "flat": {
@@ -57,9 +57,9 @@
             "$type": "color"
           },
           "radius": {
-            "$value": "{eui.radius.default}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
-            "$description": "Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference."
+            "$description": "Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs."
           }
         },
         "strong": {
@@ -87,9 +87,9 @@
             "$type": "color"
           },
           "radius": {
-            "$value": "{eui.radius.default}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
-            "$description": "Card radius matches default radius (same as buttons). In default theme (4px), in accessibility theme (8px). CSS uses --eui-radius-default directly from theme, this token is for documentation/reference."
+            "$description": "Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs."
           }
         }
       }

@@ -3,15 +3,15 @@
    ============================================================================ */
 
 [data-eui-context] .eui-card {
-  /* Base card properties - radius comes from theme (same as buttons) */
+  /* Base card properties - radius uses large for visual hierarchy above controls */
   --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
   --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
   --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
   /* Border color references semantic token directly so it updates with theme changes */
   --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-elevated-background);
-  /* Radius is determined by theme: default theme = 4px, accessibility theme = 8px */
-  --eui-card-radius: var(--eui-radius-default);
+  /* Radius uses large level: default theme = 8px, accessibility theme = 10px */
+  --eui-card-radius: var(--eui-card-variant-elevated-radius);
 
   display: block;
   border-radius: var(--eui-card-radius);
@@ -32,6 +32,7 @@
   /* Border color references semantic token directly so it updates with theme changes */
   --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-elevated-background);
+  --eui-card-radius: var(--eui-card-variant-elevated-radius);
 }
 
 /* Variant: Flat (no shadow) */
@@ -42,6 +43,7 @@
   /* Border color references semantic token directly so it updates with theme changes */
   --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-flat-background);
+  --eui-card-radius: var(--eui-card-variant-flat-radius);
 }
 
 /* Variant: Strong (prominent shadow) */
@@ -52,5 +54,6 @@
   /* Border color references semantic token directly so it updates with theme changes */
   --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-strong-background);
+  --eui-card-radius: var(--eui-card-variant-strong-radius);
 }
 
