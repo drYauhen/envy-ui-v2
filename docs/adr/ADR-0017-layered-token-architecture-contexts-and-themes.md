@@ -8,6 +8,7 @@
 **Related:**  
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
 
 ---
 
@@ -36,7 +37,7 @@ Foundation → Semantic → Context → Theme → Component
 
 **Structure:**
 - **Foundations** - Base color scales, dimensions (neutral, brand, accent families). Shared across all contexts, context-agnostic.
-- **Semantic** - Semantic tokens (text, background, border, focus) that reference foundations. Define "what" not "where".
+- **Semantic** - Semantic tokens (text, background, border, focus) that reference foundations. Define "what" not "where". **Optimized for app-default context/theme by default** (see [ADR-0026](./ADR-0026-app-default-color-positioning.md)).
 - **Contexts** - Context-specific overrides of semantic tokens (environment defaults):
   - `contexts/app.json` - Application shell semantic overrides (e.g., fontSize: 14px)
   - `contexts/website.json` - Website/CMS semantic overrides (e.g., fontSize: 16px)
