@@ -38,13 +38,14 @@ export const adrs: AdrListItem[] = [
   { number: '0015', title: 'Token-First Contract Layer and Renderer-Agnostic Model', status: 'Accepted', date: '2025-12-18' },
   { number: '0016', title: 'Prefix Unification to eui', status: 'Accepted', date: '2025-12-19' },
   { number: '0017', title: 'Layered Token Architecture for Contexts and Themes', status: 'Accepted', date: '2025-12-20' },
-  { number: '0018', title: 'Typography Units Architecture - REM, EM, and PX', status: 'Accepted', date: '2025-12-20' },
-  { number: '0019', title: 'Layout Components Architecture', status: 'Accepted', date: '2025-12-20' },
+  { number: '0018', title: 'Typography Units Architecture - REM, EM, and PX', status: 'Accepted', date: '2025-01-21' },
+  { number: '0019', title: 'Layout Components Architecture', status: 'Accepted', date: '2025-12-21' },
   { number: '0020', title: 'Elevation System Architecture', status: 'Accepted', date: '2025-12-20' },
   { number: '0021', title: 'Web Components as Framework-Agnostic Implementation Layer', status: 'Exploratory', date: '2025-01-XX' },
   { number: '0022', title: 'Storybook Model as AI-Agent-Oriented Architecture Layer', status: 'Proposed (Exploratory)', date: '2025-12-25' },
   { number: '0023', title: 'Token Organization - Context and Theme Separation', status: 'Accepted', date: '2025-12-26', exportName: 'TokenOrganizationContextAndThemeSeparation' },
   { number: '0024', title: 'CSS Layer Strategy for Context Priority', status: 'Accepted', date: '2025-12-26', exportName: 'CSSLayerStrategyForContextPriority' },
-  { number: '0025', title: 'Figma Variables Integration Strategy', status: 'Accepted', date: '2025-12-26' }
+  { number: '0025', title: 'Figma Variables Integration Strategy', status: 'Accepted', date: '2025-12-26' },
+  { number: '0026', title: 'App-Default Color Positioning and Semantic Token Optimization', status: 'Accepted', date: '2025-12-29', exportName: 'AppDefaultColorPositioning' }
 ];
 
