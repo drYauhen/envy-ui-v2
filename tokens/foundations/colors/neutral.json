@@ -3,54 +3,54 @@
     "color": {
       "neutral": {
         "50": {
-          "$value": "oklch(90% 0.00 0)",
+          "$value": "oklch(98% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps, lightness increased for lighter appearance)"
         },
         "100": {
-          "$value": "oklch(88% 0.00 0)",
+          "$value": "oklch(96.5% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
         },
         "200": {
-          "$value": "oklch(85% 0.00 0)",
+          "$value": "oklch(94% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
         },
         "300": {
-          "$value": "oklch(80% 0.00 0)",
+          "$value": "oklch(90% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
         },
         "400": {
-          "$value": "oklch(73% 0.00 0)",
+          "$value": "oklch(84% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
         },
         "500": {
-          "$value": "oklch(65% 0.00 0)",
+          "$value": "oklch(75% 0.00 0)",
           "$type": "color",
-          "$description": "Base neutral color - reference tone"
+          "$description": "Base neutral color - reference tone (progressive intervals: very small near 50, very large near 900)"
         },
         "600": {
-          "$value": "oklch(50% 0.00 0)",
+          "$value": "oklch(63% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
         },
         "700": {
-          "$value": "oklch(35% 0.00 0)",
+          "$value": "oklch(48% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
         },
         "800": {
-          "$value": "oklch(25% 0.00 0)",
+          "$value": "oklch(33% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
         },
         "900": {
-          "$value": "oklch(17% 0.00 0)",
+          "$value": "oklch(25% 0.00 0)",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps)"
+          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps, lightness increased for lighter scale)"
         },
         "white": {
           "$value": "oklch(100% 0 0)",
