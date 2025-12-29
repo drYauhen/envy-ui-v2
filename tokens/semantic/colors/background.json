@@ -21,13 +21,13 @@
       },
       "brand": {
         "primary": {
-          "$value": "{eui.color.brand.500}",
+          "$value": "{eui.color.brand.700}",
           "$type": "color"
         }
       },
       "accent": {
         "primary": {
-          "$value": "{eui.color.accent.500}",
+          "$value": "{eui.color.accent.600}",
           "$type": "color"
         }
       }

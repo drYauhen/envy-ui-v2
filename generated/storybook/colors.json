@@ -9,70 +9,70 @@
           "label": "100",
           "path": "eui.color.neutral.100",
           "cssVar": "--eui-color-neutral-100",
-          "value": "oklch(88% 0.00 0)"
+          "value": "oklch(96.5% 0.00 0)"
         },
         {
           "id": "200",
           "label": "200",
           "path": "eui.color.neutral.200",
           "cssVar": "--eui-color-neutral-200",
-          "value": "oklch(85% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "id": "300",
           "label": "300",
           "path": "eui.color.neutral.300",
           "cssVar": "--eui-color-neutral-300",
-          "value": "oklch(80% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "id": "400",
           "label": "400",
           "path": "eui.color.neutral.400",
           "cssVar": "--eui-color-neutral-400",
-          "value": "oklch(73% 0.00 0)"
+          "value": "oklch(84% 0.00 0)"
         },
         {
           "id": "50",
           "label": "50",
           "path": "eui.color.neutral.50",
           "cssVar": "--eui-color-neutral-50",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "id": "500",
           "label": "500",
           "path": "eui.color.neutral.500",
           "cssVar": "--eui-color-neutral-500",
-          "value": "oklch(65% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "id": "600",
           "label": "600",
           "path": "eui.color.neutral.600",
           "cssVar": "--eui-color-neutral-600",
-          "value": "oklch(50% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "id": "700",
           "label": "700",
           "path": "eui.color.neutral.700",
           "cssVar": "--eui-color-neutral-700",
-          "value": "oklch(35% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "id": "800",
           "label": "800",
           "path": "eui.color.neutral.800",
           "cssVar": "--eui-color-neutral-800",
-          "value": "oklch(25% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "id": "900",
           "label": "900",
           "path": "eui.color.neutral.900",
           "cssVar": "--eui-color-neutral-900",
-          "value": "oklch(17% 0.00 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "id": "white",
@@ -92,77 +92,77 @@
           "label": "100",
           "path": "eui.color.brand.100",
           "cssVar": "--eui-color-brand-100",
-          "value": "oklch(85% 0.11 222)"
+          "value": "oklch(93% 0.05 232)"
         },
         {
           "id": "200",
           "label": "200",
           "path": "eui.color.brand.200",
           "cssVar": "--eui-color-brand-200",
-          "value": "oklch(80% 0.15 221)"
+          "value": "oklch(85% 0.06 231)"
         },
         {
           "id": "300",
           "label": "300",
           "path": "eui.color.brand.300",
           "cssVar": "--eui-color-brand-300",
-          "value": "oklch(70% 0.18 221)"
+          "value": "oklch(75% 0.08 231)"
         },
         {
           "id": "400",
           "label": "400",
           "path": "eui.color.brand.400",
           "cssVar": "--eui-color-brand-400",
-          "value": "oklch(60% 0.19 220)"
+          "value": "oklch(65% 0.09 231)"
         },
         {
           "id": "50",
           "label": "50",
           "path": "eui.color.brand.50",
           "cssVar": "--eui-color-brand-50",
-          "value": "oklch(90% 0.06 222)"
+          "value": "oklch(97% 0.02 232)"
         },
         {
           "id": "500",
           "label": "500",
           "path": "eui.color.brand.500",
           "cssVar": "--eui-color-brand-500",
-          "value": "oklch(50% 0.20 220)"
+          "value": "oklch(57% 0.09 231)"
         },
         {
           "id": "600",
           "label": "600",
           "path": "eui.color.brand.600",
           "cssVar": "--eui-color-brand-600",
-          "value": "oklch(45% 0.19 220)"
+          "value": "oklch(52% 0.10 230)"
         },
         {
           "id": "700",
           "label": "700",
           "path": "eui.color.brand.700",
           "cssVar": "--eui-color-brand-700",
-          "value": "oklch(40% 0.18 221)"
+          "value": "oklch(49% 0.10 230)"
         },
         {
           "id": "800",
           "label": "800",
           "path": "eui.color.brand.800",
           "cssVar": "--eui-color-brand-800",
-          "value": "oklch(37% 0.15 221)"
+          "value": "oklch(47% 0.10 230)"
         },
         {
           "id": "900",
           "label": "900",
           "path": "eui.color.brand.900",
           "cssVar": "--eui-color-brand-900",
-          "value": "oklch(35% 0.11 222)"
+          "value": "oklch(46% 0.09 231)"
         },
         {
           "id": "primary",
           "label": "Primary",
           "path": "eui.color.brand.primary",
           "cssVar": "--eui-color-brand-primary",
-          "value": "oklch(50% 0.20 220)"
+          "value": "oklch(49% 0.10 230)"
         }
       ]
     },
@@ -175,77 +175,77 @@
           "label": "100",
           "path": "eui.color.accent.100",
           "cssVar": "--eui-color-accent-100",
-          "value": "oklch(98% 0.11 251)"
+          "value": "oklch(96% 0.05 200)"
         },
         {
           "id": "200",
           "label": "200",
           "path": "eui.color.accent.200",
           "cssVar": "--eui-color-accent-200",
-          "value": "oklch(95% 0.15 251)"
+          "value": "oklch(91% 0.07 215)"
         },
         {
           "id": "300",
           "label": "300",
           "path": "eui.color.accent.300",
           "cssVar": "--eui-color-accent-300",
-          "value": "oklch(90% 0.18 250)"
+          "value": "oklch(85% 0.08 220)"
         },
         {
           "id": "400",
           "label": "400",
           "path": "eui.color.accent.400",
           "cssVar": "--eui-color-accent-400",
-          "value": "oklch(80% 0.19 250)"
+          "value": "oklch(80% 0.09 230)"
         },
         {
           "id": "50",
           "label": "50",
           "path": "eui.color.accent.50",
           "cssVar": "--eui-color-accent-50",
-          "value": "oklch(100% 0.06 251)"
+          "value": "oklch(97% 0.03 200)"
         },
         {
           "id": "500",
           "label": "500",
           "path": "eui.color.accent.500",
           "cssVar": "--eui-color-accent-500",
-          "value": "oklch(70% 0.20 250)"
+          "value": "oklch(76% 0.10 230)"
         },
         {
           "id": "600",
           "label": "600",
           "path": "eui.color.accent.600",
           "cssVar": "--eui-color-accent-600",
-          "value": "oklch(60% 0.19 250)"
+          "value": "oklch(70% 0.13 225)"
         },
         {
           "id": "700",
           "label": "700",
           "path": "eui.color.accent.700",
           "cssVar": "--eui-color-accent-700",
-          "value": "oklch(50% 0.18 250)"
+          "value": "oklch(65% 0.15 232)"
         },
         {
           "id": "800",
           "label": "800",
           "path": "eui.color.accent.800",
           "cssVar": "--eui-color-accent-800",
-          "value": "oklch(45% 0.15 251)"
+          "value": "oklch(60% 0.14 232)"
         },
         {
           "id": "900",
           "label": "900",
           "path": "eui.color.accent.900",
           "cssVar": "--eui-color-accent-900",
-          "value": "oklch(42% 0.11 251)"
+          "value": "oklch(57% 0.13 233)"
         },
         {
           "id": "primary",
           "label": "Primary",
           "path": "eui.color.accent.primary",
           "cssVar": "--eui-color-accent-primary",
-          "value": "oklch(70% 0.20 250)"
+          "value": "oklch(70% 0.13 225)"
         }
       ]
     },
@@ -305,7 +305,7 @@
           "label": "Disabled",
           "path": "eui.color.text.disabled",
           "cssVar": "--eui-color-text-disabled",
-          "value": "oklch(35% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "id": "inverse",
@@ -319,7 +319,7 @@
           "label": "Muted",
           "path": "eui.color.text.muted",
           "cssVar": "--eui-color-text-muted",
-          "value": "oklch(80% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "id": "primary",
@@ -333,7 +333,7 @@
           "label": "Subtle",
           "path": "eui.color.text.subtle",
           "cssVar": "--eui-color-text-subtle",
-          "value": "oklch(50% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         }
       ]
     },
@@ -346,28 +346,28 @@
           "label": "Base",
           "path": "eui.color.background.base",
           "cssVar": "--eui-color-background-base",
-          "value": "oklch(17% 0.00 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "id": "inverse",
           "label": "Inverse",
           "path": "eui.color.background.inverse",
           "cssVar": "--eui-color-background-inverse",
-          "value": "oklch(17% 0.00 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "id": "muted",
           "label": "Muted",
           "path": "eui.color.background.muted",
           "cssVar": "--eui-color-background-muted",
-          "value": "oklch(85% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "id": "subtle",
           "label": "Subtle",
           "path": "eui.color.background.subtle",
           "cssVar": "--eui-color-background-subtle",
-          "value": "oklch(88% 0.00 0)"
+          "value": "oklch(96.5% 0.00 0)"
         },
         {
           "id": "surface",
@@ -387,28 +387,28 @@
           "label": "Default",
           "path": "eui.color.border.default",
           "cssVar": "--eui-color-border-default",
-          "value": "oklch(35% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "id": "inverse",
           "label": "Inverse",
           "path": "eui.color.border.inverse",
           "cssVar": "--eui-color-border-inverse",
-          "value": "oklch(25% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "id": "strong",
           "label": "Strong",
           "path": "eui.color.border.strong",
           "cssVar": "--eui-color-border-strong",
-          "value": "oklch(73% 0.00 0)"
+          "value": "oklch(84% 0.00 0)"
         },
         {
           "id": "subtle",
           "label": "Subtle",
           "path": "eui.color.border.subtle",
           "cssVar": "--eui-color-border-subtle",
-          "value": "oklch(85% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         }
       ]
     },

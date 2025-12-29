@@ -11,7 +11,7 @@
         {
           "path": "eui.color.text.disabled",
           "type": "COLOR",
-          "value": "oklch(35% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.color.text.inverse",
@@ -21,7 +21,7 @@
         {
           "path": "eui.color.text.muted",
           "type": "COLOR",
-          "value": "oklch(80% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.color.text.primary",
@@ -31,7 +31,7 @@
         {
           "path": "eui.color.text.subtle",
           "type": "COLOR",
-          "value": "oklch(50% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         }
       ]
     },
@@ -42,22 +42,22 @@
         {
           "path": "eui.color.background.base",
           "type": "COLOR",
-          "value": "oklch(17% 0.00 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.color.background.inverse",
           "type": "COLOR",
-          "value": "oklch(17% 0.00 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.color.background.muted",
           "type": "COLOR",
-          "value": "oklch(85% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.color.background.subtle",
           "type": "COLOR",
-          "value": "oklch(88% 0.00 0)"
+          "value": "oklch(96.5% 0.00 0)"
         },
         {
           "path": "eui.color.background.surface",
@@ -73,57 +73,57 @@
         {
           "path": "eui.color.accent.100",
           "type": "COLOR",
-          "value": "oklch(98% 0.11 251)"
+          "value": "oklch(96% 0.05 200)"
         },
         {
           "path": "eui.color.accent.200",
           "type": "COLOR",
-          "value": "oklch(95% 0.15 251)"
+          "value": "oklch(91% 0.07 215)"
         },
         {
           "path": "eui.color.accent.300",
           "type": "COLOR",
-          "value": "oklch(90% 0.18 250)"
+          "value": "oklch(85% 0.08 220)"
         },
         {
           "path": "eui.color.accent.400",
           "type": "COLOR",
-          "value": "oklch(80% 0.19 250)"
+          "value": "oklch(80% 0.09 230)"
         },
         {
           "path": "eui.color.accent.50",
           "type": "COLOR",
-          "value": "oklch(100% 0.06 251)"
+          "value": "oklch(97% 0.03 200)"
         },
         {
           "path": "eui.color.accent.500",
           "type": "COLOR",
-          "value": "oklch(70% 0.20 250)"
+          "value": "oklch(76% 0.10 230)"
         },
         {
           "path": "eui.color.accent.600",
           "type": "COLOR",
-          "value": "oklch(60% 0.19 250)"
+          "value": "oklch(70% 0.13 225)"
         },
         {
           "path": "eui.color.accent.700",
           "type": "COLOR",
-          "value": "oklch(50% 0.18 250)"
+          "value": "oklch(65% 0.15 232)"
         },
         {
           "path": "eui.color.accent.800",
           "type": "COLOR",
-          "value": "oklch(45% 0.15 251)"
+          "value": "oklch(60% 0.14 232)"
         },
         {
           "path": "eui.color.accent.900",
           "type": "COLOR",
-          "value": "oklch(42% 0.11 251)"
+          "value": "oklch(57% 0.13 233)"
         },
         {
           "path": "eui.color.accent.primary",
           "type": "COLOR",
-          "value": "oklch(70% 0.20 250)"
+          "value": "oklch(70% 0.13 225)"
         }
       ]
     },
@@ -134,57 +134,57 @@
         {
           "path": "eui.color.brand.100",
           "type": "COLOR",
-          "value": "oklch(85% 0.11 222)"
+          "value": "oklch(93% 0.05 232)"
         },
         {
           "path": "eui.color.brand.200",
           "type": "COLOR",
-          "value": "oklch(80% 0.15 221)"
+          "value": "oklch(85% 0.06 231)"
         },
         {
           "path": "eui.color.brand.300",
           "type": "COLOR",
-          "value": "oklch(70% 0.18 221)"
+          "value": "oklch(75% 0.08 231)"
         },
         {
           "path": "eui.color.brand.400",
           "type": "COLOR",
-          "value": "oklch(60% 0.19 220)"
+          "value": "oklch(65% 0.09 231)"
         },
         {
           "path": "eui.color.brand.50",
           "type": "COLOR",
-          "value": "oklch(90% 0.06 222)"
+          "value": "oklch(97% 0.02 232)"
         },
         {
           "path": "eui.color.brand.500",
           "type": "COLOR",
-          "value": "oklch(50% 0.20 220)"
+          "value": "oklch(57% 0.09 231)"
         },
         {
           "path": "eui.color.brand.600",
           "type": "COLOR",
-          "value": "oklch(45% 0.19 220)"
+          "value": "oklch(52% 0.10 230)"
         },
         {
           "path": "eui.color.brand.700",
           "type": "COLOR",
-          "value": "oklch(40% 0.18 221)"
+          "value": "oklch(49% 0.10 230)"
         },
         {
           "path": "eui.color.brand.800",
           "type": "COLOR",
-          "value": "oklch(37% 0.15 221)"
+          "value": "oklch(47% 0.10 230)"
         },
         {
           "path": "eui.color.brand.900",
           "type": "COLOR",
-          "value": "oklch(35% 0.11 222)"
+          "value": "oklch(46% 0.09 231)"
         },
         {
           "path": "eui.color.brand.primary",
           "type": "COLOR",
-          "value": "oklch(50% 0.20 220)"
+          "value": "oklch(49% 0.10 230)"
         }
       ]
     },
@@ -195,52 +195,52 @@
         {
           "path": "eui.color.neutral.100",
           "type": "COLOR",
-          "value": "oklch(88% 0.00 0)"
+          "value": "oklch(96.5% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.200",
           "type": "COLOR",
-          "value": "oklch(85% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.300",
           "type": "COLOR",
-          "value": "oklch(80% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.400",
           "type": "COLOR",
-          "value": "oklch(73% 0.00 0)"
+          "value": "oklch(84% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.50",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.500",
           "type": "COLOR",
-          "value": "oklch(65% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.600",
           "type": "COLOR",
-          "value": "oklch(50% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.700",
           "type": "COLOR",
-          "value": "oklch(35% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.800",
           "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.900",
           "type": "COLOR",
-          "value": "oklch(17% 0.00 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.color.neutral.white",
@@ -293,22 +293,22 @@
         {
           "path": "eui.color.border.default",
           "type": "COLOR",
-          "value": "oklch(35% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.color.border.inverse",
           "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "path": "eui.color.border.strong",
           "type": "COLOR",
-          "value": "oklch(73% 0.00 0)"
+          "value": "oklch(84% 0.00 0)"
         },
         {
           "path": "eui.color.border.subtle",
           "type": "COLOR",
-          "value": "oklch(85% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         }
       ]
     },

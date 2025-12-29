@@ -124,15 +124,15 @@
     "$type": "color"
   },
   "eui.avatar.border.colorLead": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.avatar.background.fallback": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.avatar.text.fallback": {
-    "$value": "oklch(65% 0.00 0)",
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.avatar.shape.circle.radius": {
@@ -204,23 +204,23 @@
     "$type": "stateEffect"
   },
   "eui.button.primary.background.base": {
-    "$value": "oklch(50% 0.20 220)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.button.primary.background.hover": {
-    "$value": "oklch(50% 0.20 220)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.button.primary.background.active": {
-    "$value": "oklch(50% 0.20 220)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.button.primary.background.disabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.button.primary.background.selected": {
-    "$value": "oklch(50% 0.20 220)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.button.primary.label.base": {
@@ -236,7 +236,7 @@
     "$type": "color"
   },
   "eui.button.primary.label.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.primary.label.selected": {
@@ -256,7 +256,7 @@
     "$type": "color"
   },
   "eui.button.secondary.background.disabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.background.selected": {
@@ -276,7 +276,7 @@
     "$type": "color"
   },
   "eui.button.secondary.label.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.selected": {
@@ -284,43 +284,43 @@
     "$type": "color"
   },
   "eui.button.secondary.border.base": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.hover": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.active": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.selected": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent.background.base": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.button.accent.background.hover": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.button.accent.background.active": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.button.accent.background.disabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent.background.selected": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.button.accent.label.base": {
@@ -336,7 +336,7 @@
     "$type": "color"
   },
   "eui.button.accent.label.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent.label.selected": {
@@ -344,51 +344,51 @@
     "$type": "color"
   },
   "eui.button.accent-finished.background.base": {
-    "$value": "oklch(95% 0.15 251)",
+    "$value": "oklch(91% 0.07 215)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.hover": {
-    "$value": "oklch(95% 0.15 251)",
+    "$value": "oklch(91% 0.07 215)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.active": {
-    "$value": "oklch(95% 0.15 251)",
+    "$value": "oklch(91% 0.07 215)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.disabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.selected": {
-    "$value": "oklch(95% 0.15 251)",
+    "$value": "oklch(91% 0.07 215)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.base": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.hover": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.active": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.selected": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.button.focus.ring.color.derived.base": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.focus.ring.color.derived.accessible": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.button.focus.ring.width.base": {
@@ -668,11 +668,11 @@
     "$type": "color"
   },
   "eui.calendar.colors.header.button.hover.background": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.weekday.text": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.default": {
@@ -680,19 +680,19 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.background.hover": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selected": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selectedHover": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.active": {
-    "$value": "oklch(100% 0.06 251)",
+    "$value": "oklch(97% 0.03 200)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.today": {
@@ -704,7 +704,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.background.outsideMonth": {
-    "$value": "oklch(90% 0.00 0)",
+    "$value": "oklch(98% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.default": {
@@ -716,11 +716,11 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.text.disabled": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.outsideMonth": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.today": {
@@ -728,15 +728,15 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.border.default": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.border.selected": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.calendar.colors.range.background": {
-    "$value": "oklch(100% 0.06 251)",
+    "$value": "oklch(97% 0.03 200)",
     "$type": "color"
   },
   "eui.calendar.colors.range.text": {
@@ -856,7 +856,7 @@
     "$type": "string"
   },
   "eui.card.variant.elevated.border.color": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.card.variant.elevated.background": {
@@ -880,7 +880,7 @@
     "$type": "string"
   },
   "eui.card.variant.flat.border.color": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.card.variant.flat.background": {
@@ -904,7 +904,7 @@
     "$type": "string"
   },
   "eui.card.variant.strong.border.color": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.card.variant.strong.background": {
@@ -1008,39 +1008,39 @@
     "$type": "string"
   },
   "eui.checkbox.border.base": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.checked": {
-    "$value": "oklch(45% 0.15 251)",
+    "$value": "oklch(60% 0.14 232)",
     "$type": "color"
   },
   "eui.checkbox.border.disabled": {
-    "$value": "oklch(65% 0.00 0)",
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.checkedDisabled": {
-    "$value": "oklch(65% 0.00 0)",
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.hover": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.checkedHover": {
-    "$value": "oklch(45% 0.15 251)",
+    "$value": "oklch(60% 0.14 232)",
     "$type": "color"
   },
   "eui.checkbox.border.indeterminate": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.indeterminateHover": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.border.indeterminateDisabled": {
-    "$value": "oklch(65% 0.00 0)",
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.background.base": {
@@ -1048,15 +1048,15 @@
     "$type": "color"
   },
   "eui.checkbox.background.checked": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.checkbox.background.disabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.background.checkedDisabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.background.hover": {
@@ -1064,7 +1064,7 @@
     "$type": "color"
   },
   "eui.checkbox.background.checkedHover": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.checkbox.background.indeterminate": {
@@ -1076,7 +1076,7 @@
     "$type": "color"
   },
   "eui.checkbox.background.indeterminateDisabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.base": {
@@ -1084,23 +1084,23 @@
     "$type": "color"
   },
   "eui.checkbox.checkmark.disabled": {
-    "$value": "oklch(65% 0.00 0)",
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminate": {
-    "$value": "oklch(80% 0.19 250)",
+    "$value": "oklch(80% 0.09 230)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminateDisabled": {
-    "$value": "oklch(65% 0.00 0)",
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.checkbox.focus.ring.color.derived.base": {
-    "$value": "oklch(60% 0.19 220)",
+    "$value": "oklch(65% 0.09 231)",
     "$type": "color"
   },
   "eui.checkbox.focus.ring.color.derived.accessible": {
-    "$value": "oklch(40% 0.18 221)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.checkbox.focus.ring.width.base": {
@@ -1148,7 +1148,7 @@
     "$type": "dimension"
   },
   "eui.counter.colors.pill.default.background": {
-    "$value": "oklch(98% 0.11 251)",
+    "$value": "oklch(96% 0.05 200)",
     "$type": "color"
   },
   "eui.counter.colors.pill.default.color": {
@@ -1172,11 +1172,11 @@
     "$type": "color"
   },
   "eui.counter.colors.pill.disabled.background": {
-    "$value": "oklch(80% 0.00 0)",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.pill.disabled.color": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.pill.disabled.border": {
@@ -1192,15 +1192,15 @@
     "$type": "color"
   },
   "eui.counter.colors.text.disabled.color": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.counter.colors.filter.background": {
-    "$value": "oklch(95% 0.15 251)",
+    "$value": "oklch(91% 0.07 215)",
     "$type": "color"
   },
   "eui.counter.colors.filter.color": {
-    "$value": "oklch(50% 0.18 250)",
+    "$value": "oklch(65% 0.15 232)",
     "$type": "color"
   },
   "eui.counter.colors.filter.border": {
@@ -1208,7 +1208,7 @@
     "$type": "color"
   },
   "eui.counter.colors.filter.icon.color": {
-    "$value": "oklch(60% 0.19 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.counter.shape.text.radius": {
@@ -1308,7 +1308,7 @@
     "$type": "color"
   },
   "eui.detail-panel.colors.border": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.detail-panel.shadow.left": {
@@ -1324,7 +1324,7 @@
     "$type": "dimension"
   },
   "eui.divider.colors.default": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.divider.size.thickness": {
@@ -1388,7 +1388,7 @@
     "$type": "color"
   },
   "eui.header.colors.border": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.header.size.height": {
@@ -1408,7 +1408,7 @@
     "$type": "dimension"
   },
   "eui.hero-section.colors.background.base": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.hero-section.colors.background.overlay.dark": {
@@ -1424,7 +1424,7 @@
     "$type": "color"
   },
   "eui.hero-section.colors.text.subheading": {
-    "$value": "oklch(80% 0.00 0)",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.hero-section.size.min-height.mobile": {
@@ -1540,19 +1540,19 @@
     "$type": "string"
   },
   "eui.input.border.base": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.input.border.hover": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.input.border.focus": {
-    "$value": "oklch(50% 0.20 220)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.input.border.disabled": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.input.border.error": {
@@ -1572,7 +1572,7 @@
     "$type": "color"
   },
   "eui.input.background.disabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.input.text.base": {
@@ -1580,19 +1580,19 @@
     "$type": "color"
   },
   "eui.input.text.placeholder": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.input.text.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.input.focus.ring.color.derived.base": {
-    "$value": "oklch(60% 0.19 220)",
+    "$value": "oklch(65% 0.09 231)",
     "$type": "color"
   },
   "eui.input.focus.ring.color.derived.accessible": {
-    "$value": "oklch(40% 0.18 221)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.input.focus.ring.width.base": {
@@ -1680,11 +1680,11 @@
     "$type": "dimension"
   },
   "eui.input.group.colors.prefix.text": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.input.group.colors.suffix.text": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.input.shape.radius": {
@@ -1748,7 +1748,7 @@
     "$type": "string"
   },
   "eui.menu.border.color": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.background": {
@@ -1756,7 +1756,7 @@
     "$type": "color"
   },
   "eui.menu.colors.border": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.background.default": {
@@ -1764,15 +1764,15 @@
     "$type": "color"
   },
   "eui.menu.colors.item.background.hover": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.background.focus": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.background.selected": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.colors.item.text": {
@@ -1780,7 +1780,7 @@
     "$type": "color"
   },
   "eui.menu.colors.item.text-disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.menu.shadow": {
@@ -1832,7 +1832,7 @@
     "$type": "string"
   },
   "eui.modal.colors.header.background": {
-    "$value": "oklch(50% 0.20 220)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.modal.colors.header.text": {
@@ -1856,7 +1856,7 @@
     "$type": "color"
   },
   "eui.modal.colors.footer.background": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.modal.colors.footer.text": {
@@ -1864,7 +1864,7 @@
     "$type": "color"
   },
   "eui.modal.colors.footer.border": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.modal.colors.close.color": {
@@ -1932,15 +1932,15 @@
     "$type": "color"
   },
   "eui.select.trigger.border": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.select.icon.color": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.select.icon.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.select.dropdown.background": {
@@ -1956,7 +1956,7 @@
     "$type": "borderStyle"
   },
   "eui.select.dropdown.border.color": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.select.dropdown.shadow": {
@@ -1992,19 +1992,19 @@
     "$type": "color"
   },
   "eui.select.option.background.hover": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.background.focused": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.background.selected": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.background.selected-focused": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.select.option.color.default": {
@@ -2012,7 +2012,7 @@
     "$type": "color"
   },
   "eui.select.option.color.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.select.primitive.trigger.spacing.gap": {
@@ -2064,7 +2064,7 @@
     "$type": "dimension"
   },
   "eui.select.primitive.badge.colors.background": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.select.primitive.badge.colors.text": {
@@ -2072,7 +2072,7 @@
     "$type": "color"
   },
   "eui.select.primitive.badge.colors.remove.icon": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.sidebar.animation.duration": {
@@ -2084,7 +2084,7 @@
     "$type": "string"
   },
   "eui.sidebar.colors.background": {
-    "$value": "oklch(50% 0.20 220)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.sidebar.colors.text": {
@@ -2132,7 +2132,7 @@
     "$type": "duration"
   },
   "eui.skeleton.colors.background.base": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.skeleton.colors.shimmer.start": {
@@ -2180,7 +2180,7 @@
     "$type": "string"
   },
   "eui.switch.track.border.off": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.border.on": {
@@ -2188,23 +2188,23 @@
     "$type": "color"
   },
   "eui.switch.track.border.disabled": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.background.off": {
-    "$value": "oklch(80% 0.00 0)",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.background.on": {
-    "$value": "oklch(70% 0.20 250)",
+    "$value": "oklch(70% 0.13 225)",
     "$type": "color"
   },
   "eui.switch.track.background.disabled": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.track.background.disabledOn": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.thumb.border.width": {
@@ -2216,7 +2216,7 @@
     "$type": "string"
   },
   "eui.switch.thumb.border.disabled": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.switch.thumb.background.base": {
@@ -2228,11 +2228,11 @@
     "$type": "color"
   },
   "eui.switch.focus.ring.color.derived.base": {
-    "$value": "oklch(60% 0.19 220)",
+    "$value": "oklch(65% 0.09 231)",
     "$type": "color"
   },
   "eui.switch.focus.ring.color.derived.accessible": {
-    "$value": "oklch(40% 0.18 221)",
+    "$value": "oklch(49% 0.10 230)",
     "$type": "color"
   },
   "eui.switch.focus.ring.width.base": {
@@ -2320,11 +2320,11 @@
     "$type": "color"
   },
   "eui.table.colors.border": {
-    "$value": "oklch(80% 0.00 0)",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.header.background": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.header.text": {
@@ -2332,7 +2332,7 @@
     "$type": "color"
   },
   "eui.table.colors.subheader.background": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.subheader.text": {
@@ -2344,11 +2344,11 @@
     "$type": "color"
   },
   "eui.table.colors.row.background.hover": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.table.colors.row.background.selected": {
-    "$value": "oklch(100% 0.06 251)",
+    "$value": "oklch(97% 0.03 200)",
     "$type": "color"
   },
   "eui.table.colors.cell.text": {
@@ -2472,7 +2472,7 @@
     "$type": "color"
   },
   "eui.title-bar.colors.border": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.title-bar.size.height": {
@@ -2808,11 +2808,11 @@
     "$type": "color"
   },
   "eui.color.text.muted": {
-    "$value": "oklch(80% 0.00 0)",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.color.text.subtle": {
-    "$value": "oklch(50% 0.00 0)",
+    "$value": "oklch(63% 0.00 0)",
     "$type": "color"
   },
   "eui.color.text.inverse": {
@@ -2820,11 +2820,11 @@
     "$type": "color"
   },
   "eui.color.text.disabled": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.color.background.base": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.color.background.surface": {
@@ -2832,143 +2832,143 @@
     "$type": "color"
   },
   "eui.color.background.muted": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.color.background.subtle": {
-    "$value": "oklch(88% 0.00 0)",
+    "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
   },
   "eui.color.background.inverse": {
-    "$value": "oklch(17% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.accent.50": {
-    "$value": "oklch(100% 0.06 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.100": {
-    "$value": "oklch(98% 0.11 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.200": {
-    "$value": "oklch(95% 0.15 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.300": {
-    "$value": "oklch(90% 0.18 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.400": {
-    "$value": "oklch(80% 0.19 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.500": {
-    "$value": "oklch(70% 0.20 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.600": {
-    "$value": "oklch(60% 0.19 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.700": {
-    "$value": "oklch(50% 0.18 250)",
-    "$type": "color"
-  },
-  "eui.color.accent.800": {
-    "$value": "oklch(45% 0.15 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.900": {
-    "$value": "oklch(42% 0.11 251)",
-    "$type": "color"
-  },
-  "eui.color.accent.primary": {
-    "$value": "oklch(70% 0.20 250)",
-    "$type": "color"
-  },
-  "eui.color.brand.50": {
-    "$value": "oklch(90% 0.06 222)",
-    "$type": "color"
-  },
-  "eui.color.brand.100": {
-    "$value": "oklch(85% 0.11 222)",
-    "$type": "color"
-  },
-  "eui.color.brand.200": {
-    "$value": "oklch(80% 0.15 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.300": {
-    "$value": "oklch(70% 0.18 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.400": {
-    "$value": "oklch(60% 0.19 220)",
-    "$type": "color"
-  },
-  "eui.color.brand.500": {
-    "$value": "oklch(50% 0.20 220)",
-    "$type": "color"
-  },
-  "eui.color.brand.600": {
-    "$value": "oklch(45% 0.19 220)",
-    "$type": "color"
-  },
-  "eui.color.brand.700": {
-    "$value": "oklch(40% 0.18 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.800": {
-    "$value": "oklch(37% 0.15 221)",
-    "$type": "color"
-  },
-  "eui.color.brand.900": {
-    "$value": "oklch(35% 0.11 222)",
-    "$type": "color"
-  },
-  "eui.color.brand.primary": {
-    "$value": "oklch(50% 0.20 220)",
-    "$type": "color"
-  },
-  "eui.color.neutral.50": {
-    "$value": "oklch(90% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.100": {
-    "$value": "oklch(88% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.200": {
-    "$value": "oklch(85% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.300": {
-    "$value": "oklch(80% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.400": {
-    "$value": "oklch(73% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.500": {
-    "$value": "oklch(65% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.600": {
-    "$value": "oklch(50% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.700": {
-    "$value": "oklch(35% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.800": {
     "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
+  "eui.color.accent.50": {
+    "$value": "oklch(97% 0.03 200)",
+    "$type": "color"
+  },
+  "eui.color.accent.100": {
+    "$value": "oklch(96% 0.05 200)",
+    "$type": "color"
+  },
+  "eui.color.accent.200": {
+    "$value": "oklch(91% 0.07 215)",
+    "$type": "color"
+  },
+  "eui.color.accent.300": {
+    "$value": "oklch(85% 0.08 220)",
+    "$type": "color"
+  },
+  "eui.color.accent.400": {
+    "$value": "oklch(80% 0.09 230)",
+    "$type": "color"
+  },
+  "eui.color.accent.500": {
+    "$value": "oklch(76% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.accent.600": {
+    "$value": "oklch(70% 0.13 225)",
+    "$type": "color"
+  },
+  "eui.color.accent.700": {
+    "$value": "oklch(65% 0.15 232)",
+    "$type": "color"
+  },
+  "eui.color.accent.800": {
+    "$value": "oklch(60% 0.14 232)",
+    "$type": "color"
+  },
+  "eui.color.accent.900": {
+    "$value": "oklch(57% 0.13 233)",
+    "$type": "color"
+  },
+  "eui.color.accent.primary": {
+    "$value": "oklch(70% 0.13 225)",
+    "$type": "color"
+  },
+  "eui.color.brand.50": {
+    "$value": "oklch(97% 0.02 232)",
+    "$type": "color"
+  },
+  "eui.color.brand.100": {
+    "$value": "oklch(93% 0.05 232)",
+    "$type": "color"
+  },
+  "eui.color.brand.200": {
+    "$value": "oklch(85% 0.06 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.300": {
+    "$value": "oklch(75% 0.08 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.400": {
+    "$value": "oklch(65% 0.09 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.500": {
+    "$value": "oklch(57% 0.09 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.600": {
+    "$value": "oklch(52% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.brand.700": {
+    "$value": "oklch(49% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.brand.800": {
+    "$value": "oklch(47% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.brand.900": {
+    "$value": "oklch(46% 0.09 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.primary": {
+    "$value": "oklch(49% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.neutral.50": {
+    "$value": "oklch(98% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.100": {
+    "$value": "oklch(96.5% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.200": {
+    "$value": "oklch(94% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.300": {
+    "$value": "oklch(90% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.400": {
+    "$value": "oklch(84% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.500": {
+    "$value": "oklch(75% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.600": {
+    "$value": "oklch(63% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.700": {
+    "$value": "oklch(48% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.800": {
+    "$value": "oklch(33% 0.00 0)",
+    "$type": "color"
+  },
   "eui.color.neutral.900": {
-    "$value": "oklch(17% 0.00 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.color.neutral.white": {
@@ -2997,19 +2997,19 @@
     "$type": "color"
   },
   "eui.color.border.default": {
-    "$value": "oklch(35% 0.00 0)",
+    "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
   "eui.color.border.subtle": {
-    "$value": "oklch(85% 0.00 0)",
+    "$value": "oklch(94% 0.00 0)",
     "$type": "color"
   },
   "eui.color.border.strong": {
-    "$value": "oklch(73% 0.00 0)",
+    "$value": "oklch(84% 0.00 0)",
     "$type": "color"
   },
   "eui.color.border.inverse": {
-    "$value": "oklch(25% 0.00 0)",
+    "$value": "oklch(33% 0.00 0)",
     "$type": "color"
   },
   "eui.color.focus.ring": {
