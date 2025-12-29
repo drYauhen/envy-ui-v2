@@ -79,16 +79,36 @@ export const ColorScaleViewer = ({ family, tokens, steps, title, description }: 
           const token = tokens[step];
           const oklchValue = token?.$value ?? '';
           const rgbValue = oklchValue ? formatRgbForFigma(oklchValue) : null;
+          const isBaseColor = (family === 'brand' && step === '700') || (family === 'accent' && step === '600');
           
           return (
-            <div key={step} style={{ padding: '0.5rem 0.25rem 0.25rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+            <div key={step} style={{ padding: '0.5rem 0.25rem 0.25rem', display: 'flex', flexDirection: 'column', gap: '0.35rem', position: 'relative' }}>
               <div
                 style={{
                   height: '96px',
                   borderRadius: '12px',
-                  background: oklchValue || '#e2e8f0'
+                  background: oklchValue || '#e2e8f0',
+                  border: isBaseColor ? '2px solid #0ea5e9' : undefined,
+                  boxShadow: isBaseColor ? '0 0 0 2px rgba(14, 165, 233, 0.2)' : undefined
                 }}
               />
+              {isBaseColor && (
+                <div style={{
+                  position: 'absolute',
+                  top: '0.75rem',
+                  right: '0.5rem',
+                  background: '#0ea5e9',
+                  color: '#ffffff',
+                  padding: '0.2rem 0.5rem',
+                  borderRadius: '4px',
+                  fontSize: '0.7rem',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>
+                  Base
+                </div>
+              )}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
                 <span style={{ fontWeight: 700 }}>{family}.{step}</span>
                 <span style={{ color: '#475569', fontSize: '0.9rem' }}>{oklchValue || '-'}</span>
