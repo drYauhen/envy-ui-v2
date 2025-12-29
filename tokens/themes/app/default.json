@@ -25,14 +25,14 @@
         "$description": "Baseline for minimal theme. All standard components use this value for consistent, stackable design."
       },
       "large": {
-        "$value": "4px",
+        "$value": "8px",
         "$type": "dimension",
-        "$description": "In minimal theme, same as default for consistency. Still stackable, no visual hierarchy needed."
+        "$description": "Used for cards, panels, dropdowns. Provides visual hierarchy above control elements (buttons, inputs)."
       },
       "extra-large": {
-        "$value": "6px",
+        "$value": "12px",
         "$type": "dimension",
-        "$description": "Slightly more than default even in minimal theme, for modals and prominent containers."
+        "$description": "Used for modals, sheets, prominent containers. Maximum rounding for overlay elements."
       },
       "full": {
         "$value": "{eui.radius.pill}",

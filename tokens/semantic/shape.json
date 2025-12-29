@@ -17,14 +17,14 @@
         "$description": "Baseline radius. Center point of the scale. In application context (app), used by all stackable form components (button, input, select, textarea) to ensure visual compatibility when composed together (e.g., input + button). In other contexts (site, report), components may use different radius levels based on visual hierarchy. Theme can shift this value (minimal=4px, friendly=8px), but all stackable components shift together, maintaining compatibility."
       },
       "large": {
-        "$value": "6px",
-        "$type": "dimension",
-        "$description": "Larger than default. Used for cards, panels, containers that need more visual weight."
-      },
-      "extra-large": {
         "$value": "8px",
         "$type": "dimension",
-        "$description": "Much larger than default. Used for modals, dialogs, prominent containers."
+        "$description": "Larger than default. Used for cards, panels, containers that need more visual weight. Optimized for app-default context/theme. Other contexts/themes may override this value."
+      },
+      "extra-large": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "Much larger than default. Used for modals, dialogs, prominent containers. Optimized for app-default context/theme. Other contexts/themes may override this value."
       },
       "full": {
         "$value": "{eui.radius.pill}",

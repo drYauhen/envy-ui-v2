@@ -2,7 +2,7 @@
   "eui": {
     "radius": {
       "pill": {
-        "$value": "999px",
+        "$value": "9999px",
         "$type": "dimension"
       }
     }
