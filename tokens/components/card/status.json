@@ -1,0 +1,93 @@
+{
+  "eui": {
+    "card": {
+      "status": {
+        "pending": {
+          "indicator": {
+            "$value": "{eui.color.status.application.pending}",
+            "$type": "color",
+            "$description": "Status indicator color for pending state. Left border bar color."
+          },
+          "indicatorWidth": {
+            "$value": "4px",
+            "$type": "dimension",
+            "$description": "Width of status indicator bar on left side of card."
+          }
+        },
+        "onTrack": {
+          "indicator": {
+            "$value": "{eui.color.status.application.onTrack}",
+            "$type": "color",
+            "$description": "Status indicator color for on track state. Left border bar color."
+          },
+          "indicatorWidth": {
+            "$value": "4px",
+            "$type": "dimension",
+            "$description": "Width of status indicator bar on left side of card."
+          }
+        },
+        "completed": {
+          "indicator": {
+            "$value": "{eui.color.status.application.completed}",
+            "$type": "color",
+            "$description": "Status indicator color for completed state. Left border bar color."
+          },
+          "indicatorWidth": {
+            "$value": "4px",
+            "$type": "dimension",
+            "$description": "Width of status indicator bar on left side of card."
+          }
+        },
+        "minorDisruption": {
+          "indicator": {
+            "$value": "{eui.color.status.application.minorDisruption}",
+            "$type": "color",
+            "$description": "Status indicator color for minor disruption state. Left border bar color."
+          },
+          "indicatorWidth": {
+            "$value": "4px",
+            "$type": "dimension",
+            "$description": "Width of status indicator bar on left side of card."
+          }
+        },
+        "majorDisruption": {
+          "indicator": {
+            "$value": "{eui.color.status.application.majorDisruption}",
+            "$type": "color",
+            "$description": "Status indicator color for major disruption state. Left border bar color."
+          },
+          "indicatorWidth": {
+            "$value": "4px",
+            "$type": "dimension",
+            "$description": "Width of status indicator bar on left side of card."
+          }
+        },
+        "upcoming": {
+          "indicator": {
+            "$value": "{eui.color.status.application.upcoming}",
+            "$type": "color",
+            "$description": "Status indicator color for upcoming state. Left border bar color."
+          },
+          "indicatorWidth": {
+            "$value": "4px",
+            "$type": "dimension",
+            "$description": "Width of status indicator bar on left side of card."
+          }
+        },
+        "discontinued": {
+          "indicator": {
+            "$value": "{eui.color.status.application.discontinued}",
+            "$type": "color",
+            "$description": "Status indicator color for discontinued state. Left border bar color."
+          },
+          "indicatorWidth": {
+            "$value": "4px",
+            "$type": "dimension",
+            "$description": "Width of status indicator bar on left side of card."
+          }
+        }
+      }
+    }
+  }
+}
+

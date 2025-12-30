@@ -1639,9 +1639,220 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Colors / Status",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.card.status.completed.indicator",
+          "type": "COLOR",
+          "value": "oklch(51% 0.16 256)"
+        },
+        {
+          "path": "eui.card.status.discontinued.indicator",
+          "type": "COLOR",
+          "value": "oklch(32% 0.01 61)"
+        },
+        {
+          "path": "eui.card.status.majorDisruption.indicator",
+          "type": "COLOR",
+          "value": "oklch(58% 0.23 26)"
+        },
+        {
+          "path": "eui.card.status.minorDisruption.indicator",
+          "type": "COLOR",
+          "value": "oklch(89% 0.18 95)"
+        },
+        {
+          "path": "eui.card.status.onTrack.indicator",
+          "type": "COLOR",
+          "value": "oklch(66% 0.18 137)"
+        },
+        {
+          "path": "eui.card.status.pending.indicator",
+          "type": "COLOR",
+          "value": "oklch(64% 0.00 326)"
+        },
+        {
+          "path": "eui.card.status.upcoming.indicator",
+          "type": "COLOR",
+          "value": "oklch(57% 0.10 312)"
+        },
+        {
+          "path": "eui.color.status.application.completed",
+          "type": "COLOR",
+          "value": "oklch(51% 0.16 256)"
+        },
+        {
+          "path": "eui.color.status.application.discontinued",
+          "type": "COLOR",
+          "value": "oklch(32% 0.01 61)"
+        },
+        {
+          "path": "eui.color.status.application.majorDisruption",
+          "type": "COLOR",
+          "value": "oklch(58% 0.23 26)"
+        },
+        {
+          "path": "eui.color.status.application.minorDisruption",
+          "type": "COLOR",
+          "value": "oklch(89% 0.18 95)"
+        },
+        {
+          "path": "eui.color.status.application.onTrack",
+          "type": "COLOR",
+          "value": "oklch(66% 0.18 137)"
+        },
+        {
+          "path": "eui.color.status.application.pending",
+          "type": "COLOR",
+          "value": "oklch(64% 0.00 326)"
+        },
+        {
+          "path": "eui.color.status.application.upcoming",
+          "type": "COLOR",
+          "value": "oklch(57% 0.10 312)"
+        },
+        {
+          "path": "eui.color.status.error.100",
+          "type": "COLOR",
+          "value": "oklch(74% 0.18 25)"
+        },
+        {
+          "path": "eui.color.status.error.50",
+          "type": "COLOR",
+          "value": "oklch(84% 0.10 24)"
+        },
+        {
+          "path": "eui.color.status.error.500",
+          "type": "COLOR",
+          "value": "oklch(64% 0.21 25)"
+        },
+        {
+          "path": "eui.color.status.error.600",
+          "type": "COLOR",
+          "value": "oklch(59% 0.20 25)"
+        },
+        {
+          "path": "eui.color.status.error.700",
+          "type": "COLOR",
+          "value": "oklch(56% 0.19 25)"
+        },
+        {
+          "path": "eui.color.status.info.100",
+          "type": "COLOR",
+          "value": "oklch(78% 0.13 237)"
+        },
+        {
+          "path": "eui.color.status.info.50",
+          "type": "COLOR",
+          "value": "oklch(88% 0.07 236)"
+        },
+        {
+          "path": "eui.color.status.info.500",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.color.status.info.600",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.color.status.info.700",
+          "type": "COLOR",
+          "value": "oklch(60% 0.14 237)"
+        },
+        {
+          "path": "eui.color.status.success.100",
+          "type": "COLOR",
+          "value": "oklch(82% 0.17 150)"
+        },
+        {
+          "path": "eui.color.status.success.50",
+          "type": "COLOR",
+          "value": "oklch(92% 0.10 149)"
+        },
+        {
+          "path": "eui.color.status.success.500",
+          "type": "COLOR",
+          "value": "oklch(72% 0.19 150)"
+        },
+        {
+          "path": "eui.color.status.success.600",
+          "type": "COLOR",
+          "value": "oklch(67% 0.18 150)"
+        },
+        {
+          "path": "eui.color.status.success.700",
+          "type": "COLOR",
+          "value": "oklch(64% 0.17 150)"
+        },
+        {
+          "path": "eui.color.status.warning.100",
+          "type": "COLOR",
+          "value": "oklch(87% 0.14 70)"
+        },
+        {
+          "path": "eui.color.status.warning.50",
+          "type": "COLOR",
+          "value": "oklch(97% 0.08 69)"
+        },
+        {
+          "path": "eui.color.status.warning.500",
+          "type": "COLOR",
+          "value": "oklch(77% 0.16 70)"
+        },
+        {
+          "path": "eui.color.status.warning.600",
+          "type": "COLOR",
+          "value": "oklch(72% 0.15 70)"
+        },
+        {
+          "path": "eui.color.status.warning.700",
+          "type": "COLOR",
+          "value": "oklch(69% 0.15 70)"
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Dimensions / Card",
       "mode": "default",
       "variables": [
+        {
+          "path": "eui.card.status.completed.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.discontinued.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.majorDisruption.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.minorDisruption.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.onTrack.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.pending.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.upcoming.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
         {
           "path": "eui.card.variant.elevated.border.width",
           "type": "FLOAT",
@@ -3124,147 +3335,6 @@
           "path": "eui.color.signal.keyboardFocus",
           "type": "COLOR",
           "value": "#ff4d00"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Status",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.status.application.completed",
-          "type": "COLOR",
-          "value": "oklch(51% 0.16 256)"
-        },
-        {
-          "path": "eui.color.status.application.discontinued",
-          "type": "COLOR",
-          "value": "oklch(32% 0.01 61)"
-        },
-        {
-          "path": "eui.color.status.application.majorDisruption",
-          "type": "COLOR",
-          "value": "oklch(58% 0.23 26)"
-        },
-        {
-          "path": "eui.color.status.application.minorDisruption",
-          "type": "COLOR",
-          "value": "oklch(89% 0.18 95)"
-        },
-        {
-          "path": "eui.color.status.application.onTrack",
-          "type": "COLOR",
-          "value": "oklch(66% 0.18 137)"
-        },
-        {
-          "path": "eui.color.status.application.pending",
-          "type": "COLOR",
-          "value": "oklch(64% 0.00 326)"
-        },
-        {
-          "path": "eui.color.status.application.upcoming",
-          "type": "COLOR",
-          "value": "oklch(57% 0.10 312)"
-        },
-        {
-          "path": "eui.color.status.error.100",
-          "type": "COLOR",
-          "value": "oklch(74% 0.18 25)"
-        },
-        {
-          "path": "eui.color.status.error.50",
-          "type": "COLOR",
-          "value": "oklch(84% 0.10 24)"
-        },
-        {
-          "path": "eui.color.status.error.500",
-          "type": "COLOR",
-          "value": "oklch(64% 0.21 25)"
-        },
-        {
-          "path": "eui.color.status.error.600",
-          "type": "COLOR",
-          "value": "oklch(59% 0.20 25)"
-        },
-        {
-          "path": "eui.color.status.error.700",
-          "type": "COLOR",
-          "value": "oklch(56% 0.19 25)"
-        },
-        {
-          "path": "eui.color.status.info.100",
-          "type": "COLOR",
-          "value": "oklch(78% 0.13 237)"
-        },
-        {
-          "path": "eui.color.status.info.50",
-          "type": "COLOR",
-          "value": "oklch(88% 0.07 236)"
-        },
-        {
-          "path": "eui.color.status.info.500",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.color.status.info.600",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
-        },
-        {
-          "path": "eui.color.status.info.700",
-          "type": "COLOR",
-          "value": "oklch(60% 0.14 237)"
-        },
-        {
-          "path": "eui.color.status.success.100",
-          "type": "COLOR",
-          "value": "oklch(82% 0.17 150)"
-        },
-        {
-          "path": "eui.color.status.success.50",
-          "type": "COLOR",
-          "value": "oklch(92% 0.10 149)"
-        },
-        {
-          "path": "eui.color.status.success.500",
-          "type": "COLOR",
-          "value": "oklch(72% 0.19 150)"
-        },
-        {
-          "path": "eui.color.status.success.600",
-          "type": "COLOR",
-          "value": "oklch(67% 0.18 150)"
-        },
-        {
-          "path": "eui.color.status.success.700",
-          "type": "COLOR",
-          "value": "oklch(64% 0.17 150)"
-        },
-        {
-          "path": "eui.color.status.warning.100",
-          "type": "COLOR",
-          "value": "oklch(87% 0.14 70)"
-        },
-        {
-          "path": "eui.color.status.warning.50",
-          "type": "COLOR",
-          "value": "oklch(97% 0.08 69)"
-        },
-        {
-          "path": "eui.color.status.warning.500",
-          "type": "COLOR",
-          "value": "oklch(77% 0.16 70)"
-        },
-        {
-          "path": "eui.color.status.warning.600",
-          "type": "COLOR",
-          "value": "oklch(72% 0.15 70)"
-        },
-        {
-          "path": "eui.color.status.warning.700",
-          "type": "COLOR",
-          "value": "oklch(69% 0.15 70)"
         }
       ]
     },

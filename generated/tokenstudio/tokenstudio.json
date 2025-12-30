@@ -859,6 +859,62 @@
     "$value": "1",
     "$type": "lineHeight"
   },
+  "eui.card.status.pending.indicator": {
+    "$value": "oklch(64% 0.00 326)",
+    "$type": "color"
+  },
+  "eui.card.status.pending.indicatorWidth": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.status.onTrack.indicator": {
+    "$value": "oklch(66% 0.18 137)",
+    "$type": "color"
+  },
+  "eui.card.status.onTrack.indicatorWidth": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.status.completed.indicator": {
+    "$value": "oklch(51% 0.16 256)",
+    "$type": "color"
+  },
+  "eui.card.status.completed.indicatorWidth": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.status.minorDisruption.indicator": {
+    "$value": "oklch(89% 0.18 95)",
+    "$type": "color"
+  },
+  "eui.card.status.minorDisruption.indicatorWidth": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.status.majorDisruption.indicator": {
+    "$value": "oklch(58% 0.23 26)",
+    "$type": "color"
+  },
+  "eui.card.status.majorDisruption.indicatorWidth": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.status.upcoming.indicator": {
+    "$value": "oklch(57% 0.10 312)",
+    "$type": "color"
+  },
+  "eui.card.status.upcoming.indicatorWidth": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.card.status.discontinued.indicator": {
+    "$value": "oklch(32% 0.01 61)",
+    "$type": "color"
+  },
+  "eui.card.status.discontinued.indicatorWidth": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
   "eui.card.variant.elevated.shadow": {
     "$value": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)",
     "$type": "boxShadow"

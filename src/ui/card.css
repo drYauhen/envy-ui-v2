@@ -57,3 +57,66 @@
   --eui-card-radius: var(--eui-card-variant-strong-radius);
 }
 
+/* ============================================================================
+   Card Component - Status Indicators (Compositional)
+   ============================================================================ */
+
+/* Base status indicator - uses ::before pseudo-element */
+[data-eui-context] .eui-card[data-eui-status] {
+  position: relative;
+  padding-left: calc(var(--eui-card-status-indicator-width, 4px) + 0px);
+}
+
+[data-eui-context] .eui-card[data-eui-status]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--eui-card-status-indicator-width, 4px);
+  background-color: var(--eui-card-status-indicator-color);
+  border-radius: var(--eui-card-radius, 8px) 0 0 var(--eui-card-radius, 8px);
+}
+
+/* Status: Pending */
+[data-eui-context] .eui-card[data-eui-status='pending'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-pending-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-pending-indicator-width);
+}
+
+/* Status: On Track */
+[data-eui-context] .eui-card[data-eui-status='onTrack'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-on-track-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-on-track-indicator-width);
+}
+
+/* Status: Completed */
+[data-eui-context] .eui-card[data-eui-status='completed'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-completed-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-completed-indicator-width);
+}
+
+/* Status: Minor Disruption */
+[data-eui-context] .eui-card[data-eui-status='minorDisruption'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-minor-disruption-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-minor-disruption-indicator-width);
+}
+
+/* Status: Major Disruption */
+[data-eui-context] .eui-card[data-eui-status='majorDisruption'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-major-disruption-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-major-disruption-indicator-width);
+}
+
+/* Status: Upcoming */
+[data-eui-context] .eui-card[data-eui-status='upcoming'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-upcoming-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-upcoming-indicator-width);
+}
+
+/* Status: Discontinued */
+[data-eui-context] .eui-card[data-eui-status='discontinued'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-discontinued-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-discontinued-indicator-width);
+}
+
