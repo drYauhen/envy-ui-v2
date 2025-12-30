@@ -57,3 +57,4 @@ console.log('\n' + '='.repeat(80));
 console.log('✅ Accent-700 updated!');
 console.log('📝 Next step: Run "node scripts/generate-tonal-scale-from-base-700-accent.mjs" to regenerate the scale');
 
+
