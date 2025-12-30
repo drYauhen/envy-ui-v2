@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import semanticButton from '../../tokens/components/button/colors.json';
-import focusTokens from '../../tokens/components/button/focus.json';
-import sizeTokens from '../../tokens/components/button/size.json';
-import shapeTokens from '../../tokens/components/button/shape.json';
-import semanticBackground from '../../tokens/semantic/colors/background.json';
-import semanticFocus from '../../tokens/semantic/colors/focus.json';
-import foundationBrand from '../../tokens/foundations/colors/brand.json';
-import foundationNeutral from '../../tokens/foundations/colors/neutral.json';
-import foundationAccent from '../../tokens/foundations/colors/accent.json';
-import { TokenPage, TokenSection } from '../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../viewers/tokens/token-utils';
+import semanticButton from '../../../tokens/components/button/colors.json';
+import focusTokens from '../../../tokens/components/button/focus.json';
+import sizeTokens from '../../../tokens/components/button/size.json';
+import shapeTokens from '../../../tokens/components/button/shape.json';
+import semanticBackground from '../../../tokens/semantic/colors/background.json';
+import semanticFocus from '../../../tokens/semantic/colors/focus.json';
+import foundationBrand from '../../../tokens/foundations/colors/brand.json';
+import foundationNeutral from '../../../tokens/foundations/colors/neutral.json';
+import foundationAccent from '../../../tokens/foundations/colors/accent.json';
+import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 
@@ -49,7 +49,7 @@ const sizeRefs = byPrefix('eui.button.size');
 const shapeRefs = byPrefix('eui.button.shape');
 
 const meta: Meta = {
-  title: 'Tokens/Components/Button/Colors',
+  title: 'Tokens/Components/Button',
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen'

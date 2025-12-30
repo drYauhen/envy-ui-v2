@@ -175,77 +175,77 @@
           "label": "100",
           "path": "eui.color.accent.100",
           "cssVar": "--eui-color-accent-100",
-          "value": "oklch(96% 0.05 200)"
+          "value": "oklch(90% 0.11 236)"
         },
         {
           "id": "200",
           "label": "200",
           "path": "eui.color.accent.200",
           "cssVar": "--eui-color-accent-200",
-          "value": "oklch(91% 0.07 215)"
+          "value": "oklch(83% 0.13 237)"
         },
         {
           "id": "300",
           "label": "300",
           "path": "eui.color.accent.300",
           "cssVar": "--eui-color-accent-300",
-          "value": "oklch(85% 0.08 220)"
+          "value": "oklch(78% 0.14 237)"
         },
         {
           "id": "400",
           "label": "400",
           "path": "eui.color.accent.400",
           "cssVar": "--eui-color-accent-400",
-          "value": "oklch(80% 0.09 230)"
+          "value": "oklch(73% 0.15 237)"
         },
         {
           "id": "50",
           "label": "50",
           "path": "eui.color.accent.50",
           "cssVar": "--eui-color-accent-50",
-          "value": "oklch(97% 0.03 200)"
+          "value": "oklch(98% 0.07 236)"
         },
         {
           "id": "500",
           "label": "500",
           "path": "eui.color.accent.500",
           "cssVar": "--eui-color-accent-500",
-          "value": "oklch(76% 0.10 230)"
+          "value": "oklch(67% 0.15 237)"
         },
         {
           "id": "600",
           "label": "600",
           "path": "eui.color.accent.600",
           "cssVar": "--eui-color-accent-600",
-          "value": "oklch(70% 0.13 225)"
+          "value": "oklch(68% 0.15 237)"
         },
         {
           "id": "700",
           "label": "700",
           "path": "eui.color.accent.700",
           "cssVar": "--eui-color-accent-700",
-          "value": "oklch(65% 0.15 232)"
+          "value": "oklch(63% 0.15 237)"
         },
         {
           "id": "800",
           "label": "800",
           "path": "eui.color.accent.800",
           "cssVar": "--eui-color-accent-800",
-          "value": "oklch(60% 0.14 232)"
+          "value": "oklch(58% 0.14 237)"
         },
         {
           "id": "900",
           "label": "900",
           "path": "eui.color.accent.900",
           "cssVar": "--eui-color-accent-900",
-          "value": "oklch(57% 0.13 233)"
+          "value": "oklch(53% 0.13 238)"
         },
         {
           "id": "primary",
           "label": "Primary",
           "path": "eui.color.accent.primary",
           "cssVar": "--eui-color-accent-primary",
-          "value": "oklch(70% 0.13 225)"
+          "value": "oklch(68% 0.15 237)"
         }
       ]
     },
@@ -267,32 +267,193 @@
       "title": "Status",
       "tokens": [
         {
-          "id": "error",
-          "label": "Error",
-          "path": "eui.color.status.error",
-          "cssVar": "--eui-color-status-error",
-          "value": "#ef4444"
+          "id": "application-completed",
+          "label": "Application Completed",
+          "path": "eui.color.status.application.completed",
+          "cssVar": "--eui-color-status-application-completed",
+          "value": "oklch(51% 0.16 256)"
         },
         {
-          "id": "info",
-          "label": "Info",
-          "path": "eui.color.status.info",
-          "cssVar": "--eui-color-status-info",
-          "value": "#0ea5e9"
+          "id": "application-discontinued",
+          "label": "Application Discontinued",
+          "path": "eui.color.status.application.discontinued",
+          "cssVar": "--eui-color-status-application-discontinued",
+          "value": "oklch(32% 0.01 61)"
         },
         {
-          "id": "success",
-          "label": "Success",
-          "path": "eui.color.status.success",
-          "cssVar": "--eui-color-status-success",
-          "value": "#22c55e"
+          "id": "application-majordisruption",
+          "label": "Application MajorDisruption",
+          "path": "eui.color.status.application.majorDisruption",
+          "cssVar": "--eui-color-status-application-major-disruption",
+          "value": "oklch(58% 0.23 26)"
         },
         {
-          "id": "warning",
-          "label": "Warning",
-          "path": "eui.color.status.warning",
-          "cssVar": "--eui-color-status-warning",
-          "value": "#f59e0b"
+          "id": "application-minordisruption",
+          "label": "Application MinorDisruption",
+          "path": "eui.color.status.application.minorDisruption",
+          "cssVar": "--eui-color-status-application-minor-disruption",
+          "value": "oklch(89% 0.18 95)"
+        },
+        {
+          "id": "application-ontrack",
+          "label": "Application OnTrack",
+          "path": "eui.color.status.application.onTrack",
+          "cssVar": "--eui-color-status-application-on-track",
+          "value": "oklch(66% 0.18 137)"
+        },
+        {
+          "id": "application-pending",
+          "label": "Application Pending",
+          "path": "eui.color.status.application.pending",
+          "cssVar": "--eui-color-status-application-pending",
+          "value": "oklch(64% 0.00 326)"
+        },
+        {
+          "id": "application-upcoming",
+          "label": "Application Upcoming",
+          "path": "eui.color.status.application.upcoming",
+          "cssVar": "--eui-color-status-application-upcoming",
+          "value": "oklch(57% 0.10 312)"
+        },
+        {
+          "id": "error-100",
+          "label": "Error 100",
+          "path": "eui.color.status.error.100",
+          "cssVar": "--eui-color-status-error-100",
+          "value": "oklch(74% 0.18 25)"
+        },
+        {
+          "id": "error-50",
+          "label": "Error 50",
+          "path": "eui.color.status.error.50",
+          "cssVar": "--eui-color-status-error-50",
+          "value": "oklch(84% 0.10 24)"
+        },
+        {
+          "id": "error-500",
+          "label": "Error 500",
+          "path": "eui.color.status.error.500",
+          "cssVar": "--eui-color-status-error-500",
+          "value": "oklch(64% 0.21 25)"
+        },
+        {
+          "id": "error-600",
+          "label": "Error 600",
+          "path": "eui.color.status.error.600",
+          "cssVar": "--eui-color-status-error-600",
+          "value": "oklch(59% 0.20 25)"
+        },
+        {
+          "id": "error-700",
+          "label": "Error 700",
+          "path": "eui.color.status.error.700",
+          "cssVar": "--eui-color-status-error-700",
+          "value": "oklch(56% 0.19 25)"
+        },
+        {
+          "id": "info-100",
+          "label": "Info 100",
+          "path": "eui.color.status.info.100",
+          "cssVar": "--eui-color-status-info-100",
+          "value": "oklch(78% 0.13 237)"
+        },
+        {
+          "id": "info-50",
+          "label": "Info 50",
+          "path": "eui.color.status.info.50",
+          "cssVar": "--eui-color-status-info-50",
+          "value": "oklch(88% 0.07 236)"
+        },
+        {
+          "id": "info-500",
+          "label": "Info 500",
+          "path": "eui.color.status.info.500",
+          "cssVar": "--eui-color-status-info-500",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "id": "info-600",
+          "label": "Info 600",
+          "path": "eui.color.status.info.600",
+          "cssVar": "--eui-color-status-info-600",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "id": "info-700",
+          "label": "Info 700",
+          "path": "eui.color.status.info.700",
+          "cssVar": "--eui-color-status-info-700",
+          "value": "oklch(60% 0.14 237)"
+        },
+        {
+          "id": "success-100",
+          "label": "Success 100",
+          "path": "eui.color.status.success.100",
+          "cssVar": "--eui-color-status-success-100",
+          "value": "oklch(82% 0.17 150)"
+        },
+        {
+          "id": "success-50",
+          "label": "Success 50",
+          "path": "eui.color.status.success.50",
+          "cssVar": "--eui-color-status-success-50",
+          "value": "oklch(92% 0.10 149)"
+        },
+        {
+          "id": "success-500",
+          "label": "Success 500",
+          "path": "eui.color.status.success.500",
+          "cssVar": "--eui-color-status-success-500",
+          "value": "oklch(72% 0.19 150)"
+        },
+        {
+          "id": "success-600",
+          "label": "Success 600",
+          "path": "eui.color.status.success.600",
+          "cssVar": "--eui-color-status-success-600",
+          "value": "oklch(67% 0.18 150)"
+        },
+        {
+          "id": "success-700",
+          "label": "Success 700",
+          "path": "eui.color.status.success.700",
+          "cssVar": "--eui-color-status-success-700",
+          "value": "oklch(64% 0.17 150)"
+        },
+        {
+          "id": "warning-100",
+          "label": "Warning 100",
+          "path": "eui.color.status.warning.100",
+          "cssVar": "--eui-color-status-warning-100",
+          "value": "oklch(87% 0.14 70)"
+        },
+        {
+          "id": "warning-50",
+          "label": "Warning 50",
+          "path": "eui.color.status.warning.50",
+          "cssVar": "--eui-color-status-warning-50",
+          "value": "oklch(97% 0.08 69)"
+        },
+        {
+          "id": "warning-500",
+          "label": "Warning 500",
+          "path": "eui.color.status.warning.500",
+          "cssVar": "--eui-color-status-warning-500",
+          "value": "oklch(77% 0.16 70)"
+        },
+        {
+          "id": "warning-600",
+          "label": "Warning 600",
+          "path": "eui.color.status.warning.600",
+          "cssVar": "--eui-color-status-warning-600",
+          "value": "oklch(72% 0.15 70)"
+        },
+        {
+          "id": "warning-700",
+          "label": "Warning 700",
+          "path": "eui.color.status.warning.700",
+          "cssVar": "--eui-color-status-warning-700",
+          "value": "oklch(69% 0.15 70)"
         }
       ]
     },

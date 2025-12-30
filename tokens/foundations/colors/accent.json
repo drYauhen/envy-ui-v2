@@ -3,54 +3,54 @@
     "color": {
       "accent": {
         "50": {
-          "$value": "oklch(97% 0.03 200)",
+          "$value": "oklch(98% 0.07 236)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, lightness and chroma adjusted for less intense, more subtle pastel appearance)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
         },
         "100": {
-          "$value": "oklch(96% 0.05 200)",
+          "$value": "oklch(90% 0.11 236)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, chroma adjusted for less intense, more subtle pastel appearance)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
         },
         "200": {
-          "$value": "oklch(91% 0.07 215)",
+          "$value": "oklch(83% 0.13 237)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, chroma increased for more vibrant pastel appearance)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
         },
         "300": {
-          "$value": "oklch(85% 0.08 220)",
+          "$value": "oklch(78% 0.14 237)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution, chroma increased for more vibrant pastel appearance)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
         },
         "400": {
-          "$value": "oklch(80% 0.09 230)",
+          "$value": "oklch(73% 0.15 237)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
         },
         "500": {
-          "$value": "oklch(76% 0.10 230)",
+          "$value": "oklch(67% 0.15 237)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale (asymmetric distribution)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
         },
         "600": {
-          "$value": "oklch(70% 0.13 225)",
+          "$value": "oklch(68% 0.15 237)",
           "$type": "color",
-          "$description": "Viking Blue from Envy UI v1 - anchor for accent scale (hue adjusted towards blue, lightness adjusted closer to 700, chroma slightly reduced for less intense appearance on background)"
+          "$description": "Base accent color - canonical accent color (anchor) - derived from status.info.500 using status.info algorithm"
         },
         "700": {
-          "$value": "oklch(65% 0.15 232)",
+          "$value": "oklch(63% 0.15 237)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale - dark shade (chroma increased for vibrant, slightly more intense appearance)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, dark shades for text/icons)"
         },
         "800": {
-          "$value": "oklch(60% 0.14 232)",
+          "$value": "oklch(58% 0.14 237)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale - dark shade (chroma increased for vibrant, slightly more intense appearance)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, dark shades for text/icons)"
         },
         "900": {
-          "$value": "oklch(57% 0.13 233)",
+          "$value": "oklch(53% 0.13 238)",
           "$type": "color",
-          "$description": "Generated from base 600 using OKLCH tonal scale - dark shade (chroma increased for vibrant, slightly more intense appearance)"
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, dark shades for text/icons)"
         }
       }
     }

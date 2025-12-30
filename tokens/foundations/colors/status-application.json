@@ -1,0 +1,46 @@
+{
+  "eui": {
+    "color": {
+      "status": {
+        "application": {
+          "pending": {
+            "$value": "oklch(64% 0.00 326)",
+            "$type": "color",
+            "$description": "Application status: pending state. Used for projects, plans, or items in pending state. Separate from UI status colors (see status.json)."
+          },
+          "onTrack": {
+            "$value": "oklch(66% 0.18 137)",
+            "$type": "color",
+            "$description": "Application status: on track. Used for projects or items progressing as expected."
+          },
+          "completed": {
+            "$value": "oklch(51% 0.16 256)",
+            "$type": "color",
+            "$description": "Application status: completed. Used for finished projects, plans, or items."
+          },
+          "minorDisruption": {
+            "$value": "oklch(89% 0.18 95)",
+            "$type": "color",
+            "$description": "Application status: minor disruption. Used for projects or items with minor issues."
+          },
+          "majorDisruption": {
+            "$value": "oklch(58% 0.23 26)",
+            "$type": "color",
+            "$description": "Application status: major disruption. Used for projects or items with significant issues."
+          },
+          "upcoming": {
+            "$value": "oklch(57% 0.10 312)",
+            "$type": "color",
+            "$description": "Application status: upcoming. Used for future projects, plans, or scheduled items."
+          },
+          "discontinued": {
+            "$value": "oklch(32% 0.01 61)",
+            "$type": "color",
+            "$description": "Application status: discontinued. Used for cancelled or stopped projects/items."
+          }
+        }
+      }
+    }
+  }
+}
+

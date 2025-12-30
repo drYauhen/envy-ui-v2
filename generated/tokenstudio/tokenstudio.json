@@ -8,51 +8,67 @@
     "$type": "borderStyle"
   },
   "eui.alert-banner.colors.background.info": {
-    "$value": "oklch(65% 0.18 240 / 0.1)",
+    "$value": "oklch(88% 0.07 236)",
     "$type": "color"
   },
   "eui.alert-banner.colors.background.warning": {
-    "$value": "oklch(75% 0.15 75 / 0.15)",
+    "$value": "oklch(97% 0.08 69)",
     "$type": "color"
   },
   "eui.alert-banner.colors.background.error": {
-    "$value": "oklch(60% 0.22 25 / 0.1)",
+    "$value": "oklch(84% 0.10 24)",
     "$type": "color"
   },
   "eui.alert-banner.colors.background.success": {
-    "$value": "oklch(65% 0.20 145 / 0.1)",
+    "$value": "oklch(92% 0.10 149)",
     "$type": "color"
   },
   "eui.alert-banner.colors.border.info": {
-    "$value": "#0ea5e9",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.alert-banner.colors.border.warning": {
-    "$value": "#f59e0b",
+    "$value": "oklch(72% 0.15 70)",
     "$type": "color"
   },
   "eui.alert-banner.colors.border.error": {
-    "$value": "#ef4444",
+    "$value": "oklch(59% 0.20 25)",
     "$type": "color"
   },
   "eui.alert-banner.colors.border.success": {
-    "$value": "#22c55e",
+    "$value": "oklch(67% 0.18 150)",
     "$type": "color"
   },
   "eui.alert-banner.colors.text.info": {
-    "$value": "#0ea5e9",
+    "$value": "oklch(60% 0.14 237)",
     "$type": "color"
   },
   "eui.alert-banner.colors.text.warning": {
-    "$value": "#f59e0b",
+    "$value": "oklch(69% 0.15 70)",
     "$type": "color"
   },
   "eui.alert-banner.colors.text.error": {
-    "$value": "#ef4444",
+    "$value": "oklch(56% 0.19 25)",
     "$type": "color"
   },
   "eui.alert-banner.colors.text.success": {
-    "$value": "#22c55e",
+    "$value": "oklch(64% 0.17 150)",
+    "$type": "color"
+  },
+  "eui.alert-banner.colors.icon.info": {
+    "$value": "oklch(63% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.alert-banner.colors.icon.warning": {
+    "$value": "oklch(72% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.alert-banner.colors.icon.error": {
+    "$value": "oklch(59% 0.20 25)",
+    "$type": "color"
+  },
+  "eui.alert-banner.colors.icon.success": {
+    "$value": "oklch(67% 0.18 150)",
     "$type": "color"
   },
   "eui.alert-banner.spacing.padding": {
@@ -124,7 +140,7 @@
     "$type": "color"
   },
   "eui.avatar.border.colorLead": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.avatar.background.fallback": {
@@ -304,15 +320,15 @@
     "$type": "color"
   },
   "eui.button.accent.background.base": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.button.accent.background.hover": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.button.accent.background.active": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.button.accent.background.disabled": {
@@ -320,7 +336,7 @@
     "$type": "color"
   },
   "eui.button.accent.background.selected": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.button.accent.label.base": {
@@ -344,15 +360,15 @@
     "$type": "color"
   },
   "eui.button.accent-finished.background.base": {
-    "$value": "oklch(91% 0.07 215)",
+    "$value": "oklch(83% 0.13 237)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.hover": {
-    "$value": "oklch(91% 0.07 215)",
+    "$value": "oklch(83% 0.13 237)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.active": {
-    "$value": "oklch(91% 0.07 215)",
+    "$value": "oklch(83% 0.13 237)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.disabled": {
@@ -360,19 +376,19 @@
     "$type": "color"
   },
   "eui.button.accent-finished.background.selected": {
-    "$value": "oklch(91% 0.07 215)",
+    "$value": "oklch(83% 0.13 237)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.base": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.hover": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.active": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.disabled": {
@@ -380,7 +396,7 @@
     "$type": "color"
   },
   "eui.button.accent-finished.label.selected": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.button.focus.ring.color.derived.base": {
@@ -684,15 +700,15 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selected": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selectedHover": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.active": {
-    "$value": "oklch(97% 0.03 200)",
+    "$value": "oklch(98% 0.07 236)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.today": {
@@ -732,11 +748,11 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.border.selected": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.calendar.colors.range.background": {
-    "$value": "oklch(97% 0.03 200)",
+    "$value": "oklch(98% 0.07 236)",
     "$type": "color"
   },
   "eui.calendar.colors.range.text": {
@@ -1012,7 +1028,7 @@
     "$type": "color"
   },
   "eui.checkbox.border.checked": {
-    "$value": "oklch(60% 0.14 232)",
+    "$value": "oklch(58% 0.14 237)",
     "$type": "color"
   },
   "eui.checkbox.border.disabled": {
@@ -1028,7 +1044,7 @@
     "$type": "color"
   },
   "eui.checkbox.border.checkedHover": {
-    "$value": "oklch(60% 0.14 232)",
+    "$value": "oklch(58% 0.14 237)",
     "$type": "color"
   },
   "eui.checkbox.border.indeterminate": {
@@ -1048,7 +1064,7 @@
     "$type": "color"
   },
   "eui.checkbox.background.checked": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.checkbox.background.disabled": {
@@ -1064,7 +1080,7 @@
     "$type": "color"
   },
   "eui.checkbox.background.checkedHover": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.checkbox.background.indeterminate": {
@@ -1088,7 +1104,7 @@
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminate": {
-    "$value": "oklch(80% 0.09 230)",
+    "$value": "oklch(73% 0.15 237)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminateDisabled": {
@@ -1148,7 +1164,7 @@
     "$type": "dimension"
   },
   "eui.counter.colors.pill.default.background": {
-    "$value": "oklch(96% 0.05 200)",
+    "$value": "oklch(90% 0.11 236)",
     "$type": "color"
   },
   "eui.counter.colors.pill.default.color": {
@@ -1196,11 +1212,11 @@
     "$type": "color"
   },
   "eui.counter.colors.filter.background": {
-    "$value": "oklch(91% 0.07 215)",
+    "$value": "oklch(83% 0.13 237)",
     "$type": "color"
   },
   "eui.counter.colors.filter.color": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.counter.colors.filter.border": {
@@ -1208,7 +1224,7 @@
     "$type": "color"
   },
   "eui.counter.colors.filter.icon.color": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.counter.shape.text.radius": {
@@ -1556,7 +1572,7 @@
     "$type": "color"
   },
   "eui.input.border.error": {
-    "$value": "#ef4444",
+    "$value": "oklch(59% 0.20 25)",
     "$type": "color"
   },
   "eui.input.background.base": {
@@ -2196,7 +2212,7 @@
     "$type": "color"
   },
   "eui.switch.track.background.on": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.switch.track.background.disabled": {
@@ -2348,7 +2364,7 @@
     "$type": "color"
   },
   "eui.table.colors.row.background.selected": {
-    "$value": "oklch(97% 0.03 200)",
+    "$value": "oklch(98% 0.07 236)",
     "$type": "color"
   },
   "eui.table.colors.cell.text": {
@@ -2844,47 +2860,47 @@
     "$type": "color"
   },
   "eui.color.accent.50": {
-    "$value": "oklch(97% 0.03 200)",
+    "$value": "oklch(98% 0.07 236)",
     "$type": "color"
   },
   "eui.color.accent.100": {
-    "$value": "oklch(96% 0.05 200)",
+    "$value": "oklch(90% 0.11 236)",
     "$type": "color"
   },
   "eui.color.accent.200": {
-    "$value": "oklch(91% 0.07 215)",
+    "$value": "oklch(83% 0.13 237)",
     "$type": "color"
   },
   "eui.color.accent.300": {
-    "$value": "oklch(85% 0.08 220)",
+    "$value": "oklch(78% 0.14 237)",
     "$type": "color"
   },
   "eui.color.accent.400": {
-    "$value": "oklch(80% 0.09 230)",
+    "$value": "oklch(73% 0.15 237)",
     "$type": "color"
   },
   "eui.color.accent.500": {
-    "$value": "oklch(76% 0.10 230)",
+    "$value": "oklch(67% 0.15 237)",
     "$type": "color"
   },
   "eui.color.accent.600": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.color.accent.700": {
-    "$value": "oklch(65% 0.15 232)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.color.accent.800": {
-    "$value": "oklch(60% 0.14 232)",
+    "$value": "oklch(58% 0.14 237)",
     "$type": "color"
   },
   "eui.color.accent.900": {
-    "$value": "oklch(57% 0.13 233)",
+    "$value": "oklch(53% 0.13 238)",
     "$type": "color"
   },
   "eui.color.accent.primary": {
-    "$value": "oklch(70% 0.13 225)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.color.brand.50": {
@@ -2980,20 +2996,112 @@
     "$type": "color",
     "$description": "Keyboard-only focus ring (a11y)"
   },
-  "eui.color.status.success": {
-    "$value": "#22c55e",
+  "eui.color.status.application.pending": {
+    "$value": "oklch(64% 0.00 326)",
     "$type": "color"
   },
-  "eui.color.status.warning": {
-    "$value": "#f59e0b",
+  "eui.color.status.application.onTrack": {
+    "$value": "oklch(66% 0.18 137)",
     "$type": "color"
   },
-  "eui.color.status.error": {
-    "$value": "#ef4444",
+  "eui.color.status.application.completed": {
+    "$value": "oklch(51% 0.16 256)",
     "$type": "color"
   },
-  "eui.color.status.info": {
-    "$value": "#0ea5e9",
+  "eui.color.status.application.minorDisruption": {
+    "$value": "oklch(89% 0.18 95)",
+    "$type": "color"
+  },
+  "eui.color.status.application.majorDisruption": {
+    "$value": "oklch(58% 0.23 26)",
+    "$type": "color"
+  },
+  "eui.color.status.application.upcoming": {
+    "$value": "oklch(57% 0.10 312)",
+    "$type": "color"
+  },
+  "eui.color.status.application.discontinued": {
+    "$value": "oklch(32% 0.01 61)",
+    "$type": "color"
+  },
+  "eui.color.status.success.50": {
+    "$value": "oklch(92% 0.10 149)",
+    "$type": "color"
+  },
+  "eui.color.status.success.100": {
+    "$value": "oklch(82% 0.17 150)",
+    "$type": "color"
+  },
+  "eui.color.status.success.500": {
+    "$value": "oklch(72% 0.19 150)",
+    "$type": "color"
+  },
+  "eui.color.status.success.600": {
+    "$value": "oklch(67% 0.18 150)",
+    "$type": "color"
+  },
+  "eui.color.status.success.700": {
+    "$value": "oklch(64% 0.17 150)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.50": {
+    "$value": "oklch(97% 0.08 69)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.100": {
+    "$value": "oklch(87% 0.14 70)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.500": {
+    "$value": "oklch(77% 0.16 70)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.600": {
+    "$value": "oklch(72% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.700": {
+    "$value": "oklch(69% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.color.status.error.50": {
+    "$value": "oklch(84% 0.10 24)",
+    "$type": "color"
+  },
+  "eui.color.status.error.100": {
+    "$value": "oklch(74% 0.18 25)",
+    "$type": "color"
+  },
+  "eui.color.status.error.500": {
+    "$value": "oklch(64% 0.21 25)",
+    "$type": "color"
+  },
+  "eui.color.status.error.600": {
+    "$value": "oklch(59% 0.20 25)",
+    "$type": "color"
+  },
+  "eui.color.status.error.700": {
+    "$value": "oklch(56% 0.19 25)",
+    "$type": "color"
+  },
+  "eui.color.status.info.50": {
+    "$value": "oklch(88% 0.07 236)",
+    "$type": "color"
+  },
+  "eui.color.status.info.100": {
+    "$value": "oklch(78% 0.13 237)",
+    "$type": "color"
+  },
+  "eui.color.status.info.500": {
+    "$value": "oklch(68% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.status.info.600": {
+    "$value": "oklch(63% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.status.info.700": {
+    "$value": "oklch(60% 0.14 237)",
     "$type": "color"
   },
   "eui.color.border.default": {

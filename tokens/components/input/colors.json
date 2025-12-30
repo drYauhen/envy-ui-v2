@@ -45,9 +45,9 @@
           "$description": "Border color for disabled input"
         },
         "error": {
-          "$value": "{eui.color.status.error}",
+          "$value": "{eui.color.status.error.600}",
           "$type": "color",
-          "$description": "Border color for error state"
+          "$description": "Border color for error state. Uses status.error.600 (darker) for better visibility."
         }
       },
       "text": {

@@ -5,68 +5,90 @@
       "colors": {
         "background": {
           "info": {
-            "$value": "oklch(65% 0.18 240 / 0.1)",
+            "$value": "{eui.color.status.info.50}",
             "$type": "color",
-            "$description": "Background color for info variant (light tint with 10% opacity)"
+            "$description": "Background color for info variant. Uses status.info.50 (very light) for subtle background."
           },
           "warning": {
-            "$value": "oklch(75% 0.15 75 / 0.15)",
+            "$value": "{eui.color.status.warning.50}",
             "$type": "color",
-            "$description": "Background color for warning variant (light tint with 15% opacity)"
+            "$description": "Background color for warning variant. Uses status.warning.50 (very light) for subtle background."
           },
           "error": {
-            "$value": "oklch(60% 0.22 25 / 0.1)",
+            "$value": "{eui.color.status.error.50}",
             "$type": "color",
-            "$description": "Background color for error variant (light tint with 10% opacity)"
+            "$description": "Background color for error variant. Uses status.error.50 (very light) for subtle background."
           },
           "success": {
-            "$value": "oklch(65% 0.20 145 / 0.1)",
+            "$value": "{eui.color.status.success.50}",
             "$type": "color",
-            "$description": "Background color for success variant (light tint with 10% opacity)"
+            "$description": "Background color for success variant. Uses status.success.50 (very light) for subtle background."
           }
         },
         "border": {
           "info": {
-            "$value": "{eui.color.status.info}",
+            "$value": "{eui.color.status.info.600}",
             "$type": "color",
-            "$description": "Border color for info variant"
+            "$description": "Border color for info variant. Uses status.info.600 (darker) for better visibility."
           },
           "warning": {
-            "$value": "{eui.color.status.warning}",
+            "$value": "{eui.color.status.warning.600}",
             "$type": "color",
-            "$description": "Border color for warning variant"
+            "$description": "Border color for warning variant. Uses status.warning.600 (darker) for better visibility."
           },
           "error": {
-            "$value": "{eui.color.status.error}",
+            "$value": "{eui.color.status.error.600}",
             "$type": "color",
-            "$description": "Border color for error variant"
+            "$description": "Border color for error variant. Uses status.error.600 (darker) for better visibility."
           },
           "success": {
-            "$value": "{eui.color.status.success}",
+            "$value": "{eui.color.status.success.600}",
             "$type": "color",
-            "$description": "Border color for success variant"
+            "$description": "Border color for success variant. Uses status.success.600 (darker) for better visibility."
           }
         },
         "text": {
           "info": {
-            "$value": "{eui.color.status.info}",
+            "$value": "{eui.color.status.info.700}",
             "$type": "color",
-            "$description": "Text color for info variant"
+            "$description": "Text color for info variant. Uses status.info.700 (darkest) for optimal contrast on light background."
           },
           "warning": {
-            "$value": "{eui.color.status.warning}",
+            "$value": "{eui.color.status.warning.700}",
             "$type": "color",
-            "$description": "Text color for warning variant"
+            "$description": "Text color for warning variant. Uses status.warning.700 (darkest) for optimal contrast on light background."
           },
           "error": {
-            "$value": "{eui.color.status.error}",
+            "$value": "{eui.color.status.error.700}",
             "$type": "color",
-            "$description": "Text color for error variant"
+            "$description": "Text color for error variant. Uses status.error.700 (darkest) for optimal contrast on light background."
           },
           "success": {
-            "$value": "{eui.color.status.success}",
+            "$value": "{eui.color.status.success.700}",
             "$type": "color",
-            "$description": "Text color for success variant"
+            "$description": "Text color for success variant. Uses status.success.700 (darkest) for optimal contrast on light background."
+          }
+        },
+        "icon": {
+          "info": {
+            "$value": "{eui.color.status.info.600}",
+            "$type": "color",
+            "$description": "Icon color for info variant. Uses status.info.600 (darker) for good visibility."
+          },
+          "warning": {
+            "$value": "{eui.color.status.warning.600}",
+            "$type": "color",
+            "$description": "Icon color for warning variant. Uses status.warning.600 (darker) for good visibility."
+          },
+          "error": {
+            "$value": "{eui.color.status.error.600}",
+            "$type": "color",
+            "$description": "Icon color for error variant. Uses status.error.600 (darker) for good visibility."
+          },
+          "success": {
+            "$value": "{eui.color.status.success.600}",
+            "$type": "color",
+            "$description": "Icon color for success variant. Uses status.success.600 (darker) for good visibility."
           }
         }
       }
