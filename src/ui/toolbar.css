@@ -1,0 +1,53 @@
+/* ============================================================================
+   Toolbar Component
+   ============================================================================ */
+
+[data-eui-context] .eui-toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--eui-layout-toolbar-gap);
+  padding-top: var(--eui-layout-toolbar-padding-y);
+  padding-bottom: var(--eui-layout-toolbar-padding-y);
+  min-height: var(--eui-layout-toolbar-height);
+}
+
+/* Structural parts - BEM classes */
+[data-eui-context] .eui-toolbar__left {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--eui-layout-toolbar-gap);
+}
+
+[data-eui-context] .eui-toolbar__center {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--eui-layout-toolbar-gap);
+}
+
+[data-eui-context] .eui-toolbar__right {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--eui-layout-toolbar-gap);
+}
+
+[data-eui-context] .eui-toolbar__overflow {
+  flex: 0 0 auto;
+  margin-left: var(--eui-spacing-sm);
+}
+
+/* Responsive: narrow width - wrap support via data-attribute */
+@media (max-width: 1279px) {
+  [data-eui-context] .eui-toolbar[data-eui-wrap='true'] {
+    flex-wrap: wrap;
+    row-gap: var(--eui-spacing-sm);
+  }
+}
+

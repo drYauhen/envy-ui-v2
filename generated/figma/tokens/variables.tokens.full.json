@@ -3117,6 +3117,16 @@
           "value": 10
         },
         {
+          "path": "eui.table.spacing.footer.height",
+          "type": "FLOAT",
+          "value": 56
+        },
+        {
+          "path": "eui.table.spacing.footer.paddingY",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
           "path": "eui.table.spacing.header.height",
           "type": "FLOAT",
           "value": 50
@@ -3150,6 +3160,16 @@
           "path": "eui.table.spacing.subheader.padding.vertical",
           "type": "FLOAT",
           "value": 5
+        },
+        {
+          "path": "eui.table.spacing.toolbar.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.table.spacing.toolbar.paddingY",
+          "type": "FLOAT",
+          "value": 1
         }
       ]
     },
@@ -3350,6 +3370,27 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Breakpoint",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.breakpoint.desktop",
+          "type": "FLOAT",
+          "value": 1280
+        },
+        {
+          "path": "eui.breakpoint.narrow",
+          "type": "FLOAT",
+          "value": 1024
+        },
+        {
+          "path": "eui.breakpoint.wide",
+          "type": "FLOAT",
+          "value": 1600
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Shape / Radius",
       "mode": "default",
       "variables": [
@@ -3439,6 +3480,67 @@
           "path": "eui.focus.ring.width.base",
           "type": "FLOAT",
           "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Layout",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.layout.container.gutterX",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.container.standard.maxWidth",
+          "type": "FLOAT",
+          "value": 960
+        },
+        {
+          "path": "eui.layout.container.wide.maxWidth",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.layout.page.padding.x",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.page.padding.y",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.section.gap",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.layout.section.padding",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.layout.section.title.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.layout.toolbar.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.layout.toolbar.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.layout.toolbar.paddingY",
+          "type": "FLOAT",
+          "value": 1
         }
       ]
     }

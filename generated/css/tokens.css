@@ -632,6 +632,10 @@
   --eui-table-spacing-subheader-padding-vertical: 5px;
   --eui-table-spacing-row-height: 40px;
   --eui-table-spacing-row-gap: 0;
+  --eui-table-spacing-toolbar-gap: 0.5rem;
+  --eui-table-spacing-toolbar-padding-y: 1rem;
+  --eui-table-spacing-footer-height: 56px;
+  --eui-table-spacing-footer-padding-y: 1rem;
   --eui-textarea-size-min-height: 80px;
   --eui-textarea-size-min-rows: 3;
   --eui-textarea-size-padding-vertical: 8px;
@@ -789,6 +793,9 @@
   --eui-color-status-info-700: oklch(60% 0.14 237);
   --eui-color-focus-ring: #ff4d00;
   --eui-color-system-focus: #ff4d00;
+  --eui-breakpoint-narrow: 1024px;
+  --eui-breakpoint-desktop: 1280px;
+  --eui-breakpoint-wide: 1600px;
   --eui-radius-pill: 9999px;
   --eui-spacing-xs: 0.25rem;
   --eui-spacing-sm: 0.5rem;
@@ -798,6 +805,17 @@
   --eui-spacing-2xl: 3rem;
   --eui-focus-ring-width-base: 2px;
   --eui-focus-ring-width-accessible: 3px;
+  --eui-layout-container-standard-max-width: 960px;
+  --eui-layout-container-wide-max-width: 100%;
+  --eui-layout-container-gutter-x: 1.5rem;
+  --eui-layout-page-padding-x: 1.5rem;
+  --eui-layout-page-padding-y: 1.5rem;
+  --eui-layout-section-gap: 1rem;
+  --eui-layout-section-padding: 1rem;
+  --eui-layout-section-title-gap: 0.5rem;
+  --eui-layout-toolbar-gap: 0.5rem;
+  --eui-layout-toolbar-padding-y: 1rem;
+  --eui-layout-toolbar-height: 40px;
   --eui-shadow-none: none;
   --eui-shadow-small: 0 1px 2px rgba(0, 0, 0, 0.05);
   --eui-shadow-default: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10);

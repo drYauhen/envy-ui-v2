@@ -15851,6 +15851,30 @@
           ]
         },
         {
+          "path": "eui.table.spacing.footer.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 56,
+            "app-default": 56,
+            "report-print": 56,
+            "report-screen": 56,
+            "website-dark": 56,
+            "website-default": 56
+          }
+        },
+        {
+          "path": "eui.table.spacing.footer.paddingY",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-default": 1,
+            "report-print": 1,
+            "report-screen": 1,
+            "website-dark": 1,
+            "website-default": 1
+          }
+        },
+        {
           "path": "eui.table.spacing.header.height",
           "type": "FLOAT",
           "valuesByMode": {
@@ -15935,6 +15959,33 @@
             "report-screen": 5,
             "website-dark": 5,
             "website-default": 5
+          }
+        },
+        {
+          "path": "eui.table.spacing.toolbar.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5,
+            "app-default": 0.5,
+            "report-print": 0.5,
+            "report-screen": 0.5,
+            "website-dark": 0.5,
+            "website-default": 0.5
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.table.spacing.toolbar.paddingY",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-default": 1,
+            "report-print": 1,
+            "report-screen": 1,
+            "website-dark": 1,
+            "website-default": 1
           }
         }
       ]
@@ -17071,6 +17122,55 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Breakpoint",
+      "modes": [
+        "app-accessibility",
+        "app-default",
+        "report-print",
+        "report-screen",
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.breakpoint.desktop",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1280,
+            "app-default": 1280,
+            "report-print": 1280,
+            "report-screen": 1280,
+            "website-dark": 1280,
+            "website-default": 1280
+          }
+        },
+        {
+          "path": "eui.breakpoint.narrow",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1024,
+            "app-default": 1024,
+            "report-print": 1024,
+            "report-screen": 1024,
+            "website-dark": 1024,
+            "website-default": 1024
+          }
+        },
+        {
+          "path": "eui.breakpoint.wide",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1600,
+            "app-default": 1600,
+            "report-print": 1600,
+            "report-screen": 1600,
+            "website-dark": 1600,
+            "website-default": 1600
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Shape / Radius",
       "modes": [
         "app-accessibility",
@@ -17262,6 +17362,160 @@
           "scopes": [
             "STROKE_WEIGHT"
           ]
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Layout",
+      "modes": [
+        "app-accessibility",
+        "app-default",
+        "report-print",
+        "report-screen",
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.layout.container.gutterX",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1.5,
+            "app-default": 1.5,
+            "report-print": 1.5,
+            "report-screen": 1.5,
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.layout.container.standard.maxWidth",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 960,
+            "app-default": 960,
+            "report-print": 960,
+            "report-screen": 960,
+            "website-dark": 960,
+            "website-default": 960
+          }
+        },
+        {
+          "path": "eui.layout.container.wide.maxWidth",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 100,
+            "app-default": 100,
+            "report-print": 100,
+            "report-screen": 100,
+            "website-dark": 100,
+            "website-default": 100
+          }
+        },
+        {
+          "path": "eui.layout.page.padding.x",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1.5,
+            "app-default": 1.5,
+            "report-print": 1.5,
+            "report-screen": 1.5,
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.layout.page.padding.y",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1.5,
+            "app-default": 1.5,
+            "report-print": 1.5,
+            "report-screen": 1.5,
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.layout.section.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-default": 1,
+            "report-print": 1,
+            "report-screen": 1,
+            "website-dark": 1,
+            "website-default": 1
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.layout.section.padding",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-default": 1,
+            "report-print": 1,
+            "report-screen": 1,
+            "website-dark": 1,
+            "website-default": 1
+          }
+        },
+        {
+          "path": "eui.layout.section.title.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5,
+            "app-default": 0.5,
+            "report-print": 0.5,
+            "report-screen": 0.5,
+            "website-dark": 0.5,
+            "website-default": 0.5
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.layout.toolbar.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5,
+            "app-default": 0.5,
+            "report-print": 0.5,
+            "report-screen": 0.5,
+            "website-dark": 0.5,
+            "website-default": 0.5
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.layout.toolbar.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 40,
+            "app-default": 40,
+            "report-print": 40,
+            "report-screen": 40,
+            "website-dark": 40,
+            "website-default": 40
+          }
+        },
+        {
+          "path": "eui.layout.toolbar.paddingY",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-default": 1,
+            "report-print": 1,
+            "report-screen": 1,
+            "website-dark": 1,
+            "website-default": 1
+          }
         }
       ]
     }

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "layout": {
+      "section": {
+        "gap": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Gap between section content items. References foundation spacing."
+        },
+        "padding": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Padding inside section. References foundation spacing."
+        },
+        "title": {
+          "gap": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Gap between section title and content. References foundation spacing."
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "layout": {
+      "page": {
+        "padding": {
+          "x": {
+            "$value": "{eui.layout.container.gutterX}",
+            "$type": "dimension",
+            "$description": "Horizontal page padding. References container gutter for consistency."
+          },
+          "y": {
+            "$value": "{eui.spacing.lg}",
+            "$type": "dimension",
+            "$description": "Vertical page padding. Optimized for app-default context/theme."
+          }
+        }
+      }
+    }
+  }
+}
+

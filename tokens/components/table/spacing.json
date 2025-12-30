@@ -60,6 +60,30 @@
             "$type": "dimension",
             "$description": "Gap between table rows (typically 0 for border-based separation)."
           }
+        },
+        "toolbar": {
+          "gap": {
+            "$value": "{eui.layout.toolbar.gap}",
+            "$type": "dimension",
+            "$description": "Gap between table toolbar items. References semantic layout toolbar token."
+          },
+          "paddingY": {
+            "$value": "{eui.layout.toolbar.paddingY}",
+            "$type": "dimension",
+            "$description": "Vertical padding for table toolbar. References semantic layout toolbar token."
+          }
+        },
+        "footer": {
+          "height": {
+            "$value": "56px",
+            "$type": "dimension",
+            "$description": "Fixed height for table footer (pagination area)."
+          },
+          "paddingY": {
+            "$value": "{eui.spacing.md}",
+            "$type": "dimension",
+            "$description": "Vertical padding for table footer. References foundation spacing."
+          }
         }
       }
     }

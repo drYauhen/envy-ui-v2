@@ -1,0 +1,33 @@
+/* ============================================================================
+   Grid Component
+   ============================================================================ */
+
+[data-eui-context] .eui-grid {
+  display: grid;
+  gap: var(--eui-spacing-md);
+}
+
+/* Column presets - data-attributes for configuration */
+[data-eui-context] .eui-grid[data-eui-cols='2'] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+[data-eui-context] .eui-grid[data-eui-cols='3'] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+[data-eui-context] .eui-grid[data-eui-cols='4'] {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive: narrow width - reduce columns */
+@media (max-width: 1279px) {
+  [data-eui-context] .eui-grid[data-eui-cols='4'] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  [data-eui-context] .eui-grid[data-eui-cols='3'] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

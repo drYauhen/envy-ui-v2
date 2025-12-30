@@ -1,0 +1,28 @@
+/* ============================================================================
+   Page Component
+   ============================================================================ */
+
+[data-eui-context] .eui-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-left: var(--eui-layout-page-padding-x);
+  padding-right: var(--eui-layout-page-padding-x);
+  padding-top: var(--eui-layout-page-padding-y);
+  padding-bottom: var(--eui-layout-page-padding-y);
+}
+
+/* Structural parts - BEM classes */
+[data-eui-context] .eui-page__header {
+  flex: 0 0 auto;
+}
+
+[data-eui-context] .eui-page__body {
+  flex: 1 1 auto;
+  overflow-y: auto; /* Page scroll model */
+}
+
+[data-eui-context] .eui-page__footer {
+  flex: 0 0 auto;
+}
+

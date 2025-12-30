@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "breakpoint": {
+      "narrow": {
+        "$value": "1024px",
+        "$type": "dimension",
+        "$description": "Narrow desktop window. Below this, overflow/wrap behavior is acceptable."
+      },
+      "desktop": {
+        "$value": "1280px",
+        "$type": "dimension",
+        "$description": "Standard desktop target width. Primary design target."
+      },
+      "wide": {
+        "$value": "1600px",
+        "$type": "dimension",
+        "$description": "Wide desktop display. Optional optimization target."
+      }
+    }
+  }
+}
+

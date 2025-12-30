@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "layout": {
+      "toolbar": {
+        "gap": {
+          "$value": "{eui.spacing.sm}",
+          "$type": "dimension",
+          "$description": "Gap between toolbar items. References foundation spacing."
+        },
+        "paddingY": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Vertical padding for toolbar. References foundation spacing."
+        },
+        "height": {
+          "$value": "{eui.button.size.md.height}",
+          "$type": "dimension",
+          "$description": "Toolbar height matches control height for alignment. References button size token."
+        }
+      }
+    }
+  }
+}
+

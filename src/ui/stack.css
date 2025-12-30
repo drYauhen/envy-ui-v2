@@ -1,0 +1,51 @@
+/* ============================================================================
+   Stack Component (Vertical Layout)
+   ============================================================================ */
+
+[data-eui-context] .eui-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gap variants - data-attributes for configuration */
+[data-eui-context] .eui-stack[data-eui-gap='xs'] {
+  gap: var(--eui-spacing-xs);
+}
+
+[data-eui-context] .eui-stack[data-eui-gap='sm'] {
+  gap: var(--eui-spacing-sm);
+}
+
+[data-eui-context] .eui-stack[data-eui-gap='md'] {
+  gap: var(--eui-spacing-md);
+}
+
+[data-eui-context] .eui-stack[data-eui-gap='lg'] {
+  gap: var(--eui-spacing-lg);
+}
+
+[data-eui-context] .eui-stack[data-eui-gap='xl'] {
+  gap: var(--eui-spacing-xl);
+}
+
+[data-eui-context] .eui-stack[data-eui-gap='2xl'] {
+  gap: var(--eui-spacing-2xl);
+}
+
+/* Alignment variants - data-attributes for configuration */
+[data-eui-context] .eui-stack[data-eui-align='start'] {
+  align-items: flex-start;
+}
+
+[data-eui-context] .eui-stack[data-eui-align='center'] {
+  align-items: center;
+}
+
+[data-eui-context] .eui-stack[data-eui-align='end'] {
+  align-items: flex-end;
+}
+
+[data-eui-context] .eui-stack[data-eui-align='stretch'] {
+  align-items: stretch;
+}
+

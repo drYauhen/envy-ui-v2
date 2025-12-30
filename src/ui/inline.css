@@ -1,0 +1,49 @@
+/* ============================================================================
+   Inline Component (Horizontal Layout)
+   ============================================================================ */
+
+[data-eui-context] .eui-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Gap variants - data-attributes for configuration */
+[data-eui-context] .eui-inline[data-eui-gap='xs'] {
+  gap: var(--eui-spacing-xs);
+}
+
+[data-eui-context] .eui-inline[data-eui-gap='sm'] {
+  gap: var(--eui-spacing-sm);
+}
+
+[data-eui-context] .eui-inline[data-eui-gap='md'] {
+  gap: var(--eui-spacing-md);
+}
+
+[data-eui-context] .eui-inline[data-eui-gap='lg'] {
+  gap: var(--eui-spacing-lg);
+}
+
+/* Wrap support for narrow width - data-attribute for configuration */
+[data-eui-context] .eui-inline[data-eui-wrap='true'] {
+  flex-wrap: wrap;
+}
+
+/* Justify variants - data-attributes for configuration */
+[data-eui-context] .eui-inline[data-eui-justify='start'] {
+  justify-content: flex-start;
+}
+
+[data-eui-context] .eui-inline[data-eui-justify='center'] {
+  justify-content: center;
+}
+
+[data-eui-context] .eui-inline[data-eui-justify='end'] {
+  justify-content: flex-end;
+}
+
+[data-eui-context] .eui-inline[data-eui-justify='between'] {
+  justify-content: space-between;
+}
+

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "layout": {
+      "container": {
+        "standard": {
+          "maxWidth": {
+            "$value": "960px",
+            "$type": "dimension",
+            "$description": "Readable width for forms and detail pages. Optimized for app-default context/theme."
+          }
+        },
+        "wide": {
+          "maxWidth": {
+            "$value": "100%",
+            "$type": "dimension",
+            "$description": "Full width for tables and dashboards. Optimized for app-default context/theme."
+          }
+        },
+        "gutterX": {
+          "$value": "{eui.spacing.lg}",
+          "$type": "dimension",
+          "$description": "Horizontal page gutter. Consistent across all pages. References foundation spacing."
+        }
+      }
+    }
+  }
+}
+

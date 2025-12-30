@@ -1,0 +1,27 @@
+/* ============================================================================
+   Container Component
+   ============================================================================ */
+
+[data-eui-context] .eui-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--eui-layout-container-gutter-x);
+  padding-right: var(--eui-layout-container-gutter-x);
+}
+
+/* Variant: Standard (readable width for forms/detail pages) */
+[data-eui-context] .eui-container[data-eui-container='standard'] {
+  max-width: var(--eui-layout-container-standard-max-width);
+}
+
+/* Variant: Wide (full width for tables/dashboards) */
+[data-eui-context] .eui-container[data-eui-container='wide'] {
+  max-width: var(--eui-layout-container-wide-max-width);
+}
+
+/* Variant: Fluid (no max-width constraint) */
+[data-eui-context] .eui-container[data-eui-container='fluid'] {
+  max-width: none;
+}
+

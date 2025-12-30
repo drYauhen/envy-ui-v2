@@ -2515,6 +2515,22 @@
     "$value": "0",
     "$type": "dimension"
   },
+  "eui.table.spacing.toolbar.gap": {
+    "$value": "0.5rem",
+    "$type": "dimension"
+  },
+  "eui.table.spacing.toolbar.paddingY": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.table.spacing.footer.height": {
+    "$value": "56px",
+    "$type": "dimension"
+  },
+  "eui.table.spacing.footer.paddingY": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
   "eui.textarea.size.min.height": {
     "$value": "80px",
     "$type": "dimension"
@@ -3184,6 +3200,18 @@
     "$value": "#ff4d00",
     "$type": "color"
   },
+  "eui.breakpoint.narrow": {
+    "$value": "1024px",
+    "$type": "dimension"
+  },
+  "eui.breakpoint.desktop": {
+    "$value": "1280px",
+    "$type": "dimension"
+  },
+  "eui.breakpoint.wide": {
+    "$value": "1600px",
+    "$type": "dimension"
+  },
   "eui.radius.pill": {
     "$value": "9999px",
     "$type": "dimension"
@@ -3242,6 +3270,50 @@
   },
   "eui.focus.ring.width.accessible": {
     "$value": "3px",
+    "$type": "dimension"
+  },
+  "eui.layout.container.standard.maxWidth": {
+    "$value": "960px",
+    "$type": "dimension"
+  },
+  "eui.layout.container.wide.maxWidth": {
+    "$value": "100%",
+    "$type": "dimension"
+  },
+  "eui.layout.container.gutterX": {
+    "$value": "1.5rem",
+    "$type": "dimension"
+  },
+  "eui.layout.page.padding.x": {
+    "$value": "1.5rem",
+    "$type": "dimension"
+  },
+  "eui.layout.page.padding.y": {
+    "$value": "1.5rem",
+    "$type": "dimension"
+  },
+  "eui.layout.section.gap": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.layout.section.padding": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.layout.section.title.gap": {
+    "$value": "0.5rem",
+    "$type": "dimension"
+  },
+  "eui.layout.toolbar.gap": {
+    "$value": "0.5rem",
+    "$type": "dimension"
+  },
+  "eui.layout.toolbar.paddingY": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.layout.toolbar.height": {
+    "$value": "40px",
     "$type": "dimension"
   },
   "eui.shadow.none": {

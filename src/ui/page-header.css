@@ -1,0 +1,83 @@
+/* ============================================================================
+   Page Header Component
+   ============================================================================ */
+
+[data-eui-context] .eui-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-spacing-sm);
+  margin-bottom: var(--eui-spacing-lg);
+}
+
+/* Structural parts - BEM classes */
+[data-eui-context] .eui-page-header__title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--eui-spacing-md);
+}
+
+[data-eui-context] .eui-page-header__title-section {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--eui-spacing-xs);
+}
+
+[data-eui-context] .eui-page-header__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--eui-color-text-primary);
+}
+
+[data-eui-context] .eui-page-header__description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--eui-color-text-muted);
+  line-height: 1.5;
+}
+
+[data-eui-context] .eui-page-header__breadcrumbs {
+  margin-bottom: var(--eui-spacing-xs);
+  font-size: 0.875rem;
+  color: var(--eui-color-text-muted);
+}
+
+[data-eui-context] .eui-page-header__actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--eui-spacing-sm);
+}
+
+/* Slots for custom content - data-attributes */
+[data-eui-context] .eui-page-header__actions [data-eui-slot='primary'] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--eui-spacing-sm);
+}
+
+[data-eui-context] .eui-page-header__actions [data-eui-slot='secondary'] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--eui-spacing-sm);
+}
+
+/* Responsive: narrow width - wrap title row, move secondary to overflow */
+@media (max-width: 1279px) {
+  [data-eui-context] .eui-page-header__title-row {
+    flex-wrap: wrap;
+  }
+  
+  /* Hide secondary actions on narrow (move to overflow menu in implementation) */
+  [data-eui-context] .eui-page-header__actions [data-eui-slot='secondary'] {
+    display: none;
+  }
+}
+
