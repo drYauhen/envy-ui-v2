@@ -2579,9 +2579,378 @@
     "$value": "1rem",
     "$type": "dimension"
   },
-  "eui.typography.base.fontSize": {
-    "$value": "16px",
-    "$type": "fontSize"
+  "eui.breakpoint.narrow": {
+    "$value": "1024px",
+    "$type": "dimension"
+  },
+  "eui.breakpoint.desktop": {
+    "$value": "1280px",
+    "$type": "dimension"
+  },
+  "eui.breakpoint.wide": {
+    "$value": "1600px",
+    "$type": "dimension"
+  },
+  "eui.color.accent.50": {
+    "$value": "oklch(98% 0.07 236)",
+    "$type": "color"
+  },
+  "eui.color.accent.100": {
+    "$value": "oklch(90% 0.11 236)",
+    "$type": "color"
+  },
+  "eui.color.accent.200": {
+    "$value": "oklch(83% 0.13 237)",
+    "$type": "color"
+  },
+  "eui.color.accent.300": {
+    "$value": "oklch(78% 0.14 237)",
+    "$type": "color"
+  },
+  "eui.color.accent.400": {
+    "$value": "oklch(73% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.accent.500": {
+    "$value": "oklch(67% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.accent.600": {
+    "$value": "oklch(68% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.accent.700": {
+    "$value": "oklch(63% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.accent.800": {
+    "$value": "oklch(58% 0.14 237)",
+    "$type": "color"
+  },
+  "eui.color.accent.900": {
+    "$value": "oklch(53% 0.13 238)",
+    "$type": "color"
+  },
+  "eui.color.accent.primary": {
+    "$value": "oklch(68% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.brand.50": {
+    "$value": "oklch(97% 0.02 232)",
+    "$type": "color"
+  },
+  "eui.color.brand.100": {
+    "$value": "oklch(93% 0.05 232)",
+    "$type": "color"
+  },
+  "eui.color.brand.200": {
+    "$value": "oklch(85% 0.06 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.300": {
+    "$value": "oklch(75% 0.08 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.400": {
+    "$value": "oklch(65% 0.09 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.500": {
+    "$value": "oklch(57% 0.09 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.600": {
+    "$value": "oklch(52% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.brand.700": {
+    "$value": "oklch(49% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.brand.800": {
+    "$value": "oklch(47% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.brand.900": {
+    "$value": "oklch(46% 0.09 231)",
+    "$type": "color"
+  },
+  "eui.color.brand.primary": {
+    "$value": "oklch(49% 0.10 230)",
+    "$type": "color"
+  },
+  "eui.color.neutral.50": {
+    "$value": "oklch(98% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.100": {
+    "$value": "oklch(96.5% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.200": {
+    "$value": "oklch(94% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.300": {
+    "$value": "oklch(90% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.400": {
+    "$value": "oklch(84% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.500": {
+    "$value": "oklch(75% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.600": {
+    "$value": "oklch(63% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.700": {
+    "$value": "oklch(48% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.800": {
+    "$value": "oklch(33% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.900": {
+    "$value": "oklch(25% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.neutral.white": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.signal.keyboardFocus": {
+    "$value": "#ff4d00",
+    "$type": "color",
+    "$description": "Keyboard-only focus ring (a11y)"
+  },
+  "eui.color.status.application.pending": {
+    "$value": "oklch(64% 0.00 326)",
+    "$type": "color"
+  },
+  "eui.color.status.application.onTrack": {
+    "$value": "oklch(66% 0.18 137)",
+    "$type": "color"
+  },
+  "eui.color.status.application.completed": {
+    "$value": "oklch(51% 0.16 256)",
+    "$type": "color"
+  },
+  "eui.color.status.application.minorDisruption": {
+    "$value": "oklch(89% 0.18 95)",
+    "$type": "color"
+  },
+  "eui.color.status.application.majorDisruption": {
+    "$value": "oklch(58% 0.23 26)",
+    "$type": "color"
+  },
+  "eui.color.status.application.upcoming": {
+    "$value": "oklch(57% 0.10 312)",
+    "$type": "color"
+  },
+  "eui.color.status.application.discontinued": {
+    "$value": "oklch(32% 0.01 61)",
+    "$type": "color"
+  },
+  "eui.color.status.success.50": {
+    "$value": "oklch(92% 0.10 149)",
+    "$type": "color"
+  },
+  "eui.color.status.success.100": {
+    "$value": "oklch(82% 0.17 150)",
+    "$type": "color"
+  },
+  "eui.color.status.success.500": {
+    "$value": "oklch(72% 0.19 150)",
+    "$type": "color"
+  },
+  "eui.color.status.success.600": {
+    "$value": "oklch(67% 0.18 150)",
+    "$type": "color"
+  },
+  "eui.color.status.success.700": {
+    "$value": "oklch(64% 0.17 150)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.50": {
+    "$value": "oklch(97% 0.08 69)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.100": {
+    "$value": "oklch(87% 0.14 70)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.500": {
+    "$value": "oklch(77% 0.16 70)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.600": {
+    "$value": "oklch(72% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.color.status.warning.700": {
+    "$value": "oklch(69% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.color.status.error.50": {
+    "$value": "oklch(84% 0.10 24)",
+    "$type": "color"
+  },
+  "eui.color.status.error.100": {
+    "$value": "oklch(74% 0.18 25)",
+    "$type": "color"
+  },
+  "eui.color.status.error.500": {
+    "$value": "oklch(64% 0.21 25)",
+    "$type": "color"
+  },
+  "eui.color.status.error.600": {
+    "$value": "oklch(59% 0.20 25)",
+    "$type": "color"
+  },
+  "eui.color.status.error.700": {
+    "$value": "oklch(56% 0.19 25)",
+    "$type": "color"
+  },
+  "eui.color.status.info.50": {
+    "$value": "oklch(88% 0.07 236)",
+    "$type": "color"
+  },
+  "eui.color.status.info.100": {
+    "$value": "oklch(78% 0.13 237)",
+    "$type": "color"
+  },
+  "eui.color.status.info.500": {
+    "$value": "oklch(68% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.status.info.600": {
+    "$value": "oklch(63% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.color.status.info.700": {
+    "$value": "oklch(60% 0.14 237)",
+    "$type": "color"
+  },
+  "eui.color.background.surface": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.background.muted": {
+    "$value": "oklch(94% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.subtle": {
+    "$value": "oklch(96.5% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.inverse": {
+    "$value": "oklch(25% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.base": {
+    "$value": "oklch(25% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.border.default": {
+    "$value": "oklch(48% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.border.subtle": {
+    "$value": "oklch(94% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.border.strong": {
+    "$value": "oklch(84% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.border.inverse": {
+    "$value": "oklch(33% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.focus.ring": {
+    "$value": "#ff4d00",
+    "$type": "color"
+  },
+  "eui.color.system.focus": {
+    "$value": "#ff4d00",
+    "$type": "color"
+  },
+  "eui.color.text.primary": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.text.muted": {
+    "$value": "oklch(90% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.text.subtle": {
+    "$value": "oklch(63% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.text.inverse": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.color.text.disabled": {
+    "$value": "oklch(48% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.radius.pill": {
+    "$value": "9999px",
+    "$type": "dimension"
+  },
+  "eui.radius.none": {
+    "$value": "0px",
+    "$type": "dimension"
+  },
+  "eui.radius.small": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.radius.default": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.radius.large": {
+    "$value": "8px",
+    "$type": "dimension"
+  },
+  "eui.radius.extra-large": {
+    "$value": "12px",
+    "$type": "dimension"
+  },
+  "eui.radius.full": {
+    "$value": "9999px",
+    "$type": "dimension"
+  },
+  "eui.spacing.xs": {
+    "$value": "0.25rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.sm": {
+    "$value": "0.5rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.md": {
+    "$value": "1rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.lg": {
+    "$value": "1.5rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.xl": {
+    "$value": "2rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.2xl": {
+    "$value": "3rem",
+    "$type": "dimension"
   },
   "eui.typography.fontFamily.ui": {
     "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -2891,378 +3260,9 @@
     "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
     "$type": "fontFamily"
   },
-  "eui.color.text.primary": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.text.muted": {
-    "$value": "oklch(90% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.text.subtle": {
-    "$value": "oklch(63% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.text.inverse": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.text.disabled": {
-    "$value": "oklch(48% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.background.base": {
-    "$value": "oklch(25% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.background.surface": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.background.muted": {
-    "$value": "oklch(94% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.background.subtle": {
-    "$value": "oklch(96.5% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.background.inverse": {
-    "$value": "oklch(25% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.accent.50": {
-    "$value": "oklch(98% 0.07 236)",
-    "$type": "color"
-  },
-  "eui.color.accent.100": {
-    "$value": "oklch(90% 0.11 236)",
-    "$type": "color"
-  },
-  "eui.color.accent.200": {
-    "$value": "oklch(83% 0.13 237)",
-    "$type": "color"
-  },
-  "eui.color.accent.300": {
-    "$value": "oklch(78% 0.14 237)",
-    "$type": "color"
-  },
-  "eui.color.accent.400": {
-    "$value": "oklch(73% 0.15 237)",
-    "$type": "color"
-  },
-  "eui.color.accent.500": {
-    "$value": "oklch(67% 0.15 237)",
-    "$type": "color"
-  },
-  "eui.color.accent.600": {
-    "$value": "oklch(68% 0.15 237)",
-    "$type": "color"
-  },
-  "eui.color.accent.700": {
-    "$value": "oklch(63% 0.15 237)",
-    "$type": "color"
-  },
-  "eui.color.accent.800": {
-    "$value": "oklch(58% 0.14 237)",
-    "$type": "color"
-  },
-  "eui.color.accent.900": {
-    "$value": "oklch(53% 0.13 238)",
-    "$type": "color"
-  },
-  "eui.color.accent.primary": {
-    "$value": "oklch(68% 0.15 237)",
-    "$type": "color"
-  },
-  "eui.color.brand.50": {
-    "$value": "oklch(97% 0.02 232)",
-    "$type": "color"
-  },
-  "eui.color.brand.100": {
-    "$value": "oklch(93% 0.05 232)",
-    "$type": "color"
-  },
-  "eui.color.brand.200": {
-    "$value": "oklch(85% 0.06 231)",
-    "$type": "color"
-  },
-  "eui.color.brand.300": {
-    "$value": "oklch(75% 0.08 231)",
-    "$type": "color"
-  },
-  "eui.color.brand.400": {
-    "$value": "oklch(65% 0.09 231)",
-    "$type": "color"
-  },
-  "eui.color.brand.500": {
-    "$value": "oklch(57% 0.09 231)",
-    "$type": "color"
-  },
-  "eui.color.brand.600": {
-    "$value": "oklch(52% 0.10 230)",
-    "$type": "color"
-  },
-  "eui.color.brand.700": {
-    "$value": "oklch(49% 0.10 230)",
-    "$type": "color"
-  },
-  "eui.color.brand.800": {
-    "$value": "oklch(47% 0.10 230)",
-    "$type": "color"
-  },
-  "eui.color.brand.900": {
-    "$value": "oklch(46% 0.09 231)",
-    "$type": "color"
-  },
-  "eui.color.brand.primary": {
-    "$value": "oklch(49% 0.10 230)",
-    "$type": "color"
-  },
-  "eui.color.neutral.50": {
-    "$value": "oklch(98% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.100": {
-    "$value": "oklch(96.5% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.200": {
-    "$value": "oklch(94% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.300": {
-    "$value": "oklch(90% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.400": {
-    "$value": "oklch(84% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.500": {
-    "$value": "oklch(75% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.600": {
-    "$value": "oklch(63% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.700": {
-    "$value": "oklch(48% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.800": {
-    "$value": "oklch(33% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.900": {
-    "$value": "oklch(25% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.neutral.white": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
-  "eui.color.signal.keyboardFocus": {
-    "$value": "#ff4d00",
-    "$type": "color",
-    "$description": "Keyboard-only focus ring (a11y)"
-  },
-  "eui.color.status.application.pending": {
-    "$value": "oklch(64% 0.00 326)",
-    "$type": "color"
-  },
-  "eui.color.status.application.onTrack": {
-    "$value": "oklch(66% 0.18 137)",
-    "$type": "color"
-  },
-  "eui.color.status.application.completed": {
-    "$value": "oklch(51% 0.16 256)",
-    "$type": "color"
-  },
-  "eui.color.status.application.minorDisruption": {
-    "$value": "oklch(89% 0.18 95)",
-    "$type": "color"
-  },
-  "eui.color.status.application.majorDisruption": {
-    "$value": "oklch(58% 0.23 26)",
-    "$type": "color"
-  },
-  "eui.color.status.application.upcoming": {
-    "$value": "oklch(57% 0.10 312)",
-    "$type": "color"
-  },
-  "eui.color.status.application.discontinued": {
-    "$value": "oklch(32% 0.01 61)",
-    "$type": "color"
-  },
-  "eui.color.status.success.50": {
-    "$value": "oklch(92% 0.10 149)",
-    "$type": "color"
-  },
-  "eui.color.status.success.100": {
-    "$value": "oklch(82% 0.17 150)",
-    "$type": "color"
-  },
-  "eui.color.status.success.500": {
-    "$value": "oklch(72% 0.19 150)",
-    "$type": "color"
-  },
-  "eui.color.status.success.600": {
-    "$value": "oklch(67% 0.18 150)",
-    "$type": "color"
-  },
-  "eui.color.status.success.700": {
-    "$value": "oklch(64% 0.17 150)",
-    "$type": "color"
-  },
-  "eui.color.status.warning.50": {
-    "$value": "oklch(97% 0.08 69)",
-    "$type": "color"
-  },
-  "eui.color.status.warning.100": {
-    "$value": "oklch(87% 0.14 70)",
-    "$type": "color"
-  },
-  "eui.color.status.warning.500": {
-    "$value": "oklch(77% 0.16 70)",
-    "$type": "color"
-  },
-  "eui.color.status.warning.600": {
-    "$value": "oklch(72% 0.15 70)",
-    "$type": "color"
-  },
-  "eui.color.status.warning.700": {
-    "$value": "oklch(69% 0.15 70)",
-    "$type": "color"
-  },
-  "eui.color.status.error.50": {
-    "$value": "oklch(84% 0.10 24)",
-    "$type": "color"
-  },
-  "eui.color.status.error.100": {
-    "$value": "oklch(74% 0.18 25)",
-    "$type": "color"
-  },
-  "eui.color.status.error.500": {
-    "$value": "oklch(64% 0.21 25)",
-    "$type": "color"
-  },
-  "eui.color.status.error.600": {
-    "$value": "oklch(59% 0.20 25)",
-    "$type": "color"
-  },
-  "eui.color.status.error.700": {
-    "$value": "oklch(56% 0.19 25)",
-    "$type": "color"
-  },
-  "eui.color.status.info.50": {
-    "$value": "oklch(88% 0.07 236)",
-    "$type": "color"
-  },
-  "eui.color.status.info.100": {
-    "$value": "oklch(78% 0.13 237)",
-    "$type": "color"
-  },
-  "eui.color.status.info.500": {
-    "$value": "oklch(68% 0.15 237)",
-    "$type": "color"
-  },
-  "eui.color.status.info.600": {
-    "$value": "oklch(63% 0.15 237)",
-    "$type": "color"
-  },
-  "eui.color.status.info.700": {
-    "$value": "oklch(60% 0.14 237)",
-    "$type": "color"
-  },
-  "eui.color.border.default": {
-    "$value": "oklch(48% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.border.subtle": {
-    "$value": "oklch(94% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.border.strong": {
-    "$value": "oklch(84% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.border.inverse": {
-    "$value": "oklch(33% 0.00 0)",
-    "$type": "color"
-  },
-  "eui.color.focus.ring": {
-    "$value": "#ff4d00",
-    "$type": "color"
-  },
-  "eui.color.system.focus": {
-    "$value": "#ff4d00",
-    "$type": "color"
-  },
-  "eui.breakpoint.narrow": {
-    "$value": "1024px",
-    "$type": "dimension"
-  },
-  "eui.breakpoint.desktop": {
-    "$value": "1280px",
-    "$type": "dimension"
-  },
-  "eui.breakpoint.wide": {
-    "$value": "1600px",
-    "$type": "dimension"
-  },
-  "eui.radius.pill": {
-    "$value": "9999px",
-    "$type": "dimension"
-  },
-  "eui.radius.none": {
-    "$value": "0px",
-    "$type": "dimension"
-  },
-  "eui.radius.small": {
-    "$value": "2px",
-    "$type": "dimension"
-  },
-  "eui.radius.default": {
-    "$value": "4px",
-    "$type": "dimension"
-  },
-  "eui.radius.large": {
-    "$value": "8px",
-    "$type": "dimension"
-  },
-  "eui.radius.extra-large": {
-    "$value": "12px",
-    "$type": "dimension"
-  },
-  "eui.radius.full": {
-    "$value": "9999px",
-    "$type": "dimension"
-  },
-  "eui.spacing.xs": {
-    "$value": "0.25rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.sm": {
-    "$value": "0.5rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.md": {
-    "$value": "1rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.lg": {
-    "$value": "1.5rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.xl": {
-    "$value": "2rem",
-    "$type": "dimension"
-  },
-  "eui.spacing.2xl": {
-    "$value": "3rem",
-    "$type": "dimension"
+  "eui.typography.base.fontSize": {
+    "$value": "16px",
+    "$type": "fontSize"
   },
   "eui.focus.ring.width.base": {
     "$value": "2px",

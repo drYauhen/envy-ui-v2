@@ -9,15 +9,24 @@ Figma integration enables bidirectional synchronization between design tokens an
 - **Scripts** - Automation tools for analysis and migration
 - **Artifacts** - Generated files for Figma consumption
 
+## Context Separation
+
+The token system is split into three separate systems for Figma:
+- **App context:** `generated/figma/app/variables.tokens.scoped.json` (modes: `app-default`, `app-accessibility`)
+- **Website context:** `generated/figma/website/variables.tokens.scoped.json` (modes: `website-default`, `website-dark`)
+- **Report context:** `generated/figma/report/variables.tokens.scoped.json` (modes: `report-print`, `report-screen`)
+
+Each context has its own Figma file. The plugin validates context match before importing to prevent accidental cross-context imports.
+
 ## Quick Start: Migration Workflow
 
 **When you change token structure (rename, delete, move variables):**
 
 1. **Before changes:** Create snapshot in Figma plugin → "Snapshot" tab
 2. **Change tokens:** Edit `tokens/` files
-3. **Build:** `npm run tokens:build`
+3. **Build:** `npm run tokens:build:figma` (or specific context: `npm run tokens:build:figma:app`)
 4. **Generate migration:** `npm run figma:migration:generate`
-5. **Import new tokens:** Figma plugin → "Variables" tab → Import new tokens
+5. **Import new tokens:** Figma plugin → "Variables" tab → Import new tokens (context will be validated)
 6. **Apply migration:** Figma plugin → "Migration" tab → Load migration file → Apply
 
 **Result:** All Figma Variable bindings are automatically updated to use new variables!
@@ -32,15 +41,20 @@ tokens/ (source of truth)
 Style Dictionary
   ↓
 generated/figma/
-  ├── adapter/          # Style Dictionary → adapter JSON
-  ├── tokens/           # Style Dictionary → tokens JSON
+  ├── adapter/          # Style Dictionary → adapter JSON (legacy)
+  ├── tokens/           # Style Dictionary → tokens JSON (general, all contexts)
+  ├── app/              # App context only (app-default, app-accessibility)
+  ├── website/          # Website context only (website-default, website-dark)
+  ├── report/           # Report context only (report-print, report-screen)
   ├── snapshots/        # Figma plugin → snapshot (backup)
   └── migrations/       # scripts/figma → migration files
   ↓
-Figma Plugin
+Figma Plugin (with context validation)
   ↓
-Figma Variables
+Figma Variables (context-specific)
 ```
+
+**Context Separation:** Each context (app, website, report) has its own JSON file to prevent accidental cross-context imports. The plugin validates context match before importing.
 
 ## File Structure
 
@@ -54,11 +68,14 @@ Figma Variables
 - `scripts/figma/generate-migration.mjs` - Generate migration file (future)
 
 ### Generated Artifacts
-- `generated/figma/adapter/variables.adapter.json` - Adapter format (legacy, colors only)
-- `generated/figma/tokens/variables.tokens.scoped.json` - Full tokens with modes (preferred)
+- `generated/figma/app/variables.tokens.scoped.json` - App context only (preferred for app files)
+- `generated/figma/website/variables.tokens.scoped.json` - Website context only (preferred for website files)
+- `generated/figma/report/variables.tokens.scoped.json` - Report context only (preferred for report files)
+- `generated/figma/tokens/variables.tokens.scoped.json` - General file (all contexts, for legacy use)
 - `generated/figma/tokens/variables.tokens.full.json` - Full tokens (alternative)
+- `generated/figma/adapter/variables.adapter.json` - Adapter format (legacy, colors only)
 - `generated/figma/snapshots/` - Snapshot backups
-- `generated/figma/migrations/` - Migration files (future)
+- `generated/figma/migrations/` - Migration files
 - `generated/figma/structures/` - Component structures (frozen, not actively used)
 
 ## Workflows
@@ -68,11 +85,30 @@ Figma Variables
 **Purpose:** Import design tokens into Figma as Variables.
 
 **Steps:**
-1. Build tokens: `npm run tokens:build`
+1. Build tokens for your context:
+   ```bash
+   # For app context
+   npm run tokens:build:figma:app
+   
+   # For website context
+   npm run tokens:build:figma:website
+   
+   # For report context
+   npm run tokens:build:figma:report
+   
+   # Or build all contexts at once
+   npm run tokens:build:figma
+   ```
+
 2. Open Figma plugin: Plugins → Development → Envy UI Tokens Adapter
 3. Go to "Variables" tab
-4. Load JSON file: Click "Load JSON file" → Select `generated/figma/tokens/variables.tokens.scoped.json`
+4. Load JSON file: Click "Load JSON file" → Select the appropriate context file:
+   - `generated/figma/app/variables.tokens.scoped.json` for app context
+   - `generated/figma/website/variables.tokens.scoped.json` for website context
+   - `generated/figma/report/variables.tokens.scoped.json` for report context
 5. Prepare import: Click "Prepare import" → Review summary
+   - **Context validation:** Plugin will check if the JSON context matches existing Variables in Figma
+   - **Error if mismatch:** If contexts don't match, import will be blocked with an error message
 6. Select default mode: Choose default mode (e.g., `app-default`)
 7. Apply changes: Click "Apply changes"
 
@@ -82,10 +118,17 @@ Figma Variables
 - Modes are created for each context+theme combination
 - Values are set for all modes
 
+**Context Validation:**
+- Each JSON file contains a `system.context` field (`"app"`, `"website"`, or `"report"`)
+- Plugin automatically detects the context of existing Variables in Figma by analyzing mode names
+- **Import is blocked** if contexts don't match (e.g., trying to import `app` into a file with `website` Variables)
+- **Warning is shown** if importing a general file (no context) into a context-specific file
+- This prevents accidental cross-context imports and keeps Figma files clean
+
 **Modes Structure:**
-- `app-default`, `app-accessibility`
-- `website-default`, `website-dark`
-- `report-print`, `report-screen`
+- `app-default`, `app-accessibility` (app context)
+- `website-default`, `website-dark` (website context)
+- `report-print`, `report-screen` (report context)
 
 ### 2. Export Snapshot (Figma → Backup)
 

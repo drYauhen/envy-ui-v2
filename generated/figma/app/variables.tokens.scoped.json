@@ -1,0 +1,334 @@
+{
+  "system": {
+    "id": "envy-ui-v2",
+    "version": "0.1.0"
+  },
+  "collections": [
+    {
+      "name": "envy-ui-v2 • Colors / Colors",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Alert Banner",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / AvatarGroup",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Avatar",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Border",
+      "modes": [],
+      "variables": [
+        {
+          "path": "eui.color.border.default",
+          "type": "COLOR",
+          "valuesByMode": {
+            "report-screen": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Background",
+      "modes": [],
+      "variables": [
+        {
+          "path": "eui.color.background.base",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.1314994135379519,
+              "g": 0.13149941353795186,
+              "b": 0.1314994135379519,
+              "a": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Text",
+      "modes": [],
+      "variables": [
+        {
+          "path": "eui.color.text.muted",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.8698165572308192,
+              "g": 0.8698165572308191,
+              "b": 0.8698165572308192,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.color.text.primary",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Button",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Primary",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Secondary",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Accent",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Accent Finished",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Focus",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Calendar",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Status",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Card",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Variant",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Celebration",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Checkbox",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Checkmark",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Content",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Counter",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Detail Panel",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Form",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Header",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Hero Section",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Input",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Group",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Menu",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Backdrop",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Modal",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Trigger",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Icon",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Dropdown",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Select",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Option",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Primitive",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Sidebar",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Skeleton",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Switch",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Track",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Thumb",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Table",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Textarea",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Title Bar",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Breakpoint",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Brand",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Neutral",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Signal",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Colors / System",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Shape / Radius",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Focus / Focus",
+      "modes": [],
+      "variables": []
+    },
+    {
+      "name": "envy-ui-v2 • Size / Layout",
+      "modes": [],
+      "variables": []
+    }
+  ]
+}

@@ -3226,6 +3226,27 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Breakpoint",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.breakpoint.desktop",
+          "type": "FLOAT",
+          "value": 1280
+        },
+        {
+          "path": "eui.breakpoint.narrow",
+          "type": "FLOAT",
+          "value": 1024
+        },
+        {
+          "path": "eui.breakpoint.wide",
+          "type": "FLOAT",
+          "value": 1600
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Brand",
       "mode": "default",
       "variables": [
@@ -3366,27 +3387,6 @@
           "path": "eui.color.system.focus",
           "type": "COLOR",
           "value": "#ff4d00"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Breakpoint",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.breakpoint.desktop",
-          "type": "FLOAT",
-          "value": 1280
-        },
-        {
-          "path": "eui.breakpoint.narrow",
-          "type": "FLOAT",
-          "value": 1024
-        },
-        {
-          "path": "eui.breakpoint.wide",
-          "type": "FLOAT",
-          "value": 1600
         }
       ]
     },

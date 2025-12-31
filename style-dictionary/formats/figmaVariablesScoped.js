@@ -147,14 +147,44 @@ function collectContextThemeCombinations(tokensRoot) {
   return combinations;
 }
 
+// Detect context from modes array
+function detectContextFromModes(modes) {
+  if (!modes || modes.length === 0) return null;
+  
+  // Check if all modes start with the same context prefix
+  const contexts = new Set();
+  modes.forEach(mode => {
+    const match = mode.match(/^([^-]+)-/);
+    if (match) {
+      contexts.add(match[1]);
+    }
+  });
+  
+  // If all modes are from the same context, return it
+  if (contexts.size === 1) {
+    return Array.from(contexts)[0];
+  }
+  
+  // If mixed contexts or no prefix - return null (general file)
+  return null;
+}
+
 module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'figma/variables-scoped',
     format({ dictionary, file }) {
       const tokensRoot = findTokensRoot();
-      const contextThemeCombinations = tokensRoot 
+      const allCombinations = tokensRoot 
         ? collectContextThemeCombinations(tokensRoot)
         : ['default'];
+      
+      // Get context filter from file options
+      const contextFilter = file.options?.context || null;
+      
+      // Filter combinations by context if filter is specified
+      const contextThemeCombinations = contextFilter
+        ? allCombinations.filter(mode => mode.startsWith(`${contextFilter}-`))
+        : allCombinations;
       
       const collectionsMap = new Map();
       const variablesMap = new Map(); // Map<tokenPath, variable>
@@ -257,11 +287,15 @@ module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
           .sort((a, b) => a.path.localeCompare(b.path))
       }));
 
+      // Detect context from filtered modes
+      const detectedContext = detectContextFromModes(contextThemeCombinations);
+
       return JSON.stringify(
         {
           system: {
             id: systemMeta?.system?.id ?? 'envy-ui',
-            version: systemMeta?.system?.version ?? '0.0.0'
+            version: systemMeta?.system?.version ?? '0.0.0',
+            context: detectedContext || undefined
           },
           collections
         },

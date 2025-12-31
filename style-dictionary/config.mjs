@@ -108,6 +108,48 @@ export default {
           format: 'figma/variables-scoped'
         }
       ]
+    },
+
+    figmaApp: {
+      transformGroup: 'js',
+      buildPath: path.join(repoRoot, 'generated', 'figma', 'app') + path.sep,
+      files: [
+        {
+          destination: 'variables.tokens.scoped.json',
+          format: 'figma/variables-scoped',
+          options: {
+            context: 'app'
+          }
+        }
+      ]
+    },
+
+    figmaWebsite: {
+      transformGroup: 'js',
+      buildPath: path.join(repoRoot, 'generated', 'figma', 'website') + path.sep,
+      files: [
+        {
+          destination: 'variables.tokens.scoped.json',
+          format: 'figma/variables-scoped',
+          options: {
+            context: 'website'
+          }
+        }
+      ]
+    },
+
+    figmaReport: {
+      transformGroup: 'js',
+      buildPath: path.join(repoRoot, 'generated', 'figma', 'report') + path.sep,
+      files: [
+        {
+          destination: 'variables.tokens.scoped.json',
+          format: 'figma/variables-scoped',
+          options: {
+            context: 'report'
+          }
+        }
+      ]
     }
   }
 };

@@ -19,6 +19,7 @@ interface AdapterPayload {
   system?: {
     id?: string;
     version?: string;
+    context?: string; // Context identifier: 'app', 'website', 'report', or undefined (general)
   };
   collections: AdapterCollection[];
 }
@@ -183,7 +184,29 @@ figma.ui.onmessage = async (message) => {
   console.log('[code.ts][onmessage]', message.type);
   if (message.type === 'prepare-import') {
     try {
-      const summary = calculateImportSummary(message.payload as AdapterPayload);
+      const payload = message.payload as AdapterPayload;
+      
+      // Validate context match
+      const existingContext = detectExistingContext();
+      const importContext = payload.system?.context;
+      
+      if (existingContext && importContext && existingContext !== importContext) {
+        figma.ui.postMessage({ 
+          type: 'import-error', 
+          payload: `Context mismatch! This Figma file contains "${existingContext}" context variables, but you're trying to import "${importContext}" context. Please use the correct JSON file for this context.` 
+        });
+        return;
+      }
+      
+      // Warning if importing general file into context-specific file
+      if (existingContext && !importContext) {
+        figma.ui.postMessage({ 
+          type: 'import-warning', 
+          payload: `Warning: This Figma file contains "${existingContext}" context variables, but you're importing a general file without context. This may cause conflicts.` 
+        });
+      }
+      
+      const summary = calculateImportSummary(payload);
       figma.ui.postMessage({ type: 'import-summary', payload: summary });
     } catch (error) {
       figma.ui.postMessage({ type: 'import-error', payload: formatError(error) });
@@ -540,6 +563,42 @@ function gatherExistingData(api: VariablesAPI): ExistingData {
     collectionsByName: collectionMap,
     variablesByCollectionId: variablesMap
   };
+}
+
+/**
+ * Detects the context of existing Variables in Figma by analyzing mode names
+ * Returns the context if all modes belong to the same context, null otherwise
+ */
+function detectExistingContext(): string | null {
+  if (!figma.variables) return null;
+  
+  const collections = figma.variables.getLocalVariableCollections();
+  const allModes = new Set<string>();
+  
+  collections.forEach(collection => {
+    collection.modes.forEach(mode => {
+      allModes.add(mode.name);
+    });
+  });
+  
+  if (allModes.size === 0) return null;
+  
+  // Extract context prefixes from mode names (e.g., "app-default" -> "app")
+  const contexts = new Set<string>();
+  allModes.forEach(mode => {
+    const match = mode.match(/^([^-]+)-/);
+    if (match) {
+      contexts.add(match[1]);
+    }
+  });
+  
+  // If all modes are from the same context, return it
+  if (contexts.size === 1) {
+    return Array.from(contexts)[0];
+  }
+  
+  // If mixed contexts or no prefix - return null (general/legacy file)
+  return null;
 }
 
 function normalizeVariableName(path: string): string {

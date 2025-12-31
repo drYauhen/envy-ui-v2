@@ -793,6 +793,8 @@
           }`;
         } else if (message.type === 'import-error') {
           status.textContent = `Error: ${message.payload}`;
+        } else if (message.type === 'import-warning') {
+          status.textContent = `⚠️ Warning: ${message.payload}`;
         } else if (message.type === 'structures-complete') {
           if (structuresStatus) structuresStatus.textContent = 'Generated eui.button structure.';
         } else if (message.type === 'structures-error') {
