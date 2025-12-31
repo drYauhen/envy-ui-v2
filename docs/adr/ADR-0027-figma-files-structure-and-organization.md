@@ -377,33 +377,68 @@ Together, Storybook and Figma provide:
 Envy UI - App Context
 ├── Variables (page)
 │   ├── envy-ui • Colors / Brand
+│   │   ├── color.brand.50 (modes: app-default, app-accessibility)
+│   │   ├── color.brand.100
+│   │   └── ...
 │   ├── envy-ui • Colors / Neutral
 │   ├── envy-ui • Size / Spacing
+│   │   ├── spacing.base (modes: app-default, app-accessibility)
+│   │   └── ...
+│   ├── envy-ui • Shape / Radius
 │   └── ...
 ├── Components (page)
 │   ├── Foundation/
+│   │   ├── Colors (swatches with Variables)
+│   │   ├── Typography (text styles)
+│   │   └── Spacing (spacing scale visualization)
 │   ├── Primitives/
+│   │   ├── Button/
+│   │   │   ├── Variants (Primary, Secondary, Accent)
+│   │   │   ├── States (Default, Hover, Disabled, Focus)
+│   │   │   └── Sizes (S, M, L)
+│   │   ├── Input/
+│   │   └── Select/
 │   ├── Composites/
+│   │   ├── Form Field/
+│   │   ├── Alert Banner/
+│   │   └── Card/
 │   └── Layout/
+│       ├── Modal/
+│       └── App Shell/
 ├── Patterns (page)
+│   ├── Forms/
+│   ├── Navigation/
+│   └── Data Display/
 └── Documentation (page)
+    ├── Token Reference
+    ├── Usage Guidelines
+    └── Code Connect Links
 ```
 
 **Website Context File:**
 ```
 Envy UI - Website Context
 ├── Variables (page)
-│   ├── envy-ui • Colors / Brand (different values than App)
-│   ├── envy-ui • Colors / Neutral (different values than App)
+│   ├── envy-ui • Colors / Brand
+│   │   ├── color.brand.50 (modes: website-default, website-dark)
+│   │   └── ... (different values than App context)
+│   ├── envy-ui • Colors / Neutral
+│   │   └── ... (different values than App context)
 │   └── ...
 ├── Components (page)
-│   └── ... (same structure, different visual appearance)
-└── ...
+│   ├── Foundation/
+│   ├── Primitives/
+│   │   ├── Button/ (same structure, different visual appearance)
+│   │   └── ...
+│   ├── Composites/
+│   └── Layout/
+├── Patterns (page)
+└── Documentation (page)
 ```
 
 ### Code Connect Example
 
-**Button Component in App Context:**
+**Interactive Component in App Context:**
 
 ```typescript
 // packages/tsx/button/button.figma.connect.app.ts
@@ -418,14 +453,21 @@ figma.connect(
       intent: figma.enum('Intent', {
         'Primary': 'primary',
         'Secondary': 'secondary',
+        'Accent': 'accent',
       }),
-      // ...
-    }
+      size: figma.enum('Size', {
+        'Small': 'sm',
+        'Medium': 'md',
+        'Large': 'lg',
+      }),
+      disabled: figma.boolean('Disabled'),
+    },
+    example: ({ props }) => `<ButtonClean intent="${props.intent}" size="${props.size}" ${props.disabled ? 'disabled' : ''} />`
   }
 )
 ```
 
-**Button Component in Website Context:**
+**Interactive Component in Website Context:**
 
 ```typescript
 // packages/tsx/button/button.figma.connect.website.ts
@@ -437,15 +479,28 @@ figma.connect(
   'https://www.figma.com/file/WEBSITE_FILE_ID/Envy-UI-Website-Context?node-id=BUTTON_NODE_ID',
   {
     props: {
-      // Same props, different Figma file
-    }
+      intent: figma.enum('Intent', {
+        'Primary': 'primary',
+        'Secondary': 'secondary',
+        'Accent': 'accent',
+      }),
+      size: figma.enum('Size', {
+        'Small': 'sm',
+        'Medium': 'md',
+        'Large': 'lg',
+      }),
+      disabled: figma.boolean('Disabled'),
+    },
+    example: ({ props }) => `<ButtonClean intent="${props.intent}" size="${props.size}" ${props.disabled ? 'disabled' : ''} />`
   }
 )
 ```
 
+**Note:** The same code component (`ButtonClean`) can be connected to multiple Figma files (one per context). Each connection points to the specific Figma file and node ID for that context.
+
 ### Variable Collection Example
 
-**Collection Structure in Figma:**
+**Collection Structure in Figma (App Context):**
 
 ```
 Variables Panel
@@ -455,19 +510,62 @@ Variables Panel
 │   │   │   ├── app-default: rgb(0.97, 0.98, 1.0)
 │   │   │   └── app-accessibility: rgb(0.95, 0.96, 1.0)
 │   │   ├── color.brand.100
-│   │   └── ...
+│   │   │   ├── app-default: rgb(0.94, 0.96, 1.0)
+│   │   │   └── app-accessibility: rgb(0.92, 0.94, 1.0)
+│   │   └── ... (brand.200 through brand.900)
 │   ├── Neutral
+│   │   ├── color.neutral.50
+│   │   │   ├── app-default: rgb(0.98, 0.98, 0.98)
+│   │   │   └── app-accessibility: rgb(0.96, 0.96, 0.96)
+│   │   └── ... (neutral.100 through neutral.900)
 │   ├── Accent
-│   └── Text
+│   ├── Text
+│   ├── Background
+│   └── Border
 ├── 📦 envy-ui • Size
 │   ├── Spacing
 │   │   ├── spacing.base
 │   │   │   ├── app-default: 8
 │   │   │   └── app-accessibility: 10
+│   │   ├── spacing.sm
+│   │   │   ├── app-default: 4
+│   │   │   └── app-accessibility: 5
+│   │   └── ... (spacing.md, spacing.lg, etc.)
+│   ├── Layout
+│   │   ├── layout.container.width
 │   │   └── ...
-│   └── Layout
-└── ...
+│   └── Button
+│       ├── button.size.height.sm
+│       └── ...
+├── 📦 envy-ui • Shape
+│   ├── Radius
+│   │   ├── shape.radius.sm
+│   │   │   ├── app-default: 4
+│   │   │   └── app-accessibility: 5
+│   │   └── ...
+│   └── Button
+│       └── button.shape.radius
+├── 📦 envy-ui • Border
+│   ├── Border
+│   │   └── border.width.base
+│   └── Button
+│       └── button.border.width
+├── 📦 envy-ui • Focus
+│   ├── Focus
+│   │   └── focus.ring.width
+│   └── Button
+│       └── button.focus.ring.width
+└── 📦 envy-ui • Dimensions
+    └── Typography
+        ├── typography.fontSize.base
+        │   ├── app-default: 14
+        │   └── app-accessibility: 16
+        └── ...
 ```
+
+**Note:** In Website Context file, the same collection structure exists, but with different modes:
+- `website-default` and `website-dark` (instead of `app-default` and `app-accessibility`)
+- Variable values may differ to match website design requirements
 
 ---
 
