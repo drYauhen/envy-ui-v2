@@ -218,24 +218,24 @@ Storybook Navigation
 
 ```mermaid
 graph TD
-    A[Token System<br/>tokens/{context}/] --> B[Figma Files]
-    A --> C[Storybook]
+    A["Token System<br/>tokens/{context}/"] --> B["Figma Files"]
+    A --> C["Storybook"]
     
-    B --> B1[Envy UI - App Context<br/>Variables + Components]
-    B --> B2[Envy UI - Website Context<br/>Variables + Components]
-    B --> B3[Envy UI - Report Context<br/>Variables + Components]
+    B --> B1["Envy UI - App Context<br/>Variables + Components"]
+    B --> B2["Envy UI - Website Context<br/>Variables + Components"]
+    B --> B3["Envy UI - Report Context<br/>Variables + Components"]
     
-    C --> C1[Tokens/App<br/>Documentation + Examples]
-    C --> C2[Tokens/Website<br/>Documentation + Examples]
-    C --> C3[Tokens/Report<br/>Documentation + Examples]
+    C --> C1["Tokens/App<br/>Documentation + Examples"]
+    C --> C2["Tokens/Website<br/>Documentation + Examples"]
+    C --> C3["Tokens/Report<br/>Documentation + Examples"]
     
     B1 -.->|Same Structure| C1
     B2 -.->|Same Structure| C2
     B3 -.->|Same Structure| C3
     
-    style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
-    style B fill:#f3e8ff,stroke:#a855f7,stroke-width:2px
-    style C fill:#e8f5e9,stroke:#22c55e,stroke-width:2px
+    style A fill:#e1f5ff,stroke:#0ea5e9,strokeWidth:2px
+    style B fill:#f3e8ff,stroke:#a855f7,strokeWidth:2px
+    style C fill:#e8f5e9,stroke:#22c55e,strokeWidth:2px
     style B1 fill:#fff3e0,stroke:#f59e0b
     style B2 fill:#fff3e0,stroke:#f59e0b
     style B3 fill:#fff3e0,stroke:#f59e0b
