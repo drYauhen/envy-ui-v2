@@ -610,13 +610,25 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   );
                 }
                 
-                // Check if this is a Mermaid diagram
+                // For code blocks, check if this is a Mermaid diagram
+                // Note: Mermaid diagrams are handled at the 'pre' level, but we keep this
+                // as a fallback in case the structure is different
                 const match = /language-(\w+)/.exec(className || '');
                 const language = match && match[1];
                 
                 if (language === 'mermaid') {
-                  const chart = String(children).replace(/\n$/, '');
-                  return <MermaidDiagram chart={chart} />;
+                  // Extract chart content
+                  let chart = '';
+                  if (typeof children === 'string') {
+                    chart = children;
+                  } else if (Array.isArray(children)) {
+                    chart = children
+                      .map((c: any) => typeof c === 'string' ? c : (c?.props?.children || ''))
+                      .join('');
+                  } else {
+                    chart = String(children || '');
+                  }
+                  return <MermaidDiagram chart={chart.trim()} />;
                 }
                 
                 // Regular code block
@@ -640,12 +652,45 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                 );
               },
               // Кастомизация блоков кода
-              pre: ({node, ...props}: any) => (
-                <pre style={{
-                  margin: '16px 0',
-                  overflowX: 'auto'
-                }} {...props} />
-              ),
+              pre: ({node, children, ...props}: any) => {
+                // Check if this pre contains a mermaid code block
+                // ReactMarkdown wraps code blocks in <pre><code className="language-mermaid">...</code></pre>
+                const codeElement = React.Children.toArray(children).find(
+                  (child: any) => {
+                    if (typeof child === 'object' && child?.props) {
+                      const className = child.props.className || '';
+                      return className.includes('language-mermaid');
+                    }
+                    return false;
+                  }
+                ) as any;
+                
+                if (codeElement) {
+                  // Extract the mermaid chart content
+                  let chart = '';
+                  if (typeof codeElement.props.children === 'string') {
+                    chart = codeElement.props.children;
+                  } else if (Array.isArray(codeElement.props.children)) {
+                    chart = codeElement.props.children
+                      .map((c: any) => typeof c === 'string' ? c : (c?.props?.children || ''))
+                      .join('');
+                  } else if (codeElement.props.children) {
+                    chart = String(codeElement.props.children);
+                  }
+                  
+                  if (chart.trim()) {
+                    return <MermaidDiagram chart={chart.trim()} />;
+                  }
+                }
+                
+                // Regular pre block
+                return (
+                  <pre style={{
+                    margin: '16px 0',
+                    overflowX: 'auto'
+                  }} {...props} />
+                );
+              },
               // Кастомизация таблиц
               table: ({node, ...props}) => (
                 <div style={{ overflowX: 'auto', margin: '16px 0' }}>
