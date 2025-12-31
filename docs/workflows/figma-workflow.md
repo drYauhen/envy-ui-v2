@@ -577,7 +577,8 @@ npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
 
 ## Related Documentation
 
-- [ADR-0003: Data-Driven Figma Variables Pipeline](./../adr/ADR-0003-data-driven-figma-variables-pipeline.md)
-- [ADR-0025: Figma Variables Integration Strategy](./../adr/ADR-0025-figma-variables-integration-strategy.md)
+- [ADR-0027: Figma Files Structure and Organization](./../adr/ADR-0027-figma-files-structure-and-organization.md) — File structure, page organization, and Code Connect strategy
+- [ADR-0025: Figma Variables Integration Strategy](./../adr/ADR-0025-figma-variables-integration-strategy.md) — Variables structure, modes, and export strategy
+- [ADR-0003: Data-Driven Figma Variables Pipeline](./../adr/ADR-0003-data-driven-figma-variables-pipeline.md) — Adapter pipeline and plugin architecture
 - [Generated Figma README](../../generated/figma/README.md)
 
