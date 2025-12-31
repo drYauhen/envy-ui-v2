@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import shadowTokens from '../../../tokens/app/semantic/shadow.json';
+import shadowTokens from "../../../../tokens/app/semantic/shadow.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
