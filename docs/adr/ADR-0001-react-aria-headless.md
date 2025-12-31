@@ -3,7 +3,7 @@
 **Status:** Accepted  
 **Date:** 2025-12-15  
 **Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)
+**Assistance:** AI-assisted drafting (human-reviewed)  
 
 ---
 ## Purpose of This Document

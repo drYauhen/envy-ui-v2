@@ -76,6 +76,85 @@ adrFiles.forEach(file => {
   if (!content.match(/\*\*Date:\*\*\s*(.+)/)) {
     errors.push(`❌ ADR-${number}: Missing Date field`);
   }
+  
+  // Check Assistance field formatting
+  const assistanceMatch = content.match(/\*\*Assistance:\*\*\s*(.+?)(\n|$)/);
+  if (assistanceMatch) {
+    // Check for trailing spaces (should have 2 spaces for markdown line break)
+    const assistanceLine = assistanceMatch[0];
+    if (!assistanceLine.endsWith('  \n') && !assistanceLine.endsWith('  \r\n') && !assistanceLine.endsWith('  ')) {
+      warnings.push(`⚠️  ADR-${number}: Assistance field should end with 2 spaces for markdown line break`);
+    }
+  }
+  
+  // Check Related field formatting
+  const relatedMatch = content.match(/\*\*Related:\*\*\s*(.+?)(\n\n|---)/s);
+  if (relatedMatch) {
+    const relatedContent = relatedMatch[1];
+    
+    // Check if Related is on one line (should be multi-line with markers)
+    // Allow for blank line after Related: before list items
+    const hasListMarkers = relatedContent.includes('\n-') || relatedContent.trim().startsWith('-');
+    const hasInlineLinks = relatedContent.includes('[') && relatedContent.includes('](');
+    
+    if (hasInlineLinks && !hasListMarkers && relatedContent.trim().length > 0) {
+      errors.push(`❌ ADR-${number}: Related field should use multi-line format with '-' markers, not single line`);
+    }
+    
+    // Check for wrong marker type
+    if (relatedContent.includes('\n*') && !relatedContent.match(/^\s*\*/m)) {
+      errors.push(`❌ ADR-${number}: Related field should use '-' markers, not '*'`);
+    }
+    
+    // Check for wrong field name
+    if (content.includes('**Related ADRs:**')) {
+      errors.push(`❌ ADR-${number}: Should use '**Related:**' not '**Related ADRs:**'`);
+    }
+    
+    // Check format: should be "- [ADR-XXXX](./file.md) — Title"
+    const relatedLines = relatedContent.split('\n').filter(l => l.trim().startsWith('-'));
+    relatedLines.forEach((line, index) => {
+      // Allow flexible format but check for basic structure
+      if (!line.match(/^-\s+\[ADR-\d+\]\(\.\/ADR-\d+-.+\.md\)/)) {
+        warnings.push(`⚠️  ADR-${number}: Related link format should be: '- [ADR-XXXX](./file.md) — Title' (line ${index + 1})`);
+      }
+    });
+  } else {
+    // Check if Related field exists but with wrong name
+    if (content.includes('**Related ADRs:**')) {
+      errors.push(`❌ ADR-${number}: Should use '**Related:**' not '**Related ADRs:**'`);
+    }
+  }
+  
+  // Check for proper spacing after header fields
+  const headerSection = content.match(/# ADR-\d+:.*?\n\n(.*?)(\n\n---|\n\n##)/s);
+  if (headerSection) {
+    const headerFields = headerSection[1];
+    // Check that each field ends with 2 spaces (for markdown line break)
+    const fieldPatterns = [
+      { name: 'Status', pattern: /\*\*Status:\*\*\s*(.+?)(\n|$)/ },
+      { name: 'Date', pattern: /\*\*Date:\*\*\s*(.+?)(\n|$)/ },
+      { name: 'Owner', pattern: /\*\*Owner:\*\*\s*(.+?)(\n|$)/ },
+      { name: 'Assistance', pattern: /\*\*Assistance:\*\*\s*(.+?)(\n|$)/ },
+      { name: 'Related', pattern: /\*\*Related:\*\*\s*(.+?)(\n|$)/ }
+    ];
+    
+    fieldPatterns.forEach(({ name, pattern }) => {
+      const match = headerFields.match(pattern);
+      if (match) {
+        const line = match[0];
+        // Check if line doesn't end with 2 spaces (unless it's the last field before blank line)
+        if (!line.endsWith('  \n') && !line.endsWith('  \r\n') && name !== 'Related') {
+          // Allow if next line is blank or Related field
+          const nextLineIndex = headerFields.indexOf(line) + line.length;
+          const nextChar = headerFields[nextLineIndex];
+          if (nextChar !== '\n' && nextChar !== undefined) {
+            warnings.push(`⚠️  ADR-${number}: ${name} field should end with 2 spaces for markdown line break`);
+          }
+        }
+      }
+    });
+  }
 });
 
 // Report results

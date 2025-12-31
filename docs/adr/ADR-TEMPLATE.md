@@ -4,6 +4,10 @@
 **Date:** <YYYY-MM-DD>  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
+**Related:**  
+
+- [ADR-XXXX](./ADR-XXXX-title.md) — Related ADR Title  
+- [ADR-YYYY](./ADR-YYYY-title.md) — Another Related ADR Title
 
 ---
 

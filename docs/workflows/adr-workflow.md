@@ -52,6 +52,50 @@ docs/adr/ADR-0027-figma-migration-strategy.md
 - Use impersonal language
 - Avoid "we", "I" - use "This ADR establishes", "The system", etc.
 
+### Formatting Rules
+
+**Critical: Header section formatting must be exact:**
+
+1. **Field order (required):**
+   - `**Status:**` - Must be on its own line with 2 trailing spaces
+   - `**Date:**` - Must be on its own line with 2 trailing spaces
+   - `**Owner:**` - Must be on its own line with 2 trailing spaces
+   - `**Assistance:**` - Optional, but recommended. Must end with 2 trailing spaces
+   - `**Related:**` - Must be on its own line with 2 trailing spaces, followed by blank line
+
+2. **Correct format example:**
+   ```markdown
+   **Status:** Accepted  
+   **Date:** 2025-12-15  
+   **Owner:** Eugene Goncharov  
+   **Assistance:** AI-assisted drafting (human-reviewed)  
+   **Related:**  
+
+   - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
+   - [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline
+   ```
+
+3. **Common formatting errors (avoid):**
+   - ❌ `**Related:** [ADR-0001](./file.md) (description)` - Single line format
+   - ❌ `**Related ADRs:**` - Wrong field name (should be `**Related:**`)
+   - ❌ Using `*` instead of `-` for list markers
+   - ❌ Missing trailing spaces (breaks markdown line breaks)
+   - ❌ Missing blank line after `**Related:**`
+   - ❌ Using parentheses `()` instead of em-dash `—` for descriptions
+
+4. **Related field rules:**
+   - **Field name:** Always use `**Related:**` (not "Related ADRs" or other variants)
+   - **Format:** Multi-line list with `-` markers (not `*`)
+   - **Link format:** `- [ADR-XXXX](./ADR-XXXX-title.md) — Title`
+   - **Separator:** Use em-dash `—` (not hyphen `-` or parentheses `()`)
+   - **Trailing spaces:** Each line should end with 2 spaces for markdown line breaks
+   - **Blank line:** Must have blank line after `**Related:**` before list items
+
+5. **Why trailing spaces matter:**
+   - Markdown requires 2 trailing spaces for line breaks
+   - Without them, fields run together on the same line
+   - Validation script checks for this automatically
+
 ### Step 3: Add to Storybook
 
 **Option A: Use script (recommended):**

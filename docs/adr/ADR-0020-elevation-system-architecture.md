@@ -3,9 +3,9 @@
 **Status:** Accepted  
 **Date:** 2025-12-20  
 **Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)
+**Assistance:** AI-assisted drafting (human-reviewed)  
+**Related:**  
 
-**Related:**
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 

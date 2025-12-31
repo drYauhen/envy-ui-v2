@@ -4,7 +4,10 @@
 **Date:** 2025-12-18  
 **Last Updated:** 2025-12-26  
 **Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)
+**Assistance:** AI-assisted drafting (human-reviewed)  
+**Related:**  
+
+- [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
 
 ---
 

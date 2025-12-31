@@ -3,11 +3,11 @@
 **Status:** Accepted  
 **Date:** 2025-12-16  
 **Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)
+**Assistance:** AI-assisted drafting (human-reviewed)  
+**Related:**  
 
-**Related ADRs:**  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md)  
-- [ADR-0006](./ADR-0006-focus-policy-architecture.md)
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
+- [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus Policy Architecture Driven with System Focus
 
 ---
 

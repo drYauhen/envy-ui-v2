@@ -3,9 +3,9 @@
 **Status:** Accepted  
 **Date:** 2025-12-21  
 **Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)
+**Assistance:** AI-assisted drafting (human-reviewed)  
+**Related:**  
 
-**Related:**
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
 - [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
