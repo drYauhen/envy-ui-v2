@@ -1,0 +1,85 @@
+{
+  "version": "2025-12-31",
+  "timestamp": "2025-12-31T05:07:24.295Z",
+  "snapshot": "2025-12-30T19-57-48-snapshot.json",
+  "snapshotTimestamp": "2025-12-30T19:57:28.115Z",
+  "summary": {
+    "totalChanges": 4,
+    "deleted": 4,
+    "moved": 0,
+    "added": 0,
+    "totalUsagesAffected": 0
+  },
+  "mappings": [],
+  "deleted": [
+    {
+      "old": {
+        "path": "eui.color.status.error",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "variableId": "VariableID:1:614",
+        "name": "eui/color/status/error",
+        "type": "COLOR"
+      },
+      "fallback": {
+        "path": "eui.color.status.application.completed",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "reason": "similar-path-same-collection"
+      },
+      "usages": 0,
+      "action": "delete",
+      "requiresManualReview": false
+    },
+    {
+      "old": {
+        "path": "eui.color.status.info",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "variableId": "VariableID:1:615",
+        "name": "eui/color/status/info",
+        "type": "COLOR"
+      },
+      "fallback": {
+        "path": "eui.color.status.application.completed",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "reason": "similar-path-same-collection"
+      },
+      "usages": 0,
+      "action": "delete",
+      "requiresManualReview": false
+    },
+    {
+      "old": {
+        "path": "eui.color.status.success",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "variableId": "VariableID:1:616",
+        "name": "eui/color/status/success",
+        "type": "COLOR"
+      },
+      "fallback": {
+        "path": "eui.color.status.application.completed",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "reason": "similar-path-same-collection"
+      },
+      "usages": 0,
+      "action": "delete",
+      "requiresManualReview": false
+    },
+    {
+      "old": {
+        "path": "eui.color.status.warning",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "variableId": "VariableID:1:617",
+        "name": "eui/color/status/warning",
+        "type": "COLOR"
+      },
+      "fallback": {
+        "path": "eui.color.status.application.completed",
+        "collection": "envy-ui-v2 • Colors / Status",
+        "reason": "similar-path-same-collection"
+      },
+      "usages": 0,
+      "action": "delete",
+      "requiresManualReview": false
+    }
+  ],
+  "moved": []
+}

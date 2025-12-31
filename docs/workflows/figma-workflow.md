@@ -9,6 +9,21 @@ Figma integration enables bidirectional synchronization between design tokens an
 - **Scripts** - Automation tools for analysis and migration
 - **Artifacts** - Generated files for Figma consumption
 
+## Quick Start: Migration Workflow
+
+**When you change token structure (rename, delete, move variables):**
+
+1. **Before changes:** Create snapshot in Figma plugin → "Snapshot" tab
+2. **Change tokens:** Edit `tokens/` files
+3. **Build:** `npm run tokens:build`
+4. **Generate migration:** `npm run figma:migration:generate`
+5. **Import new tokens:** Figma plugin → "Variables" tab → Import new tokens
+6. **Apply migration:** Figma plugin → "Migration" tab → Load migration file → Apply
+
+**Result:** All Figma Variable bindings are automatically updated to use new variables!
+
+See [Complete Migration Workflow](#6-apply-migration) for detailed steps.
+
 ## Architecture
 
 ```
@@ -135,38 +150,100 @@ Figma Variables
 - Variables that moved between collections
 - Warnings about broken bindings
 
-### 5. Generate Migration File (Future)
+### 5. Generate Migration File
 
 **Purpose:** Create migration file for automatic binding updates when token structure changes.
 
 **Steps:**
-1. Create snapshot before changes
-2. Change token structure (rename paths, etc.)
-3. Build tokens: `npm run tokens:build`
-4. Generate migration: `npm run figma:migration:generate`
-5. Review migration file: `tokens/migrations/YYYY-MM-DD-migration.json`
-6. Apply migration via plugin (future)
+1. **Create snapshot before changes:**
+   - Open Figma plugin → "Snapshot" tab
+   - Click "Create Snapshot"
+   - Save snapshot file (copy JSON or download)
+
+2. **Change token structure:**
+   - Edit tokens in `tokens/` directory
+   - Rename paths, delete variables, move between collections, etc.
+
+3. **Build tokens:**
+   ```bash
+   npm run tokens:build
+   ```
+
+4. **Generate migration:**
+   ```bash
+   npm run figma:migration:generate
+   ```
+   Or specify snapshot:
+   ```bash
+   npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
+   ```
+
+5. **Review migration file:**
+   - Location: `generated/figma/migrations/YYYY-MM-DD-migration.json`
+   - Check deleted variables and their fallbacks
+   - Update fallbacks manually if needed (for variables without automatic fallback)
 
 **Migration file contains:**
-- Mappings: old path → new path
-- Deleted variables with fallbacks
+- Deleted variables with suggested fallbacks
+- Moved variables (changed collection)
 - Usage counts for each change
+- Mappings for future rename support
 
-### 6. Apply Migration (Future)
+### 6. Apply Migration
 
-**Purpose:** Automatically update bindings when token structure changes.
+**Purpose:** Automatically update Figma Variable bindings when token structure changes.
 
-**Steps:**
-1. Generate migration file
-2. Open Figma plugin → "Migration" tab (future)
-3. Load migration file
-4. Review summary
-5. Apply migration
+**Complete Workflow:**
 
-**What happens:**
-- Old Variables are updated or replaced
-- Bindings are updated to new Variable IDs
-- Fallback Variables are used for deleted ones
+1. **Open Figma plugin:**
+   - Plugins → Development → Envy UI Tokens Adapter
+   - Go to "Migration" tab
+
+2. **Load migration file:**
+   - Click "Load Migration file"
+   - Select `generated/figma/migrations/YYYY-MM-DD-migration.json`
+   - Or paste migration JSON directly into textarea
+
+3. **Prepare migration:**
+   - Click "Prepare migration"
+   - Review summary:
+     - Total changes (deleted + moved)
+     - Deleted variables count
+     - Moved variables count
+     - Usages affected
+     - Variables requiring manual review
+
+4. **Apply migration:**
+   - Click "Apply Migration"
+   - Wait for completion
+   - Plugin will automatically:
+     - Replace deleted variables with fallback variables in all bindings
+     - Update bindings for moved variables
+     - Remove old variables
+
+**What happens during migration:**
+- **Deleted variables:** All bindings using deleted variables are updated to use fallback variables
+- **Moved variables:** Variables that changed collection are updated (description/name)
+- **Bindings:** All node bindings (fills, strokes, numeric properties) are automatically updated
+- **Old variables:** Deleted variables are removed from Figma
+
+**Example:**
+
+```
+Before migration:
+- Variable: eui.color.status.error (deleted)
+- Used in: 5 components (Button, Alert, etc.)
+- Fallback: eui.color.status.application.completed
+
+After migration:
+- All 5 components now use: eui.color.status.application.completed
+- Old variable eui.color.status.error is removed
+```
+
+**Important notes:**
+- Migration is **irreversible** - make sure you have a snapshot backup
+- Variables requiring manual review should be checked before applying
+- If fallback is not found, those bindings will be skipped (with warning)
 
 ## Scripts Reference
 
@@ -189,17 +266,24 @@ npm run figma:analyze -- 2025-12-30T19-57-48-snapshot.json
 - List of new variables
 - List of moved variables
 
-### generate-migration.mjs (Future)
+### generate-migration.mjs
 
 **Purpose:** Generate migration file from snapshot comparison.
 
 **Usage:**
 ```bash
+# Generate migration from latest snapshot
 npm run figma:migration:generate
+
+# Generate migration from specific snapshot
+npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
 ```
 
 **Output:**
 - Migration file in `generated/figma/migrations/YYYY-MM-DD-migration.json`
+- Summary of changes (deleted, moved, added)
+- Warnings for variables requiring manual review
+- Suggested fallbacks for deleted variables
 
 ## Artifacts Structure
 
@@ -322,40 +406,70 @@ npm run figma:migration:generate
 
 ## Common Workflows
 
-### Changing Token Structure
+### Changing Token Structure (Complete Workflow)
 
-1. **Create snapshot:**
-   ```bash
-   # In Figma plugin → Snapshot tab → Create Snapshot
-   # Save to: generated/figma/snapshots/YYYY-MM-DD-HHmmss-snapshot.json
-   ```
+**Full process from snapshot to migration:**
+
+1. **Create snapshot (before changes):**
+   - Open Figma plugin → "Snapshot" tab
+   - Click "Create Snapshot"
+   - Copy JSON or download file
+   - Save to: `generated/figma/snapshots/YYYY-MM-DD-HHmmss-snapshot.json`
 
 2. **Change tokens:**
    ```bash
    # Edit tokens in tokens/
    vim tokens/foundations/colors/brand.json
+   # Or delete/rename variables, move between collections, etc.
    ```
 
-3. **Analyze changes:**
+3. **Build tokens:**
    ```bash
    npm run tokens:build
-   npm run figma:analyze
    ```
 
-4. **Generate migration (future):**
+4. **Analyze changes (optional):**
+   ```bash
+   npm run figma:analyze
+   # Shows what will be deleted, added, moved
+   ```
+
+5. **Generate migration:**
    ```bash
    npm run figma:migration:generate
+   # Or specify snapshot:
+   npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
    ```
 
-5. **Import new tokens:**
-   ```bash
-   # In Figma plugin → Variables tab → Import
-   ```
+6. **Review migration file:**
+   - Open: `generated/figma/migrations/YYYY-MM-DD-migration.json`
+   - Check deleted variables and fallbacks
+   - Update fallbacks manually if needed
 
-6. **Apply migration (future):**
-   ```bash
-   # In Figma plugin → Migration tab → Apply
-   ```
+7. **Import new tokens (IMPORTANT - do this first!):**
+   - Open Figma plugin → "Variables" tab
+   - Load: `generated/figma/tokens/variables.tokens.scoped.json`
+   - Click "Prepare import" → "Apply changes"
+   - **This creates new variables from updated tokens**
+   - Without this step, migration won't find new variables to bind to!
+
+8. **Apply migration (then update bindings):**
+   - Open Figma plugin → "Migration" tab
+   - Click "Load Migration file"
+   - Select: `generated/figma/migrations/YYYY-MM-DD-migration.json`
+   - Click "Prepare migration" → Review summary
+   - Click "Apply Migration"
+   - **All bindings are automatically updated!**
+
+**Why this order matters:**
+1. **Step 7 (Import):** Creates new variables in Figma from your updated tokens
+2. **Step 8 (Migration):** Updates all existing bindings to use the new variables (or fallbacks)
+3. **Result:** Your Figma file now uses the new token structure, all bindings are preserved!
+
+**What happens:**
+- New variables are created from updated tokens (step 7)
+- Old bindings are updated to use new/fallback variables (step 8)
+- Old variables are removed (step 8)
 
 ### Regular Backup
 

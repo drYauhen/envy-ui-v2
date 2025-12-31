@@ -23,6 +23,7 @@
     "storybook:build": "npm run tokens:build && npm run docs:copy && storybook build",
     "figma:build": "esbuild figma-plugin/code.ts --bundle --format=iife --platform=browser --target=es2017 --outfile=figma-plugin/dist/code.js --loader:.html=text --loader:.json=json",
     "figma:analyze": "node scripts/figma/analyze-snapshot.mjs",
+    "figma:migration:generate": "node scripts/figma/generate-migration.mjs",
     "dev:app": "cd apps/dev-app && npm run dev",
     "build:app": "cd apps/dev-app && npm run build",
     "preview:app": "cd apps/dev-app && npm run preview",

@@ -143,6 +143,7 @@
       <button class="tab" data-tab="structures">Structures</button>
       <button class="tab" data-tab="applicator">Applicator</button>
       <button class="tab" data-tab="snapshot">Snapshot</button>
+      <button class="tab" data-tab="migration">Migration</button>
     </div>
     <div id="reloadTimestamp" class="reload-strip"></div>
 
@@ -296,12 +297,50 @@
       <div class="status" id="restoreStatus"></div>
     </div>
 
+    <div id="migrationPanel" class="panel">
+      <h1>Apply Migration</h1>
+      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">
+        Apply migration file to update Figma Variable bindings when token structure changes.
+        Load migration file to see what will be changed before applying.
+      </p>
+      
+      <textarea id="migrationInput" placeholder="{\n  \"version\": \"2025-12-31\",\n  \"deleted\": [],\n  \"moved\": []\n}" style="min-height: 120px;"></textarea>
+      
+      <div class="actions">
+        <div class="actions-row">
+          <button id="loadMigrationButton" class="secondary full-width">
+            Load Migration file
+          </button>
+          <input type="file" id="migrationFileInput" accept="application/json" style="display: none;" />
+        </div>
+        <div class="actions-row">
+          <button id="prepareMigrationButton" disabled>Prepare migration</button>
+          <button id="executeMigrationButton" class="secondary" disabled>Apply Migration</button>
+        </div>
+      </div>
+      
+      <div id="migrationSummary" style="display: none; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; margin: 12px 0;">
+        <div style="font-size: 12px; color: #cbd5f5; display: flex; flex-direction: column; gap: 4px;">
+          <div>Total changes: <strong id="migrationTotalChanges">0</strong></div>
+          <div>Deleted variables: <strong id="migrationDeletedCount">0</strong></div>
+          <div>Moved variables: <strong id="migrationMovedCount">0</strong></div>
+          <div>Usages affected: <strong id="migrationUsagesAffected">0</strong></div>
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div style="color: #fbbf24; font-weight: 600;">⚠️ Variables requiring review: <strong id="migrationRequiresReview">0</strong></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="status" id="migrationStatus"></div>
+    </div>
+
     <script>
       const tabs = Array.from(document.querySelectorAll('.tab'));
       const variablesPanel = document.getElementById('variablesPanel');
       const structuresPanel = document.getElementById('structuresPanel');
       const applicatorPanel = document.getElementById('applicatorPanel');
       const snapshotPanel = document.getElementById('snapshotPanel');
+      const migrationPanel = document.getElementById('migrationPanel');
 
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => {
@@ -311,6 +350,7 @@
           structuresPanel.classList.toggle('active', target === 'structures');
           applicatorPanel.classList.toggle('active', target === 'applicator');
           snapshotPanel.classList.toggle('active', target === 'snapshot');
+          migrationPanel.classList.toggle('active', target === 'migration');
         });
       });
 
@@ -636,6 +676,79 @@
       // Initialize restore button state
       updateRestoreButtonState();
 
+      // Migration handlers
+      const migrationInput = document.getElementById('migrationInput');
+      const migrationFileInput = document.getElementById('migrationFileInput');
+      const loadMigrationButton = document.getElementById('loadMigrationButton');
+      const prepareMigrationButton = document.getElementById('prepareMigrationButton');
+      const executeMigrationButton = document.getElementById('executeMigrationButton');
+      const migrationStatus = document.getElementById('migrationStatus');
+      const migrationSummary = document.getElementById('migrationSummary');
+      let lastMigration = null;
+
+      // Load migration file button
+      loadMigrationButton?.addEventListener('click', () => {
+        migrationFileInput.click();
+      });
+
+      migrationFileInput?.addEventListener('change', (event) => {
+        const file = event.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          migrationInput.value = reader.result;
+          migrationStatus.textContent = `Loaded ${file.name}`;
+          executeMigrationButton.disabled = true;
+          lastMigration = null;
+          updateMigrationButtonState();
+        };
+        reader.readAsText(file);
+      });
+
+      // Update migration button state
+      function updateMigrationButtonState() {
+        const hasContent = migrationInput.value.trim().length > 0;
+        prepareMigrationButton.disabled = !hasContent;
+      }
+
+      migrationInput?.addEventListener('input', () => {
+        executeMigrationButton.disabled = true;
+        lastMigration = null;
+        updateMigrationButtonState();
+      });
+
+      // Initialize migration button state
+      updateMigrationButtonState();
+
+      // Prepare migration button
+      prepareMigrationButton?.addEventListener('click', () => {
+        try {
+          const migration = JSON.parse(migrationInput.value);
+          lastMigration = migration;
+          executeMigrationButton.disabled = true;
+          migrationStatus.textContent = 'Preparing migration summary...';
+          parent.postMessage({ pluginMessage: { type: 'prepare-migration', payload: migration } }, '*');
+        } catch (error) {
+          migrationStatus.textContent = 'Invalid JSON';
+        }
+      });
+
+      // Execute migration button
+      executeMigrationButton?.addEventListener('click', () => {
+        if (!lastMigration) {
+          migrationStatus.textContent = 'No prepared migration to apply.';
+          return;
+        }
+        migrationStatus.textContent = 'Applying migration...';
+        parent.postMessage({ 
+          pluginMessage: { 
+            type: 'execute-migration', 
+            payload: lastMigration
+          } 
+        }, '*');
+        executeMigrationButton.disabled = true;
+      });
+
       // Prepare restore button
       prepareRestoreButton?.addEventListener('click', () => {
         try {
@@ -736,8 +849,55 @@
         } else if (message.type === 'restore-error') {
           if (restoreStatus) restoreStatus.textContent = `Error: ${message.payload}`;
           if (executeRestoreButton) executeRestoreButton.disabled = false;
+        } else if (message.type === 'migration-summary') {
+          const summary = message.payload;
+          executeMigrationButton.disabled = false;
+          if (migrationStatus) migrationStatus.textContent = formatMigrationSummary(summary);
+          
+          // Update summary display
+          if (migrationSummary) {
+            const totalChanges = document.getElementById('migrationTotalChanges');
+            const deletedCount = document.getElementById('migrationDeletedCount');
+            const movedCount = document.getElementById('migrationMovedCount');
+            const usagesAffected = document.getElementById('migrationUsagesAffected');
+            const requiresReview = document.getElementById('migrationRequiresReview');
+            
+            if (totalChanges) totalChanges.textContent = summary.totalChanges || 0;
+            if (deletedCount) deletedCount.textContent = summary.deleted || 0;
+            if (movedCount) movedCount.textContent = summary.moved || 0;
+            if (usagesAffected) usagesAffected.textContent = summary.totalUsagesAffected || 0;
+            if (requiresReview) requiresReview.textContent = summary.requiresReview || 0;
+            
+            migrationSummary.style.display = 'block';
+          }
+        } else if (message.type === 'migration-complete') {
+          const result = message.payload;
+          const summaryText = result.summary ? formatMigrationSummary(result.summary) : 'Migration complete';
+          if (migrationStatus) migrationStatus.textContent = summaryText;
+          if (executeMigrationButton) executeMigrationButton.disabled = true;
+        } else if (message.type === 'migration-error') {
+          if (migrationStatus) migrationStatus.textContent = `Error: ${message.payload}`;
+          if (executeMigrationButton) executeMigrationButton.disabled = false;
         }
       };
+
+      function formatMigrationSummary(summary) {
+        const deleted = summary?.deleted || 0;
+        const moved = summary?.moved || 0;
+        const totalChanges = summary?.totalChanges || 0;
+        const totalUsagesAffected = summary?.totalUsagesAffected || 0;
+        const requiresReview = summary?.requiresReview || 0;
+        
+        let result = `Total changes: ${totalChanges} (Deleted: ${deleted}, Moved: ${moved})`;
+        if (totalUsagesAffected > 0) {
+          result += ` • Usages affected: ${totalUsagesAffected}`;
+        }
+        if (requiresReview > 0) {
+          result += ` • ⚠️ Requires review: ${requiresReview}`;
+        }
+        
+        return result;
+      }
 
       function formatRestoreSummary(summary) {
         const collections = summary?.collections || {};

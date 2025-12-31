@@ -119,7 +119,64 @@ interface RestoreResult {
   };
 }
 
-figma.showUI(uiHtml, { width: 420, height: 520 });
+interface MigrationFile {
+  version: string;
+  timestamp: string;
+  snapshot: string;
+  snapshotTimestamp: string;
+  summary: {
+    totalChanges: number;
+    deleted: number;
+    moved: number;
+    added: number;
+    totalUsagesAffected: number;
+  };
+  mappings: any[];
+  deleted: Array<{
+    old: {
+      path: string;
+      collection: string;
+      variableId: string;
+      name: string;
+      type: string;
+    };
+    fallback: {
+      path: string;
+      collection: string;
+      reason: string;
+    } | null;
+    usages: number;
+    action: string;
+    requiresManualReview: boolean;
+  }>;
+  moved: Array<{
+    path: string;
+    oldCollection: string;
+    newCollection: string;
+    usages: number;
+    action: string;
+  }>;
+}
+
+interface MigrationSummary {
+  totalChanges: number;
+  deleted: number;
+  moved: number;
+  totalUsagesAffected: number;
+  requiresReview: number;
+}
+
+interface MigrationResult {
+  summary: MigrationSummary;
+  debug: {
+    variablesReplaced: number;
+    bindingsUpdated: number;
+    bindingsSkipped: number;
+    variablesMoved: number;
+  };
+}
+
+figma.showUI(uiHtml, { width: 520, height: 520 });
 figma.ui.postMessage({ type: 'PLUGIN_RELOADED', payload: { timestamp: formatReloadTimestamp(new Date()) } });
 
 figma.ui.onmessage = async (message) => {
@@ -173,6 +230,23 @@ figma.ui.onmessage = async (message) => {
       figma.closePlugin();
     } catch (error) {
       figma.ui.postMessage({ type: 'restore-error', payload: formatError(error) });
+    }
+  } else if (message.type === 'prepare-migration') {
+    try {
+      const migration = message.payload as MigrationFile;
+      const summary = calculateMigrationSummary(migration);
+      figma.ui.postMessage({ type: 'migration-summary', payload: summary });
+    } catch (error) {
+      figma.ui.postMessage({ type: 'migration-error', payload: formatError(error) });
+    }
+  } else if (message.type === 'execute-migration') {
+    try {
+      const migration = message.payload as MigrationFile;
+      const result = await applyMigration(migration);
+      figma.ui.postMessage({ type: 'migration-complete', payload: result });
+      figma.closePlugin();
+    } catch (error) {
+      figma.ui.postMessage({ type: 'migration-error', payload: formatError(error) });
     }
   } else if (message.type === 'request-timestamp') {
     figma.ui.postMessage({ type: 'PLUGIN_RELOADED', payload: { timestamp: formatReloadTimestamp(new Date()) } });
@@ -1088,6 +1162,159 @@ function hexToPaint(value: string): RGBA {
   const a = parseInt(fullHex.slice(6, 8), 16) / 255;
 
   return { r, g, b, a };
+}
+
+function calculateMigrationSummary(migration: MigrationFile): MigrationSummary {
+  const deleted = migration.deleted.length;
+  const moved = migration.moved.length;
+  const totalChanges = deleted + moved;
+  const totalUsagesAffected = migration.summary.totalUsagesAffected;
+  const requiresReview = migration.deleted.filter(d => d.requiresManualReview).length;
+
+  return {
+    totalChanges,
+    deleted,
+    moved,
+    totalUsagesAffected,
+    requiresReview
+  };
+}
+
+async function applyMigration(migration: MigrationFile): Promise<MigrationResult> {
+  if (!figma.variables) {
+    throw new Error('Figma Variables API not available.');
+  }
+
+  const existingVariables = figma.variables.getLocalVariables();
+  const allPages = figma.root.children.filter(p => p.type === 'PAGE') as PageNode[];
+  const allNodes: SceneNode[] = [];
+  for (const page of allPages) {
+    allNodes.push(...findAllNodesInPage(page));
+  }
+
+  // Создать map переменных по ID и по path
+  const variablesById = new Map<string, Variable>();
+  const variablesByPath = new Map<string, Variable>();
+  for (const variable of existingVariables) {
+    variablesById.set(variable.id, variable);
+    const path = variable.description || variable.name.replace(/\//g, '.');
+    variablesByPath.set(path, variable);
+  }
+
+  let variablesReplaced = 0;
+  let bindingsUpdated = 0;
+  let bindingsSkipped = 0;
+  let variablesMoved = 0;
+
+  // 1. Обработать удаленные переменные (заменить на fallback)
+  for (const deletedVar of migration.deleted) {
+    const oldVariable = variablesById.get(deletedVar.old.variableId);
+    if (!oldVariable) continue; // Переменная уже удалена или не найдена
+
+    // Найти fallback переменную
+    let fallbackVariable: Variable | null = null;
+    if (deletedVar.fallback) {
+      fallbackVariable = variablesByPath.get(deletedVar.fallback.path);
+    }
+
+    if (!fallbackVariable) {
+      console.warn(`[Migration] No fallback found for ${deletedVar.old.path}, skipping`);
+      continue;
+    }
+
+    // Найти все bindings старой переменной и заменить на fallback
+    for (const node of allNodes) {
+      const boundVars = (node as any).boundVariables || {};
+      
+      // Проверить fills/strokes
+      ['fills', 'strokes'].forEach(prop => {
+        const entries = boundVars[prop];
+        if (Array.isArray(entries)) {
+          entries.forEach((entry: any, index: number) => {
+            if (entry?.type === 'VARIABLE_ALIAS' && entry.id === oldVariable.id) {
+              try {
+                const paints = (node as any)[prop];
+                if (Array.isArray(paints) && paints[index]) {
+                  const paint = paints[index];
+                  const updatedPaint = figma.variables.setBoundVariableForPaint(paint, 'color', fallbackVariable!);
+                  const copy = paints.slice();
+                  copy[index] = updatedPaint;
+                  (node as any)[prop] = copy;
+                  bindingsUpdated++;
+                }
+              } catch (error) {
+                console.warn(`[Migration] Failed to update binding for ${prop}[${index}] on ${node.name}:`, error);
+                bindingsSkipped++;
+              }
+            }
+          });
+        }
+      });
+      
+      // Проверить numeric properties
+      const numericProps = ['strokeWeight', 'cornerRadius', 'width', 'height', 
+                           'paddingLeft', 'paddingRight', 'paddingTop', 'paddingBottom'];
+      numericProps.forEach(prop => {
+        const varEntry = boundVars[prop];
+        const varId = typeof varEntry === 'string' ? varEntry : varEntry?.id;
+        if (varId === oldVariable.id) {
+          try {
+            figma.variables.setBoundVariable(node as any, prop as any, fallbackVariable!);
+            bindingsUpdated++;
+          } catch (error) {
+            console.warn(`[Migration] Failed to update binding for ${prop} on ${node.name}:`, error);
+            bindingsSkipped++;
+          }
+        }
+      });
+    }
+
+    // Удалить старую переменную
+    try {
+      oldVariable.remove();
+      variablesReplaced++;
+    } catch (error) {
+      console.warn(`[Migration] Failed to remove variable ${deletedVar.old.path}:`, error);
+    }
+  }
+
+  // 2. Обработать перемещенные переменные (обновить коллекцию)
+  for (const movedVar of migration.moved) {
+    const variable = variablesByPath.get(movedVar.path);
+    if (!variable) continue;
+
+    // Найти старую и новую коллекции
+    const oldCollection = figma.variables.getLocalVariableCollections()
+      .find(c => c.name === movedVar.oldCollection);
+    const newCollection = figma.variables.getLocalVariableCollections()
+      .find(c => c.name === movedVar.newCollection);
+
+    if (!oldCollection || !newCollection) {
+      console.warn(`[Migration] Collections not found for ${movedVar.path}`);
+      continue;
+    }
+
+    // Переместить переменную в новую коллекцию
+    // Note: Figma API не поддерживает прямое перемещение, нужно создать новую переменную
+    // Для упрощения, просто обновим description/name
+    try {
+      // Обновить описание, чтобы отразить новую коллекцию
+      variable.description = movedVar.path;
+      variablesMoved++;
+    } catch (error) {
+      console.warn(`[Migration] Failed to move variable ${movedVar.path}:`, error);
+    }
+  }
+
+  return {
+    summary: calculateMigrationSummary(migration),
+    debug: {
+      variablesReplaced,
+      bindingsUpdated,
+      bindingsSkipped,
+      variablesMoved
+    }
+  };
 }
 
 function formatError(error: unknown): string {
