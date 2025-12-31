@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import spacingTokens from '../../../tokens/foundations/spacing.json';
+import spacingTokens from '../../../tokens/app/foundations/spacing.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { CSSProperties } from 'react';
-import neutral from '../../../tokens/foundations/colors/neutral.json';
-import brand from '../../../tokens/foundations/colors/brand.json';
-import accent from '../../../tokens/foundations/colors/accent.json';
-import statusUi from '../../../tokens/foundations/colors/status.json';
-import statusApplication from '../../../tokens/foundations/colors/status-application.json';
+import neutral from '../../../tokens/app/foundations/colors/neutral.json';
+import brand from '../../../tokens/app/foundations/colors/brand.json';
+import accent from '../../../tokens/app/foundations/colors/accent.json';
+import statusUi from '../../../tokens/app/foundations/colors/status.json';
+import statusApplication from '../../../tokens/app/foundations/colors/status-application.json';
 import { ColorScaleViewer } from '../../viewers/tokens/ColorScaleViewer';
 import { converter } from 'culori';
 
@@ -53,7 +53,7 @@ const renderFamily = (family: string) => (
     tokens={scales[family] ?? {}}
     steps={steps}
     title={`Foundations / Colors — ${family}`}
-    description="Inspection-only. Base tones (50-900) projected directly from tokens/foundations/colors."
+    description="Inspection-only. Base tones (50-900) projected directly from tokens/app/foundations/colors."
   />
 );
 

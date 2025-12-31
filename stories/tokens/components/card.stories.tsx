@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import cardTokens from '../../../tokens/components/card/variant.json';
-import semanticColors from '../../../tokens/semantic/colors/background.json';
-import semanticBorder from '../../../tokens/semantic/colors/border.json';
-import semanticShadow from '../../../tokens/semantic/shadow.json';
-import semanticShape from '../../../tokens/semantic/shape.json';
+import cardTokens from '../../../tokens/app/components/card/variant.json';
+import semanticColors from '../../../tokens/app/semantic/colors/background.json';
+import semanticBorder from '../../../tokens/app/semantic/colors/border.json';
+import semanticShadow from '../../../tokens/app/semantic/shadow.json';
+import semanticShape from '../../../tokens/app/semantic/shape.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
