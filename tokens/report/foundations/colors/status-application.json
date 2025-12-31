@@ -1,0 +1,6 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "$description": "report context - Foundation colors/status application. This structure is defined but currently empty. Tokens will be added when report context is developed."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "$description": "website context - Component menu/shadow. This structure is defined but currently empty. Tokens will be added when website context is developed."
+  }
+}
