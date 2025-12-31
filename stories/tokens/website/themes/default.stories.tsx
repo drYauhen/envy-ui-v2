@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TokenPage, TokenSection } from '../../../../viewers/tokens/TokenLayout';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 
 const meta: Meta = {
   title: 'Tokens/Website/Themes/Default',
