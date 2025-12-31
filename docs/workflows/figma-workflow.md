@@ -18,6 +18,19 @@ The token system is split into three separate systems for Figma:
 
 Each context has its own Figma file. The plugin validates context match before importing to prevent accidental cross-context imports.
 
+**File Structure:**
+- `Envy UI - App Context` - Complete design system for application context
+- `Envy UI - Website Context` - Complete design system for website context
+- `Envy UI - Report Context` - Complete design system for report context
+
+Each file contains:
+- **Variables page**: All design tokens organized into collections
+- **Components page**: All components organized by category
+- **Patterns page**: Component compositions and design patterns
+- **Documentation page**: Context-specific guidelines
+
+For detailed file structure and organization, see [ADR-0027](./../adr/ADR-0027-figma-files-structure-and-organization.md).
+
 ## Quick Start: Migration Workflow
 
 **When you change token structure (rename, delete, move variables):**
