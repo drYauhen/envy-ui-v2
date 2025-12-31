@@ -15,6 +15,7 @@ Expected artifacts
 - `tokens/variables.tokens.full.json` (full variables payload)
 - `tokens/variables.tokens.scoped.json` (scoped variables payload)
 - `structures/structures.eui.button.json` (structures payload for UI generation)
+- `snapshots/` (Figma Variables snapshots created via plugin for migration tracking)
 
 Regeneration
 - `./node_modules/.bin/style-dictionary build --config style-dictionary/config.js --platform figma`

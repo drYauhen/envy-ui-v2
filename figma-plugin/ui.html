@@ -142,6 +142,7 @@
       <button class="tab active" data-tab="variables">Variables</button>
       <button class="tab" data-tab="structures">Structures</button>
       <button class="tab" data-tab="applicator">Applicator</button>
+      <button class="tab" data-tab="snapshot">Snapshot</button>
     </div>
     <div id="reloadTimestamp" class="reload-strip"></div>
 
@@ -238,11 +239,69 @@
       <div id="axesStatusLine" style="font-size: 11px; color: #94a3b8; min-height: 14px;">Axes detected: 0 | Selected axis: — | Bindings used: 0</div>
     </div>
 
+    <div id="snapshotPanel" class="panel">
+      <h1>Export Snapshot</h1>
+      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">
+        Export current Figma Variables state for migration tracking. 
+        Use this before changing token structure to create a baseline for migration.
+      </p>
+      
+      <div id="snapshotSummary" style="display: none; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 6px; margin: 12px 0;">
+        <div style="font-size: 12px; color: #cbd5f5; display: flex; flex-direction: column; gap: 4px;">
+          <div>Collections: <strong id="snapshotCollectionsCount">0</strong></div>
+          <div>Variables: <strong id="snapshotVariablesCount">0</strong></div>
+          <div>Total usages: <strong id="snapshotUsagesCount">0</strong></div>
+          <div>Variables with bindings: <strong id="snapshotVariablesWithUsagesCount">0</strong></div>
+        </div>
+      </div>
+      
+      <button id="exportSnapshotBtn">Create Snapshot</button>
+      
+      <div id="snapshotResult" style="display: none; margin-top: 12px;">
+        <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #cbd5f5;">
+          <span>Snapshot JSON:</span>
+          <textarea id="snapshotJson" readonly style="min-height: 200px; font-family: 'JetBrains Mono', Consolas, monospace; font-size: 11px;"></textarea>
+        </label>
+        <div class="actions-row" style="margin-top: 8px;">
+          <button id="copySnapshotBtn" class="secondary">Copy to Clipboard</button>
+          <button id="downloadSnapshotBtn" class="secondary">Download JSON</button>
+        </div>
+      </div>
+      
+      <div class="status" id="snapshotStatus"></div>
+      
+      <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 24px 0;" />
+      
+      <h1 style="margin-top: 0;">Restore from Snapshot</h1>
+      <p style="margin: 0; font-size: 12px; color: #cbd5f5;">
+        Restore Figma Variables from a snapshot backup. 
+        Load snapshot file to see what will be restored before applying changes.
+      </p>
+      
+      <textarea id="restoreSnapshotInput" placeholder="{\n  \"timestamp\": \"...\",\n  \"collections\": [],\n  \"variables\": []\n}" style="min-height: 120px;"></textarea>
+      
+      <div class="actions">
+        <div class="actions-row">
+          <button id="loadSnapshotButton" class="secondary full-width">
+            Load Snapshot file
+          </button>
+          <input type="file" id="restoreFileInput" accept="application/json" style="display: none;" />
+        </div>
+        <div class="actions-row">
+          <button id="prepareRestoreButton" disabled>Prepare restore</button>
+          <button id="executeRestoreButton" class="secondary" disabled>Restore from Snapshot</button>
+        </div>
+      </div>
+      
+      <div class="status" id="restoreStatus"></div>
+    </div>
+
     <script>
       const tabs = Array.from(document.querySelectorAll('.tab'));
       const variablesPanel = document.getElementById('variablesPanel');
       const structuresPanel = document.getElementById('structuresPanel');
       const applicatorPanel = document.getElementById('applicatorPanel');
+      const snapshotPanel = document.getElementById('snapshotPanel');
 
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => {
@@ -251,6 +310,7 @@
           variablesPanel.classList.toggle('active', target === 'variables');
           structuresPanel.classList.toggle('active', target === 'structures');
           applicatorPanel.classList.toggle('active', target === 'applicator');
+          snapshotPanel.classList.toggle('active', target === 'snapshot');
         });
       });
 
@@ -288,6 +348,28 @@
       let selectedAxisId = null;
       let hasAxesCached = false;
       let axesBindingsCount = 0;
+
+      // Snapshot panel elements
+      const exportSnapshotBtn = document.getElementById('exportSnapshotBtn');
+      const snapshotResult = document.getElementById('snapshotResult');
+      const snapshotJson = document.getElementById('snapshotJson');
+      const copySnapshotBtn = document.getElementById('copySnapshotBtn');
+      const downloadSnapshotBtn = document.getElementById('downloadSnapshotBtn');
+      const snapshotStatus = document.getElementById('snapshotStatus');
+      const snapshotSummary = document.getElementById('snapshotSummary');
+      const snapshotCollectionsCount = document.getElementById('snapshotCollectionsCount');
+      const snapshotVariablesCount = document.getElementById('snapshotVariablesCount');
+      const snapshotUsagesCount = document.getElementById('snapshotUsagesCount');
+      const snapshotVariablesWithUsagesCount = document.getElementById('snapshotVariablesWithUsagesCount');
+
+      // Restore snapshot elements
+      const restoreSnapshotInput = document.getElementById('restoreSnapshotInput');
+      const restoreFileInput = document.getElementById('restoreFileInput');
+      const loadSnapshotButton = document.getElementById('loadSnapshotButton');
+      const prepareRestoreButton = document.getElementById('prepareRestoreButton');
+      const executeRestoreButton = document.getElementById('executeRestoreButton');
+      const restoreStatus = document.getElementById('restoreStatus');
+      let lastRestoreSnapshot = null;
 
       // Request timestamp in case the message arrives before UI initialization.
       parent.postMessage({ pluginMessage: { type: 'request-timestamp' } }, '*');
@@ -480,6 +562,109 @@
         applyTokensBtn.title = 'Reserved for semantic token application (future)';
       }
 
+      // Export snapshot button
+      exportSnapshotBtn?.addEventListener('click', () => {
+        exportSnapshotBtn.disabled = true;
+        exportSnapshotBtn.textContent = 'Creating snapshot...';
+        if (snapshotStatus) snapshotStatus.textContent = 'Exporting...';
+        parent.postMessage({ pluginMessage: { type: 'export-snapshot' } }, '*');
+      });
+
+      // Copy snapshot button
+      copySnapshotBtn?.addEventListener('click', () => {
+        snapshotJson.select();
+        document.execCommand('copy');
+        copySnapshotBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copySnapshotBtn.textContent = 'Copy to Clipboard';
+        }, 2000);
+      });
+
+      // Download snapshot button
+      downloadSnapshotBtn?.addEventListener('click', () => {
+        const json = snapshotJson.value;
+        if (!json) return;
+        
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+        a.href = url;
+        a.download = `${timestamp}-snapshot.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        downloadSnapshotBtn.textContent = 'Downloaded!';
+        setTimeout(() => {
+          downloadSnapshotBtn.textContent = 'Download JSON';
+        }, 2000);
+      });
+
+      // Load snapshot file button
+      loadSnapshotButton?.addEventListener('click', () => {
+        restoreFileInput.click();
+      });
+
+      restoreFileInput?.addEventListener('change', (event) => {
+        const file = event.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          restoreSnapshotInput.value = reader.result;
+          restoreStatus.textContent = `Loaded ${file.name}`;
+          executeRestoreButton.disabled = true;
+          lastRestoreSnapshot = null;
+          updateRestoreButtonState();
+        };
+        reader.readAsText(file);
+      });
+
+      // Update restore button state
+      function updateRestoreButtonState() {
+        const hasContent = restoreSnapshotInput.value.trim().length > 0;
+        prepareRestoreButton.disabled = !hasContent;
+      }
+
+      restoreSnapshotInput?.addEventListener('input', () => {
+        executeRestoreButton.disabled = true;
+        lastRestoreSnapshot = null;
+        updateRestoreButtonState();
+      });
+
+      // Initialize restore button state
+      updateRestoreButtonState();
+
+      // Prepare restore button
+      prepareRestoreButton?.addEventListener('click', () => {
+        try {
+          const snapshot = JSON.parse(restoreSnapshotInput.value);
+          lastRestoreSnapshot = snapshot;
+          executeRestoreButton.disabled = true;
+          restoreStatus.textContent = 'Preparing restore summary...';
+          parent.postMessage({ pluginMessage: { type: 'prepare-restore', payload: snapshot } }, '*');
+        } catch (error) {
+          restoreStatus.textContent = 'Invalid JSON';
+        }
+      });
+
+      // Execute restore button
+      executeRestoreButton?.addEventListener('click', () => {
+        if (!lastRestoreSnapshot) {
+          restoreStatus.textContent = 'No prepared restore to apply.';
+          return;
+        }
+        restoreStatus.textContent = 'Restoring from snapshot...';
+        parent.postMessage({ 
+          pluginMessage: { 
+            type: 'execute-restore', 
+            payload: lastRestoreSnapshot
+          } 
+        }, '*');
+        executeRestoreButton.disabled = true;
+      });
+
       window.onmessage = (event) => {
         const message = event.data.pluginMessage || {};
         if (message.type === 'import-summary') {
@@ -512,8 +697,70 @@
           const ts = message.payload?.timestamp;
           const tsEl = document.getElementById('reloadTimestamp');
           if (ts && tsEl) tsEl.textContent = ts;
+        } else if (message.type === 'snapshot-ready') {
+          const snapshot = message.payload;
+          
+          // Показать summary
+          if (snapshotCollectionsCount) snapshotCollectionsCount.textContent = snapshot.summary.totalCollections;
+          if (snapshotVariablesCount) snapshotVariablesCount.textContent = snapshot.summary.totalVariables;
+          if (snapshotUsagesCount) snapshotUsagesCount.textContent = snapshot.summary.totalUsages;
+          if (snapshotVariablesWithUsagesCount) snapshotVariablesWithUsagesCount.textContent = snapshot.summary.variablesWithUsages;
+          if (snapshotSummary) snapshotSummary.style.display = 'block';
+          
+          // Показать JSON
+          if (snapshotJson) snapshotJson.value = JSON.stringify(snapshot, null, 2);
+          if (snapshotResult) snapshotResult.style.display = 'block';
+          
+          if (exportSnapshotBtn) {
+            exportSnapshotBtn.disabled = false;
+            exportSnapshotBtn.textContent = 'Create Snapshot';
+          }
+          if (snapshotStatus) {
+            snapshotStatus.textContent = `Snapshot created at ${new Date(snapshot.timestamp).toLocaleString()}`;
+          }
+        } else if (message.type === 'snapshot-error') {
+          if (snapshotStatus) snapshotStatus.textContent = `Error: ${message.payload}`;
+          if (exportSnapshotBtn) {
+            exportSnapshotBtn.disabled = false;
+            exportSnapshotBtn.textContent = 'Create Snapshot';
+          }
+        } else if (message.type === 'restore-summary') {
+          const summary = message.payload;
+          executeRestoreButton.disabled = false;
+          if (restoreStatus) restoreStatus.textContent = formatRestoreSummary(summary);
+        } else if (message.type === 'restore-complete') {
+          const result = message.payload;
+          const summaryText = result.summary ? formatRestoreSummary(result.summary) : 'Restore complete';
+          if (restoreStatus) restoreStatus.textContent = summaryText;
+          if (executeRestoreButton) executeRestoreButton.disabled = true;
+        } else if (message.type === 'restore-error') {
+          if (restoreStatus) restoreStatus.textContent = `Error: ${message.payload}`;
+          if (executeRestoreButton) executeRestoreButton.disabled = false;
         }
       };
+
+      function formatRestoreSummary(summary) {
+        const collections = summary?.collections || {};
+        const variables = summary?.variables || {};
+        const bindings = summary?.bindings || {};
+        const warnings = summary?.warnings || [];
+        
+        let result = `Collections: +${collections.create || 0} / update ${collections.update || 0} / reuse ${collections.reuse || 0} • `;
+        result += `Variables: +${variables.create || 0} / update ${variables.update || 0}`;
+        if (variables.delete > 0) {
+          result += ` / delete ${variables.delete}`;
+        }
+        result += ` • Bindings: restore ${bindings.restore || 0}`;
+        if (bindings.skipped > 0) {
+          result += ` / skipped ${bindings.skipped}`;
+        }
+        
+        if (warnings.length > 0) {
+          result += `\n⚠️ Warnings: ${warnings.length}`;
+        }
+        
+        return result;
+      }
 
       refreshSelection?.addEventListener('click', () => {
         if (applicatorStatus) applicatorStatus.textContent = 'Reading selection...';
