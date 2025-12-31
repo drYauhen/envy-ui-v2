@@ -10,22 +10,12 @@ ADR documents therefore serve as:
 	•	context for understanding why certain approaches were explored
 	•	reference material for reflection and analysis
 
-
 ADR documents are NOT:
 	•	current system documentation
 	•	an authoritative description of the present architecture
 	•	executable instructions for implementation
 
-Clarification
-
-The restriction to ADR applies exclusively to architectural decision records.
-
-Other architectural or system documentation (e.g. rules, invariants, operational architecture,
-current system constraints, or explanatory reference material) MAY exist outside `docs/adr/`
-as long as it does NOT capture decisions, alternatives, or historical reasoning.
-
-Such documents are explanatory in nature, must not be treated as ADRs,
-and must not replace, duplicate, or compete with architectural decision records.
+**For detailed ADR workflow, see:** [`docs/workflows/adr-workflow.md`](./docs/workflows/adr-workflow.md)
 
 Canonical Rules
 	•	Single document type: ADR (Architectural Decision Record)
@@ -82,9 +72,11 @@ A typical session bootstrap relies on:
 	1.	Tokens (tokens/)
 	•	Token-first system (DTCG-aligned)
 	•	Source of truth for UI semantics and variation axes
+	•	**Workflow:** [`docs/workflows/tokens-workflow.md`](./docs/workflows/tokens-workflow.md)
 	2.	ADR documents (docs/adr/)
 	•	Historical record of architectural intent
 	•	Directional, not necessarily reflecting latest implementation details
+	•	**Workflow:** [`docs/workflows/adr-workflow.md`](./docs/workflows/adr-workflow.md)
 	3.	LAST_STEP.md (optional)
 	•	Free-form summary of the last completed session
 	•	May describe what was done, why it matters, and any open context
@@ -106,6 +98,8 @@ explicit generative pipelines.
 
 The project is TypeScript-oriented, reflecting the current company stack,
 but is intentionally designed to avoid tight coupling to any single technology or runtime.
+
+**For detailed workflows, see:** [`docs/workflows/`](./docs/workflows/)
 
 Generated Directory Model (Platform-Oriented)
 
@@ -132,6 +126,8 @@ Storybook and Style Dictionary serve as *soft orienters* for understanding the s
 These tools provide directional guidance only.
 The authoritative rules for structure and organization are defined exclusively in this manifest.
 
+**For Storybook workflow, see:** [`docs/workflows/storybook-workflow.md`](./docs/workflows/storybook-workflow.md)
+
 Examples
 
 • Figma outputs:
@@ -141,25 +137,16 @@ Examples
       variables.tokens.scoped.json
     adapter/
       variables.adapter.json
-    structures/
-      structures.eui.button.json
+    snapshots/
+      YYYY-MM-DD-HHmmss-snapshot.json
 
 • CSS outputs:
   generated/css/
-    variables.css
-    variables-dark.css
+    tokens.css
 
 • TypeScript / TSX outputs (small scale):
   generated/tsx/
-    button.tsx
     button.contract.ts
-
-• TypeScript / TSX outputs (grown structure):
-  generated/tsx/
-    components/
-      button/
-        button.tsx
-        button.contract.ts
 
 generated/ Documentation Requirements
 
@@ -173,6 +160,7 @@ generated/ Documentation Requirements
 		–	what artifacts are expected to appear here
 		–	how to regenerate or refresh the artifacts (high level)
 		–	the intended consumers/destinations
+		–	links to relevant workflow documentation when applicable
 
 	•	Whenever the assistant introduces, removes, renames, or materially reorganizes directories or files under `generated/`,
 		the assistant MUST update the relevant `README.md` files so that they reflect the current state.
@@ -280,7 +268,20 @@ Version Control Behavior
 
 ⸻
 
-7. Scope & Evolution
+7. Workflows Documentation
+
+Detailed operational workflows are documented in `docs/workflows/`:
+
+- **[Tokens Workflow](./docs/workflows/tokens-workflow.md)** - Working with design tokens
+- **[Figma Workflow](./docs/workflows/figma-workflow.md)** - Figma integration (plugin, scripts, artifacts)
+- **[Storybook Workflow](./docs/workflows/storybook-workflow.md)** - Storybook development and documentation
+- **[ADR Workflow](./docs/workflows/adr-workflow.md)** - Writing and managing Architectural Decision Records
+
+This manifest provides the framework and rules; workflows provide step-by-step instructions.
+
+⸻
+
+8. Scope & Evolution
 
 This manifest defines operational workflow, structural rules, and canonical conventions.
 
