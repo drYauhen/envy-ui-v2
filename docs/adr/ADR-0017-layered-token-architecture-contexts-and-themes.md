@@ -35,7 +35,7 @@ I decided to implement a **layered token architecture** with the following hiera
 Foundation → Semantic → Context → Theme → Component
 ```
 
-**Structure:**
+**Structure (Initial):**
 - **Foundations** - Base color scales, dimensions (neutral, brand, accent families). Shared across all contexts, context-agnostic.
 - **Semantic** - Semantic tokens (text, background, border, focus) that reference foundations. Define "what" not "where". **Optimized for app-default context/theme by default** (see [ADR-0026](./ADR-0026-app-default-color-positioning.md)).
 - **Contexts** - Context-specific overrides of semantic tokens (environment defaults):
@@ -47,6 +47,27 @@ Foundation → Semantic → Context → Theme → Component
   - `themes/website/default.json`, `themes/website/dark.json`
   - `themes/report/print.json`, `themes/report/screen.json`
 - **Components** - Component tokens reference semantic tokens, may have context-specific variants if needed.
+
+**Note (2025-12-31):** The structure has been further reorganized into fully independent context directories. Each context now has its own complete token structure:
+
+**Current Structure:**
+- **`tokens/app/`** - Application context with complete structure:
+  - `foundations/` - Base tokens for app context
+  - `semantic/` - Semantic tokens for app context
+  - `components/` - Component tokens for app context
+  - `themes/` - Theme overrides (default, accessibility)
+- **`tokens/website/`** - Website context with complete structure:
+  - `foundations/` - Base tokens for website context
+  - `semantic/` - Semantic tokens for website context
+  - `components/` - Component tokens for website context
+  - `themes/` - Theme overrides (default, dark)
+- **`tokens/report/`** - Report context with complete structure:
+  - `foundations/` - Base tokens for report context
+  - `semantic/` - Semantic tokens for report context
+  - `components/` - Component tokens for report context
+  - `themes/` - Theme overrides (print, screen)
+
+This ensures complete independence between contexts and avoids cross-context dependencies. See [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) for details on the evolution of this structure.
 
 **Resolution Priority:**
 1. Foundation tokens provide base values

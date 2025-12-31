@@ -62,16 +62,24 @@ Foundation → Semantic → Context → Theme → Component
   - `font-weight.json` - Font weights (light, normal, medium, semibold, bold)
   - `line-height.json` - Line heights (none, tight, normal, relaxed, loose)
 
-- **Semantic** (`tokens/semantic/typography/`):
+- **Semantic** (`tokens/{context}/semantic/typography/`):
   - `text-styles.json` - Semantic text styles (heading-1 through heading-6, body, caption, code)
 
-- **Contexts/Themes** (`tokens/themes/`):
+- **Themes** (`tokens/{context}/themes/`):
   - Base font-size per theme (example values: `app/default` might use one base size, `app/accessibility` might use a larger base - actual values are theme-dependent)
   - Component-level font-size overrides per theme (optional)
 
-- **Components** (`tokens/components/*/`):
+- **Components** (`tokens/{context}/components/*/`):
   - Component-specific typography tokens in REM
   - Can be overridden per theme
+
+**Note (2025-12-31):** The token structure has been reorganized. Each context now has its own complete structure. Typography tokens are context-specific:
+- `tokens/app/foundations/typography/` - Foundation typography for app
+- `tokens/app/semantic/typography/` - Semantic typography for app
+- `tokens/app/themes/` - Theme overrides for app
+- `tokens/app/components/*/typography.json` - Component typography for app
+
+Same structure applies to `website/` and `report/` contexts. See [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) for details.
 
 ### Base Font-Size Setup
 
@@ -325,7 +333,7 @@ If button font-size = 0.9rem (smaller than base)
 
 **Application Context (example values):**
 ```json
-// tokens/themes/app/default.json
+// tokens/app/themes/default.json
 {
   "eui": {
     "typography": {
@@ -336,7 +344,7 @@ If button font-size = 0.9rem (smaller than base)
   }
 }
 
-// tokens/themes/app/accessibility.json
+// tokens/app/themes/accessibility.json
 {
   "eui": {
     "typography": {
@@ -352,7 +360,7 @@ If button font-size = 0.9rem (smaller than base)
 
 **For specific use cases (example: compact reports - all values are examples):**
 ```json
-// tokens/themes/report/compact.json
+// tokens/report/themes/compact.json
 {
   "eui": {
     "typography": {
@@ -580,10 +588,10 @@ If button font-size = 0.9rem (smaller than base)
 
 ### Current Implementation Status
 
-- ✅ Foundation typography tokens created (`tokens/foundations/typography/`)
-- ✅ Semantic text styles created (`tokens/semantic/typography/`)
-- ✅ Theme base font-size tokens created (`tokens/themes/*/`)
-- ✅ Component typography tokens use REM (`tokens/components/*/size.json`)
+- ✅ Foundation typography tokens created (`tokens/{context}/foundations/typography/`)
+- ✅ Semantic text styles created (`tokens/{context}/semantic/typography/`)
+- ✅ Theme base font-size tokens created (`tokens/{context}/themes/*/`)
+- ✅ Component typography tokens use REM (`tokens/{context}/components/*/typography.json`)
 - ✅ Base font-size set in CSS (`:root` in `.storybook/preview.css`)
 - ⏳ EM units for spacing/icons (can be migrated gradually)
 

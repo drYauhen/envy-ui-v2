@@ -16,10 +16,11 @@ Storybook serves as an AI-agent-oriented architecture layer for understanding an
 stories/
   ├── components/       # Component stories
   ├── docs/            # Documentation stories (ADR, etc.)
-  ├── tokens/          # Token visualization
-  ├── architecture/    # Architecture documentation
-  └── viewers/         # Custom viewers (ADR, etc.)
+  ├── tokens/          # Token visualization (organized by context: app, website, report)
+  └── viewers/         # Custom viewers (ADR, token viewers, etc.)
 ```
+
+**Note:** Architecture documentation has been moved into the token structure itself. Each context and theme has its own README.md file that is displayed in Storybook.
 
 ## Navigation Configuration
 
@@ -39,10 +40,11 @@ sectionOrder: [
   "TSX + React Aria",
   "Web Components",
   "Tailwind",
-  "Templates",
-  "Architecture"
+  "Templates"
 ]
 ```
+
+**Note:** The "Architecture" section has been removed. Architecture documentation is now integrated into the token structure and displayed within the Tokens section.
 
 ### Component Grouping
 
@@ -149,6 +151,7 @@ npm run storybook
 **Auto-prepare includes:**
 - Build tokens
 - Copy docs to public
+- Copy token README files to public
 - Generate Tailwind config
 
 ### Watch Mode
@@ -196,11 +199,19 @@ ADRs are automatically displayed in Storybook:
    npm run docs:copy
    ```
 
-### Architecture Documentation
+### Token Documentation
 
-Architecture docs are in `stories/architecture/`:
-- Custom stories for architecture visualization
-- Can include diagrams, examples, etc.
+Token documentation is integrated into the token structure:
+- Each context has a README.md file: `tokens/{context}/README.md`
+- Each theme directory has a README.md file: `tokens/{context}/themes/README.md`
+- These README files are automatically displayed in Storybook within the Tokens section
+- Documentation is shown when viewing context or theme overview stories
+
+**Example locations:**
+- `tokens/app/README.md` - App context documentation
+- `tokens/app/themes/README.md` - App themes documentation
+- `tokens/website/README.md` - Website context documentation
+- `tokens/report/README.md` - Report context documentation
 
 ## Related Documentation
 

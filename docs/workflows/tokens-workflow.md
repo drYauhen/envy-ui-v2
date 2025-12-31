@@ -8,14 +8,28 @@ Design tokens are the foundational layer of the system. All other layers (compon
 
 ## Token Structure
 
+The token system is organized by context. Each context has its own complete token structure:
+
 ```
 tokens/
-  ├── foundations/      # Base tokens (OKLCH colors, spacing, typography)
-  ├── semantic/         # Semantic tokens (text, background, border, focus)
-  ├── contexts/         # Context-specific overrides (app, website, report)
-  ├── themes/           # Theme-specific overrides (default, dark, accessibility)
-  └── components/       # Component tokens (button, card, input, etc.)
+  ├── app/              # Application context - complete token structure
+  │   ├── foundations/  # Base tokens (OKLCH colors, spacing, typography)
+  │   ├── semantic/     # Semantic tokens (text, background, border, focus)
+  │   ├── components/   # Component tokens (button, card, input, etc.)
+  │   └── themes/       # Theme overrides (default, accessibility)
+  ├── website/          # Website context - complete token structure
+  │   ├── foundations/  # Base tokens for website
+  │   ├── semantic/     # Semantic tokens for website
+  │   ├── components/    # Component tokens for website
+  │   └── themes/       # Theme overrides (default, dark)
+  └── report/           # Report context - complete token structure
+      ├── foundations/  # Base tokens for reports
+      ├── semantic/     # Semantic tokens for reports
+      ├── components/   # Component tokens for reports
+      └── themes/       # Theme overrides (print, screen)
 ```
+
+Each context is fully independent with its own foundations, semantic, and component tokens. This ensures complete separation and avoids cross-context dependencies.
 
 ## Token Resolution Order
 
@@ -37,14 +51,15 @@ Each layer can override values from previous layers.
 
 ### Adding a New Token
 
-1. **Determine layer:**
-   - Foundation: Base values (colors, spacing, typography)
-   - Semantic: Named meanings (text.primary, background.base)
-   - Context: Environment-specific (app, website, report)
-   - Theme: Visual identity (default, dark, accessibility)
-   - Component: Component-specific (button.colors.background.primary)
+1. **Determine context and layer:**
+   - **Context**: Which context does this token belong to? (app, website, report)
+   - **Layer within context**:
+     - Foundation: Base values (colors, spacing, typography)
+     - Semantic: Named meanings (text.primary, background.base)
+     - Theme: Visual identity overrides (default, dark, accessibility)
+     - Component: Component-specific (button.colors.background.primary)
 
-2. **Create/update JSON file:**
+2. **Create/update JSON file in the appropriate context directory:**
    ```json
    {
      "eui": {
@@ -58,6 +73,12 @@ Each layer can override values from previous layers.
      }
    }
    ```
+   
+   **Example locations:**
+   - Foundation token: `tokens/app/foundations/colors/accent.json`
+   - Semantic token: `tokens/app/semantic/colors/text.json`
+   - Theme token: `tokens/app/themes/default.json`
+   - Component token: `tokens/app/components/button/colors.json`
 
 3. **Build tokens:**
    ```bash
@@ -66,7 +87,7 @@ Each layer can override values from previous layers.
 
 4. **Verify output:**
    - Check `generated/css/tokens.css`
-   - Check `generated/figma/tokens/variables.tokens.scoped.json`
+   - Check context-specific Figma files: `generated/figma/{context}/variables.tokens.scoped.json`
    - Check other platform outputs
 
 ### Changing Token Structure
@@ -119,8 +140,12 @@ npm run tokens:build
 **Generates:**
 - CSS variables (`generated/css/tokens.css`)
 - JavaScript tokens (`generated/js/tokens.js`)
-- Figma adapter (`generated/figma/adapter/variables.adapter.json`)
-- Figma tokens (`generated/figma/tokens/variables.tokens.scoped.json`)
+- Figma adapter (`generated/figma/adapter/variables.adapter.json`) - legacy
+- Figma tokens per context:
+  - `generated/figma/app/variables.tokens.scoped.json`
+  - `generated/figma/website/variables.tokens.scoped.json`
+  - `generated/figma/report/variables.tokens.scoped.json`
+- General Figma tokens (`generated/figma/tokens/variables.tokens.scoped.json`) - all contexts
 - TypeScript contracts (`generated/tsx/*.contract.ts`)
 - Storybook colors (`generated/storybook/colors.json`)
 
@@ -157,38 +182,38 @@ Tokens can reference other tokens:
 
 ## Context and Theme Tokens
 
-### Context Tokens
+### Context Structure
 
-Context tokens define environment-specific defaults:
+Each context has its own complete token structure. Contexts are fully independent:
+
+- **`app`** - Application context (compact, 14px base)
+  - Location: `tokens/app/`
+  - Contains: foundations, semantic, components, themes
+  - Themes: default, accessibility
+
+- **`website`** - Website context (relaxed, 16px base)
+  - Location: `tokens/website/`
+  - Contains: foundations, semantic, components, themes
+  - Themes: default, dark
+
+- **`report`** - Report context (print-optimized, 12px base)
+  - Location: `tokens/report/`
+  - Contains: foundations, semantic, components, themes
+  - Themes: print, screen
+
+### Foundation Tokens
+
+Foundation tokens define base values within each context:
 
 ```json
-// tokens/contexts/app.json
+// tokens/app/foundations/typography/font-size.json
 {
   "eui": {
-    "fontSize": {
-      "$value": "14px"
-    }
-  }
-}
-```
-
-**Contexts:**
-- `app` - Application context (compact, 14px)
-- `website` - Website context (relaxed, 16px)
-- `report` - Report context (print-optimized, 12px)
-
-### Theme Tokens
-
-Theme tokens define visual identity:
-
-```json
-// tokens/themes/website/dark.json
-{
-  "eui": {
-    "color": {
-      "text": {
-        "primary": {
-          "$value": "{eui.color.neutral.white}"
+    "typography": {
+      "base": {
+        "fontSize": {
+          "$value": "14px",
+          "$type": "dimension"
         }
       }
     }
@@ -196,17 +221,57 @@ Theme tokens define visual identity:
 }
 ```
 
-**Themes:**
-- `default` - Default theme
-- `dark` - Dark theme
-- `accessibility` - Accessibility theme
+### Semantic Tokens
+
+Semantic tokens define named meanings within each context:
+
+```json
+// tokens/app/semantic/colors/text.json
+{
+  "eui": {
+    "color": {
+      "text": {
+        "primary": {
+          "$value": "{eui.color.brand.700}",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}
+```
+
+### Theme Tokens
+
+Theme tokens define visual identity overrides within a context:
+
+```json
+// tokens/website/themes/dark.json
+{
+  "eui": {
+    "color": {
+      "text": {
+        "primary": {
+          "$value": "{eui.color.neutral.white}",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}
+```
+
+**Available themes per context:**
+- **app**: default, accessibility
+- **website**: default, dark
+- **report**: print, screen
 
 ## Component Tokens
 
-Component tokens define component-specific values:
+Component tokens define component-specific values within each context:
 
 ```json
-// tokens/components/button/colors.json
+// tokens/app/components/button/colors.json
 {
   "eui": {
     "button": {
@@ -222,6 +287,8 @@ Component tokens define component-specific values:
   }
 }
 ```
+
+**Note:** Component tokens are context-specific. Each context has its own component tokens in `tokens/{context}/components/`.
 
 ## Related Documentation
 

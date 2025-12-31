@@ -48,12 +48,14 @@ I decided to **optimize semantic tokens for `app-default` context/theme** while 
   - `eui.color.background.surface` → `{eui.color.neutral.white}` (optimized for app-default)
 
 ### Context and Theme Layers (Overrides)
-- **Context tokens** (`tokens/contexts/`) can override semantic tokens for specific environments
-- **Theme tokens** (`tokens/themes/`) can override semantic tokens within a context
+- **Context tokens** (within `tokens/{context}/`) can override semantic tokens for specific environments
+- **Theme tokens** (within `tokens/{context}/themes/`) can override semantic tokens within a context
 - Only override what differs from app-default
 - Examples:
-  - `tokens/contexts/website.json` might override `eui.color.text.primary` for website context
-  - `tokens/themes/app/accessibility.json` might override colors for high contrast
+  - `tokens/website/semantic/colors/text.json` might override `eui.color.text.primary` for website context
+  - `tokens/app/themes/accessibility.json` might override colors for high contrast
+
+**Note (2025-12-31):** The token structure has been reorganized. Each context now has its own complete structure. Context-specific overrides are within `tokens/{context}/semantic/` and theme overrides are in `tokens/{context}/themes/`. See [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) for details.
 
 ### Default Positioning
 

@@ -29,19 +29,21 @@ The goal is to establish a clear, maintainable file structure that reflects the 
 
 ## Decision
 
-I decided to separate contexts and themes into distinct token directories with clear responsibilities:
+I decided to separate contexts and themes into distinct token directories with clear responsibilities.
 
-### File Structure
+**Note:** This ADR describes the initial separation. The structure was later further reorganized into fully independent context directories (see "Current Structure" below). Each context now has its own complete token structure (foundations, semantic, components, themes) to ensure complete independence and avoid future complexity.
+
+### Initial Structure (Historical)
 
 ```
 tokens/
   foundations/          # Base tokens (OKLCH colors, spacing, typography)
   semantic/            # Semantic tokens (text, background, border, focus)
-  contexts/            # NEW: Context-specific overrides
+  contexts/            # Context-specific overrides
     app.json           # App context: fontSize: 14px, compact spacing
     website.json       # Website context: fontSize: 16px, relaxed spacing
     report.json        # Report context: fontSize: 12px, print-optimized
-  themes/              # REFACTORED: Only theme-specific overrides
+  themes/              # Theme-specific overrides
     app/
       default.json     # Default theme for app context
       accessibility.json # Accessibility theme for app context
@@ -53,6 +55,41 @@ tokens/
       screen.json      # Screen theme for report context
   components/          # Component tokens (button, card, input, etc.)
 ```
+
+### Current Structure (2025-12-31)
+
+The token system has been reorganized into fully independent context directories. Each context contains its own complete token structure:
+
+```
+tokens/
+  app/                 # Application context - complete token structure
+    foundations/       # Base tokens for app context
+    semantic/          # Semantic tokens for app context
+    components/        # Component tokens for app context
+    themes/            # Theme overrides for app context
+      default.json
+      accessibility.json
+  website/             # Website context - complete token structure
+    foundations/       # Base tokens for website context
+    semantic/          # Semantic tokens for website context
+    components/        # Component tokens for website context
+    themes/            # Theme overrides for website context
+      default.json
+      dark.json
+  report/              # Report context - complete token structure
+    foundations/       # Base tokens for report context
+    semantic/          # Semantic tokens for report context
+    components/        # Component tokens for report context
+    themes/            # Theme overrides for report context
+      print.json
+      screen.json
+```
+
+This structure ensures:
+- **Complete Independence**: Each context has its own foundations, semantic, and component tokens
+- **No Cross-Context Dependencies**: Contexts don't share foundational tokens, avoiding future complexity
+- **Clear Separation**: Each context is self-contained and can evolve independently
+- **Figma Integration**: Each context has its own Figma file, preventing accidental cross-context imports
 
 ### Token Resolution Order
 
@@ -157,9 +194,15 @@ Separating contexts from themes makes the architecture more intuitive:
 
 ### Maintainability
 
+**Initial Structure:**
 - Adding a new context: Create `contexts/new-context.json`
 - Adding a new theme: Create `themes/context-name/new-theme.json`
 - No confusion about which tokens belong where
+
+**Current Structure:**
+- Adding a new context: Create `tokens/new-context/` with complete structure (foundations, semantic, components, themes)
+- Adding a new theme: Create `tokens/context-name/themes/new-theme.json`
+- Each context is fully independent
 
 ### Platform Compatibility
 
@@ -192,11 +235,19 @@ This structure directly implements the layered architecture described in ADR-001
 
 ### Implementation Requirements
 
+**Initial Implementation:**
 1. Create `tokens/contexts/` directory
 2. Migrate context-specific tokens from `tokens/themes/*/default.json` to `tokens/contexts/*.json`
 3. Keep only theme-specific overrides in `tokens/themes/`
 4. Update Style Dictionary formats to read both directories
 5. Update CSS generation to create separate selectors for contexts and themes
+
+**Current Implementation (2025-12-31):**
+1. Each context has its own directory: `tokens/{context}/`
+2. Each context contains: `foundations/`, `semantic/`, `components/`, `themes/`
+3. Style Dictionary reads from context-specific directories
+4. Figma export generates separate files per context: `generated/figma/{context}/variables.tokens.scoped.json`
+5. Figma plugin validates context match before import
 
 ---
 
@@ -212,9 +263,9 @@ This structure directly implements the layered architecture described in ADR-001
 
 ## Examples
 
-### Context Token Example
+### Context Token Example (Initial Structure)
 
-**`tokens/contexts/app.json`**:
+**`tokens/contexts/app.json`** (historical):
 ```json
 {
   "eui": {
@@ -230,9 +281,51 @@ This structure directly implements the layered architecture described in ADR-001
 }
 ```
 
-### Theme Token Example
+### Context Token Example (Current Structure)
 
-**`tokens/themes/website/dark.json`**:
+**`tokens/app/foundations/typography/font-size.json`** (current):
+```json
+{
+  "eui": {
+    "typography": {
+      "base": {
+        "fontSize": {
+          "$value": "14px",
+          "$type": "dimension"
+        }
+      }
+    }
+  }
+}
+```
+
+### Theme Token Example (Initial Structure)
+
+**`tokens/themes/website/dark.json`** (historical):
+```json
+{
+  "eui": {
+    "color": {
+      "background": {
+        "base": {
+          "$value": "{eui.color.neutral.900}",
+          "$type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{eui.color.neutral.50}",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}
+```
+
+### Theme Token Example (Current Structure)
+
+**`tokens/website/themes/dark.json`** (current):
 ```json
 {
   "eui": {

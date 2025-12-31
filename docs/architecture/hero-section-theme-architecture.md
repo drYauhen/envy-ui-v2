@@ -29,11 +29,11 @@ Hero Section Tokens (tokens/components/hero-section/)
   ↓
   References: semantic tokens (text, background, spacing)
   ↓
-Semantic Tokens (tokens/semantic/)
+Semantic Tokens (tokens/website/semantic/)
   ↓
-  Can be overridden by: Context → Theme
+  Can be overridden by: Theme
   ↓
-Website Theme (tokens/themes/website/brand-a.json)
+Website Theme (tokens/website/themes/brand-a.json)
   ↓
   Overrides: semantic colors, typography, spacing
   ↓
@@ -64,7 +64,7 @@ Final CSS Variables
 Hero Section tokens reference semantic tokens:
 
 ```json
-// tokens/components/hero-section/colors.json
+// tokens/website/components/hero-section/colors.json
 {
   "text": {
     "heading": {
@@ -78,7 +78,7 @@ Hero Section tokens reference semantic tokens:
 Theme overrides semantic tokens:
 
 ```json
-// tokens/themes/website/brand-a-dark.json
+// tokens/website/themes/brand-a-dark.json
 {
   "eui": {
     "color": {
