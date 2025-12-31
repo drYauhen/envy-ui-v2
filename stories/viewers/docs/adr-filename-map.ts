@@ -36,5 +36,6 @@ export const adrFilenameMap: Record<string, string> = {
   "0024": "ADR-0024-css-layer-strategy-context-priority.md",
   "0025": "ADR-0025-figma-variables-integration-strategy.md",
   "0026": "ADR-0026-app-default-color-positioning.md",
-  "0027": "ADR-0027-figma-files-structure-and-organization.md"
+  "0027": "ADR-0027-figma-files-structure-and-organization.md",
+  "0028": "ADR-0028-internationalization-and-rtl-support.md"
 };
