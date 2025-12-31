@@ -280,15 +280,15 @@
     "$type": "color"
   },
   "eui.button.secondary.label.base": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.hover": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.active": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.label.disabled": {
@@ -296,7 +296,7 @@
     "$type": "color"
   },
   "eui.button.secondary.label.selected": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.button.secondary.border.base": {

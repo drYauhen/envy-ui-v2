@@ -90,15 +90,15 @@
         },
         "label": {
           "base": {
-            "$value": "{eui.color.text.primary}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           },
           "hover": {
-            "$value": "{eui.color.text.primary}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           },
           "active": {
-            "$value": "{eui.color.text.primary}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           },
           "disabled": {
@@ -106,7 +106,7 @@
             "$type": "color"
           },
           "selected": {
-            "$value": "{eui.color.text.primary}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color"
           }
         },

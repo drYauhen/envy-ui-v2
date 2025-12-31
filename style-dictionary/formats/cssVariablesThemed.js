@@ -97,14 +97,30 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
           const referencePath = referenceStr.split('.'); // ['eui', 'radius', 'pill']
           
           // Try to find the token in dictionary by path (exact match)
-          const resolvedToken = dictionary.allTokens.find(t => {
+          // First, try to find by path array
+          let resolvedToken = dictionary.allTokens.find(t => {
             const tPath = t.path || [];
             if (tPath.length !== referencePath.length) return false;
             return tPath.every((seg, i) => seg === referencePath[i]);
           });
           
-          if (resolvedToken && (resolvedToken.value || resolvedToken.$value)) {
-            return resolvedToken.value || resolvedToken.$value;
+          // If not found by path, try to find by name (for resolved tokens)
+          if (!resolvedToken) {
+            const tokenName = referencePath.map(s => s.replace(/\./g, '-')).join('-');
+            resolvedToken = dictionary.allTokens.find(t => {
+              const tName = t.name || (t.path || []).map(s => s.replace(/\./g, '-')).join('-');
+              return tName === tokenName;
+            });
+          }
+          
+          if (resolvedToken) {
+            // Get the resolved value (Style Dictionary resolves references)
+            const resolvedValue = resolvedToken.value || resolvedToken.$value;
+            // If the resolved value is still a reference, recursively resolve it
+            if (typeof resolvedValue === 'string' && resolvedValue.startsWith('{') && resolvedValue.endsWith('}')) {
+              return resolveTokenValue([], resolvedValue);
+            }
+            return resolvedValue;
           }
         }
         
@@ -171,7 +187,9 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
       // For now, we'll use app context semantic tokens as base (can be extended later)
       const semanticFilesToProcess = [
         { file: 'app/semantic/shape.json', pathPrefix: ['eui', 'radius'] },
-        { file: 'app/semantic/colors/border.json', pathPrefix: ['eui', 'color', 'border'] }
+        { file: 'app/semantic/colors/border.json', pathPrefix: ['eui', 'color', 'border'] },
+        { file: 'app/semantic/colors/text.json', pathPrefix: ['eui', 'color', 'text'] },
+        { file: 'app/semantic/colors/background.json', pathPrefix: ['eui', 'color', 'background'] }
       ];
       
       semanticFilesToProcess.forEach(({ file, pathPrefix }) => {

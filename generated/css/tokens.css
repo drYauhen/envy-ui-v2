@@ -73,11 +73,11 @@
   --eui-button-secondary-background-active: oklch(100% 0 0);
   --eui-button-secondary-background-disabled: oklch(94% 0.00 0);
   --eui-button-secondary-background-selected: oklch(100% 0 0);
-  --eui-button-secondary-label-base: oklch(100% 0 0);
-  --eui-button-secondary-label-hover: oklch(100% 0 0);
-  --eui-button-secondary-label-active: oklch(100% 0 0);
+  --eui-button-secondary-label-base: oklch(25% 0.00 0);
+  --eui-button-secondary-label-hover: oklch(25% 0.00 0);
+  --eui-button-secondary-label-active: oklch(25% 0.00 0);
   --eui-button-secondary-label-disabled: oklch(48% 0.00 0);
-  --eui-button-secondary-label-selected: oklch(100% 0 0);
+  --eui-button-secondary-label-selected: oklch(25% 0.00 0);
   --eui-button-secondary-border-base: oklch(48% 0.00 0);
   --eui-button-secondary-border-hover: oklch(48% 0.00 0);
   --eui-button-secondary-border-active: oklch(48% 0.00 0);
@@ -712,16 +712,9 @@
   --eui-color-status-info-500: oklch(68% 0.15 237);
   --eui-color-status-info-600: oklch(63% 0.15 237);
   --eui-color-status-info-700: oklch(60% 0.14 237);
-  --eui-color-background-surface: oklch(100% 0 0);
-  --eui-color-background-subtle: oklch(96.5% 0.00 0);
-  --eui-color-background-inverse: oklch(25% 0.00 0);
   --eui-color-background-base: oklch(25% 0.00 0);
   --eui-color-focus-ring: #ff4d00;
   --eui-color-system-focus: #ff4d00;
-  --eui-color-text-primary: oklch(100% 0 0);
-  --eui-color-text-muted: oklch(90% 0.00 0);
-  --eui-color-text-subtle: oklch(63% 0.00 0);
-  --eui-color-text-inverse: oklch(100% 0 0);
   --eui-radius-pill: 9999px;
   --eui-spacing-xs: 0.25rem;
   --eui-spacing-sm: 0.5rem;
@@ -835,6 +828,15 @@
   --eui-color-border-subtle: oklch(94% 0.00 0);
   --eui-color-border-strong: oklch(84% 0.00 0);
   --eui-color-border-inverse: oklch(33% 0.00 0);
+  --eui-color-text-primary: oklch(25% 0.00 0);
+  --eui-color-text-muted: oklch(48% 0.00 0);
+  --eui-color-text-subtle: oklch(63% 0.00 0);
+  --eui-color-text-inverse: oklch(100% 0 0);
+  --eui-color-text-disabled: oklch(75% 0.00 0);
+  --eui-color-background-surface: oklch(100% 0 0);
+  --eui-color-background-muted: oklch(98% 0.00 0);
+  --eui-color-background-subtle: oklch(96.5% 0.00 0);
+  --eui-color-background-inverse: oklch(25% 0.00 0);
 }
 
 [data-eui-context="app"][data-eui-theme="accessibility"] {

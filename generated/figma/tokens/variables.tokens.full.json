@@ -1295,12 +1295,12 @@
         {
           "path": "eui.button.secondary.label.active",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.base",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.disabled",
@@ -1310,12 +1310,12 @@
         {
           "path": "eui.button.secondary.label.hover",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.selected",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         }
       ]
     },

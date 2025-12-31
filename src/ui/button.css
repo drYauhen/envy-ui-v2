@@ -14,7 +14,7 @@
   --eui-button-bg-base: var(--eui-button-primary-background-base);
   --eui-button-label-base: var(--eui-button-primary-label-base);
   --eui-button-border-base: transparent;
-  --eui-button-border-visible: var(--eui-button-border-base, var(--eui-color-neutral-200));
+  --eui-button-border-visible: var(--eui-button-border-base, var(--eui-color-border-subtle));
   /* Separator color for primary: lighter than background (more visible on dark background) */
   --eui-button-separator-color: color-mix(in srgb, var(--eui-button-bg-base), white 35%);
   --eui-button-flex-grow: var(--eui-button-layout-default-flex-grow);
@@ -56,9 +56,9 @@
 [data-eui-context] .eui-button:disabled {
   cursor: not-allowed;
   opacity: 0.8;
-  background-color: color-mix(in srgb, var(--eui-button-bg-base), var(--eui-color-neutral-300) 35%);
-  color: color-mix(in srgb, var(--eui-button-label-base), var(--eui-color-neutral-500) 40%);
-  border-color: color-mix(in srgb, var(--eui-button-border-base), var(--eui-color-neutral-300) 35%);
+  background-color: color-mix(in srgb, var(--eui-button-bg-base), var(--eui-color-background-muted) 35%);
+  color: color-mix(in srgb, var(--eui-button-label-base), var(--eui-color-text-disabled) 40%);
+  border-color: color-mix(in srgb, var(--eui-button-border-base), var(--eui-color-border-default) 35%);
 }
 
 [data-eui-context] .eui-button:not(:disabled):hover {
