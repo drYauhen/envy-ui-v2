@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import selectColors from "../../../../tokens/app/components/select/colors.json';
-import selectDropdown from "../../../../tokens/app/components/select/dropdown.json';
-import selectPrimitive from "../../../../tokens/app/components/select/primitive.json';
-import semanticColors from "../../../../tokens/app/semantic/colors/text.json';
-import semanticShape from "../../../../tokens/app/semantic/shape.json';
-import semanticShadow from "../../../../tokens/app/semantic/shadow.json';
+import selectColors from '../../../../tokens/app/components/select/colors.json';
+import selectDropdown from '../../../../tokens/app/components/select/dropdown.json';
+import selectPrimitive from '../../../../tokens/app/components/select/primitive.json';
+import semanticColors from '../../../../tokens/app/semantic/colors/text.json';
+import semanticShape from '../../../../tokens/app/semantic/shape.json';
+import semanticShadow from '../../../../tokens/app/semantic/shadow.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
