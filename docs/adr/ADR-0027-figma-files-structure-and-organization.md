@@ -7,6 +7,7 @@
 **Related:**  
 - [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy  
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation  
+- [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer  
 - [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 
 ---
@@ -21,6 +22,7 @@ The system needs a clear Figma file structure that:
 - Provides clear organization for designers (human and AI-assisted design tools)
 - Enables efficient workflow for context-specific design work
 - Maintains consistency with the token architecture
+- Aligns with Storybook organization (which also uses context-based structure)
 
 Previous considerations included:
 - Single file with all contexts (too complex, risk of confusion)
@@ -190,6 +192,51 @@ Documentation/
 └── Code Connect Links
     └── Links to code components
 ```
+
+### Storybook Alignment
+
+Storybook uses the same context-based organization, creating a consistent structure across design and documentation:
+
+**Storybook Structure:**
+```
+Storybook Navigation
+├── Tokens/
+│   ├── App/
+│   │   ├── Context overview
+│   │   ├── Foundations/
+│   │   ├── Semantic/
+│   │   ├── Components/
+│   │   └── Themes/
+│   ├── Website/
+│   │   └── ... (same structure)
+│   └── Report/
+│       └── ... (same structure)
+└── ...
+```
+
+**Alignment Benefits:**
+- **Consistent Mental Model**: Same structure in Figma and Storybook
+- **Easy Navigation**: Developers and designers use the same organization
+- **Documentation Sync**: Storybook documentation matches Figma structure
+- **Token Visibility**: Storybook shows the same tokens that are in Figma Variables
+- **Cross-Reference**: Easy to reference between Figma and Storybook
+
+**Storybook as Documentation Layer:**
+- Storybook provides detailed token documentation with README files
+- Each context has its own documentation (`tokens/{context}/README.md`)
+- Theme documentation explains theme-specific overrides
+- Component token stories mirror the token file structure
+
+**Figma as Design Layer:**
+- Figma provides visual design tools and Variables
+- Components are designed and styled using Variables
+- Patterns demonstrate real-world usage
+- Code Connect links design to code
+
+Together, Storybook and Figma provide:
+- **Storybook**: Technical documentation, token reference, code examples
+- **Figma**: Visual design, component library, design patterns
+- **Shared Structure**: Both organized by context for consistency
 
 ---
 
@@ -406,9 +453,16 @@ For the Figma plugin implementation, see:
 - `figma-plugin/code.ts` - Plugin logic
 - `docs/workflows/figma-workflow.md` - Workflow documentation
 
+**Storybook Integration:**
+- Storybook structure mirrors Figma file structure (`Tokens/App`, `Tokens/Website`, `Tokens/Report`)
+- Both use the same context-based organization
+- Storybook provides technical documentation, Figma provides visual design
+- Token documentation in Storybook corresponds to Variables in Figma
+
 **Future Considerations:**
 - Figma Code Connect implementation for all components
 - Library file approach (if needed for shared components)
 - Component variant management across contexts
 - Design system documentation integration
+- Storybook-Figma cross-referencing (links between Storybook and Figma)
 
