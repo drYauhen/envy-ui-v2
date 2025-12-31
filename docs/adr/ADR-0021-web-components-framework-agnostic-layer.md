@@ -6,7 +6,7 @@
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0012](./ADR-0012-button-evolution-layered-architecture-and-contexts.md) — Button Evolution, Layered Architecture and Contexts  
+- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts  
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model  
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 

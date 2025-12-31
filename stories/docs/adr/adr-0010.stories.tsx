@@ -10,12 +10,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const ButtonTSXReactAriav2Alpha: Story = {
-  name: 'ADR-0010 Button TSX + React Aria v2 (Alpha)',
+export const HostFlexibleInteractiveComponentsReactAriav2Alpha: Story = {
+  name: 'ADR-0010 Host-Flexible Interactive Components (React Aria v2, Alpha)',
   render: () => (
     <AdrViewer
       adrNumber="0010"
-      title="Button TSX + React Aria v2 (Alpha)"
+      title="Host-Flexible Interactive Components (React Aria v2, Alpha)"
       status="Accepted (Alpha)"
       date="2025-12-16"
     />

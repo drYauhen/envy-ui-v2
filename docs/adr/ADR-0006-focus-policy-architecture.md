@@ -26,7 +26,7 @@ The active focus behavior is selected via **system-level policy**, not by indivi
 
 ## 2. Problem Statement
 
-During the implementation of Button v1 and subsequent accessibility discussions, the following architectural question emerged:
+During the implementation of the initial reference component and subsequent accessibility discussions, the following architectural question emerged:
 
 > Should keyboard focus be treated as a visual extension of a component, or as a universal system-level signal indicating keyboard navigation mode?
 

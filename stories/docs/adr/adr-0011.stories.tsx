@@ -10,12 +10,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const TokenDrivenButtonContractsv1Exploratory: Story = {
-  name: 'ADR-0011 Token-Driven Button Contracts (v1, Exploratory)',
+export const TokenDrivenComponentContractsv1Exploratory: Story = {
+  name: 'ADR-0011 Token-Driven Component Contracts (v1, Exploratory)',
   render: () => (
     <AdrViewer
       adrNumber="0011"
-      title="Token-Driven Button Contracts (v1, Exploratory)"
+      title="Token-Driven Component Contracts (v1, Exploratory)"
       status="Accepted (Exploratory)"
       date="2025-12-16"
     />

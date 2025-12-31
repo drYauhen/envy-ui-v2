@@ -1,4 +1,4 @@
-# ADR-0011: Token-Driven Button Contracts (v1, Exploratory)
+# ADR-0011: Token-Driven Component Contracts (v1, Exploratory)
 
 **Status:** Accepted (Exploratory)  
 **Date:** 2025-12-16  
@@ -7,18 +7,18 @@
 
 **Related:**  
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-button-v1-baseline.md) — Canonical UI Namespace and Button v1 Baseline  
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-button-and-storybook-layering.md) — TSX Layer (React Aria) Button v1 and Storybook Layering  
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering  
 - [ADR-0009](./ADR-0009-ave-token-rule-profile-aware-visual-encoding.md) — AVE Token Rule (Profile-Aware Visual Encoding)  
-- [ADR-0010](./ADR-0010-button-tsx-react-aria-v2-alpha.md) — Button TSX + React Aria v2 (Alpha)  
+- [ADR-0010](./ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md) — Host-Flexible Interactive Components (React Aria v2, Alpha)  
 
 ---
 
 ## 1. Context
 
-- System is token-first; Button tokens already encode semantic axes (intent, size, shape, states).  
+- System is token-first; component tokens encode semantic axes (intent, size, shape, states).  
 - Components historically duplicated token-derived enums/unions manually, causing drift and cognitive overhead.  
-- Button v2 highlighted the need for a single semantic contract reusable across implementations (React Aria today, others later).
+- The need for a single semantic contract reusable across implementations (React Aria today, others later) became apparent during initial component implementation.
 
 ---
 

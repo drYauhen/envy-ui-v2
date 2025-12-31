@@ -10,12 +10,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const ButtonEvolutionLayeredArchitectureandContextsExploratorySnapshot: Story = {
-  name: 'ADR-0012 Button Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)',
+export const InteractiveComponentsEvolutionLayeredArchitectureandContextsExploratorySnapshot: Story = {
+  name: 'ADR-0012 Interactive Components Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)',
   render: () => (
     <AdrViewer
       adrNumber="0012"
-      title="Button Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)"
+      title="Interactive Components Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)"
       status="Proposed (Exploratory)"
       date="2025-12-16"
     />

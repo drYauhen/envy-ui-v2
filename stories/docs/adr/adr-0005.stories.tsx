@@ -10,12 +10,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const CanonicalUINamespaceandButtonv1Baseline: Story = {
-  name: 'ADR-0005 Canonical UI Namespace and Button v1 Baseline',
+export const CanonicalUINamespaceandReferenceComponentBaseline: Story = {
+  name: 'ADR-0005 Canonical UI Namespace and Reference Component Baseline',
   render: () => (
     <AdrViewer
       adrNumber="0005"
-      title="Canonical UI Namespace and Button v1 Baseline"
+      title="Canonical UI Namespace and Reference Component Baseline"
       status="Accepted"
       date="2025-12-15"
     />

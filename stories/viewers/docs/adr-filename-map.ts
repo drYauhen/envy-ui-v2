@@ -6,7 +6,7 @@
  * but AdrViewer needs to load them by number.
  * 
  * This file is auto-generated. To regenerate, run:
- * node -e "const fs = require('fs'); const files = fs.readdirSync('docs/adr').filter(f => f.startsWith('ADR-') && f.endsWith('.md')); const mapping = files.map(f => { const match = f.match(/^ADR-(\d+)-(.+)\.md$/); if (match) return { number: match[1], filename: f }; return null; }).filter(Boolean); console.log('export const adrFilenameMap: Record<string, string> = ' + JSON.stringify(Object.fromEntries(mapping.map(m => [m.number, m.filename])), null, 2) + ';');"
+ * node -e "const fs = require('fs'); const files = fs.readdirSync('docs/adr').filter(f => f.startsWith('ADR-') && f.endsWith('.md') && !f.includes('TEMPLATE')); const mapping = files.map(f => { const match = f.match(/^ADR-(\d+)-(.+)\.md$/); if (match) return { number: match[1], filename: f }; return null; }).filter(Boolean); console.log('export const adrFilenameMap: Record<string, string> = ' + JSON.stringify(Object.fromEntries(mapping.map(m => [m.number, m.filename])), null, 2) + ';');"
  */
 
 export const adrFilenameMap: Record<string, string> = {
@@ -14,14 +14,14 @@ export const adrFilenameMap: Record<string, string> = {
   "0002": "ADR-0002-data-driven-storybook-pipeline.md",
   "0003": "ADR-0003-data-driven-figma-variables-pipeline.md",
   "0004": "ADR-0004-context-aware-ui-components-and-projection-model.md",
-  "0005": "ADR-0005-canonical-ui-namespace-and-button-v1-baseline.md",
+  "0005": "ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md",
   "0006": "ADR-0006-focus-policy-architecture.md",
   "0007": "ADR-0007-focus-token-separation-and-policy-mapping.md",
-  "0008": "ADR-0008-tsx-layer-react-aria-button-and-storybook-layering.md",
+  "0008": "ADR-0008-tsx-layer-react-aria-and-storybook-layering.md",
   "0009": "ADR-0009-ave-token-rule-profile-aware-visual-encoding.md",
-  "0010": "ADR-0010-button-tsx-react-aria-v2-alpha.md",
-  "0011": "ADR-0011-token-driven-button-contracts-v1-exploratory.md",
-  "0012": "ADR-0012-button-evolution-layered-architecture-and-contexts.md",
+  "0010": "ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md",
+  "0011": "ADR-0011-token-driven-component-contracts-v1-exploratory.md",
+  "0012": "ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md",
   "0013": "ADR-0013-current-architectural-intent-exploratory.md",
   "0014": "ADR-0014-color-model-tonal-scales-and-contextual-architecture.md",
   "0015": "ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md",
@@ -38,4 +38,3 @@ export const adrFilenameMap: Record<string, string> = {
   "0026": "ADR-0026-app-default-color-positioning.md",
   "0027": "ADR-0027-figma-files-structure-and-organization.md"
 };
-

@@ -1,4 +1,4 @@
-# ADR-0012: Button Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)
+# ADR-0012: Interactive Components Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)
 
 **Status:** Proposed (Exploratory)  
 **Date:** 2025-12-16  
@@ -7,17 +7,17 @@
 
 **Related:**  
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-button-v1-baseline.md) — Canonical UI Namespace and Button v1 Baseline  
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-button-and-storybook-layering.md) — TSX Layer (React Aria) Button v1 and Storybook Layering  
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering  
 - [ADR-0009](./ADR-0009-ave-token-rule-profile-aware-visual-encoding.md) — AVE Token Rule (Profile-Aware Visual Encoding)  
-- [ADR-0010](./ADR-0010-button-tsx-react-aria-v2-alpha.md) — Button TSX + React Aria v2 (Alpha)  
-- [ADR-0011](./ADR-0011-token-driven-button-contracts-v1-exploratory.md) — Token-Driven Button Contracts (v1, Exploratory)  
+- [ADR-0010](./ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md) — Host-Flexible Interactive Components (React Aria v2, Alpha)  
+- [ADR-0011](./ADR-0011-token-driven-component-contracts-v1-exploratory.md) — Token-Driven Component Contracts (v1, Exploratory)  
 
 ---
 
 ## 1. Context and Intent
 
-This ARD captures the current, intentionally messy stage of Button architecture. The system is expanding its semantic surface to learn whether a token-driven, layered approach can support diverse runtimes and compositions without locking into a single base implementation.
+This ADR captures the current, intentionally exploratory stage of interactive components architecture. The system is expanding its semantic surface to learn whether a token-driven, layered approach can support diverse runtimes and compositions without locking into a single base implementation.
 
 ---
 

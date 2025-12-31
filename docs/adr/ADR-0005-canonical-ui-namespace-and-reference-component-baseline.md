@@ -1,4 +1,4 @@
-# ADR-0005: Canonical UI Namespace and Button v1 Baseline
+# ADR-0005: Canonical UI Namespace and Reference Component Baseline
 
 **Status:** Accepted  
 **Date:** 2025-12-15  
@@ -16,13 +16,15 @@
 
 ## 1. Decision Summary
 
-This ADR formally records the outcomes of the **Button v1 exploration phase** and the associated **namespacing and layering decisions**.
+This ADR formally records the outcomes of the **initial interactive component exploration phase** and the associated **namespacing and layering decisions**.
+
+**Note:** Initial work was conducted using an interactive button component as a reference implementation, but the principles established here apply to all interactive components in the system.
 
 I confirm:
 
 1. A **single canonical namespace (`eui`)** is used across the system.
 2. Semantic tokens and runtime aliases are **logically separated but not namespaced separately**.
-3. Button v1 is accepted as a **baseline reference component**, not a final implementation.
+3. The initial reference component is accepted as a **baseline reference implementation**, not a final production component.
 4. Context-aware rendering is mandatory, with `app` as the initial explicit context.
 
 This ADR intentionally captures the system state **after partial implementation**, to preserve architectural intent before further iteration.
@@ -31,7 +33,7 @@ This ADR intentionally captures the system state **after partial implementation*
 
 ## 2. Problem Statement
 
-During the implementation of Button v1, several foundational questions emerged:
+During the implementation of the initial reference component (an interactive button), several foundational questions emerged:
 
 * Should semantic tokens and runtime aliases use separate namespaces?
 * How should context, intent, and state be represented without fragmenting the system?
@@ -83,11 +85,11 @@ Rules:
 
 ---
 
-## 5. Button v1 as Baseline
+## 5. Reference Component as Baseline
 
-### 5.1 Scope of Button v1
+### 5.1 Scope of Initial Reference Component
 
-Button v1 includes:
+The initial reference component (implemented as an interactive button) includes:
 
 * Intents: `primary`, `secondary`
 * Size: `md`
@@ -95,13 +97,13 @@ Button v1 includes:
 * States: default, hover, active, focus (base + accessible), disabled
 * Context: `app`
 
-Button v1 is explicitly treated as:
+The reference component is explicitly treated as:
 
-* a **reference implementation**
+* a **reference implementation** for validating architectural patterns
 * a validation of architectural assumptions
-* a foundation for future automation
+* a foundation for future automation and component generation
 
-It is **not** considered production-final.
+It is **not** considered production-final, and the patterns established apply to all interactive components (buttons, links, form controls, etc.).
 
 ---
 
@@ -165,13 +167,13 @@ These trade-offs are accepted.
 
 ## 10. Status and Next Steps
 
-This ADR marks the completion of the **Button v1 baseline phase**.
+This ADR marks the completion of the **initial reference component baseline phase**.
 
 Next steps (outside the scope of this ADR):
 
-* Review and iterate on Button v1 implementation
+* Review and iterate on the reference component implementation
 * Introduce build-time generation
-* Extend component coverage
+* Extend component coverage to other interactive elements
 * Revisit Figma plugin integration
 
 ---

@@ -5,9 +5,9 @@
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-button-and-storybook-layering.md) — TSX Layer (React Aria) Button v1 and Storybook Layering  
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering  
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model  
-- [ADR-0012](./ADR-0012-button-evolution-layered-architecture-and-contexts.md) — Button Evolution, Layered Architecture and Contexts  
+- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts  
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 
 ---

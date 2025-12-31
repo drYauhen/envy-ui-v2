@@ -1,4 +1,4 @@
-# ADR-0008: TSX Layer (React Aria) Button v1 and Storybook Layering
+# ADR-0008: TSX Layer (React Aria) and Storybook Layering
 
 **Status:** Accepted  
 **Date:** 2025-12-16  
@@ -8,7 +8,7 @@
 **Related ADRs:**  
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
 - [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-button-v1-baseline.md) — Canonical UI Namespace and Button v1 Baseline  
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
 - [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus Policy Architecture  
 - [ADR-0007](./ADR-0007-focus-token-separation-and-policy-mapping.md) — Focus Token Separation and Policy Mapping  
 
@@ -30,7 +30,7 @@ Decisions:
 
 ## 2. Problem Statement / Context
 
-Button v1 existed as a CSS-driven baseline rendered via raw HTML in Storybook.
+The initial reference component existed as a CSS-driven baseline rendered via raw HTML in Storybook.
 
 I need a TSX component layer that:
 
@@ -122,4 +122,4 @@ Story order is enforced as: `Tokens` → `CSS` → `TSX`.
 
 ## 7. Status
 
-Accepted and implemented for the Button v1 TSX baseline + Storybook layering.
+Accepted and implemented for the initial TSX baseline + Storybook layering.
