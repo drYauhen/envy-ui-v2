@@ -2228,6 +2228,12 @@
           "path": "eui.color.border.default",
           "type": "COLOR",
           "valuesByMode": {
+            "report-print": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            },
             "report-screen": {
               "r": 0.36650623808515015,
               "g": 0.36650623808515,
@@ -2588,18 +2594,6 @@
           }
         },
         {
-          "path": "eui.color.background.base",
-          "type": "COLOR",
-          "valuesByMode": {
-            "website-dark": {
-              "r": 0.1314994135379519,
-              "g": 0.13149941353795186,
-              "b": 0.1314994135379519,
-              "a": 1
-            }
-          }
-        },
-        {
           "path": "eui.color.background.inverse",
           "type": "COLOR",
           "valuesByMode": {
@@ -2613,6 +2607,18 @@
               "r": 0.1314994135379519,
               "g": 0.13149941353795186,
               "b": 0.1314994135379519,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.color.background.muted",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
               "a": 1
             }
           }
@@ -2753,6 +2759,18 @@
           }
         },
         {
+          "path": "eui.color.text.disabled",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            }
+          }
+        },
+        {
           "path": "eui.color.text.inverse",
           "type": "COLOR",
           "valuesByMode": {
@@ -2763,30 +2781,6 @@
               "a": 1
             },
             "report-screen": {
-              "r": 0.9999999999999999,
-              "g": 0.9999999999999997,
-              "b": 0.9999999999999999,
-              "a": 1
-            }
-          }
-        },
-        {
-          "path": "eui.color.text.muted",
-          "type": "COLOR",
-          "valuesByMode": {
-            "website-dark": {
-              "r": 0.8698165572308192,
-              "g": 0.8698165572308191,
-              "b": 0.8698165572308192,
-              "a": 1
-            }
-          }
-        },
-        {
-          "path": "eui.color.text.primary",
-          "type": "COLOR",
-          "valuesByMode": {
-            "website-dark": {
               "r": 0.9999999999999999,
               "g": 0.9999999999999997,
               "b": 0.9999999999999999,
@@ -8671,11 +8665,53 @@
       ],
       "variables": [
         {
+          "path": "eui.radius.default",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-default": 4
+          }
+        },
+        {
+          "path": "eui.radius.extra-large",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-default": 12
+          }
+        },
+        {
+          "path": "eui.radius.full",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-default": 9999
+          }
+        },
+        {
+          "path": "eui.radius.large",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-default": 8
+          }
+        },
+        {
+          "path": "eui.radius.none",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-default": 0
+          }
+        },
+        {
           "path": "eui.radius.pill",
           "type": "FLOAT",
           "valuesByMode": {
             "report-print": 9999,
             "report-screen": 9999
+          }
+        },
+        {
+          "path": "eui.radius.small",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-default": 2
           }
         }
       ]

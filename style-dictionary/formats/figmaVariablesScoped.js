@@ -101,43 +101,25 @@ function findTokensRoot() {
 }
 
 // Collect all context+theme combinations
+// New structure: tokens/{context}/themes/{theme}.json
 function collectContextThemeCombinations(tokensRoot) {
   const combinations = [];
   
-  // Read contexts
-  const contextsDir = path.join(tokensRoot, 'contexts');
-  const contexts = [];
-  if (fs.existsSync(contextsDir)) {
-    contexts.push(...fs.readdirSync(contextsDir)
-      .filter(f => f.endsWith('.json'))
-      .map(f => path.basename(f, '.json')));
-  }
+  // Read themes from each context directory
+  const contextDirs = ['app', 'website', 'report'];
   
-  // Read themes per context
-  const themesDir = path.join(tokensRoot, 'themes');
-  if (fs.existsSync(themesDir)) {
-    const contextDirs = fs.readdirSync(themesDir, { withFileTypes: true })
-      .filter(d => d.isDirectory());
-    
-    contextDirs.forEach(contextDir => {
-      const context = contextDir.name;
-      const contextPath = path.join(themesDir, context);
-      const themes = fs.readdirSync(contextPath)
+  contextDirs.forEach(context => {
+    const contextThemesDir = path.join(tokensRoot, context, 'themes');
+    if (fs.existsSync(contextThemesDir)) {
+      const themes = fs.readdirSync(contextThemesDir)
         .filter(f => f.endsWith('.json'))
         .map(f => path.basename(f, '.json'));
       
       themes.forEach(theme => {
         combinations.push(`${context}-${theme}`);
       });
-    });
-  }
-  
-  // If no themes found, create default modes for contexts
-  if (combinations.length === 0 && contexts.length > 0) {
-    contexts.forEach(context => {
-      combinations.push(`${context}-default`);
-    });
-  }
+    }
+  });
   
   // Fallback to single default mode
   if (combinations.length === 0) {
@@ -219,27 +201,30 @@ module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
         }
 
         // Determine which mode(s) this token belongs to
+        // New structure: tokens/{context}/themes/{theme}.json
         const filePath = token.filePath || '';
         let modes = [];
         
-        if (filePath.includes('/contexts/')) {
-          // Context token: applies to all themes in that context
-          const contextMatch = filePath.match(/contexts\/([^/]+)\.json$/);
-          if (contextMatch) {
-            const context = contextMatch[1];
-            modes = contextThemeCombinations.filter(m => m.startsWith(`${context}-`));
-          }
-        } else if (filePath.includes('/themes/')) {
+        // Check if token is from a theme file: tokens/{context}/themes/{theme}.json
+        const themeMatch = filePath.match(/\/(app|website|report)\/themes\/([^/]+)\.json$/);
+        if (themeMatch) {
           // Theme token: applies to specific context+theme
-          const themeMatch = filePath.match(/themes\/([^/]+)\/([^/]+)\.json$/);
-          if (themeMatch) {
-            const context = themeMatch[1];
-            const theme = themeMatch[2];
-            modes = [`${context}-${theme}`];
-          }
+          const context = themeMatch[1];
+          const theme = themeMatch[2];
+          modes = [`${context}-${theme}`];
         } else {
           // Base token (foundation/semantic/component): applies to all modes
-          modes = contextThemeCombinations;
+          // Note: Context-specific tokens are now in foundations/semantic within each context
+          // but they still apply to all themes in that context via the filter below
+          const contextMatch = filePath.match(/\/(app|website|report)\//);
+          if (contextMatch) {
+            // Token is from a specific context, apply to all themes in that context
+            const context = contextMatch[1];
+            modes = contextThemeCombinations.filter(m => m.startsWith(`${context}-`));
+          } else {
+            // Token is from shared location (shouldn't happen in new structure, but keep for safety)
+            modes = contextThemeCombinations;
+          }
         }
 
         // Set value for applicable modes
