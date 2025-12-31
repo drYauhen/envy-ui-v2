@@ -5,6 +5,7 @@
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
+- [ADR-0027](./ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization  
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation  
 - [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority  
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
@@ -301,7 +302,10 @@ This conversion is handled automatically during the build process and does not a
 
 ## Notes
 
-This ADR focuses on the Figma Variables structure and export strategy. For CSS generation, see:
+This ADR focuses on the Figma Variables structure and export strategy. For file structure and organization, see:
+- [ADR-0027](./ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization
+
+For CSS generation, see:
 - [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
 
 For token organization, see:
