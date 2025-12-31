@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import mermaid from 'mermaid';
+import { adrFilenameMap } from './adr-filename-map';
 
 type AdrViewerProps = {
   adrNumber: string;
@@ -373,7 +374,8 @@ const adrNumberToStoryPath = async (adrNumber: string): Promise<string> => {
     }
     
     // Fallback: fetch the ADR file to get the title
-    const response = await fetch(`/docs/adr/ADR-${adrNumber}.md`);
+    const filename = adrFilenameMap[adrNumber] || `ADR-${adrNumber}.md`;
+    const response = await fetch(`/docs/adr/${filename}`);
     if (!response.ok) {
       throw new Error(`Failed to load ADR-${adrNumber}`);
     }
@@ -400,11 +402,15 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
     setLoading(true);
     setError(null);
     
+    // Get the actual filename from the mapping, or fall back to default pattern
+    const filename = adrFilenameMap[adrNumber] || `ADR-${adrNumber}.md`;
+    const filePath = `/docs/adr/${filename}`;
+    
     // Загружаем markdown файл напрямую (универсальный подход, не зависит от Vite)
-    fetch(`/docs/adr/ADR-${adrNumber}.md`)
+    fetch(filePath)
       .then(res => {
         if (!res.ok) {
-          throw new Error(`Failed to load ADR-${adrNumber}: ${res.status} ${res.statusText}`);
+          throw new Error(`Failed to load ADR-${adrNumber}: ${res.status} ${res.statusText}. Tried path: ${filePath}`);
         }
         return res.text();
       })
