@@ -4,10 +4,10 @@ import tableColors from '../../../../tokens/app/components/table/colors.json';
 import tableExpandableCell from '../../../../tokens/app/components/table/expandable-cell.json';
 import tableFolder from '../../../../tokens/app/components/table/folder.json';
 import tableSpacing from '../../../../tokens/app/components/table/spacing.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

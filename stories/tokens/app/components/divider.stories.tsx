@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import dividerColors from '../../../../tokens/app/components/divider/colors.json';
 import dividerSize from '../../../../tokens/app/components/divider/size.json';
 import dividerSpacing from '../../../../tokens/app/components/divider/spacing.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

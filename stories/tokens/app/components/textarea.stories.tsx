@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import textareaSize from '../../../../tokens/app/components/textarea/size.json';
 import textareaTypography from '../../../../tokens/app/components/textarea/typography.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

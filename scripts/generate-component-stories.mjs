@@ -61,10 +61,10 @@ function generateStory(componentName, files) {
 
   return `import type { Meta, StoryObj } from '@storybook/react';
 ${imports}
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

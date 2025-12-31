@@ -5,10 +5,10 @@ import checkboxFocus from '../../../../tokens/app/components/checkbox/focus.json
 import checkboxLayout from '../../../../tokens/app/components/checkbox/layout.json';
 import checkboxShape from '../../../../tokens/app/components/checkbox/shape.json';
 import checkboxSize from '../../../../tokens/app/components/checkbox/size.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

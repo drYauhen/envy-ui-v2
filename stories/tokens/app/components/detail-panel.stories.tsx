@@ -3,10 +3,10 @@ import detailPanelColors from '../../../../tokens/app/components/detail-panel/co
 import detailPanelShadow from '../../../../tokens/app/components/detail-panel/shadow.json';
 import detailPanelSize from '../../../../tokens/app/components/detail-panel/size.json';
 import detailPanelSpacing from '../../../../tokens/app/components/detail-panel/spacing.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

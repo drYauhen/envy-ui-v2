@@ -3,10 +3,10 @@ import heroSectionColors from '../../../../tokens/app/components/hero-section/co
 import heroSectionSize from '../../../../tokens/app/components/hero-section/size.json';
 import heroSectionSpacing from '../../../../tokens/app/components/hero-section/spacing.json';
 import heroSectionTypography from '../../../../tokens/app/components/hero-section/typography.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

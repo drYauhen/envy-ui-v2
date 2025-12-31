@@ -3,10 +3,10 @@ import sidebarAnimation from '../../../../tokens/app/components/sidebar/animatio
 import sidebarColors from '../../../../tokens/app/components/sidebar/colors.json';
 import sidebarSize from '../../../../tokens/app/components/sidebar/size.json';
 import sidebarSpacing from '../../../../tokens/app/components/sidebar/spacing.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

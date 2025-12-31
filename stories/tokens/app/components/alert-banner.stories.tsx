@@ -3,10 +3,10 @@ import alertBannerBorder from '../../../../tokens/app/components/alert-banner/bo
 import alertBannerColors from '../../../../tokens/app/components/alert-banner/colors.json';
 import alertBannerSpacing from '../../../../tokens/app/components/alert-banner/spacing.json';
 import alertBannerZIndex from '../../../../tokens/app/components/alert-banner/z-index.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 
