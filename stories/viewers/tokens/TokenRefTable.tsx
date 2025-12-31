@@ -12,7 +12,7 @@ type TokenRefTableProps = {
   title: string;
   refs: TokenRef[];
   emptyMessage: string;
-  renderPreview: (token: TokenRef) => ReactNode;
+  renderPreview?: (token: TokenRef) => ReactNode;
   showType?: boolean;
   tokenLabel?: string;
   referenceLabel?: string;
@@ -38,7 +38,7 @@ export const TokenRefTable = ({
           <tr>
             <th style={tokenThStyle}>{tokenLabel}</th>
             <th style={tokenThStyle}>{referenceLabel}</th>
-            <th style={tokenThStyle}>Preview</th>
+            {renderPreview ? <th style={tokenThStyle}>Preview</th> : null}
             {showType ? <th style={tokenThStyle}>{typeLabel}</th> : null}
           </tr>
         </thead>
@@ -47,7 +47,7 @@ export const TokenRefTable = ({
             <tr key={token.path}>
               <td style={tokenTdStyle}>{token.path}</td>
               <td style={tokenTdStyle}>{token.ref}</td>
-              <td style={tokenTdStyle}>{renderPreview(token)}</td>
+              {renderPreview ? <td style={tokenTdStyle}>{renderPreview(token)}</td> : null}
               {showType ? <td style={tokenTdStyle}>{token.type ?? '-'}</td> : null}
             </tr>
           ))}
