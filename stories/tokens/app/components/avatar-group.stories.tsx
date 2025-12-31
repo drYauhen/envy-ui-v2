@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import avatar-groupLayout from '../../../../tokens/app/components/avatar-group/layout.json';
+import avatarGroupLayout from '../../../../tokens/app/components/avatar-group/layout.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
@@ -8,12 +8,12 @@ import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef
 type Story = StoryObj;
 
 const flatTokenMap: Record<string, FlatToken> = {};
-flattenTokens(avatar-groupLayout, [], flatTokenMap);
+flattenTokens(avatarGroupLayout, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
 const allRefs: TokenRef[] = [
-  ...collectRefs((avatar-groupLayout as any)?.eui?.avatar.group ?? {}, ['eui', 'avatar.group']),
+  ...collectRefs((avatarGroupLayout as any)?.eui?.avatar.group ?? {}, ['eui', 'avatar.group']),
 ];
 
 const meta: Meta = {

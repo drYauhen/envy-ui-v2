@@ -20,31 +20,39 @@ async function getComponentFiles(componentName) {
   }
 }
 
-function generateStory(componentName, files) {
-  const componentNameCapitalized = componentName.split('-').map(word => 
+function toCamelCase(str) {
+  return str.split('-').map((word, index) => 
+    index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+  ).join('');
+}
+
+function toPascalCase(str) {
+  return str.split('-').map(word => 
     word.charAt(0).toUpperCase() + word.slice(1)
   ).join('');
+}
+
+function generateStory(componentName, files) {
+  const componentNameCapitalized = toPascalCase(componentName);
+  const componentNameCamel = toCamelCase(componentName);
   
   const imports = files.map(file => {
-    const fileVar = file.split('-').map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join('');
-    return `import ${componentName}${fileVar} from '../../../../tokens/app/components/${componentName}/${file}.json';`;
+    const fileVar = toPascalCase(file);
+    const importVar = `${componentNameCamel}${fileVar}`;
+    return `import ${importVar} from '../../../../tokens/app/components/${componentName}/${file}.json';`;
   }).join('\n');
 
   const flattenCalls = files.map(file => {
-    const fileVar = file.split('-').map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join('');
-    return `flattenTokens(${componentName}${fileVar}, [], flatTokenMap);`;
+    const fileVar = toPascalCase(file);
+    const varName = `${componentNameCamel}${fileVar}`;
+    return `flattenTokens(${varName}, [], flatTokenMap);`;
   }).join('\n');
 
   const collectCalls = files.map(file => {
-    const fileVar = file.split('-').map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join('');
+    const fileVar = toPascalCase(file);
+    const varName = `${componentNameCamel}${fileVar}`;
     const componentPath = componentName.split('-').join('.');
-    return `  ...collectRefs((${componentName}${fileVar} as any)?.eui?.${componentPath} ?? {}, ['eui', '${componentPath}']),`;
+    return `  ...collectRefs((${varName} as any)?.eui?.${componentPath} ?? {}, ['eui', '${componentPath}']),`;
   }).join('\n');
 
   const displayName = componentName.split('-').map(word => 

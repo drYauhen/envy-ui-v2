@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import hero-sectionColors from '../../../../tokens/app/components/hero-section/colors.json';
-import hero-sectionSize from '../../../../tokens/app/components/hero-section/size.json';
-import hero-sectionSpacing from '../../../../tokens/app/components/hero-section/spacing.json';
-import hero-sectionTypography from '../../../../tokens/app/components/hero-section/typography.json';
+import heroSectionColors from '../../../../tokens/app/components/hero-section/colors.json';
+import heroSectionSize from '../../../../tokens/app/components/hero-section/size.json';
+import heroSectionSpacing from '../../../../tokens/app/components/hero-section/spacing.json';
+import heroSectionTypography from '../../../../tokens/app/components/hero-section/typography.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
@@ -11,18 +11,18 @@ import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef
 type Story = StoryObj;
 
 const flatTokenMap: Record<string, FlatToken> = {};
-flattenTokens(hero-sectionColors, [], flatTokenMap);
-flattenTokens(hero-sectionSize, [], flatTokenMap);
-flattenTokens(hero-sectionSpacing, [], flatTokenMap);
-flattenTokens(hero-sectionTypography, [], flatTokenMap);
+flattenTokens(heroSectionColors, [], flatTokenMap);
+flattenTokens(heroSectionSize, [], flatTokenMap);
+flattenTokens(heroSectionSpacing, [], flatTokenMap);
+flattenTokens(heroSectionTypography, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
 const allRefs: TokenRef[] = [
-  ...collectRefs((hero-sectionColors as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
-  ...collectRefs((hero-sectionSize as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
-  ...collectRefs((hero-sectionSpacing as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
-  ...collectRefs((hero-sectionTypography as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
+  ...collectRefs((heroSectionColors as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
+  ...collectRefs((heroSectionSize as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
+  ...collectRefs((heroSectionSpacing as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
+  ...collectRefs((heroSectionTypography as any)?.eui?.hero.section ?? {}, ['eui', 'hero.section']),
 ];
 
 const meta: Meta = {

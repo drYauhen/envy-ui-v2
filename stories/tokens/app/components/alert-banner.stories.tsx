@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import alert-bannerBorder from '../../../../tokens/app/components/alert-banner/border.json';
-import alert-bannerColors from '../../../../tokens/app/components/alert-banner/colors.json';
-import alert-bannerSpacing from '../../../../tokens/app/components/alert-banner/spacing.json';
-import alert-bannerZIndex from '../../../../tokens/app/components/alert-banner/z-index.json';
+import alertBannerBorder from '../../../../tokens/app/components/alert-banner/border.json';
+import alertBannerColors from '../../../../tokens/app/components/alert-banner/colors.json';
+import alertBannerSpacing from '../../../../tokens/app/components/alert-banner/spacing.json';
+import alertBannerZIndex from '../../../../tokens/app/components/alert-banner/z-index.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
@@ -11,18 +11,18 @@ import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef
 type Story = StoryObj;
 
 const flatTokenMap: Record<string, FlatToken> = {};
-flattenTokens(alert-bannerBorder, [], flatTokenMap);
-flattenTokens(alert-bannerColors, [], flatTokenMap);
-flattenTokens(alert-bannerSpacing, [], flatTokenMap);
-flattenTokens(alert-bannerZIndex, [], flatTokenMap);
+flattenTokens(alertBannerBorder, [], flatTokenMap);
+flattenTokens(alertBannerColors, [], flatTokenMap);
+flattenTokens(alertBannerSpacing, [], flatTokenMap);
+flattenTokens(alertBannerZIndex, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
 const allRefs: TokenRef[] = [
-  ...collectRefs((alert-bannerBorder as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
-  ...collectRefs((alert-bannerColors as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
-  ...collectRefs((alert-bannerSpacing as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
-  ...collectRefs((alert-bannerZIndex as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
+  ...collectRefs((alertBannerBorder as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
+  ...collectRefs((alertBannerColors as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
+  ...collectRefs((alertBannerSpacing as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
+  ...collectRefs((alertBannerZIndex as any)?.eui?.alert.banner ?? {}, ['eui', 'alert.banner']),
 ];
 
 const meta: Meta = {

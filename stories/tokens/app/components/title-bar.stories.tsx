@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import title-barColors from '../../../../tokens/app/components/title-bar/colors.json';
-import title-barSize from '../../../../tokens/app/components/title-bar/size.json';
-import title-barSpacing from '../../../../tokens/app/components/title-bar/spacing.json';
+import titleBarColors from '../../../../tokens/app/components/title-bar/colors.json';
+import titleBarSize from '../../../../tokens/app/components/title-bar/size.json';
+import titleBarSpacing from '../../../../tokens/app/components/title-bar/spacing.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
@@ -10,16 +10,16 @@ import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef
 type Story = StoryObj;
 
 const flatTokenMap: Record<string, FlatToken> = {};
-flattenTokens(title-barColors, [], flatTokenMap);
-flattenTokens(title-barSize, [], flatTokenMap);
-flattenTokens(title-barSpacing, [], flatTokenMap);
+flattenTokens(titleBarColors, [], flatTokenMap);
+flattenTokens(titleBarSize, [], flatTokenMap);
+flattenTokens(titleBarSpacing, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
 const allRefs: TokenRef[] = [
-  ...collectRefs((title-barColors as any)?.eui?.title.bar ?? {}, ['eui', 'title.bar']),
-  ...collectRefs((title-barSize as any)?.eui?.title.bar ?? {}, ['eui', 'title.bar']),
-  ...collectRefs((title-barSpacing as any)?.eui?.title.bar ?? {}, ['eui', 'title.bar']),
+  ...collectRefs((titleBarColors as any)?.eui?.title.bar ?? {}, ['eui', 'title.bar']),
+  ...collectRefs((titleBarSize as any)?.eui?.title.bar ?? {}, ['eui', 'title.bar']),
+  ...collectRefs((titleBarSpacing as any)?.eui?.title.bar ?? {}, ['eui', 'title.bar']),
 ];
 
 const meta: Meta = {

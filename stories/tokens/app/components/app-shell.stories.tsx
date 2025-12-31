@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import app-shellLayout from '../../../../tokens/app/components/app-shell/layout.json';
+import appShellLayout from '../../../../tokens/app/components/app-shell/layout.json';
 import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
@@ -8,12 +8,12 @@ import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef
 type Story = StoryObj;
 
 const flatTokenMap: Record<string, FlatToken> = {};
-flattenTokens(app-shellLayout, [], flatTokenMap);
+flattenTokens(appShellLayout, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
 const allRefs: TokenRef[] = [
-  ...collectRefs((app-shellLayout as any)?.eui?.app.shell ?? {}, ['eui', 'app.shell']),
+  ...collectRefs((appShellLayout as any)?.eui?.app.shell ?? {}, ['eui', 'app.shell']),
 ];
 
 const meta: Meta = {
