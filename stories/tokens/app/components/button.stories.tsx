@@ -8,10 +8,10 @@ import semanticFocus from '../../../../tokens/app/semantic/colors/focus.json';
 import foundationBrand from '../../../../tokens/app/foundations/colors/brand.json';
 import foundationNeutral from '../../../../tokens/app/foundations/colors/neutral.json';
 import foundationAccent from '../../../../tokens/app/foundations/colors/accent.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 

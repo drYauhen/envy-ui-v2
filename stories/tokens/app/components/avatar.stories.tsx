@@ -7,10 +7,10 @@ import avatarTypography from '../../../../tokens/app/components/avatar/typograph
 import semanticColors from '../../../../tokens/app/semantic/colors/background.json';
 import foundationNeutral from '../../../../tokens/app/foundations/colors/neutral.json';
 import foundationTextTransform from '../../../../tokens/app/foundations/typography/text-transform.json';
-import { TokenPage, TokenSection } from '../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../viewers/tokens/token-utils';
+import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 
 type Story = StoryObj;
 
