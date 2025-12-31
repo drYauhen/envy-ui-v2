@@ -16,8 +16,7 @@ export const navigationConfig = {
     "TSX + React Aria",
     "Web Components",
     "Tailwind",
-    "Templates",
-    "Architecture"
+    "Templates"
   ] as const,
 
   // Special sorting rules for specific sections/subsections

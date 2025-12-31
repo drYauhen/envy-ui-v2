@@ -144,8 +144,7 @@ export const parameters: Preview['parameters'] = {
         "TSX + React Aria",
         "Web Components",
         "Tailwind",
-        "Templates",
-        "Architecture"
+        "Templates"
       ];
       
       // Special rules (from navigation.config.ts)
