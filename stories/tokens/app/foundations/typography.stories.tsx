@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TypographyViewer } from '../viewers/tokens/TypographyViewer';
+import { TypographyViewer } from '../../../viewers/tokens/TypographyViewer';
 
 type Story = StoryObj;
 
