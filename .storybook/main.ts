@@ -72,6 +72,11 @@ const config: StorybookConfig = {
       };
     }
     
+    // Ensure JSON imports are properly handled
+    config.optimizeDeps = config.optimizeDeps || {};
+    config.optimizeDeps.include = config.optimizeDeps.include || [];
+    config.optimizeDeps.include.push('**/*.json');
+    
     return config;
   },
 };
