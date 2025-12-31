@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "calendar": {
+      "z-index": {
+        "default": {
+          "$value": "0",
+          "$type": "number",
+          "$description": "Default z-index for day cells (base layer within isolated stacking context)"
+        },
+        "interactive": {
+          "$value": "1",
+          "$type": "number",
+          "$description": "Z-index for interactive states (hover, focus, active) - elevated above default"
+        },
+        "selected": {
+          "$value": "2",
+          "$type": "number",
+          "$description": "Z-index for selected day cells (range start/end) - elevated above interactive states to prevent overlap"
+        },
+        "focus": {
+          "$value": "3",
+          "$type": "number",
+          "$description": "Z-index for focused day cells - highest elevation to ensure focus ring is never overlapped by neighbors"
+        }
+      }
+    }
+  }
+}
+

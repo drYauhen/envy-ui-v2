@@ -40,7 +40,7 @@
   padding: 0;
   background-color: transparent;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--eui-radius-default);
   color: var(--eui-calendar-colors-header-button-text);
   cursor: pointer;
   transition: background-color 0.15s ease;
@@ -48,6 +48,10 @@
 
 [data-eui-context] .eui-calendar__header-button:hover:not(:disabled) {
   background-color: var(--eui-calendar-colors-header-button-hover-background);
+}
+
+[data-eui-context] .eui-calendar__header-button:active:not(:disabled) {
+  background-color: var(--eui-calendar-colors-header-button-active-background);
 }
 
 [data-eui-context] .eui-calendar__header-button:disabled {
@@ -114,17 +118,17 @@
   line-height: var(--eui-calendar-typography-day-line-height);
   color: var(--eui-calendar-colors-day-text-default);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, z-index 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, z-index 0.15s ease, border-radius 0.15s ease;
   user-select: none;
   /* Default z-index (same approach as button-group) */
-  z-index: 0;
+  z-index: var(--eui-calendar-z-index-default);
 }
 
 /* Day Cell - Hover State */
-[data-eui-context] .eui-calendar__day:hover:not(:disabled):not([data-eui-selected="true"]):not([data-eui-outside-month="true"]) {
+[data-eui-context] .eui-calendar__day:hover:not(:disabled):not([data-eui-selected="true"]):not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):not([data-eui-outside-month="true"]) {
   background-color: var(--eui-calendar-colors-day-background-hover);
   /* Raise z-index on hover (isolated within grid) */
-  z-index: 1;
+  z-index: var(--eui-calendar-z-index-interactive);
 }
 
 /* Day Cell - Selected State (matches accent button styling) */
@@ -132,14 +136,14 @@
   background-color: var(--eui-calendar-colors-day-background-selected);
   border-color: var(--eui-calendar-day-border-selected);
   color: var(--eui-calendar-colors-day-text-selected);
-  /* Raise z-index when selected (isolated within grid) */
-  z-index: 1;
+  /* Raise z-index when selected (isolated within grid) - elevated above interactive states */
+  z-index: var(--eui-calendar-z-index-selected);
 }
 
-/* Selected day hover: matches accent button hover (color-mix with white 8%) */
-[data-eui-context] .eui-calendar__day[data-eui-selected="true"]:hover {
-  background-color: color-mix(in srgb, var(--eui-calendar-colors-day-background-selected), white 8%);
-  border-color: color-mix(in srgb, var(--eui-calendar-day-border-selected), white 8%);
+/* Selected day hover: brighter accent.600 instead of color-mix */
+[data-eui-context] .eui-calendar__day[data-eui-selected="true"]:hover:not(:disabled) {
+  background-color: var(--eui-calendar-colors-day-background-selected-hover);
+  border-color: var(--eui-calendar-day-border-selected);
 }
 
 /* Selected day active: matches accent button active (color-mix with black 8%) */
@@ -153,7 +157,7 @@
 [data-eui-context] .eui-calendar__day:active:not(:disabled):not([data-eui-selected="true"]):not([data-eui-outside-month="true"]) {
   background-color: var(--eui-calendar-colors-day-background-active);
   /* Raise z-index on active (isolated within grid) */
-  z-index: 1;
+  z-index: var(--eui-calendar-z-index-interactive);
 }
 
 /* Day Cell - Today State */
@@ -182,8 +186,8 @@
 [data-eui-context] .eui-calendar__day:focus-visible {
   outline: 2px solid var(--eui-color-focus-ring);
   outline-offset: -2px;
-  /* Raise z-index on focus (isolated within grid) - ensures focus ring is fully visible */
-  z-index: 1;
+  /* Highest elevation to ensure focus ring is never overlapped by neighbors */
+  z-index: var(--eui-calendar-z-index-focus);
 }
 
 /* Each day cell is a mini-button with its own border-radius */
@@ -195,10 +199,35 @@
   background-color: var(--eui-calendar-colors-day-background-selected);
   border-color: var(--eui-calendar-day-border-selected);
   color: var(--eui-calendar-colors-day-text-selected);
+  /* Same elevation as selected state to prevent overlap */
+  z-index: var(--eui-calendar-z-index-selected);
 }
 
+/* Range start/end hover - same as selected hover (brighter accent.600) */
+[data-eui-context] .eui-calendar__day[data-eui-range-start="true"]:hover:not(:disabled),
+[data-eui-context] .eui-calendar__day[data-eui-range-end="true"]:hover:not(:disabled) {
+  background-color: var(--eui-calendar-colors-day-background-selected-hover);
+  border-color: var(--eui-calendar-day-border-selected);
+}
+
+/* Range Selection - Days in range (middle days) - remove border-radius for band effect */
 [data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]) {
   background-color: var(--eui-calendar-colors-range-background);
   color: var(--eui-calendar-colors-range-text);
+  border-radius: 0; /* Remove border-radius for seamless band effect */
+}
+
+/* Range Selection - Days in range on hover - restore border-radius for interactivity */
+[data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):hover:not(:disabled) {
+  background-color: var(--eui-calendar-colors-range-background-hover); /* Brighter accent.100 instead of neutral.100 */
+  border-radius: var(--eui-radius-default); /* Restore border-radius on interaction to show interactivity */
+}
+
+/* Range Selection - Days in range on focus - highest elevation for focus ring */
+[data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):focus,
+[data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):focus-visible {
+  background-color: var(--eui-calendar-colors-range-background-hover); /* Brighter accent.100 instead of neutral.100 */
+  border-radius: var(--eui-radius-default); /* Restore border-radius on interaction to show interactivity */
+  z-index: var(--eui-calendar-z-index-focus); /* Highest elevation for focus */
 }
 

@@ -175,42 +175,42 @@
           "label": "100",
           "path": "eui.color.accent.100",
           "cssVar": "--eui-color-accent-100",
-          "value": "oklch(90% 0.11 236)"
+          "value": "oklch(93% 0.06 236)"
         },
         {
           "id": "200",
           "label": "200",
           "path": "eui.color.accent.200",
           "cssVar": "--eui-color-accent-200",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "id": "300",
           "label": "300",
           "path": "eui.color.accent.300",
           "cssVar": "--eui-color-accent-300",
-          "value": "oklch(78% 0.14 237)"
+          "value": "oklch(84% 0.14 236)"
         },
         {
           "id": "400",
           "label": "400",
           "path": "eui.color.accent.400",
           "cssVar": "--eui-color-accent-400",
-          "value": "oklch(73% 0.15 237)"
+          "value": "oklch(76% 0.15 237)"
         },
         {
           "id": "50",
           "label": "50",
           "path": "eui.color.accent.50",
           "cssVar": "--eui-color-accent-50",
-          "value": "oklch(98% 0.07 236)"
+          "value": "oklch(96% 0.04 236)"
         },
         {
           "id": "500",
           "label": "500",
           "path": "eui.color.accent.500",
           "cssVar": "--eui-color-accent-500",
-          "value": "oklch(67% 0.15 237)"
+          "value": "oklch(68% 0.15 237)"
         },
         {
           "id": "600",

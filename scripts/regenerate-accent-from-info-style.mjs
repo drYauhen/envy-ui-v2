@@ -43,34 +43,38 @@ function formatOklch(l, c, h) {
 
 /**
  * Get asymmetric lightness steps for 600 anchor (extended to 50-900)
- * Based on status.info algorithm but with more gradations in light side (500-100)
+ * Unified exponential distribution: more gradations closer to 50, smooth transition from 500 to 50
  */
 function getAsymmetricLightnessStepsFor600() {
   // Steps format: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
   // For status.info style (base ~68% lightness):
-  // Going up (50-500): MORE gradations, more steps for light backgrounds
-  // Going down (700-900): smaller steps for dark shades
+  // Exponential distribution: more gradations closer to 50, uniform fall from 500 to 50
+  // 
+  // Strategy: Smooth exponential curve from 500 (68%) to 50 (95%)
+  // - 50-300: Close values (more gradations near 50)
+  // - 300-500: Consistent steps (uniform fall)
+  // - 400 and 500: Consistent (8% difference each)
   
   // If base is at 600 with lightness ~68%, we want:
-  // More gradations between 500 and 100:
-  // 50: +30 (very light, lighter than before)
-  // 100: +22 (light, lighter than before - was 18, now 22)
-  // 200: +15 (medium-light, more gap from 100)
-  // 300: +10 (medium, more gap from 200)
-  // 400: +5 (medium-dark, more gap from 300)
-  // 500: -1 (slightly darker, closer to 600)
+  // Exponential distribution with more steps near 50:
+  // 50: +28 (95% lightness - closest to 50)
+  // 100: +25 (93% lightness - very close to 50, 2% difference)
+  // 200: +21 (89% lightness - close to 100, 4% difference)
+  // 300: +16 (84% lightness - smooth transition, 5% difference from 200)
+  // 400: +8 (76% lightness - closer to 300, 8% difference - was 10%)
+  // 500: 0 (68% lightness - closer to 400, 8% difference - was 6%)
   // 600: 0 (anchor)
   // 700: -5 (darker)
   // 800: -10 (dark)
   // 900: -15 (darkest)
   
   return {
-    50: 30,   // Lighter (was 28)
-    100: 22,  // Lighter (was 18) - more gap from 200
-    200: 15,  // More gap from 100 (was 13)
-    300: 10,  // More gap from 200 (was 8)
-    400: 5,   // More gap from 300 (was 3)
-    500: -1,  // Closer to 600 (was -2)
+    50: 28,   // 95% lightness - closest to 50
+    100: 25,  // 93% lightness - very close to 50, 2% difference
+    200: 21,  // 89% lightness - close to 100, 4% difference
+    300: 16,  // 84% lightness - smooth transition, 5% difference from 200
+    400: 8,   // 76% lightness - closer to 300, 8% difference (was 10%)
+    500: 0,   // 68% lightness - closer to 400, 8% difference (was 6%)
     600: 0,   // Anchor
     700: -5,
     800: -10,
@@ -111,12 +115,36 @@ function generateScaleFrom600(base600, config) {
     const l = Math.max(0, Math.min(100, base.l + step));
     
     // Distance from 600 (anchor) - normalize to 0-1 range
-    // Max distance is 30 (for 50) or 15 (for 900), so normalize by 30
-    const distanceFrom600 = Math.abs(step) / 30;
+    // Max distance is 28 (for 50) or 15 (for 900), so normalize by 28
+    const distanceFrom600 = Math.abs(step) / 28;
     
-    // Chroma: parabolic reduction at edges (same as status.info)
-    let c = base.c * (1 - Math.pow(distanceFrom600, 2) * chromaReduction);
-    c = Math.max(0, c);
+    // Unified chroma progression from 500 to 50
+    // Linear interpolation with additional reduction for very light shades
+    let c;
+    if (level <= 500) {
+      // Normalized position from 500 (0) to 50 (1)
+      const position = (500 - level) / 450; // 0 at 500, 1 at 50
+      
+      // Base chroma with parabolic reduction
+      c = base.c * (1 - Math.pow(position, 2) * chromaReduction);
+      c = Math.max(0, c);
+      
+      // Additional progressive reduction for very light shades (50-200)
+      // Creates softer, more pleasant secondary highlight colors
+      // Progressive reduction: 50 (60%), 100 (65%), 200 (75%)
+      if (level === 50) {
+        c = c * 0.6; // 40% reduction for 50
+      } else if (level === 100) {
+        c = c * 0.65; // 35% reduction for 100
+      } else if (level === 200) {
+        c = c * 0.75; // 25% reduction for 200 - closer to 300 in chroma
+      }
+      // 300, 400, 500 use base chroma (no additional reduction)
+    } else {
+      // For levels > 500 (600-900), use standard parabolic reduction
+      c = base.c * (1 - Math.pow(distanceFrom600, 2) * chromaReduction);
+      c = Math.max(0, c);
+    }
     
     // Hue: minimal shift to maintain color identity (same as status.info)
     let h = base.h;
@@ -146,7 +174,7 @@ function processAccentFile(filePath) {
   const data = JSON.parse(content);
   
   // Get status.info.500 as base color
-  const statusFile = join(repoRoot, 'tokens/foundations/colors/status.json');
+  const statusFile = join(repoRoot, 'tokens/app/foundations/colors/status.json');
   const statusContent = readFileSync(statusFile, 'utf-8');
   const statusData = JSON.parse(statusContent);
   const statusInfo500 = statusData.eui.color.status.info['500'].$value;
@@ -207,7 +235,7 @@ console.log('  • Parabolic chroma reduction at edges (0.5 factor)');
 console.log('  • Minimal hue shift (1°) to maintain color identity');
 console.log('  • Asymmetric lightness distribution');
 
-const accentFile = join(repoRoot, 'tokens/foundations/colors/accent.json');
+const accentFile = join(repoRoot, 'tokens/app/foundations/colors/accent.json');
 processAccentFile(accentFile);
 
 console.log('\n' + '='.repeat(80));

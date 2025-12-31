@@ -11,32 +11,32 @@
         {
           "path": "eui.color.accent.100",
           "type": "COLOR",
-          "value": "oklch(90% 0.11 236)"
+          "value": "oklch(93% 0.06 236)"
         },
         {
           "path": "eui.color.accent.200",
           "type": "COLOR",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.color.accent.300",
           "type": "COLOR",
-          "value": "oklch(78% 0.14 237)"
+          "value": "oklch(84% 0.14 236)"
         },
         {
           "path": "eui.color.accent.400",
           "type": "COLOR",
-          "value": "oklch(73% 0.15 237)"
+          "value": "oklch(76% 0.15 237)"
         },
         {
           "path": "eui.color.accent.50",
           "type": "COLOR",
-          "value": "oklch(98% 0.07 236)"
+          "value": "oklch(96% 0.04 236)"
         },
         {
           "path": "eui.color.accent.500",
           "type": "COLOR",
-          "value": "oklch(67% 0.15 237)"
+          "value": "oklch(68% 0.15 237)"
         },
         {
           "path": "eui.color.accent.600",

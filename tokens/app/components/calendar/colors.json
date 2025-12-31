@@ -14,21 +14,28 @@
             "$description": "Calendar header (month/year navigation) background color."
           },
           "text": {
-            "$value": "{eui.color.text.primary}",
+            "$value": "{eui.color.neutral.900}",
             "$type": "color",
-            "$description": "Calendar header text color."
+            "$description": "Calendar header text color (dark for readability on white background)."
           },
           "button": {
             "text": {
-              "$value": "{eui.color.text.primary}",
+              "$value": "{eui.color.accent.700}",
               "$type": "color",
-              "$description": "Calendar header navigation button text color."
+              "$description": "Calendar header navigation button text color (accent color following accent button logic)."
             },
             "hover": {
               "background": {
-                "$value": "{eui.color.neutral.100}",
+                "$value": "{eui.color.accent.50}",
                 "$type": "color",
-                "$description": "Calendar header navigation button hover background."
+                "$description": "Calendar header navigation button hover background (accent.50 following accent button logic)."
+              }
+            },
+            "active": {
+              "background": {
+                "$value": "{eui.color.accent.100}",
+                "$type": "color",
+                "$description": "Calendar header navigation button active background (accent.100 following accent button logic)."
               }
             }
           }
@@ -48,9 +55,9 @@
               "$description": "Default day cell background color."
             },
             "hover": {
-              "$value": "{eui.color.neutral.100}",
+              "$value": "{eui.color.accent.200}",
               "$type": "color",
-              "$description": "Day cell hover background color (light-gray equivalent)."
+              "$description": "Day cell hover background color (accent.200 - lighter accent color for better interactivity feedback)."
             },
             "selected": {
               "$value": "{eui.color.accent.700}",
@@ -58,9 +65,9 @@
               "$description": "Selected day background color (matches accent button - accent.700)."
             },
             "selectedHover": {
-              "$value": "{eui.color.accent.700}",
+              "$value": "{eui.color.accent.600}",
               "$type": "color",
-              "$description": "Selected day hover background color (matches accent button hover - same as base)."
+              "$description": "Selected day hover background color (accent.600 - brighter and more saturated than accent.700 base)."
             },
             "active": {
               "$value": "{eui.color.accent.50}",
@@ -73,9 +80,9 @@
               "$description": "Today's date background color."
             },
             "disabled": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.neutral.50}",
               "$type": "color",
-              "$description": "Disabled day background color."
+              "$description": "Disabled day background color (neutral.50 - more muted than white to better distinguish from active days)."
             },
             "outsideMonth": {
               "$value": "{eui.color.neutral.50}",
@@ -85,9 +92,9 @@
           },
           "text": {
             "default": {
-              "$value": "{eui.color.text.primary}",
+              "$value": "{eui.color.neutral.900}",
               "$type": "color",
-              "$description": "Default day text color."
+              "$description": "Default day text color (dark for readability on white background)."
             },
             "selected": {
               "$value": "{eui.color.neutral.white}",
@@ -95,9 +102,9 @@
               "$description": "Selected day text color (white)."
             },
             "disabled": {
-              "$value": "{eui.color.neutral.400}",
+              "$value": "{eui.color.neutral.300}",
               "$type": "color",
-              "$description": "Disabled day text color."
+              "$description": "Disabled day text color (neutral.300 - lighter and less contrasted than neutral.400 for better visual distinction)."
             },
             "outsideMonth": {
               "$value": "{eui.color.text.subtle}",
@@ -105,9 +112,9 @@
               "$description": "Days outside current month text color."
             },
             "today": {
-              "$value": "{eui.color.text.primary}",
+              "$value": "{eui.color.neutral.900}",
               "$type": "color",
-              "$description": "Today's date text color."
+              "$description": "Today's date text color (dark for readability on white background)."
             }
           },
           "border": {
@@ -129,10 +136,15 @@
             "$type": "color",
             "$description": "Date range background color (for range selection)."
           },
-          "text": {
-            "$value": "{eui.color.text.primary}",
+          "backgroundHover": {
+            "$value": "{eui.color.accent.100}",
             "$type": "color",
-            "$description": "Date range text color."
+            "$description": "Date range background color on hover (one step brighter than range background - accent.100)."
+          },
+          "text": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color",
+            "$description": "Date range text color (dark for readability on light accent.50 background)."
           }
         }
       }

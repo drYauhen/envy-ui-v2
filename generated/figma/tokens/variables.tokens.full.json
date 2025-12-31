@@ -96,7 +96,7 @@
         {
           "path": "eui.calendar.colors.day.background.active",
           "type": "COLOR",
-          "value": "oklch(98% 0.07 236)"
+          "value": "oklch(96% 0.04 236)"
         },
         {
           "path": "eui.calendar.colors.day.background.default",
@@ -106,12 +106,12 @@
         {
           "path": "eui.calendar.colors.day.background.disabled",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.background.hover",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.calendar.colors.day.background.outsideMonth",
@@ -126,7 +126,7 @@
         {
           "path": "eui.calendar.colors.day.background.selectedHover",
           "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
+          "value": "oklch(68% 0.15 237)"
         },
         {
           "path": "eui.calendar.colors.day.background.today",
@@ -146,12 +146,12 @@
         {
           "path": "eui.calendar.colors.day.text.default",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.text.disabled",
           "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.text.outsideMonth",
@@ -166,7 +166,7 @@
         {
           "path": "eui.calendar.colors.day.text.today",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.header.background",
@@ -174,29 +174,39 @@
           "value": "oklch(100% 0 0)"
         },
         {
+          "path": "eui.calendar.colors.header.button.active.background",
+          "type": "COLOR",
+          "value": "oklch(93% 0.06 236)"
+        },
+        {
           "path": "eui.calendar.colors.header.button.hover.background",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(96% 0.04 236)"
         },
         {
           "path": "eui.calendar.colors.header.button.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(63% 0.15 237)"
         },
         {
           "path": "eui.calendar.colors.header.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.range.background",
           "type": "COLOR",
-          "value": "oklch(98% 0.07 236)"
+          "value": "oklch(96% 0.04 236)"
+        },
+        {
+          "path": "eui.calendar.colors.range.backgroundHover",
+          "type": "COLOR",
+          "value": "oklch(93% 0.06 236)"
         },
         {
           "path": "eui.calendar.colors.range.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.weekday.text",
@@ -246,7 +256,7 @@
         {
           "path": "eui.counter.colors.filter.background",
           "type": "COLOR",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.counter.colors.filter.border",
@@ -266,7 +276,7 @@
         {
           "path": "eui.counter.colors.pill.default.background",
           "type": "COLOR",
-          "value": "oklch(90% 0.11 236)"
+          "value": "oklch(93% 0.06 236)"
         },
         {
           "path": "eui.counter.colors.pill.default.border",
@@ -551,7 +561,7 @@
         {
           "path": "eui.table.colors.row.background.selected",
           "type": "COLOR",
-          "value": "oklch(98% 0.07 236)"
+          "value": "oklch(96% 0.04 236)"
         },
         {
           "path": "eui.table.colors.subheader.background",
@@ -1376,32 +1386,32 @@
         {
           "path": "eui.color.accent.100",
           "type": "COLOR",
-          "value": "oklch(90% 0.11 236)"
+          "value": "oklch(93% 0.06 236)"
         },
         {
           "path": "eui.color.accent.200",
           "type": "COLOR",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.color.accent.300",
           "type": "COLOR",
-          "value": "oklch(78% 0.14 237)"
+          "value": "oklch(84% 0.14 236)"
         },
         {
           "path": "eui.color.accent.400",
           "type": "COLOR",
-          "value": "oklch(73% 0.15 237)"
+          "value": "oklch(76% 0.15 237)"
         },
         {
           "path": "eui.color.accent.50",
           "type": "COLOR",
-          "value": "oklch(98% 0.07 236)"
+          "value": "oklch(96% 0.04 236)"
         },
         {
           "path": "eui.color.accent.500",
           "type": "COLOR",
-          "value": "oklch(67% 0.15 237)"
+          "value": "oklch(68% 0.15 237)"
         },
         {
           "path": "eui.color.accent.600",
@@ -1437,12 +1447,12 @@
         {
           "path": "eui.button.accent-finished.background.active",
           "type": "COLOR",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.button.accent-finished.background.base",
           "type": "COLOR",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.button.accent-finished.background.disabled",
@@ -1452,12 +1462,12 @@
         {
           "path": "eui.button.accent-finished.background.hover",
           "type": "COLOR",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.button.accent-finished.background.selected",
           "type": "COLOR",
-          "value": "oklch(83% 0.13 237)"
+          "value": "oklch(89% 0.09 236)"
         },
         {
           "path": "eui.button.accent-finished.label.active",
@@ -1635,6 +1645,26 @@
           "path": "eui.calendar.spacing.weekday.padding.vertical",
           "type": "FLOAT",
           "value": 0.5
+        },
+        {
+          "path": "eui.calendar.z-index.default",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.calendar.z-index.focus",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.calendar.z-index.interactive",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.calendar.z-index.selected",
+          "type": "FLOAT",
+          "value": 2
         }
       ]
     },
@@ -2015,7 +2045,7 @@
         {
           "path": "eui.checkbox.checkmark.indeterminate",
           "type": "COLOR",
-          "value": "oklch(73% 0.15 237)"
+          "value": "oklch(76% 0.15 237)"
         },
         {
           "path": "eui.checkbox.checkmark.indeterminateDisabled",

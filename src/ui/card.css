@@ -75,7 +75,7 @@
   bottom: 0;
   width: var(--eui-card-status-indicator-width, 4px);
   background-color: var(--eui-card-status-indicator-color);
-  border-radius: var(--eui-card-radius, 8px) 0 0 var(--eui-card-radius, 8px);
+  border-radius: var(--eui-card-radius) 0 0 var(--eui-card-radius);
 }
 
 /* Status: Pending */

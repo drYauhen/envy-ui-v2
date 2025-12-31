@@ -360,15 +360,15 @@
     "$type": "color"
   },
   "eui.button.accent-finished.background.base": {
-    "$value": "oklch(83% 0.13 237)",
+    "$value": "oklch(89% 0.09 236)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.hover": {
-    "$value": "oklch(83% 0.13 237)",
+    "$value": "oklch(89% 0.09 236)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.active": {
-    "$value": "oklch(83% 0.13 237)",
+    "$value": "oklch(89% 0.09 236)",
     "$type": "color"
   },
   "eui.button.accent-finished.background.disabled": {
@@ -376,7 +376,7 @@
     "$type": "color"
   },
   "eui.button.accent-finished.background.selected": {
-    "$value": "oklch(83% 0.13 237)",
+    "$value": "oklch(89% 0.09 236)",
     "$type": "color"
   },
   "eui.button.accent-finished.label.base": {
@@ -676,15 +676,19 @@
     "$type": "color"
   },
   "eui.calendar.colors.header.text": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.header.button.text": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(63% 0.15 237)",
     "$type": "color"
   },
   "eui.calendar.colors.header.button.hover.background": {
-    "$value": "oklch(96.5% 0.00 0)",
+    "$value": "oklch(96% 0.04 236)",
+    "$type": "color"
+  },
+  "eui.calendar.colors.header.button.active.background": {
+    "$value": "oklch(93% 0.06 236)",
     "$type": "color"
   },
   "eui.calendar.colors.weekday.text": {
@@ -696,7 +700,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.background.hover": {
-    "$value": "oklch(96.5% 0.00 0)",
+    "$value": "oklch(89% 0.09 236)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selected": {
@@ -704,11 +708,11 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.background.selectedHover": {
-    "$value": "oklch(63% 0.15 237)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.active": {
-    "$value": "oklch(98% 0.07 236)",
+    "$value": "oklch(96% 0.04 236)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.today": {
@@ -716,7 +720,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.background.disabled": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(98% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.background.outsideMonth": {
@@ -724,7 +728,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.text.default": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.selected": {
@@ -732,7 +736,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.text.disabled": {
-    "$value": "oklch(84% 0.00 0)",
+    "$value": "oklch(90% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.text.outsideMonth": {
@@ -740,7 +744,7 @@
     "$type": "color"
   },
   "eui.calendar.colors.day.text.today": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.colors.day.border.default": {
@@ -752,11 +756,15 @@
     "$type": "color"
   },
   "eui.calendar.colors.range.background": {
-    "$value": "oklch(98% 0.07 236)",
+    "$value": "oklch(96% 0.04 236)",
+    "$type": "color"
+  },
+  "eui.calendar.colors.range.backgroundHover": {
+    "$value": "oklch(93% 0.06 236)",
     "$type": "color"
   },
   "eui.calendar.colors.range.text": {
-    "$value": "oklch(100% 0 0)",
+    "$value": "oklch(25% 0.00 0)",
     "$type": "color"
   },
   "eui.calendar.size.width": {
@@ -858,6 +866,22 @@
   "eui.calendar.typography.day.lineHeight": {
     "$value": "1",
     "$type": "lineHeight"
+  },
+  "eui.calendar.z-index.default": {
+    "$value": "0",
+    "$type": "number"
+  },
+  "eui.calendar.z-index.interactive": {
+    "$value": "1",
+    "$type": "number"
+  },
+  "eui.calendar.z-index.selected": {
+    "$value": "2",
+    "$type": "number"
+  },
+  "eui.calendar.z-index.focus": {
+    "$value": "3",
+    "$type": "number"
   },
   "eui.card.status.pending.indicator": {
     "$value": "oklch(64% 0.00 326)",
@@ -1160,7 +1184,7 @@
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminate": {
-    "$value": "oklch(73% 0.15 237)",
+    "$value": "oklch(76% 0.15 237)",
     "$type": "color"
   },
   "eui.checkbox.checkmark.indeterminateDisabled": {
@@ -1220,7 +1244,7 @@
     "$type": "dimension"
   },
   "eui.counter.colors.pill.default.background": {
-    "$value": "oklch(90% 0.11 236)",
+    "$value": "oklch(93% 0.06 236)",
     "$type": "color"
   },
   "eui.counter.colors.pill.default.color": {
@@ -1268,7 +1292,7 @@
     "$type": "color"
   },
   "eui.counter.colors.filter.background": {
-    "$value": "oklch(83% 0.13 237)",
+    "$value": "oklch(89% 0.09 236)",
     "$type": "color"
   },
   "eui.counter.colors.filter.color": {
@@ -2420,7 +2444,7 @@
     "$type": "color"
   },
   "eui.table.colors.row.background.selected": {
-    "$value": "oklch(98% 0.07 236)",
+    "$value": "oklch(96% 0.04 236)",
     "$type": "color"
   },
   "eui.table.colors.cell.text": {
@@ -2592,27 +2616,27 @@
     "$type": "dimension"
   },
   "eui.color.accent.50": {
-    "$value": "oklch(98% 0.07 236)",
+    "$value": "oklch(96% 0.04 236)",
     "$type": "color"
   },
   "eui.color.accent.100": {
-    "$value": "oklch(90% 0.11 236)",
+    "$value": "oklch(93% 0.06 236)",
     "$type": "color"
   },
   "eui.color.accent.200": {
-    "$value": "oklch(83% 0.13 237)",
+    "$value": "oklch(89% 0.09 236)",
     "$type": "color"
   },
   "eui.color.accent.300": {
-    "$value": "oklch(78% 0.14 237)",
+    "$value": "oklch(84% 0.14 236)",
     "$type": "color"
   },
   "eui.color.accent.400": {
-    "$value": "oklch(73% 0.15 237)",
+    "$value": "oklch(76% 0.15 237)",
     "$type": "color"
   },
   "eui.color.accent.500": {
-    "$value": "oklch(67% 0.15 237)",
+    "$value": "oklch(68% 0.15 237)",
     "$type": "color"
   },
   "eui.color.accent.600": {
