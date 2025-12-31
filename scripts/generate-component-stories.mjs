@@ -1,24 +1,10 @@
-import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
-import { join, dirname } from 'path';
+import { readdir, writeFile, mkdir } from 'fs/promises';
+import { join, dirname, basename } from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
-
-const existingStories = new Set([
-  'avatar', 'button', 'card', 'menu', 'modal', 'select'
-]);
-
-async function getComponentFiles(componentName) {
-  const componentDir = join(projectRoot, 'tokens/app/components', componentName);
-  try {
-    const files = await readdir(componentDir);
-    return files.filter(f => f.endsWith('.json')).map(f => f.replace('.json', ''));
-  } catch {
-    return [];
-  }
-}
 
 function toCamelCase(str) {
   return str.split('-').map((word, index) => 
@@ -32,53 +18,50 @@ function toPascalCase(str) {
   ).join('');
 }
 
-function generateStory(componentName, files) {
-  const componentNameCapitalized = toPascalCase(componentName);
+function generateStoryForTokenFile(componentName, tokenFileName) {
   const componentNameCamel = toCamelCase(componentName);
+  const tokenFileBase = basename(tokenFileName, '.json');
+  const tokenFileVar = toPascalCase(tokenFileBase);
+  const importVar = `${componentNameCamel}${tokenFileVar}`;
   
-  const imports = files.map(file => {
-    const fileVar = toPascalCase(file);
-    const importVar = `${componentNameCamel}${fileVar}`;
-    return `import ${importVar} from '../../../../tokens/app/components/${componentName}/${file}.json';`;
-  }).join('\n');
-
-  const flattenCalls = files.map(file => {
-    const fileVar = toPascalCase(file);
-    const varName = `${componentNameCamel}${fileVar}`;
-    return `flattenTokens(${varName}, [], flatTokenMap);`;
-  }).join('\n');
-
-  const collectCalls = files.map(file => {
-    const fileVar = toPascalCase(file);
-    const varName = `${componentNameCamel}${fileVar}`;
-    const componentPath = componentName.split('-').join('.');
-    return `  ...collectRefs((${varName} as any)?.eui?.${componentPath} ?? {}, ['eui', '${componentPath}']),`;
-  }).join('\n');
-
+  // Путь к токену: stories/tokens/app/components/alert-banner/colors.stories.tsx
+  // -> ../../../../../tokens/app/components/alert-banner/colors.json
+  const tokenRelativePath = `../../../../../tokens/app/components/${componentName}/${tokenFileName}`;
+  
+  // Путь к viewers: stories/tokens/app/components/alert-banner/colors.stories.tsx
+  // -> ../../../../viewers/tokens/TokenLayout
+  const viewersPath = `../../../../viewers/tokens`;
+  
+  // Путь компонента для collectRefs - используем имя с дефисом в кавычках
+  const componentPath = componentName; // 'alert-banner' или 'button'
+  
   const displayName = componentName.split('-').map(word => 
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+  
+  const categoryDisplayName = tokenFileBase.split('-').map(word => 
     word.charAt(0).toUpperCase() + word.slice(1)
   ).join(' ');
 
   return `import type { Meta, StoryObj } from '@storybook/react';
-${imports}
-import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
-import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
+import ${importVar} from '${tokenRelativePath}';
+import { TokenPage, TokenSection } from '${viewersPath}/TokenLayout';
+import { TokenRefTable } from '${viewersPath}/TokenRefTable';
+import { TokenSwatch } from '${viewersPath}/TokenSwatch';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '${viewersPath}/token-utils';
 
 type Story = StoryObj;
 
 const flatTokenMap: Record<string, FlatToken> = {};
-${flattenCalls}
+flattenTokens(${importVar}, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-const allRefs: TokenRef[] = [
-${collectCalls}
-];
+// Используем весь объект компонента из JSON файла
+const tokenRefs = collectRefs((${importVar} as any)?.eui?.['${componentPath}'] ?? {}, ['eui', '${componentPath}']);
 
 const meta: Meta = {
-  title: 'Tokens/App/Components/${displayName}',
+  title: 'Tokens/App/Components/${displayName}/${categoryDisplayName}',
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen'
@@ -94,17 +77,17 @@ const renderPreview = (token: TokenRef) => {
   return null;
 };
 
-export const ${componentNameCapitalized}: Story = {
-  name: '${displayName}',
+export const ${tokenFileVar}: Story = {
+  name: '${categoryDisplayName}',
   render: () => (
     <TokenPage>
       <TokenSection
-        title="${displayName} Component Tokens"
-        description="Token definitions for ${componentName} component."
+        title="${displayName} ${categoryDisplayName}"
+        description="Token definitions for ${componentName} ${tokenFileBase}."
       />
       <TokenRefTable
-        title="All Tokens"
-        refs={allRefs}
+        title="${categoryDisplayName}"
+        refs={tokenRefs}
         emptyMessage="No tokens found."
         renderPreview={renderPreview}
         tokenLabel="Token path"
@@ -117,29 +100,43 @@ export const ${componentNameCapitalized}: Story = {
 `;
 }
 
+async function getComponentTokenFiles(componentName) {
+  const componentDir = join(projectRoot, 'tokens/app/components', componentName);
+  try {
+    const files = await readdir(componentDir);
+    return files.filter(f => f.endsWith('.json')).sort();
+  } catch {
+    return [];
+  }
+}
+
 async function main() {
   const componentsDir = join(projectRoot, 'tokens/app/components');
   const components = await readdir(componentsDir, { withFileTypes: true });
   
   for (const component of components) {
     if (!component.isDirectory()) continue;
-    if (existingStories.has(component.name)) {
-      console.log(`Skipping ${component.name} (story already exists)`);
+    
+    const componentName = component.name;
+    const tokenFiles = await getComponentTokenFiles(componentName);
+    
+    if (tokenFiles.length === 0) {
+      console.log(`Skipping ${componentName} (no token files)`);
       continue;
     }
     
-    const files = await getComponentFiles(component.name);
-    if (files.length === 0) {
-      console.log(`Skipping ${component.name} (no token files)`);
-      continue;
-    }
+    // Создать папку для stories компонента
+    const storiesComponentDir = join(projectRoot, 'stories/tokens/app/components', componentName);
+    await mkdir(storiesComponentDir, { recursive: true });
     
-    const storyContent = generateStory(component.name, files);
-    const storyPath = join(projectRoot, 'stories/tokens/app/components', `${component.name}.stories.tsx`);
-    await writeFile(storyPath, storyContent);
-    console.log(`Created story for ${component.name}`);
+    // Создать story для каждого файла токена
+    for (const tokenFile of tokenFiles) {
+      const storyContent = generateStoryForTokenFile(componentName, tokenFile);
+      const storyPath = join(storiesComponentDir, `${basename(tokenFile, '.json')}.stories.tsx`);
+      await writeFile(storyPath, storyContent);
+      console.log(`Created story: ${componentName}/${basename(tokenFile, '.json')}.stories.tsx`);
+    }
   }
 }
 
 main().catch(console.error);
-
