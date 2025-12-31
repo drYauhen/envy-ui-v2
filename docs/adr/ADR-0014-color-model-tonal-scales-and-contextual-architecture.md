@@ -1,10 +1,10 @@
 # ADR-0014: Color Model, Tonal Scales, and Contextual Architecture
 
-Status: Accepted  
-Date: 2025-12-18  
-Last Updated: 2025-12-26  
-Owner: Eugene Goncharov  
-Assistance: AI-assisted drafting (human-reviewed)
+**Status:** Accepted  
+**Date:** 2025-12-18  
+**Last Updated:** 2025-12-26  
+**Owner:** Eugene Goncharov  
+**Assistance:** AI-assisted drafting (human-reviewed)
 
 ---
 

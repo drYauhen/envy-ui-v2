@@ -27,11 +27,26 @@ Common status values:
 - **Proposed (Exploratory)** - Decision is proposed and in exploratory phase
 - **Superseded** - Decision has been superseded by a later ADR
 
+## Quick Checklist for New ADRs
+
+After creating a new ADR, ensure:
+
+1. ✅ File added to `adr-filename-map.ts`
+2. ✅ Entry added to `adr-list-data.ts`
+3. ✅ Stories generated: `npm run adr:generate`
+4. ✅ Validation passed: `npm run adr:validate`
+5. ✅ Mermaid diagrams tested (if any)
+6. ✅ Links to other ADRs verified
+
+**For detailed checklist and troubleshooting, see:** [`docs/workflows/adr-workflow.md`](../workflows/adr-workflow.md#common-pitfalls-and-validation-checklist)
+
 ## Related Files
 
 - **Template:** `docs/adr/ADR-TEMPLATE.md`
 - **Workflow:** `docs/workflows/adr-workflow.md` (detailed guide)
 - **Storybook Overview:** `stories/docs/overview.stories.tsx`
-- **ADR List:** `stories/docs/adr/00-adr-overview.stories.tsx`
+- **ADR List:** `stories/viewers/docs/adr-list-data.ts`
 - **ADR Viewer Component:** `stories/viewers/docs/AdrViewer.tsx`
+- **Story Generator:** `scripts/generate-adr-stories.mjs`
+- **Validator:** `scripts/validate-adr.mjs`
 

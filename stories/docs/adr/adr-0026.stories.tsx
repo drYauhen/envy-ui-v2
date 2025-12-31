@@ -5,26 +5,13 @@ type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { 
-    layout: 'fullscreen',
-    // Hide addon panels for documentation (not needed for ADR documents)
-    controls: { hidden: true },
-    actions: { hidden: true },
-    interactions: { hidden: true },
-    a11y: { hidden: true }
-  }
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
-export const AppDefaultColorPositioning: Story = {
+export const AppDefaultColorPositioningandSemanticTokenOptimization: Story = {
   name: 'ADR-0026 App-Default Color Positioning and Semantic Token Optimization',
-  parameters: {
-    interactions: { hidden: true },
-    controls: { hidden: true },
-    actions: { hidden: true },
-    a11y: { hidden: true }
-  },
   render: () => (
     <AdrViewer
       adrNumber="0026"
@@ -34,4 +21,3 @@ export const AppDefaultColorPositioning: Story = {
     />
   )
 };
-

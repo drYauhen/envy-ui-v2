@@ -134,18 +134,40 @@ Common status values:
 
 ## Mermaid Diagrams in ADRs
 
-### Orientation
+### CRITICAL Syntax Rules
 
-**Always use vertical orientation:**
-- Use `graph TD` (Top Down) instead of `graph LR` (Left Right)
-- Vertical diagrams are more readable
+**To prevent rendering errors, follow these rules EXACTLY:**
 
-**Example:**
-```mermaid
-graph TD
-    A[Start] --> B[Process]
-    B --> C[End]
-```
+1. **Stroke width syntax:**
+   - ✅ CORRECT: `stroke-width:2px` (with hyphen)
+   - ❌ WRONG: `strokeWidth:2px` (camelCase)
+   - ❌ WRONG: `strokeWidth:2` (missing unit)
+
+2. **Node labels:**
+   - ✅ CORRECT: `A["Label with spaces"]` (quotes required)
+   - ✅ CORRECT: `A[SimpleLabel]` (quotes optional if no spaces)
+   - ❌ WRONG: `A[Label with spaces]` (no quotes with spaces)
+
+3. **Orientation:**
+   - ✅ CORRECT: `graph TD` (Top Down - vertical)
+   - ❌ WRONG: `graph LR` (Left Right - horizontal)
+
+4. **Complete example:**
+   ```mermaid
+   graph TD
+       A["Token System<br/>tokens/{context}/"] --> B["Figma Files"]
+       
+       style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
+       style B fill:#f3e8ff,stroke:#a855f7
+   ```
+
+### Testing Before Commit
+
+**Always test Mermaid diagrams:**
+1. Copy diagram code to [Mermaid Live Editor](https://mermaid.live)
+2. Verify it renders correctly
+3. Check for syntax errors
+4. Only then commit to ADR
 
 ### Font and Node Sizing
 
@@ -165,11 +187,20 @@ graph TD
 **Example:**
 ```mermaid
 graph TD
-    A[Foundation] --> B[Semantic]
+    A["Foundation"] --> B["Semantic"]
     
-    style A fill:#e1f5ff,stroke:#0ea5e9
+    style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
     style B fill:#e8f5e9,stroke:#22c55e
 ```
+
+### Common Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| Diagram not rendering | `strokeWidth` instead of `stroke-width` | Use hyphen format |
+| Node labels broken | Missing quotes around labels with spaces | Add quotes: `A["Label"]` |
+| Diagram too wide | Using `graph LR` | Use `graph TD` |
+| Syntax error | Invalid Mermaid syntax | Test in Mermaid Live Editor |
 
 ### Best Practices
 
@@ -200,6 +231,120 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
 - **ADR Viewer:** `stories/viewers/docs/AdrViewer.tsx`
 - **Story Generator:** `scripts/generate-adr-stories.mjs`
 
+## Common Pitfalls and Validation Checklist
+
+### After Creating a New ADR
+
+**Required Steps (in order):**
+
+1. **Create ADR file:**
+   - ✅ File name: `ADR-XXXX-descriptive-title.md`
+   - ✅ File location: `docs/adr/`
+   - ✅ Uses template from `ADR-TEMPLATE.md`
+   - ✅ Header format: `# ADR-XXXX: Title` (exact match)
+
+2. **Update filename mapping:**
+   - ✅ Add entry to `stories/viewers/docs/adr-filename-map.ts`
+   - Format: `"XXXX": "ADR-XXXX-descriptive-title.md"`
+   - **Auto-generate:** Run the command in the file's comment, or manually add
+
+3. **Update ADR list:**
+   - ✅ Add entry to `stories/viewers/docs/adr-list-data.ts`
+   - Format: `{ number: 'XXXX', title: 'Title', status: 'Status', date: 'YYYY-MM-DD', exportName: 'ExportName' }`
+   - Export name: Convert title to PascalCase (remove spaces, special chars)
+
+4. **Generate Storybook stories:**
+   - ✅ Run: `npm run adr:generate` or `node scripts/generate-adr-stories.mjs`
+   - ✅ Verify story file created: `stories/docs/adr/adr-XXXX.stories.tsx`
+
+5. **Validate:**
+   - ✅ Run: `npm run adr:validate`
+   - ✅ Fix any errors or warnings
+
+6. **Verify in Storybook:**
+   - ✅ ADR appears in "Docs/ADR" section
+   - ✅ ADR loads without errors
+   - ✅ Mermaid diagrams render correctly
+   - ✅ Links to other ADRs work
+
+### File Naming Consistency
+
+**Critical: File name must match exactly:**
+
+- ADR file: `ADR-0027-figma-files-structure-and-organization.md`
+- Story file: `adr-0027.stories.tsx` (lowercase, no title)
+- Filename map: `"0027": "ADR-0027-figma-files-structure-and-organization.md"`
+- ADR list: `number: '0027'` (4 digits with leading zeros)
+
+**Mismatch causes:**
+- ❌ ADR not loading in Storybook
+- ❌ 404 errors when viewing ADR
+- ❌ Broken links between ADRs
+
+### Link Validation
+
+**When adding links to other ADRs:**
+
+1. **Format:**
+   ```markdown
+   - [ADR-XXXX](./ADR-XXXX-descriptive-title.md) — Title
+   ```
+
+2. **Check:**
+   - ✅ File exists: `docs/adr/ADR-XXXX-descriptive-title.md`
+   - ✅ Link uses relative path: `./ADR-XXXX-...`
+   - ✅ Title matches actual ADR title
+
+3. **In Related section:**
+   - List all referenced ADRs
+   - Use consistent format with em-dash separator
+
+### Quick Validation Script
+
+After creating a new ADR, run this checklist:
+
+```bash
+# 1. Check file exists
+ls docs/adr/ADR-XXXX-*.md
+
+# 2. Check filename mapping
+grep "XXXX" stories/viewers/docs/adr-filename-map.ts
+
+# 3. Check ADR list
+grep "XXXX" stories/viewers/docs/adr-list-data.ts
+
+# 4. Check story file
+ls stories/docs/adr/adr-XXXX.stories.tsx
+
+# 5. Generate/regenerate stories
+npm run adr:generate
+
+# 6. Validate everything
+npm run adr:validate
+
+# 7. Test Mermaid syntax (manual check in Storybook)
+```
+
+### Troubleshooting
+
+**ADR not loading:**
+1. Check `adr-filename-map.ts` has correct entry
+2. Verify file name matches exactly (case-sensitive)
+3. Check Storybook console for errors
+4. Verify `docs/` is in `staticDirs` in `.storybook/main.ts`
+5. Run `npm run adr:validate` to check for issues
+
+**Mermaid not rendering:**
+1. Check syntax: use `stroke-width` (with hyphen)
+2. Verify quotes around node labels
+3. Test in [Mermaid Live Editor](https://mermaid.live)
+4. Check browser console for Mermaid errors
+
+**Links broken:**
+1. Verify target ADR file exists
+2. Check relative path format: `./ADR-XXXX-...`
+3. Verify file name matches exactly
+
 ## Notes for AI Agents
 
 When creating a new ADR:
@@ -209,10 +354,14 @@ When creating a new ADR:
 3. Use impersonal language
 4. Include Related ADRs section with proper markdown links
 5. Set the correct date (use current date)
-6. **Use the script:** `node scripts/generate-adr-stories.mjs`
-7. For images: Place in `docs/adr/` and reference with relative paths
-8. For Mermaid diagrams:
+6. **Use the script:** `npm run adr:generate`
+7. **Validate:** `npm run adr:validate`
+8. For images: Place in `docs/adr/` and reference with relative paths
+9. For Mermaid diagrams:
    - Always use `graph TD` (vertical orientation)
+   - Use `stroke-width:2px` (with hyphen, NOT `strokeWidth`)
+   - Use quotes around node labels: `A["Label"]`
+   - Test in Mermaid Live Editor before committing
    - Keep font sizes compact (14px)
    - Use consistent color scheme
    - Keep node labels concise

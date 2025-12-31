@@ -233,9 +233,9 @@ graph TD
     B2 -.->|Same Structure| C2
     B3 -.->|Same Structure| C3
     
-    style A fill:#e1f5ff,stroke:#0ea5e9,strokeWidth:2px
-    style B fill:#f3e8ff,stroke:#a855f7,strokeWidth:2px
-    style C fill:#e8f5e9,stroke:#22c55e,strokeWidth:2px
+    style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
+    style B fill:#f3e8ff,stroke:#a855f7,stroke-width:2px
+    style C fill:#e8f5e9,stroke:#22c55e,stroke-width:2px
     style B1 fill:#fff3e0,stroke:#f59e0b
     style B2 fill:#fff3e0,stroke:#f59e0b
     style B3 fill:#fff3e0,stroke:#f59e0b

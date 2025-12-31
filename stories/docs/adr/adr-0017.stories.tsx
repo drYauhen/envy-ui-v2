@@ -5,25 +5,12 @@ type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { 
-    layout: 'fullscreen',
-    // Hide addon panels for documentation (not needed for ADR documents)
-    controls: { hidden: true },
-    actions: { hidden: true },
-    interactions: { hidden: true },
-    a11y: { hidden: true }
-  }
+  parameters: { layout: 'fullscreen' }
 };
 
 export default meta;
 
 export const LayeredTokenArchitectureforContextsandThemes: Story = {
-  parameters: {
-    interactions: { hidden: true },
-    controls: { hidden: true },
-    actions: { hidden: true },
-    a11y: { hidden: true }
-  },
   name: 'ADR-0017 Layered Token Architecture for Contexts and Themes',
   render: () => (
     <AdrViewer
