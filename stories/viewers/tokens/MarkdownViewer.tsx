@@ -307,7 +307,54 @@ export const MarkdownViewer = ({ markdownPath, fallback = 'Loading...' }: Markdo
                 );
               }
               
-              // Regular code block
+              // Extract text content for analysis
+              let codeText = '';
+              if (typeof children === 'string') {
+                codeText = children;
+              } else if (Array.isArray(children)) {
+                codeText = children
+                  .map((c: any) => typeof c === 'string' ? c : (c?.props?.children || ''))
+                  .join('');
+              } else {
+                codeText = String(children || '');
+              }
+              
+              const trimmedText = codeText.trim();
+              const hasLineBreaks = trimmedText.includes('\n');
+              const hasLanguage = className && /language-\w+/.test(className);
+              
+              // Determine if this should be styled as inline-block
+              // Criteria:
+              // 1. Very long code (> 200 chars) → always block
+              // 2. Has line breaks → always block (multi-line code)
+              // 3. Has language specification → likely a code example → block
+              // 4. Short single-line code without language → likely inline variable/name → inline-block
+              const shouldBeInlineBlock = 
+                trimmedText.length > 0 &&
+                trimmedText.length <= 200 &&
+                !hasLineBreaks &&
+                !hasLanguage;
+              
+              if (shouldBeInlineBlock) {
+                // Render as inline-block for short, single-line code fragments without language
+                return (
+                  <code style={{
+                    display: 'inline-block',
+                    background: '#f1f5f9',
+                    padding: '2px 6px',
+                    borderRadius: '4px',
+                    fontSize: '0.9em',
+                    fontFamily: 'Monaco, "Courier New", monospace',
+                    color: '#e11d48',
+                    margin: '0 2px',
+                    verticalAlign: 'baseline'
+                  }} {...props}>
+                    {children}
+                  </code>
+                );
+              }
+              
+              // Regular code block for longer/multi-line/language-specified code
               return (
                 <code style={{
                   display: 'block',
