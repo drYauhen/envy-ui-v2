@@ -1,0 +1,79 @@
+{
+  "eui": {
+    "side-nav": {
+      "size": {
+        "width": {
+          "expanded": {
+            "$value": "280px",
+            "$type": "dimension",
+            "$description": "Side navigation width when expanded."
+          },
+          "collapsed": {
+            "$value": "64px",
+            "$type": "dimension",
+            "$description": "Side navigation width when collapsed."
+          }
+        },
+        "item": {
+          "height": {
+            "$value": "44px",
+            "$type": "dimension",
+            "$description": "Height of navigation items."
+          },
+          "indicator": {
+            "width": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Width of active/selected indicator (left border)."
+            }
+          }
+        },
+        "icon": {
+          "width": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$description": "Width of navigation item icons."
+          },
+          "height": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$description": "Height of navigation item icons."
+          }
+        },
+        "badge": {
+          "min-width": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$description": "Minimum width for badge."
+          },
+          "height": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$description": "Height of badge."
+          }
+        },
+        "section": {
+          "title-height": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$description": "Height of section title."
+          }
+        },
+        "header": {
+          "height": {
+            "$value": "64px",
+            "$type": "dimension",
+            "$description": "Height of navigation header (logo/brand area)."
+          }
+        },
+        "footer": {
+          "height": {
+            "$value": "64px",
+            "$type": "dimension",
+            "$description": "Height of navigation footer (user profile area)."
+          }
+        }
+      }
+    }
+  }
+}

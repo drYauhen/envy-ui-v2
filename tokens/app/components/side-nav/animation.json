@@ -1,0 +1,42 @@
+{
+  "eui": {
+    "side-nav": {
+      "animation": {
+        "duration": {
+          "$value": "200ms",
+          "$type": "duration",
+          "$description": "Transition duration for side navigation expand/collapse animation."
+        },
+        "easing": {
+          "$value": "ease-in-out",
+          "$type": "string",
+          "$description": "Easing function for side navigation transitions."
+        },
+        "item": {
+          "duration": {
+            "$value": "150ms",
+            "$type": "duration",
+            "$description": "Transition duration for navigation item state changes."
+          },
+          "easing": {
+            "$value": "ease-out",
+            "$type": "string",
+            "$description": "Easing function for navigation item transitions."
+          }
+        },
+        "indicator": {
+          "duration": {
+            "$value": "200ms",
+            "$type": "duration",
+            "$description": "Transition duration for active indicator animation."
+          },
+          "easing": {
+            "$value": "ease-out",
+            "$type": "string",
+            "$description": "Easing function for active indicator animation."
+          }
+        }
+      }
+    }
+  }
+}

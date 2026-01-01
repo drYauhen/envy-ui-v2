@@ -1,0 +1,129 @@
+{
+  "eui": {
+    "side-nav": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Side navigation background color. Brand primary for brand identity."
+        },
+        "border": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Side navigation border color."
+        },
+        "item": {
+          "background": {
+            "default": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Default navigation item background."
+            },
+            "hover": {
+              "$value": "{eui.color.brand.800}",
+              "$type": "color",
+              "$description": "Navigation item background on hover."
+            },
+            "active": {
+              "$value": "{eui.color.brand.600}",
+              "$type": "color",
+              "$description": "Active navigation item background."
+            },
+            "selected": {
+              "$value": "{eui.color.brand.700}",
+              "$type": "color",
+              "$description": "Selected navigation item background."
+            },
+            "focus": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Navigation item background on focus."
+            },
+            "disabled": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Disabled navigation item background."
+            }
+          },
+          "text": {
+            "default": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Default navigation item text color."
+            },
+            "hover": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Navigation item text color on hover."
+            },
+            "active": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Active navigation item text color."
+            },
+            "selected": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Selected navigation item text color."
+            },
+            "disabled": {
+              "$value": "{eui.color.text.disabled}",
+              "$type": "color",
+              "$description": "Disabled navigation item text color."
+            }
+          },
+          "indicator": {
+            "active": {
+              "$value": "{eui.color.brand.200}",
+              "$type": "color",
+              "$description": "Active indicator color (left border or accent)."
+            },
+            "selected": {
+              "$value": "{eui.color.brand.100}",
+              "$type": "color",
+              "$description": "Selected indicator color."
+            }
+          },
+          "badge": {
+            "background": {
+              "$value": "{eui.color.brand.200}",
+              "$type": "color",
+              "$description": "Badge background color."
+            },
+            "text": {
+              "$value": "{eui.color.brand.900}",
+              "$type": "color",
+              "$description": "Badge text color."
+            }
+          }
+        },
+        "section": {
+          "title": {
+            "text": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Section title text color."
+            }
+          }
+        },
+        "separator": {
+          "$value": "{eui.color.border.subtle}",
+          "$type": "color",
+          "$description": "Separator color between sections."
+        },
+        "tooltip": {
+          "background": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color",
+            "$description": "Tooltip background color (shown in collapsed state)."
+          },
+          "text": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Tooltip text color."
+          }
+        }
+      }
+    }
+  }
+}

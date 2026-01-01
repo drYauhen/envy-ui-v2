@@ -619,6 +619,111 @@
           "value": "oklch(94% 0.00 0)"
         },
         {
+          "path": "eui.side-nav.colors.background",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.side-nav.colors.border",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.active",
+          "type": "COLOR",
+          "value": "oklch(52% 0.10 230)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.default",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.disabled",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.focus",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.hover",
+          "type": "COLOR",
+          "value": "oklch(47% 0.10 230)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.selected",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.badge.background",
+          "type": "COLOR",
+          "value": "oklch(85% 0.06 231)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.badge.text",
+          "type": "COLOR",
+          "value": "oklch(46% 0.09 231)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.indicator.active",
+          "type": "COLOR",
+          "value": "oklch(85% 0.06 231)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.indicator.selected",
+          "type": "COLOR",
+          "value": "oklch(93% 0.05 232)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.active",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.default",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.disabled",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.selected",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.section.title.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.separator",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.tooltip.background",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.side-nav.colors.tooltip.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
           "path": "eui.sidebar.colors.background",
           "type": "COLOR",
           "value": "oklch(49% 0.10 230)"
@@ -3120,6 +3225,127 @@
           "path": "eui.select.primitive.badge.colors.text",
           "type": "COLOR",
           "value": "oklch(100% 0 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Side Nav",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.side-nav.size.badge.height",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.badge.min-width",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.footer.height",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.side-nav.size.header.height",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.side-nav.size.icon.height",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.icon.width",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.item.height",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.side-nav.size.item.indicator.width",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.side-nav.size.section.title-height",
+          "type": "FLOAT",
+          "value": 32
+        },
+        {
+          "path": "eui.side-nav.size.width.collapsed",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.side-nav.size.width.expanded",
+          "type": "FLOAT",
+          "value": 280
+        },
+        {
+          "path": "eui.side-nav.spacing.group.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.side-nav.spacing.item.gap",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.side-nav.spacing.item.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.side-nav.spacing.nested.indent",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.side-nav.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.side-nav.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.side-nav.spacing.section.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.side-nav.spacing.section.padding.top",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.side-nav.spacing.separator.margin.vertical",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.side-nav.typography.header.font-size",
+          "type": "FLOAT",
+          "value": 18
+        },
+        {
+          "path": "eui.side-nav.typography.item.font-size",
+          "type": "FLOAT",
+          "value": 14
+        },
+        {
+          "path": "eui.side-nav.typography.section-title.font-size",
+          "type": "FLOAT",
+          "value": 12
         }
       ]
     },

@@ -1,0 +1,54 @@
+{
+  "eui": {
+    "side-nav": {
+      "typography": {
+        "item": {
+          "font-size": {
+            "$value": "14px",
+            "$type": "dimension",
+            "$description": "Font size for navigation items."
+          },
+          "font-weight": {
+            "$value": "400",
+            "$type": "string",
+            "$description": "Font weight for navigation items."
+          },
+          "line-height": {
+            "$value": "normal",
+            "$type": "string",
+            "$description": "Line height for navigation items."
+          }
+        },
+        "section-title": {
+          "font-size": {
+            "$value": "12px",
+            "$type": "dimension",
+            "$description": "Font size for section titles."
+          },
+          "font-weight": {
+            "$value": "600",
+            "$type": "string",
+            "$description": "Font weight for section titles."
+          },
+          "line-height": {
+            "$value": "normal",
+            "$type": "string",
+            "$description": "Line height for section titles."
+          }
+        },
+        "header": {
+          "font-size": {
+            "$value": "18px",
+            "$type": "dimension",
+            "$description": "Font size for header logo/brand text."
+          },
+          "font-weight": {
+            "$value": "600",
+            "$type": "string",
+            "$description": "Font weight for header logo/brand text."
+          }
+        }
+      }
+    }
+  }
+}

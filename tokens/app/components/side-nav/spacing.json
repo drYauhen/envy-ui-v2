@@ -1,0 +1,71 @@
+{
+  "eui": {
+    "side-nav": {
+      "spacing": {
+        "padding": {
+          "vertical": {
+            "$value": "0.5rem",
+            "$type": "dimension",
+            "$description": "Vertical padding for navigation container."
+          },
+          "horizontal": {
+            "$value": "0",
+            "$type": "dimension",
+            "$description": "Horizontal padding for navigation container."
+          }
+        },
+        "item": {
+          "padding": {
+            "horizontal": {
+              "$value": "1rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for navigation items."
+            }
+          },
+          "gap": {
+            "$value": "0.75rem",
+            "$type": "dimension",
+            "$description": "Gap between icon and label in navigation items."
+          }
+        },
+        "section": {
+          "padding": {
+            "horizontal": {
+              "$value": "1rem",
+              "$type": "dimension",
+              "$description": "Horizontal padding for section titles."
+            },
+            "top": {
+              "$value": "0.5rem",
+              "$type": "dimension",
+              "$description": "Top padding for section titles."
+            }
+          }
+        },
+        "group": {
+          "gap": {
+            "$value": "0.25rem",
+            "$type": "dimension",
+            "$description": "Gap between items in a group."
+          }
+        },
+        "separator": {
+          "margin": {
+            "vertical": {
+              "$value": "0.75rem",
+              "$type": "dimension",
+              "$description": "Vertical margin for separators."
+            }
+          }
+        },
+        "nested": {
+          "indent": {
+            "$value": "1.5rem",
+            "$type": "dimension",
+            "$description": "Indentation for nested navigation items."
+          }
+        }
+      }
+    }
+  }
+}

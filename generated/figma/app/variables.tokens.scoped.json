@@ -2019,6 +2019,354 @@
           }
         },
         {
+          "path": "eui.side-nav.colors.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.active",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.05493297099503531,
+              "g": 0.44982359931658017,
+              "b": 0.5926983713344595,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.05493297099503531,
+              "g": 0.44982359931658017,
+              "b": 0.5926983713344595,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.default",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": "#00000000",
+            "app-default": "#00000000"
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.disabled",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": "#00000000",
+            "app-default": "#00000000"
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.focus",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": "#00000000",
+            "app-default": "#00000000"
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.hover",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0,
+              "g": 0.39214330235980244,
+              "b": 0.5322967413575149,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0,
+              "g": 0.39214330235980244,
+              "b": 0.5322967413575149,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.background.selected",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.badge.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.6525501816743702,
+              "g": 0.8378508812651068,
+              "b": 0.9343434174993952,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.6525501816743702,
+              "g": 0.8378508812651068,
+              "b": 0.9343434174993952,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.badge.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.03293088457327742,
+              "g": 0.37745456959358464,
+              "b": 0.5053197473026612,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.03293088457327742,
+              "g": 0.37745456959358464,
+              "b": 0.5053197473026612,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.indicator.active",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.6525501816743702,
+              "g": 0.8378508812651068,
+              "b": 0.9343434174993952,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.6525501816743702,
+              "g": 0.8378508812651068,
+              "b": 0.9343434174993952,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.indicator.selected",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.7824125021361918,
+              "g": 0.9357296237160299,
+              "b": 1,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.7824125021361918,
+              "g": 0.9357296237160299,
+              "b": 1,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.active",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.default",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.disabled",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.hover",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.item.text.selected",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.section.title.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.separator",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.tooltip.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.1314994135379519,
+              "g": 0.13149941353795186,
+              "b": 0.1314994135379519,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.1314994135379519,
+              "g": 0.13149941353795186,
+              "b": 0.1314994135379519,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.side-nav.colors.tooltip.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
           "path": "eui.sidebar.colors.background",
           "type": "COLOR",
           "valuesByMode": {
@@ -8123,6 +8471,229 @@
               "b": 0.9999999999999999,
               "a": 1
             }
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Side Nav",
+      "modes": [
+        "app-accessibility",
+        "app-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.side-nav.size.badge.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 20,
+            "app-default": 20
+          },
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.side-nav.size.badge.min-width",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 20,
+            "app-default": 20
+          }
+        },
+        {
+          "path": "eui.side-nav.size.footer.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 64,
+            "app-default": 64
+          },
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.side-nav.size.header.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 64,
+            "app-default": 64
+          },
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.side-nav.size.icon.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 20,
+            "app-default": 20
+          },
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.side-nav.size.icon.width",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 20,
+            "app-default": 20
+          },
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.side-nav.size.item.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 44,
+            "app-default": 44
+          },
+          "scopes": [
+            "FRAME_HEIGHT"
+          ]
+        },
+        {
+          "path": "eui.side-nav.size.item.indicator.width",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 3,
+            "app-default": 3
+          },
+          "scopes": [
+            "FRAME_WIDTH"
+          ]
+        },
+        {
+          "path": "eui.side-nav.size.section.title-height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 32,
+            "app-default": 32
+          }
+        },
+        {
+          "path": "eui.side-nav.size.width.collapsed",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 64,
+            "app-default": 64
+          }
+        },
+        {
+          "path": "eui.side-nav.size.width.expanded",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 280,
+            "app-default": 280
+          }
+        },
+        {
+          "path": "eui.side-nav.spacing.group.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.25,
+            "app-default": 0.25
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.side-nav.spacing.item.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.75,
+            "app-default": 0.75
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.side-nav.spacing.item.padding.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-default": 1
+          }
+        },
+        {
+          "path": "eui.side-nav.spacing.nested.indent",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1.5,
+            "app-default": 1.5
+          }
+        },
+        {
+          "path": "eui.side-nav.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0,
+            "app-default": 0
+          }
+        },
+        {
+          "path": "eui.side-nav.spacing.padding.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5,
+            "app-default": 0.5
+          }
+        },
+        {
+          "path": "eui.side-nav.spacing.section.padding.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-default": 1
+          }
+        },
+        {
+          "path": "eui.side-nav.spacing.section.padding.top",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5,
+            "app-default": 0.5
+          },
+          "scopes": [
+            "PADDING_VERTICAL"
+          ]
+        },
+        {
+          "path": "eui.side-nav.spacing.separator.margin.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.75,
+            "app-default": 0.75
+          }
+        },
+        {
+          "path": "eui.side-nav.typography.header.font-size",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 18,
+            "app-default": 18
+          }
+        },
+        {
+          "path": "eui.side-nav.typography.item.font-size",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 14,
+            "app-default": 14
+          }
+        },
+        {
+          "path": "eui.side-nav.typography.section-title.font-size",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 12,
+            "app-default": 12
           }
         }
       ]
