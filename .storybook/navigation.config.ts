@@ -12,11 +12,10 @@ export const navigationConfig = {
     "Tokens",
     "HTML + CSS",
     "TSX (Clean)",
-    "TSX",
     "TSX + React Aria",
-    "Web Components",
+    "Templates",
     "Tailwind",
-    "Templates"
+    "Web Components"
   ] as const,
 
   // Special sorting rules for specific sections/subsections

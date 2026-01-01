@@ -135,25 +135,24 @@ export const parameters: Preview['parameters'] = {
       //   3. Or manually copy values from navigation.config.ts to this function
       // 
       // Section order (from navigation.config.ts -> sectionOrder)
-                        const sectionOrder = [
+                              const sectionOrder = [
         "Docs",
         "Tokens",
         "HTML + CSS",
         "TSX (Clean)",
-        "TSX",
         "TSX + React Aria",
-        "Web Components",
+        "Templates",
         "Tailwind",
-        "Templates"
+        "Web Components"
       ];
       
       // Special rules (from navigation.config.ts)
-                        const specialRules = {
+                              const specialRules = {
         "Docs/ADR": { firstItem: "ADR Overview" }
       };
       
       // Section configs (from navigation.config.ts)
-                        const sectionConfigs = {
+                              const sectionConfigs = {
         "HTML + CSS": {
           componentGroups: [
             { components: ["Avatar", "AvatarGroup"] },
@@ -176,9 +175,9 @@ export const parameters: Preview['parameters'] = {
         }
       };
       
-      // Extract story paths
-      const aTitle = (a[1] && a[1].title) || (a[1] && a[1].kind) || '';
-      const bTitle = (b[1] && b[1].title) || (b[1] && b[1].kind) || '';
+      // Extract story paths - Storybook 10 format: objects with title/kind/name properties
+      const aTitle = a.title || a.kind || '';
+      const bTitle = b.title || b.kind || '';
       const aParts = aTitle.split('/');
       const bParts = bTitle.split('/');
       const aSection = aParts[0] || '';
@@ -200,8 +199,8 @@ export const parameters: Preview['parameters'] = {
       const specialRule = specialRules[aPath] || specialRules[bPath];
       
       if (specialRule && specialRule.firstItem) {
-        const aName = (a[1] && a[1].name) || '';
-        const bName = (b[1] && b[1].name) || '';
+        const aName = a.name || '';
+        const bName = b.name || '';
         if (aName === specialRule.firstItem) return -1;
         if (bName === specialRule.firstItem) return 1;
       }
