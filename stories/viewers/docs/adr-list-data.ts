@@ -48,6 +48,7 @@ export const adrs: AdrListItem[] = [
   { number: '0025', title: 'Figma Variables Integration Strategy', status: 'Accepted', date: '2025-12-26' },
   { number: '0026', title: 'App-Default Color Positioning and Semantic Token Optimization', status: 'Accepted', date: '2025-12-29', exportName: 'AppDefaultColorPositioning' },
   { number: '0027', title: 'Figma Files Structure and Organization', status: 'Accepted', date: '2025-12-31', exportName: 'FigmaFilesStructureandOrganization' },
-  { number: '0028', title: 'Internationalization (i18n) and RTL Support Architecture', status: 'Proposed', date: '2025-01-01', exportName: 'Internationalizationi18nandRTLSupportArchitecture' }
+  { number: '0028', title: 'Internationalization (i18n) and RTL Support Architecture', status: 'Proposed', date: '2025-01-01', exportName: 'Internationalizationi18nandRTLSupportArchitecture' },
+  { number: '0029', title: 'Accessibility Architecture and Decision Framework', status: 'Accepted', date: '2025-12-31', exportName: 'AccessibilityArchitectureandDecisionFramework' }
 ];
 

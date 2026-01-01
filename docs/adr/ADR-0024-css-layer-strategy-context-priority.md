@@ -302,7 +302,7 @@ CSS Custom Properties penetrate Shadow DOM boundaries. The `@layer` directive on
 
 - **Browser Support**: Requires modern browsers (all current browsers support `@layer`)
 - **Build Complexity**: Style Dictionary formats need to generate `@layer` declarations
-- **Learning Curve**: Developers need to understand `@layer` behavior
+- **Implementation**: System uses CSS `@layer` to manage cascade priority (handled automatically by build process)
 
 ### Implementation Requirements
 
