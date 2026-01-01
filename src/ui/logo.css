@@ -39,64 +39,94 @@
   height: 100%;
 }
 
-[data-eui-context] .eui-logo__svg svg * {
+/* For monochrome variants - apply currentColor */
+[data-eui-context] .eui-logo[data-eui-variant="monochrome"] .eui-logo__svg svg *,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"] .eui-logo__svg svg *,
+[data-eui-context] .eui-logo[data-eui-variant="full"] .eui-logo__svg svg * {
   fill: currentColor;
   stroke: currentColor;
 }
 
+/* For color variants - preserve original colors from SVG */
+[data-eui-context] .eui-logo[data-eui-variant="color"] .eui-logo__svg svg *,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only-color"] .eui-logo__svg svg *,
+[data-eui-context] .eui-logo[data-eui-variant="full-color"] .eui-logo__svg svg * {
+  /* Don't override fill/stroke - use colors from SVG */
+}
+
+/* For loading variant - preserve animation and colors */
+[data-eui-context] .eui-logo[data-eui-variant="loading"] .eui-logo__svg svg * {
+  /* Preserve all styles and animations from SVG */
+}
+
 /* Sizes - для icon-only (квадратные) */
-[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="xs"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="xs"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only-color"][data-eui-size="xs"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="loading"][data-eui-size="xs"] .eui-logo__svg {
   width: var(--eui-logo-size-icon-xs);
   height: var(--eui-logo-size-icon-xs);
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="sm"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="sm"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only-color"][data-eui-size="sm"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="loading"][data-eui-size="sm"] .eui-logo__svg {
   width: var(--eui-logo-size-icon-sm);
   height: var(--eui-logo-size-icon-sm);
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="md"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="md"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only-color"][data-eui-size="md"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="loading"][data-eui-size="md"] .eui-logo__svg {
   width: var(--eui-logo-size-icon-md);
   height: var(--eui-logo-size-icon-md);
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="lg"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="lg"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only-color"][data-eui-size="lg"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="loading"][data-eui-size="lg"] .eui-logo__svg {
   width: var(--eui-logo-size-icon-lg);
   height: var(--eui-logo-size-icon-lg);
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="xl"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="xl"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only-color"][data-eui-size="xl"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="loading"][data-eui-size="xl"] .eui-logo__svg {
   width: var(--eui-logo-size-icon-xl);
   height: var(--eui-logo-size-icon-xl);
 }
 
 /* Sizes - для full (горизонтальные, сохраняют пропорции) */
-[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="xs"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="xs"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="full-color"][data-eui-size="xs"] .eui-logo__svg {
   height: var(--eui-logo-size-icon-xs);
   width: auto;
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="sm"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="sm"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="full-color"][data-eui-size="sm"] .eui-logo__svg {
   height: var(--eui-logo-size-icon-sm);
   width: auto;
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="md"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="md"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="full-color"][data-eui-size="md"] .eui-logo__svg {
   height: var(--eui-logo-size-icon-md);
   width: auto;
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="lg"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="lg"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="full-color"][data-eui-size="lg"] .eui-logo__svg {
   height: var(--eui-logo-size-icon-lg);
   width: auto;
 }
 
-[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="xl"] .eui-logo__svg {
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="xl"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="full-color"][data-eui-size="xl"] .eui-logo__svg {
   height: var(--eui-logo-size-icon-xl);
   width: auto;
 }
 
-/* Color variants */
+/* Color variants - только для monochrome вариантов */
 [data-eui-context] .eui-logo[data-eui-color="default"] .eui-logo__svg {
   color: var(--eui-logo-colors-icon-default);
 }
@@ -111,4 +141,12 @@
 
 [data-eui-context] .eui-logo[data-eui-color="monochrome"] .eui-logo__svg {
   color: currentColor;
+}
+
+/* Color variants не применяются к color и loading вариантам */
+[data-eui-context] .eui-logo[data-eui-variant="color"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="full-color"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="icon-only-color"] .eui-logo__svg,
+[data-eui-context] .eui-logo[data-eui-variant="loading"] .eui-logo__svg {
+  color: inherit;
 }

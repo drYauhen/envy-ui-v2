@@ -59,3 +59,8 @@ public/docs/
 # ===============================
 docs/dirty/
 docs/tasks/
+
+# ===============================
+# Personal workspace (not committed)
+# ===============================
+personal/
