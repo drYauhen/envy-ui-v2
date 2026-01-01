@@ -462,6 +462,16 @@
   --eui-input-typography-font-family: inherit;
   --eui-input-typography-font-weight: 400;
   --eui-input-typography-line-height: 1.5;
+  --eui-logo-colors-icon-default: oklch(49% 0.10 230);
+  --eui-logo-colors-icon-inverse: oklch(100% 0 0);
+  --eui-logo-colors-icon-grayscale: oklch(63% 0.00 0);
+  --eui-logo-colors-icon-monochrome: currentColor;
+  --eui-logo-size-icon-xs: 16px;
+  --eui-logo-size-icon-sm: 24px;
+  --eui-logo-size-icon-md: 32px;
+  --eui-logo-size-icon-lg: 48px;
+  --eui-logo-size-icon-xl: 64px;
+  --eui-logo-spacing-gap: 0.75rem;
   --eui-menu-border-width: 1px;
   --eui-menu-border-style: solid;
   --eui-menu-border-color: oklch(94% 0.00 0);

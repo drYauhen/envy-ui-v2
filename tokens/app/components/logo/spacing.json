@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "logo": {
+      "spacing": {
+        "gap": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Gap between icon and wordmark in full variant (not used for inline SVG)."
+        }
+      }
+    }
+  }
+}

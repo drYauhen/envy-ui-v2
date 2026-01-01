@@ -1,0 +1,114 @@
+/* Logo Component */
+
+[data-eui-context] .eui-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--eui-logo-spacing-gap);
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+}
+
+/* Logo as link */
+[data-eui-context] .eui-logo[href] {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+[data-eui-context] .eui-logo[href]:hover {
+  opacity: 0.8;
+}
+
+[data-eui-context] .eui-logo[href]:focus {
+  outline: 2px solid var(--eui-color-focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Logo SVG container */
+[data-eui-context] .eui-logo__svg {
+  display: block;
+  flex-shrink: 0;
+  color: var(--eui-logo-colors-icon-default);
+}
+
+/* SVG inside should inherit color */
+[data-eui-context] .eui-logo__svg svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+[data-eui-context] .eui-logo__svg svg * {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* Sizes - для icon-only (квадратные) */
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="xs"] .eui-logo__svg {
+  width: var(--eui-logo-size-icon-xs);
+  height: var(--eui-logo-size-icon-xs);
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="sm"] .eui-logo__svg {
+  width: var(--eui-logo-size-icon-sm);
+  height: var(--eui-logo-size-icon-sm);
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="md"] .eui-logo__svg {
+  width: var(--eui-logo-size-icon-md);
+  height: var(--eui-logo-size-icon-md);
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="lg"] .eui-logo__svg {
+  width: var(--eui-logo-size-icon-lg);
+  height: var(--eui-logo-size-icon-lg);
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="xl"] .eui-logo__svg {
+  width: var(--eui-logo-size-icon-xl);
+  height: var(--eui-logo-size-icon-xl);
+}
+
+/* Sizes - для full (горизонтальные, сохраняют пропорции) */
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="xs"] .eui-logo__svg {
+  height: var(--eui-logo-size-icon-xs);
+  width: auto;
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="sm"] .eui-logo__svg {
+  height: var(--eui-logo-size-icon-sm);
+  width: auto;
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="md"] .eui-logo__svg {
+  height: var(--eui-logo-size-icon-md);
+  width: auto;
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="lg"] .eui-logo__svg {
+  height: var(--eui-logo-size-icon-lg);
+  width: auto;
+}
+
+[data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="xl"] .eui-logo__svg {
+  height: var(--eui-logo-size-icon-xl);
+  width: auto;
+}
+
+/* Color variants */
+[data-eui-context] .eui-logo[data-eui-color="default"] .eui-logo__svg {
+  color: var(--eui-logo-colors-icon-default);
+}
+
+[data-eui-context] .eui-logo[data-eui-color="inverse"] .eui-logo__svg {
+  color: var(--eui-logo-colors-icon-inverse);
+}
+
+[data-eui-context] .eui-logo[data-eui-color="grayscale"] .eui-logo__svg {
+  color: var(--eui-logo-colors-icon-grayscale);
+}
+
+[data-eui-context] .eui-logo[data-eui-color="monochrome"] .eui-logo__svg {
+  color: currentColor;
+}

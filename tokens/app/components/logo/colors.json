@@ -1,0 +1,30 @@
+{
+  "eui": {
+    "logo": {
+      "colors": {
+        "icon": {
+          "default": {
+            "$value": "{eui.color.brand.primary}",
+            "$type": "color",
+            "$description": "Default logo icon color (brand primary)."
+          },
+          "inverse": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Logo icon color for dark backgrounds (inverse)."
+          },
+          "grayscale": {
+            "$value": "{eui.color.neutral.600}",
+            "$type": "color",
+            "$description": "Grayscale logo icon color."
+          },
+          "monochrome": {
+            "$value": "currentColor",
+            "$type": "color",
+            "$description": "Monochrome logo icon color (inherits text color)."
+          }
+        }
+      }
+    }
+  }
+}

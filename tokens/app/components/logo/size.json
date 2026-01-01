@@ -1,0 +1,35 @@
+{
+  "eui": {
+    "logo": {
+      "size": {
+        "icon": {
+          "xs": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$description": "Extra small logo icon size (for inline text, badges)."
+          },
+          "sm": {
+            "$value": "24px",
+            "$type": "dimension",
+            "$description": "Small logo icon size (for collapsed menus)."
+          },
+          "md": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$description": "Medium logo icon size (standard)."
+          },
+          "lg": {
+            "$value": "48px",
+            "$type": "dimension",
+            "$description": "Large logo icon size (for hero sections)."
+          },
+          "xl": {
+            "$value": "64px",
+            "$type": "dimension",
+            "$description": "Extra large logo icon size (for landing pages)."
+          }
+        }
+      }
+    }
+  }
+}

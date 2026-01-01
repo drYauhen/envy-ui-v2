@@ -1269,6 +1269,68 @@
           }
         },
         {
+          "path": "eui.logo.colors.icon.default",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.logo.colors.icon.grayscale",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.5371451090074392,
+              "g": 0.5371451090074391,
+              "b": 0.5371451090074392,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.5371451090074392,
+              "g": 0.5371451090074391,
+              "b": 0.5371451090074392,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.logo.colors.icon.inverse",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.logo.colors.icon.monochrome",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": "currentColor",
+            "website-default": "currentColor"
+          }
+        },
+        {
           "path": "eui.menu.colors.background",
           "type": "COLOR",
           "valuesByMode": {
@@ -7575,6 +7637,66 @@
               "a": 1
             }
           }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Logo",
+      "modes": [
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.logo.size.icon.lg",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 48,
+            "website-default": 48
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.md",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 32,
+            "website-default": 32
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.sm",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 24,
+            "website-default": 24
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 64,
+            "website-default": 64
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.xs",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 16,
+            "website-default": 16
+          }
+        },
+        {
+          "path": "eui.logo.spacing.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.75,
+            "website-default": 0.75
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
         }
       ]
     },

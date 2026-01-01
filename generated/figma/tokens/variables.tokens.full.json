@@ -394,6 +394,26 @@
           "value": "oklch(90% 0.00 0)"
         },
         {
+          "path": "eui.logo.colors.icon.default",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.logo.colors.icon.grayscale",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.logo.colors.icon.inverse",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.logo.colors.icon.monochrome",
+          "type": "COLOR",
+          "value": "currentColor"
+        },
+        {
           "path": "eui.menu.colors.background",
           "type": "COLOR",
           "value": "oklch(100% 0 0)"
@@ -2745,6 +2765,42 @@
           "path": "eui.input.group.colors.suffix.text",
           "type": "COLOR",
           "value": "oklch(63% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Logo",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.logo.size.icon.lg",
+          "type": "FLOAT",
+          "value": 48
+        },
+        {
+          "path": "eui.logo.size.icon.md",
+          "type": "FLOAT",
+          "value": 32
+        },
+        {
+          "path": "eui.logo.size.icon.sm",
+          "type": "FLOAT",
+          "value": 24
+        },
+        {
+          "path": "eui.logo.size.icon.xl",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.logo.size.icon.xs",
+          "type": "FLOAT",
+          "value": 16
+        },
+        {
+          "path": "eui.logo.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.75
         }
       ]
     },

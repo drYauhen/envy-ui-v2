@@ -1269,6 +1269,68 @@
           }
         },
         {
+          "path": "eui.logo.colors.icon.default",
+          "type": "COLOR",
+          "valuesByMode": {
+            "report-print": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            },
+            "report-screen": {
+              "r": 0,
+              "g": 0.4150800546453409,
+              "b": 0.556334746347095,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.logo.colors.icon.grayscale",
+          "type": "COLOR",
+          "valuesByMode": {
+            "report-print": {
+              "r": 0.5371451090074392,
+              "g": 0.5371451090074391,
+              "b": 0.5371451090074392,
+              "a": 1
+            },
+            "report-screen": {
+              "r": 0.5371451090074392,
+              "g": 0.5371451090074391,
+              "b": 0.5371451090074392,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.logo.colors.icon.inverse",
+          "type": "COLOR",
+          "valuesByMode": {
+            "report-print": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "report-screen": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.logo.colors.icon.monochrome",
+          "type": "COLOR",
+          "valuesByMode": {
+            "report-print": "currentColor",
+            "report-screen": "currentColor"
+          }
+        },
+        {
           "path": "eui.menu.colors.background",
           "type": "COLOR",
           "valuesByMode": {
@@ -7539,6 +7601,66 @@
               "a": 1
             }
           }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Logo",
+      "modes": [
+        "report-print",
+        "report-screen"
+      ],
+      "variables": [
+        {
+          "path": "eui.logo.size.icon.lg",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 48,
+            "report-screen": 48
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.md",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 32,
+            "report-screen": 32
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.sm",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 24,
+            "report-screen": 24
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 64,
+            "report-screen": 64
+          }
+        },
+        {
+          "path": "eui.logo.size.icon.xs",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 16,
+            "report-screen": 16
+          }
+        },
+        {
+          "path": "eui.logo.spacing.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 0.75,
+            "report-screen": 0.75
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
         }
       ]
     },
