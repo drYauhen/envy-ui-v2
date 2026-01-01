@@ -60,38 +60,43 @@ function flattenTokens(obj, prefix = '', result = {}) {
   return result;
 }
 
-// Read spacing tokens
-const spacingPath = join(repoRoot, 'tokens', 'foundations', 'spacing.json');
+// Read spacing tokens from app context (primary context for Tailwind)
+const spacingPath = join(repoRoot, 'tokens', 'app', 'foundations', 'spacing.json');
 const spacingData = readTokenFile(spacingPath);
 const spacing = spacingData?.eui?.spacing ? flattenTokens(spacingData.eui.spacing) : {};
 
-// Read color tokens
-const colorsDir = join(repoRoot, 'tokens', 'foundations', 'colors');
-const colorFiles = readdirSync(colorsDir).filter(f => f.endsWith('.json'));
-const colors = {};
+// Read color tokens from app context
+const colorsDir = join(repoRoot, 'tokens', 'app', 'foundations', 'colors');
+let colors = {};
 
-colorFiles.forEach(file => {
-  const colorPath = join(colorsDir, file);
-  const colorData = readTokenFile(colorPath);
-  if (colorData?.eui?.color) {
-    const category = file.replace('.json', '');
-    const flattened = flattenTokens(colorData.eui.color);
-    // Flatten nested structure: brand.brand-600 -> brand-600
-    // But keep category prefix for organization
-    Object.keys(flattened).forEach(key => {
-      const newKey = key.startsWith(`${category}-`) ? key : `${category}-${key}`;
-      colors[newKey] = flattened[key];
-    });
-  }
-});
+try {
+  const colorFiles = readdirSync(colorsDir).filter(f => f.endsWith('.json'));
+  
+  colorFiles.forEach(file => {
+    const colorPath = join(colorsDir, file);
+    const colorData = readTokenFile(colorPath);
+    if (colorData?.eui?.color) {
+      const category = file.replace('.json', '');
+      const flattened = flattenTokens(colorData.eui.color);
+      // Flatten nested structure: brand.brand-600 -> brand-600
+      // But keep category prefix for organization
+      Object.keys(flattened).forEach(key => {
+        const newKey = key.startsWith(`${category}-`) ? key : `${category}-${key}`;
+        colors[newKey] = flattened[key];
+      });
+    }
+  });
+} catch (error) {
+  console.warn('Warning: Could not read color tokens:', error.message);
+}
 
-// Read shape tokens
-const shapePath = join(repoRoot, 'tokens', 'foundations', 'shape.json');
+// Read shape tokens from app context
+const shapePath = join(repoRoot, 'tokens', 'app', 'foundations', 'shape.json');
 const shapeData = readTokenFile(shapePath);
 const borderRadius = shapeData?.eui?.radius ? flattenTokens(shapeData.eui.radius) : {};
 
-// Read typography tokens
-const typographyDir = join(repoRoot, 'tokens', 'foundations', 'typography');
+// Read typography tokens from app context
+const typographyDir = join(repoRoot, 'tokens', 'app', 'foundations', 'typography');
 const fontSize = {};
 const fontWeight = {};
 const lineHeight = {};
