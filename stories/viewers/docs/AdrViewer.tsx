@@ -510,12 +510,12 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
               ),
               // Кастомизация ссылок
               a: ({node, href, children, ...props}: any) => {
-                // Convert ADR file links to Storybook story links
+                // Convert ADR file links and Architecture document links to Storybook story links
                 let storybookHref = href;
                 let targetAdrNumber: string | null = null;
                 
                 if (href && typeof href === 'string') {
-                  // Match links to ADR files: ./ADR-XXXX-*.md or ADR-XXXX-*.md
+                  // Match links to ADR files: ./ADR-XXXX-*.md or ADR-XXXX-*.md or ../adr/ADR-XXXX-*.md
                   const adrMatch = href.match(/ADR-(\d{4})[^/]*\.md$/);
                   if (adrMatch) {
                     targetAdrNumber = adrMatch[1];
@@ -563,6 +563,18 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                       }).catch(() => {
                         console.warn(`Could not resolve ADR-${targetAdrNumber} link`);
                       });
+                    }
+                  } else {
+                    // Match links to Architecture documents: ../architecture/*.md or architecture/*.md
+                    const archMatch = href.match(/\/architecture\/([^/]+)\.md$/) || 
+                                     href.match(/architecture\/([^/]+)\.md$/);
+                    if (archMatch) {
+                      const filename = archMatch[1]; // e.g., "accessibility-reference"
+                      // Convert filename to story slug
+                      // Story export name is PascalCase (e.g., "AccessibilityReference")
+                      // Storybook slug is kebab-case (e.g., "accessibility-reference")
+                      // Use the filename directly as slug since it's already kebab-case and matches the story slug
+                      storybookHref = `?path=/story/docs-architecture--${filename}`;
                     }
                   }
                 }
