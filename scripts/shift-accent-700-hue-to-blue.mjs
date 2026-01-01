@@ -72,3 +72,4 @@ console.log('✅ Accent-700 hue shifted towards blue!');
 console.log('📝 Next step: Run "node scripts/generate-tonal-scale-from-base-600-accent.mjs" to regenerate the scale');
 
 
+

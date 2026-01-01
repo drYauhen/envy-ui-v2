@@ -81,3 +81,4 @@ console.log('✅ Accent colors shifted!');
 console.log('📝 Next step: Run "node scripts/generate-tonal-scale-from-base-700-accent.mjs" to regenerate the scale');
 
 
+
