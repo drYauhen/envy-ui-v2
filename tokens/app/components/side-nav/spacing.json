@@ -64,6 +64,15 @@
             "$type": "dimension",
             "$description": "Indentation for nested navigation items."
           }
+        },
+        "toggle": {
+          "offset": {
+            "right": {
+              "$value": "-12px",
+              "$type": "dimension",
+              "$description": "Right offset for toggle button (negative to make it protrude beyond nav border, shifted 25% left from original position)."
+            }
+          }
         }
       }
     }

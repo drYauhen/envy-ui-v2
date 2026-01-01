@@ -77,7 +77,11 @@ export const Enhanced: Story = {
             onClick={() => setCollapsed(!collapsed)}
             aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
           >
-            ←
+            <span 
+              className="eui-side-nav__toggle-icon"
+              data-eui-icon={collapsed ? "chevron-right" : "chevron-left"}
+              aria-hidden="true"
+            />
           </button>
           
           {/* Content */}
@@ -91,7 +95,7 @@ export const Enhanced: Story = {
               <li>
                 <button className="eui-side-nav__item" type="button">
                   <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon">📄</span>
+                    <span className="eui-side-nav__item-icon" data-eui-icon="search" aria-hidden="true" />
                     <span className="eui-side-nav__item-label">View/Edit Plan</span>
                   </div>
                   <div className="eui-side-nav__tooltip">View/Edit Plan</div>
@@ -101,7 +105,7 @@ export const Enhanced: Story = {
               <li>
                 <button className="eui-side-nav__item" type="button">
                   <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon">✓</span>
+                    <span className="eui-side-nav__item-icon" data-eui-icon="check-circle" aria-hidden="true" />
                     <span className="eui-side-nav__item-label">Submit Updates</span>
                     <span className="eui-side-nav__item-badge">3</span>
                   </div>
@@ -112,7 +116,7 @@ export const Enhanced: Story = {
               <li>
                 <button className="eui-side-nav__item" type="button" data-eui-active="true">
                   <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon">📊</span>
+                    <span className="eui-side-nav__item-icon" data-eui-icon="expand-all" aria-hidden="true" />
                     <span className="eui-side-nav__item-label">Reports</span>
                   </div>
                   <div className="eui-side-nav__tooltip">Reports</div>
@@ -138,7 +142,7 @@ export const Enhanced: Story = {
                   onClick={() => toggleExpand('projects')}
                 >
                   <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon">🔧</span>
+                    <span className="eui-side-nav__item-icon" data-eui-icon="cog" aria-hidden="true" />
                     <span className="eui-side-nav__item-label">Projects Planning</span>
                     <span className="eui-side-nav__item-chevron">›</span>
                   </div>
@@ -159,19 +163,44 @@ export const Enhanced: Story = {
                       </div>
                     </button>
                   </li>
+                  {Array.from({ length: 20 }, (_, i) => (
+                    <li key={`project-${i + 1}`}>
+                      <button className="eui-side-nav__item" type="button">
+                        <div className="eui-side-nav__item-content">
+                          <span className="eui-side-nav__item-label">Project {i + 1}</span>
+                        </div>
+                      </button>
+                    </li>
+                  ))}
                 </ul>
               </li>
               
               <li>
                 <button className="eui-side-nav__item" type="button">
                   <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon">🗺️</span>
+                    <span className="eui-side-nav__item-icon" data-eui-icon="external-link" aria-hidden="true" />
                     <span className="eui-side-nav__item-label">Projects Dashboard</span>
                   </div>
                   <div className="eui-side-nav__tooltip">Projects Dashboard</div>
                 </button>
               </li>
             </ul>
+            
+            {/* Collapsible empty area */}
+            <button
+              className="eui-side-nav__collapse-zone"
+              type="button"
+              onClick={() => setCollapsed(!collapsed)}
+              onMouseEnter={(e) => {
+                const nav = e.currentTarget.closest('.eui-side-nav');
+                if (nav) nav.setAttribute('data-eui-collapse-zone-hover', 'true');
+              }}
+              onMouseLeave={(e) => {
+                const nav = e.currentTarget.closest('.eui-side-nav');
+                if (nav) nav.removeAttribute('data-eui-collapse-zone-hover');
+              }}
+              aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
+            />
           </div>
           
           {/* Footer */}

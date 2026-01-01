@@ -2635,6 +2635,14 @@
     "$value": "64px",
     "$type": "dimension"
   },
+  "eui.side-nav.size.toggle.width": {
+    "$value": "32px",
+    "$type": "dimension"
+  },
+  "eui.side-nav.size.toggle.height": {
+    "$value": "32px",
+    "$type": "dimension"
+  },
   "eui.side-nav.spacing.padding.vertical": {
     "$value": "0.5rem",
     "$type": "dimension"
@@ -2669,6 +2677,10 @@
   },
   "eui.side-nav.spacing.nested.indent": {
     "$value": "1.5rem",
+    "$type": "dimension"
+  },
+  "eui.side-nav.spacing.toggle.offset.right": {
+    "$value": "-12px",
     "$type": "dimension"
   },
   "eui.side-nav.typography.item.font-size": {

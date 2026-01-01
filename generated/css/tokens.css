@@ -662,6 +662,8 @@
   --eui-side-nav-size-section-title-height: 32px;
   --eui-side-nav-size-header-height: 64px;
   --eui-side-nav-size-footer-height: 64px;
+  --eui-side-nav-size-toggle-width: 32px;
+  --eui-side-nav-size-toggle-height: 32px;
   --eui-side-nav-spacing-padding-vertical: 0.5rem;
   --eui-side-nav-spacing-padding-horizontal: 0;
   --eui-side-nav-spacing-item-padding-horizontal: 1rem;
@@ -671,6 +673,7 @@
   --eui-side-nav-spacing-group-gap: 0.25rem;
   --eui-side-nav-spacing-separator-margin-vertical: 0.75rem;
   --eui-side-nav-spacing-nested-indent: 1.5rem;
+  --eui-side-nav-spacing-toggle-offset-right: -12px;
   --eui-side-nav-typography-item-font-size: 14px;
   --eui-side-nav-typography-item-font-weight: 400;
   --eui-side-nav-typography-item-line-height: normal;

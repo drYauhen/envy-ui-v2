@@ -72,6 +72,18 @@
             "$type": "dimension",
             "$description": "Height of navigation footer (user profile area)."
           }
+        },
+        "toggle": {
+          "width": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$description": "Width of collapse/expand toggle button."
+          },
+          "height": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$description": "Height of collapse/expand toggle button."
+          }
         }
       }
     }

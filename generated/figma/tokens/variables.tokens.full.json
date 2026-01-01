@@ -3334,6 +3334,16 @@
           "value": 32
         },
         {
+          "path": "eui.side-nav.size.toggle.height",
+          "type": "FLOAT",
+          "value": 32
+        },
+        {
+          "path": "eui.side-nav.size.toggle.width",
+          "type": "FLOAT",
+          "value": 32
+        },
+        {
           "path": "eui.side-nav.size.width.collapsed",
           "type": "FLOAT",
           "value": 64
@@ -3387,6 +3397,11 @@
           "path": "eui.side-nav.spacing.separator.margin.vertical",
           "type": "FLOAT",
           "value": 0.75
+        },
+        {
+          "path": "eui.side-nav.spacing.toggle.offset.right",
+          "type": "FLOAT",
+          "value": -12
         },
         {
           "path": "eui.side-nav.typography.header.font-size",
