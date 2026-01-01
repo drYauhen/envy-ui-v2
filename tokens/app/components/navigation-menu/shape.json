@@ -1,0 +1,15 @@
+{
+  "eui": {
+    "navigation-menu": {
+      "shape": {
+        "collapser": {
+          "border-radius": {
+            "$value": "50%",
+            "$type": "dimension",
+            "$description": "Border radius for collapser button (circular)."
+          }
+        }
+      }
+    }
+  }
+}

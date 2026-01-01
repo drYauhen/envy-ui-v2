@@ -1,0 +1,154 @@
+{
+  "eui": {
+    "navigation-menu": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Navigation menu background color. Brand primary for brand identity."
+        },
+        "border": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Navigation menu border color. Matches background for seamless appearance."
+        },
+        "separator": {
+          "light": {
+            "$value": "{eui.color.border.subtle}",
+            "$type": "color",
+            "$description": "Solid separator color between major sections (e.g., before toolbar)."
+          },
+          "xlight": {
+            "$value": "{eui.color.border.subtle}",
+            "$type": "color",
+            "$description": "Dotted separator color between menu item groups."
+          }
+        },
+        "item": {
+          "background": {
+            "default": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Default menu item background (transparent)."
+            },
+            "hover": {
+              "$value": "{eui.color.brand.800}",
+              "$type": "color",
+              "$description": "Menu item background on hover. Darkened brand primary."
+            },
+            "active": {
+              "$value": "{eui.color.brand.300}",
+              "$type": "color",
+              "$description": "Active menu item background. Lightened brand color."
+            },
+            "focus": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Menu item background on focus (focus ring handles visual indication)."
+            },
+            "disabled": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Disabled menu item background."
+            }
+          },
+          "text": {
+            "default": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Default menu item text color. Inverse (light gray) for contrast on brand background."
+            },
+            "hover": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Menu item text color on hover. White for emphasis."
+            },
+            "active": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Active menu item text color. White for emphasis."
+            },
+            "focus": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Menu item text color on focus."
+            },
+            "disabled": {
+              "$value": "{eui.color.text.disabled}",
+              "$type": "color",
+              "$description": "Disabled menu item text color."
+            },
+            "secondary": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Secondary text color (e.g., for section titles). Slightly lighter than primary."
+            }
+          },
+          "icon": {
+            "default": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Default icon color. Inverse (light gray) for contrast on brand background."
+            },
+            "hover": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Icon color on hover. White for emphasis."
+            },
+            "active": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Active icon color. White for emphasis."
+            },
+            "focus": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Icon color on focus."
+            },
+            "disabled": {
+              "$value": "{eui.color.text.disabled}",
+              "$type": "color",
+              "$description": "Disabled icon color."
+            }
+          }
+        },
+        "section-title": {
+          "text": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Section title text color. Secondary inverse color."
+          }
+        },
+        "collapser": {
+          "background": {
+            "default": {
+              "$value": "{eui.color.brand.primary}",
+              "$type": "color",
+              "$description": "Collapser button background color."
+            },
+            "hover": {
+              "$value": "{eui.color.brand.800}",
+              "$type": "color",
+              "$description": "Collapser button background on hover. Darkened brand primary."
+            },
+            "active": {
+              "$value": "{eui.color.brand.300}",
+              "$type": "color",
+              "$description": "Collapser button background on active. Lightened brand color."
+            }
+          },
+          "border": {
+            "$value": "{eui.color.border.subtle}",
+            "$type": "color",
+            "$description": "Collapser button border color."
+          },
+          "icon": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Collapser icon color. Inverse for contrast."
+          }
+        }
+      }
+    }
+  }
+}

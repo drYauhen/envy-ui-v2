@@ -22,6 +22,7 @@ import '../src/ui/celebration.css';
 import '../src/ui/modal.css';
 import '../src/ui/app-shell.css';
 import '../src/ui/sidebar.css';
+import '../src/ui/navigation-menu.css';
 import '../src/ui/header.css';
 import '../src/ui/title-bar.css';
 import '../src/ui/content.css';

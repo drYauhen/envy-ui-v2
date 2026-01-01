@@ -489,6 +489,136 @@
           "value": "oklch(100% 0 0)"
         },
         {
+          "path": "eui.navigation-menu.colors.background",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.border",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.collapser.background.active",
+          "type": "COLOR",
+          "value": "oklch(75% 0.08 231)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.collapser.background.default",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.collapser.background.hover",
+          "type": "COLOR",
+          "value": "oklch(47% 0.10 230)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.collapser.border",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.collapser.icon",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.background.active",
+          "type": "COLOR",
+          "value": "oklch(75% 0.08 231)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.background.default",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.background.disabled",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.background.focus",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.background.hover",
+          "type": "COLOR",
+          "value": "oklch(47% 0.10 230)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.icon.active",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.icon.default",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.icon.disabled",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.icon.focus",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.icon.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.text.active",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.text.default",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.text.disabled",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.text.focus",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.text.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.item.text.secondary",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.section-title.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.separator.light",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.navigation-menu.colors.separator.xlight",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
           "path": "eui.sidebar.colors.background",
           "type": "COLOR",
           "value": "oklch(49% 0.10 230)"
@@ -2643,6 +2773,147 @@
           "path": "eui.modal.spacing.header.padding.vertical",
           "type": "FLOAT",
           "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Navigation Menu",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.navigation-menu.border.collapser.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.navigation-menu.border.separator.light.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.navigation-menu.border.separator.xlight.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.navigation-menu.shape.collapser.border-radius",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.navigation-menu.size.collapser.height",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.navigation-menu.size.collapser.icon.size",
+          "type": "FLOAT",
+          "value": 7
+        },
+        {
+          "path": "eui.navigation-menu.size.collapser.icon.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.navigation-menu.size.collapser.width",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.navigation-menu.size.icon.height",
+          "type": "FLOAT",
+          "value": 25
+        },
+        {
+          "path": "eui.navigation-menu.size.icon.width",
+          "type": "FLOAT",
+          "value": 25
+        },
+        {
+          "path": "eui.navigation-menu.size.item.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.navigation-menu.size.item.section-title-height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.navigation-menu.size.item.title-height",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.navigation-menu.size.item.toolbar-height",
+          "type": "FLOAT",
+          "value": 55
+        },
+        {
+          "path": "eui.navigation-menu.size.width.collapsed",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.navigation-menu.size.width.expanded",
+          "type": "FLOAT",
+          "value": 300
+        },
+        {
+          "path": "eui.navigation-menu.spacing.collapser.offset.collapsed-right",
+          "type": "FLOAT",
+          "value": -5
+        },
+        {
+          "path": "eui.navigation-menu.spacing.collapser.offset.right",
+          "type": "FLOAT",
+          "value": 5
+        },
+        {
+          "path": "eui.navigation-menu.spacing.collapser.offset.top",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.navigation-menu.spacing.item.gap",
+          "type": "FLOAT",
+          "value": 0.625
+        },
+        {
+          "path": "eui.navigation-menu.spacing.item.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.navigation-menu.spacing.item.padding.vertical",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.navigation-menu.spacing.padding",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.navigation-menu.spacing.section-title.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.navigation-menu.spacing.separator.margin.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.navigation-menu.typography.item.font-size",
+          "type": "FLOAT",
+          "value": 14
+        },
+        {
+          "path": "eui.navigation-menu.typography.section-title.font-size",
+          "type": "FLOAT",
+          "value": 14
         }
       ]
     },

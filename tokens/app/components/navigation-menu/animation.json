@@ -1,0 +1,54 @@
+{
+  "eui": {
+    "navigation-menu": {
+      "animation": {
+        "duration": {
+          "$value": "200ms",
+          "$type": "duration",
+          "$description": "Transition duration for navigation menu expand/collapse animation."
+        },
+        "easing": {
+          "$value": "ease-in-out",
+          "$type": "string",
+          "$description": "Easing function for navigation menu transitions."
+        },
+        "item": {
+          "duration": {
+            "$value": "150ms",
+            "$type": "duration",
+            "$description": "Transition duration for menu item state changes (hover, active)."
+          },
+          "easing": {
+            "$value": "ease-out",
+            "$type": "string",
+            "$description": "Easing function for menu item transitions."
+          }
+        },
+        "collapser": {
+          "duration": {
+            "$value": "300ms",
+            "$type": "duration",
+            "$description": "Transition duration for collapser icon rotation animation."
+          },
+          "easing": {
+            "$value": "ease-in-out",
+            "$type": "string",
+            "$description": "Easing function for collapser icon animation."
+          },
+          "hover": {
+            "duration": {
+              "$value": "1.25s",
+              "$type": "duration",
+              "$description": "Animation duration for collapser hover indication (pulsing animation)."
+            },
+            "easing": {
+              "$value": "ease-in-out",
+              "$type": "string",
+              "$description": "Easing function for collapser hover animation."
+            }
+          }
+        }
+      }
+    }
+  }
+}
