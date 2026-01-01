@@ -255,6 +255,7 @@ When assisting with architecture, structure, or implementation, the assistant mu
 	•	Respect the Project Structure & Generation Model.
 	•	Enforce the platform-oriented `generated/` model for pipeline artifacts.
 	•	Assume consistency and discipline are more important than convenience.
+	•	Ensure all commits, comments, code, and documentation use English only.
 
 Version Control Behavior
 
