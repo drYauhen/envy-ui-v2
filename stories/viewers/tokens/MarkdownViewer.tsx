@@ -378,7 +378,9 @@ export const MarkdownViewer = ({ markdownPath, fallback = 'Loading...' }: Markdo
               <pre style={{
                 margin: '16px 0',
                 overflowX: 'auto'
-              }} {...props} />
+              }} {...props}>
+                {children}
+              </pre>
             ),
             table: ({node, ...props}: any) => (
               <div style={{ overflowX: 'auto', margin: '16px 0' }}>

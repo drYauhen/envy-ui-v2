@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import mermaid from 'mermaid';
 import { adrFilenameMap } from './adr-filename-map';
+import { adrs } from './adr-list-data';
 
 type AdrViewerProps = {
   adrNumber: string;
@@ -352,11 +353,45 @@ const MermaidDiagram = ({ chart }: { chart: string }) => {
   );
 };
 
+// Helper function to convert export name to Storybook slug
+// Storybook converts PascalCase export names to kebab-case slugs
+// This function attempts to match Storybook's exact behavior
+// 
+// Storybook's algorithm appears to:
+// 1. Treat consecutive uppercase letters as acronyms when followed by a capital+lowercase
+//    Example: "RTLSupport" -> "rtl-support" (not "r-t-l-support")
+// 2. Insert dash before capital letters (except first)
+// 3. Convert to lowercase
+const exportNameToSlug = (exportName: string): string => {
+  // Step 1: Handle acronyms - consecutive uppercase letters before a capital+lowercase word
+  // Pattern: [A-Z]{2,}[A-Z][a-z] -> treat the consecutive uppercase as acronym
+  // Example: "RTLSupport" -> we want "RTL" to stay together, then "-Support"
+  let processed = exportName.replace(/([A-Z]{2,})([A-Z][a-z])/g, (match, acronym, word) => {
+    // Keep the acronym together, add dash before the word
+    return acronym + '-' + word;
+  });
+  
+  // Step 2: Insert dash before capital letters (except first, and after acronyms we just handled)
+  processed = processed
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // Insert dash between lowercase/number and uppercase
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2'); // Insert dash between single uppercase and uppercase+lowercase
+  
+  // Step 3: Convert to lowercase
+  return processed.toLowerCase();
+};
+
 // Helper function to convert ADR number to Storybook story path
-// This function fetches the story file to extract the actual export name and generate the correct slug
+// This function uses adr-list-data.ts to get the export name if available
 const adrNumberToStoryPath = async (adrNumber: string): Promise<string> => {
   try {
-    // First, try to fetch the story file to get the actual export name
+    // First, try to get export name from adr-list-data.ts
+    const adrData = adrs.find(adr => adr.number === adrNumber);
+    if (adrData && adrData.exportName) {
+      const slug = exportNameToSlug(adrData.exportName);
+      return `?path=/story/docs-adr--${slug}`;
+    }
+    
+    // Fallback: try to fetch the story file to get the actual export name
     const storyResponse = await fetch(`/stories/docs/adr/adr-${adrNumber}.stories.tsx`);
     if (storyResponse.ok) {
       const storyText = await storyResponse.text();
@@ -364,16 +399,12 @@ const adrNumberToStoryPath = async (adrNumber: string): Promise<string> => {
       const exportMatch = storyText.match(/export const (\w+):\s*Story/);
       if (exportMatch) {
         const exportName = exportMatch[1];
-        // Convert export name to slug (Storybook's behavior)
-        const slug = exportName
-          .replace(/([a-z])([A-Z])/g, '$1-$2')
-          .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
-          .toLowerCase();
+        const slug = exportNameToSlug(exportName);
         return `?path=/story/docs-adr--${slug}`;
       }
     }
     
-    // Fallback: fetch the ADR file to get the title
+    // Final fallback: fetch the ADR file to get the title
     const filename = adrFilenameMap[adrNumber] || `ADR-${adrNumber}.md`;
     const response = await fetch(`/docs/adr/${filename}`);
     if (!response.ok) {
@@ -747,7 +778,9 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   <pre style={{
                     margin: '16px 0',
                     overflowX: 'auto'
-                  }} {...props} />
+                  }} {...props}>
+                    {children}
+                  </pre>
                 );
               },
               // Кастомизация таблиц
