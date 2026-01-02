@@ -29,6 +29,8 @@
   box-sizing: border-box;
   resize: vertical;
   overflow-y: auto;
+  overflow-x: hidden;
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 [data-eui-context] .eui-textarea::placeholder {

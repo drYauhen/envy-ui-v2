@@ -20,6 +20,8 @@
 [data-eui-context] .eui-page__body {
   flex: 1 1 auto;
   overflow-y: auto; /* Page scroll model */
+  overflow-x: hidden;
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 [data-eui-context] .eui-page__footer {

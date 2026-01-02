@@ -121,10 +121,12 @@
   max-width: var(--eui-table-expandable-cell-panel-max-width);
   max-height: var(--eui-table-expandable-cell-panel-max-height);
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: var(--eui-table-expandable-cell-panel-z-index);
   display: none;
   opacity: 0;
   transition: opacity var(--eui-table-expandable-cell-animation-duration) var(--eui-table-expandable-cell-animation-easing);
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 [data-eui-context] .eui-table-cell-panel[data-eui-open="true"] {

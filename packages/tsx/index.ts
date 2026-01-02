@@ -6,3 +6,4 @@ export * from './menu';
 export * from './icon';
 export * from './celebration';
 export * from './side-nav';
+export * from './scrollbar';

@@ -10,6 +10,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   width: var(--eui-detail-panel-size-width);
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 /* Hidden state (default and explicit) */

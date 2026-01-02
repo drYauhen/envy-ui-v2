@@ -1,0 +1,63 @@
+/* Universal Overlay Scrollbar Styles
+ * 
+ * This provides a custom overlay scrollbar that:
+ * - Doesn't take space in layout (overlay positioning)
+ * - Always visible when content is scrollable
+ * - Works across all browsers
+ * - Compatible with React ARIA
+ */
+
+/* Hide native scrollbar */
+[data-eui-context] .eui-scrollbar-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE и Edge */
+}
+
+[data-eui-context] .eui-scrollbar-content::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Custom overlay scrollbar track */
+[data-eui-context] .eui-scrollbar-track {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  /* Height will be set by JavaScript to match content's clientHeight */
+}
+
+/* Hide scrollbar when no scroll */
+[data-eui-context] .eui-scrollbar-track[data-eui-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Custom overlay scrollbar thumb */
+[data-eui-context] .eui-scrollbar-thumb {
+  position: absolute !important;
+  right: 2px;
+  width: 4px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  min-height: 20px;
+  top: 0; /* Default position, will be overridden by JS */
+}
+
+[data-eui-context] .eui-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Container must be position: relative */
+[data-eui-context] .eui-scrollbar-container {
+  position: relative;
+}
+

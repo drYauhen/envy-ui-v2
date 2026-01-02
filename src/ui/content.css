@@ -8,6 +8,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   min-height: 0;
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 

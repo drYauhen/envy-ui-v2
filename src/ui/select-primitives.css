@@ -75,6 +75,7 @@
   max-height: var(--eui-select-primitive-popover-size-max-height);
   overflow-y: auto;
   overflow-x: hidden;
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 /* ============================================================================

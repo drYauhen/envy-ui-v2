@@ -101,8 +101,10 @@
   background-color: var(--eui-modal-colors-body-background);
   color: var(--eui-modal-colors-body-text);
   overflow-y: auto;
+  overflow-x: hidden;
   flex: 1;
   min-height: 0;
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 /* Footer - Subtle gray background */

@@ -13,6 +13,7 @@
   max-height: var(--eui-select-dropdown-max-height);
   overflow-y: auto;
   overflow-x: hidden;
+  /* Native scrollbar is hidden - using custom overlay scrollbar */
 }
 
 /* ListBox container */

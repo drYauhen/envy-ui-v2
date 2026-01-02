@@ -6,8 +6,10 @@ import { useFocusRing } from 'react-aria';
 import { useHover } from 'react-aria';
 import { mergeProps } from 'react-aria';
 import { Icon } from '../icon';
+import { useOverlayScrollbar } from '../scrollbar';
 import systemMeta from '../../../system.meta.json';
 import '../../../src/ui/side-nav.css';
+import '../../../src/ui/scrollbar.css';
 
 const SYSTEM_PREFIX = systemMeta?.tokens?.prefix ?? 'eui';
 const prefixedDataAttr = (name: string) => `data-${SYSTEM_PREFIX}-${name}`;
@@ -172,9 +174,10 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
     listRef
   );
 
-  // Scroll shadow management
-  const contentRef = React.useRef<HTMLDivElement>(null);
+  // Overlay scrollbar
+  const { contentRef, trackRef, thumbRef, containerProps } = useOverlayScrollbar();
 
+  // Scroll shadow management
   React.useEffect(() => {
     const content = contentRef.current;
     if (!content) return;
@@ -332,49 +335,58 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
         />
       </button>
 
-      {/* Content */}
-      <div className={`${SYSTEM_PREFIX}-side-nav__content`} ref={contentRef}>
-        <ul
-          ref={listRef}
-          className={`${SYSTEM_PREFIX}-side-nav__list`}
-          role="menu"
-          aria-label="Main navigation"
-          {...menuProps}
+      {/* Content wrapper with scrollbar */}
+      <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+        <div 
+          className={`${SYSTEM_PREFIX}-side-nav__content eui-scrollbar-content`} 
+          ref={contentRef}
         >
-          {sections.map((section, sectionIndex) => (
-            <React.Fragment key={sectionIndex}>
-              {section.title && (
-                <li className={`${SYSTEM_PREFIX}-side-nav__section`}>
-                  <div className={`${SYSTEM_PREFIX}-side-nav__section-title`}>{section.title}</div>
-                </li>
-              )}
-              {section.items.map((item) => (
-                <NavItem key={item.key} item={item} />
-              ))}
-              {sectionIndex < sections.length - 1 && (
-                <li>
-                  <div className={`${SYSTEM_PREFIX}-side-nav__separator`} role="separator" />
-                </li>
-              )}
-            </React.Fragment>
-          ))}
-        </ul>
+          <ul
+            ref={listRef}
+            className={`${SYSTEM_PREFIX}-side-nav__list`}
+            role="menu"
+            aria-label="Main navigation"
+            {...menuProps}
+          >
+            {sections.map((section, sectionIndex) => (
+              <React.Fragment key={sectionIndex}>
+                {section.title && (
+                  <li className={`${SYSTEM_PREFIX}-side-nav__section`}>
+                    <div className={`${SYSTEM_PREFIX}-side-nav__section-title`}>{section.title}</div>
+                  </li>
+                )}
+                {section.items.map((item) => (
+                  <NavItem key={item.key} item={item} />
+                ))}
+                {sectionIndex < sections.length - 1 && (
+                  <li>
+                    <div className={`${SYSTEM_PREFIX}-side-nav__separator`} role="separator" />
+                  </li>
+                )}
+              </React.Fragment>
+            ))}
+          </ul>
 
-        {/* Collapsible empty area */}
-        <button
-          ref={collapseZoneRef}
-          className={`${SYSTEM_PREFIX}-side-nav__collapse-zone`}
-          type="button"
-          {...collapseZoneButtonProps}
-          onMouseEnter={(e) => {
-            const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
-            if (nav) nav.setAttribute(prefixedDataAttr('collapse-zone-hover'), 'true');
-          }}
-          onMouseLeave={(e) => {
-            const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
-            if (nav) nav.removeAttribute(prefixedDataAttr('collapse-zone-hover'));
-          }}
-        />
+          {/* Collapsible empty area */}
+          <button
+            ref={collapseZoneRef}
+            className={`${SYSTEM_PREFIX}-side-nav__collapse-zone`}
+            type="button"
+            {...collapseZoneButtonProps}
+            onMouseEnter={(e) => {
+              const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
+              if (nav) nav.setAttribute(prefixedDataAttr('collapse-zone-hover'), 'true');
+            }}
+            onMouseLeave={(e) => {
+              const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
+              if (nav) nav.removeAttribute(prefixedDataAttr('collapse-zone-hover'));
+            }}
+          />
+        </div>
+        {/* Overlay scrollbar - outside content to stay fixed */}
+        <div ref={trackRef} className="eui-scrollbar-track">
+          <div ref={thumbRef} className="eui-scrollbar-thumb" />
+        </div>
       </div>
 
       {/* Footer */}
