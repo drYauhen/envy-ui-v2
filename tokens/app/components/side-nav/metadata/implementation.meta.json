@@ -1,0 +1,68 @@
+{
+  "eui": {
+    "side-nav": {
+      "metadata": {
+        "implementation": {
+          "library": {
+            "$value": "react-aria",
+            "$type": "string",
+            "$description": "Accessibility implementation uses React Aria hooks for headless accessibility. React Aria provides browser-consistent behavior, keyboard navigation, focus management, and ARIA attributes without dictating visual styling."
+          },
+          "hooks": {
+            "useMenu": {
+              "$value": "Menu container behavior and keyboard navigation",
+              "$type": "string",
+              "$description": "useMenu hook provides menu container behavior, keyboard navigation logic, and ARIA attributes for the <ul role=\"menu\"> element."
+            },
+            "useMenuItem": {
+              "$value": "Individual menu item behavior",
+              "$type": "string",
+              "$description": "useMenuItem hook provides individual menu item behavior, keyboard interactions, focus management, and ARIA attributes for each <li role=\"menuitem\"> element."
+            },
+            "useTreeState": {
+              "$value": "Menu state management",
+              "$type": "string",
+              "$description": "useTreeState hook manages menu item state and selection. Initialized with children: [] and selectionMode: 'none' as items are managed dynamically via useMenuItem hooks."
+            },
+            "useFocusRing": {
+              "$value": "Focus ring styling",
+              "$type": "string",
+              "$description": "useFocusRing hook provides isFocusVisible state for styling focus rings. Distinguishes between keyboard focus (visible) and mouse focus (optional)."
+            },
+            "useHover": {
+              "$value": "Hover state management",
+              "$type": "string",
+              "$description": "useHover hook provides hover state management for menu items, enabling hover effects while maintaining accessibility."
+            },
+            "useButton": {
+              "$value": "Toggle button behavior",
+              "$type": "string",
+              "$description": "useButton hook provides accessible button behavior for the collapse/expand toggle button, including keyboard support and ARIA attributes."
+            }
+          },
+          "dom-structure": {
+            "$value": "<nav role=\"navigation\"><ul role=\"menu\"><li role=\"menuitem\"><button tabIndex={-1}>...</button></li></ul></nav>",
+            "$type": "string",
+            "$description": "DOM structure: semantic <nav> with implicit role=\"navigation\" landmark, <ul> with role=\"menu\" (via useMenu), <li> elements with role=\"menuitem\" (via useMenuItem), inner <button> elements with tabIndex={-1} to remove from tab order (navigation handled by menuItemProps)."
+          },
+          "file-location": {
+            "$value": "packages/tsx/side-nav/side-nav.tsx",
+            "$type": "string",
+            "$description": "Location of the React component implementation file."
+          },
+          "css-location": {
+            "$value": "src/ui/side-nav.css",
+            "$type": "string",
+            "$description": "Location of the CSS stylesheet for the component."
+          },
+          "storybook-location": {
+            "$value": "stories/tsx/side-nav.stories.tsx",
+            "$type": "string",
+            "$description": "Location of the Storybook stories for the component."
+          }
+        }
+      }
+    }
+  }
+}
+

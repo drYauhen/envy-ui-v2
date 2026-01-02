@@ -1,4 +1,5 @@
 const systemMeta = require('../../system.meta.json');
+const { isVisualToken } = require('../utils/token-filters');
 
 const toTitleCase = (value = '') =>
   value
@@ -55,6 +56,13 @@ module.exports = function registerFullVariablesFormat(StyleDictionary) {
       const collectionsMap = new Map();
 
       dictionary.allTokens.forEach((token) => {
+        const filePath = token.filePath || '';
+        
+        // Skip non-visual tokens (behavior/, metadata/, etc.)
+        if (!isVisualToken(filePath)) {
+          return;
+        }
+        
         const variableType = mapVariableType(token);
         if (!variableType) return;
 

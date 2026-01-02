@@ -1,0 +1,253 @@
+{
+  "eui": {
+    "side-nav": {
+      "accessibility": {
+        "role": {
+          "$value": "navigation",
+          "$type": "string",
+          "$description": "ARIA role for the side navigation container. Uses semantic <nav> element which provides implicit role=\"navigation\" landmark. This landmark helps screen reader users identify and navigate to the main navigation area."
+        },
+        "aria-label": {
+          "$value": "Application navigation",
+          "$type": "string",
+          "$description": "ARIA label for the navigation landmark. Provides descriptive context for screen reader users, helping them understand the purpose of this navigation area."
+        },
+        "pattern": {
+          "$value": "menu-bar",
+          "$type": "string",
+          "$description": "WAI-ARIA Authoring Practices Guide pattern: Menu Bar Pattern. This pattern enables efficient keyboard navigation using arrow keys within the menu structure, while Tab key moves between major page regions. See: https://www.w3.org/WAI/ARIA/apg/patterns/menubar/"
+        },
+        "keyboard": {
+          "navigation": {
+            "enabled": {
+              "$value": true,
+              "$type": "boolean",
+              "$description": "Keyboard navigation is enabled via React Aria useMenu and useMenuItem hooks. All keyboard interactions are handled automatically by React Aria, following WAI-ARIA Menu Bar Pattern standards."
+            },
+            "level-1": {
+              "description": {
+                "$value": "Major regions navigation (Tab key)",
+                "$type": "string",
+                "$description": "Level 1 navigation: Tab key moves focus between major page regions (header → navigation → main content → footer). This follows the Menu Bar Pattern where Tab skips individual menu items and only moves between major landmarks."
+              },
+              "keys": {
+                "tab": {
+                  "$value": "Move to next major region",
+                  "$type": "string",
+                  "$description": "Tab key behavior: moves focus to the next major page region, skipping individual menu items. This is intentional - individual items are navigated with arrow keys."
+                },
+                "shift-tab": {
+                  "$value": "Move to previous major region",
+                  "$type": "string",
+                  "$description": "Shift+Tab key behavior: moves focus to the previous major page region."
+                }
+              }
+            },
+            "level-2": {
+              "description": {
+                "$value": "Menu items navigation (Arrow keys)",
+                "$type": "string",
+                "$description": "Level 2 navigation: Arrow keys navigate between menu items within the navigation menu. This provides fast, efficient navigation through menu items without requiring multiple Tab presses."
+              },
+              "keys": {
+                "arrow-down": {
+                  "$value": "Move to next menu item",
+                  "$type": "string",
+                  "$description": "Arrow Down key behavior: navigates to the next menu item in the menu. Wraps to first item if at the end."
+                },
+                "arrow-up": {
+                  "$value": "Move to previous menu item",
+                  "$type": "string",
+                  "$description": "Arrow Up key behavior: navigates to the previous menu item in the menu. Wraps to last item if at the beginning."
+                },
+                "home": {
+                  "$value": "Move to first menu item",
+                  "$type": "string",
+                  "$description": "Home key behavior: jumps directly to the first menu item in the menu."
+                },
+                "end": {
+                  "$value": "Move to last menu item",
+                  "$type": "string",
+                  "$description": "End key behavior: jumps directly to the last menu item in the menu."
+                },
+                "enter": {
+                  "$value": "Activate menu item",
+                  "$type": "string",
+                  "$description": "Enter key behavior: activates the currently focused menu item, triggering its onAction callback."
+                },
+                "space": {
+                  "$value": "Activate menu item",
+                  "$type": "string",
+                  "$description": "Space key behavior: activates the currently focused menu item, triggering its onAction callback."
+                }
+              }
+            }
+          }
+        },
+        "focus": {
+          "management": {
+            "$value": "react-aria",
+            "$type": "string",
+            "$description": "Focus management is handled automatically by React Aria hooks (useMenu, useMenuItem). Focus is managed according to WAI-ARIA Menu Bar Pattern standards."
+          },
+          "ring": {
+            "visible": {
+              "$value": true,
+              "$type": "boolean",
+              "$description": "Focus ring is visible when menu item receives keyboard focus. Focus ring styling is controlled by React Aria's useFocusRing hook, which provides isFocusVisible state for styling."
+            },
+            "implementation": {
+              "$value": "useFocusRing",
+              "$type": "string",
+              "$description": "Focus ring visibility is determined by React Aria's useFocusRing hook, which distinguishes between keyboard focus (visible) and mouse focus (optional)."
+            }
+          },
+          "tab-order": {
+            "menu-items": {
+              "$value": -1,
+              "$type": "number",
+              "$description": "Menu item buttons have tabIndex={-1} to remove them from the tab order. Navigation is handled by React Aria's menuItemProps, which manages focus programmatically. This ensures Tab key only moves between major regions, not individual items."
+            },
+            "toggle-button": {
+              "$value": 0,
+              "$type": "number",
+              "$description": "Toggle button (collapse/expand) has default tabIndex (0), allowing it to be reached via Tab key as part of major region navigation."
+            }
+          }
+        },
+        "screen-reader": {
+          "support": {
+            "enabled": {
+              "$value": true,
+              "$type": "boolean",
+              "$description": "Full screen reader support is provided via ARIA roles and attributes managed by React Aria hooks."
+            },
+            "announcements": {
+              "landmark": {
+                "$value": "Navigation landmark announced",
+                "$type": "string",
+                "$description": "Screen readers announce the navigation landmark when users navigate to it, helping them understand the page structure."
+              },
+              "menu": {
+                "$value": "Menu container announced",
+                "$type": "string",
+                "$description": "Screen readers announce the menu container (role=\"menu\") when focus enters the menu area."
+              },
+              "menuitem": {
+                "$value": "Each item announced as menuitem",
+                "$type": "string",
+                "$description": "Each menu item is announced as \"menuitem\" with its label, helping screen reader users understand the navigation structure."
+              },
+              "state": {
+                "$value": "Selected/active state announced",
+                "$type": "string",
+                "$description": "Selected and active states are announced to screen reader users, providing feedback about the current navigation context."
+              },
+              "disabled": {
+                "$value": "Disabled items announced and skipped",
+                "$type": "string",
+                "$description": "Disabled menu items are announced as disabled and automatically skipped during keyboard navigation."
+              }
+            }
+          }
+        },
+        "implementation": {
+          "library": {
+            "$value": "react-aria",
+            "$type": "string",
+            "$description": "Accessibility implementation uses React Aria hooks for headless accessibility. React Aria provides browser-consistent behavior, keyboard navigation, focus management, and ARIA attributes without dictating visual styling."
+          },
+          "hooks": {
+            "useMenu": {
+              "$value": "Menu container behavior and keyboard navigation",
+              "$type": "string",
+              "$description": "useMenu hook provides menu container behavior, keyboard navigation logic, and ARIA attributes for the <ul role=\"menu\"> element."
+            },
+            "useMenuItem": {
+              "$value": "Individual menu item behavior",
+              "$type": "string",
+              "$description": "useMenuItem hook provides individual menu item behavior, keyboard interactions, focus management, and ARIA attributes for each <li role=\"menuitem\"> element."
+            },
+            "useTreeState": {
+              "$value": "Menu state management",
+              "$type": "string",
+              "$description": "useTreeState hook manages menu item state and selection. Initialized with children: [] and selectionMode: 'none' as items are managed dynamically via useMenuItem hooks."
+            },
+            "useFocusRing": {
+              "$value": "Focus ring styling",
+              "$type": "string",
+              "$description": "useFocusRing hook provides isFocusVisible state for styling focus rings. Distinguishes between keyboard focus (visible) and mouse focus (optional)."
+            },
+            "useHover": {
+              "$value": "Hover state management",
+              "$type": "string",
+              "$description": "useHover hook provides hover state management for menu items, enabling hover effects while maintaining accessibility."
+            },
+            "useButton": {
+              "$value": "Toggle button behavior",
+              "$type": "string",
+              "$description": "useButton hook provides accessible button behavior for the collapse/expand toggle button, including keyboard support and ARIA attributes."
+            }
+          },
+          "dom-structure": {
+            "$value": "<nav role=\"navigation\"><ul role=\"menu\"><li role=\"menuitem\"><button tabIndex={-1}>...</button></li></ul></nav>",
+            "$type": "string",
+            "$description": "DOM structure: semantic <nav> with implicit role=\"navigation\" landmark, <ul> with role=\"menu\" (via useMenu), <li> elements with role=\"menuitem\" (via useMenuItem), inner <button> elements with tabIndex={-1} to remove from tab order (navigation handled by menuItemProps)."
+          },
+          "aria-attributes": {
+            "navigation": {
+              "$value": "role=\"navigation\" (implicit), aria-label=\"Application navigation\"",
+              "$type": "string",
+              "$description": "Navigation container: semantic <nav> provides implicit role=\"navigation\", aria-label provides descriptive label for screen readers."
+            },
+            "menu": {
+              "$value": "role=\"menu\", aria-label=\"Main navigation\"",
+              "$type": "string",
+              "$description": "Menu container: role=\"menu\" and aria-label=\"Main navigation\" are provided by useMenu hook."
+            },
+            "menuitem": {
+              "$value": "role=\"menuitem\", aria-selected, aria-disabled",
+              "$type": "string",
+              "$description": "Menu items: role=\"menuitem\", aria-selected (for selected state), aria-disabled (for disabled state) are provided by useMenuItem hook."
+            },
+            "toggle": {
+              "$value": "aria-label=\"Expand navigation\" / \"Collapse navigation\"",
+              "$type": "string",
+              "$description": "Toggle button: aria-label changes dynamically based on collapsed state, provided by useButton hook."
+            }
+          }
+        },
+        "rationale": {
+          "menu-bar-pattern": {
+            "$value": "Efficient navigation for large menus",
+            "$type": "string",
+            "$description": "The Menu Bar Pattern is chosen because traditional Tab navigation through all menu items is inefficient for large navigation menus. Arrow keys provide fast, intuitive navigation within the menu, while Tab moves between major page regions."
+          },
+          "two-level-navigation": {
+            "$value": "Tab for regions, Arrow keys for items",
+            "$type": "string",
+            "$description": "Two-level navigation model: Tab key moves between major page regions (header, navigation, main content, footer), while Arrow keys navigate within the menu. This follows WAI-ARIA best practices and provides optimal user experience."
+          }
+        },
+        "references": {
+          "wai-aria": {
+            "$value": "https://www.w3.org/WAI/ARIA/apg/patterns/menubar/",
+            "$type": "string",
+            "$description": "WAI-ARIA Authoring Practices Guide: Menu Bar Pattern reference. This component follows the Menu Bar Pattern specification for keyboard navigation and ARIA roles."
+          },
+          "react-aria-menu": {
+            "$value": "https://react-spectrum.adobe.com/react-aria/useMenu.html",
+            "$type": "string",
+            "$description": "React Aria useMenu hook documentation. This hook provides menu container behavior and keyboard navigation."
+          },
+          "react-aria-menu-item": {
+            "$value": "https://react-spectrum.adobe.com/react-aria/useMenuItem.html",
+            "$type": "string",
+            "$description": "React Aria useMenuItem hook documentation. This hook provides individual menu item behavior and keyboard interactions."
+          }
+        }
+      }
+    }
+  }
+}
+

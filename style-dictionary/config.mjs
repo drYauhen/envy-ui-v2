@@ -26,7 +26,11 @@ registerCssVariablesThemedFormat(StyleDictionary);
 export default {
   usesDtcg: true,
 
-  source: [path.join(repoRoot, 'tokens', '**', '*.json')],
+  source: [
+    path.join(repoRoot, 'tokens', '**', '*.json')
+    // Note: .meta.json files are excluded via filtering in custom formats
+    // See style-dictionary/utils/token-filters.js and format files
+  ],
 
   log: {
     verbosity: 'verbose'

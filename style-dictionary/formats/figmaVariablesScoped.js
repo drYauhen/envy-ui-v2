@@ -3,6 +3,7 @@ const path = require('path');
 const { converter } = require('culori');
 const systemMeta = require('../../system.meta.json');
 const { deriveFigmaScopes } = require('../figma/figma-scope-rules');
+const { isVisualToken } = require('../utils/token-filters');
 
 // Setup culori converters
 const toRgb = converter('rgb');
@@ -173,6 +174,13 @@ module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
 
       // First pass: collect all tokens and create variable entries
       dictionary.allTokens.forEach((token) => {
+        const filePath = token.filePath || '';
+        
+        // Skip non-visual tokens (behavior/, metadata/, etc.)
+        if (!isVisualToken(filePath)) {
+          return;
+        }
+        
         const variableType = mapVariableType(token);
         if (!variableType) return;
 
@@ -202,7 +210,6 @@ module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
 
         // Determine which mode(s) this token belongs to
         // New structure: tokens/{context}/themes/{theme}.json
-        const filePath = token.filePath || '';
         let modes = [];
         
         // Check if token is from a theme file: tokens/{context}/themes/{theme}.json

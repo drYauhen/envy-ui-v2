@@ -1,4 +1,5 @@
 const systemMeta = require('../../system.meta.json');
+const { isVisualToken } = require('../utils/token-filters');
 
 const toTitleCase = (value = '') =>
   value
@@ -14,7 +15,13 @@ module.exports = function registerFigmaAdapterFormat(StyleDictionary) {
       const collectionsMap = new Map();
 
       dictionary.allTokens
-        .filter((token) => token?.path?.[0] === 'eui' && token?.path?.[1] === 'color')
+        .filter((token) => {
+          // Skip non-visual tokens (behavior/, metadata/, etc.)
+          if (!isVisualToken(token.filePath)) {
+            return false;
+          }
+          return token?.path?.[0] === 'eui' && token?.path?.[1] === 'color';
+        })
         .forEach((token) => {
           const groupId = token.path[2] || 'base';
           const collectionName = `${systemMeta?.system?.id ?? 'System'} • Colors / ${toTitleCase(groupId)}`;

@@ -9,6 +9,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { isVisualToken } = require('../utils/token-filters');
 
 module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
@@ -41,12 +42,12 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
           themeFilesList.forEach(themeFile => {
             const theme = path.basename(themeFile, '.json');
             const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
-            const filePath = path.join(contextThemesDir, themeFile);
+            const themeFilePath = path.join(contextThemesDir, themeFile);
             try {
-              const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-              themeFiles.set(selector, { filePath, data });
+              const data = JSON.parse(fs.readFileSync(themeFilePath, 'utf8'));
+              themeFiles.set(selector, { filePath: themeFilePath, data });
             } catch (e) {
-              console.warn(`Warning: Could not read theme file ${filePath}:`, e.message);
+              console.warn(`Warning: Could not read theme file ${themeFilePath}:`, e.message);
             }
           });
         }
@@ -61,6 +62,12 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
       
       dictionary.allTokens.forEach((token) => {
         const filePath = token.filePath || '';
+        
+        // Skip non-visual tokens (behavior/, metadata/, etc.)
+        if (!isVisualToken(filePath)) {
+          return;
+        }
+        
         const tokenName = token.name || (token.path || []).join('.');
 
         // Detect if token is from a theme file
@@ -167,6 +174,11 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
         // Skip tokens from themes files - they're already in themeTokens
         // New structure: tokens/{context}/themes/{theme}.json
         if (/\/themes\/[^/]+\.json$/.test(filePath)) {
+          return;
+        }
+
+        // Skip non-visual tokens (behavior/, metadata/, etc.)
+        if (!isVisualToken(filePath)) {
           return;
         }
 
