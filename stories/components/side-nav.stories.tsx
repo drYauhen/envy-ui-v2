@@ -158,7 +158,7 @@ const SideNavComponent: React.FC<{
           <li>
             <button className="eui-side-nav__item" type="button">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="search" aria-hidden="true" />
+                <span className="eui-side-nav__item-icon" data-eui-icon="plan" aria-hidden="true" />
                 <span className="eui-side-nav__item-label">View/Edit Plan</span>
               </div>
               <div className="eui-side-nav__tooltip">View/Edit Plan</div>
@@ -168,7 +168,7 @@ const SideNavComponent: React.FC<{
           <li>
             <button className="eui-side-nav__item" type="button">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="check-circle" aria-hidden="true" />
+                <span className="eui-side-nav__item-icon" data-eui-icon="submit-updates" aria-hidden="true" />
                 <span className="eui-side-nav__item-label">Submit Updates</span>
                 <span className="eui-side-nav__item-badge">3</span>
               </div>
@@ -179,7 +179,7 @@ const SideNavComponent: React.FC<{
           <li>
             <button className="eui-side-nav__item" type="button" data-eui-active="true">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="expand-all" aria-hidden="true" />
+                <span className="eui-side-nav__item-icon" data-eui-icon="plan-reports" aria-hidden="true" />
                 <span className="eui-side-nav__item-label">Reports</span>
               </div>
               <div className="eui-side-nav__tooltip">Reports</div>
@@ -189,20 +189,10 @@ const SideNavComponent: React.FC<{
           <li>
             <button className="eui-side-nav__item" type="button">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="clock" aria-hidden="true" />
-                <span className="eui-side-nav__item-label">History</span>
+                <span className="eui-side-nav__item-icon" data-eui-icon="plan-dashboards" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Public Dashboards</span>
               </div>
-              <div className="eui-side-nav__tooltip">History</div>
-            </button>
-          </li>
-          
-          <li>
-            <button className="eui-side-nav__item" type="button">
-              <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="info-circle" aria-hidden="true" />
-                <span className="eui-side-nav__item-label">Help & Support</span>
-              </div>
-              <div className="eui-side-nav__tooltip">Help & Support</div>
+              <div className="eui-side-nav__tooltip">Public Dashboards</div>
             </button>
           </li>
           
@@ -211,57 +201,35 @@ const SideNavComponent: React.FC<{
             <div className="eui-side-nav__separator" role="separator" />
           </li>
           
-          {/* Section: Projects (expandable) */}
+          {/* Section: Projects */}
           <li className="eui-side-nav__section">
             <div className="eui-side-nav__section-title">Projects</div>
           </li>
           
           <li>
-            <button 
-              className="eui-side-nav__item" 
-              type="button"
-              data-eui-expandable="true"
-              data-eui-expanded={expandedItems.has('projects')}
-              onClick={() => toggleExpand('projects')}
-            >
+            <button className="eui-side-nav__item" type="button">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="cog" aria-hidden="true" />
-                <span className="eui-side-nav__item-label">Projects Planning</span>
-                <span className="eui-side-nav__item-chevron">›</span>
+                <span className="eui-side-nav__item-icon" data-eui-icon="tasks" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Tasks</span>
               </div>
-              <div className="eui-side-nav__tooltip">Projects Planning</div>
+              <div className="eui-side-nav__tooltip">Tasks</div>
             </button>
-            <ul className="eui-side-nav__submenu">
-              <li>
-                <button className="eui-side-nav__item" type="button">
-                  <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-label">Active Projects</span>
-                  </div>
-                </button>
-              </li>
-              <li>
-                <button className="eui-side-nav__item" type="button" data-eui-selected="true">
-                  <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-label">Project Dashboard</span>
-                  </div>
-                </button>
-              </li>
-              {Array.from({ length: 20 }, (_, i) => (
-                <li key={`project-${i + 1}`}>
-                  <button className="eui-side-nav__item" type="button">
-                    <div className="eui-side-nav__item-content">
-                      <span className="eui-side-nav__item-label">Project {i + 1}</span>
-                    </div>
-                  </button>
-                </li>
-              ))}
-            </ul>
           </li>
           
           <li>
             <button className="eui-side-nav__item" type="button">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="external-link" aria-hidden="true" />
+                <span className="eui-side-nav__item-icon" data-eui-icon="pencil-ruler" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Projects Planning</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Projects Planning</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="map-marked-alt" aria-hidden="true" />
                 <span className="eui-side-nav__item-label">Projects Dashboard</span>
               </div>
               <div className="eui-side-nav__tooltip">Projects Dashboard</div>
@@ -271,20 +239,90 @@ const SideNavComponent: React.FC<{
           <li>
             <button className="eui-side-nav__item" type="button">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="plus-circle" aria-hidden="true" />
-                <span className="eui-side-nav__item-label">Create Project</span>
+                <span className="eui-side-nav__item-icon" data-eui-icon="plan-reports" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Project Reports</span>
               </div>
-              <div className="eui-side-nav__tooltip">Create Project</div>
+              <div className="eui-side-nav__tooltip">Project Reports</div>
+            </button>
+          </li>
+          
+          {/* Separator */}
+          <li>
+            <div className="eui-side-nav__separator" role="separator" />
+          </li>
+          
+          {/* Section: Analytics */}
+          <li className="eui-side-nav__section">
+            <div className="eui-side-nav__section-title">Analytics</div>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="data-source" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Data Sources</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Data Sources</div>
             </button>
           </li>
           
           <li>
             <button className="eui-side-nav__item" type="button">
               <div className="eui-side-nav__item-content">
-                <span className="eui-side-nav__item-icon" data-eui-icon="trash" aria-hidden="true" />
-                <span className="eui-side-nav__item-label">Archived Projects</span>
+                <span className="eui-side-nav__item-icon" data-eui-icon="visuals" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Visuals</span>
               </div>
-              <div className="eui-side-nav__tooltip">Archived Projects</div>
+              <div className="eui-side-nav__tooltip">Visuals</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="visuals-dashboard" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Dashboards</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Dashboards</div>
+            </button>
+          </li>
+          
+          {/* Separator */}
+          <li>
+            <div className="eui-side-nav__separator" role="separator" />
+          </li>
+          
+          {/* Section: People */}
+          <li className="eui-side-nav__section">
+            <div className="eui-side-nav__section-title">People</div>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="personal-assessment" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">My Assessments</span>
+              </div>
+              <div className="eui-side-nav__tooltip">My Assessments</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="team-assessment" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Team Assessments</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Team Assessments</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="org-assessment" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Organization Assessments</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Organization Assessments</div>
             </button>
           </li>
         </ul>

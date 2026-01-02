@@ -633,12 +633,12 @@
   --eui-side-nav-colors-background: oklch(49% 0.10 230);
   --eui-side-nav-colors-border: oklch(49% 0.10 230);
   --eui-side-nav-colors-item-background-default: rgba(0, 0, 0, 0);
-  --eui-side-nav-colors-item-background-hover: oklch(49% 0.10 230);
-  --eui-side-nav-colors-item-background-active: oklch(52% 0.10 230);
-  --eui-side-nav-colors-item-background-selected: oklch(52% 0.10 230);
+  --eui-side-nav-colors-item-background-hover: oklch(47% 0.10 230);
+  --eui-side-nav-colors-item-background-active: oklch(57% 0.09 231);
+  --eui-side-nav-colors-item-background-selected: oklch(57% 0.09 231);
   --eui-side-nav-colors-item-background-focus: rgba(0, 0, 0, 0);
   --eui-side-nav-colors-item-background-disabled: rgba(0, 0, 0, 0);
-  --eui-side-nav-colors-item-text-default: oklch(100% 0 0);
+  --eui-side-nav-colors-item-text-default: oklch(93% 0.05 232);
   --eui-side-nav-colors-item-text-hover: oklch(100% 0 0);
   --eui-side-nav-colors-item-text-active: oklch(100% 0 0);
   --eui-side-nav-colors-item-text-selected: oklch(93% 0.05 232);

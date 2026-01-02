@@ -20,19 +20,19 @@
               "$description": "Default navigation item background."
             },
             "hover": {
-              "$value": "{eui.color.brand.700}",
+              "$value": "{eui.color.brand.800}",
               "$type": "color",
-              "$description": "Navigation item background on hover - more prominent."
+              "$description": "Navigation item background on hover - more prominent darker effect."
             },
             "active": {
-              "$value": "{eui.color.brand.600}",
+              "$value": "{eui.color.brand.500}",
               "$type": "color",
-              "$description": "Active navigation item background."
+              "$description": "Active navigation item background - brand.500 for better visibility."
             },
             "selected": {
-              "$value": "{eui.color.brand.600}",
+              "$value": "{eui.color.brand.500}",
               "$type": "color",
-              "$description": "Selected navigation item background."
+              "$description": "Selected navigation item background - brand.500 for better visibility."
             },
             "focus": {
               "$value": "transparent",
@@ -47,9 +47,9 @@
           },
           "text": {
             "default": {
-              "$value": "{eui.color.text.inverse}",
+              "$value": "{eui.color.brand.100}",
               "$type": "color",
-              "$description": "Default navigation item text color."
+              "$description": "Default navigation item text color - brand.100 for less prominent appearance."
             },
             "hover": {
               "$value": "{eui.color.text.inverse}",

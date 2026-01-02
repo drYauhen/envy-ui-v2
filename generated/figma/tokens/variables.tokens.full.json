@@ -661,7 +661,7 @@
         {
           "path": "eui.side-nav.colors.item.background.active",
           "type": "COLOR",
-          "value": "oklch(52% 0.10 230)"
+          "value": "oklch(57% 0.09 231)"
         },
         {
           "path": "eui.side-nav.colors.item.background.default",
@@ -681,12 +681,12 @@
         {
           "path": "eui.side-nav.colors.item.background.hover",
           "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
+          "value": "oklch(47% 0.10 230)"
         },
         {
           "path": "eui.side-nav.colors.item.background.selected",
           "type": "COLOR",
-          "value": "oklch(52% 0.10 230)"
+          "value": "oklch(57% 0.09 231)"
         },
         {
           "path": "eui.side-nav.colors.item.badge.background",
@@ -716,7 +716,7 @@
         {
           "path": "eui.side-nav.colors.item.text.default",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(93% 0.05 232)"
         },
         {
           "path": "eui.side-nav.colors.item.text.disabled",

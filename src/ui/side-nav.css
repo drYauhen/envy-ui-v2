@@ -237,8 +237,7 @@
   font-weight: var(--eui-side-nav-typography-item-font-weight);
   line-height: var(--eui-side-nav-typography-item-line-height);
   transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing),
-              color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing),
-              transform 0.2s ease;
+              color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
 }
 
 /* Active indicator (left border) */
@@ -280,22 +279,19 @@
 /* Item states */
 [data-eui-context] .eui-side-nav__item:hover {
   background-color: var(--eui-side-nav-colors-item-background-hover);
-  /* More prominent hover effect - subtle shift */
-  transform: translateX(2px);
+  /* More prominent hover effect - darker background */
 }
 
 
 [data-eui-context] .eui-side-nav__item[data-eui-active="true"] {
   background-color: var(--eui-side-nav-colors-item-background-active);
-  color: var(--eui-side-nav-colors-item-text-active);
-  font-weight: 600;
+  color: var(--eui-color-text-inverse);
 }
 
 [data-eui-context] .eui-side-nav__item[data-eui-selected="true"] {
   background-color: var(--eui-side-nav-colors-item-background-selected);
-  color: var(--eui-side-nav-colors-item-text-selected);
-  font-weight: 600;
-  /* Accent color for selected items */
+  color: var(--eui-color-text-inverse);
+  /* White color for selected items - applies to all children including icons */
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
@@ -322,6 +318,21 @@
   flex-shrink: 0;
   width: var(--eui-side-nav-size-icon-width);
   height: var(--eui-side-nav-size-icon-height);
+  color: inherit;
+  transition: color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+}
+
+/* Icon color for default state - brand.100 */
+[data-eui-context] .eui-side-nav__item-icon[data-eui-icon] {
+  background-color: var(--eui-side-nav-colors-item-text-default);
+  color: var(--eui-side-nav-colors-item-text-default);
+}
+
+/* Selected/Active item icon - white color (must be after default to override) */
+[data-eui-context] .eui-side-nav__item[data-eui-selected="true"] .eui-side-nav__item-icon[data-eui-icon],
+[data-eui-context] .eui-side-nav__item[data-eui-active="true"] .eui-side-nav__item-icon[data-eui-icon] {
+  background-color: var(--eui-color-text-inverse) !important;
+  color: var(--eui-color-text-inverse) !important;
 }
 
 /* Label */
