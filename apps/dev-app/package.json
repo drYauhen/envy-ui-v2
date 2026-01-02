@@ -4,18 +4,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 5173",
+    "dev:server": "cd server && npm run dev",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\"",
+    "server:install": "cd server && npm install",
+    "server:init": "cd server && npm run db:init",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-aria": "^3.45.0",
+    "react-dom": "^19.2.3",
+    "react-stately": "^3.43.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.16",
+    "concurrently": "^9.2.1",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.9.3",
@@ -23,4 +30,3 @@
     "vite-plugin-svgr": "^4.5.0"
   }
 }
-

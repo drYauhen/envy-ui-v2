@@ -1,0 +1,20 @@
+{
+  "name": "dev-app-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx tsx watch index.ts",
+    "start": "npx tsx index.ts",
+    "db:init": "npx tsx db/seed.ts"
+  },
+  "dependencies": {
+    "@graphql-yoga/node": "^3.1.0",
+    "better-sqlite3": "^12.5.0",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0"
+  }
+}

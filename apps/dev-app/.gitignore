@@ -21,3 +21,7 @@ dist-ssr/
 .DS_Store
 Thumbs.db
 
+
+# Server files
+server/db/database.sqlite
+server/node_modules

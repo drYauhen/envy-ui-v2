@@ -29,7 +29,7 @@
     "tokens:build:figma:app": "style-dictionary build --config style-dictionary/config.mjs --platform figmaApp",
     "tokens:build:figma:website": "style-dictionary build --config style-dictionary/config.mjs --platform figmaWebsite",
     "tokens:build:figma:report": "style-dictionary build --config style-dictionary/config.mjs --platform figmaReport",
-    "dev:app": "cd apps/dev-app && npm run dev",
+    "dev:app": "node scripts/dev-app.mjs",
     "build:app": "cd apps/dev-app && npm run build",
     "preview:app": "cd apps/dev-app && npm run preview",
     "icons:normalize": "node scripts/normalize-svg-icons.mjs",

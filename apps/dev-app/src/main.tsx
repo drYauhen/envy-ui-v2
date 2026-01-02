@@ -37,6 +37,9 @@ import '@src/ui/content.css';
 import '@src/ui/detail-panel.css';
 import '@src/ui/skip-link.css';
 import '@src/ui/table.css';
+import '@src/ui/logo.css';
+import '@src/ui/side-nav.css';
+import '@src/ui/icons/_icons.css';
 
 // Import app styles
 import './index.css';
