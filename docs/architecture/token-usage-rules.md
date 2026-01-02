@@ -66,6 +66,52 @@ These are treated as known gaps. Either:
 
 Silent literals outside this list are not allowed.
 
+## Third-Party Library Integration
+
+**Context:** Third-party libraries (e.g., React Grid Layout, drag-and-drop libraries) come with their own CSS containing fixed values. These libraries cannot be modified to use our token system directly.
+
+**Allowed Patterns for Third-Party Integration:**
+
+1. **CSS Variable Mapping:**
+   ```css
+   /* Map third-party CSS variables to our tokens */
+   [data-eui-context] .third-party-component {
+     --third-party-color: var(--eui-color-background-base);
+     --third-party-spacing: var(--eui-spacing-md);
+   }
+   ```
+
+2. **Scoped Overrides Using Tokens:**
+   ```css
+   /* Override third-party styles using tokens */
+   [data-eui-context] .react-grid-layout {
+     background: var(--eui-color-background-base);
+     border: 1px solid var(--eui-color-border-default);
+     border-radius: var(--eui-radius-default);
+   }
+   ```
+
+3. **Token Creation for Third-Party:**
+   - Create tokens for third-party component values in `tokens/app/components/{library-name}/`
+   - Map third-party CSS variables to design tokens
+   - Document as explicit exceptions in component documentation
+
+**Rules:**
+- Third-party CSS must be placed in `@layer third-party` (lowest priority)
+- Our overrides must be in `@layer components` using tokens exclusively
+- No literal values in our override code (only third-party CSS can contain literals)
+- All overrides must use `[data-eui-context]` selectors for scoping
+- Each third-party integration must be documented with:
+  - Which library is used
+  - Why it's needed
+  - How it's integrated (pattern used)
+  - Token mappings created
+
+**Explicit Approval Required:**
+- Third-party libraries require explicit approval before integration
+- Approval must be documented in ADR or component documentation
+- See [ADR-0030](../adr/ADR-0030-third-party-library-integration-strategy.md) for full integration strategy
+
 ## Decoration Compatibility Rule
 
 ### Context-Specific: Application Context
