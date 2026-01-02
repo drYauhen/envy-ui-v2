@@ -36,7 +36,8 @@
     "icons:generate": "node scripts/generate-icons.mjs",
     "icons:process": "npm run icons:normalize && npm run icons:generate",
     "adr:validate": "node scripts/validate-adr.mjs",
-    "adr:generate": "node scripts/generate-adr-stories.mjs"
+    "adr:generate": "node scripts/generate-adr-stories.mjs",
+    "docs:validate": "node scripts/validate-docs-links.mjs"
   },
   "keywords": [],
   "author": "",

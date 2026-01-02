@@ -17,6 +17,10 @@ Each workflow document describes:
 - **[Storybook Workflow](./storybook-workflow.md)** - Storybook development and documentation
 - **[ADR Workflow](./adr-workflow.md)** - Writing and managing Architectural Decision Records
 
+## Documentation Management
+
+- **[Documentation Guide](../DOCS-GUIDE.md)** - Guide for managing all documentation (link validation, registry, cross-references)
+
 ## Relationship to WORKFLOW_MANIFEST.md
 
 The root `WORKFLOW_MANIFEST.md` contains:

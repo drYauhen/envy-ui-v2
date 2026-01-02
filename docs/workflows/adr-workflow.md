@@ -6,6 +6,28 @@ Complete guide to writing and managing Architectural Decision Records (ADR) in E
 
 ADRs document significant architectural decisions, their context, rationale, and consequences. They serve as a historical record of architectural thinking, not as current system documentation.
 
+## Single Source of Truth
+
+**⚠️ CRITICAL:** `stories/viewers/docs/adr-list-data.ts` is the **SINGLE SOURCE OF TRUTH** for all ADR metadata.
+
+All ADR metadata must be defined here FIRST:
+- Number, title, status, date
+- **exportName** (recommended for reliable linking)
+
+**Workflow:**
+1. Update `adr-list-data.ts` FIRST
+2. Create/update ADR markdown file
+3. Run `npm run adr:generate` (reads from adr-list-data.ts)
+4. Run `npm run adr:validate` (verifies consistency)
+
+**Why this matters:**
+- Prevents broken links in overview page
+- Ensures consistency between story files and links
+- Makes it impossible to have mismatched exportName
+- Provides reliable navigation in Storybook
+
+**For detailed agent instructions, see:** [`docs/adr/AGENT-GUIDE.md`](../adr/AGENT-GUIDE.md)
+
 ## ADR Principles
 
 ### What ADRs Are
@@ -71,8 +93,8 @@ docs/adr/ADR-0027-figma-migration-strategy.md
    **Assistance:** AI-assisted drafting (human-reviewed)  
    **Related:**  
 
-   - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-   - [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline
+   - [ADR-0001](../adr/ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
+   - [ADR-0002](../adr/ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline
    ```
 
 3. **Common formatting errors (avoid):**
@@ -96,14 +118,39 @@ docs/adr/ADR-0027-figma-migration-strategy.md
    - Without them, fields run together on the same line
    - Validation script checks for this automatically
 
-### Step 3: Add to Storybook
+### Step 3: Add to adr-list-data.ts
 
-**Option A: Use script (recommended):**
-```bash
-node scripts/generate-adr-stories.mjs
+**CRITICAL:** Add entry to `stories/viewers/docs/adr-list-data.ts` FIRST:
+
+```typescript
+// In stories/viewers/docs/adr-list-data.ts
+{ 
+  number: '0030', 
+  title: 'Your ADR Title', 
+  status: 'Accepted', 
+  date: '2025-01-02',
+  exportName: 'YourAdrTitle' // Recommended: ensures reliable linking
+}
 ```
 
-**Option B: Manual:**
+**exportName rules:**
+- Remove all non-alphanumeric characters from title
+- Remove all spaces
+- Example: "Token Organization - Context" → `TokenOrganizationContext`
+
+### Step 4: Generate Storybook Stories
+
+**Use script (required):**
+```bash
+npm run adr:generate
+```
+
+This script:
+- Reads `adr-list-data.ts` for exportName (single source of truth)
+- Generates story file with correct export name
+- Ensures links work correctly
+
+**Option B: Manual (not recommended):**
 
 1. Create story file: `stories/docs/adr/adr-XXXX.stories.tsx`
 
@@ -133,19 +180,7 @@ export const [StoryName]: Story = {
 };
 ```
 
-2. Add to ADR list: `stories/docs/adr/00-adr-overview.stories.tsx`
-
-```typescript
-const adrs = [
-  // ... existing ADRs
-  { 
-    number: 'XXXX', 
-    title: '[ADR Title]', 
-    status: '[Status]', 
-    date: '[YYYY-MM-DD]' 
-  }
-];
-```
+2. **Note:** ADR list is now managed in `stories/viewers/docs/adr-list-data.ts` (single source of truth). The overview page reads from this file automatically.
 
 ## ADR Status Values
 
@@ -281,33 +316,37 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
 
 **Required Steps (in order):**
 
-1. **Create ADR file:**
+1. **Add to adr-list-data.ts FIRST (SINGLE SOURCE OF TRUTH):**
+   - ✅ Add entry to `stories/viewers/docs/adr-list-data.ts`
+   - Format: `{ number: 'XXXX', title: 'Title', status: 'Status', date: 'YYYY-MM-DD', exportName: 'ExportName' }`
+   - **exportName:** Convert title to PascalCase (remove spaces, special chars)
+   - Example: "Token Organization - Context" → `TokenOrganizationContext`
+
+2. **Create ADR file:**
    - ✅ File name: `ADR-XXXX-descriptive-title.md`
    - ✅ File location: `docs/adr/`
    - ✅ Uses template from `ADR-TEMPLATE.md`
    - ✅ Header format: `# ADR-XXXX: Title` (exact match)
 
-2. **Update filename mapping:**
+3. **Update filename mapping:**
    - ✅ Add entry to `stories/viewers/docs/adr-filename-map.ts`
    - Format: `"XXXX": "ADR-XXXX-descriptive-title.md"`
    - **Auto-generate:** Run the command in the file's comment, or manually add
 
-3. **Update ADR list:**
-   - ✅ Add entry to `stories/viewers/docs/adr-list-data.ts`
-   - Format: `{ number: 'XXXX', title: 'Title', status: 'Status', date: 'YYYY-MM-DD', exportName: 'ExportName' }`
-   - Export name: Convert title to PascalCase (remove spaces, special chars)
-
 4. **Generate Storybook stories:**
-   - ✅ Run: `npm run adr:generate` or `node scripts/generate-adr-stories.mjs`
+   - ✅ Run: `npm run adr:generate`
+   - ✅ Script reads `adr-list-data.ts` for exportName
    - ✅ Verify story file created: `stories/docs/adr/adr-XXXX.stories.tsx`
 
 5. **Validate:**
    - ✅ Run: `npm run adr:validate`
+   - ✅ Checks exportName matches story file
    - ✅ Fix any errors or warnings
 
 6. **Verify in Storybook:**
    - ✅ ADR appears in "Docs/ADR" section
    - ✅ ADR loads without errors
+   - ✅ Overview page link works
    - ✅ Mermaid diagrams render correctly
    - ✅ Links to other ADRs work
 
@@ -393,20 +432,25 @@ npm run adr:validate
 
 When creating a new ADR:
 
-1. Always use the template from `ADR-TEMPLATE.md`
-2. Follow existing ADR structure and style
-3. Use impersonal language
-4. Include Related ADRs section with proper markdown links
-5. Set the correct date (use current date)
-6. **Use the script:** `npm run adr:generate`
-7. **Validate:** `npm run adr:validate`
-8. For images: Place in `docs/adr/` and reference with relative paths
-9. For Mermaid diagrams:
-   - Always use `graph TD` (vertical orientation)
-   - Use `stroke-width:2px` (with hyphen, NOT `strokeWidth`)
-   - Use quotes around node labels: `A["Label"]`
-   - Test in Mermaid Live Editor before committing
-   - Keep font sizes compact (14px)
-   - Use consistent color scheme
-   - Keep node labels concise
+1. **CRITICAL:** Update `stories/viewers/docs/adr-list-data.ts` FIRST (single source of truth)
+   - Add entry with number, title, status, date, exportName
+   - exportName: Remove all non-alphanumeric chars and spaces from title
+2. Always use the template from `ADR-TEMPLATE.md`
+3. Follow existing ADR structure and style
+4. Use impersonal language
+5. Include Related ADRs section with proper markdown links
+6. Set the correct date (use current date)
+7. **Use the script:** `npm run adr:generate` (reads from adr-list-data.ts)
+8. **Validate:** `npm run adr:validate` (checks exportName matches)
+9. For images: Place in `docs/adr/` and reference with relative paths
+10. For Mermaid diagrams:
+    - Always use `graph TD` (vertical orientation)
+    - Use `stroke-width:2px` (with hyphen, NOT `strokeWidth`)
+    - Use quotes around node labels: `A["Label"]`
+    - Test in Mermaid Live Editor before committing
+    - Keep font sizes compact (14px)
+    - Use consistent color scheme
+    - Keep node labels concise
+
+**For complete agent workflow, see:** [`docs/adr/AGENT-GUIDE.md`](../adr/AGENT-GUIDE.md)
 

@@ -1,15 +1,29 @@
 /**
  * ADR list data
  * 
- * This file contains the list of all Architectural Decision Records.
- * Update this file when adding new ADRs to the system.
+ * ⚠️ SINGLE SOURCE OF TRUTH ⚠️
+ * 
+ * This file is the SINGLE SOURCE OF TRUTH for all ADR metadata.
+ * 
+ * **CRITICAL:** When creating or modifying ADRs:
+ * 1. Update this file FIRST
+ * 2. Then run `npm run adr:generate` to generate story files
+ * 3. Then run `npm run adr:validate` to verify consistency
  * 
  * Format:
  * - number: ADR number (4 digits with leading zeros)
  * - title: ADR title (must match the title in the ADR markdown file)
  * - status: ADR status (must match exactly as in ADR file)
  * - date: ADR date (YYYY-MM-DD format)
- * - exportName: (optional) Story export name - if provided, used for link generation instead of generating from title
+ * - exportName: (recommended) Story export name - ensures reliable linking in overview page
+ * 
+ * **exportName rules:**
+ * - Remove all non-alphanumeric characters from title
+ * - Remove all spaces
+ * - Must match the export name in the generated story file
+ * - Example: "Token Organization - Context" → `TokenOrganizationContext`
+ * 
+ * **See:** `docs/adr/AGENT-GUIDE.md` for complete workflow instructions
  */
 
 export type AdrListItem = {
@@ -43,10 +57,10 @@ export const adrs: AdrListItem[] = [
   { number: '0020', title: 'Elevation System Architecture', status: 'Accepted', date: '2025-12-20' },
   { number: '0021', title: 'Web Components as Framework-Agnostic Implementation Layer', status: 'Exploratory', date: '2025-01-XX' },
   { number: '0022', title: 'Storybook Model as AI-Agent-Oriented Architecture Layer', status: 'Proposed (Exploratory)', date: '2025-12-25' },
-  { number: '0023', title: 'Token Organization - Context and Theme Separation', status: 'Accepted', date: '2025-12-26', exportName: 'TokenOrganizationContextAndThemeSeparation' },
-  { number: '0024', title: 'CSS Layer Strategy for Context Priority', status: 'Accepted', date: '2025-12-26', exportName: 'CSSLayerStrategyForContextPriority' },
+  { number: '0023', title: 'Token Organization - Context and Theme Separation', status: 'Accepted', date: '2025-12-26', exportName: 'TokenOrganizationContextandThemeSeparation' },
+  { number: '0024', title: 'CSS Layer Strategy for Context Priority', status: 'Accepted', date: '2025-12-26', exportName: 'CSSLayerStrategyforContextPriority' },
   { number: '0025', title: 'Figma Variables Integration Strategy', status: 'Accepted', date: '2025-12-26' },
-  { number: '0026', title: 'App-Default Color Positioning and Semantic Token Optimization', status: 'Accepted', date: '2025-12-29', exportName: 'AppDefaultColorPositioning' },
+  { number: '0026', title: 'App-Default Color Positioning and Semantic Token Optimization', status: 'Accepted', date: '2025-12-29', exportName: 'AppDefaultColorPositioningandSemanticTokenOptimization' },
   { number: '0027', title: 'Figma Files Structure and Organization', status: 'Accepted', date: '2025-12-31', exportName: 'FigmaFilesStructureandOrganization' },
   { number: '0028', title: 'Internationalization (i18n) and RTL Support Architecture', status: 'Proposed', date: '2025-01-01', exportName: 'Internationalizationi18nandRTLSupportArchitecture' },
   { number: '0029', title: 'Accessibility Architecture and Decision Framework', status: 'Accepted', date: '2025-12-31', exportName: 'AccessibilityArchitectureandDecisionFramework' }

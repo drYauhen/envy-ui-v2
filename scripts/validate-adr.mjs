@@ -10,6 +10,33 @@ const adrListPath = 'stories/viewers/docs/adr-list-data.ts';
 let errors = [];
 let warnings = [];
 
+/**
+ * Parse adr-list-data.ts to extract ADR metadata
+ * This file is the SINGLE SOURCE OF TRUTH for ADR metadata
+ */
+function parseAdrListData() {
+  const content = readFileSync(adrListPath, 'utf-8');
+  const adrMap = new Map();
+  
+  // Extract ADR entries from the array
+  // Pattern: { number: 'XXXX', title: '...', status: '...', date: '...', exportName: '...' }
+  const adrPattern = /\{\s*number:\s*['"]([\d]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*status:\s*['"]([^'"]+)['"],\s*date:\s*['"]([^'"]+)['"](?:,\s*exportName:\s*['"]([^'"]+)['"])?\s*\}/g;
+  
+  let match;
+  while ((match = adrPattern.exec(content)) !== null) {
+    const [, number, title, status, date, exportName] = match;
+    adrMap.set(number, {
+      number,
+      title,
+      status,
+      date,
+      exportName: exportName || null
+    });
+  }
+  
+  return adrMap;
+}
+
 // Check all ADR files (exclude TEMPLATE)
 const adrFiles = readdirSync(adrDir)
   .filter(f => f.startsWith('ADR-') && f.endsWith('.md') && !f.includes('TEMPLATE'))
@@ -20,6 +47,9 @@ console.log(`\n🔍 Validating ${adrFiles.length} ADR files...\n`);
 // Check filename mapping
 const filenameMapContent = readFileSync(filenameMapPath, 'utf-8');
 const adrListContent = readFileSync(adrListPath, 'utf-8');
+
+// Load ADR list data as source of truth
+const adrListData = parseAdrListData();
 
 adrFiles.forEach(file => {
   const match = file.match(/^ADR-(\d+)-(.+)\.md$/);
@@ -44,6 +74,24 @@ adrFiles.forEach(file => {
   const storyFile = `stories/docs/adr/adr-${number.toLowerCase()}.stories.tsx`;
   if (!existsSync(storyFile)) {
     warnings.push(`⚠️  Story file missing: ${storyFile}`);
+  } else {
+    // NEW: Validate exportName matches actual export in story file
+    const storyContent = readFileSync(storyFile, 'utf-8');
+    const exportMatch = storyContent.match(/export const (\w+): Story =/);
+    if (exportMatch) {
+      const actualExportName = exportMatch[1];
+      const adrData = adrListData.get(number);
+      
+      if (adrData && adrData.exportName) {
+        // If exportName is specified in adr-list-data.ts, it must match
+        if (adrData.exportName !== actualExportName) {
+          errors.push(`❌ ADR-${number}: exportName mismatch. Expected '${adrData.exportName}' (from adr-list-data.ts) but found '${actualExportName}' in story file. Run 'npm run adr:generate' to fix.`);
+        }
+      } else {
+        // If no exportName in adr-list-data.ts, suggest adding it for reliable linking
+        warnings.push(`⚠️  ADR-${number}: Consider adding exportName: '${actualExportName}' to adr-list-data.ts for reliable linking`);
+      }
+    }
   }
   
   // Check Mermaid syntax
