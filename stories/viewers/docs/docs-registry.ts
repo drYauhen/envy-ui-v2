@@ -74,6 +74,12 @@ const architectureDocs: DocRegistryItem[] = [
     path: 'architecture/hero-section-theme-architecture.md',
     title: 'Hero Section Theme Architecture',
     category: 'architecture'
+  },
+  {
+    id: 'arch-dev-app',
+    path: 'architecture/dev-app-architecture.md',
+    title: 'Dev App Architecture',
+    category: 'architecture'
   }
 ];
 
@@ -101,6 +107,12 @@ const workflowDocs: DocRegistryItem[] = [
     id: 'workflow-tokens',
     path: 'workflows/tokens-workflow.md',
     title: 'Tokens Workflow',
+    category: 'workflows'
+  },
+  {
+    id: 'workflow-dev-app',
+    path: 'workflows/dev-app-workflow.md',
+    title: 'Dev App Workflow',
     category: 'workflows'
   },
   {
