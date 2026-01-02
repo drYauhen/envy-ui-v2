@@ -138,9 +138,22 @@ docs/adr/ADR-0027-figma-migration-strategy.md
 - Remove all spaces
 - Example: "Token Organization - Context" → `TokenOrganizationContext`
 
-### Step 4: Generate Storybook Stories
+### Step 4: Update Filename Map
 
-**Use script (required):**
+**CRITICAL:** Add entry to `stories/viewers/docs/adr-filename-map.ts`:
+
+```typescript
+// In stories/viewers/docs/adr-filename-map.ts
+"0030": "ADR-0030-your-title.md"
+```
+
+This maps the ADR number to the actual filename. Required for the ADR viewer to load the correct file.
+
+**Note:** You can auto-generate this file by running the command in the file's comment, or add entries manually.
+
+### Step 5: Generate Storybook Stories
+
+**Use script (recommended):**
 ```bash
 npm run adr:generate
 ```
@@ -150,7 +163,7 @@ This script:
 - Generates story file with correct export name
 - Ensures links work correctly
 
-**Option B: Manual (not recommended):**
+**If script doesn't work or you need manual creation:**
 
 1. Create story file: `stories/docs/adr/adr-XXXX.stories.tsx`
 
@@ -180,7 +193,16 @@ export const [StoryName]: Story = {
 };
 ```
 
-2. **Note:** ADR list is now managed in `stories/viewers/docs/adr-list-data.ts` (single source of truth). The overview page reads from this file automatically.
+2. **Important:** After creating the story file, restart Storybook:
+   ```bash
+   # Stop Storybook (Ctrl+C)
+   # Then restart
+   npm run storybook
+   ```
+   
+   Storybook needs to reload to pick up new story files. If you see "Couldn't find story matching..." error, restart Storybook.
+
+3. **Note:** ADR list is now managed in `stories/viewers/docs/adr-list-data.ts` (single source of truth). The overview page reads from this file automatically.
 
 ## ADR Status Values
 
@@ -332,6 +354,7 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
    - ✅ Add entry to `stories/viewers/docs/adr-filename-map.ts`
    - Format: `"XXXX": "ADR-XXXX-descriptive-title.md"`
    - **Auto-generate:** Run the command in the file's comment, or manually add
+   - **CRITICAL:** This is required for the ADR viewer to load the correct file
 
 4. **Generate Storybook stories:**
    - ✅ Run: `npm run adr:generate`
@@ -343,7 +366,13 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
    - ✅ Checks exportName matches story file
    - ✅ Fix any errors or warnings
 
-6. **Verify in Storybook:**
+6. **Restart Storybook:**
+   - ✅ Stop Storybook (Ctrl+C)
+   - ✅ Restart: `npm run storybook`
+   - ✅ **CRITICAL:** Storybook needs to reload to pick up new story files
+   - ✅ If you see "Couldn't find story matching..." error, restart Storybook
+
+7. **Verify in Storybook:**
    - ✅ ADR appears in "Docs/ADR" section
    - ✅ ADR loads without errors
    - ✅ Overview page link works
@@ -382,6 +411,37 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
    - List all referenced ADRs
    - Use consistent format with em-dash separator
 
+**When adding links to Architecture documents:**
+
+1. **CRITICAL: Check if document exists FIRST:**
+   ```bash
+   ls docs/architecture/document-name.md
+   ```
+
+2. **If document doesn't exist, CREATE IT:**
+   - ❌ **DON'T create broken links**
+   - ✅ Create the Architecture document first
+   - ✅ Follow workflow in `docs/architecture/README.md`
+   - ✅ Update `docs/architecture/README.md` index
+   - ✅ Create Storybook story if needed
+
+3. **Format:**
+   ```markdown
+   - [Token Usage Rules](../architecture/token-usage-rules.md) — Current rules
+   - [Accessibility Reference](../architecture/accessibility-reference.md) — Reference documentation
+   ```
+
+4. **Path rules:**
+   - From ADR: `../architecture/filename.md`
+   - Always use relative paths
+   - Verify file exists before committing
+
+5. **After creating Architecture document:**
+   - ✅ Add to `docs/architecture/README.md` index
+   - ✅ Create Storybook story (if needed for viewing)
+   - ✅ Update `docs-registry.ts` (if needed)
+   - ✅ Verify link works
+
 ### Quick Validation Script
 
 After creating a new ADR, run this checklist:
@@ -413,9 +473,17 @@ npm run adr:validate
 **ADR not loading:**
 1. Check `adr-filename-map.ts` has correct entry
 2. Verify file name matches exactly (case-sensitive)
-3. Check Storybook console for errors
-4. Verify `docs/` is in `staticDirs` in `.storybook/main.ts`
-5. Run `npm run adr:validate` to check for issues
+3. **Restart Storybook** (if new story file was created)
+4. Check Storybook console for errors
+5. Verify `docs/` is in `staticDirs` in `.storybook/main.ts`
+6. Run `npm run adr:validate` to check for issues
+
+**"Couldn't find story matching..." error:**
+1. **Restart Storybook** - Storybook needs to reload to pick up new story files
+2. Verify story file exists: `stories/docs/adr/adr-XXXX.stories.tsx`
+3. Check export name matches `exportName` in `adr-list-data.ts`
+4. Verify story file has correct structure (see Step 5 manual creation)
+5. Check Storybook console for compilation errors
 
 **Mermaid not rendering:**
 1. Check syntax: use `stroke-width` (with hyphen)
@@ -428,6 +496,13 @@ npm run adr:validate
 2. Check relative path format: `./ADR-XXXX-...`
 3. Verify file name matches exactly
 
+**Architecture document link broken:**
+1. Check if document exists: `ls docs/architecture/document-name.md`
+2. If missing, create it following `docs/architecture/README.md` workflow
+3. Update `docs/architecture/README.md` index
+4. Verify path format: `../architecture/filename.md`
+5. Create Storybook story if needed
+
 ## Notes for AI Agents
 
 When creating a new ADR:
@@ -435,15 +510,26 @@ When creating a new ADR:
 1. **CRITICAL:** Update `stories/viewers/docs/adr-list-data.ts` FIRST (single source of truth)
    - Add entry with number, title, status, date, exportName
    - exportName: Remove all non-alphanumeric chars and spaces from title
-2. Always use the template from `ADR-TEMPLATE.md`
-3. Follow existing ADR structure and style
-4. Use impersonal language
-5. Include Related ADRs section with proper markdown links
-6. Set the correct date (use current date)
-7. **Use the script:** `npm run adr:generate` (reads from adr-list-data.ts)
-8. **Validate:** `npm run adr:validate` (checks exportName matches)
-9. For images: Place in `docs/adr/` and reference with relative paths
-10. For Mermaid diagrams:
+2. **CRITICAL:** Update `stories/viewers/docs/adr-filename-map.ts`
+   - Add entry: `"XXXX": "ADR-XXXX-descriptive-title.md"`
+   - Required for ADR viewer to load the correct file
+3. Always use the template from `ADR-TEMPLATE.md`
+4. Follow existing ADR structure and style
+5. Use impersonal language
+6. Include Related ADRs section with proper markdown links
+7. **CRITICAL:** When linking to Architecture documents:
+   - Check if document exists: `ls docs/architecture/document-name.md`
+   - If missing, CREATE IT FIRST (don't create broken links)
+   - Follow workflow in `docs/architecture/README.md`
+   - Update `docs/architecture/README.md` index
+8. Set the correct date (use current date)
+9. **Generate story file:** Use `npm run adr:generate` (reads from adr-list-data.ts) or create manually
+10. **CRITICAL:** Restart Storybook after creating new story file
+   - Storybook needs to reload to pick up new story files
+   - If you see "Couldn't find story matching..." error, restart Storybook
+11. **Validate:** `npm run adr:validate` (checks exportName matches)
+12. For images: Place in `docs/adr/` and reference with relative paths
+13. For Mermaid diagrams:
     - Always use `graph TD` (vertical orientation)
     - Use `stroke-width:2px` (with hyphen, NOT `strokeWidth`)
     - Use quotes around node labels: `A["Label"]`

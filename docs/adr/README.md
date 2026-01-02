@@ -33,12 +33,14 @@ Common status values:
 
 After creating a new ADR, ensure:
 
-1. ✅ File added to `adr-filename-map.ts`
-2. ✅ Entry added to `adr-list-data.ts`
-3. ✅ Stories generated: `npm run adr:generate`
-4. ✅ Validation passed: `npm run adr:validate`
-5. ✅ Mermaid diagrams tested (if any)
-6. ✅ Links to other ADRs verified
+1. ✅ Entry added to `adr-list-data.ts` FIRST (single source of truth)
+2. ✅ File added to `adr-filename-map.ts`
+3. ✅ ADR markdown file created
+4. ✅ Stories generated: `npm run adr:generate` (or created manually)
+5. ✅ Validation passed: `npm run adr:validate`
+6. ✅ Storybook restarted (if new story file created)
+7. ✅ Mermaid diagrams tested (if any)
+8. ✅ Links to other ADRs verified
 
 **For detailed checklist and troubleshooting, see:** [`docs/workflows/adr-workflow.md`](../workflows/adr-workflow.md#common-pitfalls-and-validation-checklist)
 

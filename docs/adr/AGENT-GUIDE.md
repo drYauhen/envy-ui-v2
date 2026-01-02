@@ -42,7 +42,20 @@ cp docs/adr/ADR-TEMPLATE.md docs/adr/ADR-0030-your-title.md
 
 Fill in the template with correct number, title, status, date.
 
-### Step 3: Generate Stories
+### Step 3: Update Filename Map
+
+**CRITICAL:** Add entry to `stories/viewers/docs/adr-filename-map.ts`:
+
+```typescript
+// In stories/viewers/docs/adr-filename-map.ts
+"0030": "ADR-0030-your-title.md"
+```
+
+**Note:** This file maps ADR numbers to actual filenames. It's required for the ADR viewer to load the correct file.
+
+### Step 4: Generate Stories
+
+**Option A: Use Script (Recommended)**
 
 ```bash
 npm run adr:generate
@@ -53,7 +66,39 @@ This will:
 - Generate story file with correct export name
 - Ensure links work correctly
 
-### Step 4: Validate
+**Option B: Manual Creation (If script doesn't work)**
+
+If the script doesn't work or you need to create manually, create `stories/docs/adr/adr-XXXX.stories.tsx`:
+
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
+import { AdrViewer } from '../../viewers/docs/AdrViewer';
+
+type Story = StoryObj;
+
+const meta: Meta = {
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
+};
+
+export default meta;
+
+export const [ExportName]: Story = {
+  name: 'ADR-XXXX [Title]',
+  render: () => (
+    <AdrViewer
+      adrNumber="XXXX"
+      title="[Title]"
+      status="[Status]"
+      date="YYYY-MM-DD"
+    />
+  )
+};
+```
+
+**Important:** The export name must match `exportName` from `adr-list-data.ts` exactly.
+
+### Step 5: Validate
 
 ```bash
 npm run adr:validate
@@ -64,6 +109,18 @@ This checks:
 - ✅ File exists in filename map
 - ✅ All links are valid
 - ✅ Formatting is correct
+
+### Step 6: Restart Storybook
+
+**CRITICAL:** After creating a new story file, restart Storybook:
+
+```bash
+# Stop Storybook (Ctrl+C)
+# Then restart
+npm run storybook
+```
+
+Storybook needs to reload to pick up new story files. If you see "Couldn't find story matching..." error, restart Storybook.
 
 ## Workflow for Modifying ADR
 
@@ -121,6 +178,38 @@ Links in ADR markdown files use format:
 - ✅ Link uses relative path: `./ADR-XXXX-...`
 - ✅ Title matches actual ADR title
 
+### Links to Architecture Documents
+
+**CRITICAL:** When linking to Architecture documents from ADR:
+
+1. **Check if document exists FIRST:**
+   ```bash
+   ls docs/architecture/token-usage-rules.md
+   ```
+
+2. **If document doesn't exist, CREATE IT:**
+   - Don't create broken links
+   - Create the Architecture document first
+   - Follow workflow in `docs/architecture/README.md`
+   - Update `docs/architecture/README.md` index
+
+3. **Use correct path format:**
+   ```markdown
+   - [Token Usage Rules](../architecture/token-usage-rules.md) — Current rules
+   - [Accessibility Reference](../architecture/accessibility-reference.md) — Reference documentation
+   ```
+
+4. **Path rules:**
+   - From ADR: `../architecture/filename.md`
+   - Always use relative paths
+   - Check file exists before committing
+
+5. **After creating Architecture document:**
+   - ✅ Add to `docs/architecture/README.md` index
+   - ✅ Create Storybook story if needed
+   - ✅ Update `docs-registry.ts` if needed
+   - ✅ Verify link works
+
 ### Overview Links
 
 Links in overview are generated from `adr-list-data.ts`:
@@ -137,26 +226,36 @@ Links in overview are generated from `adr-list-data.ts`:
 
 ### ❌ DON'T:
 - Create ADR file before adding to `adr-list-data.ts`
-- Manually edit story files (they're auto-generated)
+- Forget to update `adr-filename-map.ts`
+- Manually edit story files if using auto-generation (they'll be overwritten)
 - Change exportName without regenerating stories
 - Use different exportName in `adr-list-data.ts` and story file
 - Skip validation before committing
+- Forget to restart Storybook after creating new story file
 
 ### ✅ DO:
-- Always update `adr-list-data.ts` FIRST
-- Always run `npm run adr:generate` after changes
+- Always update `adr-list-data.ts` FIRST (single source of truth)
+- Always update `adr-filename-map.ts` with filename mapping
+- Always run `npm run adr:generate` after changes (or create story manually)
 - Always run `npm run adr:validate` before committing
+- Always restart Storybook after creating new story file
 - Use `exportName` for all ADRs to ensure reliable linking
+- **Check Architecture documents exist before linking** (create if missing)
+- **Update `docs/architecture/README.md`** when creating new Architecture documents
 - Verify links work in Storybook after changes
 
 ## Quick Checklist
 
 When creating/modifying ADR:
 
-- [ ] Updated `adr-list-data.ts` with correct `exportName`
+- [ ] Updated `adr-list-data.ts` with correct `exportName` (FIRST)
 - [ ] Created/updated ADR markdown file
-- [ ] Ran `npm run adr:generate`
+- [ ] Updated `adr-filename-map.ts` with filename mapping
+- [ ] Created story file (via `npm run adr:generate` or manually)
 - [ ] Ran `npm run adr:validate` (no errors)
+- [ ] Restarted Storybook (if new story file created)
+- [ ] **Checked all Architecture document links exist** (create if missing)
+- [ ] **Updated `docs/architecture/README.md`** if created new Architecture document
 - [ ] Verified links work in Storybook
 - [ ] Checked overview page links work
 
