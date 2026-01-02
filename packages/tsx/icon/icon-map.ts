@@ -22,11 +22,15 @@ import { IconPlanReports } from './generated/IconPlanReports';
 import { IconPlan } from './generated/IconPlan';
 import { IconPlusCircle } from './generated/IconPlusCircle';
 import { IconPolco } from './generated/IconPolco';
+import { IconPowerOff } from './generated/IconPowerOff';
 import { IconSearch } from './generated/IconSearch';
+import { IconSitemap } from './generated/IconSitemap';
 import { IconSubmitUpdates } from './generated/IconSubmitUpdates';
+import { IconSwap } from './generated/IconSwap';
 import { IconTasks } from './generated/IconTasks';
 import { IconTeamAssessment } from './generated/IconTeamAssessment';
 import { IconTrash } from './generated/IconTrash';
+import { IconUserFriends } from './generated/IconUserFriends';
 import { IconVisualsDashboard } from './generated/IconVisualsDashboard';
 import { IconVisuals } from './generated/IconVisuals';
 
@@ -52,13 +56,17 @@ export const iconMap = {
   'plan': IconPlan,
   'plus-circle': IconPlusCircle,
   'polco': IconPolco,
+  'power-off': IconPowerOff,
   'search': IconSearch,
+  'sitemap': IconSitemap,
   'submit-updates': IconSubmitUpdates,
+  'swap': IconSwap,
   'tasks': IconTasks,
   'team-assessment': IconTeamAssessment,
   'trash': IconTrash,
+  'user-friends': IconUserFriends,
   'visuals-dashboard': IconVisualsDashboard,
   'visuals': IconVisuals,
 };
 
-export type IconName = 'check-circle' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'clock' | 'cog' | 'data-source' | 'ellipsis-v' | 'exclamation-circle' | 'expand-all' | 'external-link' | 'info-circle' | 'map-marked-alt' | 'org-assessment' | 'pencil-ruler' | 'personal-assessment' | 'plan-dashboards' | 'plan-reports' | 'plan' | 'plus-circle' | 'polco' | 'search' | 'submit-updates' | 'tasks' | 'team-assessment' | 'trash' | 'visuals-dashboard' | 'visuals';
+export type IconName = 'check-circle' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'clock' | 'cog' | 'data-source' | 'ellipsis-v' | 'exclamation-circle' | 'expand-all' | 'external-link' | 'info-circle' | 'map-marked-alt' | 'org-assessment' | 'pencil-ruler' | 'personal-assessment' | 'plan-dashboards' | 'plan-reports' | 'plan' | 'plus-circle' | 'polco' | 'power-off' | 'search' | 'sitemap' | 'submit-updates' | 'swap' | 'tasks' | 'team-assessment' | 'trash' | 'user-friends' | 'visuals-dashboard' | 'visuals';

@@ -76,6 +76,30 @@
     "subcategory": "status",
     "tags": ["exclamation", "warning", "alert", "error", "circle"],
     "description": "Exclamation circle icon for warnings and error states"
+  },
+  "swap": {
+    "category": "ui",
+    "subcategory": "actions",
+    "tags": ["swap", "switch", "exchange", "replace", "toggle", "user-switch"],
+    "description": "Swap icon for switching between users or contexts"
+  },
+  "sitemap": {
+    "category": "ui",
+    "subcategory": "navigation",
+    "tags": ["sitemap", "organization", "chart", "hierarchy", "structure", "tree"],
+    "description": "Sitemap icon for organization charts and hierarchical structures"
+  },
+  "user-friends": {
+    "category": "ui",
+    "subcategory": "navigation",
+    "tags": ["user-friends", "users", "people", "team", "employees", "group"],
+    "description": "User friends icon for team, employees, and user groups"
+  },
+  "power-off": {
+    "category": "ui",
+    "subcategory": "actions",
+    "tags": ["power-off", "sign-out", "logout", "exit", "shutdown", "off"],
+    "description": "Power off icon for sign out and logout actions"
   }
 }
 
