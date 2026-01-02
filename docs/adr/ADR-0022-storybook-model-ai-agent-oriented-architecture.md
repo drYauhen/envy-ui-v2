@@ -97,6 +97,7 @@ A global `storybook.manifest.json` defines:
 **Component Usage:**
 - Use only Envy UI components from helpers
 - If helper component doesn't exist: **ASK USER** (never create inline styles as workaround)
+- **Exception:** Third-party libraries may be used with explicit approval and proper integration (see [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md))
 - Follow component-model for component structure, storybook-model for demonstration structure
 
 ---
@@ -145,6 +146,8 @@ A global `storybook.manifest.json` defines:
 **1. Maintains System Integrity**
 - System should use only Envy UI components — no exceptions
 - Missing components indicate gap in system that should be addressed
+- **Exception:** Third-party libraries may be used with explicit approval (see [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md))
+- **Exception:** Third-party libraries may be used with explicit approval (see [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md))
 
 **2. AI Agent Clarity**
 - Unambiguous error handling prevents agents from making architectural decisions

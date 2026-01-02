@@ -8,6 +8,7 @@
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation  
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes  
 - [ADR-0021](./ADR-0021-web-components-framework-agnostic-layer.md) — Web Components Framework-Agnostic Layer
+- [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
 
 ---
 
@@ -37,11 +38,13 @@ This diagram shows the typical scenario where both Report and Website/CMS can be
 
 ```mermaid
 graph TD
-    A[":root<br/>Foundation + Semantic"] --> B["@layer context-app<br/>Application Shell"]
+    A[":root<br/>Foundation + Semantic"] --> TP["@layer third-party<br/>Third-Party Libraries"]
+    TP --> B["@layer context-app<br/>Application Shell"]
     B --> C["@layer context-report<br/>Report (nested in App)"]
     B --> E["@layer context-website<br/>Website/CMS (nested in App)"]
-    C --> D["@layer theme<br/>Theme overrides"]
-    E --> D
+    C --> COMP["@layer components<br/>Component Overrides"]
+    E --> COMP
+    COMP --> D["@layer theme<br/>Theme overrides"]
     
     B --> B1["HTML: data-eui-context=app"]
     C --> C1["HTML: data-eui-context=report<br/>(child of app)"]
@@ -49,9 +52,11 @@ graph TD
     D --> D1["HTML: data-eui-theme"]
     
     style A fill:#e1f5ff,stroke:#0ea5e9
+    style TP fill:#fef3c7,stroke:#f59e0b
     style B fill:#fff3e0,stroke:#f59e0b
     style C fill:#fce7f3,stroke:#ec4899
     style E fill:#e8f5e9,stroke:#22c55e
+    style COMP fill:#e0e7ff,stroke:#6366f1
     style D fill:#f3e8ff,stroke:#a855f7
     style B1 fill:#fff9e6,stroke:#f59e0b
     style C1 fill:#fdf2f8,stroke:#ec4899
@@ -60,10 +65,12 @@ graph TD
 
 **Layer priority order:**
 1. `:root` - Foundation and semantic tokens (base values)
-2. `@layer context-app` - Application context styles
-3. `@layer context-website` - Website/CMS context styles (overrides app when nested)
-4. `@layer context-report` - Report context styles (overrides app when nested)
-5. `@layer theme` - Theme overrides (highest priority)
+2. `@layer third-party` - Third-party library CSS (lowest priority, isolated)
+3. `@layer context-app` - Application context styles
+4. `@layer context-website` - Website/CMS context styles (overrides app when nested)
+5. `@layer context-report` - Report context styles (overrides app when nested)
+6. `@layer components` - Component styles and third-party overrides (uses tokens)
+7. `@layer theme` - Theme overrides (highest priority)
 
 **Note:** This example shows the default/priority scenario where both Report and Website/CMS can be children of Application (preview and generative scenarios). Other configurations (Website standalone, Report standalone, Website → Report) are also supported, but App → Report and App → Website are the most common patterns.
 
@@ -72,10 +79,14 @@ graph TD
 All context layers are generated, but the example above shows the default/priority scenario:
 
 1. **`:root`** - Foundation and semantic tokens (base values)
-2. **`@layer context-app`** - Application context overrides
-3. **`@layer context-website`** - Website context overrides (available but not shown in default example)
-4. **`@layer context-report`** - Report context overrides (overrides app when nested)
-5. **`@layer theme`** - Theme overrides (highest priority)
+2. **`@layer third-party`** - Third-party library CSS (lowest priority, isolated)
+3. **`@layer context-app`** - Application context overrides
+4. **`@layer context-website`** - Website context overrides (available but not shown in default example)
+5. **`@layer context-report`** - Report context overrides (overrides app when nested)
+6. **`@layer components`** - Component styles and third-party overrides (uses tokens)
+7. **`@layer theme`** - Theme overrides (highest priority)
+
+**Note:** See [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) for third-party library integration strategy.
 
 ### Possible Context Configurations
 
@@ -307,19 +318,23 @@ CSS Custom Properties penetrate Shadow DOM boundaries. The `@layer` directive on
 ### Implementation Requirements
 
 1. Update Style Dictionary CSS format to generate `@layer` declarations
-2. Define layer order in build configuration
+2. Define layer order in build configuration (including `@layer third-party` and `@layer components`)
 3. Generate context selectors within appropriate layers
-4. Generate theme selectors in the highest priority layer
-5. Ensure `:root` contains base tokens (foundation + semantic)
+4. Generate component overrides in `@layer components` (uses tokens)
+5. Generate theme selectors in the highest priority layer
+6. Ensure `:root` contains base tokens (foundation + semantic)
+7. Place all third-party CSS in `@layer third-party` (lowest priority)
 
 ---
 
 ## Explicit Rules
 
-1. **Layer Order**: Foundation/Semantic → Context-App → Context-Website → Context-Report → Theme
+1. **Layer Order**: Foundation/Semantic → Third-Party → Context-App → Context-Website → Context-Report → Components → Theme
 2. **Base Tokens**: Always in `:root` (no layer)
-3. **Context Tokens**: Each context in its own `@layer`
-4. **Theme Tokens**: All themes in the highest priority `@layer theme`
+3. **Third-Party CSS**: All third-party library CSS in `@layer third-party` (lowest priority)
+4. **Context Tokens**: Each context in its own `@layer`
+5. **Component Overrides**: Our component styles and third-party overrides in `@layer components` (uses tokens)
+6. **Theme Tokens**: All themes in the highest priority `@layer theme`
 5. **Selector Specificity**: `@layer` order overrides selector specificity
 
 ---
