@@ -15,6 +15,7 @@
     "react": "^19.2.3",
     "react-aria": "^3.45.0",
     "react-dom": "^19.2.3",
+    "react-router-dom": "^6.30.2",
     "react-stately": "^3.43.0"
   },
   "devDependencies": {

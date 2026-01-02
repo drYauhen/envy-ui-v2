@@ -103,3 +103,32 @@ export async function updateNavigationItem(
   return data.updateNavigationItem;
 }
 
+// Query для получения контента страницы
+export const GET_PAGE_CONTENT = `
+  query GetPageContent($pageKey: String!) {
+    pageContent(pageKey: $pageKey) {
+      id
+      pageKey
+      title
+      content
+      metadata
+    }
+  }
+`;
+
+export interface PageContent {
+  id: number;
+  pageKey: string;
+  title: string;
+  content?: string;
+  metadata?: string;
+}
+
+export async function getPageContent(pageKey: string): Promise<PageContent | null> {
+  const data = await graphqlRequest<{ pageContent: PageContent | null }>(
+    GET_PAGE_CONTENT,
+    { pageKey }
+  );
+  return data.pageContent;
+}
+

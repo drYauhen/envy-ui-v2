@@ -1,4 +1,4 @@
-import { initDatabase, getDatabase, sectionQueries, itemQueries } from './database.js';
+import { initDatabase, getDatabase, sectionQueries, itemQueries, pageContentQueries } from './database.js';
 
 const db = initDatabase();
 
@@ -54,5 +54,20 @@ items.forEach(item => {
   });
 });
 
-console.log('✅ Database seeded with Storybook navigation data');
+// Создать контент для каждой страницы
+const pageContents = items.map(item => ({
+  pageKey: item.key,
+  title: item.label,
+  content: `This is the content for ${item.label}. This page will be implemented in the future.`,
+  metadata: JSON.stringify({
+    icon: item.icon,
+    sectionKey: item.sectionKey,
+  }),
+}));
+
+pageContents.forEach(content => {
+  pageContentQueries.create(db, content);
+});
+
+console.log('✅ Database seeded with Storybook navigation data and page content');
 

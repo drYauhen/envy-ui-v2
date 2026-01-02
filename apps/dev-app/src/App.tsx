@@ -1,38 +1,43 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { SideNav } from '@packages/tsx/side-nav';
 import type { SideNavSection, SideNavFooter } from '@packages/tsx/side-nav';
 import { getNavigation } from './api/graphql';
+import type { NavigationSection } from './api/graphql';
 import Home from './pages/Home';
 import Components from './pages/Components';
+import PageContent from './pages/PageContent';
 
-type Page = 'home' | 'components';
-
-function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
-  const [isCollapsed, setIsCollapsed] = useState(false);
+function AppContent() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [sections, setSections] = useState<SideNavSection[]>([]);
   const [loading, setLoading] = useState(true);
+  const [navigationData, setNavigationData] = useState<NavigationSection[]>([]);
 
   useEffect(() => {
     loadNavigation();
   }, []);
 
   useEffect(() => {
-    // Обновить selected state при изменении currentPage
+    // Обновить selected state при изменении роута
+    const currentKey = location.pathname.replace('/', '') || 'home';
     setSections(prevSections => 
       prevSections.map(section => ({
         ...section,
         items: section.items.map(item => ({
           ...item,
-          isSelected: currentPage === item.key,
+          isSelected: currentKey === item.key,
         })),
       }))
     );
-  }, [currentPage]);
+  }, [location.pathname]);
 
   async function loadNavigation() {
     try {
       const navData = await getNavigation();
+      setNavigationData(navData);
       
       // Преобразовать данные из GraphQL в формат SideNav
       const formattedSections: SideNavSection[] = navData.map(section => {
@@ -44,10 +49,11 @@ function App() {
             label: item.label,
             icon: item.icon as any,
             badge: item.badge ? (isNaN(Number(item.badge)) ? item.badge : Number(item.badge)) : undefined,
-            isSelected: currentPage === item.key,
+            isSelected: location.pathname === `/${item.key}` || (location.pathname === '/' && item.key === 'home'),
             onAction: () => {
-              const pageKey = item.key as Page;
-              setCurrentPage(pageKey);
+              // Использовать routePath если есть, иначе key
+              const path = item.routePath || `/${item.key}`;
+              navigate(path);
             },
           }));
         
@@ -63,21 +69,20 @@ function App() {
       console.error('Failed to load navigation:', error);
       // Fallback к дефолтным данным
       setSections([{
-        key: 'navigation',
         items: [
           {
             key: 'home',
             label: 'Home',
             icon: 'plan-dashboards',
-            isSelected: currentPage === 'home',
-            onAction: () => setCurrentPage('home'),
+            isSelected: location.pathname === '/' || location.pathname === '/home',
+            onAction: () => navigate('/home'),
           },
           {
             key: 'components',
             label: 'Components',
             icon: 'cog',
-            isSelected: currentPage === 'components',
-            onAction: () => setCurrentPage('components'),
+            isSelected: location.pathname === '/components',
+            onAction: () => navigate('/components'),
           },
         ],
       }]);
@@ -129,13 +134,25 @@ function App() {
         flex: 1, 
         padding: '32px', 
         overflow: 'auto',
-        maxWidth: '1200px',
-        margin: '0 auto'
+        width: '100%',
+        backgroundColor: '#ffffff'
       }}>
-        {currentPage === 'home' && <Home />}
-        {currentPage === 'components' && <Components />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/components" element={<Components />} />
+          <Route path="/:pageKey" element={<PageContent />} />
+        </Routes>
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

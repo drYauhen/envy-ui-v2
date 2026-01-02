@@ -3,7 +3,7 @@
     "side-nav": {
       "animation": {
         "duration": {
-          "$value": "200ms",
+          "$value": "150ms",
           "$type": "duration",
           "$description": "Transition duration for side navigation expand/collapse animation."
         },

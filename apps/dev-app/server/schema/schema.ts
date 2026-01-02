@@ -1,5 +1,5 @@
 import { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLBoolean } from 'graphql';
-import { getDatabase, sectionQueries, itemQueries } from '../db/database.js';
+import { getDatabase, sectionQueries, itemQueries, pageContentQueries } from '../db/database.js';
 
 // Navigation Item Type
 const NavigationItemType = new GraphQLObjectType({
@@ -58,6 +58,21 @@ const NavigationSectionType = new GraphQLObjectType({
   },
 });
 
+// Page Content Type
+const PageContentType = new GraphQLObjectType({
+  name: 'PageContent',
+  fields: {
+    id: { type: GraphQLInt },
+    pageKey: { 
+      type: GraphQLString,
+      resolve: (parent) => parent.page_key,
+    },
+    title: { type: GraphQLString },
+    content: { type: GraphQLString },
+    metadata: { type: GraphQLString },
+  },
+});
+
 // Query Type
 const QueryType = new GraphQLObjectType({
   name: 'Query',
@@ -77,6 +92,16 @@ const QueryType = new GraphQLObjectType({
       resolve: (parent, args) => {
         const db = getDatabase();
         return sectionQueries.getByKey(db, args.key);
+      },
+    },
+    pageContent: {
+      type: PageContentType,
+      args: {
+        pageKey: { type: GraphQLString },
+      },
+      resolve: (parent, args) => {
+        const db = getDatabase();
+        return pageContentQueries.getByKey(db, args.pageKey);
       },
     },
   },

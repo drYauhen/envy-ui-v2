@@ -11,7 +11,7 @@
   position: relative;
   /* Changed to visible to allow toggle button to protrude */
   overflow: visible;
-  transition: width var(--eui-side-nav-animation-duration) var(--eui-side-nav-animation-easing);
+  transition: width 150ms ease-in-out;
   /* Grid area for app-shell layout */
   grid-area: sidebar;
   /* Ensure full height in grid */
@@ -290,7 +290,21 @@
   width: var(--eui-side-nav-size-icon-width);
   height: var(--eui-side-nav-size-icon-height);
   color: inherit;
-  transition: color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+  opacity: 1;
+  visibility: visible;
+  /* Hide icons quickly at transition start, show after width transition completes */
+  transition: opacity 50ms ease-in-out 0ms,
+              visibility 50ms ease-in-out 0ms,
+              color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+}
+
+/* When menu is transitioning, hide icons immediately and show after transition */
+[data-eui-context] .eui-side-nav:not(.eui-side-nav--collapsed) .eui-side-nav__item-icon,
+[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__item-icon {
+  /* Icons fade out quickly at start, fade in after width transition (100ms delay = ~67% of 150ms) */
+  transition: opacity 50ms ease-in-out 100ms,
+              visibility 50ms ease-in-out 100ms,
+              color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
 }
 
 /* Icon color for default state - brand.100 */
@@ -511,7 +525,7 @@
 [data-eui-context] .eui-side-nav__toggle {
   position: absolute;
   top: var(--eui-side-nav-size-header-height);
-  right: var(--eui-side-nav-spacing-toggle-offset-right);
+  right: var(--eui-side-nav-spacing-item-padding-horizontal);
   width: var(--eui-side-nav-size-toggle-width);
   height: var(--eui-side-nav-size-toggle-height);
   border-radius: 50%;
@@ -525,10 +539,21 @@
   z-index: 100;
   /* Enhanced shadow for elevated appearance */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, right 0.3s ease;
   color: var(--eui-side-nav-colors-item-text-default);
   font-size: 0.875rem;
   /* Center button vertically on the border between header and content */
+  transform: translateY(-50%);
+}
+
+/* When expanded - button is inside the menu */
+[data-eui-context] .eui-side-nav:not(.eui-side-nav--collapsed) .eui-side-nav__toggle {
+  right: 0.75rem; /* Slightly closer to edge than item padding (1rem) */
+}
+
+/* When collapsed - button protrudes outside */
+[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__toggle {
+  right: var(--eui-side-nav-spacing-toggle-offset-right);
   transform: translateY(-50%);
 }
 
@@ -537,10 +562,6 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
   background-color: var(--eui-color-brand-800);
   border-color: var(--eui-side-nav-colors-item-indicator-active);
-}
-
-[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__toggle {
-  transform: translateY(-50%);
 }
 
 [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__toggle:hover {

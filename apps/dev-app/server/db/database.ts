@@ -131,3 +131,42 @@ export const itemQueries = {
   },
 };
 
+// Методы для работы с контентом страниц
+export const pageContentQueries = {
+  getByKey: (db: Database.Database, pageKey: string) => {
+    return db.prepare('SELECT * FROM page_content WHERE page_key = ?').get(pageKey);
+  },
+  create: (db: Database.Database, data: {
+    pageKey: string;
+    title: string;
+    content?: string;
+    metadata?: string;
+  }) => {
+    const stmt = db.prepare(`
+      INSERT INTO page_content (page_key, title, content, metadata)
+      VALUES (?, ?, ?, ?)
+    `);
+    return stmt.run(
+      data.pageKey,
+      data.title,
+      data.content || null,
+      data.metadata || null
+    );
+  },
+  update: (db: Database.Database, pageKey: string, data: {
+    title?: string;
+    content?: string;
+    metadata?: string;
+  }) => {
+    const stmt = db.prepare(`
+      UPDATE page_content 
+      SET title = COALESCE(?, title),
+          content = COALESCE(?, content),
+          metadata = COALESCE(?, metadata),
+          updated_at = CURRENT_TIMESTAMP
+      WHERE page_key = ?
+    `);
+    return stmt.run(data.title || null, data.content || null, data.metadata || null, pageKey);
+  },
+};
+
