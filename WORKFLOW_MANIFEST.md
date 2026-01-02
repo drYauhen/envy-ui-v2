@@ -264,6 +264,17 @@ Version Control Behavior
 		but all changes must remain uncommitted unless explicitly instructed otherwise.
 	•	The assistant is allowed to create a git commit ONLY when the task explicitly
 		states that committing changes is permitted.
+	•	**When committing is authorized, changes MUST be split into logical, atomic commits:**
+		- Each commit should represent a single logical change or related set of changes
+		- Related changes should be grouped together in one commit
+		- Unrelated changes must be in separate commits
+		- Commit messages should clearly describe what was changed and why
+		- Examples of separate commits:
+		  * "feat(dev-app): Add third-party integration strategy"
+		  * "docs(architecture): Add README with documentation index"
+		  * "fix(storybook): Resolve importers path error in architecture stories"
+		- If user requests to commit "all changes", the assistant must still split them
+		  into logical commits based on the nature of changes (features, docs, fixes, etc.)
 	•	If committing is not explicitly authorized, the assistant must stop after
 		preparing changes and report what was modified.
 
