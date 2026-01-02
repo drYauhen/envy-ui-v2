@@ -11,7 +11,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag'
   },
-  staticDirs: ['../public', '../docs'],
+  staticDirs: ['../public', '../docs', '../assets'],
   async viteFinal(config) {
     // Add SVGR plugin to Vite config
     config.plugins = config.plugins || [];

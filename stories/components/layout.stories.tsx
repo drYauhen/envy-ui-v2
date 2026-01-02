@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
+import { SideNav } from '../../src/ui/side-nav';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Layout',
@@ -61,6 +62,7 @@ export const FullLayout: Story = {
   render: () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const [detailPanelOpen, setDetailPanelOpen] = useState(false);
+    const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['projects']));
 
     const htmlCode = `
 <div class="eui-app-shell" 
@@ -77,26 +79,17 @@ export const FullLayout: Story = {
     </div>
   </header>
   
+  <!-- Side Navigation Component -->
+  <!-- Use the SideNav React component from src/ui/side-nav.tsx -->
+  <!-- In React: <SideNav collapsed={sidebarCollapsed} setCollapsed={setSidebarCollapsed} /> -->
   <nav 
     id="main-navigation"
-    class="eui-sidebar" 
+    class="eui-side-nav ${sidebarCollapsed ? 'eui-side-nav--collapsed' : ''}" 
     role="navigation" 
-    aria-label="Main navigation"
-    aria-expanded="${!sidebarCollapsed}"
-    data-eui-collapsed="${sidebarCollapsed}"
+    aria-label="Application navigation"
   >
-    <button 
-      class="eui-button" 
-      data-eui-intent="secondary"
-      onclick="toggleSidebar()"
-    >
-      ${sidebarCollapsed ? '→' : '←'}
-    </button>
-    <div style="margin-top: 1rem;">
-      <div style="padding: 0.5rem; color: white;">📊 Dashboard</div>
-      <div style="padding: 0.5rem; color: white;">📈 Reports</div>
-      <div style="padding: 0.5rem; color: white;">⚙️ Settings</div>
-    </div>
+    <!-- SideNav component structure -->
+    <!-- See src/ui/side-nav.tsx for full implementation -->
   </nav>
   
   <div class="eui-title-bar eui-title-bar--global" role="region" aria-label="Global navigation">
@@ -159,28 +152,12 @@ export const FullLayout: Story = {
             </div>
           </header>
           
-          <nav 
-            id="main-navigation"
-            className="eui-sidebar" 
-            role="navigation" 
-            aria-label="Main navigation"
-            aria-expanded={!sidebarCollapsed}
-            data-eui-collapsed={sidebarCollapsed}
-          >
-            <button 
-              className="eui-button" 
-              data-eui-intent="secondary"
-              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.3)' }}
-            >
-              {sidebarCollapsed ? '→' : '←'}
-            </button>
-            <div style={{ marginTop: '1rem' }}>
-              <div style={{ padding: '0.5rem', color: 'white' }}>📊 Dashboard</div>
-              <div style={{ padding: '0.5rem', color: 'white' }}>📈 Reports</div>
-              <div style={{ padding: '0.5rem', color: 'white' }}>⚙️ Settings</div>
-            </div>
-          </nav>
+          <SideNav
+            collapsed={sidebarCollapsed}
+            setCollapsed={setSidebarCollapsed}
+            expandedItems={expandedItems}
+            setExpandedItems={setExpandedItems}
+          />
           
           <div className="eui-title-bar eui-title-bar--global" role="region" aria-label="Global navigation">
             <div>Breadcrumbs: Home / Section</div>

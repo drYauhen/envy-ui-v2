@@ -12,6 +12,10 @@
   /* Changed to visible to allow toggle button to protrude */
   overflow: visible;
   transition: width var(--eui-side-nav-animation-duration) var(--eui-side-nav-animation-easing);
+  /* Grid area for app-shell layout */
+  grid-area: sidebar;
+  /* Ensure full height in grid */
+  align-self: stretch;
 }
 
 /* Collapsed state */

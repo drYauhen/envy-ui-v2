@@ -7,7 +7,7 @@
     "sidebar global-title-bar ."
     "sidebar contextual-title-bar ."
     "sidebar content .";
-  grid-template-columns: var(--eui-sidebar-size-expanded-width) 1fr;
+  grid-template-columns: var(--eui-side-nav-size-width-expanded) 1fr;
   grid-template-rows: 
     var(--eui-header-size-height) 
     var(--eui-title-bar-size-height) 
@@ -20,7 +20,7 @@
 
 /* Sidebar collapsed state */
 [data-eui-context] .eui-app-shell[data-eui-sidebar-collapsed="true"] {
-  grid-template-columns: var(--eui-sidebar-size-collapsed-width) 1fr;
+  grid-template-columns: var(--eui-side-nav-size-width-collapsed) 1fr;
 }
 
 /* Detail panel open state */
@@ -30,11 +30,11 @@
     "sidebar global-title-bar detail-panel"
     "sidebar contextual-title-bar detail-panel"
     "sidebar content detail-panel";
-  grid-template-columns: var(--eui-sidebar-size-expanded-width) 1fr var(--eui-detail-panel-size-width);
+  grid-template-columns: var(--eui-side-nav-size-width-expanded) 1fr var(--eui-detail-panel-size-width);
 }
 
 /* Sidebar collapsed + detail panel open */
 [data-eui-context] .eui-app-shell[data-eui-sidebar-collapsed="true"][data-eui-detail-panel-open="true"] {
-  grid-template-columns: var(--eui-sidebar-size-collapsed-width) 1fr var(--eui-detail-panel-size-width);
+  grid-template-columns: var(--eui-side-nav-size-width-collapsed) 1fr var(--eui-detail-panel-size-width);
 }
 

@@ -1,3 +1,12 @@
+/* Storybook Logo Customization */
+/* Reduce logo size by 25% (make it 75% of original) */
+.sidebar-header a[href="/"] img,
+.sidebar-header a img,
+a[href="/"] img {
+  transform: scale(0.75) !important;
+  transform-origin: center top !important;
+}
+
 /* Storybook Sidebar Navigation - First Level Styling */
 /* Target first level items - they are div.sidebar-subheading[data-nodetype="root"] */
 
