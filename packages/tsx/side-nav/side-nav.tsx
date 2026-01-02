@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useButton } from 'react-aria';
+import { useLink } from 'react-aria';
 import { useMenu, useMenuItem } from 'react-aria';
 import { useToggleState, useTreeState } from 'react-stately';
 import { useFocusRing } from 'react-aria';
@@ -54,10 +55,46 @@ export interface SideNavSection {
   items: SideNavItem[];
 }
 
+export interface SideNavAdditionalLink {
+  key: string;
+  label: string;
+  icon: string;
+  href: string;
+  onClick?: () => void;
+}
+
+export interface SideNavUserActions {
+  onPreferencesClick?: () => void;
+  onSignOutClick?: () => void;
+  canViewPreferences?: boolean;
+  canImpersonate?: boolean;
+  onImpersonateClick?: () => void;
+}
+
+export interface SideNavCorporation {
+  name: string;
+  logoUrl?: string;
+  timeZone?: string;
+  onSettingsClick?: () => void;
+  canViewSettings?: boolean;
+}
+
 export interface SideNavFooter {
   name: string;
   role: string;
   avatarUrl?: string;
+  /**
+   * Corporation information (shown in user mode)
+   */
+  corporation?: SideNavCorporation;
+  /**
+   * Additional links (Organization Chart, Employees, etc.)
+   */
+  additionalLinks?: SideNavAdditionalLink[];
+  /**
+   * User actions (Preferences, Sign Out, etc.)
+   */
+  userActions?: SideNavUserActions;
 }
 
 export interface SideNavProps {
@@ -90,10 +127,152 @@ export interface SideNavProps {
    */
   onSelectionChange?: (key: string) => void;
   /**
+   * Whether to show user mode (user/corporation info) instead of navigation
+   */
+  showUserMode?: boolean;
+  /**
+   * Callback when user mode toggle is requested
+   */
+  onUserModeToggle?: (showUserMode: boolean) => void;
+  /**
    * Additional CSS class
    */
   className?: string;
 }
+
+// Sign Out Button Component
+const SignOutButton = React.memo(({ onSignOut }: { onSignOut: () => void }) => {
+  const signOutButtonRef = React.useRef<HTMLButtonElement>(null);
+  const { buttonProps } = useButton(
+    {
+      onPress: onSignOut,
+      'aria-label': 'Sign out'
+    },
+    signOutButtonRef
+  );
+  const { hoverProps, isHovered } = useHover({});
+  const { focusProps, isFocusVisible } = useFocusRing();
+
+  return (
+    <button
+      ref={signOutButtonRef}
+      type="button"
+      className={`${SYSTEM_PREFIX}-side-nav__sign-out-button`}
+      {...mergeProps(buttonProps, hoverProps, focusProps)}
+      {...{
+        [prefixedDataAttr('hovered')]: dataAttr(isHovered),
+        [prefixedDataAttr('focus-visible')]: dataAttr(isFocusVisible)
+      }}
+    >
+      <div className={`${SYSTEM_PREFIX}-side-nav__item-content`}>
+        <span
+          className={`${SYSTEM_PREFIX}-side-nav__item-icon`}
+          {...{ [prefixedDataAttr('icon')]: 'power-off' }}
+          aria-hidden="true"
+        />
+        <span className={`${SYSTEM_PREFIX}-side-nav__item-label`}>Log Out</span>
+      </div>
+    </button>
+  );
+});
+
+SignOutButton.displayName = 'SignOutButton';
+
+// Footer Button Component
+const FooterButton = React.memo(({
+  footer,
+  isCollapsed,
+  showUserMode,
+  onToggle
+}: {
+  footer: SideNavFooter;
+  isCollapsed: boolean;
+  showUserMode: boolean;
+  onToggle: () => void;
+}) => {
+  const footerButtonRef = React.useRef<HTMLButtonElement>(null);
+  const { buttonProps } = useButton(
+    {
+      onPress: onToggle,
+      'aria-label': showUserMode ? 'Back to navigation' : 'Show user information'
+    },
+    footerButtonRef
+  );
+  const { hoverProps, isHovered } = useHover({});
+  const { focusProps, isFocusVisible } = useFocusRing();
+
+  return (
+    <button
+      ref={footerButtonRef}
+      className={`${SYSTEM_PREFIX}-side-nav__footer`}
+      type="button"
+      {...mergeProps(buttonProps, hoverProps, focusProps)}
+      {...{
+        [prefixedDataAttr('hovered')]: dataAttr(isHovered),
+        [prefixedDataAttr('focus-visible')]: dataAttr(isFocusVisible),
+        [prefixedDataAttr('user-mode')]: dataAttr(showUserMode)
+      }}
+    >
+      {showUserMode && isCollapsed ? (
+        <>
+          <span className={`${SYSTEM_PREFIX}-side-nav__footer-back-text`}>Back</span>
+          <span
+            className={`${SYSTEM_PREFIX}-side-nav__footer-chevron`}
+            {...{ [prefixedDataAttr('icon')]: 'chevron-right' }}
+            aria-hidden="true"
+          />
+        </>
+      ) : showUserMode && !isCollapsed ? (
+        <>
+          <span className={`${SYSTEM_PREFIX}-side-nav__footer-back-text`}>Back</span>
+          <span
+            className={`${SYSTEM_PREFIX}-side-nav__footer-chevron`}
+            {...{ [prefixedDataAttr('icon')]: 'chevron-right' }}
+            aria-hidden="true"
+          />
+        </>
+      ) : isCollapsed ? (
+        <>
+          <div className={`${SYSTEM_PREFIX}-side-nav__footer-avatar`}>
+            <div className={`${SYSTEM_PREFIX}-avatar`} {...{ [prefixedDataAttr('size')]: 'sm' }}>
+              {footer.avatarUrl ? (
+                <img src={footer.avatarUrl} alt={footer.name} />
+              ) : (
+                <span className={`${SYSTEM_PREFIX}-avatar-initials`}>{getInitials(footer.name)}</span>
+              )}
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={`${SYSTEM_PREFIX}-side-nav__footer-avatar`}>
+            <div className={`${SYSTEM_PREFIX}-avatar`} {...{ [prefixedDataAttr('size')]: 'sm' }}>
+              {footer.avatarUrl ? (
+                <img src={footer.avatarUrl} alt={footer.name} />
+              ) : (
+                <span className={`${SYSTEM_PREFIX}-avatar-initials`}>{getInitials(footer.name)}</span>
+              )}
+            </div>
+          </div>
+          <div className={`${SYSTEM_PREFIX}-side-nav__footer-info`}>
+            <div className={`${SYSTEM_PREFIX}-side-nav__footer-name`}>{footer.name}</div>
+            <div className={`${SYSTEM_PREFIX}-side-nav__footer-role`}>{footer.role}</div>
+          </div>
+          <span
+            className={`${SYSTEM_PREFIX}-side-nav__footer-chevron`}
+            {...{ [prefixedDataAttr('icon')]: 'chevron-right' }}
+            aria-hidden="true"
+          />
+        </>
+      )}
+      <div className={`${SYSTEM_PREFIX}-side-nav__tooltip`}>
+        {showUserMode ? 'Back to navigation' : `${footer.name}\n${footer.role}`}
+      </div>
+    </button>
+  );
+});
+
+FooterButton.displayName = 'FooterButton';
 
 export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function SideNav(
   {
@@ -104,6 +283,8 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
     footer,
     selectedKey,
     onSelectionChange,
+    showUserMode: controlledShowUserMode,
+    onUserModeToggle,
     className,
     ...rest
   },
@@ -120,6 +301,28 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
   });
 
   const isCollapsed = isControlled ? controlledCollapsed : toggleState.isSelected;
+
+  // User mode state
+  const isUserModeControlled = controlledShowUserMode !== undefined;
+  const [internalShowUserMode, setInternalShowUserMode] = React.useState(false);
+  const showUserMode = isUserModeControlled ? controlledShowUserMode : internalShowUserMode;
+
+  const handleUserModeToggle = React.useCallback(() => {
+    const newShowUserMode = !showUserMode;
+    if (!isUserModeControlled) {
+      setInternalShowUserMode(newShowUserMode);
+    }
+    onUserModeToggle?.(newShowUserMode);
+
+    // If menu is collapsed, expand it when switching to user mode
+    if (isCollapsed && newShowUserMode) {
+      if (isControlled) {
+        onCollapsedChange?.(false);
+      } else {
+        toggleState.setSelected(false);
+      }
+    }
+  }, [showUserMode, isUserModeControlled, isCollapsed, isControlled, onCollapsedChange, onUserModeToggle, toggleState]);
 
   // Toggle button
   const toggleRef = React.useRef<HTMLButtonElement>(null);
@@ -221,6 +424,146 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
       resizeObserver.disconnect();
     };
   }, [isCollapsed, sections]);
+
+  // User Mode Components
+  const UserModeContent = React.memo(() => {
+    if (!footer) return null;
+
+    return (
+      <div className={`${SYSTEM_PREFIX}-side-nav__user-mode`}>
+        {/* User Info Section */}
+        <div className={`${SYSTEM_PREFIX}-side-nav__user-info`}>
+          <div className={`${SYSTEM_PREFIX}-side-nav__user-avatar-large`}>
+            <div className={`${SYSTEM_PREFIX}-avatar`} {...{ [prefixedDataAttr('size')]: 'lg' }}>
+              {footer.avatarUrl ? (
+                <img src={footer.avatarUrl} alt={footer.name} />
+              ) : (
+                <span className={`${SYSTEM_PREFIX}-avatar-initials`}>{getInitials(footer.name)}</span>
+              )}
+            </div>
+          </div>
+          <div className={`${SYSTEM_PREFIX}-side-nav__user-details`}>
+            <div className={`${SYSTEM_PREFIX}-side-nav__user-name`}>{footer.name}</div>
+            <div className={`${SYSTEM_PREFIX}-side-nav__user-role`}>{footer.role}</div>
+          </div>
+          {footer.userActions?.canImpersonate && footer.userActions.onImpersonateClick && (
+            <div className={`${SYSTEM_PREFIX}-side-nav__user-actions`}>
+              <button
+                type="button"
+                className={`${SYSTEM_PREFIX}-side-nav__user-action-button`}
+                onClick={footer.userActions.onImpersonateClick}
+                aria-label="Switch user"
+              >
+                <span
+                  className={`${SYSTEM_PREFIX}-side-nav__item-icon`}
+                  {...{ [prefixedDataAttr('icon')]: 'swap' }}
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Separator */}
+        <div className={`${SYSTEM_PREFIX}-side-nav__separator`} role="separator" />
+
+        {/* Corporation Info Section */}
+        {footer.corporation && (
+          <>
+            <div className={`${SYSTEM_PREFIX}-side-nav__corporation-info`}>
+              {footer.corporation.logoUrl && (
+                <div className={`${SYSTEM_PREFIX}-side-nav__corporation-logo`}>
+                  <img src={footer.corporation.logoUrl} alt={footer.corporation.name} />
+                </div>
+              )}
+              <div className={`${SYSTEM_PREFIX}-side-nav__corporation-details`}>
+                <div className={`${SYSTEM_PREFIX}-side-nav__corporation-name`}>{footer.corporation.name}</div>
+                {footer.corporation.timeZone && (
+                  <div className={`${SYSTEM_PREFIX}-side-nav__corporation-context`}>{footer.corporation.timeZone}</div>
+                )}
+              </div>
+              {footer.corporation.canViewSettings && footer.corporation.onSettingsClick && (
+                <div className={`${SYSTEM_PREFIX}-side-nav__corporation-actions`}>
+                  <button
+                    type="button"
+                    className={`${SYSTEM_PREFIX}-side-nav__corporation-action-button`}
+                    onClick={footer.corporation.onSettingsClick}
+                    aria-label="Organization settings"
+                  >
+                    <span
+                      className={`${SYSTEM_PREFIX}-side-nav__item-icon`}
+                      {...{ [prefixedDataAttr('icon')]: 'cog' }}
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Separator */}
+            <div className={`${SYSTEM_PREFIX}-side-nav__separator`} role="separator" />
+          </>
+        )}
+
+        {/* Additional Links */}
+        {footer.additionalLinks && footer.additionalLinks.length > 0 && (
+          <>
+            <ul className={`${SYSTEM_PREFIX}-side-nav__additional-links`}>
+              {footer.additionalLinks.map((link) => {
+                const linkRef = React.useRef<HTMLAnchorElement>(null);
+                const { linkProps } = useLink(
+                  {
+                    href: link.href,
+                    onPress: () => {
+                      link.onClick?.();
+                    }
+                  },
+                  linkRef
+                );
+                const { hoverProps, isHovered } = useHover({});
+                const { focusProps, isFocusVisible } = useFocusRing();
+
+                return (
+                  <li key={link.key}>
+                    <a
+                      ref={linkRef}
+                      className={`${SYSTEM_PREFIX}-side-nav__additional-link`}
+                      {...mergeProps(linkProps, hoverProps, focusProps)}
+                      {...{
+                        [prefixedDataAttr('hovered')]: dataAttr(isHovered),
+                        [prefixedDataAttr('focus-visible')]: dataAttr(isFocusVisible)
+                      }}
+                    >
+                      <div className={`${SYSTEM_PREFIX}-side-nav__item-content`}>
+                        <span
+                          className={`${SYSTEM_PREFIX}-side-nav__item-icon`}
+                          {...{ [prefixedDataAttr('icon')]: link.icon }}
+                          aria-hidden="true"
+                        />
+                        <span className={`${SYSTEM_PREFIX}-side-nav__item-label`}>{link.label}</span>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Separator */}
+            <div className={`${SYSTEM_PREFIX}-side-nav__separator`} role="separator" />
+          </>
+        )}
+
+        {/* Sign Out Button (only when expanded) */}
+        {!isCollapsed && footer.userActions?.onSignOutClick && (
+          <div className={`${SYSTEM_PREFIX}-side-nav__user-actions-footer`}>
+            <SignOutButton onSignOut={footer.userActions.onSignOutClick} />
+          </div>
+        )}
+      </div>
+    );
+  });
+
+  UserModeContent.displayName = 'UserModeContent';
 
   // Navigation item component with Menu Bar Pattern
   const NavItem = React.memo(({ item }: { item: SideNavItem }) => {
@@ -341,47 +684,53 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
           className={`${SYSTEM_PREFIX}-side-nav__content eui-scrollbar-content`} 
           ref={contentRef}
         >
-          <ul
-            ref={listRef}
-            className={`${SYSTEM_PREFIX}-side-nav__list`}
-            role="menu"
-            aria-label="Main navigation"
-            {...menuProps}
-          >
-            {sections.map((section, sectionIndex) => (
-              <React.Fragment key={sectionIndex}>
-                {section.title && (
-                  <li className={`${SYSTEM_PREFIX}-side-nav__section`}>
-                    <div className={`${SYSTEM_PREFIX}-side-nav__section-title`}>{section.title}</div>
-                  </li>
-                )}
-                {section.items.map((item) => (
-                  <NavItem key={item.key} item={item} />
+          {!showUserMode ? (
+            <>
+              <ul
+                ref={listRef}
+                className={`${SYSTEM_PREFIX}-side-nav__list`}
+                role="menu"
+                aria-label="Main navigation"
+                {...menuProps}
+              >
+                {sections.map((section, sectionIndex) => (
+                  <React.Fragment key={sectionIndex}>
+                    {section.title && (
+                      <li className={`${SYSTEM_PREFIX}-side-nav__section`}>
+                        <div className={`${SYSTEM_PREFIX}-side-nav__section-title`}>{section.title}</div>
+                      </li>
+                    )}
+                    {section.items.map((item) => (
+                      <NavItem key={item.key} item={item} />
+                    ))}
+                    {sectionIndex < sections.length - 1 && (
+                      <li>
+                        <div className={`${SYSTEM_PREFIX}-side-nav__separator`} role="separator" />
+                      </li>
+                    )}
+                  </React.Fragment>
                 ))}
-                {sectionIndex < sections.length - 1 && (
-                  <li>
-                    <div className={`${SYSTEM_PREFIX}-side-nav__separator`} role="separator" />
-                  </li>
-                )}
-              </React.Fragment>
-            ))}
-          </ul>
+              </ul>
 
-          {/* Collapsible empty area */}
-          <button
-            ref={collapseZoneRef}
-            className={`${SYSTEM_PREFIX}-side-nav__collapse-zone`}
-            type="button"
-            {...collapseZoneButtonProps}
-            onMouseEnter={(e) => {
-              const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
-              if (nav) nav.setAttribute(prefixedDataAttr('collapse-zone-hover'), 'true');
-            }}
-            onMouseLeave={(e) => {
-              const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
-              if (nav) nav.removeAttribute(prefixedDataAttr('collapse-zone-hover'));
-            }}
-          />
+              {/* Collapsible empty area */}
+              <button
+                ref={collapseZoneRef}
+                className={`${SYSTEM_PREFIX}-side-nav__collapse-zone`}
+                type="button"
+                {...collapseZoneButtonProps}
+                onMouseEnter={(e) => {
+                  const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
+                  if (nav) nav.setAttribute(prefixedDataAttr('collapse-zone-hover'), 'true');
+                }}
+                onMouseLeave={(e) => {
+                  const nav = e.currentTarget.closest(`.${SYSTEM_PREFIX}-side-nav`) as HTMLElement;
+                  if (nav) nav.removeAttribute(prefixedDataAttr('collapse-zone-hover'));
+                }}
+              />
+            </>
+          ) : (
+            <UserModeContent />
+          )}
         </div>
         {/* Overlay scrollbar - outside content to stay fixed */}
         <div ref={trackRef} className="eui-scrollbar-track">
@@ -391,26 +740,12 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
 
       {/* Footer */}
       {footer && (
-        <div className={`${SYSTEM_PREFIX}-side-nav__footer`}>
-          <div className={`${SYSTEM_PREFIX}-side-nav__footer-avatar`}>
-            <div className={`${SYSTEM_PREFIX}-avatar`} {...{ [prefixedDataAttr('size')]: 'md' }}>
-              {footer.avatarUrl ? (
-                <img src={footer.avatarUrl} alt={footer.name} />
-              ) : (
-                <span>{getInitials(footer.name)}</span>
-              )}
-            </div>
-          </div>
-          <div className={`${SYSTEM_PREFIX}-side-nav__footer-info`}>
-            <div className={`${SYSTEM_PREFIX}-side-nav__footer-name`}>{footer.name}</div>
-            <div className={`${SYSTEM_PREFIX}-side-nav__footer-role`}>{footer.role}</div>
-          </div>
-          <div className={`${SYSTEM_PREFIX}-side-nav__tooltip`}>
-            {footer.name}
-            <br />
-            {footer.role}
-          </div>
-        </div>
+        <FooterButton
+          footer={footer}
+          isCollapsed={isCollapsed}
+          showUserMode={showUserMode}
+          onToggle={handleUserModeToggle}
+        />
       )}
     </nav>
   );
