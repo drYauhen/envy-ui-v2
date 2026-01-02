@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { DeviceFrameWrapper } from './DeviceFrameWrapper';
 
 // Logo SVG components
 const FullLogoSVG = () => (
@@ -13,6 +14,15 @@ const IconOnlySVG = () => (
     <path fill="currentColor" d="M14.39 78.88a5.18 5.18 0 0 1-5.83-2.02 48.33 48.33 0 0 1-6.19-12.62C-5.86 38.58 8.55 11.06 34.52 2.9A49.93 49.93 0 0 1 47.62.64a5.1 5.1 0 1 1 .39 10.2 38.65 38.65 0 0 0-33.4 21 38.54 38.54 0 0 0 2.49 39.32 5.04 5.04 0 0 1-2.71 7.71M49.54 88.86a36.73 36.73 0 0 1-28.3-25.2A36.27 36.27 0 0 1 35.03 23.3a5.2 5.2 0 0 1 7.17 1.16 5.07 5.07 0 0 1-1.18 7.12 26.22 26.22 0 0 0-9.95 29.09A26.73 26.73 0 0 0 67.91 76.8a5.2 5.2 0 0 1 6.87 2.45 5.08 5.08 0 0 1-2.45 6.79 37.15 37.15 0 0 1-22.79 2.82ZM49.83 58.18a5.01 5.01 0 0 1-5.04-5.08 5.5 5.5 0 0 1 5.24-5.42A13.38 13.38 0 0 0 62.75 34.5c.05-2.8-.87-5.51-2.6-7.7a5.32 5.32 0 0 1 .92-7.4 5.44 5.44 0 0 1 3.41-1.2 4.96 4.96 0 0 1 3.93 1.89 22.2 22.2 0 0 1 4.82 14.07 23.93 23.93 0 0 1-6.88 16.64 23.9 23.9 0 0 1-16.31 7.4h-.2"></path>
   </svg>
 );
+
+// Helper function to get initials from name
+const getInitials = (name: string): string => {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+  return name.substring(0, 2).toUpperCase();
+};
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Side Nav',
@@ -31,189 +41,322 @@ const containerStyle: React.CSSProperties = {
   background: '#f1f5f9'
 };
 
+// Reusable navigation component
+const SideNavComponent: React.FC<{
+  collapsed: boolean;
+  setCollapsed: (value: boolean) => void;
+  expandedItems: Set<string>;
+  setExpandedItems: (value: Set<string>) => void;
+}> = ({ collapsed, setCollapsed, expandedItems, setExpandedItems }) => {
+  const toggleExpand = (key: string) => {
+    const newExpanded = new Set(expandedItems);
+    if (newExpanded.has(key)) {
+      newExpanded.delete(key);
+    } else {
+      newExpanded.add(key);
+    }
+    setExpandedItems(newExpanded);
+  };
+  
+  const contentRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const content = contentRef.current;
+    if (!content) return;
+
+    const updateScrollShadows = () => {
+      const { scrollTop, scrollHeight, clientHeight } = content;
+      const hasScroll = scrollHeight > clientHeight;
+      const isAtTop = scrollTop <= 1; // Allow 1px tolerance
+      const isAtBottom = Math.abs(scrollHeight - clientHeight - scrollTop) <= 1;
+      const nav = content.closest('.eui-side-nav') as HTMLElement;
+      
+      if (hasScroll) {
+        content.classList.toggle('has-scroll-top', !isAtTop);
+        content.classList.toggle('has-scroll-bottom', !isAtBottom);
+        if (nav) {
+          nav.classList.toggle('has-scroll-top', !isAtTop);
+          nav.classList.toggle('has-scroll-bottom', !isAtBottom);
+        }
+      } else {
+        content.classList.remove('has-scroll-top', 'has-scroll-bottom');
+        if (nav) {
+          nav.classList.remove('has-scroll-top', 'has-scroll-bottom');
+        }
+      }
+    };
+
+    // Initial check with small delay to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      updateScrollShadows();
+    }, 100);
+
+    // Update on scroll
+    content.addEventListener('scroll', updateScrollShadows, { passive: true });
+    
+    // Update on resize (content might change)
+    const resizeObserver = new ResizeObserver(() => {
+      // Use requestAnimationFrame to ensure layout is complete
+      requestAnimationFrame(updateScrollShadows);
+    });
+    resizeObserver.observe(content);
+
+    return () => {
+      clearTimeout(timeoutId);
+      content.removeEventListener('scroll', updateScrollShadows);
+      resizeObserver.disconnect();
+    };
+  }, [collapsed, expandedItems]); // Re-run when layout changes
+  
+  return (
+    <nav 
+      className={`eui-side-nav ${collapsed ? 'eui-side-nav--collapsed' : ''}`}
+      role="navigation"
+      aria-label="Application navigation"
+    >
+      {/* Header */}
+      <div className="eui-side-nav__header">
+        <a 
+          href="/" 
+          className="eui-logo" 
+          data-eui-variant={collapsed ? "icon-only" : "full"}
+          data-eui-size="md"
+          data-eui-color="inverse"
+          aria-label="ENVISIO Home"
+        >
+          <span className="eui-logo__svg eui-logo__svg--full">
+            <FullLogoSVG />
+          </span>
+          <span className="eui-logo__svg eui-logo__svg--icon">
+            <IconOnlySVG />
+          </span>
+        </a>
+        <div className="eui-side-nav__tooltip">ENVISIO</div>
+      </div>
+      
+      {/* Toggle button */}
+      <button 
+        className="eui-side-nav__toggle"
+        onClick={() => setCollapsed(!collapsed)}
+        aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
+      >
+        <span 
+          className="eui-side-nav__toggle-icon"
+          data-eui-icon={collapsed ? "chevron-right" : "chevron-left"}
+          aria-hidden="true"
+        />
+      </button>
+      
+      {/* Content */}
+      <div className="eui-side-nav__content" ref={contentRef}>
+        <ul className="eui-side-nav__list">
+          {/* Section: Plans */}
+          <li className="eui-side-nav__section">
+            <div className="eui-side-nav__section-title">Plans</div>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="search" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">View/Edit Plan</span>
+              </div>
+              <div className="eui-side-nav__tooltip">View/Edit Plan</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="check-circle" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Submit Updates</span>
+                <span className="eui-side-nav__item-badge">3</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Submit Updates (3)</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button" data-eui-active="true">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="expand-all" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Reports</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Reports</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="clock" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">History</span>
+              </div>
+              <div className="eui-side-nav__tooltip">History</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="info-circle" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Help & Support</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Help & Support</div>
+            </button>
+          </li>
+          
+          {/* Separator */}
+          <li>
+            <div className="eui-side-nav__separator" role="separator" />
+          </li>
+          
+          {/* Section: Projects (expandable) */}
+          <li className="eui-side-nav__section">
+            <div className="eui-side-nav__section-title">Projects</div>
+          </li>
+          
+          <li>
+            <button 
+              className="eui-side-nav__item" 
+              type="button"
+              data-eui-expandable="true"
+              data-eui-expanded={expandedItems.has('projects')}
+              onClick={() => toggleExpand('projects')}
+            >
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="cog" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Projects Planning</span>
+                <span className="eui-side-nav__item-chevron">›</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Projects Planning</div>
+            </button>
+            <ul className="eui-side-nav__submenu">
+              <li>
+                <button className="eui-side-nav__item" type="button">
+                  <div className="eui-side-nav__item-content">
+                    <span className="eui-side-nav__item-label">Active Projects</span>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button className="eui-side-nav__item" type="button" data-eui-selected="true">
+                  <div className="eui-side-nav__item-content">
+                    <span className="eui-side-nav__item-label">Project Dashboard</span>
+                  </div>
+                </button>
+              </li>
+              {Array.from({ length: 20 }, (_, i) => (
+                <li key={`project-${i + 1}`}>
+                  <button className="eui-side-nav__item" type="button">
+                    <div className="eui-side-nav__item-content">
+                      <span className="eui-side-nav__item-label">Project {i + 1}</span>
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="external-link" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Projects Dashboard</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Projects Dashboard</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="plus-circle" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Create Project</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Create Project</div>
+            </button>
+          </li>
+          
+          <li>
+            <button className="eui-side-nav__item" type="button">
+              <div className="eui-side-nav__item-content">
+                <span className="eui-side-nav__item-icon" data-eui-icon="trash" aria-hidden="true" />
+                <span className="eui-side-nav__item-label">Archived Projects</span>
+              </div>
+              <div className="eui-side-nav__tooltip">Archived Projects</div>
+            </button>
+          </li>
+        </ul>
+        
+        {/* Collapsible empty area */}
+        <button
+          className="eui-side-nav__collapse-zone"
+          type="button"
+          onClick={() => setCollapsed(!collapsed)}
+          onMouseEnter={(e) => {
+            const nav = e.currentTarget.closest('.eui-side-nav');
+            if (nav) nav.setAttribute('data-eui-collapse-zone-hover', 'true');
+          }}
+          onMouseLeave={(e) => {
+            const nav = e.currentTarget.closest('.eui-side-nav');
+            if (nav) nav.removeAttribute('data-eui-collapse-zone-hover');
+          }}
+          aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
+        />
+      </div>
+      
+      {/* Footer */}
+      <div className="eui-side-nav__footer">
+        <div className="eui-side-nav__footer-avatar">
+          <div className="eui-avatar" data-eui-size="md">
+            <img src="https://i.pravatar.cc/150?img=12" alt="Alex Morgan" />
+          </div>
+        </div>
+        <div className="eui-side-nav__footer-info">
+          <div className="eui-side-nav__footer-name">Alex Morgan</div>
+          <div className="eui-side-nav__footer-role">Head of Product</div>
+        </div>
+        <div className="eui-side-nav__tooltip">Alex Morgan<br />Head of Product</div>
+      </div>
+    </nav>
+  );
+};
+
 export const Enhanced: Story = {
   name: 'Enhanced Side Navigation',
   render: () => {
     const [collapsed, setCollapsed] = useState(false);
     const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['projects']));
     
-    const toggleExpand = (key: string) => {
-      const newExpanded = new Set(expandedItems);
-      if (newExpanded.has(key)) {
-        newExpanded.delete(key);
-      } else {
-        newExpanded.add(key);
-      }
-      setExpandedItems(newExpanded);
-    };
-    
     return (
       <div style={containerStyle}>
-        <nav 
-          className={`eui-side-nav ${collapsed ? 'eui-side-nav--collapsed' : ''}`}
-          role="navigation"
-          aria-label="Application navigation"
-        >
-          {/* Header */}
-          <div className="eui-side-nav__header">
-            <a 
-              href="/" 
-              className="eui-logo" 
-              data-eui-variant={collapsed ? "icon-only" : "full"}
-              data-eui-size="md"
-              data-eui-color="inverse"
-              aria-label="ENVISIO Home"
-            >
-              <span className="eui-logo__svg">
-                {collapsed ? <IconOnlySVG /> : <FullLogoSVG />}
-              </span>
-            </a>
-            <div className="eui-side-nav__tooltip">ENVISIO</div>
-          </div>
-          
-          {/* Toggle button */}
-          <button 
-            className="eui-side-nav__toggle"
-            onClick={() => setCollapsed(!collapsed)}
-            aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
-          >
-            <span 
-              className="eui-side-nav__toggle-icon"
-              data-eui-icon={collapsed ? "chevron-right" : "chevron-left"}
-              aria-hidden="true"
-            />
-          </button>
-          
-          {/* Content */}
-          <div className="eui-side-nav__content">
-            <ul className="eui-side-nav__list">
-              {/* Section: Plans */}
-              <li className="eui-side-nav__section">
-                <div className="eui-side-nav__section-title">Plans</div>
-              </li>
-              
-              <li>
-                <button className="eui-side-nav__item" type="button">
-                  <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon" data-eui-icon="search" aria-hidden="true" />
-                    <span className="eui-side-nav__item-label">View/Edit Plan</span>
-                  </div>
-                  <div className="eui-side-nav__tooltip">View/Edit Plan</div>
-                </button>
-              </li>
-              
-              <li>
-                <button className="eui-side-nav__item" type="button">
-                  <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon" data-eui-icon="check-circle" aria-hidden="true" />
-                    <span className="eui-side-nav__item-label">Submit Updates</span>
-                    <span className="eui-side-nav__item-badge">3</span>
-                  </div>
-                  <div className="eui-side-nav__tooltip">Submit Updates (3)</div>
-                </button>
-              </li>
-              
-              <li>
-                <button className="eui-side-nav__item" type="button" data-eui-active="true">
-                  <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon" data-eui-icon="expand-all" aria-hidden="true" />
-                    <span className="eui-side-nav__item-label">Reports</span>
-                  </div>
-                  <div className="eui-side-nav__tooltip">Reports</div>
-                </button>
-              </li>
-              
-              {/* Separator */}
-              <li>
-                <div className="eui-side-nav__separator" role="separator" />
-              </li>
-              
-              {/* Section: Projects (expandable) */}
-              <li className="eui-side-nav__section">
-                <div className="eui-side-nav__section-title">Projects</div>
-              </li>
-              
-              <li>
-                <button 
-                  className="eui-side-nav__item" 
-                  type="button"
-                  data-eui-expandable="true"
-                  data-eui-expanded={expandedItems.has('projects')}
-                  onClick={() => toggleExpand('projects')}
-                >
-                  <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon" data-eui-icon="cog" aria-hidden="true" />
-                    <span className="eui-side-nav__item-label">Projects Planning</span>
-                    <span className="eui-side-nav__item-chevron">›</span>
-                  </div>
-                  <div className="eui-side-nav__tooltip">Projects Planning</div>
-                </button>
-                <ul className="eui-side-nav__submenu">
-                  <li>
-                    <button className="eui-side-nav__item" type="button">
-                      <div className="eui-side-nav__item-content">
-                        <span className="eui-side-nav__item-label">Active Projects</span>
-                      </div>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="eui-side-nav__item" type="button" data-eui-selected="true">
-                      <div className="eui-side-nav__item-content">
-                        <span className="eui-side-nav__item-label">Project Dashboard</span>
-                      </div>
-                    </button>
-                  </li>
-                  {Array.from({ length: 20 }, (_, i) => (
-                    <li key={`project-${i + 1}`}>
-                      <button className="eui-side-nav__item" type="button">
-                        <div className="eui-side-nav__item-content">
-                          <span className="eui-side-nav__item-label">Project {i + 1}</span>
-                        </div>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-              
-              <li>
-                <button className="eui-side-nav__item" type="button">
-                  <div className="eui-side-nav__item-content">
-                    <span className="eui-side-nav__item-icon" data-eui-icon="external-link" aria-hidden="true" />
-                    <span className="eui-side-nav__item-label">Projects Dashboard</span>
-                  </div>
-                  <div className="eui-side-nav__tooltip">Projects Dashboard</div>
-                </button>
-              </li>
-            </ul>
-            
-            {/* Collapsible empty area */}
-            <button
-              className="eui-side-nav__collapse-zone"
-              type="button"
-              onClick={() => setCollapsed(!collapsed)}
-              onMouseEnter={(e) => {
-                const nav = e.currentTarget.closest('.eui-side-nav');
-                if (nav) nav.setAttribute('data-eui-collapse-zone-hover', 'true');
-              }}
-              onMouseLeave={(e) => {
-                const nav = e.currentTarget.closest('.eui-side-nav');
-                if (nav) nav.removeAttribute('data-eui-collapse-zone-hover');
-              }}
-              aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
-            />
-          </div>
-          
-          {/* Footer */}
-          <div className="eui-side-nav__footer">
-            <div className="eui-side-nav__footer-avatar">CO</div>
-            <div className="eui-side-nav__footer-info">
-              <div className="eui-side-nav__footer-name">Cara Ong</div>
-              <div className="eui-side-nav__footer-role">Head of Product</div>
-            </div>
-            <div className="eui-side-nav__tooltip">Cara Ong<br />Head of Product</div>
-          </div>
-        </nav>
+        <SideNavComponent
+          collapsed={collapsed}
+          setCollapsed={setCollapsed}
+          expandedItems={expandedItems}
+          setExpandedItems={setExpandedItems}
+        />
       </div>
+    );
+  }
+};
+
+export const Mobile: Story = {
+  name: 'Mobile View',
+  render: () => {
+    const [collapsed, setCollapsed] = useState(false);
+    const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['projects']));
+    
+    return (
+      <DeviceFrameWrapper>
+        <SideNavComponent
+          collapsed={collapsed}
+          setCollapsed={setCollapsed}
+          expandedItems={expandedItems}
+          setExpandedItems={setExpandedItems}
+        />
+      </DeviceFrameWrapper>
     );
   }
 };

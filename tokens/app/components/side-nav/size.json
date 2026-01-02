@@ -75,12 +75,12 @@
         },
         "toggle": {
           "width": {
-            "$value": "32px",
+            "$value": "28px",
             "$type": "dimension",
             "$description": "Width of collapse/expand toggle button."
           },
           "height": {
-            "$value": "32px",
+            "$value": "28px",
             "$type": "dimension",
             "$description": "Height of collapse/expand toggle button."
           }

@@ -26,14 +26,82 @@
   justify-content: flex-start;
   height: var(--eui-side-nav-size-header-height);
   padding: 0 var(--eui-side-nav-spacing-item-padding-horizontal);
-  border-bottom: 1px solid var(--eui-side-nav-colors-separator);
+  border-bottom: 1px solid var(--eui-side-nav-colors-header-border);
   flex-shrink: 0;
   position: relative;
+  overflow: hidden; /* Предотвращает выход логотипа за границы */
+  transition: padding 0.3s ease;
 }
 
 [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header {
-  justify-content: center;
+  justify-content: flex-start; /* Оставляем flex-start для плавности */
   padding: 0;
+}
+
+/* Logo container - фиксированная позиция для выравнивания */
+[data-eui-context] .eui-side-nav__header .eui-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-width: 0;
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+/* В collapsed состоянии центрируем через margin */
+[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header .eui-logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Контейнер для SVG - оба перекрываются, выровнены по левому краю */
+[data-eui-context] .eui-side-nav__header .eui-logo__svg {
+  display: block;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, overflow 0.3s ease;
+  /* Оба SVG должны иметь одинаковую высоту для правильного выравнивания */
+  height: var(--eui-logo-size-icon-md);
+}
+
+/* Полный логотип - видимый в развернутом состоянии */
+[data-eui-context] .eui-side-nav__header .eui-logo__svg--full {
+  opacity: 1;
+  position: relative;
+  width: auto;
+  overflow: visible;
+}
+
+[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header .eui-logo__svg--full {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Иконка только - скрыта в развернутом состоянии, выровнена по левому краю */
+[data-eui-context] .eui-side-nav__header .eui-logo__svg--icon {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header .eui-logo__svg--icon {
+  opacity: 1;
+  position: relative;
+  width: auto;
+  overflow: visible;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 [data-eui-context] .eui-side-nav__header-logo {
@@ -62,7 +130,7 @@
   
   /* Overlay scrollbar - Firefox */
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
 }
 
 /* Overlay scrollbar - WebKit (Chrome, Safari, Edge) */
@@ -75,7 +143,7 @@
 }
 
 [data-eui-context] .eui-side-nav__content::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -83,7 +151,7 @@
 }
 
 [data-eui-context] .eui-side-nav__content::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Show scrollbar only on hover or when scrolling */
@@ -93,7 +161,50 @@
 
 [data-eui-context] .eui-side-nav__content:hover::-webkit-scrollbar-thumb,
 [data-eui-context] .eui-side-nav__content:focus::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Scroll shadow indicators */
+[data-eui-context] .eui-side-nav__content {
+  position: relative;
+}
+
+/* Top shadow - shows when can scroll up (positioned at top of content area) */
+[data-eui-context] .eui-side-nav.has-scroll-top::before {
+  content: '';
+  position: absolute;
+  top: var(--eui-side-nav-size-header-height);
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.15) 0%, 
+    rgba(0, 0, 0, 0.12) 20%,
+    rgba(0, 0, 0, 0.08) 40%,
+    rgba(0, 0, 0, 0.04) 60%,
+    rgba(0, 0, 0, 0.02) 80%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Bottom shadow - shows when can scroll down (positioned at bottom of content area) */
+[data-eui-context] .eui-side-nav.has-scroll-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: var(--eui-side-nav-size-footer-height);
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to top, 
+    rgba(0, 0, 0, 0.15) 0%, 
+    rgba(0, 0, 0, 0.12) 20%,
+    rgba(0, 0, 0, 0.08) 40%,
+    rgba(0, 0, 0, 0.04) 60%,
+    rgba(0, 0, 0, 0.02) 80%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: 10;
 }
 
 /* Navigation list */
@@ -126,7 +237,8 @@
   font-weight: var(--eui-side-nav-typography-item-font-weight);
   line-height: var(--eui-side-nav-typography-item-line-height);
   transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing),
-              color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+              color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing),
+              transform 0.2s ease;
 }
 
 /* Active indicator (left border) */
@@ -168,16 +280,23 @@
 /* Item states */
 [data-eui-context] .eui-side-nav__item:hover {
   background-color: var(--eui-side-nav-colors-item-background-hover);
+  /* More prominent hover effect - subtle shift */
+  transform: translateX(2px);
 }
+
 
 [data-eui-context] .eui-side-nav__item[data-eui-active="true"] {
   background-color: var(--eui-side-nav-colors-item-background-active);
   color: var(--eui-side-nav-colors-item-text-active);
+  font-weight: 600;
 }
 
 [data-eui-context] .eui-side-nav__item[data-eui-selected="true"] {
   background-color: var(--eui-side-nav-colors-item-background-selected);
   color: var(--eui-side-nav-colors-item-text-selected);
+  font-weight: 600;
+  /* Accent color for selected items */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 [data-eui-context] .eui-side-nav__item:focus {
@@ -324,7 +443,7 @@
   justify-content: flex-start;
   height: var(--eui-side-nav-size-footer-height);
   padding: 0 var(--eui-side-nav-spacing-item-padding-horizontal);
-  border-top: 1px solid var(--eui-side-nav-colors-separator);
+  border-top: 1px solid var(--eui-side-nav-colors-footer-border);
   flex-shrink: 0;
   gap: var(--eui-side-nav-spacing-item-gap);
   position: relative;
@@ -337,17 +456,11 @@
 }
 
 [data-eui-context] .eui-side-nav__footer-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--eui-side-nav-colors-item-badge-background);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--eui-side-nav-colors-item-badge-text);
-  font-size: 0.875rem;
-  font-weight: 600;
+  /* Avatar component handles its own sizing and styling */
 }
 
 [data-eui-context] .eui-side-nav__footer-info {
@@ -421,7 +534,7 @@
   height: var(--eui-side-nav-size-toggle-height);
   border-radius: 50%;
   background-color: var(--eui-side-nav-colors-background);
-  border: 1px solid var(--eui-side-nav-colors-separator);
+  border: 1px solid var(--eui-side-nav-colors-toggle-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -430,7 +543,7 @@
   z-index: 100;
   /* Enhanced shadow for elevated appearance */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   color: var(--eui-side-nav-colors-item-text-default);
   font-size: 0.875rem;
   /* Center button vertically on the border between header and content */
@@ -440,16 +553,25 @@
 [data-eui-context] .eui-side-nav__toggle:hover {
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: var(--eui-color-brand-800);
+  border-color: var(--eui-side-nav-colors-item-indicator-active);
 }
 
 [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__toggle {
   transform: translateY(-50%);
 }
 
+[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: var(--eui-color-brand-800);
+  border-color: var(--eui-side-nav-colors-item-indicator-active);
+}
+
 /* Toggle button icon */
 [data-eui-context] .eui-side-nav__toggle-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   display: block;
   flex-shrink: 0;
   transition: transform 0.2s ease;
@@ -477,8 +599,26 @@
   z-index: 1;
 }
 
+/* Collapse zone hover - no visual change, only cursor pointer */
 [data-eui-context] .eui-side-nav__collapse-zone:hover {
-  background-color: var(--eui-side-nav-colors-item-background-hover);
+  /* No background change - keep transparent */
+  background-color: transparent;
+}
+
+/* Apply toggle button hover styles when collapse zone is hovered - darker background */
+[data-eui-context] .eui-side-nav:has(.eui-side-nav__collapse-zone:hover) .eui-side-nav__toggle {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: var(--eui-color-brand-800);
+  border-color: var(--eui-side-nav-colors-item-indicator-active);
+}
+
+/* Fallback for browsers that don't support :has() */
+[data-eui-context] .eui-side-nav[data-eui-collapse-zone-hover="true"] .eui-side-nav__toggle {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: var(--eui-color-brand-800);
+  border-color: var(--eui-side-nav-colors-item-indicator-active);
 }
 
 /* Collapse zone should be visible in both expanded and collapsed states */

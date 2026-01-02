@@ -20,9 +20,9 @@
               "$description": "Default navigation item background."
             },
             "hover": {
-              "$value": "{eui.color.brand.800}",
+              "$value": "{eui.color.brand.700}",
               "$type": "color",
-              "$description": "Navigation item background on hover."
+              "$description": "Navigation item background on hover - more prominent."
             },
             "active": {
               "$value": "{eui.color.brand.600}",
@@ -30,7 +30,7 @@
               "$description": "Active navigation item background."
             },
             "selected": {
-              "$value": "{eui.color.brand.700}",
+              "$value": "{eui.color.brand.600}",
               "$type": "color",
               "$description": "Selected navigation item background."
             },
@@ -62,9 +62,9 @@
               "$description": "Active navigation item text color."
             },
             "selected": {
-              "$value": "{eui.color.text.inverse}",
+              "$value": "{eui.color.brand.100}",
               "$type": "color",
-              "$description": "Selected navigation item text color."
+              "$description": "Selected navigation item text color - accent color for better visibility."
             },
             "disabled": {
               "$value": "{eui.color.text.disabled}",
@@ -79,9 +79,9 @@
               "$description": "Active indicator color (left border or accent)."
             },
             "selected": {
-              "$value": "{eui.color.brand.100}",
+              "$value": "{eui.color.brand.300}",
               "$type": "color",
-              "$description": "Selected indicator color."
+              "$description": "Selected indicator color - accent color for better visibility."
             }
           },
           "badge": {
@@ -110,6 +110,27 @@
           "$value": "{eui.color.border.subtle}",
           "$type": "color",
           "$description": "Separator color between sections."
+        },
+        "header": {
+          "border": {
+            "$value": "{eui.color.brand.300}",
+            "$type": "color",
+            "$description": "Header border color (between header and content) - brand color for subtle appearance."
+          }
+        },
+        "footer": {
+          "border": {
+            "$value": "{eui.color.brand.300}",
+            "$type": "color",
+            "$description": "Footer border color (between content and footer) - brand color for subtle appearance."
+          }
+        },
+        "toggle": {
+          "border": {
+            "$value": "{eui.color.brand.200}",
+            "$type": "color",
+            "$description": "Toggle button border color - brand color for subtle appearance."
+          }
         },
         "tooltip": {
           "background": {
