@@ -295,4 +295,7 @@ Component tokens define component-specific values within each context:
 - [ADR-0017: Layered Token Architecture](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)
 - [ADR-0023: Token Organization - Context and Theme Separation](./../adr/ADR-0023-token-organization-context-and-theme-separation.md)
 - [Token Usage Rules](./../architecture/token-usage-rules.md)
+- [Token System Tooling](./../tokens/README.md) - Developer tools for working with tokens
+- [Token Utilities Use Cases](./../tokens/use-cases.md) - Practical examples for AI agents and developers
+- [Token Reference](./../tokens/reference.md) - Complete token reference (auto-generated)
 
