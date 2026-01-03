@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { MarkdownViewer } from '../../../viewers/tokens/MarkdownViewer';
+import { getSectionParameters } from '../../../../.storybook/preview';
 
 const meta: Meta = {
   title: 'Tokens/Report/Themes',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('Tokens/Report/Themes'),
     layout: 'fullscreen'
   }
 };

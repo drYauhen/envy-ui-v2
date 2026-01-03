@@ -6,6 +6,7 @@ import toolbarTokens from '../../../../tokens/app/semantic/layout/toolbar.json';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
+import { getSectionParameters } from '../../../../.storybook/preview';
 
 type Story = StoryObj;
 
@@ -26,6 +27,8 @@ const meta: Meta = {
   title: 'Tokens/App/Semantic/Layout',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('Tokens/App/Semantic/Layout'),
     layout: 'fullscreen'
   }
 };

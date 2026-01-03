@@ -5,6 +5,7 @@ import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 import foundationNeutral from '../../../../tokens/app/foundations/colors/neutral.json';
+import { getSectionParameters } from '../../../../.storybook/preview';
 
 type Story = StoryObj;
 
@@ -24,6 +25,8 @@ const meta: Meta = {
   title: 'Tokens/App/Themes/Accessibility',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('Tokens/App/Themes/Accessibility'),
     layout: 'fullscreen'
   }
 };

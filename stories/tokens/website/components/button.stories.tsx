@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
+import { getSectionParameters } from '../../../../.storybook/preview';
 
 const meta: Meta = {
   title: 'Tokens/Website/Components/Button',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('Tokens/Website/Components/Button'),
     layout: 'fullscreen'
   }
 };

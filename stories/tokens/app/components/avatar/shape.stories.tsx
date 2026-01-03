@@ -4,6 +4,7 @@ import { TokenPage, TokenSection } from '../../../../viewers/tokens/TokenLayout'
 import { TokenRefTable } from '../../../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../../../viewers/tokens/TokenSwatch';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../../viewers/tokens/token-utils';
+import { getSectionParameters } from '../../../../../.storybook/preview';
 
 type Story = StoryObj;
 
@@ -19,6 +20,8 @@ const meta: Meta = {
   title: 'Tokens/App/Components/Avatar/Shape',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('Tokens/App/Components/Avatar/Shape'),
     layout: 'fullscreen'
   }
 };
