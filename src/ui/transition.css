@@ -1,0 +1,213 @@
+/* ============================================
+   Transition Component Styles
+   ============================================ */
+
+/* Base container styles */
+[data-eui-context] .eui-transition {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Inner wrapper for horizontal layout */
+[data-eui-context] .eui-transition__wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 200%; /* Two contents at 100% each */
+  height: 100%;
+  will-change: transform;
+  transition: transform var(--eui-transition-duration, 150ms) var(--eui-transition-easing, ease-in-out);
+}
+
+/* Base content styles (for slide transitions) */
+[data-eui-context] .eui-transition__content {
+  flex: 0 0 50%; /* Each content is 50% of wrapper (i.e. 100% of visible area) */
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Disable interaction for hidden content */
+[data-eui-context] .eui-transition__content[data-tabindex-disabled="true"] * {
+  pointer-events: none;
+  tab-index: -1;
+}
+
+/* ============================================
+   SLIDE TRANSITIONS
+   ============================================ */
+
+/* Slide Left: container moves left */
+[data-eui-context] .eui-transition--slide-left .eui-transition__wrapper {
+  transform: translateX(0);
+}
+
+[data-eui-context] .eui-transition--slide-left.eui-transition--active .eui-transition__wrapper {
+  transform: translateX(-50%); /* Shift by half (one content) */
+}
+
+/* Slide Right: container moves right */
+[data-eui-context] .eui-transition--slide-right .eui-transition__wrapper {
+  transform: translateX(-50%);
+}
+
+[data-eui-context] .eui-transition--slide-right.eui-transition--active .eui-transition__wrapper {
+  transform: translateX(0);
+}
+
+/* Slide Up: container moves up */
+[data-eui-context] .eui-transition--slide-up .eui-transition__wrapper {
+  flex-direction: column;
+  width: 100%;
+  height: 200%;
+  transform: translateY(0);
+}
+
+[data-eui-context] .eui-transition--slide-up .eui-transition__content {
+  flex: 0 0 50%;
+  width: 100%;
+  height: 50%;
+}
+
+[data-eui-context] .eui-transition--slide-up.eui-transition--active .eui-transition__wrapper {
+  transform: translateY(-50%);
+}
+
+/* Slide Down: container moves down */
+[data-eui-context] .eui-transition--slide-down .eui-transition__wrapper {
+  flex-direction: column;
+  width: 100%;
+  height: 200%;
+  transform: translateY(-50%);
+}
+
+[data-eui-context] .eui-transition--slide-down .eui-transition__content {
+  flex: 0 0 50%;
+  width: 100%;
+  height: 50%;
+}
+
+[data-eui-context] .eui-transition--slide-down.eui-transition--active .eui-transition__wrapper {
+  transform: translateY(0);
+}
+
+/* ============================================
+   FADE TRANSITION (uses absolute positioning)
+   ============================================ */
+
+[data-eui-context] .eui-transition--fade .eui-transition__wrapper {
+  width: 100%;
+}
+
+[data-eui-context] .eui-transition--fade .eui-transition__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex: none;
+  transition: opacity var(--eui-transition-duration, 150ms) var(--eui-transition-easing, ease-in-out);
+}
+
+[data-eui-context] .eui-transition--fade .eui-transition__content--primary {
+  opacity: 1;
+}
+
+[data-eui-context] .eui-transition--fade .eui-transition__content--primary.eui-transition__content--hidden {
+  opacity: 0;
+}
+
+[data-eui-context] .eui-transition--fade .eui-transition__content--alternate {
+  opacity: 0;
+}
+
+[data-eui-context] .eui-transition--fade .eui-transition__content--alternate:not(.eui-transition__content--hidden) {
+  opacity: 1;
+}
+
+/* ============================================
+   SCALE TRANSITION (uses absolute positioning)
+   ============================================ */
+
+[data-eui-context] .eui-transition--scale .eui-transition__wrapper {
+  width: 100%;
+}
+
+[data-eui-context] .eui-transition--scale .eui-transition__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex: none;
+  transition: transform var(--eui-transition-duration, 150ms) var(--eui-transition-easing, ease-in-out),
+              opacity var(--eui-transition-duration, 150ms) var(--eui-transition-easing, ease-in-out);
+}
+
+[data-eui-context] .eui-transition--scale .eui-transition__content--primary {
+  transform: scale(1);
+  opacity: 1;
+}
+
+[data-eui-context] .eui-transition--scale .eui-transition__content--primary.eui-transition__content--hidden {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+[data-eui-context] .eui-transition--scale .eui-transition__content--alternate {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+[data-eui-context] .eui-transition--scale .eui-transition__content--alternate:not(.eui-transition__content--hidden) {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ============================================
+   NONE (Instant)
+   ============================================ */
+
+[data-eui-context] .eui-transition--none .eui-transition__wrapper {
+  transition: none;
+}
+
+/* ============================================
+   Accessibility: prefers-reduced-motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-eui-context] .eui-transition__wrapper {
+    transition: none !important;
+  }
+  
+  [data-eui-context] .eui-transition--slide-left.eui-transition--active .eui-transition__wrapper,
+  [data-eui-context] .eui-transition--slide-right.eui-transition--active .eui-transition__wrapper {
+    transform: translateX(-50%);
+  }
+  
+  [data-eui-context] .eui-transition--slide-up.eui-transition--active .eui-transition__wrapper,
+  [data-eui-context] .eui-transition--slide-down.eui-transition--active .eui-transition__wrapper {
+    transform: translateY(-50%);
+  }
+  
+  [data-eui-context] .eui-transition--fade .eui-transition__content--primary.eui-transition__content--hidden {
+    opacity: 0;
+  }
+  
+  [data-eui-context] .eui-transition--fade .eui-transition__content--alternate:not(.eui-transition__content--hidden) {
+    opacity: 1;
+  }
+  
+  [data-eui-context] .eui-transition--scale .eui-transition__content--primary.eui-transition__content--hidden {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  
+  [data-eui-context] .eui-transition--scale .eui-transition__content--alternate:not(.eui-transition__content--hidden) {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

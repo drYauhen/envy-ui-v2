@@ -7,3 +7,4 @@ export * from './icon';
 export * from './celebration';
 export * from './side-nav';
 export * from './scrollbar';
+export * from './transition';
