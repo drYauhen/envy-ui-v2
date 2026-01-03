@@ -189,7 +189,7 @@ export const parameters: Preview['parameters'] = {
       //   3. Or manually copy values from navigation.config.ts to this function
       // 
       // Section order (from navigation.config.ts -> sectionOrder)
-                              const sectionOrder = [
+                                                const sectionOrder = [
         "Docs",
         "Tokens",
         "HTML + CSS",
@@ -201,12 +201,12 @@ export const parameters: Preview['parameters'] = {
       ];
       
       // Special rules (from navigation.config.ts)
-                              const specialRules = {
+                                                const specialRules = {
         "Docs/ADR": { firstItem: "ADR Overview" }
       };
       
       // Section configs (from navigation.config.ts)
-                              const sectionConfigs = {
+                                                const sectionConfigs = {
         "HTML + CSS": {
           componentGroups: [
             { components: ["Avatar", "AvatarGroup"] },

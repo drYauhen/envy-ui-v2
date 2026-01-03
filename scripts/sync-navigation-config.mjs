@@ -70,29 +70,117 @@ if (!sectionsMatch) {
   process.exit(1);
 }
 
-// Parse sections (simplified - just extract the structure)
+// Parse sections dynamically from navigation.config.ts
 const sectionsContent = sectionsMatch[1];
+const sectionConfigs = {};
+
+// Parse each section - need to handle nested objects properly
+// Match: "Section Name": { ... } with proper brace matching
+let pos = 0;
+const sectionPattern = /"([^"]+)":\s*\{/g;
+let sectionMatch;
+
+while ((sectionMatch = sectionPattern.exec(sectionsContent)) !== null) {
+  const sectionName = sectionMatch[1];
+  const startPos = sectionMatch.index + sectionMatch[0].length;
+  
+  // Find matching closing brace
+  let braceCount = 1;
+  let endPos = startPos;
+  while (braceCount > 0 && endPos < sectionsContent.length) {
+    if (sectionsContent[endPos] === '{') braceCount++;
+    if (sectionsContent[endPos] === '}') braceCount--;
+    endPos++;
+  }
+  
+  const sectionBody = sectionsContent.substring(startPos, endPos - 1);
+  
+  // Parse componentGroups - need to handle nested arrays properly
+  const componentGroupsMatch = sectionBody.match(/componentGroups:\s*\[/);
+  const componentGroups = [];
+  if (componentGroupsMatch) {
+    const groupsStartPos = componentGroupsMatch.index + componentGroupsMatch[0].length;
+    // Find matching closing bracket for componentGroups array
+    let bracketCount = 1;
+    let groupsEndPos = groupsStartPos;
+    while (bracketCount > 0 && groupsEndPos < sectionBody.length) {
+      if (sectionBody[groupsEndPos] === '[') bracketCount++;
+      if (sectionBody[groupsEndPos] === ']') bracketCount--;
+      groupsEndPos++;
+    }
+    const groupsContent = sectionBody.substring(groupsStartPos, groupsEndPos - 1);
+    
+    // Match each group object: { components: [...] } with proper brace/bracket matching
+    const groupPattern = /\{\s*components:\s*\[/g;
+    let groupMatch;
+    while ((groupMatch = groupPattern.exec(groupsContent)) !== null) {
+      const groupStartPos = groupMatch.index + groupMatch[0].length;
+      // Find matching closing bracket for components array
+      let compBracketCount = 1;
+      let compEndPos = groupStartPos;
+      while (compBracketCount > 0 && compEndPos < groupsContent.length) {
+        if (groupsContent[compEndPos] === '[') compBracketCount++;
+        if (groupsContent[compEndPos] === ']') compBracketCount--;
+        compEndPos++;
+      }
+      const componentsStr = groupsContent.substring(groupStartPos, compEndPos - 1);
+      const components = componentsStr
+        .split(',')
+        .map(c => {
+          // Remove comments and extract string value
+          const cleaned = c.replace(/\/\/.*$/gm, '').trim();
+          const match = cleaned.match(/["']([^"']+)["']/);
+          return match ? match[1] : null;
+        })
+        .filter(c => c && c.length > 0);
+      if (components.length > 0) {
+        componentGroups.push({ components });
+      }
+    }
+  }
+  
+  // Parse otherComponents - need to handle nested arrays properly
+  const otherComponentsMatch = sectionBody.match(/otherComponents:\s*\[/);
+  let otherComponents = [];
+  if (otherComponentsMatch) {
+    const otherStartPos = otherComponentsMatch.index + otherComponentsMatch[0].length;
+    // Find matching closing bracket for otherComponents array
+    let bracketCount = 1;
+    let otherEndPos = otherStartPos;
+    while (bracketCount > 0 && otherEndPos < sectionBody.length) {
+      if (sectionBody[otherEndPos] === '[') bracketCount++;
+      if (sectionBody[otherEndPos] === ']') bracketCount--;
+      otherEndPos++;
+    }
+    const otherComponentsStr = sectionBody.substring(otherStartPos, otherEndPos - 1);
+    otherComponents = otherComponentsStr
+      .split(',')
+      .map(c => {
+        // Remove comments and extract string value
+        const cleaned = c.replace(/\/\/.*$/gm, '').trim();
+        const match = cleaned.match(/["']([^"']+)["']/);
+        return match ? match[1] : null;
+      })
+      .filter(c => c && c.length > 0);
+  }
+  
+  sectionConfigs[sectionName] = {
+    componentGroups,
+    otherComponents
+  };
+}
+
+// Generate sectionConfigs code
 const sectionConfigsCode = `      const sectionConfigs = {
-        "HTML + CSS": {
-          componentGroups: [
-            { components: ["Avatar", "AvatarGroup"] },
-            { components: ["Button", "ButtonGroup"] },
-            { components: ["Input", "InputGroup", "Select", "Textarea"] },
-            { components: ["Checkbox", "Switch"] },
-            { components: ["Card", "Layout"] }
-          ],
-          otherComponents: ["AlertBanner", "Counter", "FormElementsContextThemeTest", "FormLayout", "Icon", "Label", "Menu", "Modal", "Skeleton", "Table"]
-        },
-        "TSX + React Aria": {
-          componentGroups: [
-            { components: ["Select", "MultiSelect", "SearchableSelect"] }
-          ],
-          otherComponents: ["AlertBanner", "Button", "FormLayout", "Icon", "Menu"]
-        },
-        "Web Components": {
-          componentGroups: [],
-          otherComponents: ["Button"]
-        }
+${Object.entries(sectionConfigs).map(([sectionName, config]) => {
+  const groupsCode = config.componentGroups.length > 0
+    ? `          componentGroups: [\n${config.componentGroups.map(group => 
+        `            { components: [${group.components.map(c => `"${c}"`).join(', ')}] }`
+      ).join(',\n')}\n          ],`
+    : '          componentGroups: [],';
+  const otherComponentsCode = `          otherComponents: [${config.otherComponents.map(c => `"${c}"`).join(', ')}]`;
+  return `        "${sectionName}": {\n${groupsCode}\n${otherComponentsCode}\n        }`;
+}).join(',\n')}
       };`;
 
 // Read preview.tsx
