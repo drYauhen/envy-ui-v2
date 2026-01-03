@@ -7,7 +7,7 @@
 
 import { addons } from 'storybook/manager-api';
 import { addStatusBadges } from './manager.js';
-import { badgesConfig } from './config';
+import { badgesConfig } from './config.js';
 
 // CSS styles from styles.css (injected at runtime in manager context)
 const badgeStyles = `
@@ -91,9 +91,8 @@ const badgeStyles = `
 /* Ensure badge doesn't break button layout */
 button[data-action="collapse-root"] {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: flex-start;
+  width: auto;
   position: relative;
 }
 `;
@@ -118,11 +117,15 @@ addons.register(ADDON_ID, () => {
   // Only run in browser context
   if (typeof document === 'undefined') return;
   
+  console.log('[Section Badges] Registering addon...');
+  console.log('[Section Badges] Config:', badgesConfig);
+  
   // Inject CSS styles first
   injectStyles();
   
   // Initialize badges when manager loads
   function initBadges() {
+    console.log('[Section Badges] Initializing badges with config:', badgesConfig);
     addStatusBadges(badgesConfig);
   }
   

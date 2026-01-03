@@ -9,20 +9,34 @@
 // Configuration will be passed from register.js
 
 export function addStatusBadges(config) {
+  console.log('[Section Badges] addStatusBadges called with config:', config);
+  
+  if (!config || !config.sectionStatus) {
+    console.error('[Section Badges] Invalid config:', config);
+    return;
+  }
+  
   const { sectionStatus, badgeLabels, badgeTooltips } = config;
+  
+  console.log('[Section Badges] Looking for sidebar...');
   
   // Try multiple selectors for sidebar
   const sidebar = document.querySelector('[data-side="left"]') || 
                   document.querySelector('[role="complementary"]') ||
                   document.querySelector('.os-host[data-side="left"]') ||
                   document.querySelector('aside[role="complementary"]') ||
-                  document.querySelector('[data-test-id="sidebar-container"]');
+                  document.querySelector('[data-test-id="sidebar-container"]') ||
+                  document.querySelector('.sidebar-container') ||
+                  document.querySelector('[class*="sidebar"]');
   
   if (!sidebar) {
+    console.log('[Section Badges] Sidebar not found, retrying...');
     // Retry after a delay
     setTimeout(() => addStatusBadges(config), 500);
     return;
   }
+
+  console.log('[Section Badges] Sidebar found:', sidebar);
 
   function addBadges() {
     // Find all section buttons
@@ -30,11 +44,19 @@ export function addStatusBadges(config) {
       document.querySelectorAll('button[data-action="collapse-root"]')
     );
     
+    console.log('[Section Badges] Found', sectionButtons.length, 'section buttons');
+    
     if (sectionButtons.length === 0) {
+      console.log('[Section Badges] No buttons found, retrying...');
       // Retry if buttons not found
       setTimeout(addBadges, 200);
       return;
     }
+
+    // Log all button texts for debugging
+    console.log('[Section Badges] Button texts:', sectionButtons.map(btn => btn.textContent?.trim()));
+
+    let badgesAdded = 0;
 
     Object.entries(sectionStatus).forEach(([sectionName, status]) => {
       if (!status) return;
@@ -45,10 +67,19 @@ export function addStatusBadges(config) {
         // Remove any existing badge text from comparison
         const textWithoutBadge = text.replace(/\s*(Active|Exp|Future)\s*$/, '').trim();
         // Check if button text starts with section name and doesn't have badge yet
-        return textWithoutBadge === sectionName && !btn.querySelector('.section-badge');
+        const matches = textWithoutBadge === sectionName;
+        const hasBadge = btn.querySelector('.section-badge') !== null;
+        
+        if (matches) {
+          console.log('[Section Badges] Match found:', sectionName, 'text:', textWithoutBadge, 'hasBadge:', hasBadge);
+        }
+        
+        return matches && !hasBadge;
       });
 
       if (sectionButton) {
+        console.log('[Section Badges] Adding badge to:', sectionName, status);
+        
         const badge = document.createElement('span');
         badge.className = `section-badge section-badge--${status}`;
         badge.textContent = badgeLabels[status];
@@ -62,8 +93,11 @@ export function addStatusBadges(config) {
         badge.appendChild(tooltip);
         
         sectionButton.appendChild(badge);
+        badgesAdded++;
       }
     });
+    
+    console.log('[Section Badges] Added', badgesAdded, 'badges');
   }
 
   // Use MutationObserver to handle dynamic sidebar updates

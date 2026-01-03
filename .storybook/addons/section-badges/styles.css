@@ -78,9 +78,8 @@
 /* Ensure badge doesn't break button layout */
 button[data-action="collapse-root"] {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: flex-start;
+  width: auto;
   position: relative;
 }
 
