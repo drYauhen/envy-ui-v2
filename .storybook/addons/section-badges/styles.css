@@ -5,18 +5,9 @@
  * This approach is more stable than DOM manipulation and doesn't require style overrides.
  */
 
-/* Badge container - ensure button can contain ::after pseudo-element */
-button[data-action="collapse-root"][data-section-status] {
-  position: relative;
-}
-
-/* Badge via ::after pseudo-element */
+/* Badge via ::after pseudo-element - naturally positioned in flexbox */
 button[data-action="collapse-root"][data-section-status]::after {
   content: attr(data-section-status);
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   padding: 2px 6px;

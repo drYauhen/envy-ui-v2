@@ -12,16 +12,9 @@ import { badgesConfig } from './config.js';
 // CSS styles for badges (inline for manager context compatibility)
 const badgeStyles = `
 /* Section Status Badges - CSS-only implementation */
-button[data-action="collapse-root"][data-section-status] {
-  position: relative;
-}
-
+/* Badge via ::after pseudo-element - naturally positioned in flexbox */
 button[data-action="collapse-root"][data-section-status]::after {
   content: attr(data-section-status);
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   padding: 2px 6px;
