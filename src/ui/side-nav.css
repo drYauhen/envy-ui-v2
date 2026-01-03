@@ -33,16 +33,16 @@
   border-bottom: 1px solid var(--eui-side-nav-colors-header-border);
   flex-shrink: 0;
   position: relative;
-  overflow: hidden; /* Предотвращает выход логотипа за границы */
+  overflow: hidden; /* Prevents logo overflow */
   transition: padding 0.3s ease;
 }
 
 [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header {
-  justify-content: flex-start; /* Оставляем flex-start для плавности */
+  justify-content: flex-start; /* Keep flex-start for smoothness */
   padding: 0;
 }
 
-/* Logo container - фиксированная позиция для выравнивания */
+/* Logo container - fixed positioning for alignment */
 [data-eui-context] .eui-side-nav__header .eui-logo {
   position: relative;
   display: inline-flex;
@@ -53,22 +53,22 @@
   margin-left: 0;
 }
 
-/* В collapsed состоянии центрируем через margin */
+/* In collapsed state, center via margin */
 [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header .eui-logo {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Контейнер для SVG - оба перекрываются, выровнены по левому краю */
+/* SVG container - both overlap, aligned to the left */
 [data-eui-context] .eui-side-nav__header .eui-logo__svg {
   display: block;
   flex-shrink: 0;
   transition: opacity 0.3s ease, width 0.3s ease, overflow 0.3s ease;
-  /* Оба SVG должны иметь одинаковую высоту для правильного выравнивания */
+  /* Both SVGs should have the same height for correct alignment */
   height: var(--eui-logo-size-icon-md);
 }
 
-/* Полный логотип - видимый в развернутом состоянии */
+/* Full logo - visible in expanded state */
 [data-eui-context] .eui-side-nav__header .eui-logo__svg--full {
   opacity: 1;
   position: relative;
@@ -87,7 +87,7 @@
   visibility: hidden;
 }
 
-/* Иконка только - скрыта в развернутом состоянии, выровнена по левому краю */
+/* Icon only - hidden in expanded state, aligned to the left */
 [data-eui-context] .eui-side-nav__header .eui-logo__svg--icon {
   opacity: 0;
   position: absolute;
@@ -147,13 +147,14 @@
   top: var(--eui-side-nav-size-header-height);
   left: 0;
   right: 0;
-  height: 10px;
+  height: 18px;
   background: linear-gradient(to bottom, 
-    rgba(0, 0, 0, 0.15) 0%, 
-    rgba(0, 0, 0, 0.12) 20%,
-    rgba(0, 0, 0, 0.08) 40%,
-    rgba(0, 0, 0, 0.04) 60%,
-    rgba(0, 0, 0, 0.02) 80%,
+    rgba(0, 0, 0, 0.28) 0%, 
+    rgba(0, 0, 0, 0.22) 15%,
+    rgba(0, 0, 0, 0.16) 30%,
+    rgba(0, 0, 0, 0.10) 50%,
+    rgba(0, 0, 0, 0.06) 70%,
+    rgba(0, 0, 0, 0.03) 85%,
     transparent 100%);
   pointer-events: none;
   z-index: 10;
@@ -166,13 +167,14 @@
   bottom: var(--eui-side-nav-size-footer-height);
   left: 0;
   right: 0;
-  height: 10px;
+  height: 18px;
   background: linear-gradient(to top, 
-    rgba(0, 0, 0, 0.15) 0%, 
-    rgba(0, 0, 0, 0.12) 20%,
-    rgba(0, 0, 0, 0.08) 40%,
-    rgba(0, 0, 0, 0.04) 60%,
-    rgba(0, 0, 0, 0.02) 80%,
+    rgba(0, 0, 0, 0.28) 0%, 
+    rgba(0, 0, 0, 0.22) 15%,
+    rgba(0, 0, 0, 0.16) 30%,
+    rgba(0, 0, 0, 0.10) 50%,
+    rgba(0, 0, 0, 0.06) 70%,
+    rgba(0, 0, 0, 0.03) 85%,
     transparent 100%);
   pointer-events: none;
   z-index: 10;
@@ -945,9 +947,51 @@
 
 /* Footer Back Text and Chevron */
 [data-eui-context] .eui-side-nav__footer-back-text {
+  display: inline-block; /* Always in layout for animation */
   font-size: var(--eui-side-nav-typography-item-font-size);
   font-weight: var(--eui-side-nav-typography-item-font-weight);
   color: var(--eui-side-nav-colors-item-text-default);
+  opacity: 0;
+  transform: translateX(25px); /* Increased from 20px to 25px for correct chevron positioning */
+  max-width: 0; /* Hide via max-width so it doesn't take space */
+  min-width: 0; /* Further constrain width */
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: calc(-1 * var(--eui-side-nav-spacing-item-gap)); /* Compensate the gap between chevron and back */
+  margin-right: 0;
+  padding: 0; /* Remove padding so it doesn't take space */
+  visibility: hidden; /* Hide visually, keep element in DOM */
+  /* Animate only container expansion - chevron shifts automatically via flex layout */
+  transition: opacity 250ms var(--eui-side-nav-animation-item-easing),
+              transform 250ms var(--eui-side-nav-animation-item-easing),
+              max-width 250ms var(--eui-side-nav-animation-item-easing),
+              margin-left 250ms var(--eui-side-nav-animation-item-easing),
+              margin-right 250ms var(--eui-side-nav-animation-item-easing),
+              visibility 0s 250ms; /* Visibility delay for smoothness */
+}
+
+/* Show Back text when in user mode - slide in from right to left */
+/* Check parent nav element for absence of collapsed class */
+/* dataAttr returns empty string for true, so check attribute presence */
+[data-eui-context] .eui-side-nav:not(.eui-side-nav--collapsed) .eui-side-nav__footer[data-eui-user-mode] .eui-side-nav__footer-back-text {
+  opacity: 1;
+  transform: translateX(0); /* Move into place (to the right of chevron) */
+  max-width: 5rem; /* Expand - chevron shifts left automatically via flex layout */
+  margin-left: calc(-1 * var(--eui-side-nav-spacing-item-gap)); /* Compensate gap - no spacing between chevron and back */
+  margin-right: var(--eui-side-nav-spacing-item-gap); /* Spacing from chevron (to the right of text) */
+  visibility: visible; /* Show */
+  /* Animate only container expansion - chevron shifts automatically */
+  transition: opacity 250ms var(--eui-side-nav-animation-item-easing),
+              transform 250ms var(--eui-side-nav-animation-item-easing),
+              max-width 250ms var(--eui-side-nav-animation-item-easing),
+              margin-left 250ms var(--eui-side-nav-animation-item-easing),
+              margin-right 250ms var(--eui-side-nav-animation-item-easing),
+              visibility 0s 0s; /* Remove delay when showing */
+}
+
+/* Hide back text when collapsed */
+[data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer-back-text {
+  display: none;
 }
 
 [data-eui-context] .eui-side-nav__footer-chevron {
@@ -957,9 +1001,15 @@
   flex-shrink: 0;
   width: var(--eui-side-nav-size-icon-width);
   height: var(--eui-side-nav-size-icon-height);
-  margin-left: auto;
+  margin-left: auto; /* Always pushed to the right edge - do not change this value */
+  margin-right: 0;
+  /* Optimize for smooth movement when neighboring elements resize */
+  will-change: transform;
+  /* Movement is provided by Back container expansion via flex layout */
+  /* Only rotation remains via Icon component */
 }
 
+/* Hide chevron when collapsed */
 [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer-chevron {
   display: none;
 }

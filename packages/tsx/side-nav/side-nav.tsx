@@ -213,58 +213,44 @@ const FooterButton = React.memo(({
         [prefixedDataAttr('user-mode')]: dataAttr(showUserMode)
       }}
     >
-      {showUserMode && isCollapsed ? (
-        <>
-          <span className={`${SYSTEM_PREFIX}-side-nav__footer-back-text`}>Back</span>
-          <span
-            className={`${SYSTEM_PREFIX}-side-nav__footer-chevron`}
-            {...{ [prefixedDataAttr('icon')]: 'chevron-right' }}
-            aria-hidden="true"
-          />
-        </>
-      ) : showUserMode && !isCollapsed ? (
-        <>
-          <span className={`${SYSTEM_PREFIX}-side-nav__footer-back-text`}>Back</span>
-          <span
-            className={`${SYSTEM_PREFIX}-side-nav__footer-chevron`}
-            {...{ [prefixedDataAttr('icon')]: 'chevron-right' }}
-            aria-hidden="true"
-          />
-        </>
-      ) : isCollapsed ? (
-        <>
-          <div className={`${SYSTEM_PREFIX}-side-nav__footer-avatar`}>
-            <div className={`${SYSTEM_PREFIX}-avatar`} {...{ [prefixedDataAttr('size')]: 'sm' }}>
-              {footer.avatarUrl ? (
-                <img src={footer.avatarUrl} alt={footer.name} />
-              ) : (
-                <span className={`${SYSTEM_PREFIX}-avatar-initials`}>{getInitials(footer.name)}</span>
-              )}
-            </div>
+      {/* Avatar - render only when not in user mode */}
+      {!showUserMode && (
+        <div className={`${SYSTEM_PREFIX}-side-nav__footer-avatar`}>
+          <div className={`${SYSTEM_PREFIX}-avatar`} {...{ [prefixedDataAttr('size')]: 'sm' }}>
+            {footer.avatarUrl ? (
+              <img src={footer.avatarUrl} alt={footer.name} />
+            ) : (
+              <span className={`${SYSTEM_PREFIX}-avatar-initials`}>{getInitials(footer.name)}</span>
+            )}
           </div>
-        </>
-      ) : (
-        <>
-          <div className={`${SYSTEM_PREFIX}-side-nav__footer-avatar`}>
-            <div className={`${SYSTEM_PREFIX}-avatar`} {...{ [prefixedDataAttr('size')]: 'sm' }}>
-              {footer.avatarUrl ? (
-                <img src={footer.avatarUrl} alt={footer.name} />
-              ) : (
-                <span className={`${SYSTEM_PREFIX}-avatar-initials`}>{getInitials(footer.name)}</span>
-              )}
-            </div>
-          </div>
-          <div className={`${SYSTEM_PREFIX}-side-nav__footer-info`}>
-            <div className={`${SYSTEM_PREFIX}-side-nav__footer-name`}>{footer.name}</div>
-            <div className={`${SYSTEM_PREFIX}-side-nav__footer-role`}>{footer.role}</div>
-          </div>
-          <span
-            className={`${SYSTEM_PREFIX}-side-nav__footer-chevron`}
-            {...{ [prefixedDataAttr('icon')]: 'chevron-right' }}
-            aria-hidden="true"
-          />
-        </>
+        </div>
       )}
+
+      {/* User info - render only when not in user mode and not collapsed */}
+      {!showUserMode && !isCollapsed && (
+        <div className={`${SYSTEM_PREFIX}-side-nav__footer-info`}>
+          <div className={`${SYSTEM_PREFIX}-side-nav__footer-name`}>{footer.name}</div>
+          <div className={`${SYSTEM_PREFIX}-side-nav__footer-role`}>{footer.role}</div>
+        </div>
+      )}
+
+      {/* Chevron - always renders when not collapsed, with dynamic rotation */}
+      {!isCollapsed && (
+        <span className={`${SYSTEM_PREFIX}-side-nav__footer-chevron`}>
+          <Icon
+            name="chevron-right"
+            rotate={showUserMode ? 180 : 0}
+            animated={false}
+            aria-hidden="true"
+          />
+        </span>
+      )}
+
+      {/* Back text - always renders when not collapsed, appears to the right of the chevron */}
+      {!isCollapsed && (
+        <span className={`${SYSTEM_PREFIX}-side-nav__footer-back-text`}>Back</span>
+      )}
+
       <div className={`${SYSTEM_PREFIX}-side-nav__tooltip`}>
         {showUserMode ? 'Back to navigation' : `${footer.name}\n${footer.role}`}
       </div>
@@ -306,6 +292,17 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
   const isUserModeControlled = controlledShowUserMode !== undefined;
   const [internalShowUserMode, setInternalShowUserMode] = React.useState(false);
   const showUserMode = isUserModeControlled ? controlledShowUserMode : internalShowUserMode;
+
+  // Automatically switch from user mode to navigation mode when collapsing
+  React.useEffect(() => {
+    if (isCollapsed && showUserMode) {
+      // If the menu collapses while in user mode, switch back to navigation mode
+      if (!isUserModeControlled) {
+        setInternalShowUserMode(false);
+      }
+      onUserModeToggle?.(false);
+    }
+  }, [isCollapsed, showUserMode, isUserModeControlled, onUserModeToggle]);
 
   const handleUserModeToggle = React.useCallback(() => {
     const newShowUserMode = !showUserMode;
@@ -752,4 +749,3 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
 });
 
 SideNav.displayName = 'SideNav';
-
