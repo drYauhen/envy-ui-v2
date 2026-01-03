@@ -145,12 +145,35 @@ const adrGuideDocs: DocRegistryItem[] = [
   }
 ];
 
+// Tokens documents
+const tokensDocs: DocRegistryItem[] = [
+  {
+    id: 'tokens-readme',
+    path: 'tokens/README.md',
+    title: 'Token System Tooling',
+    category: 'other'
+  },
+  {
+    id: 'tokens-reference',
+    path: 'tokens/reference.md',
+    title: 'Token Reference',
+    category: 'other'
+  },
+  {
+    id: 'tokens-use-cases',
+    path: 'tokens/use-cases.md',
+    title: 'Token Utilities Use Cases',
+    category: 'other'
+  }
+];
+
 // Combine all documents
 export const docsRegistry: DocRegistryItem[] = [
   ...adrDocs,
   ...adrGuideDocs,
   ...architectureDocs,
-  ...workflowDocs
+  ...workflowDocs,
+  ...tokensDocs
 ];
 
 // Helper functions for lookup
