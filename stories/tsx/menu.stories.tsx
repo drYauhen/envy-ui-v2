@@ -5,8 +5,7 @@ import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Menu',
-  tags: ['autodocs']
-
+  tags: ['autodocs'],
   parameters: {
     // Apply section-specific parameters automatically
     ...getSectionParameters('TSX + React Aria/Components/Menu'),

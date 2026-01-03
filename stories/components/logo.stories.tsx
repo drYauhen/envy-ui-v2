@@ -139,8 +139,7 @@ const LoadingSVG = () => (
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Logo',
-  tags: ['autodocs']
-
+  tags: ['autodocs'],
   parameters: {
     // Apply section-specific parameters automatically
     ...getSectionParameters('HTML + CSS/Components/Logo'),

@@ -4,8 +4,7 @@ import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Table',
-  tags: ['autodocs']
-
+  tags: ['autodocs'],
   parameters: {
     // Apply section-specific parameters automatically
     ...getSectionParameters('HTML + CSS/Components/Table'),
