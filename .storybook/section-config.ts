@@ -215,6 +215,35 @@ export function hasSectionConfig(sectionName: string): boolean {
 }
 
 /**
+ * Get viewer component for a section
+ * 
+ * @param title - Story title in format "Section/Subsection/Component"
+ * @returns React component or null if no viewer configured
+ * 
+ * @example
+ * const Viewer = getViewerForSection("Tokens/App/Foundations/Colors");
+ * if (Viewer) {
+ *   return <Viewer {...props} />;
+ * }
+ */
+export function getViewerForSection(title: string): import('react').ComponentType<any> | null {
+  const config = getSectionConfig(title);
+  if (!config || !config.viewer) {
+    return null;
+  }
+  
+  // Dynamic import to avoid circular dependencies
+  // Viewer registry will be imported when needed
+  try {
+    const { getViewerComponent } = require('./viewer-registry');
+    return getViewerComponent(config.viewer);
+  } catch (error) {
+    console.warn(`[Section Config] Could not load viewer registry:`, error);
+    return null;
+  }
+}
+
+/**
  * Export section configs for external use (e.g., in decorators)
  */
 export { sectionConfigs };
