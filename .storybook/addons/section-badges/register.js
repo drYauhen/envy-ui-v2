@@ -7,8 +7,9 @@
 
 import { addons } from 'storybook/manager-api';
 import { addStatusBadges } from './manager.js';
+import { badgesConfig } from './config';
 
-// CSS styles (will be injected in browser context)
+// CSS styles from styles.css (injected at runtime in manager context)
 const badgeStyles = `
 /* Section Status Badges */
 .section-badge {
@@ -112,32 +113,6 @@ function injectStyles() {
 
 const ADDON_ID = 'envy-ui/section-badges';
 
-// Configuration from navigation.config.ts
-// Note: We duplicate this here because manager.js runs in browser context
-// and cannot directly import TypeScript modules
-const config = {
-  sectionStatus: {
-    "Docs": null,
-    "Tokens": "active",
-    "HTML + CSS": "active",
-    "TSX (Clean)": "active",
-    "TSX + React Aria": "active",
-    "Templates": "future",
-    "Tailwind": "future",
-    "Web Components": "exp"
-  },
-  badgeLabels: {
-    active: "Active",
-    exp: "Exp",
-    future: "Future"
-  },
-  badgeTooltips: {
-    active: "Actively developed and maintained. Ready for production use.",
-    exp: "Experimental/Exploratory. Proof of concept. Not production-ready.",
-    future: "Planned for future development. Placeholder for upcoming features."
-  }
-};
-
 // Register the addon
 addons.register(ADDON_ID, () => {
   // Only run in browser context
@@ -148,7 +123,7 @@ addons.register(ADDON_ID, () => {
   
   // Initialize badges when manager loads
   function initBadges() {
-    addStatusBadges(config);
+    addStatusBadges(badgesConfig);
   }
   
   if (document.readyState === 'loading') {
