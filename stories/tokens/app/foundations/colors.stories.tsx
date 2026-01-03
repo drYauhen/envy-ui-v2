@@ -7,6 +7,7 @@ import statusUi from '../../../../tokens/app/foundations/colors/status.json';
 import statusApplication from '../../../../tokens/app/foundations/colors/status-application.json';
 import { ColorScaleViewer } from '../../../viewers/tokens/ColorScaleViewer';
 import { converter } from 'culori';
+import { getSectionParameters } from '../../../../.storybook/preview';
 
 type Story = StoryObj;
 
@@ -15,6 +16,8 @@ const meta: Meta = {
   tags: ['autodocs'],
   parameters: { 
     layout: 'fullscreen',
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('Tokens/App/Foundations/Colors'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false,

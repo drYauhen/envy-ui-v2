@@ -1,5 +1,6 @@
 import type { Decorator, Preview } from '@storybook/react';
 import React from 'react';
+import { getSectionConfig } from './section-config';
 import './mermaid.css';
 import '../generated/css/tokens.css';
 import '../packages/tailwind/tailwind.css';
@@ -50,6 +51,43 @@ import '../src/ui/toolbar.css';
 import '../src/ui/page-header.css';
 import './preview.css';
 
+/**
+ * Function to get section-specific parameters based on story title
+ * This will be used to merge with story parameters
+ */
+export function getSectionParameters(title: string) {
+  const sectionConfig = getSectionConfig(title);
+  
+  if (!sectionConfig || !sectionConfig.panels) {
+    return {};
+  }
+  
+  const { panels } = sectionConfig;
+  const params: Record<string, any> = {};
+  
+  // Apply controls configuration
+  if (panels.controls === false || (typeof panels.controls === 'object' && panels.controls.hidden)) {
+    params.controls = { hidden: true };
+  }
+  
+  // Apply actions configuration
+  if (panels.actions === false || (typeof panels.actions === 'object' && panels.actions.hidden)) {
+    params.actions = { hidden: true };
+  }
+  
+  // Apply a11y configuration
+  if (panels.a11y === false || (typeof panels.a11y === 'object' && panels.a11y.hidden)) {
+    params.a11y = { hidden: true };
+  }
+  
+  // Apply codePanel configuration
+  if (panels.codePanel === false) {
+    params.docs = { codePanel: false };
+  }
+  
+  return params;
+}
+
 const withPreviewLayout: Decorator = (Story, context) => {
   const focusPolicy = context.globals.focusPolicy === '_reset' ? 'derived' : (context.globals.focusPolicy ?? 'derived');
   const contextValue = context.globals.context === '_reset' ? 'app' : (context.globals.context ?? 'app');
@@ -69,7 +107,21 @@ const withPreviewLayout: Decorator = (Story, context) => {
   );
 };
 
-export const decorators: Preview['decorators'] = [withPreviewLayout];
+/**
+ * Decorator to apply section-specific parameters
+ * Note: In Storybook, parameters are applied before decorators run.
+ * This decorator serves as documentation - actual parameters should be applied
+ * via meta.parameters in individual story files or through a custom addon.
+ * 
+ * For now, we'll apply parameters manually in story files using getSectionParameters helper.
+ */
+const withSectionParameters: Decorator = (Story, context) => {
+  // Parameters are already applied by Storybook before decorators run
+  // This decorator is a placeholder for future enhancement
+  return <Story />;
+};
+
+export const decorators: Preview['decorators'] = [withSectionParameters, withPreviewLayout];
 
 export const globalTypes: Preview['globalTypes'] = {
   context: {
@@ -255,6 +307,9 @@ export const parameters: Preview['parameters'] = {
   // (This is handled in individual story files via meta.parameters)
 };
 
-const preview: Preview = { decorators, parameters };
+const preview: Preview = { 
+  decorators, 
+  parameters
+};
 
 export default preview;
