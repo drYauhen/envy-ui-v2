@@ -1,11 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Highlight, themes } from 'prism-react-renderer';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Counter',
   tags: ['autodocs']
-};
+
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Counter'),
+    layout: 'padded'
+  }};
 
 export default meta;
 

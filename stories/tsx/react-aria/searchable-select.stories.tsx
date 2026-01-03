@@ -2,10 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import type { Key } from 'react';
 import { SearchableSelect, SearchableSelectItem } from '../../../packages/tsx/select';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/SearchableSelect',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/SearchableSelect'),
     layout: 'padded'
   }
 };

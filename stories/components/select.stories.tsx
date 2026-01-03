@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Select',
@@ -39,6 +40,8 @@ const formGroupStyle = {
 export const SelectStates: Story = {
   name: 'States',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Select'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false

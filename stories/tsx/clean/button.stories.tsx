@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonClean, ButtonGroup } from '../../../packages/tsx';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../generated/tsx/button.contract';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type ButtonStoryProps = {
   intent: ButtonIntent;
@@ -14,6 +15,11 @@ type ButtonStoryProps = {
 const meta: Meta<ButtonStoryProps> = {
   title: 'TSX (Clean)/Components/Button',
   tags: ['autodocs'],
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX (Clean)/Components/Button'),
+    layout: 'padded'
+  },
   argTypes: {
     intent: { options: ['primary', 'secondary', 'accent'], control: { type: 'radio' } },
     shape: { options: ['default', 'round', 'circle'], control: { type: 'radio' } },

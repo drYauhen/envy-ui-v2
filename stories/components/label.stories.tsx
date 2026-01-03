@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Label',
@@ -44,6 +45,8 @@ const formGroupStyle = {
 export const FormExample: Story = {
   name: 'Label Usage in Forms',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Label'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false

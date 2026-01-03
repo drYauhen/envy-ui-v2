@@ -1,10 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Menu',
   tags: ['autodocs']
-};
+
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Menu'),
+    layout: 'padded'
+  }};
 
 export default meta;
 

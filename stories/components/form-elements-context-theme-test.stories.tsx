@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/FormElementsContextThemeTest',
@@ -50,6 +51,8 @@ const noteStyle = {
 export const AllFormElements: Story = {
   name: 'All Form Elements - Test Context & Theme Switching',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/FormElementsContextThemeTest'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false,

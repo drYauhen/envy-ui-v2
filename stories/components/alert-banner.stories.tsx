@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/AlertBanner',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/AlertBanner'),
     layout: 'fullscreen'
   }
 };

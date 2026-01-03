@@ -2,10 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { AlertBanner } from '../../../packages/tsx/alert-banner';
 import { Icon } from '../../../packages/tsx/icon';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/AlertBanner',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/AlertBanner'),
     layout: 'fullscreen'
   }
 };

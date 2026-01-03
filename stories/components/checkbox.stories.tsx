@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useEffect, useRef } from 'react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Checkbox',
@@ -60,6 +61,8 @@ const rowStyle = {
 export const CheckboxStates: Story = {
   name: 'States',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Checkbox'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false

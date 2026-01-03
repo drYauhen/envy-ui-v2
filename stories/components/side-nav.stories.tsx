@@ -2,11 +2,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { DeviceFrameWrapper } from './DeviceFrameWrapper';
 import { SideNav } from '../../src/ui/side-nav';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Side Nav',
   tags: ['autodocs']
-};
+
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Side Nav'),
+    layout: 'padded'
+  }};
 
 export default meta;
 

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ButtonGroupViewer } from '../viewers/components/ButtonGroupViewer';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/ButtonGroup',
@@ -20,6 +21,8 @@ const containerStyle = {
 export const ButtonGroup: Story = {
   name: 'Button Group (HTML + CSS)',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/ButtonGroup'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false

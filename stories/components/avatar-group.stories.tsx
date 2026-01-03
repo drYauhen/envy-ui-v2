@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/AvatarGroup',
@@ -49,6 +50,8 @@ const getInitials = (name: string): string => {
 export const BasicOverlap: Story = {
   name: 'Basic Overlap',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/AvatarGroup'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false

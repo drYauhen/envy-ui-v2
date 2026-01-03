@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { SideNav } from '../../src/ui/side-nav';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Layout',
@@ -54,6 +55,8 @@ const Highlight = ({ code, language }: { code: string; language: string }) => (
 export const FullLayout: Story = {
   name: 'Full Application Layout',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Layout'),
     layout: 'fullscreen',
     docs: {
       canvas: { sourceState: 'none' }

@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState, useEffect } from 'react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Celebration',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Celebration'),
     docs: {
       description: {
         component: 'Celebration effect component with shine, sparkle, and lift animations. Can be triggered on mount, visibility, click, or value change.'

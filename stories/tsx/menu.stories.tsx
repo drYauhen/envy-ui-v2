@@ -1,11 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Menu, MenuTrigger, MenuList, MenuItem } from '../../packages/tsx/menu';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Menu',
   tags: ['autodocs']
-};
+
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/Menu'),
+    layout: 'padded'
+  }};
 
 export default meta;
 

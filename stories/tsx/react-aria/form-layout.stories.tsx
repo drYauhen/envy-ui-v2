@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { FormField, FormSection, FormRow, FormGroup } from '../../../packages/tsx/form';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/FormLayout',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/FormLayout'),
     layout: 'padded'
   }
 };

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useRef, useEffect } from 'react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Modal',
@@ -13,6 +14,8 @@ type Story = StoryObj;
 export const Basic: Story = {
   name: 'Basic Modal',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Modal'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false

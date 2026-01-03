@@ -1,10 +1,13 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/InputGroup',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/InputGroup'),
     docs: {
       description: {
         component: 'InputGroup allows adding prefix (left) and suffix (right) icons/elements inside the input border. The group uses flexbox layout where the container has border and background, the input field inside has no border, and prefix/suffix slots have fixed width.'

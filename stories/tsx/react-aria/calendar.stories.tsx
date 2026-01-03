@@ -2,10 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Calendar } from '../../../packages/tsx/calendar';
 import '../../../src/ui/calendar.css';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Calendar',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/Calendar'),
     layout: 'padded'
   }
 };

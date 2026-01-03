@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 // Import SVG files as React components
 const FullLogoSVG = () => (
@@ -139,7 +140,12 @@ const LoadingSVG = () => (
 const meta: Meta = {
   title: 'HTML + CSS/Components/Logo',
   tags: ['autodocs']
-};
+
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Logo'),
+    layout: 'padded'
+  }};
 
 export default meta;
 

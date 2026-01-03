@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Icon } from '../../../packages/tsx/icon';
 import { Button } from '../../../src/ui';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type IconStoryProps = {
   size?: number;
@@ -11,6 +12,11 @@ type IconStoryProps = {
 const meta: Meta<IconStoryProps> = {
   title: 'TSX + React Aria/Components/Icon',
   tags: ['autodocs'],
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/Icon'),
+    layout: 'padded'
+  },
   argTypes: {
     size: {
       control: { type: 'number', min: 8, max: 48, step: 2 }

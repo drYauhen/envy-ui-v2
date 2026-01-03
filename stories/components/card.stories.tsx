@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Card',
@@ -43,6 +44,8 @@ const variantsRowStyle = {
 export const Card: Story = {
   name: 'Card (HTML + CSS)',
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Card'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false

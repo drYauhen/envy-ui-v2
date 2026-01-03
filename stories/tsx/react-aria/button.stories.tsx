@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../../../src/ui';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../src/ui';
 import { Icon } from '../../../packages/tsx/icon';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type ButtonStoryProps = {
   intent: ButtonIntent;
@@ -15,6 +16,11 @@ type ButtonStoryProps = {
 const meta: Meta<ButtonStoryProps> = {
   title: 'TSX + React Aria/Components/Button',
   tags: ['autodocs'],
+  parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/Button'),
+    layout: 'padded'
+  },
   argTypes: {
     intent: {
       options: ['primary', 'secondary', 'accent'],

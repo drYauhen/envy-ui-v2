@@ -10,6 +10,8 @@ const meta: Meta = {
   title: 'HTML + CSS/Components/Icon',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('HTML + CSS/Components/Icon'),
     docs: {
       description: {
         component: `
@@ -495,6 +497,7 @@ export const TSXReactAria: Story = {
 {`// Direct component usage
 // Universal Icon component
 import { Icon } from '@envy-ui/tsx/icon';
+import { getSectionParameters } from '../../.storybook/preview';
 
 // Basic usage
 <Icon name="search" />

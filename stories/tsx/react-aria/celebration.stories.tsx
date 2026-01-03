@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { CelebrationWrapper } from '../../../packages/tsx/celebration';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Celebration',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/Celebration'),
     docs: {
       description: {
         component: 'Celebration effect component using React hooks. Supports multiple trigger types: onMount, onVisible, onClick, onValueChange, and manual.'

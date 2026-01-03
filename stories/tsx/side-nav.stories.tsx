@@ -2,11 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { SideNav, type SideNavSection } from '../../packages/tsx/side-nav';
 import { DeviceFrameWrapper } from '../components/DeviceFrameWrapper';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Side Nav',
   tags: ['autodocs'],
   parameters: {
+    // Apply section-specific parameters automatically
+    ...getSectionParameters('TSX + React Aria/Components/Side Nav'),
     docs: {
       description: {
         component: `
