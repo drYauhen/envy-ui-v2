@@ -2,22 +2,29 @@
  * Section Badges Addon
  * 
  * Official Storybook addon for adding status badges to sidebar navigation sections.
- * Uses Storybook's addons API for proper integration.
+ * Uses CSS-only approach with data attributes for maximum stability.
  */
 
 import { addons } from 'storybook/manager-api';
 import { addStatusBadges } from './manager.js';
 import { badgesConfig } from './config.js';
 
-// CSS styles from styles.css (injected at runtime in manager context)
+// CSS styles for badges (inline for manager context compatibility)
 const badgeStyles = `
-/* Section Status Badges */
-.section-badge {
+/* Section Status Badges - CSS-only implementation */
+button[data-action="collapse-root"][data-section-status] {
   position: relative;
+}
+
+button[data-action="collapse-root"][data-section-status]::after {
+  content: attr(data-section-status);
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   display: inline-flex;
   align-items: center;
   padding: 2px 6px;
-  margin-left: 8px;
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
@@ -26,74 +33,26 @@ const badgeStyles = `
   line-height: 1.2;
   cursor: help;
   user-select: none;
-  flex-shrink: 0;
-}
-
-.section-badge--active {
-  background-color: #10b981;
-  color: white;
-}
-
-.section-badge--exp {
-  background-color: #f59e0b;
-  color: white;
-}
-
-.section-badge--future {
-  background-color: #6b7280;
-  color: white;
-}
-
-/* Tooltip */
-.section-badge-tooltip {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 12px;
-  background-color: rgba(31, 41, 55, 0.95);
-  backdrop-filter: blur(4px);
-  color: white;
-  font-size: 12px;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: normal;
-  white-space: normal;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-  z-index: 1000;
-  max-width: 200px;
-  text-align: center;
-  line-height: 1.4;
-}
-
-/* Tooltip arrow */
-.section-badge-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: rgba(31, 41, 55, 0.95);
-}
-
-/* Show tooltip on hover */
-.section-badge:hover .section-badge-tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
+  white-space: nowrap;
   pointer-events: auto;
 }
 
-/* Ensure badge doesn't break button layout */
-button[data-action="collapse-root"] {
-  display: flex;
-  justify-content: flex-start;
-  width: auto;
-  position: relative;
+button[data-action="collapse-root"][data-section-status="active"]::after {
+  background-color: #10b981;
+  color: white;
+  content: "Active";
+}
+
+button[data-action="collapse-root"][data-section-status="exp"]::after {
+  background-color: #f59e0b;
+  color: white;
+  content: "Exp";
+}
+
+button[data-action="collapse-root"][data-section-status="future"]::after {
+  background-color: #6b7280;
+  color: white;
+  content: "Future";
 }
 `;
 
@@ -117,15 +76,11 @@ addons.register(ADDON_ID, () => {
   // Only run in browser context
   if (typeof document === 'undefined') return;
   
-  console.log('[Section Badges] Registering addon...');
-  console.log('[Section Badges] Config:', badgesConfig);
-  
   // Inject CSS styles first
   injectStyles();
   
   // Initialize badges when manager loads
   function initBadges() {
-    console.log('[Section Badges] Initializing badges with config:', badgesConfig);
     addStatusBadges(badgesConfig);
   }
   
@@ -153,4 +108,3 @@ addons.register(ADDON_ID, () => {
   setTimeout(initBadges, 1000);
   setTimeout(initBadges, 2000);
 });
-
