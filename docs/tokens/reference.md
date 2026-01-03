@@ -1,0 +1,1151 @@
+# Design Tokens Reference
+
+> Auto-generated from design tokens. Last updated: 2026-01-03T17:15:40.614Z
+
+## Overview
+
+This document lists all available CSS custom properties (tokens) organized by component and foundation tokens.
+
+**Total tokens:** 929
+
+## Usage
+
+### In CSS
+
+```css
+/* In component CSS */
+.my-component {
+  color: var(--eui-button-primary-label-base);
+  height: var(--eui-button-size-md-height);
+}
+```
+
+### In TypeScript/React
+
+```typescript
+// Using type-safe token utilities
+import { tokenVar, getTokenValue } from '@/generated/tsx/tokens.types';
+import { getComponentTokens } from '@/utils/tokens';
+
+// Type-safe token reference
+const style = {
+  color: tokenVar('eui-button-primary-label-base'),
+  height: tokenVar('eui-button-size-md-height')
+};
+
+// Get token value at runtime
+const buttonColor = getTokenValue('eui-button-primary-label-base');
+
+// Get all tokens for a component
+const buttonTokens = getComponentTokens('button');
+```
+
+### In Inline Styles
+
+```tsx
+<div style={{ color: 'var(--eui-button-primary-label-base)' }}>
+  Content
+</div>
+```
+
+---
+
+## Foundation Tokens
+
+Foundation tokens are base design tokens that are not component-specific.
+
+| Token | Value |
+|-------|-------|
+| `--eui-color-accent-100` | `oklch(93% 0.06 236)` |
+| `--eui-color-accent-200` | `oklch(89% 0.09 236)` |
+| `--eui-color-accent-300` | `oklch(84% 0.14 236)` |
+| `--eui-color-accent-400` | `oklch(76% 0.15 237)` |
+| `--eui-color-accent-50` | `oklch(96% 0.04 236)` |
+| `--eui-color-accent-500` | `oklch(68% 0.15 237)` |
+| `--eui-color-accent-600` | `oklch(68% 0.15 237)` |
+| `--eui-color-accent-700` | `oklch(63% 0.15 237)` |
+| `--eui-color-accent-800` | `oklch(58% 0.14 237)` |
+| `--eui-color-accent-900` | `oklch(53% 0.13 238)` |
+| `--eui-color-accent-primary` | `oklch(68% 0.15 237)` |
+| `--eui-color-background-base` | `oklch(25% 0.00 0)` |
+| `--eui-color-background-inverse` | `oklch(25% 0.00 0)` |
+| `--eui-color-background-muted` | `oklch(98% 0.00 0)` |
+| `--eui-color-background-muted` | `oklch(94% 0.00 0)` |
+| `--eui-color-background-subtle` | `oklch(96.5% 0.00 0)` |
+| `--eui-color-background-surface` | `oklch(100% 0 0)` |
+| `--eui-color-border-default` | `oklch(90% 0.00 0)` |
+| `--eui-color-border-default` | `oklch(48% 0.00 0)` |
+| `--eui-color-border-default` | `oklch(90% 0.00 0)` |
+| `--eui-color-border-inverse` | `oklch(33% 0.00 0)` |
+| `--eui-color-border-strong` | `oklch(84% 0.00 0)` |
+| `--eui-color-border-subtle` | `oklch(94% 0.00 0)` |
+| `--eui-color-brand-100` | `oklch(93% 0.05 232)` |
+| `--eui-color-brand-200` | `oklch(85% 0.06 231)` |
+| `--eui-color-brand-300` | `oklch(75% 0.08 231)` |
+| `--eui-color-brand-400` | `oklch(65% 0.09 231)` |
+| `--eui-color-brand-50` | `oklch(97% 0.02 232)` |
+| `--eui-color-brand-500` | `oklch(57% 0.09 231)` |
+| `--eui-color-brand-600` | `oklch(52% 0.10 230)` |
+| `--eui-color-brand-700` | `oklch(49% 0.10 230)` |
+| `--eui-color-brand-800` | `oklch(47% 0.10 230)` |
+| `--eui-color-brand-900` | `oklch(46% 0.09 231)` |
+| `--eui-color-brand-primary` | `oklch(49% 0.10 230)` |
+| `--eui-color-focus-ring` | `#ff4d00` |
+| `--eui-color-neutral-100` | `oklch(96.5% 0.00 0)` |
+| `--eui-color-neutral-200` | `oklch(94% 0.00 0)` |
+| `--eui-color-neutral-300` | `oklch(90% 0.00 0)` |
+| `--eui-color-neutral-400` | `oklch(84% 0.00 0)` |
+| `--eui-color-neutral-50` | `oklch(98% 0.00 0)` |
+| `--eui-color-neutral-500` | `oklch(75% 0.00 0)` |
+| `--eui-color-neutral-600` | `oklch(63% 0.00 0)` |
+| `--eui-color-neutral-700` | `oklch(48% 0.00 0)` |
+| `--eui-color-neutral-800` | `oklch(33% 0.00 0)` |
+| `--eui-color-neutral-900` | `oklch(25% 0.00 0)` |
+| `--eui-color-neutral-white` | `oklch(100% 0 0)` |
+| `--eui-color-signal-keyboard-focus` | `#ff4d00` |
+| `--eui-color-status-application-completed` | `oklch(51% 0.16 256)` |
+| `--eui-color-status-application-discontinued` | `oklch(32% 0.01 61)` |
+| `--eui-color-status-application-major-disruption` | `oklch(58% 0.23 26)` |
+| `--eui-color-status-application-minor-disruption` | `oklch(89% 0.18 95)` |
+| `--eui-color-status-application-on-track` | `oklch(66% 0.18 137)` |
+| `--eui-color-status-application-pending` | `oklch(64% 0.00 326)` |
+| `--eui-color-status-application-upcoming` | `oklch(57% 0.10 312)` |
+| `--eui-color-status-error-100` | `oklch(74% 0.18 25)` |
+| `--eui-color-status-error-50` | `oklch(84% 0.10 24)` |
+| `--eui-color-status-error-500` | `oklch(64% 0.21 25)` |
+| `--eui-color-status-error-600` | `oklch(59% 0.20 25)` |
+| `--eui-color-status-error-700` | `oklch(56% 0.19 25)` |
+| `--eui-color-status-info-100` | `oklch(78% 0.13 237)` |
+| `--eui-color-status-info-50` | `oklch(88% 0.07 236)` |
+| `--eui-color-status-info-500` | `oklch(68% 0.15 237)` |
+| `--eui-color-status-info-600` | `oklch(63% 0.15 237)` |
+| `--eui-color-status-info-700` | `oklch(60% 0.14 237)` |
+| `--eui-color-status-success-100` | `oklch(82% 0.17 150)` |
+| `--eui-color-status-success-50` | `oklch(92% 0.10 149)` |
+| `--eui-color-status-success-500` | `oklch(72% 0.19 150)` |
+| `--eui-color-status-success-600` | `oklch(67% 0.18 150)` |
+| `--eui-color-status-success-700` | `oklch(64% 0.17 150)` |
+| `--eui-color-status-warning-100` | `oklch(87% 0.14 70)` |
+| `--eui-color-status-warning-50` | `oklch(97% 0.08 69)` |
+| `--eui-color-status-warning-500` | `oklch(77% 0.16 70)` |
+| `--eui-color-status-warning-600` | `oklch(72% 0.15 70)` |
+| `--eui-color-status-warning-700` | `oklch(69% 0.15 70)` |
+| `--eui-color-system-focus` | `#ff4d00` |
+| `--eui-color-text-disabled` | `oklch(75% 0.00 0)` |
+| `--eui-color-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-color-text-inverse` | `oklch(100% 0 0)` |
+| `--eui-color-text-muted` | `oklch(48% 0.00 0)` |
+| `--eui-color-text-primary` | `oklch(25% 0.00 0)` |
+| `--eui-color-text-primary` | `oklch(25% 0.00 0)` |
+| `--eui-color-text-subtle` | `oklch(63% 0.00 0)` |
+| `--eui-radius-default` | `4px` |
+| `--eui-radius-default` | `8px` |
+| `--eui-radius-default` | `4px` |
+| `--eui-radius-extra-large` | `12px` |
+| `--eui-radius-extra-large` | `12px` |
+| `--eui-radius-extra-large` | `12px` |
+| `--eui-radius-full` | `9999px` |
+| `--eui-radius-full` | `9999px` |
+| `--eui-radius-full` | `9999px` |
+| `--eui-radius-large` | `8px` |
+| `--eui-radius-large` | `10px` |
+| `--eui-radius-large` | `8px` |
+| `--eui-radius-none` | `0px` |
+| `--eui-radius-none` | `0px` |
+| `--eui-radius-none` | `0px` |
+| `--eui-radius-pill` | `9999px` |
+| `--eui-radius-small` | `2px` |
+| `--eui-radius-small` | `4px` |
+| `--eui-radius-small` | `2px` |
+| `--eui-shadow-default` | `0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)` |
+| `--eui-shadow-extra-large` | `0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)` |
+| `--eui-shadow-large` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
+| `--eui-shadow-none` | `none` |
+| `--eui-shadow-small` | `0 1px 2px rgba(0, 0, 0, 0.05)` |
+| `--eui-spacing-2xl` | `3rem` |
+| `--eui-spacing-lg` | `1.5rem` |
+| `--eui-spacing-md` | `1rem` |
+| `--eui-spacing-sm` | `0.5rem` |
+| `--eui-spacing-xl` | `2rem` |
+| `--eui-spacing-xs` | `0.25rem` |
+| `--eui-typography-base-font-size` | `16px` |
+| `--eui-typography-base-fontSize` | `16px` |
+| `--eui-typography-font-family-monospace` | `'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace` |
+| `--eui-typography-font-family-ui` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-font-size-2xl` | `1.875rem` |
+| `--eui-typography-font-size-3xl` | `2.25rem` |
+| `--eui-typography-font-size-4xl` | `3rem` |
+| `--eui-typography-font-size-5xl` | `3.75rem` |
+| `--eui-typography-font-size-6xl` | `4.5rem` |
+| `--eui-typography-font-size-base` | `1rem` |
+| `--eui-typography-font-size-lg` | `1.25rem` |
+| `--eui-typography-font-size-md` | `1.125rem` |
+| `--eui-typography-font-size-sm` | `0.875rem` |
+| `--eui-typography-font-size-xl` | `1.5rem` |
+| `--eui-typography-font-size-xs` | `0.75rem` |
+| `--eui-typography-font-style-italic` | `italic` |
+| `--eui-typography-font-style-normal` | `normal` |
+| `--eui-typography-font-style-oblique` | `oblique` |
+| `--eui-typography-font-weight-bold` | `700` |
+| `--eui-typography-font-weight-light` | `300` |
+| `--eui-typography-font-weight-medium` | `500` |
+| `--eui-typography-font-weight-normal` | `400` |
+| `--eui-typography-font-weight-semibold` | `600` |
+| `--eui-typography-letter-spacing-normal` | `0` |
+| `--eui-typography-letter-spacing-tight` | `-0.025em` |
+| `--eui-typography-letter-spacing-tighter` | `-0.05em` |
+| `--eui-typography-letter-spacing-wide` | `0.01em` |
+| `--eui-typography-letter-spacing-wider` | `0.025em` |
+| `--eui-typography-letter-spacing-widest` | `0.05em` |
+| `--eui-typography-line-height-loose` | `2` |
+| `--eui-typography-line-height-none` | `1` |
+| `--eui-typography-line-height-normal` | `1.5` |
+| `--eui-typography-line-height-relaxed` | `1.75` |
+| `--eui-typography-line-height-tight` | `1.25` |
+| `--eui-typography-text-decoration-line-through` | `line-through` |
+| `--eui-typography-text-decoration-none` | `none` |
+| `--eui-typography-text-decoration-underline` | `underline` |
+| `--eui-typography-text-style-body-base-font-size` | `1rem` |
+| `--eui-typography-text-style-body-base-font-weight` | `400` |
+| `--eui-typography-text-style-body-base-line-height` | `1.5` |
+| `--eui-typography-text-style-body-large-font-size` | `1.125rem` |
+| `--eui-typography-text-style-body-large-font-weight` | `400` |
+| `--eui-typography-text-style-body-large-line-height` | `1.5` |
+| `--eui-typography-text-style-body-small-font-size` | `0.875rem` |
+| `--eui-typography-text-style-body-small-font-weight` | `400` |
+| `--eui-typography-text-style-body-small-line-height` | `1.5` |
+| `--eui-typography-text-style-caption-font-size` | `0.75rem` |
+| `--eui-typography-text-style-caption-font-weight` | `400` |
+| `--eui-typography-text-style-caption-line-height` | `1.5` |
+| `--eui-typography-text-style-code-base-font-family` | `'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace` |
+| `--eui-typography-text-style-code-base-font-size` | `0.875rem` |
+| `--eui-typography-text-style-code-base-font-weight` | `400` |
+| `--eui-typography-text-style-code-base-line-height` | `1.5` |
+| `--eui-typography-text-style-code-small-font-family` | `'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace` |
+| `--eui-typography-text-style-code-small-font-size` | `0.75rem` |
+| `--eui-typography-text-style-code-small-font-weight` | `400` |
+| `--eui-typography-text-style-code-small-line-height` | `1.5` |
+| `--eui-typography-text-style-heading-1-font-size` | `4.5rem` |
+| `--eui-typography-text-style-heading-1-font-weight` | `700` |
+| `--eui-typography-text-style-heading-1-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-2-font-size` | `3.75rem` |
+| `--eui-typography-text-style-heading-2-font-weight` | `700` |
+| `--eui-typography-text-style-heading-2-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-3-font-size` | `3rem` |
+| `--eui-typography-text-style-heading-3-font-weight` | `700` |
+| `--eui-typography-text-style-heading-3-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-4-font-size` | `2.25rem` |
+| `--eui-typography-text-style-heading-4-font-weight` | `700` |
+| `--eui-typography-text-style-heading-4-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-5-font-size` | `1.875rem` |
+| `--eui-typography-text-style-heading-5-font-weight` | `700` |
+| `--eui-typography-text-style-heading-5-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-6-font-size` | `1.5rem` |
+| `--eui-typography-text-style-heading-6-font-weight` | `600` |
+| `--eui-typography-text-style-heading-6-line-height` | `1.25` |
+| `--eui-typography-text-transform-capitalize` | `capitalize` |
+| `--eui-typography-text-transform-lowercase` | `lowercase` |
+| `--eui-typography-text-transform-none` | `none` |
+| `--eui-typography-text-transform-uppercase` | `uppercase` |
+
+---
+
+## Alert
+
+| Token | Value |
+|-------|-------|
+| `--eui-alert-banner-border-style` | `solid` |
+| `--eui-alert-banner-border-width` | `1px` |
+| `--eui-alert-banner-colors-background-error` | `oklch(84% 0.10 24)` |
+| `--eui-alert-banner-colors-background-info` | `oklch(88% 0.07 236)` |
+| `--eui-alert-banner-colors-background-success` | `oklch(92% 0.10 149)` |
+| `--eui-alert-banner-colors-background-warning` | `oklch(97% 0.08 69)` |
+| `--eui-alert-banner-colors-border-error` | `oklch(59% 0.20 25)` |
+| `--eui-alert-banner-colors-border-info` | `oklch(63% 0.15 237)` |
+| `--eui-alert-banner-colors-border-success` | `oklch(67% 0.18 150)` |
+| `--eui-alert-banner-colors-border-warning` | `oklch(72% 0.15 70)` |
+| `--eui-alert-banner-colors-icon-error` | `oklch(59% 0.20 25)` |
+| `--eui-alert-banner-colors-icon-info` | `oklch(63% 0.15 237)` |
+| `--eui-alert-banner-colors-icon-success` | `oklch(67% 0.18 150)` |
+| `--eui-alert-banner-colors-icon-warning` | `oklch(72% 0.15 70)` |
+| `--eui-alert-banner-colors-text-error` | `oklch(56% 0.19 25)` |
+| `--eui-alert-banner-colors-text-info` | `oklch(60% 0.14 237)` |
+| `--eui-alert-banner-colors-text-success` | `oklch(64% 0.17 150)` |
+| `--eui-alert-banner-colors-text-warning` | `oklch(69% 0.15 70)` |
+| `--eui-alert-banner-spacing-gap-actions` | `0.5rem` |
+| `--eui-alert-banner-spacing-gap-content` | `0.5rem` |
+| `--eui-alert-banner-spacing-height-min` | `auto` |
+| `--eui-alert-banner-spacing-padding` | `1rem` |
+| `--eui-alert-banner-z-index` | `10000` |
+
+## App
+
+| Token | Value |
+|-------|-------|
+| `--eui-app-shell-layout-grid-template-areas` | `"header header header" "sidebar global-title-bar detail-panel" "sidebar contextual-title-bar detail-panel" "sidebar content detail-panel"` |
+
+## Avatar
+
+| Token | Value |
+|-------|-------|
+| `--eui-avatar-background-fallback` | `oklch(96.5% 0.00 0)` |
+| `--eui-avatar-border-color` | `oklch(100% 0 0)` |
+| `--eui-avatar-border-color-lead` | `oklch(68% 0.15 237)` |
+| `--eui-avatar-border-style` | `solid` |
+| `--eui-avatar-border-width` | `2px` |
+| `--eui-avatar-group-layout-hover-duration` | `200ms` |
+| `--eui-avatar-group-layout-hover-easing` | `ease-out` |
+| `--eui-avatar-group-layout-hover-scale` | `1.1` |
+| `--eui-avatar-group-layout-hover-spread` | `12px` |
+| `--eui-avatar-group-layout-max-visible` | `4` |
+| `--eui-avatar-group-layout-overlap` | `12px` |
+| `--eui-avatar-group-layout-overlap-lead` | `6px` |
+| `--eui-avatar-group-layout-overlap-tight` | `16px` |
+| `--eui-avatar-shape-circle-radius` | `50%` |
+| `--eui-avatar-size-lg-diameter` | `40px` |
+| `--eui-avatar-size-md-diameter` | `32px` |
+| `--eui-avatar-size-sm-diameter` | `28px` |
+| `--eui-avatar-text-fallback` | `oklch(75% 0.00 0)` |
+| `--eui-avatar-typography-font-family` | `inherit` |
+| `--eui-avatar-typography-font-size-lg` | `0.875rem` |
+| `--eui-avatar-typography-font-size-md` | `0.75rem` |
+| `--eui-avatar-typography-font-size-sm` | `0.6875rem` |
+| `--eui-avatar-typography-font-weight` | `600` |
+| `--eui-avatar-typography-line-height` | `1` |
+| `--eui-avatar-typography-text-transform` | `uppercase` |
+
+## Breakpoint
+
+| Token | Value |
+|-------|-------|
+| `--eui-breakpoint-desktop` | `1280px` |
+| `--eui-breakpoint-narrow` | `1024px` |
+| `--eui-breakpoint-wide` | `1600px` |
+
+## Button
+
+| Token | Value |
+|-------|-------|
+| `--eui-button-accent-background-active` | `oklch(68% 0.15 237)` |
+| `--eui-button-accent-background-base` | `oklch(68% 0.15 237)` |
+| `--eui-button-accent-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-accent-background-hover` | `oklch(68% 0.15 237)` |
+| `--eui-button-accent-background-selected` | `oklch(68% 0.15 237)` |
+| `--eui-button-accent-finished-background-active` | `oklch(89% 0.09 236)` |
+| `--eui-button-accent-finished-background-base` | `oklch(89% 0.09 236)` |
+| `--eui-button-accent-finished-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-accent-finished-background-hover` | `oklch(89% 0.09 236)` |
+| `--eui-button-accent-finished-background-selected` | `oklch(89% 0.09 236)` |
+| `--eui-button-accent-finished-label-active` | `oklch(63% 0.15 237)` |
+| `--eui-button-accent-finished-label-base` | `oklch(63% 0.15 237)` |
+| `--eui-button-accent-finished-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-accent-finished-label-hover` | `oklch(63% 0.15 237)` |
+| `--eui-button-accent-finished-label-selected` | `oklch(63% 0.15 237)` |
+| `--eui-button-accent-label-active` | `oklch(100% 0 0)` |
+| `--eui-button-accent-label-base` | `oklch(100% 0 0)` |
+| `--eui-button-accent-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-accent-label-hover` | `oklch(100% 0 0)` |
+| `--eui-button-accent-label-selected` | `oklch(100% 0 0)` |
+| `--eui-button-border-style` | `solid` |
+| `--eui-button-border-width` | `1px` |
+| `--eui-button-focus-ring-color-derived-accessible` | `oklch(48% 0.00 0)` |
+| `--eui-button-focus-ring-color-derived-base` | `oklch(48% 0.00 0)` |
+| `--eui-button-focus-ring-offset-base` | `1px` |
+| `--eui-button-focus-ring-width-accessible` | `2px` |
+| `--eui-button-focus-ring-width-base` | `2px` |
+| `--eui-button-group-orientation-horizontal` | `horizontal` |
+| `--eui-button-group-orientation-vertical` | `vertical` |
+| `--eui-button-group-position-first-shape-orientation-horizontal-corner-bottom-left` | `4px` |
+| `--eui-button-group-position-first-shape-orientation-horizontal-corner-bottom-right` | `0px` |
+| `--eui-button-group-position-first-shape-orientation-horizontal-corner-top-left` | `4px` |
+| `--eui-button-group-position-first-shape-orientation-horizontal-corner-top-right` | `0px` |
+| `--eui-button-group-position-first-shape-orientation-vertical-corner-bottom-left` | `0px` |
+| `--eui-button-group-position-first-shape-orientation-vertical-corner-bottom-right` | `0px` |
+| `--eui-button-group-position-first-shape-orientation-vertical-corner-top-left` | `4px` |
+| `--eui-button-group-position-first-shape-orientation-vertical-corner-top-right` | `4px` |
+| `--eui-button-group-position-last-shape-orientation-horizontal-corner-bottom-left` | `0px` |
+| `--eui-button-group-position-last-shape-orientation-horizontal-corner-bottom-right` | `4px` |
+| `--eui-button-group-position-last-shape-orientation-horizontal-corner-top-left` | `0px` |
+| `--eui-button-group-position-last-shape-orientation-horizontal-corner-top-right` | `4px` |
+| `--eui-button-group-position-last-shape-orientation-vertical-corner-bottom-left` | `4px` |
+| `--eui-button-group-position-last-shape-orientation-vertical-corner-bottom-right` | `4px` |
+| `--eui-button-group-position-last-shape-orientation-vertical-corner-top-left` | `0px` |
+| `--eui-button-group-position-last-shape-orientation-vertical-corner-top-right` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-horizontal-corner-bottom-left` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-horizontal-corner-bottom-right` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-horizontal-corner-top-left` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-horizontal-corner-top-right` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-vertical-corner-bottom-left` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-vertical-corner-bottom-right` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-vertical-corner-top-left` | `0px` |
+| `--eui-button-group-position-middle-shape-orientation-vertical-corner-top-right` | `0px` |
+| `--eui-button-group-position-single-shape-corner-bottom-left` | `4px` |
+| `--eui-button-group-position-single-shape-corner-bottom-right` | `4px` |
+| `--eui-button-group-position-single-shape-corner-top-left` | `4px` |
+| `--eui-button-group-position-single-shape-corner-top-right` | `4px` |
+| `--eui-button-layout-default-flex-basis` | `auto` |
+| `--eui-button-layout-default-flex-grow` | `0` |
+| `--eui-button-layout-default-flex-shrink` | `0` |
+| `--eui-button-layout-default-white-space` | `nowrap` |
+| `--eui-button-layout-stack-internal-border-horizontal` | `none` |
+| `--eui-button-layout-stack-internal-border-vertical` | `none` |
+| `--eui-button-layout-stack-perimeter-border` | `preserve` |
+| `--eui-button-layout-stack-separator-inset` | `6px` |
+| `--eui-button-layout-stack-separator-thickness` | `1px` |
+| `--eui-button-primary-background-active` | `oklch(49% 0.10 230)` |
+| `--eui-button-primary-background-base` | `oklch(49% 0.10 230)` |
+| `--eui-button-primary-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-primary-background-hover` | `oklch(49% 0.10 230)` |
+| `--eui-button-primary-background-selected` | `oklch(49% 0.10 230)` |
+| `--eui-button-primary-label-active` | `oklch(100% 0 0)` |
+| `--eui-button-primary-label-base` | `oklch(100% 0 0)` |
+| `--eui-button-primary-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-primary-label-hover` | `oklch(100% 0 0)` |
+| `--eui-button-primary-label-selected` | `oklch(100% 0 0)` |
+| `--eui-button-secondary-background-active` | `oklch(100% 0 0)` |
+| `--eui-button-secondary-background-base` | `oklch(100% 0 0)` |
+| `--eui-button-secondary-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-secondary-background-hover` | `oklch(100% 0 0)` |
+| `--eui-button-secondary-background-selected` | `oklch(100% 0 0)` |
+| `--eui-button-secondary-border-active` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-border-base` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-border-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-border-hover` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-border-selected` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-label-active` | `oklch(25% 0.00 0)` |
+| `--eui-button-secondary-label-base` | `oklch(25% 0.00 0)` |
+| `--eui-button-secondary-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-label-hover` | `oklch(25% 0.00 0)` |
+| `--eui-button-secondary-label-selected` | `oklch(25% 0.00 0)` |
+| `--eui-button-separator-inset` | `6px` |
+| `--eui-button-separator-thickness` | `1px` |
+| `--eui-button-shape-circle-radius` | `50%` |
+| `--eui-button-shape-default-radius` | `4px` |
+| `--eui-button-shape-round-radius` | `9999px` |
+| `--eui-button-size-lg-font-size` | `1rem` |
+| `--eui-button-size-lg-font-weight` | `600` |
+| `--eui-button-size-lg-gap` | `0.45rem` |
+| `--eui-button-size-lg-height` | `48px` |
+| `--eui-button-size-lg-padding-inline` | `24px` |
+| `--eui-button-size-md-font-size` | `0.95rem` |
+| `--eui-button-size-md-font-weight` | `600` |
+| `--eui-button-size-md-gap` | `0.4rem` |
+| `--eui-button-size-md-height` | `40px` |
+| `--eui-button-size-md-padding-inline` | `20px` |
+| `--eui-button-size-sm-font-size` | `0.9rem` |
+| `--eui-button-size-sm-font-weight` | `600` |
+| `--eui-button-size-sm-gap` | `0.35rem` |
+| `--eui-button-size-sm-height` | `36px` |
+| `--eui-button-size-sm-padding-inline` | `16px` |
+| `--eui-button-states-active` | `press` |
+| `--eui-button-states-disabled` | `mute` |
+| `--eui-button-states-hover` | `emphasize` |
+| `--eui-button-states-selected` | `select` |
+
+## Calendar
+
+| Token | Value |
+|-------|-------|
+| `--eui-calendar-border-radius-calendar` | `4px` |
+| `--eui-calendar-border-radius-day` | `4px` |
+| `--eui-calendar-border-width` | `1px` |
+| `--eui-calendar-colors-background` | `oklch(100% 0 0)` |
+| `--eui-calendar-colors-day-background-active` | `oklch(96% 0.04 236)` |
+| `--eui-calendar-colors-day-background-default` | `oklch(100% 0 0)` |
+| `--eui-calendar-colors-day-background-disabled` | `oklch(98% 0.00 0)` |
+| `--eui-calendar-colors-day-background-hover` | `oklch(89% 0.09 236)` |
+| `--eui-calendar-colors-day-background-outside-month` | `oklch(98% 0.00 0)` |
+| `--eui-calendar-colors-day-background-selected` | `oklch(63% 0.15 237)` |
+| `--eui-calendar-colors-day-background-selected-hover` | `oklch(68% 0.15 237)` |
+| `--eui-calendar-colors-day-background-today` | `oklch(100% 0 0)` |
+| `--eui-calendar-colors-day-border-default` | `oklch(94% 0.00 0)` |
+| `--eui-calendar-colors-day-border-selected` | `oklch(63% 0.15 237)` |
+| `--eui-calendar-colors-day-text-default` | `oklch(25% 0.00 0)` |
+| `--eui-calendar-colors-day-text-disabled` | `oklch(90% 0.00 0)` |
+| `--eui-calendar-colors-day-text-outside-month` | `oklch(63% 0.00 0)` |
+| `--eui-calendar-colors-day-text-selected` | `oklch(100% 0 0)` |
+| `--eui-calendar-colors-day-text-today` | `oklch(25% 0.00 0)` |
+| `--eui-calendar-colors-header-background` | `oklch(100% 0 0)` |
+| `--eui-calendar-colors-header-button-active-background` | `oklch(93% 0.06 236)` |
+| `--eui-calendar-colors-header-button-hover-background` | `oklch(96% 0.04 236)` |
+| `--eui-calendar-colors-header-button-text` | `oklch(63% 0.15 237)` |
+| `--eui-calendar-colors-header-text` | `oklch(25% 0.00 0)` |
+| `--eui-calendar-colors-range-background` | `oklch(96% 0.04 236)` |
+| `--eui-calendar-colors-range-background-hover` | `oklch(93% 0.06 236)` |
+| `--eui-calendar-colors-range-text` | `oklch(25% 0.00 0)` |
+| `--eui-calendar-colors-weekday-text` | `oklch(63% 0.00 0)` |
+| `--eui-calendar-size-day-aspect-ratio` | `1` |
+| `--eui-calendar-size-day-min-height` | `36px` |
+| `--eui-calendar-size-day-width` | `14.285714286%` |
+| `--eui-calendar-size-header-height` | `auto` |
+| `--eui-calendar-size-min-width` | `250px` |
+| `--eui-calendar-size-weekday-height` | `auto` |
+| `--eui-calendar-size-weekday-width` | `14.285714286%` |
+| `--eui-calendar-size-width` | `280px` |
+| `--eui-calendar-spacing-day-margin-overlap` | `-1px` |
+| `--eui-calendar-spacing-day-padding-horizontal` | `0` |
+| `--eui-calendar-spacing-day-padding-vertical` | `4%` |
+| `--eui-calendar-spacing-grid-gap` | `0` |
+| `--eui-calendar-spacing-header-gap` | `0.5rem` |
+| `--eui-calendar-spacing-header-padding-horizontal` | `0.5rem` |
+| `--eui-calendar-spacing-header-padding-vertical` | `0.5rem` |
+| `--eui-calendar-spacing-padding` | `0.75rem` |
+| `--eui-calendar-spacing-weekday-gap` | `0` |
+| `--eui-calendar-spacing-weekday-padding-vertical` | `0.5rem` |
+| `--eui-calendar-typography-day-font-size` | `0.875rem` |
+| `--eui-calendar-typography-day-font-weight` | `400` |
+| `--eui-calendar-typography-day-line-height` | `1` |
+| `--eui-calendar-typography-header-font-size` | `1rem` |
+| `--eui-calendar-typography-header-font-weight` | `600` |
+| `--eui-calendar-typography-weekday-font-size` | `0.75rem` |
+| `--eui-calendar-typography-weekday-font-weight` | `600` |
+| `--eui-calendar-z-index-default` | `0` |
+| `--eui-calendar-z-index-focus` | `3` |
+| `--eui-calendar-z-index-interactive` | `1` |
+| `--eui-calendar-z-index-selected` | `2` |
+
+## Card
+
+| Token | Value |
+|-------|-------|
+| `--eui-card-status-completed-indicator` | `oklch(51% 0.16 256)` |
+| `--eui-card-status-completed-indicator-width` | `4px` |
+| `--eui-card-status-discontinued-indicator` | `oklch(32% 0.01 61)` |
+| `--eui-card-status-discontinued-indicator-width` | `4px` |
+| `--eui-card-status-major-disruption-indicator` | `oklch(58% 0.23 26)` |
+| `--eui-card-status-major-disruption-indicator-width` | `4px` |
+| `--eui-card-status-minor-disruption-indicator` | `oklch(89% 0.18 95)` |
+| `--eui-card-status-minor-disruption-indicator-width` | `4px` |
+| `--eui-card-status-on-track-indicator` | `oklch(66% 0.18 137)` |
+| `--eui-card-status-on-track-indicator-width` | `4px` |
+| `--eui-card-status-pending-indicator` | `oklch(64% 0.00 326)` |
+| `--eui-card-status-pending-indicator-width` | `4px` |
+| `--eui-card-status-upcoming-indicator` | `oklch(57% 0.10 312)` |
+| `--eui-card-status-upcoming-indicator-width` | `4px` |
+| `--eui-card-variant-elevated-background` | `oklch(100% 0 0)` |
+| `--eui-card-variant-elevated-border-color` | `oklch(48% 0.00 0)` |
+| `--eui-card-variant-elevated-border-style` | `solid` |
+| `--eui-card-variant-elevated-border-width` | `1px` |
+| `--eui-card-variant-elevated-radius` | `8px` |
+| `--eui-card-variant-elevated-shadow` | `0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)` |
+| `--eui-card-variant-flat-background` | `oklch(100% 0 0)` |
+| `--eui-card-variant-flat-border-color` | `oklch(48% 0.00 0)` |
+| `--eui-card-variant-flat-border-style` | `solid` |
+| `--eui-card-variant-flat-border-width` | `1px` |
+| `--eui-card-variant-flat-radius` | `8px` |
+| `--eui-card-variant-flat-shadow` | `none` |
+| `--eui-card-variant-strong-background` | `oklch(100% 0 0)` |
+| `--eui-card-variant-strong-border-color` | `oklch(48% 0.00 0)` |
+| `--eui-card-variant-strong-border-style` | `solid` |
+| `--eui-card-variant-strong-border-width` | `1px` |
+| `--eui-card-variant-strong-radius` | `8px` |
+| `--eui-card-variant-strong-shadow` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
+
+## Celebration
+
+| Token | Value |
+|-------|-------|
+| `--eui-celebration-animation-delay-long` | `1000ms` |
+| `--eui-celebration-animation-delay-medium` | `500ms` |
+| `--eui-celebration-animation-delay-short` | `200ms` |
+| `--eui-celebration-animation-duration` | `1.8s` |
+| `--eui-celebration-animation-easing` | `cubic-bezier(0.34, 1.56, 0.64, 1)` |
+| `--eui-celebration-animation-lift-max-scale` | `1.03` |
+| `--eui-celebration-animation-lift-max-translate-y` | `-6px` |
+| `--eui-celebration-animation-lift-shadow-base` | `0 1px 3px rgba(0, 0, 0, 0.12)` |
+| `--eui-celebration-animation-lift-shadow-peak` | `0 12px 24px rgba(0, 0, 0, 0.18)` |
+| `--eui-celebration-animation-shine-duration` | `1.2s` |
+| `--eui-celebration-animation-shine-easing` | `ease-in-out` |
+| `--eui-celebration-animation-shine-width` | `50%` |
+| `--eui-celebration-animation-sparkle-duration` | `1.5s` |
+| `--eui-celebration-animation-sparkle-easing` | `ease-out` |
+| `--eui-celebration-animation-sparkle-particle-size` | `2px` |
+| `--eui-celebration-colors-shine-end` | `rgba(255, 255, 255, 0)` |
+| `--eui-celebration-colors-shine-mid` | `rgba(255, 255, 255, 0.3)` |
+| `--eui-celebration-colors-shine-start` | `rgba(255, 255, 255, 0)` |
+| `--eui-celebration-colors-sparkle-base` | `#ffffff` |
+| `--eui-celebration-colors-sparkle-bright` | `rgba(255, 255, 255, 0.9)` |
+| `--eui-celebration-colors-sparkle-dim` | `rgba(255, 255, 255, 0.7)` |
+
+## Checkbox
+
+| Token | Value |
+|-------|-------|
+| `--eui-checkbox-background-base` | `oklch(100% 0 0)` |
+| `--eui-checkbox-background-checked` | `oklch(68% 0.15 237)` |
+| `--eui-checkbox-background-checked-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-checkbox-background-checked-hover` | `oklch(68% 0.15 237)` |
+| `--eui-checkbox-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-checkbox-background-hover` | `oklch(100% 0 0)` |
+| `--eui-checkbox-background-indeterminate` | `oklch(100% 0 0)` |
+| `--eui-checkbox-background-indeterminate-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-checkbox-background-indeterminate-hover` | `oklch(100% 0 0)` |
+| `--eui-checkbox-border-base` | `oklch(84% 0.00 0)` |
+| `--eui-checkbox-border-checked` | `oklch(58% 0.14 237)` |
+| `--eui-checkbox-border-checked-disabled` | `oklch(75% 0.00 0)` |
+| `--eui-checkbox-border-checked-hover` | `oklch(58% 0.14 237)` |
+| `--eui-checkbox-border-disabled` | `oklch(75% 0.00 0)` |
+| `--eui-checkbox-border-hover` | `oklch(84% 0.00 0)` |
+| `--eui-checkbox-border-indeterminate` | `oklch(84% 0.00 0)` |
+| `--eui-checkbox-border-indeterminate-disabled` | `oklch(75% 0.00 0)` |
+| `--eui-checkbox-border-indeterminate-hover` | `oklch(84% 0.00 0)` |
+| `--eui-checkbox-border-style` | `solid` |
+| `--eui-checkbox-border-width` | `1px` |
+| `--eui-checkbox-checkmark-base` | `oklch(100% 0 0)` |
+| `--eui-checkbox-checkmark-disabled` | `oklch(75% 0.00 0)` |
+| `--eui-checkbox-checkmark-indeterminate` | `oklch(76% 0.15 237)` |
+| `--eui-checkbox-checkmark-indeterminate-disabled` | `oklch(75% 0.00 0)` |
+| `--eui-checkbox-focus-ring-color-derived-accessible` | `oklch(49% 0.10 230)` |
+| `--eui-checkbox-focus-ring-color-derived-base` | `oklch(65% 0.09 231)` |
+| `--eui-checkbox-focus-ring-offset` | `2px` |
+| `--eui-checkbox-focus-ring-width-accessible` | `3px` |
+| `--eui-checkbox-focus-ring-width-base` | `2px` |
+| `--eui-checkbox-layout-gap` | `0.5em` |
+| `--eui-checkbox-shape-radius` | `2px` |
+| `--eui-checkbox-size-lg-size` | `1.5em` |
+| `--eui-checkbox-size-md-size` | `1.25em` |
+| `--eui-checkbox-size-sm-size` | `1em` |
+
+## Content
+
+| Token | Value |
+|-------|-------|
+| `--eui-content-colors-background` | `oklch(100% 0 0)` |
+| `--eui-content-colors-text` | `oklch(100% 0 0)` |
+| `--eui-content-spacing-padding` | `1.5rem` |
+
+## Counter
+
+| Token | Value |
+|-------|-------|
+| `--eui-counter-colors-filter-background` | `oklch(89% 0.09 236)` |
+| `--eui-counter-colors-filter-border` | `rgba(0, 0, 0, 0)` |
+| `--eui-counter-colors-filter-color` | `oklch(63% 0.15 237)` |
+| `--eui-counter-colors-filter-icon-color` | `oklch(68% 0.15 237)` |
+| `--eui-counter-colors-pill-default-background` | `oklch(93% 0.06 236)` |
+| `--eui-counter-colors-pill-default-border` | `rgba(0, 0, 0, 0)` |
+| `--eui-counter-colors-pill-default-color` | `oklch(100% 0 0)` |
+| `--eui-counter-colors-pill-disabled-background` | `oklch(90% 0.00 0)` |
+| `--eui-counter-colors-pill-disabled-border` | `rgba(0, 0, 0, 0)` |
+| `--eui-counter-colors-pill-disabled-color` | `oklch(48% 0.00 0)` |
+| `--eui-counter-colors-pill-inverse-background` | `rgba(255, 255, 255, 0.2)` |
+| `--eui-counter-colors-pill-inverse-border` | `rgba(0, 0, 0, 0)` |
+| `--eui-counter-colors-pill-inverse-color` | `oklch(100% 0 0)` |
+| `--eui-counter-colors-text-default-color` | `oklch(100% 0 0)` |
+| `--eui-counter-colors-text-disabled-color` | `oklch(48% 0.00 0)` |
+| `--eui-counter-colors-text-inverse-color` | `oklch(100% 0 0)` |
+| `--eui-counter-shape-filter-radius` | `9999px` |
+| `--eui-counter-shape-pill-radius` | `9999px` |
+| `--eui-counter-shape-text-radius` | `0px` |
+| `--eui-counter-size-lg-height` | `18px` |
+| `--eui-counter-size-lg-padding-inline` | `8px` |
+| `--eui-counter-size-lg-padding-vertical` | `3px` |
+| `--eui-counter-size-md-height` | `15px` |
+| `--eui-counter-size-md-padding-inline` | `6px` |
+| `--eui-counter-size-md-padding-vertical` | `2px` |
+| `--eui-counter-size-sm-height` | `14px` |
+| `--eui-counter-size-sm-padding-inline` | `5px` |
+| `--eui-counter-size-sm-padding-vertical` | `2px` |
+| `--eui-counter-spacing-icon-gap` | `0.25rem` |
+| `--eui-counter-spacing-icon-size-lg` | `16px` |
+| `--eui-counter-spacing-icon-size-md` | `14px` |
+| `--eui-counter-spacing-icon-size-sm` | `12px` |
+| `--eui-counter-typography-font-family` | `inherit` |
+| `--eui-counter-typography-font-size-filter` | `0.875rem` |
+| `--eui-counter-typography-font-size-pill` | `0.875rem` |
+| `--eui-counter-typography-font-size-text` | `1rem` |
+| `--eui-counter-typography-font-weight` | `400` |
+| `--eui-counter-typography-line-height` | `1` |
+
+## Detail
+
+| Token | Value |
+|-------|-------|
+| `--eui-detail-panel-colors-background` | `oklch(100% 0 0)` |
+| `--eui-detail-panel-colors-border` | `oklch(48% 0.00 0)` |
+| `--eui-detail-panel-colors-text` | `oklch(100% 0 0)` |
+| `--eui-detail-panel-shadow-left` | `-4px 0 8px rgba(0, 0, 0, 0.1)` |
+| `--eui-detail-panel-size-width` | `400px` |
+| `--eui-detail-panel-spacing-padding` | `1.5rem` |
+
+## Divider
+
+| Token | Value |
+|-------|-------|
+| `--eui-divider-colors-default` | `oklch(48% 0.00 0)` |
+| `--eui-divider-size-thickness` | `1px` |
+| `--eui-divider-spacing-margin-horizontal` | `0.5rem` |
+| `--eui-divider-spacing-margin-vertical` | `0.5rem` |
+
+## Focus
+
+| Token | Value |
+|-------|-------|
+| `--eui-focus-ring-width-accessible` | `3px` |
+| `--eui-focus-ring-width-base` | `2px` |
+
+## Form
+
+| Token | Value |
+|-------|-------|
+| `--eui-form-animation-duration` | `0.2s` |
+| `--eui-form-animation-easing` | `ease-in-out` |
+| `--eui-form-spacing-field-gap-external` | `1rem` |
+| `--eui-form-spacing-field-gap-internal` | `0.5rem` |
+| `--eui-form-spacing-group-gap` | `0.5rem` |
+| `--eui-form-spacing-row-gap` | `1rem` |
+| `--eui-form-spacing-section-gap-external` | `1.5rem` |
+| `--eui-form-spacing-section-gap-internal` | `1rem` |
+| `--eui-form-spacing-section-gap-title` | `1rem` |
+| `--eui-form-spacing-section-header-padding` | `0.5rem` |
+
+## Header
+
+| Token | Value |
+|-------|-------|
+| `--eui-header-colors-background` | `oklch(100% 0 0)` |
+| `--eui-header-colors-border` | `oklch(48% 0.00 0)` |
+| `--eui-header-colors-text` | `oklch(100% 0 0)` |
+| `--eui-header-size-height` | `56px` |
+| `--eui-header-spacing-gap` | `1rem` |
+| `--eui-header-spacing-padding-horizontal` | `1.5rem` |
+| `--eui-header-spacing-padding-vertical` | `0.75rem` |
+
+## Hero
+
+| Token | Value |
+|-------|-------|
+| `--eui-hero-section-colors-background-base` | `oklch(25% 0.00 0)` |
+| `--eui-hero-section-colors-background-overlay-dark` | `rgba(0, 0, 0, 0.4)` |
+| `--eui-hero-section-colors-background-overlay-light` | `rgba(255, 255, 255, 0.2)` |
+| `--eui-hero-section-colors-text-heading` | `oklch(100% 0 0)` |
+| `--eui-hero-section-colors-text-subheading` | `oklch(90% 0.00 0)` |
+| `--eui-hero-section-size-content-max-width` | `1200px` |
+| `--eui-hero-section-size-heading-max-width` | `800px` |
+| `--eui-hero-section-size-min-height-desktop` | `600px` |
+| `--eui-hero-section-size-min-height-mobile` | `400px` |
+| `--eui-hero-section-size-min-height-tablet` | `500px` |
+| `--eui-hero-section-size-min-height-wide` | `700px` |
+| `--eui-hero-section-size-subheading-max-width` | `600px` |
+| `--eui-hero-section-spacing-gap-content` | `1.5rem` |
+| `--eui-hero-section-spacing-gap-cta` | `1rem` |
+| `--eui-hero-section-spacing-gap-media` | `2rem` |
+| `--eui-hero-section-spacing-padding-desktop-block` | `4rem` |
+| `--eui-hero-section-spacing-padding-desktop-inline` | `3rem` |
+| `--eui-hero-section-spacing-padding-mobile-block` | `2rem` |
+| `--eui-hero-section-spacing-padding-mobile-inline` | `1rem` |
+| `--eui-hero-section-spacing-padding-tablet-block` | `3rem` |
+| `--eui-hero-section-spacing-padding-tablet-inline` | `2rem` |
+| `--eui-hero-section-typography-heading-desktop-font-size` | `3rem` |
+| `--eui-hero-section-typography-heading-desktop-font-weight` | `700` |
+| `--eui-hero-section-typography-heading-desktop-line-height` | `1.2` |
+| `--eui-hero-section-typography-heading-mobile-font-size` | `2rem` |
+| `--eui-hero-section-typography-heading-mobile-font-weight` | `700` |
+| `--eui-hero-section-typography-heading-mobile-line-height` | `1.2` |
+| `--eui-hero-section-typography-subheading-desktop-font-size` | `1.25rem` |
+| `--eui-hero-section-typography-subheading-desktop-line-height` | `1.6` |
+| `--eui-hero-section-typography-subheading-mobile-font-size` | `1rem` |
+| `--eui-hero-section-typography-subheading-mobile-line-height` | `1.6` |
+
+## Input
+
+| Token | Value |
+|-------|-------|
+| `--eui-input-background-base` | `oklch(100% 0 0)` |
+| `--eui-input-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-input-background-focus` | `oklch(100% 0 0)` |
+| `--eui-input-background-hover` | `oklch(100% 0 0)` |
+| `--eui-input-border-base` | `oklch(48% 0.00 0)` |
+| `--eui-input-border-disabled` | `oklch(84% 0.00 0)` |
+| `--eui-input-border-error` | `oklch(59% 0.20 25)` |
+| `--eui-input-border-focus` | `oklch(49% 0.10 230)` |
+| `--eui-input-border-hover` | `oklch(84% 0.00 0)` |
+| `--eui-input-border-style` | `solid` |
+| `--eui-input-border-width` | `1px` |
+| `--eui-input-focus-ring-color-derived-accessible` | `oklch(49% 0.10 230)` |
+| `--eui-input-focus-ring-color-derived-base` | `oklch(65% 0.09 231)` |
+| `--eui-input-focus-ring-offset` | `2px` |
+| `--eui-input-focus-ring-width-accessible` | `3px` |
+| `--eui-input-focus-ring-width-base` | `2px` |
+| `--eui-input-group-colors-prefix-text` | `oklch(63% 0.00 0)` |
+| `--eui-input-group-colors-suffix-text` | `oklch(63% 0.00 0)` |
+| `--eui-input-group-size-prefix-height-lg` | `44px` |
+| `--eui-input-group-size-prefix-height-md` | `40px` |
+| `--eui-input-group-size-prefix-height-sm` | `36px` |
+| `--eui-input-group-size-prefix-width-lg` | `44px` |
+| `--eui-input-group-size-prefix-width-md` | `40px` |
+| `--eui-input-group-size-prefix-width-sm` | `36px` |
+| `--eui-input-group-size-suffix-height-lg` | `44px` |
+| `--eui-input-group-size-suffix-height-md` | `40px` |
+| `--eui-input-group-size-suffix-height-sm` | `36px` |
+| `--eui-input-group-size-suffix-width-lg` | `44px` |
+| `--eui-input-group-size-suffix-width-md` | `40px` |
+| `--eui-input-group-size-suffix-width-sm` | `36px` |
+| `--eui-input-group-spacing-input-padding-left` | `0.5rem` |
+| `--eui-input-group-spacing-input-padding-right` | `0.5rem` |
+| `--eui-input-group-spacing-prefix-padding-left` | `0.5rem` |
+| `--eui-input-group-spacing-prefix-padding-right` | `0.25rem` |
+| `--eui-input-group-spacing-suffix-padding-left` | `0.25rem` |
+| `--eui-input-group-spacing-suffix-padding-right` | `0.5rem` |
+| `--eui-input-shape-radius` | `4px` |
+| `--eui-input-size-lg-font-size` | `1rem` |
+| `--eui-input-size-lg-height` | `44px` |
+| `--eui-input-size-lg-padding-inline` | `14px` |
+| `--eui-input-size-md-font-size` | `1rem` |
+| `--eui-input-size-md-height` | `40px` |
+| `--eui-input-size-md-padding-inline` | `12px` |
+| `--eui-input-size-sm-font-size` | `0.875rem` |
+| `--eui-input-size-sm-height` | `36px` |
+| `--eui-input-size-sm-padding-inline` | `12px` |
+| `--eui-input-text-base` | `oklch(100% 0 0)` |
+| `--eui-input-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-input-text-placeholder` | `oklch(63% 0.00 0)` |
+| `--eui-input-typography-font-family` | `inherit` |
+| `--eui-input-typography-font-weight` | `400` |
+| `--eui-input-typography-line-height` | `1.5` |
+
+## Layout
+
+| Token | Value |
+|-------|-------|
+| `--eui-layout-container-gutter-x` | `1.5rem` |
+| `--eui-layout-container-standard-max-width` | `960px` |
+| `--eui-layout-container-wide-max-width` | `100%` |
+| `--eui-layout-page-padding-x` | `1.5rem` |
+| `--eui-layout-page-padding-y` | `1.5rem` |
+| `--eui-layout-section-gap` | `1rem` |
+| `--eui-layout-section-padding` | `1rem` |
+| `--eui-layout-section-title-gap` | `0.5rem` |
+| `--eui-layout-toolbar-gap` | `0.5rem` |
+| `--eui-layout-toolbar-height` | `40px` |
+| `--eui-layout-toolbar-padding-y` | `1rem` |
+
+## Logo
+
+| Token | Value |
+|-------|-------|
+| `--eui-logo-colors-icon-default` | `oklch(49% 0.10 230)` |
+| `--eui-logo-colors-icon-grayscale` | `oklch(63% 0.00 0)` |
+| `--eui-logo-colors-icon-inverse` | `oklch(100% 0 0)` |
+| `--eui-logo-colors-icon-monochrome` | `currentColor` |
+| `--eui-logo-size-icon-lg` | `48px` |
+| `--eui-logo-size-icon-md` | `32px` |
+| `--eui-logo-size-icon-sm` | `24px` |
+| `--eui-logo-size-icon-xl` | `64px` |
+| `--eui-logo-size-icon-xs` | `16px` |
+| `--eui-logo-spacing-gap` | `0.75rem` |
+
+## Menu
+
+| Token | Value |
+|-------|-------|
+| `--eui-menu-border-color` | `oklch(94% 0.00 0)` |
+| `--eui-menu-border-style` | `solid` |
+| `--eui-menu-border-width` | `1px` |
+| `--eui-menu-colors-background` | `oklch(100% 0 0)` |
+| `--eui-menu-colors-border` | `oklch(48% 0.00 0)` |
+| `--eui-menu-colors-item-background-default` | `rgba(0, 0, 0, 0)` |
+| `--eui-menu-colors-item-background-focus` | `oklch(96.5% 0.00 0)` |
+| `--eui-menu-colors-item-background-hover` | `oklch(96.5% 0.00 0)` |
+| `--eui-menu-colors-item-background-selected` | `oklch(94% 0.00 0)` |
+| `--eui-menu-colors-item-text` | `oklch(100% 0 0)` |
+| `--eui-menu-colors-item-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-menu-shadow` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
+| `--eui-menu-shape-radius` | `8px` |
+| `--eui-menu-size-max-height` | `300px` |
+| `--eui-menu-size-max-width` | `400px` |
+| `--eui-menu-size-min-width` | `200px` |
+| `--eui-menu-spacing-divider-margin` | `0.25rem` |
+| `--eui-menu-spacing-item-gap` | `0.25rem` |
+| `--eui-menu-spacing-item-padding-horizontal` | `0.75rem` |
+| `--eui-menu-spacing-item-padding-vertical` | `0.5rem` |
+| `--eui-menu-spacing-list-padding` | `0.5rem` |
+
+## Modal
+
+| Token | Value |
+|-------|-------|
+| `--eui-modal-backdrop-blur` | `none` |
+| `--eui-modal-backdrop-color` | `rgba(0, 0, 0, 0.5)` |
+| `--eui-modal-colors-body-background` | `oklch(100% 0 0)` |
+| `--eui-modal-colors-body-border` | `rgba(0, 0, 0, 0)` |
+| `--eui-modal-colors-body-text` | `oklch(100% 0 0)` |
+| `--eui-modal-colors-close-color` | `oklch(100% 0 0)` |
+| `--eui-modal-colors-close-hover` | `oklch(100% 0 0)` |
+| `--eui-modal-colors-footer-background` | `oklch(96.5% 0.00 0)` |
+| `--eui-modal-colors-footer-border` | `oklch(48% 0.00 0)` |
+| `--eui-modal-colors-footer-text` | `oklch(100% 0 0)` |
+| `--eui-modal-colors-header-background` | `oklch(49% 0.10 230)` |
+| `--eui-modal-colors-header-border` | `rgba(0, 0, 0, 0)` |
+| `--eui-modal-colors-header-text` | `oklch(100% 0 0)` |
+| `--eui-modal-shadow-elevation` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
+| `--eui-modal-shape-radius` | `12px` |
+| `--eui-modal-size-full-max-width` | `100vw` |
+| `--eui-modal-size-lg-max-width` | `600px` |
+| `--eui-modal-size-md-max-width` | `500px` |
+| `--eui-modal-size-sm-max-width` | `400px` |
+| `--eui-modal-size-xl-max-width` | `800px` |
+| `--eui-modal-spacing-body-padding` | `1.5rem` |
+| `--eui-modal-spacing-footer-padding-horizontal` | `1.5rem` |
+| `--eui-modal-spacing-footer-padding-vertical` | `1rem` |
+| `--eui-modal-spacing-gap` | `0.5rem` |
+| `--eui-modal-spacing-header-padding-horizontal` | `1.5rem` |
+| `--eui-modal-spacing-header-padding-vertical` | `1rem` |
+
+## Select
+
+| Token | Value |
+|-------|-------|
+| `--eui-select-dropdown-background` | `oklch(100% 0 0)` |
+| `--eui-select-dropdown-border-color` | `oklch(94% 0.00 0)` |
+| `--eui-select-dropdown-border-style` | `solid` |
+| `--eui-select-dropdown-border-width` | `1px` |
+| `--eui-select-dropdown-max-height` | `300px` |
+| `--eui-select-dropdown-padding` | `0.5rem` |
+| `--eui-select-dropdown-radius` | `8px` |
+| `--eui-select-dropdown-shadow` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
+| `--eui-select-dropdown-z-index` | `1000` |
+| `--eui-select-icon-color` | `oklch(63% 0.00 0)` |
+| `--eui-select-icon-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-select-option-background-default` | `rgba(0, 0, 0, 0)` |
+| `--eui-select-option-background-focused` | `oklch(96.5% 0.00 0)` |
+| `--eui-select-option-background-hover` | `oklch(96.5% 0.00 0)` |
+| `--eui-select-option-background-selected` | `oklch(94% 0.00 0)` |
+| `--eui-select-option-background-selected-focused` | `oklch(94% 0.00 0)` |
+| `--eui-select-option-color-default` | `oklch(100% 0 0)` |
+| `--eui-select-option-color-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-select-option-padding-horizontal` | `0.75rem` |
+| `--eui-select-option-padding-vertical` | `0.5rem` |
+| `--eui-select-primitive-badge-colors-background` | `oklch(96.5% 0.00 0)` |
+| `--eui-select-primitive-badge-colors-remove-icon` | `oklch(63% 0.00 0)` |
+| `--eui-select-primitive-badge-colors-text` | `oklch(100% 0 0)` |
+| `--eui-select-primitive-badge-shape-radius` | `2px` |
+| `--eui-select-primitive-badge-spacing-gap` | `0.25rem` |
+| `--eui-select-primitive-badge-spacing-padding-horizontal` | `0.25rem` |
+| `--eui-select-primitive-badge-spacing-padding-vertical` | `2px` |
+| `--eui-select-primitive-listbox-spacing-gap` | `0.25rem` |
+| `--eui-select-primitive-option-shape-radius` | `4px` |
+| `--eui-select-primitive-option-spacing-padding-horizontal` | `0.75rem` |
+| `--eui-select-primitive-option-spacing-padding-vertical` | `0.5rem` |
+| `--eui-select-primitive-popover-size-max-height` | `300px` |
+| `--eui-select-primitive-popover-size-min-width` | `100%` |
+| `--eui-select-primitive-popover-spacing-padding` | `0.5rem` |
+| `--eui-select-primitive-trigger-spacing-gap` | `0.25rem` |
+| `--eui-select-trigger-background` | `oklch(100% 0 0)` |
+| `--eui-select-trigger-border` | `oklch(48% 0.00 0)` |
+
+## Side
+
+| Token | Value |
+|-------|-------|
+| `--eui-side-nav-animation-duration` | `200ms` |
+| `--eui-side-nav-animation-easing` | `ease-in-out` |
+| `--eui-side-nav-animation-indicator-duration` | `200ms` |
+| `--eui-side-nav-animation-indicator-easing` | `ease-out` |
+| `--eui-side-nav-animation-item-duration` | `150ms` |
+| `--eui-side-nav-animation-item-easing` | `ease-out` |
+| `--eui-side-nav-colors-background` | `oklch(49% 0.10 230)` |
+| `--eui-side-nav-colors-border` | `oklch(49% 0.10 230)` |
+| `--eui-side-nav-colors-footer-border` | `oklch(75% 0.08 231)` |
+| `--eui-side-nav-colors-header-border` | `oklch(75% 0.08 231)` |
+| `--eui-side-nav-colors-item-background-active` | `oklch(57% 0.09 231)` |
+| `--eui-side-nav-colors-item-background-default` | `rgba(0, 0, 0, 0)` |
+| `--eui-side-nav-colors-item-background-disabled` | `rgba(0, 0, 0, 0)` |
+| `--eui-side-nav-colors-item-background-focus` | `rgba(0, 0, 0, 0)` |
+| `--eui-side-nav-colors-item-background-hover` | `oklch(47% 0.10 230)` |
+| `--eui-side-nav-colors-item-background-selected` | `oklch(57% 0.09 231)` |
+| `--eui-side-nav-colors-item-badge-background` | `oklch(85% 0.06 231)` |
+| `--eui-side-nav-colors-item-badge-text` | `oklch(46% 0.09 231)` |
+| `--eui-side-nav-colors-item-indicator-active` | `oklch(85% 0.06 231)` |
+| `--eui-side-nav-colors-item-indicator-selected` | `oklch(75% 0.08 231)` |
+| `--eui-side-nav-colors-item-text-active` | `oklch(100% 0 0)` |
+| `--eui-side-nav-colors-item-text-default` | `oklch(93% 0.05 232)` |
+| `--eui-side-nav-colors-item-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-side-nav-colors-item-text-hover` | `oklch(100% 0 0)` |
+| `--eui-side-nav-colors-item-text-selected` | `oklch(93% 0.05 232)` |
+| `--eui-side-nav-colors-section-title-text` | `oklch(100% 0 0)` |
+| `--eui-side-nav-colors-separator` | `oklch(94% 0.00 0)` |
+| `--eui-side-nav-colors-toggle-border` | `oklch(85% 0.06 231)` |
+| `--eui-side-nav-colors-tooltip-background` | `oklch(25% 0.00 0)` |
+| `--eui-side-nav-colors-tooltip-text` | `oklch(100% 0 0)` |
+| `--eui-side-nav-size-badge-height` | `20px` |
+| `--eui-side-nav-size-badge-min-width` | `20px` |
+| `--eui-side-nav-size-footer-height` | `64px` |
+| `--eui-side-nav-size-header-height` | `64px` |
+| `--eui-side-nav-size-icon-height` | `20px` |
+| `--eui-side-nav-size-icon-width` | `20px` |
+| `--eui-side-nav-size-item-height` | `44px` |
+| `--eui-side-nav-size-item-indicator-width` | `3px` |
+| `--eui-side-nav-size-section-title-height` | `32px` |
+| `--eui-side-nav-size-toggle-height` | `28px` |
+| `--eui-side-nav-size-toggle-width` | `28px` |
+| `--eui-side-nav-size-width-collapsed` | `64px` |
+| `--eui-side-nav-size-width-expanded` | `280px` |
+| `--eui-side-nav-spacing-group-gap` | `0.25rem` |
+| `--eui-side-nav-spacing-item-gap` | `0.75rem` |
+| `--eui-side-nav-spacing-item-padding-horizontal` | `1rem` |
+| `--eui-side-nav-spacing-nested-indent` | `1.5rem` |
+| `--eui-side-nav-spacing-padding-horizontal` | `0` |
+| `--eui-side-nav-spacing-padding-vertical` | `0.5rem` |
+| `--eui-side-nav-spacing-section-padding-horizontal` | `1rem` |
+| `--eui-side-nav-spacing-section-padding-top` | `0.5rem` |
+| `--eui-side-nav-spacing-separator-margin-vertical` | `0.75rem` |
+| `--eui-side-nav-spacing-toggle-offset-right` | `-12px` |
+| `--eui-side-nav-typography-header-font-size` | `18px` |
+| `--eui-side-nav-typography-header-font-weight` | `600` |
+| `--eui-side-nav-typography-item-font-size` | `14px` |
+| `--eui-side-nav-typography-item-font-weight` | `400` |
+| `--eui-side-nav-typography-item-line-height` | `normal` |
+| `--eui-side-nav-typography-section-title-font-size` | `12px` |
+| `--eui-side-nav-typography-section-title-font-weight` | `600` |
+| `--eui-side-nav-typography-section-title-line-height` | `normal` |
+
+## Sidebar
+
+| Token | Value |
+|-------|-------|
+| `--eui-sidebar-animation-duration` | `200ms` |
+| `--eui-sidebar-animation-easing` | `ease-in-out` |
+| `--eui-sidebar-colors-background` | `oklch(49% 0.10 230)` |
+| `--eui-sidebar-colors-border` | `rgba(0, 0, 0, 0)` |
+| `--eui-sidebar-colors-text` | `oklch(100% 0 0)` |
+| `--eui-sidebar-size-collapsed-width` | `64px` |
+| `--eui-sidebar-size-expanded-width` | `240px` |
+| `--eui-sidebar-spacing-item-gap` | `0.5rem` |
+| `--eui-sidebar-spacing-padding` | `1rem` |
+
+## Skeleton
+
+| Token | Value |
+|-------|-------|
+| `--eui-skeleton-animation-duration` | `1.5s` |
+| `--eui-skeleton-animation-easing` | `linear` |
+| `--eui-skeleton-animation-shimmer-width` | `200%` |
+| `--eui-skeleton-animation-stagger-max` | `800ms` |
+| `--eui-skeleton-animation-stagger-step` | `100ms` |
+| `--eui-skeleton-colors-background-base` | `oklch(94% 0.00 0)` |
+| `--eui-skeleton-colors-shimmer-end` | `rgba(0, 0, 0, 0)` |
+| `--eui-skeleton-colors-shimmer-mid` | `rgba(255, 255, 255, 0.4)` |
+| `--eui-skeleton-colors-shimmer-start` | `rgba(0, 0, 0, 0)` |
+| `--eui-skeleton-shape-circular-radius` | `50%` |
+| `--eui-skeleton-shape-rectangular-radius` | `4px` |
+| `--eui-skeleton-shape-text-radius` | `0px` |
+| `--eui-skeleton-size-circular-default-diameter` | `40px` |
+| `--eui-skeleton-size-rectangular-default-height` | `1rem` |
+| `--eui-skeleton-size-text-line-height` | `1.25rem` |
+
+## Switch
+
+| Token | Value |
+|-------|-------|
+| `--eui-switch-focus-ring-color-derived-accessible` | `oklch(49% 0.10 230)` |
+| `--eui-switch-focus-ring-color-derived-base` | `oklch(65% 0.09 231)` |
+| `--eui-switch-focus-ring-offset` | `2px` |
+| `--eui-switch-focus-ring-width-accessible` | `3px` |
+| `--eui-switch-focus-ring-width-base` | `2px` |
+| `--eui-switch-shape-radius-thumb` | `9999px` |
+| `--eui-switch-shape-radius-track` | `9999px` |
+| `--eui-switch-size-lg-thumb-offset` | `3px` |
+| `--eui-switch-size-lg-thumb-size` | `22px` |
+| `--eui-switch-size-lg-track-height` | `28px` |
+| `--eui-switch-size-lg-track-width` | `52px` |
+| `--eui-switch-size-md-thumb-offset` | `3px` |
+| `--eui-switch-size-md-thumb-size` | `16px` |
+| `--eui-switch-size-md-track-height` | `22px` |
+| `--eui-switch-size-md-track-width` | `40px` |
+| `--eui-switch-size-sm-thumb-offset` | `3px` |
+| `--eui-switch-size-sm-thumb-size` | `12px` |
+| `--eui-switch-size-sm-track-height` | `18px` |
+| `--eui-switch-size-sm-track-width` | `34px` |
+| `--eui-switch-thumb-background-base` | `oklch(100% 0 0)` |
+| `--eui-switch-thumb-background-disabled` | `rgba(0, 0, 0, 0)` |
+| `--eui-switch-thumb-border-disabled` | `oklch(84% 0.00 0)` |
+| `--eui-switch-thumb-border-style` | `solid` |
+| `--eui-switch-thumb-border-width` | `1px` |
+| `--eui-switch-track-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-switch-track-background-disabled-on` | `oklch(94% 0.00 0)` |
+| `--eui-switch-track-background-off` | `oklch(90% 0.00 0)` |
+| `--eui-switch-track-background-on` | `oklch(68% 0.15 237)` |
+| `--eui-switch-track-border-disabled` | `oklch(84% 0.00 0)` |
+| `--eui-switch-track-border-off` | `oklch(84% 0.00 0)` |
+| `--eui-switch-track-border-on` | `rgba(0, 0, 0, 0)` |
+| `--eui-switch-track-border-style` | `solid` |
+| `--eui-switch-track-border-width` | `1px` |
+
+## Table
+
+| Token | Value |
+|-------|-------|
+| `--eui-table-border-radius` | `0px` |
+| `--eui-table-border-style` | `solid` |
+| `--eui-table-border-width` | `1px` |
+| `--eui-table-colors-background` | `oklch(100% 0 0)` |
+| `--eui-table-colors-border` | `oklch(90% 0.00 0)` |
+| `--eui-table-colors-cell-text` | `oklch(100% 0 0)` |
+| `--eui-table-colors-header-background` | `oklch(96.5% 0.00 0)` |
+| `--eui-table-colors-header-text` | `oklch(100% 0 0)` |
+| `--eui-table-colors-row-background-default` | `oklch(100% 0 0)` |
+| `--eui-table-colors-row-background-hover` | `oklch(94% 0.00 0)` |
+| `--eui-table-colors-row-background-selected` | `oklch(96% 0.04 236)` |
+| `--eui-table-colors-subheader-background` | `oklch(94% 0.00 0)` |
+| `--eui-table-colors-subheader-text` | `oklch(100% 0 0)` |
+| `--eui-table-expandable-cell-animation-duration` | `200ms` |
+| `--eui-table-expandable-cell-animation-easing` | `ease-in-out` |
+| `--eui-table-expandable-cell-border-radius` | `4px` |
+| `--eui-table-expandable-cell-panel-max-height` | `300px` |
+| `--eui-table-expandable-cell-panel-max-width` | `400px` |
+| `--eui-table-expandable-cell-panel-z-index` | `100` |
+| `--eui-table-expandable-cell-shadow` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
+| `--eui-table-expandable-cell-spacing-padding` | `1rem` |
+| `--eui-table-folder-animation-duration` | `200ms` |
+| `--eui-table-folder-animation-easing` | `ease-in-out` |
+| `--eui-table-folder-icon-gap` | `0.5rem` |
+| `--eui-table-folder-icon-size` | `16px` |
+| `--eui-table-folder-indent-level` | `1.5rem` |
+| `--eui-table-spacing-cell-padding-horizontal` | `0` |
+| `--eui-table-spacing-cell-padding-right` | `10px` |
+| `--eui-table-spacing-footer-height` | `56px` |
+| `--eui-table-spacing-footer-padding-y` | `1rem` |
+| `--eui-table-spacing-header-height` | `50px` |
+| `--eui-table-spacing-header-padding-horizontal` | `1rem` |
+| `--eui-table-spacing-header-padding-vertical` | `5px` |
+| `--eui-table-spacing-row-gap` | `0` |
+| `--eui-table-spacing-row-height` | `40px` |
+| `--eui-table-spacing-subheader-padding-horizontal` | `1rem` |
+| `--eui-table-spacing-subheader-padding-vertical` | `5px` |
+| `--eui-table-spacing-toolbar-gap` | `0.5rem` |
+| `--eui-table-spacing-toolbar-padding-y` | `1rem` |
+
+## Textarea
+
+| Token | Value |
+|-------|-------|
+| `--eui-textarea-size-min-height` | `80px` |
+| `--eui-textarea-size-min-rows` | `3` |
+| `--eui-textarea-size-padding-inline` | `12px` |
+| `--eui-textarea-size-padding-vertical` | `8px` |
+| `--eui-textarea-typography-line-height` | `1.5` |
+
+## Title
+
+| Token | Value |
+|-------|-------|
+| `--eui-title-bar-colors-background` | `oklch(100% 0 0)` |
+| `--eui-title-bar-colors-border` | `oklch(48% 0.00 0)` |
+| `--eui-title-bar-colors-text` | `oklch(100% 0 0)` |
+| `--eui-title-bar-size-height` | `48px` |
+| `--eui-title-bar-spacing-gap` | `1rem` |
+| `--eui-title-bar-spacing-padding-horizontal` | `1.5rem` |
+| `--eui-title-bar-spacing-padding-vertical` | `0.75rem` |
+
+---
+
+## Related Documentation
+
+- [Token Usage Rules](../architecture/token-usage-rules.md) - Rules for using tokens in components
+- [Token System Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Architecture overview
+- [Token-First Contract Layer](../adr/ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) - Contract layer design
+
+---
+
+*This file is auto-generated. Do not edit manually. Run `npm run tokens:generate-docs` to regenerate.*
