@@ -31,6 +31,30 @@ export interface IconProps {
    * @default true
    */
   'aria-hidden'?: boolean;
+  
+  /**
+   * Rotation angle in degrees (0-360)
+   * @example 180 for chevron-right -> chevron-left
+   */
+  rotate?: number;
+  
+  /**
+   * Enable smooth animation for rotation
+   * @default false
+   */
+  animated?: boolean;
+  
+  /**
+   * Custom transition duration for rotation animation
+   * @default '150ms'
+   */
+  rotationDuration?: string;
+  
+  /**
+   * Custom transition easing for rotation animation
+   * @default 'ease-in-out'
+   */
+  rotationEasing?: string;
 }
 
 
