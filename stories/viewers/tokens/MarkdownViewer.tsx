@@ -43,6 +43,16 @@ const errorStyle: CSSProperties = {
   padding: '24px'
 };
 
+const DOC_STORY_LINKS: Record<string, string> = {
+  '/docs/architecture/README.md': 'docs-architecture--architecture-overview',
+  '/docs/architecture/accessibility-reference.md': 'docs-architecture--accessibility-reference',
+  '/docs/architecture/token-usage-rules.md': 'docs-architecture--token-usage-rules',
+  '/docs/tokens/README.md': 'docs-tokens--token-tooling',
+  '/docs/tokens/use-cases.md': 'docs-tokens--token-use-cases',
+  '/docs/tokens/reference.md': 'docs-tokens--token-reference',
+  '/docs/workflows/tokens-workflow.md': 'docs-tokens--tokens-workflow'
+};
+
 // Helper function to convert ADR title to Storybook story slug
 // Storybook converts export names (camelCase/PascalCase) to kebab-case slugs
 const titleToStorySlug = (title: string): string => {
@@ -101,6 +111,20 @@ const adrNumberToStoryPath = async (adrNumber: string): Promise<string> => {
   }
   // This fallback should rarely be used
   return '';
+};
+
+const resolveDocPath = (href: string, basePath: string): string | null => {
+  if (!href || !basePath || typeof window === 'undefined') {
+    return null;
+  }
+
+  try {
+    const baseUrl = new URL(basePath, window.location.origin);
+    const resolved = new URL(href, baseUrl);
+    return resolved.pathname;
+  } catch {
+    return null;
+  }
 };
 
 export const MarkdownViewer = ({ markdownPath, fallback = 'Loading...' }: MarkdownViewerProps) => {
@@ -211,6 +235,7 @@ export const MarkdownViewer = ({ markdownPath, fallback = 'Loading...' }: Markdo
               // Convert ADR file links to Storybook story links
               let storybookHref = href;
               let targetAdrNumber: string | null = null;
+              const resolvedDocPath = href && markdownPath ? resolveDocPath(href, markdownPath) : null;
               
               if (href && typeof href === 'string') {
                 // Match links to ADR files: ./ADR-XXXX-*.md or ADR-XXXX-*.md or ../adr/ADR-XXXX-*.md
@@ -263,6 +288,10 @@ export const MarkdownViewer = ({ markdownPath, fallback = 'Loading...' }: Markdo
                     });
                   }
                 }
+              }
+
+              if (!targetAdrNumber && resolvedDocPath && DOC_STORY_LINKS[resolvedDocPath]) {
+                storybookHref = `?path=/story/${DOC_STORY_LINKS[resolvedDocPath]}`;
               }
               
               // Add data attribute for async link resolution
@@ -434,4 +463,3 @@ export const MarkdownViewer = ({ markdownPath, fallback = 'Loading...' }: Markdo
     </div>
   );
 };
-
