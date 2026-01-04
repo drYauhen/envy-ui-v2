@@ -484,10 +484,10 @@ For detailed decision framework, see [ADR-0029](../adr/ADR-0029-accessibility-ar
 
 2. **Menu vs ListBox:**
    - List of actions → `role="menu"` (use `useMenu`)
-   - List of selectable items (with checkbox'ы) → `role="listbox"` (use `useSelect`/`useListBox`)
+   - List of selectable items (with checkboxes) → `role="listbox"` (use `useSelect`/`useListBox`)
 
 3. **Component Composition:**
-   - When adding interactive elements (expandable, checkbox'ы), reassess the ARIA role
+   - When adding interactive elements (expandable, checkboxes), reassess the ARIA role
    - Role should reflect functional purpose, not just visual appearance
 
 4. **React Aria Usage:**

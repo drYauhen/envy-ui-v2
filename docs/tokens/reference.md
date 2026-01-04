@@ -1,6 +1,6 @@
 # Design Tokens Reference
 
-> Auto-generated from design tokens. Last updated: 2026-01-03T17:15:40.614Z
+> Auto-generated from design tokens. Last updated: 2026-01-04T00:32:17.638Z
 
 ## Overview
 
@@ -67,7 +67,7 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-color-accent-800` | `oklch(58% 0.14 237)` |
 | `--eui-color-accent-900` | `oklch(53% 0.13 238)` |
 | `--eui-color-accent-primary` | `oklch(68% 0.15 237)` |
-| `--eui-color-background-base` | `oklch(25% 0.00 0)` |
+| `--eui-color-background-base` | `oklch(100% 0 0)` |
 | `--eui-color-background-inverse` | `oklch(25% 0.00 0)` |
 | `--eui-color-background-muted` | `oklch(98% 0.00 0)` |
 | `--eui-color-background-muted` | `oklch(94% 0.00 0)` |
@@ -168,7 +168,6 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-spacing-sm` | `0.5rem` |
 | `--eui-spacing-xl` | `2rem` |
 | `--eui-spacing-xs` | `0.25rem` |
-| `--eui-typography-base-font-size` | `16px` |
 | `--eui-typography-base-fontSize` | `16px` |
 | `--eui-typography-font-family-monospace` | `'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace` |
 | `--eui-typography-font-family-ui` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
@@ -328,28 +327,28 @@ Foundation tokens are base design tokens that are not component-specific.
 |-------|-------|
 | `--eui-button-accent-background-active` | `oklch(68% 0.15 237)` |
 | `--eui-button-accent-background-base` | `oklch(68% 0.15 237)` |
-| `--eui-button-accent-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-accent-background-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-button-accent-background-hover` | `oklch(68% 0.15 237)` |
 | `--eui-button-accent-background-selected` | `oklch(68% 0.15 237)` |
 | `--eui-button-accent-finished-background-active` | `oklch(89% 0.09 236)` |
 | `--eui-button-accent-finished-background-base` | `oklch(89% 0.09 236)` |
-| `--eui-button-accent-finished-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-accent-finished-background-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-button-accent-finished-background-hover` | `oklch(89% 0.09 236)` |
 | `--eui-button-accent-finished-background-selected` | `oklch(89% 0.09 236)` |
 | `--eui-button-accent-finished-label-active` | `oklch(63% 0.15 237)` |
 | `--eui-button-accent-finished-label-base` | `oklch(63% 0.15 237)` |
-| `--eui-button-accent-finished-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-accent-finished-label-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-button-accent-finished-label-hover` | `oklch(63% 0.15 237)` |
 | `--eui-button-accent-finished-label-selected` | `oklch(63% 0.15 237)` |
 | `--eui-button-accent-label-active` | `oklch(100% 0 0)` |
 | `--eui-button-accent-label-base` | `oklch(100% 0 0)` |
-| `--eui-button-accent-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-accent-label-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-button-accent-label-hover` | `oklch(100% 0 0)` |
 | `--eui-button-accent-label-selected` | `oklch(100% 0 0)` |
 | `--eui-button-border-style` | `solid` |
 | `--eui-button-border-width` | `1px` |
-| `--eui-button-focus-ring-color-derived-accessible` | `oklch(48% 0.00 0)` |
-| `--eui-button-focus-ring-color-derived-base` | `oklch(48% 0.00 0)` |
+| `--eui-button-focus-ring-color-derived-accessible` | `oklch(90% 0.00 0)` |
+| `--eui-button-focus-ring-color-derived-base` | `oklch(90% 0.00 0)` |
 | `--eui-button-focus-ring-offset-base` | `1px` |
 | `--eui-button-focus-ring-width-accessible` | `2px` |
 | `--eui-button-focus-ring-width-base` | `2px` |
@@ -394,27 +393,27 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-button-layout-stack-separator-thickness` | `1px` |
 | `--eui-button-primary-background-active` | `oklch(49% 0.10 230)` |
 | `--eui-button-primary-background-base` | `oklch(49% 0.10 230)` |
-| `--eui-button-primary-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-primary-background-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-button-primary-background-hover` | `oklch(49% 0.10 230)` |
 | `--eui-button-primary-background-selected` | `oklch(49% 0.10 230)` |
 | `--eui-button-primary-label-active` | `oklch(100% 0 0)` |
 | `--eui-button-primary-label-base` | `oklch(100% 0 0)` |
-| `--eui-button-primary-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-primary-label-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-button-primary-label-hover` | `oklch(100% 0 0)` |
 | `--eui-button-primary-label-selected` | `oklch(100% 0 0)` |
 | `--eui-button-secondary-background-active` | `oklch(100% 0 0)` |
 | `--eui-button-secondary-background-base` | `oklch(100% 0 0)` |
-| `--eui-button-secondary-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-button-secondary-background-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-button-secondary-background-hover` | `oklch(100% 0 0)` |
 | `--eui-button-secondary-background-selected` | `oklch(100% 0 0)` |
-| `--eui-button-secondary-border-active` | `oklch(48% 0.00 0)` |
-| `--eui-button-secondary-border-base` | `oklch(48% 0.00 0)` |
-| `--eui-button-secondary-border-disabled` | `oklch(48% 0.00 0)` |
-| `--eui-button-secondary-border-hover` | `oklch(48% 0.00 0)` |
-| `--eui-button-secondary-border-selected` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-border-active` | `oklch(90% 0.00 0)` |
+| `--eui-button-secondary-border-base` | `oklch(90% 0.00 0)` |
+| `--eui-button-secondary-border-disabled` | `oklch(90% 0.00 0)` |
+| `--eui-button-secondary-border-hover` | `oklch(90% 0.00 0)` |
+| `--eui-button-secondary-border-selected` | `oklch(90% 0.00 0)` |
 | `--eui-button-secondary-label-active` | `oklch(25% 0.00 0)` |
 | `--eui-button-secondary-label-base` | `oklch(25% 0.00 0)` |
-| `--eui-button-secondary-label-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-button-secondary-label-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-button-secondary-label-hover` | `oklch(25% 0.00 0)` |
 | `--eui-button-secondary-label-selected` | `oklch(25% 0.00 0)` |
 | `--eui-button-separator-inset` | `6px` |
@@ -523,19 +522,19 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-card-status-upcoming-indicator` | `oklch(57% 0.10 312)` |
 | `--eui-card-status-upcoming-indicator-width` | `4px` |
 | `--eui-card-variant-elevated-background` | `oklch(100% 0 0)` |
-| `--eui-card-variant-elevated-border-color` | `oklch(48% 0.00 0)` |
+| `--eui-card-variant-elevated-border-color` | `oklch(90% 0.00 0)` |
 | `--eui-card-variant-elevated-border-style` | `solid` |
 | `--eui-card-variant-elevated-border-width` | `1px` |
 | `--eui-card-variant-elevated-radius` | `8px` |
 | `--eui-card-variant-elevated-shadow` | `0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)` |
 | `--eui-card-variant-flat-background` | `oklch(100% 0 0)` |
-| `--eui-card-variant-flat-border-color` | `oklch(48% 0.00 0)` |
+| `--eui-card-variant-flat-border-color` | `oklch(90% 0.00 0)` |
 | `--eui-card-variant-flat-border-style` | `solid` |
 | `--eui-card-variant-flat-border-width` | `1px` |
 | `--eui-card-variant-flat-radius` | `8px` |
 | `--eui-card-variant-flat-shadow` | `none` |
 | `--eui-card-variant-strong-background` | `oklch(100% 0 0)` |
-| `--eui-card-variant-strong-border-color` | `oklch(48% 0.00 0)` |
+| `--eui-card-variant-strong-border-color` | `oklch(90% 0.00 0)` |
 | `--eui-card-variant-strong-border-style` | `solid` |
 | `--eui-card-variant-strong-border-width` | `1px` |
 | `--eui-card-variant-strong-radius` | `8px` |
@@ -573,12 +572,12 @@ Foundation tokens are base design tokens that are not component-specific.
 |-------|-------|
 | `--eui-checkbox-background-base` | `oklch(100% 0 0)` |
 | `--eui-checkbox-background-checked` | `oklch(68% 0.15 237)` |
-| `--eui-checkbox-background-checked-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-checkbox-background-checked-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-checkbox-background-checked-hover` | `oklch(68% 0.15 237)` |
-| `--eui-checkbox-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-checkbox-background-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-checkbox-background-hover` | `oklch(100% 0 0)` |
 | `--eui-checkbox-background-indeterminate` | `oklch(100% 0 0)` |
-| `--eui-checkbox-background-indeterminate-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-checkbox-background-indeterminate-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-checkbox-background-indeterminate-hover` | `oklch(100% 0 0)` |
 | `--eui-checkbox-border-base` | `oklch(84% 0.00 0)` |
 | `--eui-checkbox-border-checked` | `oklch(58% 0.14 237)` |
@@ -611,7 +610,7 @@ Foundation tokens are base design tokens that are not component-specific.
 | Token | Value |
 |-------|-------|
 | `--eui-content-colors-background` | `oklch(100% 0 0)` |
-| `--eui-content-colors-text` | `oklch(100% 0 0)` |
+| `--eui-content-colors-text` | `oklch(25% 0.00 0)` |
 | `--eui-content-spacing-padding` | `1.5rem` |
 
 ## Counter
@@ -624,15 +623,15 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-counter-colors-filter-icon-color` | `oklch(68% 0.15 237)` |
 | `--eui-counter-colors-pill-default-background` | `oklch(93% 0.06 236)` |
 | `--eui-counter-colors-pill-default-border` | `rgba(0, 0, 0, 0)` |
-| `--eui-counter-colors-pill-default-color` | `oklch(100% 0 0)` |
+| `--eui-counter-colors-pill-default-color` | `oklch(25% 0.00 0)` |
 | `--eui-counter-colors-pill-disabled-background` | `oklch(90% 0.00 0)` |
 | `--eui-counter-colors-pill-disabled-border` | `rgba(0, 0, 0, 0)` |
-| `--eui-counter-colors-pill-disabled-color` | `oklch(48% 0.00 0)` |
+| `--eui-counter-colors-pill-disabled-color` | `oklch(75% 0.00 0)` |
 | `--eui-counter-colors-pill-inverse-background` | `rgba(255, 255, 255, 0.2)` |
 | `--eui-counter-colors-pill-inverse-border` | `rgba(0, 0, 0, 0)` |
 | `--eui-counter-colors-pill-inverse-color` | `oklch(100% 0 0)` |
-| `--eui-counter-colors-text-default-color` | `oklch(100% 0 0)` |
-| `--eui-counter-colors-text-disabled-color` | `oklch(48% 0.00 0)` |
+| `--eui-counter-colors-text-default-color` | `oklch(25% 0.00 0)` |
+| `--eui-counter-colors-text-disabled-color` | `oklch(75% 0.00 0)` |
 | `--eui-counter-colors-text-inverse-color` | `oklch(100% 0 0)` |
 | `--eui-counter-shape-filter-radius` | `9999px` |
 | `--eui-counter-shape-pill-radius` | `9999px` |
@@ -662,8 +661,8 @@ Foundation tokens are base design tokens that are not component-specific.
 | Token | Value |
 |-------|-------|
 | `--eui-detail-panel-colors-background` | `oklch(100% 0 0)` |
-| `--eui-detail-panel-colors-border` | `oklch(48% 0.00 0)` |
-| `--eui-detail-panel-colors-text` | `oklch(100% 0 0)` |
+| `--eui-detail-panel-colors-border` | `oklch(90% 0.00 0)` |
+| `--eui-detail-panel-colors-text` | `oklch(25% 0.00 0)` |
 | `--eui-detail-panel-shadow-left` | `-4px 0 8px rgba(0, 0, 0, 0.1)` |
 | `--eui-detail-panel-size-width` | `400px` |
 | `--eui-detail-panel-spacing-padding` | `1.5rem` |
@@ -672,7 +671,7 @@ Foundation tokens are base design tokens that are not component-specific.
 
 | Token | Value |
 |-------|-------|
-| `--eui-divider-colors-default` | `oklch(48% 0.00 0)` |
+| `--eui-divider-colors-default` | `oklch(90% 0.00 0)` |
 | `--eui-divider-size-thickness` | `1px` |
 | `--eui-divider-spacing-margin-horizontal` | `0.5rem` |
 | `--eui-divider-spacing-margin-vertical` | `0.5rem` |
@@ -704,8 +703,8 @@ Foundation tokens are base design tokens that are not component-specific.
 | Token | Value |
 |-------|-------|
 | `--eui-header-colors-background` | `oklch(100% 0 0)` |
-| `--eui-header-colors-border` | `oklch(48% 0.00 0)` |
-| `--eui-header-colors-text` | `oklch(100% 0 0)` |
+| `--eui-header-colors-border` | `oklch(90% 0.00 0)` |
+| `--eui-header-colors-text` | `oklch(25% 0.00 0)` |
 | `--eui-header-size-height` | `56px` |
 | `--eui-header-spacing-gap` | `1rem` |
 | `--eui-header-spacing-padding-horizontal` | `1.5rem` |
@@ -715,11 +714,11 @@ Foundation tokens are base design tokens that are not component-specific.
 
 | Token | Value |
 |-------|-------|
-| `--eui-hero-section-colors-background-base` | `oklch(25% 0.00 0)` |
+| `--eui-hero-section-colors-background-base` | `oklch(100% 0 0)` |
 | `--eui-hero-section-colors-background-overlay-dark` | `rgba(0, 0, 0, 0.4)` |
 | `--eui-hero-section-colors-background-overlay-light` | `rgba(255, 255, 255, 0.2)` |
-| `--eui-hero-section-colors-text-heading` | `oklch(100% 0 0)` |
-| `--eui-hero-section-colors-text-subheading` | `oklch(90% 0.00 0)` |
+| `--eui-hero-section-colors-text-heading` | `oklch(25% 0.00 0)` |
+| `--eui-hero-section-colors-text-subheading` | `oklch(48% 0.00 0)` |
 | `--eui-hero-section-size-content-max-width` | `1200px` |
 | `--eui-hero-section-size-heading-max-width` | `800px` |
 | `--eui-hero-section-size-min-height-desktop` | `600px` |
@@ -752,10 +751,10 @@ Foundation tokens are base design tokens that are not component-specific.
 | Token | Value |
 |-------|-------|
 | `--eui-input-background-base` | `oklch(100% 0 0)` |
-| `--eui-input-background-disabled` | `oklch(94% 0.00 0)` |
+| `--eui-input-background-disabled` | `oklch(98% 0.00 0)` |
 | `--eui-input-background-focus` | `oklch(100% 0 0)` |
 | `--eui-input-background-hover` | `oklch(100% 0 0)` |
-| `--eui-input-border-base` | `oklch(48% 0.00 0)` |
+| `--eui-input-border-base` | `oklch(90% 0.00 0)` |
 | `--eui-input-border-disabled` | `oklch(84% 0.00 0)` |
 | `--eui-input-border-error` | `oklch(59% 0.20 25)` |
 | `--eui-input-border-focus` | `oklch(49% 0.10 230)` |
@@ -797,8 +796,8 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-input-size-sm-font-size` | `0.875rem` |
 | `--eui-input-size-sm-height` | `36px` |
 | `--eui-input-size-sm-padding-inline` | `12px` |
-| `--eui-input-text-base` | `oklch(100% 0 0)` |
-| `--eui-input-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-input-text-base` | `oklch(25% 0.00 0)` |
+| `--eui-input-text-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-input-text-placeholder` | `oklch(63% 0.00 0)` |
 | `--eui-input-typography-font-family` | `inherit` |
 | `--eui-input-typography-font-weight` | `400` |
@@ -843,13 +842,13 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-menu-border-style` | `solid` |
 | `--eui-menu-border-width` | `1px` |
 | `--eui-menu-colors-background` | `oklch(100% 0 0)` |
-| `--eui-menu-colors-border` | `oklch(48% 0.00 0)` |
+| `--eui-menu-colors-border` | `oklch(90% 0.00 0)` |
 | `--eui-menu-colors-item-background-default` | `rgba(0, 0, 0, 0)` |
 | `--eui-menu-colors-item-background-focus` | `oklch(96.5% 0.00 0)` |
 | `--eui-menu-colors-item-background-hover` | `oklch(96.5% 0.00 0)` |
-| `--eui-menu-colors-item-background-selected` | `oklch(94% 0.00 0)` |
-| `--eui-menu-colors-item-text` | `oklch(100% 0 0)` |
-| `--eui-menu-colors-item-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-menu-colors-item-background-selected` | `oklch(98% 0.00 0)` |
+| `--eui-menu-colors-item-text` | `oklch(25% 0.00 0)` |
+| `--eui-menu-colors-item-text-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-menu-shadow` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
 | `--eui-menu-shape-radius` | `8px` |
 | `--eui-menu-size-max-height` | `300px` |
@@ -869,12 +868,12 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-modal-backdrop-color` | `rgba(0, 0, 0, 0.5)` |
 | `--eui-modal-colors-body-background` | `oklch(100% 0 0)` |
 | `--eui-modal-colors-body-border` | `rgba(0, 0, 0, 0)` |
-| `--eui-modal-colors-body-text` | `oklch(100% 0 0)` |
+| `--eui-modal-colors-body-text` | `oklch(25% 0.00 0)` |
 | `--eui-modal-colors-close-color` | `oklch(100% 0 0)` |
 | `--eui-modal-colors-close-hover` | `oklch(100% 0 0)` |
 | `--eui-modal-colors-footer-background` | `oklch(96.5% 0.00 0)` |
-| `--eui-modal-colors-footer-border` | `oklch(48% 0.00 0)` |
-| `--eui-modal-colors-footer-text` | `oklch(100% 0 0)` |
+| `--eui-modal-colors-footer-border` | `oklch(90% 0.00 0)` |
+| `--eui-modal-colors-footer-text` | `oklch(25% 0.00 0)` |
 | `--eui-modal-colors-header-background` | `oklch(49% 0.10 230)` |
 | `--eui-modal-colors-header-border` | `rgba(0, 0, 0, 0)` |
 | `--eui-modal-colors-header-text` | `oklch(100% 0 0)` |
@@ -906,19 +905,19 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-select-dropdown-shadow` | `0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)` |
 | `--eui-select-dropdown-z-index` | `1000` |
 | `--eui-select-icon-color` | `oklch(63% 0.00 0)` |
-| `--eui-select-icon-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-select-icon-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-select-option-background-default` | `rgba(0, 0, 0, 0)` |
 | `--eui-select-option-background-focused` | `oklch(96.5% 0.00 0)` |
 | `--eui-select-option-background-hover` | `oklch(96.5% 0.00 0)` |
-| `--eui-select-option-background-selected` | `oklch(94% 0.00 0)` |
-| `--eui-select-option-background-selected-focused` | `oklch(94% 0.00 0)` |
-| `--eui-select-option-color-default` | `oklch(100% 0 0)` |
-| `--eui-select-option-color-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-select-option-background-selected` | `oklch(98% 0.00 0)` |
+| `--eui-select-option-background-selected-focused` | `oklch(98% 0.00 0)` |
+| `--eui-select-option-color-default` | `oklch(25% 0.00 0)` |
+| `--eui-select-option-color-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-select-option-padding-horizontal` | `0.75rem` |
 | `--eui-select-option-padding-vertical` | `0.5rem` |
 | `--eui-select-primitive-badge-colors-background` | `oklch(96.5% 0.00 0)` |
 | `--eui-select-primitive-badge-colors-remove-icon` | `oklch(63% 0.00 0)` |
-| `--eui-select-primitive-badge-colors-text` | `oklch(100% 0 0)` |
+| `--eui-select-primitive-badge-colors-text` | `oklch(25% 0.00 0)` |
 | `--eui-select-primitive-badge-shape-radius` | `2px` |
 | `--eui-select-primitive-badge-spacing-gap` | `0.25rem` |
 | `--eui-select-primitive-badge-spacing-padding-horizontal` | `0.25rem` |
@@ -932,13 +931,13 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-select-primitive-popover-spacing-padding` | `0.5rem` |
 | `--eui-select-primitive-trigger-spacing-gap` | `0.25rem` |
 | `--eui-select-trigger-background` | `oklch(100% 0 0)` |
-| `--eui-select-trigger-border` | `oklch(48% 0.00 0)` |
+| `--eui-select-trigger-border` | `oklch(90% 0.00 0)` |
 
 ## Side
 
 | Token | Value |
 |-------|-------|
-| `--eui-side-nav-animation-duration` | `200ms` |
+| `--eui-side-nav-animation-duration` | `150ms` |
 | `--eui-side-nav-animation-easing` | `ease-in-out` |
 | `--eui-side-nav-animation-indicator-duration` | `200ms` |
 | `--eui-side-nav-animation-indicator-easing` | `ease-out` |
@@ -960,7 +959,7 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-side-nav-colors-item-indicator-selected` | `oklch(75% 0.08 231)` |
 | `--eui-side-nav-colors-item-text-active` | `oklch(100% 0 0)` |
 | `--eui-side-nav-colors-item-text-default` | `oklch(93% 0.05 232)` |
-| `--eui-side-nav-colors-item-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-side-nav-colors-item-text-disabled` | `oklch(75% 0.00 0)` |
 | `--eui-side-nav-colors-item-text-hover` | `oklch(100% 0 0)` |
 | `--eui-side-nav-colors-item-text-selected` | `oklch(93% 0.05 232)` |
 | `--eui-side-nav-colors-section-title-text` | `oklch(100% 0 0)` |
@@ -991,6 +990,7 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-side-nav-spacing-section-padding-top` | `0.5rem` |
 | `--eui-side-nav-spacing-separator-margin-vertical` | `0.75rem` |
 | `--eui-side-nav-spacing-toggle-offset-right` | `-12px` |
+| `--eui-side-nav-spacing-toggle-offset-right-expanded` | `0.75rem` |
 | `--eui-side-nav-typography-header-font-size` | `18px` |
 | `--eui-side-nav-typography-header-font-weight` | `600` |
 | `--eui-side-nav-typography-item-font-size` | `14px` |
@@ -1062,8 +1062,8 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-switch-thumb-border-disabled` | `oklch(84% 0.00 0)` |
 | `--eui-switch-thumb-border-style` | `solid` |
 | `--eui-switch-thumb-border-width` | `1px` |
-| `--eui-switch-track-background-disabled` | `oklch(94% 0.00 0)` |
-| `--eui-switch-track-background-disabled-on` | `oklch(94% 0.00 0)` |
+| `--eui-switch-track-background-disabled` | `oklch(98% 0.00 0)` |
+| `--eui-switch-track-background-disabled-on` | `oklch(98% 0.00 0)` |
 | `--eui-switch-track-background-off` | `oklch(90% 0.00 0)` |
 | `--eui-switch-track-background-on` | `oklch(68% 0.15 237)` |
 | `--eui-switch-track-border-disabled` | `oklch(84% 0.00 0)` |
@@ -1081,14 +1081,14 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-table-border-width` | `1px` |
 | `--eui-table-colors-background` | `oklch(100% 0 0)` |
 | `--eui-table-colors-border` | `oklch(90% 0.00 0)` |
-| `--eui-table-colors-cell-text` | `oklch(100% 0 0)` |
+| `--eui-table-colors-cell-text` | `oklch(25% 0.00 0)` |
 | `--eui-table-colors-header-background` | `oklch(96.5% 0.00 0)` |
-| `--eui-table-colors-header-text` | `oklch(100% 0 0)` |
+| `--eui-table-colors-header-text` | `oklch(25% 0.00 0)` |
 | `--eui-table-colors-row-background-default` | `oklch(100% 0 0)` |
 | `--eui-table-colors-row-background-hover` | `oklch(94% 0.00 0)` |
 | `--eui-table-colors-row-background-selected` | `oklch(96% 0.04 236)` |
 | `--eui-table-colors-subheader-background` | `oklch(94% 0.00 0)` |
-| `--eui-table-colors-subheader-text` | `oklch(100% 0 0)` |
+| `--eui-table-colors-subheader-text` | `oklch(25% 0.00 0)` |
 | `--eui-table-expandable-cell-animation-duration` | `200ms` |
 | `--eui-table-expandable-cell-animation-easing` | `ease-in-out` |
 | `--eui-table-expandable-cell-border-radius` | `4px` |
@@ -1131,8 +1131,8 @@ Foundation tokens are base design tokens that are not component-specific.
 | Token | Value |
 |-------|-------|
 | `--eui-title-bar-colors-background` | `oklch(100% 0 0)` |
-| `--eui-title-bar-colors-border` | `oklch(48% 0.00 0)` |
-| `--eui-title-bar-colors-text` | `oklch(100% 0 0)` |
+| `--eui-title-bar-colors-border` | `oklch(90% 0.00 0)` |
+| `--eui-title-bar-colors-text` | `oklch(25% 0.00 0)` |
 | `--eui-title-bar-size-height` | `48px` |
 | `--eui-title-bar-spacing-gap` | `1rem` |
 | `--eui-title-bar-spacing-padding-horizontal` | `1.5rem` |
