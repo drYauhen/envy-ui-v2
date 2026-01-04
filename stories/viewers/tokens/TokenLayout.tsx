@@ -51,6 +51,13 @@ export const tokenTdStyle: CSSProperties = {
   color: '#0f172a'
 };
 
+// Style for preview column - adaptive height (can increase for fontSize)
+export const tokenTdPreviewStyle: CSSProperties = {
+  ...tokenTdStyle,
+  verticalAlign: 'middle',
+  // Minimum height = base, but can increase for exceptions (fontSize)
+};
+
 export const TokenPage = ({ children }: { children: ReactNode }) => (
   <div style={tokenPageStyle}>{children}</div>
 );
