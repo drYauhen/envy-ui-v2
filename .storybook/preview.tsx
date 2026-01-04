@@ -50,6 +50,7 @@ import '../src/ui/grid.css';
 import '../src/ui/toolbar.css';
 import '../src/ui/page-header.css';
 import './preview.css';
+import { ContextThemeProvider, DEFAULT_CONTEXT_THEMES } from '../stories/utils/context-theme';
 
 /**
  * Function to get section-specific parameters based on story title
@@ -88,22 +89,28 @@ export function getSectionParameters(title: string) {
   return params;
 }
 
+const getGlobalValue = (value: unknown, fallback: string) =>
+  value === '_reset' || value == null ? fallback : String(value);
+
 const withPreviewLayout: Decorator = (Story, context) => {
-  const focusPolicy = context.globals.focusPolicy === '_reset' ? 'derived' : (context.globals.focusPolicy ?? 'derived');
-  const contextValue = context.globals.context === '_reset' ? 'app' : (context.globals.context ?? 'app');
-  const theme = context.globals.theme === '_reset' ? 'default' : (context.globals.theme ?? 'default');
+  const focusPolicy = getGlobalValue(context.globals.focusPolicy, 'derived');
+  const appTheme = getGlobalValue(context.globals.appTheme, DEFAULT_CONTEXT_THEMES.app);
+  const websiteTheme = getGlobalValue(context.globals.websiteTheme, DEFAULT_CONTEXT_THEMES.website);
+  const reportTheme = getGlobalValue(context.globals.reportTheme, DEFAULT_CONTEXT_THEMES.report);
 
   return (
-    <div 
-      className="sb-preview-wrapper" 
-      data-eui-focus-policy={focusPolicy}
-      data-eui-context={contextValue}
-      data-eui-theme={theme}
-    >
-      <div className="sb-preview-region">
-        <Story />
+    <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
+      <div
+        className="sb-preview-wrapper"
+        data-eui-focus-policy={focusPolicy}
+        data-eui-context="app"
+        data-eui-theme={appTheme}
+      >
+        <div className="sb-preview-region">
+          <Story />
+        </div>
       </div>
-    </div>
+    </ContextThemeProvider>
   );
 };
 
@@ -124,37 +131,22 @@ const withSectionParameters: Decorator = (Story, context) => {
 export const decorators: Preview['decorators'] = [withSectionParameters, withPreviewLayout];
 
 export const globalTypes: Preview['globalTypes'] = {
-  context: {
-    name: 'Context',
-    description: 'Select rendering context',
-    defaultValue: 'app',
-    toolbar: {
-      icon: 'folder',
-      items: [
-        { value: 'app', title: 'Application' },
-        { value: 'website', title: 'Website/CMS', disabled: true },
-        { value: 'report', title: 'Report' }
-      ],
-      showName: true,
-      dynamicTitle: true
-    }
+  appTheme: {
+    name: 'App Theme',
+    description: 'Theme for app context',
+    defaultValue: DEFAULT_CONTEXT_THEMES.app
   },
-  
-  theme: {
-    name: 'Theme',
-    description: 'Select theme',
-    defaultValue: 'default',
-    toolbar: {
-      icon: 'paintbrush',
-      items: [
-        { value: 'default', title: 'Default' },
-        { value: 'accessibility', title: 'Accessibility' },
-        { value: 'print', title: 'Print' },
-        { value: 'screen', title: 'Screen' }
-      ],
-      showName: true,
-      dynamicTitle: true
-    }
+
+  websiteTheme: {
+    name: 'Website Theme',
+    description: 'Theme for website context',
+    defaultValue: DEFAULT_CONTEXT_THEMES.website
+  },
+
+  reportTheme: {
+    name: 'Report Theme',
+    description: 'Theme for report context',
+    defaultValue: DEFAULT_CONTEXT_THEMES.report
   },
   
   focusPolicy: {
