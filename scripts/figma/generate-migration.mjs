@@ -11,7 +11,7 @@ const MIGRATIONS_DIR = path.join(repoRoot, 'generated', 'figma', 'migrations');
 const ADAPTER_PATH = path.join(repoRoot, 'generated', 'figma', 'adapter', 'variables.adapter.json');
 
 /**
- * Загружает snapshot из файла
+ * Loads snapshot from file
  */
 function loadSnapshot(snapshotPath) {
   if (!fs.existsSync(snapshotPath)) {
@@ -21,7 +21,7 @@ function loadSnapshot(snapshotPath) {
 }
 
 /**
- * Загружает latest snapshot
+ * Loads latest snapshot
  */
 function loadLatestSnapshot() {
   const latestPath = path.join(SNAPSHOTS_DIR, 'latest-snapshot.json');
@@ -30,11 +30,11 @@ function loadLatestSnapshot() {
       const realPath = fs.readlinkSync(latestPath);
       return loadSnapshot(path.join(SNAPSHOTS_DIR, realPath));
     } catch (error) {
-      // Если symlink не работает, попробовать найти последний файл
+      // If symlink doesn't work, try to find the latest file
     }
   }
   
-  // Если нет symlink, найти последний по дате
+  // If no symlink, find latest by date
   const files = fs.readdirSync(SNAPSHOTS_DIR)
     .filter(f => f.endsWith('-snapshot.json'))
     .sort()
@@ -48,7 +48,7 @@ function loadLatestSnapshot() {
 }
 
 /**
- * Загружает adapter из generated/figma/tokens/variables.tokens.scoped.json
+ * Loads adapter from generated/figma/tokens/variables.tokens.scoped.json
  */
 function loadAdapter() {
   const scopedPath = path.join(repoRoot, 'generated', 'figma', 'tokens', 'variables.tokens.scoped.json');
@@ -57,7 +57,7 @@ function loadAdapter() {
     return convertScopedToAdapter(scoped);
   }
   
-  // Fallback: использовать старый adapter (только цвета)
+  // Fallback: use old adapter (colors only)
   if (fs.existsSync(ADAPTER_PATH)) {
     const adapter = JSON.parse(fs.readFileSync(ADAPTER_PATH, 'utf8'));
     
@@ -92,7 +92,7 @@ function loadAdapter() {
 }
 
 /**
- * Конвертирует scoped tokens в adapter формат
+ * Converts scoped tokens to adapter format
  */
 function convertScopedToAdapter(scoped) {
   const collections = new Map();
@@ -115,16 +115,16 @@ function convertScopedToAdapter(scoped) {
 }
 
 /**
- * Анализирует изменения между snapshot и adapter
+ * Analyzes changes between snapshot and adapter
  */
 function analyzeChanges(snapshot, adapter) {
-  // Создать map переменных из snapshot по path
+  // Create map of variables from snapshot by path
   const snapshotVarsByPath = new Map();
   for (const variable of snapshot.variables) {
     snapshotVarsByPath.set(variable.path, variable);
   }
   
-  // Создать map переменных из adapter по path
+  // Create map of variables from adapter by path
   const adapterVarsByPath = new Map();
   for (const collection of adapter.collections) {
     for (const variable of collection.variables) {
@@ -136,7 +136,7 @@ function analyzeChanges(snapshot, adapter) {
     }
   }
   
-  // Найти удаленные (есть в snapshot, нет в adapter)
+  // Find deleted (exists in snapshot, not in adapter)
   const deleted = [];
   for (const [path, variable] of snapshotVarsByPath.entries()) {
     if (!adapterVarsByPath.has(path)) {
@@ -151,7 +151,7 @@ function analyzeChanges(snapshot, adapter) {
     }
   }
   
-  // Найти новые (есть в adapter, нет в snapshot)
+  // Find added (exists in adapter, not in snapshot)
   const added = [];
   for (const [path, variable] of adapterVarsByPath.entries()) {
     if (!snapshotVarsByPath.has(path)) {
@@ -163,7 +163,7 @@ function analyzeChanges(snapshot, adapter) {
     }
   }
   
-  // Найти измененные (есть в обоих, но изменилась collection)
+  // Find moved (exists in both, but collection changed)
   const moved = [];
   for (const [path, snapshotVar] of snapshotVarsByPath.entries()) {
     const adapterVar = adapterVarsByPath.get(path);
@@ -194,19 +194,19 @@ function analyzeChanges(snapshot, adapter) {
 }
 
 /**
- * Находит fallback переменную для удаленной переменной
- * Ищет похожую переменную по имени или типу в той же коллекции
+ * Finds fallback variable for deleted variable
+ * Searches for similar variable by name or type in the same collection
  */
 function findFallback(deletedVar, adapter) {
-  // Попробовать найти переменную с похожим путем
+  // Try to find variable with similar path
   const pathParts = deletedVar.path.split('.');
   const basePath = pathParts.slice(0, -1).join('.');
   const lastPart = pathParts[pathParts.length - 1];
   
-  // Искать переменные в той же коллекции
+  // Search for variables in the same collection
   for (const collection of adapter.collections) {
     if (collection.name === deletedVar.collection) {
-      // Попробовать найти переменную с похожим именем
+      // Try to find variable with similar name
       for (const variable of collection.variables) {
         if (variable.path.includes(basePath) && variable.type === deletedVar.type) {
           return {
@@ -217,7 +217,7 @@ function findFallback(deletedVar, adapter) {
         }
       }
       
-      // Попробовать найти переменную того же типа
+      // Try to find variable of the same type
       for (const variable of collection.variables) {
         if (variable.type === deletedVar.type) {
           return {
@@ -230,12 +230,12 @@ function findFallback(deletedVar, adapter) {
     }
   }
   
-  // Если не найдено, вернуть null (требуется ручной выбор)
+  // If not found, return null (manual selection required)
   return null;
 }
 
 /**
- * Генерирует файл миграции
+ * Generates migration file
  */
 function generateMigration(snapshot, snapshotFilename, analysis, adapter) {
   const today = new Date();
@@ -259,7 +259,7 @@ function generateMigration(snapshot, snapshotFilename, analysis, adapter) {
     moved: []
   };
   
-  // Обработать удаленные переменные
+  // Process deleted variables
   for (const deletedVar of analysis.deleted) {
     const fallback = findFallback(deletedVar, adapter);
     
@@ -278,7 +278,7 @@ function generateMigration(snapshot, snapshotFilename, analysis, adapter) {
     });
   }
   
-  // Обработать перемещенные переменные
+  // Process moved variables
   for (const movedVar of analysis.moved) {
     migration.moved.push({
       path: movedVar.path,
@@ -296,7 +296,7 @@ function generateMigration(snapshot, snapshotFilename, analysis, adapter) {
 }
 
 /**
- * Сохраняет файл миграции
+ * Saves migration file
  */
 function saveMigration(migration) {
   if (!fs.existsSync(MIGRATIONS_DIR)) {
@@ -312,7 +312,7 @@ function saveMigration(migration) {
 }
 
 /**
- * Выводит информацию о миграции
+ * Prints migration information
  */
 function printMigrationInfo(migration, filepath) {
   console.log('\n✅ Migration file generated!\n');

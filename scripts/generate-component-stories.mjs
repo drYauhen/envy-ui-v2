@@ -24,15 +24,15 @@ function generateStoryForTokenFile(componentName, tokenFileName) {
   const tokenFileVar = toPascalCase(tokenFileBase);
   const importVar = `${componentNameCamel}${tokenFileVar}`;
   
-  // Путь к токену: stories/tokens/app/components/alert-banner/colors.stories.tsx
+  // Token path: stories/tokens/app/components/alert-banner/colors.stories.tsx
   // -> ../../../../../tokens/app/components/alert-banner/colors.json
   const tokenRelativePath = `../../../../../tokens/app/components/${componentName}/${tokenFileName}`;
   
-  // Путь к viewers: stories/tokens/app/components/alert-banner/colors.stories.tsx
+  // Viewers path: stories/tokens/app/components/alert-banner/colors.stories.tsx
   // -> ../../../../viewers/tokens/TokenLayout
   const viewersPath = `../../../../viewers/tokens`;
   
-  // Путь компонента для collectRefs - используем имя с дефисом в кавычках
+  // Component path for collectRefs - use name with dash in quotes
   const componentPath = componentName; // 'alert-banner' или 'button'
   
   const displayName = componentName.split('-').map(word => 
@@ -57,7 +57,7 @@ flattenTokens(${importVar}, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-// Используем весь объект компонента из JSON файла
+// Use the entire component object from the JSON file
 const tokenRefs = collectRefs((${importVar} as any)?.eui?.['${componentPath}'] ?? {}, ['eui', '${componentPath}']);
 
 const meta: Meta = {
@@ -125,11 +125,11 @@ async function main() {
       continue;
     }
     
-    // Создать папку для stories компонента
+    // Create directory for component stories
     const storiesComponentDir = join(projectRoot, 'stories/tokens/app/components', componentName);
     await mkdir(storiesComponentDir, { recursive: true });
     
-    // Создать story для каждого файла токена
+    // Create story for each token file
     for (const tokenFile of tokenFiles) {
       const storyContent = generateStoryForTokenFile(componentName, tokenFile);
       const storyPath = join(storiesComponentDir, `${basename(tokenFile, '.json')}.stories.tsx`);

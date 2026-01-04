@@ -10,7 +10,7 @@ const repoRoot = path.resolve(__dirname, '..');
 
 const SCHEMA_URL = 'https://schemas.s1seven.com/style-dictionary/v3/schema.json';
 
-// Компоненты и их файлы
+// Components and their files
 const components = {
   'alert-banner': ['border.json', 'colors.json', 'spacing.json', 'z-index.json'],
   'app-shell': ['layout.json'],
@@ -40,7 +40,7 @@ const components = {
   'title-bar': ['colors.json', 'size.json', 'spacing.json']
 };
 
-// Foundations файлы
+// Foundations files
 const foundationsFiles = {
   'colors': ['accent.json', 'brand.json', 'neutral.json', 'signal.json', 'status.json', 'status-application.json'],
   'typography': ['font-family.json', 'font-size.json', 'font-style.json', 'font-weight.json', 'letter-spacing.json', 'line-height.json', 'text-decoration.json', 'text-transform.json']
@@ -48,7 +48,7 @@ const foundationsFiles = {
 
 const foundationsRoot = ['breakpoints.json', 'shape.json', 'spacing.json'];
 
-// Semantic файлы
+// Semantic files
 const semanticFiles = {
   'colors': ['background.json', 'border.json', 'focus.json', 'text.json'],
   'layout': ['container.json', 'page.json', 'section.json', 'toolbar.json'],

@@ -10,7 +10,7 @@ const SNAPSHOTS_DIR = path.join(repoRoot, 'generated', 'figma', 'snapshots');
 const ADAPTER_PATH = path.join(repoRoot, 'generated', 'figma', 'adapter', 'variables.adapter.json');
 
 /**
- * Загружает snapshot из файла
+ * Loads snapshot from file
  */
 function loadSnapshot(snapshotPath) {
   if (!fs.existsSync(snapshotPath)) {
@@ -20,7 +20,7 @@ function loadSnapshot(snapshotPath) {
 }
 
 /**
- * Загружает latest snapshot
+ * Loads latest snapshot
  */
 function loadLatestSnapshot() {
   const latestPath = path.join(SNAPSHOTS_DIR, 'latest-snapshot.json');
@@ -29,11 +29,11 @@ function loadLatestSnapshot() {
       const realPath = fs.readlinkSync(latestPath);
       return loadSnapshot(path.join(SNAPSHOTS_DIR, realPath));
     } catch (error) {
-      // Если symlink не работает, попробовать найти последний файл
+      // If symlink doesn't work, try to find the latest file
     }
   }
   
-  // Если нет symlink, найти последний по дате
+  // If no symlink, find latest by date
   const files = fs.readdirSync(SNAPSHOTS_DIR)
     .filter(f => f.endsWith('-snapshot.json'))
     .sort()
@@ -47,23 +47,23 @@ function loadLatestSnapshot() {
 }
 
 /**
- * Загружает adapter из generated/figma/tokens/variables.tokens.scoped.json
- * (полный список всех токенов с modes)
- * Fallback: использует старый adapter (только цвета)
+ * Loads adapter from generated/figma/tokens/variables.tokens.scoped.json
+ * (full list of all tokens with modes)
+ * Fallback: uses old adapter (colors only)
  */
 function loadAdapter() {
-  // Приоритет: использовать scoped tokens (полный список всех токенов)
+  // Priority: use scoped tokens (full list of all tokens)
   const scopedPath = path.join(repoRoot, 'generated', 'figma', 'tokens', 'variables.tokens.scoped.json');
   if (fs.existsSync(scopedPath)) {
     const scoped = JSON.parse(fs.readFileSync(scopedPath, 'utf8'));
     return convertScopedToAdapter(scoped);
   }
   
-  // Fallback: использовать старый adapter (только цвета)
+  // Fallback: use old adapter (colors only)
   if (fs.existsSync(ADAPTER_PATH)) {
     const adapter = JSON.parse(fs.readFileSync(ADAPTER_PATH, 'utf8'));
     
-    // Если adapter в старом формате (один mode), конвертировать
+    // If adapter is in old format (single mode), convert
     if (adapter.collections && adapter.collections[0] && adapter.collections[0].mode) {
       return {
         collections: adapter.collections.map(c => ({
@@ -95,7 +95,7 @@ function loadAdapter() {
 }
 
 /**
- * Конвертирует scoped tokens в adapter формат
+ * Converts scoped tokens to adapter format
  */
 function convertScopedToAdapter(scoped) {
   const collections = new Map();
@@ -118,16 +118,16 @@ function convertScopedToAdapter(scoped) {
 }
 
 /**
- * Анализирует изменения между snapshot и adapter
+ * Analyzes changes between snapshot and adapter
  */
 function analyzeChanges(snapshot, adapter) {
-  // Создать map переменных из snapshot по path
+  // Create map of variables from snapshot by path
   const snapshotVarsByPath = new Map();
   for (const variable of snapshot.variables) {
     snapshotVarsByPath.set(variable.path, variable);
   }
   
-  // Создать map переменных из adapter по path
+  // Create map of variables from adapter by path
   const adapterVarsByPath = new Map();
   for (const collection of adapter.collections) {
     for (const variable of collection.variables) {
@@ -139,7 +139,7 @@ function analyzeChanges(snapshot, adapter) {
     }
   }
   
-  // Найти удаленные (есть в snapshot, нет в adapter)
+  // Find deleted (exists in snapshot, not in adapter)
   const deleted = [];
   for (const [path, variable] of snapshotVarsByPath.entries()) {
     if (!adapterVarsByPath.has(path)) {
@@ -154,7 +154,7 @@ function analyzeChanges(snapshot, adapter) {
     }
   }
   
-  // Найти новые (есть в adapter, нет в snapshot)
+  // Find added (exists in adapter, not in snapshot)
   const added = [];
   for (const [path, variable] of adapterVarsByPath.entries()) {
     if (!snapshotVarsByPath.has(path)) {
@@ -166,7 +166,7 @@ function analyzeChanges(snapshot, adapter) {
     }
   }
   
-  // Найти измененные (есть в обоих, но изменилась collection)
+  // Find moved (exists in both, but collection changed)
   const moved = [];
   for (const [path, snapshotVar] of snapshotVarsByPath.entries()) {
     const adapterVar = adapterVarsByPath.get(path);
@@ -197,7 +197,7 @@ function analyzeChanges(snapshot, adapter) {
 }
 
 /**
- * Выводит результаты анализа
+ * Prints analysis results
  */
 function printAnalysis(analysis, snapshot) {
   console.log('\n📊 Snapshot Analysis\n');
@@ -218,8 +218,8 @@ function printAnalysis(analysis, snapshot) {
   if (analysis.deleted.length > 0) {
     console.log(`\n❌ Deleted Variables (${analysis.deleted.length}):\n`);
     analysis.deleted
-      .sort((a, b) => b.usages - a.usages) // Сортировать по количеству использований
-      .slice(0, 30) // Показать топ 30
+      .sort((a, b) => b.usages - a.usages) // Sort by usage count
+      .slice(0, 30) // Show top 30
       .forEach(v => {
         console.log(`  - ${v.path}`);
         console.log(`    Collection: ${v.collection}`);
