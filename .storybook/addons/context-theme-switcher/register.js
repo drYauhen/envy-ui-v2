@@ -20,11 +20,20 @@ const THEME_OPTIONS = {
   ]
 };
 
+const FOCUS_OPTIONS = [
+  { value: 'derived', label: 'Derived' },
+  { value: 'system', label: 'System' }
+];
+
 const menuStyle = {
   display: 'grid',
   gap: '8px',
   minWidth: '240px',
-  padding: '10px 12px'
+  padding: '10px 12px',
+  backgroundColor: '#ffffff',
+  border: '1px solid #e2e8f0',
+  borderRadius: '6px',
+  boxShadow: '0 8px 24px rgba(15, 23, 42, 0.12)'
 };
 
 const rowStyle = {
@@ -48,15 +57,23 @@ const selectStyle = {
   minWidth: '140px'
 };
 
+const dividerStyle = {
+  gridColumn: '1 / -1',
+  height: '1px',
+  backgroundColor: '#e2e8f0',
+  margin: '2px 0'
+};
+
 function ContextThemeSwitcher() {
   const [globals, updateGlobals] = useGlobals();
   const appTheme = globals.appTheme || 'default';
   const websiteTheme = globals.websiteTheme || 'default';
   const reportTheme = globals.reportTheme || 'print';
+  const focusPolicy = globals.focusPolicy || 'derived';
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const updateTheme = React.useCallback((key, value) => {
-    updateGlobals({ [`${key}Theme`]: value });
+  const updateGlobal = React.useCallback((key, value) => {
+    updateGlobals({ [key]: value });
   }, [updateGlobals]);
 
   const renderRow = (label, value, options, onChange) => (
@@ -85,9 +102,11 @@ function ContextThemeSwitcher() {
       onVisibleChange={setIsOpen}
       tooltip={(
         <div style={menuStyle}>
-          {renderRow('App', appTheme, THEME_OPTIONS.app, (value) => updateTheme('app', value))}
-          {renderRow('Website', websiteTheme, THEME_OPTIONS.website, (value) => updateTheme('website', value))}
-          {renderRow('Report', reportTheme, THEME_OPTIONS.report, (value) => updateTheme('report', value))}
+          {renderRow('App', appTheme, THEME_OPTIONS.app, (value) => updateGlobal('appTheme', value))}
+          {renderRow('Website', websiteTheme, THEME_OPTIONS.website, (value) => updateGlobal('websiteTheme', value))}
+          {renderRow('Report', reportTheme, THEME_OPTIONS.report, (value) => updateGlobal('reportTheme', value))}
+          <div style={dividerStyle} />
+          {renderRow('Focus', focusPolicy, FOCUS_OPTIONS, (value) => updateGlobal('focusPolicy', value))}
         </div>
       )}
     >

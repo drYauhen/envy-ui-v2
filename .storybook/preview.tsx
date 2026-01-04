@@ -152,16 +152,7 @@ export const globalTypes: Preview['globalTypes'] = {
   focusPolicy: {
     name: 'Focus Policy',
     description: 'Select focus styling: Derived (brand color) or System (high accessibility orange).',
-    defaultValue: 'derived',
-    toolbar: {
-      icon: 'circlehollow',
-      items: [
-        { value: 'derived', title: 'Derived' },
-        { value: 'system', title: 'System' }
-      ],
-      showName: true,
-      dynamicTitle: true
-    }
+    defaultValue: 'derived'
   }
 };
 
