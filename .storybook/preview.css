@@ -1,14 +1,48 @@
+/* =============================================================================
+   STORYBOOK PREVIEW.CSS - REFERENCE & POSSIBLE CUSTOMIZATIONS
+   =============================================================================
+
+   This file contains documented possibilities for customizing the Storybook
+   preview panel. All styles are commented out by default.
+
+   When you need to apply a customization:
+   1. Uncomment the relevant section
+   2. Adjust values as needed
+   3. Test in Storybook
+   4. Consider if this affects component documentation negatively
+
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   1. GLOBAL TYPOGRAPHY & COLORS
+   -----------------------------------------------------------------------------
+   Customize the base typography and colors for the entire preview panel.
+   This affects all documentation and component previews.
+
+   IMPORTANT: Only change if you have a design system that requires it.
+   ----------------------------------------------------------------------------- */
+
+/*
 :root,
 body,
 #storybook-root,
 .sbdocs-wrapper {
-  font-family: var(--eui-typography-font-family-ui, 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
-  font-size: var(--eui-typography-base-fontSize, 14px);
-  background-color: #f6f7fb;
-  color: #0f172a;
-  font-weight: var(--eui-typography-font-weight-normal, 400);
+  font-family: var(--your-font-family, system-ui, -apple-system, sans-serif);
+  font-size: var(--your-base-font-size, 14px);
+  background-color: var(--your-background-color, #ffffff);
+  color: var(--your-text-color, #000000);
+  font-weight: var(--your-normal-weight, 400);
 }
+*/
 
+/* -----------------------------------------------------------------------------
+   2. DOCUMENTATION PANEL LAYOUT
+   -----------------------------------------------------------------------------
+   Adjust spacing and layout for documentation pages (Docs mode).
+   These affect the padding around MDX content and story descriptions.
+   ----------------------------------------------------------------------------- */
+
+/*
 .sbdocs-content,
 .sbdocs,
 .sbdocs-wrapper {
@@ -16,29 +50,42 @@ body,
   padding-top: 24px;
   padding-bottom: 24px;
 }
+*/
 
+/*
 .sbdocs-preview {
   padding: 16px !important;
   min-height: 0 !important;
 }
+*/
 
+/*
 .sbdocs.sbdocs-preview.sb-unstyled {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+*/
 
+/*
 .sbdocs-preview .docs-story {
-  padding: 24px 0; /* Keep top/bottom padding, remove left/right padding */
+  padding: 24px 0;
 }
+*/
 
-.ui-button {
-  font-weight: 400 !important;
-}
+/* -----------------------------------------------------------------------------
+   3. COMPONENT PREVIEW CONTAINER
+   -----------------------------------------------------------------------------
+   Customize the main preview area where components are rendered.
+   This is the white/colored box containing your actual components.
+   ----------------------------------------------------------------------------- */
 
+/*
 #storybook-root {
   min-height: 100vh;
 }
+*/
 
+/*
 .sb-preview-wrapper {
   min-height: 100vh;
   box-sizing: border-box;
@@ -48,8 +95,95 @@ body,
   justify-content: flex-start;
   align-items: flex-start;
 }
+*/
 
+/*
 .sb-preview-region {
   width: 100%;
   background: transparent;
 }
+*/
+
+/* -----------------------------------------------------------------------------
+   4. COMPONENT-SPECIFIC OVERRIDES
+   -----------------------------------------------------------------------------
+   Override styles for specific components when they appear in Storybook.
+   Use sparingly - prefer fixing styles in component CSS files.
+   ----------------------------------------------------------------------------- */
+
+/*
+.your-component-class {
+  // Override specific component styles for Storybook only
+}
+*/
+
+/* -----------------------------------------------------------------------------
+   5. UTILITY CLASSES
+   -----------------------------------------------------------------------------
+   Add utility classes that help with component demos and documentation.
+   ----------------------------------------------------------------------------- */
+
+/*
+.utility-class-for-demos {
+  // Utility styles for demonstrating components
+}
+*/
+
+/* -----------------------------------------------------------------------------
+   RESPONSIVE DESIGN FOR PREVIEW
+   -----------------------------------------------------------------------------
+   Media queries for different screen sizes in preview panel.
+   ----------------------------------------------------------------------------- */
+
+/*
+@media (max-width: 768px) {
+  .sb-preview-wrapper {
+    padding: 16px;
+  }
+}
+*/
+
+/* -----------------------------------------------------------------------------
+   DARK MODE / THEME SUPPORT
+   -----------------------------------------------------------------------------
+   Add theme-specific styles if your design system supports themes.
+   ----------------------------------------------------------------------------- */
+
+/*
+[data-theme="dark"] .sb-preview-wrapper {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+*/
+
+/* -----------------------------------------------------------------------------
+   FOCUS & ACCESSIBILITY ENHANCEMENTS
+   -----------------------------------------------------------------------------
+   Improve focus indicators and accessibility in preview mode.
+   ----------------------------------------------------------------------------- */
+
+/*
+.sb-preview-wrapper *:focus-visible {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+*/
+
+/* =============================================================================
+   BEST PRACTICES:
+   =============================================================================
+
+   ✅ DO:
+   - Test changes across different story types (components, docs, tokens)
+   - Consider mobile responsiveness
+   - Keep accessibility in mind
+   - Use CSS custom properties from your design system
+   - Document why each customization exists
+
+   ❌ DON'T:
+   - Override component styles that should be fixed in component files
+   - Make the preview look too different from production
+   - Add styles that break component isolation
+   - Forget to test with different Storybook addons (Controls, Actions, etc.)
+
+   ============================================================================= */
