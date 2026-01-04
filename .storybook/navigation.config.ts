@@ -49,6 +49,15 @@ export const navigationConfig = {
     // Docs/ADR: "ADR Overview" should always be first
     "Docs/ADR": {
       firstItem: "ADR Overview"
+    },
+    "Docs/Architecture": {
+      firstItem: "Architecture Overview"
+    },
+    "Docs/Tokens": {
+      firstItem: "Tokens Overview"
+    },
+    "Docs/Workflows": {
+      firstItem: "Workflows Overview"
     }
   },
 
@@ -93,4 +102,3 @@ export const navigationConfig = {
     }
   }
 } as const;
-

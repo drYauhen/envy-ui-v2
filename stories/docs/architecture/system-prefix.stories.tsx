@@ -7,8 +7,7 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
-    ...getSectionParameters('Docs/Architecture'), 
+    ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
     actions: { hidden: true },
@@ -19,12 +18,12 @@ const meta: Meta = {
 
 export default meta;
 
-export const TokenUsageRules: Story = {
-  name: 'Token Usage Rules',
+export const SystemPrefix: Story = {
+  name: 'System Prefix',
   render: () => (
     <DocViewer
-      markdownPath="/docs/architecture/token-usage-rules.md"
-      fallback="Loading token usage rules..."
+      markdownPath="/docs/architecture/system-prefix.md"
+      fallback="Loading system prefix documentation..."
     />
   )
 };

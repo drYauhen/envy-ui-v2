@@ -72,25 +72,29 @@ const architectureDocs: DocRegistryItem[] = [
     id: 'arch-component-naming',
     path: 'architecture/component-naming-conventions.md',
     title: 'Component Naming Conventions',
-    category: 'architecture'
+    category: 'architecture',
+    storybookId: 'docs-architecture--component-naming-conventions'
   },
   {
     id: 'arch-system-prefix',
     path: 'architecture/system-prefix.md',
     title: 'System Prefix',
-    category: 'architecture'
+    category: 'architecture',
+    storybookId: 'docs-architecture--system-prefix'
   },
   {
     id: 'arch-hero-theme',
     path: 'architecture/hero-section-theme-architecture.md',
     title: 'Hero Section Theme Architecture',
-    category: 'architecture'
+    category: 'architecture',
+    storybookId: 'docs-architecture--hero-section-theme-architecture'
   },
   {
     id: 'arch-dev-app',
     path: 'architecture/dev-app-architecture.md',
     title: 'Dev App Architecture',
-    category: 'architecture'
+    category: 'architecture',
+    storybookId: 'docs-architecture--dev-app-architecture'
   }
 ];
 
@@ -100,38 +104,43 @@ const workflowDocs: DocRegistryItem[] = [
     id: 'workflow-adr',
     path: 'workflows/adr-workflow.md',
     title: 'ADR Workflow',
-    category: 'workflows'
+    category: 'workflows',
+    storybookId: 'docs-workflows--adr-workflow'
   },
   {
     id: 'workflow-figma',
     path: 'workflows/figma-workflow.md',
     title: 'Figma Workflow',
-    category: 'workflows'
+    category: 'workflows',
+    storybookId: 'docs-workflows--figma-workflow'
   },
   {
     id: 'workflow-storybook',
     path: 'workflows/storybook-workflow.md',
     title: 'Storybook Workflow',
-    category: 'workflows'
+    category: 'workflows',
+    storybookId: 'docs-workflows--storybook-workflow'
   },
   {
     id: 'workflow-tokens',
     path: 'workflows/tokens-workflow.md',
     title: 'Tokens Workflow',
     category: 'workflows',
-    storybookId: 'docs-tokens--tokens-workflow'
+    storybookId: 'docs-workflows--tokens-workflow'
   },
   {
     id: 'workflow-dev-app',
     path: 'workflows/dev-app-workflow.md',
     title: 'Dev App Workflow',
-    category: 'workflows'
+    category: 'workflows',
+    storybookId: 'docs-workflows--dev-app-workflow'
   },
   {
     id: 'workflow-readme',
     path: 'workflows/README.md',
     title: 'Workflows Documentation',
-    category: 'workflows'
+    category: 'workflows',
+    storybookId: 'docs-workflows--workflows-documentation'
   }
 ];
 

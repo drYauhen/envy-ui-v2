@@ -185,7 +185,10 @@ export const parameters: Preview['parameters'] = {
       
       // Special rules (from navigation.config.ts)
                                                 const specialRules = {
-        "Docs/ADR": { firstItem: "ADR Overview" }
+        "Docs/ADR": { firstItem: "ADR Overview" },
+        "Docs/Architecture": { firstItem: "Architecture Overview" },
+        "Docs/Tokens": { firstItem: "Tokens Overview" },
+        "Docs/Workflows": { firstItem: "Workflows Overview" }
       };
       
       // Section configs (from navigation.config.ts)

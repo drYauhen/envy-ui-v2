@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MarkdownViewer } from '../../viewers/tokens/MarkdownViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -22,7 +22,7 @@ export default meta;
 export const AccessibilityReference: Story = {
   name: 'Accessibility Reference',
   render: () => (
-    <MarkdownViewer 
+    <DocViewer
       markdownPath="/docs/architecture/accessibility-reference.md"
       fallback="Loading accessibility reference..."
     />

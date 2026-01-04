@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MarkdownViewer } from '../../viewers/tokens/MarkdownViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { DocSectionListViewer } from '../../viewers/docs/DocSectionListViewer';
+import { docsRegistry } from '../../viewers/docs/docs-registry';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -19,10 +21,28 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchitectureOverview: Story = {
-  name: 'Architecture Documentation Overview',
+const architectureDocs = docsRegistry.filter(doc => doc.path.startsWith('architecture/'));
+
+export const Overview: Story = {
+  name: 'Architecture Overview',
   render: () => (
-    <MarkdownViewer 
+    <DocSectionListViewer
+      title="Architecture Documentation"
+      description={
+        <>
+          <p>Current architectural rules, standards, and references for Envy UI v2.</p>
+          <p>Use this list to navigate all architecture documents in Storybook.</p>
+        </>
+      }
+      docs={architectureDocs}
+    />
+  )
+};
+
+export const ArchitectureOverview: Story = {
+  name: 'Architecture Documentation',
+  render: () => (
+    <DocViewer
       markdownPath="/docs/architecture/README.md"
       fallback="Loading architecture documentation..."
     />

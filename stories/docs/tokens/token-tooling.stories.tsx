@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MarkdownViewer } from '../../viewers/tokens/MarkdownViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { DocSectionListViewer } from '../../viewers/docs/DocSectionListViewer';
+import { docsRegistry } from '../../viewers/docs/docs-registry';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -19,22 +21,30 @@ const meta: Meta = {
 
 export default meta;
 
-export const TokenTooling: Story = {
-  name: 'Token System Tooling',
+const tokenDocs = docsRegistry.filter(doc => doc.path.startsWith('tokens/'));
+
+export const Overview: Story = {
+  name: 'Tokens Overview',
   render: () => (
-    <MarkdownViewer 
-      markdownPath="/docs/tokens/README.md"
-      fallback="Loading token tooling documentation..."
+    <DocSectionListViewer
+      title="Tokens Documentation"
+      description={
+        <>
+          <p>Reference documentation and tooling guides for the token system.</p>
+          <p>Use this list to navigate token docs in Storybook.</p>
+        </>
+      }
+      docs={tokenDocs}
     />
   )
 };
 
-export const TokensWorkflow: Story = {
-  name: 'Tokens Workflow',
+export const TokenTooling: Story = {
+  name: 'Token System Tooling',
   render: () => (
-    <MarkdownViewer
-      markdownPath="/docs/workflows/tokens-workflow.md"
-      fallback="Loading tokens workflow documentation..."
+    <DocViewer
+      markdownPath="/docs/tokens/README.md"
+      fallback="Loading token tooling documentation..."
     />
   )
 };
@@ -42,7 +52,7 @@ export const TokensWorkflow: Story = {
 export const TokenUseCases: Story = {
   name: 'Token Utilities Use Cases',
   render: () => (
-    <MarkdownViewer 
+    <DocViewer
       markdownPath="/docs/tokens/use-cases.md"
       fallback="Loading token use cases..."
     />
@@ -52,7 +62,7 @@ export const TokenUseCases: Story = {
 export const TokenReference: Story = {
   name: 'Token Reference',
   render: () => (
-    <MarkdownViewer 
+    <DocViewer
       markdownPath="/docs/tokens/reference.md"
       fallback="Loading token reference..."
     />
