@@ -29,6 +29,16 @@ export const TokenTooling: Story = {
   )
 };
 
+export const TokensWorkflow: Story = {
+  name: 'Tokens Workflow',
+  render: () => (
+    <MarkdownViewer
+      markdownPath="/docs/workflows/tokens-workflow.md"
+      fallback="Loading tokens workflow documentation..."
+    />
+  )
+};
+
 export const TokenUseCases: Story = {
   name: 'Token Utilities Use Cases',
   render: () => (
@@ -48,4 +58,3 @@ export const TokenReference: Story = {
     />
   )
 };
-
