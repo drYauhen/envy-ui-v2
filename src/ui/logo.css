@@ -59,7 +59,7 @@
   /* Preserve all styles and animations from SVG */
 }
 
-/* Sizes - для icon-only (квадратные) */
+/* Sizes - for icon-only (square) */
 [data-eui-context] .eui-logo[data-eui-variant="icon-only"][data-eui-size="xs"] .eui-logo__svg,
 [data-eui-context] .eui-logo[data-eui-variant="icon-only-color"][data-eui-size="xs"] .eui-logo__svg,
 [data-eui-context] .eui-logo[data-eui-variant="loading"][data-eui-size="xs"] .eui-logo__svg {
@@ -95,7 +95,7 @@
   height: var(--eui-logo-size-icon-xl);
 }
 
-/* Sizes - для full (горизонтальные, сохраняют пропорции) */
+/* Sizes - for full (horizontal, preserve aspect ratio) */
 [data-eui-context] .eui-logo[data-eui-variant="full"][data-eui-size="xs"] .eui-logo__svg,
 [data-eui-context] .eui-logo[data-eui-variant="full-color"][data-eui-size="xs"] .eui-logo__svg {
   height: var(--eui-logo-size-icon-xs);
@@ -126,7 +126,7 @@
   width: auto;
 }
 
-/* Color variants - только для monochrome вариантов */
+/* Color variants - only for monochrome variants */
 [data-eui-context] .eui-logo[data-eui-color="default"] .eui-logo__svg {
   color: var(--eui-logo-colors-icon-default);
 }
@@ -143,7 +143,7 @@
   color: currentColor;
 }
 
-/* Color variants не применяются к color и loading вариантам */
+/* Color variants do not apply to color and loading variants */
 [data-eui-context] .eui-logo[data-eui-variant="color"] .eui-logo__svg,
 [data-eui-context] .eui-logo[data-eui-variant="full-color"] .eui-logo__svg,
 [data-eui-context] .eui-logo[data-eui-variant="icon-only-color"] .eui-logo__svg,

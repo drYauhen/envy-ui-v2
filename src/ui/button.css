@@ -106,12 +106,12 @@
     0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-focus-color-accessible);
 }
 
-/* Override focus ring during finish animation - используем те же цвета, что и background */
+/* Override focus ring during finish animation - use same colors as background */
 [data-eui-context] .eui-button[data-eui-intent='accent'][data-eui-finishing]:focus,
 [data-eui-context] .eui-button[data-eui-intent='accent'][data-eui-finishing]:focus-visible {
-  /* Отключаем стандартный голубой focus ring */
+  /* Disable standard blue focus ring */
   box-shadow: none !important;
-  /* Применяем анимацию с правильными цветами */
+  /* Apply animation with correct colors */
   animation: button-finish-transition 1.2s cubic-bezier(0.4, 0, 0.2, 1),
              button-finish-focus-ring 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }

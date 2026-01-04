@@ -12,7 +12,7 @@ type CelebrationDelay = number | 'short' | 'medium' | 'long';
 interface UseCelebrationOptions {
   trigger?: CelebrationTrigger;
   delay?: CelebrationDelay;
-  value?: any; // Для триггера 'onValueChange'
+  value?: any; // For 'onValueChange' trigger
   enabled?: boolean;
   onCelebrate?: () => void;
 }
@@ -37,7 +37,7 @@ export const useCelebration = ({
   const elementRef = useRef<HTMLElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
-  // Обработка delay
+  // Handle delay
   useEffect(() => {
     if (typeof delay === 'number') {
       setDelayAttr(undefined);
@@ -46,7 +46,7 @@ export const useCelebration = ({
     }
   }, [delay]);
 
-  // Триггер: onMount
+  // Trigger: onMount
   useEffect(() => {
     if (trigger === 'onMount' && enabled) {
       const timeout = getDelayMs(delay);
@@ -55,7 +55,7 @@ export const useCelebration = ({
         setIsActive(true);
         onCelebrate?.();
         
-        // Автоматически убираем через 2 секунды
+        // Automatically remove after 2 seconds
         setTimeout(() => setIsActive(false), 2000);
       }, timeout);
 
@@ -63,7 +63,7 @@ export const useCelebration = ({
     }
   }, [trigger, delay, enabled, onCelebrate]);
 
-  // Триггер: onVisible (Intersection Observer)
+  // Trigger: onVisible (Intersection Observer)
   useEffect(() => {
     if (trigger === 'onVisible' && enabled && elementRef.current) {
       observerRef.current = new IntersectionObserver(
@@ -78,7 +78,7 @@ export const useCelebration = ({
                 setTimeout(() => setIsActive(false), 2000);
               }, timeout);
               
-              // Отключаем observer после первого срабатывания
+              // Disconnect observer after first trigger
               observerRef.current?.disconnect();
             }
           });
@@ -94,7 +94,7 @@ export const useCelebration = ({
     }
   }, [trigger, delay, enabled, isActive, onCelebrate]);
 
-  // Триггер: onValueChange
+  // Trigger: onValueChange
   useEffect(() => {
     if (trigger === 'onValueChange' && enabled && value !== undefined) {
       if (prevValueRef.current !== value) {
@@ -111,7 +111,7 @@ export const useCelebration = ({
     }
   }, [trigger, delay, enabled, value, onCelebrate]);
 
-  // Триггер: onClick
+  // Trigger: onClick
   const handleClick = useCallback(() => {
     if (trigger === 'onClick' && enabled) {
       const timeout = getDelayMs(delay);
@@ -133,7 +133,7 @@ export const useCelebration = ({
     }
   }, [enabled, onCelebrate]);
 
-  // Получаем атрибуты для элемента
+  // Get attributes for element
   const getAttributes = useCallback(() => {
     const attrs: Record<string, any> = {
       className: 'eui-celebration',

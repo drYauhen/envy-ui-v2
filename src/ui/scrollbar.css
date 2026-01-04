@@ -10,7 +10,7 @@
 /* Hide native scrollbar */
 [data-eui-context] .eui-scrollbar-content {
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE и Edge */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 [data-eui-context] .eui-scrollbar-content::-webkit-scrollbar {
