@@ -69,7 +69,7 @@ export const Controlled: Story = {
         <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
           Selected: {Array.from(selected).join(', ') || 'none'}
         </p>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -173,7 +173,6 @@ export const InForm: Story = {
     </ContextThemeScope>
   )
 };
-
 
 
 

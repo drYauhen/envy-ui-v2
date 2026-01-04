@@ -174,7 +174,7 @@ export const MultipleBanners: Story = {
           <h1>Application Content</h1>
           <p>Multiple banners can be stacked (requires layout adjustment for positioning).</p>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };

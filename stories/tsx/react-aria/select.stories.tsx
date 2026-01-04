@@ -68,7 +68,7 @@ export const Controlled: Story = {
         <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
           Selected: {selected || 'none'}
         </p>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
