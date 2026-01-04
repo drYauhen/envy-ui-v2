@@ -24,6 +24,20 @@ The following directories are intentionally excluded from Storybook registry and
 
 These are working notes and drafts. They can be referenced by links, but they should not be registered in `docs-registry.ts`.
 
+## Documentation Sections
+
+Docs are organized by section. Each section can have an overview story that lists all documents from the registry.
+
+**Current sections:**
+- `Docs/ADR` - Historical decisions
+- `Docs/Architecture` - Current rules and standards
+- `Docs/Workflows` - How to work with the system
+- `Docs/Tokens` - Token references and tooling
+
+**Overview pages (recommended):**
+- If a section has more than a couple documents, create an overview story that renders a list from the registry.
+- Use the shared list viewer (`DocSectionListViewer`) to keep the UI consistent across sections.
+
 ## Workflow for New Document
 
 ### Step 1: Add to docs-registry.ts FIRST
@@ -58,6 +72,44 @@ This checks:
 - ✅ All links point to existing files
 - ✅ All linked files are registered in registry
 - ✅ No broken cross-references
+
+## Storybook Doc Stories
+
+**Default pattern (DocViewer):**
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+
+const meta: Meta = {
+  title: 'Docs/Architecture',
+  parameters: { layout: 'fullscreen' }
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const AccessibilityReference: Story = {
+  name: 'Accessibility Reference',
+  render: () => (
+    <DocViewer markdownPath="/docs/architecture/accessibility-reference.md" />
+  )
+};
+```
+
+**Overview list pattern (DocSectionListViewer):**
+```typescript
+import { DocSectionListViewer } from '../../viewers/docs/DocSectionListViewer';
+import { docsRegistry } from '../../viewers/docs/docs-registry';
+
+const architectureDocs = docsRegistry.filter(doc => doc.path.startsWith('architecture/'));
+
+export const Overview: Story = {
+  name: 'Architecture Overview',
+  render: () => (
+    <DocSectionListViewer title="Architecture Documentation" docs={architectureDocs} />
+  )
+};
+```
 
 ## Workflow for Renaming/Moving Document
 
@@ -101,10 +153,6 @@ When linking between documents in different directories:
 - ✅ Target is registered in docs-registry.ts
 - ✅ Link path is correct
 
-## ADR Documents
-
-ADR documents are automatically registered from `adr-list-data.ts`. You don't need to manually add them to `docs-registry.ts`.
-
 ## Storybook Link Mapping
 
 `DocViewer` uses `docs-registry.ts` to map markdown links to Storybook story routes.
@@ -114,6 +162,34 @@ For any doc that has a Storybook story:
 - Use the Storybook story id format, for example: `docs-architecture--accessibility-reference`
 
 However, ADR guide documents (README.md, AGENT-GUIDE.md, TEMPLATE.md) must be manually registered.
+
+## Mermaid Diagrams (All Docs)
+
+**Recommended rules:**
+- Prefer `graph TD` for vertical flow (more readable in docs).
+- Use `stroke-width:2px` (hyphenated, with unit).
+- Use quotes for labels with spaces: `A["Label with spaces"]`.
+
+**Optional max width:**
+```mermaid
+%% sb: maxWidth=20rem %%
+graph TD
+  A["Step 1"] --> B["Step 2"]
+```
+
+## Images and Assets
+
+Place images next to the markdown file and reference them with relative paths:
+```markdown
+![Diagram](./your-image.png)
+```
+
+`npm run docs:copy` will copy docs assets into `public/docs/` for Storybook.
+
+## ADR Notes (Section-Specific)
+
+ADR documents are automatically registered from `adr-list-data.ts`. You don't need to manually add them to `docs-registry.ts`.
+ADR guide documents (README.md, AGENT-GUIDE.md, TEMPLATE.md) still require manual registry entries.
 
 ## Common Mistakes
 
@@ -155,7 +231,7 @@ When creating/modifying document:
 2. Use `../` to go up one directory level
 3. Example: From `workflows/adr-workflow.md` to `adr/ADR-0001.md` → `../adr/ADR-0001.md`
 
-## Integration with ADR System
+## ADR Integration (Registry + Validation)
 
 ADR documents are automatically included in the registry from `adr-list-data.ts`. The validation system:
 - Parses ADR entries from `adr-list-data.ts`

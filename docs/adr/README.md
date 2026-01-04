@@ -2,6 +2,8 @@
 
 This directory contains Architectural Decision Records (ADR) for Envy UI v2. ADRs document significant architectural decisions, their context, rationale, and consequences.
 
+**ADR is one section of the broader documentation system.** For general documentation rules (registry, link mapping, mermaid, assets), see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).
+
 ## Quick Start
 
 - **Template:** [`ADR-TEMPLATE.md`](./ADR-TEMPLATE.md)
@@ -31,18 +33,14 @@ Common status values:
 
 ## Quick Checklist for New ADRs
 
-After creating a new ADR, ensure:
+For the full ADR-specific checklist and troubleshooting, see:
+[`docs/workflows/adr-workflow.md`](../workflows/adr-workflow.md#common-pitfalls-and-validation-checklist).
 
-1. ✅ Entry added to `adr-list-data.ts` FIRST (single source of truth)
-2. ✅ File added to `adr-filename-map.ts`
-3. ✅ ADR markdown file created
-4. ✅ Stories generated: `npm run adr:generate` (or created manually)
-5. ✅ Validation passed: `npm run adr:validate`
-6. ✅ Storybook restarted (if new story file created)
-7. ✅ Mermaid diagrams tested (if any)
-8. ✅ Links to other ADRs verified
-
-**For detailed checklist and troubleshooting, see:** [`docs/workflows/adr-workflow.md`](../workflows/adr-workflow.md#common-pitfalls-and-validation-checklist)
+Short version:
+1. Update `adr-list-data.ts` and `adr-filename-map.ts`
+2. Create the ADR markdown file from the template
+3. Run `npm run adr:generate` and `npm run adr:validate`
+4. Restart Storybook if a new story file was created
 
 ## Single Source of Truth
 
@@ -65,4 +63,3 @@ When creating or modifying ADRs:
 - **ADR Viewer Component:** `stories/viewers/docs/AdrViewer.tsx`
 - **Story Generator:** `scripts/generate-adr-stories.mjs` (reads from adr-list-data.ts)
 - **Validator:** `scripts/validate-adr.mjs` (checks exportName consistency)
-

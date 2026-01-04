@@ -2,6 +2,8 @@
 
 **CRITICAL:** This guide must be followed when creating or modifying ADRs to prevent broken links.
 
+**Scope:** ADR-specific rules only. For general documentation rules (registry, link mapping, mermaid, assets), see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).
+
 ## Single Source of Truth
 
 **`stories/viewers/docs/adr-list-data.ts` is the SINGLE SOURCE OF TRUTH for ADR metadata.**
@@ -166,6 +168,8 @@ Storybook needs to reload to pick up new story files. If you see "Couldn't find 
 
 ## Link Validation
 
+For general cross-reference rules, see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).
+
 ### Internal ADR Links
 
 Links in ADR markdown files use format:
@@ -180,35 +184,10 @@ Links in ADR markdown files use format:
 
 ### Links to Architecture Documents
 
-**CRITICAL:** When linking to Architecture documents from ADR:
-
-1. **Check if document exists FIRST:**
-   ```bash
-   ls docs/architecture/token-usage-rules.md
-   ```
-
-2. **If document doesn't exist, CREATE IT:**
-   - Don't create broken links
-   - Create the Architecture document first
-   - Follow workflow in `docs/architecture/README.md`
-   - Update `docs/architecture/README.md` index
-
-3. **Use correct path format:**
-   ```markdown
-   - [Token Usage Rules](../architecture/token-usage-rules.md) — Current rules
-   - [Accessibility Reference](../architecture/accessibility-reference.md) — Reference documentation
-   ```
-
-4. **Path rules:**
-   - From ADR: `../architecture/filename.md`
-   - Always use relative paths
-   - Check file exists before committing
-
-5. **After creating Architecture document:**
-   - ✅ Add to `docs/architecture/README.md` index
-   - ✅ Create Storybook story if needed
-   - ✅ Update `docs-registry.ts` if needed (include `storybookId` for link mapping)
-   - ✅ Verify link works
+When ADRs link to Architecture docs:
+- Ensure the target file exists and is registered.
+- Use `../architecture/filename.md` paths.
+- Follow `docs/architecture/README.md` for new Architecture documents.
 
 ### Overview Links
 

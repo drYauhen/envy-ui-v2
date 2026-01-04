@@ -6,6 +6,8 @@ Complete guide to writing and managing Architectural Decision Records (ADR) in E
 
 ADRs document significant architectural decisions, their context, rationale, and consequences. They serve as a historical record of architectural thinking, not as current system documentation.
 
+**Scope:** This document covers ADR-specific rules. For general documentation rules (sections, link mapping, mermaid, assets), see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).
+
 ## Single Source of Truth
 
 **⚠️ CRITICAL:** `stories/viewers/docs/adr-list-data.ts` is the **SINGLE SOURCE OF TRUTH** for all ADR metadata.
@@ -212,106 +214,19 @@ Common status values:
 - **Proposed (Exploratory)** - Decision is proposed and in exploratory phase
 - **Superseded** - Decision has been superseded by a later ADR
 
-## Adding Images to ADRs
+## Images in ADRs
 
-1. **Place images in `docs/adr/` directory:**
-   ```
-   docs/adr/
-   ├── ADR-0025-diagram.png
-   └── ADR-0025-architecture.svg
-   ```
+Place images next to the ADR markdown file and reference them with relative paths.
+For general asset rules, see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md#images-and-assets).
 
-2. **Reference in markdown:**
-   ```markdown
-   ![Architecture Diagram](./ADR-0025-diagram.png)
-   ```
+## Mermaid Diagrams
 
-3. **Images are automatically copied** when running:
-   ```bash
-   npm run docs:copy
-   ```
+Mermaid rules are shared across all documentation. See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md#mermaid-diagrams-all-docs) for syntax, sizing, and max-width guidance.
 
-**Supported formats:** PNG, JPEG, GIF, SVG, WebP
-
-## Mermaid Diagrams in ADRs
-
-### CRITICAL Syntax Rules
-
-**To prevent rendering errors, follow these rules EXACTLY:**
-
-1. **Stroke width syntax:**
-   - ✅ CORRECT: `stroke-width:2px` (with hyphen)
-   - ❌ WRONG: `strokeWidth:2px` (camelCase)
-   - ❌ WRONG: `strokeWidth:2` (missing unit)
-
-2. **Node labels:**
-   - ✅ CORRECT: `A["Label with spaces"]` (quotes required)
-   - ✅ CORRECT: `A[SimpleLabel]` (quotes optional if no spaces)
-   - ❌ WRONG: `A[Label with spaces]` (no quotes with spaces)
-
-3. **Orientation:**
-   - ✅ CORRECT: `graph TD` (Top Down - vertical)
-   - ❌ WRONG: `graph LR` (Left Right - horizontal)
-
-4. **Complete example:**
-   ```mermaid
-   %% sb: maxWidth=20rem %%
-   graph TD
-       A["Token System<br/>tokens/{context}/"] --> B["Figma Files"]
-       
-       style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
-       style B fill:#f3e8ff,stroke:#a855f7
-   ```
-
-### Testing Before Commit
-
-**Always test Mermaid diagrams:**
-1. Copy diagram code to [Mermaid Live Editor](https://mermaid.live)
-2. Verify it renders correctly
-3. Check for syntax errors
-4. Only then commit to ADR
-
-### Font and Node Sizing
-
-**Diagrams must match document text size:**
-- Font size: **14px** (matches document body text)
-- Node sizes should be compact
-- Diagrams should integrate seamlessly with text
-
-### Styling
-
-**Use consistent color scheme:**
-- Foundation/Semantic: `#e1f5ff` (light blue)
-- Context: `#fff3e0` (light orange) or `#e8f5e9` (light green)
-- Theme: `#f3e8ff` (light purple)
-- Component: `#fce7f3` (light pink)
-
-**Example:**
-```mermaid
-%% sb: maxWidth=20rem %%
-graph TD
-    A["Foundation"] --> B["Semantic"]
-    
-    style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
-    style B fill:#e8f5e9,stroke:#22c55e
+If a diagram is too narrow or tall, use:
 ```
-
-### Common Errors
-
-| Error | Cause | Fix |
-|-------|-------|-----|
-| Diagram not rendering | `strokeWidth` instead of `stroke-width` | Use hyphen format |
-| Node labels broken | Missing quotes around labels with spaces | Add quotes: `A["Label"]` |
-| Diagram too wide | Using `graph LR` | Use `graph TD` |
-| Syntax error | Invalid Mermaid syntax | Test in Mermaid Live Editor |
-
-### Best Practices
-
-1. Keep diagrams focused: One diagram per concept
-2. Use descriptive labels: But keep them concise
-3. Center diagrams: They are automatically centered
-4. Test readability: Ensure readable at document text size
-5. Avoid over-styling: Use colors purposefully
+%% sb: maxWidth=20rem %%
+```
 
 ## Storybook Navigation
 
@@ -509,6 +424,7 @@ npm run adr:validate
 
 When creating a new ADR:
 
+0. **Follow general docs rules:** [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md)
 1. **CRITICAL:** Update `stories/viewers/docs/adr-list-data.ts` FIRST (single source of truth)
    - Add entry with number, title, status, date, exportName
    - exportName: Remove all non-alphanumeric chars and spaces from title

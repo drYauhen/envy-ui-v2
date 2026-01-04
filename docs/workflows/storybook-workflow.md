@@ -6,7 +6,7 @@ Complete guide to working with Storybook in Envy UI v2.
 
 Storybook serves as an AI-agent-oriented architecture layer for understanding and exploring the design system. It provides:
 - Component documentation and examples
-- ADR documentation viewer
+- Documentation layer (Docs section: ADR, Architecture, Workflows, Tokens)
 - Token visualization
 - Architecture and workflow documentation
 
@@ -103,7 +103,34 @@ export const Primary: Story = {
 };
 ```
 
-### ADR Story
+### Documentation Story (DocViewer)
+
+**File:** `stories/docs/architecture/accessibility-reference.stories.tsx`
+
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+
+const meta: Meta = {
+  title: 'Docs/Architecture',
+  parameters: { layout: 'fullscreen' }
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const AccessibilityReference: Story = {
+  name: 'Accessibility Reference',
+  render: () => (
+    <DocViewer
+      markdownPath="/docs/architecture/accessibility-reference.md"
+      fallback="Loading accessibility reference..."
+    />
+  )
+};
+```
+
+### ADR Story (ADR-specific)
 
 **File:** `stories/docs/adr/adr-0025.stories.tsx`
 
@@ -134,33 +161,6 @@ export const FigmaVariablesIntegrationStrategy: Story = {
 ```
 
 **Note:** Use `node scripts/generate-adr-stories.mjs` to auto-generate ADR stories.
-
-### Architecture/Workflow Story
-
-**File:** `stories/docs/architecture/accessibility-reference.stories.tsx`
-
-```typescript
-import type { Meta, StoryObj } from '@storybook/react';
-import { DocViewer } from '../../viewers/docs/DocViewer';
-
-const meta: Meta = {
-  title: 'Docs/Architecture',
-  parameters: { layout: 'fullscreen' }
-};
-
-export default meta;
-type Story = StoryObj;
-
-export const AccessibilityReference: Story = {
-  name: 'Accessibility Reference',
-  render: () => (
-    <DocViewer
-      markdownPath="/docs/architecture/accessibility-reference.md"
-      fallback="Loading accessibility reference..."
-    />
-  )
-};
-```
 
 ## Development
 
@@ -202,26 +202,32 @@ npm run storybook:build
 
 ## Documentation Integration
 
-### ADR Documentation
+### Documentation Sections
 
-ADRs are automatically displayed in Storybook:
-- Located in `Docs/ADR` section
+Docs are organized by section:
+- `Docs/ADR` - ADR list + individual ADR stories
+- `Docs/Architecture` - Current rules and standards
+- `Docs/Workflows` - How to work with the system
+- `Docs/Tokens` - Token references and tooling
+
+**ADR specifics:**
+- ADRs are displayed in `Docs/ADR`
 - "ADR Overview" appears first
-- Each ADR is a separate story
+- Each ADR is a separate story (auto-generated)
 
-### Adding Images to ADRs
+### Adding Images to Docs
 
-1. Place image in `docs/adr/`:
+1. Place the image next to the markdown file:
    ```
-   docs/adr/ADR-0025-diagram.png
+   docs/architecture/your-diagram.png
    ```
 
 2. Reference in markdown:
    ```markdown
-   ![Diagram](./ADR-0025-diagram.png)
+   ![Diagram](./your-diagram.png)
    ```
 
-3. Images are auto-copied to `public/docs/adr/` when running:
+3. Images are auto-copied to `public/docs/` when running:
    ```bash
    npm run docs:copy
    ```
