@@ -255,6 +255,7 @@ Common status values:
 
 4. **Complete example:**
    ```mermaid
+   %% sb: maxWidth=20rem %%
    graph TD
        A["Token System<br/>tokens/{context}/"] --> B["Figma Files"]
        
@@ -287,6 +288,7 @@ Common status values:
 
 **Example:**
 ```mermaid
+%% sb: maxWidth=20rem %%
 graph TD
     A["Foundation"] --> B["Semantic"]
     
