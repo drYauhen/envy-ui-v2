@@ -15,25 +15,50 @@
           "$value": "{eui.color.neutral.700}",
           "$type": "color",
           "$description": "Strong border color for maximum contrast in accessibility theme. Dark and highly visible for accessibility needs."
+        },
+        "subtle": {
+          "$value": "{eui.color.neutral.600}",
+          "$type": "color",
+          "$description": "Subtle border color with higher contrast for accessibility theme."
+        },
+        "strong": {
+          "$value": "{eui.color.neutral.800}",
+          "$type": "color",
+          "$description": "Strong border color for high-contrast separation in accessibility theme."
         }
       },
       "text": {
         "primary": {
           "$value": "{eui.color.neutral.900}",
           "$type": "color",
-          "$description": "Maximum contrast text for accessibility"
+          "$description": "Maximum contrast text for accessibility."
         },
-        "disabled": {
+        "muted": {
+          "$value": "{eui.color.neutral.800}",
+          "$type": "color",
+          "$description": "Secondary text with increased contrast for accessibility theme."
+        },
+        "subtle": {
           "$value": "{eui.color.neutral.700}",
           "$type": "color",
-          "$description": "More visible disabled text (was 500, now 700 for better contrast)"
+          "$description": "Tertiary text with increased contrast for accessibility theme."
+        },
+        "disabled": {
+          "$value": "{eui.color.neutral.600}",
+          "$type": "color",
+          "$description": "Readable disabled text with improved contrast."
         }
       },
       "background": {
         "muted": {
           "$value": "{eui.color.neutral.200}",
           "$type": "color",
-          "$description": "More visible muted background (was 50, now 200 for better contrast)"
+          "$description": "Muted background with stronger contrast vs surface for accessibility."
+        },
+        "subtle": {
+          "$value": "{eui.color.neutral.300}",
+          "$type": "color",
+          "$description": "Subtle background with clearer separation for accessibility theme."
         }
       }
     },
@@ -69,4 +94,3 @@
     }
   }
 }
-

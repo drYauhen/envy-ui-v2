@@ -7,12 +7,12 @@
     "$value": "oklch(48% 0.00 0)",
     "$type": "color"
   },
-  "eui.color.text.disabled": {
-    "$value": "oklch(75% 0.00 0)",
-    "$type": "color"
-  },
   "eui.color.text.subtle": {
     "$value": "oklch(63% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.text.disabled": {
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.color.text.inverse": {
@@ -27,12 +27,12 @@
     "$value": "oklch(98% 0.00 0)",
     "$type": "color"
   },
-  "eui.color.background.surface": {
-    "$value": "oklch(100% 0 0)",
-    "$type": "color"
-  },
   "eui.color.background.subtle": {
     "$value": "oklch(96.5% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.color.background.surface": {
+    "$value": "oklch(100% 0 0)",
     "$type": "color"
   },
   "eui.color.background.inverse": {

@@ -4,13 +4,13 @@
 
 export const EuiColorTextPrimary = "oklch(25% 0.00 0)"; // Primary text color. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorTextMuted = "oklch(48% 0.00 0)"; // Muted text color for secondary content. Optimized for app-default context/theme. Other contexts/themes may override this value.
-export const EuiColorTextDisabled = "oklch(75% 0.00 0)"; // Disabled text color for inactive elements. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorTextSubtle = "oklch(63% 0.00 0)"; // Subtle text color for tertiary content. Optimized for app-default context/theme. Other contexts/themes may override this value.
+export const EuiColorTextDisabled = "oklch(75% 0.00 0)"; // Disabled text color for inactive elements. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorTextInverse = "oklch(100% 0 0)"; // Inverse text color for use on dark backgrounds. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorBackgroundBase = "oklch(100% 0 0)"; // Base background color for website context.
 export const EuiColorBackgroundMuted = "oklch(98% 0.00 0)"; // Muted background color for subtle surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value.
-export const EuiColorBackgroundSurface = "oklch(100% 0 0)"; // Surface background color. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorBackgroundSubtle = "oklch(96.5% 0.00 0)"; // Subtle background color for slightly emphasized surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value.
+export const EuiColorBackgroundSurface = "oklch(100% 0 0)"; // Surface background color. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorBackgroundInverse = "oklch(25% 0.00 0)"; // Inverse background color for dark surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorBorderDefault = "oklch(90% 0.00 0)"; // Default border color. Optimized for app-default context/theme. Other contexts/themes may override this value.
 export const EuiColorBorderSubtle = "oklch(94% 0.00 0)"; // Subtle border color for minimal separation. Optimized for app-default context/theme. Other contexts/themes may override this value.

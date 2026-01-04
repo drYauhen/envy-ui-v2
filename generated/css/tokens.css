@@ -918,9 +918,14 @@
 
 [data-eui-context="app"][data-eui-theme="accessibility"] {
   --eui-color-background-muted: oklch(94% 0.00 0);
+  --eui-color-background-subtle: oklch(90% 0.00 0);
   --eui-color-border-default: oklch(48% 0.00 0);
-  --eui-color-text-disabled: oklch(48% 0.00 0);
+  --eui-color-border-strong: oklch(33% 0.00 0);
+  --eui-color-border-subtle: oklch(63% 0.00 0);
+  --eui-color-text-disabled: oklch(63% 0.00 0);
+  --eui-color-text-muted: oklch(33% 0.00 0);
   --eui-color-text-primary: oklch(25% 0.00 0);
+  --eui-color-text-subtle: oklch(48% 0.00 0);
   --eui-radius-default: 8px;
   --eui-radius-extra-large: 12px;
   --eui-radius-full: 9999px;
