@@ -1,6 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
+import { globSync } from 'glob';
 import StyleDictionary from 'style-dictionary';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,11 +27,15 @@ registerCssVariablesThemedFormat(StyleDictionary);
 export default {
   usesDtcg: true,
 
-  source: [
-    path.join(repoRoot, 'tokens', '**', '*.json')
-    // Note: .meta.json files are excluded via filtering in custom formats
-    // See style-dictionary/utils/token-filters.js and format files
-  ],
+  source: (() => {
+    // Use glob to find all .json files, but exclude .meta.json
+    const allJsonFiles = globSync(path.join(repoRoot, 'tokens', '**', '*.json'), {
+      ignore: [path.join(repoRoot, 'tokens', '**', '*.meta.json')]
+    });
+    return allJsonFiles;
+  })(),
+  // Note: .meta.json files are also excluded via filtering in custom formats
+  // See style-dictionary/utils/token-filters.js and format files
 
   log: {
     verbosity: 'verbose'
