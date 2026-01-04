@@ -43,7 +43,7 @@
 }
 
 [data-eui-context] .eui-menu-item:focus {
-  outline: 2px solid var(--eui-color-focus-ring-default);
+  outline: 2px solid var(--eui-color-focus-ring);
   outline-offset: -2px;
   background-color: var(--eui-menu-colors-item-background-focus);
 }

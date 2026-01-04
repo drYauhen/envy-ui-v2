@@ -91,7 +91,7 @@
 }
 
 [data-eui-context] .eui-modal-close:focus {
-  outline: 2px solid var(--eui-color-focus-ring-default);
+  outline: 2px solid var(--eui-color-focus-ring);
   outline-offset: 2px;
 }
 

@@ -43,16 +43,16 @@
 
 [data-eui-context] .eui-form-field [data-eui-slot="helper-text"],
 [data-eui-context] .eui-form-field [data-eui-slot="error-text"] {
-  font-size: var(--eui-typography-body-size-sm);
+  font-size: var(--eui-typography-text-style-body-small-font-size);
   margin-top: calc(var(--eui-form-spacing-field-gap-internal) * -1);
 }
 
 [data-eui-context] .eui-form-field [data-eui-slot="helper-text"] {
-  color: var(--eui-color-text-secondary);
+  color: var(--eui-color-text-muted);
 }
 
 [data-eui-context] .eui-form-field [data-eui-slot="error-text"] {
-  color: var(--eui-color-status-error);
+  color: var(--eui-color-status-error-600);
 }
 
 /* Error state - show error text, hide helper text */

@@ -17,7 +17,7 @@
 [data-eui-context] .eui-skip-link:focus {
   top: 0.5rem;
   left: 0.5rem;
-  outline: 2px solid var(--eui-color-focus-ring-default);
+  outline: 2px solid var(--eui-color-focus-ring);
   outline-offset: 2px;
 }
 

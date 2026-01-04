@@ -16,8 +16,8 @@
 /* Group Label */
 [data-eui-context] .eui-form-group-label {
   margin-bottom: var(--eui-form-spacing-field-gap-internal);
-  font-size: var(--eui-typography-body-size-base);
-  font-weight: var(--eui-typography-weight-medium);
+  font-size: var(--eui-typography-text-style-body-base-font-size);
+  font-weight: var(--eui-typography-font-weight-medium);
   color: var(--eui-color-text-primary);
 }
 

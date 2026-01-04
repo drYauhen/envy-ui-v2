@@ -40,16 +40,16 @@
 /* Section Title */
 [data-eui-context] .eui-form-section-title {
   margin: 0;
-  font-size: var(--eui-typography-heading-size-md);
-  font-weight: var(--eui-typography-weight-semibold);
+  font-size: var(--eui-typography-text-style-heading-4-font-size);
+  font-weight: var(--eui-typography-font-weight-semibold);
   color: var(--eui-color-text-primary);
 }
 
 /* Section Subtitle */
 [data-eui-context] .eui-form-section-subtitle {
   margin: 0;
-  font-size: var(--eui-typography-body-size-base);
-  color: var(--eui-color-text-secondary);
+  font-size: var(--eui-typography-text-style-body-base-font-size);
+  color: var(--eui-color-text-muted);
 }
 
 /* Optional: Additional header elements (avatar, badges, metrics) */
@@ -68,7 +68,7 @@
   flex-shrink: 0;
   width: 1.5rem;
   height: 1.5rem;
-  color: var(--eui-color-text-secondary);
+  color: var(--eui-color-text-muted);
   transition: transform var(--eui-form-animation-duration) var(--eui-form-animation-easing);
 }
 

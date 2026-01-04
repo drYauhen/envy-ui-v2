@@ -101,7 +101,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.75rem;
-  color: var(--eui-color-text-secondary);
+  color: var(--eui-color-text-muted);
   pointer-events: none;
   transition: transform var(--eui-table-expandable-cell-animation-duration) var(--eui-table-expandable-cell-animation-easing);
 }

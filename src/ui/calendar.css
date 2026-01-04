@@ -8,7 +8,7 @@
   min-width: var(--eui-calendar-size-min-width);
   padding: var(--eui-calendar-spacing-padding);
   background-color: var(--eui-calendar-colors-background);
-  border: var(--eui-calendar-border-width) solid var(--eui-calendar-day-border-default);
+  border: var(--eui-calendar-border-width) solid var(--eui-calendar-colors-day-border-default);
   border-radius: var(--eui-radius-default);
   overflow: hidden;
 }
@@ -20,7 +20,7 @@
   justify-content: space-between;
   padding: var(--eui-calendar-spacing-header-padding-vertical) var(--eui-calendar-spacing-header-padding-horizontal);
   background-color: var(--eui-calendar-colors-header-background);
-  border-bottom: var(--eui-calendar-border-width) solid var(--eui-calendar-day-border-default);
+  border-bottom: var(--eui-calendar-border-width) solid var(--eui-calendar-colors-day-border-default);
 }
 
 [data-eui-context] .eui-calendar__header-label {
@@ -111,7 +111,7 @@
   padding: var(--eui-calendar-spacing-day-padding-vertical) var(--eui-calendar-spacing-day-padding-horizontal);
   margin: var(--eui-calendar-spacing-day-margin-overlap) 0 0 var(--eui-calendar-spacing-day-margin-overlap);
   background-color: var(--eui-calendar-colors-day-background-default);
-  border: var(--eui-calendar-border-width) solid var(--eui-calendar-day-border-default);
+  border: var(--eui-calendar-border-width) solid var(--eui-calendar-colors-day-border-default);
   border-radius: var(--eui-radius-default);
   font-size: var(--eui-calendar-typography-day-font-size);
   font-weight: var(--eui-calendar-typography-day-font-weight);
@@ -134,7 +134,7 @@
 /* Day Cell - Selected State (matches accent button styling) */
 [data-eui-context] .eui-calendar__day[data-eui-selected="true"] {
   background-color: var(--eui-calendar-colors-day-background-selected);
-  border-color: var(--eui-calendar-day-border-selected);
+  border-color: var(--eui-calendar-colors-day-border-selected);
   color: var(--eui-calendar-colors-day-text-selected);
   /* Raise z-index when selected (isolated within grid) - elevated above interactive states */
   z-index: var(--eui-calendar-z-index-selected);
@@ -143,13 +143,13 @@
 /* Selected day hover: brighter accent.600 instead of color-mix */
 [data-eui-context] .eui-calendar__day[data-eui-selected="true"]:hover:not(:disabled) {
   background-color: var(--eui-calendar-colors-day-background-selected-hover);
-  border-color: var(--eui-calendar-day-border-selected);
+  border-color: var(--eui-calendar-colors-day-border-selected);
 }
 
 /* Selected day active: matches accent button active (color-mix with black 8%) */
 [data-eui-context] .eui-calendar__day[data-eui-selected="true"]:active {
   background-color: color-mix(in srgb, var(--eui-calendar-colors-day-background-selected), black 8%);
-  border-color: color-mix(in srgb, var(--eui-calendar-day-border-selected), black 12%);
+  border-color: color-mix(in srgb, var(--eui-calendar-colors-day-border-selected), black 12%);
   transform: translateY(1px);
 }
 
@@ -176,8 +176,8 @@
 
 /* Day Cell - Outside Month */
 [data-eui-context] .eui-calendar__day[data-eui-outside-month="true"] {
-  background-color: var(--eui-calendar-colors-day-background-outsideMonth);
-  color: var(--eui-calendar-colors-day-text-outsideMonth);
+  background-color: var(--eui-calendar-colors-day-background-outside-month);
+  color: var(--eui-calendar-colors-day-text-outside-month);
   opacity: 0.6;
 }
 
@@ -197,7 +197,7 @@
 [data-eui-context] .eui-calendar__day[data-eui-range-start="true"],
 [data-eui-context] .eui-calendar__day[data-eui-range-end="true"] {
   background-color: var(--eui-calendar-colors-day-background-selected);
-  border-color: var(--eui-calendar-day-border-selected);
+  border-color: var(--eui-calendar-colors-day-border-selected);
   color: var(--eui-calendar-colors-day-text-selected);
   /* Same elevation as selected state to prevent overlap */
   z-index: var(--eui-calendar-z-index-selected);
@@ -207,7 +207,7 @@
 [data-eui-context] .eui-calendar__day[data-eui-range-start="true"]:hover:not(:disabled),
 [data-eui-context] .eui-calendar__day[data-eui-range-end="true"]:hover:not(:disabled) {
   background-color: var(--eui-calendar-colors-day-background-selected-hover);
-  border-color: var(--eui-calendar-day-border-selected);
+  border-color: var(--eui-calendar-colors-day-border-selected);
 }
 
 /* Range Selection - Days in range (middle days) - remove border-radius for band effect */

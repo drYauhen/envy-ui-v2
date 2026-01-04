@@ -122,7 +122,7 @@
 /* Option selected state */
 [data-eui-context] .eui-select-option[data-eui-selected="true"] {
   background-color: var(--eui-select-option-background-selected);
-  font-weight: var(--eui-typography-weight-medium);
+  font-weight: var(--eui-typography-font-weight-medium);
 }
 
 /* Option selected + focused state */
@@ -165,7 +165,7 @@
   background-color: var(--eui-select-primitive-badge-colors-background);
   color: var(--eui-select-primitive-badge-colors-text);
   border-radius: var(--eui-select-primitive-badge-shape-radius);
-  font-size: var(--eui-typography-body-size-sm);
+  font-size: var(--eui-typography-text-style-body-small-font-size);
   line-height: 1;
   white-space: nowrap;
 }
@@ -208,7 +208,7 @@
 /* Badge count (for "+N" indicator) */
 [data-eui-context] .eui-select-badge-count {
   color: var(--eui-color-text-subtle);
-  font-size: var(--eui-typography-body-size-sm);
+  font-size: var(--eui-typography-text-style-body-small-font-size);
   line-height: 1;
 }
 

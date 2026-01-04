@@ -51,7 +51,7 @@
 /* Option selected state */
 [data-eui-context] .eui-select-option[data-eui-selected="true"] {
   background-color: var(--eui-select-option-background-selected);
-  font-weight: var(--eui-typography-weight-medium);
+  font-weight: var(--eui-typography-font-weight-medium);
 }
 
 /* Option selected + focused state */
@@ -108,14 +108,14 @@
 }
 
 [data-eui-context] .eui-select-value[data-placeholder="true"] {
-  color: var(--eui-color-text-secondary);
+  color: var(--eui-color-text-muted);
 }
 
 /* Chevron icon */
 [data-eui-context] .eui-select-chevron {
   flex-shrink: 0;
   transition: transform 0.2s ease;
-  color: var(--eui-color-text-secondary);
+  color: var(--eui-color-text-muted);
 }
 
 [data-eui-context] .eui-select-trigger[aria-expanded="true"] .eui-select-chevron {
