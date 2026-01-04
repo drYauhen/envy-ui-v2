@@ -59,7 +59,7 @@ interface ExistingData {
 interface SnapshotVariable {
   id: string;
   name: string;
-  path: string; // Из description или name
+  path: string; // From description or name
   collection: string;
   collectionId: string;
   type: 'COLOR' | 'FLOAT';
@@ -101,11 +101,11 @@ interface RestoreSummary {
   variables: {
     create: number;
     update: number;
-    delete: number; // Variables в Figma, которых нет в snapshot
+    delete: number; // Variables in Figma that are not in snapshot
   };
   bindings: {
     restore: number;
-    skipped: number; // Ноды не найдены
+    skipped: number; // Nodes not found
   };
   warnings: string[];
 }
@@ -320,7 +320,7 @@ async function importCollections(payload: AdapterPayload, defaultMode: string | 
     // Handle modes: support both old format (mode) and new format (modes[])
     let modesToCreate = collectionData.modes || (collectionData.mode ? [collectionData.mode] : ['default']);
     
-    // Если указан дефолтный мод, переупорядочить массив так, чтобы он был первым
+    // If default mode is specified, reorder array so it's first
     if (defaultMode && modesToCreate.includes(defaultMode)) {
       modesToCreate = [defaultMode, ...modesToCreate.filter(m => m !== defaultMode)];
     }
@@ -614,7 +614,7 @@ async function exportSnapshot(): Promise<SnapshotPayload> {
   const variables = figma.variables.getLocalVariables();
   const allPages = figma.root.children.filter(p => p.type === 'PAGE') as PageNode[];
   
-  // Найти все bindings для каждой переменной
+  // Find all bindings for each variable
   const variableUsages = new Map<string, Array<{
     nodeId: string;
     nodeName: string;
@@ -623,7 +623,7 @@ async function exportSnapshot(): Promise<SnapshotPayload> {
     index?: number;
   }>>();
   
-  // Собрать все ноды из всех страниц
+  // Collect all nodes from all pages
   const allNodes: SceneNode[] = [];
   for (const page of allPages) {
     allNodes.push(...findAllNodesInPage(page));
@@ -646,7 +646,7 @@ async function exportSnapshot(): Promise<SnapshotPayload> {
     }
   }
   
-  // Собрать snapshot данных
+  // Collect snapshot data
   const snapshotVariables: SnapshotVariable[] = [];
   let totalUsages = 0;
   
@@ -654,15 +654,15 @@ async function exportSnapshot(): Promise<SnapshotPayload> {
     const collection = collections.find(c => c.id === variable.variableCollectionId);
     if (!collection) continue;
     
-    // Получить path из description или из name
+    // Get path from description or name
     const path = variable.description || variable.name.replace(/\//g, '.');
     
-    // Получить значения для всех modes
+    // Get values for all modes
     const valuesByMode: Record<string, any> = {};
     for (const mode of collection.modes) {
       const value = variable.valuesByMode[mode.modeId];
       if (value !== undefined) {
-        // Сохранить значение как есть (RGB объект или число)
+        // Save value as is (RGB object or number)
         valuesByMode[mode.name] = value;
       }
     }
@@ -702,7 +702,7 @@ async function exportSnapshot(): Promise<SnapshotPayload> {
   return snapshot;
 }
 
-// Вспомогательная функция для поиска всех нод на странице
+// Helper function to find all nodes on a page
 function findAllNodesInPage(page: PageNode): SceneNode[] {
   const result: SceneNode[] = [];
   const walk = (node: SceneNode) => {
@@ -717,7 +717,7 @@ function findAllNodesInPage(page: PageNode): SceneNode[] {
   return result;
 }
 
-// Упрощенная версия detectVariableBindings для snapshot
+// Simplified version of detectVariableBindings for snapshot
 function detectVariableBindingsForSnapshot(nodes: SceneNode[]): Array<{
   variableId: string;
   targetNodeId: string;
@@ -735,7 +735,7 @@ function detectVariableBindingsForSnapshot(nodes: SceneNode[]): Array<{
   for (const node of nodes) {
     const boundVars = (node as any).boundVariables || {};
     
-    // Проверить fills/strokes
+    // Check fills/strokes
     ['fills', 'strokes'].forEach(prop => {
       const entries = boundVars[prop];
       if (Array.isArray(entries)) {
@@ -752,7 +752,7 @@ function detectVariableBindingsForSnapshot(nodes: SceneNode[]): Array<{
       }
     });
     
-    // Проверить numeric properties
+    // Check numeric properties
     const numericProps = ['strokeWeight', 'cornerRadius', 'width', 'height', 
                          'paddingLeft', 'paddingRight', 'paddingTop', 'paddingBottom'];
     numericProps.forEach(prop => {
@@ -780,7 +780,7 @@ function calculateRestoreSummary(snapshot: SnapshotPayload): RestoreSummary {
   const existingVariables = figma.variables.getLocalVariables();
   const existingData = gatherExistingData({ getLocalVariableCollections: () => existingCollections, getLocalVariables: () => existingVariables } as VariablesAPI);
 
-  // Анализ Collections
+  // Analyze Collections
   const collectionsToCreate: string[] = [];
   const collectionsToUpdate: string[] = [];
   const collectionsToReuse: string[] = [];
@@ -790,7 +790,7 @@ function calculateRestoreSummary(snapshot: SnapshotPayload): RestoreSummary {
     if (!existing) {
       collectionsToCreate.push(snapshotCollection.name);
     } else {
-      // Проверить, нужно ли обновить modes
+      // Check if modes need to be updated
       const existingModes = existing.modes.map(m => m.name).sort();
       const snapshotModes = snapshotCollection.modes.map(m => m.name).sort();
       if (JSON.stringify(existingModes) !== JSON.stringify(snapshotModes)) {
@@ -801,25 +801,25 @@ function calculateRestoreSummary(snapshot: SnapshotPayload): RestoreSummary {
     }
   }
 
-  // Анализ Variables
+  // Analyze Variables
   const variablesToCreate: string[] = [];
   const variablesToUpdate: string[] = [];
   const variablesToDelete: string[] = [];
 
-  // Создать map существующих переменных по path
+  // Create map of existing variables by path
   const existingVarsByPath = new Map<string, Variable>();
   for (const variable of existingVariables) {
     const path = variable.description || variable.name.replace(/\//g, '.');
     existingVarsByPath.set(path, variable);
   }
 
-  // Проверить переменные из snapshot
+  // Check variables from snapshot
   for (const snapshotVar of snapshot.variables) {
     const existing = existingVarsByPath.get(snapshotVar.path);
     if (!existing) {
       variablesToCreate.push(snapshotVar.path);
     } else {
-      // Проверить, нужно ли обновить значения
+      // Check if values need to be updated
       const collection = existingCollections.find(c => c.id === existing.variableCollectionId);
       if (collection) {
         let needsUpdate = false;
@@ -838,7 +838,7 @@ function calculateRestoreSummary(snapshot: SnapshotPayload): RestoreSummary {
     }
   }
 
-  // Найти переменные в Figma, которых нет в snapshot
+  // Find variables in Figma that are not in snapshot
   for (const [path, variable] of existingVarsByPath.entries()) {
     const inSnapshot = snapshot.variables.some(v => v.path === path);
     if (!inSnapshot) {
@@ -846,7 +846,7 @@ function calculateRestoreSummary(snapshot: SnapshotPayload): RestoreSummary {
     }
   }
 
-  // Анализ Bindings
+  // Analyze Bindings
   const allPages = figma.root.children.filter(p => p.type === 'PAGE') as PageNode[];
   const allNodes: SceneNode[] = [];
   for (const page of allPages) {
@@ -859,13 +859,13 @@ function calculateRestoreSummary(snapshot: SnapshotPayload): RestoreSummary {
   for (const snapshotVar of snapshot.variables) {
     if (snapshotVar.usages.length === 0) continue;
 
-    // Проверить, существует ли переменная (или будет создана)
+    // Check if variable exists (or will be created)
     const willExist = variablesToCreate.includes(snapshotVar.path) || 
                      variablesToUpdate.includes(snapshotVar.path) ||
                      existingVarsByPath.has(snapshotVar.path);
 
     if (willExist) {
-      // Проверить, существуют ли ноды
+      // Check if nodes exist
       for (const usage of snapshotVar.usages) {
         try {
           const node = figma.getNodeById(usage.nodeId);
@@ -924,47 +924,47 @@ async function restoreFromSnapshot(snapshot: SnapshotPayload): Promise<RestoreRe
   let bindingsRestored = 0;
   let bindingsSkipped = 0;
 
-  // 1. Создать/обновить Collections
+  // 1. Create/update Collections
   const collectionMap = new Map<string, VariableCollection>(); // snapshot name -> Figma collection
 
   for (const snapshotCollection of snapshot.collections) {
     let collection = existingData.collectionsByName.get(snapshotCollection.name);
     
     if (!collection) {
-      // Создать новую коллекцию
+      // Create new collection
       collection = figma.variables.createVariableCollection(snapshotCollection.name);
       collectionsCreated++;
     }
 
-    // Обновить modes
+    // Update modes
     const existingModes = collection.modes.map(m => m.name);
     const snapshotModes = snapshotCollection.modes.map(m => m.name);
 
-    // Добавить недостающие modes
+    // Add missing modes
     for (const snapshotMode of snapshotModes) {
       if (!existingModes.includes(snapshotMode)) {
         collection.addMode(snapshotMode);
       }
     }
 
-    // Удалить лишние modes (опционально, можно пропустить для безопасности)
+    // Remove extra modes (optional, can skip for safety)
     // for (const existingMode of existingModes) {
     //   if (!snapshotModes.includes(existingMode)) {
-    //     // Удаление mode может быть опасным, пропускаем
+    //     // Removing mode can be dangerous, skip
     //   }
     // }
 
     collectionMap.set(snapshotCollection.name, collection);
   }
 
-  // 2. Создать/обновить Variables
+  // 2. Create/update Variables
   const variableMap = new Map<string, Variable>(); // snapshot path -> Figma variable
 
   for (const snapshotVar of snapshot.variables) {
     const collection = collectionMap.get(snapshotVar.collection);
     if (!collection) continue;
 
-    // Найти существующую переменную по path
+    // Find existing variable by path
     const existingVar = existingVariables.find(v => {
       const path = v.description || v.name.replace(/\//g, '.');
       return path === snapshotVar.path;
@@ -975,18 +975,18 @@ async function restoreFromSnapshot(snapshot: SnapshotPayload): Promise<RestoreRe
     if (existingVar) {
       variable = existingVar;
     } else {
-      // Создать новую переменную
+      // Create new variable
       const variableName = normalizeVariableName(snapshotVar.path);
       variable = figma.variables.createVariable(
         variableName,
         collection,
         snapshotVar.type
       );
-      variable.description = snapshotVar.path; // Сохранить path в description
+      variable.description = snapshotVar.path; // Save path in description
       variablesCreated++;
     }
 
-    // Установить значения для всех modes
+    // Set values for all modes
     for (const [modeName, value] of Object.entries(snapshotVar.valuesByMode)) {
       const mode = collection.modes.find(m => m.name === modeName);
       if (!mode) continue;
@@ -1002,7 +1002,7 @@ async function restoreFromSnapshot(snapshot: SnapshotPayload): Promise<RestoreRe
               a: value.a !== undefined ? value.a : 1
             };
           } else {
-            continue; // Пропустить невалидные значения
+            continue; // Skip invalid values
           }
           variable.setValueForMode(mode.modeId, colorValue);
         } else {
@@ -1019,7 +1019,7 @@ async function restoreFromSnapshot(snapshot: SnapshotPayload): Promise<RestoreRe
     variableMap.set(snapshotVar.path, variable);
   }
 
-  // 3. Восстановить bindings
+  // 3. Restore bindings
   const allPages = figma.root.children.filter(p => p.type === 'PAGE') as PageNode[];
   const allNodes: SceneNode[] = [];
   for (const page of allPages) {
@@ -1040,7 +1040,7 @@ async function restoreFromSnapshot(snapshot: SnapshotPayload): Promise<RestoreRe
           continue;
         }
 
-        // Восстановить binding
+        // Restore binding
         try {
           if (usage.property === 'fills' || usage.property === 'strokes') {
             const paints = (node as any)[usage.property];
@@ -1251,7 +1251,7 @@ async function applyMigration(migration: MigrationFile): Promise<MigrationResult
     allNodes.push(...findAllNodesInPage(page));
   }
 
-  // Создать map переменных по ID и по path
+  // Create map of variables by ID and by path
   const variablesById = new Map<string, Variable>();
   const variablesByPath = new Map<string, Variable>();
   for (const variable of existingVariables) {
@@ -1265,12 +1265,12 @@ async function applyMigration(migration: MigrationFile): Promise<MigrationResult
   let bindingsSkipped = 0;
   let variablesMoved = 0;
 
-  // 1. Обработать удаленные переменные (заменить на fallback)
+  // 1. Process deleted variables (replace with fallback)
   for (const deletedVar of migration.deleted) {
     const oldVariable = variablesById.get(deletedVar.old.variableId);
-    if (!oldVariable) continue; // Переменная уже удалена или не найдена
+    if (!oldVariable) continue; // Variable already deleted or not found
 
-    // Найти fallback переменную
+    // Find fallback variable
     let fallbackVariable: Variable | null = null;
     if (deletedVar.fallback) {
       fallbackVariable = variablesByPath.get(deletedVar.fallback.path);
@@ -1281,11 +1281,11 @@ async function applyMigration(migration: MigrationFile): Promise<MigrationResult
       continue;
     }
 
-    // Найти все bindings старой переменной и заменить на fallback
+    // Find all bindings of old variable and replace with fallback
     for (const node of allNodes) {
       const boundVars = (node as any).boundVariables || {};
       
-      // Проверить fills/strokes
+      // Check fills/strokes
       ['fills', 'strokes'].forEach(prop => {
         const entries = boundVars[prop];
         if (Array.isArray(entries)) {
@@ -1310,7 +1310,7 @@ async function applyMigration(migration: MigrationFile): Promise<MigrationResult
         }
       });
       
-      // Проверить numeric properties
+      // Check numeric properties
       const numericProps = ['strokeWeight', 'cornerRadius', 'width', 'height', 
                            'paddingLeft', 'paddingRight', 'paddingTop', 'paddingBottom'];
       numericProps.forEach(prop => {
@@ -1328,7 +1328,7 @@ async function applyMigration(migration: MigrationFile): Promise<MigrationResult
       });
     }
 
-    // Удалить старую переменную
+    // Remove old variable
     try {
       oldVariable.remove();
       variablesReplaced++;
@@ -1337,12 +1337,12 @@ async function applyMigration(migration: MigrationFile): Promise<MigrationResult
     }
   }
 
-  // 2. Обработать перемещенные переменные (обновить коллекцию)
+  // 2. Process moved variables (update collection)
   for (const movedVar of migration.moved) {
     const variable = variablesByPath.get(movedVar.path);
     if (!variable) continue;
 
-    // Найти старую и новую коллекции
+    // Find old and new collections
     const oldCollection = figma.variables.getLocalVariableCollections()
       .find(c => c.name === movedVar.oldCollection);
     const newCollection = figma.variables.getLocalVariableCollections()
@@ -1353,11 +1353,11 @@ async function applyMigration(migration: MigrationFile): Promise<MigrationResult
       continue;
     }
 
-    // Переместить переменную в новую коллекцию
-    // Note: Figma API не поддерживает прямое перемещение, нужно создать новую переменную
-    // Для упрощения, просто обновим description/name
+    // Move variable to new collection
+    // Note: Figma API doesn't support direct move, need to create new variable
+    // For simplicity, just update description/name
     try {
-      // Обновить описание, чтобы отразить новую коллекцию
+      // Update description to reflect new collection
       variable.description = movedVar.path;
       variablesMoved++;
     } catch (error) {
