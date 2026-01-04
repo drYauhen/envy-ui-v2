@@ -247,6 +247,48 @@ The header is mandatory, while the remaining README content is flexible and may 
 
 6. Assistant Expectations
 
+**For AI Assistants and Code Editors**
+
+This section defines rules that apply to all AI assistants, code editors, and automated tools working with this project. These rules are self-contained and do not depend on editor-specific configuration files.
+
+Manifest as Living Document
+
+This manifest is a living document that may lag behind project evolution. The project is actively developed, and new directories, entities, and structures may be introduced that are not yet documented here.
+
+When working with this manifest:
+
+	•	**Follow manifest rules strictly** for documented structures and conventions.
+	•	**Do NOT break existing project structures** that are not yet documented in the manifest.
+	•	**Respect current project state** - if a directory or pattern exists in the project but is not in the manifest, it is valid and should be preserved.
+	•	**Adapt to project evolution** - new structures that emerge should be respected, not removed to match an outdated manifest.
+	•	**Update the manifest** when introducing significant structural changes, but do not require manifest updates for every minor addition.
+
+Priority order (when rules conflict):
+	1.	User instructions (highest priority)
+	2.	Current project structure and existing code
+	3.	Manifest rules (for documented structures)
+	4.	Workflow documentation
+	5.	ADR documents (historical context)
+
+The manifest provides guidance and establishes conventions, but the actual project structure reflects the current reality. When in doubt between manifest rules and existing project structure, preserve the existing structure and note the discrepancy for potential manifest update.
+
+Language Requirement
+
+All code, comments, documentation, and commit messages must use English.
+
+This applies to:
+	•	Source code files (`.ts`, `.tsx`, `.js`, `.mjs`, `.css`)
+	•	Documentation files (`.md`)
+	•	Comments in code
+	•	Commit messages
+	•	Variable names, function names, and identifiers
+	•	Error messages and console logs
+	•	README files
+	•	Configuration files with human-readable content
+	•	All project directories, including `personal/`, `generated/`, `apps/dev-app/`, and `storybook-static/`
+
+Core Expectations
+
 When assisting with architecture, structure, or implementation, the assistant must:
 
 	•	Treat this WORKFLOW_MANIFEST.md as the primary operational source of truth.
@@ -255,7 +297,18 @@ When assisting with architecture, structure, or implementation, the assistant mu
 	•	Respect the Project Structure & Generation Model.
 	•	Enforce the platform-oriented `generated/` model for pipeline artifacts.
 	•	Assume consistency and discipline are more important than convenience.
-	•	Ensure all commits, comments, code, and documentation use English only.
+	•	Use English for all code, comments, documentation, and commit messages.
+
+Editor-Specific Configuration
+
+Some editors may support project-specific configuration files (e.g., `.cursorrules` for Cursor IDE). These files are optional and serve as convenience wrappers that reference this manifest. They should not contain rules that are not already present in this document.
+
+If an editor-specific configuration file exists, it should:
+	•	Reference this WORKFLOW_MANIFEST.md as the source of truth
+	•	Provide quick access to the most critical rules
+	•	Not duplicate extensive content (link to this document instead)
+
+The absence of editor-specific configuration files does not affect the validity of rules defined in this manifest.
 
 Version Control Behavior
 
@@ -293,7 +346,70 @@ This manifest provides the framework and rules; workflows provide step-by-step i
 
 ⸻
 
-8. Scope & Evolution
+9. Project Directory Structure
+
+This section describes the main directories in the project. Note that this structure may evolve, and new directories may be added that are not yet documented here. Existing structures take precedence over this documentation.
+
+Core Directories
+
+	•	`tokens/` - Source of truth for design tokens (DTCG-aligned)
+	•	`generated/` - Platform-oriented generated artifacts (see section 4)
+	•	`docs/` - Documentation (ADR, workflows, architecture)
+	•	`scripts/` - Build and generation scripts
+	•	`style-dictionary/` - Style Dictionary configuration and formats
+	•	`personal/` - Personal sandbox (excluded from rules, see section 4)
+
+Package Directories
+
+	•	`packages/tsx/` - TypeScript/React component implementations
+	•	`packages/tailwind/` - Tailwind CSS configuration and utilities
+	•	`packages/web-components/` - Web Components implementations
+
+Application Directories
+
+	•	`apps/dev-app/` - Development application (testing, demos)
+	  - May have its own conventions
+	  - Excluded from main project structural rules
+
+Storybook Structure
+
+	•	`stories/` - Storybook stories organized by category:
+	  - `stories/tokens/` - Token documentation stories
+	  - `stories/components/` - Component stories
+	  - `stories/docs/` - Documentation viewer stories
+	  - `stories/viewers/` - Custom story viewers
+	  - `stories/architecture/` - Architecture documentation stories
+
+Source Code
+
+	•	`src/ui/` - Component CSS styles (token-consumers)
+	•	`src/hooks/` - React hooks
+	•	`src/utils/` - Utility functions
+
+Figma Integration
+
+	•	`figma-plugin/` - Figma plugin code
+	  - Follows Figma plugin API conventions
+	  - Integrates with `generated/figma/` artifacts
+
+Component Model
+
+	•	`component-model/` - Component schema definitions
+	  - JSON schemas for component structure
+	  - Used by generators and validators
+
+Reference
+
+	•	`reference/` - Reference documentation and guides
+	  - Quick reference materials
+	  - Migration guides
+	  - Legacy system documentation
+
+Note: This directory structure may not be exhaustive. New directories may exist that are not yet documented here. When working with the project, respect existing structures even if they are not listed in this section.
+
+⸻
+
+10. Scope & Evolution
 
 This manifest defines operational workflow, structural rules, and canonical conventions.
 
@@ -302,6 +418,12 @@ It is intended to be:
 	•	minimal
 	•	enforced
 
+However, this manifest is a living document that evolves with the project:
+	•	New directories and structures may be introduced before they are documented here.
+	•	The manifest is updated periodically, not continuously.
+	•	Existing project structures that are not yet documented are valid and should be preserved.
+	•	When significant structural changes are made, the manifest should be updated to reflect them.
+
 Architectural intent lives in ADRs.
 Implementation details may evolve.
-Structural rules defined here must remain consistent.
+Structural rules defined here must remain consistent, but the manifest itself may lag behind project evolution.

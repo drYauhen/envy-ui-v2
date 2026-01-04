@@ -1,0 +1,20 @@
+# Cursor Rules for Envy UI v2
+
+**Note:** This file is Cursor-specific. For complete rules, see `WORKFLOW_MANIFEST.md`.
+
+## Quick Reference
+
+- **Language:** All code, comments, documentation, and commits must use English.
+- **Source of truth:** `WORKFLOW_MANIFEST.md` contains all project rules.
+- **Architecture:** Token-first, platform-oriented generated/ structure.
+- **Version control:** Do NOT commit unless explicitly authorized. Split into logical commits.
+
+## Full Rules
+
+See `WORKFLOW_MANIFEST.md` for complete rules, including:
+- Project structure and conventions
+- Assistant expectations
+- Version control behavior
+- Workflow documentation references
+- Manifest evolution and project reality
+
