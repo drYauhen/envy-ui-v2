@@ -16,6 +16,7 @@
  * - `title` is the document title (from markdown header)
  * - `category` is the directory (adr, architecture, workflows, etc.)
  * - `exportName` (optional) is for Storybook story exports (if applicable)
+ * - `storybookId` (optional) is for Storybook story IDs (if applicable)
  * - `aliases` (optional) are alternative paths (for renamed files)
  */
 
@@ -28,6 +29,7 @@ export type DocRegistryItem = {
   title: string; // Document title
   category: 'adr' | 'architecture' | 'workflows' | 'tasks' | 'steps' | 'other';
   exportName?: string; // Optional: Storybook export name
+  storybookId?: string; // Optional: Storybook story id (e.g., "docs-architecture--accessibility-reference")
   aliases?: string[]; // Optional: alternative paths (for renamed files)
 };
 
@@ -46,16 +48,25 @@ const adrDocs: DocRegistryItem[] = adrs.map(adr => {
 // Architecture documents
 const architectureDocs: DocRegistryItem[] = [
   {
+    id: 'arch-readme',
+    path: 'architecture/README.md',
+    title: 'Architecture Documentation Overview',
+    category: 'architecture',
+    storybookId: 'docs-architecture--architecture-overview'
+  },
+  {
     id: 'arch-accessibility',
     path: 'architecture/accessibility-reference.md',
     title: 'Accessibility Reference',
-    category: 'architecture'
+    category: 'architecture',
+    storybookId: 'docs-architecture--accessibility-reference'
   },
   {
     id: 'arch-token-usage',
     path: 'architecture/token-usage-rules.md',
     title: 'Token Usage Rules',
-    category: 'architecture'
+    category: 'architecture',
+    storybookId: 'docs-architecture--token-usage-rules'
   },
   {
     id: 'arch-component-naming',
@@ -107,7 +118,8 @@ const workflowDocs: DocRegistryItem[] = [
     id: 'workflow-tokens',
     path: 'workflows/tokens-workflow.md',
     title: 'Tokens Workflow',
-    category: 'workflows'
+    category: 'workflows',
+    storybookId: 'docs-tokens--tokens-workflow'
   },
   {
     id: 'workflow-dev-app',
@@ -151,18 +163,30 @@ const tokensDocs: DocRegistryItem[] = [
     id: 'tokens-readme',
     path: 'tokens/README.md',
     title: 'Token System Tooling',
-    category: 'other'
+    category: 'other',
+    storybookId: 'docs-tokens--token-tooling'
   },
   {
     id: 'tokens-reference',
     path: 'tokens/reference.md',
     title: 'Token Reference',
-    category: 'other'
+    category: 'other',
+    storybookId: 'docs-tokens--token-reference'
   },
   {
     id: 'tokens-use-cases',
     path: 'tokens/use-cases.md',
     title: 'Token Utilities Use Cases',
+    category: 'other',
+    storybookId: 'docs-tokens--token-use-cases'
+  }
+];
+
+const generalDocs: DocRegistryItem[] = [
+  {
+    id: 'docs-guide',
+    path: 'DOCS-GUIDE.md',
+    title: 'Documentation Guide',
     category: 'other'
   }
 ];
@@ -173,7 +197,8 @@ export const docsRegistry: DocRegistryItem[] = [
   ...adrGuideDocs,
   ...architectureDocs,
   ...workflowDocs,
-  ...tokensDocs
+  ...tokensDocs,
+  ...generalDocs
 ];
 
 // Helper functions for lookup
@@ -201,4 +226,3 @@ export const docsRegistryByPath: Map<string, DocRegistryItem> = new Map(
     return entries;
   })
 );
-

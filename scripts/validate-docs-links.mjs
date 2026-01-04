@@ -54,10 +54,10 @@ function parseDocsRegistry() {
   // Parse registry file for non-ADR documents
   const registryContent = readFileSync(registryPath, 'utf-8');
   // Pattern: { id: '...', path: '...', title: '...', category: '...' }
-  const docPattern = /\{\s*id:\s*['"]([^'"]+)['"],\s*path:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*category:\s*['"]([^'"]+)['"](?:,\s*exportName:\s*['"]([^'"]+)['"])?(?:,\s*aliases:\s*\[([^\]]+)\])?\s*\}/g;
+  const docPattern = /\{\s*id:\s*['"]([^'"]+)['"],\s*path:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*category:\s*['"]([^'"]+)['"](?:,\s*storybookId:\s*['"]([^'"]+)['"])?(?:,\s*exportName:\s*['"]([^'"]+)['"])?(?:,\s*aliases:\s*\[([^\]]+)\])?\s*\}/g;
   
   while ((match = docPattern.exec(registryContent)) !== null) {
-    const [, id, path, title, category, exportName, aliasesStr] = match;
+    const [, id, path, title, category, storybookId, exportName, aliasesStr] = match;
     // Skip ADR documents (already parsed)
     const isAdrDoc = /^adr-\d{4}$/.test(id) && category === 'adr';
     if (isAdrDoc) {
@@ -73,6 +73,7 @@ function parseDocsRegistry() {
       path,
       title,
       category,
+      storybookId: storybookId || null,
       exportName: exportName || null,
       aliases
     };
