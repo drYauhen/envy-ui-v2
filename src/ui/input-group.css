@@ -22,20 +22,20 @@
 
 /* Hover state - border color change */
 [data-eui-context="app"] .eui-input-group:not(:has(.eui-input:disabled)):not(:has(.eui-input:focus)):hover,
-[data-eui-context="site"] .eui-input-group:not(:has(.eui-input:disabled)):not(:has(.eui-input:focus)):hover {
+[data-eui-context="website"] .eui-input-group:not(:has(.eui-input:disabled)):not(:has(.eui-input:focus)):hover {
   border-color: var(--eui-input-border-hover);
 }
 
 /* Focus state - border color and focus ring on container */
 [data-eui-context="app"] .eui-input-group:has(.eui-input:focus),
-[data-eui-context="site"] .eui-input-group:has(.eui-input:focus) {
+[data-eui-context="website"] .eui-input-group:has(.eui-input:focus) {
   border-color: var(--eui-input-border-focus);
   box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
   z-index: 1;
 }
 
 [data-eui-context="app"] .eui-input-group:has(.eui-input:focus-visible),
-[data-eui-context="site"] .eui-input-group:has(.eui-input:focus-visible) {
+[data-eui-context="website"] .eui-input-group:has(.eui-input:focus-visible) {
   box-shadow: 0 0 0 var(--eui-input-focus-ring-width-accessible) var(--eui-input-focus-ring-color-derived-accessible);
 }
 
@@ -53,7 +53,7 @@
 }
 
 [data-eui-context="app"] .eui-input-group[data-eui-state="error"]:has(.eui-input:focus),
-[data-eui-context="site"] .eui-input-group[data-eui-state="error"]:has(.eui-input:focus) {
+[data-eui-context="website"] .eui-input-group[data-eui-state="error"]:has(.eui-input:focus) {
   border-color: var(--eui-input-border-error);
   box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
 }

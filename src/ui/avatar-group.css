@@ -34,21 +34,21 @@
 /* Hover animation: spread neighbors and scale hovered avatar */
 /* When hovering over a specific avatar, scale it up and spread neighbors */
 [data-eui-context="app"] .eui-avatar-group .eui-avatar:hover,
-[data-eui-context="site"] .eui-avatar-group .eui-avatar:hover {
+[data-eui-context="website"] .eui-avatar-group .eui-avatar:hover {
   transform: scale(var(--eui-avatar-group-layout-hover-scale));
   z-index: 10;
 }
 
 /* Spread right neighbors (avatars after hovered) - move them to the right */
 [data-eui-context="app"] .eui-avatar-group .eui-avatar:hover ~ .eui-avatar,
-[data-eui-context="site"] .eui-avatar-group .eui-avatar:hover ~ .eui-avatar {
+[data-eui-context="website"] .eui-avatar-group .eui-avatar:hover ~ .eui-avatar {
   transform: translateX(var(--eui-avatar-group-layout-hover-spread));
 }
 
 /* Spread left neighbors (avatars before hovered) - move them to the left */
 /* Using :has() selector for better browser support (modern browsers) */
 [data-eui-context="app"] .eui-avatar-group .eui-avatar:has(+ .eui-avatar:hover),
-[data-eui-context="site"] .eui-avatar-group .eui-avatar:has(+ .eui-avatar:hover) {
+[data-eui-context="website"] .eui-avatar-group .eui-avatar:has(+ .eui-avatar:hover) {
   transform: translateX(calc(-1 * var(--eui-avatar-group-layout-hover-spread)));
 }
 
@@ -64,25 +64,25 @@
 
 /* Counter hover in AvatarGroup - also spreads neighbors and changes color to accent */
 [data-eui-context="app"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover,
-[data-eui-context="site"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover {
+[data-eui-context="website"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover {
   transform: scale(var(--eui-avatar-group-layout-hover-scale));
   z-index: 10;
   color: var(--eui-color-accent-primary);
 }
 
 [data-eui-context="app"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover ~ .eui-avatar,
-[data-eui-context="site"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover ~ .eui-avatar {
+[data-eui-context="website"] .eui-avatar-group .eui-counter[data-eui-variant="text"]:hover ~ .eui-avatar {
   transform: translateX(var(--eui-avatar-group-layout-hover-spread));
 }
 
 [data-eui-context="app"] .eui-avatar-group .eui-avatar:has(+ .eui-counter:hover),
-[data-eui-context="site"] .eui-avatar-group .eui-avatar:has(+ .eui-counter:hover) {
+[data-eui-context="website"] .eui-avatar-group .eui-avatar:has(+ .eui-counter:hover) {
   transform: translateX(calc(-1 * var(--eui-avatar-group-layout-hover-spread)));
 }
 
 /* Counter changes to accent color when any avatar in the group is hovered */
 [data-eui-context="app"] .eui-avatar-group:has(.eui-avatar:hover) .eui-counter[data-eui-variant="text"],
-[data-eui-context="site"] .eui-avatar-group:has(.eui-avatar:hover) .eui-counter[data-eui-variant="text"] {
+[data-eui-context="website"] .eui-avatar-group:has(.eui-avatar:hover) .eui-counter[data-eui-variant="text"] {
   color: var(--eui-color-accent-primary);
 }
 

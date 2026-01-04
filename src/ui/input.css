@@ -56,27 +56,27 @@
 
 /* Hover state */
 [data-eui-context="app"] .eui-input:not(:disabled):not(:focus):hover,
-[data-eui-context="site"] .eui-input:not(:disabled):not(:focus):hover {
+[data-eui-context="website"] .eui-input:not(:disabled):not(:focus):hover {
   border-color: var(--eui-color-border-strong);
 }
 
 /* Focus states */
 [data-eui-context="app"] .eui-input:focus,
-[data-eui-context="site"] .eui-input:focus {
+[data-eui-context="website"] .eui-input:focus {
   border-color: var(--eui-input-border-focus);
   box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
   z-index: 1;
 }
 
 [data-eui-context="app"] .eui-input:focus-visible,
-[data-eui-context="site"] .eui-input:focus-visible {
+[data-eui-context="website"] .eui-input:focus-visible {
   box-shadow: 0 0 0 var(--eui-input-focus-ring-width-accessible) var(--eui-input-focus-ring-color-derived-accessible);
   z-index: 1;
 }
 
 /* Disabled state */
 [data-eui-context="app"] .eui-input:disabled,
-[data-eui-context="site"] .eui-input:disabled {
+[data-eui-context="website"] .eui-input:disabled {
   background-color: var(--eui-input-background-disabled);
   border-color: var(--eui-input-border-disabled);
   color: var(--eui-input-text-disabled);
@@ -86,12 +86,12 @@
 
 /* Error state */
 [data-eui-context="app"] .eui-input[data-eui-state="error"],
-[data-eui-context="site"] .eui-input[data-eui-state="error"] {
+[data-eui-context="website"] .eui-input[data-eui-state="error"] {
   border-color: var(--eui-input-border-error);
 }
 
 [data-eui-context="app"] .eui-input[data-eui-state="error"]:focus,
-[data-eui-context="site"] .eui-input[data-eui-state="error"]:focus {
+[data-eui-context="website"] .eui-input[data-eui-state="error"]:focus {
   border-color: var(--eui-input-border-error);
   box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
 }

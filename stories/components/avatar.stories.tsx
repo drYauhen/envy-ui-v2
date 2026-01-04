@@ -204,7 +204,7 @@ export const AvatarContexts: Story = {
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Contexts</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          Avatars adapt to different rendering contexts (app, site, report).
+          Avatars adapt to different rendering contexts (app, website, report).
         </p>
         <div style={sectionStyle}>
           <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Application Context (app)</h4>

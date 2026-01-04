@@ -132,7 +132,7 @@ export const globalTypes: Preview['globalTypes'] = {
       icon: 'folder',
       items: [
         { value: 'app', title: 'Application' },
-        { value: 'site', title: 'Website/CMS', disabled: true },
+        { value: 'website', title: 'Website/CMS', disabled: true },
         { value: 'report', title: 'Report' }
       ],
       showName: true,

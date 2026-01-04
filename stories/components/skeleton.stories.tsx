@@ -278,7 +278,7 @@ export const Contexts: Story = {
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Contexts</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          Skeleton animations are enabled in app and site contexts, but disabled in report context for print-optimized output.
+          Skeleton animations are enabled in app and website contexts, but disabled in report context for print-optimized output.
         </p>
         <div style={sectionStyle}>
           <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Application Context (app) - Animated</h4>

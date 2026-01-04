@@ -133,7 +133,7 @@ This ensures that when components are stacked/split (e.g., `[Input] [Button]`), 
 
 ### Other Contexts: Website & Printable
 
-**In `site` and `report` contexts:** This rule does not apply, as:
+**In `website` and `report` contexts:** This rule does not apply, as:
 - **Website context:** Primarily reading-focused, minimal form compositions. Design goals prioritize expressive visuals over stackable consistency.
 - **Printable context:** No interactive form elements. Design goals focus on document expressiveness, not component composition.
 

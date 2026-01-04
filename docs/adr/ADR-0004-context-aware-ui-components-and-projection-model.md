@@ -29,7 +29,7 @@ A single component definition must be renderable in multiple contexts (applicati
 The application includes multiple UI surfaces:
 
 * Interactive application UI
-* Generated websites (site previews)
+* Generated websites (website previews)
 * Generated reports (print / PDF-oriented documents)
 
 These surfaces may coexist within a single screen (e.g. application UI embedding both website and report previews).
@@ -63,7 +63,7 @@ The system explicitly separates the following concerns:
 | --------- | ---------------------------------------------------- |
 | Component | What the thing is (Button, Card, Input)              |
 | Intent    | Why it exists (primary, secondary, danger)           |
-| Context   | Where it is rendered (app, site, report)             |
+| Context   | Where it is rendered (app, website, report)             |
 | Scheme    | How it is styled (light, dark, high-contrast, print) |
 | State     | How it reacts (hover, active, focus, disabled)       |
 
@@ -78,7 +78,7 @@ No axis may encode responsibilities of another axis.
 Initial conceptual contexts include:
 
 * `app` – interactive application UI
-* `site` – generated website preview
+* `website` – generated website preview
 * `report` – printable / static document (PDF / HTML)
 
 Contexts are **orthogonal** to themes and schemes.
@@ -98,7 +98,7 @@ Example:
   <button class="eui-button" data-eui-intent="primary">Submit</button>
 </div>
 
-<div data-eui-context="site">
+<div data-eui-context="website">
   <button class="eui-button" data-eui-intent="primary">Submit</button>
 </div>
 ```

@@ -165,12 +165,12 @@
 }
 
 [data-eui-context="app"] .eui-modal[open],
-[data-eui-context="site"] .eui-modal[open] {
+[data-eui-context="website"] .eui-modal[open] {
   animation: modal-fade-in 0.2s ease-out;
 }
 
 [data-eui-context="app"] .eui-modal[open]::backdrop,
-[data-eui-context="site"] .eui-modal[open]::backdrop {
+[data-eui-context="website"] .eui-modal[open]::backdrop {
   animation: backdrop-fade-in 0.2s ease-out;
 }
 

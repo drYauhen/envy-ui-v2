@@ -12,16 +12,16 @@
 [data-eui-context="app"] label:has(input:disabled) .eui-label,
 [data-eui-context="app"] label:has(.eui-checkbox:disabled) .eui-label,
 [data-eui-context="app"] label:has(.eui-switch:disabled) .eui-label,
-[data-eui-context="site"] label:has(input:disabled) .eui-label,
-[data-eui-context="site"] label:has(.eui-checkbox:disabled) .eui-label,
-[data-eui-context="site"] label:has(.eui-switch:disabled) .eui-label,
+[data-eui-context="website"] label:has(input:disabled) .eui-label,
+[data-eui-context="website"] label:has(.eui-checkbox:disabled) .eui-label,
+[data-eui-context="website"] label:has(.eui-switch:disabled) .eui-label,
 /* Works when label is sibling of disabled input (pattern: <label class="eui-label"><input>) */
 [data-eui-context="app"] label:has(> input:disabled),
 [data-eui-context="app"] label:has(> .eui-checkbox:disabled),
 [data-eui-context="app"] label:has(> .eui-switch:disabled),
-[data-eui-context="site"] label:has(> input:disabled),
-[data-eui-context="site"] label:has(> .eui-checkbox:disabled),
-[data-eui-context="site"] label:has(> .eui-switch:disabled) {
+[data-eui-context="website"] label:has(> input:disabled),
+[data-eui-context="website"] label:has(> .eui-checkbox:disabled),
+[data-eui-context="website"] label:has(> .eui-switch:disabled) {
   opacity: 0.7;
   cursor: not-allowed;
 }
