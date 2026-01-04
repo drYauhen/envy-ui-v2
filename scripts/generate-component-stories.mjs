@@ -33,7 +33,7 @@ function generateStoryForTokenFile(componentName, tokenFileName) {
   const viewersPath = `../../../../viewers/tokens`;
   
   // Component path for collectRefs - use name with dash in quotes
-  const componentPath = componentName; // 'alert-banner' или 'button'
+  const componentPath = componentName; // 'alert-banner' or 'button'
   
   const displayName = componentName.split('-').map(word => 
     word.charAt(0).toUpperCase() + word.slice(1)

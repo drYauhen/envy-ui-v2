@@ -289,8 +289,8 @@ function generateMigration(snapshot, snapshotFilename, analysis, adapter) {
     });
   }
   
-  // Mappings для переименованных переменных (пока не реализовано, но структура готова)
-  // В будущем можно добавить логику для определения переименований
+  // Mappings for renamed variables (not implemented yet, but structure is ready)
+  // In the future, logic can be added to detect renames
   
   return migration;
 }

@@ -629,7 +629,7 @@ async function exportSnapshot(): Promise<SnapshotPayload> {
     allNodes.push(...findAllNodesInPage(page));
   }
   
-  // Найти все bindings
+  // Find all bindings
   for (const node of allNodes) {
     const bindings = detectVariableBindingsForSnapshot([node]);
     for (const binding of bindings) {
