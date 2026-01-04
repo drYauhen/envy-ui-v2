@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import mermaid from 'mermaid';
 import { adrFilenameMap } from './adr-filename-map';
-import { adrs } from './adr-list-data';
+import { adrNumberToStoryPath, storySlugFromAdrLinkText } from './adr-links';
 
 type AdrViewerProps = {
   adrNumber: string;
@@ -98,39 +98,6 @@ const linkStyle: CSSProperties = {
   color: '#066a8d',
   textDecoration: 'none',
   fontWeight: 500
-};
-
-// Helper function to convert ADR title to Storybook story slug
-// Storybook converts export names (camelCase/PascalCase) to kebab-case slugs
-// The generator script creates story names by removing all non-alphanumeric chars and spaces
-// Example: "Data-Driven Figma Variables Pipeline via Adapter JSON"
-//   -> Story name: "DataDrivenFigmaVariablesPipelineviaAdapterJSON"
-//   -> Storybook slug: "data-driven-figma-variables-pipeline-via-adapter-j-s-o-n"
-//
-// The problem is that Storybook splits on capital letters, so "JSON" becomes "j-s-o-n"
-// and "Pipelinevia" becomes "pipeline-via" (which is actually correct)
-//
-// We need to match Storybook's exact behavior: insert dash before each capital letter
-// (except the first one), then convert to lowercase
-const titleToStorySlug = (title: string): string => {
-  // First, replace dashes/em-dashes with spaces to preserve word boundaries
-  // This ensures "Context - Theme" becomes "Context  Theme" (double space) which will be collapsed
-  // This is important because the generator removes all non-alphanumeric chars, so we need to
-  // preserve word separation before removing them
-  let normalized = title.replace(/[-—–]/g, ' ');
-  
-  // Generate story name the same way as the generator script
-  // This removes all non-alphanumeric chars and spaces (collapsing multiple spaces)
-  const storyName = normalized.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '');
-  
-  // Storybook's slug conversion: insert dash before each capital letter (except first)
-  // Then convert to lowercase
-  const slug = storyName
-    .replace(/([a-z])([A-Z])/g, '$1-$2') // Insert dash between lowercase and uppercase
-    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2') // Insert dash between uppercase groups and following word
-    .toLowerCase();
-  
-  return slug;
 };
 
 /**
@@ -357,73 +324,6 @@ const MermaidDiagram = ({ chart }: { chart: string }) => {
 // Storybook converts PascalCase export names to kebab-case slugs
 // This function attempts to match Storybook's exact behavior
 // 
-// Storybook's algorithm appears to:
-// 1. Treat consecutive uppercase letters as acronyms when followed by a capital+lowercase
-//    Example: "RTLSupport" -> "rtl-support" (not "r-t-l-support")
-// 2. Insert dash before capital letters (except first)
-// 3. Convert to lowercase
-const exportNameToSlug = (exportName: string): string => {
-  // Step 1: Handle acronyms - consecutive uppercase letters before a capital+lowercase word
-  // Pattern: [A-Z]{2,}[A-Z][a-z] -> treat the consecutive uppercase as acronym
-  // Example: "RTLSupport" -> we want "RTL" to stay together, then "-Support"
-  let processed = exportName.replace(/([A-Z]{2,})([A-Z][a-z])/g, (match, acronym, word) => {
-    // Keep the acronym together, add dash before the word
-    return acronym + '-' + word;
-  });
-  
-  // Step 2: Insert dash before capital letters (except first, and after acronyms we just handled)
-  processed = processed
-    .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // Insert dash between lowercase/number and uppercase
-    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2'); // Insert dash between single uppercase and uppercase+lowercase
-  
-  // Step 3: Convert to lowercase
-  return processed.toLowerCase();
-};
-
-// Helper function to convert ADR number to Storybook story path
-// This function uses adr-list-data.ts to get the export name if available
-const adrNumberToStoryPath = async (adrNumber: string): Promise<string> => {
-  try {
-    // First, try to get export name from adr-list-data.ts
-    const adrData = adrs.find(adr => adr.number === adrNumber);
-    if (adrData && adrData.exportName) {
-      const slug = exportNameToSlug(adrData.exportName);
-      return `?path=/story/docs-adr--${slug}`;
-    }
-    
-    // Fallback: try to fetch the story file to get the actual export name
-    const storyResponse = await fetch(`/stories/docs/adr/adr-${adrNumber}.stories.tsx`);
-    if (storyResponse.ok) {
-      const storyText = await storyResponse.text();
-      // Extract export name: export const ExportName: Story
-      const exportMatch = storyText.match(/export const (\w+):\s*Story/);
-      if (exportMatch) {
-        const exportName = exportMatch[1];
-        const slug = exportNameToSlug(exportName);
-        return `?path=/story/docs-adr--${slug}`;
-      }
-    }
-    
-    // Final fallback: fetch the ADR file to get the title
-    const filename = adrFilenameMap[adrNumber] || `ADR-${adrNumber}.md`;
-    const response = await fetch(`/docs/adr/${filename}`);
-    if (!response.ok) {
-      throw new Error(`Failed to load ADR-${adrNumber}`);
-    }
-    const text = await response.text();
-    const titleMatch = text.match(/^# ADR-\d+:\s*(.+)$/m);
-    if (titleMatch) {
-      const title = titleMatch[1].trim();
-      const storySlug = titleToStorySlug(title);
-      return `?path=/story/docs-adr--${storySlug}`;
-    }
-  } catch (err) {
-    console.warn(`Could not load ADR-${adrNumber} for link generation:`, err);
-  }
-  // This fallback should rarely be used
-  return '';
-};
-
 export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) => {
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
@@ -559,21 +459,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                                       (typeof c === 'object' && c?.props?.children ? String(c.props.children) : '')
                                     ).join('') : '');
                     
-                    let storySlug = '';
-                    if (linkText) {
-                      // Try to extract title after "—" or ":" separator
-                      const titleMatch = linkText.match(/[—:]\s*(.+)$/) || 
-                                        linkText.match(/ADR-\d+[:\s]+(.+)$/) ||
-                                        linkText.match(/^(.+)$/);
-                      if (titleMatch) {
-                        const title = titleMatch[1].trim();
-                        // Remove ADR-XXXX prefix if present
-                        const cleanTitle = title.replace(/^ADR-\d+\s*/, '').trim();
-                        if (cleanTitle) {
-                          storySlug = titleToStorySlug(cleanTitle);
-                        }
-                      }
-                    }
+                    const storySlug = linkText ? storySlugFromAdrLinkText(linkText) : null;
                     
                     if (storySlug) {
                       storybookHref = `?path=/story/docs-adr--${storySlug}`;
@@ -836,4 +722,3 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
     </div>
   );
 };
-
