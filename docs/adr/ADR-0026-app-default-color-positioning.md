@@ -60,6 +60,7 @@ I decided to **optimize semantic tokens for `app-default` context/theme** while 
 ### Default Positioning
 
 ```mermaid
+%% sb: maxWidth=20rem %%
 graph TD
     A[Foundation Tokens<br/>Context-Agnostic<br/>OKLCH color scales] --> B[Semantic Tokens<br/>App-Default Optimized<br/>brand.primary, accent.primary]
     B --> C[Context Tokens<br/>Environment Overrides<br/>app, website, report]
@@ -216,4 +217,3 @@ This ADR documents the positioning strategy. Implementation details for CSS gene
 - [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model: AI Agent-Oriented Architecture
 
 The color scale re-architecture (Brand-700, Accent-600 anchors) is documented separately but aligns with this positioning strategy.
-

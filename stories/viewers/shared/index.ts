@@ -8,8 +8,8 @@
 export { CodeBlock } from './CodeBlock';
 export { CollapsibleSection } from './CollapsibleSection';
 export { AccessibilityPanel } from './AccessibilityPanel';
+export { MermaidDiagram } from './MermaidDiagram';
 
 export type { CodeBlockProps } from './CodeBlock';
 export type { CollapsibleSectionProps } from './CollapsibleSection';
 export type { AccessibilityPanelProps } from './AccessibilityPanel';
-

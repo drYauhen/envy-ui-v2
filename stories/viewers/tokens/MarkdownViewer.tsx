@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import type { CSSProperties } from 'react';
 import { adrNumberToStoryPath, storySlugFromAdrLinkText } from '../docs/adr-links';
+import { MermaidDiagram } from '../shared/MermaidDiagram';
 
 type MarkdownViewerProps = {
   markdownPath: string;
@@ -329,14 +330,43 @@ export const MarkdownViewer = ({ markdownPath, fallback = 'Loading...' }: Markdo
                 </code>
               );
             },
-            pre: ({node, children, ...props}: any) => (
-              <pre style={{
-                margin: '16px 0',
-                overflowX: 'auto'
-              }} {...props}>
-                {children}
-              </pre>
-            ),
+            pre: ({node, children, ...props}: any) => {
+              const codeElement = React.Children.toArray(children).find(
+                (child: any) => {
+                  if (typeof child === 'object' && child?.props) {
+                    const className = child.props.className || '';
+                    return className.includes('language-mermaid');
+                  }
+                  return false;
+                }
+              ) as any;
+
+              if (codeElement) {
+                let chart = '';
+                if (typeof codeElement.props.children === 'string') {
+                  chart = codeElement.props.children;
+                } else if (Array.isArray(codeElement.props.children)) {
+                  chart = codeElement.props.children
+                    .map((c: any) => typeof c === 'string' ? c : (c?.props?.children || ''))
+                    .join('');
+                } else if (codeElement.props.children) {
+                  chart = String(codeElement.props.children);
+                }
+
+                if (chart.trim()) {
+                  return <MermaidDiagram chart={chart.trim()} />;
+                }
+              }
+
+              return (
+                <pre style={{
+                  margin: '16px 0',
+                  overflowX: 'auto'
+                }} {...props}>
+                  {children}
+                </pre>
+              );
+            },
             table: ({node, ...props}: any) => (
               <div style={{ overflowX: 'auto', margin: '16px 0' }}>
                 <table style={{

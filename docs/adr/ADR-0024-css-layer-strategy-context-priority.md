@@ -158,6 +158,7 @@ graph TD
 **Example 1: App with nested Report**
 
 ```mermaid
+%% sb: maxWidth=20rem %%
 graph TD
     A["HTML: data-eui-context=app"] --> B["CSS: :root values"]
     B --> C["CSS: @layer context-app<br/>app styles applied"]
@@ -175,6 +176,7 @@ graph TD
 **Example 2: Website with nested Report**
 
 ```mermaid
+%% sb: maxWidth=20rem %%
 graph TD
     A["HTML: data-eui-context=website"] --> B["CSS: :root values"]
     B --> C["CSS: @layer context-website<br/>website styles applied"]
@@ -192,6 +194,7 @@ graph TD
 **Example 3: Standalone Report**
 
 ```mermaid
+%% sb: maxWidth=20rem %%
 graph TD
     A["HTML: data-eui-context=report"] --> B["CSS: :root values"]
     B --> C["CSS: @layer context-report<br/>report styles applied"]
@@ -426,4 +429,3 @@ This ADR focuses on CSS generation. For Figma Variables integration, see:
 
 For token organization, see:
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
-
