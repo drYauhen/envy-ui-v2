@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import type { Key } from 'react';
 import { SearchableSelect, SearchableSelectItem } from '../../../packages/tsx/select';
 import { getSectionParameters } from '../../../.storybook/preview';
+import { ContextThemeScope } from '../../utils/context-theme';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/SearchableSelect',
@@ -30,25 +31,25 @@ const manyItems: SearchableSelectItem[] = Array.from({ length: 50 }, (_, i) => (
 
 export const Basic: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <SearchableSelect
         label="Search and select"
         placeholder="Type to search..."
         items={basicItems}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const WithDefaultValue: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <SearchableSelect
         label="Search and select"
         items={basicItems}
         defaultSelectedKey="option2"
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -57,7 +58,7 @@ export const Controlled: Story = {
     const [selected, setSelected] = useState<Key | null>('option2');
 
     return (
-      <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
         <SearchableSelect
           label="Controlled SearchableSelect"
           items={basicItems}
@@ -74,13 +75,13 @@ export const Controlled: Story = {
 
 export const ManyOptions: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <SearchableSelect
         label="Search in many options"
         placeholder="Type to filter..."
         items={manyItems}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -94,19 +95,19 @@ export const WithDisabledOptions: Story = {
     ];
 
     return (
-      <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
         <SearchableSelect
           label="Search and select"
           items={itemsWithDisabled}
         />
-      </div>
+      </ContextThemeScope>
     );
   }
 };
 
 export const Sizes: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <SearchableSelect
         label="Small"
         items={basicItems}
@@ -125,13 +126,13 @@ export const Sizes: Story = {
         size="lg"
         defaultSelectedKey="option3"
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const States: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <SearchableSelect
         label="Normal"
         items={basicItems}
@@ -149,13 +150,13 @@ export const States: Story = {
         error
         defaultSelectedKey="option3"
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const InForm: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '400px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '400px' }}>
       <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         <SearchableSelect
           label="Search and select"
@@ -166,10 +167,9 @@ export const InForm: Story = {
           Submit
         </button>
       </form>
-    </div>
+    </ContextThemeScope>
   )
 };
-
 
 
 

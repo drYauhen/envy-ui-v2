@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Layout/Primitives',
@@ -25,7 +26,7 @@ export const Container: Story = {
     }
   },
   render: () => (
-    <div data-eui-context="app" style={containerStyle}>
+    <ContextThemeScope data-eui-context="app" style={containerStyle}>
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Container Variants</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -49,14 +50,14 @@ export const Container: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Stack: Story = {
   name: 'Stack (Vertical Layout)',
   render: () => (
-    <div data-eui-context="app" style={containerStyle}>
+    <ContextThemeScope data-eui-context="app" style={containerStyle}>
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Stack - Gap Variants</h3>
         <div className="eui-stack" data-eui-gap="md">
@@ -86,14 +87,14 @@ export const Stack: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Inline: Story = {
   name: 'Inline (Horizontal Layout)',
   render: () => (
-    <div data-eui-context="app" style={containerStyle}>
+    <ContextThemeScope data-eui-context="app" style={containerStyle}>
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Inline - Gap and Justify Variants</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -123,14 +124,14 @@ export const Inline: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Grid: Story = {
   name: 'Grid',
   render: () => (
-    <div data-eui-context="app" style={containerStyle}>
+    <ContextThemeScope data-eui-context="app" style={containerStyle}>
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Grid - Column Presets</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -162,14 +163,14 @@ export const Grid: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Toolbar: Story = {
   name: 'Toolbar',
   render: () => (
-    <div data-eui-context="app" style={containerStyle}>
+    <ContextThemeScope data-eui-context="app" style={containerStyle}>
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Toolbar with Left, Center, Right Sections</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -195,14 +196,14 @@ export const Toolbar: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const PageHeader: Story = {
   name: 'Page Header',
   render: () => (
-    <div data-eui-context="app" style={containerStyle}>
+    <ContextThemeScope data-eui-context="app" style={containerStyle}>
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Page Header with Title, Description, and Actions</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -241,14 +242,14 @@ export const PageHeader: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Section: Story = {
   name: 'Section',
   render: () => (
-    <div data-eui-context="app" style={containerStyle}>
+    <ContextThemeScope data-eui-context="app" style={containerStyle}>
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Section with Title and Content</h3>
         <div className="eui-section" style={{ background: '#f1f5f9', borderRadius: '8px' }}>
@@ -259,7 +260,6 @@ export const Section: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
-

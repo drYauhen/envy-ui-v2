@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { getSectionParameters } from '../../.storybook/preview';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Select',
@@ -151,7 +152,7 @@ export const SelectContexts: Story = {
     <div style={containerStyle}>
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Application Context (Interactive)</h3>
-        <div data-eui-context="app" style={formGroupStyle}>
+        <ContextThemeScope data-eui-context="app" style={formGroupStyle}>
           <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <span className="eui-label">Interactive select</span>
             <select className="eui-select">
@@ -160,12 +161,12 @@ export const SelectContexts: Story = {
               <option value="option2">Option 2</option>
             </select>
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
 
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Report Context (Print Style)</h3>
-        <div data-eui-context="report" style={formGroupStyle}>
+        <ContextThemeScope data-eui-context="report" style={formGroupStyle}>
           <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <span className="eui-label">Static select (print)</span>
             <select className="eui-select" disabled>
@@ -173,9 +174,8 @@ export const SelectContexts: Story = {
               <option value="option2" selected>Option 2</option>
             </select>
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
     </div>
   )
 };
-

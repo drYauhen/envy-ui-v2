@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Layout/Table Page',
@@ -19,7 +20,7 @@ export const TablePage: Story = {
     layout: 'fullscreen'
   },
   render: () => (
-    <div data-eui-context="app">
+    <ContextThemeScope data-eui-context="app">
       <div className="eui-page">
         <div className="eui-page__header">
           <div className="eui-container" data-eui-container="wide">
@@ -100,7 +101,6 @@ export const TablePage: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
-

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { AlertBanner } from '../../../packages/tsx/alert-banner';
 import { Icon } from '../../../packages/tsx/icon';
 import { getSectionParameters } from '../../../.storybook/preview';
+import { ContextThemeScope } from '../../utils/context-theme';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/AlertBanner',
@@ -18,7 +19,7 @@ type Story = StoryObj;
 
 export const Info: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner
         id="info-1"
         variant="info"
@@ -30,13 +31,13 @@ export const Info: Story = {
         <h1>Application Content</h1>
         <p>This is your application content. The alert banner appears above everything.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Warning: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner
         id="warning-1"
         variant="warning"
@@ -50,13 +51,13 @@ export const Warning: Story = {
         <h1>Application Content</h1>
         <p>This warning banner indicates a system-wide announcement.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Error: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner
         id="error-1"
         variant="error"
@@ -67,13 +68,13 @@ export const Error: Story = {
         <h1>Application Content</h1>
         <p>This error banner indicates a critical system issue.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Success: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner
         id="success-1"
         variant="success"
@@ -84,13 +85,13 @@ export const Success: Story = {
         <h1>Application Content</h1>
         <p>This success banner confirms a positive system update.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const WithDontShowAgain: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner
         id="persistent-1"
         variant="warning"
@@ -105,13 +106,13 @@ export const WithDontShowAgain: Story = {
         <p>This banner includes "Don't show again" option for persistent dismissal.</p>
         <p>Try dismissing it - it will be remembered across page reloads.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const SessionDismissal: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner
         id="session-1"
         variant="info"
@@ -123,13 +124,13 @@ export const SessionDismissal: Story = {
         <h1>Application Content</h1>
         <p>This banner uses session-only dismissal. It will reappear after page reload.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const NonDismissible: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner
         id="non-dismissible-1"
         variant="info"
@@ -140,7 +141,7 @@ export const NonDismissible: Story = {
         <h1>Application Content</h1>
         <p>This banner has no dismiss button and remains visible.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -150,7 +151,7 @@ export const MultipleBanners: Story = {
     const [showBanner2, setShowBanner2] = useState(true);
 
     return (
-      <div data-eui-context="app" style={{ paddingTop: '120px' }}>
+      <ContextThemeScope data-eui-context="app" style={{ paddingTop: '120px' }}>
         {showBanner1 && (
           <AlertBanner
             id="multiple-1"
@@ -180,7 +181,7 @@ export const MultipleBanners: Story = {
 
 export const WithSelectDropdown: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner id="select-1" variant="warning">
         <span data-eui-slot="icon">
           <Icon name="exclamation-circle" size={20} />
@@ -211,13 +212,13 @@ export const WithSelectDropdown: Story = {
         <h1>Application Content</h1>
         <p>This banner uses slots to include a select dropdown for region selection.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const WithCustomActions: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner id="custom-actions-1" variant="info">
         <span data-eui-slot="icon">
           <Icon name="info-circle" size={20} />
@@ -245,13 +246,13 @@ export const WithCustomActions: Story = {
         <h1>Application Content</h1>
         <p>This banner includes custom action buttons via the actions slot.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const WithComplexLayout: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <AlertBanner id="complex-1" variant="warning">
         <span data-eui-slot="icon">
           <Icon name="exclamation-circle" size={20} />
@@ -298,7 +299,6 @@ export const WithComplexLayout: Story = {
         <h1>Application Content</h1>
         <p>This banner demonstrates a complex layout with multiple form elements.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
-

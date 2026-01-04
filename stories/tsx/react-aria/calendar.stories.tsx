@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Calendar } from '../../../packages/tsx/calendar';
 import '../../../src/ui/calendar.css';
 import { getSectionParameters } from '../../../.storybook/preview';
+import { ContextThemeScope } from '../../utils/context-theme';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Calendar',
@@ -21,7 +22,7 @@ export const Basic: Story = {
     const [value, setValue] = useState<Date | null>(null);
     
     return (
-      <div data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <ContextThemeScope data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <Calendar
           value={value}
           onChange={setValue}
@@ -31,7 +32,7 @@ export const Basic: Story = {
             Selected: {value.toLocaleDateString()}
           </div>
         )}
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -41,7 +42,7 @@ export const WithDefaultValue: Story = {
     const [value, setValue] = useState<Date | null>(new Date());
     
     return (
-      <div data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <ContextThemeScope data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <Calendar
           value={value}
           onChange={setValue}
@@ -51,7 +52,7 @@ export const WithDefaultValue: Story = {
             Selected: {value.toLocaleDateString()}
           </div>
         )}
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -59,12 +60,12 @@ export const WithDefaultValue: Story = {
 export const Disabled: Story = {
   render: () => {
     return (
-      <div data-eui-context="app">
+      <ContextThemeScope data-eui-context="app">
         <Calendar
           defaultValue={new Date()}
           isDisabled
         />
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -72,12 +73,12 @@ export const Disabled: Story = {
 export const ReadOnly: Story = {
   render: () => {
     return (
-      <div data-eui-context="app">
+      <ContextThemeScope data-eui-context="app">
         <Calendar
           defaultValue={new Date()}
           isReadOnly
         />
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -92,7 +93,7 @@ export const WithMinMax: Story = {
     maxDate.setDate(today.getDate() + 30); // 30 days from now
     
     return (
-      <div data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <ContextThemeScope data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <Calendar
           value={value}
           onChange={setValue}
@@ -104,8 +105,7 @@ export const WithMinMax: Story = {
           <p>Max date: {maxDate.toLocaleDateString()}</p>
           {value && <p>Selected: {value.toLocaleDateString()}</p>}
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
-

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { getSectionParameters } from '../../.storybook/preview';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/AlertBanner',
@@ -15,7 +16,7 @@ type Story = StoryObj;
 
 export const Info: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <div className="eui-alert-banner" data-eui-variant="info" data-eui-dismissible="true" data-eui-id="info-1">
         <div className="eui-alert-banner-content">
           <span className="eui-alert-banner-icon" aria-hidden="true">
@@ -36,13 +37,13 @@ export const Info: Story = {
         <h1>Application Content</h1>
         <p>This is your application content. The alert banner appears above everything.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Warning: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <div className="eui-alert-banner" data-eui-variant="warning" data-eui-dismissible="true" data-eui-id="warning-1">
         <div className="eui-alert-banner-content">
           <span className="eui-alert-banner-icon" aria-hidden="true">
@@ -64,13 +65,13 @@ export const Warning: Story = {
         <h1>Application Content</h1>
         <p>This warning banner indicates a system-wide announcement.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Error: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <div className="eui-alert-banner" data-eui-variant="error" data-eui-dismissible="true" data-eui-id="error-1">
         <div className="eui-alert-banner-content">
           <span className="eui-alert-banner-icon" aria-hidden="true">
@@ -90,13 +91,13 @@ export const Error: Story = {
         <h1>Application Content</h1>
         <p>This error banner indicates a critical system issue.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const Success: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <div className="eui-alert-banner" data-eui-variant="success" data-eui-dismissible="true" data-eui-id="success-1">
         <div className="eui-alert-banner-content">
           <span className="eui-alert-banner-icon" aria-hidden="true">
@@ -116,13 +117,13 @@ export const Success: Story = {
         <h1>Application Content</h1>
         <p>This success banner confirms a positive system update.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const WithDontShowAgain: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <div className="eui-alert-banner" data-eui-variant="warning" data-eui-dismissible="true" data-eui-id="persistent-1">
         <div className="eui-alert-banner-content">
           <span className="eui-alert-banner-icon" aria-hidden="true">
@@ -144,13 +145,13 @@ export const WithDontShowAgain: Story = {
         <h1>Application Content</h1>
         <p>This banner includes "Don't show again" option for persistent dismissal.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const NonDismissible: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ paddingTop: '60px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ paddingTop: '60px' }}>
       <div className="eui-alert-banner" data-eui-variant="info" data-eui-dismissible="false" data-eui-id="non-dismissible-1">
         <div className="eui-alert-banner-content">
           <span className="eui-alert-banner-icon" aria-hidden="true">
@@ -165,7 +166,6 @@ export const NonDismissible: Story = {
         <h1>Application Content</h1>
         <p>This banner has no dismiss button and remains visible.</p>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
-

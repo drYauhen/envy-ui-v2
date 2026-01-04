@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { CelebrationWrapper } from '../../../packages/tsx/celebration';
 import { getSectionParameters } from '../../../.storybook/preview';
+import { ContextThemeScope } from '../../utils/context-theme';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Celebration',
@@ -66,7 +67,7 @@ export const OnMount: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle} data-eui-context="application">
+    <ContextThemeScope style={containerStyle} data-eui-context="app">
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Auto-trigger on Mount</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -80,7 +81,7 @@ export const OnMount: Story = {
           </CelebrationWrapper>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -93,7 +94,7 @@ export const WithDelay: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle} data-eui-context="application">
+    <ContextThemeScope style={containerStyle} data-eui-context="app">
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Delayed Celebration</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -126,7 +127,7 @@ export const WithDelay: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -139,7 +140,7 @@ export const OnClick: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle} data-eui-context="application">
+    <ContextThemeScope style={containerStyle} data-eui-context="app">
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Click to Celebrate</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -153,7 +154,7 @@ export const OnClick: Story = {
           </CelebrationWrapper>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -169,7 +170,7 @@ export const ValueChange: Story = {
     const [count, setCount] = useState(15);
 
     return (
-      <div style={containerStyle} data-eui-context="application">
+      <ContextThemeScope style={containerStyle} data-eui-context="app">
         <div style={sectionStyle}>
           <h3 style={sectionTitleStyle}>Value Change Trigger</h3>
           <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -234,7 +235,7 @@ export const ValueChange: Story = {
             )}
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -248,7 +249,7 @@ export const OnVisible: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle} data-eui-context="application">
+    <ContextThemeScope style={containerStyle} data-eui-context="app">
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>On Visible (Scroll into view)</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -274,7 +275,7 @@ export const OnVisible: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -287,7 +288,7 @@ export const DifferentContent: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle} data-eui-context="application">
+    <ContextThemeScope style={containerStyle} data-eui-context="app">
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Works with Any Content</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -336,7 +337,6 @@ export const DifferentContent: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
-

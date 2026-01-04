@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { ContextThemeScope } from '../utils/context-theme';
 
 // Hero Section for city management (GAVTEK)
 // Visualization concepts:
@@ -192,7 +193,7 @@ const renderHeroSection = (config: any) => {
   const minHeight = responsive?.desktop?.minHeight || '600px';
 
   return (
-    <section
+    <ContextThemeScope
       style={{
         ...backgroundStyle,
         minHeight,
@@ -204,6 +205,7 @@ const renderHeroSection = (config: any) => {
         width: '100%'
       }}
       data-eui-context="website"
+      as="section"
     >
       {background.type === 'video' && background.video && (
         <video
@@ -388,7 +390,7 @@ const renderHeroSection = (config: any) => {
           </div>
         )}
       </div>
-    </section>
+    </ContextThemeScope>
   );
 };
 
@@ -412,4 +414,3 @@ export const ManagementCentered: Story = {
   name: 'Management-Centered Layout',
   render: () => renderHeroSection(cityManagementCenteredConfig)
 };
-

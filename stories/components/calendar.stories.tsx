@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import '../../src/ui/calendar.css';
 import { getSectionParameters } from '../../.storybook/preview';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Calendar',
@@ -120,7 +121,7 @@ export const Basic: Story = {
     const days = generateCalendarDays(currentYear, currentMonth);
     
     return (
-      <div data-eui-context="app" style={containerStyle}>
+      <ContextThemeScope data-eui-context="app" style={containerStyle}>
         <div className="eui-calendar">
           {/* Header */}
           <div className="eui-calendar__header">
@@ -171,7 +172,7 @@ export const Basic: Story = {
             })}
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -186,7 +187,7 @@ export const States: Story = {
     const days = generateCalendarDays(currentYear, currentMonth);
     
     return (
-      <div data-eui-context="app" style={containerStyle}>
+      <ContextThemeScope data-eui-context="app" style={containerStyle}>
         <h3 style={sectionTitleStyle}>Calendar States</h3>
         
         <div className="eui-calendar">
@@ -248,7 +249,7 @@ export const States: Story = {
             <li>Outside Month: Lighter color (previous/next month days)</li>
           </ul>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -265,7 +266,7 @@ export const DateRange: Story = {
     const rangeEnd = 20;
     
     return (
-      <div data-eui-context="app" style={containerStyle}>
+      <ContextThemeScope data-eui-context="app" style={containerStyle}>
         <h3 style={sectionTitleStyle}>Date Range Selection</h3>
         
         <div className="eui-calendar">
@@ -335,7 +336,7 @@ export const DateRange: Story = {
         <div style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
           <p><strong>Range:</strong> {rangeStart} - {rangeEnd}</p>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -372,7 +373,7 @@ export const DoubleFaced: Story = {
     const firstCurrentMonthIndex = nextDays.findIndex(item => !item.outsideMonth);
     
     return (
-      <div data-eui-context="app" style={containerStyle}>
+      <ContextThemeScope data-eui-context="app" style={containerStyle}>
         <h3 style={sectionTitleStyle}>Double-Faced Calendar (Range Picker)</h3>
         <p style={{ fontSize: '0.875rem', color: '#64748b', marginBottom: '1rem' }}>
           Two months displayed side-by-side with synchronized navigation. Single header controls both months for date range selection.
@@ -507,7 +508,7 @@ export const DoubleFaced: Story = {
             </div>
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -521,7 +522,7 @@ export const Weekly: Story = {
     const currentYear = today.getFullYear();
     
     return (
-      <div data-eui-context="app" style={containerStyle}>
+      <ContextThemeScope data-eui-context="app" style={containerStyle}>
         <h3 style={sectionTitleStyle}>Week View Calendar</h3>
         <p style={{ fontSize: '0.875rem', color: '#64748b', marginBottom: '1rem' }}>
           Week as the navigation unit. Single row of 7 days with week-based navigation instead of month-based.
@@ -572,9 +573,8 @@ export const Weekly: Story = {
             })}
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
-
 

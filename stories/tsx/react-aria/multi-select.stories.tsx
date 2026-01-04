@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import type { Key } from 'react';
 import { MultiSelect, MultiSelectItem } from '../../../packages/tsx/select';
 import { getSectionParameters } from '../../../.storybook/preview';
+import { ContextThemeScope } from '../../utils/context-theme';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/MultiSelect',
@@ -31,25 +32,25 @@ const manyItems: MultiSelectItem[] = Array.from({ length: 20 }, (_, i) => ({
 
 export const Basic: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <MultiSelect
         label="Choose options"
         placeholder="Select options..."
         items={basicItems}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const WithDefaultSelection: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <MultiSelect
         label="Choose options"
         items={basicItems}
         defaultSelectedKeys={['option2', 'option4']}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -58,7 +59,7 @@ export const Controlled: Story = {
     const [selected, setSelected] = useState<Set<Key>>(new Set(['option2']));
 
     return (
-      <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
         <MultiSelect
           label="Controlled MultiSelect"
           items={basicItems}
@@ -75,13 +76,13 @@ export const Controlled: Story = {
 
 export const ManyOptions: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <MultiSelect
         label="Choose options"
         placeholder="Select options..."
         items={manyItems}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -96,20 +97,20 @@ export const WithDisabledOptions: Story = {
     ];
 
     return (
-      <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
         <MultiSelect
           label="Choose options"
           items={itemsWithDisabled}
           defaultSelectedKeys={['option1', 'option3']}
         />
-      </div>
+      </ContextThemeScope>
     );
   }
 };
 
 export const Sizes: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <MultiSelect
         label="Small"
         items={basicItems}
@@ -128,13 +129,13 @@ export const Sizes: Story = {
         size="lg"
         defaultSelectedKeys={['option4', 'option5']}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const States: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <MultiSelect
         label="Normal"
         items={basicItems}
@@ -152,13 +153,13 @@ export const States: Story = {
         error
         defaultSelectedKeys={['option2']}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const InForm: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '400px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '400px' }}>
       <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         <MultiSelect
           label="Select multiple options"
@@ -169,10 +170,9 @@ export const InForm: Story = {
           Submit
         </button>
       </form>
-    </div>
+    </ContextThemeScope>
   )
 };
-
 
 
 

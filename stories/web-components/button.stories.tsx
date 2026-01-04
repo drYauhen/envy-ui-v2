@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ContextThemeScope } from '../utils/context-theme';
 import { useEffect } from 'react';
 import '../../packages/web-components/button'; // Registers the custom element
 // TypeScript declarations are automatically picked up from button.d.ts
@@ -58,7 +59,7 @@ export const Button: Story = {
     }, []);
 
     return (
-      <div style={containerStyle} data-eui-context="application">
+      <ContextThemeScope style={containerStyle} data-eui-context="app">
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Primary Buttons</h3>
           <div style={buttonGroupStyle}>
@@ -103,7 +104,7 @@ export const Button: Story = {
             <eui-button data-eui-intent="primary" data-eui-shape="circle">○</eui-button>
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -112,7 +113,7 @@ export const States: Story = {
   name: 'Button States',
   render: () => {
     return (
-      <div style={containerStyle} data-eui-context="application">
+      <ContextThemeScope style={containerStyle} data-eui-context="app">
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Interactive States</h3>
           <p style={{ margin: '0 0 1rem', color: '#64748b', fontSize: '14px' }}>
@@ -124,7 +125,7 @@ export const States: Story = {
             <eui-button data-eui-intent="primary" data-eui-selected>Selected</eui-button>
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -133,7 +134,7 @@ export const WithContent: Story = {
   name: 'Button with Content',
   render: () => {
     return (
-      <div style={containerStyle} data-eui-context="application">
+      <ContextThemeScope style={containerStyle} data-eui-context="app">
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Text Content</h3>
           <div style={buttonGroupStyle}>
@@ -142,8 +143,7 @@ export const WithContent: Story = {
             <eui-button data-eui-intent="accent">Delete item</eui-button>
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
-

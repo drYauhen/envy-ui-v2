@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import type { Key } from 'react';
 import { Select, SelectItem } from '../../../packages/tsx/select';
 import { getSectionParameters } from '../../../.storybook/preview';
+import { ContextThemeScope } from '../../utils/context-theme';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Select',
@@ -30,25 +31,25 @@ const manyItems: SelectItem[] = Array.from({ length: 20 }, (_, i) => ({
 
 export const Basic: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <Select
         label="Choose an option"
         placeholder="Select..."
         items={basicItems}
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const WithDefaultValue: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <Select
         label="Choose an option"
         items={basicItems}
         defaultSelectedKey="option2"
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -57,7 +58,7 @@ export const Controlled: Story = {
     const [selected, setSelected] = useState<Key | null>('option2');
 
     return (
-      <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
         <Select
           label="Controlled Select"
           items={basicItems}
@@ -74,7 +75,7 @@ export const Controlled: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <Select
         label="Small"
         items={basicItems}
@@ -93,13 +94,13 @@ export const Sizes: Story = {
         size="lg"
         defaultSelectedKey="option3"
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const States: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <Select
         label="Default"
         items={basicItems}
@@ -117,7 +118,7 @@ export const States: Story = {
         isDisabled
         defaultSelectedKey="option3"
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
@@ -132,31 +133,31 @@ export const WithDisabledOptions: Story = {
     ];
 
     return (
-      <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
         <Select
           label="Select with disabled options"
           items={itemsWithDisabled}
         />
-      </div>
+      </ContextThemeScope>
     );
   }
 };
 
 export const ManyOptions: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
       <Select
         label="Select with many options"
         items={manyItems}
         placeholder="Choose from 20 options..."
       />
-    </div>
+    </ContextThemeScope>
   )
 };
 
 export const InForm: Story = {
   render: () => (
-    <div data-eui-context="app" style={{ maxWidth: '400px' }}>
+    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '400px' }}>
       <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         <Select
           label="Country"
@@ -187,7 +188,6 @@ export const InForm: Story = {
           defaultSelectedKey="active"
         />
       </form>
-    </div>
+    </ContextThemeScope>
   )
 };
-

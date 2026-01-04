@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useEffect, useRef } from 'react';
 import { getSectionParameters } from '../../.storybook/preview';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Checkbox',
@@ -120,7 +121,7 @@ export const CheckboxContexts: Story = {
     <div style={containerStyle}>
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Application Context (Interactive)</h3>
-        <div data-eui-context="app" style={rowStyle}>
+        <ContextThemeScope data-eui-context="app" style={rowStyle}>
           <label className="eui-checkbox-wrapper">
             <input type="checkbox" className="eui-checkbox" />
             <span className="eui-label">Unchecked</span>
@@ -130,12 +131,12 @@ export const CheckboxContexts: Story = {
             <input type="checkbox" className="eui-checkbox" defaultChecked />
             <span className="eui-label">Checked</span>
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
 
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Report Context (Print Style)</h3>
-        <div data-eui-context="report" style={rowStyle}>
+        <ContextThemeScope data-eui-context="report" style={rowStyle}>
           <label className="eui-checkbox-wrapper">
             <input type="checkbox" className="eui-checkbox" disabled />
             <span className="eui-label">Unchecked (brackets)</span>
@@ -145,7 +146,7 @@ export const CheckboxContexts: Story = {
             <input type="checkbox" className="eui-checkbox" defaultChecked disabled />
             <span className="eui-label">Checked (brackets + checkmark)</span>
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
     </div>
   )
@@ -222,4 +223,3 @@ export const CheckboxSizes: Story = {
     </div>
   )
 };
-

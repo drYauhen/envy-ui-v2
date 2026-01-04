@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Layout/Form Page',
@@ -19,7 +20,7 @@ export const FormPage: Story = {
     layout: 'fullscreen'
   },
   render: () => (
-    <div data-eui-context="app">
+    <ContextThemeScope data-eui-context="app">
       <div className="eui-page">
         <div className="eui-page__header">
           <div className="eui-container" data-eui-container="standard">
@@ -84,7 +85,6 @@ export const FormPage: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </ContextThemeScope>
   )
 };
-

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { getSectionParameters } from '../../.storybook/preview';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Switch',
@@ -188,7 +189,7 @@ export const SwitchContexts: Story = {
     <div style={containerStyle}>
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Application Context (Interactive)</h3>
-        <div data-eui-context="app" style={formGroupStyle}>
+        <ContextThemeScope data-eui-context="app" style={formGroupStyle}>
           <label className="eui-switch-wrapper">
             <input type="checkbox" className="eui-switch" />
             <span className="eui-label">Interactive switch</span>
@@ -198,12 +199,12 @@ export const SwitchContexts: Story = {
             <input type="checkbox" className="eui-switch" defaultChecked />
             <span className="eui-label">Interactive switch (on)</span>
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
 
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Report Context (Print Style)</h3>
-        <div data-eui-context="report" style={formGroupStyle}>
+        <ContextThemeScope data-eui-context="report" style={formGroupStyle}>
           <label className="eui-switch-wrapper">
             <input type="checkbox" className="eui-switch" disabled />
             <span className="eui-label">Static switch (off)</span>
@@ -213,12 +214,11 @@ export const SwitchContexts: Story = {
             <input type="checkbox" className="eui-switch" defaultChecked disabled />
             <span className="eui-label">Static switch (on)</span>
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
     </div>
   )
 };
-
 
 
 

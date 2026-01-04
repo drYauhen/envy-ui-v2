@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { getSectionParameters } from '../../.storybook/preview';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Input',
@@ -127,22 +128,22 @@ export const InputContexts: Story = {
     <div style={containerStyle}>
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Application Context (Interactive)</h3>
-        <div data-eui-context="app" style={formGroupStyle}>
+        <ContextThemeScope data-eui-context="app" style={formGroupStyle}>
           <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <span className="eui-label">Interactive input</span>
             <input type="text" className="eui-input" placeholder="Type here" />
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
 
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Report Context (Print Style)</h3>
-        <div data-eui-context="report" style={formGroupStyle}>
+        <ContextThemeScope data-eui-context="report" style={formGroupStyle}>
           <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <span className="eui-label">Static input (print)</span>
             <input type="text" className="eui-input" defaultValue="Printed value" disabled />
           </label>
-        </div>
+        </ContextThemeScope>
       </div>
     </div>
   )
@@ -186,4 +187,3 @@ export const InputSizes: Story = {
     </div>
   )
 };
-

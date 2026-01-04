@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ButtonStatesViewer } from '../viewers/components/ButtonStatesViewer';
 import { getSectionParameters } from '../../.storybook/preview';
+import { ContextThemeScope } from '../utils/context-theme';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Button',
@@ -74,7 +75,7 @@ export const SparkleTest: Story = {
     }, []);
     
     return (
-      <div style={containerStyle} data-eui-context="application">
+      <ContextThemeScope style={containerStyle} data-eui-context="app">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
             Sparkle Visibility Test
@@ -93,7 +94,7 @@ export const SparkleTest: Story = {
             Finish Task
           </button>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -125,7 +126,7 @@ export const CelebrationVariants: Story = {
     ];
 
     return (
-      <div style={containerStyle} data-eui-context="application">
+      <ContextThemeScope style={containerStyle} data-eui-context="app">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <div>
             <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
@@ -156,7 +157,7 @@ export const CelebrationVariants: Story = {
             ))}
           </div>
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
@@ -192,7 +193,7 @@ export const AccentToFinished: Story = {
     };
 
     return (
-      <div style={containerStyle} data-eui-context="application">
+      <ContextThemeScope style={containerStyle} data-eui-context="app">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
             Finish Task Button
@@ -252,7 +253,7 @@ export const AccentToFinished: Story = {
             </div>
           )}
         </div>
-      </div>
+      </ContextThemeScope>
     );
   }
 };
