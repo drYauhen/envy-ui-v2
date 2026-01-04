@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "counter": {
+      "typography": {
+        "font": {
+          "weight": {
+            "$resolved": "400"
+          },
+          "size": {
+            "text": {
+              "$resolved": "1rem"
+            },
+            "pill": {
+              "$resolved": "0.875rem"
+            },
+            "filter": {
+              "$resolved": "0.875rem"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "color": {
+      "text": {
+        "primary": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "muted": {
+          "$resolved": "oklch(90% 0.00 0)"
+        }
+      },
+      "background": {
+        "base": {
+          "$resolved": "oklch(25% 0.00 0)"
+        }
+      }
+    }
+  }
+}

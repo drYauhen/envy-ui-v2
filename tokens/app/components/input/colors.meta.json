@@ -1,0 +1,48 @@
+{
+  "eui": {
+    "input": {
+      "background": {
+        "base": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "hover": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "focus": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "disabled": {
+          "$resolved": "oklch(94% 0.00 0)"
+        }
+      },
+      "border": {
+        "base": {
+          "$resolved": "oklch(48% 0.00 0)"
+        },
+        "hover": {
+          "$resolved": "oklch(84% 0.00 0)"
+        },
+        "focus": {
+          "$resolved": "oklch(49% 0.10 230)"
+        },
+        "disabled": {
+          "$resolved": "oklch(84% 0.00 0)"
+        },
+        "error": {
+          "$resolved": "oklch(59% 0.20 25)"
+        }
+      },
+      "text": {
+        "base": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "placeholder": {
+          "$resolved": "oklch(63% 0.00 0)"
+        },
+        "disabled": {
+          "$resolved": "oklch(48% 0.00 0)"
+        }
+      }
+    }
+  }
+}

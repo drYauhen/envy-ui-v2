@@ -1,0 +1,42 @@
+{
+  "eui": {
+    "hero-section": {
+      "spacing": {
+        "padding": {
+          "mobile": {
+            "inline": {
+              "$resolved": "1rem"
+            },
+            "block": {
+              "$resolved": "2rem"
+            }
+          },
+          "tablet": {
+            "inline": {
+              "$resolved": "2rem"
+            },
+            "block": {
+              "$resolved": "3rem"
+            }
+          },
+          "desktop": {
+            "inline": {
+              "$resolved": "3rem"
+            }
+          }
+        },
+        "gap": {
+          "content": {
+            "$resolved": "1.5rem"
+          },
+          "cta": {
+            "$resolved": "1rem"
+          },
+          "media": {
+            "$resolved": "2rem"
+          }
+        }
+      }
+    }
+  }
+}

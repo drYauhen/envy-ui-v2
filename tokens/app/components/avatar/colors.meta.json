@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "avatar": {
+      "background": {
+        "fallback": {
+          "$resolved": "oklch(96.5% 0.00 0)"
+        }
+      },
+      "text": {
+        "fallback": {
+          "$resolved": "oklch(75% 0.00 0)"
+        }
+      }
+    }
+  }
+}

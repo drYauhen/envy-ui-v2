@@ -1,0 +1,28 @@
+{
+  "eui": {
+    "input": {
+      "focus": {
+        "ring": {
+          "color": {
+            "derived": {
+              "base": {
+                "$resolved": "oklch(65% 0.09 231)"
+              },
+              "accessible": {
+                "$resolved": "oklch(49% 0.10 230)"
+              }
+            }
+          },
+          "width": {
+            "base": {
+              "$resolved": "2px"
+            },
+            "accessible": {
+              "$resolved": "3px"
+            }
+          }
+        }
+      }
+    }
+  }
+}

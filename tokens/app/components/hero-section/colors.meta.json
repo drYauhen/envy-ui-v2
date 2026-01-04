@@ -1,0 +1,21 @@
+{
+  "eui": {
+    "hero-section": {
+      "colors": {
+        "background": {
+          "base": {
+            "$resolved": "oklch(25% 0.00 0)"
+          }
+        },
+        "text": {
+          "heading": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "subheading": {
+            "$resolved": "oklch(90% 0.00 0)"
+          }
+        }
+      }
+    }
+  }
+}

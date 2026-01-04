@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "menu": {
+      "border": {
+        "color": {
+          "$resolved": "oklch(94% 0.00 0)"
+        }
+      }
+    }
+  }
+}

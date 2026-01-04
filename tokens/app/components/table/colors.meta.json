@@ -1,0 +1,48 @@
+{
+  "eui": {
+    "table": {
+      "colors": {
+        "background": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "border": {
+          "$resolved": "oklch(90% 0.00 0)"
+        },
+        "header": {
+          "background": {
+            "$resolved": "oklch(96.5% 0.00 0)"
+          },
+          "text": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        },
+        "subheader": {
+          "background": {
+            "$resolved": "oklch(94% 0.00 0)"
+          },
+          "text": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        },
+        "row": {
+          "background": {
+            "default": {
+              "$resolved": "oklch(100% 0 0)"
+            },
+            "hover": {
+              "$resolved": "oklch(94% 0.00 0)"
+            },
+            "selected": {
+              "$resolved": "oklch(96% 0.04 236)"
+            }
+          }
+        },
+        "cell": {
+          "text": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        }
+      }
+    }
+  }
+}

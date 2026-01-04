@@ -1,0 +1,76 @@
+{
+  "eui": {
+    "select": {
+      "primitive": {
+        "trigger": {
+          "spacing": {
+            "gap": {
+              "$resolved": "0.25rem"
+            }
+          }
+        },
+        "popover": {
+          "spacing": {
+            "padding": {
+              "$resolved": "0.5rem"
+            }
+          }
+        },
+        "listbox": {
+          "spacing": {
+            "gap": {
+              "$resolved": "0.25rem"
+            }
+          }
+        },
+        "option": {
+          "spacing": {
+            "padding": {
+              "horizontal": {
+                "$resolved": "0.75rem"
+              },
+              "vertical": {
+                "$resolved": "0.5rem"
+              }
+            }
+          },
+          "shape": {
+            "radius": {
+              "$resolved": "4px"
+            }
+          }
+        },
+        "badge": {
+          "spacing": {
+            "gap": {
+              "$resolved": "0.25rem"
+            },
+            "padding": {
+              "horizontal": {
+                "$resolved": "0.25rem"
+              }
+            }
+          },
+          "shape": {
+            "radius": {
+              "$resolved": "2px"
+            }
+          },
+          "colors": {
+            "background": {
+              "$resolved": "oklch(96.5% 0.00 0)"
+            },
+            "text": {
+              "$resolved": "oklch(100% 0 0)"
+            },
+            "remove": {
+              "icon": {
+                "$resolved": "oklch(63% 0.00 0)"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

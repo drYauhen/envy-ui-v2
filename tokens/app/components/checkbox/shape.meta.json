@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "checkbox": {
+      "shape": {
+        "radius": {
+          "$resolved": "2px"
+        }
+      }
+    }
+  }
+}

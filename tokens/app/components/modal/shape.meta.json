@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "modal": {
+      "shape": {
+        "radius": {
+          "$resolved": "12px"
+        }
+      }
+    }
+  }
+}

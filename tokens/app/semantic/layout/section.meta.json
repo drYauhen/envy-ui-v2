@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "layout": {
+      "section": {
+        "gap": {
+          "$resolved": "1rem"
+        },
+        "padding": {
+          "$resolved": "1rem"
+        },
+        "title": {
+          "gap": {
+            "$resolved": "0.5rem"
+          }
+        }
+      }
+    }
+  }
+}

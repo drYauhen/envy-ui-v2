@@ -1,0 +1,18 @@
+{
+  "eui": {
+    "button": {
+      "shape": {
+        "default": {
+          "radius": {
+            "$resolved": "4px"
+          }
+        },
+        "round": {
+          "radius": {
+            "$resolved": "9999px"
+          }
+        }
+      }
+    }
+  }
+}

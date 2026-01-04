@@ -1,0 +1,167 @@
+{
+  "eui": {
+    "button": {
+      "primary": {
+        "background": {
+          "base": {
+            "$resolved": "oklch(49% 0.10 230)"
+          },
+          "hover": {
+            "$resolved": "oklch(49% 0.10 230)"
+          },
+          "active": {
+            "$resolved": "oklch(49% 0.10 230)"
+          },
+          "disabled": {
+            "$resolved": "oklch(94% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(49% 0.10 230)"
+          }
+        },
+        "label": {
+          "base": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "hover": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "active": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "disabled": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        }
+      },
+      "secondary": {
+        "background": {
+          "base": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "hover": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "active": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "disabled": {
+            "$resolved": "oklch(94% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        },
+        "label": {
+          "base": {
+            "$resolved": "oklch(25% 0.00 0)"
+          },
+          "hover": {
+            "$resolved": "oklch(25% 0.00 0)"
+          },
+          "active": {
+            "$resolved": "oklch(25% 0.00 0)"
+          },
+          "disabled": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(25% 0.00 0)"
+          }
+        },
+        "border": {
+          "base": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "hover": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "active": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "disabled": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(48% 0.00 0)"
+          }
+        }
+      },
+      "accent": {
+        "background": {
+          "base": {
+            "$resolved": "oklch(68% 0.15 237)"
+          },
+          "hover": {
+            "$resolved": "oklch(68% 0.15 237)"
+          },
+          "active": {
+            "$resolved": "oklch(68% 0.15 237)"
+          },
+          "disabled": {
+            "$resolved": "oklch(94% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(68% 0.15 237)"
+          }
+        },
+        "label": {
+          "base": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "hover": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "active": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "disabled": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        }
+      },
+      "accent-finished": {
+        "background": {
+          "base": {
+            "$resolved": "oklch(89% 0.09 236)"
+          },
+          "hover": {
+            "$resolved": "oklch(89% 0.09 236)"
+          },
+          "active": {
+            "$resolved": "oklch(89% 0.09 236)"
+          },
+          "disabled": {
+            "$resolved": "oklch(94% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(89% 0.09 236)"
+          }
+        },
+        "label": {
+          "base": {
+            "$resolved": "oklch(63% 0.15 237)"
+          },
+          "hover": {
+            "$resolved": "oklch(63% 0.15 237)"
+          },
+          "active": {
+            "$resolved": "oklch(63% 0.15 237)"
+          },
+          "disabled": {
+            "$resolved": "oklch(48% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(63% 0.15 237)"
+          }
+        }
+      }
+    }
+  }
+}

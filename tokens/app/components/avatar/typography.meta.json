@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "avatar": {
+      "typography": {
+        "textTransform": {
+          "$resolved": "uppercase"
+        }
+      }
+    }
+  }
+}

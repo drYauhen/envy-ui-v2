@@ -1,0 +1,46 @@
+{
+  "eui": {
+    "form": {
+      "spacing": {
+        "field": {
+          "gap": {
+            "internal": {
+              "$resolved": "0.5rem"
+            },
+            "external": {
+              "$resolved": "1rem"
+            }
+          }
+        },
+        "section": {
+          "gap": {
+            "internal": {
+              "$resolved": "1rem"
+            },
+            "external": {
+              "$resolved": "1.5rem"
+            },
+            "title": {
+              "$resolved": "1rem"
+            }
+          },
+          "header": {
+            "padding": {
+              "$resolved": "0.5rem"
+            }
+          }
+        },
+        "group": {
+          "gap": {
+            "$resolved": "0.5rem"
+          }
+        },
+        "row": {
+          "gap": {
+            "$resolved": "1rem"
+          }
+        }
+      }
+    }
+  }
+}

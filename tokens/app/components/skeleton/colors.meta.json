@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "skeleton": {
+      "colors": {
+        "background": {
+          "base": {
+            "$resolved": "oklch(94% 0.00 0)"
+          }
+        }
+      }
+    }
+  }
+}

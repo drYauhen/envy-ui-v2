@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "menu": {
+      "shape": {
+        "radius": {
+          "$resolved": "8px"
+        }
+      }
+    }
+  }
+}

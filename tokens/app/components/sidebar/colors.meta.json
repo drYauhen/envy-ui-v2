@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "sidebar": {
+      "colors": {
+        "background": {
+          "$resolved": "oklch(49% 0.10 230)"
+        },
+        "text": {
+          "$resolved": "oklch(100% 0 0)"
+        }
+      }
+    }
+  }
+}

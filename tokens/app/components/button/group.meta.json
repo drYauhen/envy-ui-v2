@@ -1,0 +1,80 @@
+{
+  "eui": {
+    "button": {
+      "group": {
+        "position": {
+          "single": {
+            "shape": {
+              "corner": {
+                "topLeft": {
+                  "$resolved": "4px"
+                },
+                "topRight": {
+                  "$resolved": "4px"
+                },
+                "bottomRight": {
+                  "$resolved": "4px"
+                },
+                "bottomLeft": {
+                  "$resolved": "4px"
+                }
+              }
+            }
+          },
+          "first": {
+            "shape": {
+              "orientation": {
+                "horizontal": {
+                  "corner": {
+                    "topLeft": {
+                      "$resolved": "4px"
+                    },
+                    "bottomLeft": {
+                      "$resolved": "4px"
+                    }
+                  }
+                },
+                "vertical": {
+                  "corner": {
+                    "topLeft": {
+                      "$resolved": "4px"
+                    },
+                    "topRight": {
+                      "$resolved": "4px"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "last": {
+            "shape": {
+              "orientation": {
+                "horizontal": {
+                  "corner": {
+                    "topRight": {
+                      "$resolved": "4px"
+                    },
+                    "bottomRight": {
+                      "$resolved": "4px"
+                    }
+                  }
+                },
+                "vertical": {
+                  "corner": {
+                    "bottomRight": {
+                      "$resolved": "4px"
+                    },
+                    "bottomLeft": {
+                      "$resolved": "4px"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

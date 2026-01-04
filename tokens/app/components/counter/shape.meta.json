@@ -1,0 +1,18 @@
+{
+  "eui": {
+    "counter": {
+      "shape": {
+        "pill": {
+          "radius": {
+            "$resolved": "9999px"
+          }
+        },
+        "filter": {
+          "radius": {
+            "$resolved": "9999px"
+          }
+        }
+      }
+    }
+  }
+}

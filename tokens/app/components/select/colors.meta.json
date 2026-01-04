@@ -1,0 +1,22 @@
+{
+  "eui": {
+    "select": {
+      "trigger": {
+        "background": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "border": {
+          "$resolved": "oklch(48% 0.00 0)"
+        }
+      },
+      "icon": {
+        "color": {
+          "$resolved": "oklch(63% 0.00 0)"
+        },
+        "disabled": {
+          "$resolved": "oklch(48% 0.00 0)"
+        }
+      }
+    }
+  }
+}

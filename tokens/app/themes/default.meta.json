@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "color": {
+      "border": {
+        "default": {
+          "$resolved": "oklch(90% 0.00 0)"
+        }
+      }
+    },
+    "radius": {
+      "full": {
+        "$resolved": "9999px"
+      }
+    }
+  }
+}

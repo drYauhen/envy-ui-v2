@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "color": {
+      "focus": {
+        "ring": {
+          "$resolved": "#ff4d00"
+        }
+      },
+      "system": {
+        "focus": {
+          "$resolved": "#ff4d00"
+        }
+      }
+    }
+  }
+}

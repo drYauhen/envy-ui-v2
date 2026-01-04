@@ -1,0 +1,103 @@
+{
+  "eui": {
+    "calendar": {
+      "colors": {
+        "background": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "header": {
+          "background": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "text": {
+            "$resolved": "oklch(25% 0.00 0)"
+          },
+          "button": {
+            "text": {
+              "$resolved": "oklch(63% 0.15 237)"
+            },
+            "hover": {
+              "background": {
+                "$resolved": "oklch(96% 0.04 236)"
+              }
+            },
+            "active": {
+              "background": {
+                "$resolved": "oklch(93% 0.06 236)"
+              }
+            }
+          }
+        },
+        "weekday": {
+          "text": {
+            "$resolved": "oklch(63% 0.00 0)"
+          }
+        },
+        "day": {
+          "background": {
+            "default": {
+              "$resolved": "oklch(100% 0 0)"
+            },
+            "hover": {
+              "$resolved": "oklch(89% 0.09 236)"
+            },
+            "selected": {
+              "$resolved": "oklch(63% 0.15 237)"
+            },
+            "selectedHover": {
+              "$resolved": "oklch(68% 0.15 237)"
+            },
+            "active": {
+              "$resolved": "oklch(96% 0.04 236)"
+            },
+            "today": {
+              "$resolved": "oklch(100% 0 0)"
+            },
+            "disabled": {
+              "$resolved": "oklch(98% 0.00 0)"
+            },
+            "outsideMonth": {
+              "$resolved": "oklch(98% 0.00 0)"
+            }
+          },
+          "text": {
+            "default": {
+              "$resolved": "oklch(25% 0.00 0)"
+            },
+            "selected": {
+              "$resolved": "oklch(100% 0 0)"
+            },
+            "disabled": {
+              "$resolved": "oklch(90% 0.00 0)"
+            },
+            "outsideMonth": {
+              "$resolved": "oklch(63% 0.00 0)"
+            },
+            "today": {
+              "$resolved": "oklch(25% 0.00 0)"
+            }
+          },
+          "border": {
+            "default": {
+              "$resolved": "oklch(94% 0.00 0)"
+            },
+            "selected": {
+              "$resolved": "oklch(63% 0.15 237)"
+            }
+          }
+        },
+        "range": {
+          "background": {
+            "$resolved": "oklch(96% 0.04 236)"
+          },
+          "backgroundHover": {
+            "$resolved": "oklch(93% 0.06 236)"
+          },
+          "text": {
+            "$resolved": "oklch(25% 0.00 0)"
+          }
+        }
+      }
+    }
+  }
+}

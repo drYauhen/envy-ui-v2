@@ -1,0 +1,53 @@
+{
+  "eui": {
+    "card": {
+      "variant": {
+        "elevated": {
+          "shadow": {
+            "$resolved": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)"
+          },
+          "border": {
+            "color": {
+              "$resolved": "oklch(48% 0.00 0)"
+            }
+          },
+          "background": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "radius": {
+            "$resolved": "8px"
+          }
+        },
+        "flat": {
+          "border": {
+            "color": {
+              "$resolved": "oklch(48% 0.00 0)"
+            }
+          },
+          "background": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "radius": {
+            "$resolved": "8px"
+          }
+        },
+        "strong": {
+          "shadow": {
+            "$resolved": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"
+          },
+          "border": {
+            "color": {
+              "$resolved": "oklch(48% 0.00 0)"
+            }
+          },
+          "background": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "radius": {
+            "$resolved": "8px"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "switch": {
+      "shape": {
+        "radius": {
+          "track": {
+            "$resolved": "9999px"
+          },
+          "thumb": {
+            "$resolved": "9999px"
+          }
+        }
+      }
+    }
+  }
+}

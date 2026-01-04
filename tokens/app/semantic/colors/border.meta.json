@@ -1,0 +1,20 @@
+{
+  "eui": {
+    "color": {
+      "border": {
+        "default": {
+          "$resolved": "oklch(90% 0.00 0)"
+        },
+        "subtle": {
+          "$resolved": "oklch(94% 0.00 0)"
+        },
+        "strong": {
+          "$resolved": "oklch(84% 0.00 0)"
+        },
+        "inverse": {
+          "$resolved": "oklch(33% 0.00 0)"
+        }
+      }
+    }
+  }
+}

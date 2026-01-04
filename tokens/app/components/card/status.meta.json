@@ -1,0 +1,43 @@
+{
+  "eui": {
+    "card": {
+      "status": {
+        "pending": {
+          "indicator": {
+            "$resolved": "oklch(64% 0.00 326)"
+          }
+        },
+        "onTrack": {
+          "indicator": {
+            "$resolved": "oklch(66% 0.18 137)"
+          }
+        },
+        "completed": {
+          "indicator": {
+            "$resolved": "oklch(51% 0.16 256)"
+          }
+        },
+        "minorDisruption": {
+          "indicator": {
+            "$resolved": "oklch(89% 0.18 95)"
+          }
+        },
+        "majorDisruption": {
+          "indicator": {
+            "$resolved": "oklch(58% 0.23 26)"
+          }
+        },
+        "upcoming": {
+          "indicator": {
+            "$resolved": "oklch(57% 0.10 312)"
+          }
+        },
+        "discontinued": {
+          "indicator": {
+            "$resolved": "oklch(32% 0.01 61)"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "eui": {
+    "color": {
+      "border": {
+        "default": {
+          "$resolved": "oklch(48% 0.00 0)"
+        }
+      },
+      "text": {
+        "primary": {
+          "$resolved": "oklch(25% 0.00 0)"
+        },
+        "disabled": {
+          "$resolved": "oklch(48% 0.00 0)"
+        }
+      },
+      "background": {
+        "muted": {
+          "$resolved": "oklch(94% 0.00 0)"
+        }
+      }
+    },
+    "radius": {
+      "full": {
+        "$resolved": "9999px"
+      }
+    }
+  }
+}

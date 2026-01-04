@@ -1,0 +1,9 @@
+{
+  "eui": {
+    "menu": {
+      "shadow": {
+        "$resolved": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"
+      }
+    }
+  }
+}

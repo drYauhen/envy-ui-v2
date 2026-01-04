@@ -1,0 +1,78 @@
+{
+  "eui": {
+    "checkbox": {
+      "background": {
+        "base": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "checked": {
+          "$resolved": "oklch(68% 0.15 237)"
+        },
+        "disabled": {
+          "$resolved": "oklch(94% 0.00 0)"
+        },
+        "checkedDisabled": {
+          "$resolved": "oklch(94% 0.00 0)"
+        },
+        "hover": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "checkedHover": {
+          "$resolved": "oklch(68% 0.15 237)"
+        },
+        "indeterminate": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "indeterminateHover": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "indeterminateDisabled": {
+          "$resolved": "oklch(94% 0.00 0)"
+        }
+      },
+      "border": {
+        "base": {
+          "$resolved": "oklch(84% 0.00 0)"
+        },
+        "checked": {
+          "$resolved": "oklch(58% 0.14 237)"
+        },
+        "disabled": {
+          "$resolved": "oklch(75% 0.00 0)"
+        },
+        "checkedDisabled": {
+          "$resolved": "oklch(75% 0.00 0)"
+        },
+        "hover": {
+          "$resolved": "oklch(84% 0.00 0)"
+        },
+        "checkedHover": {
+          "$resolved": "oklch(58% 0.14 237)"
+        },
+        "indeterminate": {
+          "$resolved": "oklch(84% 0.00 0)"
+        },
+        "indeterminateHover": {
+          "$resolved": "oklch(84% 0.00 0)"
+        },
+        "indeterminateDisabled": {
+          "$resolved": "oklch(75% 0.00 0)"
+        }
+      },
+      "checkmark": {
+        "base": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "disabled": {
+          "$resolved": "oklch(75% 0.00 0)"
+        },
+        "indeterminate": {
+          "$resolved": "oklch(76% 0.15 237)"
+        },
+        "indeterminateDisabled": {
+          "$resolved": "oklch(75% 0.00 0)"
+        }
+      }
+    }
+  }
+}

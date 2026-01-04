@@ -1,0 +1,17 @@
+{
+  "eui": {
+    "layout": {
+      "toolbar": {
+        "gap": {
+          "$resolved": "0.5rem"
+        },
+        "paddingY": {
+          "$resolved": "1rem"
+        },
+        "height": {
+          "$resolved": "40px"
+        }
+      }
+    }
+  }
+}

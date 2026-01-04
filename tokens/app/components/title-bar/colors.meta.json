@@ -1,0 +1,17 @@
+{
+  "eui": {
+    "title-bar": {
+      "colors": {
+        "background": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "text": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "border": {
+          "$resolved": "oklch(48% 0.00 0)"
+        }
+      }
+    }
+  }
+}

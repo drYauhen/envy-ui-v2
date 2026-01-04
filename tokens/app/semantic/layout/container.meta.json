@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "layout": {
+      "container": {
+        "gutterX": {
+          "$resolved": "1.5rem"
+        }
+      }
+    }
+  }
+}

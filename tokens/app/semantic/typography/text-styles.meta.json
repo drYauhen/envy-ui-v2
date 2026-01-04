@@ -1,0 +1,152 @@
+{
+  "eui": {
+    "typography": {
+      "textStyle": {
+        "heading": {
+          "1": {
+            "fontSize": {
+              "$resolved": "4.5rem"
+            },
+            "fontWeight": {
+              "$resolved": "700"
+            },
+            "lineHeight": {
+              "$resolved": "1.25"
+            }
+          },
+          "2": {
+            "fontSize": {
+              "$resolved": "3.75rem"
+            },
+            "fontWeight": {
+              "$resolved": "700"
+            },
+            "lineHeight": {
+              "$resolved": "1.25"
+            }
+          },
+          "3": {
+            "fontSize": {
+              "$resolved": "3rem"
+            },
+            "fontWeight": {
+              "$resolved": "700"
+            },
+            "lineHeight": {
+              "$resolved": "1.25"
+            }
+          },
+          "4": {
+            "fontSize": {
+              "$resolved": "2.25rem"
+            },
+            "fontWeight": {
+              "$resolved": "700"
+            },
+            "lineHeight": {
+              "$resolved": "1.25"
+            }
+          },
+          "5": {
+            "fontSize": {
+              "$resolved": "1.875rem"
+            },
+            "fontWeight": {
+              "$resolved": "700"
+            },
+            "lineHeight": {
+              "$resolved": "1.25"
+            }
+          },
+          "6": {
+            "fontSize": {
+              "$resolved": "1.5rem"
+            },
+            "fontWeight": {
+              "$resolved": "600"
+            },
+            "lineHeight": {
+              "$resolved": "1.25"
+            }
+          }
+        },
+        "body": {
+          "large": {
+            "fontSize": {
+              "$resolved": "1.125rem"
+            },
+            "fontWeight": {
+              "$resolved": "400"
+            },
+            "lineHeight": {
+              "$resolved": "1.5"
+            }
+          },
+          "base": {
+            "fontSize": {
+              "$resolved": "1rem"
+            },
+            "fontWeight": {
+              "$resolved": "400"
+            },
+            "lineHeight": {
+              "$resolved": "1.5"
+            }
+          },
+          "small": {
+            "fontSize": {
+              "$resolved": "0.875rem"
+            },
+            "fontWeight": {
+              "$resolved": "400"
+            },
+            "lineHeight": {
+              "$resolved": "1.5"
+            }
+          }
+        },
+        "caption": {
+          "fontSize": {
+            "$resolved": "0.75rem"
+          },
+          "fontWeight": {
+            "$resolved": "400"
+          },
+          "lineHeight": {
+            "$resolved": "1.5"
+          }
+        },
+        "code": {
+          "base": {
+            "fontSize": {
+              "$resolved": "0.875rem"
+            },
+            "fontWeight": {
+              "$resolved": "400"
+            },
+            "lineHeight": {
+              "$resolved": "1.5"
+            },
+            "fontFamily": {
+              "$resolved": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace"
+            }
+          },
+          "small": {
+            "fontSize": {
+              "$resolved": "0.75rem"
+            },
+            "fontWeight": {
+              "$resolved": "400"
+            },
+            "lineHeight": {
+              "$resolved": "1.5"
+            },
+            "fontFamily": {
+              "$resolved": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace"
+            }
+          }
+        }
+      }
+    }
+  }
+}

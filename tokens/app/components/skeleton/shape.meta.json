@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "skeleton": {
+      "shape": {
+        "rectangular": {
+          "radius": {
+            "$resolved": "4px"
+          }
+        }
+      }
+    }
+  }
+}

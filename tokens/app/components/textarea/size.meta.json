@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "textarea": {
+      "size": {
+        "padding": {
+          "inline": {
+            "$resolved": "12px"
+          }
+        }
+      }
+    }
+  }
+}

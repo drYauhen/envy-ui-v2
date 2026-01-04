@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "calendar": {
+      "border": {
+        "radius": {
+          "calendar": {
+            "$resolved": "4px"
+          },
+          "day": {
+            "$resolved": "4px"
+          }
+        }
+      }
+    }
+  }
+}

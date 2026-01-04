@@ -1,0 +1,14 @@
+{
+  "eui": {
+    "avatar": {
+      "border": {
+        "color": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "colorLead": {
+          "$resolved": "oklch(68% 0.15 237)"
+        }
+      }
+    }
+  }
+}

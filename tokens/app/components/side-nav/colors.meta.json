@@ -1,0 +1,93 @@
+{
+  "eui": {
+    "side-nav": {
+      "colors": {
+        "background": {
+          "$resolved": "oklch(49% 0.10 230)"
+        },
+        "border": {
+          "$resolved": "oklch(49% 0.10 230)"
+        },
+        "item": {
+          "background": {
+            "hover": {
+              "$resolved": "oklch(47% 0.10 230)"
+            },
+            "active": {
+              "$resolved": "oklch(57% 0.09 231)"
+            },
+            "selected": {
+              "$resolved": "oklch(57% 0.09 231)"
+            }
+          },
+          "text": {
+            "default": {
+              "$resolved": "oklch(93% 0.05 232)"
+            },
+            "hover": {
+              "$resolved": "oklch(100% 0 0)"
+            },
+            "active": {
+              "$resolved": "oklch(100% 0 0)"
+            },
+            "selected": {
+              "$resolved": "oklch(93% 0.05 232)"
+            },
+            "disabled": {
+              "$resolved": "oklch(48% 0.00 0)"
+            }
+          },
+          "indicator": {
+            "active": {
+              "$resolved": "oklch(85% 0.06 231)"
+            },
+            "selected": {
+              "$resolved": "oklch(75% 0.08 231)"
+            }
+          },
+          "badge": {
+            "background": {
+              "$resolved": "oklch(85% 0.06 231)"
+            },
+            "text": {
+              "$resolved": "oklch(46% 0.09 231)"
+            }
+          }
+        },
+        "section": {
+          "title": {
+            "text": {
+              "$resolved": "oklch(100% 0 0)"
+            }
+          }
+        },
+        "separator": {
+          "$resolved": "oklch(94% 0.00 0)"
+        },
+        "header": {
+          "border": {
+            "$resolved": "oklch(75% 0.08 231)"
+          }
+        },
+        "footer": {
+          "border": {
+            "$resolved": "oklch(75% 0.08 231)"
+          }
+        },
+        "toggle": {
+          "border": {
+            "$resolved": "oklch(85% 0.06 231)"
+          }
+        },
+        "tooltip": {
+          "background": {
+            "$resolved": "oklch(25% 0.00 0)"
+          },
+          "text": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "eui": {
+    "input": {
+      "group": {
+        "spacing": {
+          "prefix": {
+            "padding": {
+              "left": {
+                "$resolved": "0.5rem"
+              },
+              "right": {
+                "$resolved": "0.25rem"
+              }
+            }
+          },
+          "suffix": {
+            "padding": {
+              "left": {
+                "$resolved": "0.25rem"
+              },
+              "right": {
+                "$resolved": "0.5rem"
+              }
+            }
+          },
+          "input": {
+            "padding": {
+              "left": {
+                "$resolved": "0.5rem"
+              },
+              "right": {
+                "$resolved": "0.5rem"
+              }
+            }
+          }
+        },
+        "size": {
+          "prefix": {
+            "width": {
+              "sm": {
+                "$resolved": "36px"
+              },
+              "md": {
+                "$resolved": "40px"
+              },
+              "lg": {
+                "$resolved": "44px"
+              }
+            },
+            "height": {
+              "sm": {
+                "$resolved": "36px"
+              },
+              "md": {
+                "$resolved": "40px"
+              },
+              "lg": {
+                "$resolved": "44px"
+              }
+            }
+          },
+          "suffix": {
+            "width": {
+              "sm": {
+                "$resolved": "36px"
+              },
+              "md": {
+                "$resolved": "40px"
+              },
+              "lg": {
+                "$resolved": "44px"
+              }
+            },
+            "height": {
+              "sm": {
+                "$resolved": "36px"
+              },
+              "md": {
+                "$resolved": "40px"
+              },
+              "lg": {
+                "$resolved": "44px"
+              }
+            }
+          }
+        },
+        "colors": {
+          "prefix": {
+            "text": {
+              "$resolved": "oklch(63% 0.00 0)"
+            }
+          },
+          "suffix": {
+            "text": {
+              "$resolved": "oklch(63% 0.00 0)"
+            }
+          }
+        }
+      }
+    }
+  }
+}

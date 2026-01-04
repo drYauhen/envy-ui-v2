@@ -1,0 +1,61 @@
+{
+  "eui": {
+    "counter": {
+      "colors": {
+        "pill": {
+          "default": {
+            "background": {
+              "$resolved": "oklch(93% 0.06 236)"
+            },
+            "color": {
+              "$resolved": "oklch(100% 0 0)"
+            }
+          },
+          "inverse": {
+            "color": {
+              "$resolved": "oklch(100% 0 0)"
+            }
+          },
+          "disabled": {
+            "background": {
+              "$resolved": "oklch(90% 0.00 0)"
+            },
+            "color": {
+              "$resolved": "oklch(48% 0.00 0)"
+            }
+          }
+        },
+        "text": {
+          "default": {
+            "color": {
+              "$resolved": "oklch(100% 0 0)"
+            }
+          },
+          "inverse": {
+            "color": {
+              "$resolved": "oklch(100% 0 0)"
+            }
+          },
+          "disabled": {
+            "color": {
+              "$resolved": "oklch(48% 0.00 0)"
+            }
+          }
+        },
+        "filter": {
+          "background": {
+            "$resolved": "oklch(89% 0.09 236)"
+          },
+          "color": {
+            "$resolved": "oklch(63% 0.15 237)"
+          },
+          "icon": {
+            "color": {
+              "$resolved": "oklch(68% 0.15 237)"
+            }
+          }
+        }
+      }
+    }
+  }
+}

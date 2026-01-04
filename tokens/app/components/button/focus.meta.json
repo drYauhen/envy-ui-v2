@@ -1,0 +1,20 @@
+{
+  "eui": {
+    "button": {
+      "focus": {
+        "ring": {
+          "color": {
+            "derived": {
+              "base": {
+                "$resolved": "oklch(48% 0.00 0)"
+              },
+              "accessible": {
+                "$resolved": "oklch(48% 0.00 0)"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

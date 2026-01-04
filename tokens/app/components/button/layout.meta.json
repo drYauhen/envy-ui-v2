@@ -1,0 +1,18 @@
+{
+  "eui": {
+    "button": {
+      "layout": {
+        "stack": {
+          "separator": {
+            "inset": {
+              "$resolved": "6px"
+            },
+            "thickness": {
+              "$resolved": "1px"
+            }
+          }
+        }
+      }
+    }
+  }
+}

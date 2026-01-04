@@ -1,0 +1,9 @@
+{
+  "eui": {
+    "radius": {
+      "full": {
+        "$resolved": "9999px"
+      }
+    }
+  }
+}

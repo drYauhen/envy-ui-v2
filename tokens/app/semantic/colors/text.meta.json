@@ -1,0 +1,23 @@
+{
+  "eui": {
+    "color": {
+      "text": {
+        "primary": {
+          "$resolved": "oklch(25% 0.00 0)"
+        },
+        "muted": {
+          "$resolved": "oklch(48% 0.00 0)"
+        },
+        "subtle": {
+          "$resolved": "oklch(63% 0.00 0)"
+        },
+        "inverse": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "disabled": {
+          "$resolved": "oklch(75% 0.00 0)"
+        }
+      }
+    }
+  }
+}

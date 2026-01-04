@@ -1,0 +1,21 @@
+{
+  "eui": {
+    "table": {
+      "spacing": {
+        "toolbar": {
+          "gap": {
+            "$resolved": "0.5rem"
+          },
+          "paddingY": {
+            "$resolved": "1rem"
+          }
+        },
+        "footer": {
+          "paddingY": {
+            "$resolved": "1rem"
+          }
+        }
+      }
+    }
+  }
+}

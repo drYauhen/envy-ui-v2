@@ -1,0 +1,64 @@
+{
+  "eui": {
+    "alert-banner": {
+      "colors": {
+        "background": {
+          "info": {
+            "$resolved": "oklch(88% 0.07 236)"
+          },
+          "warning": {
+            "$resolved": "oklch(97% 0.08 69)"
+          },
+          "error": {
+            "$resolved": "oklch(84% 0.10 24)"
+          },
+          "success": {
+            "$resolved": "oklch(92% 0.10 149)"
+          }
+        },
+        "border": {
+          "info": {
+            "$resolved": "oklch(63% 0.15 237)"
+          },
+          "warning": {
+            "$resolved": "oklch(72% 0.15 70)"
+          },
+          "error": {
+            "$resolved": "oklch(59% 0.20 25)"
+          },
+          "success": {
+            "$resolved": "oklch(67% 0.18 150)"
+          }
+        },
+        "text": {
+          "info": {
+            "$resolved": "oklch(60% 0.14 237)"
+          },
+          "warning": {
+            "$resolved": "oklch(69% 0.15 70)"
+          },
+          "error": {
+            "$resolved": "oklch(56% 0.19 25)"
+          },
+          "success": {
+            "$resolved": "oklch(64% 0.17 150)"
+          }
+        },
+        "icon": {
+          "info": {
+            "$resolved": "oklch(63% 0.15 237)"
+          },
+          "warning": {
+            "$resolved": "oklch(72% 0.15 70)"
+          },
+          "error": {
+            "$resolved": "oklch(59% 0.20 25)"
+          },
+          "success": {
+            "$resolved": "oklch(67% 0.18 150)"
+          }
+        }
+      }
+    }
+  }
+}

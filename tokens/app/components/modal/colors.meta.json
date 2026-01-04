@@ -1,0 +1,43 @@
+{
+  "eui": {
+    "modal": {
+      "colors": {
+        "header": {
+          "background": {
+            "$resolved": "oklch(49% 0.10 230)"
+          },
+          "text": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        },
+        "body": {
+          "background": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "text": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        },
+        "footer": {
+          "background": {
+            "$resolved": "oklch(96.5% 0.00 0)"
+          },
+          "text": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "border": {
+            "$resolved": "oklch(48% 0.00 0)"
+          }
+        },
+        "close": {
+          "color": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "hover": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        }
+      }
+    }
+  }
+}

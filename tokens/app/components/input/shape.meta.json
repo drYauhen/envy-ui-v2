@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "input": {
+      "shape": {
+        "radius": {
+          "$resolved": "4px"
+        }
+      }
+    }
+  }
+}

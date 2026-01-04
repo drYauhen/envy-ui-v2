@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "logo": {
+      "colors": {
+        "icon": {
+          "default": {
+            "$resolved": "oklch(49% 0.10 230)"
+          },
+          "inverse": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "grayscale": {
+            "$resolved": "oklch(63% 0.00 0)"
+          }
+        }
+      }
+    }
+  }
+}

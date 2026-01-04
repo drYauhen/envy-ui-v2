@@ -1,0 +1,19 @@
+{
+  "eui": {
+    "alert-banner": {
+      "spacing": {
+        "padding": {
+          "$resolved": "1rem"
+        },
+        "gap": {
+          "content": {
+            "$resolved": "0.5rem"
+          },
+          "actions": {
+            "$resolved": "0.5rem"
+          }
+        }
+      }
+    }
+  }
+}

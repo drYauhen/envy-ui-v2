@@ -1,0 +1,30 @@
+{
+  "eui": {
+    "color": {
+      "background": {
+        "surface": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "muted": {
+          "$resolved": "oklch(98% 0.00 0)"
+        },
+        "subtle": {
+          "$resolved": "oklch(96.5% 0.00 0)"
+        },
+        "inverse": {
+          "$resolved": "oklch(25% 0.00 0)"
+        }
+      },
+      "brand": {
+        "primary": {
+          "$resolved": "oklch(49% 0.10 230)"
+        }
+      },
+      "accent": {
+        "primary": {
+          "$resolved": "oklch(68% 0.15 237)"
+        }
+      }
+    }
+  }
+}

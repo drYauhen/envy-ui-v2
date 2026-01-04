@@ -1,0 +1,16 @@
+{
+  "eui": {
+    "layout": {
+      "page": {
+        "padding": {
+          "x": {
+            "$resolved": "1.5rem"
+          },
+          "y": {
+            "$resolved": "1.5rem"
+          }
+        }
+      }
+    }
+  }
+}

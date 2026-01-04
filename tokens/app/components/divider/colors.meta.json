@@ -1,0 +1,11 @@
+{
+  "eui": {
+    "divider": {
+      "colors": {
+        "default": {
+          "$resolved": "oklch(48% 0.00 0)"
+        }
+      }
+    }
+  }
+}

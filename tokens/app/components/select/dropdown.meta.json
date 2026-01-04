@@ -1,0 +1,57 @@
+{
+  "eui": {
+    "select": {
+      "dropdown": {
+        "background": {
+          "$resolved": "oklch(100% 0 0)"
+        },
+        "border": {
+          "color": {
+            "$resolved": "oklch(94% 0.00 0)"
+          }
+        },
+        "shadow": {
+          "$resolved": "0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"
+        },
+        "radius": {
+          "$resolved": "8px"
+        },
+        "padding": {
+          "$resolved": "0.5rem"
+        }
+      },
+      "option": {
+        "padding": {
+          "horizontal": {
+            "$resolved": "0.75rem"
+          },
+          "vertical": {
+            "$resolved": "0.5rem"
+          }
+        },
+        "background": {
+          "hover": {
+            "$resolved": "oklch(96.5% 0.00 0)"
+          },
+          "focused": {
+            "$resolved": "oklch(96.5% 0.00 0)"
+          },
+          "selected": {
+            "$resolved": "oklch(94% 0.00 0)"
+          },
+          "selected-focused": {
+            "$resolved": "oklch(94% 0.00 0)"
+          }
+        },
+        "color": {
+          "default": {
+            "$resolved": "oklch(100% 0 0)"
+          },
+          "disabled": {
+            "$resolved": "oklch(48% 0.00 0)"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "eui": {
+    "switch": {
+      "track": {
+        "background": {
+          "off": {
+            "$resolved": "oklch(90% 0.00 0)"
+          },
+          "on": {
+            "$resolved": "oklch(68% 0.15 237)"
+          },
+          "disabled": {
+            "$resolved": "oklch(94% 0.00 0)"
+          },
+          "disabledOn": {
+            "$resolved": "oklch(94% 0.00 0)"
+          }
+        },
+        "border": {
+          "off": {
+            "$resolved": "oklch(84% 0.00 0)"
+          },
+          "disabled": {
+            "$resolved": "oklch(84% 0.00 0)"
+          }
+        }
+      },
+      "thumb": {
+        "background": {
+          "base": {
+            "$resolved": "oklch(100% 0 0)"
+          }
+        },
+        "border": {
+          "disabled": {
+            "$resolved": "oklch(84% 0.00 0)"
+          }
+        }
+      }
+    }
+  }
+}
