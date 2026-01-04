@@ -31,6 +31,10 @@ tokens/
 
 Each context is fully independent with its own foundations, semantic, and component tokens. This ensures complete separation and avoids cross-context dependencies.
 
+## Non-visual Metadata Files
+
+Non-visual metadata (behavior, implementation notes, etc.) must live under component subdirectories like `behavior/` or `metadata/` and use the `.meta.json` suffix only. These files are excluded from Style Dictionary; do not create `.json` duplicates in those folders or the build will try to resolve strings and fail.
+
 ## Token Resolution Order
 
 ```
@@ -298,4 +302,3 @@ Component tokens define component-specific values within each context:
 - [Token System Tooling](./../tokens/README.md) - Developer tools for working with tokens
 - [Token Utilities Use Cases](./../tokens/use-cases.md) - Practical examples for AI agents and developers
 - [Token Reference](./../tokens/reference.md) - Complete token reference (auto-generated)
-
