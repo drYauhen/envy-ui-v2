@@ -14,6 +14,15 @@ All documentation metadata must be defined here FIRST:
 - `exportName` (optional, for Storybook exports)
 - `aliases` (optional, for renamed files)
 
+## Excluded Directories
+
+The following directories are intentionally excluded from Storybook registry and link validation warnings:
+- `docs/dirty/`
+- `docs/tasks/`
+- `docs/steps/`
+
+These are working notes and drafts. They can be referenced by links, but they should not be registered in `docs-registry.ts`.
+
 ## Workflow for New Document
 
 ### Step 1: Add to docs-registry.ts FIRST
@@ -147,4 +156,3 @@ ADR documents are automatically included in the registry from `adr-list-data.ts`
 **See also:**
 - [`docs/adr/AGENT-GUIDE.md`](./adr/AGENT-GUIDE.md) - ADR-specific guide
 - [`docs/workflows/adr-workflow.md`](./workflows/adr-workflow.md) - ADR workflow
-

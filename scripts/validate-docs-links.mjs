@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const repoRoot = resolve(__dirname, '..');
+const EXCLUDED_REGISTRY_PREFIXES = ['dirty/', 'tasks/', 'steps/'];
 
 /**
  * Parse docs-registry.ts to get all registered documents
@@ -58,7 +59,8 @@ function parseDocsRegistry() {
   while ((match = docPattern.exec(registryContent)) !== null) {
     const [, id, path, title, category, exportName, aliasesStr] = match;
     // Skip ADR documents (already parsed)
-    if (id.startsWith('adr-') && category === 'adr') {
+    const isAdrDoc = /^adr-\d{4}$/.test(id) && category === 'adr';
+    if (isAdrDoc) {
       continue;
     }
     
@@ -217,6 +219,7 @@ try {
         const isTemplateLink = link.resolvedPath.includes('XXXX') || 
                                link.resolvedPath.includes('YYYY') || 
                                link.resolvedPath.includes('file.md') ||
+                               link.resolvedPath.includes('filename.md') ||
                                link.resolvedPath.includes('descriptive-title');
         
         if (isTemplateLink) {
@@ -227,8 +230,10 @@ try {
         const isExternalLink = !link.resolvedPath.startsWith('adr/') && 
                                !link.resolvedPath.startsWith('architecture/') && 
                                !link.resolvedPath.startsWith('workflows/') &&
+                               !link.resolvedPath.startsWith('tokens/') &&
                                !link.resolvedPath.startsWith('tasks/') &&
                                !link.resolvedPath.startsWith('steps/') &&
+                               !link.resolvedPath.startsWith('dirty/') &&
                                !link.resolvedPath.match(/^[^/]+\.md$/); // Root level files
         
         if (isExternalLink) {
@@ -249,6 +254,12 @@ try {
         
         // Check if target is registered in registry
         const targetRelative = link.resolvedPath;
+        const isExcludedFromRegistry = EXCLUDED_REGISTRY_PREFIXES.some(prefix =>
+          targetRelative.startsWith(prefix)
+        );
+        if (isExcludedFromRegistry) {
+          return;
+        }
         const registeredDoc = docsMap.get(targetRelative);
         
         if (!registeredDoc) {
@@ -263,6 +274,9 @@ try {
   // Check for unregistered files
   allFiles.forEach(({ relativePath }) => {
     if (!docsMap.get(relativePath)) {
+      if (EXCLUDED_REGISTRY_PREFIXES.some(prefix => relativePath.startsWith(prefix))) {
+        return;
+      }
       // Skip template files and guides
       if (!relativePath.includes('TEMPLATE') && !relativePath.includes('AGENT-GUIDE') && !relativePath.includes('README')) {
         info.push(`ℹ️  ${relativePath}: File exists but is not registered in docs-registry.ts`);
@@ -306,4 +320,3 @@ if (errors.length === 0 && warnings.length === 0 && info.length === 0) {
   console.log(`\nFound: ${summary.join(', ')}.\n`);
   process.exit(errors.length > 0 ? 1 : 0);
 }
-
