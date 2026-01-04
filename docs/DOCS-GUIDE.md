@@ -12,6 +12,7 @@ All documentation metadata must be defined here FIRST:
 - `title` from markdown header
 - `category` (adr, architecture, workflows, tasks, steps, other)
 - `exportName` (optional, for Storybook exports)
+- `storybookId` (optional, Storybook story id for link mapping)
 - `aliases` (optional, for renamed files)
 
 ## Excluded Directories
@@ -33,7 +34,8 @@ These are working notes and drafts. They can be referenced by links, but they sh
   id: 'category-document-name',
   path: 'category/document-name.md',
   title: 'Document Title',
-  category: 'category'
+  category: 'category',
+  storybookId: 'docs-category--document-name'
 }
 ```
 
@@ -102,6 +104,14 @@ When linking between documents in different directories:
 ## ADR Documents
 
 ADR documents are automatically registered from `adr-list-data.ts`. You don't need to manually add them to `docs-registry.ts`.
+
+## Storybook Link Mapping
+
+`DocViewer` uses `docs-registry.ts` to map markdown links to Storybook story routes.
+
+For any doc that has a Storybook story:
+- Add `storybookId` to its registry entry
+- Use the Storybook story id format, for example: `docs-architecture--accessibility-reference`
 
 However, ADR guide documents (README.md, AGENT-GUIDE.md, TEMPLATE.md) must be manually registered.
 

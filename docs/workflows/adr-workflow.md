@@ -439,7 +439,7 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
 5. **After creating Architecture document:**
    - ✅ Add to `docs/architecture/README.md` index
    - ✅ Create Storybook story (if needed for viewing)
-   - ✅ Update `docs-registry.ts` (if needed)
+   - ✅ Update `docs-registry.ts` (if needed, include `storybookId` for link mapping)
    - ✅ Verify link works
 
 ### Quick Validation Script
@@ -539,4 +539,3 @@ When creating a new ADR:
     - Keep node labels concise
 
 **For complete agent workflow, see:** [`docs/adr/AGENT-GUIDE.md`](../adr/AGENT-GUIDE.md)
-

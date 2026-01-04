@@ -8,19 +8,19 @@ Storybook serves as an AI-agent-oriented architecture layer for understanding an
 - Component documentation and examples
 - ADR documentation viewer
 - Token visualization
-- Architecture documentation
+- Architecture and workflow documentation
 
 ## Structure
 
 ```
 stories/
   ├── components/       # Component stories
-  ├── docs/            # Documentation stories (ADR, etc.)
+  ├── docs/            # Documentation stories (ADR, Architecture, Workflows)
   ├── tokens/          # Token visualization (organized by context: app, website, report)
-  └── viewers/         # Custom viewers (ADR, token viewers, etc.)
+  └── viewers/         # Documentation renderers and viewers
 ```
 
-**Note:** Architecture documentation has been moved into the token structure itself. Each context and theme has its own README.md file that is displayed in Storybook.
+**Note:** Documentation stories render markdown from `docs/` and use shared viewers (DocViewer + AdrViewer) to keep cross-links and mermaid handling consistent.
 
 ## Navigation Configuration
 
@@ -44,7 +44,7 @@ sectionOrder: [
 ]
 ```
 
-**Note:** The "Architecture" section has been removed. Architecture documentation is now integrated into the token structure and displayed within the Tokens section.
+**Note:** The "Docs" section includes ADRs, Architecture, and Workflows. Tokens documentation lives in `Docs/Tokens` (generated markdown) and token stories remain under `Tokens/...`.
 
 ### Component Grouping
 
@@ -135,6 +135,33 @@ export const FigmaVariablesIntegrationStrategy: Story = {
 
 **Note:** Use `node scripts/generate-adr-stories.mjs` to auto-generate ADR stories.
 
+### Architecture/Workflow Story
+
+**File:** `stories/docs/architecture/accessibility-reference.stories.tsx`
+
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+
+const meta: Meta = {
+  title: 'Docs/Architecture',
+  parameters: { layout: 'fullscreen' }
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const AccessibilityReference: Story = {
+  name: 'Accessibility Reference',
+  render: () => (
+    <DocViewer
+      markdownPath="/docs/architecture/accessibility-reference.md"
+      fallback="Loading accessibility reference..."
+    />
+  )
+};
+```
+
 ## Development
 
 ### Start Storybook
@@ -207,6 +234,13 @@ Token documentation is integrated into the token structure:
 - These README files are automatically displayed in Storybook within the Tokens section
 - Documentation is shown when viewing context or theme overview stories
 
+### Documentation Registry
+
+Documentation metadata and link resolution are centralized:
+- **Single source of truth:** `stories/viewers/docs/docs-registry.ts`
+- **Storybook link mapping:** Set `storybookId` for any doc that has a Storybook story
+- **Link rendering:** `DocViewer` uses the registry to map markdown links to Storybook routes
+
 **Example locations:**
 - `tokens/app/README.md` - App context documentation
 - `tokens/app/themes/README.md` - App themes documentation
@@ -217,4 +251,3 @@ Token documentation is integrated into the token structure:
 
 - [ADR-0022: Storybook Model as AI-Agent-Oriented Architecture Layer](./../adr/ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
 - [ADR-0002: Data-Driven Storybook Pipeline](./../adr/ADR-0002-data-driven-storybook-pipeline.md)
-

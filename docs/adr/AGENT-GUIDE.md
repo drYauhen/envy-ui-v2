@@ -207,7 +207,7 @@ Links in ADR markdown files use format:
 5. **After creating Architecture document:**
    - ✅ Add to `docs/architecture/README.md` index
    - ✅ Create Storybook story if needed
-   - ✅ Update `docs-registry.ts` if needed
+   - ✅ Update `docs-registry.ts` if needed (include `storybookId` for link mapping)
    - ✅ Verify link works
 
 ### Overview Links
@@ -296,4 +296,3 @@ Following this guide ensures:
 - ✅ Overview page is reliable
 - ✅ Internal ADR links are valid
 - ✅ No broken navigation in Storybook
-

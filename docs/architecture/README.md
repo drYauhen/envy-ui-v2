@@ -67,10 +67,11 @@ Create an Architecture document when:
 3. **Create Storybook story** (if needed for viewing in Storybook)
    - Create `stories/docs/architecture/filename.stories.tsx`
    - Follow pattern from `accessibility-reference.stories.tsx`
-   - Use `MarkdownViewer` component
+   - Use `DocViewer` component
 
 4. **Update docs-registry.ts** (if needed)
    - Add entry to `architectureDocs` array in `stories/viewers/docs/docs-registry.ts`
+   - Include `storybookId` when the document has a Storybook story (for link mapping)
 
 5. **Add metadata** (recommended)
    - Add `**Last Updated:**` date
@@ -126,7 +127,7 @@ See [Architecture Documentation](../architecture/README.md) for current rules an
 
 5. **Create Storybook story** if document should be viewable in Storybook
    - Follow pattern from `accessibility-reference.stories.tsx`
-   - Use `MarkdownViewer` component
+   - Use `DocViewer` component
    - Export name: PascalCase (e.g., `TokenUsageRules`)
 
 6. **Add metadata** to new documents:
@@ -139,4 +140,3 @@ See [Architecture Documentation](../architecture/README.md) for current rules an
 - **[ADR Documentation](../adr/README.md)** - Historical decision records
 - **[Documentation Guide](../DOCS-GUIDE.md)** - General documentation guidelines
 - **[ADR Workflow](../workflows/adr-workflow.md)** - How to create and manage ADRs
-
