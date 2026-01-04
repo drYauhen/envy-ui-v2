@@ -1,9 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import alertBannerBorder from '../../../../../tokens/app/components/alert-banner/border.json';
+// Attempt to load metadata (may not exist)
+let alertBannerBorderMeta: any = null;
+try {
+  alertBannerBorderMeta = require('../../../../../tokens/app/components/alert-banner/border.meta.json');
+} catch {
+  // Metadata not found - this is fine
+}
+
 import { TokenPage, TokenSection } from '../../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../../viewers/tokens/TokenRefTable';
-import { TokenSwatch } from '../../../../viewers/tokens/TokenSwatch';
-import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../../viewers/tokens/token-utils';
+import { collectRefs, flattenTokens, resolveAlias, type FlatToken } from '../../../../viewers/tokens/token-utils';
 import { getSectionParameters } from '../../../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -13,7 +20,10 @@ flattenTokens(alertBannerBorder, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-// Используем весь объект компонента из JSON файла
+// Load metadata (if file exists)
+const metadata = alertBannerBorderMeta || null;
+
+// Use the entire component object from the JSON file
 const tokenRefs = collectRefs((alertBannerBorder as any)?.eui?.['alert-banner'] ?? {}, ['eui', 'alert-banner']);
 
 const meta: Meta = {
@@ -28,26 +38,21 @@ const meta: Meta = {
 
 export default meta;
 
-const renderPreview = (token: TokenRef) => {
-  if (token.path.includes('color') || token.path.includes('background') || token.path.includes('border')) {
-    return <TokenSwatch reference={token.ref} resolveReference={resolveReference} />;
-  }
-  return null;
-};
-
 export const Border: Story = {
   name: 'Border',
   render: () => (
     <TokenPage>
       <TokenSection
         title="Alert Banner Border"
-        description="Token definitions for alert-banner border."
+        description="Token definitions for alert-banner border. Preview is automatically determined by token type."
       />
       <TokenRefTable
         title="Border"
         refs={tokenRefs}
         emptyMessage="No tokens found."
-        renderPreview={renderPreview}
+        autoPreview={true}
+        resolveReference={resolveReference}
+        metadata={metadata}
         tokenLabel="Token path"
         referenceLabel="Reference"
         showType
