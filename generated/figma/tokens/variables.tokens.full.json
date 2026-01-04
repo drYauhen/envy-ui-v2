@@ -5,6 +5,952 @@
   },
   "collections": [
     {
+      "name": "envy-ui-v2 • Colors / Text",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.avatar.text.fallback",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.color.text.disabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.color.text.inverse",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.color.text.muted",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.color.text.primary",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.color.text.subtle",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.input.text.base",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.input.text.disabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.input.text.placeholder",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Background",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.avatar.background.fallback",
+          "type": "COLOR",
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.background.base",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.checkbox.background.checked",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.checkbox.background.checkedDisabled",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.background.checkedHover",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.checkbox.background.disabled",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.background.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.checkbox.background.indeterminate",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.checkbox.background.indeterminateDisabled",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.background.indeterminateHover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.color.background.base",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.color.background.inverse",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.color.background.muted",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.color.background.subtle",
+          "type": "COLOR",
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.color.background.surface",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.input.background.base",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.input.background.disabled",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.input.background.focus",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.input.background.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Border",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.avatar.border.color",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.avatar.border.colorLead",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.checkbox.border.base",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.border.checked",
+          "type": "COLOR",
+          "value": "oklch(58% 0.14 237)"
+        },
+        {
+          "path": "eui.checkbox.border.checkedDisabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.border.checkedHover",
+          "type": "COLOR",
+          "value": "oklch(58% 0.14 237)"
+        },
+        {
+          "path": "eui.checkbox.border.disabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.border.hover",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.border.indeterminate",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.border.indeterminateDisabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.border.indeterminateHover",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.color.border.default",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.color.border.inverse",
+          "type": "COLOR",
+          "value": "oklch(33% 0.00 0)"
+        },
+        {
+          "path": "eui.color.border.strong",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.color.border.subtle",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.input.border.base",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.input.border.disabled",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.input.border.error",
+          "type": "COLOR",
+          "value": "oklch(59% 0.20 25)"
+        },
+        {
+          "path": "eui.input.border.focus",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.input.border.hover",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.menu.border.color",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Focus",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.button.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.button.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.checkbox.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        },
+        {
+          "path": "eui.color.focus.ring",
+          "type": "COLOR",
+          "value": "#ff4d00"
+        },
+        {
+          "path": "eui.input.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.input.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        },
+        {
+          "path": "eui.switch.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.switch.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / System",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.system.focus",
+          "type": "COLOR",
+          "value": "#ff4d00"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Brand",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.brand.100",
+          "type": "COLOR",
+          "value": "oklch(93% 0.05 232)"
+        },
+        {
+          "path": "eui.color.brand.200",
+          "type": "COLOR",
+          "value": "oklch(85% 0.06 231)"
+        },
+        {
+          "path": "eui.color.brand.300",
+          "type": "COLOR",
+          "value": "oklch(75% 0.08 231)"
+        },
+        {
+          "path": "eui.color.brand.400",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        },
+        {
+          "path": "eui.color.brand.50",
+          "type": "COLOR",
+          "value": "oklch(97% 0.02 232)"
+        },
+        {
+          "path": "eui.color.brand.500",
+          "type": "COLOR",
+          "value": "oklch(57% 0.09 231)"
+        },
+        {
+          "path": "eui.color.brand.600",
+          "type": "COLOR",
+          "value": "oklch(52% 0.10 230)"
+        },
+        {
+          "path": "eui.color.brand.700",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.color.brand.800",
+          "type": "COLOR",
+          "value": "oklch(47% 0.10 230)"
+        },
+        {
+          "path": "eui.color.brand.900",
+          "type": "COLOR",
+          "value": "oklch(46% 0.09 231)"
+        },
+        {
+          "path": "eui.color.brand.primary",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Accent",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.button.accent.background.active",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.button.accent.background.base",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.button.accent.background.disabled",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.button.accent.background.hover",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.button.accent.background.selected",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.button.accent.label.active",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.accent.label.base",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.accent.label.disabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.button.accent.label.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.accent.label.selected",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.color.accent.100",
+          "type": "COLOR",
+          "value": "oklch(93% 0.06 236)"
+        },
+        {
+          "path": "eui.color.accent.200",
+          "type": "COLOR",
+          "value": "oklch(89% 0.09 236)"
+        },
+        {
+          "path": "eui.color.accent.300",
+          "type": "COLOR",
+          "value": "oklch(84% 0.14 236)"
+        },
+        {
+          "path": "eui.color.accent.400",
+          "type": "COLOR",
+          "value": "oklch(76% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.50",
+          "type": "COLOR",
+          "value": "oklch(96% 0.04 236)"
+        },
+        {
+          "path": "eui.color.accent.500",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.600",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.700",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.800",
+          "type": "COLOR",
+          "value": "oklch(58% 0.14 237)"
+        },
+        {
+          "path": "eui.color.accent.900",
+          "type": "COLOR",
+          "value": "oklch(53% 0.13 238)"
+        },
+        {
+          "path": "eui.color.accent.primary",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Status",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.card.status.completed.indicator",
+          "type": "COLOR",
+          "value": "oklch(51% 0.16 256)"
+        },
+        {
+          "path": "eui.card.status.discontinued.indicator",
+          "type": "COLOR",
+          "value": "oklch(32% 0.01 61)"
+        },
+        {
+          "path": "eui.card.status.majorDisruption.indicator",
+          "type": "COLOR",
+          "value": "oklch(58% 0.23 26)"
+        },
+        {
+          "path": "eui.card.status.minorDisruption.indicator",
+          "type": "COLOR",
+          "value": "oklch(89% 0.18 95)"
+        },
+        {
+          "path": "eui.card.status.onTrack.indicator",
+          "type": "COLOR",
+          "value": "oklch(66% 0.18 137)"
+        },
+        {
+          "path": "eui.card.status.pending.indicator",
+          "type": "COLOR",
+          "value": "oklch(64% 0.00 326)"
+        },
+        {
+          "path": "eui.card.status.upcoming.indicator",
+          "type": "COLOR",
+          "value": "oklch(57% 0.10 312)"
+        },
+        {
+          "path": "eui.color.status.application.completed",
+          "type": "COLOR",
+          "value": "oklch(51% 0.16 256)"
+        },
+        {
+          "path": "eui.color.status.application.discontinued",
+          "type": "COLOR",
+          "value": "oklch(32% 0.01 61)"
+        },
+        {
+          "path": "eui.color.status.application.majorDisruption",
+          "type": "COLOR",
+          "value": "oklch(58% 0.23 26)"
+        },
+        {
+          "path": "eui.color.status.application.minorDisruption",
+          "type": "COLOR",
+          "value": "oklch(89% 0.18 95)"
+        },
+        {
+          "path": "eui.color.status.application.onTrack",
+          "type": "COLOR",
+          "value": "oklch(66% 0.18 137)"
+        },
+        {
+          "path": "eui.color.status.application.pending",
+          "type": "COLOR",
+          "value": "oklch(64% 0.00 326)"
+        },
+        {
+          "path": "eui.color.status.application.upcoming",
+          "type": "COLOR",
+          "value": "oklch(57% 0.10 312)"
+        },
+        {
+          "path": "eui.color.status.error.100",
+          "type": "COLOR",
+          "value": "oklch(74% 0.18 25)"
+        },
+        {
+          "path": "eui.color.status.error.50",
+          "type": "COLOR",
+          "value": "oklch(84% 0.10 24)"
+        },
+        {
+          "path": "eui.color.status.error.500",
+          "type": "COLOR",
+          "value": "oklch(64% 0.21 25)"
+        },
+        {
+          "path": "eui.color.status.error.600",
+          "type": "COLOR",
+          "value": "oklch(59% 0.20 25)"
+        },
+        {
+          "path": "eui.color.status.error.700",
+          "type": "COLOR",
+          "value": "oklch(56% 0.19 25)"
+        },
+        {
+          "path": "eui.color.status.info.100",
+          "type": "COLOR",
+          "value": "oklch(78% 0.13 237)"
+        },
+        {
+          "path": "eui.color.status.info.50",
+          "type": "COLOR",
+          "value": "oklch(88% 0.07 236)"
+        },
+        {
+          "path": "eui.color.status.info.500",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.color.status.info.600",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.color.status.info.700",
+          "type": "COLOR",
+          "value": "oklch(60% 0.14 237)"
+        },
+        {
+          "path": "eui.color.status.success.100",
+          "type": "COLOR",
+          "value": "oklch(82% 0.17 150)"
+        },
+        {
+          "path": "eui.color.status.success.50",
+          "type": "COLOR",
+          "value": "oklch(92% 0.10 149)"
+        },
+        {
+          "path": "eui.color.status.success.500",
+          "type": "COLOR",
+          "value": "oklch(72% 0.19 150)"
+        },
+        {
+          "path": "eui.color.status.success.600",
+          "type": "COLOR",
+          "value": "oklch(67% 0.18 150)"
+        },
+        {
+          "path": "eui.color.status.success.700",
+          "type": "COLOR",
+          "value": "oklch(64% 0.17 150)"
+        },
+        {
+          "path": "eui.color.status.warning.100",
+          "type": "COLOR",
+          "value": "oklch(87% 0.14 70)"
+        },
+        {
+          "path": "eui.color.status.warning.50",
+          "type": "COLOR",
+          "value": "oklch(97% 0.08 69)"
+        },
+        {
+          "path": "eui.color.status.warning.500",
+          "type": "COLOR",
+          "value": "oklch(77% 0.16 70)"
+        },
+        {
+          "path": "eui.color.status.warning.600",
+          "type": "COLOR",
+          "value": "oklch(72% 0.15 70)"
+        },
+        {
+          "path": "eui.color.status.warning.700",
+          "type": "COLOR",
+          "value": "oklch(69% 0.15 70)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Signal",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.signal.keyboardFocus",
+          "type": "COLOR",
+          "value": "#ff4d00"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Neutral",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.neutral.100",
+          "type": "COLOR",
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.200",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.300",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.400",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.50",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.500",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.600",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.700",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.800",
+          "type": "COLOR",
+          "value": "oklch(33% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.900",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.white",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Shape / Radius",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.radius.default",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.radius.extra-large",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.radius.full",
+          "type": "FLOAT",
+          "value": 9999
+        },
+        {
+          "path": "eui.radius.large",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.radius.none",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.radius.pill",
+          "type": "FLOAT",
+          "value": 9999
+        },
+        {
+          "path": "eui.radius.small",
+          "type": "FLOAT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Layout",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.layout.container.gutterX",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.container.standard.maxWidth",
+          "type": "FLOAT",
+          "value": 960
+        },
+        {
+          "path": "eui.layout.container.wide.maxWidth",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.layout.page.padding.x",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.page.padding.y",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.section.gap",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.layout.section.padding",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.layout.section.title.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.layout.toolbar.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.layout.toolbar.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.layout.toolbar.paddingY",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Focus / Focus",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Breakpoint",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.breakpoint.desktop",
+          "type": "FLOAT",
+          "value": 1280
+        },
+        {
+          "path": "eui.breakpoint.narrow",
+          "type": "FLOAT",
+          "value": 1024
+        },
+        {
+          "path": "eui.breakpoint.wide",
+          "type": "FLOAT",
+          "value": 1600
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Title Bar",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.title-bar.size.height",
+          "type": "FLOAT",
+          "value": 48
+        },
+        {
+          "path": "eui.title-bar.spacing.gap",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.75
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Colors",
       "mode": "default",
       "variables": [
@@ -251,7 +1197,7 @@
         {
           "path": "eui.content.colors.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.filter.background",
@@ -286,7 +1232,7 @@
         {
           "path": "eui.counter.colors.pill.default.color",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.pill.disabled.background",
@@ -301,7 +1247,7 @@
         {
           "path": "eui.counter.colors.pill.disabled.color",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.pill.inverse.background",
@@ -321,12 +1267,12 @@
         {
           "path": "eui.counter.colors.text.default.color",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.text.disabled.color",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.text.inverse.color",
@@ -341,17 +1287,17 @@
         {
           "path": "eui.detail-panel.colors.border",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.detail-panel.colors.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.divider.colors.default",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.header.colors.background",
@@ -361,17 +1307,17 @@
         {
           "path": "eui.header.colors.border",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.header.colors.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.hero-section.colors.background.base",
           "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
+          "value": "oklch(100% 0 0)"
         },
         {
           "path": "eui.hero-section.colors.background.overlay.dark",
@@ -386,12 +1332,12 @@
         {
           "path": "eui.hero-section.colors.text.heading",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.hero-section.colors.text.subheading",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.logo.colors.icon.default",
@@ -421,7 +1367,7 @@
         {
           "path": "eui.menu.colors.border",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.background.default",
@@ -441,17 +1387,17 @@
         {
           "path": "eui.menu.colors.item.background.selected",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.text-disabled",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.body.background",
@@ -466,7 +1412,7 @@
         {
           "path": "eui.modal.colors.body.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.close.color",
@@ -486,12 +1432,12 @@
         {
           "path": "eui.modal.colors.footer.border",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.footer.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.header.background",
@@ -591,7 +1537,7 @@
         {
           "path": "eui.side-nav.colors.item.text.disabled",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.side-nav.colors.item.text.hover",
@@ -676,7 +1622,7 @@
         {
           "path": "eui.table.colors.cell.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.table.colors.header.background",
@@ -686,7 +1632,7 @@
         {
           "path": "eui.table.colors.header.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.table.colors.row.background.default",
@@ -711,7 +1657,7 @@
         {
           "path": "eui.table.colors.subheader.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "path": "eui.title-bar.colors.background",
@@ -721,368 +1667,1695 @@
         {
           "path": "eui.title-bar.colors.border",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.title-bar.colors.text",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         }
       ]
     },
     {
-      "name": "envy-ui-v2 • Dimensions / Alert Banner",
+      "name": "envy-ui-v2 • Dimensions / Textarea",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.alert-banner.spacing.gap.actions",
+          "path": "eui.textarea.size.min.height",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 80
         },
         {
-          "path": "eui.alert-banner.spacing.gap.content",
+          "path": "eui.textarea.size.min.rows",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 3
         },
         {
-          "path": "eui.alert-banner.spacing.padding",
+          "path": "eui.textarea.size.padding.inline",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.textarea.size.padding.vertical",
+          "type": "FLOAT",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Table",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.table.border.radius",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.table.border.width",
           "type": "FLOAT",
           "value": 1
         },
         {
-          "path": "eui.alert-banner.z-index",
-          "type": "FLOAT",
-          "value": 10000
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / AvatarGroup",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.avatarGroup.layout.hover.scale",
-          "type": "FLOAT",
-          "value": 1.1
-        },
-        {
-          "path": "eui.avatarGroup.layout.hover.spread",
-          "type": "FLOAT",
-          "value": 12
-        },
-        {
-          "path": "eui.avatarGroup.layout.maxVisible",
+          "path": "eui.table.expandable-cell.border.radius",
           "type": "FLOAT",
           "value": 4
         },
         {
-          "path": "eui.avatarGroup.layout.overlap",
+          "path": "eui.table.expandable-cell.panel.max-height",
           "type": "FLOAT",
-          "value": 12
+          "value": 300
         },
         {
-          "path": "eui.avatarGroup.layout.overlapLead",
+          "path": "eui.table.expandable-cell.panel.max-width",
           "type": "FLOAT",
-          "value": 6
+          "value": 400
         },
         {
-          "path": "eui.avatarGroup.layout.overlapTight",
+          "path": "eui.table.expandable-cell.panel.z-index",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.table.expandable-cell.spacing.padding",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.table.folder.icon.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.table.folder.icon.size",
           "type": "FLOAT",
           "value": 16
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Avatar",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.avatar.border.width",
-          "type": "FLOAT",
-          "value": 2
         },
         {
-          "path": "eui.avatar.shape.circle.radius",
+          "path": "eui.table.folder.indent.level",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.table.spacing.cell.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.table.spacing.cell.padding.right",
+          "type": "FLOAT",
+          "value": 10
+        },
+        {
+          "path": "eui.table.spacing.footer.height",
+          "type": "FLOAT",
+          "value": 56
+        },
+        {
+          "path": "eui.table.spacing.footer.paddingY",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.table.spacing.header.height",
           "type": "FLOAT",
           "value": 50
         },
         {
-          "path": "eui.avatar.size.lg.diameter",
+          "path": "eui.table.spacing.header.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.table.spacing.header.padding.vertical",
+          "type": "FLOAT",
+          "value": 5
+        },
+        {
+          "path": "eui.table.spacing.row.gap",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.table.spacing.row.height",
           "type": "FLOAT",
           "value": 40
         },
         {
-          "path": "eui.avatar.size.md.diameter",
+          "path": "eui.table.spacing.subheader.padding.horizontal",
           "type": "FLOAT",
-          "value": 32
+          "value": 1
         },
         {
-          "path": "eui.avatar.size.sm.diameter",
+          "path": "eui.table.spacing.subheader.padding.vertical",
+          "type": "FLOAT",
+          "value": 5
+        },
+        {
+          "path": "eui.table.spacing.toolbar.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.table.spacing.toolbar.paddingY",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Switch",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.switch.focus.ring.offset",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.switch.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.switch.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.switch.shape.radius.thumb",
+          "type": "FLOAT",
+          "value": 9999
+        },
+        {
+          "path": "eui.switch.shape.radius.track",
+          "type": "FLOAT",
+          "value": 9999
+        },
+        {
+          "path": "eui.switch.size.lg.thumb.offset",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.switch.size.lg.thumb.size",
+          "type": "FLOAT",
+          "value": 22
+        },
+        {
+          "path": "eui.switch.size.lg.track.height",
           "type": "FLOAT",
           "value": 28
+        },
+        {
+          "path": "eui.switch.size.lg.track.width",
+          "type": "FLOAT",
+          "value": 52
+        },
+        {
+          "path": "eui.switch.size.md.thumb.offset",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.switch.size.md.thumb.size",
+          "type": "FLOAT",
+          "value": 16
+        },
+        {
+          "path": "eui.switch.size.md.track.height",
+          "type": "FLOAT",
+          "value": 22
+        },
+        {
+          "path": "eui.switch.size.md.track.width",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.switch.size.sm.thumb.offset",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.switch.size.sm.thumb.size",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.switch.size.sm.track.height",
+          "type": "FLOAT",
+          "value": 18
+        },
+        {
+          "path": "eui.switch.size.sm.track.width",
+          "type": "FLOAT",
+          "value": 34
+        },
+        {
+          "path": "eui.switch.thumb.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.switch.track.border.width",
+          "type": "FLOAT",
+          "value": 1
         }
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Border",
+      "name": "envy-ui-v2 • Colors / Track",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.avatar.border.color",
+          "path": "eui.switch.track.background.disabled",
           "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
-          "path": "eui.avatar.border.colorLead",
+          "path": "eui.switch.track.background.disabledOn",
           "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
-          "path": "eui.checkbox.border.base",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.border.checked",
-          "type": "COLOR",
-          "value": "oklch(58% 0.14 237)"
-        },
-        {
-          "path": "eui.checkbox.border.checkedDisabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.border.checkedHover",
-          "type": "COLOR",
-          "value": "oklch(58% 0.14 237)"
-        },
-        {
-          "path": "eui.checkbox.border.disabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.border.hover",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.border.indeterminate",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.border.indeterminateDisabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.border.indeterminateHover",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.color.border.default",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        },
-        {
-          "path": "eui.color.border.inverse",
-          "type": "COLOR",
-          "value": "oklch(33% 0.00 0)"
-        },
-        {
-          "path": "eui.color.border.strong",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.color.border.subtle",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.input.border.base",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        },
-        {
-          "path": "eui.input.border.disabled",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.input.border.error",
-          "type": "COLOR",
-          "value": "oklch(59% 0.20 25)"
-        },
-        {
-          "path": "eui.input.border.focus",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.input.border.hover",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.menu.border.color",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Background",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.avatar.background.fallback",
-          "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.background.base",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.checkbox.background.checked",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.checkbox.background.checkedDisabled",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.background.checkedHover",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.checkbox.background.disabled",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.background.hover",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.checkbox.background.indeterminate",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.checkbox.background.indeterminateDisabled",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.background.indeterminateHover",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.color.background.base",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
-        },
-        {
-          "path": "eui.color.background.inverse",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
-        },
-        {
-          "path": "eui.color.background.muted",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.color.background.subtle",
-          "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
-        },
-        {
-          "path": "eui.color.background.surface",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.input.background.base",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.input.background.disabled",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.input.background.focus",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.input.background.hover",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Text",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.avatar.text.fallback",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.color.text.disabled",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        },
-        {
-          "path": "eui.color.text.inverse",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.color.text.muted",
+          "path": "eui.switch.track.background.off",
           "type": "COLOR",
           "value": "oklch(90% 0.00 0)"
         },
         {
-          "path": "eui.color.text.primary",
+          "path": "eui.switch.track.background.on",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.switch.track.border.disabled",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.switch.track.border.off",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.switch.track.border.on",
+          "type": "COLOR",
+          "value": "#00000000"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Thumb",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.switch.thumb.background.base",
           "type": "COLOR",
           "value": "oklch(100% 0 0)"
         },
         {
-          "path": "eui.color.text.subtle",
+          "path": "eui.switch.thumb.background.disabled",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.switch.thumb.border.disabled",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Skeleton",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.skeleton.animation.shimmer.width",
+          "type": "FLOAT",
+          "value": 200
+        },
+        {
+          "path": "eui.skeleton.shape.circular.radius",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.skeleton.shape.rectangular.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.skeleton.shape.text.radius",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.skeleton.size.circular.defaultDiameter",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.skeleton.size.rectangular.defaultHeight",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.skeleton.size.text.lineHeight",
+          "type": "FLOAT",
+          "value": 1.25
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Sidebar",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.sidebar.size.collapsed.width",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.sidebar.size.expanded.width",
+          "type": "FLOAT",
+          "value": 240
+        },
+        {
+          "path": "eui.sidebar.spacing.item-gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.sidebar.spacing.padding",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Side Nav",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.side-nav.size.badge.height",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.badge.min-width",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.footer.height",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.side-nav.size.header.height",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.side-nav.size.icon.height",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.icon.width",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.side-nav.size.item.height",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.side-nav.size.item.indicator.width",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.side-nav.size.section.title-height",
+          "type": "FLOAT",
+          "value": 32
+        },
+        {
+          "path": "eui.side-nav.size.toggle.height",
+          "type": "FLOAT",
+          "value": 28
+        },
+        {
+          "path": "eui.side-nav.size.toggle.width",
+          "type": "FLOAT",
+          "value": 28
+        },
+        {
+          "path": "eui.side-nav.size.width.collapsed",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.side-nav.size.width.expanded",
+          "type": "FLOAT",
+          "value": 280
+        },
+        {
+          "path": "eui.side-nav.spacing.group.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.side-nav.spacing.item.gap",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.side-nav.spacing.item.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.side-nav.spacing.nested.indent",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.side-nav.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.side-nav.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.side-nav.spacing.section.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.side-nav.spacing.section.padding.top",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.side-nav.spacing.separator.margin.vertical",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.side-nav.spacing.toggle.offset.right",
+          "type": "FLOAT",
+          "value": -12
+        },
+        {
+          "path": "eui.side-nav.spacing.toggle.offset.right-expanded",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.side-nav.typography.header.font-size",
+          "type": "FLOAT",
+          "value": 18
+        },
+        {
+          "path": "eui.side-nav.typography.item.font-size",
+          "type": "FLOAT",
+          "value": 14
+        },
+        {
+          "path": "eui.side-nav.typography.section-title.font-size",
+          "type": "FLOAT",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Select",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.dropdown.max-height",
+          "type": "FLOAT",
+          "value": 300
+        },
+        {
+          "path": "eui.select.dropdown.padding",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.select.dropdown.radius",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.select.dropdown.z-index",
+          "type": "FLOAT",
+          "value": 1000
+        },
+        {
+          "path": "eui.select.option.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.select.option.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.select.primitive.badge.shape.radius",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.select.primitive.badge.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.select.primitive.badge.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.select.primitive.badge.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.select.primitive.listbox.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.select.primitive.option.shape.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.select.primitive.option.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.select.primitive.option.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.select.primitive.popover.size.max-height",
+          "type": "FLOAT",
+          "value": 300
+        },
+        {
+          "path": "eui.select.primitive.popover.size.min-width",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.select.primitive.popover.spacing.padding",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.select.primitive.trigger.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Primitive",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.primitive.badge.colors.background",
+          "type": "COLOR",
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.select.primitive.badge.colors.remove.icon",
           "type": "COLOR",
           "value": "oklch(63% 0.00 0)"
         },
         {
-          "path": "eui.input.text.base",
+          "path": "eui.select.primitive.badge.colors.text",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Dropdown",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.dropdown.background",
           "type": "COLOR",
           "value": "oklch(100% 0 0)"
         },
         {
-          "path": "eui.input.text.disabled",
+          "path": "eui.select.dropdown.border.color",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Option",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.option.background.default",
+          "type": "COLOR",
+          "value": "#00000000"
         },
         {
-          "path": "eui.input.text.placeholder",
+          "path": "eui.select.option.background.focused",
+          "type": "COLOR",
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.select.option.background.hover",
+          "type": "COLOR",
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.select.option.background.selected",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.select.option.background.selected-focused",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.select.option.color.default",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.select.option.color.disabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Trigger",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.trigger.background",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.select.trigger.border",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Icon",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.select.icon.color",
           "type": "COLOR",
           "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.select.icon.disabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Modal",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.modal.shape.radius",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.modal.size.full.maxWidth",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.modal.size.lg.maxWidth",
+          "type": "FLOAT",
+          "value": 600
+        },
+        {
+          "path": "eui.modal.size.md.maxWidth",
+          "type": "FLOAT",
+          "value": 500
+        },
+        {
+          "path": "eui.modal.size.sm.maxWidth",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.modal.size.xl.maxWidth",
+          "type": "FLOAT",
+          "value": 800
+        },
+        {
+          "path": "eui.modal.spacing.body.padding",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.modal.spacing.footer.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.modal.spacing.footer.padding.vertical",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.modal.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.modal.spacing.header.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.modal.spacing.header.padding.vertical",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Backdrop",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.modal.backdrop.color",
+          "type": "COLOR",
+          "value": "#00000080"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Menu",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.menu.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.menu.shape.radius",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.menu.size.max-height",
+          "type": "FLOAT",
+          "value": 300
+        },
+        {
+          "path": "eui.menu.size.max-width",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.menu.size.min-width",
+          "type": "FLOAT",
+          "value": 200
+        },
+        {
+          "path": "eui.menu.spacing.divider.margin",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.menu.spacing.item.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.menu.spacing.item.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.menu.spacing.item.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.menu.spacing.list.padding",
+          "type": "FLOAT",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Logo",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.logo.size.icon.lg",
+          "type": "FLOAT",
+          "value": 48
+        },
+        {
+          "path": "eui.logo.size.icon.md",
+          "type": "FLOAT",
+          "value": 32
+        },
+        {
+          "path": "eui.logo.size.icon.sm",
+          "type": "FLOAT",
+          "value": 24
+        },
+        {
+          "path": "eui.logo.size.icon.xl",
+          "type": "FLOAT",
+          "value": 64
+        },
+        {
+          "path": "eui.logo.size.icon.xs",
+          "type": "FLOAT",
+          "value": 16
+        },
+        {
+          "path": "eui.logo.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.75
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Input",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.input.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.input.focus.ring.offset",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.input.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.input.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.input.group.size.prefix.height.lg",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.input.group.size.prefix.height.md",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.input.group.size.prefix.height.sm",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.input.group.size.prefix.width.lg",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.input.group.size.prefix.width.md",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.input.group.size.prefix.width.sm",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.input.group.size.suffix.height.lg",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.input.group.size.suffix.height.md",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.input.group.size.suffix.height.sm",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.input.group.size.suffix.width.lg",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.input.group.size.suffix.width.md",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.input.group.size.suffix.width.sm",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.input.group.spacing.input.padding.left",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.input.group.spacing.input.padding.right",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.input.group.spacing.prefix.padding.left",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.input.group.spacing.prefix.padding.right",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.input.group.spacing.suffix.padding.left",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.input.group.spacing.suffix.padding.right",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.input.shape.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.input.size.lg.height",
+          "type": "FLOAT",
+          "value": 44
+        },
+        {
+          "path": "eui.input.size.lg.padding.inline",
+          "type": "FLOAT",
+          "value": 14
+        },
+        {
+          "path": "eui.input.size.md.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.input.size.md.padding.inline",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.input.size.sm.height",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.input.size.sm.padding.inline",
+          "type": "FLOAT",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Group",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.input.group.colors.prefix.text",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.input.group.colors.suffix.text",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Hero Section",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.hero-section.size.content-max-width",
+          "type": "FLOAT",
+          "value": 1200
+        },
+        {
+          "path": "eui.hero-section.size.heading-max-width",
+          "type": "FLOAT",
+          "value": 800
+        },
+        {
+          "path": "eui.hero-section.size.min-height.desktop",
+          "type": "FLOAT",
+          "value": 600
+        },
+        {
+          "path": "eui.hero-section.size.min-height.mobile",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.hero-section.size.min-height.tablet",
+          "type": "FLOAT",
+          "value": 500
+        },
+        {
+          "path": "eui.hero-section.size.min-height.wide",
+          "type": "FLOAT",
+          "value": 700
+        },
+        {
+          "path": "eui.hero-section.size.subheading-max-width",
+          "type": "FLOAT",
+          "value": 600
+        },
+        {
+          "path": "eui.hero-section.spacing.gap.content",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.hero-section.spacing.gap.cta",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.hero-section.spacing.gap.media",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.desktop.block",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.desktop.inline",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.mobile.block",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.mobile.inline",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.tablet.block",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.hero-section.spacing.padding.tablet.inline",
+          "type": "FLOAT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Header",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.header.size.height",
+          "type": "FLOAT",
+          "value": 56
+        },
+        {
+          "path": "eui.header.spacing.gap",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.header.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.header.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.75
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Form",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.form.spacing.field.gap.external",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.form.spacing.field.gap.internal",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.form.spacing.group.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.form.spacing.row.gap",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.form.spacing.section.gap.external",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.form.spacing.section.gap.internal",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.form.spacing.section.gap.title",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.form.spacing.section.header.padding",
+          "type": "FLOAT",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.divider.size.thickness",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.divider.spacing.margin.horizontal",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.divider.spacing.margin.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Detail Panel",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.detail-panel.size.width",
+          "type": "FLOAT",
+          "value": 400
+        },
+        {
+          "path": "eui.detail-panel.spacing.padding",
+          "type": "FLOAT",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Counter",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.counter.shape.filter.radius",
+          "type": "FLOAT",
+          "value": 9999
+        },
+        {
+          "path": "eui.counter.shape.pill.radius",
+          "type": "FLOAT",
+          "value": 9999
+        },
+        {
+          "path": "eui.counter.shape.text.radius",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.counter.size.lg.height",
+          "type": "FLOAT",
+          "value": 18
+        },
+        {
+          "path": "eui.counter.size.lg.padding.inline",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.counter.size.lg.padding.vertical",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.counter.size.md.height",
+          "type": "FLOAT",
+          "value": 15
+        },
+        {
+          "path": "eui.counter.size.md.padding.inline",
+          "type": "FLOAT",
+          "value": 6
+        },
+        {
+          "path": "eui.counter.size.md.padding.vertical",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.counter.size.sm.height",
+          "type": "FLOAT",
+          "value": 14
+        },
+        {
+          "path": "eui.counter.size.sm.padding.inline",
+          "type": "FLOAT",
+          "value": 5
+        },
+        {
+          "path": "eui.counter.size.sm.padding.vertical",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.counter.spacing.icon.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.counter.spacing.icon.size.lg",
+          "type": "FLOAT",
+          "value": 16
+        },
+        {
+          "path": "eui.counter.spacing.icon.size.md",
+          "type": "FLOAT",
+          "value": 14
+        },
+        {
+          "path": "eui.counter.spacing.icon.size.sm",
+          "type": "FLOAT",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Content",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.content.spacing.padding",
+          "type": "FLOAT",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Checkbox",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.checkbox.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.checkbox.focus.ring.offset",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.checkbox.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.checkbox.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.checkbox.layout.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.checkbox.shape.radius",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.checkbox.size.lg.size",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.checkbox.size.md.size",
+          "type": "FLOAT",
+          "value": 1.25
+        },
+        {
+          "path": "eui.checkbox.size.sm.size",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Checkmark",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.checkbox.checkmark.base",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.checkbox.checkmark.disabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.checkmark.indeterminate",
+          "type": "COLOR",
+          "value": "oklch(76% 0.15 237)"
+        },
+        {
+          "path": "eui.checkbox.checkmark.indeterminateDisabled",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Celebration",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.celebration.animation.lift.max.scale",
+          "type": "FLOAT",
+          "value": 1.03
+        },
+        {
+          "path": "eui.celebration.animation.lift.max.translateY",
+          "type": "FLOAT",
+          "value": -6
+        },
+        {
+          "path": "eui.celebration.animation.shine.width",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.celebration.animation.sparkle.particle.size",
+          "type": "FLOAT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Card",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.card.status.completed.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.discontinued.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.majorDisruption.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.minorDisruption.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.onTrack.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.pending.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.status.upcoming.indicatorWidth",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.card.variant.elevated.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.card.variant.elevated.radius",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.card.variant.flat.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.card.variant.flat.radius",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.card.variant.strong.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.card.variant.strong.radius",
+          "type": "FLOAT",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Variant",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.card.variant.elevated.background",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.card.variant.elevated.border.color",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.card.variant.flat.background",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.card.variant.flat.border.color",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.card.variant.strong.background",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.card.variant.strong.border.color",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Calendar",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.calendar.border.radius.calendar",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.calendar.border.radius.day",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.calendar.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.calendar.size.day.aspectRatio",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.calendar.size.day.minHeight",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.calendar.size.day.width",
+          "type": "FLOAT",
+          "value": 14.285714286
+        },
+        {
+          "path": "eui.calendar.size.minWidth",
+          "type": "FLOAT",
+          "value": 250
+        },
+        {
+          "path": "eui.calendar.size.weekday.width",
+          "type": "FLOAT",
+          "value": 14.285714286
+        },
+        {
+          "path": "eui.calendar.size.width",
+          "type": "FLOAT",
+          "value": 280
+        },
+        {
+          "path": "eui.calendar.spacing.day.margin.overlap",
+          "type": "FLOAT",
+          "value": -1
+        },
+        {
+          "path": "eui.calendar.spacing.day.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.calendar.spacing.day.padding.vertical",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.calendar.spacing.grid.gap",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.calendar.spacing.header.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.calendar.spacing.header.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.calendar.spacing.header.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.calendar.spacing.padding",
+          "type": "FLOAT",
+          "value": 0.75
+        },
+        {
+          "path": "eui.calendar.spacing.weekday.gap",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.calendar.spacing.weekday.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.calendar.z-index.default",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.calendar.z-index.focus",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.calendar.z-index.interactive",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.calendar.z-index.selected",
+          "type": "FLOAT",
+          "value": 2
         }
       ]
     },
@@ -1349,7 +3622,7 @@
         {
           "path": "eui.button.primary.background.disabled",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "path": "eui.button.primary.background.hover",
@@ -1374,7 +3647,7 @@
         {
           "path": "eui.button.primary.label.disabled",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.button.primary.label.hover",
@@ -1405,7 +3678,7 @@
         {
           "path": "eui.button.secondary.background.disabled",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.background.hover",
@@ -1420,27 +3693,27 @@
         {
           "path": "eui.button.secondary.border.active",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.base",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.disabled",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.hover",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.border.selected",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.active",
@@ -1455,7 +3728,7 @@
         {
           "path": "eui.button.secondary.label.disabled",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.button.secondary.label.hover",
@@ -1466,117 +3739,6 @@
           "path": "eui.button.secondary.label.selected",
           "type": "COLOR",
           "value": "oklch(25% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Accent",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.button.accent.background.active",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.button.accent.background.base",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.button.accent.background.disabled",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.button.accent.background.hover",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.button.accent.background.selected",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.button.accent.label.active",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.accent.label.base",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.accent.label.disabled",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        },
-        {
-          "path": "eui.button.accent.label.hover",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.accent.label.selected",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.color.accent.100",
-          "type": "COLOR",
-          "value": "oklch(93% 0.06 236)"
-        },
-        {
-          "path": "eui.color.accent.200",
-          "type": "COLOR",
-          "value": "oklch(89% 0.09 236)"
-        },
-        {
-          "path": "eui.color.accent.300",
-          "type": "COLOR",
-          "value": "oklch(84% 0.14 236)"
-        },
-        {
-          "path": "eui.color.accent.400",
-          "type": "COLOR",
-          "value": "oklch(76% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.50",
-          "type": "COLOR",
-          "value": "oklch(96% 0.04 236)"
-        },
-        {
-          "path": "eui.color.accent.500",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.600",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.700",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.800",
-          "type": "COLOR",
-          "value": "oklch(58% 0.14 237)"
-        },
-        {
-          "path": "eui.color.accent.900",
-          "type": "COLOR",
-          "value": "oklch(53% 0.13 238)"
-        },
-        {
-          "path": "eui.color.accent.primary",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
         }
       ]
     },
@@ -1597,7 +3759,7 @@
         {
           "path": "eui.button.accent-finished.background.disabled",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "path": "eui.button.accent-finished.background.hover",
@@ -1622,7 +3784,7 @@
         {
           "path": "eui.button.accent-finished.label.disabled",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.button.accent-finished.label.hover",
@@ -1637,2252 +3799,95 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Focus",
+      "name": "envy-ui-v2 • Dimensions / AvatarGroup",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.button.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "path": "eui.avatarGroup.layout.hover.scale",
+          "type": "FLOAT",
+          "value": 1.1
         },
         {
-          "path": "eui.button.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "path": "eui.avatarGroup.layout.hover.spread",
+          "type": "FLOAT",
+          "value": 12
         },
         {
-          "path": "eui.checkbox.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.checkbox.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
-        },
-        {
-          "path": "eui.color.focus.ring",
-          "type": "COLOR",
-          "value": "#ff4d00"
-        },
-        {
-          "path": "eui.input.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.input.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
-        },
-        {
-          "path": "eui.switch.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.switch.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Calendar",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.calendar.border.radius.calendar",
+          "path": "eui.avatarGroup.layout.maxVisible",
           "type": "FLOAT",
           "value": 4
         },
         {
-          "path": "eui.calendar.border.radius.day",
+          "path": "eui.avatarGroup.layout.overlap",
           "type": "FLOAT",
-          "value": 4
+          "value": 12
         },
         {
-          "path": "eui.calendar.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.calendar.size.day.aspectRatio",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.calendar.size.day.minHeight",
-          "type": "FLOAT",
-          "value": 36
-        },
-        {
-          "path": "eui.calendar.size.day.width",
-          "type": "FLOAT",
-          "value": 14.285714286
-        },
-        {
-          "path": "eui.calendar.size.minWidth",
-          "type": "FLOAT",
-          "value": 250
-        },
-        {
-          "path": "eui.calendar.size.weekday.width",
-          "type": "FLOAT",
-          "value": 14.285714286
-        },
-        {
-          "path": "eui.calendar.size.width",
-          "type": "FLOAT",
-          "value": 280
-        },
-        {
-          "path": "eui.calendar.spacing.day.margin.overlap",
-          "type": "FLOAT",
-          "value": -1
-        },
-        {
-          "path": "eui.calendar.spacing.day.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.calendar.spacing.day.padding.vertical",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.calendar.spacing.grid.gap",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.calendar.spacing.header.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.calendar.spacing.header.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.calendar.spacing.header.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.calendar.spacing.padding",
-          "type": "FLOAT",
-          "value": 0.75
-        },
-        {
-          "path": "eui.calendar.spacing.weekday.gap",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.calendar.spacing.weekday.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.calendar.z-index.default",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.calendar.z-index.focus",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.calendar.z-index.interactive",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.calendar.z-index.selected",
-          "type": "FLOAT",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Status",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.card.status.completed.indicator",
-          "type": "COLOR",
-          "value": "oklch(51% 0.16 256)"
-        },
-        {
-          "path": "eui.card.status.discontinued.indicator",
-          "type": "COLOR",
-          "value": "oklch(32% 0.01 61)"
-        },
-        {
-          "path": "eui.card.status.majorDisruption.indicator",
-          "type": "COLOR",
-          "value": "oklch(58% 0.23 26)"
-        },
-        {
-          "path": "eui.card.status.minorDisruption.indicator",
-          "type": "COLOR",
-          "value": "oklch(89% 0.18 95)"
-        },
-        {
-          "path": "eui.card.status.onTrack.indicator",
-          "type": "COLOR",
-          "value": "oklch(66% 0.18 137)"
-        },
-        {
-          "path": "eui.card.status.pending.indicator",
-          "type": "COLOR",
-          "value": "oklch(64% 0.00 326)"
-        },
-        {
-          "path": "eui.card.status.upcoming.indicator",
-          "type": "COLOR",
-          "value": "oklch(57% 0.10 312)"
-        },
-        {
-          "path": "eui.color.status.application.completed",
-          "type": "COLOR",
-          "value": "oklch(51% 0.16 256)"
-        },
-        {
-          "path": "eui.color.status.application.discontinued",
-          "type": "COLOR",
-          "value": "oklch(32% 0.01 61)"
-        },
-        {
-          "path": "eui.color.status.application.majorDisruption",
-          "type": "COLOR",
-          "value": "oklch(58% 0.23 26)"
-        },
-        {
-          "path": "eui.color.status.application.minorDisruption",
-          "type": "COLOR",
-          "value": "oklch(89% 0.18 95)"
-        },
-        {
-          "path": "eui.color.status.application.onTrack",
-          "type": "COLOR",
-          "value": "oklch(66% 0.18 137)"
-        },
-        {
-          "path": "eui.color.status.application.pending",
-          "type": "COLOR",
-          "value": "oklch(64% 0.00 326)"
-        },
-        {
-          "path": "eui.color.status.application.upcoming",
-          "type": "COLOR",
-          "value": "oklch(57% 0.10 312)"
-        },
-        {
-          "path": "eui.color.status.error.100",
-          "type": "COLOR",
-          "value": "oklch(74% 0.18 25)"
-        },
-        {
-          "path": "eui.color.status.error.50",
-          "type": "COLOR",
-          "value": "oklch(84% 0.10 24)"
-        },
-        {
-          "path": "eui.color.status.error.500",
-          "type": "COLOR",
-          "value": "oklch(64% 0.21 25)"
-        },
-        {
-          "path": "eui.color.status.error.600",
-          "type": "COLOR",
-          "value": "oklch(59% 0.20 25)"
-        },
-        {
-          "path": "eui.color.status.error.700",
-          "type": "COLOR",
-          "value": "oklch(56% 0.19 25)"
-        },
-        {
-          "path": "eui.color.status.info.100",
-          "type": "COLOR",
-          "value": "oklch(78% 0.13 237)"
-        },
-        {
-          "path": "eui.color.status.info.50",
-          "type": "COLOR",
-          "value": "oklch(88% 0.07 236)"
-        },
-        {
-          "path": "eui.color.status.info.500",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.color.status.info.600",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
-        },
-        {
-          "path": "eui.color.status.info.700",
-          "type": "COLOR",
-          "value": "oklch(60% 0.14 237)"
-        },
-        {
-          "path": "eui.color.status.success.100",
-          "type": "COLOR",
-          "value": "oklch(82% 0.17 150)"
-        },
-        {
-          "path": "eui.color.status.success.50",
-          "type": "COLOR",
-          "value": "oklch(92% 0.10 149)"
-        },
-        {
-          "path": "eui.color.status.success.500",
-          "type": "COLOR",
-          "value": "oklch(72% 0.19 150)"
-        },
-        {
-          "path": "eui.color.status.success.600",
-          "type": "COLOR",
-          "value": "oklch(67% 0.18 150)"
-        },
-        {
-          "path": "eui.color.status.success.700",
-          "type": "COLOR",
-          "value": "oklch(64% 0.17 150)"
-        },
-        {
-          "path": "eui.color.status.warning.100",
-          "type": "COLOR",
-          "value": "oklch(87% 0.14 70)"
-        },
-        {
-          "path": "eui.color.status.warning.50",
-          "type": "COLOR",
-          "value": "oklch(97% 0.08 69)"
-        },
-        {
-          "path": "eui.color.status.warning.500",
-          "type": "COLOR",
-          "value": "oklch(77% 0.16 70)"
-        },
-        {
-          "path": "eui.color.status.warning.600",
-          "type": "COLOR",
-          "value": "oklch(72% 0.15 70)"
-        },
-        {
-          "path": "eui.color.status.warning.700",
-          "type": "COLOR",
-          "value": "oklch(69% 0.15 70)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Card",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.card.status.completed.indicatorWidth",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.card.status.discontinued.indicatorWidth",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.card.status.majorDisruption.indicatorWidth",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.card.status.minorDisruption.indicatorWidth",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.card.status.onTrack.indicatorWidth",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.card.status.pending.indicatorWidth",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.card.status.upcoming.indicatorWidth",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.card.variant.elevated.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.card.variant.elevated.radius",
-          "type": "FLOAT",
-          "value": 8
-        },
-        {
-          "path": "eui.card.variant.flat.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.card.variant.flat.radius",
-          "type": "FLOAT",
-          "value": 8
-        },
-        {
-          "path": "eui.card.variant.strong.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.card.variant.strong.radius",
-          "type": "FLOAT",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Variant",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.card.variant.elevated.background",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.card.variant.elevated.border.color",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        },
-        {
-          "path": "eui.card.variant.flat.background",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.card.variant.flat.border.color",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        },
-        {
-          "path": "eui.card.variant.strong.background",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.card.variant.strong.border.color",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Celebration",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.celebration.animation.lift.max.scale",
-          "type": "FLOAT",
-          "value": 1.03
-        },
-        {
-          "path": "eui.celebration.animation.lift.max.translateY",
-          "type": "FLOAT",
-          "value": -6
-        },
-        {
-          "path": "eui.celebration.animation.shine.width",
-          "type": "FLOAT",
-          "value": 50
-        },
-        {
-          "path": "eui.celebration.animation.sparkle.particle.size",
-          "type": "FLOAT",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Checkbox",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.checkbox.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.checkbox.focus.ring.offset",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.checkbox.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.checkbox.focus.ring.width.base",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.checkbox.layout.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.checkbox.shape.radius",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.checkbox.size.lg.size",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.checkbox.size.md.size",
-          "type": "FLOAT",
-          "value": 1.25
-        },
-        {
-          "path": "eui.checkbox.size.sm.size",
-          "type": "FLOAT",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Checkmark",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.checkbox.checkmark.base",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.checkbox.checkmark.disabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.checkmark.indeterminate",
-          "type": "COLOR",
-          "value": "oklch(76% 0.15 237)"
-        },
-        {
-          "path": "eui.checkbox.checkmark.indeterminateDisabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Content",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.content.spacing.padding",
-          "type": "FLOAT",
-          "value": 1.5
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Counter",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.counter.shape.filter.radius",
-          "type": "FLOAT",
-          "value": 9999
-        },
-        {
-          "path": "eui.counter.shape.pill.radius",
-          "type": "FLOAT",
-          "value": 9999
-        },
-        {
-          "path": "eui.counter.shape.text.radius",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.counter.size.lg.height",
-          "type": "FLOAT",
-          "value": 18
-        },
-        {
-          "path": "eui.counter.size.lg.padding.inline",
-          "type": "FLOAT",
-          "value": 8
-        },
-        {
-          "path": "eui.counter.size.lg.padding.vertical",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.counter.size.md.height",
-          "type": "FLOAT",
-          "value": 15
-        },
-        {
-          "path": "eui.counter.size.md.padding.inline",
+          "path": "eui.avatarGroup.layout.overlapLead",
           "type": "FLOAT",
           "value": 6
         },
         {
-          "path": "eui.counter.size.md.padding.vertical",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.counter.size.sm.height",
-          "type": "FLOAT",
-          "value": 14
-        },
-        {
-          "path": "eui.counter.size.sm.padding.inline",
-          "type": "FLOAT",
-          "value": 5
-        },
-        {
-          "path": "eui.counter.size.sm.padding.vertical",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.counter.spacing.icon.gap",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.counter.spacing.icon.size.lg",
+          "path": "eui.avatarGroup.layout.overlapTight",
           "type": "FLOAT",
           "value": 16
-        },
-        {
-          "path": "eui.counter.spacing.icon.size.md",
-          "type": "FLOAT",
-          "value": 14
-        },
-        {
-          "path": "eui.counter.spacing.icon.size.sm",
-          "type": "FLOAT",
-          "value": 12
         }
       ]
     },
     {
-      "name": "envy-ui-v2 • Dimensions / Detail Panel",
+      "name": "envy-ui-v2 • Dimensions / Avatar",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.detail-panel.size.width",
-          "type": "FLOAT",
-          "value": 400
-        },
-        {
-          "path": "eui.detail-panel.spacing.padding",
-          "type": "FLOAT",
-          "value": 1.5
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Divider",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.divider.size.thickness",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.divider.spacing.margin.horizontal",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.divider.spacing.margin.vertical",
-          "type": "FLOAT",
-          "value": 0.5
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Form",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.form.spacing.field.gap.external",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.form.spacing.field.gap.internal",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.form.spacing.group.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.form.spacing.row.gap",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.form.spacing.section.gap.external",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.form.spacing.section.gap.internal",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.form.spacing.section.gap.title",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.form.spacing.section.header.padding",
-          "type": "FLOAT",
-          "value": 0.5
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Header",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.header.size.height",
-          "type": "FLOAT",
-          "value": 56
-        },
-        {
-          "path": "eui.header.spacing.gap",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.header.spacing.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.header.spacing.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.75
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Hero Section",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.hero-section.size.content-max-width",
-          "type": "FLOAT",
-          "value": 1200
-        },
-        {
-          "path": "eui.hero-section.size.heading-max-width",
-          "type": "FLOAT",
-          "value": 800
-        },
-        {
-          "path": "eui.hero-section.size.min-height.desktop",
-          "type": "FLOAT",
-          "value": 600
-        },
-        {
-          "path": "eui.hero-section.size.min-height.mobile",
-          "type": "FLOAT",
-          "value": 400
-        },
-        {
-          "path": "eui.hero-section.size.min-height.tablet",
-          "type": "FLOAT",
-          "value": 500
-        },
-        {
-          "path": "eui.hero-section.size.min-height.wide",
-          "type": "FLOAT",
-          "value": 700
-        },
-        {
-          "path": "eui.hero-section.size.subheading-max-width",
-          "type": "FLOAT",
-          "value": 600
-        },
-        {
-          "path": "eui.hero-section.spacing.gap.content",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.hero-section.spacing.gap.cta",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.hero-section.spacing.gap.media",
+          "path": "eui.avatar.border.width",
           "type": "FLOAT",
           "value": 2
         },
         {
-          "path": "eui.hero-section.spacing.padding.desktop.block",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.hero-section.spacing.padding.desktop.inline",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.hero-section.spacing.padding.mobile.block",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.hero-section.spacing.padding.mobile.inline",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.hero-section.spacing.padding.tablet.block",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.hero-section.spacing.padding.tablet.inline",
-          "type": "FLOAT",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Input",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.input.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.input.focus.ring.offset",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.input.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.input.focus.ring.width.base",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.input.group.size.prefix.height.lg",
-          "type": "FLOAT",
-          "value": 44
-        },
-        {
-          "path": "eui.input.group.size.prefix.height.md",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.input.group.size.prefix.height.sm",
-          "type": "FLOAT",
-          "value": 36
-        },
-        {
-          "path": "eui.input.group.size.prefix.width.lg",
-          "type": "FLOAT",
-          "value": 44
-        },
-        {
-          "path": "eui.input.group.size.prefix.width.md",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.input.group.size.prefix.width.sm",
-          "type": "FLOAT",
-          "value": 36
-        },
-        {
-          "path": "eui.input.group.size.suffix.height.lg",
-          "type": "FLOAT",
-          "value": 44
-        },
-        {
-          "path": "eui.input.group.size.suffix.height.md",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.input.group.size.suffix.height.sm",
-          "type": "FLOAT",
-          "value": 36
-        },
-        {
-          "path": "eui.input.group.size.suffix.width.lg",
-          "type": "FLOAT",
-          "value": 44
-        },
-        {
-          "path": "eui.input.group.size.suffix.width.md",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.input.group.size.suffix.width.sm",
-          "type": "FLOAT",
-          "value": 36
-        },
-        {
-          "path": "eui.input.group.spacing.input.padding.left",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.input.group.spacing.input.padding.right",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.input.group.spacing.prefix.padding.left",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.input.group.spacing.prefix.padding.right",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.input.group.spacing.suffix.padding.left",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.input.group.spacing.suffix.padding.right",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.input.shape.radius",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.input.size.lg.height",
-          "type": "FLOAT",
-          "value": 44
-        },
-        {
-          "path": "eui.input.size.lg.padding.inline",
-          "type": "FLOAT",
-          "value": 14
-        },
-        {
-          "path": "eui.input.size.md.height",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.input.size.md.padding.inline",
-          "type": "FLOAT",
-          "value": 12
-        },
-        {
-          "path": "eui.input.size.sm.height",
-          "type": "FLOAT",
-          "value": 36
-        },
-        {
-          "path": "eui.input.size.sm.padding.inline",
-          "type": "FLOAT",
-          "value": 12
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Group",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.input.group.colors.prefix.text",
-          "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
-        },
-        {
-          "path": "eui.input.group.colors.suffix.text",
-          "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Logo",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.logo.size.icon.lg",
-          "type": "FLOAT",
-          "value": 48
-        },
-        {
-          "path": "eui.logo.size.icon.md",
-          "type": "FLOAT",
-          "value": 32
-        },
-        {
-          "path": "eui.logo.size.icon.sm",
-          "type": "FLOAT",
-          "value": 24
-        },
-        {
-          "path": "eui.logo.size.icon.xl",
-          "type": "FLOAT",
-          "value": 64
-        },
-        {
-          "path": "eui.logo.size.icon.xs",
-          "type": "FLOAT",
-          "value": 16
-        },
-        {
-          "path": "eui.logo.spacing.gap",
-          "type": "FLOAT",
-          "value": 0.75
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Menu",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.menu.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.menu.shape.radius",
-          "type": "FLOAT",
-          "value": 8
-        },
-        {
-          "path": "eui.menu.size.max-height",
-          "type": "FLOAT",
-          "value": 300
-        },
-        {
-          "path": "eui.menu.size.max-width",
-          "type": "FLOAT",
-          "value": 400
-        },
-        {
-          "path": "eui.menu.size.min-width",
-          "type": "FLOAT",
-          "value": 200
-        },
-        {
-          "path": "eui.menu.spacing.divider.margin",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.menu.spacing.item.gap",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.menu.spacing.item.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0.75
-        },
-        {
-          "path": "eui.menu.spacing.item.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.menu.spacing.list.padding",
-          "type": "FLOAT",
-          "value": 0.5
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Backdrop",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.modal.backdrop.color",
-          "type": "COLOR",
-          "value": "#00000080"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Modal",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.modal.shape.radius",
-          "type": "FLOAT",
-          "value": 12
-        },
-        {
-          "path": "eui.modal.size.full.maxWidth",
-          "type": "FLOAT",
-          "value": 100
-        },
-        {
-          "path": "eui.modal.size.lg.maxWidth",
-          "type": "FLOAT",
-          "value": 600
-        },
-        {
-          "path": "eui.modal.size.md.maxWidth",
-          "type": "FLOAT",
-          "value": 500
-        },
-        {
-          "path": "eui.modal.size.sm.maxWidth",
-          "type": "FLOAT",
-          "value": 400
-        },
-        {
-          "path": "eui.modal.size.xl.maxWidth",
-          "type": "FLOAT",
-          "value": 800
-        },
-        {
-          "path": "eui.modal.spacing.body.padding",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.modal.spacing.footer.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.modal.spacing.footer.padding.vertical",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.modal.spacing.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.modal.spacing.header.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.modal.spacing.header.padding.vertical",
-          "type": "FLOAT",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Trigger",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.select.trigger.background",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.select.trigger.border",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Icon",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.select.icon.color",
-          "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
-        },
-        {
-          "path": "eui.select.icon.disabled",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Dropdown",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.select.dropdown.background",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.select.dropdown.border.color",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Select",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.select.dropdown.max-height",
-          "type": "FLOAT",
-          "value": 300
-        },
-        {
-          "path": "eui.select.dropdown.padding",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.select.dropdown.radius",
-          "type": "FLOAT",
-          "value": 8
-        },
-        {
-          "path": "eui.select.dropdown.z-index",
-          "type": "FLOAT",
-          "value": 1000
-        },
-        {
-          "path": "eui.select.option.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0.75
-        },
-        {
-          "path": "eui.select.option.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.select.primitive.badge.shape.radius",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.select.primitive.badge.spacing.gap",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.select.primitive.badge.spacing.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.select.primitive.badge.spacing.padding.vertical",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.select.primitive.listbox.spacing.gap",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.select.primitive.option.shape.radius",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.select.primitive.option.spacing.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0.75
-        },
-        {
-          "path": "eui.select.primitive.option.spacing.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.select.primitive.popover.size.max-height",
-          "type": "FLOAT",
-          "value": 300
-        },
-        {
-          "path": "eui.select.primitive.popover.size.min-width",
-          "type": "FLOAT",
-          "value": 100
-        },
-        {
-          "path": "eui.select.primitive.popover.spacing.padding",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.select.primitive.trigger.spacing.gap",
-          "type": "FLOAT",
-          "value": 0.25
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Option",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.select.option.background.default",
-          "type": "COLOR",
-          "value": "#00000000"
-        },
-        {
-          "path": "eui.select.option.background.focused",
-          "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
-        },
-        {
-          "path": "eui.select.option.background.hover",
-          "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
-        },
-        {
-          "path": "eui.select.option.background.selected",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.select.option.background.selected-focused",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.select.option.color.default",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.select.option.color.disabled",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Primitive",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.select.primitive.badge.colors.background",
-          "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
-        },
-        {
-          "path": "eui.select.primitive.badge.colors.remove.icon",
-          "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
-        },
-        {
-          "path": "eui.select.primitive.badge.colors.text",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Side Nav",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.side-nav.size.badge.height",
-          "type": "FLOAT",
-          "value": 20
-        },
-        {
-          "path": "eui.side-nav.size.badge.min-width",
-          "type": "FLOAT",
-          "value": 20
-        },
-        {
-          "path": "eui.side-nav.size.footer.height",
-          "type": "FLOAT",
-          "value": 64
-        },
-        {
-          "path": "eui.side-nav.size.header.height",
-          "type": "FLOAT",
-          "value": 64
-        },
-        {
-          "path": "eui.side-nav.size.icon.height",
-          "type": "FLOAT",
-          "value": 20
-        },
-        {
-          "path": "eui.side-nav.size.icon.width",
-          "type": "FLOAT",
-          "value": 20
-        },
-        {
-          "path": "eui.side-nav.size.item.height",
-          "type": "FLOAT",
-          "value": 44
-        },
-        {
-          "path": "eui.side-nav.size.item.indicator.width",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.side-nav.size.section.title-height",
-          "type": "FLOAT",
-          "value": 32
-        },
-        {
-          "path": "eui.side-nav.size.toggle.height",
-          "type": "FLOAT",
-          "value": 28
-        },
-        {
-          "path": "eui.side-nav.size.toggle.width",
-          "type": "FLOAT",
-          "value": 28
-        },
-        {
-          "path": "eui.side-nav.size.width.collapsed",
-          "type": "FLOAT",
-          "value": 64
-        },
-        {
-          "path": "eui.side-nav.size.width.expanded",
-          "type": "FLOAT",
-          "value": 280
-        },
-        {
-          "path": "eui.side-nav.spacing.group.gap",
-          "type": "FLOAT",
-          "value": 0.25
-        },
-        {
-          "path": "eui.side-nav.spacing.item.gap",
-          "type": "FLOAT",
-          "value": 0.75
-        },
-        {
-          "path": "eui.side-nav.spacing.item.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.side-nav.spacing.nested.indent",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.side-nav.spacing.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.side-nav.spacing.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.side-nav.spacing.section.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.side-nav.spacing.section.padding.top",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.side-nav.spacing.separator.margin.vertical",
-          "type": "FLOAT",
-          "value": 0.75
-        },
-        {
-          "path": "eui.side-nav.spacing.toggle.offset.right",
-          "type": "FLOAT",
-          "value": -12
-        },
-        {
-          "path": "eui.side-nav.typography.header.font-size",
-          "type": "FLOAT",
-          "value": 18
-        },
-        {
-          "path": "eui.side-nav.typography.item.font-size",
-          "type": "FLOAT",
-          "value": 14
-        },
-        {
-          "path": "eui.side-nav.typography.section-title.font-size",
-          "type": "FLOAT",
-          "value": 12
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Sidebar",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.sidebar.size.collapsed.width",
-          "type": "FLOAT",
-          "value": 64
-        },
-        {
-          "path": "eui.sidebar.size.expanded.width",
-          "type": "FLOAT",
-          "value": 240
-        },
-        {
-          "path": "eui.sidebar.spacing.item-gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.sidebar.spacing.padding",
-          "type": "FLOAT",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Skeleton",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.skeleton.animation.shimmer.width",
-          "type": "FLOAT",
-          "value": 200
-        },
-        {
-          "path": "eui.skeleton.shape.circular.radius",
+          "path": "eui.avatar.shape.circle.radius",
           "type": "FLOAT",
           "value": 50
         },
         {
-          "path": "eui.skeleton.shape.rectangular.radius",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.skeleton.shape.text.radius",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.skeleton.size.circular.defaultDiameter",
+          "path": "eui.avatar.size.lg.diameter",
           "type": "FLOAT",
           "value": 40
         },
         {
-          "path": "eui.skeleton.size.rectangular.defaultHeight",
+          "path": "eui.avatar.size.md.diameter",
           "type": "FLOAT",
-          "value": 1
+          "value": 32
         },
         {
-          "path": "eui.skeleton.size.text.lineHeight",
-          "type": "FLOAT",
-          "value": 1.25
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Switch",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.switch.focus.ring.offset",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.switch.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.switch.focus.ring.width.base",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.switch.shape.radius.thumb",
-          "type": "FLOAT",
-          "value": 9999
-        },
-        {
-          "path": "eui.switch.shape.radius.track",
-          "type": "FLOAT",
-          "value": 9999
-        },
-        {
-          "path": "eui.switch.size.lg.thumb.offset",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.switch.size.lg.thumb.size",
-          "type": "FLOAT",
-          "value": 22
-        },
-        {
-          "path": "eui.switch.size.lg.track.height",
+          "path": "eui.avatar.size.sm.diameter",
           "type": "FLOAT",
           "value": 28
-        },
-        {
-          "path": "eui.switch.size.lg.track.width",
-          "type": "FLOAT",
-          "value": 52
-        },
-        {
-          "path": "eui.switch.size.md.thumb.offset",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.switch.size.md.thumb.size",
-          "type": "FLOAT",
-          "value": 16
-        },
-        {
-          "path": "eui.switch.size.md.track.height",
-          "type": "FLOAT",
-          "value": 22
-        },
-        {
-          "path": "eui.switch.size.md.track.width",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.switch.size.sm.thumb.offset",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.switch.size.sm.thumb.size",
-          "type": "FLOAT",
-          "value": 12
-        },
-        {
-          "path": "eui.switch.size.sm.track.height",
-          "type": "FLOAT",
-          "value": 18
-        },
-        {
-          "path": "eui.switch.size.sm.track.width",
-          "type": "FLOAT",
-          "value": 34
-        },
-        {
-          "path": "eui.switch.thumb.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.switch.track.border.width",
-          "type": "FLOAT",
-          "value": 1
         }
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Track",
+      "name": "envy-ui-v2 • Dimensions / Alert Banner",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.switch.track.background.disabled",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.switch.track.background.disabledOn",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.switch.track.background.off",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.switch.track.background.on",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.switch.track.border.disabled",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.switch.track.border.off",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.switch.track.border.on",
-          "type": "COLOR",
-          "value": "#00000000"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Thumb",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.switch.thumb.background.base",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.switch.thumb.background.disabled",
-          "type": "COLOR",
-          "value": "#00000000"
-        },
-        {
-          "path": "eui.switch.thumb.border.disabled",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Table",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.table.border.radius",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.table.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.table.expandable-cell.border.radius",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.table.expandable-cell.panel.max-height",
-          "type": "FLOAT",
-          "value": 300
-        },
-        {
-          "path": "eui.table.expandable-cell.panel.max-width",
-          "type": "FLOAT",
-          "value": 400
-        },
-        {
-          "path": "eui.table.expandable-cell.panel.z-index",
-          "type": "FLOAT",
-          "value": 100
-        },
-        {
-          "path": "eui.table.expandable-cell.spacing.padding",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.table.folder.icon.gap",
+          "path": "eui.alert-banner.spacing.gap.actions",
           "type": "FLOAT",
           "value": 0.5
         },
         {
-          "path": "eui.table.folder.icon.size",
-          "type": "FLOAT",
-          "value": 16
-        },
-        {
-          "path": "eui.table.folder.indent.level",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.table.spacing.cell.padding.horizontal",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.table.spacing.cell.padding.right",
-          "type": "FLOAT",
-          "value": 10
-        },
-        {
-          "path": "eui.table.spacing.footer.height",
-          "type": "FLOAT",
-          "value": 56
-        },
-        {
-          "path": "eui.table.spacing.footer.paddingY",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.table.spacing.header.height",
-          "type": "FLOAT",
-          "value": 50
-        },
-        {
-          "path": "eui.table.spacing.header.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.table.spacing.header.padding.vertical",
-          "type": "FLOAT",
-          "value": 5
-        },
-        {
-          "path": "eui.table.spacing.row.gap",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.table.spacing.row.height",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.table.spacing.subheader.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.table.spacing.subheader.padding.vertical",
-          "type": "FLOAT",
-          "value": 5
-        },
-        {
-          "path": "eui.table.spacing.toolbar.gap",
+          "path": "eui.alert-banner.spacing.gap.content",
           "type": "FLOAT",
           "value": 0.5
         },
         {
-          "path": "eui.table.spacing.toolbar.paddingY",
-          "type": "FLOAT",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Textarea",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.textarea.size.min.height",
-          "type": "FLOAT",
-          "value": 80
-        },
-        {
-          "path": "eui.textarea.size.min.rows",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.textarea.size.padding.inline",
-          "type": "FLOAT",
-          "value": 12
-        },
-        {
-          "path": "eui.textarea.size.padding.vertical",
-          "type": "FLOAT",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Title Bar",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.title-bar.size.height",
-          "type": "FLOAT",
-          "value": 48
-        },
-        {
-          "path": "eui.title-bar.spacing.gap",
+          "path": "eui.alert-banner.spacing.padding",
           "type": "FLOAT",
           "value": 1
         },
         {
-          "path": "eui.title-bar.spacing.padding.horizontal",
+          "path": "eui.alert-banner.z-index",
           "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.title-bar.spacing.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.75
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Breakpoint",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.breakpoint.desktop",
-          "type": "FLOAT",
-          "value": 1280
-        },
-        {
-          "path": "eui.breakpoint.narrow",
-          "type": "FLOAT",
-          "value": 1024
-        },
-        {
-          "path": "eui.breakpoint.wide",
-          "type": "FLOAT",
-          "value": 1600
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Brand",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.brand.100",
-          "type": "COLOR",
-          "value": "oklch(93% 0.05 232)"
-        },
-        {
-          "path": "eui.color.brand.200",
-          "type": "COLOR",
-          "value": "oklch(85% 0.06 231)"
-        },
-        {
-          "path": "eui.color.brand.300",
-          "type": "COLOR",
-          "value": "oklch(75% 0.08 231)"
-        },
-        {
-          "path": "eui.color.brand.400",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
-        },
-        {
-          "path": "eui.color.brand.50",
-          "type": "COLOR",
-          "value": "oklch(97% 0.02 232)"
-        },
-        {
-          "path": "eui.color.brand.500",
-          "type": "COLOR",
-          "value": "oklch(57% 0.09 231)"
-        },
-        {
-          "path": "eui.color.brand.600",
-          "type": "COLOR",
-          "value": "oklch(52% 0.10 230)"
-        },
-        {
-          "path": "eui.color.brand.700",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.color.brand.800",
-          "type": "COLOR",
-          "value": "oklch(47% 0.10 230)"
-        },
-        {
-          "path": "eui.color.brand.900",
-          "type": "COLOR",
-          "value": "oklch(46% 0.09 231)"
-        },
-        {
-          "path": "eui.color.brand.primary",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Neutral",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.neutral.100",
-          "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.200",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.300",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.400",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.50",
-          "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.500",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.600",
-          "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.700",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.800",
-          "type": "COLOR",
-          "value": "oklch(33% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.900",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
-        },
-        {
-          "path": "eui.color.neutral.white",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Signal",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.signal.keyboardFocus",
-          "type": "COLOR",
-          "value": "#ff4d00"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / System",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.system.focus",
-          "type": "COLOR",
-          "value": "#ff4d00"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Shape / Radius",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.radius.default",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.radius.extra-large",
-          "type": "FLOAT",
-          "value": 12
-        },
-        {
-          "path": "eui.radius.full",
-          "type": "FLOAT",
-          "value": 9999
-        },
-        {
-          "path": "eui.radius.large",
-          "type": "FLOAT",
-          "value": 8
-        },
-        {
-          "path": "eui.radius.none",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.radius.pill",
-          "type": "FLOAT",
-          "value": 9999
-        },
-        {
-          "path": "eui.radius.small",
-          "type": "FLOAT",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Size / Spacing",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.spacing.2xl",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.spacing.lg",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.spacing.md",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.spacing.sm",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.spacing.xl",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.spacing.xs",
-          "type": "FLOAT",
-          "value": 0.25
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Focus / Focus",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.focus.ring.width.base",
-          "type": "FLOAT",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Size / Layout",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.layout.container.gutterX",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.layout.container.standard.maxWidth",
-          "type": "FLOAT",
-          "value": 960
-        },
-        {
-          "path": "eui.layout.container.wide.maxWidth",
-          "type": "FLOAT",
-          "value": 100
-        },
-        {
-          "path": "eui.layout.page.padding.x",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.layout.page.padding.y",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.layout.section.gap",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.layout.section.padding",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.layout.section.title.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.layout.toolbar.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.layout.toolbar.height",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.layout.toolbar.paddingY",
-          "type": "FLOAT",
-          "value": 1
+          "value": 10000
         }
       ]
     }

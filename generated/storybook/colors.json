@@ -466,7 +466,7 @@
           "label": "Disabled",
           "path": "eui.color.text.disabled",
           "cssVar": "--eui-color-text-disabled",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "id": "inverse",
@@ -480,14 +480,14 @@
           "label": "Muted",
           "path": "eui.color.text.muted",
           "cssVar": "--eui-color-text-muted",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "id": "primary",
           "label": "Primary",
           "path": "eui.color.text.primary",
           "cssVar": "--eui-color-text-primary",
-          "value": "oklch(100% 0 0)"
+          "value": "oklch(25% 0.00 0)"
         },
         {
           "id": "subtle",
@@ -507,7 +507,7 @@
           "label": "Base",
           "path": "eui.color.background.base",
           "cssVar": "--eui-color-background-base",
-          "value": "oklch(25% 0.00 0)"
+          "value": "oklch(100% 0 0)"
         },
         {
           "id": "inverse",
@@ -521,7 +521,7 @@
           "label": "Muted",
           "path": "eui.color.background.muted",
           "cssVar": "--eui-color-background-muted",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(98% 0.00 0)"
         },
         {
           "id": "subtle",
@@ -548,7 +548,7 @@
           "label": "Default",
           "path": "eui.color.border.default",
           "cssVar": "--eui-color-border-default",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "id": "inverse",

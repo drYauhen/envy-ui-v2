@@ -1,7 +1,7 @@
 // AUTO-GENERATED - Do not edit manually
 // Generated from: generated/css/tokens.css
 // Run: npm run tokens:generate-types
-// Last updated: 2026-01-03T17:15:34.582Z
+// Last updated: 2026-01-04T00:32:17.323Z
 
 /**
  * All available CSS custom property names (without -- prefix)
@@ -730,6 +730,7 @@ export type TokenName =
   | 'eui-side-nav-spacing-section-padding-top'
   | 'eui-side-nav-spacing-separator-margin-vertical'
   | 'eui-side-nav-spacing-toggle-offset-right'
+  | 'eui-side-nav-spacing-toggle-offset-right-expanded'
   | 'eui-side-nav-typography-header-font-size'
   | 'eui-side-nav-typography-header-font-weight'
   | 'eui-side-nav-typography-item-font-size'
@@ -852,7 +853,6 @@ export type TokenName =
   | 'eui-title-bar-spacing-gap'
   | 'eui-title-bar-spacing-padding-horizontal'
   | 'eui-title-bar-spacing-padding-vertical'
-  | 'eui-typography-base-font-size'
   | 'eui-typography-base-fontSize'
   | 'eui-typography-font-family-monospace'
   | 'eui-typography-font-family-ui'
@@ -1667,6 +1667,7 @@ export const TOKEN_NAMES: readonly TokenName[] = [
   'eui-side-nav-spacing-section-padding-top',
   'eui-side-nav-spacing-separator-margin-vertical',
   'eui-side-nav-spacing-toggle-offset-right',
+  'eui-side-nav-spacing-toggle-offset-right-expanded',
   'eui-side-nav-typography-header-font-size',
   'eui-side-nav-typography-header-font-weight',
   'eui-side-nav-typography-item-font-size',
@@ -1789,7 +1790,6 @@ export const TOKEN_NAMES: readonly TokenName[] = [
   'eui-title-bar-spacing-gap',
   'eui-title-bar-spacing-padding-horizontal',
   'eui-title-bar-spacing-padding-vertical',
-  'eui-typography-base-font-size',
   'eui-typography-base-fontSize',
   'eui-typography-font-family-monospace',
   'eui-typography-font-family-ui',
