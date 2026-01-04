@@ -13,7 +13,7 @@ flattenTokens(tableColors, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-// Используем весь объект компонента из JSON файла
+// Use the entire component object from the JSON file
 const tokenRefs = collectRefs((tableColors as any)?.eui?.['table'] ?? {}, ['eui', 'table']);
 
 const meta: Meta = {

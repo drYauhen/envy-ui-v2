@@ -13,7 +13,7 @@ flattenTokens(inputTypography, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-// Используем весь объект компонента из JSON файла
+// Use the entire component object from the JSON file
 const tokenRefs = collectRefs((inputTypography as any)?.eui?.['input'] ?? {}, ['eui', 'input']);
 
 const meta: Meta = {

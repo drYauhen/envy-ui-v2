@@ -437,7 +437,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
     const filename = adrFilenameMap[adrNumber] || `ADR-${adrNumber}.md`;
     const filePath = `/docs/adr/${filename}`;
     
-    // Загружаем markdown файл напрямую (универсальный подход, не зависит от Vite)
+    // Load markdown file directly (universal approach, doesn't depend on Vite)
     fetch(filePath)
       .then(res => {
         if (!res.ok) {
@@ -487,7 +487,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
             components={{
-              // Кастомизация заголовков
+              // Customize headings
               h1: ({node, ...props}) => (
                 <h1 style={{ 
                   fontSize: '28px', 
@@ -517,14 +517,14 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   color: '#0f172a'
                 }} {...props} />
               ),
-              // Кастомизация параграфов
+              // Customize paragraphs
               p: ({node, ...props}) => (
                 <p style={{ 
                   margin: '0 0 16px',
                   lineHeight: 1.7
                 }} {...props} />
               ),
-              // Кастомизация списков
+              // Customize lists
               ul: ({node, ...props}) => (
                 <ul style={{ 
                   margin: '0 0 16px',
@@ -539,7 +539,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   lineHeight: 1.7
                 }} {...props} />
               ),
-              // Кастомизация ссылок
+              // Customize links
               a: ({node, href, children, ...props}: any) => {
                 // Convert ADR file links and Architecture document links to Storybook story links
                 let storybookHref = href;
@@ -636,7 +636,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   </a>
                 );
               },
-              // Кастомизация кода
+              // Customize code
               code: ({node, inline, className, children, ...props}: any) => {
                 if (inline) {
                   return (
@@ -741,7 +741,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   </code>
                 );
               },
-              // Кастомизация блоков кода
+              // Customize code blocks
               pre: ({node, children, ...props}: any) => {
                 // Check if this pre contains a mermaid code block
                 // ReactMarkdown wraps code blocks in <pre><code className="language-mermaid">...</code></pre>
@@ -783,7 +783,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   </pre>
                 );
               },
-              // Кастомизация таблиц
+              // Customize tables
               table: ({node, ...props}) => (
                 <div style={{ overflowX: 'auto', margin: '16px 0' }}>
                   <table style={{
@@ -808,7 +808,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   border: '1px solid #e2e8f0'
                 }} {...props} />
               ),
-              // Кастомизация блоков цитат
+              // Customize blockquotes
               blockquote: ({node, ...props}) => (
                 <blockquote style={{
                   margin: '16px 0',
@@ -819,7 +819,7 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
                   fontStyle: 'italic'
                 }} {...props} />
               ),
-              // Кастомизация горизонтальных линий
+              // Customize horizontal rules
               hr: ({node, ...props}) => (
                 <hr style={{
                   margin: '24px 0',

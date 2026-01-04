@@ -13,7 +13,7 @@ flattenTokens(avatarColors, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-// Используем весь объект компонента из JSON файла
+// Use the entire component object from the JSON file
 const tokenRefs = collectRefs((avatarColors as any)?.eui?.['avatar'] ?? {}, ['eui', 'avatar']);
 
 const meta: Meta = {

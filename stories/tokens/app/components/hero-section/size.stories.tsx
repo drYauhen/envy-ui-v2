@@ -13,7 +13,7 @@ flattenTokens(heroSectionSize, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-// Используем весь объект компонента из JSON файла
+// Use the entire component object from the JSON file
 const tokenRefs = collectRefs((heroSectionSize as any)?.eui?.['hero-section'] ?? {}, ['eui', 'hero-section']);
 
 const meta: Meta = {

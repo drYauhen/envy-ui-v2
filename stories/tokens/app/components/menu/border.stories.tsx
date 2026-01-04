@@ -13,7 +13,7 @@ flattenTokens(menuBorder, [], flatTokenMap);
 
 const resolveReference = (ref: string) => resolveAlias(ref, flatTokenMap);
 
-// Используем весь объект компонента из JSON файла
+// Use the entire component object from the JSON file
 const tokenRefs = collectRefs((menuBorder as any)?.eui?.['menu'] ?? {}, ['eui', 'menu']);
 
 const meta: Meta = {
