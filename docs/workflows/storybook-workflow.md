@@ -10,6 +10,8 @@ Storybook serves as an AI-agent-oriented architecture layer for understanding an
 - Token visualization
 - Architecture and workflow documentation
 
+**Reminder:** Any changes to Storybook-related npm scripts must be documented in [`docs/workflows/scripts-reference.md`](./scripts-reference.md).
+
 ## Structure
 
 ```

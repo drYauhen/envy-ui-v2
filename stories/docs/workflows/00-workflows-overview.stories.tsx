@@ -78,6 +78,16 @@ export const StorybookWorkflow: Story = {
   )
 };
 
+export const ScriptsReference: Story = {
+  name: 'Scripts Reference',
+  render: () => (
+    <DocViewer
+      markdownPath="/docs/workflows/scripts-reference.md"
+      fallback="Loading scripts reference..."
+    />
+  )
+};
+
 export const TokensWorkflow: Story = {
   name: 'Tokens Workflow',
   render: () => (

@@ -15,6 +15,7 @@ Each workflow document describes:
 - **[Tokens Workflow](./tokens-workflow.md)** - Working with design tokens
 - **[Figma Workflow](./figma-workflow.md)** - Figma integration (plugin, scripts, artifacts)
 - **[Storybook Workflow](./storybook-workflow.md)** - Storybook development and documentation
+- **[Scripts Reference](./scripts-reference.md)** - Root-level npm scripts and usage
 - **[ADR Workflow](./adr-workflow.md)** - Writing and managing Architectural Decision Records
 
 ## Documentation Management
@@ -34,4 +35,3 @@ This directory (`docs/workflows/`) contains:
 - Platform-specific processes
 
 Both documents work together: the manifest provides the framework, workflows provide the details.
-

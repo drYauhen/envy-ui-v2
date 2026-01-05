@@ -35,38 +35,7 @@ Assistant Behavior
 	•	If uncertainty remains, the assistant must stop and ask for clarification.
 
 
-2. LAST_STEP.md — Optional Session Context
-
-LAST_STEP.md is an optional, free-form context file that may be present at the project root.
-
-Its purpose is to capture high-level context at the end of a working session when no ADR is warranted.
-
-Typical content may include:
-	•	What was done during the last session
-	•	Why the work matters in the broader project context
-	•	Loose or tentative intentions for future work
-
-Rules
-	•	Optional; absence is acceptable
-	•	No fixed template
-	•	No required structure
-	•	Informational only; never prescriptive
-	•	Must not be treated as an instruction set or task list
-
-History Preservation
-	•	When LAST_STEP.md is updated, the previous version MUST be archived to `docs/steps/`
-	•	Archived files are named using the date from the "Last updated" field: `YYYY-MM-DD-step.md`
-	•	Example: If LAST_STEP.md has "Last updated: 2025-12-20", archive it as `docs/steps/2025-12-20-step.md`
-	•	The root LAST_STEP.md always contains the most recent session snapshot
-	•	This preserves development history as a sequence of dated files
-
-Agent Guidance
-	•	The assistant may read LAST_STEP.md for orientation only.
-	•	LAST_STEP.md must not override user instructions or ADRs.
-	•	If LAST_STEP.md conflicts with current user intent, it must be ignored.
-	•	When updating LAST_STEP.md, the assistant MUST archive the previous version to `docs/steps/` before making changes.
-
-3. Canonical Inputs for New Sessions
+2. Canonical Inputs for New Sessions
 
 A typical session bootstrap relies on:
 	1.	Tokens (tokens/)
@@ -77,18 +46,12 @@ A typical session bootstrap relies on:
 	•	Historical record of architectural intent
 	•	Directional, not necessarily reflecting latest implementation details
 	•	**Workflow:** [`docs/workflows/adr-workflow.md`](./docs/workflows/adr-workflow.md)
-	3.	LAST_STEP.md (optional)
-	•	Free-form summary of the last completed session
-	•	May describe what was done, why it matters, and any open context
-	•	May include tentative intentions, but is not a task list or commitment
-	•	Informational only; never authoritative
-	•	Historical versions are preserved in `docs/steps/` as dated files
-	4.	Pipeline & generators (e.g. Style Dictionary configs)
+	3.	Pipeline & generators (e.g. Style Dictionary configs)
 	•	Reference implementations for consistency
 
 ⸻
 
-4. Project Structure & Generation Model
+3. Project Structure & Generation Model
 
 This project is token-driven and generative by design.
 
@@ -191,6 +154,19 @@ The root-level `generated/` directory is reserved exclusively for
 project-level, pipeline-generated artifacts.
 
 Outputs originating from `personal/` MUST NOT be written into the root `generated/` directory.
+
+4. Scripts & Automation (Package.json)
+
+Scripts are part of the operational workflow and must remain organized and documented.
+
+Rules
+	•	All scripts live in the root `package.json` and must be grouped by domain (docs, ADR, tokens, Tailwind, icons, Figma, app, Storybook, Vitest).
+	•	Any new script or change in behavior MUST be documented in `docs/workflows/scripts-reference.md`.
+	•	Script names should remain stable once documented; if a script is removed, update the reference docs accordingly.
+	•	If a script becomes legacy/experimental, mark it explicitly in the scripts reference.
+
+Scripts Reference
+	•	**Primary index:** [`docs/workflows/scripts-reference.md`](./docs/workflows/scripts-reference.md)
 
 5. Canonical Terminology & Error Handling
 

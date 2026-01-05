@@ -122,6 +122,13 @@ const workflowDocs: DocRegistryItem[] = [
     storybookId: 'docs-workflows--storybook-workflow'
   },
   {
+    id: 'workflow-scripts',
+    path: 'workflows/scripts-reference.md',
+    title: 'Scripts Reference',
+    category: 'workflows',
+    storybookId: 'docs-workflows--scripts-reference'
+  },
+  {
     id: 'workflow-tokens',
     path: 'workflows/tokens-workflow.md',
     title: 'Tokens Workflow',
