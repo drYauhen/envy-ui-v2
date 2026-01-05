@@ -64,5 +64,6 @@ export const adrs: AdrListItem[] = [
   { number: '0027', title: 'Figma Files Structure and Organization', status: 'Accepted', date: '2025-12-31', exportName: 'FigmaFilesStructureandOrganization' },
   { number: '0028', title: 'Internationalization (i18n) and RTL Support Architecture', status: 'Proposed', date: '2025-01-01', exportName: 'Internationalizationi18nandRTLSupportArchitecture' },
   { number: '0029', title: 'Accessibility Architecture and Decision Framework', status: 'Accepted', date: '2025-12-31', exportName: 'AccessibilityArchitectureandDecisionFramework' },
-  { number: '0030', title: 'Third-Party Library Integration Strategy', status: 'Accepted', date: '2025-01-02', exportName: 'ThirdPartyLibraryIntegrationStrategy' }
+  { number: '0030', title: 'Third-Party Library Integration Strategy', status: 'Accepted', date: '2025-01-02', exportName: 'ThirdPartyLibraryIntegrationStrategy' },
+  { number: '0031', title: 'Contrast Strategy for Dynamic Colors and On-Color Tokens', status: 'Proposed', date: '2026-01-05', exportName: 'ContrastStrategyforDynamicColorsandOnColorTokens' }
 ];

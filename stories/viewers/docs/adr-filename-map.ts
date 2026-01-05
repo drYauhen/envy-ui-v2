@@ -39,5 +39,6 @@ export const adrFilenameMap: Record<string, string> = {
   "0027": "ADR-0027-figma-files-structure-and-organization.md",
   "0028": "ADR-0028-internationalization-and-rtl-support.md",
   "0029": "ADR-0029-accessibility-architecture-and-decision-framework.md",
-  "0030": "ADR-0030-third-party-library-integration-strategy.md"
+  "0030": "ADR-0030-third-party-library-integration-strategy.md",
+  "0031": "ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md"
 };
