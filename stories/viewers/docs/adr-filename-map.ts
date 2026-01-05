@@ -40,5 +40,6 @@ export const adrFilenameMap: Record<string, string> = {
   "0028": "ADR-0028-internationalization-and-rtl-support.md",
   "0029": "ADR-0029-accessibility-architecture-and-decision-framework.md",
   "0030": "ADR-0030-third-party-library-integration-strategy.md",
-  "0031": "ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md"
+  "0031": "ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md",
+  "0032": "ADR-0032-token-override-strategy-multi-tenant-generative-ui.md"
 };
