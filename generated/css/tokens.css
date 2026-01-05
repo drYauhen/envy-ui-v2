@@ -189,6 +189,11 @@
   --eui-typography-font-family-ui: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --eui-typography-font-family-monospace: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace;
   --eui-radius-pill: 9999px;
+  --eui-opacity-muted: 0.6;
+  --eui-filter-muted-grayscale: 1;
+  --eui-filter-muted-saturate: 0.35;
+  --eui-filter-muted-contrast: 0.9;
+  --eui-filter-muted-brightness: 0.95;
   --eui-badge-colors-neutral-background: oklch(96.5% 0.00 0);
   --eui-badge-colors-neutral-border: oklch(94% 0.00 0);
   --eui-badge-colors-neutral-text: oklch(48% 0.00 0);
@@ -741,6 +746,12 @@
   --eui-card-variant-flat-border-color: oklch(90% 0.00 0);
   --eui-card-variant-flat-background: oklch(100% 0 0);
   --eui-card-variant-flat-radius: 8px;
+  --eui-card-variant-muted-shadow: none;
+  --eui-card-variant-muted-border-width: 1px;
+  --eui-card-variant-muted-border-style: solid;
+  --eui-card-variant-muted-border-color: oklch(94% 0.00 0);
+  --eui-card-variant-muted-background: oklch(98% 0.00 0);
+  --eui-card-variant-muted-radius: 8px;
   --eui-card-variant-strong-shadow: 0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12);
   --eui-card-variant-strong-border-width: 1px;
   --eui-card-variant-strong-border-style: solid;
@@ -1043,6 +1054,11 @@
   --eui-color-text-muted: oklch(33% 0.00 0);
   --eui-color-text-primary: oklch(25% 0.00 0);
   --eui-color-text-subtle: oklch(48% 0.00 0);
+  --eui-filter-muted-brightness: 1;
+  --eui-filter-muted-contrast: 0.95;
+  --eui-filter-muted-grayscale: 0.6;
+  --eui-filter-muted-saturate: 0.5;
+  --eui-opacity-muted: 0.75;
   --eui-radius-default: 8px;
   --eui-radius-extra-large: 12px;
   --eui-radius-full: 9999px;

@@ -791,6 +791,43 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Opacity",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.opacity.muted",
+          "type": "FLOAT",
+          "value": 0.6
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Filter",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.filter.muted.brightness",
+          "type": "FLOAT",
+          "value": 0.95
+        },
+        {
+          "path": "eui.filter.muted.contrast",
+          "type": "FLOAT",
+          "value": 0.9
+        },
+        {
+          "path": "eui.filter.muted.grayscale",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.filter.muted.saturate",
+          "type": "FLOAT",
+          "value": 0.35
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Colors",
       "mode": "default",
       "variables": [
@@ -3377,6 +3414,16 @@
           "value": 8
         },
         {
+          "path": "eui.card.variant.muted.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.card.variant.muted.radius",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
           "path": "eui.card.variant.strong.border.width",
           "type": "FLOAT",
           "value": 1
@@ -3411,6 +3458,16 @@
           "path": "eui.card.variant.flat.border.color",
           "type": "COLOR",
           "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.card.variant.muted.background",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.card.variant.muted.border.color",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.card.variant.strong.background",

@@ -824,6 +824,26 @@
     "$value": "9999px",
     "$type": "dimension"
   },
+  "eui.opacity.muted": {
+    "$value": 0.6,
+    "$type": "number"
+  },
+  "eui.filter.muted.grayscale": {
+    "$value": 1,
+    "$type": "number"
+  },
+  "eui.filter.muted.saturate": {
+    "$value": 0.35,
+    "$type": "number"
+  },
+  "eui.filter.muted.contrast": {
+    "$value": 0.9,
+    "$type": "number"
+  },
+  "eui.filter.muted.brightness": {
+    "$value": 0.95,
+    "$type": "number"
+  },
   "eui.badge.colors.neutral.background": {
     "$value": "oklch(96.5% 0.00 0)",
     "$type": "color"
@@ -3029,6 +3049,30 @@
     "$type": "color"
   },
   "eui.card.variant.flat.radius": {
+    "$value": "8px",
+    "$type": "dimension"
+  },
+  "eui.card.variant.muted.shadow": {
+    "$value": "none",
+    "$type": "boxShadow"
+  },
+  "eui.card.variant.muted.border.width": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.card.variant.muted.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
+  "eui.card.variant.muted.border.color": {
+    "$value": "oklch(94% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.card.variant.muted.background": {
+    "$value": "oklch(98% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.card.variant.muted.radius": {
     "$value": "8px",
     "$type": "dimension"
   },

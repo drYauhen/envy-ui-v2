@@ -29,6 +29,12 @@
     "tags": ["clock", "time", "timer", "schedule", "deadline"],
     "description": "Clock icon for time-related information and scheduling"
   },
+  "alert-triangle": {
+    "category": "ui",
+    "subcategory": "status",
+    "tags": ["alert", "warning", "triangle", "attention", "in-progress"],
+    "description": "Alert triangle icon for warning or in-progress states"
+  },
   "cog": {
     "category": "ui",
     "subcategory": "actions",

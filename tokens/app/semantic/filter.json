@@ -1,0 +1,28 @@
+{
+  "eui": {
+    "filter": {
+      "muted": {
+        "grayscale": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "Grayscale strength for muted content."
+        },
+        "saturate": {
+          "$value": 0.35,
+          "$type": "number",
+          "$description": "Saturation reduction for muted content."
+        },
+        "contrast": {
+          "$value": 0.9,
+          "$type": "number",
+          "$description": "Contrast reduction for muted content."
+        },
+        "brightness": {
+          "$value": 0.95,
+          "$type": "number",
+          "$description": "Brightness adjustment for muted content."
+        }
+      }
+    }
+  }
+}

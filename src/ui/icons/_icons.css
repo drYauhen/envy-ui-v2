@@ -39,6 +39,19 @@
 /* Icon-specific styles */
 
 
+/* Icon: alert-triangle */
+[data-eui-icon="alert-triangle"] {
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22black%22%3E%20%3Cpath%20fill%3D%22black%22%20d%3D%22M12%203.5L22%2020.5H2L12%203.5Z%22%20%2F%3E%20%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%222%22%20height%3D%226%22%20fill%3D%22black%22%20%2F%3E%20%3Crect%20x%3D%2211%22%20y%3D%2217%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22black%22%20%2F%3E%20%3C%2Fsvg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22black%22%3E%20%3Cpath%20fill%3D%22black%22%20d%3D%22M12%203.5L22%2020.5H2L12%203.5Z%22%20%2F%3E%20%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%222%22%20height%3D%226%22%20fill%3D%22black%22%20%2F%3E%20%3Crect%20x%3D%2211%22%20y%3D%2217%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22black%22%20%2F%3E%20%3C%2Fsvg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  background-color: currentColor;
+}
+
 /* Icon: check-circle */
 [data-eui-icon="check-circle"] {
   mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20style%3D%22height%3A%2020px%3B%20width%3A%2020px%3B%22%20fill%3D%22black%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M%2023.625%2012%20C%2023.625%2018.420328%2018.420328%2023.625%2012%2023.625%20S%200.375%2018.420328%200.375%2012%20S%205.579672%200.375%2012%200.375%20S%2023.625%205.579672%2023.625%2012%20Z%20M%2010.655344%2018.155344%20L%2019.280344%209.530344%20C%2019.573219%209.237469%2019.573219%208.762578%2019.280344%208.469703%20L%2018.219703%207.409063%20C%2017.926828%207.116141%2017.451937%207.116141%2017.159016%207.409063%20L%2010.125%2014.443031%20L%206.840984%2011.159016%20C%206.548109%2010.866141%206.073219%2010.866141%205.780297%2011.159016%20L%204.719656%2012.219656%20C%204.426781%2012.512531%204.426781%2012.987422%204.719656%2013.280297%20L%209.594656%2018.155297%20C%209.887578%2018.448219%2010.362422%2018.448219%2010.655344%2018.155344%20Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");

@@ -79,12 +79,46 @@ export const Card: Story = {
             </div>
           </div>
 
+          {/* Muted */}
+          <div className="eui-card" data-eui-variant="muted" style={{ width: '280px' }}>
+            <div style={cardContentStyle}>
+              <h4 style={cardTitleStyle}>Muted Card</h4>
+              <p style={cardTextStyle}>
+                Low-emphasis card for inactive or background content.
+              </p>
+            </div>
+          </div>
+
           {/* Strong */}
           <div className="eui-card" data-eui-variant="strong" style={{ width: '280px' }}>
             <div style={cardContentStyle}>
               <h4 style={cardTitleStyle}>Strong Card</h4>
               <p style={cardTextStyle}>
                 Card with prominent shadow for emphasis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
+          Muted Content State
+        </h3>
+        <div style={variantsRowStyle}>
+          <div className="eui-card" data-eui-variant="muted" data-eui-state="muted" style={{ width: '280px' }}>
+            <div style={cardContentStyle}>
+              <h4 style={cardTitleStyle}>Muted Card + Content</h4>
+              <p style={cardTextStyle}>
+                Surface and content are muted to indicate inactive state.
+              </p>
+            </div>
+          </div>
+          <div className="eui-card" data-eui-variant="elevated" style={{ width: '280px' }}>
+            <div data-eui-state="muted" style={cardContentStyle}>
+              <h4 style={cardTitleStyle}>Muted Content Only</h4>
+              <p style={cardTextStyle}>
+                Normal surface with muted content to de-emphasize details.
               </p>
             </div>
           </div>
@@ -205,4 +239,3 @@ export const WithStatusIndicators: Story = {
     );
   }
 };
-

@@ -62,6 +62,37 @@
             "$description": "Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs."
           }
         },
+        "muted": {
+          "shadow": {
+            "$value": "none",
+            "$type": "boxShadow",
+            "$description": "Muted card uses no shadow to reduce emphasis."
+          },
+          "border": {
+            "width": {
+              "$value": "1px",
+              "$type": "dimension"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string"
+            },
+            "color": {
+              "$value": "{eui.color.border.subtle}",
+              "$type": "color"
+            }
+          },
+          "background": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Muted surface background for low-emphasis cards."
+          },
+          "radius": {
+            "$value": "{eui.radius.large}",
+            "$type": "dimension",
+            "$description": "Card radius uses large radius for visual hierarchy above control elements. In default theme (8px), in accessibility theme (10px). Cards, panels, and containers use this level to distinguish from buttons and inputs."
+          }
+        },
         "strong": {
           "shadow": {
             "$value": "{eui.shadow.large}",
@@ -96,4 +127,3 @@
     }
   }
 }
-

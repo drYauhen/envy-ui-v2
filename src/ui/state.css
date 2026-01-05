@@ -1,0 +1,11 @@
+/* ============================================================================
+   Generic State Utilities
+   ============================================================================ */
+
+[data-eui-context] [data-eui-state='muted'] {
+  opacity: var(--eui-opacity-muted);
+  filter: grayscale(var(--eui-filter-muted-grayscale))
+    saturate(var(--eui-filter-muted-saturate))
+    contrast(var(--eui-filter-muted-contrast))
+    brightness(var(--eui-filter-muted-brightness));
+}

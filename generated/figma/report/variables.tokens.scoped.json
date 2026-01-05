@@ -2597,6 +2597,64 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Opacity",
+      "modes": [
+        "report-print",
+        "report-screen"
+      ],
+      "variables": [
+        {
+          "path": "eui.opacity.muted",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 0.6,
+            "report-screen": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Filter",
+      "modes": [
+        "report-print",
+        "report-screen"
+      ],
+      "variables": [
+        {
+          "path": "eui.filter.muted.brightness",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 0.95,
+            "report-screen": 0.95
+          }
+        },
+        {
+          "path": "eui.filter.muted.contrast",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 0.9,
+            "report-screen": 0.9
+          }
+        },
+        {
+          "path": "eui.filter.muted.grayscale",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 1,
+            "report-screen": 1
+          }
+        },
+        {
+          "path": "eui.filter.muted.saturate",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 0.35,
+            "report-screen": 0.35
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Colors",
       "modes": [
         "report-print",
@@ -8743,6 +8801,25 @@
           }
         },
         {
+          "path": "eui.card.variant.muted.border.width",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 1,
+            "report-screen": 1
+          },
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.card.variant.muted.radius",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-print": 8,
+            "report-screen": 8
+          }
+        },
+        {
           "path": "eui.card.variant.strong.border.width",
           "type": "FLOAT",
           "valuesByMode": {
@@ -8838,6 +8915,42 @@
               "r": 0.8698165572308192,
               "g": 0.8698165572308191,
               "b": 0.8698165572308192,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.card.variant.muted.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "report-print": {
+              "r": 0.9736912701044002,
+              "g": 0.9736912701043999,
+              "b": 0.9736912701044002,
+              "a": 1
+            },
+            "report-screen": {
+              "r": 0.9736912701044002,
+              "g": 0.9736912701043999,
+              "b": 0.9736912701044002,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.card.variant.muted.border.color",
+          "type": "COLOR",
+          "valuesByMode": {
+            "report-print": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            },
+            "report-screen": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
               "a": 1
             }
           }

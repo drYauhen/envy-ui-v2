@@ -62,6 +62,37 @@
         }
       }
     },
+    "opacity": {
+      "muted": {
+        "$value": 0.75,
+        "$type": "number",
+        "$description": "Increase muted content opacity for accessibility theme to preserve readability."
+      }
+    },
+    "filter": {
+      "muted": {
+        "grayscale": {
+          "$value": 0.6,
+          "$type": "number",
+          "$description": "Reduce grayscale strength for accessibility theme."
+        },
+        "saturate": {
+          "$value": 0.5,
+          "$type": "number",
+          "$description": "Allow more saturation for accessibility theme."
+        },
+        "contrast": {
+          "$value": 0.95,
+          "$type": "number",
+          "$description": "Maintain contrast for accessibility theme."
+        },
+        "brightness": {
+          "$value": 1,
+          "$type": "number",
+          "$description": "Avoid darkening muted content in accessibility theme."
+        }
+      }
+    },
     "badge": {
       "colors": {
         "neutral": {

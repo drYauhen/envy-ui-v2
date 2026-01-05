@@ -4247,6 +4247,78 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Opacity",
+      "modes": [
+        "app-accessibility",
+        "app-accessibility.meta",
+        "app-default",
+        "app-default.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.opacity.muted",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.6,
+            "app-accessibility.meta": 0.6,
+            "app-default": 0.6,
+            "app-default.meta": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Filter",
+      "modes": [
+        "app-accessibility",
+        "app-accessibility.meta",
+        "app-default",
+        "app-default.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.filter.muted.brightness",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.95,
+            "app-accessibility.meta": 0.95,
+            "app-default": 0.95,
+            "app-default.meta": 0.95
+          }
+        },
+        {
+          "path": "eui.filter.muted.contrast",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.9,
+            "app-accessibility.meta": 0.9,
+            "app-default": 0.9,
+            "app-default.meta": 0.9
+          }
+        },
+        {
+          "path": "eui.filter.muted.grayscale",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-accessibility.meta": 1,
+            "app-default": 1,
+            "app-default.meta": 1
+          }
+        },
+        {
+          "path": "eui.filter.muted.saturate",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.35,
+            "app-accessibility.meta": 0.35,
+            "app-default": 0.35,
+            "app-default.meta": 0.35
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Colors",
       "modes": [
         "app-accessibility",
@@ -13203,6 +13275,29 @@
           }
         },
         {
+          "path": "eui.card.variant.muted.border.width",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-accessibility.meta": 1,
+            "app-default": 1,
+            "app-default.meta": 1
+          },
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.card.variant.muted.radius",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 8,
+            "app-accessibility.meta": 8,
+            "app-default": 8,
+            "app-default.meta": 8
+          }
+        },
+        {
           "path": "eui.card.variant.strong.border.width",
           "type": "FLOAT",
           "valuesByMode": {
@@ -13352,6 +13447,66 @@
               "r": 0.8698165572308192,
               "g": 0.8698165572308191,
               "b": 0.8698165572308192,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.card.variant.muted.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9736912701044002,
+              "g": 0.9736912701043999,
+              "b": 0.9736912701044002,
+              "a": 1
+            },
+            "app-accessibility.meta": {
+              "r": 0.9736912701044002,
+              "g": 0.9736912701043999,
+              "b": 0.9736912701044002,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9736912701044002,
+              "g": 0.9736912701043999,
+              "b": 0.9736912701044002,
+              "a": 1
+            },
+            "app-default.meta": {
+              "r": 0.9736912701044002,
+              "g": 0.9736912701043999,
+              "b": 0.9736912701044002,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.card.variant.muted.border.color",
+          "type": "COLOR",
+          "valuesByMode": {
+            "app-accessibility": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            },
+            "app-accessibility.meta": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            },
+            "app-default.meta": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
               "a": 1
             }
           }

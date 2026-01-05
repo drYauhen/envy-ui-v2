@@ -12,6 +12,227 @@ type DocViewerProps = {
   title?: string;
   status?: string;
   date?: string;
+  badges?: Array<{
+    label: string;
+    tone?: 'success' | 'warning' | 'error' | 'info' | 'neutral';
+    variant?: 'solid' | 'outline';
+  }>;
+};
+
+type LayoutDiagramKind =
+  | 'app-shell-page'
+  | 'standalone-page'
+  | 'data-table-page'
+  | 'split-two'
+  | 'split-right-bottom'
+  | 'split-full-width';
+
+const layoutDiagramContainerStyle: CSSProperties = {
+  margin: '16px 0',
+  padding: 'var(--eui-spacing-lg)',
+  background: 'var(--eui-card-variant-flat-background)',
+  border: '1px solid var(--eui-color-border-default)',
+  borderRadius: 'var(--eui-card-variant-flat-radius)'
+};
+
+const layoutDiagramTitleStyle: CSSProperties = {
+  marginBottom: '12px',
+  color: 'var(--eui-color-text-muted)'
+};
+
+const layoutPaneStyle: CSSProperties = {
+  padding: 'var(--eui-spacing-md)',
+  minHeight: '96px'
+};
+
+const layoutPaneTitleStyle: CSSProperties = {
+  margin: 0,
+  fontWeight: 600,
+  color: 'var(--eui-color-text-primary)'
+};
+
+const layoutPaneMetaStyle: CSSProperties = {
+  marginTop: '4px',
+  color: 'var(--eui-color-text-muted)'
+};
+
+const layoutRegionStyle: CSSProperties = {
+  padding: 'var(--eui-spacing-sm)',
+  minHeight: '44px'
+};
+
+const getNodeText = (value: any): string => {
+  if (typeof value === 'string') {
+    return value;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => getNodeText(item)).join('');
+  }
+  if (typeof value === 'object' && value?.props?.children) {
+    return getNodeText(value.props.children);
+  }
+  return String(value ?? '');
+};
+
+const LayoutDiagram = ({ kind }: { kind: LayoutDiagramKind }) => {
+  if (kind === 'app-shell-page') {
+    return (
+      <div className="eui-card" data-eui-variant="flat" style={layoutDiagramContainerStyle}>
+        <div className="eui-text-body-sm" style={layoutDiagramTitleStyle}>
+          App shell + page content
+        </div>
+        <div className="eui-stack" data-eui-gap="sm">
+          <div className="eui-card" data-eui-variant="elevated" style={layoutRegionStyle}>
+            <span className="eui-text-body-sm" style={layoutPaneTitleStyle}>Global header</span>
+          </div>
+          <div className="eui-grid" data-eui-cols="2" style={{ gridTemplateColumns: '160px 1fr' }}>
+            <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, minHeight: '220px' }}>
+              <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Side nav</p>
+              <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-side-nav</p>
+            </div>
+            <div className="eui-stack" data-eui-gap="sm">
+              <div className="eui-card" data-eui-variant="elevated" style={layoutRegionStyle}>
+                <span className="eui-text-body-sm" style={layoutPaneTitleStyle}>Title bar (global)</span>
+              </div>
+              <div className="eui-card" data-eui-variant="elevated" style={layoutRegionStyle}>
+                <span className="eui-text-body-sm" style={layoutPaneTitleStyle}>Title bar (context)</span>
+              </div>
+              <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, minHeight: '120px' }}>
+                <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Page body</p>
+                <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-page</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === 'standalone-page') {
+    return (
+      <div className="eui-card" data-eui-variant="flat" style={layoutDiagramContainerStyle}>
+        <div className="eui-text-body-sm" style={layoutDiagramTitleStyle}>
+          Standalone page (site/report)
+        </div>
+        <div className="eui-stack" data-eui-gap="sm">
+          <div className="eui-card" data-eui-variant="elevated" style={layoutRegionStyle}>
+            <span className="eui-text-body-sm" style={layoutPaneTitleStyle}>Page header</span>
+          </div>
+          <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, minHeight: '120px' }}>
+            <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Page body</p>
+            <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-page</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === 'data-table-page') {
+    return (
+      <div className="eui-card" data-eui-variant="flat" style={layoutDiagramContainerStyle}>
+        <div className="eui-text-body-sm" style={layoutDiagramTitleStyle}>
+          Data table page
+        </div>
+        <div className="eui-stack" data-eui-gap="sm">
+          <div className="eui-card" data-eui-variant="elevated" style={layoutRegionStyle}>
+            <span className="eui-text-body-sm" style={layoutPaneTitleStyle}>Page header</span>
+          </div>
+          <div className="eui-card" data-eui-variant="elevated" style={layoutRegionStyle}>
+            <span className="eui-text-body-sm" style={layoutPaneTitleStyle}>Toolbar</span>
+          </div>
+          <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, minHeight: '120px' }}>
+            <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Table content</p>
+            <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-card</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === 'split-two') {
+    return (
+      <div className="eui-card" data-eui-variant="flat" style={layoutDiagramContainerStyle}>
+        <div className="eui-text-body-sm" style={layoutDiagramTitleStyle}>
+          Split layout: two panes
+        </div>
+        <div className="eui-grid" data-eui-cols="2">
+          <div className="eui-card" data-eui-variant="elevated" style={layoutPaneStyle}>
+            <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Left pane</p>
+            <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+          </div>
+          <div className="eui-card" data-eui-variant="elevated" style={layoutPaneStyle}>
+            <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Right pane</p>
+            <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === 'split-right-bottom') {
+    return (
+      <div className="eui-card" data-eui-variant="flat" style={layoutDiagramContainerStyle}>
+        <div className="eui-text-body-sm" style={layoutDiagramTitleStyle}>
+          Split layout: left + right + bottom (default)
+        </div>
+        <div className="eui-grid" data-eui-cols="2">
+          <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, minHeight: '220px' }}>
+            <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Left pane</p>
+            <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+          </div>
+          <div className="eui-stack" data-eui-gap="sm" style={{ height: '100%' }}>
+            <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, flex: 1 }}>
+              <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Right pane (top)</p>
+              <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+            </div>
+            <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, flex: 1 }}>
+              <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Bottom pane (right)</p>
+              <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === 'split-full-width') {
+    return (
+      <div className="eui-card" data-eui-variant="flat" style={layoutDiagramContainerStyle}>
+        <div className="eui-text-body-sm" style={layoutDiagramTitleStyle}>
+          Split layout: left + right + bottom (full width)
+        </div>
+        <div className="eui-stack" data-eui-gap="sm">
+          <div className="eui-grid" data-eui-cols="2">
+            <div className="eui-card" data-eui-variant="elevated" style={layoutPaneStyle}>
+              <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Left pane (top)</p>
+              <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+            </div>
+            <div className="eui-card" data-eui-variant="elevated" style={layoutPaneStyle}>
+              <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Right pane (top)</p>
+              <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+            </div>
+          </div>
+          <div className="eui-card" data-eui-variant="elevated" style={{ ...layoutPaneStyle, minHeight: '120px' }}>
+            <p className="eui-text-body-sm" style={layoutPaneTitleStyle}>Bottom pane (full width)</p>
+            <p className="eui-text-body-sm" style={layoutPaneMetaStyle}>eui-pane</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+const getLayoutKind = (value: string): LayoutDiagramKind | null => {
+  const normalized = value.trim().toLowerCase();
+  if (normalized === 'app-shell-page') return 'app-shell-page';
+  if (normalized === 'standalone-page') return 'standalone-page';
+  if (normalized === 'data-table-page') return 'data-table-page';
+  if (normalized === 'split-two') return 'split-two';
+  if (normalized === 'split-right-bottom') return 'split-right-bottom';
+  if (normalized === 'split-full-width') return 'split-full-width';
+  return null;
 };
 
 const containerStyle: CSSProperties = {
@@ -50,6 +271,12 @@ const statusToTone = (status: string) => {
   if (normalized.startsWith('rejected')) return 'error';
   if (normalized.startsWith('superseded')) return 'neutral';
   return 'neutral';
+};
+
+const getBadgeIcon = (label: string): string | null => {
+  const normalized = label.trim().toLowerCase();
+  if (normalized === 'in progress') return 'clock';
+  return null;
 };
 
 const contentStyle: CSSProperties = {
@@ -109,11 +336,13 @@ export const DocViewer = ({
   fallback = 'Loading...',
   title,
   status,
-  date
+  date,
+  badges
 }: DocViewerProps) => {
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const isInProgress = badges?.some((badge) => badge.label.trim().toLowerCase() === 'in progress');
 
   useEffect(() => {
     setLoading(true);
@@ -156,22 +385,40 @@ export const DocViewer = ({
 
   return (
     <div style={containerStyle}>
-      {title || status || date ? (
+      {title || status || date || (badges && badges.length > 0) ? (
         <div style={headerStyle}>
           {title ? <h1 style={titleStyle}>{title}</h1> : null}
-          {status || date ? (
+          {status || date || (badges && badges.length > 0) ? (
             <div style={metaStyle}>
               {status ? (
                 <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(status)}>
                   {status}
                 </span>
               ) : null}
+              {badges ? badges.map((badge) => (
+                <span
+                  key={badge.label}
+                  className="eui-badge"
+                  data-eui-tone={badge.tone ?? 'neutral'}
+                  data-eui-variant={badge.variant}
+                >
+                  {getBadgeIcon(badge.label) ? (
+                    <span data-eui-icon={getBadgeIcon(badge.label) ?? undefined} data-eui-size="xs" aria-hidden="true" />
+                  ) : null}
+                  {badge.label}
+                </span>
+              )) : null}
               {date ? <span>Date: {date}</span> : null}
             </div>
           ) : null}
         </div>
       ) : null}
-      <div style={contentStyle} className="eui-card" data-eui-variant="elevated">
+      <div
+        style={contentStyle}
+        className="eui-card"
+        data-eui-variant={isInProgress ? 'muted' : 'elevated'}
+        {...(isInProgress ? { 'data-eui-state': 'muted' } : {})}
+      >
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
@@ -364,26 +611,25 @@ export const DocViewer = ({
                 (child: any) => {
                   if (typeof child === 'object' && child?.props) {
                     const className = child.props.className || '';
-                    return className.includes('language-mermaid');
+                    return className.includes('language-mermaid') || className.includes('language-layout');
                   }
                   return false;
                 }
               ) as any;
 
               if (codeElement) {
-                let chart = '';
-                if (typeof codeElement.props.children === 'string') {
-                  chart = codeElement.props.children;
-                } else if (Array.isArray(codeElement.props.children)) {
-                  chart = codeElement.props.children
-                    .map((c: any) => typeof c === 'string' ? c : (c?.props?.children || ''))
-                    .join('');
-                } else if (codeElement.props.children) {
-                  chart = String(codeElement.props.children);
+                const className = codeElement.props.className || '';
+                const codeText = getNodeText(codeElement.props.children).trim();
+
+                if (className.includes('language-layout')) {
+                  const kind = getLayoutKind(codeText);
+                  if (kind) {
+                    return <LayoutDiagram kind={kind} />;
+                  }
                 }
 
-                if (chart.trim()) {
-                  return <MermaidDiagram chart={chart.trim()} />;
+                if (className.includes('language-mermaid') && codeText) {
+                  return <MermaidDiagram chart={codeText} />;
                 }
               }
 

@@ -38,6 +38,7 @@ This directory contains **current architectural rules, standards, and references
 
 - **[Hero Section Theme Architecture](./hero-section-theme-architecture.md)** - Theme architecture for hero sections
 - **[Component Naming Conventions](./component-naming-conventions.md)** - Recommended naming patterns for components and variants
+- **[Layout Composition Guide](./layout-composition-guide.md)** - Canonical layout patterns and composition rules
 
 ## Creating New Architecture Documents
 

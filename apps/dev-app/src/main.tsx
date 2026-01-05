@@ -10,6 +10,7 @@ import '@packages/tailwind/tailwind.css';
 
 // Import focus policy
 import '@src/ui/focus-policy.css';
+import '@src/ui/state.css';
 
 // Import component CSS
 import '@src/ui/label.css';
@@ -51,4 +52,3 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
   </React.StrictMode>
 );
-

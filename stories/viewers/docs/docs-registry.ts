@@ -30,6 +30,7 @@ export type DocRegistryItem = {
   category: 'adr' | 'architecture' | 'workflows' | 'tasks' | 'steps' | 'other';
   exportName?: string; // Optional: Storybook export name
   storybookId?: string; // Optional: Storybook story id (e.g., "docs-architecture--accessibility-reference")
+  status?: 'in-progress';
   aliases?: string[]; // Optional: alternative paths (for renamed files)
 };
 
@@ -74,6 +75,14 @@ const architectureDocs: DocRegistryItem[] = [
     title: 'Component Naming Conventions',
     category: 'architecture',
     storybookId: 'docs-architecture--component-naming-conventions'
+  },
+  {
+    id: 'arch-layout-composition',
+    path: 'architecture/layout-composition-guide.md',
+    title: 'Layout Composition Guide',
+    category: 'architecture',
+    storybookId: 'docs-architecture--layout-composition-guide',
+    status: 'in-progress'
   },
   {
     id: 'arch-system-prefix',

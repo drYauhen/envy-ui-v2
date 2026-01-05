@@ -46,6 +46,16 @@
   --eui-card-radius: var(--eui-card-variant-flat-radius);
 }
 
+/* Variant: Muted (low emphasis) */
+[data-eui-context] .eui-card[data-eui-variant='muted'] {
+  --eui-card-shadow: var(--eui-card-variant-muted-shadow);
+  --eui-card-border-width: var(--eui-card-variant-muted-border-width);
+  --eui-card-border-style: var(--eui-card-variant-muted-border-style);
+  --eui-card-border-color: var(--eui-card-variant-muted-border-color);
+  --eui-card-background: var(--eui-card-variant-muted-background);
+  --eui-card-radius: var(--eui-card-variant-muted-radius);
+}
+
 /* Variant: Strong (prominent shadow) */
 [data-eui-context] .eui-card[data-eui-variant='strong'] {
   --eui-card-shadow: var(--eui-card-variant-strong-shadow);
@@ -119,4 +129,3 @@
   --eui-card-status-indicator-color: var(--eui-card-status-discontinued-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-discontinued-indicator-width);
 }
-

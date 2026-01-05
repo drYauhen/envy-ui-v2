@@ -5,6 +5,7 @@ import './mermaid.css';
 import '../generated/css/tokens.css';
 import '../packages/tailwind/tailwind.css';
 import '../src/ui/focus-policy.css';
+import '../src/ui/state.css';
 import '../src/ui/label.css';
 import '../src/ui/button.css';
 import '../src/ui/card.css';

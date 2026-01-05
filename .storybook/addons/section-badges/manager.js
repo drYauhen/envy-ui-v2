@@ -16,7 +16,7 @@ export function addStatusBadges(config) {
     return;
   }
   
-  const { sectionStatus } = config;
+  const { sectionStatus, docStatus, docBadgeTooltips } = config;
   
   // Try multiple selectors for sidebar
   const sidebar = document.querySelector('[data-side="left"]') || 
@@ -67,6 +67,21 @@ export function addStatusBadges(config) {
       }
     });
     
+    Object.entries(docStatus || {}).forEach(([storyId, status]) => {
+      if (!status) return;
+
+      const item = document.querySelector(`.sidebar-item[data-item-id="${storyId}"]`);
+      const button = item?.querySelector('button');
+      if (!button || button.hasAttribute('data-doc-status')) return;
+
+      button.setAttribute('data-doc-status', status);
+      const tooltip = docBadgeTooltips?.[status];
+      if (tooltip) {
+        button.setAttribute('data-doc-status-title', tooltip);
+      }
+      attributesAdded++;
+    });
+
     if (attributesAdded > 0) {
       console.log('[Section Badges] Added', attributesAdded, 'data attributes');
     }

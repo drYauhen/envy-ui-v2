@@ -78,7 +78,7 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
                 <div
                   style={{ ...disabledLinkStyle, ...docsListItemStyle }}
                   className="eui-card"
-                  data-eui-variant="elevated"
+                  data-eui-variant="muted"
                 >
                   <div style={docsItemTitleStyle} className="eui-text-title-md">
                     {doc.title}
