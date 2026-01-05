@@ -1,0 +1,18 @@
+{
+  "eui": {
+    "badge": {
+      "border": {
+        "width": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Border width for badge."
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "string",
+          "$description": "Border style for badge."
+        }
+      }
+    }
+  }
+}

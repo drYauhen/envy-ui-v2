@@ -61,16 +61,25 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
           );
 
           return (
-            <li key={doc.id} style={docsListItemStyle}>
+            <li key={doc.id}>
               {storyPath ? (
-                <a href={storyPath} style={docsLinkStyle}>
+                <a
+                  href={storyPath}
+                  style={{ ...docsLinkStyle, ...docsListItemStyle }}
+                  className="eui-card"
+                  data-eui-variant="elevated"
+                >
                   <div style={docsItemTitleStyle} className="eui-text-title-md">
                     {doc.title}
                   </div>
                   {meta}
                 </a>
               ) : (
-                <div style={disabledLinkStyle}>
+                <div
+                  style={{ ...disabledLinkStyle, ...docsListItemStyle }}
+                  className="eui-card"
+                  data-eui-variant="elevated"
+                >
                   <div style={docsItemTitleStyle} className="eui-text-title-md">
                     {doc.title}
                   </div>

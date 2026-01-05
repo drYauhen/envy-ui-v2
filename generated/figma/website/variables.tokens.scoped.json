@@ -2597,277 +2597,6 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Size / Layout",
-      "modes": [
-        "website-dark",
-        "website-default"
-      ],
-      "variables": [
-        {
-          "path": "eui.layout.container.gutterX",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1.5,
-            "website-default": 1.5
-          }
-        },
-        {
-          "path": "eui.layout.container.standard.maxWidth",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 960,
-            "website-default": 960
-          }
-        },
-        {
-          "path": "eui.layout.container.wide.maxWidth",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 100,
-            "website-default": 100
-          }
-        },
-        {
-          "path": "eui.layout.page.padding.x",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1.5,
-            "website-default": 1.5
-          }
-        },
-        {
-          "path": "eui.layout.page.padding.y",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1.5,
-            "website-default": 1.5
-          }
-        },
-        {
-          "path": "eui.layout.section.gap",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1,
-            "website-default": 1
-          },
-          "scopes": [
-            "ITEM_SPACING"
-          ]
-        },
-        {
-          "path": "eui.layout.section.padding",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1,
-            "website-default": 1
-          }
-        },
-        {
-          "path": "eui.layout.section.title.gap",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 0.5,
-            "website-default": 0.5
-          },
-          "scopes": [
-            "ITEM_SPACING"
-          ]
-        },
-        {
-          "path": "eui.layout.toolbar.gap",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 0.5,
-            "website-default": 0.5
-          },
-          "scopes": [
-            "ITEM_SPACING"
-          ]
-        },
-        {
-          "path": "eui.layout.toolbar.height",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 40,
-            "website-default": 40
-          }
-        },
-        {
-          "path": "eui.layout.toolbar.paddingY",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1,
-            "website-default": 1
-          }
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Focus / Focus",
-      "modes": [
-        "website-dark",
-        "website-default"
-      ],
-      "variables": [
-        {
-          "path": "eui.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 3,
-            "website-default": 3
-          },
-          "scopes": [
-            "STROKE_WEIGHT"
-          ]
-        },
-        {
-          "path": "eui.focus.ring.width.base",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 2,
-            "website-default": 2
-          },
-          "scopes": [
-            "STROKE_WEIGHT"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Size / Spacing",
-      "modes": [
-        "website-dark",
-        "website-default"
-      ],
-      "variables": [
-        {
-          "path": "eui.spacing.2xl",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 3,
-            "website-default": 3
-          }
-        },
-        {
-          "path": "eui.spacing.lg",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1.5,
-            "website-default": 1.5
-          }
-        },
-        {
-          "path": "eui.spacing.md",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1,
-            "website-default": 1
-          }
-        },
-        {
-          "path": "eui.spacing.sm",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 0.5,
-            "website-default": 0.5
-          }
-        },
-        {
-          "path": "eui.spacing.xl",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 2,
-            "website-default": 2
-          }
-        },
-        {
-          "path": "eui.spacing.xs",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 0.25,
-            "website-default": 0.25
-          }
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Breakpoint",
-      "modes": [
-        "website-dark",
-        "website-default"
-      ],
-      "variables": [
-        {
-          "path": "eui.breakpoint.desktop",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1280,
-            "website-default": 1280
-          }
-        },
-        {
-          "path": "eui.breakpoint.narrow",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1024,
-            "website-default": 1024
-          }
-        },
-        {
-          "path": "eui.breakpoint.wide",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1600,
-            "website-default": 1600
-          }
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Title Bar",
-      "modes": [
-        "website-dark",
-        "website-default"
-      ],
-      "variables": [
-        {
-          "path": "eui.title-bar.size.height",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 48,
-            "website-default": 48
-          }
-        },
-        {
-          "path": "eui.title-bar.spacing.gap",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1,
-            "website-default": 1
-          },
-          "scopes": [
-            "ITEM_SPACING"
-          ]
-        },
-        {
-          "path": "eui.title-bar.spacing.padding.horizontal",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1.5,
-            "website-default": 1.5
-          }
-        },
-        {
-          "path": "eui.title-bar.spacing.padding.vertical",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 0.75,
-            "website-default": 0.75
-          }
-        }
-      ]
-    },
-    {
       "name": "envy-ui-v2 • Colors / Colors",
       "modes": [
         "website-dark",
@@ -3146,6 +2875,554 @@
         },
         {
           "path": "eui.alert-banner.colors.text.warning",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.8359549983332758,
+              "g": 0.5327387960299282,
+              "b": 0,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.8359549983332758,
+              "g": 0.5327387960299282,
+              "b": 0,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.error.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 1,
+              "g": 0.6939772330385416,
+              "b": 0.6698850560439482,
+              "a": 1
+            },
+            "website-default": {
+              "r": 1,
+              "g": 0.6939772330385416,
+              "b": 0.6698850560439482,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.error.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 1,
+              "g": 0.4605839705011892,
+              "b": 0.43486111956110396,
+              "a": 1
+            },
+            "website-default": {
+              "r": 1,
+              "g": 0.4605839705011892,
+              "b": 0.43486111956110396,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.error.solid.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.8583054012484441,
+              "g": 0.2170249620775424,
+              "b": 0.22870539877522827,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.8583054012484441,
+              "g": 0.2170249620775424,
+              "b": 0.22870539877522827,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.error.solid.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.8583054012484441,
+              "g": 0.2170249620775424,
+              "b": 0.22870539877522827,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.8583054012484441,
+              "g": 0.2170249620775424,
+              "b": 0.22870539877522827,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.error.solid.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.error.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.800885927161737,
+              "g": 0.19937443620195971,
+              "b": 0.2105056983761054,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.800885927161737,
+              "g": 0.19937443620195971,
+              "b": 0.2105056983761054,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.info.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.672255129449895,
+              "g": 0.8763993297559693,
+              "b": 1,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.672255129449895,
+              "g": 0.8763993297559693,
+              "b": 1,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.info.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.3511992164551125,
+              "g": 0.7650429665782693,
+              "b": 1,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.3511992164551125,
+              "g": 0.7650429665782693,
+              "b": 1,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.info.solid.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0,
+              "g": 0.5799111312069141,
+              "b": 0.8448122935415836,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0,
+              "g": 0.5799111312069141,
+              "b": 0.8448122935415836,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.info.solid.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0,
+              "g": 0.5799111312069141,
+              "b": 0.8448122935415836,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0,
+              "g": 0.5799111312069141,
+              "b": 0.8448122935415836,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.info.solid.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.info.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0,
+              "g": 0.5420492020662088,
+              "b": 0.7859725302983113,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0,
+              "g": 0.5420492020662088,
+              "b": 0.7859725302983113,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.neutral.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9540474781011391,
+              "g": 0.9540474781011389,
+              "b": 0.9540474781011391,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9540474781011391,
+              "g": 0.9540474781011389,
+              "b": 0.9540474781011391,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.neutral.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9214775807409604,
+              "g": 0.9214775807409602,
+              "b": 0.9214775807409603,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.neutral.solid.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.neutral.solid.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.neutral.solid.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.neutral.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.36650623808515015,
+              "g": 0.36650623808515,
+              "b": 0.36650623808515004,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.success.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.7130990178422156,
+              "g": 0.9716475394875866,
+              "b": 0.7543927118126691,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.7130990178422156,
+              "g": 0.9716475394875866,
+              "b": 0.7543927118126691,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.success.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.3957718932572475,
+              "g": 0.8868835500243489,
+              "b": 0.5291979000374187,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.3957718932572475,
+              "g": 0.8868835500243489,
+              "b": 0.5291979000374187,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.success.solid.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.07781538371453348,
+              "g": 0.6993678661389312,
+              "b": 0.3310127138376391,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.07781538371453348,
+              "g": 0.6993678661389312,
+              "b": 0.3310127138376391,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.success.solid.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.07781538371453348,
+              "g": 0.6993678661389312,
+              "b": 0.3310127138376391,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.07781538371453348,
+              "g": 0.6993678661389312,
+              "b": 0.3310127138376391,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.success.solid.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.success.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.0914588524197689,
+              "g": 0.6563632484619292,
+              "b": 0.3129430168128605,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.0914588524197689,
+              "g": 0.6563632484619292,
+              "b": 0.3129430168128605,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.variant.outline.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": "#00000000",
+            "website-default": "#00000000"
+          }
+        },
+        {
+          "path": "eui.badge.colors.warning.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 1,
+              "g": 0.9263166653458195,
+              "b": 0.7336846366938978,
+              "a": 1
+            },
+            "website-default": {
+              "r": 1,
+              "g": 0.9263166653458195,
+              "b": 0.7336846366938978,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.warning.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 1,
+              "g": 0.7647386593204302,
+              "b": 0.395849372660206,
+              "a": 1
+            },
+            "website-default": {
+              "r": 1,
+              "g": 0.7647386593204302,
+              "b": 0.395849372660206,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.warning.solid.background",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.8754779563726459,
+              "g": 0.5695623153272585,
+              "b": 0.10043160110860355,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.8754779563726459,
+              "g": 0.5695623153272585,
+              "b": 0.10043160110860355,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.warning.solid.border",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.8754779563726459,
+              "g": 0.5695623153272585,
+              "b": 0.10043160110860355,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.8754779563726459,
+              "g": 0.5695623153272585,
+              "b": 0.10043160110860355,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.warning.solid.text",
+          "type": "COLOR",
+          "valuesByMode": {
+            "website-dark": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            },
+            "website-default": {
+              "r": 0.9999999999999999,
+              "g": 0.9999999999999997,
+              "b": 0.9999999999999999,
+              "a": 1
+            }
+          }
+        },
+        {
+          "path": "eui.badge.colors.warning.text",
           "type": "COLOR",
           "valuesByMode": {
             "website-dark": {
@@ -5224,6 +5501,332 @@
               "b": 0.1314994135379519,
               "a": 1
             }
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Badge",
+      "modes": [
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.badge.border.width",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1,
+            "website-default": 1
+          },
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.badge.shape.radius",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 4,
+            "website-default": 4
+          }
+        },
+        {
+          "path": "eui.badge.spacing.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.25,
+            "website-default": 0.25
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.badge.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5,
+            "website-default": 0.5
+          }
+        },
+        {
+          "path": "eui.badge.spacing.padding.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2,
+            "website-default": 2
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Layout",
+      "modes": [
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.layout.container.gutterX",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.layout.container.standard.maxWidth",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 960,
+            "website-default": 960
+          }
+        },
+        {
+          "path": "eui.layout.container.wide.maxWidth",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 100,
+            "website-default": 100
+          }
+        },
+        {
+          "path": "eui.layout.page.padding.x",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.layout.page.padding.y",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.layout.section.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1,
+            "website-default": 1
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.layout.section.padding",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1,
+            "website-default": 1
+          }
+        },
+        {
+          "path": "eui.layout.section.title.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5,
+            "website-default": 0.5
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.layout.toolbar.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5,
+            "website-default": 0.5
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.layout.toolbar.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 40,
+            "website-default": 40
+          }
+        },
+        {
+          "path": "eui.layout.toolbar.paddingY",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1,
+            "website-default": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Focus / Focus",
+      "modes": [
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 3,
+            "website-default": 3
+          },
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        },
+        {
+          "path": "eui.focus.ring.width.base",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2,
+            "website-default": 2
+          },
+          "scopes": [
+            "STROKE_WEIGHT"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "modes": [
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 3,
+            "website-default": 3
+          }
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1,
+            "website-default": 1
+          }
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5,
+            "website-default": 0.5
+          }
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2,
+            "website-default": 2
+          }
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.25,
+            "website-default": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Breakpoint",
+      "modes": [
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.breakpoint.desktop",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1280,
+            "website-default": 1280
+          }
+        },
+        {
+          "path": "eui.breakpoint.narrow",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1024,
+            "website-default": 1024
+          }
+        },
+        {
+          "path": "eui.breakpoint.wide",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1600,
+            "website-default": 1600
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Title Bar",
+      "modes": [
+        "website-dark",
+        "website-default"
+      ],
+      "variables": [
+        {
+          "path": "eui.title-bar.size.height",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 48,
+            "website-default": 48
+          }
+        },
+        {
+          "path": "eui.title-bar.spacing.gap",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1,
+            "website-default": 1
+          },
+          "scopes": [
+            "ITEM_SPACING"
+          ]
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.5,
+            "website-default": 1.5
+          }
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.75,
+            "website-default": 0.75
           }
         }
       ]

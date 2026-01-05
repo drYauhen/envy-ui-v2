@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "badge": {
+      "shape": {
+        "radius": {
+          "$value": "{eui.radius.default}",
+          "$type": "dimension",
+          "$description": "Border radius for badge."
+        }
+      }
+    }
+  }
+}

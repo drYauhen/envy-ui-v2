@@ -1,0 +1,187 @@
+{
+  "eui": {
+    "badge": {
+      "colors": {
+        "variant": {
+          "outline": {
+            "background": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Outline variant background (transparent)."
+            }
+          }
+        },
+        "neutral": {
+          "background": {
+            "$value": "{eui.color.neutral.100}",
+            "$type": "color",
+            "$description": "Neutral badge background (subtle)."
+          },
+          "border": {
+            "$value": "{eui.color.neutral.200}",
+            "$type": "color",
+            "$description": "Neutral badge border."
+          },
+          "text": {
+            "$value": "{eui.color.neutral.700}",
+            "$type": "color",
+            "$description": "Neutral badge text color."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.neutral.700}",
+              "$type": "color",
+              "$description": "Neutral solid badge background."
+            },
+            "border": {
+              "$value": "{eui.color.neutral.700}",
+              "$type": "color",
+              "$description": "Neutral solid badge border."
+            },
+            "text": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Neutral solid badge text color."
+            }
+          }
+        },
+        "success": {
+          "background": {
+            "$value": "{eui.color.status.success.50}",
+            "$type": "color",
+            "$description": "Success badge background (subtle)."
+          },
+          "border": {
+            "$value": "{eui.color.status.success.100}",
+            "$type": "color",
+            "$description": "Success badge border."
+          },
+          "text": {
+            "$value": "{eui.color.status.success.700}",
+            "$type": "color",
+            "$description": "Success badge text color."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.status.success.600}",
+              "$type": "color",
+              "$description": "Success solid badge background."
+            },
+            "border": {
+              "$value": "{eui.color.status.success.600}",
+              "$type": "color",
+              "$description": "Success solid badge border."
+            },
+            "text": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Success solid badge text color."
+            }
+          }
+        },
+        "warning": {
+          "background": {
+            "$value": "{eui.color.status.warning.50}",
+            "$type": "color",
+            "$description": "Warning badge background (subtle)."
+          },
+          "border": {
+            "$value": "{eui.color.status.warning.100}",
+            "$type": "color",
+            "$description": "Warning badge border."
+          },
+          "text": {
+            "$value": "{eui.color.status.warning.700}",
+            "$type": "color",
+            "$description": "Warning badge text color."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.status.warning.600}",
+              "$type": "color",
+              "$description": "Warning solid badge background."
+            },
+            "border": {
+              "$value": "{eui.color.status.warning.600}",
+              "$type": "color",
+              "$description": "Warning solid badge border."
+            },
+            "text": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Warning solid badge text color."
+            }
+          }
+        },
+        "error": {
+          "background": {
+            "$value": "{eui.color.status.error.50}",
+            "$type": "color",
+            "$description": "Error badge background (subtle)."
+          },
+          "border": {
+            "$value": "{eui.color.status.error.100}",
+            "$type": "color",
+            "$description": "Error badge border."
+          },
+          "text": {
+            "$value": "{eui.color.status.error.700}",
+            "$type": "color",
+            "$description": "Error badge text color."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.status.error.600}",
+              "$type": "color",
+              "$description": "Error solid badge background."
+            },
+            "border": {
+              "$value": "{eui.color.status.error.600}",
+              "$type": "color",
+              "$description": "Error solid badge border."
+            },
+            "text": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Error solid badge text color."
+            }
+          }
+        },
+        "info": {
+          "background": {
+            "$value": "{eui.color.status.info.50}",
+            "$type": "color",
+            "$description": "Info badge background (subtle)."
+          },
+          "border": {
+            "$value": "{eui.color.status.info.100}",
+            "$type": "color",
+            "$description": "Info badge border."
+          },
+          "text": {
+            "$value": "{eui.color.status.info.700}",
+            "$type": "color",
+            "$description": "Info badge text color."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.status.info.600}",
+              "$type": "color",
+              "$description": "Info solid badge background."
+            },
+            "border": {
+              "$value": "{eui.color.status.info.600}",
+              "$type": "color",
+              "$description": "Info solid badge border."
+            },
+            "text": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Info solid badge text color."
+            }
+          }
+        }
+      }
+    }
+  }
+}

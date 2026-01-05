@@ -1,0 +1,38 @@
+{
+  "eui": {
+    "badge": {
+      "typography": {
+        "fontFamily": {
+          "$value": "{eui.typography.fontFamily.ui}",
+          "$type": "fontFamily",
+          "$description": "Font family for badge text."
+        },
+        "fontSize": {
+          "$value": "{eui.typography.fontSize.xs}",
+          "$type": "fontSize",
+          "$description": "Font size for badge text."
+        },
+        "fontWeight": {
+          "$value": "{eui.typography.fontWeight.semibold}",
+          "$type": "fontWeight",
+          "$description": "Font weight for badge text."
+        },
+        "lineHeight": {
+          "$value": "{eui.typography.lineHeight.tight}",
+          "$type": "lineHeight",
+          "$description": "Line height for badge text."
+        },
+        "letterSpacing": {
+          "$value": "{eui.typography.letterSpacing.wider}",
+          "$type": "letterSpacing",
+          "$description": "Letter spacing for badge text."
+        },
+        "textTransform": {
+          "$value": "{eui.typography.textTransform.uppercase}",
+          "$type": "textTransform",
+          "$description": "Text transform for badge text."
+        }
+      }
+    }
+  }
+}

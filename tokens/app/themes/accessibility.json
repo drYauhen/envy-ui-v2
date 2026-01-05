@@ -62,6 +62,180 @@
         }
       }
     },
+    "badge": {
+      "colors": {
+        "neutral": {
+          "background": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color",
+            "$description": "Neutral badge background for maximum contrast in accessibility theme."
+          },
+          "border": {
+            "$value": "{eui.color.neutral.800}",
+            "$type": "color",
+            "$description": "Neutral badge border with stronger contrast for accessibility theme."
+          },
+          "text": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color",
+            "$description": "Neutral badge text color with maximum contrast for accessibility theme."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Neutral solid badge background for accessibility theme."
+            },
+            "border": {
+              "$value": "{eui.color.neutral.800}",
+              "$type": "color",
+              "$description": "Neutral solid badge border for accessibility theme."
+            },
+            "text": {
+              "$value": "{eui.color.neutral.900}",
+              "$type": "color",
+              "$description": "Neutral solid badge text color for accessibility theme."
+            }
+          }
+        },
+        "success": {
+          "background": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color",
+            "$description": "Success badge background for maximum contrast in accessibility theme."
+          },
+          "border": {
+            "$value": "{eui.color.status.success.700}",
+            "$type": "color",
+            "$description": "Success badge border with improved contrast for accessibility theme."
+          },
+          "text": {
+            "$value": "{eui.color.status.success.700}",
+            "$type": "color",
+            "$description": "Success badge text color for accessibility theme."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Success solid badge background for accessibility theme."
+            },
+            "border": {
+              "$value": "{eui.color.status.success.700}",
+              "$type": "color",
+              "$description": "Success solid badge border for accessibility theme."
+            },
+            "text": {
+              "$value": "{eui.color.status.success.700}",
+              "$type": "color",
+              "$description": "Success solid badge text color for accessibility theme."
+            }
+          }
+        },
+        "warning": {
+          "background": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color",
+            "$description": "Warning badge background for maximum contrast in accessibility theme."
+          },
+          "border": {
+            "$value": "{eui.color.status.warning.700}",
+            "$type": "color",
+            "$description": "Warning badge border with improved contrast for accessibility theme."
+          },
+          "text": {
+            "$value": "{eui.color.status.warning.700}",
+            "$type": "color",
+            "$description": "Warning badge text color for accessibility theme."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Warning solid badge background for accessibility theme."
+            },
+            "border": {
+              "$value": "{eui.color.status.warning.700}",
+              "$type": "color",
+              "$description": "Warning solid badge border for accessibility theme."
+            },
+            "text": {
+              "$value": "{eui.color.status.warning.700}",
+              "$type": "color",
+              "$description": "Warning solid badge text color for accessibility theme."
+            }
+          }
+        },
+        "error": {
+          "background": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color",
+            "$description": "Error badge background for maximum contrast in accessibility theme."
+          },
+          "border": {
+            "$value": "{eui.color.status.error.700}",
+            "$type": "color",
+            "$description": "Error badge border with improved contrast for accessibility theme."
+          },
+          "text": {
+            "$value": "{eui.color.status.error.700}",
+            "$type": "color",
+            "$description": "Error badge text color for accessibility theme."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Error solid badge background for accessibility theme."
+            },
+            "border": {
+              "$value": "{eui.color.status.error.700}",
+              "$type": "color",
+              "$description": "Error solid badge border for accessibility theme."
+            },
+            "text": {
+              "$value": "{eui.color.status.error.700}",
+              "$type": "color",
+              "$description": "Error solid badge text color for accessibility theme."
+            }
+          }
+        },
+        "info": {
+          "background": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color",
+            "$description": "Info badge background for maximum contrast in accessibility theme."
+          },
+          "border": {
+            "$value": "{eui.color.status.info.700}",
+            "$type": "color",
+            "$description": "Info badge border with improved contrast for accessibility theme."
+          },
+          "text": {
+            "$value": "{eui.color.status.info.700}",
+            "$type": "color",
+            "$description": "Info badge text color for accessibility theme."
+          },
+          "solid": {
+            "background": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Info solid badge background for accessibility theme."
+            },
+            "border": {
+              "$value": "{eui.color.status.info.700}",
+              "$type": "color",
+              "$description": "Info solid badge border for accessibility theme."
+            },
+            "text": {
+              "$value": "{eui.color.status.info.700}",
+              "$type": "color",
+              "$description": "Info solid badge text color for accessibility theme."
+            }
+          }
+        }
+      }
+    },
     "radius": {
       "none": {
         "$value": "0px",

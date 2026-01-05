@@ -791,166 +791,6 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Size / Layout",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.layout.container.gutterX",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.layout.container.standard.maxWidth",
-          "type": "FLOAT",
-          "value": 960
-        },
-        {
-          "path": "eui.layout.container.wide.maxWidth",
-          "type": "FLOAT",
-          "value": 100
-        },
-        {
-          "path": "eui.layout.page.padding.x",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.layout.page.padding.y",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.layout.section.gap",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.layout.section.padding",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.layout.section.title.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.layout.toolbar.gap",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.layout.toolbar.height",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.layout.toolbar.paddingY",
-          "type": "FLOAT",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Focus / Focus",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.focus.ring.width.base",
-          "type": "FLOAT",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Size / Spacing",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.spacing.2xl",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.spacing.lg",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.spacing.md",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.spacing.sm",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.spacing.xl",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.spacing.xs",
-          "type": "FLOAT",
-          "value": 0.25
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Breakpoint",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.breakpoint.desktop",
-          "type": "FLOAT",
-          "value": 1280
-        },
-        {
-          "path": "eui.breakpoint.narrow",
-          "type": "FLOAT",
-          "value": 1024
-        },
-        {
-          "path": "eui.breakpoint.wide",
-          "type": "FLOAT",
-          "value": 1600
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Title Bar",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.title-bar.size.height",
-          "type": "FLOAT",
-          "value": 48
-        },
-        {
-          "path": "eui.title-bar.spacing.gap",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.title-bar.spacing.padding.horizontal",
-          "type": "FLOAT",
-          "value": 1.5
-        },
-        {
-          "path": "eui.title-bar.spacing.padding.vertical",
-          "type": "FLOAT",
-          "value": 0.75
-        }
-      ]
-    },
-    {
       "name": "envy-ui-v2 • Colors / Colors",
       "mode": "default",
       "variables": [
@@ -1031,6 +871,161 @@
         },
         {
           "path": "eui.alert-banner.colors.text.warning",
+          "type": "COLOR",
+          "value": "oklch(69% 0.15 70)"
+        },
+        {
+          "path": "eui.badge.colors.error.background",
+          "type": "COLOR",
+          "value": "oklch(84% 0.10 24)"
+        },
+        {
+          "path": "eui.badge.colors.error.border",
+          "type": "COLOR",
+          "value": "oklch(74% 0.18 25)"
+        },
+        {
+          "path": "eui.badge.colors.error.solid.background",
+          "type": "COLOR",
+          "value": "oklch(59% 0.20 25)"
+        },
+        {
+          "path": "eui.badge.colors.error.solid.border",
+          "type": "COLOR",
+          "value": "oklch(59% 0.20 25)"
+        },
+        {
+          "path": "eui.badge.colors.error.solid.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.badge.colors.error.text",
+          "type": "COLOR",
+          "value": "oklch(56% 0.19 25)"
+        },
+        {
+          "path": "eui.badge.colors.info.background",
+          "type": "COLOR",
+          "value": "oklch(88% 0.07 236)"
+        },
+        {
+          "path": "eui.badge.colors.info.border",
+          "type": "COLOR",
+          "value": "oklch(78% 0.13 237)"
+        },
+        {
+          "path": "eui.badge.colors.info.solid.background",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.badge.colors.info.solid.border",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.badge.colors.info.solid.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.badge.colors.info.text",
+          "type": "COLOR",
+          "value": "oklch(60% 0.14 237)"
+        },
+        {
+          "path": "eui.badge.colors.neutral.background",
+          "type": "COLOR",
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.badge.colors.neutral.border",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.badge.colors.neutral.solid.background",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.badge.colors.neutral.solid.border",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.badge.colors.neutral.solid.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.badge.colors.neutral.text",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.badge.colors.success.background",
+          "type": "COLOR",
+          "value": "oklch(92% 0.10 149)"
+        },
+        {
+          "path": "eui.badge.colors.success.border",
+          "type": "COLOR",
+          "value": "oklch(82% 0.17 150)"
+        },
+        {
+          "path": "eui.badge.colors.success.solid.background",
+          "type": "COLOR",
+          "value": "oklch(67% 0.18 150)"
+        },
+        {
+          "path": "eui.badge.colors.success.solid.border",
+          "type": "COLOR",
+          "value": "oklch(67% 0.18 150)"
+        },
+        {
+          "path": "eui.badge.colors.success.solid.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.badge.colors.success.text",
+          "type": "COLOR",
+          "value": "oklch(64% 0.17 150)"
+        },
+        {
+          "path": "eui.badge.colors.variant.outline.background",
+          "type": "COLOR",
+          "value": "#00000000"
+        },
+        {
+          "path": "eui.badge.colors.warning.background",
+          "type": "COLOR",
+          "value": "oklch(97% 0.08 69)"
+        },
+        {
+          "path": "eui.badge.colors.warning.border",
+          "type": "COLOR",
+          "value": "oklch(87% 0.14 70)"
+        },
+        {
+          "path": "eui.badge.colors.warning.solid.background",
+          "type": "COLOR",
+          "value": "oklch(72% 0.15 70)"
+        },
+        {
+          "path": "eui.badge.colors.warning.solid.border",
+          "type": "COLOR",
+          "value": "oklch(72% 0.15 70)"
+        },
+        {
+          "path": "eui.badge.colors.warning.solid.text",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.badge.colors.warning.text",
           "type": "COLOR",
           "value": "oklch(69% 0.15 70)"
         },
@@ -1673,6 +1668,197 @@
           "path": "eui.title-bar.colors.text",
           "type": "COLOR",
           "value": "oklch(25% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Badge",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.badge.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.badge.shape.radius",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.badge.spacing.gap",
+          "type": "FLOAT",
+          "value": 0.25
+        },
+        {
+          "path": "eui.badge.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.badge.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Layout",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.layout.container.gutterX",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.container.standard.maxWidth",
+          "type": "FLOAT",
+          "value": 960
+        },
+        {
+          "path": "eui.layout.container.wide.maxWidth",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.layout.page.padding.x",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.page.padding.y",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.layout.section.gap",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.layout.section.padding",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.layout.section.title.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.layout.toolbar.gap",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.layout.toolbar.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.layout.toolbar.paddingY",
+          "type": "FLOAT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Focus / Focus",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "value": 0.5
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "value": 0.25
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Breakpoint",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.breakpoint.desktop",
+          "type": "FLOAT",
+          "value": 1280
+        },
+        {
+          "path": "eui.breakpoint.narrow",
+          "type": "FLOAT",
+          "value": 1024
+        },
+        {
+          "path": "eui.breakpoint.wide",
+          "type": "FLOAT",
+          "value": 1600
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Title Bar",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.title-bar.size.height",
+          "type": "FLOAT",
+          "value": 48
+        },
+        {
+          "path": "eui.title-bar.spacing.gap",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.horizontal",
+          "type": "FLOAT",
+          "value": 1.5
+        },
+        {
+          "path": "eui.title-bar.spacing.padding.vertical",
+          "type": "FLOAT",
+          "value": 0.75
         }
       ]
     },

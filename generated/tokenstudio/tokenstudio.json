@@ -824,6 +824,178 @@
     "$value": "9999px",
     "$type": "dimension"
   },
+  "eui.badge.colors.neutral.background": {
+    "$value": "oklch(96.5% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.neutral.border": {
+    "$value": "oklch(94% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.neutral.text": {
+    "$value": "oklch(48% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.neutral.solid.background": {
+    "$value": "oklch(48% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.neutral.solid.border": {
+    "$value": "oklch(48% 0.00 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.neutral.solid.text": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.success.background": {
+    "$value": "oklch(92% 0.10 149)",
+    "$type": "color"
+  },
+  "eui.badge.colors.success.border": {
+    "$value": "oklch(82% 0.17 150)",
+    "$type": "color"
+  },
+  "eui.badge.colors.success.text": {
+    "$value": "oklch(64% 0.17 150)",
+    "$type": "color"
+  },
+  "eui.badge.colors.success.solid.background": {
+    "$value": "oklch(67% 0.18 150)",
+    "$type": "color"
+  },
+  "eui.badge.colors.success.solid.border": {
+    "$value": "oklch(67% 0.18 150)",
+    "$type": "color"
+  },
+  "eui.badge.colors.success.solid.text": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.warning.background": {
+    "$value": "oklch(97% 0.08 69)",
+    "$type": "color"
+  },
+  "eui.badge.colors.warning.border": {
+    "$value": "oklch(87% 0.14 70)",
+    "$type": "color"
+  },
+  "eui.badge.colors.warning.text": {
+    "$value": "oklch(69% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.badge.colors.warning.solid.background": {
+    "$value": "oklch(72% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.badge.colors.warning.solid.border": {
+    "$value": "oklch(72% 0.15 70)",
+    "$type": "color"
+  },
+  "eui.badge.colors.warning.solid.text": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.error.background": {
+    "$value": "oklch(84% 0.10 24)",
+    "$type": "color"
+  },
+  "eui.badge.colors.error.border": {
+    "$value": "oklch(74% 0.18 25)",
+    "$type": "color"
+  },
+  "eui.badge.colors.error.text": {
+    "$value": "oklch(56% 0.19 25)",
+    "$type": "color"
+  },
+  "eui.badge.colors.error.solid.background": {
+    "$value": "oklch(59% 0.20 25)",
+    "$type": "color"
+  },
+  "eui.badge.colors.error.solid.border": {
+    "$value": "oklch(59% 0.20 25)",
+    "$type": "color"
+  },
+  "eui.badge.colors.error.solid.text": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.info.background": {
+    "$value": "oklch(88% 0.07 236)",
+    "$type": "color"
+  },
+  "eui.badge.colors.info.border": {
+    "$value": "oklch(78% 0.13 237)",
+    "$type": "color"
+  },
+  "eui.badge.colors.info.text": {
+    "$value": "oklch(60% 0.14 237)",
+    "$type": "color"
+  },
+  "eui.badge.colors.info.solid.background": {
+    "$value": "oklch(63% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.badge.colors.info.solid.border": {
+    "$value": "oklch(63% 0.15 237)",
+    "$type": "color"
+  },
+  "eui.badge.colors.info.solid.text": {
+    "$value": "oklch(100% 0 0)",
+    "$type": "color"
+  },
+  "eui.badge.colors.variant.outline.background": {
+    "$value": "#00000000",
+    "$type": "color"
+  },
+  "eui.badge.typography.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.badge.typography.fontSize": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.badge.typography.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.badge.typography.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.badge.typography.letterSpacing": {
+    "$value": "0.025em",
+    "$type": "letterSpacing"
+  },
+  "eui.badge.typography.textTransform": {
+    "$value": "uppercase",
+    "$type": "textTransform"
+  },
+  "eui.badge.spacing.gap": {
+    "$value": "0.25rem",
+    "$type": "dimension"
+  },
+  "eui.badge.spacing.padding.vertical": {
+    "$value": "2px",
+    "$type": "dimension"
+  },
+  "eui.badge.spacing.padding.horizontal": {
+    "$value": "0.5rem",
+    "$type": "dimension"
+  },
+  "eui.badge.shape.radius": {
+    "$value": "4px",
+    "$type": "dimension"
+  },
+  "eui.badge.border.width": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.badge.border.style": {
+    "$value": "solid",
+    "$type": "string"
+  },
   "eui.shadow.none": {
     "$value": "none",
     "$type": "boxShadow"

@@ -8,6 +8,7 @@ import '../src/ui/focus-policy.css';
 import '../src/ui/label.css';
 import '../src/ui/button.css';
 import '../src/ui/card.css';
+import '../src/ui/badge.css';
 import '../src/ui/checkbox.css';
 import '../src/ui/switch.css';
 import '../src/ui/input.css';

@@ -73,6 +73,7 @@ export const navigationConfig = {
       ],
       otherComponents: [
         "AlertBanner",
+        "Badge",
         "Counter",
         "FormElementsContextThemeTest",
         "FormLayout",

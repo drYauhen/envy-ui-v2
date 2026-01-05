@@ -1,0 +1,95 @@
+/* ============================================================================
+   Badge Component
+   ============================================================================ */
+
+[data-eui-context] .eui-badge {
+  --eui-badge-background: var(--eui-badge-colors-neutral-background);
+  --eui-badge-border: var(--eui-badge-colors-neutral-border);
+  --eui-badge-color: var(--eui-badge-colors-neutral-text);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--eui-badge-spacing-gap);
+  padding: var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal);
+  border-radius: var(--eui-badge-shape-radius);
+  border: var(--eui-badge-border-width) var(--eui-badge-border-style) var(--eui-badge-border);
+  background-color: var(--eui-badge-background);
+  color: var(--eui-badge-color);
+  font-family: var(--eui-badge-typography-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-badge-typography-font-size);
+  font-weight: var(--eui-badge-typography-font-weight);
+  line-height: var(--eui-badge-typography-line-height);
+  letter-spacing: var(--eui-badge-typography-letter-spacing);
+  text-transform: var(--eui-badge-typography-text-transform);
+  white-space: nowrap;
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='success'] {
+  --eui-badge-background: var(--eui-badge-colors-success-background);
+  --eui-badge-border: var(--eui-badge-colors-success-border);
+  --eui-badge-color: var(--eui-badge-colors-success-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='success'][data-eui-variant='solid'] {
+  --eui-badge-background: var(--eui-badge-colors-success-solid-background);
+  --eui-badge-border: var(--eui-badge-colors-success-solid-border);
+  --eui-badge-color: var(--eui-badge-colors-success-solid-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='warning'] {
+  --eui-badge-background: var(--eui-badge-colors-warning-background);
+  --eui-badge-border: var(--eui-badge-colors-warning-border);
+  --eui-badge-color: var(--eui-badge-colors-warning-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='warning'][data-eui-variant='solid'] {
+  --eui-badge-background: var(--eui-badge-colors-warning-solid-background);
+  --eui-badge-border: var(--eui-badge-colors-warning-solid-border);
+  --eui-badge-color: var(--eui-badge-colors-warning-solid-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='error'] {
+  --eui-badge-background: var(--eui-badge-colors-error-background);
+  --eui-badge-border: var(--eui-badge-colors-error-border);
+  --eui-badge-color: var(--eui-badge-colors-error-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='error'][data-eui-variant='solid'] {
+  --eui-badge-background: var(--eui-badge-colors-error-solid-background);
+  --eui-badge-border: var(--eui-badge-colors-error-solid-border);
+  --eui-badge-color: var(--eui-badge-colors-error-solid-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='info'] {
+  --eui-badge-background: var(--eui-badge-colors-info-background);
+  --eui-badge-border: var(--eui-badge-colors-info-border);
+  --eui-badge-color: var(--eui-badge-colors-info-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='info'][data-eui-variant='solid'] {
+  --eui-badge-background: var(--eui-badge-colors-info-solid-background);
+  --eui-badge-border: var(--eui-badge-colors-info-solid-border);
+  --eui-badge-color: var(--eui-badge-colors-info-solid-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='neutral'] {
+  --eui-badge-background: var(--eui-badge-colors-neutral-background);
+  --eui-badge-border: var(--eui-badge-colors-neutral-border);
+  --eui-badge-color: var(--eui-badge-colors-neutral-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-tone='neutral'][data-eui-variant='solid'] {
+  --eui-badge-background: var(--eui-badge-colors-neutral-solid-background);
+  --eui-badge-border: var(--eui-badge-colors-neutral-solid-border);
+  --eui-badge-color: var(--eui-badge-colors-neutral-solid-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-variant='solid'] {
+  --eui-badge-background: var(--eui-badge-colors-neutral-solid-background);
+  --eui-badge-border: var(--eui-badge-colors-neutral-solid-border);
+  --eui-badge-color: var(--eui-badge-colors-neutral-solid-text);
+}
+
+[data-eui-context] .eui-badge[data-eui-variant='outline'] {
+  --eui-badge-background: var(--eui-badge-colors-variant-outline-background);
+}

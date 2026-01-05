@@ -42,27 +42,14 @@ const metaStyle: CSSProperties = {
   marginTop: '8px'
 };
 
-const statusBadgeStyle: CSSProperties = {
-  display: 'inline-block',
-  padding: '2px 8px',
-  borderRadius: '4px',
-  fontSize: '12px',
-  fontWeight: 600,
-  textTransform: 'uppercase'
-};
-
-const getStatusStyle = (status: string): CSSProperties => {
-  const base = { ...statusBadgeStyle };
-  switch (status.toLowerCase()) {
-    case 'accepted':
-      return { ...base, background: '#d1fae5', color: '#065f46' };
-    case 'exploratory':
-      return { ...base, background: '#dbeafe', color: '#1e40af' };
-    case 'superseded':
-      return { ...base, background: '#f3f4f6', color: '#374151' };
-    default:
-      return { ...base, background: '#fef3c7', color: '#92400e' };
-  }
+const statusToTone = (status: string) => {
+  const normalized = status.toLowerCase();
+  if (normalized.startsWith('accepted')) return 'success';
+  if (normalized.startsWith('exploratory')) return 'info';
+  if (normalized.startsWith('proposed')) return 'warning';
+  if (normalized.startsWith('rejected')) return 'error';
+  if (normalized.startsWith('superseded')) return 'neutral';
+  return 'neutral';
 };
 
 const contentStyle: CSSProperties = {
@@ -176,7 +163,11 @@ export const DocViewer = ({
           {title ? <h1 style={titleStyle}>{title}</h1> : null}
           {status || date ? (
             <div style={metaStyle}>
-              {status ? <span style={getStatusStyle(status)}>{status}</span> : null}
+              {status ? (
+                <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(status)}>
+                  {status}
+                </span>
+              ) : null}
               {date ? <span>Date: {date}</span> : null}
             </div>
           ) : null}
