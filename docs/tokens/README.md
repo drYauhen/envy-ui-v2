@@ -79,12 +79,7 @@ The script will:
 
 ### Allowed Exceptions
 
-The following literal values are allowed:
-
-- `0px`, `0rem`, `0em`, `0%`, `0`
-- `1px` (for borders)
-- `100%`, `auto`, `inherit`, `transparent`
-- CSS keywords (e.g., `solid`, `dashed`, `flex`, `block`)
+Token validation uses a permissive allowlist of safe CSS keywords and baseline literals to avoid false positives (see `scripts/validate-token-usage.mjs`). However, **policy overrides tooling**: use of literals should follow the rules in [`docs/architecture/token-usage-rules.md`](../architecture/token-usage-rules.md). Only the documented temporary gaps (motion/opacity/press translation) are allowed without explicit approval. Any other literal must be justified and documented.
 
 ### Example Output
 
@@ -361,4 +356,3 @@ See [use-cases.md](./use-cases.md) for complete examples with code.
 - [Token Usage Rules](../architecture/token-usage-rules.md) - Rules for using tokens
 - [Token Reference](./reference.md) - Auto-generated token reference
 - [Token Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Architecture overview
-

@@ -4,9 +4,9 @@
 
 ## Single Source of Truth
 
-**`stories/viewers/docs/docs-registry.ts` is the SINGLE SOURCE OF TRUTH for all documentation.**
+**`stories/viewers/docs/docs-registry.ts` is the SINGLE SOURCE OF TRUTH for all non-ADR documentation.**
 
-All documentation metadata must be defined here FIRST:
+All non-ADR documentation metadata must be defined here FIRST:
 - Unique `id` for each document
 - `path` relative to `docs/` root
 - `title` from markdown header
@@ -14,6 +14,8 @@ All documentation metadata must be defined here FIRST:
 - `exportName` (optional, for Storybook exports)
 - `storybookId` (optional, Storybook story id for link mapping)
 - `aliases` (optional, for renamed files)
+
+**ADR exception:** ADR metadata lives in `stories/viewers/docs/adr-list-data.ts` (single source of truth) and is imported into the registry for link mapping and Storybook navigation. Only ADR guide documents (README, AGENT-GUIDE, TEMPLATE) should be registered manually.
 
 ## Excluded Directories
 
@@ -72,6 +74,7 @@ This checks:
 - ✅ All links point to existing files
 - ✅ All linked files are registered in registry
 - ✅ No broken cross-references
+- ✅ Storybook story ids in the registry resolve to real story exports
 
 ## Storybook Doc Stories
 
@@ -169,6 +172,8 @@ However, ADR guide documents (README.md, AGENT-GUIDE.md, TEMPLATE.md) must be ma
 - Prefer `graph TD` for vertical flow (more readable in docs).
 - Use `stroke-width:2px` (hyphenated, with unit).
 - Use quotes for labels with spaces: `A["Label with spaces"]`.
+
+**ADR overrides:** ADRs have stricter diagram rules (orientation, sizing, typography). See `docs/adr/README.md`.
 
 **Optional max width:**
 ```mermaid

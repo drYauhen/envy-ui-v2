@@ -69,6 +69,8 @@ Foundation → Semantic → Context → Theme → Component
 
 This ensures complete independence between contexts and avoids cross-context dependencies. See [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) for details on the evolution of this structure.
 
+**Note:** Some components may define variants within a single theme (for example, a light side-nav or alternate hero variant). These variants live within component tokens (for example, `tokens/{context}/components/{component}/variant/*`) and are selected at the component level. They do not introduce a new theme layer. Cross-context variant compatibility is desirable when reuse is needed, but it is not formally defined yet.
+
 **Resolution Priority:**
 1. Foundation tokens provide base values
 2. Semantic tokens reference foundations (can be context-neutral defaults)

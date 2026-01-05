@@ -1,8 +1,10 @@
-# Component Naming Conventions: Research & Recommendations
+# Component Naming Conventions
 
 **Date:** 2025-01-21  
-**Status:** Research & Recommendation  
+**Status:** Guide (Advisory)  
 **Context:** Establishing naming conventions for Select component variants
+
+This document is a guide and recommendation, not an enforceable rule. If this evolves into a binding system rule, capture it as an ADR or update an Architecture rule document.
 
 ---
 
@@ -170,7 +172,7 @@ Apply same pattern to other components:
 
 ---
 
-## Decision
+## Recommendation
 
 **✅ Use Modifier Prefix Pattern:**
 - `Select` (base)
@@ -195,5 +197,3 @@ If we need to support combined features (e.g., multi + searchable), we have opti
 3. **Props-based:** Add `searchable` prop to `MultiSelect`
 
 Decision should be made based on usage patterns and complexity.
-
-

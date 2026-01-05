@@ -23,7 +23,6 @@ This directory contains **current architectural rules, standards, and references
 **Enforceable rules that must be followed:**
 
 - **[Token Usage Rules](./token-usage-rules.md)** - Rules for using design tokens in CSS, contracts, and generated outputs
-- **[Component Naming Conventions](./component-naming-conventions.md)** - Naming patterns for components and variants
 - **[System Prefix](./system-prefix.md)** - Canonical prefix system (`eui`)
 
 ### References
@@ -38,6 +37,7 @@ This directory contains **current architectural rules, standards, and references
 **Architectural guides and patterns:**
 
 - **[Hero Section Theme Architecture](./hero-section-theme-architecture.md)** - Theme architecture for hero sections
+- **[Component Naming Conventions](./component-naming-conventions.md)** - Recommended naming patterns for components and variants
 
 ## Creating New Architecture Documents
 

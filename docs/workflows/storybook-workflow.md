@@ -14,10 +14,18 @@ Storybook serves as an AI-agent-oriented architecture layer for understanding an
 
 ```
 stories/
-  ├── components/       # Component stories
-  ├── docs/            # Documentation stories (ADR, Architecture, Workflows)
-  ├── tokens/          # Token visualization (organized by context: app, website, report)
-  └── viewers/         # Documentation renderers and viewers
+  ├── architecture/     # Architecture story entries
+  ├── components/       # Component stories (if used)
+  ├── docs/             # Documentation stories (ADR, Architecture, Workflows, Tokens)
+  ├── foundations/      # Foundation token stories
+  ├── layouts/          # Layout stories
+  ├── tailwind/         # Tailwind examples
+  ├── templates/        # Template stories
+  ├── tokens/           # Token visualization (app, website, report)
+  ├── tsx/              # TSX component stories (clean/react-aria)
+  ├── utils/            # Storybook utilities
+  ├── viewers/          # Documentation renderers and viewers
+  └── web-components/   # Web component stories
 ```
 
 **Note:** Documentation stories render markdown from `docs/` and use shared viewers (DocViewer + AdrViewer) to keep cross-links and mermaid handling consistent.

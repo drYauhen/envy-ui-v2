@@ -64,6 +64,7 @@ Foundation → Semantic → Context → Theme → Component
 
 - **Semantic** (`tokens/{context}/semantic/typography/`):
   - `text-styles.json` - Semantic text styles (heading-1 through heading-6, body, caption, code)
+  - Note: The app context now includes additional roles (title, bodyStrong, label, overline). Other contexts can add them as needed.
 
 - **Themes** (`tokens/{context}/themes/`):
   - Base font-size per theme (example values: `app/default` might use one base size, `app/accessibility` might use a larger base - actual values are theme-dependent)
@@ -627,4 +628,3 @@ If button font-size = 0.9rem (smaller than base)
 ## Changelog
 
 - 2025-01-21: Initial ADR - Typography units architecture decision
-

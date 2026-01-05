@@ -16,7 +16,7 @@ These are defined in `templates/*.json` and remain constant across themes.
 - **Spacing** - padding, gaps (can vary by theme)
 - **Component styling** - buttons, cards inside Hero Section inherit theme
 
-These are defined in `tokens/components/hero-section/` and reference semantic tokens that change per theme.
+These are defined in `tokens/{context}/components/hero-section/` and reference semantic tokens that change per theme.
 
 ## Architecture Flow
 
@@ -25,7 +25,7 @@ Template Configuration (templates/hero-centered-v1.json)
   ↓
   Defines: layout variant, content structure, media position
   ↓
-Hero Section Tokens (tokens/components/hero-section/)
+Hero Section Tokens (tokens/website/components/hero-section/)
   ↓
   References: semantic tokens (text, background, spacing)
   ↓
@@ -33,7 +33,7 @@ Semantic Tokens (tokens/website/semantic/)
   ↓
   Can be overridden by: Theme
   ↓
-Website Theme (tokens/website/themes/brand-a.json)
+Website Theme (tokens/website/themes/default.json)
   ↓
   Overrides: semantic colors, typography, spacing
   ↓
@@ -49,12 +49,12 @@ Final CSS Variables
 - Content: heading + subheading + 2 CTAs
 - Background: gradient
 
-**Theme: brand-a (light)**
+**Theme: default**
 - Background: light gradient (`{eui.color.brand.primary}` → light)
 - Text: dark (`{eui.color.text.primary}` = `{eui.color.neutral.900}`)
 - Buttons: use button tokens (inherit theme)
 
-**Theme: brand-a-dark**
+**Theme: dark**
 - Background: dark gradient (`{eui.color.brand.primary}` → dark)
 - Text: light (`{eui.color.text.primary}` = `{eui.color.neutral.white}`)
 - Buttons: use button tokens (inherit theme, may be inverted)
@@ -78,7 +78,7 @@ Hero Section tokens reference semantic tokens:
 Theme overrides semantic tokens:
 
 ```json
-// tokens/website/themes/brand-a-dark.json
+// tokens/website/themes/dark.json
 {
   "eui": {
     "color": {
@@ -101,4 +101,3 @@ Result: Hero Section text automatically becomes light in dark theme, without cha
 2. **Tokens = Visual Parameters** - Colors, typography, spacing that adapt to theme
 3. **Components Inside Hero** - Buttons, cards inherit theme automatically via their own tokens
 4. **One Template, Multiple Themes** - Same JSON template works with any website theme
-

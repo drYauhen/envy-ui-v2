@@ -30,6 +30,8 @@ All ADR metadata must be defined here FIRST:
 
 **For detailed agent instructions, see:** [`docs/adr/AGENT-GUIDE.md`](../adr/AGENT-GUIDE.md)
 
+**Docs registry note:** ADR entries are auto-registered from `adr-list-data.ts`. Do not add individual ADRs to `docs-registry.ts` (only ADR guide docs like README/TEMPLATE belong there). See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md) for non-ADR registry rules.
+
 ## ADR Principles
 
 ### What ADRs Are

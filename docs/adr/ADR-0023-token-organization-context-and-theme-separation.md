@@ -94,6 +94,7 @@ This structure ensures:
 ### Token Resolution Order
 
 ```mermaid
+%% sb: maxWidth=20rem %%
 graph TD
     A[Foundation Tokens<br/>OKLCH colors, spacing, typography] --> B[Semantic Tokens<br/>text, background, border, focus]
     B --> C[Context Tokens<br/>app, website, report]
@@ -109,47 +110,56 @@ graph TD
 
 ### Directory Hierarchy
 
+#### Core Scope
+
 ```mermaid
+%% sb: maxWidth=30rem %%
 graph TD
     A[tokens/] --> B[foundations/]
     A --> C[semantic/]
-    A --> D[contexts/]
-    A --> E[themes/]
     A --> F[components/]
-    
+
     B --> B1[Base tokens<br/>OKLCH colors<br/>spacing<br/>typography]
-    
     C --> C1[Semantic tokens<br/>text, background<br/>border, focus]
-    
-    D --> D1[app.json]
-    D --> D2[website.json]
-    D --> D3[report.json]
-    
-    D1 --> D1A[fontSize: 14px<br/>compact spacing]
-    D2 --> D2A[fontSize: 16px<br/>relaxed spacing]
-    D3 --> D3A[fontSize: 12px<br/>print-optimized]
-    
-    E --> E1[app/]
-    E --> E2[website/]
-    E --> E3[report/]
-    
-    E1 --> E1A[default.json]
-    E1 --> E1B[accessibility.json]
-    
-    E2 --> E2A[default.json]
-    E2 --> E2B[dark.json]
-    
-    E3 --> E3A[print.json]
-    E3 --> E3B[screen.json]
-    
     F --> F1[Component tokens<br/>button, card<br/>input, etc.]
-    
+
     style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
     style B fill:#e1f5ff,stroke:#0ea5e9
     style C fill:#e8f5e9,stroke:#22c55e
+    style F fill:#fce7f3,stroke:#ec4899
+```
+
+#### Overrides Scope
+
+```mermaid
+graph TD
+    A[tokens/] --> D[contexts/]
+    A --> E[themes/]
+
+    D --> D1[app.json]
+    D --> D2[website.json]
+    D --> D3[report.json]
+
+    D1 --> D1A[fontSize: 14px<br/>compact spacing]
+    D2 --> D2A[fontSize: 16px<br/>relaxed spacing]
+    D3 --> D3A[fontSize: 12px<br/>print-optimized]
+
+    E --> E1[app/]
+    E --> E2[website/]
+    E --> E3[report/]
+
+    E1 --> E1A[default.json]
+    E1 --> E1B[accessibility.json]
+
+    E2 --> E2A[default.json]
+    E2 --> E2B[dark.json]
+
+    E3 --> E3A[print.json]
+    E3 --> E3B[screen.json]
+
+    style A fill:#e1f5ff,stroke:#0ea5e9,stroke-width:2px
     style D fill:#fff3e0,stroke:#f59e0b
     style E fill:#f3e8ff,stroke:#a855f7
-    style F fill:#fce7f3,stroke:#ec4899
 ```
 
 ### Context Responsibilities
@@ -259,6 +269,8 @@ This structure directly implements the layered architecture described in ADR-001
 4. Themes are **context-specific** - each theme belongs to a specific context
 5. Token resolution always follows: Foundation → Semantic → Context → Theme → Component
 
+**Note:** Some components may define variants within a single theme (for example, a light side-nav or alternate hero variant). Variants live inside component tokens and are selected at the component level; they do not add a new resolution layer. Cross-context variant compatibility is desirable but not defined yet.
+
 ---
 
 ## Examples
@@ -354,4 +366,3 @@ This structure directly implements the layered architecture described in ADR-001
 This ADR establishes the file structure. The implementation details for CSS generation, Figma export, and nested context support are documented in:
 - [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
 - [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
-

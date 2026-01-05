@@ -31,6 +31,8 @@ tokens/
 
 Each context is fully independent with its own foundations, semantic, and component tokens. This ensures complete separation and avoids cross-context dependencies.
 
+**Note:** The new semantic typography roles (title, bodyStrong, label, overline) are currently defined in the **app** context only. Website/report contexts will add matching roles when their typography systems are defined.
+
 ## Non-visual Metadata Files
 
 Non-visual metadata (behavior, implementation notes, etc.) must live under component subdirectories like `behavior/` or `metadata/` and use the `.meta.json` suffix only. These files are excluded from Style Dictionary; do not create `.json` duplicates in those folders or the build will try to resolve strings and fail.
@@ -50,6 +52,16 @@ Component Tokens
 ```
 
 Each layer can override values from previous layers.
+
+## Component Variants (Within a Theme)
+
+Some components need multiple visual modes inside the same theme (for example, a light side-nav versus a brand-heavy side-nav, or different hero variants within one website theme). This is handled as a **component-level variant axis**, not a new theme layer.
+
+**Guidelines:**
+- Variants live inside the component token namespace: `tokens/{context}/components/{component}/variant/{name}/...`
+- Keep variant names consistent across contexts when cross-context reuse is expected.
+- Variants should reference semantic tokens so theme changes still apply.
+- Cross-context compatibility details are intentionally left open and will be defined when needed.
 
 ## Working with Tokens
 

@@ -66,6 +66,8 @@ These are treated as known gaps. Either:
 
 Silent literals outside this list are not allowed.
 
+**Tooling note:** The validator uses a permissive allowlist of CSS keywords to avoid false positives. This does not grant permission to add literals outside the exceptions above.
+
 ## Third-Party Library Integration
 
 **Context:** Third-party libraries (e.g., React Grid Layout, drag-and-drop libraries) come with their own CSS containing fixed values. These libraries cannot be modified to use our token system directly.

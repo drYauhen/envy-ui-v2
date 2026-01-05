@@ -53,6 +53,8 @@ When creating or modifying ADRs:
 
 **See:** [`AGENT-GUIDE.md`](./AGENT-GUIDE.md) for complete instructions.
 
+**Docs registry note:** ADR entries are auto-registered from `adr-list-data.ts`. Do not add individual ADRs to `docs-registry.ts` (only ADR guide docs like README/TEMPLATE belong there). See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md) for non-ADR registry rules.
+
 ## Related Files
 
 - **Template:** `docs/adr/ADR-TEMPLATE.md`
@@ -63,3 +65,17 @@ When creating or modifying ADRs:
 - **ADR Viewer Component:** `stories/viewers/docs/AdrViewer.tsx`
 - **Story Generator:** `scripts/generate-adr-stories.mjs` (reads from adr-list-data.ts)
 - **Validator:** `scripts/validate-adr.mjs` (checks exportName consistency)
+
+## Mermaid Diagrams (ADR-Specific)
+
+ADRs have stricter diagram rules than general documentation. These rules are required:
+
+- Use vertical orientation: `graph TD` (not `graph LR`)
+- Keep diagrams compact and readable at body text size (14px)
+- Avoid oversized nodes; keep labels concise
+- If a diagram is too narrow or tall, add a max width hint:
+  ```
+  %% sb: maxWidth=20rem %%
+  ```
+
+General Mermaid rules still apply (see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md)).
