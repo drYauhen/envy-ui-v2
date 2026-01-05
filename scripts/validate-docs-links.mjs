@@ -8,6 +8,25 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const repoRoot = resolve(__dirname, '..');
 const EXCLUDED_REGISTRY_PREFIXES = ['dirty/', 'tasks/', 'steps/'];
+const STORY_FILE_EXTENSIONS = ['.stories.js', '.stories.jsx', '.stories.mjs', '.stories.ts', '.stories.tsx'];
+
+const sanitizeStoryIdPart = (input) => input
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/-+/g, '-')
+  .replace(/^-+|-+$/g, '');
+
+const storyNameFromExport = (exportName) => exportName
+  .replace(/_/g, ' ')
+  .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+  .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2')
+  .replace(/([a-zA-Z])([0-9])/g, '$1 $2')
+  .replace(/([0-9])([a-zA-Z])/g, '$1 $2')
+  .trim();
+
+const toStoryId = (title, exportName) => (
+  `${sanitizeStoryIdPart(title)}--${sanitizeStoryIdPart(storyNameFromExport(exportName))}`
+);
 
 /**
  * Parse docs-registry.ts to get all registered documents
@@ -130,6 +149,72 @@ function findAllMarkdownFiles() {
 }
 
 /**
+ * Find all Storybook story files in stories/
+ */
+function findAllStoryFiles() {
+  const storiesDir = join(repoRoot, 'stories');
+  const files = [];
+
+  function walkDir(dir) {
+    try {
+      const entries = readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        if (entry.name.startsWith('.') || entry.name === 'node_modules') {
+          continue;
+        }
+        const fullPath = join(dir, entry.name);
+        if (entry.isDirectory()) {
+          walkDir(fullPath);
+          continue;
+        }
+        if (STORY_FILE_EXTENSIONS.some(ext => entry.name.endsWith(ext))) {
+          files.push(fullPath);
+        }
+      }
+    } catch (err) {
+      console.warn(`Warning: Could not read directory ${dir}: ${err.message}`);
+    }
+  }
+
+  walkDir(storiesDir);
+  return files;
+}
+
+/**
+ * Parse story files to collect Storybook ids
+ */
+function buildStoryIdSet() {
+  const storyFiles = findAllStoryFiles();
+  const storyIds = new Set();
+  const missingTitle = [];
+  const missingExports = [];
+
+  storyFiles.forEach((filePath) => {
+    const content = readFileSync(filePath, 'utf-8');
+    const titleMatch = content.match(/title:\s*['"]([^'"]+)['"]/);
+    if (!titleMatch) {
+      missingTitle.push(filePath);
+      return;
+    }
+
+    const storyTitle = titleMatch[1];
+    const exportMatches = [...content.matchAll(/export const (\w+)\s*:\s*Story\w*/g)];
+    if (exportMatches.length === 0) {
+      missingExports.push(filePath);
+      return;
+    }
+
+    exportMatches.forEach((match) => {
+      const exportName = match[1];
+      const storyId = toStoryId(storyTitle, exportName);
+      storyIds.add(storyId);
+    });
+  });
+
+  return { storyIds, missingTitle, missingExports };
+}
+
+/**
  * Extract all markdown links from content
  */
 function extractLinks(content, filePath) {
@@ -195,9 +280,11 @@ let info = [];
 try {
   const { docsMap, idMap } = parseDocsRegistry();
   const allFiles = findAllMarkdownFiles();
+  const { storyIds, missingTitle, missingExports } = buildStoryIdSet();
   
   console.log(`\n🔍 Validating links in ${allFiles.length} documentation files...\n`);
   console.log(`📋 Found ${docsMap.size} registered documents in registry\n`);
+  console.log(`📚 Found ${storyIds.size} Storybook story ids\n`);
   
   allFiles.forEach(({ fullPath, relativePath }) => {
     try {
@@ -284,7 +371,38 @@ try {
       }
     }
   });
-  
+
+  // Validate docs registry storybookId entries
+  const registeredDocs = new Map();
+  idMap.forEach((doc) => registeredDocs.set(doc.id, doc));
+  registeredDocs.forEach((doc) => {
+    if (!doc.storybookId) return;
+    if (!storyIds.has(doc.storybookId)) {
+      errors.push(`❌ docs-registry.ts: Storybook id '${doc.storybookId}' not found in stories for '${doc.path}'`);
+    }
+  });
+
+  // Validate ADR story ids (Docs/ADR)
+  registeredDocs.forEach((doc) => {
+    if (doc.category !== 'adr' || !/^adr\/ADR-\d{4}/.test(doc.path)) {
+      return;
+    }
+    if (!doc.exportName) {
+      return;
+    }
+    const expectedId = toStoryId('Docs/ADR', doc.exportName);
+    if (!storyIds.has(expectedId)) {
+      errors.push(`❌ ADR story missing: expected '${expectedId}' for '${doc.path}'`);
+    }
+  });
+
+  if (missingTitle.length > 0) {
+    warnings.push(`⚠️  ${missingTitle.length} story file(s) missing meta title: ${missingTitle.join(', ')}`);
+  }
+  if (missingExports.length > 0) {
+    warnings.push(`⚠️  ${missingExports.length} story file(s) missing Story exports: ${missingExports.join(', ')}`);
+  }
+
 } catch (err) {
   console.error(`❌ Fatal error: ${err.message}`);
   console.error(err.stack);
