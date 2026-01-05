@@ -18,27 +18,27 @@ const containerStyle: CSSProperties = {
   padding: '24px',
   maxWidth: 1200,
   margin: '0 auto',
-  color: '#0f172a'
+  color: 'var(--eui-color-text-primary)'
 };
 
 const headerStyle: CSSProperties = {
   marginBottom: '24px',
   paddingBottom: '16px',
-  borderBottom: '2px solid #e2e8f0'
+  borderBottom: '2px solid var(--eui-color-border-default)'
 };
 
 const titleStyle: CSSProperties = {
   margin: '0 0 8px',
   fontSize: '24px',
   fontWeight: 600,
-  color: '#0f172a'
+  color: 'var(--eui-color-text-primary)'
 };
 
 const metaStyle: CSSProperties = {
   display: 'flex',
   gap: '16px',
   fontSize: '14px',
-  color: '#64748b',
+  color: 'var(--eui-color-text-muted)',
   marginTop: '8px'
 };
 
@@ -53,27 +53,25 @@ const statusToTone = (status: string) => {
 };
 
 const contentStyle: CSSProperties = {
-  background: '#fff',
   padding: '32px',
-  borderRadius: '8px',
-  border: '1px solid #e2e8f0',
-  boxShadow: '0 1px 3px rgba(15, 23, 42, 0.08)',
-  fontSize: '15px',
-  lineHeight: 1.7
+  fontSize: 'var(--eui-typography-text-style-body-base-font-size)',
+  lineHeight: 'var(--eui-typography-line-height-relaxed)'
 };
 
 const loadingStyle: CSSProperties = {
   ...contentStyle,
   textAlign: 'center',
   padding: '48px 24px',
-  color: '#64748b'
+  color: 'var(--eui-color-text-muted)'
 };
 
 const errorStyle: CSSProperties = {
   ...contentStyle,
-  background: '#fef2f2',
-  borderColor: '#fecaca',
-  color: '#dc2626',
+  background: 'var(--eui-color-status-error-50)',
+  borderColor: 'var(--eui-color-status-error-100)',
+  color: 'var(--eui-color-status-error-700)',
+  borderWidth: '1px',
+  borderStyle: 'solid',
   padding: '24px'
 };
 
@@ -138,7 +136,7 @@ export const DocViewer = ({
   if (loading) {
     return (
       <div style={containerStyle}>
-        <div style={loadingStyle}>
+        <div style={loadingStyle} className="eui-card" data-eui-variant="elevated">
           <p style={{ margin: 0 }}>{fallback}</p>
         </div>
       </div>
@@ -148,7 +146,7 @@ export const DocViewer = ({
   if (error) {
     return (
       <div style={containerStyle}>
-        <div style={errorStyle}>
+        <div style={errorStyle} className="eui-card" data-eui-variant="flat">
           <p style={{ margin: '0 0 8px', fontWeight: 600 }}>Error loading document</p>
           <p style={{ margin: 0, fontSize: '14px' }}>Failed to load documentation from {markdownPath}</p>
         </div>
@@ -173,7 +171,7 @@ export const DocViewer = ({
           ) : null}
         </div>
       ) : null}
-      <div style={contentStyle}>
+      <div style={contentStyle} className="eui-card" data-eui-variant="elevated">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
