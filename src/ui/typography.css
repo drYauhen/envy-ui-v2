@@ -1,0 +1,147 @@
+.eui-typography-root {
+  font-family: var(--eui-typography-font-family-ui);
+  font-size: var(--eui-typography-font-size-base);
+  line-height: var(--eui-typography-line-height-normal);
+}
+
+.eui-text-heading-1 {
+  font-family: var(--eui-typography-text-style-heading-1-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-heading-1-font-size);
+  font-weight: var(--eui-typography-text-style-heading-1-font-weight);
+  line-height: var(--eui-typography-text-style-heading-1-line-height);
+}
+
+.eui-text-heading-2 {
+  font-family: var(--eui-typography-text-style-heading-2-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-heading-2-font-size);
+  font-weight: var(--eui-typography-text-style-heading-2-font-weight);
+  line-height: var(--eui-typography-text-style-heading-2-line-height);
+}
+
+.eui-text-heading-3 {
+  font-family: var(--eui-typography-text-style-heading-3-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-heading-3-font-size);
+  font-weight: var(--eui-typography-text-style-heading-3-font-weight);
+  line-height: var(--eui-typography-text-style-heading-3-line-height);
+}
+
+.eui-text-heading-4 {
+  font-family: var(--eui-typography-text-style-heading-4-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-heading-4-font-size);
+  font-weight: var(--eui-typography-text-style-heading-4-font-weight);
+  line-height: var(--eui-typography-text-style-heading-4-line-height);
+}
+
+.eui-text-heading-5 {
+  font-family: var(--eui-typography-text-style-heading-5-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-heading-5-font-size);
+  font-weight: var(--eui-typography-text-style-heading-5-font-weight);
+  line-height: var(--eui-typography-text-style-heading-5-line-height);
+}
+
+.eui-text-heading-6 {
+  font-family: var(--eui-typography-text-style-heading-6-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-heading-6-font-size);
+  font-weight: var(--eui-typography-text-style-heading-6-font-weight);
+  line-height: var(--eui-typography-text-style-heading-6-line-height);
+}
+
+.eui-text-title-lg {
+  font-family: var(--eui-typography-text-style-title-lg-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-title-lg-font-size);
+  font-weight: var(--eui-typography-text-style-title-lg-font-weight);
+  line-height: var(--eui-typography-text-style-title-lg-line-height);
+}
+
+.eui-text-title-md {
+  font-family: var(--eui-typography-text-style-title-md-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-title-md-font-size);
+  font-weight: var(--eui-typography-text-style-title-md-font-weight);
+  line-height: var(--eui-typography-text-style-title-md-line-height);
+}
+
+.eui-text-title-sm {
+  font-family: var(--eui-typography-text-style-title-sm-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-title-sm-font-size);
+  font-weight: var(--eui-typography-text-style-title-sm-font-weight);
+  line-height: var(--eui-typography-text-style-title-sm-line-height);
+}
+
+.eui-text-body-lg {
+  font-family: var(--eui-typography-text-style-body-large-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-body-large-font-size);
+  font-weight: var(--eui-typography-text-style-body-large-font-weight);
+  line-height: var(--eui-typography-text-style-body-large-line-height);
+}
+
+.eui-text-body {
+  font-family: var(--eui-typography-text-style-body-base-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-body-base-font-size);
+  font-weight: var(--eui-typography-text-style-body-base-font-weight);
+  line-height: var(--eui-typography-text-style-body-base-line-height);
+}
+
+.eui-text-body-sm {
+  font-family: var(--eui-typography-text-style-body-small-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-body-small-font-size);
+  font-weight: var(--eui-typography-text-style-body-small-font-weight);
+  line-height: var(--eui-typography-text-style-body-small-line-height);
+}
+
+.eui-text-body-strong {
+  font-family: var(--eui-typography-text-style-body-strong-base-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-body-strong-base-font-size);
+  font-weight: var(--eui-typography-text-style-body-strong-base-font-weight);
+  line-height: var(--eui-typography-text-style-body-strong-base-line-height);
+}
+
+.eui-text-body-strong-sm {
+  font-family: var(--eui-typography-text-style-body-strong-small-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-body-strong-small-font-size);
+  font-weight: var(--eui-typography-text-style-body-strong-small-font-weight);
+  line-height: var(--eui-typography-text-style-body-strong-small-line-height);
+}
+
+.eui-text-label-md {
+  font-family: var(--eui-typography-text-style-label-md-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-label-md-font-size);
+  font-weight: var(--eui-typography-text-style-label-md-font-weight);
+  line-height: var(--eui-typography-text-style-label-md-line-height);
+}
+
+.eui-text-label-sm {
+  font-family: var(--eui-typography-text-style-label-sm-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-label-sm-font-size);
+  font-weight: var(--eui-typography-text-style-label-sm-font-weight);
+  line-height: var(--eui-typography-text-style-label-sm-line-height);
+}
+
+.eui-text-caption {
+  font-family: var(--eui-typography-text-style-caption-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-caption-font-size);
+  font-weight: var(--eui-typography-text-style-caption-font-weight);
+  line-height: var(--eui-typography-text-style-caption-line-height);
+}
+
+.eui-text-overline {
+  font-family: var(--eui-typography-text-style-overline-font-family, var(--eui-typography-font-family-ui));
+  font-size: var(--eui-typography-text-style-overline-font-size);
+  font-weight: var(--eui-typography-text-style-overline-font-weight);
+  line-height: var(--eui-typography-text-style-overline-line-height);
+  letter-spacing: var(--eui-typography-text-style-overline-letter-spacing);
+  text-transform: var(--eui-typography-text-style-overline-text-transform);
+}
+
+.eui-text-code-base {
+  font-family: var(--eui-typography-text-style-code-base-font-family, var(--eui-typography-font-family-monospace));
+  font-size: var(--eui-typography-text-style-code-base-font-size);
+  font-weight: var(--eui-typography-text-style-code-base-font-weight);
+  line-height: var(--eui-typography-text-style-code-base-line-height);
+}
+
+.eui-text-code-sm {
+  font-family: var(--eui-typography-text-style-code-small-font-family, var(--eui-typography-font-family-monospace));
+  font-size: var(--eui-typography-text-style-code-small-font-size);
+  font-weight: var(--eui-typography-text-style-code-small-font-weight);
+  line-height: var(--eui-typography-text-style-code-small-line-height);
+}

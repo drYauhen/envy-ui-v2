@@ -58,14 +58,14 @@
           },
           "colors": {
             "background": {
-              "$resolved": "oklch(96.5% 0.00 0)"
+              "$resolved": "oklch(90% 0.00 0)"
             },
             "text": {
               "$resolved": "oklch(100% 0 0)"
             },
             "remove": {
               "icon": {
-                "$resolved": "oklch(63% 0.00 0)"
+                "$resolved": "oklch(48% 0.00 0)"
               }
             }
           }

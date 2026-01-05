@@ -87,12 +87,12 @@
         "colors": {
           "prefix": {
             "text": {
-              "$resolved": "oklch(63% 0.00 0)"
+              "$resolved": "oklch(48% 0.00 0)"
             }
           },
           "suffix": {
             "text": {
-              "$resolved": "oklch(63% 0.00 0)"
+              "$resolved": "oklch(48% 0.00 0)"
             }
           }
         }

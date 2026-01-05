@@ -4,19 +4,34 @@
       "border": {
         "default": {
           "$resolved": "oklch(48% 0.00 0)"
+        },
+        "subtle": {
+          "$resolved": "oklch(63% 0.00 0)"
+        },
+        "strong": {
+          "$resolved": "oklch(33% 0.00 0)"
         }
       },
       "text": {
         "primary": {
           "$resolved": "oklch(25% 0.00 0)"
         },
-        "disabled": {
+        "muted": {
+          "$resolved": "oklch(33% 0.00 0)"
+        },
+        "subtle": {
           "$resolved": "oklch(48% 0.00 0)"
+        },
+        "disabled": {
+          "$resolved": "oklch(63% 0.00 0)"
         }
       },
       "background": {
         "muted": {
           "$resolved": "oklch(94% 0.00 0)"
+        },
+        "subtle": {
+          "$resolved": "oklch(90% 0.00 0)"
         }
       }
     },

@@ -49,6 +49,7 @@ import '../src/ui/inline.css';
 import '../src/ui/grid.css';
 import '../src/ui/toolbar.css';
 import '../src/ui/page-header.css';
+import '../src/ui/typography.css';
 import './preview.css';
 import { ContextThemeProvider, DEFAULT_CONTEXT_THEMES } from '../stories/utils/context-theme';
 
@@ -101,7 +102,7 @@ const withPreviewLayout: Decorator = (Story, context) => {
   return (
     <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
       <div
-        className="sb-preview-wrapper"
+        className="sb-preview-wrapper eui-typography-root"
         data-eui-focus-policy={focusPolicy}
         data-eui-context="app"
         data-eui-theme={appTheme}

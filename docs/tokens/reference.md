@@ -1,12 +1,12 @@
 # Design Tokens Reference
 
-> Auto-generated from design tokens. Last updated: 2026-01-04T00:32:17.638Z
+> Auto-generated from design tokens. Last updated: 2026-01-04T22:37:37.050Z
 
 ## Overview
 
 This document lists all available CSS custom properties (tokens) organized by component and foundation tokens.
 
-**Total tokens:** 929
+**Total tokens:** 978
 
 ## Usage
 
@@ -72,13 +72,16 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-color-background-muted` | `oklch(98% 0.00 0)` |
 | `--eui-color-background-muted` | `oklch(94% 0.00 0)` |
 | `--eui-color-background-subtle` | `oklch(96.5% 0.00 0)` |
+| `--eui-color-background-subtle` | `oklch(90% 0.00 0)` |
 | `--eui-color-background-surface` | `oklch(100% 0 0)` |
 | `--eui-color-border-default` | `oklch(90% 0.00 0)` |
 | `--eui-color-border-default` | `oklch(48% 0.00 0)` |
 | `--eui-color-border-default` | `oklch(90% 0.00 0)` |
 | `--eui-color-border-inverse` | `oklch(33% 0.00 0)` |
 | `--eui-color-border-strong` | `oklch(84% 0.00 0)` |
+| `--eui-color-border-strong` | `oklch(33% 0.00 0)` |
 | `--eui-color-border-subtle` | `oklch(94% 0.00 0)` |
+| `--eui-color-border-subtle` | `oklch(63% 0.00 0)` |
 | `--eui-color-brand-100` | `oklch(93% 0.05 232)` |
 | `--eui-color-brand-200` | `oklch(85% 0.06 231)` |
 | `--eui-color-brand-300` | `oklch(75% 0.08 231)` |
@@ -132,12 +135,14 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-color-status-warning-700` | `oklch(69% 0.15 70)` |
 | `--eui-color-system-focus` | `#ff4d00` |
 | `--eui-color-text-disabled` | `oklch(75% 0.00 0)` |
-| `--eui-color-text-disabled` | `oklch(48% 0.00 0)` |
+| `--eui-color-text-disabled` | `oklch(63% 0.00 0)` |
 | `--eui-color-text-inverse` | `oklch(100% 0 0)` |
 | `--eui-color-text-muted` | `oklch(48% 0.00 0)` |
+| `--eui-color-text-muted` | `oklch(33% 0.00 0)` |
 | `--eui-color-text-primary` | `oklch(25% 0.00 0)` |
 | `--eui-color-text-primary` | `oklch(25% 0.00 0)` |
 | `--eui-color-text-subtle` | `oklch(63% 0.00 0)` |
+| `--eui-color-text-subtle` | `oklch(48% 0.00 0)` |
 | `--eui-radius-default` | `4px` |
 | `--eui-radius-default` | `8px` |
 | `--eui-radius-default` | `4px` |
@@ -204,15 +209,27 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-typography-text-decoration-line-through` | `line-through` |
 | `--eui-typography-text-decoration-none` | `none` |
 | `--eui-typography-text-decoration-underline` | `underline` |
+| `--eui-typography-text-style-body-base-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-body-base-font-size` | `1rem` |
 | `--eui-typography-text-style-body-base-font-weight` | `400` |
 | `--eui-typography-text-style-body-base-line-height` | `1.5` |
+| `--eui-typography-text-style-body-large-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-body-large-font-size` | `1.125rem` |
 | `--eui-typography-text-style-body-large-font-weight` | `400` |
 | `--eui-typography-text-style-body-large-line-height` | `1.5` |
+| `--eui-typography-text-style-body-small-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-body-small-font-size` | `0.875rem` |
 | `--eui-typography-text-style-body-small-font-weight` | `400` |
 | `--eui-typography-text-style-body-small-line-height` | `1.5` |
+| `--eui-typography-text-style-body-strong-base-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-body-strong-base-font-size` | `1rem` |
+| `--eui-typography-text-style-body-strong-base-font-weight` | `600` |
+| `--eui-typography-text-style-body-strong-base-line-height` | `1.5` |
+| `--eui-typography-text-style-body-strong-small-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-body-strong-small-font-size` | `0.875rem` |
+| `--eui-typography-text-style-body-strong-small-font-weight` | `600` |
+| `--eui-typography-text-style-body-strong-small-line-height` | `1.5` |
+| `--eui-typography-text-style-caption-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-caption-font-size` | `0.75rem` |
 | `--eui-typography-text-style-caption-font-weight` | `400` |
 | `--eui-typography-text-style-caption-line-height` | `1.5` |
@@ -224,24 +241,56 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-typography-text-style-code-small-font-size` | `0.75rem` |
 | `--eui-typography-text-style-code-small-font-weight` | `400` |
 | `--eui-typography-text-style-code-small-line-height` | `1.5` |
+| `--eui-typography-text-style-heading-1-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-heading-1-font-size` | `4.5rem` |
 | `--eui-typography-text-style-heading-1-font-weight` | `700` |
 | `--eui-typography-text-style-heading-1-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-2-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-heading-2-font-size` | `3.75rem` |
 | `--eui-typography-text-style-heading-2-font-weight` | `700` |
 | `--eui-typography-text-style-heading-2-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-3-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-heading-3-font-size` | `3rem` |
-| `--eui-typography-text-style-heading-3-font-weight` | `700` |
+| `--eui-typography-text-style-heading-3-font-weight` | `600` |
 | `--eui-typography-text-style-heading-3-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-4-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-heading-4-font-size` | `2.25rem` |
-| `--eui-typography-text-style-heading-4-font-weight` | `700` |
+| `--eui-typography-text-style-heading-4-font-weight` | `600` |
 | `--eui-typography-text-style-heading-4-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-5-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-heading-5-font-size` | `1.875rem` |
-| `--eui-typography-text-style-heading-5-font-weight` | `700` |
+| `--eui-typography-text-style-heading-5-font-weight` | `600` |
 | `--eui-typography-text-style-heading-5-line-height` | `1.25` |
+| `--eui-typography-text-style-heading-6-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
 | `--eui-typography-text-style-heading-6-font-size` | `1.5rem` |
 | `--eui-typography-text-style-heading-6-font-weight` | `600` |
 | `--eui-typography-text-style-heading-6-line-height` | `1.25` |
+| `--eui-typography-text-style-label-md-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-label-md-font-size` | `0.875rem` |
+| `--eui-typography-text-style-label-md-font-weight` | `600` |
+| `--eui-typography-text-style-label-md-line-height` | `1.5` |
+| `--eui-typography-text-style-label-sm-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-label-sm-font-size` | `0.75rem` |
+| `--eui-typography-text-style-label-sm-font-weight` | `600` |
+| `--eui-typography-text-style-label-sm-line-height` | `1.5` |
+| `--eui-typography-text-style-overline-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-overline-font-size` | `0.75rem` |
+| `--eui-typography-text-style-overline-font-weight` | `600` |
+| `--eui-typography-text-style-overline-letter-spacing` | `0.025em` |
+| `--eui-typography-text-style-overline-line-height` | `1.5` |
+| `--eui-typography-text-style-overline-text-transform` | `uppercase` |
+| `--eui-typography-text-style-title-lg-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-title-lg-font-size` | `1.5rem` |
+| `--eui-typography-text-style-title-lg-font-weight` | `600` |
+| `--eui-typography-text-style-title-lg-line-height` | `1.25` |
+| `--eui-typography-text-style-title-md-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-title-md-font-size` | `1.25rem` |
+| `--eui-typography-text-style-title-md-font-weight` | `600` |
+| `--eui-typography-text-style-title-md-line-height` | `1.25` |
+| `--eui-typography-text-style-title-sm-font-family` | `'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif` |
+| `--eui-typography-text-style-title-sm-font-size` | `1.125rem` |
+| `--eui-typography-text-style-title-sm-font-weight` | `600` |
+| `--eui-typography-text-style-title-sm-line-height` | `1.25` |
 | `--eui-typography-text-transform-capitalize` | `capitalize` |
 | `--eui-typography-text-transform-lowercase` | `lowercase` |
 | `--eui-typography-text-transform-none` | `none` |

@@ -20,7 +20,7 @@
         },
         "footer": {
           "background": {
-            "$resolved": "oklch(96.5% 0.00 0)"
+            "$resolved": "oklch(90% 0.00 0)"
           },
           "text": {
             "$resolved": "oklch(100% 0 0)"

@@ -69,7 +69,8 @@ const tokenInfoStyle: CSSProperties = {
 type TextStyleExample = {
   label: string;
   token: string;
-  style: CSSProperties;
+  className: string;
+  style?: CSSProperties;
   description?: string;
 };
 
@@ -77,68 +78,59 @@ const headingExamples: TextStyleExample[] = [
   {
     label: 'Heading 1',
     token: '--eui-typography-text-style-heading-1-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-heading-1-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-heading-1-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-heading-1-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-heading-1',
     description: 'Page title, hero heading'
   },
   {
     label: 'Heading 2',
     token: '--eui-typography-text-style-heading-2-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-heading-2-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-heading-2-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-heading-2-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-heading-2',
     description: 'Section heading'
   },
   {
     label: 'Heading 3',
     token: '--eui-typography-text-style-heading-3-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-heading-3-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-heading-3-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-heading-3-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-heading-3',
     description: 'Subsection heading'
   },
   {
     label: 'Heading 4',
     token: '--eui-typography-text-style-heading-4-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-heading-4-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-heading-4-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-heading-4-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-heading-4',
     description: 'Card title, medium heading'
   },
   {
     label: 'Heading 5',
     token: '--eui-typography-text-style-heading-5-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-heading-5-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-heading-5-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-heading-5-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-heading-5',
     description: 'Small heading'
   },
   {
     label: 'Heading 6',
     token: '--eui-typography-text-style-heading-6-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-heading-6-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-heading-6-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-heading-6-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-heading-6',
     description: 'Smallest heading, emphasized text'
+  }
+];
+
+const titleExamples: TextStyleExample[] = [
+  {
+    label: 'Title Large',
+    token: '--eui-typography-text-style-title-lg-font-size',
+    className: 'eui-text-title-lg',
+    description: 'Large title - section headers, panels'
+  },
+  {
+    label: 'Title Medium',
+    token: '--eui-typography-text-style-title-md-font-size',
+    className: 'eui-text-title-md',
+    description: 'Medium title - cards, collapsible headers'
+  },
+  {
+    label: 'Title Small',
+    token: '--eui-typography-text-style-title-sm-font-size',
+    className: 'eui-text-title-sm',
+    description: 'Small title - dense UI headers'
   }
 ];
 
@@ -146,73 +138,78 @@ const bodyExamples: TextStyleExample[] = [
   {
     label: 'Body Large',
     token: '--eui-typography-text-style-body-large-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-body-large-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-body-large-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-body-large-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-body-lg',
     description: 'Large body text - emphasized content'
   },
   {
     label: 'Body Base',
     token: '--eui-typography-text-style-body-base-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-body-base-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-body-base-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-body-base-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-body',
     description: 'Base body text - default for application UI'
   },
   {
     label: 'Body Small',
     token: '--eui-typography-text-style-body-small-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-body-small-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-body-small-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-body-small-line-height)',
-      margin: 0
-    },
+    className: 'eui-text-body-sm',
     description: 'Small body text - helper text, secondary content'
+  }
+];
+
+const bodyStrongExamples: TextStyleExample[] = [
+  {
+    label: 'Body Strong Base',
+    token: '--eui-typography-text-style-body-strong-base-font-size',
+    className: 'eui-text-body-strong',
+    description: 'Emphasized body text'
+  },
+  {
+    label: 'Body Strong Small',
+    token: '--eui-typography-text-style-body-strong-small-font-size',
+    className: 'eui-text-body-strong-sm',
+    description: 'Emphasized small text'
+  }
+];
+
+const labelExamples: TextStyleExample[] = [
+  {
+    label: 'Label Medium',
+    token: '--eui-typography-text-style-label-md-font-size',
+    className: 'eui-text-label-md',
+    description: 'Form labels, button text'
+  },
+  {
+    label: 'Label Small',
+    token: '--eui-typography-text-style-label-sm-font-size',
+    className: 'eui-text-label-sm',
+    description: 'Secondary labels'
   }
 ];
 
 const captionExample: TextStyleExample = {
   label: 'Caption',
   token: '--eui-typography-text-style-caption-font-size',
-  style: {
-    fontSize: 'var(--eui-typography-text-style-caption-font-size)',
-    fontWeight: 'var(--eui-typography-text-style-caption-font-weight)',
-    lineHeight: 'var(--eui-typography-text-style-caption-line-height)',
-    margin: 0
-  },
+  className: 'eui-text-caption',
   description: 'Caption text - labels, metadata, counters in buttons'
+};
+
+const overlineExample: TextStyleExample = {
+  label: 'Overline',
+  token: '--eui-typography-text-style-overline-font-size',
+  className: 'eui-text-overline',
+  description: 'Uppercase label for small UI headers'
 };
 
 const codeExamples: TextStyleExample[] = [
   {
     label: 'Code Base',
     token: '--eui-typography-text-style-code-base-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-code-base-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-code-base-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-code-base-line-height)',
-      fontFamily: 'var(--eui-typography-text-style-code-base-font-family)',
-      margin: 0
-    },
+    className: 'eui-text-code-base',
     description: 'Code inline text - default size'
   },
   {
     label: 'Code Small',
     token: '--eui-typography-text-style-code-small-font-size',
-    style: {
-      fontSize: 'var(--eui-typography-text-style-code-small-font-size)',
-      fontWeight: 'var(--eui-typography-text-style-code-small-font-weight)',
-      lineHeight: 'var(--eui-typography-text-style-code-small-line-height)',
-      fontFamily: 'var(--eui-typography-text-style-code-small-font-family)',
-      margin: 0
-    },
+    className: 'eui-text-code-sm',
     description: 'Small code text'
   }
 ];
@@ -234,7 +231,7 @@ const fontSizeScale = [
 const renderExample = (example: TextStyleExample) => (
   <div key={example.label} style={exampleStyle}>
     <div style={labelStyle}>{example.label}</div>
-    <div style={example.style}>
+    <div className={example.className} style={{ margin: 0, ...example.style }}>
       {example.description || 'The quick brown fox jumps over the lazy dog'}
     </div>
     {example.description && (
@@ -288,8 +285,29 @@ export const TypographyViewer = () => {
 
       <div style={cardStyle}>
         <div style={sectionStyle}>
+          <h3 style={sectionHeadingStyle}>Titles</h3>
+          {titleExamples.map(renderExample)}
+        </div>
+      </div>
+
+      <div style={cardStyle}>
+        <div style={sectionStyle}>
           <h3 style={sectionHeadingStyle}>Body Text</h3>
           {bodyExamples.map(renderExample)}
+        </div>
+      </div>
+
+      <div style={cardStyle}>
+        <div style={sectionStyle}>
+          <h3 style={sectionHeadingStyle}>Body Strong</h3>
+          {bodyStrongExamples.map(renderExample)}
+        </div>
+      </div>
+
+      <div style={cardStyle}>
+        <div style={sectionStyle}>
+          <h3 style={sectionHeadingStyle}>Labels</h3>
+          {labelExamples.map(renderExample)}
         </div>
       </div>
 
@@ -302,6 +320,13 @@ export const TypographyViewer = () => {
 
       <div style={cardStyle}>
         <div style={sectionStyle}>
+          <h3 style={sectionHeadingStyle}>Overline</h3>
+          {renderExample(overlineExample)}
+        </div>
+      </div>
+
+      <div style={cardStyle}>
+        <div style={sectionStyle}>
           <h3 style={sectionHeadingStyle}>Code</h3>
           {codeExamples.map(renderExample)}
         </div>
@@ -309,4 +334,3 @@ export const TypographyViewer = () => {
     </div>
   );
 };
-

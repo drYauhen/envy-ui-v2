@@ -34,7 +34,7 @@
               "$resolved": "oklch(93% 0.05 232)"
             },
             "disabled": {
-              "$resolved": "oklch(48% 0.00 0)"
+              "$resolved": "oklch(63% 0.00 0)"
             }
           },
           "indicator": {
@@ -62,7 +62,7 @@
           }
         },
         "separator": {
-          "$resolved": "oklch(94% 0.00 0)"
+          "$resolved": "oklch(63% 0.00 0)"
         },
         "header": {
           "border": {

@@ -30,7 +30,7 @@
         },
         "weekday": {
           "text": {
-            "$resolved": "oklch(63% 0.00 0)"
+            "$resolved": "oklch(48% 0.00 0)"
           }
         },
         "day": {
@@ -71,7 +71,7 @@
               "$resolved": "oklch(90% 0.00 0)"
             },
             "outsideMonth": {
-              "$resolved": "oklch(63% 0.00 0)"
+              "$resolved": "oklch(48% 0.00 0)"
             },
             "today": {
               "$resolved": "oklch(25% 0.00 0)"
@@ -79,7 +79,7 @@
           },
           "border": {
             "default": {
-              "$resolved": "oklch(94% 0.00 0)"
+              "$resolved": "oklch(63% 0.00 0)"
             },
             "selected": {
               "$resolved": "oklch(63% 0.15 237)"

@@ -21,7 +21,7 @@
               "$resolved": "oklch(90% 0.00 0)"
             },
             "color": {
-              "$resolved": "oklch(48% 0.00 0)"
+              "$resolved": "oklch(63% 0.00 0)"
             }
           }
         },
@@ -38,7 +38,7 @@
           },
           "disabled": {
             "color": {
-              "$resolved": "oklch(48% 0.00 0)"
+              "$resolved": "oklch(63% 0.00 0)"
             }
           }
         },

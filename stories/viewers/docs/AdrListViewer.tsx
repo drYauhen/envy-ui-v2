@@ -54,8 +54,8 @@ export const AdrListViewer: React.FC<AdrListViewerProps> = ({
 
   return (
     <div style={docsContainerStyle}>
-      <h1 style={docsTitleStyle}>{title}</h1>
-      <div style={docsDescriptionStyle}>
+      <h1 style={docsTitleStyle} className="eui-text-heading-5">{title}</h1>
+      <div style={docsDescriptionStyle} className="eui-text-body">
         {description || defaultDescription}
       </div>
       <ul style={docsListStyle}>
@@ -75,10 +75,10 @@ export const AdrListViewer: React.FC<AdrListViewerProps> = ({
                 href={storyPath}
                 style={docsLinkStyle}
               >
-                <div style={docsItemTitleStyle}>
+                <div style={docsItemTitleStyle} className="eui-text-title-md">
                   ADR-{adr.number}: {adr.title}
                 </div>
-                <div style={docsItemMetaStyle}>
+                <div style={docsItemMetaStyle} className="eui-text-caption">
                   <span style={getStatusStyle(adr.status)}>{adr.status}</span>
                   <span>Date: {adr.date}</span>
                 </div>

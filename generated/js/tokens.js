@@ -83,33 +83,95 @@ export const EuiTypographyBaseFontSize = "16px"; // Base font size for accessibi
 export const EuiTypographyTextStyleHeading1FontSize = "4.5rem"; // Heading level 1 - Page title, hero heading
 export const EuiTypographyTextStyleHeading1FontWeight = "700"; // Bold weight for heading 1
 export const EuiTypographyTextStyleHeading1LineHeight = "1.25"; // Tight line height for heading 1
+export const EuiTypographyTextStyleHeading1FontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for headings
 export const EuiTypographyTextStyleHeading2FontSize = "3.75rem"; // Heading level 2 - Section heading
 export const EuiTypographyTextStyleHeading2FontWeight = "700"; // Bold weight for heading 2
 export const EuiTypographyTextStyleHeading2LineHeight = "1.25"; // Tight line height for heading 2
+export const EuiTypographyTextStyleHeading2FontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for headings
 export const EuiTypographyTextStyleHeading3FontSize = "3rem"; // Heading level 3 - Subsection heading
-export const EuiTypographyTextStyleHeading3FontWeight = "700"; // Bold weight for heading 3
+export const EuiTypographyTextStyleHeading3FontWeight = "600"; // Semi-bold weight for heading 3
 export const EuiTypographyTextStyleHeading3LineHeight = "1.25"; // Tight line height for heading 3
-export const EuiTypographyTextStyleHeading4FontSize = "2.25rem"; // Heading level 4 - Card title, medium heading
-export const EuiTypographyTextStyleHeading4FontWeight = "700"; // Bold weight for heading 4
+export const EuiTypographyTextStyleHeading3FontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for headings
+export const EuiTypographyTextStyleHeading4FontSize = "2.25rem"; // Heading level 4 - Section heading
+export const EuiTypographyTextStyleHeading4FontWeight = "600"; // Semi-bold weight for heading 4
 export const EuiTypographyTextStyleHeading4LineHeight = "1.25"; // Tight line height for heading 4
+export const EuiTypographyTextStyleHeading4FontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for headings
 export const EuiTypographyTextStyleHeading5FontSize = "1.875rem"; // Heading level 5 - Small heading
-export const EuiTypographyTextStyleHeading5FontWeight = "700"; // Bold weight for heading 5
+export const EuiTypographyTextStyleHeading5FontWeight = "600"; // Semi-bold weight for heading 5
 export const EuiTypographyTextStyleHeading5LineHeight = "1.25"; // Tight line height for heading 5
-export const EuiTypographyTextStyleHeading6FontSize = "1.5rem"; // Heading level 6 - Smallest heading, emphasized text
+export const EuiTypographyTextStyleHeading5FontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for headings
+export const EuiTypographyTextStyleHeading6FontSize = "1.5rem"; // Heading level 6 - Smallest heading
 export const EuiTypographyTextStyleHeading6FontWeight = "600"; // Semi-bold weight for heading 6
 export const EuiTypographyTextStyleHeading6LineHeight = "1.25"; // Tight line height for heading 6
+export const EuiTypographyTextStyleHeading6FontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for headings
+export const EuiTypographyTextStyleTitleLgFontSize = "1.5rem"; // Large title - section headers, panels
+export const EuiTypographyTextStyleTitleLgFontWeight = "600"; // Semi-bold weight for titles
+export const EuiTypographyTextStyleTitleLgLineHeight = "1.25"; // Tight line height for titles
+export const EuiTypographyTextStyleTitleLgFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
+export const EuiTypographyTextStyleTitleMdFontSize = "1.25rem"; // Medium title - cards, collapsible headers
+export const EuiTypographyTextStyleTitleMdFontWeight = "600"; // Semi-bold weight for titles
+export const EuiTypographyTextStyleTitleMdLineHeight = "1.25"; // Tight line height for titles
+export const EuiTypographyTextStyleTitleMdFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
+export const EuiTypographyTextStyleTitleSmFontSize = "1.125rem"; // Small title - dense UI headers
+export const EuiTypographyTextStyleTitleSmFontWeight = "600"; // Semi-bold weight for titles
+export const EuiTypographyTextStyleTitleSmLineHeight = "1.25"; // Tight line height for titles
+export const EuiTypographyTextStyleTitleSmFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
 export const EuiTypographyTextStyleBodyLargeFontSize = "1.125rem"; // Large body text - emphasized content
 export const EuiTypographyTextStyleBodyLargeFontWeight = "400"; // Normal weight for large body
 export const EuiTypographyTextStyleBodyLargeLineHeight = "1.5"; // Normal line height for large body
+export const EuiTypographyTextStyleBodyLargeFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for body text
 export const EuiTypographyTextStyleBodyBaseFontSize = "1rem"; // Base body text - default for application UI
 export const EuiTypographyTextStyleBodyBaseFontWeight = "400"; // Normal weight for body text
 export const EuiTypographyTextStyleBodyBaseLineHeight = "1.5"; // Normal line height for body text
+export const EuiTypographyTextStyleBodyBaseFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for body text
 export const EuiTypographyTextStyleBodySmallFontSize = "0.875rem"; // Small body text - helper text, secondary content
 export const EuiTypographyTextStyleBodySmallFontWeight = "400"; // Normal weight for small body
 export const EuiTypographyTextStyleBodySmallLineHeight = "1.5"; // Normal line height for small body
-export const EuiTypographyTextStyleCaptionFontSize = "0.75rem"; // Caption text - labels, metadata, counters in buttons
+export const EuiTypographyTextStyleBodySmallFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for body text
+export const EuiTypographyTextStyleBodyStrongBaseFontSize = "1rem"; // Body strong - emphasized body text
+export const EuiTypographyTextStyleBodyStrongBaseFontWeight = "600"; // Semi-bold weight for body strong
+export const EuiTypographyTextStyleBodyStrongBaseLineHeight = "1.5"; // Normal line height for body strong
+export const EuiTypographyTextStyleBodyStrongBaseFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for body strong
+export const EuiTypographyTextStyleBodyStrongSmallFontSize = "0.875rem"; // Small body strong - emphasized small text
+export const EuiTypographyTextStyleBodyStrongSmallFontWeight = "600"; // Semi-bold weight for body strong
+export const EuiTypographyTextStyleBodyStrongSmallLineHeight = "1.5"; // Normal line height for body strong
+export const EuiTypographyTextStyleBodyStrongSmallFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for body strong
+export const EuiTypographyTextStyleLabelMdFontSize = "0.875rem"; // Label text - form labels, buttons
+export const EuiTypographyTextStyleLabelMdFontWeight = "600"; // Semi-bold weight for labels
+export const EuiTypographyTextStyleLabelMdLineHeight = "1.5"; // Normal line height for labels
+export const EuiTypographyTextStyleLabelMdFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for labels
+export const EuiTypographyTextStyleLabelSmFontSize = "0.75rem"; // Small label text - secondary labels
+export const EuiTypographyTextStyleLabelSmFontWeight = "600"; // Semi-bold weight for small labels
+export const EuiTypographyTextStyleLabelSmLineHeight = "1.5"; // Normal line height for small labels
+export const EuiTypographyTextStyleLabelSmFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for labels
+export const EuiTypographyTextStyleCaptionFontSize = "0.75rem"; // Caption text - helper text, metadata
 export const EuiTypographyTextStyleCaptionFontWeight = "400"; // Normal weight for caption
 export const EuiTypographyTextStyleCaptionLineHeight = "1.5"; // Normal line height for caption
+export const EuiTypographyTextStyleCaptionFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for captions
+export const EuiTypographyTextStyleOverlineFontSize = "0.75rem"; // Overline text - small uppercase labels
+export const EuiTypographyTextStyleOverlineFontWeight = "600"; // Semi-bold weight for overline
+export const EuiTypographyTextStyleOverlineLineHeight = "1.5"; // Normal line height for overline
+export const EuiTypographyTextStyleOverlineLetterSpacing = "0.025em"; // Wider tracking for overline
+export const EuiTypographyTextStyleOverlineTextTransform = "uppercase"; // Uppercase overline
+export const EuiTypographyTextStyleOverlineFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for overline
 export const EuiTypographyTextStyleCodeBaseFontSize = "0.875rem"; // Code inline text - default size
 export const EuiTypographyTextStyleCodeBaseFontWeight = "400"; // Normal weight for code
 export const EuiTypographyTextStyleCodeBaseLineHeight = "1.5"; // Normal line height for code

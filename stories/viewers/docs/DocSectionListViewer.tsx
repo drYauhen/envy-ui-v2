@@ -44,13 +44,17 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
 
   return (
     <div style={docsContainerStyle}>
-      <h1 style={docsTitleStyle}>{title}</h1>
-      {description ? <div style={docsDescriptionStyle}>{description}</div> : null}
+      <h1 style={docsTitleStyle} className="eui-text-heading-5">{title}</h1>
+      {description ? (
+        <div style={docsDescriptionStyle} className="eui-text-body">
+          {description}
+        </div>
+      ) : null}
       <ul style={docsListStyle}>
         {sortedDocs.map((doc) => {
           const storyPath = doc.storybookId ? `?path=/story/${doc.storybookId}` : null;
           const meta = (
-            <div style={docsItemMetaStyle}>
+            <div style={docsItemMetaStyle} className="eui-text-caption">
               <span>Path: {doc.path}</span>
               {!doc.storybookId ? <span>Storybook: not available</span> : null}
             </div>
@@ -60,12 +64,16 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
             <li key={doc.id} style={docsListItemStyle}>
               {storyPath ? (
                 <a href={storyPath} style={docsLinkStyle}>
-                  <div style={docsItemTitleStyle}>{doc.title}</div>
+                  <div style={docsItemTitleStyle} className="eui-text-title-md">
+                    {doc.title}
+                  </div>
                   {meta}
                 </a>
               ) : (
                 <div style={disabledLinkStyle}>
-                  <div style={docsItemTitleStyle}>{doc.title}</div>
+                  <div style={docsItemTitleStyle} className="eui-text-title-md">
+                    {doc.title}
+                  </div>
                   {meta}
                 </div>
               )}

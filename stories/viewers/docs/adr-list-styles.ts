@@ -9,20 +9,16 @@ export const docsContainerStyle: CSSProperties = {
   padding: '24px',
   maxWidth: 1200,
   margin: '0 auto',
-  fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
   color: '#0f172a'
 };
 
 export const docsTitleStyle: CSSProperties = {
   margin: '0 0 24px',
-  fontSize: '28px',
-  fontWeight: 600,
   color: '#0f172a'
 };
 
 export const docsDescriptionStyle: CSSProperties = {
   margin: '0 0 32px',
-  fontSize: '16px',
   color: '#475569',
   lineHeight: 1.6,
   maxWidth: '800px'
@@ -53,15 +49,12 @@ export const docsLinkStyle: CSSProperties = {
 
 export const docsItemTitleStyle: CSSProperties = {
   margin: '0 0 8px',
-  fontSize: '18px',
-  fontWeight: 600,
   color: '#0f172a'
 };
 
 export const docsItemMetaStyle: CSSProperties = {
   display: 'flex',
   gap: '12px',
-  fontSize: '14px',
   color: '#64748b',
   marginTop: '8px'
 };
@@ -93,4 +86,3 @@ export const getStatusStyle = (status: string): CSSProperties => {
       return { ...base, background: '#fef3c7', color: '#92400e' };
   }
 };
-

@@ -11,10 +11,10 @@
         "item": {
           "background": {
             "hover": {
-              "$resolved": "oklch(96.5% 0.00 0)"
+              "$resolved": "oklch(90% 0.00 0)"
             },
             "focus": {
-              "$resolved": "oklch(96.5% 0.00 0)"
+              "$resolved": "oklch(90% 0.00 0)"
             },
             "selected": {
               "$resolved": "oklch(94% 0.00 0)"
@@ -24,7 +24,7 @@
             "$resolved": "oklch(100% 0 0)"
           },
           "text-disabled": {
-            "$resolved": "oklch(48% 0.00 0)"
+            "$resolved": "oklch(63% 0.00 0)"
           }
         }
       }

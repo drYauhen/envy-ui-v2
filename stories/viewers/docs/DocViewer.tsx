@@ -18,9 +18,7 @@ const containerStyle: CSSProperties = {
   padding: '24px',
   maxWidth: 1200,
   margin: '0 auto',
-  fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-  color: '#0f172a',
-  lineHeight: 1.6
+  color: '#0f172a'
 };
 
 const headerStyle: CSSProperties = {
@@ -190,38 +188,31 @@ export const DocViewer = ({
           components={{
             h1: ({node, ...props}: any) => (
               <h1 style={{
-                fontSize: '28px',
                 marginTop: '32px',
                 marginBottom: '16px',
-                fontWeight: 600,
                 color: '#0f172a',
                 borderBottom: '2px solid #e2e8f0',
                 paddingBottom: '8px'
-              }} {...props} />
+              }} className="eui-text-heading-5" {...props} />
             ),
             h2: ({node, ...props}: any) => (
               <h2 style={{
-                fontSize: '24px',
                 marginTop: '28px',
                 marginBottom: '12px',
-                fontWeight: 600,
                 color: '#0f172a'
-              }} {...props} />
+              }} className="eui-text-heading-6" {...props} />
             ),
             h3: ({node, ...props}: any) => (
               <h3 style={{
-                fontSize: '20px',
                 marginTop: '24px',
                 marginBottom: '10px',
-                fontWeight: 600,
                 color: '#0f172a'
-              }} {...props} />
+              }} className="eui-text-title-md" {...props} />
             ),
             p: ({node, ...props}: any) => (
               <p style={{
-                margin: '0 0 16px',
-                lineHeight: 1.7
-              }} {...props} />
+                margin: '0 0 16px'
+              }} className="eui-text-body" {...props} />
             ),
             ul: ({node, ...props}: any) => (
               <ul style={{
@@ -240,7 +231,7 @@ export const DocViewer = ({
             li: ({node, ...props}: any) => (
               <li style={{
                 marginTop: '0.25rem'
-              }} {...props} />
+              }} className="eui-text-body" {...props} />
             ),
             a: ({node, href, children, ...props}: any) => {
               let storybookHref = href;
@@ -318,10 +309,8 @@ export const DocViewer = ({
                     background: '#f1f5f9',
                     padding: '2px 6px',
                     borderRadius: '4px',
-                    fontSize: '0.9em',
-                    fontFamily: 'Monaco, "Courier New", monospace',
                     color: '#e11d48'
-                  }} {...props}>
+                  }} className="eui-text-code-base" {...props}>
                     {children}
                   </code>
                 );
@@ -355,12 +344,10 @@ export const DocViewer = ({
                     background: '#f1f5f9',
                     padding: '2px 6px',
                     borderRadius: '4px',
-                    fontSize: '0.9em',
-                    fontFamily: 'Monaco, "Courier New", monospace',
                     color: '#e11d48',
                     margin: '0 2px',
                     verticalAlign: 'baseline'
-                  }} {...props}>
+                  }} className="eui-text-code-base" {...props}>
                     {children}
                   </code>
                 );
@@ -373,14 +360,12 @@ export const DocViewer = ({
                   color: '#e2e8f0',
                   padding: '16px',
                   borderRadius: '8px',
-                  fontSize: '14px',
                   lineHeight: 1.6,
                   overflowX: 'auto',
                   whiteSpace: 'pre-wrap',
                   wordBreak: 'break-word',
-                  fontFamily: 'Monaco, "Courier New", monospace',
                   margin: '16px 0'
-                }} {...props}>
+                }} className="eui-text-code-base" {...props}>
                   {children}
                 </code>
               );
@@ -454,7 +439,7 @@ export const DocViewer = ({
                 background: '#f8fafc',
                 color: '#475569',
                 fontStyle: 'italic'
-              }} {...props} />
+              }} className="eui-text-body-sm" {...props} />
             ),
             hr: ({node, ...props}: any) => (
               <hr style={{
