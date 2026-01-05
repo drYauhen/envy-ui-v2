@@ -5,6 +5,7 @@ import { Icon } from '../../packages/tsx/icon';
 import { Button } from '../../src/ui';
 import iconMetadata from '../../assets/icons/icon-metadata.json';
 import { IconGrid } from '../viewers/components/IconGrid';
+import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Icon',
@@ -527,4 +528,3 @@ import { getSectionParameters } from '../../.storybook/preview';
     </div>
   )
 };
-

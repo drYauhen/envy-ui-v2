@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Menu, MenuTrigger, MenuList, MenuItem } from '../../packages/tsx/menu';
+import { Button } from '../../src/ui';
 import { getSectionParameters } from '../../.storybook/preview';
 
 const meta: Meta = {
@@ -168,4 +169,3 @@ export const MenuWithIcons: Story = {
     );
   }
 };
-
