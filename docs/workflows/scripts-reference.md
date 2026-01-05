@@ -73,7 +73,7 @@ Note: The dev app has its own scripts inside `apps/dev-app/` (e.g., `npm run dev
 - `storybook:prepare`: Build tokens + copy docs + generate Tailwind config.
 - `storybook:dev`: Start Storybook on port 6006.
 - `storybook:restart`: Restart Storybook after adding new story files (manual).
-- `storybook`: Prepare + run Storybook with docs/tokens/Tailwind watchers.
+- `storybook`: Prepare + run Storybook with nodemon restarts and docs/tokens/Tailwind watchers.
 - `storybook:build`: Build Storybook for static deployment.
 
 ## Vitest (Storybook)

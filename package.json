@@ -38,7 +38,7 @@
     "storybook:prepare": "npm run tokens:build && npm run docs:copy && npm run tokens:copy-readme && npm run tailwind:generate-config",
     "storybook:dev": "storybook dev -p 6006",
     "storybook:restart": "npm run docs:copy && npm run storybook:dev",
-    "storybook": "npm run storybook:prepare && concurrently \"npm run storybook:dev\" \"npm run docs:watch\" \"npm run tokens:watch\" \"npm run tailwind:watch\"",
+    "storybook": "npm run storybook:prepare && concurrently \"nodemon\" \"npm run docs:watch\" \"npm run tokens:watch\" \"npm run tailwind:watch\"",
     "storybook:build": "npm run tokens:build && npm run docs:copy && npm run tokens:copy-readme && storybook build",
     "vitest:setup": "playwright install chromium",
     "vitest:storybook": "vitest -c vitest.config.ts --watch"

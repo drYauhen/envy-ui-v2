@@ -1,6 +1,7 @@
 {
   "watch": [
     ".storybook/**/*.{ts,tsx,js,jsx,json}",
+    "stories/viewers/docs/**/*.{ts,tsx,js,jsx,json}",
     "system.manifest.json",
     "package.json",
     "docs/adr/**/*.md"
@@ -21,4 +22,3 @@
   "signal": "SIGTERM",
   "restartable": "rs"
 }
-
