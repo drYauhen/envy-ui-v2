@@ -394,7 +394,6 @@ If button font-size = 0.9rem (smaller than base)
    - Material Design uses REM
    - Ant Design uses REM
    - Chakra UI uses REM
-   - Tailwind CSS uses REM
    - Bootstrap uses REM
 
 2. **Global Consistency:**
@@ -620,7 +619,6 @@ If button font-size = 0.9rem (smaller than base)
 - Material Design Typography: Uses REM for font-size
 - Ant Design Typography: Uses REM for font-size, EM for spacing
 - Chakra UI Typography: Uses REM for font-size, EM for spacing
-- Tailwind CSS: Uses REM for typography scale
 - Bootstrap: Uses REM for typography, PX for fixed dimensions
 
 ---

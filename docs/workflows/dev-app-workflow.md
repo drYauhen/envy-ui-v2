@@ -221,19 +221,15 @@ mutation {
 All CSS files must be imported in `src/main.tsx` in the correct order:
 
 1. **Design Tokens** (first)
-2. **Tailwind Utilities**
-3. **Focus Policy**
-4. **Component CSS** (alphabetical order recommended)
-5. **App Styles** (last)
+2. **Focus Policy**
+3. **Component CSS** (alphabetical order recommended)
+4. **App Styles** (last)
 
 Example:
 
 ```typescript
 // Design tokens first
 import '@generated/css/tokens.css';
-
-// Tailwind
-import '@packages/tailwind/tailwind.css';
 
 // Focus policy
 import '@src/ui/focus-policy.css';
@@ -386,4 +382,3 @@ The automated script handles this automatically.
 - [Storybook Workflow](./storybook-workflow.md) - Storybook integration
 - [Component Naming Conventions](../architecture/component-naming-conventions.md) - Component naming
 - [Token Usage Rules](../architecture/token-usage-rules.md) - Token usage guidelines
-

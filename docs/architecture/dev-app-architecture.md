@@ -9,30 +9,27 @@ The dev-app is a full-stack demonstration application showcasing Envy UI compone
 - **Frontend**: React 19 + Vite + TypeScript
 - **Backend**: GraphQL (GraphQL Yoga) + SQLite (better-sqlite3)
 - **State Management**: React hooks (useState, useEffect)
-- **Styling**: Envy UI design tokens + Tailwind CSS
+- **Styling**: Envy UI design tokens + component CSS
 
 ## Architecture Diagram
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Dev App (Root)                        │
-│                                                          │
-│  ┌──────────────────┐         ┌──────────────────┐     │
-│  │   Frontend       │         │   Backend        │     │
-│  │   (Vite)         │◄───────►│   (GraphQL)      │     │
-│  │                  │  HTTP   │                  │     │
-│  │  React + TSX     │         │  GraphQL Yoga    │     │
-│  │  Components      │         │  SQLite DB       │     │
-│  └──────────────────┘         └──────────────────┘     │
-│         │                              │                │
-│         │                              │                │
-│         ▼                              ▼                │
-│  ┌──────────────────┐         ┌──────────────────┐     │
-│  │  Envy UI         │         │  Database        │     │
-│  │  Components      │         │  (SQLite)        │     │
-│  │  (packages/tsx/) │         │  navigation_*    │     │
-│  └──────────────────┘         └──────────────────┘     │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+  A["Dev App (Root)"]
+  subgraph Frontend
+    F["Frontend (Vite)\nReact + TSX Components"]
+  end
+  subgraph Backend
+    B["Backend (GraphQL)\nGraphQL Yoga"]
+  end
+  UI["Envy UI Components\n(packages/tsx/)"]
+  DB["Database (SQLite)\nnavigation_*"]
+
+  A --> F
+  A --> B
+  F <--> |HTTP| B
+  F --> UI
+  B --> DB
 ```
 
 ## Frontend Architecture
@@ -43,7 +40,6 @@ The entry point is responsible for:
 
 1. **CSS Imports** (in correct order):
    - Design tokens (`@generated/css/tokens.css`)
-   - Tailwind utilities
    - Focus policy
    - Component CSS files
    - App-specific styles
@@ -218,10 +214,9 @@ interface SideNavItem {
 CSS must be imported in this exact order in `src/main.tsx`:
 
 1. **Design Tokens** - Foundation
-2. **Tailwind** - Utility classes
-3. **Focus Policy** - Focus management
-4. **Component CSS** - Component styles
-5. **App Styles** - Application-specific overrides
+2. **Focus Policy** - Focus management
+3. **Component CSS** - Component styles
+4. **App Styles** - Application-specific overrides
 
 ### Context Requirements
 
@@ -312,7 +307,6 @@ SideNav re-renders
 - **Vite**: 5.4.0
 - **TypeScript**: 5.9.3
 - **React Aria**: 3.45.0 (via Envy UI components)
-- **Tailwind CSS**: 3.4.0
 
 ### Backend
 - **GraphQL Yoga**: 3.1.0
@@ -445,4 +439,3 @@ Dev-app serves as integration test for:
 - [Dev App Workflow](../workflows/dev-app-workflow.md) - Usage guide
 - [Storybook Workflow](../workflows/storybook-workflow.md) - Storybook integration
 - [Component Naming Conventions](./component-naming-conventions.md) - Component naming
-

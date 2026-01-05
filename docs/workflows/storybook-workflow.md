@@ -21,7 +21,6 @@ stories/
   ├── docs/             # Documentation stories (ADR, Architecture, Workflows, Tokens)
   ├── foundations/      # Foundation token stories
   ├── layouts/          # Layout stories
-  ├── tailwind/         # Tailwind examples
   ├── templates/        # Template stories
   ├── tokens/           # Token visualization (app, website, report)
   ├── tsx/              # TSX component stories (clean/react-aria)
@@ -49,7 +48,6 @@ sectionOrder: [
   "TSX",
   "TSX + React Aria",
   "Web Components",
-  "Tailwind",
   "Templates"
 ]
 ```
@@ -189,7 +187,6 @@ npm run storybook
 - Build tokens
 - Copy docs to public
 - Copy token README files to public
-- Generate Tailwind config
 
 ### Watch Mode
 
