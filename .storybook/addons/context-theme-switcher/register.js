@@ -1,6 +1,7 @@
 import React from 'react';
 import { addons, types, useGlobals } from 'storybook/manager-api';
 import { IconButton, WithTooltip } from 'storybook/internal/components';
+import '../../../src/ui/icons/_icons.css';
 
 const ADDON_ID = 'envy-ui/context-theme-switcher';
 const TOOL_ID = `${ADDON_ID}/tool`;
@@ -111,18 +112,11 @@ function ContextThemeSwitcher() {
       )}
     >
       <IconButton title="Context themes" aria-label="Context themes" active={isOpen}>
-        <svg
+        <span
           aria-hidden="true"
-          focusable="false"
-          viewBox="0 0 16 16"
-          width="14"
-          height="14"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        >
-          <path d="M2 4h12M2 8h12M2 12h12" fill="none" />
-        </svg>
+          data-eui-icon="envisio-logo"
+          style={{ fontSize: '14px' }}
+        />
       </IconButton>
     </WithTooltip>
   );

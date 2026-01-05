@@ -38,6 +38,13 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 function commandToString(cmd, isRelative = false) {
   const code = isRelative ? cmd.code.toLowerCase() : cmd.code.toUpperCase();
   
+  const normalizeArcFlag = (value) => {
+    if (value === true) return 1;
+    if (value === false) return 0;
+    if (value === 1 || value === 0) return value;
+    return value ? 1 : 0;
+  };
+
   switch (cmd.code.toUpperCase()) {
     case 'M':
       return `${code} ${formatNumber(cmd.x)} ${formatNumber(cmd.y)}`;
@@ -56,7 +63,7 @@ function commandToString(cmd, isRelative = false) {
     case 'T':
       return `${code} ${formatNumber(cmd.x)} ${formatNumber(cmd.y)}`;
     case 'A':
-      return `${code} ${formatNumber(cmd.rx)} ${formatNumber(cmd.ry)} ${cmd.xAxisRotation || 0} ${cmd.largeArcFlag || 0} ${cmd.sweepFlag || 0} ${formatNumber(cmd.x)} ${formatNumber(cmd.y)}`;
+      return `${code} ${formatNumber(cmd.rx)} ${formatNumber(cmd.ry)} ${cmd.xAxisRotation || 0} ${normalizeArcFlag(cmd.largeArcFlag ?? cmd.largeArc)} ${normalizeArcFlag(cmd.sweepFlag ?? cmd.sweep)} ${formatNumber(cmd.x)} ${formatNumber(cmd.y)}`;
     case 'Z':
       return 'Z';
     default:

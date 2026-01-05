@@ -9,6 +9,7 @@ import { IconClock } from './generated/IconClock';
 import { IconCog } from './generated/IconCog';
 import { IconDataSource } from './generated/IconDataSource';
 import { IconEllipsisV } from './generated/IconEllipsisV';
+import { IconEnvisioLogo } from './generated/IconEnvisioLogo';
 import { IconExclamationCircle } from './generated/IconExclamationCircle';
 import { IconExpandAll } from './generated/IconExpandAll';
 import { IconExternalLink } from './generated/IconExternalLink';
@@ -43,6 +44,7 @@ export const iconMap = {
   'cog': IconCog,
   'data-source': IconDataSource,
   'ellipsis-v': IconEllipsisV,
+  'envisio-logo': IconEnvisioLogo,
   'exclamation-circle': IconExclamationCircle,
   'expand-all': IconExpandAll,
   'external-link': IconExternalLink,
@@ -69,4 +71,4 @@ export const iconMap = {
   'visuals': IconVisuals,
 };
 
-export type IconName = 'check-circle' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'clock' | 'cog' | 'data-source' | 'ellipsis-v' | 'exclamation-circle' | 'expand-all' | 'external-link' | 'info-circle' | 'map-marked-alt' | 'org-assessment' | 'pencil-ruler' | 'personal-assessment' | 'plan-dashboards' | 'plan-reports' | 'plan' | 'plus-circle' | 'polco' | 'power-off' | 'search' | 'sitemap' | 'submit-updates' | 'swap' | 'tasks' | 'team-assessment' | 'trash' | 'user-friends' | 'visuals-dashboard' | 'visuals';
+export type IconName = 'check-circle' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'clock' | 'cog' | 'data-source' | 'ellipsis-v' | 'envisio-logo' | 'exclamation-circle' | 'expand-all' | 'external-link' | 'info-circle' | 'map-marked-alt' | 'org-assessment' | 'pencil-ruler' | 'personal-assessment' | 'plan-dashboards' | 'plan-reports' | 'plan' | 'plus-circle' | 'polco' | 'power-off' | 'search' | 'sitemap' | 'submit-updates' | 'swap' | 'tasks' | 'team-assessment' | 'trash' | 'user-friends' | 'visuals-dashboard' | 'visuals';

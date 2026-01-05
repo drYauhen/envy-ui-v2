@@ -77,6 +77,12 @@
     "tags": ["exclamation", "warning", "alert", "error", "circle"],
     "description": "Exclamation circle icon for warnings and error states"
   },
+  "envisio-logo": {
+    "category": "semantic",
+    "subcategory": "brand",
+    "tags": ["envisio", "logo", "brand", "mark"],
+    "description": "Envisio logo mark for brand representation"
+  },
   "swap": {
     "category": "ui",
     "subcategory": "actions",
@@ -102,4 +108,3 @@
     "description": "Power off icon for sign out and logout actions"
   }
 }
-
