@@ -13,7 +13,8 @@ const THEME_OPTIONS = {
   ],
   website: [
     { value: 'default', label: 'Default' },
-    { value: 'dark', label: 'Dark' }
+    { value: 'dark', label: 'Dark' },
+    { value: 'toy-r-us', label: 'Toy-R-Us' }
   ],
   report: [
     { value: 'print', label: 'Print' },

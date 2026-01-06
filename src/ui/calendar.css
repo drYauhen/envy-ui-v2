@@ -13,6 +13,13 @@
   overflow: hidden;
 }
 
+/* Embedded surface variant (inline, no container outline) */
+[data-eui-context] .eui-calendar[data-eui-surface="embedded"] {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
 /* Calendar Header (Month/Year Navigation) */
 [data-eui-context] .eui-calendar__header {
   display: flex;
@@ -21,6 +28,11 @@
   padding: var(--eui-calendar-spacing-header-padding-vertical) var(--eui-calendar-spacing-header-padding-horizontal);
   background-color: var(--eui-calendar-colors-header-background);
   border-bottom: var(--eui-calendar-border-width) solid var(--eui-calendar-colors-day-border-default);
+}
+
+[data-eui-context] .eui-calendar[data-eui-surface="embedded"] .eui-calendar__header {
+  background-color: transparent;
+  border-bottom: 0;
 }
 
 [data-eui-context] .eui-calendar__header-label {
@@ -230,4 +242,3 @@
   border-radius: var(--eui-radius-default); /* Restore border-radius on interaction to show interactivity */
   z-index: var(--eui-calendar-z-index-focus); /* Highest elevation for focus */
 }
-

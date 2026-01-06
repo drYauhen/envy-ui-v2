@@ -267,6 +267,19 @@
         }
       }
     },
+    "calendar": {
+      "colors": {
+        "day": {
+          "border": {
+            "default": {
+              "$value": "{eui.color.border.default}",
+              "$type": "color",
+              "$description": "Visible day border in accessibility theme to improve cell separation."
+            }
+          }
+        }
+      }
+    },
     "radius": {
       "none": {
         "$value": "0px",

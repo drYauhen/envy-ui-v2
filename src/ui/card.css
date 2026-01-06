@@ -7,18 +7,28 @@
   --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
   --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
   --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
-  /* Border color references semantic token directly so it updates with theme changes */
-  --eui-card-border-color: var(--eui-color-border-default);
+  /* Border color defaults to elevated variant token with fallback to semantic border */
+  --eui-card-border-color: var(--eui-card-variant-elevated-border-color, var(--eui-color-border-default));
   --eui-card-background: var(--eui-card-variant-elevated-background);
+  --eui-card-background-image: var(--eui-card-variant-elevated-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-elevated-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-elevated-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-elevated-backgroundSize, auto);
   /* Radius uses large level: default theme = 8px, accessibility theme = 10px */
   --eui-card-radius: var(--eui-card-variant-elevated-radius);
+  --eui-card-padding: var(--eui-spacing-md);
 
-  display: block;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--eui-card-radius);
   border-width: var(--eui-card-border-width);
   border-style: var(--eui-card-border-style);
   border-color: var(--eui-card-border-color);
   background-color: var(--eui-card-background);
+  background-image: var(--eui-card-background-image);
+  background-repeat: var(--eui-card-background-repeat);
+  background-position: var(--eui-card-background-position);
+  background-size: var(--eui-card-background-size);
   box-shadow: var(--eui-card-shadow);
 }
 
@@ -29,9 +39,12 @@
   --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
   --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
   --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
-  /* Border color references semantic token directly so it updates with theme changes */
-  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-border-color: var(--eui-card-variant-elevated-border-color, var(--eui-color-border-default));
   --eui-card-background: var(--eui-card-variant-elevated-background);
+  --eui-card-background-image: var(--eui-card-variant-elevated-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-elevated-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-elevated-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-elevated-backgroundSize, auto);
   --eui-card-radius: var(--eui-card-variant-elevated-radius);
 }
 
@@ -40,9 +53,12 @@
   --eui-card-shadow: var(--eui-card-variant-flat-shadow);
   --eui-card-border-width: var(--eui-card-variant-flat-border-width);
   --eui-card-border-style: var(--eui-card-variant-flat-border-style);
-  /* Border color references semantic token directly so it updates with theme changes */
-  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-border-color: var(--eui-card-variant-flat-border-color, var(--eui-color-border-default));
   --eui-card-background: var(--eui-card-variant-flat-background);
+  --eui-card-background-image: var(--eui-card-variant-flat-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-flat-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-flat-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-flat-backgroundSize, auto);
   --eui-card-radius: var(--eui-card-variant-flat-radius);
 }
 
@@ -53,6 +69,10 @@
   --eui-card-border-style: var(--eui-card-variant-muted-border-style);
   --eui-card-border-color: var(--eui-card-variant-muted-border-color);
   --eui-card-background: var(--eui-card-variant-muted-background);
+  --eui-card-background-image: var(--eui-card-variant-muted-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-muted-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-muted-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-muted-backgroundSize, auto);
   --eui-card-radius: var(--eui-card-variant-muted-radius);
 }
 
@@ -61,10 +81,51 @@
   --eui-card-shadow: var(--eui-card-variant-strong-shadow);
   --eui-card-border-width: var(--eui-card-variant-strong-border-width);
   --eui-card-border-style: var(--eui-card-variant-strong-border-style);
-  /* Border color references semantic token directly so it updates with theme changes */
-  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-border-color: var(--eui-card-variant-strong-border-color, var(--eui-color-border-default));
   --eui-card-background: var(--eui-card-variant-strong-background);
+  --eui-card-background-image: var(--eui-card-variant-strong-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-strong-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-strong-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-strong-backgroundSize, auto);
   --eui-card-radius: var(--eui-card-variant-strong-radius);
+}
+
+/* ============================================================================
+   Card Component - Layout Zones
+   ============================================================================ */
+
+[data-eui-context] .eui-card__header,
+[data-eui-context] .eui-card__body,
+[data-eui-context] .eui-card__footer {
+  padding: var(--eui-card-padding);
+}
+
+[data-eui-context] .eui-card__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-eui-context] .eui-card__body[data-eui-padding='none'] {
+  padding: 0;
+}
+
+/* ============================================================================
+   Card Component - Toy-R-Us Theme Alignment
+   ============================================================================ */
+
+[data-eui-context='website'][data-eui-theme='toy-r-us'] .eui-card__header {
+  text-align: center;
+}
+
+[data-eui-context='website'][data-eui-theme='toy-r-us'] .eui-card__body {
+  text-align: center;
+  justify-content: center;
+}
+
+[data-eui-context='website'][data-eui-theme='toy-r-us'] .eui-card__body > * {
+  width: 100%;
 }
 
 /* ============================================================================

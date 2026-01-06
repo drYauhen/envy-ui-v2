@@ -1,0 +1,61 @@
+{
+  "eui": {
+    "chart": {
+      "colors": {
+        "text": {
+          "primary": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Chart primary text color for labels and values."
+          },
+          "muted": {
+            "$value": "{eui.color.text.muted}",
+            "$type": "color",
+            "$description": "Chart secondary text color for subtitles, axis labels, and legend."
+          }
+        },
+        "axis": {
+          "line": {
+            "$value": "{eui.color.border.default}",
+            "$type": "color",
+            "$description": "Chart axis line and tick color."
+          },
+          "grid": {
+            "$value": "{eui.color.border.subtle}",
+            "$type": "color",
+            "$description": "Chart grid line color."
+          }
+        },
+        "series": {
+          "primary": {
+            "$value": "{eui.color.status.info.600}",
+            "$type": "color",
+            "$description": "Primary chart series color."
+          },
+          "secondary": {
+            "$value": "{eui.color.status.success.600}",
+            "$type": "color",
+            "$description": "Secondary chart series color."
+          }
+        },
+        "tooltip": {
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Chart tooltip background color."
+          },
+          "border": {
+            "$value": "{eui.color.border.default}",
+            "$type": "color",
+            "$description": "Chart tooltip border color."
+          },
+          "text": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Chart tooltip text color."
+          }
+        }
+      }
+    }
+  }
+}

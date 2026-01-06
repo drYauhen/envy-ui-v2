@@ -1,0 +1,195 @@
+/* Handsontable theme adapter: map Envy UI tokens -> Handsontable CSS variables. */
+[data-eui-context] .handsontable,
+[data-eui-context] .handsontable th,
+[data-eui-context] .handsontable td {
+  font-family: var(--eui-typography-font-family-ui);
+}
+
+.eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-root-wrapper,
+.eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-portal,
+.eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-theme-main,
+.eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-theme-main-dark,
+.eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-theme-main-dark-auto {
+  font-family: var(--eui-typography-font-family-ui);
+  --ht-common-accent: var(--eui-color-accent-primary);
+  --ht-common-foreground: var(--eui-table-colors-cell-text);
+  --ht-common-foreground-secondary: var(--eui-color-text-muted);
+  --ht-common-background: var(--eui-table-colors-background);
+  --ht-common-background-secondary: var(--eui-table-colors-header-background);
+  --ht-common-border: var(--eui-table-colors-border);
+  --ht-common-placeholder: var(--eui-color-text-subtle);
+  --ht-common-disabled: var(--eui-color-text-disabled);
+  --ht-common-read-only: var(--eui-color-text-muted);
+  --ht-font-size: var(--eui-typography-text-style-body-base-font-size);
+  --ht-line-height: calc(
+    var(--eui-typography-text-style-body-base-line-height) *
+      var(--eui-typography-text-style-body-base-font-size)
+  );
+  --ht-font-size-small: var(--eui-typography-text-style-body-small-font-size);
+  --ht-line-height-small: calc(
+    var(--eui-typography-text-style-body-small-line-height) *
+      var(--eui-typography-text-style-body-small-font-size)
+  );
+  --ht-cell-horizontal-padding: var(--eui-table-spacing-cell-padding-right);
+  --ht-cell-vertical-padding: var(--eui-spacing-sm);
+  --ht-bar-horizontal-padding: var(--eui-table-spacing-header-padding-horizontal);
+  --ht-bar-vertical-padding: var(--eui-table-spacing-header-padding-vertical);
+  --ht-wrapper-border-radius: var(--eui-table-border-radius);
+  --ht-border-color: var(--eui-table-colors-border);
+  --ht-cell-horizontal-border-color: var(--eui-table-colors-border);
+  --ht-cell-vertical-border-color: transparent;
+  --ht-header-background-color: var(--eui-table-colors-header-background);
+  --ht-header-foreground-color: var(--eui-table-colors-header-text);
+  --ht-header-font-weight: var(--eui-typography-font-weight-semibold);
+  --ht-row-header-odd-background-color: var(--eui-table-colors-header-background);
+  --ht-row-header-even-background-color: var(--eui-table-colors-header-background);
+  --ht-row-cell-odd-background-color: var(--eui-table-colors-row-background-default);
+  --ht-row-cell-even-background-color: var(--eui-table-colors-row-background-default);
+  --ht-cell-selection-background-color: var(--eui-table-colors-row-background-selected);
+  --ht-cell-selection-border-color: var(--eui-color-accent-primary);
+  --ht-cell-read-only-background-color: var(--eui-color-background-muted);
+}
+
+.eui-handsontable--borderless {
+  --ht-common-border: transparent;
+  --ht-border-color: transparent;
+  --ht-cell-horizontal-border-color: transparent;
+  --ht-cell-vertical-border-color: transparent;
+}
+
+.eui-theme[data-eui-context="website"] .ht-root-wrapper,
+.eui-theme[data-eui-context="website"] .ht-portal,
+.eui-theme[data-eui-context="website"] .ht-theme-main,
+.eui-theme[data-eui-context="website"] .ht-theme-main-dark,
+.eui-theme[data-eui-context="website"] .ht-theme-main-dark-auto {
+  font-family: var(--eui-typography-font-family-ui);
+}
+
+.eui-theme[data-eui-context="website"][data-eui-theme="toy-r-us"] .ht-root-wrapper,
+.eui-theme[data-eui-context="website"][data-eui-theme="toy-r-us"] .ht-portal,
+.eui-theme[data-eui-context="website"][data-eui-theme="toy-r-us"] .ht-theme-main,
+.eui-theme[data-eui-context="website"][data-eui-theme="toy-r-us"] .ht-theme-main-dark,
+.eui-theme[data-eui-context="website"][data-eui-theme="toy-r-us"] .ht-theme-main-dark-auto {
+  --ht-common-foreground: var(--eui-table-colors-cell-text);
+  --ht-common-foreground-secondary: var(--eui-color-text-muted);
+  --ht-common-background: var(--eui-table-colors-background);
+  --ht-common-background-secondary: var(--eui-table-colors-header-background);
+  --ht-common-border: var(--eui-table-colors-border);
+  --ht-common-placeholder: var(--eui-color-text-subtle);
+  --ht-common-disabled: var(--eui-color-text-disabled);
+  --ht-common-read-only: var(--eui-color-text-muted);
+  --ht-background-color: var(--eui-table-colors-background);
+  --ht-border-color: var(--eui-table-colors-border);
+  --ht-cell-horizontal-border-color: var(--eui-table-colors-border);
+  --ht-cell-vertical-border-color: transparent;
+  --ht-header-background-color: var(--eui-table-colors-header-background);
+  --ht-header-foreground-color: var(--eui-table-colors-header-text);
+  --ht-row-header-odd-background-color: var(--eui-table-colors-header-background);
+  --ht-row-header-even-background-color: var(--eui-table-colors-header-background);
+  --ht-row-cell-odd-background-color: var(--eui-table-colors-row-background-default);
+  --ht-row-cell-even-background-color: var(--eui-table-colors-row-background-default);
+  --ht-cell-selection-background-color: var(--eui-table-colors-row-background-selected);
+  --ht-cell-selection-border-color: var(--eui-color-accent-primary);
+  --ht-font-size: var(--eui-typography-text-style-body-base-font-size);
+  --ht-line-height: calc(
+    var(--eui-typography-text-style-body-base-line-height) *
+      var(--eui-typography-text-style-body-base-font-size)
+  );
+  --ht-font-size-small: var(--eui-typography-text-style-body-small-font-size);
+  --ht-line-height-small: calc(
+    var(--eui-typography-text-style-body-small-line-height) *
+      var(--eui-typography-text-style-body-small-font-size)
+  );
+}
+
+.eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-root-wrapper,
+.eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-portal,
+.eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-theme-main,
+.eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-theme-main-dark,
+.eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-theme-main-dark-auto {
+  font-family: var(--eui-typography-font-family-ui);
+  --ht-common-accent: var(--eui-color-accent-primary);
+  --ht-common-foreground: var(--eui-color-text-primary);
+  --ht-common-foreground-secondary: var(--eui-color-text-muted);
+  --ht-common-background: var(--eui-color-background-surface);
+  --ht-common-background-secondary: var(--eui-color-background-subtle);
+  --ht-common-border: var(--eui-color-border-default);
+  --ht-common-placeholder: var(--eui-color-text-subtle);
+  --ht-common-disabled: var(--eui-color-text-disabled);
+  --ht-common-read-only: var(--eui-color-text-muted);
+  --ht-font-size: var(--eui-typography-text-style-body-base-font-size);
+  --ht-line-height: calc(
+    var(--eui-typography-text-style-body-base-line-height) *
+      var(--eui-typography-text-style-body-base-font-size)
+  );
+  --ht-font-size-small: var(--eui-typography-text-style-body-small-font-size);
+  --ht-line-height-small: calc(
+    var(--eui-typography-text-style-body-small-line-height) *
+      var(--eui-typography-text-style-body-small-font-size)
+  );
+  --ht-cell-horizontal-padding: var(--eui-spacing-sm);
+  --ht-cell-vertical-padding: var(--eui-spacing-xs);
+  --ht-bar-horizontal-padding: var(--eui-spacing-md);
+  --ht-bar-vertical-padding: var(--eui-spacing-sm);
+  --ht-wrapper-border-radius: var(--eui-radius-default);
+}
+
+.ht-portal.ht-theme-main,
+.ht-portal.ht-theme-main-dark,
+.ht-portal.ht-theme-main-dark-auto,
+.ht-portal[data-eui-context="app"][data-eui-theme="default"],
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] {
+  --ht-menu-shadow-x: 0;
+  --ht-menu-shadow-y: 2px;
+  --ht-menu-shadow-blur: 6px;
+  --ht-menu-shadow-color: rgba(0, 0, 0, 0.12);
+  --ht-menu-border-width: var(--eui-calendar-border-width);
+  --ht-menu-border-color: var(--eui-calendar-colors-day-border-default);
+  --ht-menu-border-radius: var(--eui-calendar-border-radius-calendar);
+  --ht-menu-item-hover-color: var(--eui-calendar-colors-day-background-hover);
+  --ht-accent-color: var(--eui-calendar-colors-day-background-selected);
+  --ht-foreground-color: var(--eui-calendar-colors-day-text-default);
+  --ht-background-color: var(--eui-calendar-colors-background);
+  --ht-button-border-radius: var(--eui-calendar-border-radius-day);
+}
+
+.ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single,
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single {
+  font-family: var(--eui-typography-font-family-ui);
+}
+
+.ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single .pika-title,
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single .pika-title {
+  padding: var(--eui-calendar-spacing-header-padding-vertical)
+    var(--eui-calendar-spacing-header-padding-horizontal);
+  gap: var(--eui-calendar-spacing-header-gap);
+}
+
+.ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single .pika-label,
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single .pika-label {
+  color: var(--eui-calendar-colors-header-text);
+  font-weight: var(--eui-calendar-typography-header-font-weight);
+}
+
+.ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single .pika-table th,
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single .pika-table th {
+  color: var(--eui-calendar-colors-weekday-text);
+  font-weight: var(--eui-calendar-typography-weekday-font-weight);
+}
+
+.ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single .pika-table .pika-button,
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single .pika-table .pika-button {
+  color: var(--eui-calendar-colors-day-text-default);
+  font-size: var(--eui-calendar-typography-day-font-size);
+  line-height: var(--eui-calendar-typography-day-line-height);
+}
+
+.ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single .pika-table td.is-today .pika-button,
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single .pika-table td.is-today .pika-button {
+  color: var(--eui-calendar-colors-day-text-today);
+}
+
+.ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single .pika-table td.is-selected .pika-button,
+.ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single .pika-table td.is-selected .pika-button {
+  color: var(--eui-calendar-colors-day-text-selected);
+}

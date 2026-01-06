@@ -95,11 +95,70 @@ export function getSectionParameters(title: string) {
 const getGlobalValue = (value: unknown, fallback: string) =>
   value === '_reset' || value == null ? fallback : String(value);
 
+type ThemeMap = typeof DEFAULT_CONTEXT_THEMES;
+
+const badgeRowStyle: React.CSSProperties = {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  gap: '0.5rem',
+  marginBottom: '0.75rem'
+};
+
+const TsxCleanViewerBadgeRow = ({
+  themes,
+  refreshKey,
+}: {
+  themes: ThemeMap;
+  refreshKey: string;
+}) => {
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const [contextInfo, setContextInfo] = React.useState(() => ({
+    context: 'app',
+    theme: themes.app
+  }));
+
+  React.useEffect(() => {
+    const root = containerRef.current;
+    if (!root) return;
+
+    const wrapper = root.closest('.sb-preview-wrapper') as HTMLElement | null;
+    const scoped = wrapper?.querySelector('.sb-preview-region [data-eui-context]') as HTMLElement | null;
+    if (scoped) {
+      const context = (scoped.getAttribute('data-eui-context') || 'app') as keyof ThemeMap;
+      const theme = scoped.getAttribute('data-eui-theme') || themes[context] || themes.app;
+      setContextInfo({ context, theme });
+      return;
+    }
+
+    if (wrapper) {
+      const context = (wrapper.getAttribute('data-eui-context') || 'app') as keyof ThemeMap;
+      const theme = wrapper.getAttribute('data-eui-theme') || themes[context] || themes.app;
+      setContextInfo({ context, theme });
+      return;
+    }
+
+    setContextInfo({ context: 'app', theme: themes.app });
+  }, [themes, refreshKey]);
+
+  return (
+    <div ref={containerRef} style={badgeRowStyle}>
+      <span className="eui-badge" data-eui-tone="info">
+        Context: {contextInfo.context}
+      </span>
+      <span className="eui-badge" data-eui-tone="neutral">
+        Theme: {contextInfo.theme}
+      </span>
+    </div>
+  );
+};
+
 const withPreviewLayout: Decorator = (Story, context) => {
   const focusPolicy = getGlobalValue(context.globals.focusPolicy, 'derived');
   const appTheme = getGlobalValue(context.globals.appTheme, DEFAULT_CONTEXT_THEMES.app);
   const websiteTheme = getGlobalValue(context.globals.websiteTheme, DEFAULT_CONTEXT_THEMES.website);
   const reportTheme = getGlobalValue(context.globals.reportTheme, DEFAULT_CONTEXT_THEMES.report);
+  const isTsxClean = context.title?.startsWith('TSX (Clean)/');
+  const storyNode = <Story />;
 
   return (
     <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
@@ -109,9 +168,13 @@ const withPreviewLayout: Decorator = (Story, context) => {
         data-eui-context="app"
         data-eui-theme={appTheme}
       >
-        <div className="sb-preview-region">
-          <Story />
-        </div>
+        {isTsxClean ? (
+          <TsxCleanViewerBadgeRow
+            themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}
+            refreshKey={`${context.id}:${appTheme}:${websiteTheme}:${reportTheme}`}
+          />
+        ) : null}
+        <div className="sb-preview-region">{storyNode}</div>
       </div>
     </ContextThemeProvider>
   );

@@ -1,0 +1,61 @@
+{
+  "eui": {
+    "chart": {
+      "colors": {
+        "text": {
+          "primary": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color",
+            "$description": "Chart primary text color for print/report context."
+          },
+          "muted": {
+            "$value": "{eui.color.neutral.600}",
+            "$type": "color",
+            "$description": "Chart secondary text color for print/report context."
+          }
+        },
+        "axis": {
+          "line": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Chart axis line and tick color for print/report context."
+          },
+          "grid": {
+            "$value": "{eui.color.neutral.200}",
+            "$type": "color",
+            "$description": "Chart grid line color for print/report context."
+          }
+        },
+        "series": {
+          "primary": {
+            "$value": "{eui.color.neutral.800}",
+            "$type": "color",
+            "$description": "Primary chart series color for print/report context."
+          },
+          "secondary": {
+            "$value": "{eui.color.neutral.600}",
+            "$type": "color",
+            "$description": "Secondary chart series color for print/report context."
+          }
+        },
+        "tooltip": {
+          "background": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color",
+            "$description": "Chart tooltip background color for print/report context."
+          },
+          "border": {
+            "$value": "{eui.color.neutral.300}",
+            "$type": "color",
+            "$description": "Chart tooltip border color for print/report context."
+          },
+          "text": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color",
+            "$description": "Chart tooltip text color for print/report context."
+          }
+        }
+      }
+    }
+  }
+}

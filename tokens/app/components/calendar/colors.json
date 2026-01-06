@@ -119,9 +119,9 @@
           },
           "border": {
             "default": {
-              "$value": "{eui.color.border.subtle}",
+              "$value": "transparent",
               "$type": "color",
-              "$description": "Day cell border color."
+              "$description": "Day cell border color (no visible outline in default theme)."
             },
             "selected": {
               "$value": "{eui.color.accent.700}",
@@ -151,4 +151,3 @@
     }
   }
 }
-
