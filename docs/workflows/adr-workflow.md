@@ -197,14 +197,22 @@ export const [StoryName]: Story = {
 };
 ```
 
-2. **Important:** After creating the story file, restart Storybook:
+2. **Important:** Verify auto-reload if Storybook is running:
+
+   **If running `npm run storybook`:**
+   - ✅ **No manual restart needed** - nodemon auto-detects new story files
+   - Wait ~2 seconds for automatic reload
+   - Nodemon watches `stories/viewers/docs/**/*.{ts,tsx,js,jsx,json}`
+
+   **If Storybook is NOT running:**
    ```bash
-   # Stop Storybook (Ctrl+C)
-   # Then restart
    npm run storybook
    ```
-   
-   Storybook needs to reload to pick up new story files. If you see "Couldn't find story matching..." error, restart Storybook.
+
+   **If you see "Couldn't find story matching..." error:**
+   - Wait 2-3 seconds for nodemon to detect changes
+   - Check nodemon is running (part of `npm run storybook`)
+   - Only manually restart if nodemon is not running
 
 3. **Note:** ADR list is now managed in `stories/viewers/docs/adr-list-data.ts` (single source of truth). The overview page reads from this file automatically.
 
@@ -285,11 +293,11 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
    - ✅ Checks exportName matches story file
    - ✅ Fix any errors or warnings
 
-6. **Restart Storybook:**
-   - ✅ Stop Storybook (Ctrl+C)
-   - ✅ Restart: `npm run storybook`
-   - ✅ **CRITICAL:** Storybook needs to reload to pick up new story files
-   - ✅ If you see "Couldn't find story matching..." error, restart Storybook
+6. **Verify auto-reload (if Storybook is running):**
+   - ✅ If running `npm run storybook`: **No manual restart needed**
+   - ✅ Wait ~2 seconds for nodemon to detect new story file
+   - ✅ Storybook reloads automatically
+   - ✅ If not running: Start with `npm run storybook`
 
 7. **Verify in Storybook:**
    - ✅ ADR appears in "Docs/ADR" section
@@ -444,9 +452,10 @@ When creating a new ADR:
    - Update `docs/architecture/README.md` index
 8. Set the correct date (use current date)
 9. **Generate story file:** Use `npm run adr:generate` (reads from adr-list-data.ts) or create manually
-10. **CRITICAL:** Restart Storybook after creating new story file
-   - Storybook needs to reload to pick up new story files
-   - If you see "Couldn't find story matching..." error, restart Storybook
+10. **Verify auto-reload:** If Storybook is running via `npm run storybook`:
+   - **No manual restart needed** - nodemon auto-detects new story files
+   - Wait ~2 seconds for automatic reload
+   - Only restart manually if nodemon is not running
 11. **Validate:** `npm run adr:validate` (checks exportName matches)
 12. For images: Place in `docs/adr/` and reference with relative paths
 13. For Mermaid diagrams:

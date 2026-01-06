@@ -172,32 +172,77 @@ export const FigmaVariablesIntegrationStrategy: Story = {
 
 ## Development
 
-### Start Storybook
+### Primary Development Command
+
+**⚠️ CRITICAL: `npm run storybook` is the primary development command.**
+
+```bash
+npm run storybook
+```
+
+This is the **main core development workflow** that:
+1. **Prepares** the system (tokens, docs, Tailwind config)
+2. **Starts** Storybook dev server on port 6006
+3. **Watches** for changes and auto-reloads:
+   - `.storybook/**/*.{ts,tsx,js,jsx,json}` - Storybook config changes
+   - `stories/viewers/docs/**/*.{ts,tsx,js,jsx,json}` - Documentation viewer changes
+   - `stories/docs/**/*.{ts,tsx,js,jsx,json}` - **Story file changes (including ADR stories)**
+   - `docs/adr/**/*.md` - **ADR markdown file changes**
+   - `docs/**/*.md` - Documentation changes (via docs:watch)
+   - `tokens/**/*.json` - Token changes (via tokens:watch)
+   - `package.json` - Package changes
+   - `system.manifest.json` - Manifest changes
+
+**Auto-prepare includes:**
+- Build tokens → CSS, JS, Figma outputs
+- Copy docs to public directory
+- Copy token README files to public
+- Generate Tailwind config from tokens
+
+**Auto-reload on changes:**
+- Token files → rebuild tokens + reload Storybook
+- Doc files → copy to public + reload Storybook
+- Story files → **automatic Storybook reload** (nodemon watches `stories/`)
+- ADR markdown → **automatic reload** (nodemon watches `docs/adr/`)
+
+### Important: No Manual Restart Needed
+
+**When adding new story files** (e.g., via `npm run adr:generate`):
+- ❌ **DO NOT** manually restart Storybook
+- ✅ **Wait ~2 seconds** - nodemon detects new files automatically
+- ✅ Storybook reloads automatically via `storybook:restart`
+
+**Nodemon watches** (configured in `nodemon.json`):
+- `stories/viewers/docs/**/*.{ts,tsx,js,jsx,json}` ← **ADR story files here**
+- `docs/adr/**/*.md` ← **ADR markdown files here**
+- Delay: 2000ms (2 seconds)
+- Restart command: `npm run storybook:restart`
+
+**When nodemon restart is needed:**
+- New story files added (e.g., `stories/docs/adr/adr-0034.stories.tsx`)
+- Storybook config changes (e.g., `.storybook/preview.tsx`)
+- System manifest changes
+- Package.json changes
+
+**When nodemon restart is NOT needed:**
+- Editing existing story files
+- Editing existing documentation
+- Editing existing tokens
+- Editing existing components
+
+### Alternative: Storybook Dev Only
+
+**Only use this when you've already prepared the system:**
 
 ```bash
 npm run storybook:dev
 ```
 
-**Or with auto-prepare:**
-```bash
-npm run storybook
-```
-
-**Auto-prepare includes:**
-- Build tokens
-- Copy docs to public
-- Copy token README files to public
-
-### Watch Mode
-
-```bash
-npm run storybook
-```
-
-**Watches:**
-- Token files (auto-rebuild)
-- Doc files (auto-copy)
-- Story files (auto-reload)
+This **skips** auto-prepare and **does not** watch for changes. Use only when:
+- Tokens already built
+- Docs already copied
+- No changes expected to tokens/docs
+- Quick restart needed for testing
 
 ### Build Static
 
