@@ -212,7 +212,8 @@ const generalDocs: DocRegistryItem[] = [
     id: 'docs-guide',
     path: 'DOCS-GUIDE.md',
     title: 'Documentation Guide',
-    category: 'other'
+    category: 'other',
+    storybookId: 'docs-workflows--documentation-guide'
   }
 ];
 

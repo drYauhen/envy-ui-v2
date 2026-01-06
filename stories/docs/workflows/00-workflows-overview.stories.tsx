@@ -107,3 +107,13 @@ export const DevAppWorkflow: Story = {
     />
   )
 };
+
+export const DocumentationGuide: Story = {
+  name: 'Documentation Guide',
+  render: () => (
+    <DocViewer
+      markdownPath="/docs/DOCS-GUIDE.md"
+      fallback="Loading documentation guide..."
+    />
+  )
+};
