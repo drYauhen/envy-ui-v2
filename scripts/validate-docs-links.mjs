@@ -376,9 +376,32 @@ try {
   const registeredDocs = new Map();
   idMap.forEach((doc) => registeredDocs.set(doc.id, doc));
   registeredDocs.forEach((doc) => {
-    if (!doc.storybookId) return;
-    if (!storyIds.has(doc.storybookId)) {
-      errors.push(`❌ docs-registry.ts: Storybook id '${doc.storybookId}' not found in stories for '${doc.path}'`);
+    // Check if document has storybookId defined
+    if (doc.storybookId) {
+      // If storybookId is defined, verify it exists in actual story files
+      if (!storyIds.has(doc.storybookId)) {
+        errors.push(`❌ docs-registry.ts: Storybook id '${doc.storybookId}' not found in stories for '${doc.path}'`);
+      }
+    } else {
+      // Warn if document doesn't have storybookId but should probably have one
+      // Categories that typically should have Storybook stories:
+      const shouldHaveStory = ['architecture', 'workflows', 'other'].includes(doc.category);
+      // Skip ADR template/guide files and README files (these are meta-documentation)
+      const isMetaDoc = doc.path.includes('TEMPLATE') ||
+                        doc.path.includes('AGENT-GUIDE') ||
+                        doc.path.includes('README');
+
+      // Special handling for root-level guide files (DOCS-GUIDE.md, etc.)
+      // These should have storybookId if they're meant to be viewable in Storybook
+      const isRootGuide = /^[A-Z-]+\.md$/.test(doc.path);
+
+      if (shouldHaveStory && !isMetaDoc) {
+        const severity = isRootGuide ? '⚠️' : 'ℹ️';
+        const message = isRootGuide
+          ? `${severity}  docs-registry.ts: Document '${doc.path}' (${doc.id}) should have storybookId for proper link resolution in Storybook.`
+          : `${severity}  docs-registry.ts: Document '${doc.path}' (${doc.id}) doesn't have storybookId. Links from other docs may not work correctly.`;
+        warnings.push(message);
+      }
     }
   });
 
