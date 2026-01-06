@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../schemas/theme-presets.schema.json",
+  "$description": "Component presets for report context default theme",
+  "components": {
+    "handsontable": {
+      "props": {
+        "theme": "ht-theme-main",
+        "stretchH": "all",
+        "className": "ht-theme-main report-variant"
+      },
+      "layout": {
+        "centerContent": false,
+        "maxWidth": "100%"
+      },
+      "styles": {
+        "headerBackground": "{eui.color.surface.secondary}",
+        "headerTextColor": "{eui.color.text.primary}",
+        "rowBackground": "{eui.color.surface.base}",
+        "borderColor": "{eui.color.border.subtle}"
+      },
+      "$meta": {
+        "description": "Report-optimized Handsontable configuration with compact density",
+        "vendor": "handsontable",
+        "version": "^16.2.0"
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useEffect, useRef } from 'react';
 import { getSectionParameters } from '../../.storybook/preview';
-import { ContextThemeScope } from '../utils/context-theme';
+import { MultiContextViewer } from '../utils/multi-context-viewer';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Checkbox',
@@ -70,85 +70,97 @@ export const CheckboxStates: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Checkbox States</h3>
-        <div style={rowStyle}>
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" />
-            <span className="eui-label">Unchecked</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" defaultChecked />
-            <span className="eui-label">Checked</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" disabled />
-            <span className="eui-label">Disabled</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" defaultChecked disabled />
-            <span className="eui-label">Checked & Disabled</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <IndeterminateCheckbox />
-            <span className="eui-label">Indeterminate</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <IndeterminateCheckbox disabled />
-            <span className="eui-label">Indeterminate & Disabled</span>
-          </label>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Checkbox States</h3>
+            <div style={rowStyle}>
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" />
+                <span className="eui-label">Unchecked</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" defaultChecked />
+                <span className="eui-label">Checked</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" disabled />
+                <span className="eui-label">Disabled</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" defaultChecked disabled />
+                <span className="eui-label">Checked & Disabled</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <IndeterminateCheckbox />
+                <span className="eui-label">Indeterminate</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <IndeterminateCheckbox disabled />
+                <span className="eui-label">Indeterminate & Disabled</span>
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const CheckboxContexts: Story = {
   name: 'Contexts (App vs Report)',
   parameters: {
+    layout: 'fullscreen',
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Application Context (Interactive)</h3>
-        <ContextThemeScope data-eui-context="app" style={rowStyle}>
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" />
-            <span className="eui-label">Unchecked</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" defaultChecked />
-            <span className="eui-label">Checked</span>
-          </label>
-        </ContextThemeScope>
-      </div>
+    <MultiContextViewer
+      contexts={[
+        { context: 'app' },
+        { context: 'report' }
+      ]}
+    >
+      {(context) => (
+        <div style={sectionStyle}>
+          <h3 style={sectionTitleStyle}>
+            {context === 'app' ? 'Application Context (Interactive)' : 'Report Context (Print Style)'}
+          </h3>
+          <div style={rowStyle}>
+            <label className="eui-checkbox-wrapper">
+              <input
+                type="checkbox"
+                className="eui-checkbox"
+                disabled={context === 'report'}
+              />
+              <span className="eui-label">
+                {context === 'app' ? 'Unchecked' : 'Unchecked (brackets)'}
+              </span>
+            </label>
 
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Report Context (Print Style)</h3>
-        <ContextThemeScope data-eui-context="report" style={rowStyle}>
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" disabled />
-            <span className="eui-label">Unchecked (brackets)</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" defaultChecked disabled />
-            <span className="eui-label">Checked (brackets + checkmark)</span>
-          </label>
-        </ContextThemeScope>
-      </div>
-    </div>
+            <label className="eui-checkbox-wrapper">
+              <input
+                type="checkbox"
+                className="eui-checkbox"
+                defaultChecked
+                disabled={context === 'report'}
+              />
+              <span className="eui-label">
+                {context === 'app' ? 'Checked' : 'Checked (brackets + checkmark)'}
+              </span>
+            </label>
+          </div>
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -161,27 +173,31 @@ export const CheckboxExample: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Checkbox Group Example</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" defaultChecked />
-            <span className="eui-label">Accept terms and conditions</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" />
-            <span className="eui-label">Subscribe to newsletter</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" />
-            <span className="eui-label">Enable notifications</span>
-          </label>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Checkbox Group Example</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" defaultChecked />
+                <span className="eui-label">Accept terms and conditions</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" />
+                <span className="eui-label">Subscribe to newsletter</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" />
+                <span className="eui-label">Enable notifications</span>
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -197,29 +213,33 @@ export const CheckboxSizes: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Checkbox Sizes (Architecture Demo)</h3>
-        <p style={{ margin: '0 0 1rem 0', fontSize: '0.875rem', color: '#64748b' }}>
-          Size variants are available for future theme customization. In application context, typically only default size is used.
-        </p>
-        <div style={rowStyle}>
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" data-eui-size="sm" />
-            <span className="eui-label">Small checkbox</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" data-eui-size="md" defaultChecked />
-            <span className="eui-label">Medium checkbox (default)</span>
-          </label>
-          
-          <label className="eui-checkbox-wrapper">
-            <input type="checkbox" className="eui-checkbox" data-eui-size="lg" defaultChecked />
-            <span className="eui-label">Large checkbox</span>
-          </label>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Checkbox Sizes (Architecture Demo)</h3>
+            <p style={{ margin: '0 0 1rem 0', fontSize: '0.875rem', color: '#64748b' }}>
+              Size variants are available for future theme customization. In application context, typically only default size is used.
+            </p>
+            <div style={rowStyle}>
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" data-eui-size="sm" />
+                <span className="eui-label">Small checkbox</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" data-eui-size="md" defaultChecked />
+                <span className="eui-label">Medium checkbox (default)</span>
+              </label>
+
+              <label className="eui-checkbox-wrapper">
+                <input type="checkbox" className="eui-checkbox" data-eui-size="lg" defaultChecked />
+                <span className="eui-label">Large checkbox</span>
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };

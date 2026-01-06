@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../schemas/theme-presets.schema.json",
+  "$description": "Component presets for website context default theme",
+  "components": {
+    "handsontable": {
+      "props": {
+        "theme": "ht-theme-main",
+        "stretchH": "all",
+        "className": "ht-theme-main"
+      },
+      "layout": {
+        "centerContent": false,
+        "maxWidth": "100%"
+      },
+      "$meta": {
+        "description": "Default Handsontable configuration for website context",
+        "vendor": "handsontable",
+        "version": "^16.2.0"
+      }
+    }
+  }
+}
