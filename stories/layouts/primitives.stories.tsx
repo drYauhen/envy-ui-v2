@@ -26,7 +26,10 @@ export const Container: Story = {
     }
   },
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={containerStyle}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Container Variants</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -50,14 +53,20 @@ export const Container: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const Stack: Story = {
   name: 'Stack (Vertical Layout)',
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={containerStyle}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Stack - Gap Variants</h3>
         <div className="eui-stack" data-eui-gap="md">
@@ -87,14 +96,20 @@ export const Stack: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const Inline: Story = {
   name: 'Inline (Horizontal Layout)',
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={containerStyle}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Inline - Gap and Justify Variants</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -124,14 +139,20 @@ export const Inline: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const Grid: Story = {
   name: 'Grid',
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={containerStyle}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Grid - Column Presets</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -163,14 +184,20 @@ export const Grid: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const Toolbar: Story = {
   name: 'Toolbar',
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={containerStyle}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Toolbar with Left, Center, Right Sections</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -196,14 +223,20 @@ export const Toolbar: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const PageHeader: Story = {
   name: 'Page Header',
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={containerStyle}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Page Header with Title, Description, and Actions</h3>
         <div className="eui-stack" data-eui-gap="lg">
@@ -242,14 +275,20 @@ export const PageHeader: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const Section: Story = {
   name: 'Section',
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={containerStyle}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div>
         <h3 style={{ margin: '0 0 1rem 0', fontSize: '1.125rem', fontWeight: 600 }}>Section with Title and Content</h3>
         <div className="eui-section" style={{ background: '#f1f5f9', borderRadius: '8px' }}>
@@ -260,6 +299,9 @@ export const Section: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };

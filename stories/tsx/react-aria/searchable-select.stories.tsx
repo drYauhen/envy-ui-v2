@@ -31,25 +31,37 @@ const manyItems: SearchableSelectItem[] = Array.from({ length: 50 }, (_, i) => (
 
 export const Basic: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
       <SearchableSelect
         label="Search and select"
         placeholder="Type to search..."
         items={basicItems}
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const WithDefaultValue: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
       <SearchableSelect
         label="Search and select"
         items={basicItems}
         defaultSelectedKey="option2"
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
@@ -58,7 +70,10 @@ export const Controlled: Story = {
     const [selected, setSelected] = useState<Key | null>('option2');
 
     return (
-      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
         <SearchableSelect
           label="Controlled SearchableSelect"
           items={basicItems}
@@ -68,20 +83,29 @@ export const Controlled: Story = {
         <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
           Selected: {selected || 'none'}
         </p>
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
 
 export const ManyOptions: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
       <SearchableSelect
         label="Search in many options"
         placeholder="Type to filter..."
         items={manyItems}
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
@@ -95,19 +119,28 @@ export const WithDisabledOptions: Story = {
     ];
 
     return (
-      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
         <SearchableSelect
           label="Search and select"
           items={itemsWithDisabled}
         />
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
 
 export const Sizes: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
+
       <SearchableSelect
         label="Small"
         items={basicItems}
@@ -126,13 +159,19 @@ export const Sizes: Story = {
         size="lg"
         defaultSelectedKey="option3"
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const States: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
+
       <SearchableSelect
         label="Normal"
         items={basicItems}
@@ -150,13 +189,19 @@ export const States: Story = {
         error
         defaultSelectedKey="option3"
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const InForm: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '400px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '400px' }>
+
       <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         <SearchableSelect
           label="Search and select"
@@ -167,7 +212,10 @@ export const InForm: Story = {
           Submit
         </button>
       </form>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 

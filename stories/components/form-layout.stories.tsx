@@ -17,7 +17,9 @@ type Story = StoryObj;
 // FormField Examples
 export const FormFieldBasic: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-field">
         <span className="eui-label" data-eui-slot="label">First Name</span>
         <input type="text" className="eui-input" data-eui-slot="input" placeholder="Enter your first name" />
@@ -29,25 +31,36 @@ export const FormFieldBasic: Story = {
         <input type="email" className="eui-input" data-eui-slot="input" placeholder="your@email.com" />
         <span data-eui-slot="helper-text">We'll never share your email</span>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const FormFieldWithError: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-field" data-eui-error="true">
         <span className="eui-label" data-eui-slot="label">Email Address</span>
         <input type="email" className="eui-input" data-eui-slot="input" placeholder="your@email.com" value="invalid-email" />
         <span data-eui-slot="error-text">Please enter a valid email address</span>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const FormFieldLabelPositions: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }>
+
       <div className="eui-form-field" data-eui-label-position="top">
         <span className="eui-label" data-eui-slot="label">Top Label</span>
         <input type="text" className="eui-input" data-eui-slot="input" placeholder="Label on top" />
@@ -62,14 +75,19 @@ export const FormFieldLabelPositions: Story = {
         <input type="checkbox" className="eui-checkbox" data-eui-slot="input" id="inline-checkbox" />
         <label className="eui-label" data-eui-slot="label" htmlFor="inline-checkbox">Inline Label</label>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 // FormSection Examples
 export const FormSectionBasic: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-section">
         <div className="eui-form-section-header" data-eui-slot="header">
           <h3 className="eui-form-section-title">Personal Information</h3>
@@ -87,13 +105,18 @@ export const FormSectionBasic: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const FormSectionCollapsible: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="false">
         <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="false">
           <div className="eui-form-section-header-content" data-eui-slot="header-content">
@@ -135,13 +158,18 @@ export const FormSectionCollapsible: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const FormSectionWithHeaderContent: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="true">
         <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="true">
           <div className="eui-form-section-header-content" data-eui-slot="header-content">
@@ -170,14 +198,19 @@ export const FormSectionWithHeaderContent: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 // FormRow Examples
 export const FormRowTwoColumns: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-row" data-eui-columns="2">
         <div className="eui-form-field">
           <span className="eui-label" data-eui-slot="label">First Name</span>
@@ -188,13 +221,18 @@ export const FormRowTwoColumns: Story = {
           <input type="text" className="eui-input" data-eui-slot="input" />
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const FormRowThreeColumns: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-row" data-eui-columns="3">
         <div className="eui-form-field">
           <span className="eui-label" data-eui-slot="label">Day</span>
@@ -209,14 +247,19 @@ export const FormRowThreeColumns: Story = {
           <input type="text" className="eui-input" data-eui-slot="input" placeholder="YYYY" />
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 // FormGroup Examples
 export const FormGroupVertical: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-group" data-eui-orientation="vertical">
         <div className="eui-form-group-label" data-eui-slot="label">Notification Preferences</div>
         <div className="eui-form-group-items" data-eui-slot="items">
@@ -234,13 +277,18 @@ export const FormGroupVertical: Story = {
           </label>
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const FormGroupHorizontal: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
       <div className="eui-form-group" data-eui-orientation="horizontal">
         <div className="eui-form-group-label" data-eui-slot="label">Payment Method</div>
         <div className="eui-form-group-items" data-eui-slot="items">
@@ -258,14 +306,20 @@ export const FormGroupHorizontal: Story = {
           </label>
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 // Complex Form Example
 export const ComplexFormExample: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '600px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '600px' }>
+
       <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="true">
         <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="true">
           <div className="eui-form-section-header-content" data-eui-slot="header-content">
@@ -323,7 +377,10 @@ export const ComplexFormExample: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 

@@ -67,7 +67,10 @@ export const OnMount: Story = {
     }
   },
   render: () => (
-    <ContextThemeScope style={containerStyle} data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Auto-trigger on Mount</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -81,7 +84,10 @@ export const OnMount: Story = {
           </CelebrationWrapper>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -94,7 +100,10 @@ export const WithDelay: Story = {
     }
   },
   render: () => (
-    <ContextThemeScope style={containerStyle} data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Delayed Celebration</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -127,7 +136,10 @@ export const WithDelay: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -140,7 +152,10 @@ export const OnClick: Story = {
     }
   },
   render: () => (
-    <ContextThemeScope style={containerStyle} data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Click to Celebrate</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -154,7 +169,10 @@ export const OnClick: Story = {
           </CelebrationWrapper>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -170,7 +188,10 @@ export const ValueChange: Story = {
     const [count, setCount] = useState(15);
 
     return (
-      <ContextThemeScope style={containerStyle} data-eui-context="app">
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
         <div style={sectionStyle}>
           <h3 style={sectionTitleStyle}>Value Change Trigger</h3>
           <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -235,7 +256,10 @@ export const ValueChange: Story = {
             )}
           </div>
         </div>
-      </ContextThemeScope>
+      
+        </div>
+      )}
+    </MultiContextViewer>
     );
   }
 };
@@ -249,7 +273,10 @@ export const OnVisible: Story = {
     }
   },
   render: () => (
-    <ContextThemeScope style={containerStyle} data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>On Visible (Scroll into view)</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -275,7 +302,10 @@ export const OnVisible: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -288,7 +318,10 @@ export const DifferentContent: Story = {
     }
   },
   render: () => (
-    <ContextThemeScope style={containerStyle} data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
       <div style={sectionStyle}>
         <h3 style={sectionTitleStyle}>Works with Any Content</h3>
         <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
@@ -337,6 +370,9 @@ export const DifferentContent: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };

@@ -59,7 +59,10 @@ export const Button: Story = {
     }, []);
 
     return (
-      <ContextThemeScope style={containerStyle} data-eui-context="app">
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Primary Buttons</h3>
           <div style={buttonGroupStyle}>
@@ -104,7 +107,10 @@ export const Button: Story = {
             <eui-button data-eui-intent="primary" data-eui-shape="circle">○</eui-button>
           </div>
         </div>
-      </ContextThemeScope>
+      
+        </div>
+      )}
+    </MultiContextViewer>
     );
   }
 };
@@ -113,7 +119,10 @@ export const States: Story = {
   name: 'Button States',
   render: () => {
     return (
-      <ContextThemeScope style={containerStyle} data-eui-context="app">
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Interactive States</h3>
           <p style={{ margin: '0 0 1rem', color: '#64748b', fontSize: '14px' }}>
@@ -125,7 +134,10 @@ export const States: Story = {
             <eui-button data-eui-intent="primary" data-eui-selected>Selected</eui-button>
           </div>
         </div>
-      </ContextThemeScope>
+      
+        </div>
+      )}
+    </MultiContextViewer>
     );
   }
 };
@@ -134,7 +146,10 @@ export const WithContent: Story = {
   name: 'Button with Content',
   render: () => {
     return (
-      <ContextThemeScope style={containerStyle} data-eui-context="app">
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Text Content</h3>
           <div style={buttonGroupStyle}>
@@ -143,7 +158,10 @@ export const WithContent: Story = {
             <eui-button data-eui-intent="accent">Delete item</eui-button>
           </div>
         </div>
-      </ContextThemeScope>
+      
+        </div>
+      )}
+    </MultiContextViewer>
     );
   }
 };

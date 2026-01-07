@@ -32,25 +32,37 @@ const manyItems: MultiSelectItem[] = Array.from({ length: 20 }, (_, i) => ({
 
 export const Basic: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
       <MultiSelect
         label="Choose options"
         placeholder="Select options..."
         items={basicItems}
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const WithDefaultSelection: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
       <MultiSelect
         label="Choose options"
         items={basicItems}
         defaultSelectedKeys={['option2', 'option4']}
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
@@ -59,7 +71,10 @@ export const Controlled: Story = {
     const [selected, setSelected] = useState<Set<Key>>(new Set(['option2']));
 
     return (
-      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
         <MultiSelect
           label="Controlled MultiSelect"
           items={basicItems}
@@ -69,20 +84,29 @@ export const Controlled: Story = {
         <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
           Selected: {Array.from(selected).join(', ') || 'none'}
         </p>
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
 
 export const ManyOptions: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
       <MultiSelect
         label="Choose options"
         placeholder="Select options..."
         items={manyItems}
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
@@ -97,20 +121,29 @@ export const WithDisabledOptions: Story = {
     ];
 
     return (
-      <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px' }}>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px' }>
+
         <MultiSelect
           label="Choose options"
           items={itemsWithDisabled}
           defaultSelectedKeys={['option1', 'option3']}
         />
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
 
 export const Sizes: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
+
       <MultiSelect
         label="Small"
         items={basicItems}
@@ -129,13 +162,19 @@ export const Sizes: Story = {
         size="lg"
         defaultSelectedKeys={['option4', 'option5']}
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const States: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
+
       <MultiSelect
         label="Normal"
         items={basicItems}
@@ -153,13 +192,19 @@ export const States: Story = {
         error
         defaultSelectedKeys={['option2']}
       />
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 
 export const InForm: Story = {
   render: () => (
-    <ContextThemeScope data-eui-context="app" style={{ maxWidth: '400px' }}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ maxWidth: '400px' }>
+
       <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         <MultiSelect
           label="Select multiple options"
@@ -170,7 +215,10 @@ export const InForm: Story = {
           Submit
         </button>
       </form>
-    </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
   )
 };
 

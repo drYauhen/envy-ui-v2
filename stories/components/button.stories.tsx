@@ -31,28 +31,32 @@ export const Button: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <ButtonStatesViewer
-        config={{ intent: 'primary', size: 'md', shape: 'default', label: 'Button' }}
-        title="Primary"
-        description="Primary button with all states"
-      />
-      <ButtonStatesViewer
-        config={{ intent: 'secondary', size: 'md', shape: 'default', label: 'Button' }}
-        title="Secondary"
-        description="Secondary button with all states"
-      />
-      <ButtonStatesViewer
-        config={{ intent: 'accent', size: 'md', shape: 'default', label: 'Button' }}
-        title="Accent"
-        description="Accent button with all states"
-      />
-      <ButtonStatesViewer
-        config={{ intent: 'primary', size: 'md', shape: 'round', label: 'Button' }}
-        title="Primary Round"
-        description="Primary button with round shape"
-      />
-    </div>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <ButtonStatesViewer
+            config={{ intent: 'primary', size: 'md', shape: 'default', label: 'Button' }}
+            title="Primary"
+            description="Primary button with all states"
+          />
+          <ButtonStatesViewer
+            config={{ intent: 'secondary', size: 'md', shape: 'default', label: 'Button' }}
+            title="Secondary"
+            description="Secondary button with all states"
+          />
+          <ButtonStatesViewer
+            config={{ intent: 'accent', size: 'md', shape: 'default', label: 'Button' }}
+            title="Accent"
+            description="Accent button with all states"
+          />
+          <ButtonStatesViewer
+            config={{ intent: 'primary', size: 'md', shape: 'round', label: 'Button' }}
+            title="Primary Round"
+            description="Primary button with round shape"
+          />
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -66,35 +70,39 @@ export const SparkleTest: Story = {
   },
   render: () => {
     const buttonRef = React.useRef<HTMLButtonElement>(null);
-    
+
     React.useEffect(() => {
       if (buttonRef.current) {
         buttonRef.current.setAttribute('data-eui-celebration', 'active');
         buttonRef.current.classList.add('eui-celebration');
       }
     }, []);
-    
+
     return (
-      <ContextThemeScope style={containerStyle} data-eui-context="app">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
-            Sparkle Visibility Test
-          </h3>
-          <p style={{ margin: 0, color: '#64748b' }}>
-            Button with active celebration classes - sparkles should be visible statically.
-          </p>
-          <button
-            ref={buttonRef}
-            className="eui-button eui-celebration"
-            data-eui-intent="accent"
-            data-eui-size="md"
-            data-eui-shape="default"
-            data-eui-celebration="active"
-          >
-            Finish Task
-          </button>
-        </div>
-      </ContextThemeScope>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+        {() => (
+          <div style={containerStyle}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
+                Sparkle Visibility Test
+              </h3>
+              <p style={{ margin: 0, color: '#64748b' }}>
+                Button with active celebration classes - sparkles should be visible statically.
+              </p>
+              <button
+                ref={buttonRef}
+                className="eui-button eui-celebration"
+                data-eui-intent="accent"
+                data-eui-size="md"
+                data-eui-shape="default"
+                data-eui-celebration="active"
+              >
+                Finish Task
+              </button>
+            </div>
+          </div>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -126,38 +134,42 @@ export const CelebrationVariants: Story = {
     ];
 
     return (
-      <ContextThemeScope style={containerStyle} data-eui-context="app">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          <div>
-            <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
-              Celebration Animation Variants
-            </h3>
-            <p style={{ margin: 0, color: '#64748b', marginTop: '0.5rem' }}>
-              Click each button to compare different celebration animation styles inspired by YouTube subscribe button.
-            </p>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            {buttonVariants.map(({ id, label, variant, description }) => (
-              <div key={id} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-                  <button
-                    className={`eui-button eui-celebration`}
-                    data-eui-intent="accent"
-                    data-eui-size="md"
-                    data-eui-shape="default"
-                    data-eui-celebration={activeButton === id ? 'active' : 'inactive'}
-                    data-eui-celebration-variant={variant}
-                    onClick={(e) => handleClick(id, e)}
-                  >
-                    {label}
-                  </button>
-                  <span style={{ color: '#64748b', fontSize: '0.875rem' }}>{description}</span>
-                </div>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+        {() => (
+          <div style={containerStyle}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div>
+                <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
+                  Celebration Animation Variants
+                </h3>
+                <p style={{ margin: 0, color: '#64748b', marginTop: '0.5rem' }}>
+                  Click each button to compare different celebration animation styles inspired by YouTube subscribe button.
+                </p>
               </div>
-            ))}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                {buttonVariants.map(({ id, label, variant, description }) => (
+                  <div key={id} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                      <button
+                        className={`eui-button eui-celebration`}
+                        data-eui-intent="accent"
+                        data-eui-size="md"
+                        data-eui-shape="default"
+                        data-eui-celebration={activeButton === id ? 'active' : 'inactive'}
+                        data-eui-celebration-variant={variant}
+                        onClick={(e) => handleClick(id, e)}
+                      >
+                        {label}
+                      </button>
+                      <span style={{ color: '#64748b', fontSize: '0.875rem' }}>{description}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </ContextThemeScope>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -193,67 +205,71 @@ export const AccentToFinished: Story = {
     };
 
     return (
-      <ContextThemeScope style={containerStyle} data-eui-context="app">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
-            Finish Task Button
-          </h3>
-          <p style={{ margin: 0, color: '#64748b' }}>
-            Click the button to see it transition from accent to finished state with animation.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-            <div style={{ position: 'relative', display: 'inline-block' }}>
-              <button
-                className={`eui-button ${isFinishing ? 'eui-celebration' : ''}`}
-                data-eui-intent={isFinished ? 'accent-finished' : 'accent'}
-                data-eui-size="md"
-                data-eui-shape="default"
-                data-eui-celebration={isFinishing ? 'active' : 'inactive'}
-                data-eui-finishing={isFinishing ? '' : undefined}
-                onClick={handleClick}
-                disabled={isFinished}
-                autoFocus={isFinishing}
-              >
-                {isFinished ? '✓ Task Finished' : 'Finish Task'}
-              </button>
-                     {isFinishing && (
-                       <span className="eui-celebration-sparkle"></span>
-                     )}
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+        {() => (
+          <div style={containerStyle}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: 600, color: '#0f172a' }}>
+                Finish Task Button
+              </h3>
+              <p style={{ margin: 0, color: '#64748b' }}>
+                Click the button to see it transition from accent to finished state with animation.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <div style={{ position: 'relative', display: 'inline-block' }}>
+                  <button
+                    className={`eui-button ${isFinishing ? 'eui-celebration' : ''}`}
+                    data-eui-intent={isFinished ? 'accent-finished' : 'accent'}
+                    data-eui-size="md"
+                    data-eui-shape="default"
+                    data-eui-celebration={isFinishing ? 'active' : 'inactive'}
+                    data-eui-finishing={isFinishing ? '' : undefined}
+                    onClick={handleClick}
+                    disabled={isFinished}
+                    autoFocus={isFinishing}
+                  >
+                    {isFinished ? '✓ Task Finished' : 'Finish Task'}
+                  </button>
+                  {isFinishing && (
+                    <span className="eui-celebration-sparkle"></span>
+                  )}
+                </div>
+              </div>
+              {isFinished && (
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.5rem',
+                  padding: '1rem',
+                  backgroundColor: '#f8fafc',
+                  borderRadius: '4px',
+                  border: '1px solid #e2e8f0'
+                }}>
+                  <p style={{ margin: 0, color: '#0f172a', fontSize: '0.875rem', fontWeight: 500 }}>
+                    Task is finished
+                  </p>
+                  <button
+                    onClick={handleRestore}
+                    style={{
+                      alignSelf: 'flex-start',
+                      padding: '0.25rem 0.5rem',
+                      fontSize: '0.875rem',
+                      color: '#066a8d',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      textDecoration: 'underline',
+                      textUnderlineOffset: '2px'
+                    }}
+                  >
+                    Restore
+                  </button>
+                </div>
+              )}
             </div>
           </div>
-          {isFinished && (
-            <div style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              gap: '0.5rem',
-              padding: '1rem',
-              backgroundColor: '#f8fafc',
-              borderRadius: '4px',
-              border: '1px solid #e2e8f0'
-            }}>
-              <p style={{ margin: 0, color: '#0f172a', fontSize: '0.875rem', fontWeight: 500 }}>
-                Task is finished
-              </p>
-              <button
-                onClick={handleRestore}
-                style={{
-                  alignSelf: 'flex-start',
-                  padding: '0.25rem 0.5rem',
-                  fontSize: '0.875rem',
-                  color: '#066a8d',
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  textDecoration: 'underline',
-                  textUnderlineOffset: '2px'
-                }}
-              >
-                Restore
-              </button>
-            </div>
-          )}
-        </div>
-      </ContextThemeScope>
+        )}
+      </MultiContextViewer>
     );
   }
 };

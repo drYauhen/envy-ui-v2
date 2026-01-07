@@ -20,7 +20,10 @@ export const TablePage: Story = {
     layout: 'fullscreen'
   },
   render: () => (
-    <ContextThemeScope data-eui-context="app">
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div >
+
       <div className="eui-page">
         <div className="eui-page__header">
           <div className="eui-container" data-eui-container="wide">
@@ -101,6 +104,9 @@ export const TablePage: Story = {
           </div>
         </div>
       </div>
-    </ContextThemeScope>
+    
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };

@@ -22,7 +22,10 @@ export const Basic: Story = {
     const [value, setValue] = useState<Date | null>(null);
     
     return (
-      <ContextThemeScope data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }>
+
         <Calendar
           value={value}
           onChange={setValue}
@@ -32,7 +35,10 @@ export const Basic: Story = {
             Selected: {value.toLocaleDateString()}
           </div>
         )}
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
@@ -42,7 +48,10 @@ export const WithDefaultValue: Story = {
     const [value, setValue] = useState<Date | null>(new Date());
     
     return (
-      <ContextThemeScope data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }>
+
         <Calendar
           value={value}
           onChange={setValue}
@@ -52,7 +61,10 @@ export const WithDefaultValue: Story = {
             Selected: {value.toLocaleDateString()}
           </div>
         )}
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
@@ -60,12 +72,17 @@ export const WithDefaultValue: Story = {
 export const Disabled: Story = {
   render: () => {
     return (
-      <ContextThemeScope data-eui-context="app">
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
         <Calendar
           defaultValue={new Date()}
           isDisabled
         />
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
@@ -73,12 +90,17 @@ export const Disabled: Story = {
 export const ReadOnly: Story = {
   render: () => {
     return (
-      <ContextThemeScope data-eui-context="app">
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <>
         <Calendar
           defaultValue={new Date()}
           isReadOnly
         />
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };
@@ -93,7 +115,10 @@ export const WithMinMax: Story = {
     maxDate.setDate(today.getDate() + 30); // 30 days from now
     
     return (
-      <ContextThemeScope data-eui-context="app" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }>
+
         <Calendar
           value={value}
           onChange={setValue}
@@ -105,7 +130,10 @@ export const WithMinMax: Story = {
           <p>Max date: {maxDate.toLocaleDateString()}</p>
           {value && <p>Selected: {value.toLocaleDateString()}</p>}
         </div>
-      </ContextThemeScope>
+</>
+      )}
+    
+</MultiContextViewer>
     );
   }
 };

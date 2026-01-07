@@ -319,56 +319,60 @@ const syncPortalTheme = (context: 'app' | 'website' | 'report', hotInstance?: { 
 export const ResizableSplitGrid: Story = {
   name: 'Resizable Split Grid',
   render: () => (
-    <ContextThemeScope context="website" className="eui-theme" style={gridShellStyle}>
-      <GridLayout
-        cols={12}
-        rowHeight={30}
-        margin={[16, 16]}
-        isDraggable
-        isResizable
-        draggableHandle=".eui-grid-card__handle"
-        compactType={null}
-        preventCollision
-      >
-        {gridCards.map((card) => (
-          <div key={card.key} data-grid={gridLayout.find((item) => item.i === card.key)}>
-            <div className="eui-card" data-eui-variant="elevated" style={gridItemStyle}>
-              <div className="eui-card__header eui-grid-card__handle" style={gridHeaderStyle}>
-                {card.title}
-              </div>
-              {card.key === 'bottom-right' ? (
-                <div className="eui-card__body">
-                  <ResizableChart />
-                </div>
-              ) : (
-                <div className="eui-card__body" data-eui-padding="none">
-                  <div style={tableWrapperStyle}>
-                    <HotTable
-                      data={card.data}
-                      colHeaders={card.colHeaders}
-                      columns={card.columns}
-                      colWidths={card.colWidths}
-                      style={{ height: '100%' }}
-                      className="ht-theme-main eui-handsontable--borderless"
-                      afterInit={function () {
-                        syncPortalTheme('website', this);
-                      }}
-                      afterSetTheme={function () {
-                        syncPortalTheme('website', this);
-                      }}
-                      stretchH={card.stretchH}
-                      width="100%"
-                      height="100%"
-                      licenseKey="non-commercial-and-evaluation"
-                      theme="ht-theme-main"
-                    />
+    <MultiContextViewer contexts={[{ context: 'website' }]}>
+      {() => (
+        <div className="eui-theme" style={gridShellStyle}>
+          <GridLayout
+            cols={12}
+            rowHeight={30}
+            margin={[16, 16]}
+            isDraggable
+            isResizable
+            draggableHandle=".eui-grid-card__handle"
+            compactType={null}
+            preventCollision
+          >
+            {gridCards.map((card) => (
+              <div key={card.key} data-grid={gridLayout.find((item) => item.i === card.key)}>
+                <div className="eui-card" data-eui-variant="elevated" style={gridItemStyle}>
+                  <div className="eui-card__header eui-grid-card__handle" style={gridHeaderStyle}>
+                    {card.title}
                   </div>
+                  {card.key === 'bottom-right' ? (
+                    <div className="eui-card__body">
+                      <ResizableChart />
+                    </div>
+                  ) : (
+                    <div className="eui-card__body" data-eui-padding="none">
+                      <div style={tableWrapperStyle}>
+                        <HotTable
+                          data={card.data}
+                          colHeaders={card.colHeaders}
+                          columns={card.columns}
+                          colWidths={card.colWidths}
+                          style={{ height: '100%' }}
+                          className="ht-theme-main eui-handsontable--borderless"
+                          afterInit={function () {
+                            syncPortalTheme('website', this);
+                          }}
+                          afterSetTheme={function () {
+                            syncPortalTheme('website', this);
+                          }}
+                          stretchH={card.stretchH}
+                          width="100%"
+                          height="100%"
+                          licenseKey="non-commercial-and-evaluation"
+                          theme="ht-theme-main"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </GridLayout>
-    </ContextThemeScope>
+              </div>
+            ))}
+          </GridLayout>
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
