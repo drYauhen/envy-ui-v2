@@ -1,17 +1,18 @@
 {
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
   "eui": {
     "divider": {
       "spacing": {
         "margin": {
           "vertical": {
-            "$value": "0.5rem",
+            "$value": "{eui.spacing.sm}",
             "$type": "dimension",
-            "$description": "Vertical margin for horizontal divider."
+            "$description": "Vertical margin for horizontal divider - separates content above/below."
           },
           "horizontal": {
-            "$value": "0.5rem",
+            "$value": "{eui.spacing.sm}",
             "$type": "dimension",
-            "$description": "Horizontal margin for vertical divider."
+            "$description": "Horizontal margin for vertical divider - separates content left/right."
           }
         }
       }

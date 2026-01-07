@@ -1366,6 +1366,27 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.divider.size.thickness",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.divider.spacing.margin.horizontal",
+          "type": "FLOAT",
+          "value": 0.5714
+        },
+        {
+          "path": "eui.divider.spacing.margin.vertical",
+          "type": "FLOAT",
+          "value": 0.5714
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Text",
       "mode": "default",
       "variables": [
@@ -3585,27 +3606,6 @@
           "path": "eui.form.spacing.section.header.padding",
           "type": "FLOAT",
           "value": 0.5714
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Divider",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.divider.size.thickness",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.divider.spacing.margin.horizontal",
-          "type": "FLOAT",
-          "value": 0.5
-        },
-        {
-          "path": "eui.divider.spacing.margin.vertical",
-          "type": "FLOAT",
-          "value": 0.5
         }
       ]
     },

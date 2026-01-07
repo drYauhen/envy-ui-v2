@@ -8016,6 +8016,51 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "modes": [
+        "website-dark",
+        "website-default",
+        "website-default.presets.meta",
+        "website-toy-r-us",
+        "website-toy-r-us.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.divider.size.thickness",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1,
+            "website-default": 1,
+            "website-default.presets.meta": 1,
+            "website-toy-r-us": 1,
+            "website-toy-r-us.presets.meta": 1
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5714,
+            "website-default": 0.5714,
+            "website-default.presets.meta": 0.5714,
+            "website-toy-r-us": 0.5714,
+            "website-toy-r-us.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5714,
+            "website-default": 0.5714,
+            "website-default.presets.meta": 0.5714,
+            "website-toy-r-us": 0.5714,
+            "website-toy-r-us.presets.meta": 0.5714
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Text",
       "modes": [
         "website-dark",
@@ -16251,51 +16296,6 @@
             "website-default.presets.meta": 0.5714,
             "website-toy-r-us": 0.5714,
             "website-toy-r-us.presets.meta": 0.5714
-          }
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Divider",
-      "modes": [
-        "website-dark",
-        "website-default",
-        "website-default.presets.meta",
-        "website-toy-r-us",
-        "website-toy-r-us.presets.meta"
-      ],
-      "variables": [
-        {
-          "path": "eui.divider.size.thickness",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 1,
-            "website-default": 1,
-            "website-default.presets.meta": 1,
-            "website-toy-r-us": 1,
-            "website-toy-r-us.presets.meta": 1
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.horizontal",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 0.5,
-            "website-default": 0.5,
-            "website-default.presets.meta": 0.5,
-            "website-toy-r-us": 0.5,
-            "website-toy-r-us.presets.meta": 0.5
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.vertical",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "website-dark": 0.5,
-            "website-default": 0.5,
-            "website-default.presets.meta": 0.5,
-            "website-toy-r-us": 0.5,
-            "website-toy-r-us.presets.meta": 0.5
           }
         }
       ]

@@ -8016,6 +8016,51 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "modes": [
+        "report-default.presets.meta",
+        "report-print",
+        "report-print.presets.meta",
+        "report-screen",
+        "report-screen.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.divider.size.thickness",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 1,
+            "report-print": 1,
+            "report-print.presets.meta": 1,
+            "report-screen": 1,
+            "report-screen.presets.meta": 1
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 0.5714,
+            "report-print": 0.5714,
+            "report-print.presets.meta": 0.5714,
+            "report-screen": 0.5714,
+            "report-screen.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 0.5714,
+            "report-print": 0.5714,
+            "report-print.presets.meta": 0.5714,
+            "report-screen": 0.5714,
+            "report-screen.presets.meta": 0.5714
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Text",
       "modes": [
         "report-default.presets.meta",
@@ -16251,51 +16296,6 @@
             "report-print.presets.meta": 0.5714,
             "report-screen": 0.5714,
             "report-screen.presets.meta": 0.5714
-          }
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Divider",
-      "modes": [
-        "report-default.presets.meta",
-        "report-print",
-        "report-print.presets.meta",
-        "report-screen",
-        "report-screen.presets.meta"
-      ],
-      "variables": [
-        {
-          "path": "eui.divider.size.thickness",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "report-default.presets.meta": 1,
-            "report-print": 1,
-            "report-print.presets.meta": 1,
-            "report-screen": 1,
-            "report-screen.presets.meta": 1
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.horizontal",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "report-default.presets.meta": 0.5,
-            "report-print": 0.5,
-            "report-print.presets.meta": 0.5,
-            "report-screen": 0.5,
-            "report-screen.presets.meta": 0.5
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.vertical",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "report-default.presets.meta": 0.5,
-            "report-print": 0.5,
-            "report-print.presets.meta": 0.5,
-            "report-screen": 0.5,
-            "report-screen.presets.meta": 0.5
           }
         }
       ]

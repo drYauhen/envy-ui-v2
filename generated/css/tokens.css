@@ -80,6 +80,10 @@
   --eui-table-border-width: 1px;
   --eui-table-border-radius: 0px;
   --eui-table-border-style: solid;
+  --eui-divider-spacing-margin-vertical: 0.5714rem;
+  --eui-divider-spacing-margin-horizontal: 0.5714rem;
+  --eui-divider-size-thickness: 1px;
+  --eui-divider-colors-default: oklch(90% 0.00 0);
   --eui-chart-typography-font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --eui-chart-typography-subtitle-font-size: 0.75rem;
   --eui-chart-typography-subtitle-font-weight: 400;
@@ -797,10 +801,6 @@
   --eui-form-spacing-row-gap: 1.1429rem;
   --eui-form-animation-duration: 0.2s;
   --eui-form-animation-easing: ease-in-out;
-  --eui-divider-spacing-margin-vertical: 0.5rem;
-  --eui-divider-spacing-margin-horizontal: 0.5rem;
-  --eui-divider-size-thickness: 1px;
-  --eui-divider-colors-default: oklch(90% 0.00 0);
   --eui-detail-panel-spacing-padding: 1.5rem;
   --eui-detail-panel-size-width: 400px;
   --eui-detail-panel-shadow-left: -4px 0 8px rgba(0, 0, 0, 0.1);

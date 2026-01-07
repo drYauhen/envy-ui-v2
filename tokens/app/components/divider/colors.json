@@ -1,11 +1,12 @@
 {
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
   "eui": {
     "divider": {
       "colors": {
         "default": {
           "$value": "{eui.color.border.default}",
           "$type": "color",
-          "$description": "Divider color. Default border color for separation."
+          "$description": "Default divider color - semantic border color for separation."
         }
       }
     }

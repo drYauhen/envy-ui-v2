@@ -20715,6 +20715,91 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "modes": [
+        "app-accessibility",
+        "app-accessibility.meta",
+        "app-default",
+        "app-default.meta",
+        "app-default.presets.meta",
+        "website-dark",
+        "website-default",
+        "website-default.presets.meta",
+        "website-toy-r-us",
+        "website-toy-r-us.presets.meta",
+        "report-default.presets.meta",
+        "report-print",
+        "report-print.presets.meta",
+        "report-screen",
+        "report-screen.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.divider.size.thickness",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-accessibility.meta": 1,
+            "app-default": 1,
+            "app-default.meta": 1,
+            "app-default.presets.meta": 1,
+            "website-dark": 1,
+            "website-default": 1,
+            "website-default.presets.meta": 1,
+            "website-toy-r-us": 1,
+            "website-toy-r-us.presets.meta": 1,
+            "report-default.presets.meta": 1,
+            "report-print": 1,
+            "report-print.presets.meta": 1,
+            "report-screen": 1,
+            "report-screen.presets.meta": 1
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714,
+            "website-dark": 0.5714,
+            "website-default": 0.5714,
+            "website-default.presets.meta": 0.5714,
+            "website-toy-r-us": 0.5714,
+            "website-toy-r-us.presets.meta": 0.5714,
+            "report-default.presets.meta": 0.5714,
+            "report-print": 0.5714,
+            "report-print.presets.meta": 0.5714,
+            "report-screen": 0.5714,
+            "report-screen.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714,
+            "website-dark": 0.5714,
+            "website-default": 0.5714,
+            "website-default.presets.meta": 0.5714,
+            "website-toy-r-us": 0.5714,
+            "website-toy-r-us.presets.meta": 0.5714,
+            "report-default.presets.meta": 0.5714,
+            "report-print": 0.5714,
+            "report-print.presets.meta": 0.5714,
+            "report-screen": 0.5714,
+            "report-screen.presets.meta": 0.5714
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Text",
       "modes": [
         "app-accessibility",
@@ -39710,91 +39795,6 @@
             "report-print.presets.meta": 0.5714,
             "report-screen": 0.5714,
             "report-screen.presets.meta": 0.5714
-          }
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Divider",
-      "modes": [
-        "app-accessibility",
-        "app-accessibility.meta",
-        "app-default",
-        "app-default.meta",
-        "app-default.presets.meta",
-        "website-dark",
-        "website-default",
-        "website-default.presets.meta",
-        "website-toy-r-us",
-        "website-toy-r-us.presets.meta",
-        "report-default.presets.meta",
-        "report-print",
-        "report-print.presets.meta",
-        "report-screen",
-        "report-screen.presets.meta"
-      ],
-      "variables": [
-        {
-          "path": "eui.divider.size.thickness",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1,
-            "website-dark": 1,
-            "website-default": 1,
-            "website-default.presets.meta": 1,
-            "website-toy-r-us": 1,
-            "website-toy-r-us.presets.meta": 1,
-            "report-default.presets.meta": 1,
-            "report-print": 1,
-            "report-print.presets.meta": 1,
-            "report-screen": 1,
-            "report-screen.presets.meta": 1
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.horizontal",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5,
-            "website-dark": 0.5,
-            "website-default": 0.5,
-            "website-default.presets.meta": 0.5,
-            "website-toy-r-us": 0.5,
-            "website-toy-r-us.presets.meta": 0.5,
-            "report-default.presets.meta": 0.5,
-            "report-print": 0.5,
-            "report-print.presets.meta": 0.5,
-            "report-screen": 0.5,
-            "report-screen.presets.meta": 0.5
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.vertical",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5,
-            "website-dark": 0.5,
-            "website-default": 0.5,
-            "website-default.presets.meta": 0.5,
-            "website-toy-r-us": 0.5,
-            "website-toy-r-us.presets.meta": 0.5,
-            "report-default.presets.meta": 0.5,
-            "report-print": 0.5,
-            "report-print.presets.meta": 0.5,
-            "report-screen": 0.5,
-            "report-screen.presets.meta": 0.5
           }
         }
       ]

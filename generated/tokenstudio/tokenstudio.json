@@ -371,6 +371,22 @@
     "$value": "solid",
     "$type": "string"
   },
+  "eui.divider.spacing.margin.vertical": {
+    "$value": "0.5714rem",
+    "$type": "dimension"
+  },
+  "eui.divider.spacing.margin.horizontal": {
+    "$value": "0.5714rem",
+    "$type": "dimension"
+  },
+  "eui.divider.size.thickness": {
+    "$value": "1px",
+    "$type": "dimension"
+  },
+  "eui.divider.colors.default": {
+    "$value": "oklch(90% 0.00 0)",
+    "$type": "color"
+  },
   "eui.chart.typography.font.family": {
     "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     "$type": "fontFamily"
@@ -3318,22 +3334,6 @@
   "eui.form.animation.easing": {
     "$value": "ease-in-out",
     "$type": "cubic-bezier"
-  },
-  "eui.divider.spacing.margin.vertical": {
-    "$value": "0.5rem",
-    "$type": "dimension"
-  },
-  "eui.divider.spacing.margin.horizontal": {
-    "$value": "0.5rem",
-    "$type": "dimension"
-  },
-  "eui.divider.size.thickness": {
-    "$value": "1px",
-    "$type": "dimension"
-  },
-  "eui.divider.colors.default": {
-    "$value": "oklch(90% 0.00 0)",
-    "$type": "color"
   },
   "eui.detail-panel.spacing.padding": {
     "$value": "1.5rem",

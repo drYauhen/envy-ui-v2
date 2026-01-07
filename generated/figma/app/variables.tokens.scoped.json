@@ -8016,6 +8016,51 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Dimensions / Divider",
+      "modes": [
+        "app-accessibility",
+        "app-accessibility.meta",
+        "app-default",
+        "app-default.meta",
+        "app-default.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.divider.size.thickness",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1,
+            "app-accessibility.meta": 1,
+            "app-default": 1,
+            "app-default.meta": 1,
+            "app-default.presets.meta": 1
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.horizontal",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.divider.spacing.margin.vertical",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Colors / Text",
       "modes": [
         "app-accessibility",
@@ -16251,51 +16296,6 @@
             "app-default": 0.5714,
             "app-default.meta": 0.5714,
             "app-default.presets.meta": 0.5714
-          }
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Divider",
-      "modes": [
-        "app-accessibility",
-        "app-accessibility.meta",
-        "app-default",
-        "app-default.meta",
-        "app-default.presets.meta"
-      ],
-      "variables": [
-        {
-          "path": "eui.divider.size.thickness",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.horizontal",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
-          }
-        },
-        {
-          "path": "eui.divider.spacing.margin.vertical",
-          "type": "FLOAT",
-          "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
           }
         }
       ]
