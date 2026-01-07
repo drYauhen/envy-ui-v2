@@ -45,21 +45,20 @@ const ContextWrapper: React.FC<{
       className="eui-theme"
       style={containerStyle}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <div className="eui-stack">
         {showLabels && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="neutral">
-              context: {context}
-            </span>
-            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="info">
-              theme: {theme}
-            </span>
-            {label && (
-              <span style={{ fontSize: '0.75rem', fontStyle: 'italic', opacity: 0.7 }}>
-                {label}
+          <>
+            <hr className='eui-divider' />
+            <div className="eui-inline" data-eui-gap="sm">
+              <span className="eui-badge" data-eui-variant="outline" data-eui-tone="neutral">
+                context: {context}
               </span>
-            )}
-          </div>
+              <span className="eui-badge" data-eui-variant="outline" data-eui-tone="info">
+                theme: {theme}
+              </span>
+            </div>
+            <hr className='eui-divider' />
+          </>
         )}
         {children(context, theme)}
       </div>
