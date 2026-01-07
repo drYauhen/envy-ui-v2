@@ -6,7 +6,7 @@
         "trigger": {
           "spacing": {
             "gap": {
-              "$value": "{eui.dimension.1}",
+              "$value": "{eui.spacing.xs}",
               "$type": "dimension",
               "$description": "Gap between trigger content elements (value and chevron)"
             }
@@ -68,13 +68,13 @@
         "badge": {
           "spacing": {
             "gap": {
-              "$value": "{eui.dimension.1}",
+              "$value": "{eui.spacing.xs}",
               "$type": "dimension",
               "$description": "Gap between badges in MultiSelect trigger"
             },
             "padding": {
               "horizontal": {
-                "$value": "{eui.dimension.1}",
+                "$value": "{eui.spacing.xs}",
                 "$type": "dimension",
                 "$description": "Horizontal padding for badge"
               },

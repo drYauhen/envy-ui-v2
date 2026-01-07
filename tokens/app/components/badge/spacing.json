@@ -3,7 +3,7 @@
     "badge": {
       "spacing": {
         "gap": {
-          "$value": "{eui.dimension.1}",
+          "$value": "{eui.spacing.xs}",
           "$type": "dimension",
           "$description": "Gap between badge content elements."
         },
@@ -14,7 +14,7 @@
             "$description": "Vertical padding for badge."
           },
           "horizontal": {
-            "$value": "{eui.dimension.2}",
+            "$value": "{eui.spacing.sm}",
             "$type": "dimension",
             "$description": "Horizontal padding for badge."
           }

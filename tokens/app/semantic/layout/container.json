@@ -18,7 +18,7 @@
           }
         },
         "gutterX": {
-          "$value": "{eui.dimension.6}",
+          "$value": "{eui.spacing.lg}",
           "$type": "dimension",
           "$description": "Horizontal page gutter. Consistent across all pages. References foundation spacing."
         }

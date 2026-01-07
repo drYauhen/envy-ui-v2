@@ -4,18 +4,18 @@
     "layout": {
       "section": {
         "gap": {
-          "$value": "{eui.dimension.4}",
+          "$value": "{eui.spacing.md}",
           "$type": "dimension",
           "$description": "Gap between section content items. References foundation spacing."
         },
         "padding": {
-          "$value": "{eui.dimension.4}",
+          "$value": "{eui.spacing.md}",
           "$type": "dimension",
           "$description": "Padding inside section. References foundation spacing."
         },
         "title": {
           "gap": {
-            "$value": "{eui.dimension.2}",
+            "$value": "{eui.spacing.sm}",
             "$type": "dimension",
             "$description": "Gap between section title and content. References foundation spacing."
           }
