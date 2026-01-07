@@ -8040,22 +8040,22 @@
           "path": "eui.divider.spacing.margin.horizontal",
           "type": "FLOAT",
           "valuesByMode": {
-            "website-dark": 0.5714,
-            "website-default": 0.5714,
-            "website-default.presets.meta": 0.5714,
-            "website-toy-r-us": 0.5714,
-            "website-toy-r-us.presets.meta": 0.5714
+            "website-dark": 0,
+            "website-default": 0,
+            "website-default.presets.meta": 0,
+            "website-toy-r-us": 0,
+            "website-toy-r-us.presets.meta": 0
           }
         },
         {
           "path": "eui.divider.spacing.margin.vertical",
           "type": "FLOAT",
           "valuesByMode": {
-            "website-dark": 0.5714,
-            "website-default": 0.5714,
-            "website-default.presets.meta": 0.5714,
-            "website-toy-r-us": 0.5714,
-            "website-toy-r-us.presets.meta": 0.5714
+            "website-dark": 0,
+            "website-default": 0,
+            "website-default.presets.meta": 0,
+            "website-toy-r-us": 0,
+            "website-toy-r-us.presets.meta": 0
           }
         }
       ]

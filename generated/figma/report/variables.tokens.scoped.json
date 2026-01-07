@@ -8040,22 +8040,22 @@
           "path": "eui.divider.spacing.margin.horizontal",
           "type": "FLOAT",
           "valuesByMode": {
-            "report-default.presets.meta": 0.5714,
-            "report-print": 0.5714,
-            "report-print.presets.meta": 0.5714,
-            "report-screen": 0.5714,
-            "report-screen.presets.meta": 0.5714
+            "report-default.presets.meta": 0,
+            "report-print": 0,
+            "report-print.presets.meta": 0,
+            "report-screen": 0,
+            "report-screen.presets.meta": 0
           }
         },
         {
           "path": "eui.divider.spacing.margin.vertical",
           "type": "FLOAT",
           "valuesByMode": {
-            "report-default.presets.meta": 0.5714,
-            "report-print": 0.5714,
-            "report-print.presets.meta": 0.5714,
-            "report-screen": 0.5714,
-            "report-screen.presets.meta": 0.5714
+            "report-default.presets.meta": 0,
+            "report-print": 0,
+            "report-print.presets.meta": 0,
+            "report-screen": 0,
+            "report-screen.presets.meta": 0
           }
         }
       ]

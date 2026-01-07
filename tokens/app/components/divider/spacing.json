@@ -5,14 +5,14 @@
       "spacing": {
         "margin": {
           "vertical": {
-            "$value": "{eui.spacing.sm}",
+            "$value": "0",
             "$type": "dimension",
-            "$description": "Vertical margin for horizontal divider - separates content above/below."
+            "$description": "No margin by default - divider relies on parent layout spacing (gap, padding, flex/grid). In inline contexts, add margin via wrapper padding or utility class."
           },
           "horizontal": {
-            "$value": "{eui.spacing.sm}",
+            "$value": "0",
             "$type": "dimension",
-            "$description": "Horizontal margin for vertical divider - separates content left/right."
+            "$description": "No margin by default - divider relies on parent layout spacing (gap, padding, flex/grid). In inline contexts, add margin via wrapper padding or utility class."
           }
         }
       }

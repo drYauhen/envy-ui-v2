@@ -8040,22 +8040,22 @@
           "path": "eui.divider.spacing.margin.horizontal",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5714,
-            "app-accessibility.meta": 0.5714,
-            "app-default": 0.5714,
-            "app-default.meta": 0.5714,
-            "app-default.presets.meta": 0.5714
+            "app-accessibility": 0,
+            "app-accessibility.meta": 0,
+            "app-default": 0,
+            "app-default.meta": 0,
+            "app-default.presets.meta": 0
           }
         },
         {
           "path": "eui.divider.spacing.margin.vertical",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5714,
-            "app-accessibility.meta": 0.5714,
-            "app-default": 0.5714,
-            "app-default.meta": 0.5714,
-            "app-default.presets.meta": 0.5714
+            "app-accessibility": 0,
+            "app-accessibility.meta": 0,
+            "app-default": 0,
+            "app-default.meta": 0,
+            "app-default.presets.meta": 0
           }
         }
       ]

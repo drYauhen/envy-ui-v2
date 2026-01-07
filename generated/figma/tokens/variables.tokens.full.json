@@ -1377,12 +1377,12 @@
         {
           "path": "eui.divider.spacing.margin.horizontal",
           "type": "FLOAT",
-          "value": 0.5714
+          "value": 0
         },
         {
           "path": "eui.divider.spacing.margin.vertical",
           "type": "FLOAT",
-          "value": 0.5714
+          "value": 0
         }
       ]
     },

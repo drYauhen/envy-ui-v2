@@ -380,11 +380,11 @@
     "$type": "borderStyle"
   },
   "eui.divider.spacing.margin.vertical": {
-    "$value": "0.5714rem",
+    "$value": "0",
     "$type": "dimension"
   },
   "eui.divider.spacing.margin.horizontal": {
-    "$value": "0.5714rem",
+    "$value": "0",
     "$type": "dimension"
   },
   "eui.divider.size.thickness": {

@@ -82,8 +82,8 @@
   --eui-table-border-style: solid;
   --eui-divider-style-default: solid;
   --eui-divider-style-subtle: dashed;
-  --eui-divider-spacing-margin-vertical: 0.5714rem;
-  --eui-divider-spacing-margin-horizontal: 0.5714rem;
+  --eui-divider-spacing-margin-vertical: 0;
+  --eui-divider-spacing-margin-horizontal: 0;
   --eui-divider-size-thickness: 1px;
   --eui-divider-colors-default: oklch(90% 0.00 0);
   --eui-chart-typography-font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
