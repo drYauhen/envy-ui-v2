@@ -20,8 +20,10 @@ type TokenRefTableProps = {
   resolveReference?: (ref: string) => string | null; // for resolving aliases in autoPreview
   metadata?: Record<string, any> | null; // metadata with resolved values
   showType?: boolean;
+  showResolved?: boolean; // show resolved values column
   tokenLabel?: string;
   referenceLabel?: string;
+  resolvedLabel?: string;
   typeLabel?: string;
 };
 
@@ -34,8 +36,10 @@ export const TokenRefTable = ({
   resolveReference,
   metadata,
   showType = false,
+  showResolved = false,
   tokenLabel = 'Token',
   referenceLabel = 'Reference',
+  resolvedLabel = 'Resolved',
   typeLabel = 'Type'
 }: TokenRefTableProps) => {
   console.log('[TokenRefTable] Props:', {
@@ -93,37 +97,42 @@ export const TokenRefTable = ({
             <tr>
               <th style={tokenThStyle}>{tokenLabel}</th>
               <th style={tokenThStyle}>{referenceLabel}</th>
+              {showResolved ? <th style={tokenThStyle}>{resolvedLabel}</th> : null}
               {hasPreview ? <th style={tokenThStyle}>Preview</th> : null}
               {showType ? <th style={tokenThStyle}>{typeLabel}</th> : null}
             </tr>
           </thead>
           <tbody>
-            {refs.map((token) => (
-              <tr key={token.path}>
-                <td style={tokenTdStyle}>{token.path}</td>
-                <td style={tokenTdStyle}>{token.ref}</td>
-                {hasPreview ? (
-                  <td style={tokenTdPreviewStyle}>
-                    {autoPreview ? (
-                      (() => {
-                        const resolvedValue = getResolvedValue(token);
-                        console.log('[TokenRefTable] Rendering TokenPreview for:', token.path, 'with resolvedValue:', resolvedValue);
-                        return (
-                          <TokenPreview 
-                            token={token} 
-                            resolvedValue={resolvedValue}
-                            resolveReference={resolveReference || (() => null)}
-                          />
-                        );
-                      })()
-                    ) : (
-                      renderPreview?.(token)
-                    )}
-                  </td>
-                ) : null}
-                {showType ? <td style={tokenTdStyle}>{token.type ?? '-'}</td> : null}
-              </tr>
-            ))}
+            {refs.map((token) => {
+              const resolvedValue = showResolved ? getResolvedValue(token) : null;
+
+              return (
+                <tr key={token.path}>
+                  <td style={tokenTdStyle}>{token.path}</td>
+                  <td style={tokenTdStyle}>{token.ref}</td>
+                  {showResolved ? <td style={tokenTdStyle}>{resolvedValue ?? '-'}</td> : null}
+                  {hasPreview ? (
+                    <td style={tokenTdPreviewStyle}>
+                      {autoPreview ? (
+                        (() => {
+                          console.log('[TokenRefTable] Rendering TokenPreview for:', token.path, 'with resolvedValue:', resolvedValue);
+                          return (
+                            <TokenPreview
+                              token={token}
+                              resolvedValue={resolvedValue}
+                              resolveReference={resolveReference || (() => null)}
+                            />
+                          );
+                        })()
+                      ) : (
+                        renderPreview?.(token)
+                      )}
+                    </td>
+                  ) : null}
+                  {showType ? <td style={tokenTdStyle}>{token.type ?? '-'}</td> : null}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       )}

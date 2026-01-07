@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import spacingTokens from '../../../../tokens/app/semantic/spacing.json';
+import spacingMetadata from '../../../../tokens/app/semantic/spacing.meta.json';
 import foundationDimensions from '../../../../tokens/app/foundations/dimension.json';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
+import { DimensionPreview } from '../../../viewers/tokens/previews';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
 import { getSectionParameters } from '../../../../.storybook/preview';
 
@@ -29,28 +31,14 @@ const meta: Meta = {
 export default meta;
 
 const renderPreview = (token: TokenRef) => {
-  const value = resolveReference(token.ref) || token.ref;
-  const numericValue = parseFloat(value);
-  const unit = value.replace(/[\d.]/g, '');
-
-  // Convert rem to pixels (app context base font size is 14px)
-  const pixelValue = unit === 'rem' ? numericValue * 14 : numericValue;
+  const resolvedValue = resolveReference(token.ref);
 
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '8px'
-    }}>
-      <div style={{
-        width: `${pixelValue}px`,
-        height: '24px',
-        background: 'var(--eui-color-brand-700, #066a8d)',
-        borderRadius: '4px',
-        minWidth: '4px'
-      }} />
-      <span style={{ fontSize: '0.875rem', color: '#64748b' }}>{value}</span>
-    </div>
+    <DimensionPreview
+      token={token}
+      resolvedValue={resolvedValue}
+      resolveReference={resolveReference}
+    />
   );
 };
 
@@ -67,11 +55,13 @@ export const Spacing: Story = {
         refs={spacingRefs}
         emptyMessage="No spacing tokens found."
         renderPreview={renderPreview}
-        tokenLabel="Token path"
-        referenceLabel="Value"
+        metadata={spacingMetadata}
+        tokenLabel="Token"
+        referenceLabel="Reference"
+        resolvedLabel="Resolved Value"
+        showResolved
         showType
       />
     </TokenPage>
   )
 };
-

@@ -1,0 +1,24 @@
+{
+  "eui": {
+    "spacing": {
+      "xs": {
+        "$resolved": "0.2857rem"
+      },
+      "sm": {
+        "$resolved": "0.5714rem"
+      },
+      "md": {
+        "$resolved": "1.1429rem"
+      },
+      "lg": {
+        "$resolved": "1.7143rem"
+      },
+      "xl": {
+        "$resolved": "2.2857rem"
+      },
+      "2xl": {
+        "$resolved": "3.4286rem"
+      }
+    }
+  }
+}
