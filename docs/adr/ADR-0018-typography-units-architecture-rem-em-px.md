@@ -63,8 +63,12 @@ Foundation → Semantic → Context → Theme → Component
   - `line-height.json` - Line heights (none, tight, normal, relaxed, loose)
 
 - **Semantic** (`tokens/{context}/semantic/typography/`):
-  - `text-styles.json` - Semantic text styles (heading-1 through heading-6, body, caption, code)
-  - Note: The app context now includes additional roles (title, bodyStrong, label, overline). Other contexts can add them as needed.
+  - `headings.json` - Heading hierarchy (heading.1 through heading.6)
+  - `titles.json` - Title variants (title.lg, title.md, title.sm)
+  - `body.json` - Body text styles (body.large/base/small, bodyStrong.base/small)
+  - `labels.json` - Label and caption styles (label.md/sm, caption, overline)
+  - `code.json` - Code typography (code.base, code.small)
+  - Note: Typography tokens are now logically separated into focused files instead of monolithic `text-styles.json`
 
 - **Themes** (`tokens/{context}/themes/`):
   - Base font-size per theme (example values: `app/default` might use one base size, `app/accessibility` might use a larger base - actual values are theme-dependent)

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.designtokens.org/TR/2025.10/format/",
+  "title": "Design Tokens Format 2025.10",
+  "description": "JSON schema for Design Tokens Community Group format specification 2025.10",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional schema reference"
+    }
+  },
+  "patternProperties": {
+    "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+      "oneOf": [
+        { "$ref": "#/$defs/token" },
+        { "$ref": "#/$defs/tokenGroup" }
+      ]
+    }
+  },
+  "$defs": {
+    "token": {
+      "type": "object",
+      "required": ["$value"],
+      "properties": {
+        "$value": {
+          "description": "The value of the token"
+        },
+        "$type": {
+          "type": "string",
+          "description": "The type of the token value",
+          "enum": [
+            "string", "number", "boolean", "object",
+            "color", "dimension", "fontFamily", "fontWeight",
+            "fontSize", "lineHeight", "letterSpacing",
+            "textDecoration", "textTransform"
+          ]
+        },
+        "$description": {
+          "type": "string",
+          "description": "Human-readable description of the token"
+        },
+        "$extensions": {
+          "type": "object",
+          "description": "Tool-specific extensions"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tokenGroup": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+          "oneOf": [
+            { "$ref": "#/$defs/token" },
+            { "$ref": "#/$defs/tokenGroup" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
