@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "divider": {
+      "style": {
+        "default": {
+          "$value": "solid",
+          "$type": "borderStyle",
+          "$description": "Default divider style - solid line for standard separation."
+        },
+        "subtle": {
+          "$value": "dashed",
+          "$type": "borderStyle",
+          "$description": "Subtle divider style - dashed line for less visible separation."
+        }
+      }
+    }
+  }
+}

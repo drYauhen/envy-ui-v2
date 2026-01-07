@@ -80,6 +80,8 @@
   --eui-table-border-width: 1px;
   --eui-table-border-radius: 0px;
   --eui-table-border-style: solid;
+  --eui-divider-style-default: solid;
+  --eui-divider-style-subtle: dashed;
   --eui-divider-spacing-margin-vertical: 0.5714rem;
   --eui-divider-spacing-margin-horizontal: 0.5714rem;
   --eui-divider-size-thickness: 1px;

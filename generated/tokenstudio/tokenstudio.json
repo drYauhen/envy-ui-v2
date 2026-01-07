@@ -371,6 +371,14 @@
     "$value": "solid",
     "$type": "string"
   },
+  "eui.divider.style.default": {
+    "$value": "solid",
+    "$type": "borderStyle"
+  },
+  "eui.divider.style.subtle": {
+    "$value": "dashed",
+    "$type": "borderStyle"
+  },
   "eui.divider.spacing.margin.vertical": {
     "$value": "0.5714rem",
     "$type": "dimension"
