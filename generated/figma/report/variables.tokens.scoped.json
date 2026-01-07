@@ -12389,6 +12389,84 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "modes": [
+        "report-default.presets.meta",
+        "report-print",
+        "report-print.presets.meta",
+        "report-screen",
+        "report-screen.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 3.4286,
+            "report-print": 3.4286,
+            "report-print.presets.meta": 3.4286,
+            "report-screen": 3.4286,
+            "report-screen.presets.meta": 3.4286
+          }
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 1.7143,
+            "report-print": 1.7143,
+            "report-print.presets.meta": 1.7143,
+            "report-screen": 1.7143,
+            "report-screen.presets.meta": 1.7143
+          }
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 1.1429,
+            "report-print": 1.1429,
+            "report-print.presets.meta": 1.1429,
+            "report-screen": 1.1429,
+            "report-screen.presets.meta": 1.1429
+          }
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 0.5714,
+            "report-print": 0.5714,
+            "report-print.presets.meta": 0.5714,
+            "report-screen": 0.5714,
+            "report-screen.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 2.2857,
+            "report-print": 2.2857,
+            "report-print.presets.meta": 2.2857,
+            "report-screen": 2.2857,
+            "report-screen.presets.meta": 2.2857
+          }
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "report-default.presets.meta": 0.2857,
+            "report-print": 0.2857,
+            "report-print.presets.meta": 0.2857,
+            "report-screen": 0.2857,
+            "report-screen.presets.meta": 0.2857
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Size / Layout",
       "modes": [
         "report-default.presets.meta",

@@ -12389,6 +12389,84 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "modes": [
+        "website-dark",
+        "website-default",
+        "website-default.presets.meta",
+        "website-toy-r-us",
+        "website-toy-r-us.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 3.4286,
+            "website-default": 3.4286,
+            "website-default.presets.meta": 3.4286,
+            "website-toy-r-us": 3.4286,
+            "website-toy-r-us.presets.meta": 3.4286
+          }
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.7143,
+            "website-default": 1.7143,
+            "website-default.presets.meta": 1.7143,
+            "website-toy-r-us": 1.7143,
+            "website-toy-r-us.presets.meta": 1.7143
+          }
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.1429,
+            "website-default": 1.1429,
+            "website-default.presets.meta": 1.1429,
+            "website-toy-r-us": 1.1429,
+            "website-toy-r-us.presets.meta": 1.1429
+          }
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5714,
+            "website-default": 0.5714,
+            "website-default.presets.meta": 0.5714,
+            "website-toy-r-us": 0.5714,
+            "website-toy-r-us.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2.2857,
+            "website-default": 2.2857,
+            "website-default.presets.meta": 2.2857,
+            "website-toy-r-us": 2.2857,
+            "website-toy-r-us.presets.meta": 2.2857
+          }
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.2857,
+            "website-default": 0.2857,
+            "website-default.presets.meta": 0.2857,
+            "website-toy-r-us": 0.2857,
+            "website-toy-r-us.presets.meta": 0.2857
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Size / Layout",
       "modes": [
         "website-dark",

@@ -2180,6 +2180,42 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "value": 3.4286
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "value": 1.7143
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "value": 1.1429
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "value": 0.5714
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "value": 2.2857
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "value": 0.2857
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Size / Layout",
       "mode": "default",
       "variables": [

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "spacing": {
+      "xs": {
+        "$value": "{eui.dimension.1}",
+        "$type": "dimension",
+        "$description": "Extra small spacing - 4px. Used for minimal gaps and padding (borders, small icon padding)."
+      },
+      "sm": {
+        "$value": "{eui.dimension.2}",
+        "$type": "dimension",
+        "$description": "Small spacing - 8px. Used for compact component spacing and form field gaps."
+      },
+      "md": {
+        "$value": "{eui.dimension.4}",
+        "$type": "dimension",
+        "$description": "Medium spacing - 16px. Used for standard component spacing and padding."
+      },
+      "lg": {
+        "$value": "{eui.dimension.6}",
+        "$type": "dimension",
+        "$description": "Large spacing - 24px. Used for layout padding and major component margins."
+      },
+      "xl": {
+        "$value": "{eui.dimension.8}",
+        "$type": "dimension",
+        "$description": "Extra large spacing - 32px. Used for section spacing and hero section padding on mobile."
+      },
+      "2xl": {
+        "$value": "{eui.dimension.12}",
+        "$type": "dimension",
+        "$description": "2X large spacing - 48px. Used for major layout sections and hero section padding."
+      }
+    }
+  }
+}

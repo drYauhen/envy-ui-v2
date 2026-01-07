@@ -1735,6 +1735,30 @@
     "$value": "4px",
     "$type": "dimension"
   },
+  "eui.spacing.xs": {
+    "$value": "0.2857rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.sm": {
+    "$value": "0.5714rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.md": {
+    "$value": "1.1429rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.lg": {
+    "$value": "1.7143rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.xl": {
+    "$value": "2.2857rem",
+    "$type": "dimension"
+  },
+  "eui.spacing.2xl": {
+    "$value": "3.4286rem",
+    "$type": "dimension"
+  },
   "eui.shadow.none": {
     "$value": "none",
     "$type": "shadow"

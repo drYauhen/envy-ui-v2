@@ -12389,6 +12389,84 @@
       ]
     },
     {
+      "name": "envy-ui-v2 • Size / Spacing",
+      "modes": [
+        "app-accessibility",
+        "app-accessibility.meta",
+        "app-default",
+        "app-default.meta",
+        "app-default.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 3.4286,
+            "app-accessibility.meta": 3.4286,
+            "app-default": 3.4286,
+            "app-default.meta": 3.4286,
+            "app-default.presets.meta": 3.4286
+          }
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1.7143,
+            "app-accessibility.meta": 1.7143,
+            "app-default": 1.7143,
+            "app-default.meta": 1.7143,
+            "app-default.presets.meta": 1.7143
+          }
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
+          }
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 2.2857,
+            "app-accessibility.meta": 2.2857,
+            "app-default": 2.2857,
+            "app-default.meta": 2.2857,
+            "app-default.presets.meta": 2.2857
+          }
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 0.2857,
+            "app-accessibility.meta": 0.2857,
+            "app-default": 0.2857,
+            "app-default.meta": 0.2857,
+            "app-default.presets.meta": 0.2857
+          }
+        }
+      ]
+    },
+    {
       "name": "envy-ui-v2 • Size / Layout",
       "modes": [
         "app-accessibility",
