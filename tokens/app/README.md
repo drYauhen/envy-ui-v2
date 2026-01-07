@@ -11,7 +11,7 @@ The App context is optimized for application interfaces with:
 
 ## Structure
 
-- **Foundations**: Base color scales, spacing, typography, shape tokens
+- **Foundations**: Base color scales, spacing, typography, shape, dimension tokens
 - **Semantic**: Semantic tokens (text, background, border, focus, shadow, shape, layout, typography)
 - **Components**: Component-specific tokens (button, menu, modal, etc.)
 - **Themes**: Visual identity layers (default, accessibility)

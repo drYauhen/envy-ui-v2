@@ -1293,7 +1293,7 @@
     "$type": "color"
   },
   "eui.badge.colors.neutral.border": {
-    "$value": "oklch(94% 0.00 0)",
+    "$value": "oklch(75% 0.00 0)",
     "$type": "color"
   },
   "eui.badge.colors.neutral.text": {
@@ -1782,6 +1782,90 @@
   },
   "eui.spacing.2xl": {
     "$value": "3rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.0": {
+    "$value": "0rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.1": {
+    "$value": "0.2857rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.2": {
+    "$value": "0.5714rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.3": {
+    "$value": "0.8571rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.4": {
+    "$value": "1.1429rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.5": {
+    "$value": "1.4286rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.6": {
+    "$value": "1.7143rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.7": {
+    "$value": "2rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.8": {
+    "$value": "2.2857rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.9": {
+    "$value": "2.5714rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.10": {
+    "$value": "2.8571rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.11": {
+    "$value": "3.1429rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.12": {
+    "$value": "3.4286rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.13": {
+    "$value": "3.7143rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.14": {
+    "$value": "4rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.15": {
+    "$value": "4.2857rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.16": {
+    "$value": "4.5714rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.17": {
+    "$value": "4.8571rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.18": {
+    "$value": "5.1429rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.19": {
+    "$value": "5.4286rem",
+    "$type": "dimension"
+  },
+  "eui.dimension.20": {
+    "$value": "5.7143rem",
     "$type": "dimension"
   },
   "eui.breakpoint.narrow": {

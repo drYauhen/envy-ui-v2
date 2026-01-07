@@ -2808,33 +2808,33 @@
           "type": "COLOR",
           "valuesByMode": {
             "website-dark": {
-              "r": 0.9214775807409604,
-              "g": 0.9214775807409602,
-              "b": 0.9214775807409603,
+              "r": 0.6813410947645363,
+              "g": 0.6813410947645361,
+              "b": 0.6813410947645362,
               "a": 1
             },
             "website-default": {
-              "r": 0.9214775807409604,
-              "g": 0.9214775807409602,
-              "b": 0.9214775807409603,
+              "r": 0.6813410947645363,
+              "g": 0.6813410947645361,
+              "b": 0.6813410947645362,
               "a": 1
             },
             "website-default.presets.meta": {
-              "r": 0.9214775807409604,
-              "g": 0.9214775807409602,
-              "b": 0.9214775807409603,
+              "r": 0.6813410947645363,
+              "g": 0.6813410947645361,
+              "b": 0.6813410947645362,
               "a": 1
             },
             "website-toy-r-us": {
-              "r": 0.9214775807409604,
-              "g": 0.9214775807409602,
-              "b": 0.9214775807409603,
+              "r": 0.6813410947645363,
+              "g": 0.6813410947645361,
+              "b": 0.6813410947645362,
               "a": 1
             },
             "website-toy-r-us.presets.meta": {
-              "r": 0.9214775807409604,
-              "g": 0.9214775807409602,
-              "b": 0.9214775807409603,
+              "r": 0.6813410947645363,
+              "g": 0.6813410947645361,
+              "b": 0.6813410947645362,
               "a": 1
             }
           }
@@ -12536,6 +12536,249 @@
             "website-default.presets.meta": 0.25,
             "website-toy-r-us": 0.25,
             "website-toy-r-us.presets.meta": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Dimension",
+      "modes": [
+        "website-dark",
+        "website-default",
+        "website-default.presets.meta",
+        "website-toy-r-us",
+        "website-toy-r-us.presets.meta"
+      ],
+      "variables": [
+        {
+          "path": "eui.dimension.0",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0,
+            "website-default": 0,
+            "website-default.presets.meta": 0,
+            "website-toy-r-us": 0,
+            "website-toy-r-us.presets.meta": 0
+          }
+        },
+        {
+          "path": "eui.dimension.1",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.2857,
+            "website-default": 0.2857,
+            "website-default.presets.meta": 0.2857,
+            "website-toy-r-us": 0.2857,
+            "website-toy-r-us.presets.meta": 0.2857
+          }
+        },
+        {
+          "path": "eui.dimension.10",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2.8571,
+            "website-default": 2.8571,
+            "website-default.presets.meta": 2.8571,
+            "website-toy-r-us": 2.8571,
+            "website-toy-r-us.presets.meta": 2.8571
+          }
+        },
+        {
+          "path": "eui.dimension.11",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 3.1429,
+            "website-default": 3.1429,
+            "website-default.presets.meta": 3.1429,
+            "website-toy-r-us": 3.1429,
+            "website-toy-r-us.presets.meta": 3.1429
+          }
+        },
+        {
+          "path": "eui.dimension.12",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 3.4286,
+            "website-default": 3.4286,
+            "website-default.presets.meta": 3.4286,
+            "website-toy-r-us": 3.4286,
+            "website-toy-r-us.presets.meta": 3.4286
+          }
+        },
+        {
+          "path": "eui.dimension.13",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 3.7143,
+            "website-default": 3.7143,
+            "website-default.presets.meta": 3.7143,
+            "website-toy-r-us": 3.7143,
+            "website-toy-r-us.presets.meta": 3.7143
+          }
+        },
+        {
+          "path": "eui.dimension.14",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 4,
+            "website-default": 4,
+            "website-default.presets.meta": 4,
+            "website-toy-r-us": 4,
+            "website-toy-r-us.presets.meta": 4
+          }
+        },
+        {
+          "path": "eui.dimension.15",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 4.2857,
+            "website-default": 4.2857,
+            "website-default.presets.meta": 4.2857,
+            "website-toy-r-us": 4.2857,
+            "website-toy-r-us.presets.meta": 4.2857
+          }
+        },
+        {
+          "path": "eui.dimension.16",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 4.5714,
+            "website-default": 4.5714,
+            "website-default.presets.meta": 4.5714,
+            "website-toy-r-us": 4.5714,
+            "website-toy-r-us.presets.meta": 4.5714
+          }
+        },
+        {
+          "path": "eui.dimension.17",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 4.8571,
+            "website-default": 4.8571,
+            "website-default.presets.meta": 4.8571,
+            "website-toy-r-us": 4.8571,
+            "website-toy-r-us.presets.meta": 4.8571
+          }
+        },
+        {
+          "path": "eui.dimension.18",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 5.1429,
+            "website-default": 5.1429,
+            "website-default.presets.meta": 5.1429,
+            "website-toy-r-us": 5.1429,
+            "website-toy-r-us.presets.meta": 5.1429
+          }
+        },
+        {
+          "path": "eui.dimension.19",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 5.4286,
+            "website-default": 5.4286,
+            "website-default.presets.meta": 5.4286,
+            "website-toy-r-us": 5.4286,
+            "website-toy-r-us.presets.meta": 5.4286
+          }
+        },
+        {
+          "path": "eui.dimension.2",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.5714,
+            "website-default": 0.5714,
+            "website-default.presets.meta": 0.5714,
+            "website-toy-r-us": 0.5714,
+            "website-toy-r-us.presets.meta": 0.5714
+          }
+        },
+        {
+          "path": "eui.dimension.20",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 5.7143,
+            "website-default": 5.7143,
+            "website-default.presets.meta": 5.7143,
+            "website-toy-r-us": 5.7143,
+            "website-toy-r-us.presets.meta": 5.7143
+          }
+        },
+        {
+          "path": "eui.dimension.3",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 0.8571,
+            "website-default": 0.8571,
+            "website-default.presets.meta": 0.8571,
+            "website-toy-r-us": 0.8571,
+            "website-toy-r-us.presets.meta": 0.8571
+          }
+        },
+        {
+          "path": "eui.dimension.4",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.1429,
+            "website-default": 1.1429,
+            "website-default.presets.meta": 1.1429,
+            "website-toy-r-us": 1.1429,
+            "website-toy-r-us.presets.meta": 1.1429
+          }
+        },
+        {
+          "path": "eui.dimension.5",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.4286,
+            "website-default": 1.4286,
+            "website-default.presets.meta": 1.4286,
+            "website-toy-r-us": 1.4286,
+            "website-toy-r-us.presets.meta": 1.4286
+          }
+        },
+        {
+          "path": "eui.dimension.6",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 1.7143,
+            "website-default": 1.7143,
+            "website-default.presets.meta": 1.7143,
+            "website-toy-r-us": 1.7143,
+            "website-toy-r-us.presets.meta": 1.7143
+          }
+        },
+        {
+          "path": "eui.dimension.7",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2,
+            "website-default": 2,
+            "website-default.presets.meta": 2,
+            "website-toy-r-us": 2,
+            "website-toy-r-us.presets.meta": 2
+          }
+        },
+        {
+          "path": "eui.dimension.8",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2.2857,
+            "website-default": 2.2857,
+            "website-default.presets.meta": 2.2857,
+            "website-toy-r-us": 2.2857,
+            "website-toy-r-us.presets.meta": 2.2857
+          }
+        },
+        {
+          "path": "eui.dimension.9",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "website-dark": 2.5714,
+            "website-default": 2.5714,
+            "website-default.presets.meta": 2.5714,
+            "website-toy-r-us": 2.5714,
+            "website-toy-r-us.presets.meta": 2.5714
           }
         }
       ]

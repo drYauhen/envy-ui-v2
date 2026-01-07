@@ -470,7 +470,7 @@
         {
           "path": "eui.badge.colors.neutral.border",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(75% 0.00 0)"
         },
         {
           "path": "eui.badge.colors.neutral.solid.background",
@@ -2274,6 +2274,117 @@
           "path": "eui.spacing.xs",
           "type": "FLOAT",
           "value": 0.25
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Dimension",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.dimension.0",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.dimension.1",
+          "type": "FLOAT",
+          "value": 0.2857
+        },
+        {
+          "path": "eui.dimension.10",
+          "type": "FLOAT",
+          "value": 2.8571
+        },
+        {
+          "path": "eui.dimension.11",
+          "type": "FLOAT",
+          "value": 3.1429
+        },
+        {
+          "path": "eui.dimension.12",
+          "type": "FLOAT",
+          "value": 3.4286
+        },
+        {
+          "path": "eui.dimension.13",
+          "type": "FLOAT",
+          "value": 3.7143
+        },
+        {
+          "path": "eui.dimension.14",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
+          "path": "eui.dimension.15",
+          "type": "FLOAT",
+          "value": 4.2857
+        },
+        {
+          "path": "eui.dimension.16",
+          "type": "FLOAT",
+          "value": 4.5714
+        },
+        {
+          "path": "eui.dimension.17",
+          "type": "FLOAT",
+          "value": 4.8571
+        },
+        {
+          "path": "eui.dimension.18",
+          "type": "FLOAT",
+          "value": 5.1429
+        },
+        {
+          "path": "eui.dimension.19",
+          "type": "FLOAT",
+          "value": 5.4286
+        },
+        {
+          "path": "eui.dimension.2",
+          "type": "FLOAT",
+          "value": 0.5714
+        },
+        {
+          "path": "eui.dimension.20",
+          "type": "FLOAT",
+          "value": 5.7143
+        },
+        {
+          "path": "eui.dimension.3",
+          "type": "FLOAT",
+          "value": 0.8571
+        },
+        {
+          "path": "eui.dimension.4",
+          "type": "FLOAT",
+          "value": 1.1429
+        },
+        {
+          "path": "eui.dimension.5",
+          "type": "FLOAT",
+          "value": 1.4286
+        },
+        {
+          "path": "eui.dimension.6",
+          "type": "FLOAT",
+          "value": 1.7143
+        },
+        {
+          "path": "eui.dimension.7",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.dimension.8",
+          "type": "FLOAT",
+          "value": 2.2857
+        },
+        {
+          "path": "eui.dimension.9",
+          "type": "FLOAT",
+          "value": 2.5714
         }
       ]
     },

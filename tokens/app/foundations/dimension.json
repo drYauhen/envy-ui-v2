@@ -1,0 +1,112 @@
+{
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "eui": {
+    "dimension": {
+      "0": {
+        "$value": "0rem",
+        "$type": "dimension",
+        "$description": "Zero dimension (0px). Used for collapsing elements or no size."
+      },
+      "1": {
+        "$value": "0.2857rem",
+        "$type": "dimension",
+        "$description": "4px in app context (0.2857rem at 14px base). Used for borders, small icon padding, dividers."
+      },
+      "2": {
+        "$value": "0.5714rem",
+        "$type": "dimension",
+        "$description": "8px in app context (0.5714rem at 14px base). Used for small gaps, minimal padding."
+      },
+      "3": {
+        "$value": "0.8571rem",
+        "$type": "dimension",
+        "$description": "12px in app context (0.8571rem at 14px base). Used for small component spacing."
+      },
+      "4": {
+        "$value": "1.1429rem",
+        "$type": "dimension",
+        "$description": "16px in app context (1.1429rem at 14px base). Used for standard component spacing and padding."
+      },
+      "5": {
+        "$value": "1.4286rem",
+        "$type": "dimension",
+        "$description": "20px in app context (1.4286rem at 14px base). Used for medium component spacing."
+      },
+      "6": {
+        "$value": "1.7143rem",
+        "$type": "dimension",
+        "$description": "24px in app context (1.7143rem at 14px base). Used for component padding and margins."
+      },
+      "7": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "28px in app context (2rem at 14px base). Used for small avatars, compact buttons, icon sizes."
+      },
+      "8": {
+        "$value": "2.2857rem",
+        "$type": "dimension",
+        "$description": "32px in app context (2.2857rem at 14px base). Used for medium avatars, icon buttons, default element heights."
+      },
+      "9": {
+        "$value": "2.5714rem",
+        "$type": "dimension",
+        "$description": "36px in app context (2.5714rem at 14px base). Used for small buttons, small form controls."
+      },
+      "10": {
+        "$value": "2.8571rem",
+        "$type": "dimension",
+        "$description": "40px in app context (2.8571rem at 14px base). Used for large avatars, standard buttons, input fields, clickable targets."
+      },
+      "11": {
+        "$value": "3.1429rem",
+        "$type": "dimension",
+        "$description": "44px in app context (3.1429rem at 14px base). Used for navigation items, prominent buttons, recommended touch targets (44px minimum)."
+      },
+      "12": {
+        "$value": "3.4286rem",
+        "$type": "dimension",
+        "$description": "48px in app context (3.4286rem at 14px base). Used for large buttons, headers, title bars, prominent controls."
+      },
+      "13": {
+        "$value": "3.7143rem",
+        "$type": "dimension",
+        "$description": "52px in app context (3.7143rem at 14px base). Used for large form controls, group headers."
+      },
+      "14": {
+        "$value": "4rem",
+        "$type": "dimension",
+        "$description": "56px in app context (4rem at 14px base). Used for larger components, sidebar headers."
+      },
+      "15": {
+        "$value": "4.2857rem",
+        "$type": "dimension",
+        "$description": "60px in app context (4.2857rem at 14px base). Used for large component heights."
+      },
+      "16": {
+        "$value": "4.5714rem",
+        "$type": "dimension",
+        "$description": "64px in app context (4.5714rem at 14px base). Used for large cards, big component areas, side nav items."
+      },
+      "17": {
+        "$value": "4.8571rem",
+        "$type": "dimension",
+        "$description": "68px in app context (4.8571rem at 14px base). Used for extra large component heights."
+      },
+      "18": {
+        "$value": "5.1429rem",
+        "$type": "dimension",
+        "$description": "72px in app context (5.1429rem at 14px base). Used for hero sections, large headers."
+      },
+      "19": {
+        "$value": "5.4286rem",
+        "$type": "dimension",
+        "$description": "76px in app context (5.4286rem at 14px base). Used for very large component areas."
+      },
+      "20": {
+        "$value": "5.7143rem",
+        "$type": "dimension",
+        "$description": "80px in app context (5.7143rem at 14px base). Used for maximum component heights, full-size areas."
+      }
+    }
+  }
+}
