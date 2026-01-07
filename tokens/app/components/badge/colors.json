@@ -18,7 +18,7 @@
             "$description": "Neutral badge background (subtle)."
           },
           "border": {
-            "$value": "{eui.color.neutral.200}",
+            "$value": "{eui.color.neutral.500}",
             "$type": "color",
             "$description": "Neutral badge border."
           },
