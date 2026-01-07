@@ -43,5 +43,7 @@ export const adrFilenameMap: Record<string, string> = {
   "0031": "ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md",
   "0032": "ADR-0032-token-override-strategy-multi-tenant-generative-ui.md",
   "0033": "ADR-0033-accessibility-strategy-theme-switching-across-contexts.md",
-  "0034": "ADR-0034-theme-presets-component-props-extension.md"
+  "0034": "ADR-0034-theme-presets-component-props-extension.md",
+  "0035": "ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md",
+  "0036": "ADR-0036-ai-first-component-architecture-vision.md"
 };

@@ -68,5 +68,7 @@ export const adrs: AdrListItem[] = [
   { number: '0031', title: 'Contrast Strategy for Dynamic Colors and On-Color Tokens', status: 'Proposed', date: '2026-01-05', exportName: 'ContrastStrategyforDynamicColorsandOnColorTokens' },
   { number: '0032', title: 'Token Override Strategy for Multi-Tenant and Generative UI', status: 'Proposed', date: '2026-01-06', exportName: 'TokenOverrideStrategyforMultiTenantandGenerativeUI' },
   { number: '0033', title: 'Accessibility Strategy for Theme Switching Across Contexts', status: 'Proposed', date: '2026-01-05', exportName: 'AccessibilityStrategyforThemeSwitchingAcrossContexts' },
-  { number: '0034', title: 'Theme Presets - Component Props Extension for Third-Party Integration', status: 'Proposed', date: '2026-01-06', exportName: 'ThemePresetsComponentPropsExtensionforThirdPartyIntegration' }
+  { number: '0034', title: 'Theme Presets - Component Props Extension for Third-Party Integration', status: 'Proposed', date: '2026-01-06', exportName: 'ThemePresetsComponentPropsExtensionforThirdPartyIntegration' },
+  { number: '0035', title: 'CSS Naming Conventions - Class Names vs Data Attributes', status: 'Accepted', date: '2026-01-07', exportName: 'CSSNamingConventionsClassNamesvsDataAttributes' },
+  { number: '0036', title: 'AI-First Component Architecture Vision', status: 'Proposed (Evolutionary)', date: '2026-01-07', exportName: 'AIFirstComponentArchitectureVision' }
 ];

@@ -21,6 +21,22 @@
   margin: 0 var(--eui-divider-spacing-margin-horizontal);
 }
 
+/* Subtle variant (dashed) - Horizontal */
+[data-eui-context] .eui-divider[data-eui-variant="subtle"]:where(:not([data-eui-orientation="vertical"])) {
+  background: transparent;
+  border-top: var(--eui-divider-size-thickness) dashed var(--eui-divider-colors-default);
+  height: 0;
+}
+
+/* Subtle variant (dashed) - Vertical */
+[data-eui-context] .eui-divider[data-eui-variant="subtle"][data-eui-orientation="vertical"] {
+  background: transparent;
+  border-left: var(--eui-divider-size-thickness) dashed var(--eui-divider-colors-default);
+  border-top: none;
+  width: 0;
+  height: 100%;
+}
+
 
 
 
