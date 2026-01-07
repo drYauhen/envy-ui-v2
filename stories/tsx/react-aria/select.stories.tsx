@@ -33,17 +33,15 @@ export const Basic: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }>
-
-      <Select
-        label="Choose an option"
-        placeholder="Select..."
-        items={basicItems}
-      />
-</>
+        <div style={{ maxWidth: '300px' }}>
+          <Select
+            label="Choose an option"
+            placeholder="Select..."
+            items={basicItems}
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -51,17 +49,15 @@ export const WithDefaultValue: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }>
-
-      <Select
-        label="Choose an option"
-        items={basicItems}
-        defaultSelectedKey="option2"
-      />
-</>
+        <div style={{ maxWidth: '300px' }}>
+          <Select
+            label="Choose an option"
+            items={basicItems}
+            defaultSelectedKey="option2"
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -71,22 +67,20 @@ export const Controlled: Story = {
 
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ maxWidth: '300px' }>
-
-        <Select
-          label="Controlled Select"
-          items={basicItems}
-          selectedKey={selected}
-          onSelectionChange={(key) => setSelected(key)}
-        />
-        <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
-          Selected: {selected || 'none'}
-        </p>
-</>
-      )}
-    
-</MultiContextViewer>
+        {() => (
+          <div style={{ maxWidth: '300px' }}>
+            <Select
+              label="Controlled Select"
+              items={basicItems}
+              selectedKey={selected}
+              onSelectionChange={(key) => setSelected(key)}
+            />
+            <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
+              Selected: {selected || 'none'}
+            </p>
+          </div>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -95,30 +89,28 @@ export const Sizes: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
-
-      <Select
-        label="Small"
-        items={basicItems}
-        size="sm"
-        defaultSelectedKey="option1"
-      />
-      <Select
-        label="Medium (default)"
-        items={basicItems}
-        size="md"
-        defaultSelectedKey="option2"
-      />
-      <Select
-        label="Large"
-        items={basicItems}
-        size="lg"
-        defaultSelectedKey="option3"
-      />
-</>
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <Select
+            label="Small"
+            items={basicItems}
+            size="sm"
+            defaultSelectedKey="option1"
+          />
+          <Select
+            label="Medium (default)"
+            items={basicItems}
+            size="md"
+            defaultSelectedKey="option2"
+          />
+          <Select
+            label="Large"
+            items={basicItems}
+            size="lg"
+            defaultSelectedKey="option3"
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -126,29 +118,27 @@ export const States: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
-
-      <Select
-        label="Default"
-        items={basicItems}
-        defaultSelectedKey="option1"
-      />
-      <Select
-        label="Error state"
-        items={basicItems}
-        error
-        defaultSelectedKey="option2"
-      />
-      <Select
-        label="Disabled"
-        items={basicItems}
-        isDisabled
-        defaultSelectedKey="option3"
-      />
-</>
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <Select
+            label="Default"
+            items={basicItems}
+            defaultSelectedKey="option1"
+          />
+          <Select
+            label="Error state"
+            items={basicItems}
+            error
+            defaultSelectedKey="option2"
+          />
+          <Select
+            label="Disabled"
+            items={basicItems}
+            isDisabled
+            defaultSelectedKey="option3"
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -164,17 +154,15 @@ export const WithDisabledOptions: Story = {
 
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ maxWidth: '300px' }>
-
-        <Select
-          label="Select with disabled options"
-          items={itemsWithDisabled}
-        />
-</>
-      )}
-    
-</MultiContextViewer>
+        {() => (
+          <div style={{ maxWidth: '300px' }}>
+            <Select
+              label="Select with disabled options"
+              items={itemsWithDisabled}
+            />
+          </div>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -183,17 +171,15 @@ export const ManyOptions: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }>
-
-      <Select
-        label="Select with many options"
-        items={manyItems}
-        placeholder="Choose from 20 options..."
-      />
-</>
+        <div style={{ maxWidth: '300px' }}>
+          <Select
+            label="Select with many options"
+            items={manyItems}
+            placeholder="Choose from 20 options..."
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -201,41 +187,39 @@ export const InForm: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '400px' }>
-
-      <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        <Select
-          label="Country"
-          items={[
-            { key: 'us', label: 'United States' },
-            { key: 'uk', label: 'United Kingdom' },
-            { key: 'ca', label: 'Canada' },
-            { key: 'au', label: 'Australia' }
-          ]}
-          placeholder="Select country"
-        />
-        <Select
-          label="Region"
-          items={[
-            { key: 'na', label: 'North America' },
-            { key: 'eu', label: 'Europe' },
-            { key: 'ap', label: 'Asia Pacific' }
-          ]}
-          placeholder="Select region"
-        />
-        <Select
-          label="Status"
-          items={[
-            { key: 'active', label: 'Active' },
-            { key: 'inactive', label: 'Inactive' },
-            { key: 'pending', label: 'Pending' }
-          ]}
-          defaultSelectedKey="active"
-        />
-      </form>
-</>
+        <div style={{ maxWidth: '400px' }}>
+          <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <Select
+              label="Country"
+              items={[
+                { key: 'us', label: 'United States' },
+                { key: 'uk', label: 'United Kingdom' },
+                { key: 'ca', label: 'Canada' },
+                { key: 'au', label: 'Australia' }
+              ]}
+              placeholder="Select country"
+            />
+            <Select
+              label="Region"
+              items={[
+                { key: 'na', label: 'North America' },
+                { key: 'eu', label: 'Europe' },
+                { key: 'ap', label: 'Asia Pacific' }
+              ]}
+              placeholder="Select region"
+            />
+            <Select
+              label="Status"
+              items={[
+                { key: 'active', label: 'Active' },
+                { key: 'inactive', label: 'Inactive' },
+                { key: 'pending', label: 'Pending' }
+              ]}
+              defaultSelectedKey="active"
+            />
+          </form>
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };

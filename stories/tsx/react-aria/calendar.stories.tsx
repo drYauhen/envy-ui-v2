@@ -20,25 +20,23 @@ type Story = StoryObj;
 export const Basic: Story = {
   render: () => {
     const [value, setValue] = useState<Date | null>(null);
-    
+
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }>
-
-        <Calendar
-          value={value}
-          onChange={setValue}
-        />
-        {value && (
-          <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
-            Selected: {value.toLocaleDateString()}
+        {() => (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <Calendar
+              value={value}
+              onChange={setValue}
+            />
+            {value && (
+              <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
+                Selected: {value.toLocaleDateString()}
+              </div>
+            )}
           </div>
         )}
-</>
-      )}
-    
-</MultiContextViewer>
+      </MultiContextViewer>
     );
   }
 };
@@ -46,25 +44,23 @@ export const Basic: Story = {
 export const WithDefaultValue: Story = {
   render: () => {
     const [value, setValue] = useState<Date | null>(new Date());
-    
+
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }>
-
-        <Calendar
-          value={value}
-          onChange={setValue}
-        />
-        {value && (
-          <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
-            Selected: {value.toLocaleDateString()}
+        {() => (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <Calendar
+              value={value}
+              onChange={setValue}
+            />
+            {value && (
+              <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
+                Selected: {value.toLocaleDateString()}
+              </div>
+            )}
           </div>
         )}
-</>
-      )}
-    
-</MultiContextViewer>
+      </MultiContextViewer>
     );
   }
 };
@@ -73,16 +69,15 @@ export const Disabled: Story = {
   render: () => {
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-        <Calendar
-          defaultValue={new Date()}
-          isDisabled
-        />
-</>
-      )}
-    
-</MultiContextViewer>
+        {() => (
+          <>
+            <Calendar
+              defaultValue={new Date()}
+              isDisabled
+            />
+          </>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -91,16 +86,15 @@ export const ReadOnly: Story = {
   render: () => {
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-        <Calendar
-          defaultValue={new Date()}
-          isReadOnly
-        />
-</>
-      )}
-    
-</MultiContextViewer>
+        {() => (
+          <>
+            <Calendar
+              defaultValue={new Date()}
+              isReadOnly
+            />
+          </>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -113,27 +107,25 @@ export const WithMinMax: Story = {
     minDate.setDate(today.getDate() - 7); // 7 days ago
     const maxDate = new Date(today);
     maxDate.setDate(today.getDate() + 30); // 30 days from now
-    
+
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }>
-
-        <Calendar
-          value={value}
-          onChange={setValue}
-          minValue={minDate}
-          maxValue={maxDate}
-        />
-        <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
-          <p>Min date: {minDate.toLocaleDateString()}</p>
-          <p>Max date: {maxDate.toLocaleDateString()}</p>
-          {value && <p>Selected: {value.toLocaleDateString()}</p>}
-        </div>
-</>
-      )}
-    
-</MultiContextViewer>
+        {() => (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <Calendar
+              value={value}
+              onChange={setValue}
+              minValue={minDate}
+              maxValue={maxDate}
+            />
+            <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
+              <p>Min date: {minDate.toLocaleDateString()}</p>
+              <p>Max date: {maxDate.toLocaleDateString()}</p>
+              {value && <p>Selected: {value.toLocaleDateString()}</p>}
+            </div>
+          </div>
+        )}
+      </MultiContextViewer>
     );
   }
 };

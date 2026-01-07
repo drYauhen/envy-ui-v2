@@ -33,17 +33,15 @@ export const Basic: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }>
-
-      <SearchableSelect
-        label="Search and select"
-        placeholder="Type to search..."
-        items={basicItems}
-      />
-</>
+        <div style={{ maxWidth: '300px' }}>
+          <SearchableSelect
+            label="Search and select"
+            placeholder="Type to search..."
+            items={basicItems}
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -51,17 +49,15 @@ export const WithDefaultValue: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }>
-
-      <SearchableSelect
-        label="Search and select"
-        items={basicItems}
-        defaultSelectedKey="option2"
-      />
-</>
+        <div style={{ maxWidth: '300px' }}>
+          <SearchableSelect
+            label="Search and select"
+            items={basicItems}
+            defaultSelectedKey="option2"
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -71,22 +67,20 @@ export const Controlled: Story = {
 
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ maxWidth: '300px' }>
-
-        <SearchableSelect
-          label="Controlled SearchableSelect"
-          items={basicItems}
-          selectedKey={selected}
-          onSelectionChange={(key) => setSelected(key)}
-        />
-        <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
-          Selected: {selected || 'none'}
-        </p>
-</>
-      )}
-    
-</MultiContextViewer>
+        {() => (
+          <div style={{ maxWidth: '300px' }}>
+            <SearchableSelect
+              label="Controlled SearchableSelect"
+              items={basicItems}
+              selectedKey={selected}
+              onSelectionChange={(key) => setSelected(key)}
+            />
+            <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: '#64748b' }}>
+              Selected: {selected || 'none'}
+            </p>
+          </div>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -95,17 +89,15 @@ export const ManyOptions: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }>
-
-      <SearchableSelect
-        label="Search in many options"
-        placeholder="Type to filter..."
-        items={manyItems}
-      />
-</>
+        <div style={{ maxWidth: '300px' }}>
+          <SearchableSelect
+            label="Search in many options"
+            placeholder="Type to filter..."
+            items={manyItems}
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -120,17 +112,15 @@ export const WithDisabledOptions: Story = {
 
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ maxWidth: '300px' }>
-
-        <SearchableSelect
-          label="Search and select"
-          items={itemsWithDisabled}
-        />
-</>
-      )}
-    
-</MultiContextViewer>
+        {() => (
+          <div style={{ maxWidth: '300px' }}>
+            <SearchableSelect
+              label="Search and select"
+              items={itemsWithDisabled}
+            />
+          </div>
+        )}
+      </MultiContextViewer>
     );
   }
 };
@@ -139,30 +129,28 @@ export const Sizes: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
-
-      <SearchableSelect
-        label="Small"
-        items={basicItems}
-        size="sm"
-        defaultSelectedKey="option1"
-      />
-      <SearchableSelect
-        label="Medium (default)"
-        items={basicItems}
-        size="md"
-        defaultSelectedKey="option2"
-      />
-      <SearchableSelect
-        label="Large"
-        items={basicItems}
-        size="lg"
-        defaultSelectedKey="option3"
-      />
-</>
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <SearchableSelect
+            label="Small"
+            items={basicItems}
+            size="sm"
+            defaultSelectedKey="option1"
+          />
+          <SearchableSelect
+            label="Medium (default)"
+            items={basicItems}
+            size="md"
+            defaultSelectedKey="option2"
+          />
+          <SearchableSelect
+            label="Large"
+            items={basicItems}
+            size="lg"
+            defaultSelectedKey="option3"
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -170,29 +158,27 @@ export const States: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }>
-
-      <SearchableSelect
-        label="Normal"
-        items={basicItems}
-        defaultSelectedKey="option1"
-      />
-      <SearchableSelect
-        label="Disabled"
-        items={basicItems}
-        isDisabled
-        defaultSelectedKey="option2"
-      />
-      <SearchableSelect
-        label="Error"
-        items={basicItems}
-        error
-        defaultSelectedKey="option3"
-      />
-</>
+        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <SearchableSelect
+            label="Normal"
+            items={basicItems}
+            defaultSelectedKey="option1"
+          />
+          <SearchableSelect
+            label="Disabled"
+            items={basicItems}
+            isDisabled
+            defaultSelectedKey="option2"
+          />
+          <SearchableSelect
+            label="Error"
+            items={basicItems}
+            error
+            defaultSelectedKey="option3"
+          />
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
 
@@ -200,25 +186,19 @@ export const InForm: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '400px' }>
-
-      <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        <SearchableSelect
-          label="Search and select"
-          placeholder="Type to search..."
-          items={basicItems}
-        />
-        <button type="submit" className="eui-button" data-eui-intent="primary">
-          Submit
-        </button>
-      </form>
-</>
+        <div style={{ maxWidth: '400px' }}>
+          <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <SearchableSelect
+              label="Search and select"
+              placeholder="Type to search..."
+              items={basicItems}
+            />
+            <button type="submit" className="eui-button" data-eui-intent="primary">
+              Submit
+            </button>
+          </form>
+        </div>
       )}
-    
-</MultiContextViewer>
+    </MultiContextViewer>
   )
 };
-
-
-
-
