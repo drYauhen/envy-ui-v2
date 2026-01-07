@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ContextThemeScope } from '../utils/context-theme';
+import { MultiContextViewer } from '../utils/multi-context-viewer';
 
 // Hero Section for city management (GAVTEK)
 // Visualization concepts:

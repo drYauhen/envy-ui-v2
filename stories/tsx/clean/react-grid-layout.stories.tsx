@@ -6,7 +6,7 @@ import ReactGridLayout, { WidthProvider } from 'react-grid-layout/legacy';
 import Highcharts from 'highcharts';
 import HighchartsReact, { HighchartsReactRefObject } from 'highcharts-react-official';
 import { getSectionParameters } from '../../../.storybook/preview';
-import { ContextThemeScope } from '../../utils/context-theme';
+import { MultiContextViewer } from '../../utils/multi-context-viewer';
 import 'handsontable/styles/handsontable.css';
 import 'handsontable/styles/ht-icons-main.css';
 import 'handsontable/styles/ht-theme-main.css';

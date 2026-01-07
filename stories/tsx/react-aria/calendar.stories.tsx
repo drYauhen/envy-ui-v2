@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Calendar } from '../../../packages/tsx/calendar';
 import '../../../src/ui/calendar.css';
 import { getSectionParameters } from '../../../.storybook/preview';
-import { ContextThemeScope } from '../../utils/context-theme';
+import { MultiContextViewer } from '../../utils/multi-context-viewer';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Calendar',

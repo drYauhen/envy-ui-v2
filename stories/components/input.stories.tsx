@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { getSectionParameters } from '../../.storybook/preview';
-import { ContextThemeScope } from '../utils/context-theme';
+import { MultiContextViewer } from '../utils/multi-context-viewer';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Input',

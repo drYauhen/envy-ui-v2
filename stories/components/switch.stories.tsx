@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { getSectionParameters } from '../../.storybook/preview';
-import { ContextThemeScope } from '../utils/context-theme';
+import { MultiContextViewer } from '../utils/multi-context-viewer';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Switch',
@@ -56,32 +56,36 @@ export const SwitchStates: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Switch States</h3>
-        <div style={formGroupStyle}>
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" />
-            <span className="eui-label">Off (unchecked)</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" defaultChecked />
-            <span className="eui-label">On (checked)</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" disabled />
-            <span className="eui-label">Disabled (off)</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" defaultChecked disabled />
-            <span className="eui-label">Disabled (on)</span>
-          </label>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Switch States</h3>
+            <div style={formGroupStyle}>
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" />
+                <span className="eui-label">Off (unchecked)</span>
+              </label>
+
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" defaultChecked />
+                <span className="eui-label">On (checked)</span>
+              </label>
+
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" disabled />
+                <span className="eui-label">Disabled (off)</span>
+              </label>
+
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" defaultChecked disabled />
+                <span className="eui-label">Disabled (on)</span>
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -94,48 +98,52 @@ export const SwitchSizes: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Switch Sizes</h3>
-        <div style={formGroupStyle}>
-          <div style={rowStyle}>
-            <label className="eui-switch-wrapper">
-              <input type="checkbox" className="eui-switch" data-eui-size="sm" />
-              <span className="eui-label">Small</span>
-            </label>
-            
-            <label className="eui-switch-wrapper">
-              <input type="checkbox" className="eui-switch" data-eui-size="sm" defaultChecked />
-              <span className="eui-label">Small (on)</span>
-            </label>
-          </div>
-          
-          <div style={rowStyle}>
-            <label className="eui-switch-wrapper">
-              <input type="checkbox" className="eui-switch" data-eui-size="md" />
-              <span className="eui-label">Medium (default)</span>
-            </label>
-            
-            <label className="eui-switch-wrapper">
-              <input type="checkbox" className="eui-switch" data-eui-size="md" defaultChecked />
-              <span className="eui-label">Medium (on)</span>
-            </label>
-          </div>
-          
-          <div style={rowStyle}>
-            <label className="eui-switch-wrapper">
-              <input type="checkbox" className="eui-switch" data-eui-size="lg" />
-              <span className="eui-label">Large</span>
-            </label>
-            
-            <label className="eui-switch-wrapper">
-              <input type="checkbox" className="eui-switch" data-eui-size="lg" defaultChecked />
-              <span className="eui-label">Large (on)</span>
-            </label>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Switch Sizes</h3>
+            <div style={formGroupStyle}>
+              <div style={rowStyle}>
+                <label className="eui-switch-wrapper">
+                  <input type="checkbox" className="eui-switch" data-eui-size="sm" />
+                  <span className="eui-label">Small</span>
+                </label>
+
+                <label className="eui-switch-wrapper">
+                  <input type="checkbox" className="eui-switch" data-eui-size="sm" defaultChecked />
+                  <span className="eui-label">Small (on)</span>
+                </label>
+              </div>
+
+              <div style={rowStyle}>
+                <label className="eui-switch-wrapper">
+                  <input type="checkbox" className="eui-switch" data-eui-size="md" />
+                  <span className="eui-label">Medium (default)</span>
+                </label>
+
+                <label className="eui-switch-wrapper">
+                  <input type="checkbox" className="eui-switch" data-eui-size="md" defaultChecked />
+                  <span className="eui-label">Medium (on)</span>
+                </label>
+              </div>
+
+              <div style={rowStyle}>
+                <label className="eui-switch-wrapper">
+                  <input type="checkbox" className="eui-switch" data-eui-size="lg" />
+                  <span className="eui-label">Large</span>
+                </label>
+
+                <label className="eui-switch-wrapper">
+                  <input type="checkbox" className="eui-switch" data-eui-size="lg" defaultChecked />
+                  <span className="eui-label">Large (on)</span>
+                </label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
@@ -148,75 +156,87 @@ export const SwitchExample: Story = {
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Settings Example</h3>
-        <div style={formGroupStyle}>
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" defaultChecked />
-            <span className="eui-label">Email notifications</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" defaultChecked />
-            <span className="eui-label">Push notifications</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" />
-            <span className="eui-label">SMS notifications</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" disabled />
-            <span className="eui-label">Beta features (disabled)</span>
-          </label>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Settings Example</h3>
+            <div style={formGroupStyle}>
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" defaultChecked />
+                <span className="eui-label">Email notifications</span>
+              </label>
+
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" defaultChecked />
+                <span className="eui-label">Push notifications</span>
+              </label>
+
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" />
+                <span className="eui-label">SMS notifications</span>
+              </label>
+
+              <label className="eui-switch-wrapper">
+                <input type="checkbox" className="eui-switch" disabled />
+                <span className="eui-label">Beta features (disabled)</span>
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const SwitchContexts: Story = {
   name: 'Contexts (App vs Report)',
   parameters: {
+    layout: 'fullscreen',
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Application Context (Interactive)</h3>
-        <ContextThemeScope data-eui-context="app" style={formGroupStyle}>
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" />
-            <span className="eui-label">Interactive switch</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" defaultChecked />
-            <span className="eui-label">Interactive switch (on)</span>
-          </label>
-        </ContextThemeScope>
-      </div>
+    <MultiContextViewer
+      contexts={[
+        { context: 'app' },
+        { context: 'report' }
+      ]}
+    >
+      {(context) => (
+        <div style={sectionStyle}>
+          <h3 style={sectionTitleStyle}>
+            {context === 'app' ? 'Application Context (Interactive)' : 'Report Context (Print Style)'}
+          </h3>
+          <div style={formGroupStyle}>
+            <label className="eui-switch-wrapper">
+              <input
+                type="checkbox"
+                className="eui-switch"
+                disabled={context === 'report'}
+              />
+              <span className="eui-label">
+                {context === 'app' ? 'Interactive switch' : 'Static switch (off)'}
+              </span>
+            </label>
 
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Report Context (Print Style)</h3>
-        <ContextThemeScope data-eui-context="report" style={formGroupStyle}>
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" disabled />
-            <span className="eui-label">Static switch (off)</span>
-          </label>
-          
-          <label className="eui-switch-wrapper">
-            <input type="checkbox" className="eui-switch" defaultChecked disabled />
-            <span className="eui-label">Static switch (on)</span>
-          </label>
-        </ContextThemeScope>
-      </div>
-    </div>
+            <label className="eui-switch-wrapper">
+              <input
+                type="checkbox"
+                className="eui-switch"
+                defaultChecked
+                disabled={context === 'report'}
+              />
+              <span className="eui-label">
+                {context === 'app' ? 'Interactive switch (on)' : 'Static switch (on)'}
+              </span>
+            </label>
+          </div>
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 

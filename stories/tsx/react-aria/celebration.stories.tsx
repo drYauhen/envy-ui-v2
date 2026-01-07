@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { CelebrationWrapper } from '../../../packages/tsx/celebration';
 import { getSectionParameters } from '../../../.storybook/preview';
-import { ContextThemeScope } from '../../utils/context-theme';
+import { MultiContextViewer } from '../../utils/multi-context-viewer';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/Celebration',

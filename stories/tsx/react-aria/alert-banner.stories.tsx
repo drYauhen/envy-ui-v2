@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AlertBanner } from '../../../packages/tsx/alert-banner';
 import { Icon } from '../../../packages/tsx/icon';
 import { getSectionParameters } from '../../../.storybook/preview';
-import { ContextThemeScope } from '../../utils/context-theme';
+import { MultiContextViewer } from '../../utils/multi-context-viewer';
 
 const meta: Meta = {
   title: 'TSX + React Aria/Components/AlertBanner',
