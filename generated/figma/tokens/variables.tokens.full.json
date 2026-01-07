@@ -1316,7 +1316,7 @@
         {
           "path": "eui.table.spacing.footer.paddingY",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.table.spacing.header.height",
@@ -1356,12 +1356,12 @@
         {
           "path": "eui.table.spacing.toolbar.gap",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.table.spacing.toolbar.paddingY",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         }
       ]
     },
@@ -1655,7 +1655,7 @@
         {
           "path": "eui.color.focus.ring",
           "type": "COLOR",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         },
         {
           "path": "eui.input.focus.ring.color.derived.accessible",
@@ -1686,7 +1686,7 @@
         {
           "path": "eui.color.system.focus",
           "type": "COLOR",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     },
@@ -1833,7 +1833,7 @@
         {
           "path": "eui.color.accent.500",
           "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
+          "value": "oklch(71% 0.15 237)"
         },
         {
           "path": "eui.color.accent.600",
@@ -1869,7 +1869,7 @@
         {
           "path": "eui.color.signal.keyboardFocus",
           "type": "COLOR",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     },
@@ -1959,19 +1959,34 @@
           "value": 8
         },
         {
+          "path": "eui.radius.lg",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.radius.md",
+          "type": "FLOAT",
+          "value": 4
+        },
+        {
           "path": "eui.radius.none",
           "type": "FLOAT",
           "value": 0
         },
         {
-          "path": "eui.radius.pill",
+          "path": "eui.radius.sm",
           "type": "FLOAT",
-          "value": 9999
+          "value": 2
         },
         {
           "path": "eui.radius.small",
           "type": "FLOAT",
           "value": 2
+        },
+        {
+          "path": "eui.radius.xl",
+          "type": "FLOAT",
+          "value": 12
         }
       ]
     },
@@ -2029,12 +2044,12 @@
         {
           "path": "eui.badge.spacing.gap",
           "type": "FLOAT",
-          "value": 0.25
+          "value": 0.2857
         },
         {
           "path": "eui.badge.spacing.padding.horizontal",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.badge.spacing.padding.vertical",
@@ -2171,7 +2186,7 @@
         {
           "path": "eui.layout.container.gutterX",
           "type": "FLOAT",
-          "value": 1.5
+          "value": 1.7143
         },
         {
           "path": "eui.layout.container.standard.maxWidth",
@@ -2186,32 +2201,32 @@
         {
           "path": "eui.layout.page.padding.x",
           "type": "FLOAT",
-          "value": 1.5
+          "value": 1.7143
         },
         {
           "path": "eui.layout.page.padding.y",
           "type": "FLOAT",
-          "value": 1.5
+          "value": 1.7143
         },
         {
           "path": "eui.layout.section.gap",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.layout.section.padding",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.layout.section.title.gap",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.layout.toolbar.gap",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.layout.toolbar.height",
@@ -2221,7 +2236,7 @@
         {
           "path": "eui.layout.toolbar.paddingY",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         }
       ]
     },
@@ -2242,38 +2257,43 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Size / Spacing",
+      "name": "envy-ui-v2 • Dimensions / Z",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.spacing.2xl",
+          "path": "eui.z.base",
           "type": "FLOAT",
-          "value": 3
+          "value": 0
         },
         {
-          "path": "eui.spacing.lg",
+          "path": "eui.z.dialog",
           "type": "FLOAT",
-          "value": 1.5
+          "value": 1070
         },
         {
-          "path": "eui.spacing.md",
+          "path": "eui.z.dropdown",
           "type": "FLOAT",
-          "value": 1
+          "value": 1000
         },
         {
-          "path": "eui.spacing.sm",
+          "path": "eui.z.hide",
           "type": "FLOAT",
-          "value": 0.5
+          "value": -1
         },
         {
-          "path": "eui.spacing.xl",
+          "path": "eui.z.modal",
           "type": "FLOAT",
-          "value": 2
+          "value": 1060
         },
         {
-          "path": "eui.spacing.xs",
+          "path": "eui.z.overlay",
           "type": "FLOAT",
-          "value": 0.25
+          "value": 1050
+        },
+        {
+          "path": "eui.z.sticky",
+          "type": "FLOAT",
+          "value": 100
         }
       ]
     },
@@ -2874,12 +2894,12 @@
         {
           "path": "eui.select.primitive.badge.spacing.gap",
           "type": "FLOAT",
-          "value": 0.25
+          "value": 0.2857
         },
         {
           "path": "eui.select.primitive.badge.spacing.padding.horizontal",
           "type": "FLOAT",
-          "value": 0.25
+          "value": 0.2857
         },
         {
           "path": "eui.select.primitive.badge.spacing.padding.vertical",
@@ -2924,7 +2944,7 @@
         {
           "path": "eui.select.primitive.trigger.spacing.gap",
           "type": "FLOAT",
-          "value": 0.25
+          "value": 0.2857
         }
       ]
     },
@@ -3294,32 +3314,32 @@
         {
           "path": "eui.input.group.spacing.input.padding.left",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.input.group.spacing.input.padding.right",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.input.group.spacing.prefix.padding.left",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.input.group.spacing.prefix.padding.right",
           "type": "FLOAT",
-          "value": 0.25
+          "value": 0.2857
         },
         {
           "path": "eui.input.group.spacing.suffix.padding.left",
           "type": "FLOAT",
-          "value": 0.25
+          "value": 0.2857
         },
         {
           "path": "eui.input.group.spacing.suffix.padding.right",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.input.shape.radius",
@@ -3416,17 +3436,17 @@
         {
           "path": "eui.hero-section.spacing.gap.content",
           "type": "FLOAT",
-          "value": 1.5
+          "value": 1.7143
         },
         {
           "path": "eui.hero-section.spacing.gap.cta",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.hero-section.spacing.gap.media",
           "type": "FLOAT",
-          "value": 2
+          "value": 2.2857
         },
         {
           "path": "eui.hero-section.spacing.padding.desktop.block",
@@ -3436,27 +3456,27 @@
         {
           "path": "eui.hero-section.spacing.padding.desktop.inline",
           "type": "FLOAT",
-          "value": 3
+          "value": 3.4286
         },
         {
           "path": "eui.hero-section.spacing.padding.mobile.block",
           "type": "FLOAT",
-          "value": 2
+          "value": 2.2857
         },
         {
           "path": "eui.hero-section.spacing.padding.mobile.inline",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.hero-section.spacing.padding.tablet.block",
           "type": "FLOAT",
-          "value": 3
+          "value": 3.4286
         },
         {
           "path": "eui.hero-section.spacing.padding.tablet.inline",
           "type": "FLOAT",
-          "value": 2
+          "value": 2.2857
         }
       ]
     },
@@ -3493,42 +3513,42 @@
         {
           "path": "eui.form.spacing.field.gap.external",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.form.spacing.field.gap.internal",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.form.spacing.group.gap",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.form.spacing.row.gap",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.form.spacing.section.gap.external",
           "type": "FLOAT",
-          "value": 1.5
+          "value": 1.7143
         },
         {
           "path": "eui.form.spacing.section.gap.internal",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.form.spacing.section.gap.title",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.form.spacing.section.header.padding",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         }
       ]
     },
@@ -4282,17 +4302,17 @@
         {
           "path": "eui.alert-banner.spacing.gap.actions",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.alert-banner.spacing.gap.content",
           "type": "FLOAT",
-          "value": 0.5
+          "value": 0.5714
         },
         {
           "path": "eui.alert-banner.spacing.padding",
           "type": "FLOAT",
-          "value": 1
+          "value": 1.1429
         },
         {
           "path": "eui.alert-banner.z-index",

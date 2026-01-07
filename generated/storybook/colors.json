@@ -210,7 +210,7 @@
           "label": "500",
           "path": "eui.color.accent.500",
           "cssVar": "--eui-color-accent-500",
-          "value": "oklch(68% 0.15 237)"
+          "value": "oklch(71% 0.15 237)"
         },
         {
           "id": "600",
@@ -258,7 +258,7 @@
           "label": "KeyboardFocus",
           "path": "eui.color.signal.keyboardFocus",
           "cssVar": "--eui-color-signal-keyboard-focus",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     },
@@ -582,7 +582,7 @@
           "label": "Ring",
           "path": "eui.color.focus.ring",
           "cssVar": "--eui-color-focus-ring",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     },
@@ -595,7 +595,7 @@
           "label": "Focus",
           "path": "eui.color.system.focus",
           "cssVar": "--eui-color-system-focus",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     }

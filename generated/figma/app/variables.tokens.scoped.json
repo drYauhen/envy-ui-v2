@@ -7901,11 +7901,11 @@
           "path": "eui.table.spacing.footer.paddingY",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {
@@ -7992,11 +7992,11 @@
           "path": "eui.table.spacing.toolbar.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "ITEM_SPACING"
@@ -8006,11 +8006,11 @@
           "path": "eui.table.spacing.toolbar.paddingY",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         }
       ]
@@ -9973,11 +9973,36 @@
           "path": "eui.color.focus.ring",
           "type": "COLOR",
           "valuesByMode": {
-            "app-accessibility": "#ff4d00",
-            "app-accessibility.meta": "#ff4d00",
-            "app-default": "#ff4d00",
-            "app-default.meta": "#ff4d00",
-            "app-default.presets.meta": "#ff4d00"
+            "app-accessibility": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-accessibility.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default.presets.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            }
           }
         },
         {
@@ -10140,11 +10165,36 @@
           "path": "eui.color.system.focus",
           "type": "COLOR",
           "valuesByMode": {
-            "app-accessibility": "#ff4d00",
-            "app-accessibility.meta": "#ff4d00",
-            "app-default": "#ff4d00",
-            "app-default.meta": "#ff4d00",
-            "app-default.presets.meta": "#ff4d00"
+            "app-accessibility": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-accessibility.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default.presets.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            }
           }
         }
       ]
@@ -11112,33 +11162,33 @@
           "type": "COLOR",
           "valuesByMode": {
             "app-accessibility": {
-              "r": 0,
-              "g": 0.6421163053553081,
-              "b": 0.910843593677343,
+              "r": 0.10076928278190109,
+              "g": 0.6798479750126484,
+              "b": 0.9508275490853938,
               "a": 1
             },
             "app-accessibility.meta": {
-              "r": 0,
-              "g": 0.6421163053553081,
-              "b": 0.910843593677343,
+              "r": 0.10076928278190109,
+              "g": 0.6798479750126484,
+              "b": 0.9508275490853938,
               "a": 1
             },
             "app-default": {
-              "r": 0,
-              "g": 0.6421163053553081,
-              "b": 0.910843593677343,
+              "r": 0.10076928278190109,
+              "g": 0.6798479750126484,
+              "b": 0.9508275490853938,
               "a": 1
             },
             "app-default.meta": {
-              "r": 0,
-              "g": 0.6421163053553081,
-              "b": 0.910843593677343,
+              "r": 0.10076928278190109,
+              "g": 0.6798479750126484,
+              "b": 0.9508275490853938,
               "a": 1
             },
             "app-default.presets.meta": {
-              "r": 0,
-              "g": 0.6421163053553081,
-              "b": 0.910843593677343,
+              "r": 0.10076928278190109,
+              "g": 0.6798479750126484,
+              "b": 0.9508275490853938,
               "a": 1
             }
           }
@@ -11339,11 +11389,36 @@
           "path": "eui.color.signal.keyboardFocus",
           "type": "COLOR",
           "valuesByMode": {
-            "app-accessibility": "#ff4d00",
-            "app-accessibility.meta": "#ff4d00",
-            "app-default": "#ff4d00",
-            "app-default.meta": "#ff4d00",
-            "app-default.presets.meta": "#ff4d00"
+            "app-accessibility": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-accessibility.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            },
+            "app-default.presets.meta": {
+              "r": 0.9920041592075107,
+              "g": 0,
+              "b": 0.14384344874219235,
+              "a": 1
+            }
           }
         }
       ]
@@ -11811,6 +11886,28 @@
           }
         },
         {
+          "path": "eui.radius.lg",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 8,
+            "app-accessibility.meta": 8,
+            "app-default": 8,
+            "app-default.meta": 8,
+            "app-default.presets.meta": 8
+          }
+        },
+        {
+          "path": "eui.radius.md",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 4,
+            "app-accessibility.meta": 4,
+            "app-default": 4,
+            "app-default.meta": 4,
+            "app-default.presets.meta": 4
+          }
+        },
+        {
           "path": "eui.radius.none",
           "type": "FLOAT",
           "valuesByMode": {
@@ -11822,14 +11919,14 @@
           }
         },
         {
-          "path": "eui.radius.pill",
+          "path": "eui.radius.sm",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 9999,
-            "app-accessibility.meta": 9999,
-            "app-default": 9999,
-            "app-default.meta": 9999,
-            "app-default.presets.meta": 9999
+            "app-accessibility": 2,
+            "app-accessibility.meta": 2,
+            "app-default": 2,
+            "app-default.meta": 2,
+            "app-default.presets.meta": 2
           }
         },
         {
@@ -11841,6 +11938,17 @@
             "app-default": 2,
             "app-default.meta": 2,
             "app-default.presets.meta": 2
+          }
+        },
+        {
+          "path": "eui.radius.xl",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 12,
+            "app-accessibility.meta": 12,
+            "app-default": 12,
+            "app-default.meta": 12,
+            "app-default.presets.meta": 12
           }
         }
       ]
@@ -11963,11 +12071,11 @@
           "path": "eui.badge.spacing.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.25,
-            "app-accessibility.meta": 0.25,
-            "app-default": 0.25,
-            "app-default.meta": 0.25,
-            "app-default.presets.meta": 0.25
+            "app-accessibility": 0.2857,
+            "app-accessibility.meta": 0.2857,
+            "app-default": 0.2857,
+            "app-default.meta": 0.2857,
+            "app-default.presets.meta": 0.2857
           },
           "scopes": [
             "ITEM_SPACING"
@@ -11977,11 +12085,11 @@
           "path": "eui.badge.spacing.padding.horizontal",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           }
         },
         {
@@ -12294,11 +12402,11 @@
           "path": "eui.layout.container.gutterX",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1.5,
-            "app-accessibility.meta": 1.5,
-            "app-default": 1.5,
-            "app-default.meta": 1.5,
-            "app-default.presets.meta": 1.5
+            "app-accessibility": 1.7143,
+            "app-accessibility.meta": 1.7143,
+            "app-default": 1.7143,
+            "app-default.meta": 1.7143,
+            "app-default.presets.meta": 1.7143
           }
         },
         {
@@ -12327,33 +12435,33 @@
           "path": "eui.layout.page.padding.x",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1.5,
-            "app-accessibility.meta": 1.5,
-            "app-default": 1.5,
-            "app-default.meta": 1.5,
-            "app-default.presets.meta": 1.5
+            "app-accessibility": 1.7143,
+            "app-accessibility.meta": 1.7143,
+            "app-default": 1.7143,
+            "app-default.meta": 1.7143,
+            "app-default.presets.meta": 1.7143
           }
         },
         {
           "path": "eui.layout.page.padding.y",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1.5,
-            "app-accessibility.meta": 1.5,
-            "app-default": 1.5,
-            "app-default.meta": 1.5,
-            "app-default.presets.meta": 1.5
+            "app-accessibility": 1.7143,
+            "app-accessibility.meta": 1.7143,
+            "app-default": 1.7143,
+            "app-default.meta": 1.7143,
+            "app-default.presets.meta": 1.7143
           }
         },
         {
           "path": "eui.layout.section.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           },
           "scopes": [
             "ITEM_SPACING"
@@ -12363,22 +12471,22 @@
           "path": "eui.layout.section.padding",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {
           "path": "eui.layout.section.title.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "ITEM_SPACING"
@@ -12388,11 +12496,11 @@
           "path": "eui.layout.toolbar.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "ITEM_SPACING"
@@ -12413,11 +12521,11 @@
           "path": "eui.layout.toolbar.paddingY",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         }
       ]
@@ -12463,7 +12571,7 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Size / Spacing",
+      "name": "envy-ui-v2 • Dimensions / Z",
       "modes": [
         "app-accessibility",
         "app-accessibility.meta",
@@ -12473,69 +12581,80 @@
       ],
       "variables": [
         {
-          "path": "eui.spacing.2xl",
+          "path": "eui.z.base",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 3,
-            "app-accessibility.meta": 3,
-            "app-default": 3,
-            "app-default.meta": 3,
-            "app-default.presets.meta": 3
+            "app-accessibility": 0,
+            "app-accessibility.meta": 0,
+            "app-default": 0,
+            "app-default.meta": 0,
+            "app-default.presets.meta": 0
           }
         },
         {
-          "path": "eui.spacing.lg",
+          "path": "eui.z.dialog",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1.5,
-            "app-accessibility.meta": 1.5,
-            "app-default": 1.5,
-            "app-default.meta": 1.5,
-            "app-default.presets.meta": 1.5
+            "app-accessibility": 1070,
+            "app-accessibility.meta": 1070,
+            "app-default": 1070,
+            "app-default.meta": 1070,
+            "app-default.presets.meta": 1070
           }
         },
         {
-          "path": "eui.spacing.md",
+          "path": "eui.z.dropdown",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1000,
+            "app-accessibility.meta": 1000,
+            "app-default": 1000,
+            "app-default.meta": 1000,
+            "app-default.presets.meta": 1000
           }
         },
         {
-          "path": "eui.spacing.sm",
+          "path": "eui.z.hide",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": -1,
+            "app-accessibility.meta": -1,
+            "app-default": -1,
+            "app-default.meta": -1,
+            "app-default.presets.meta": -1
           }
         },
         {
-          "path": "eui.spacing.xl",
+          "path": "eui.z.modal",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 2,
-            "app-accessibility.meta": 2,
-            "app-default": 2,
-            "app-default.meta": 2,
-            "app-default.presets.meta": 2
+            "app-accessibility": 1060,
+            "app-accessibility.meta": 1060,
+            "app-default": 1060,
+            "app-default.meta": 1060,
+            "app-default.presets.meta": 1060
           }
         },
         {
-          "path": "eui.spacing.xs",
+          "path": "eui.z.overlay",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.25,
-            "app-accessibility.meta": 0.25,
-            "app-default": 0.25,
-            "app-default.meta": 0.25,
-            "app-default.presets.meta": 0.25
+            "app-accessibility": 1050,
+            "app-accessibility.meta": 1050,
+            "app-default": 1050,
+            "app-default.meta": 1050,
+            "app-default.presets.meta": 1050
+          }
+        },
+        {
+          "path": "eui.z.sticky",
+          "type": "FLOAT",
+          "valuesByMode": {
+            "app-accessibility": 100,
+            "app-accessibility.meta": 100,
+            "app-default": 100,
+            "app-default.meta": 100,
+            "app-default.presets.meta": 100
           }
         }
       ]
@@ -14124,11 +14243,11 @@
           "path": "eui.select.primitive.badge.spacing.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.25,
-            "app-accessibility.meta": 0.25,
-            "app-default": 0.25,
-            "app-default.meta": 0.25,
-            "app-default.presets.meta": 0.25
+            "app-accessibility": 0.2857,
+            "app-accessibility.meta": 0.2857,
+            "app-default": 0.2857,
+            "app-default.meta": 0.2857,
+            "app-default.presets.meta": 0.2857
           },
           "scopes": [
             "ITEM_SPACING"
@@ -14138,11 +14257,11 @@
           "path": "eui.select.primitive.badge.spacing.padding.horizontal",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.25,
-            "app-accessibility.meta": 0.25,
-            "app-default": 0.25,
-            "app-default.meta": 0.25,
-            "app-default.presets.meta": 0.25
+            "app-accessibility": 0.2857,
+            "app-accessibility.meta": 0.2857,
+            "app-default": 0.2857,
+            "app-default.meta": 0.2857,
+            "app-default.presets.meta": 0.2857
           }
         },
         {
@@ -14240,11 +14359,11 @@
           "path": "eui.select.primitive.trigger.spacing.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.25,
-            "app-accessibility.meta": 0.25,
-            "app-default": 0.25,
-            "app-default.meta": 0.25,
-            "app-default.presets.meta": 0.25
+            "app-accessibility": 0.2857,
+            "app-accessibility.meta": 0.2857,
+            "app-default": 0.2857,
+            "app-default.meta": 0.2857,
+            "app-default.presets.meta": 0.2857
           },
           "scopes": [
             "ITEM_SPACING"
@@ -15444,11 +15563,11 @@
           "path": "eui.input.group.spacing.input.padding.left",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "PADDING_HORIZONTAL"
@@ -15458,11 +15577,11 @@
           "path": "eui.input.group.spacing.input.padding.right",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "PADDING_HORIZONTAL"
@@ -15472,11 +15591,11 @@
           "path": "eui.input.group.spacing.prefix.padding.left",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "PADDING_HORIZONTAL"
@@ -15486,11 +15605,11 @@
           "path": "eui.input.group.spacing.prefix.padding.right",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.25,
-            "app-accessibility.meta": 0.25,
-            "app-default": 0.25,
-            "app-default.meta": 0.25,
-            "app-default.presets.meta": 0.25
+            "app-accessibility": 0.2857,
+            "app-accessibility.meta": 0.2857,
+            "app-default": 0.2857,
+            "app-default.meta": 0.2857,
+            "app-default.presets.meta": 0.2857
           },
           "scopes": [
             "PADDING_HORIZONTAL"
@@ -15500,11 +15619,11 @@
           "path": "eui.input.group.spacing.suffix.padding.left",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.25,
-            "app-accessibility.meta": 0.25,
-            "app-default": 0.25,
-            "app-default.meta": 0.25,
-            "app-default.presets.meta": 0.25
+            "app-accessibility": 0.2857,
+            "app-accessibility.meta": 0.2857,
+            "app-default": 0.2857,
+            "app-default.meta": 0.2857,
+            "app-default.presets.meta": 0.2857
           },
           "scopes": [
             "PADDING_HORIZONTAL"
@@ -15514,11 +15633,11 @@
           "path": "eui.input.group.spacing.suffix.padding.right",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "PADDING_HORIZONTAL"
@@ -15796,33 +15915,33 @@
           "path": "eui.hero-section.spacing.gap.content",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1.5,
-            "app-accessibility.meta": 1.5,
-            "app-default": 1.5,
-            "app-default.meta": 1.5,
-            "app-default.presets.meta": 1.5
+            "app-accessibility": 1.7143,
+            "app-accessibility.meta": 1.7143,
+            "app-default": 1.7143,
+            "app-default.meta": 1.7143,
+            "app-default.presets.meta": 1.7143
           }
         },
         {
           "path": "eui.hero-section.spacing.gap.cta",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {
           "path": "eui.hero-section.spacing.gap.media",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 2,
-            "app-accessibility.meta": 2,
-            "app-default": 2,
-            "app-default.meta": 2,
-            "app-default.presets.meta": 2
+            "app-accessibility": 2.2857,
+            "app-accessibility.meta": 2.2857,
+            "app-default": 2.2857,
+            "app-default.meta": 2.2857,
+            "app-default.presets.meta": 2.2857
           }
         },
         {
@@ -15840,55 +15959,55 @@
           "path": "eui.hero-section.spacing.padding.desktop.inline",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 3,
-            "app-accessibility.meta": 3,
-            "app-default": 3,
-            "app-default.meta": 3,
-            "app-default.presets.meta": 3
+            "app-accessibility": 3.4286,
+            "app-accessibility.meta": 3.4286,
+            "app-default": 3.4286,
+            "app-default.meta": 3.4286,
+            "app-default.presets.meta": 3.4286
           }
         },
         {
           "path": "eui.hero-section.spacing.padding.mobile.block",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 2,
-            "app-accessibility.meta": 2,
-            "app-default": 2,
-            "app-default.meta": 2,
-            "app-default.presets.meta": 2
+            "app-accessibility": 2.2857,
+            "app-accessibility.meta": 2.2857,
+            "app-default": 2.2857,
+            "app-default.meta": 2.2857,
+            "app-default.presets.meta": 2.2857
           }
         },
         {
           "path": "eui.hero-section.spacing.padding.mobile.inline",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {
           "path": "eui.hero-section.spacing.padding.tablet.block",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 3,
-            "app-accessibility.meta": 3,
-            "app-default": 3,
-            "app-default.meta": 3,
-            "app-default.presets.meta": 3
+            "app-accessibility": 3.4286,
+            "app-accessibility.meta": 3.4286,
+            "app-default": 3.4286,
+            "app-default.meta": 3.4286,
+            "app-default.presets.meta": 3.4286
           }
         },
         {
           "path": "eui.hero-section.spacing.padding.tablet.inline",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 2,
-            "app-accessibility.meta": 2,
-            "app-default": 2,
-            "app-default.meta": 2,
-            "app-default.presets.meta": 2
+            "app-accessibility": 2.2857,
+            "app-accessibility.meta": 2.2857,
+            "app-default": 2.2857,
+            "app-default.meta": 2.2857,
+            "app-default.presets.meta": 2.2857
           }
         }
       ]
@@ -15966,33 +16085,33 @@
           "path": "eui.form.spacing.field.gap.external",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {
           "path": "eui.form.spacing.field.gap.internal",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           }
         },
         {
           "path": "eui.form.spacing.group.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           },
           "scopes": [
             "ITEM_SPACING"
@@ -16002,11 +16121,11 @@
           "path": "eui.form.spacing.row.gap",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           },
           "scopes": [
             "ITEM_SPACING"
@@ -16016,44 +16135,44 @@
           "path": "eui.form.spacing.section.gap.external",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1.5,
-            "app-accessibility.meta": 1.5,
-            "app-default": 1.5,
-            "app-default.meta": 1.5,
-            "app-default.presets.meta": 1.5
+            "app-accessibility": 1.7143,
+            "app-accessibility.meta": 1.7143,
+            "app-default": 1.7143,
+            "app-default.meta": 1.7143,
+            "app-default.presets.meta": 1.7143
           }
         },
         {
           "path": "eui.form.spacing.section.gap.internal",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {
           "path": "eui.form.spacing.section.gap.title",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {
           "path": "eui.form.spacing.section.header.padding",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           }
         }
       ]
@@ -18852,33 +18971,33 @@
           "path": "eui.alert-banner.spacing.gap.actions",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           }
         },
         {
           "path": "eui.alert-banner.spacing.gap.content",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 0.5,
-            "app-accessibility.meta": 0.5,
-            "app-default": 0.5,
-            "app-default.meta": 0.5,
-            "app-default.presets.meta": 0.5
+            "app-accessibility": 0.5714,
+            "app-accessibility.meta": 0.5714,
+            "app-default": 0.5714,
+            "app-default.meta": 0.5714,
+            "app-default.presets.meta": 0.5714
           }
         },
         {
           "path": "eui.alert-banner.spacing.padding",
           "type": "FLOAT",
           "valuesByMode": {
-            "app-accessibility": 1,
-            "app-accessibility.meta": 1,
-            "app-default": 1,
-            "app-default.meta": 1,
-            "app-default.presets.meta": 1
+            "app-accessibility": 1.1429,
+            "app-accessibility.meta": 1.1429,
+            "app-default": 1.1429,
+            "app-default.meta": 1.1429,
+            "app-default.presets.meta": 1.1429
           }
         },
         {

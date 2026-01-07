@@ -80,7 +80,7 @@
             "$description": "Fixed height for table footer (pagination area)."
           },
           "paddingY": {
-            "$value": "{eui.spacing.md}",
+            "$value": "{eui.dimension.4}",
             "$type": "dimension",
             "$description": "Vertical padding for table footer. References foundation spacing."
           }

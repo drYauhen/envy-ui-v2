@@ -306,7 +306,7 @@
         "$description": "Much larger than default. Used for modals, dialogs. Clear hierarchy: default (8px) < large (10px) < extra-large (12px)."
       },
       "full": {
-        "$value": "{eui.radius.pill}",
+        "$value": "{eui.radius.full}",
         "$type": "dimension"
       }
     }

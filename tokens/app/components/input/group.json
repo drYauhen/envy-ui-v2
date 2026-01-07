@@ -7,12 +7,12 @@
           "prefix": {
             "padding": {
               "left": {
-                "$value": "{eui.spacing.sm}",
+                "$value": "{eui.dimension.2}",
                 "$type": "dimension",
                 "$description": "Left padding for prefix slot"
               },
               "right": {
-                "$value": "{eui.spacing.xs}",
+                "$value": "{eui.dimension.1}",
                 "$type": "dimension",
                 "$description": "Right padding for prefix slot (gap between prefix and input text)"
               }
@@ -21,12 +21,12 @@
           "suffix": {
             "padding": {
               "left": {
-                "$value": "{eui.spacing.xs}",
+                "$value": "{eui.dimension.1}",
                 "$type": "dimension",
                 "$description": "Left padding for suffix slot (gap between input text and suffix)"
               },
               "right": {
-                "$value": "{eui.spacing.sm}",
+                "$value": "{eui.dimension.2}",
                 "$type": "dimension",
                 "$description": "Right padding for suffix slot"
               }
@@ -35,12 +35,12 @@
           "input": {
             "padding": {
               "left": {
-                "$value": "{eui.spacing.sm}",
+                "$value": "{eui.dimension.2}",
                 "$type": "dimension",
                 "$description": "Left padding for input when prefix is present"
               },
               "right": {
-                "$value": "{eui.spacing.sm}",
+                "$value": "{eui.dimension.2}",
                 "$type": "dimension",
                 "$description": "Right padding for input when suffix is present"
               }

@@ -11,7 +11,7 @@
         },
         "round": {
           "radius": {
-            "$value": "{eui.radius.pill}",
+            "$value": "{eui.radius.full}",
             "$type": "dimension"
           }
         },

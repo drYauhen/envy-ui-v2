@@ -9,13 +9,13 @@ export const tokenPageStyle: CSSProperties = {
   color: '#0f172a'
 };
 
-export const tokenSectionStyle: CSSProperties = {
-  padding: '1rem',
-  border: '1px solid #e2e8f0',
-  borderRadius: '0.75rem',
-  background: '#ffffff',
-  boxShadow: '0 1px 3px rgba(15, 23, 42, 0.06)'
-};
+// export const tokenSectionStyle: CSSProperties = {
+//   padding: '1rem',
+//   border: '1px solid #e2e8f0',
+//   borderRadius: '0.75rem',
+//   background: '#ffffff',
+//   boxShadow: '0 1px 3px rgba(15, 23, 42, 0.06)'
+// };
 
 export const tokenHeadingStyle: CSSProperties = {
   margin: '0 0 0.35rem',
@@ -71,7 +71,7 @@ export const TokenSection = ({
   description?: ReactNode;
   children?: ReactNode;
 }) => (
-  <div style={tokenSectionStyle}>
+  <div className="eui-card" data-eui-variant="elevated">
     <p style={tokenHeadingStyle}>{title}</p>
     {description ? <p style={tokenTextStyle}>{description}</p> : null}
     {children}

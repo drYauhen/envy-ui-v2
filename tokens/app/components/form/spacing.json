@@ -6,12 +6,12 @@
         "field": {
           "gap": {
             "internal": {
-              "$value": "{eui.spacing.sm}",
+              "$value": "{eui.dimension.2}",
               "$type": "dimension",
               "$description": "Gap between label, input, helper text within a field"
             },
             "external": {
-              "$value": "{eui.spacing.md}",
+              "$value": "{eui.dimension.4}",
               "$type": "dimension",
               "$description": "Margin-bottom between form fields"
             }
@@ -20,24 +20,24 @@
         "section": {
           "gap": {
             "internal": {
-              "$value": "{eui.spacing.md}",
+              "$value": "{eui.dimension.4}",
               "$type": "dimension",
               "$description": "Gap between fields within a section"
             },
             "external": {
-              "$value": "{eui.spacing.lg}",
+              "$value": "{eui.dimension.6}",
               "$type": "dimension",
               "$description": "Margin-bottom between form sections"
             },
             "title": {
-              "$value": "{eui.spacing.md}",
+              "$value": "{eui.dimension.4}",
               "$type": "dimension",
               "$description": "Margin-bottom between section title and first field"
             }
           },
           "header": {
             "padding": {
-              "$value": "{eui.spacing.sm}",
+              "$value": "{eui.dimension.2}",
               "$type": "dimension",
               "$description": "Padding for collapsible section header"
             }
@@ -45,14 +45,14 @@
         },
         "group": {
           "gap": {
-            "$value": "{eui.spacing.sm}",
+            "$value": "{eui.dimension.2}",
             "$type": "dimension",
             "$description": "Gap between items in a form group (checkboxes, radios)"
           }
         },
         "row": {
           "gap": {
-            "$value": "{eui.spacing.md}",
+            "$value": "{eui.dimension.4}",
             "$type": "dimension",
             "$description": "Gap between columns in a form row"
           }

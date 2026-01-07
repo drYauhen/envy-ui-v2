@@ -1,5 +1,5 @@
 {
-  "eui": {
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",  "eui": {
     "typography": {
       "textDecoration": {
         "none": {

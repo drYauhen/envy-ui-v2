@@ -28,14 +28,14 @@
           "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
         },
         "500": {
-          "$value": "oklch(68% 0.15 237)",
+          "$value": "oklch(71% 0.15 237)",
           "$type": "color",
-          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
+          "$description": "Medium accent color - generated from base 600 using status.info algorithm (asymmetric distribution, medium shades)"
         },
         "600": {
-          "$value": "oklch(68% 0.15 237)",
+          "$value": "{eui.color.status.info.500}",
           "$type": "color",
-          "$description": "Base accent color - canonical accent color (anchor) - derived from status.info.500 using status.info algorithm"
+          "$description": "Base accent color - canonical accent color (anchor) - derived from status.info.500"
         },
         "700": {
           "$value": "oklch(63% 0.15 237)",

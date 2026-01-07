@@ -16,8 +16,8 @@ export default {
         "accent-200": "oklch(89% 0.09 236)",
         "accent-300": "oklch(84% 0.14 236)",
         "accent-400": "oklch(76% 0.15 237)",
-        "accent-500": "oklch(68% 0.15 237)",
-        "accent-600": "oklch(68% 0.15 237)",
+        "accent-500": "oklch(71% 0.15 237)",
+        "accent-600": "{eui.color.status.info.500}",
         "accent-700": "oklch(63% 0.15 237)",
         "accent-800": "oklch(58% 0.14 237)",
         "accent-900": "oklch(53% 0.13 238)",
@@ -42,7 +42,7 @@ export default {
         "neutral-800": "oklch(33% 0.00 0)",
         "neutral-900": "oklch(25% 0.00 0)",
         "neutral-white": "oklch(100% 0 0)",
-        "signal-keyboardFocus": "#ff4d00",
+        "signal-keyboardFocus": "oklch(62% 0.26 25)",
         "status-application-pending": "oklch(64% 0.00 326)",
         "status-application-onTrack": "oklch(66% 0.18 137)",
         "status-application-completed": "oklch(51% 0.16 256)",
@@ -71,16 +71,14 @@ export default {
         "status-info-600": "oklch(63% 0.15 237)",
         "status-info-700": "oklch(60% 0.14 237)"
       },
-      "spacing": {
-        "xs": "0.25rem",
-        "sm": "0.5rem",
-        "md": "1rem",
-        "lg": "1.5rem",
-        "xl": "2rem",
-        "2xl": "3rem"
-      },
+      "spacing": {},
       "borderRadius": {
-        "pill": "9999px"
+        "none": "0px",
+        "sm": "2px",
+        "md": "4px",
+        "lg": "8px",
+        "xl": "12px",
+        "full": "9999px"
       },
       "fontSize": {
         "xs": "0.75rem",

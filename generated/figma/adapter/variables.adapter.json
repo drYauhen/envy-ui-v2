@@ -99,7 +99,7 @@
         {
           "path": "eui.color.focus.ring",
           "type": "COLOR",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     },
@@ -110,7 +110,7 @@
         {
           "path": "eui.color.system.focus",
           "type": "COLOR",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     },
@@ -207,7 +207,7 @@
         {
           "path": "eui.color.accent.500",
           "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
+          "value": "oklch(71% 0.15 237)"
         },
         {
           "path": "eui.color.accent.600",
@@ -384,7 +384,7 @@
         {
           "path": "eui.color.signal.keyboardFocus",
           "type": "COLOR",
-          "value": "#ff4d00"
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     },

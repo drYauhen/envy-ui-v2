@@ -1,11 +1,12 @@
 {
+  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
   "eui": {
     "color": {
       "signal": {
         "keyboardFocus": {
-          "$value": "#ff4d00",
+          "$value": "oklch(62% 0.26 25)",
           "$type": "color",
-          "description": "Keyboard-only focus ring (a11y)"
+          "$description": "Keyboard-only focus ring - bright, saturated orange for high contrast accessibility"
         }
       }
     }

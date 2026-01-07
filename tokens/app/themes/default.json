@@ -35,7 +35,7 @@
         "$description": "Used for modals, sheets, prominent containers. Maximum rounding for overlay elements."
       },
       "full": {
-        "$value": "{eui.radius.pill}",
+        "$value": "{eui.radius.full}",
         "$type": "dimension"
       }
     }

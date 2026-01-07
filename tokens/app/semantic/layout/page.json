@@ -10,7 +10,7 @@
             "$description": "Horizontal page padding. References container gutter for consistency."
           },
           "y": {
-            "$value": "{eui.spacing.lg}",
+            "$value": "{eui.dimension.6}",
             "$type": "dimension",
             "$description": "Vertical page padding. Optimized for app-default context/theme."
           }

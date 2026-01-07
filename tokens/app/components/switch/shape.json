@@ -4,12 +4,12 @@
       "shape": {
         "radius": {
           "track": {
-            "$value": "{eui.radius.pill}",
+            "$value": "{eui.radius.full}",
             "$type": "dimension",
             "$description": "Track border radius. Uses pill (fully rounded) for switch track."
           },
           "thumb": {
-            "$value": "{eui.radius.pill}",
+            "$value": "{eui.radius.full}",
             "$type": "dimension",
             "$description": "Thumb border radius. Always fully rounded (circle)."
           }

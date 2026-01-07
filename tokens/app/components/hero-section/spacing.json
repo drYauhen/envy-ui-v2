@@ -5,31 +5,31 @@
         "padding": {
           "mobile": {
             "inline": {
-              "$value": "{eui.spacing.md}",
+              "$value": "{eui.dimension.4}",
               "$type": "dimension",
               "$description": "Horizontal padding for hero section on mobile"
             },
             "block": {
-              "$value": "{eui.spacing.xl}",
+              "$value": "{eui.dimension.8}",
               "$type": "dimension",
               "$description": "Vertical padding for hero section on mobile"
             }
           },
           "tablet": {
             "inline": {
-              "$value": "{eui.spacing.xl}",
+              "$value": "{eui.dimension.8}",
               "$type": "dimension",
               "$description": "Horizontal padding for hero section on tablet"
             },
             "block": {
-              "$value": "{eui.spacing.2xl}",
+              "$value": "{eui.dimension.12}",
               "$type": "dimension",
               "$description": "Vertical padding for hero section on tablet"
             }
           },
           "desktop": {
             "inline": {
-              "$value": "{eui.spacing.2xl}",
+              "$value": "{eui.dimension.12}",
               "$type": "dimension",
               "$description": "Horizontal padding for hero section on desktop"
             },
@@ -42,17 +42,17 @@
         },
         "gap": {
           "content": {
-            "$value": "{eui.spacing.lg}",
+            "$value": "{eui.dimension.6}",
             "$type": "dimension",
             "$description": "Gap between content elements (heading, subheading, CTAs)"
           },
           "cta": {
-            "$value": "{eui.spacing.md}",
+            "$value": "{eui.dimension.4}",
             "$type": "dimension",
             "$description": "Gap between primary and secondary CTA buttons"
           },
           "media": {
-            "$value": "{eui.spacing.xl}",
+            "$value": "{eui.dimension.8}",
             "$type": "dimension",
             "$description": "Gap between content and media in split layout"
           }

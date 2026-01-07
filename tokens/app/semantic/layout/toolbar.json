@@ -4,12 +4,12 @@
     "layout": {
       "toolbar": {
         "gap": {
-          "$value": "{eui.spacing.sm}",
+          "$value": "{eui.dimension.2}",
           "$type": "dimension",
           "$description": "Gap between toolbar items. References foundation spacing."
         },
         "paddingY": {
-          "$value": "{eui.spacing.md}",
+          "$value": "{eui.dimension.4}",
           "$type": "dimension",
           "$description": "Vertical padding for toolbar. References foundation spacing."
         },

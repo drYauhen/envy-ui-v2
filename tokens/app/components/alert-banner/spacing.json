@@ -4,18 +4,18 @@
     "alert-banner": {
       "spacing": {
         "padding": {
-          "$value": "{eui.spacing.md}",
+          "$value": "{eui.dimension.4}",
           "$type": "dimension",
           "$description": "Padding for alert banner content"
         },
         "gap": {
           "content": {
-            "$value": "{eui.spacing.sm}",
+            "$value": "{eui.dimension.2}",
             "$type": "dimension",
             "$description": "Gap between icon and message in alert banner"
           },
           "actions": {
-            "$value": "{eui.spacing.sm}",
+            "$value": "{eui.dimension.2}",
             "$type": "dimension",
             "$description": "Gap between action buttons in alert banner"
           }
