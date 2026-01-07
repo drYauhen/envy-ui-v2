@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schemas.s1seven.com/style-dictionary/v3/schema.json",
+  "$schema": "./schemas/dtcg-2025.10-schema.json",
   "eui": {
     "divider": {
       "$description": "report context - Divider component inherits from app context. Override values here if needed for report-specific styling."

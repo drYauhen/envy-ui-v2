@@ -779,6 +779,54 @@
     "$value": "16px",
     "$type": "fontSize"
   },
+  "eui.typography.textStyle.title.lg.fontSize": {
+    "$value": "1.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.title.lg.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.title.lg.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.title.lg.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.title.md.fontSize": {
+    "$value": "1.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.title.md.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.title.md.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.title.md.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.title.sm.fontSize": {
+    "$value": "1.125rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.title.sm.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.title.sm.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.title.sm.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
   "eui.typography.textStyle.heading.1.fontSize": {
     "$value": "4.5rem",
     "$type": "fontSize"
@@ -872,54 +920,6 @@
     "$type": "lineHeight"
   },
   "eui.typography.textStyle.heading.6.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.title.lg.fontSize": {
-    "$value": "1.5rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.title.lg.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.title.lg.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.title.lg.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.title.md.fontSize": {
-    "$value": "1.25rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.title.md.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.title.md.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.title.md.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.title.sm.fontSize": {
-    "$value": "1.125rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.title.sm.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.title.sm.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.title.sm.fontFamily": {
     "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     "$type": "fontFamily"
   },

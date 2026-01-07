@@ -205,6 +205,21 @@ export const EuiColorNeutral800 = "oklch(33% 0.00 0)"; // Generated from base 50
 export const EuiColorNeutral900 = "oklch(25% 0.00 0)"; // Generated from base 500 using OKLCH tonal scale best practices (adaptive steps, lightness increased for lighter scale)
 export const EuiColorNeutralWhite = "oklch(100% 0 0)";
 export const EuiTypographyBaseFontSize = "16px"; // Base font size for accessibility theme. Overrides app context default (14px) with larger size for better readability and accessibility compliance.
+export const EuiTypographyTextStyleTitleLgFontSize = "1.5rem"; // Large title - section headers, panels
+export const EuiTypographyTextStyleTitleLgFontWeight = "600"; // Semi-bold weight for titles
+export const EuiTypographyTextStyleTitleLgLineHeight = "1.25"; // Tight line height for titles
+export const EuiTypographyTextStyleTitleLgFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
+export const EuiTypographyTextStyleTitleMdFontSize = "1.25rem"; // Medium title - cards, collapsible headers
+export const EuiTypographyTextStyleTitleMdFontWeight = "600"; // Semi-bold weight for titles
+export const EuiTypographyTextStyleTitleMdLineHeight = "1.25"; // Tight line height for titles
+export const EuiTypographyTextStyleTitleMdFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
+export const EuiTypographyTextStyleTitleSmFontSize = "1.125rem"; // Small title - dense UI headers
+export const EuiTypographyTextStyleTitleSmFontWeight = "600"; // Semi-bold weight for titles
+export const EuiTypographyTextStyleTitleSmLineHeight = "1.25"; // Tight line height for titles
+export const EuiTypographyTextStyleTitleSmFontFamily =
+  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
 export const EuiTypographyTextStyleHeading1FontSize = "4.5rem"; // Heading level 1 - Page title, hero heading
 export const EuiTypographyTextStyleHeading1FontWeight = "700"; // Bold weight for heading 1
 export const EuiTypographyTextStyleHeading1LineHeight = "1.25"; // Tight line height for heading 1
@@ -235,21 +250,6 @@ export const EuiTypographyTextStyleHeading6FontWeight = "600"; // Semi-bold weig
 export const EuiTypographyTextStyleHeading6LineHeight = "1.25"; // Tight line height for heading 6
 export const EuiTypographyTextStyleHeading6FontFamily =
   "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for headings
-export const EuiTypographyTextStyleTitleLgFontSize = "1.5rem"; // Large title - section headers, panels
-export const EuiTypographyTextStyleTitleLgFontWeight = "600"; // Semi-bold weight for titles
-export const EuiTypographyTextStyleTitleLgLineHeight = "1.25"; // Tight line height for titles
-export const EuiTypographyTextStyleTitleLgFontFamily =
-  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
-export const EuiTypographyTextStyleTitleMdFontSize = "1.25rem"; // Medium title - cards, collapsible headers
-export const EuiTypographyTextStyleTitleMdFontWeight = "600"; // Semi-bold weight for titles
-export const EuiTypographyTextStyleTitleMdLineHeight = "1.25"; // Tight line height for titles
-export const EuiTypographyTextStyleTitleMdFontFamily =
-  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
-export const EuiTypographyTextStyleTitleSmFontSize = "1.125rem"; // Small title - dense UI headers
-export const EuiTypographyTextStyleTitleSmFontWeight = "600"; // Semi-bold weight for titles
-export const EuiTypographyTextStyleTitleSmLineHeight = "1.25"; // Tight line height for titles
-export const EuiTypographyTextStyleTitleSmFontFamily =
-  "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"; // Primary UI font for titles
 export const EuiTypographyTextStyleBodyLargeFontSize = "1.125rem"; // Large body text - emphasized content
 export const EuiTypographyTextStyleBodyLargeFontWeight = "400"; // Normal weight for large body
 export const EuiTypographyTextStyleBodyLargeLineHeight = "1.5"; // Normal line height for large body

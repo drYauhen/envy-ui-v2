@@ -1,0 +1,143 @@
+{
+  "$schema": "./schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "typography": {
+      "textStyle": {
+        "heading": {
+          "1": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.6xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 1 - Page title, hero heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Bold weight for heading 1"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 1"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for headings"
+            }
+          },
+          "2": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.5xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 2 - Section heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Bold weight for heading 2"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 2"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for headings"
+            }
+          },
+          "3": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.4xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 3 - Subsection heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Semi-bold weight for heading 3"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 3"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for headings"
+            }
+          },
+          "4": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.3xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 4 - Section heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Semi-bold weight for heading 4"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 4"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for headings"
+            }
+          },
+          "5": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.2xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 5 - Small heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Semi-bold weight for heading 5"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 5"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for headings"
+            }
+          },
+          "6": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.xl}",
+              "$type": "fontSize",
+              "$description": "Heading level 6 - Smallest heading"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Semi-bold weight for heading 6"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Tight line height for heading 6"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for headings"
+            }
+          }
+        }
+      }
+    }
+  }
+}
