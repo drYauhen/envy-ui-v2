@@ -29,6 +29,7 @@ This directory contains **current architectural rules, standards, and references
 
 **Comprehensive reference documentation:**
 
+- **[Token Architecture](./token-architecture.md)** - Complete token system architecture, DTCG compliance, and developer tooling
 - **[Accessibility Reference](./accessibility-reference.md)** - ARIA roles, WAI-ARIA patterns, and React Aria hooks reference
 - **[Dev App Architecture](./dev-app-architecture.md)** - Architecture of the development application
 
