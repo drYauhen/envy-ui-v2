@@ -4,13 +4,27 @@ This document explains the developer tools available for working with design tok
 
 ## Overview
 
-The token system provides several tools to improve developer experience:
+The Envy UI token system is a comprehensive design token architecture supporting multiple contexts (app, website, report) with DTCG 2025.10 compliance. The system provides extensive tooling to improve developer experience:
 
-1. **TypeScript Types** - Type-safe token references
-2. **Token Validation** - Validate token usage in CSS files
-3. **VS Code Autocomplete** - Autocomplete for CSS custom properties
-4. **Runtime Utilities** - Helper functions for working with tokens
-5. **Auto-Generated Documentation** - Token reference documentation
+### Core Features
+
+1. **Multi-Context Architecture** - Independent token structures for app/website/report contexts
+2. **DTCG 2025.10 Compliance** - Local schema validation with official specification alignment
+3. **Logical Typography Organization** - Typography tokens separated into focused semantic files
+4. **Enhanced Token Viewers** - Display both references and resolved values for transparency
+5. **TypeScript Integration** - Generated types and runtime utilities for type safety
+6. **Token Validation** - Automated validation of token usage in CSS files
+7. **VS Code Autocomplete** - Intelligent autocomplete for CSS custom properties
+8. **Runtime Utilities** - Helper functions for dynamic token access
+9. **Auto-Generated Documentation** - Comprehensive token reference documentation
+
+### Architecture Highlights
+
+- **Layered System**: Foundation → Semantic → Context → Theme → Component
+- **Local DTCG Schema**: `schemas/dtcg-2025.10-schema.json` provides validation without external dependencies
+- **Typography Structure**: Semantic tokens organized in `headings.json`, `titles.json`, `body.json`, `labels.json`, `code.json`
+- **Context Independence**: Each context (`app/`, `website/`, `report/`) has complete token structure
+- **Resolved Value Display**: Token viewers show actual computed values alongside raw references
 
 ## TypeScript Types
 
@@ -354,5 +368,7 @@ See [use-cases.md](./use-cases.md) for complete examples with code.
 ## Related Documentation
 
 - [Token Usage Rules](../architecture/token-usage-rules.md) - Rules for using tokens
+- [Token Architecture](../architecture/token-architecture.md) - Complete current token system architecture
 - [Token Reference](./reference.md) - Auto-generated token reference
-- [Token Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Architecture overview
+- [DTCG Schema Resolution](../adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md) - Recent improvements
+- [Layered Token Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Architectural foundation
