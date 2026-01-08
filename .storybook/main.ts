@@ -4,9 +4,10 @@ import svgr from 'vite-plugin-svgr';
 const config: StorybookConfig = {
   stories: ['../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-docs', 
+    '@storybook/addon-docs',
     '@storybook/addon-a11y',
-    '@storybook/addon-vitest'
+    '@storybook/addon-vitest',
+    './addons/context-theme-switcher/preset.js'
   ],
   framework: {
     name: '@storybook/react-vite',

@@ -1,9 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const { converter } = require('culori');
-const systemMeta = require('../../system.meta.json');
-const { deriveFigmaScopes } = require('../figma/figma-scope-rules');
-const { isVisualToken } = require('../utils/token-filters');
+import fs from 'fs';
+import path from 'path';
+import { converter } from 'culori';
+import { fileURLToPath } from 'url';
+import { deriveFigmaScopes } from '../figma/figma-scope-rules.js';
+import { isVisualToken } from '../utils/token-filters.js';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
+const systemMeta = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../system.meta.json'), 'utf8'));
 
 // Setup culori converters
 const toRgb = converter('rgb');
@@ -152,7 +155,7 @@ function detectContextFromModes(modes) {
   return null;
 }
 
-module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
+export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'figma/variables-scoped',
     format({ dictionary, file }) {
@@ -296,4 +299,4 @@ module.exports = function registerScopedFigmaVariablesFormat(StyleDictionary) {
       );
     }
   });
-};
+}

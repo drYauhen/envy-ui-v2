@@ -1,21 +1,17 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { createRequire } from 'module';
 import { globSync } from 'glob';
 import StyleDictionary from 'style-dictionary';
+import registerStorybookColorsFormat from './formats/storybookColors.js';
+import registerFigmaAdapterFormat from './formats/figmaAdapter.js';
+import registerTokenStudioFormat from './formats/tokenStudio.js';
+import registerFullVariablesFormat from './formats/variablesFull.js';
+import registerScopedFigmaVariablesFormat from './formats/figmaVariablesScoped.js';
+import registerCssVariablesThemedFormat from './formats/cssVariablesThemed.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const require = createRequire(import.meta.url);
 const repoRoot = path.resolve(__dirname, '..');
-
-// Import CommonJS formats using createRequire
-const registerStorybookColorsFormat = require('./formats/storybookColors.js');
-const registerFigmaAdapterFormat = require('./formats/figmaAdapter.js');
-const registerTokenStudioFormat = require('./formats/tokenStudio.js');
-const registerFullVariablesFormat = require('./formats/variablesFull.js');
-const registerScopedFigmaVariablesFormat = require('./formats/figmaVariablesScoped.js');
-const registerCssVariablesThemedFormat = require('./formats/cssVariablesThemed.js');
 
 registerStorybookColorsFormat(StyleDictionary);
 registerFigmaAdapterFormat(StyleDictionary);

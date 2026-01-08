@@ -12,6 +12,7 @@ Each workflow document describes:
 
 ## Available Workflows
 
+- **[Layer Generation Workflow](./layer-generation-workflow.md)** - Managing component layers and automated generation
 - **[Tokens Workflow](./tokens-workflow.md)** - Working with design tokens
 - **[Figma Workflow](./figma-workflow.md)** - Figma integration (plugin, scripts, artifacts)
 - **[Storybook Workflow](./storybook-workflow.md)** - Storybook development and documentation

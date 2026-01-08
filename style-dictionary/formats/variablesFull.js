@@ -1,5 +1,10 @@
-const systemMeta = require('../../system.meta.json');
-const { isVisualToken } = require('../utils/token-filters');
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { fileURLToPath } from 'url';
+import { isVisualToken } from '../utils/token-filters.js';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
+const systemMeta = JSON.parse(readFileSync(resolve(__dirname, '../../system.meta.json'), 'utf8'));
 
 const toTitleCase = (value = '') =>
   value
@@ -49,7 +54,7 @@ function resolveCollectionName(token, variableType) {
   return `${systemId} • ${category} / ${toTitleCase(seg || 'Base')}`;
 }
 
-module.exports = function registerFullVariablesFormat(StyleDictionary) {
+export default function registerFullVariablesFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'figma/variables-full',
     format({ dictionary }) {
@@ -107,4 +112,4 @@ module.exports = function registerFullVariablesFormat(StyleDictionary) {
       );
     }
   });
-};
+}

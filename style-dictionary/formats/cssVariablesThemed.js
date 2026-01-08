@@ -7,11 +7,14 @@
  * - Theme tokens go to [data-eui-context="..."][data-eui-theme="..."] selectors
  */
 
-const fs = require('fs');
-const path = require('path');
-const { isVisualToken } = require('../utils/token-filters');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { isVisualToken } from '../utils/token-filters.js';
 
-module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
+
+export default function registerCssVariablesThemedFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'css/variables-themed',
     format({ dictionary, file }) {
@@ -294,5 +297,4 @@ module.exports = function registerCssVariablesThemedFormat(StyleDictionary) {
       return output;
     }
   });
-};
-
+}

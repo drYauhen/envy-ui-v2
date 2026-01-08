@@ -32,7 +32,7 @@
     "figma:migration:generate": "node scripts/figma/generate-migration.mjs",
     "dev:app": "node scripts/dev-app.mjs",
     "build:app": "cd apps/dev-app && npm run build",
-    "preview:app": "cd apps/dev-app && npm run preview",
+    "preview:app": "cd apps/dev-app && npm run preview", 
     "storybook:sync-nav": "node scripts/sync-navigation-order.mjs",
     "storybook:sync-config": "node scripts/sync-navigation-config.mjs",
     "storybook:prepare": "npm run tokens:build && npm run docs:copy && npm run tokens:copy-readme && npm run tailwind:generate-config",
@@ -41,15 +41,24 @@
     "storybook": "npm run storybook:prepare && concurrently \"nodemon\" \"npm run docs:watch\" \"npm run tokens:watch\" \"npm run tailwind:watch\"",
     "storybook:build": "npm run tokens:build && npm run docs:copy && npm run tokens:copy-readme && storybook build",
     "vitest:setup": "playwright install chromium",
-    "vitest:storybook": "vitest -c vitest.config.ts --watch"
+    "vitest:storybook": "vitest -c vitest.config.ts --watch",
+    "layers:generate": "node scripts/generate-layers.mjs",
+    "layers:list": "node scripts/generate-layers.mjs --list",
+    "layers:help": "node scripts/generate-layers.mjs --help",
+    "generate:html-css": "echo 'HTML/CSS generation not implemented yet'",
+    "generate:tsx-clean": "echo 'TSX Clean generation not implemented yet'",
+    "generate:tsx": "echo 'TSX generation not implemented yet'",
+    "generate:tsx-react-aria": "echo 'TSX React Aria generation not implemented yet'",
+    "generate:web-components": "echo 'Web Components generation not implemented yet'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "engines": {
-    "node": ">=18.17.0"
+    "node": "24.11.1"
   },
+  "type": "module",
   "devDependencies": {
     "@figma/code-connect": "^1.3.12",
     "@figma/plugin-typings": "^1.121.0",
@@ -104,5 +113,8 @@
     "workerDirectory": [
       "public"
     ]
+  },
+  "volta": {
+    "node": "24.11.1"
   }
 }

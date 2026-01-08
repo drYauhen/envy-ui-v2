@@ -145,6 +145,13 @@ const workflowDocs: DocRegistryItem[] = [
     storybookId: 'docs-workflows--tokens-workflow'
   },
   {
+    id: 'workflow-layer-generation',
+    path: 'workflows/layer-generation-workflow.md',
+    title: 'Layer Generation Workflow',
+    category: 'workflows',
+    storybookId: 'docs-workflows--layer-generation-workflow'
+  },
+  {
     id: 'workflow-dev-app',
     path: 'workflows/dev-app-workflow.md',
     title: 'Dev App Workflow',

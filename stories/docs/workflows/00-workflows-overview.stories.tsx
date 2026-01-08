@@ -98,6 +98,16 @@ export const TokensWorkflow: Story = {
   )
 };
 
+export const LayerGenerationWorkflow: Story = {
+  name: 'Layer Generation Workflow',
+  render: () => (
+    <DocViewer
+      markdownPath="/docs/workflows/layer-generation-workflow.md"
+      fallback="Loading layer generation workflow..."
+    />
+  )
+};
+
 export const DevAppWorkflow: Story = {
   name: 'Dev App Workflow',
   render: () => (

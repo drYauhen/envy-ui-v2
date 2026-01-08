@@ -1,7 +1,7 @@
 // Pattern-based Figma scope derivation. No token source changes required.
 // Scopes follow Figma Variables semantics for numeric properties.
 
-module.exports.FIGMA_SCOPE_RULES = [
+export const FIGMA_SCOPE_RULES = [
   { match: /\.shape\.corner\./, scopes: ['CORNER_RADIUS'] },
   { match: /\.shape\.orientation\..*corner\./, scopes: ['CORNER_RADIUS'] },
   { match: /\.shape\.default\.radius$/, scopes: ['CORNER_RADIUS'] },
@@ -26,6 +26,6 @@ module.exports.FIGMA_SCOPE_RULES = [
   { match: /\.focus\..*offset/, scopes: ['PADDING_HORIZONTAL'] }
 ];
 
-module.exports.deriveFigmaScopes = function deriveFigmaScopes(tokenPath) {
-  return module.exports.FIGMA_SCOPE_RULES.filter((rule) => rule.match.test(tokenPath)).flatMap((rule) => rule.scopes);
-};
+export function deriveFigmaScopes(tokenPath) {
+  return FIGMA_SCOPE_RULES.filter((rule) => rule.match.test(tokenPath)).flatMap((rule) => rule.scopes);
+}

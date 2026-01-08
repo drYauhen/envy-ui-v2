@@ -1,6 +1,6 @@
-const { isVisualToken } = require('../utils/token-filters');
+import { isVisualToken } from '../utils/token-filters.js';
 
-module.exports = function registerTokenStudioFormat(StyleDictionary) {
+export default function registerTokenStudioFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'json/token-studio',
     format({ dictionary }) {
@@ -31,4 +31,4 @@ module.exports = function registerTokenStudioFormat(StyleDictionary) {
       return JSON.stringify(output, null, 2);
     }
   });
-};
+}

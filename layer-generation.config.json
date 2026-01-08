@@ -1,0 +1,149 @@
+{
+  "$schema": "./schemas/layer-generation.schema.json",
+  "version": "1.0.0",
+  "description": "Configuration for layered component generation in Envy UI v2",
+
+  "layers": {
+    "tokens": {
+      "name": "Design Tokens",
+      "description": "Foundation tokens and semantic mappings",
+      "platforms": ["css", "js", "figma", "tokenstudio"],
+      "enabled": true,
+      "dependsOn": [],
+      "generator": {
+        "command": "npm run tokens:build",
+        "watchCommand": "npm run tokens:watch",
+        "outputPaths": [
+          "generated/css/tokens.css",
+          "generated/js/tokens.js",
+          "generated/figma/**",
+          "generated/tokenstudio/**"
+        ]
+      }
+    },
+
+    "html-css": {
+      "name": "HTML + CSS",
+      "description": "Pure HTML/CSS components with semantic markup",
+      "platforms": ["css"],
+      "enabled": true,
+      "dependsOn": ["tokens"],
+      "generator": {
+        "command": "npm run generate:html-css",
+        "outputPaths": [
+          "generated/html-css/**",
+          "src/ui/**"
+        ]
+      },
+      "storybook": {
+        "section": "HTML + CSS",
+        "order": 1
+      }
+    },
+
+    "tsx-clean": {
+      "name": "TSX (Clean)",
+      "description": "Clean React components without external dependencies",
+      "platforms": ["tsx"],
+      "enabled": true,
+      "dependsOn": ["tokens", "html-css"],
+      "generator": {
+        "command": "npm run generate:tsx-clean",
+        "outputPaths": [
+          "generated/tsx/clean/**",
+          "packages/tsx/clean/**"
+        ]
+      },
+      "storybook": {
+        "section": "TSX (Clean)",
+        "order": 2
+      }
+    },
+
+    "tsx": {
+      "name": "TSX",
+      "description": "Full React components with state management",
+      "platforms": ["tsx"],
+      "enabled": true,
+      "dependsOn": ["tokens", "tsx-clean"],
+      "generator": {
+        "command": "npm run generate:tsx",
+        "outputPaths": [
+          "generated/tsx/**",
+          "packages/tsx/**"
+        ]
+      },
+      "storybook": {
+        "section": "TSX",
+        "order": 3
+      }
+    },
+
+    "tsx-react-aria": {
+      "name": "TSX + React Aria",
+      "description": "Accessible components with React Aria integration",
+      "platforms": ["tsx"],
+      "enabled": false,
+      "dependsOn": ["tokens", "tsx"],
+      "generator": {
+        "command": "npm run generate:tsx-react-aria",
+        "outputPaths": [
+          "generated/tsx/react-aria/**",
+          "packages/tsx/react-aria/**"
+        ]
+      },
+      "storybook": {
+        "section": "TSX + React Aria",
+        "order": 4
+      }
+    },
+
+    "web-components": {
+      "name": "Web Components",
+      "description": "Framework-agnostic web components",
+      "platforms": ["web-components"],
+      "enabled": false,
+      "dependsOn": ["tokens", "html-css"],
+      "generator": {
+        "command": "npm run generate:web-components",
+        "outputPaths": [
+          "generated/web-components/**",
+          "packages/web-components/**"
+        ]
+      },
+      "storybook": {
+        "section": "Web Components",
+        "order": 5
+      }
+    }
+  },
+
+  "generation": {
+    "autoGenerate": false,
+    "triggerOnTokenChange": true,
+    "selectedLayers": ["tokens", "html-css", "tsx-clean", "tsx"],
+    "parallelExecution": false,
+    "failFast": true
+  },
+
+  "ai": {
+    "enabled": true,
+    "provider": "openai",
+    "model": "gpt-4",
+    "prompts": {
+      "html-css-to-tsx": "Convert HTML/CSS component to clean React TSX component",
+      "tsx-to-react-aria": "Add React Aria accessibility features to TSX component",
+      "layer-validation": "Validate component implementation against layer requirements"
+    }
+  },
+
+  "validation": {
+    "enabled": true,
+    "rules": {
+      "token-usage": true,
+      "accessibility": true,
+      "performance": true,
+      "consistency": true
+    }
+  }
+}

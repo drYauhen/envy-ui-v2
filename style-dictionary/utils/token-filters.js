@@ -58,7 +58,7 @@ function filterVisualTokens(tokens) {
   });
 }
 
-module.exports = {
+export {
   isVisualToken,
   filterVisualTokens,
   EXCLUDED_SUBDIRECTORIES

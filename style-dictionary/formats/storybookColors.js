@@ -1,4 +1,4 @@
-const { isVisualToken } = require('../utils/token-filters');
+import { isVisualToken } from '../utils/token-filters.js';
 
 const DEFAULT_GROUPS = [
   { id: 'neutral', title: 'Foundation Neutral' },
@@ -28,7 +28,7 @@ const slugFromSegments = (segments = []) =>
 
 const formatLabel = (segments = []) => toTitleCase(segments.join(' '));
 
-module.exports = function registerStorybookColorsFormat(StyleDictionary) {
+export default function registerStorybookColorsFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'json/storybook-colors',
     format({ dictionary }) {
@@ -84,4 +84,4 @@ module.exports = function registerStorybookColorsFormat(StyleDictionary) {
       return JSON.stringify({ groups }, null, 2);
     }
   });
-};
+}
