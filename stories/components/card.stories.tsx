@@ -60,7 +60,6 @@ export const Card: Story = {
           Card Variants
         </h3>
         <MultiContextViewer
-          shellContext="app"
           contexts={[{ context: 'app' }]}
         >
           {(context, theme) => (
@@ -114,7 +113,6 @@ export const Card: Story = {
           Muted Content State
         </h3>
         <MultiContextViewer
-          shellContext="app"
           contexts={[{ context: 'app' }]}
         >
           {(context, theme) => (
@@ -181,7 +179,6 @@ export const WithStatusIndicators: Story = {
               All Statuses with Elevated Variant
             </h4>
             <MultiContextViewer
-              shellContext="app"
               contexts={[{ context: 'app' }]}
             >
               {(context, theme) => (
@@ -213,7 +210,6 @@ export const WithStatusIndicators: Story = {
               Example Combinations
             </h4>
             <MultiContextViewer
-              shellContext="app"
               contexts={[{ context: 'app' }]}
             >
               {(context, theme) => (

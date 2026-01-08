@@ -14,7 +14,9 @@ import { isVisualToken } from '../utils/token-filters.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-export default function registerCssVariablesThemedFormat(StyleDictionary) {
+export default function registerCssVariablesThemedFormat(StyleDictionary, options = {}) {
+  const { allowedContexts = ['app', 'website', 'report', 'storybook'], contextMirrors = {} } = options;
+
   StyleDictionary.registerFormat({
     name: 'css/variables-themed',
     format({ dictionary, file }) {
@@ -36,8 +38,15 @@ export default function registerCssVariablesThemedFormat(StyleDictionary) {
       // New structure: tokens/{context}/themes/{theme}.json
       const themeFiles = new Map(); // Map<selector, {filePath, data}>
       
-      // Find all context directories (app, website, report)
-      const contextDirs = ['app', 'website', 'report'];
+      // Find all context directories (filter by allowed contexts + their mirrors)
+      const allContextDirs = ['app', 'website', 'report', 'storybook'];
+
+      // Include mirrored contexts even if not in allowedContexts
+      const mirroredContexts = Object.keys(contextMirrors).filter(k => allowedContexts.includes(contextMirrors[k]));
+      const contextDirs = [...new Set([...allowedContexts, ...mirroredContexts])];
+
+      console.log(`Generating CSS for contexts: ${contextDirs.join(', ')}`);
+
       contextDirs.forEach(context => {
         const contextThemesDir = path.join(tokensRoot, context, 'themes');
         if (fs.existsSync(contextThemesDir)) {
@@ -275,19 +284,65 @@ export default function registerCssVariablesThemedFormat(StyleDictionary) {
       if (hasThemeTokens || hasSecondaryThemeTokens) {
         output += '@layer theme {\n';
 
+        // Group selectors by their mirrored contexts
+        const selectorGroups = new Map(); // Map<baseSelector, Set<mirroredSelectors>>
+
         // Generate primary theme tokens from directly read JSON files
         themeFiles.forEach(({ data }, selector) => {
           const themeTokenList = extractTokensFromJson(data);
           if (themeTokenList.length > 0) {
-            output += `  ${selector} {\n`;
+            // Check if this selector should be mirrored
+            const contextMatch = selector.match(/\[data-eui-context="([^"]+)"\]\[data-eui-theme="([^"]+)"\]/);
+            if (contextMatch) {
+              const context = contextMatch[1];
+              const theme = contextMatch[2];
+
+              // Check if this context mirrors another
+              const mirroredContext = Object.keys(contextMirrors).find(k => contextMirrors[k] === context);
+              const baseContext = contextMirrors[context];
+
+              if (baseContext) {
+                // This context mirrors another - group them
+                const baseSelector = `[data-eui-context="${baseContext}"][data-eui-theme="${theme}"]`;
+                if (!selectorGroups.has(baseSelector)) {
+                  selectorGroups.set(baseSelector, new Set());
+                }
+                selectorGroups.get(baseSelector).add(selector);
+              } else if (mirroredContext) {
+                // This is a base context that others mirror - handled above
+              } else {
+                // No mirroring - generate individual selector
+                output += `  ${selector} {\n`;
+                themeTokenList.sort((a, b) => a.name.localeCompare(b.name));
+                themeTokenList.forEach(({ name, value }) => {
+                  if (value) {
+                    output += `    --${name}: ${value};\n`;
+                  }
+                });
+                output += '  }\n\n';
+              }
+            }
+          }
+        });
+
+        // Generate grouped selectors for mirrored contexts
+        selectorGroups.forEach((mirroredSelectors, baseSelector) => {
+          const allSelectors = [baseSelector, ...Array.from(mirroredSelectors)].join(',\n  ');
+          output += `  ${allSelectors} {\n`;
+
+          // Get tokens from the base selector
+          const baseThemeFile = themeFiles.get(baseSelector);
+          if (baseThemeFile) {
+            const themeTokenList = extractTokensFromJson(baseThemeFile.data);
             themeTokenList.sort((a, b) => a.name.localeCompare(b.name));
             themeTokenList.forEach(({ name, value }) => {
               if (value) {
                 output += `    --${name}: ${value};\n`;
               }
             });
-            output += '  }\n\n';
           }
+
+          output += '  }\n\n';
         });
 
         // Generate secondary theme tokens from dictionary

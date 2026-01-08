@@ -13,12 +13,31 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 
+// Target-based context filtering
+const TARGET_CONFIGS = {
+  storybook: ['app', 'website', 'report', 'storybook'],
+  'dev-app': ['app'],
+  'website-app': ['website'],
+  'report-app': ['report']
+};
+
+// Context mirroring - contexts that share CSS rules
+const CONTEXT_MIRRORS = {
+  storybook: 'app'  // storybook[default] mirrors app[default]
+};
+
+const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
+const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
+
+console.log(`Building CSS for target: ${target}`);
+console.log(`Allowed contexts: ${allowedContexts.join(', ')}`);
+
 registerStorybookColorsFormat(StyleDictionary);
 registerFigmaAdapterFormat(StyleDictionary);
 registerTokenStudioFormat(StyleDictionary);
 registerFullVariablesFormat(StyleDictionary);
 registerScopedFigmaVariablesFormat(StyleDictionary);
-registerCssVariablesThemedFormat(StyleDictionary);
+registerCssVariablesThemedFormat(StyleDictionary, { allowedContexts, contextMirrors: CONTEXT_MIRRORS });
 
 export default {
   usesDtcg: true,

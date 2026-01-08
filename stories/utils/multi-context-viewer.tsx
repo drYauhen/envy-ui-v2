@@ -17,10 +17,6 @@ export type MultiContextViewerProps = {
   showLabels?: boolean;
   /** Whether to make preset details collapsible (default: true) */
   collapsiblePresets?: boolean;
-  /** Shell context and theme for viewer UI elements (badges, dividers, etc.) */
-  shellContext?: ContextName;
-  /** Shell theme for viewer UI elements */
-  shellTheme?: string;
 };
 
 const defaultContainerStyle: React.CSSProperties | string | undefined = undefined;
@@ -44,29 +40,31 @@ const ContextWrapper: React.FC<{
   const style = containerStyle && !isClassName ? containerStyle : undefined;
 
   return (
-    <ContextThemeScope
-      context={context}
-      className={className}
-      style={style}
-    >
-      <div className="eui-stack" data-eui-gap="lg">
-        {showLabels && (
-          <div className="eui-stack" data-eui-gap="xs">
-            <hr className="eui-divider" data-eui-orientation="horizontal" data-eui-variant="subtle" />
-            <div className="eui-inline" data-eui-gap="sm" data-eui-justify="end">
-              <span className="eui-badge" data-eui-variant="outline" data-eui-tone="neutral">
-                context: {context}
-              </span>
-              <span className="eui-badge" data-eui-variant="outline" data-eui-tone="info">
-                theme: {theme}
-              </span>
-            </div>
+    <div className="eui-stack" data-eui-gap="lg">
+      {showLabels && (
+        <div className="eui-stack" data-eui-gap="xs">
+          <hr className="eui-divider" data-eui-orientation="horizontal" data-eui-variant="subtle" />
+          <div className="eui-inline" data-eui-gap="sm" data-eui-justify="end">
+            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="neutral">
+              context: {context}
+            </span>
+            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="info">
+              theme: {theme}
+            </span>
           </div>
-        )}
+        </div>
+      )}
+      {/* Only this block should receive dynamic context theme */}
+      <ContextThemeScope
+        context={context}
+        className={className}
+        style={style}
+      >
         {children(context, theme)}
-        <hr className="eui-divider" data-eui-orientation="horizontal" />
-      </div>
-    </ContextThemeScope>
+      </ContextThemeScope>
+      {/* Only this block should receive dynamic context theme */}
+      <hr className="eui-divider" data-eui-orientation="horizontal" />
+    </div>
   );
 };
 
@@ -113,9 +111,7 @@ export const MultiContextViewer: React.FC<MultiContextViewerProps> = ({
   contexts,
   children,
   containerStyle = defaultContainerStyle,
-  showLabels = true,
-  shellContext = 'app',
-  shellTheme
+  showLabels = true
 }) => {
   if (contexts.length === 0 || contexts.length > 3) {
     throw new Error('MultiContextViewer requires 1-3 contexts');
@@ -123,8 +119,8 @@ export const MultiContextViewer: React.FC<MultiContextViewerProps> = ({
 
   return (
     <ContextThemeScope
-      context={shellContext}
-      theme={shellTheme}
+      context="storybook"
+      theme="default"
       style={{ padding: '2rem' }}
     >
       <div className="eui-stack" data-eui-gap="lg">

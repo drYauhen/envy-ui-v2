@@ -1094,62 +1094,8 @@
 }
 
 @layer theme {
-  [data-eui-context="app"][data-eui-theme="accessibility"] {
-    --eui-badge-colors-error-background: oklch(100% 0 0);
-    --eui-badge-colors-error-border: oklch(56% 0.19 25);
-    --eui-badge-colors-error-solid-background: oklch(100% 0 0);
-    --eui-badge-colors-error-solid-border: oklch(56% 0.19 25);
-    --eui-badge-colors-error-solid-text: oklch(56% 0.19 25);
-    --eui-badge-colors-error-text: oklch(56% 0.19 25);
-    --eui-badge-colors-info-background: oklch(100% 0 0);
-    --eui-badge-colors-info-border: oklch(60% 0.14 237);
-    --eui-badge-colors-info-solid-background: oklch(100% 0 0);
-    --eui-badge-colors-info-solid-border: oklch(60% 0.14 237);
-    --eui-badge-colors-info-solid-text: oklch(60% 0.14 237);
-    --eui-badge-colors-info-text: oklch(60% 0.14 237);
-    --eui-badge-colors-neutral-background: oklch(100% 0 0);
-    --eui-badge-colors-neutral-border: oklch(33% 0.00 0);
-    --eui-badge-colors-neutral-solid-background: oklch(100% 0 0);
-    --eui-badge-colors-neutral-solid-border: oklch(33% 0.00 0);
-    --eui-badge-colors-neutral-solid-text: oklch(25% 0.00 0);
-    --eui-badge-colors-neutral-text: oklch(25% 0.00 0);
-    --eui-badge-colors-success-background: oklch(100% 0 0);
-    --eui-badge-colors-success-border: oklch(64% 0.17 150);
-    --eui-badge-colors-success-solid-background: oklch(100% 0 0);
-    --eui-badge-colors-success-solid-border: oklch(64% 0.17 150);
-    --eui-badge-colors-success-solid-text: oklch(64% 0.17 150);
-    --eui-badge-colors-success-text: oklch(64% 0.17 150);
-    --eui-badge-colors-warning-background: oklch(100% 0 0);
-    --eui-badge-colors-warning-border: oklch(69% 0.15 70);
-    --eui-badge-colors-warning-solid-background: oklch(100% 0 0);
-    --eui-badge-colors-warning-solid-border: oklch(69% 0.15 70);
-    --eui-badge-colors-warning-solid-text: oklch(69% 0.15 70);
-    --eui-badge-colors-warning-text: oklch(69% 0.15 70);
-    --eui-calendar-colors-day-border-default: oklch(90% 0.00 0);
-    --eui-color-background-muted: oklch(94% 0.00 0);
-    --eui-color-background-subtle: oklch(90% 0.00 0);
-    --eui-color-border-default: oklch(48% 0.00 0);
-    --eui-color-border-strong: oklch(33% 0.00 0);
-    --eui-color-border-subtle: oklch(63% 0.00 0);
-    --eui-color-text-disabled: oklch(63% 0.00 0);
-    --eui-color-text-muted: oklch(33% 0.00 0);
-    --eui-color-text-primary: oklch(25% 0.00 0);
-    --eui-color-text-subtle: oklch(48% 0.00 0);
-    --eui-filter-muted-brightness: 1;
-    --eui-filter-muted-contrast: 0.95;
-    --eui-filter-muted-grayscale: 0.6;
-    --eui-filter-muted-saturate: 0.5;
-    --eui-opacity-muted: 0.75;
-    --eui-radius-default: 8px;
-    --eui-radius-extra-large: 12px;
-    --eui-radius-full: 9999px;
-    --eui-radius-large: 10px;
-    --eui-radius-none: 0px;
-    --eui-radius-small: 4px;
-    --eui-typography-base-fontSize: 16px;
-  }
-
-  [data-eui-context="app"][data-eui-theme="default"] {
+  [data-eui-context="app"][data-eui-theme="default"],
+  [data-eui-context="storybook"][data-eui-theme="default"] {
     --eui-color-border-default: oklch(90% 0.00 0);
     --eui-radius-default: 4px;
     --eui-radius-extra-large: 12px;
@@ -1160,56 +1106,22 @@
   }
 
   [data-eui-context="website"][data-eui-theme="toy-r-us"] {
-    --eui-card-header-colors-text: #E1007A;
-    --eui-card-header-typography-fontFamily: 'Lilita One', 'Comic Sans MS', 'Comic Sans', 'Marker Felt', 'Trebuchet MS', cursive;
-    --eui-card-header-typography-fontSize: 1.15rem;
-    --eui-card-header-typography-fontWeight: 400;
-    --eui-card-variant-elevated-background: #FFF6D6;
-    --eui-card-variant-elevated-backgroundImage: radial-gradient(circle at 14% 18%, rgba(255, 140, 202, 0.38) 0 18%, rgba(255, 140, 202, 0) 19%), radial-gradient(circle at 82% 22%, rgba(122, 200, 255, 0.35) 0 16%, rgba(122, 200, 255, 0) 17%), radial-gradient(circle at 24% 82%, rgba(255, 225, 120, 0.35) 0 14%, rgba(255, 225, 120, 0) 15%), linear-gradient(135deg, rgba(255, 231, 244, 0.55) 0%, rgba(255, 246, 214, 0.55) 55%, rgba(214, 240, 255, 0.55) 100%);
-    --eui-card-variant-elevated-backgroundPosition: center;
-    --eui-card-variant-elevated-backgroundRepeat: no-repeat;
-    --eui-card-variant-elevated-backgroundSize: cover;
-    --eui-card-variant-elevated-border-color: #F2A3C4;
-    --eui-card-variant-elevated-border-style: solid;
-    --eui-card-variant-elevated-border-width: 2px;
-    --eui-card-variant-elevated-radius: 16px;
-    --eui-card-variant-elevated-shadow: 0 6px 0 rgba(255, 125, 184, 0.25), 0 14px 28px rgba(79, 176, 255, 0.18);
-    --eui-card-variant-flat-background: #FFFFFF;
-    --eui-card-variant-flat-backgroundImage: radial-gradient(circle at 18% 22%, rgba(255, 225, 120, 0.22) 0 16%, rgba(255, 225, 120, 0) 17%), radial-gradient(circle at 82% 18%, rgba(122, 200, 255, 0.22) 0 14%, rgba(122, 200, 255, 0) 15%), linear-gradient(135deg, rgba(255, 242, 251, 0.35) 0%, rgba(241, 248, 255, 0.35) 100%);
-    --eui-card-variant-flat-backgroundPosition: center;
-    --eui-card-variant-flat-backgroundRepeat: no-repeat;
-    --eui-card-variant-flat-backgroundSize: cover;
-    --eui-card-variant-flat-border-color: #F2A3C4;
-    --eui-card-variant-flat-border-style: solid;
-    --eui-card-variant-flat-border-width: 2px;
-    --eui-card-variant-flat-radius: 16px;
-    --eui-card-variant-flat-shadow: none;
-    --eui-card-variant-muted-background: #F5F7FF;
-    --eui-card-variant-muted-border-color: #F7C7DD;
-    --eui-card-variant-muted-border-style: solid;
-    --eui-card-variant-muted-border-width: 1px;
-    --eui-card-variant-muted-radius: 16px;
-    --eui-card-variant-muted-shadow: none;
-    --eui-card-variant-strong-background: #FFE5F1;
-    --eui-card-variant-strong-backgroundImage: radial-gradient(circle at 12% 20%, rgba(122, 200, 255, 0.35) 0 18%, rgba(122, 200, 255, 0) 19%), radial-gradient(circle at 78% 28%, rgba(255, 225, 120, 0.35) 0 16%, rgba(255, 225, 120, 0) 17%), radial-gradient(circle at 28% 78%, rgba(255, 140, 202, 0.38) 0 18%, rgba(255, 140, 202, 0) 19%), linear-gradient(135deg, rgba(255, 223, 245, 0.6) 0%, rgba(255, 242, 214, 0.55) 52%, rgba(214, 240, 255, 0.55) 100%);
-    --eui-card-variant-strong-backgroundPosition: center;
-    --eui-card-variant-strong-backgroundRepeat: no-repeat;
-    --eui-card-variant-strong-backgroundSize: cover;
-    --eui-card-variant-strong-border-color: #E88FB6;
-    --eui-card-variant-strong-border-style: solid;
-    --eui-card-variant-strong-border-width: 2px;
-    --eui-card-variant-strong-radius: 18px;
-    --eui-card-variant-strong-shadow: 0 8px 0 rgba(255, 125, 184, 0.35), 0 18px 32px rgba(79, 176, 255, 0.22);
-    --eui-table-colors-background: transparent;
-    --eui-table-colors-border: rgba(225, 0, 122, 0.35);
-    --eui-table-colors-cell-text: oklch(25% 0.00 0);
-    --eui-table-colors-header-background: rgba(255, 255, 255, 0.8);
-    --eui-table-colors-header-text: #E1007A;
-    --eui-table-colors-row-background-default: transparent;
-    --eui-table-colors-row-background-hover: rgba(255, 255, 255, 0.5);
-    --eui-table-colors-row-background-selected: rgba(255, 225, 214, 0.65);
-    --eui-table-colors-subheader-background: rgba(255, 255, 255, 0.7);
-    --eui-table-colors-subheader-text: #E1007A;
+    --eui-card-header-colors-text: #e1007a;
+    --eui-card-header-typography-font-family: 'Lilita One', 'Comic Sans MS', 'Comic Sans', 'Marker Felt', 'Trebuchet MS', cursive;
+    --eui-card-header-typography-font-size: 1.15rem;
+    --eui-card-header-typography-font-weight: 400;
+    --eui-card-variant-elevated-background-image: radial-gradient(circle at 14% 18%, rgba(255, 140, 202, 0.38) 0 18%, rgba(255, 140, 202, 0) 19%), radial-gradient(circle at 82% 22%, rgba(122, 200, 255, 0.35) 0 16%, rgba(122, 200, 255, 0) 17%), radial-gradient(circle at 24% 82%, rgba(255, 225, 120, 0.35) 0 14%, rgba(255, 225, 120, 0) 15%), linear-gradient(135deg, rgba(255, 231, 244, 0.55) 0%, rgba(255, 246, 214, 0.55) 55%, rgba(214, 240, 255, 0.55) 100%);
+    --eui-card-variant-elevated-background-position: center;
+    --eui-card-variant-elevated-background-repeat: no-repeat;
+    --eui-card-variant-elevated-background-size: cover;
+    --eui-card-variant-flat-background-image: radial-gradient(circle at 18% 22%, rgba(255, 225, 120, 0.22) 0 16%, rgba(255, 225, 120, 0) 17%), radial-gradient(circle at 82% 18%, rgba(122, 200, 255, 0.22) 0 14%, rgba(122, 200, 255, 0) 15%), linear-gradient(135deg, rgba(255, 242, 251, 0.35) 0%, rgba(241, 248, 255, 0.35) 100%);
+    --eui-card-variant-flat-background-position: center;
+    --eui-card-variant-flat-background-repeat: no-repeat;
+    --eui-card-variant-flat-background-size: cover;
+    --eui-card-variant-strong-background-image: radial-gradient(circle at 12% 20%, rgba(122, 200, 255, 0.35) 0 18%, rgba(122, 200, 255, 0) 19%), radial-gradient(circle at 78% 28%, rgba(255, 225, 120, 0.35) 0 16%, rgba(255, 225, 120, 0) 17%), radial-gradient(circle at 28% 78%, rgba(255, 140, 202, 0.38) 0 18%, rgba(255, 140, 202, 0) 19%), linear-gradient(135deg, rgba(255, 223, 245, 0.6) 0%, rgba(255, 242, 214, 0.55) 52%, rgba(214, 240, 255, 0.55) 100%);
+    --eui-card-variant-strong-background-position: center;
+    --eui-card-variant-strong-background-repeat: no-repeat;
+    --eui-card-variant-strong-background-size: cover;
   }
 
 }
