@@ -11,19 +11,19 @@ export type MultiContextViewerProps = {
   contexts: ViewerContext[];
   /** Render function that receives context and current theme */
   children: (context: ContextName, theme: string) => React.ReactNode;
-  /** Optional container style override */
-  containerStyle?: React.CSSProperties;
+  /** Optional container style override or className */
+  containerStyle?: React.CSSProperties | string;
   /** Whether to show context labels */
   showLabels?: boolean;
   /** Whether to make preset details collapsible (default: true) */
   collapsiblePresets?: boolean;
+  /** Shell context and theme for viewer UI elements (badges, dividers, etc.) */
+  shellContext?: ContextName;
+  /** Shell theme for viewer UI elements */
+  shellTheme?: string;
 };
 
-const defaultContainerStyle: React.CSSProperties = {
-  background: 'var(--eui-color-background-base)',
-  padding: '1.5rem',
-  borderRadius: 'var(--eui-radius-large)'
-};
+const defaultContainerStyle: React.CSSProperties | string | undefined = undefined;
 
 /**
  * Context Wrapper Component
@@ -34,20 +34,25 @@ const ContextWrapper: React.FC<{
   context: ContextName;
   label?: string;
   showLabels: boolean;
-  containerStyle: React.CSSProperties;
+  containerStyle?: React.CSSProperties | string;
   children: (context: ContextName, theme: string) => React.ReactNode;
 }> = ({ context, label, showLabels, containerStyle, children }) => {
   const theme = useContextTheme(context);
 
+  const isClassName = typeof containerStyle === 'string';
+  const className = containerStyle ? (isClassName ? `eui-theme ${containerStyle}` : 'eui-theme') : 'eui-theme';
+  const style = containerStyle && !isClassName ? containerStyle : undefined;
+
   return (
     <ContextThemeScope
       context={context}
-      className="eui-theme"
-      style={containerStyle}
+      className={className}
+      style={style}
     >
-      <div className="eui-stack" data-eui-gap="xs">
+      <div className="eui-stack" data-eui-gap="lg">
         {showLabels && (
-          <>
+          <div className="eui-stack" data-eui-gap="xs">
+            <hr className="eui-divider" data-eui-orientation="horizontal" data-eui-variant="subtle" />
             <div className="eui-inline" data-eui-gap="sm" data-eui-justify="end">
               <span className="eui-badge" data-eui-variant="outline" data-eui-tone="neutral">
                 context: {context}
@@ -56,10 +61,10 @@ const ContextWrapper: React.FC<{
                 theme: {theme}
               </span>
             </div>
-            <hr className="eui-divider" data-eui-orientation="horizontal" data-eui-variant="subtle" />
-          </>
+          </div>
         )}
         {children(context, theme)}
+        <hr className="eui-divider" data-eui-orientation="horizontal" />
       </div>
     </ContextThemeScope>
   );
@@ -71,14 +76,15 @@ const ContextWrapper: React.FC<{
  * **THE RECOMMENDED WAY** to display components in Storybook stories.
  * This is a unified viewer that works consistently for 1, 2, or 3 contexts.
  *
- * Displays components across theme contexts (app, website, report) in a responsive
- * grid layout. Always shows context and theme badges for clarity.
+ * Features a **shell wrapper** with configurable context+theme for viewer UI elements
+ * (badges, dividers, etc.), containing up to 3 different context-themed components
+ * in a vertical stack layout.
  *
  * **Key Features:**
- * - Unified API for all stories (single context or multi-context)
+ * - Shell wrapper with configurable context+theme for consistent viewer styling
+ * - Up to 3 component contexts stacked vertically inside the shell
+ * - Component themes controlled by Storybook theme switcher
  * - Always displays context/theme badges using native Envy UI components
- * - Themes read dynamically from global Storybook theme switcher
- * - Automatic responsive layout based on number of contexts
  *
  * **IMPORTANT:** Do not hardcode theme values - they are read dynamically
  * from the global theme switcher and will be ignored if provided.
@@ -90,13 +96,13 @@ const ContextWrapper: React.FC<{
  * </MultiContextViewer>
  * ```
  *
- * @example Multiple contexts for comparison
+ * @example Multiple contexts (themes controlled by Storybook switcher)
  * ```tsx
  * <MultiContextViewer
  *   contexts={[
- *     { context: 'app' },
- *     { context: 'website' },
- *     { context: 'report' }
+ *     { context: 'app', label: 'App Context' },
+ *     { context: 'website', label: 'Website Context' },
+ *     { context: 'report', label: 'Report Context' }
  *   ]}
  * >
  *   {(context, theme) => <YourComponent context={context} theme={theme} />}
@@ -107,39 +113,34 @@ export const MultiContextViewer: React.FC<MultiContextViewerProps> = ({
   contexts,
   children,
   containerStyle = defaultContainerStyle,
-  showLabels = true
+  showLabels = true,
+  shellContext = 'app',
+  shellTheme
 }) => {
   if (contexts.length === 0 || contexts.length > 3) {
     throw new Error('MultiContextViewer requires 1-3 contexts');
   }
 
-  const gridColumns = contexts.length === 1
-    ? '1fr'
-    : contexts.length === 2
-    ? 'repeat(2, 1fr)'
-    : 'repeat(auto-fit, minmax(500px, 1fr))';
-
   return (
-    <div
-      style={{
-        padding: '2rem',
-        display: 'grid',
-        gridTemplateColumns: gridColumns,
-        gap: '2rem'
-      }}
+    <ContextThemeScope
+      context={shellContext}
+      theme={shellTheme}
+      style={{ padding: '2rem' }}
     >
-      {contexts.map((ctx) => (
-        <ContextWrapper
-          key={ctx.context}
-          context={ctx.context}
-          label={ctx.label}
-          showLabels={showLabels}
-          containerStyle={containerStyle}
-        >
-          {children}
-        </ContextWrapper>
-      ))}
-    </div>
+      <div className="eui-stack" data-eui-gap="lg">
+        {contexts.map((ctx) => (
+          <ContextWrapper
+            key={ctx.context}
+            context={ctx.context}
+            label={ctx.label}
+            showLabels={showLabels}
+            containerStyle={containerStyle}
+          >
+            {children}
+          </ContextWrapper>
+        ))}
+      </div>
+    </ContextThemeScope>
   );
 };
 
