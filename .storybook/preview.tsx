@@ -106,8 +106,8 @@ const withPreviewLayout: Decorator = (Story, context) => {
       <div
         className="sb-preview-wrapper eui-typography-root"
         data-eui-focus-policy={focusPolicy}
-        data-eui-context="app"
-        data-eui-theme={appTheme}
+        data-eui-context="storybook"
+        data-eui-theme="default"
       >
         <div className="sb-preview-region">{storyNode}</div>
       </div>

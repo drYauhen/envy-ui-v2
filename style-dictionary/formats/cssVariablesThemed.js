@@ -34,30 +34,65 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         }
       }
       
-      // Read theme JSON files directly to get all values (bypassing Style Dictionary collision resolution)
-      // New structure: tokens/{context}/themes/{theme}.json
-      const themeFiles = new Map(); // Map<selector, {filePath, data}>
-      
-      // Find all context directories (filter by allowed contexts + their mirrors)
-      const allContextDirs = ['app', 'website', 'report', 'storybook'];
+      // Read foundation and theme JSON files directly to get all values (bypassing Style Dictionary collision resolution)
+      // New structure: tokens/{context}/foundations/*.json, tokens/{context}/semantic/*.json, tokens/{context}/themes/{theme}.json
+      const contextFiles = new Map(); // Map<selector, {filePath, data, type}>
 
-      // Include mirrored contexts even if not in allowedContexts
-      const mirroredContexts = Object.keys(contextMirrors).filter(k => allowedContexts.includes(contextMirrors[k]));
-      const contextDirs = [...new Set([...allowedContexts, ...mirroredContexts])];
+      // Find all context directories (filter by allowed contexts)
+      // Mirrored contexts (like storybook mirroring app) should not generate their own CSS rules
+      // They inherit styles through CSS attribute inheritance
+      const contextDirs = allowedContexts.filter(context => !Object.keys(contextMirrors).includes(context));
 
       console.log(`Generating CSS for contexts: ${contextDirs.join(', ')}`);
 
       contextDirs.forEach(context => {
+        // Process foundations
+        const contextFoundationsDir = path.join(tokensRoot, context, 'foundations');
+        if (fs.existsSync(contextFoundationsDir)) {
+          const foundationFilesList = fs.readdirSync(contextFoundationsDir).filter(f => f.endsWith('.json'));
+          foundationFilesList.forEach(foundationFile => {
+            const foundationName = path.basename(foundationFile, '.json');
+            const selector = `[data-eui-${context}-theme]`;
+            const foundationFilePath = path.join(contextFoundationsDir, foundationFile);
+            try {
+              const data = JSON.parse(fs.readFileSync(foundationFilePath, 'utf8'));
+              const key = `${selector}:${foundationName}`;
+              contextFiles.set(key, { filePath: foundationFilePath, data, type: 'foundation', context, name: foundationName });
+            } catch (e) {
+              console.warn(`Warning: Could not read foundation file ${foundationFilePath}:`, e.message);
+            }
+          });
+        }
+
+        // Process semantic tokens
+        const contextSemanticDir = path.join(tokensRoot, context, 'semantic');
+        if (fs.existsSync(contextSemanticDir)) {
+          const semanticFilesList = fs.readdirSync(contextSemanticDir).filter(f => f.endsWith('.json'));
+          semanticFilesList.forEach(semanticFile => {
+            const semanticName = path.basename(semanticFile, '.json');
+            const selector = `[data-eui-${context}-theme]`;
+            const semanticFilePath = path.join(contextSemanticDir, semanticFile);
+            try {
+              const data = JSON.parse(fs.readFileSync(semanticFilePath, 'utf8'));
+              const key = `${selector}:${semanticName}`;
+              contextFiles.set(key, { filePath: semanticFilePath, data, type: 'semantic', context, name: semanticName });
+            } catch (e) {
+              console.warn(`Warning: Could not read semantic file ${semanticFilePath}:`, e.message);
+            }
+          });
+        }
+
+        // Process themes
         const contextThemesDir = path.join(tokensRoot, context, 'themes');
         if (fs.existsSync(contextThemesDir)) {
           const themeFilesList = fs.readdirSync(contextThemesDir).filter(f => f.endsWith('.json'));
           themeFilesList.forEach(themeFile => {
             const theme = path.basename(themeFile, '.json');
-            const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
+            const selector = `[data-eui-${context}-theme="${theme}"]`;
             const themeFilePath = path.join(contextThemesDir, themeFile);
             try {
               const data = JSON.parse(fs.readFileSync(themeFilePath, 'utf8'));
-              themeFiles.set(selector, { filePath: themeFilePath, data });
+              contextFiles.set(selector, { filePath: themeFilePath, data, type: 'theme', context, theme });
             } catch (e) {
               console.warn(`Warning: Could not read theme file ${themeFilePath}:`, e.message);
             }
@@ -92,8 +127,8 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           if (themeMatch) {
             const context = themeMatch[1];
             const theme = themeMatch[2];
-            const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
-            
+            const selector = `[data-eui-${context}-theme="${theme}"]`;
+
             if (!themeTokens.has(selector)) {
               themeTokens.set(selector, []);
             }
@@ -269,104 +304,57 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       // Context tokens are now in foundations/semantic within each context
       // They are handled as base tokens and don't need separate context selectors
 
-      // Generate theme tokens from directly read JSON files (bypassing collision resolution)
-      // Wrap all theme selectors in @layer theme (ADR-0024)
-      const hasThemeTokens = Array.from(themeFiles.values()).some(({ data }) => {
-        return extractTokensFromJson(data).length > 0;
+      // Generate context-specific tokens from directly read JSON files (bypassing collision resolution)
+      // Group tokens by selector for efficient CSS generation
+      const selectorTokens = new Map(); // Map<selector, tokens[]>
+
+      contextFiles.forEach((fileInfo, key) => {
+        const { data, type } = fileInfo;
+        let selector;
+
+        if (type === 'theme') {
+          selector = key; // key is already the selector for themes
+        } else {
+          // For foundations and semantic, extract selector from key
+          const colonIndex = key.indexOf(':');
+          selector = key.substring(0, colonIndex);
+        }
+
+        if (!selectorTokens.has(selector)) {
+          selectorTokens.set(selector, []);
+        }
+
+        const tokenList = extractTokensFromJson(data);
+        selectorTokens.get(selector).push(...tokenList);
       });
+
+      // Check if we have any context tokens
+      const hasContextTokens = Array.from(selectorTokens.values()).some(tokens => tokens.length > 0);
 
       // Check if there are any secondary theme tokens (from dictionary)
       const hasSecondaryThemeTokens = Array.from(themeTokens.keys()).some(selector =>
-        !themeFiles.has(selector) && themeTokens.get(selector).length > 0
+        !selectorTokens.has(selector) && themeTokens.get(selector).length > 0
       );
 
-      // If we have any theme tokens (primary or secondary), wrap them in @layer theme
-      if (hasThemeTokens || hasSecondaryThemeTokens) {
+      // If we have any context tokens, wrap them in @layer theme
+      if (hasContextTokens || hasSecondaryThemeTokens) {
         output += '@layer theme {\n';
 
-        // Group selectors by their mirrored contexts
-        const selectorGroups = new Map(); // Map<baseSelector, Set<mirroredSelectors>>
-
-        // Generate primary theme tokens from directly read JSON files
-        themeFiles.forEach(({ data }, selector) => {
-          const themeTokenList = extractTokensFromJson(data);
-          if (themeTokenList.length > 0) {
-            // Check if this selector should be mirrored
-            const contextMatch = selector.match(/\[data-eui-context="([^"]+)"\]\[data-eui-theme="([^"]+)"\]/);
-            if (contextMatch) {
-              const context = contextMatch[1];
-              const theme = contextMatch[2];
-
-              // Check if this context mirrors another
-              const mirroredContext = Object.keys(contextMirrors).find(k => contextMirrors[k] === context);
-              const baseContext = contextMirrors[context];
-
-              if (baseContext) {
-                // This context mirrors another - group them
-                const baseSelector = `[data-eui-context="${baseContext}"][data-eui-theme="${theme}"]`;
-                if (!selectorGroups.has(baseSelector)) {
-                  selectorGroups.set(baseSelector, new Set());
-                }
-                selectorGroups.get(baseSelector).add(selector);
-              } else if (mirroredContext) {
-                // This is a base context that others mirror - handled above
-              } else {
-                // No mirroring - generate individual selector
-                output += `  ${selector} {\n`;
-                themeTokenList.sort((a, b) => a.name.localeCompare(b.name));
-                themeTokenList.forEach(({ name, value }) => {
-                  if (value) {
-                    output += `    --${name}: ${value};\n`;
-                  }
-                });
-                output += '  }\n\n';
-              }
-            }
-          }
-        });
-
-        // Generate grouped selectors for mirrored contexts
-        selectorGroups.forEach((mirroredSelectors, baseSelector) => {
-          const allSelectors = [baseSelector, ...Array.from(mirroredSelectors)].join(',\n  ');
-          output += `  ${allSelectors} {\n`;
-
-          // Get tokens from the base selector
-          const baseThemeFile = themeFiles.get(baseSelector);
-          if (baseThemeFile) {
-            const themeTokenList = extractTokensFromJson(baseThemeFile.data);
-            themeTokenList.sort((a, b) => a.name.localeCompare(b.name));
-            themeTokenList.forEach(({ name, value }) => {
+        // Generate context tokens grouped by selector
+        selectorTokens.forEach((tokens, selector) => {
+          if (tokens.length > 0) {
+            output += `  ${selector} {\n`;
+            tokens.sort((a, b) => a.name.localeCompare(b.name));
+            tokens.forEach(({ name, value }) => {
               if (value) {
                 output += `    --${name}: ${value};\n`;
               }
             });
+            output += '  }\n\n';
           }
-
-          output += '  }\n\n';
         });
 
-        // Generate secondary theme tokens from dictionary
-        themeTokens.forEach((tokens, selector) => {
-          // Skip if we already processed this selector from themeFiles
-          if (themeFiles.has(selector)) {
-            return;
-          }
-          output += `  ${selector} {\n`;
-          const sortedTokens = [...tokens].sort((a, b) => {
-            const nameA = a.name || (a.path || []).join('.');
-            const nameB = b.name || (b.path || []).join('.');
-            return nameA.localeCompare(nameB);
-          });
-          sortedTokens.forEach((token) => {
-            const name = token.name || (token.path || []).map(s => s.replace(/\./g, '-')).join('-');
-            const cssName = `--${name}`;
-            const value = token.value || token.original?.value || token.$value || '';
-            if (value && name) {
-              output += `    ${cssName}: ${value};\n`;
-            }
-          });
-          output += '  }\n\n';
-        });
+
 
         output += '}\n\n';
       }

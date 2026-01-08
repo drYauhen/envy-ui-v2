@@ -119,8 +119,6 @@ export const MultiContextViewer: React.FC<MultiContextViewerProps> = ({
 
   return (
     <ContextThemeScope
-      context="storybook"
-      theme="default"
       style={{ padding: '2rem' }}
     >
       <div className="eui-stack" data-eui-gap="lg">

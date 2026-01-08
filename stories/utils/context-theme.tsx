@@ -40,8 +40,6 @@ type ContextThemeScopeProps = React.HTMLAttributes<HTMLElement> & {
   context?: ContextName;
   theme?: string;
   as?: React.ElementType;
-  'data-eui-context'?: ContextName;
-  'data-eui-theme'?: string;
 };
 
 export function ContextThemeScope({
@@ -50,25 +48,23 @@ export function ContextThemeScope({
   as: Component = 'div',
   ...rest
 }: ContextThemeScopeProps) {
-  const { ['data-eui-context']: dataContext, ['data-eui-theme']: dataTheme, ...otherProps } = rest as {
-    'data-eui-context'?: ContextName;
-    'data-eui-theme'?: string;
-  };
-  const resolvedContext = context ?? dataContext;
+  const resolvedContext = context;
   const fallbackContext: ContextName = 'app';
   const themeFromContext = useContextTheme(resolvedContext ?? fallbackContext);
 
   if (!resolvedContext) {
-    return <Component {...otherProps} />;
+    return <Component {...rest} />;
   }
 
-  const resolvedTheme = theme ?? dataTheme ?? themeFromContext;
+  const resolvedTheme = theme ?? themeFromContext;
+
+  // Create the context-specific theme attribute
+  const themeAttribute = `data-eui-${resolvedContext}-theme`;
 
   return (
     <Component
-      data-eui-context={resolvedContext}
-      data-eui-theme={resolvedTheme}
-      {...otherProps}
+      {...rest}
+      {...{ [themeAttribute]: resolvedTheme }}
     />
   );
 }

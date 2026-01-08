@@ -1094,8 +1094,130 @@
 }
 
 @layer theme {
-  [data-eui-context="app"][data-eui-theme="default"],
-  [data-eui-context="storybook"][data-eui-theme="default"] {
+  [data-eui-app-theme] {
+    --eui-border-width-default: 2px;
+    --eui-border-width-thick: 3px;
+    --eui-border-width-thin: 1px;
+    --eui-breakpoint-desktop: 1280px;
+    --eui-breakpoint-narrow: 1024px;
+    --eui-breakpoint-wide: 1600px;
+    --eui-dimension-0: 0rem;
+    --eui-dimension-1: 0.2857rem;
+    --eui-dimension-10: 2.8571rem;
+    --eui-dimension-11: 3.1429rem;
+    --eui-dimension-12: 3.4286rem;
+    --eui-dimension-13: 3.7143rem;
+    --eui-dimension-14: 4rem;
+    --eui-dimension-15: 4.2857rem;
+    --eui-dimension-16: 4.5714rem;
+    --eui-dimension-17: 4.8571rem;
+    --eui-dimension-18: 5.1429rem;
+    --eui-dimension-19: 5.4286rem;
+    --eui-dimension-2: 0.5714rem;
+    --eui-dimension-20: 5.7143rem;
+    --eui-dimension-3: 0.8571rem;
+    --eui-dimension-4: 1.1429rem;
+    --eui-dimension-5: 1.4286rem;
+    --eui-dimension-6: 1.7143rem;
+    --eui-dimension-7: 2rem;
+    --eui-dimension-8: 2.2857rem;
+    --eui-dimension-9: 2.5714rem;
+    --eui-filter-muted-brightness: 0.95;
+    --eui-filter-muted-contrast: 0.9;
+    --eui-filter-muted-grayscale: 1;
+    --eui-filter-muted-saturate: 0.35;
+    --eui-opacity-muted: 0.6;
+    --eui-radius-default: 4px;
+    --eui-radius-extra-large: 12px;
+    --eui-radius-full: 9999px;
+    --eui-radius-large: 8px;
+    --eui-radius-none: 0px;
+    --eui-radius-small: 2px;
+    --eui-shadow-default: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10);
+    --eui-shadow-extra-large: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    --eui-shadow-large: 0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12);
+    --eui-shadow-none: none;
+    --eui-shadow-small: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --eui-spacing-2xl: 3.4286rem;
+    --eui-spacing-lg: 1.7143rem;
+    --eui-spacing-md: 1.1429rem;
+    --eui-spacing-sm: 0.5714rem;
+    --eui-spacing-xl: 2.2857rem;
+    --eui-spacing-xs: 0.2857rem;
+    --eui-transition-duration-base: 200ms;
+    --eui-transition-duration-fast: 100ms;
+    --eui-transition-duration-instant: 0ms;
+    --eui-transition-duration-slow: 300ms;
+    --eui-transition-duration-slower: 500ms;
+    --eui-transition-easing-in: ease-in;
+    --eui-transition-easing-inOut: ease-in-out;
+    --eui-transition-easing-linear: linear;
+    --eui-transition-easing-out: ease-out;
+    --eui-z-base: 0;
+    --eui-z-dialog: 1070;
+    --eui-z-dropdown: 1000;
+    --eui-z-hide: -1;
+    --eui-z-modal: 1060;
+    --eui-z-overlay: 1050;
+    --eui-z-sticky: 100;
+  }
+
+  [data-eui-app-theme="accessibility"] {
+    --eui-badge-colors-error-background: oklch(100% 0 0);
+    --eui-badge-colors-error-border: oklch(56% 0.19 25);
+    --eui-badge-colors-error-solid-background: oklch(100% 0 0);
+    --eui-badge-colors-error-solid-border: oklch(56% 0.19 25);
+    --eui-badge-colors-error-solid-text: oklch(56% 0.19 25);
+    --eui-badge-colors-error-text: oklch(56% 0.19 25);
+    --eui-badge-colors-info-background: oklch(100% 0 0);
+    --eui-badge-colors-info-border: oklch(60% 0.14 237);
+    --eui-badge-colors-info-solid-background: oklch(100% 0 0);
+    --eui-badge-colors-info-solid-border: oklch(60% 0.14 237);
+    --eui-badge-colors-info-solid-text: oklch(60% 0.14 237);
+    --eui-badge-colors-info-text: oklch(60% 0.14 237);
+    --eui-badge-colors-neutral-background: oklch(100% 0 0);
+    --eui-badge-colors-neutral-border: oklch(33% 0.00 0);
+    --eui-badge-colors-neutral-solid-background: oklch(100% 0 0);
+    --eui-badge-colors-neutral-solid-border: oklch(33% 0.00 0);
+    --eui-badge-colors-neutral-solid-text: oklch(25% 0.00 0);
+    --eui-badge-colors-neutral-text: oklch(25% 0.00 0);
+    --eui-badge-colors-success-background: oklch(100% 0 0);
+    --eui-badge-colors-success-border: oklch(64% 0.17 150);
+    --eui-badge-colors-success-solid-background: oklch(100% 0 0);
+    --eui-badge-colors-success-solid-border: oklch(64% 0.17 150);
+    --eui-badge-colors-success-solid-text: oklch(64% 0.17 150);
+    --eui-badge-colors-success-text: oklch(64% 0.17 150);
+    --eui-badge-colors-warning-background: oklch(100% 0 0);
+    --eui-badge-colors-warning-border: oklch(69% 0.15 70);
+    --eui-badge-colors-warning-solid-background: oklch(100% 0 0);
+    --eui-badge-colors-warning-solid-border: oklch(69% 0.15 70);
+    --eui-badge-colors-warning-solid-text: oklch(69% 0.15 70);
+    --eui-badge-colors-warning-text: oklch(69% 0.15 70);
+    --eui-calendar-colors-day-border-default: oklch(90% 0.00 0);
+    --eui-color-background-muted: oklch(94% 0.00 0);
+    --eui-color-background-subtle: oklch(90% 0.00 0);
+    --eui-color-border-default: oklch(48% 0.00 0);
+    --eui-color-border-strong: oklch(33% 0.00 0);
+    --eui-color-border-subtle: oklch(63% 0.00 0);
+    --eui-color-text-disabled: oklch(63% 0.00 0);
+    --eui-color-text-muted: oklch(33% 0.00 0);
+    --eui-color-text-primary: oklch(25% 0.00 0);
+    --eui-color-text-subtle: oklch(48% 0.00 0);
+    --eui-filter-muted-brightness: 1;
+    --eui-filter-muted-contrast: 0.95;
+    --eui-filter-muted-grayscale: 0.6;
+    --eui-filter-muted-saturate: 0.5;
+    --eui-opacity-muted: 0.75;
+    --eui-radius-default: 8px;
+    --eui-radius-extra-large: 12px;
+    --eui-radius-full: 9999px;
+    --eui-radius-large: 10px;
+    --eui-radius-none: 0px;
+    --eui-radius-small: 4px;
+    --eui-typography-base-fontSize: 16px;
+  }
+
+  [data-eui-app-theme="default"] {
     --eui-color-border-default: oklch(90% 0.00 0);
     --eui-radius-default: 4px;
     --eui-radius-extra-large: 12px;
@@ -1103,25 +1225,6 @@
     --eui-radius-large: 8px;
     --eui-radius-none: 0px;
     --eui-radius-small: 2px;
-  }
-
-  [data-eui-context="website"][data-eui-theme="toy-r-us"] {
-    --eui-card-header-colors-text: #e1007a;
-    --eui-card-header-typography-font-family: 'Lilita One', 'Comic Sans MS', 'Comic Sans', 'Marker Felt', 'Trebuchet MS', cursive;
-    --eui-card-header-typography-font-size: 1.15rem;
-    --eui-card-header-typography-font-weight: 400;
-    --eui-card-variant-elevated-background-image: radial-gradient(circle at 14% 18%, rgba(255, 140, 202, 0.38) 0 18%, rgba(255, 140, 202, 0) 19%), radial-gradient(circle at 82% 22%, rgba(122, 200, 255, 0.35) 0 16%, rgba(122, 200, 255, 0) 17%), radial-gradient(circle at 24% 82%, rgba(255, 225, 120, 0.35) 0 14%, rgba(255, 225, 120, 0) 15%), linear-gradient(135deg, rgba(255, 231, 244, 0.55) 0%, rgba(255, 246, 214, 0.55) 55%, rgba(214, 240, 255, 0.55) 100%);
-    --eui-card-variant-elevated-background-position: center;
-    --eui-card-variant-elevated-background-repeat: no-repeat;
-    --eui-card-variant-elevated-background-size: cover;
-    --eui-card-variant-flat-background-image: radial-gradient(circle at 18% 22%, rgba(255, 225, 120, 0.22) 0 16%, rgba(255, 225, 120, 0) 17%), radial-gradient(circle at 82% 18%, rgba(122, 200, 255, 0.22) 0 14%, rgba(122, 200, 255, 0) 15%), linear-gradient(135deg, rgba(255, 242, 251, 0.35) 0%, rgba(241, 248, 255, 0.35) 100%);
-    --eui-card-variant-flat-background-position: center;
-    --eui-card-variant-flat-background-repeat: no-repeat;
-    --eui-card-variant-flat-background-size: cover;
-    --eui-card-variant-strong-background-image: radial-gradient(circle at 12% 20%, rgba(122, 200, 255, 0.35) 0 18%, rgba(122, 200, 255, 0) 19%), radial-gradient(circle at 78% 28%, rgba(255, 225, 120, 0.35) 0 16%, rgba(255, 225, 120, 0) 17%), radial-gradient(circle at 28% 78%, rgba(255, 140, 202, 0.38) 0 18%, rgba(255, 140, 202, 0) 19%), linear-gradient(135deg, rgba(255, 223, 245, 0.6) 0%, rgba(255, 242, 214, 0.55) 52%, rgba(214, 240, 255, 0.55) 100%);
-    --eui-card-variant-strong-background-position: center;
-    --eui-card-variant-strong-background-repeat: no-repeat;
-    --eui-card-variant-strong-background-size: cover;
   }
 
 }
