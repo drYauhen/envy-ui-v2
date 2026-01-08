@@ -371,6 +371,494 @@
     "$value": "solid",
     "$type": "string"
   },
+  "eui.typography.textStyle.title.lg.fontSize": {
+    "$value": "1.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.title.lg.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.title.lg.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.title.lg.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.title.md.fontSize": {
+    "$value": "1.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.title.md.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.title.md.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.title.md.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.title.sm.fontSize": {
+    "$value": "1.125rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.title.sm.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.title.sm.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.title.sm.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.label.md.fontSize": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.label.md.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.label.md.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.label.md.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.label.sm.fontSize": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.label.sm.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.label.sm.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.label.sm.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.caption.fontSize": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.caption.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.caption.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.caption.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.overline.fontSize": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.overline.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.overline.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.overline.letterSpacing": {
+    "$value": "0.025em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.textStyle.overline.textTransform": {
+    "$value": "uppercase",
+    "$type": "textTransform"
+  },
+  "eui.typography.textStyle.overline.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.heading.1.fontSize": {
+    "$value": "4.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.1.fontWeight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.1.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.1.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.heading.2.fontSize": {
+    "$value": "3.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.2.fontWeight": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.2.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.2.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.heading.3.fontSize": {
+    "$value": "3rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.3.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.3.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.3.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.heading.4.fontSize": {
+    "$value": "2.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.4.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.4.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.4.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.heading.5.fontSize": {
+    "$value": "1.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.5.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.5.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.5.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.heading.6.fontSize": {
+    "$value": "1.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.heading.6.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.heading.6.lineHeight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.heading.6.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.code.base.fontSize": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.code.base.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.code.base.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.code.base.fontFamily": {
+    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.code.small.fontSize": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.code.small.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.code.small.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.code.small.fontFamily": {
+    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.body.large.fontSize": {
+    "$value": "1.125rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.body.large.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.body.large.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.body.large.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.body.base.fontSize": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.body.base.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.body.base.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.body.base.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.body.small.fontSize": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.body.small.fontWeight": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.body.small.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.body.small.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.bodyStrong.base.fontSize": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.bodyStrong.base.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.bodyStrong.base.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.bodyStrong.base.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textStyle.bodyStrong.small.fontSize": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.textStyle.bodyStrong.small.fontWeight": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.textStyle.bodyStrong.small.lineHeight": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.textStyle.bodyStrong.small.fontFamily": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.textTransform.none": {
+    "$value": "none",
+    "$type": "textTransform"
+  },
+  "eui.typography.textTransform.uppercase": {
+    "$value": "uppercase",
+    "$type": "textTransform"
+  },
+  "eui.typography.textTransform.lowercase": {
+    "$value": "lowercase",
+    "$type": "textTransform"
+  },
+  "eui.typography.textTransform.capitalize": {
+    "$value": "capitalize",
+    "$type": "textTransform"
+  },
+  "eui.typography.textDecoration.none": {
+    "$value": "none",
+    "$type": "textDecoration"
+  },
+  "eui.typography.textDecoration.underline": {
+    "$value": "underline",
+    "$type": "textDecoration"
+  },
+  "eui.typography.textDecoration.line-through": {
+    "$value": "line-through",
+    "$type": "textDecoration"
+  },
+  "eui.typography.lineHeight.none": {
+    "$value": "1",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.tight": {
+    "$value": "1.25",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.normal": {
+    "$value": "1.5",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.relaxed": {
+    "$value": "1.75",
+    "$type": "lineHeight"
+  },
+  "eui.typography.lineHeight.loose": {
+    "$value": "2",
+    "$type": "lineHeight"
+  },
+  "eui.typography.letterSpacing.tighter": {
+    "$value": "-0.05em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.tight": {
+    "$value": "-0.025em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.normal": {
+    "$value": "0",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.wide": {
+    "$value": "0.01em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.wider": {
+    "$value": "0.025em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.letterSpacing.widest": {
+    "$value": "0.05em",
+    "$type": "letterSpacing"
+  },
+  "eui.typography.fontWeight.light": {
+    "$value": "300",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.normal": {
+    "$value": "400",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.medium": {
+    "$value": "500",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.semibold": {
+    "$value": "600",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontWeight.bold": {
+    "$value": "700",
+    "$type": "fontWeight"
+  },
+  "eui.typography.fontStyle.normal": {
+    "$value": "normal",
+    "$type": "fontStyle"
+  },
+  "eui.typography.fontStyle.italic": {
+    "$value": "italic",
+    "$type": "fontStyle"
+  },
+  "eui.typography.fontStyle.oblique": {
+    "$value": "oblique",
+    "$type": "fontStyle"
+  },
+  "eui.typography.fontSize.xs": {
+    "$value": "0.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.sm": {
+    "$value": "0.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.base": {
+    "$value": "1rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.md": {
+    "$value": "1.125rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.lg": {
+    "$value": "1.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.xl": {
+    "$value": "1.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.2xl": {
+    "$value": "1.875rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.3xl": {
+    "$value": "2.25rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.4xl": {
+    "$value": "3rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.5xl": {
+    "$value": "3.75rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontSize.6xl": {
+    "$value": "4.5rem",
+    "$type": "fontSize"
+  },
+  "eui.typography.fontFamily.ui": {
+    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "$type": "fontFamily"
+  },
+  "eui.typography.fontFamily.monospace": {
+    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
+    "$type": "fontFamily"
+  },
+  "eui.typography.base.fontSize": {
+    "$value": "16px",
+    "$type": "fontSize"
+  },
   "eui.divider.style.default": {
     "$value": "solid",
     "$type": "borderStyle"
@@ -774,494 +1262,6 @@
   "eui.color.neutral.white": {
     "$value": "oklch(100% 0 0)",
     "$type": "color"
-  },
-  "eui.typography.base.fontSize": {
-    "$value": "16px",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.title.lg.fontSize": {
-    "$value": "1.5rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.title.lg.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.title.lg.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.title.lg.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.title.md.fontSize": {
-    "$value": "1.25rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.title.md.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.title.md.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.title.md.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.title.sm.fontSize": {
-    "$value": "1.125rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.title.sm.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.title.sm.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.title.sm.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.heading.1.fontSize": {
-    "$value": "4.5rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.heading.1.fontWeight": {
-    "$value": "700",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.heading.1.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.heading.1.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.heading.2.fontSize": {
-    "$value": "3.75rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.heading.2.fontWeight": {
-    "$value": "700",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.heading.2.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.heading.2.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.heading.3.fontSize": {
-    "$value": "3rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.heading.3.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.heading.3.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.heading.3.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.heading.4.fontSize": {
-    "$value": "2.25rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.heading.4.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.heading.4.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.heading.4.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.heading.5.fontSize": {
-    "$value": "1.875rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.heading.5.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.heading.5.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.heading.5.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.heading.6.fontSize": {
-    "$value": "1.5rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.heading.6.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.heading.6.lineHeight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.heading.6.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.body.large.fontSize": {
-    "$value": "1.125rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.body.large.fontWeight": {
-    "$value": "400",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.body.large.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.body.large.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.body.base.fontSize": {
-    "$value": "1rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.body.base.fontWeight": {
-    "$value": "400",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.body.base.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.body.base.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.body.small.fontSize": {
-    "$value": "0.875rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.body.small.fontWeight": {
-    "$value": "400",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.body.small.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.body.small.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.bodyStrong.base.fontSize": {
-    "$value": "1rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.bodyStrong.base.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.bodyStrong.base.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.bodyStrong.base.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.bodyStrong.small.fontSize": {
-    "$value": "0.875rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.bodyStrong.small.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.bodyStrong.small.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.bodyStrong.small.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.label.md.fontSize": {
-    "$value": "0.875rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.label.md.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.label.md.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.label.md.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.label.sm.fontSize": {
-    "$value": "0.75rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.label.sm.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.label.sm.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.label.sm.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.caption.fontSize": {
-    "$value": "0.75rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.caption.fontWeight": {
-    "$value": "400",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.caption.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.caption.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.overline.fontSize": {
-    "$value": "0.75rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.overline.fontWeight": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.overline.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.overline.letterSpacing": {
-    "$value": "0.025em",
-    "$type": "letterSpacing"
-  },
-  "eui.typography.textStyle.overline.textTransform": {
-    "$value": "uppercase",
-    "$type": "textTransform"
-  },
-  "eui.typography.textStyle.overline.fontFamily": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.code.base.fontSize": {
-    "$value": "0.875rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.code.base.fontWeight": {
-    "$value": "400",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.code.base.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.code.base.fontFamily": {
-    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textStyle.code.small.fontSize": {
-    "$value": "0.75rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.textStyle.code.small.fontWeight": {
-    "$value": "400",
-    "$type": "fontWeight"
-  },
-  "eui.typography.textStyle.code.small.lineHeight": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.textStyle.code.small.fontFamily": {
-    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
-    "$type": "fontFamily"
-  },
-  "eui.typography.textTransform.none": {
-    "$value": "none",
-    "$type": "textTransform"
-  },
-  "eui.typography.textTransform.uppercase": {
-    "$value": "uppercase",
-    "$type": "textTransform"
-  },
-  "eui.typography.textTransform.lowercase": {
-    "$value": "lowercase",
-    "$type": "textTransform"
-  },
-  "eui.typography.textTransform.capitalize": {
-    "$value": "capitalize",
-    "$type": "textTransform"
-  },
-  "eui.typography.textDecoration.none": {
-    "$value": "none",
-    "$type": "textDecoration"
-  },
-  "eui.typography.textDecoration.underline": {
-    "$value": "underline",
-    "$type": "textDecoration"
-  },
-  "eui.typography.textDecoration.line-through": {
-    "$value": "line-through",
-    "$type": "textDecoration"
-  },
-  "eui.typography.lineHeight.none": {
-    "$value": "1",
-    "$type": "lineHeight"
-  },
-  "eui.typography.lineHeight.tight": {
-    "$value": "1.25",
-    "$type": "lineHeight"
-  },
-  "eui.typography.lineHeight.normal": {
-    "$value": "1.5",
-    "$type": "lineHeight"
-  },
-  "eui.typography.lineHeight.relaxed": {
-    "$value": "1.75",
-    "$type": "lineHeight"
-  },
-  "eui.typography.lineHeight.loose": {
-    "$value": "2",
-    "$type": "lineHeight"
-  },
-  "eui.typography.letterSpacing.tighter": {
-    "$value": "-0.05em",
-    "$type": "letterSpacing"
-  },
-  "eui.typography.letterSpacing.tight": {
-    "$value": "-0.025em",
-    "$type": "letterSpacing"
-  },
-  "eui.typography.letterSpacing.normal": {
-    "$value": "0",
-    "$type": "letterSpacing"
-  },
-  "eui.typography.letterSpacing.wide": {
-    "$value": "0.01em",
-    "$type": "letterSpacing"
-  },
-  "eui.typography.letterSpacing.wider": {
-    "$value": "0.025em",
-    "$type": "letterSpacing"
-  },
-  "eui.typography.letterSpacing.widest": {
-    "$value": "0.05em",
-    "$type": "letterSpacing"
-  },
-  "eui.typography.fontWeight.light": {
-    "$value": "300",
-    "$type": "fontWeight"
-  },
-  "eui.typography.fontWeight.normal": {
-    "$value": "400",
-    "$type": "fontWeight"
-  },
-  "eui.typography.fontWeight.medium": {
-    "$value": "500",
-    "$type": "fontWeight"
-  },
-  "eui.typography.fontWeight.semibold": {
-    "$value": "600",
-    "$type": "fontWeight"
-  },
-  "eui.typography.fontWeight.bold": {
-    "$value": "700",
-    "$type": "fontWeight"
-  },
-  "eui.typography.fontStyle.normal": {
-    "$value": "normal",
-    "$type": "fontStyle"
-  },
-  "eui.typography.fontStyle.italic": {
-    "$value": "italic",
-    "$type": "fontStyle"
-  },
-  "eui.typography.fontStyle.oblique": {
-    "$value": "oblique",
-    "$type": "fontStyle"
-  },
-  "eui.typography.fontSize.xs": {
-    "$value": "0.75rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.sm": {
-    "$value": "0.875rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.base": {
-    "$value": "1rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.md": {
-    "$value": "1.125rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.lg": {
-    "$value": "1.25rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.xl": {
-    "$value": "1.5rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.2xl": {
-    "$value": "1.875rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.3xl": {
-    "$value": "2.25rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.4xl": {
-    "$value": "3rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.5xl": {
-    "$value": "3.75rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontSize.6xl": {
-    "$value": "4.5rem",
-    "$type": "fontSize"
-  },
-  "eui.typography.fontFamily.ui": {
-    "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-    "$type": "fontFamily"
-  },
-  "eui.typography.fontFamily.monospace": {
-    "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
-    "$type": "fontFamily"
   },
   "eui.radius.none": {
     "$value": "0px",

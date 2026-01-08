@@ -1,6 +1,24 @@
 {
   "$schema": "./schemas/dtcg-2025.10-schema.json",
   "eui": {
-    "$description": "website context - Foundation typography/text decoration. This structure is defined but currently empty. Tokens will be added when website context is developed."
+    "typography": {
+      "textDecoration": {
+        "none": {
+          "$value": "none",
+          "$type": "textDecoration",
+          "$description": "No text decoration - default for most text, links without underline"
+        },
+        "underline": {
+          "$value": "underline",
+          "$type": "textDecoration",
+          "$description": "Underline decoration - for links, emphasis in content"
+        },
+        "line-through": {
+          "$value": "line-through",
+          "$type": "textDecoration",
+          "$description": "Line-through decoration - for deleted text, strikethrough"
+        }
+      }
+    }
   }
 }

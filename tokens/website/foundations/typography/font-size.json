@@ -1,6 +1,64 @@
 {
   "$schema": "./schemas/dtcg-2025.10-schema.json",
   "eui": {
-    "$description": "website context - Foundation typography/font size. This structure is defined but currently empty. Tokens will be added when website context is developed."
+    "typography": {
+      "fontSize": {
+        "xs": {
+          "$value": "0.75rem",
+          "$type": "fontSize",
+          "$description": "12px in website context (16px base). For captions, labels, badges, counters inside buttons."
+        },
+        "sm": {
+          "$value": "0.875rem",
+          "$type": "fontSize",
+          "$description": "14px in website context (16px base). Secondary body text, helper text, small UI elements."
+        },
+        "base": {
+          "$value": "1rem",
+          "$type": "fontSize",
+          "$description": "16px in website context (16px base). Default body text size, website baseline."
+        },
+        "md": {
+          "$value": "1.125rem",
+          "$type": "fontSize",
+          "$description": "18px in website context (16px base). Slightly larger body text, emphasized content."
+        },
+        "lg": {
+          "$value": "1.25rem",
+          "$type": "fontSize",
+          "$description": "20px in website context (16px base). Large body text, subheadings."
+        },
+        "xl": {
+          "$value": "1.5rem",
+          "$type": "fontSize",
+          "$description": "24px in website context (16px base). Heading level 6, card titles."
+        },
+        "2xl": {
+          "$value": "1.875rem",
+          "$type": "fontSize",
+          "$description": "30px in website context (16px base). Heading level 5."
+        },
+        "3xl": {
+          "$value": "2.25rem",
+          "$type": "fontSize",
+          "$description": "36px in website context (16px base). Heading level 4."
+        },
+        "4xl": {
+          "$value": "3rem",
+          "$type": "fontSize",
+          "$description": "48px in website context (16px base). Heading level 3."
+        },
+        "5xl": {
+          "$value": "3.75rem",
+          "$type": "fontSize",
+          "$description": "60px in website context (16px base). Heading level 2."
+        },
+        "6xl": {
+          "$value": "4.5rem",
+          "$type": "fontSize",
+          "$description": "72px in website context (16px base). Heading level 1, hero text."
+        }
+      }
+    }
   }
 }

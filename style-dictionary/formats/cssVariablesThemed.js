@@ -242,6 +242,10 @@ export default function registerCssVariablesThemedFormat(StyleDictionary) {
 
       let output = '/**\n * Do not edit directly, this file was auto-generated.\n */\n\n';
 
+      // CSS Cascade Layers - ADR-0024
+      output += '/* CSS Cascade Layers - ADR-0024 */\n';
+      output += '@layer third-party, context-app, context-website, context-report, components, theme;\n\n';
+
       // Generate base tokens in :root
       if (baseTokens.length > 0) {
         output += ':root {\n';
@@ -257,42 +261,60 @@ export default function registerCssVariablesThemedFormat(StyleDictionary) {
       // They are handled as base tokens and don't need separate context selectors
 
       // Generate theme tokens from directly read JSON files (bypassing collision resolution)
-      themeFiles.forEach(({ data }, selector) => {
-        const themeTokenList = extractTokensFromJson(data);
-        if (themeTokenList.length > 0) {
-          output += `${selector} {\n`;
-          themeTokenList.sort((a, b) => a.name.localeCompare(b.name));
-          themeTokenList.forEach(({ name, value }) => {
-            if (value) {
-              output += `  --${name}: ${value};\n`;
-            }
-          });
-          output += '}\n\n';
-        }
+      // Wrap all theme selectors in @layer theme (ADR-0024)
+      const hasThemeTokens = Array.from(themeFiles.values()).some(({ data }) => {
+        return extractTokensFromJson(data).length > 0;
       });
 
-      // Also generate tokens from dictionary (for context tokens and any theme tokens that made it through)
-      themeTokens.forEach((tokens, selector) => {
-        // Skip if we already processed this selector from themeFiles
-        if (themeFiles.has(selector)) {
-          return;
-        }
-        output += `${selector} {\n`;
-        const sortedTokens = [...tokens].sort((a, b) => {
-          const nameA = a.name || (a.path || []).join('.');
-          const nameB = b.name || (b.path || []).join('.');
-          return nameA.localeCompare(nameB);
-        });
-        sortedTokens.forEach((token) => {
-          const name = token.name || (token.path || []).map(s => s.replace(/\./g, '-')).join('-');
-          const cssName = `--${name}`;
-          const value = token.value || token.original?.value || token.$value || '';
-          if (value && name) {
-            output += `  ${cssName}: ${value};\n`;
+      // Check if there are any secondary theme tokens (from dictionary)
+      const hasSecondaryThemeTokens = Array.from(themeTokens.keys()).some(selector =>
+        !themeFiles.has(selector) && themeTokens.get(selector).length > 0
+      );
+
+      // If we have any theme tokens (primary or secondary), wrap them in @layer theme
+      if (hasThemeTokens || hasSecondaryThemeTokens) {
+        output += '@layer theme {\n';
+
+        // Generate primary theme tokens from directly read JSON files
+        themeFiles.forEach(({ data }, selector) => {
+          const themeTokenList = extractTokensFromJson(data);
+          if (themeTokenList.length > 0) {
+            output += `  ${selector} {\n`;
+            themeTokenList.sort((a, b) => a.name.localeCompare(b.name));
+            themeTokenList.forEach(({ name, value }) => {
+              if (value) {
+                output += `    --${name}: ${value};\n`;
+              }
+            });
+            output += '  }\n\n';
           }
         });
+
+        // Generate secondary theme tokens from dictionary
+        themeTokens.forEach((tokens, selector) => {
+          // Skip if we already processed this selector from themeFiles
+          if (themeFiles.has(selector)) {
+            return;
+          }
+          output += `  ${selector} {\n`;
+          const sortedTokens = [...tokens].sort((a, b) => {
+            const nameA = a.name || (a.path || []).join('.');
+            const nameB = b.name || (b.path || []).join('.');
+            return nameA.localeCompare(nameB);
+          });
+          sortedTokens.forEach((token) => {
+            const name = token.name || (token.path || []).map(s => s.replace(/\./g, '-')).join('-');
+            const cssName = `--${name}`;
+            const value = token.value || token.original?.value || token.$value || '';
+            if (value && name) {
+              output += `    ${cssName}: ${value};\n`;
+            }
+          });
+          output += '  }\n\n';
+        });
+
         output += '}\n\n';
-      });
+      }
 
       return output;
     }
