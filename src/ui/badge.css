@@ -93,3 +93,103 @@
 [data-eui-context] .eui-badge[data-eui-variant='outline'] {
   --eui-badge-background: var(--eui-badge-colors-variant-outline-background);
 }
+
+/* ============================================================================
+   Accessibility Theme Overrides (WCAG 2.2 AA Compliant)
+   ============================================================================ */
+
+/* High contrast overrides for accessibility theme */
+[data-eui-app-theme="accessibility"] .eui-badge {
+  --eui-badge-border: #000000;
+  --eui-badge-border-width: 2px;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='neutral'] {
+  --eui-badge-background: #ffffff;
+  --eui-badge-color: #000000;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='neutral'][data-eui-variant='solid'] {
+  --eui-badge-background: #000000;
+  --eui-badge-color: #ffffff;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='success'] {
+  --eui-badge-background: #e6f7e6;
+  --eui-badge-color: #000000;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='success'][data-eui-variant='solid'] {
+  --eui-badge-background: #006400;
+  --eui-badge-color: #ffffff;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='warning'] {
+  --eui-badge-background: #fff8e1;
+  --eui-badge-color: #000000;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='warning'][data-eui-variant='solid'] {
+  --eui-badge-background: #8b4513;
+  --eui-badge-color: #ffffff;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='error'] {
+  --eui-badge-background: #ffe6e6;
+  --eui-badge-color: #000000;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='error'][data-eui-variant='solid'] {
+  --eui-badge-background: #8b0000;
+  --eui-badge-color: #ffffff;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='info'] {
+  --eui-badge-background: #e6f3ff;
+  --eui-badge-color: #000000;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='info'][data-eui-variant='solid'] {
+  --eui-badge-background: #00008b;
+  --eui-badge-color: #ffffff;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-variant='solid'] {
+  --eui-badge-background: #000000;
+  --eui-badge-color: #ffffff;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='neutral'][data-eui-variant='outline'] {
+  --eui-badge-background: transparent;
+  --eui-badge-color: #000000;
+  --eui-badge-border: #000000;
+  --eui-badge-border-width: 2px;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='success'][data-eui-variant='outline'] {
+  --eui-badge-background: transparent;
+  --eui-badge-color: #006400;
+  --eui-badge-border: #006400;
+  --eui-badge-border-width: 2px;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='warning'][data-eui-variant='outline'] {
+  --eui-badge-background: transparent;
+  --eui-badge-color: #8b4513;
+  --eui-badge-border: #8b4513;
+  --eui-badge-border-width: 2px;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='error'][data-eui-variant='outline'] {
+  --eui-badge-background: transparent;
+  --eui-badge-color: #8b0000;
+  --eui-badge-border: #8b0000;
+  --eui-badge-border-width: 2px;
+}
+
+[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='info'][data-eui-variant='outline'] {
+  --eui-badge-background: transparent;
+  --eui-badge-color: #00008b;
+  --eui-badge-border: #00008b;
+  --eui-badge-border-width: 2px;
+}

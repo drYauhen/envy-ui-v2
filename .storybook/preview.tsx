@@ -2,7 +2,6 @@ import type { Decorator, Preview } from '@storybook/react';
 import { getSectionConfig } from './section-config';
 import './mermaid.css';
 import '../generated/css/tokens.css';
-import '../packages/tailwind/tailwind.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/state.css';
 import '../src/ui/label.css';
@@ -106,7 +105,7 @@ const withPreviewLayout: Decorator = (Story, context) => {
       <div
         className="sb-preview-wrapper eui-typography-root"
         data-eui-focus-policy={focusPolicy}
-        data-eui-context="storybook"
+        data-eui-context="app"
         data-eui-theme="default"
       >
         <div className="sb-preview-region">{storyNode}</div>
@@ -135,7 +134,14 @@ export const globalTypes: Preview['globalTypes'] = {
   appTheme: {
     name: 'App Theme',
     description: 'Theme for app context',
-    defaultValue: DEFAULT_CONTEXT_THEMES.app
+    defaultValue: DEFAULT_CONTEXT_THEMES.app,
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'default', title: 'Default' },
+        { value: 'accessibility', title: 'Accessibility' }
+      ]
+    }
   },
 
   websiteTheme: {
@@ -149,7 +155,7 @@ export const globalTypes: Preview['globalTypes'] = {
     description: 'Theme for report context',
     defaultValue: DEFAULT_CONTEXT_THEMES.report
   },
-  
+
   focusPolicy: {
     name: 'Focus Policy',
     description: 'Select focus styling: Derived (brand color) or System (high accessibility orange).',
@@ -173,27 +179,23 @@ export const parameters: Preview['parameters'] = {
       //   3. Or manually copy values from navigation.config.ts to this function
       // 
       // Section order (from navigation.config.ts -> sectionOrder)
-                                                const sectionOrder = [
+                                                      const sectionOrder = [
         "Docs",
         "Tokens",
         "HTML + CSS",
         "TSX (Clean)",
         "TSX + React Aria",
         "Templates",
-        "Tailwind",
         "Web Components"
       ];
       
       // Special rules (from navigation.config.ts)
-                                                const specialRules = {
-        "Docs/ADR": { firstItem: "ADR Overview" },
-        "Docs/Architecture": { firstItem: "Architecture Overview" },
-        "Docs/Tokens": { firstItem: "Tokens Overview" },
-        "Docs/Workflows": { firstItem: "Workflows Overview" }
+                                                      const specialRules = {
+        "Docs/ADR": { firstItem: "ADR Overview" }
       };
       
       // Section configs (from navigation.config.ts)
-                                                const sectionConfigs = {
+                                                      const sectionConfigs = {
         "HTML + CSS": {
           componentGroups: [
             { components: ["Avatar", "AvatarGroup"] },
@@ -202,7 +204,7 @@ export const parameters: Preview['parameters'] = {
             { components: ["Checkbox", "Switch"] },
             { components: ["Card", "Layout"] }
           ],
-          otherComponents: ["AlertBanner", "Counter", "FormElementsContextThemeTest", "FormLayout", "Icon", "Label", "Menu", "Modal", "Skeleton", "Table"]
+          otherComponents: ["AlertBanner", "Badge", "Counter", "FormElementsContextThemeTest", "FormLayout", "Icon", "Label", "Menu", "Modal", "Skeleton", "Table"]
         },
         "TSX + React Aria": {
           componentGroups: [
@@ -288,6 +290,10 @@ export const parameters: Preview['parameters'] = {
       color: /(background|color)$/i,
       date: /Date$/i
     }
+  },
+  // Configure accessibility testing to only target component containers within MultiContextViewer
+  a11y: {
+    context: '[data-testid="component-under-test"]'
   },
   // Apply parameters based on story title
   // Stories with title starting with "Docs/ADR" will have panels disabled
