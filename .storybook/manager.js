@@ -12,4 +12,3 @@ addons.setConfig({
 // Import section badges addon
 // The addon is registered in ./addons/section-badges/register.js
 import './addons/section-badges/register.js';
-import './addons/context-theme-switcher/register.js';

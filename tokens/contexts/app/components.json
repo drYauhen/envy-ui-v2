@@ -1,0 +1,62 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "component": {
+      "button": {
+        "bg": {
+          "$value": "{eui.color.brand.600}",
+          "$type": "color",
+          "$description": "App context: Button uses brand color for background"
+        },
+        "color": {
+          "$value": "{eui.color.neutral.white}",
+          "$type": "color",
+          "$description": "App context: Button uses white text on brand background"
+        },
+        "border": {
+          "color": {
+            "$value": "{eui.color.brand.600}",
+            "$type": "color",
+            "$description": "App context: Button border matches background"
+          },
+          "width": {
+            "$value": "1px",
+            "$type": "dimension",
+            "$description": "App context: Standard button border width"
+          },
+          "radius": {
+            "$value": "{eui.radius.default}",
+            "$type": "dimension",
+            "$description": "App context: Button uses default border radius"
+          }
+        },
+        "spacing": {
+          "padding": {
+            "x": {
+              "$value": "{eui.spacing.md}",
+              "$type": "dimension",
+              "$description": "App context: Standard horizontal button padding"
+            },
+            "y": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "App context: Standard vertical button padding"
+            }
+          }
+        },
+        "typography": {
+          "size": {
+            "$value": "{eui.typography.fontSize.base}",
+            "$type": "fontSize",
+            "$description": "App context: Button uses base font size"
+          },
+          "weight": {
+            "$value": "{eui.typography.fontWeight.medium}",
+            "$type": "fontWeight",
+            "$description": "App context: Button uses medium font weight"
+          }
+        }
+      }
+    }
+  }
+}

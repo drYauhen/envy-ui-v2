@@ -15,16 +15,14 @@ const repoRoot = path.resolve(__dirname, '..');
 
 // Target-based context filtering
 const TARGET_CONFIGS = {
-  storybook: ['app', 'website', 'report', 'storybook'],
+  storybook: ['app', 'website', 'report'],
   'dev-app': ['app'],
   'website-app': ['website'],
   'report-app': ['report']
 };
 
 // Context mirroring - contexts that share CSS rules
-const CONTEXT_MIRRORS = {
-  storybook: 'app'  // storybook[default] mirrors app[default]
-};
+const CONTEXT_MIRRORS = {};
 
 const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
 const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
@@ -177,4 +175,5 @@ export default {
     }
   }
 };
+
 

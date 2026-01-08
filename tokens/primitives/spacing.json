@@ -1,0 +1,112 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "spacing": {
+      "0": {
+        "$value": "0px",
+        "$type": "dimension",
+        "$description": "Zero spacing"
+      },
+      "1": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$description": "4px spacing step"
+      },
+      "2": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$description": "8px spacing step"
+      },
+      "3": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "12px spacing step"
+      },
+      "4": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$description": "16px spacing step"
+      },
+      "5": {
+        "$value": "20px",
+        "$type": "dimension",
+        "$description": "20px spacing step"
+      },
+      "6": {
+        "$value": "24px",
+        "$type": "dimension",
+        "$description": "24px spacing step"
+      },
+      "7": {
+        "$value": "28px",
+        "$type": "dimension",
+        "$description": "28px spacing step"
+      },
+      "8": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$description": "32px spacing step"
+      },
+      "9": {
+        "$value": "36px",
+        "$type": "dimension",
+        "$description": "36px spacing step"
+      },
+      "10": {
+        "$value": "40px",
+        "$type": "dimension",
+        "$description": "40px spacing step"
+      },
+      "11": {
+        "$value": "44px",
+        "$type": "dimension",
+        "$description": "44px spacing step"
+      },
+      "12": {
+        "$value": "48px",
+        "$type": "dimension",
+        "$description": "48px spacing step"
+      },
+      "13": {
+        "$value": "52px",
+        "$type": "dimension",
+        "$description": "52px spacing step"
+      },
+      "14": {
+        "$value": "56px",
+        "$type": "dimension",
+        "$description": "56px spacing step"
+      },
+      "15": {
+        "$value": "60px",
+        "$type": "dimension",
+        "$description": "60px spacing step"
+      },
+      "16": {
+        "$value": "64px",
+        "$type": "dimension",
+        "$description": "64px spacing step"
+      },
+      "17": {
+        "$value": "68px",
+        "$type": "dimension",
+        "$description": "68px spacing step"
+      },
+      "18": {
+        "$value": "72px",
+        "$type": "dimension",
+        "$description": "72px spacing step"
+      },
+      "19": {
+        "$value": "76px",
+        "$type": "dimension",
+        "$description": "76px spacing step"
+      },
+      "20": {
+        "$value": "80px",
+        "$type": "dimension",
+        "$description": "80px spacing step"
+      }
+    }
+  }
+}

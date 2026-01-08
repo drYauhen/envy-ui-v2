@@ -12,6 +12,39 @@ Storybook serves as an AI-agent-oriented architecture layer for understanding an
 
 **Reminder:** Any changes to Storybook-related npm scripts must be documented in [`docs/workflows/scripts-reference.md`](./scripts-reference.md).
 
+## Accessibility Testing
+
+Storybook includes built-in accessibility testing with `@storybook/addon-a11y`:
+
+### Scoped Accessibility Testing
+
+**Important Change:** Accessibility tests are now **scoped to component content only**, excluding wrapper UI elements (MultiContextViewer badges, descriptions, etc.).
+
+**Configuration:**
+```typescript
+// .storybook/preview.tsx
+a11y: {
+  element: '[data-testid="component-under-test"]'  // Targets component containers
+}
+```
+
+**Benefits:**
+- ✅ **Focused testing** - Tests actual component accessibility, not viewer UI
+- ✅ **Relevant results** - No false positives from wrapper elements
+- ✅ **Better compliance** - Accurate WCAG assessment of components
+
+### Theme-Based Accessibility
+
+The accessibility theme provides **WCAG 2.2 AA compliant** high-contrast versions:
+- **4.5:1 minimum contrast ratios** for normal text
+- **Theme switcher** in Storybook toolbar (App → Accessibility)
+- **Automatic theme switching** for all components using MultiContextViewer
+
+**Testing accessibility:**
+1. Switch to "Accessibility" theme in Storybook toolbar
+2. Run a11y addon to verify WCAG 2.2 AA compliance
+3. Check contrast ratios and color combinations
+
 ## Structure
 
 ```

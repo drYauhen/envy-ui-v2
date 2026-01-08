@@ -1,10 +1,16 @@
 # ADR-0002: Data-Driven Storybook Pipeline via Style Dictionary
 
-**Status:** Accepted  
-**Date:** 2025-12-15  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted
+
+**Date:** 2025-12-15
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
 
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — Headless / React Aria strategy
 
@@ -28,9 +34,23 @@ These issues made the system harder to evolve and increased the risk of inconsis
 
 ## Decision
 
-I decided to treat **Storybook as a dumb renderer** and move all token knowledge into a **data preparation layer** built with **Style Dictionary**.
+I decided to establish **architectural separation by Storybook section purpose**, with different approaches for different use cases:
 
-I made the following architectural decisions:
+### Section-Specific Architecture
+
+**1. Tokens Section (`/Tokens/`): Comprehensive Documentation Layer**
+- **Purpose**: Educational token documentation and visualization
+- **Approach**: Direct token imports for detailed, structured documentation
+- **Rationale**: Need full control over presentation, educational content, and JSON structure display
+- **Stories**: Rich, interactive documentation that teaches token relationships
+
+**2. Component Sections (`/HTML + CSS/`, `/TSX (Clean)/`, etc.): Usage Examples**
+- **Purpose**: Component testing, examples, and validation
+- **Approach**: Generated data consumption ("dumb renderers")
+- **Rationale**: Avoid duplication, ensure consistency, automatic updates
+- **Stories**: Pure renderers that demonstrate component behavior
+
+### Core Architectural Decisions
 
 1. **Style Dictionary prepares Storybook-ready data**
    - Token filtering (e.g. colors only)
@@ -39,25 +59,25 @@ I made the following architectural decisions:
    - CSS variable resolution
    - Stable, opinionated output shape
 
-2. **Storybook consumes generated data only**
-   - No token lists defined in stories
-   - No grouping or taxonomy logic
-   - No prefix or naming computation
-   - No assumptions about token structure
+2. **Purpose-driven data consumption**
+   - **Tokens section**: Direct imports (comprehensive docs)
+   - **Component sections**: Generated data (consistency)
+   - **Future sections**: Generated data (maintainability)
 
-3. A dedicated output is generated for Storybook consumption:
-
-This file is treated as a **public data contract**, not an internal build artifact.
+3. **Generated outputs serve as public contracts**
+   - `generated/storybook/colors.json` - Available for future component stories
+   - Treated as **public data contracts**, not internal artifacts
+   - Can be consumed by docs, tests, and other tools
 
 4. **system.meta.json** acts as a system-level contract:
 - Defines shared metadata (e.g. token prefix)
 - Consumed by Style Dictionary and other tooling
 - Storybook does not derive or compute system rules itself
 
-5. **Storybook stories are pure renderers**
-- They iterate over provided data
-- They render tokens visually
-- They do not encode system semantics
+5. **Architectural clarity over universal rules**
+- Different sections serve different purposes
+- Accept that some sections need direct access for educational value
+- Reserve "dumb renderer" approach for sections where it provides clear benefits
 
 ---
 

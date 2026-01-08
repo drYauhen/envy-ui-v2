@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { CSSProperties } from 'react';
-import neutral from '../../../tokens/app/foundations/colors/neutral.json';
-import brand from '../../../tokens/app/foundations/colors/brand.json';
-import accent from '../../../tokens/app/foundations/colors/accent.json';
-import statusUi from '../../../tokens/app/foundations/colors/status.json';
-import statusApplication from '../../../tokens/app/foundations/colors/status-application.json';
+import neutral from '../../../tokens/primitives/colors/neutral.json';
+import brand from '../../../tokens/primitives/colors/brand.json';
+import accent from '../../../tokens/primitives/colors/accent.json';
+import statusUi from '../../../tokens/contexts/app/semantics/colors/status.json';
+import statusApplication from '../../../tokens/contexts/app/semantics/colors/status-application.json';
 import { ColorScaleViewer } from '../../viewers/tokens/ColorScaleViewer';
 import { converter } from 'culori';
 

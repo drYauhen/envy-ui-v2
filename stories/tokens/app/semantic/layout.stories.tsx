@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import containerTokens from '../../../../tokens/app/semantic/layout/container.json';
-import pageTokens from '../../../../tokens/app/semantic/layout/page.json';
-import sectionTokens from '../../../../tokens/app/semantic/layout/section.json';
-import toolbarTokens from '../../../../tokens/app/semantic/layout/toolbar.json';
+import containerTokens from '../../../../tokens/contexts/app/semantics/layout/container.json';
+import pageTokens from '../../../../tokens/contexts/app/semantics/layout/page.json';
+import sectionTokens from '../../../../tokens/contexts/app/semantics/layout/section.json';
+import toolbarTokens from '../../../../tokens/contexts/app/semantics/layout/toolbar.json';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';

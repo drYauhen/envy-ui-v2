@@ -1,0 +1,22 @@
+[14:05:22.528] [INFO] storybook v10.1.11
+[14:05:23.525] [DEBUG] Getting package.json info for /Users/eugenegoncharov/Projects/envy-ui-v2/package.json...
+[14:05:24.634] [DEBUG] Serving static files from [36mpublic[39m at [36m/[39m
+[14:05:24.634] [DEBUG] Serving static files from [36mdocs[39m at [36m/[39m
+[14:05:24.634] [DEBUG] Serving static files from [36massets[39m at [36m/[39m
+[14:05:24.635] [DEBUG] Serving static files from [36mtokens[39m at [36m/[39m
+[14:05:24.635] [INFO] Starting...
+[14:05:26.533] [DEBUG] Starting preview..
+[14:05:26.583] [DEBUG] Using tsconfig paths for react-docgen
+[14:05:26.792] [ERROR] [38;2;241;97;97mError: listen EADDRINUSE: address already in use :::6006[39m
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at _Polka.listen (file://./node_modules/storybook/dist/core-server/index.js:6099:110)
+    at file://./node_modules/storybook/dist/core-server/index.js:6816:39
+    at new Promise (<anonymous>)
+    at storybookDevServer (file://./node_modules/storybook/dist/core-server/index.js:6815:19)
+    at async buildOrThrow (file://./node_modules/storybook/dist/core-server/index.js:5555:12)
+    at async buildDevStandalone (file://./node_modules/storybook/dist/core-server/index.js:7208:66)
+    at async withTelemetry (file://./node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)
+[14:05:26.793] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.

@@ -104,6 +104,12 @@ const architectureDocs: DocRegistryItem[] = [
     title: 'Dev App Architecture',
     category: 'architecture',
     storybookId: 'docs-architecture--dev-app-architecture'
+  },
+  {
+    id: 'arch-theme-structure',
+    path: 'theme-structure-analysis.md',
+    title: 'Theme Structure Analysis: Composition vs Semantic Breakdown',
+    category: 'architecture'
   }
 ];
 

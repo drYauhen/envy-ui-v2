@@ -1,16 +1,22 @@
 # ADR-0008: TSX Layer (React Aria) and Storybook Layering
 
-**Status:** Accepted  
-**Date:** 2025-12-16  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted (Implemented)
 
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
-- [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus Policy Architecture  
-- [ADR-0007](./ADR-0007-focus-token-separation-and-policy-mapping.md) — Focus Token Separation and Policy Mapping  
+**Date:** 2025-12-16
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
+- [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus Policy Architecture
+- [ADR-0007](./ADR-0007-focus-token-separation-and-policy-mapping.md) — Focus Token Separation and Policy Mapping
 
 ---
 
@@ -120,6 +126,50 @@ Story order is enforced as: `Tokens` → `CSS` → `TSX`.
 
 ---
 
-## 7. Status
+## 7. Implementation Notes
 
-Accepted and implemented for the initial TSX baseline + Storybook layering.
+This ADR has been **fully implemented** with the Button component serving as the reference TSX baseline:
+
+### Current Implementation Status
+- ✅ **React Aria Integration**: Button component uses `useButton`, `useFocusRing`, `useHover` hooks
+- ✅ **Meta-Package Dependencies**: `react-aria` and `react-stately` installed as specified
+- ✅ **DOM-Blessed API**: Supports both `disabled` (DOM) and `isDisabled` (React Aria) props
+- ✅ **Dual Interaction Props**: `onClick` (DOM) and `onPress` (React Aria) both supported
+- ✅ **CSS Independence**: Component emits `data-eui-*` state attributes for interaction states
+- ✅ **State Data Attributes**: `data-eui-hovered`, `data-eui-pressed`, `data-eui-focused`, `data-eui-focus-visible`
+- ✅ **Storybook Layering**: Perfect organization with `TSX + React Aria/Components/Button`
+- ✅ **Context Awareness**: Component respects external context without internal assumptions
+- ✅ **CSS Contract Preservation**: Maintains `class="eui-button"` + `data-eui-*` axes
+
+### Technical Realization
+- **Button Component**: Located in `src/ui/button.tsx` with comprehensive React Aria integration
+- **Type Safety**: Uses generated TypeScript contracts from token definitions
+- **Flexible Rendering**: Supports `asChild` pattern, link buttons, and custom hosts
+- **Accessibility**: Full keyboard navigation, focus management, and screen reader support
+- **Icon Support**: `startIcon`/`endIcon` props with proper slotting
+- **Loading States**: `isLoading` prop with `aria-busy` and visual indicators
+
+### Storybook Organization
+- **Tokens Section**: `Tokens/...` for token visualization
+- **CSS Section**: `CSS/...` for HTML + CSS reference stories
+- **TSX Section**: `TSX + React Aria/Components/Button` for component stories
+- **Navigation Order**: Enforced as Tokens → CSS → TSX as specified
+
+### Architectural Validation
+The ADR's decisions remain sound and well-implemented:
+- React Aria provides excellent headless accessibility foundation
+- Dual API approach enables gradual migration and flexibility
+- State data attributes keep CSS layer independent
+- Storybook layering makes architectural boundaries clear
+
+### Evolution Path
+The Button component establishes patterns for future TSX components:
+- Consistent React Aria hook usage
+- Standardized prop patterns (DOM + React Aria)
+- CSS contract preservation
+- Context-aware external application
+- Comprehensive accessibility features
+
+## 8. Status
+
+**Accepted (Implemented)** - Button component fully implemented with React Aria integration, dual API support, CSS independence, and proper Storybook layering. Serves as reference implementation for future TSX components.

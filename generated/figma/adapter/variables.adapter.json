@@ -93,150 +93,6 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Focus",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.focus.ring",
-          "type": "COLOR",
-          "value": "oklch(62% 0.26 25)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / System",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.system.focus",
-          "type": "COLOR",
-          "value": "oklch(62% 0.26 25)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Brand",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.brand.100",
-          "type": "COLOR",
-          "value": "oklch(93% 0.05 232)"
-        },
-        {
-          "path": "eui.color.brand.200",
-          "type": "COLOR",
-          "value": "oklch(85% 0.06 231)"
-        },
-        {
-          "path": "eui.color.brand.300",
-          "type": "COLOR",
-          "value": "oklch(75% 0.08 231)"
-        },
-        {
-          "path": "eui.color.brand.400",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
-        },
-        {
-          "path": "eui.color.brand.50",
-          "type": "COLOR",
-          "value": "oklch(97% 0.02 232)"
-        },
-        {
-          "path": "eui.color.brand.500",
-          "type": "COLOR",
-          "value": "oklch(57% 0.09 231)"
-        },
-        {
-          "path": "eui.color.brand.600",
-          "type": "COLOR",
-          "value": "oklch(52% 0.10 230)"
-        },
-        {
-          "path": "eui.color.brand.700",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.color.brand.800",
-          "type": "COLOR",
-          "value": "oklch(47% 0.10 230)"
-        },
-        {
-          "path": "eui.color.brand.900",
-          "type": "COLOR",
-          "value": "oklch(46% 0.09 231)"
-        },
-        {
-          "path": "eui.color.brand.primary",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Accent",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.color.accent.100",
-          "type": "COLOR",
-          "value": "oklch(93% 0.06 236)"
-        },
-        {
-          "path": "eui.color.accent.200",
-          "type": "COLOR",
-          "value": "oklch(89% 0.09 236)"
-        },
-        {
-          "path": "eui.color.accent.300",
-          "type": "COLOR",
-          "value": "oklch(84% 0.14 236)"
-        },
-        {
-          "path": "eui.color.accent.400",
-          "type": "COLOR",
-          "value": "oklch(76% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.50",
-          "type": "COLOR",
-          "value": "oklch(96% 0.04 236)"
-        },
-        {
-          "path": "eui.color.accent.500",
-          "type": "COLOR",
-          "value": "oklch(71% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.600",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.700",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
-        },
-        {
-          "path": "eui.color.accent.800",
-          "type": "COLOR",
-          "value": "oklch(58% 0.14 237)"
-        },
-        {
-          "path": "eui.color.accent.900",
-          "type": "COLOR",
-          "value": "oklch(53% 0.13 238)"
-        },
-        {
-          "path": "eui.color.accent.primary",
-          "type": "COLOR",
-          "value": "oklch(68% 0.15 237)"
-        }
-      ]
-    },
-    {
       "name": "envy-ui-v2 • Colors / Status",
       "mode": "default",
       "variables": [
@@ -446,6 +302,150 @@
           "path": "eui.color.neutral.white",
           "type": "COLOR",
           "value": "oklch(100% 0 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Brand",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.brand.100",
+          "type": "COLOR",
+          "value": "oklch(93% 0.05 232)"
+        },
+        {
+          "path": "eui.color.brand.200",
+          "type": "COLOR",
+          "value": "oklch(85% 0.06 231)"
+        },
+        {
+          "path": "eui.color.brand.300",
+          "type": "COLOR",
+          "value": "oklch(75% 0.08 231)"
+        },
+        {
+          "path": "eui.color.brand.400",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        },
+        {
+          "path": "eui.color.brand.50",
+          "type": "COLOR",
+          "value": "oklch(97% 0.02 232)"
+        },
+        {
+          "path": "eui.color.brand.500",
+          "type": "COLOR",
+          "value": "oklch(57% 0.09 231)"
+        },
+        {
+          "path": "eui.color.brand.600",
+          "type": "COLOR",
+          "value": "oklch(52% 0.10 230)"
+        },
+        {
+          "path": "eui.color.brand.700",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.color.brand.800",
+          "type": "COLOR",
+          "value": "oklch(47% 0.10 230)"
+        },
+        {
+          "path": "eui.color.brand.900",
+          "type": "COLOR",
+          "value": "oklch(46% 0.09 231)"
+        },
+        {
+          "path": "eui.color.brand.primary",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Accent",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.accent.100",
+          "type": "COLOR",
+          "value": "oklch(93% 0.06 236)"
+        },
+        {
+          "path": "eui.color.accent.200",
+          "type": "COLOR",
+          "value": "oklch(89% 0.09 236)"
+        },
+        {
+          "path": "eui.color.accent.300",
+          "type": "COLOR",
+          "value": "oklch(84% 0.14 236)"
+        },
+        {
+          "path": "eui.color.accent.400",
+          "type": "COLOR",
+          "value": "oklch(76% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.50",
+          "type": "COLOR",
+          "value": "oklch(96% 0.04 236)"
+        },
+        {
+          "path": "eui.color.accent.500",
+          "type": "COLOR",
+          "value": "oklch(71% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.600",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.700",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.color.accent.800",
+          "type": "COLOR",
+          "value": "oklch(58% 0.14 237)"
+        },
+        {
+          "path": "eui.color.accent.900",
+          "type": "COLOR",
+          "value": "oklch(53% 0.13 238)"
+        },
+        {
+          "path": "eui.color.accent.primary",
+          "type": "COLOR",
+          "value": "oklch(68% 0.15 237)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Focus",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.focus.ring",
+          "type": "COLOR",
+          "value": "oklch(62% 0.26 25)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / System",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.system.focus",
+          "type": "COLOR",
+          "value": "oklch(62% 0.26 25)"
         }
       ]
     }

@@ -1,9 +1,14 @@
 # ADR-0023: Token Organization - Context and Theme Separation
 
-**Status:** Accepted  
-**Date:** 2025-12-26  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Accepted (Partially Implemented)
+
+**Date:** 2025-12-26
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**  
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes  
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
@@ -258,6 +263,88 @@ This structure directly implements the layered architecture described in ADR-001
 3. Style Dictionary reads from context-specific directories
 4. Figma export generates separate files per context: `generated/figma/{context}/variables.tokens.scoped.json`
 5. Figma plugin validates context match before import
+
+## Implementation Notes
+
+This ADR establishes the conceptual and structural foundation for context+theme token separation, with **partial implementation** completed:
+
+### Current Implementation Status
+- ✅ **Conceptual Separation**: Context vs theme responsibilities clearly defined and working
+- ✅ **Token Resolution Order**: Foundation → Semantic → Context → Theme → Component resolution implemented
+- ✅ **Context Responsibilities**: App (14px), website, report contexts with different defaults
+- ✅ **Theme Responsibilities**: Multiple themes per context (default, accessibility, dark, etc.)
+- ⚠️ **Directory Structure**: Mixed old/new structure - migration in progress
+
+### Current Structure Reality (2026-01-08)
+
+**Mixed Architecture (Transitional State):**
+```
+tokens/
+├── foundations/        ✅ Global foundations (OKLCH, spacing, typography)
+├── semantic/          ✅ Global semantic tokens
+├── contexts/          ✅ Context-specific overrides (old structure)
+│   ├── app.json       ✅ App context defaults
+│   ├── website.json   ✅ Website context defaults
+│   └── report.json    ✅ Report context defaults
+├── themes/            ✅ Theme-specific overrides (old structure)
+│   ├── app/           ✅ App themes (default, accessibility)
+│   ├── website/       ✅ Website themes (default, dark)
+│   └── report/        ✅ Report themes (print, screen)
+├── app/               ⚠️ New structure - incomplete
+│   └── components/    ✅ Only components migrated so far
+├── website/           ⚠️ New structure - incomplete
+└── report/           ⚠️ New structure - incomplete
+```
+
+**Working Token Resolution:**
+- Context tokens from `tokens/contexts/` properly override semantic defaults
+- Theme tokens from `tokens/themes/` properly override context defaults
+- Component tokens properly override theme defaults
+- CSS generation creates correct context+theme selectors
+- Figma export supports context+theme combinations
+
+### Migration Progress
+**Completed:**
+- Conceptual model established and working
+- Context-specific defaults implemented
+- Theme overrides implemented
+- Token resolution order working correctly
+
+**In Progress:**
+- Directory structure migration from mixed to context-specific
+- Context directories (`tokens/app/`, `tokens/website/`, `tokens/report/`) created but incomplete
+- Need to migrate foundations, semantic, and theme tokens into context directories
+
+**Future State (per ADR):**
+```
+tokens/
+├── app/               🎯 Target: Complete context structure
+│   ├── foundations/   ❌ Needs migration
+│   ├── semantic/      ❌ Needs migration
+│   ├── components/    ✅ Exists
+│   └── themes/        ❌ Needs migration from tokens/themes/app/
+├── website/           🎯 Target: Complete context structure
+└── report/           🎯 Target: Complete context structure
+```
+
+### Technical Implementation
+- **Style Dictionary**: Configured to read both old and new structures during transition
+- **CSS Generation**: Creates separate selectors for contexts and themes
+- **Figma Export**: Generates scoped token files per context (`generated/figma/{context}/variables.tokens.scoped.json`)
+- **Validation**: Context+theme combinations validated before export
+
+### Benefits Achieved
+- **Clarity**: File structure matches conceptual model
+- **Maintainability**: Easy to add new contexts or themes
+- **Platform Support**: Cleaner export to Figma and other platforms
+- **Developer Experience**: Clear mental model for token organization
+
+### Migration Strategy
+The transition to fully independent context directories is designed to be **non-breaking**:
+- Old structure continues to work during migration
+- New context directories can be populated incrementally
+- Style Dictionary reads from both structures
+- No disruption to existing token usage
 
 ---
 

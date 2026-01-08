@@ -1,12 +1,13 @@
 # ADR-XXXX: <Title>
 
-**Status:** <Proposed | Accepted | Superseded>  
-**Date:** <YYYY-MM-DD>  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** <Proposed | Accepted | Superseded>
+**Date:** <YYYY-MM-DD>
+**Last Updated:** <YYYY-MM-DD> (leave blank for new ADRs)
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
 
-- [ADR-XXXX](./ADR-XXXX-title.md) — Related ADR Title  
+- [ADR-XXXX](./ADR-XXXX-title.md) — Related ADR Title
 - [ADR-YYYY](./ADR-YYYY-title.md) — Another Related ADR Title
 
 ---

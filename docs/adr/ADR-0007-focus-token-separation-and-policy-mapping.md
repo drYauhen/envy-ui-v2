@@ -1,12 +1,18 @@
 # ADR-0007: Focus Token Separation and Policy Mapping
 
-**Status:** Accepted  
-**Date:** 2025-12-16  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted (Partially Implemented)
 
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
+**Date:** 2025-12-16
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
 - [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus Policy Architecture Driven with System Focus
 
 ---
@@ -91,6 +97,55 @@ This preserves the separation of responsibilities:
 
 ---
 
-## 7. Status
+## 7. Implementation Notes
 
-Accepted and implemented for the initial reference component baseline + Storybook policy toggle.
+This ADR has been **partially implemented** with comprehensive token architecture but deferred runtime policy mapping:
+
+### Current Implementation Status
+- ✅ **System-level focus tokens**: Fully implemented with proper naming
+  - `--eui-color-system-focus`: `oklch(62% 0.26 25)` (unique, globally consistent)
+  - `--eui-color-focus-ring`: References system focus color
+  - `--eui-focus-ring-width-base/accessible`: Global widths (2px/3px)
+
+- ✅ **Component-level focus tokens**: Fully implemented for interactive components
+  - `--eui-switch-focus-ring-color-derived-base/accessible`: Component-specific derived colors
+  - Proper separation between system and component focus concerns
+  - Tokens exist across multiple interactive components (button, input, checkbox, switch)
+
+- ✅ **Token naming evolution**: Implemented with dash convention
+  - ADR expected: `eui.color.system.focus`
+  - Implementation: `eui.color.system-focus` (functionally equivalent)
+  - Consistent with broader token naming patterns in the system
+
+- ⚠️ **Runtime policy mapping**: Architectural foundation exists, mechanism deferred
+  - Token structure supports policy-driven overrides
+  - Component-local CSS variables architecture ready for implementation
+  - Policy selection mechanism (e.g., `data-eui-focus-policy="system"`) not yet implemented
+
+- ⚠️ **Storybook policy toggle**: Architecture ready, UI mechanism needs verification
+  - ADR claims "Storybook policy toggle" implemented
+  - Token foundation exists but toggle mechanism status unclear
+
+### Technical Realization
+- **Token Hierarchy**: Perfect separation between global system tokens and component-specific tokens
+- **Color Uniqueness**: System focus color intentionally distinct from brand/semantic colors
+- **Component Agnosticism**: Components don't decide focus policy, as required by ADR
+- **Scalability**: Token structure supports easy extension to new components
+
+### Architectural Validation
+The ADR's core decisions remain sound and well-implemented:
+- System vs component token separation perfectly realized
+- Global focus color established as unique and reusable
+- Component policy agnosticism maintained
+- Runtime mapping architecture foundation solid
+
+### Evolution Path
+The implemented token architecture provides:
+- Immediate focus styling through component-derived tokens
+- Foundation for future policy-driven system focus implementation
+- Clear migration path for runtime policy mapping
+- Extensible focus behavior without component refactoring
+
+## 8. Status
+
+**Accepted (Partially Implemented)** - Token architecture fully implemented with system/component separation complete. Runtime policy mapping foundation established but mechanism deferred to future accessibility/policy implementation phase.

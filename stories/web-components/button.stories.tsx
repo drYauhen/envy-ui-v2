@@ -1,8 +1,9 @@
+/// <reference path="../../../packages/web-components/button/button.d.ts" />
+
 import type { Meta, StoryObj } from '@storybook/react';
 import { MultiContextViewer } from '../utils/multi-context-viewer';
 import { useEffect } from 'react';
-import '../../packages/web-components/button'; // Registers the custom element
-// TypeScript declarations are automatically picked up from button.d.ts
+import '../../../packages/web-components/button'; // Registers the custom element
 
 const meta: Meta = {
   title: 'Web Components/Components/Button',

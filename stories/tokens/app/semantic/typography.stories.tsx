@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import textStylesTokens from '../../../../tokens/app/semantic/typography/text-styles.json';
+import textStylesTokens from '../../../../tokens/contexts/app/semantics/typography/text-styles.json';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';

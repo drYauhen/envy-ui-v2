@@ -1,10 +1,16 @@
 # ADR-0020: Elevation System Architecture
 
-**Status:** Accepted  
-**Date:** 2025-12-20  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted (Implemented)
+
+**Date:** 2025-12-20
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
 
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
@@ -200,6 +206,45 @@ Elements may change elevation on interaction (optional):
 - `extra-large` for critical modals (if needed)
 - Tooltip component with `extra-large` elevation
 
+### Implementation Notes
+
+This ADR has been **fully implemented** with a comprehensive elevation system that provides clear visual hierarchy and functional separation:
+
+### Current Implementation Status
+- ✅ **Semantic Elevation Tokens**: Complete bidirectional scale in `tokens/contexts/app/semantics/shadow.json`
+  - `none`: `"none"` (no shadow)
+  - `small`: `"0 1px 2px rgba(0, 0, 0, 0.05)"` (1-2dp)
+  - `default`: `"0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.10)"` (2-4dp)
+  - `large`: `"0 2px 4px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.12)"` (8-12dp)
+  - `extra-large`: `"0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)"` (16-24dp)
+
+- ✅ **Component Elevation Mapping**: Exact implementation of ADR specifications
+  - **Cards**: `elevated` → `default`, `flat` → `none`, `strong` → `large`
+  - **Detail Panel**: Custom left-side shadow (`--eui-detail-panel-shadow-left`)
+  - **Functional Hierarchy**: Content (cards) < Floating UI (menus) < Overlays (modals) < Critical UI (tooltips)
+
+- ✅ **Z-Index Correlation**: Implemented through functional hierarchy principles
+  - Base content: Low elevation (cards, panels)
+  - Floating elements: High elevation (menus, dropdowns)
+  - Overlays: Higher elevation (modals)
+  - Critical elements: Maximum elevation (tooltips)
+
+- ✅ **Context Awareness**: Detail Panel uses custom left-side shadow for contextual elevation
+- ✅ **Token Integration**: Full support through layered token architecture
+
+### Technical Realization
+- **Token Structure**: Semantic shadows in context-specific semantic layer
+- **Component Integration**: Component tokens reference semantic elevation levels
+- **CSS Variables**: Generated variables like `--eui-shadow-large`, `--eui-card-variant-elevated-shadow`
+- **Context/Theme Support**: Elevation can vary by context (app vs website vs report) and theme
+
+### Architecture Benefits Achieved
+- **Visual Hierarchy**: Clear functional importance through elevation levels
+- **Consistency**: Same component types use same elevation across the system
+- **Industry Standards**: Aligns with Material Design, Ant Design, Chakra UI elevation patterns
+- **Scalability**: Bidirectional scale allows easy extension
+- **Maintainability**: Token-based system enables easy theme adjustments
+
 ### Usage Guidelines
 
 **Correct:**
@@ -219,6 +264,15 @@ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 /* ❌ Use wrong level for functional role */
 .menu { box-shadow: var(--eui-shadow-small); } /* ❌ Menu should be large */
 ```
+
+### Future Enhancements
+- **Z-Index Tokens**: Can be added for explicit z-index/elevation correlation if needed
+- **Tooltip Component**: Will use `extra-large` elevation when implemented
+- **Dynamic Elevation**: Optional hover/focus elevation changes can be added per component
+
+## Status
+
+**Accepted (Implemented)** - Elevation system architecture fully implemented with semantic tokens, component mapping, and functional hierarchy principles.
 
 ---
 

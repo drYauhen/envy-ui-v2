@@ -1,9 +1,18 @@
 # ADR-0001: React Aria as Headless Accessibility Foundation
 
-**Status:** Accepted  
-**Date:** 2025-12-15  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Accepted
+
+**Date:** 2025-12-15
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+
+- [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
 
 ---
 ## Purpose of This Document
@@ -148,53 +157,85 @@ Using Spectrum would conflict with these goals.
 
 ## Component Layering in Envy UI v2
 
-### Low-Level Components
+Envy UI v2 implements a **multi-tier component architecture** with different implementation strategies for different use cases:
 
-Examples:
+### Tier 1: TSX (Clean) Components
 
-* Checkbox
-* Radio
-* Switch
-* Button
-* Input / TextField
+**Purpose**: Basic, lightweight components for simple use cases
+**Implementation**: Plain HTML elements with semantic markup and CSS styling
+**Examples**: Simple buttons, basic form inputs, layout components
 
-Implementation:
-
-* React Aria hooks
-* Envy UI v2 tokens for styling
-
----
-
-### Mid-Level Components
-
-Examples:
-
-* Select
-* Dropdown
-* Menu
-* Popover
-
-Implementation:
-
-* composition of React Aria pattern primitives,
-* custom DOM structure,
-* custom or extended semantics when required.
+**Characteristics**:
+* No external dependencies beyond React
+* Semantic HTML with ARIA attributes
+* CSS-driven styling with Envy UI tokens
+* Fast, lightweight, and reliable
 
 ---
 
-### High-Level Components
+### Tier 2: TSX + React Aria Components
+
+**Purpose**: Accessible, interactive components requiring complex interaction patterns
+**Implementation**: React Aria hooks with custom DOM structure and Envy UI styling
+**Examples**: Select dropdowns, complex form controls, advanced navigation
+
+**Characteristics**:
+* React Aria hooks for accessibility and interaction
+* Custom DOM structure optimized for Envy UI design language
+* Full keyboard navigation and screen reader support
+* Consistent behavior across browsers and devices
+
+#### Low-Level Components (React Aria)
 
 Examples:
-
-* Table / Grid
-* Tree / TreeGrid
-* Calendar-like systems
+* Button (with keyboard/focus management)
+* Checkbox, Radio, Switch
+* TextField, TextArea
+* Focus management utilities
 
 Implementation:
+* `useButton`, `useCheckbox`, `useFocusRing` hooks
+* Envy UI v2 tokens for visual styling
+* Custom accessibility enhancements
 
-* fully custom,
-* built on top of low-level primitives,
-* without React Aria high-level components.
+#### Mid-Level Components (React Aria)
+
+Examples:
+* Select, MultiSelect, SearchableSelect
+* Menu, Dropdown
+* Popover, Dialog
+* ListBox, ComboBox
+
+Implementation:
+* Composition of React Aria pattern primitives (`useListBox`, `useMenu`)
+* Custom DOM structure and semantics
+* Extended accessibility features when needed
+
+---
+
+### Tier 3: Web Components
+
+**Purpose**: Framework-agnostic, reusable components
+**Implementation**: Web Components API with shadow DOM
+**Examples**: Cross-framework UI primitives
+
+**Characteristics**:
+* No React dependency
+* Shadow DOM encapsulation
+* Framework-agnostic API
+* Experimental/proof-of-concept status
+
+---
+
+### Implementation Strategy by Component Type
+
+| Component Type | TSX (Clean) | TSX + React Aria | Web Components |
+|---|---|---|---|
+| Simple Button | ✅ Primary | ✅ Advanced interactions | ✅ Cross-framework |
+| Basic Input | ✅ Primary | ✅ Complex validation | ❌ Not applicable |
+| Select Dropdown | ❌ Limited | ✅ Primary | ✅ Cross-framework |
+| Data Table | ❌ Limited | ✅ Primary | ❌ Complex |
+| Layout Components | ✅ Primary | ❌ Not needed | ❌ Not applicable |
 
 ---
 

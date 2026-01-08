@@ -1,13 +1,18 @@
 # ADR-0009: AVE Token Rule — Profile-Aware Visual Encoding
 
-**Status:** Accepted (Architectural Rule)  
-**Date:** 2025-12-16  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Accepted (Architectural Rule)
 
-**Related:**  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering  
+**Date:** 2025-12-16
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering
 
 ---
 
@@ -95,6 +100,37 @@ Violations are tolerated temporarily during exploration; treat this rule as lint
 
 ---
 
-## 9. Status and Next Steps
+## 9. Implementation Notes
 
-Rule is **accepted**. Implementation can follow Option A (incremental) or Option B (immediate alignment) depending on momentum and cleanliness priorities. Future ADRs may define concrete `eui.profile.*` structures and migration steps.
+This ADR establishes an **architectural rule** that is **accepted but not yet implemented**, following the **Option A (incremental)** migration strategy:
+
+### Current Implementation Status
+- ✅ **Architectural Rule Accepted**: AVE Token Rule established as system guidance
+- ✅ **Token Structure Foundation**: Orthogonal axes (color/decoration/density) architecturally sound
+- ✅ **Migration Strategy Chosen**: Option A (incremental application) actively pursued
+- ⚠️ **Profile-Level Tokens**: No `eui.profile.*` tokens exist yet (expected per deferral)
+- ⚠️ **Component Token Routing**: Components contain descriptive strings, not profile references (tolerated per ADR)
+
+### Technical Assessment
+- **Component Token State**: All current component tokens are "violations" (direct descriptions vs profile routing)
+- **Primitive Token Availability**: Complete primitive token library exists in `tokens/primitives/`
+- **Future Extensibility**: Token structure enables seamless profile introduction
+- **Incremental Progress**: New/changed tokens can adopt AVE rule without system-wide refactor
+
+### Architectural Validation
+The AVE Token Rule provides **essential future-proofing**:
+- **Theme Independence**: Components won't require refactoring for new visual themes
+- **Profile Flexibility**: Color, decoration, density profiles remain orthogonal and composable
+- **Semantic Preservation**: Component tokens represent intent, profiles handle visual resolution
+- **CMS-Ready**: Enables runtime theme switching and brand customization
+
+### Evolution Path
+The rule enables future capabilities without current disruption:
+- **Multi-Theme Support**: Different brand palettes without component changes
+- **Regulatory Compliance**: Market-specific visual requirements (EU/GovTech accessibility)
+- **User Customization**: CMS-style theme switching and personalization
+- **Design System Evolution**: A/B testing of visual treatments
+
+## 10. Status and Next Steps
+
+Rule is **accepted as architectural guidance**. Implementation follows **Option A (incremental)** - existing tokens remain as-is while new/changed tokens adopt the AVE routing rule. Profile-level token structures will be defined in future ADRs when theme/profile switching becomes a concrete requirement.

@@ -1,11 +1,12 @@
 # Token Architecture
 
-**Last Updated:** 2026-01-07
+**Last Updated:** 2026-01-08
 **Category:** Reference
 **Related ADR:**
 - [ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture
 - [ADR-0023](./../adr/ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization
 - [ADR-0036](./../adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
+- [Theme Structure Analysis](../theme-structure-analysis.md) — Current Theme Architecture Decisions
 
 ---
 
@@ -13,13 +14,20 @@
 
 The Envy UI token system is a comprehensive design token architecture that supports multiple contexts (app, website, report) with theme variations, while maintaining DTCG compliance and providing excellent developer experience.
 
+**Key Features:**
+- **WCAG 2.2 AA Accessibility Theme** - Built-in high-contrast theme for accessibility compliance
+- **Composition-Based Themes** - Holistic theme approach for better maintainability
+- **Multi-Context Support** - Independent token structures for different use cases
+- **Scoped Accessibility Testing** - A11y testing focused on component content only
+
 ## Core Principles
 
 1. **Layered Architecture** - Foundation → Semantic → Context → Theme → Component
 2. **DTCG Compliance** - Follows Design Tokens Community Group 2025.10 specification
 3. **Multi-Context Support** - Independent token structures for different use cases
-4. **Type Safety** - Generated TypeScript types for all tokens
-5. **Developer Experience** - Rich tooling, validation, and documentation
+4. **Accessibility-First** - WCAG 2.2 AA compliance built into the theme system
+5. **Type Safety** - Generated TypeScript types for all tokens
+6. **Developer Experience** - Rich tooling, validation, and documentation
 
 ## Architecture Layers
 
@@ -110,25 +118,53 @@ tokens/{context}/
 
 ## Theme System
 
-Themes provide visual variations within a context:
+Themes provide visual variations within a context using a **composition-based approach** where all theme overrides are contained in single comprehensive files.
 
 ### Theme Resolution Order
 1. **Foundation** - Base values (OKLCH colors, spacing)
 2. **Semantic** - Context-specific defaults
-3. **Theme** - Visual identity overrides
+3. **Theme** - Visual identity overrides (composition-based)
 4. **Component** - Component-specific overrides
 
-### Example Theme Override
+### Current Theme Structure
+
+**Composition Approach:**
+```
+tokens/contexts/app/themes/
+├── default.json          # Default theme (implicit baseline)
+└── accessibility.json    # WCAG 2.2 AA compliant high-contrast theme
+```
+
+### Accessibility Theme Features
+
+The accessibility theme provides WCAG 2.2 AA compliance with:
+- **4.5:1 minimum contrast ratios** for normal text
+- **High-contrast color combinations** for all UI elements
+- **Semantic color preservation** while ensuring readability
+- **Badge-specific overrides** for all variants (subtle, solid, outline)
+
+### Example Theme Override (Accessibility)
 ```json
-// tokens/app/themes/dark.json
+// tokens/contexts/app/themes/accessibility.json
 {
   "eui": {
-    "color": {
-      "background": {
-        "base": { "$value": "{eui.color.neutral.900}" }
-      },
-      "text": {
-        "primary": { "$value": "{eui.color.neutral.50}" }
+    "typography": {
+      "base": {
+        "fontSize": { "$value": "16px" }  // Larger for accessibility
+      }
+    },
+    "badge": {
+      "colors": {
+        "neutral": {
+          "background": { "$value": "#ffffff" },  // High contrast
+          "text": { "$value": "#000000" }         // Black text
+        },
+        "success": {
+          "solid": {
+            "background": { "$value": "#006400" }, // Dark green
+            "text": { "$value": "#ffffff" }        // White text
+          }
+        }
       }
     }
   }
@@ -303,12 +339,15 @@ Each context exports as separate Figma files:
 ## Current Implementation Status
 
 - ✅ **Multi-context architecture** - app/website/report contexts
-- ✅ **Theme system** - Default, dark, accessibility, print themes
+- ✅ **Composition-based themes** - Holistic theme approach with accessibility theme
+- ✅ **WCAG 2.2 AA compliance** - Built-in high-contrast accessibility theme
+- ✅ **Scoped accessibility testing** - A11y tests focused on component content only
 - ✅ **DTCG compliance** - Local schema validation
 - ✅ **TypeScript support** - Generated types and utilities
 - ✅ **Developer tooling** - Validation, autocomplete, documentation
 - ✅ **Platform exports** - CSS, Figma, JavaScript support
 - ✅ **Token viewers** - Enhanced with resolved values
+- ✅ **Badge accessibility** - Full WCAG compliance for all badge variants
 
 ## Related Documentation
 

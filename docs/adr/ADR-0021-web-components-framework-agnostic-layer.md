@@ -1,13 +1,19 @@
 # ADR-0021: Web Components as Framework-Agnostic Implementation Layer
 
-**Status:** Exploratory  
-**Date:** 2025-01-XX  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts  
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model  
+**Status:** Exploratory (Proof-of-Concept Implemented)
+
+**Date:** 2025-01-XX
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts
+- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 
 ---
@@ -296,12 +302,76 @@ This proof-of-concept serves a **strategic purpose beyond immediate production n
 
 ---
 
+## Implementation Notes
+
+This ADR describes a **long-term proof-of-concept** that has been **successfully implemented**, validating Envy UI v2's framework-agnostic architecture:
+
+### Current Implementation Status
+- ✅ **Web Components Button**: Complete `EuiButton` implementation in `packages/web-components/button/`
+  - Custom Elements v1 with Shadow DOM v1
+  - Full token integration via CSS custom properties
+  - Context/theme support via `[data-eui-context]` and `[data-eui-theme]`
+  - Native ARIA accessibility implementation
+  - Framework-agnostic usage patterns
+
+- ✅ **Token Penetration**: CSS custom properties automatically flow into Shadow DOM
+  - `:host` selector consumes `var(--eui-button-bg-base)` etc.
+  - No special bridging needed - tokens work natively
+  - Context/theme attributes cascade through Shadow DOM boundaries
+
+- ✅ **Storybook Integration**: Complete stories in `stories/web-components/`
+  - MultiContextViewer demonstrates framework-agnostic usage
+  - Shows usage in React, Vue, Angular, or vanilla JavaScript
+  - Validates token system across technology boundaries
+
+- ✅ **Accessibility**: Native ARIA implementation (not React Aria)
+  - `aria-disabled`, `aria-expanded` attributes
+  - Keyboard navigation support
+  - Focus management with `:focus` and `:focus-visible`
+  - Follows WAI-ARIA Authoring Practices Guide (same standard as React Aria)
+
+### Technical Architecture Validated
+- **Custom Elements v1**: `customElements.define('eui-button', EuiButton)`
+- **Shadow DOM v1**: `this.attachShadow({ mode: 'open' })`
+- **Observed Attributes**: `static get observedAttributes()` for reactive updates
+- **Style Encapsulation**: Shadow DOM prevents CSS conflicts while allowing token inheritance
+- **Event Handling**: Standard event bubbling with `composed: true` when needed
+
+### Strategic Validation Achieved
+- **Framework Agnostic**: Proves components work in any framework or vanilla JavaScript
+- **Token Universality**: Validates tokens as true source of truth across runtimes
+- **Contract Preservation**: Component contracts survive technology stack changes
+- **Future-Proofing**: Migration path available if React/current stack becomes obsolete
+- **Industry Alignment**: Uses same patterns as Microsoft FAST, Adobe Spectrum, Salesforce Lightning
+
+### Proof-of-Concept Results
+**✅ Successful Validation:**
+- Token system works across technology boundaries
+- Design decisions are preserved independently of implementation frameworks
+- Business and design choices are not lost when technology stacks change
+- Architecture supports long-term evolution and technology stack migration
+
+**🎯 Strategic Purpose Achieved:**
+- Demonstrates architectural flexibility and longevity
+- Validates renderer-agnostic model ([ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
+- Strengthens positioning as universal, future-proof design system
+- Proves Envy UI v2 can survive technology stack changes
+
+### Usage Example
+```html
+<!-- Works in any framework or vanilla JavaScript -->
+<div data-eui-context="app" data-eui-theme="default">
+  <eui-button data-eui-intent="primary">Framework Agnostic</eui-button>
+</div>
+```
+
 ## Status
 
 * Document type: **Architecture Decision / Exploratory Analysis**
-* Status: **Exploratory** (early-stage analysis, proof-of-concept phase)
-* Not a commitment to full implementation
-* Subject to validation through proof-of-concept
+* Status: **Exploratory (Proof-of-Concept Implemented)** - Proof-of-concept successfully completed, validating framework-agnostic architecture
+* Strategic validation achieved - tokens and contracts survive technology stack changes
+* No commitment to full production implementation beyond proof-of-concept
+* Serves as architectural validation and future migration reference
 
 ---
 

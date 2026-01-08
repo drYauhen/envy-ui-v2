@@ -1,11 +1,17 @@
 # ADR-0018: Typography Units Architecture - REM, EM, and PX
 
-**Status:** Accepted  
-**Date:** 2025-01-21  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes  
+**Status:** Accepted (Partially Implemented)
+
+**Date:** 2025-01-21
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 
 ---
@@ -550,6 +556,79 @@ If button font-size = 0.9rem (smaller than base)
 
 **Risk:** Performance impact of CSS calculations
 - **Mitigation:** REM/EM calculations are native CSS, minimal performance impact
+
+---
+
+## Implementation Notes
+
+This ADR establishes a **hybrid typography units architecture** that has been **partially implemented** with the REM/PX foundation complete and EM migration planned:
+
+### Current Implementation Status
+- ✅ **REM Units for Component Typography**: Component font-size uses REM values
+  - Button sizes: `0.9rem` (small), `0.95rem` (medium)
+  - Semantic text styles: `1.5rem`, `1.25rem`, `1.125rem`
+  - All typography scales globally from root font-size
+
+- ✅ **PX Units for Fixed Dimensions**: Heights, borders, shadows use PX
+  - Button heights: `36px`, `40px`
+  - Border widths: `1px`
+  - Shadow blur values: fixed across themes
+
+- ✅ **Base Font-Size at Root Level**: Storybook sets root font-size
+  - `font-size: var(--your-base-font-size, 14px)` in `.storybook/preview.css`
+  - Enables theme-based font-size overrides
+
+- ⏳ **EM Units for Spacing/Internal Elements**: Currently PX/REM mix for spacing
+  - Gap uses REM: `0.35rem`
+  - Padding uses PX: `16px`, `20px`
+  - Migration to EM documented as Phase 2 enhancement
+
+### Technical Realization
+- **Token Structure**: PX values in JSON tokens converted to REM in generated CSS
+- **Global Scaling**: REM units scale automatically when root font-size changes
+- **Theme Flexibility**: Base font-size can be overridden per context/theme
+- **Component Isolation**: Font-size set explicitly on component roots
+- **Industry Alignment**: Follows Material Design/Ant Design/Chakra UI patterns
+
+### Architecture Benefits Achieved
+- **Industry Standard**: REM for typography matches modern design systems
+- **Theme Scalability**: Global typography scaling via root font-size changes
+- **Fixed Consistency**: PX units maintain visual consistency across themes
+- **Migration Path**: Non-breaking EM adoption possible gradually
+- **Future-Proof**: Hybrid approach handles all typography use cases
+
+### Current Implementation (Phase 1)
+```
+Component Typography: REM ✅
+Fixed Dimensions: PX ✅
+Spacing/Icons: PX/REM (EM migration pending) ⏳
+```
+
+### Enhanced Implementation (Phase 2 - Documented)
+```
+Component Typography: REM ✅
+Spacing/Icons: EM ⏳ (migration documented)
+Fixed Dimensions: PX ✅
+```
+
+### Migration Strategy
+The transition from PX/REM spacing to EM is designed to be **gradually adoptable**:
+- Change component padding from `px` to `em` one component at a time
+- Update icon sizes from fixed values to `em` units
+- Maintain backward compatibility during migration
+- No breaking changes required
+
+### Evolution Path
+The typography units architecture provides:
+- **Immediate Functionality**: Complete REM/PX implementation operational
+- **Enhanced Flexibility**: EM migration enables component-level proportional scaling
+- **Industry Alignment**: Matches established design system patterns
+- **Theme Power**: Global and component-level typography control
+- **Scalability**: Supports unlimited contexts and themes
+
+## Status
+
+**Accepted (Partially Implemented)** - Core REM/PX typography architecture implemented with global scaling and theme support. EM units for spacing migration documented as Phase 2 enhancement with non-breaking adoption path.
 
 ---
 

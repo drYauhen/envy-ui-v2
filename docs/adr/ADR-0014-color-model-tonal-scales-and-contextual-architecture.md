@@ -1,11 +1,16 @@
 # ADR-0014: Color Model, Tonal Scales, and Contextual Architecture
 
-**Status:** Accepted  
-**Date:** 2025-12-18  
-**Last Updated:** 2025-12-26  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted
+
+**Date:** 2025-12-18
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
 
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
 
@@ -106,4 +111,63 @@ These dimensions remain intentionally unimplemented; they exist to guide future 
   - Requires modern browser support for OKLCH (Safari 15.4+, Chrome 111+, Firefox 113+)
   - Added abstraction up front with automated generation
   - Recalibration work relies on the established structure and generation script
-- Documenting the intent and implementation reduces ambiguity when recalibration, alternate profiles, or multiple themes are introduced later. 
+- Documenting the intent and implementation reduces ambiguity when recalibration, alternate profiles, or multiple themes are introduced later.
+
+## Implementation Notes
+
+This ADR has been **fully implemented** with a comprehensive, perceptually uniform color system that serves as the foundation for scalable, accessible design:
+
+### Current Implementation Status
+- ✅ **OKLCH Color Model**: All foundation tokens use OKLCH format with direct browser support
+  - Signal colors: `oklch(62% 0.26 25)` for keyboard focus
+  - Brand colors: Full 50-900 tonal scale generated from anchor
+  - Accent colors: Generated from Viking Blue anchor (600)
+  - Neutral colors: Rebalanced with brighter light shades (50-300)
+
+- ✅ **Canonical Tonal Scale**: Complete 50-900 scale with asymmetric anchor points
+  - **Brand anchor**: 700 (`oklch(49% 0.10 230)`) - perceptually dark for primary actions
+  - **Accent anchor**: 600 (via generation scripts) - optimized for interactive elements
+  - **Adaptive steps**: Asymmetric distribution with more light shades for UI surfaces
+  - **Edge case handling**: Prevents near-black values for dark anchors
+
+- ✅ **Programmatic Generation**: Automated scripts using `culori` library
+  - `generate-tonal-scale-from-base-700.mjs`: Brand colors from 700 anchor
+  - `generate-tonal-scale-from-base-600-accent.mjs`: Accent colors from 600 anchor
+  - Parabolic chroma curves and slight hue shifts for natural appearance
+  - Adaptive lightness steps based on anchor color properties
+
+- ✅ **Layering Architecture**: Foundation → semantic → component separation
+  - **Foundation**: `tokens/primitives/colors/` - OKLCH values only
+  - **Semantic**: `tokens/contexts/app/semantics/colors/` - Ready for aliases
+  - **Component**: Never consume foundation tokens directly
+  - Stable component APIs insulated from base color changes
+
+- ✅ **Context/Profile/Theme Framework**: Extension dimensions defined for future implementation
+  - **Contexts**: Application UI, print/export, non-React runtimes
+  - **Profiles**: Screen, monochrome print, alternative outputs
+  - **Themes**: Visual identity remapping within contexts
+  - Architecture ready for multi-theme/multi-profile support
+
+### Technical Realization
+- **Browser Support**: OKLCH supported in Safari 15.4+, Chrome 111+, Firefox 113+
+- **Perceptual Uniformity**: Equal steps in OKLCH appear equally different to human eye
+- **Scalability**: Change anchor color, regenerate entire scale automatically
+- **Future-Proof**: Clean hooks for contexts/profiles/themes without current disruption
+- **Inspection-Friendly**: Clear tonal contracts for safe recalibration
+
+### Color Usage Patterns
+- **Primary buttons**: Use `brand.700` (canonical brand anchor)
+- **Accent buttons**: Use `accent.600` (canonical accent anchor)
+- **Component stability**: APIs remain stable when base colors change
+- **Semantic clarity**: Tonal positions express relative relationships, not absolute values
+
+### Evolution Path
+The implemented color system provides:
+- **Immediate usability**: Complete, perceptually uniform color palette
+- **Future extensibility**: Ready for multi-theme, multi-profile, multi-context support
+- **Recalibration safety**: Automated generation ensures consistency
+- **Standards alignment**: OKLCH provides modern, future-proof color representation
+
+## Status
+
+**Accepted** - Color model, tonal scales, and contextual architecture fully implemented with OKLCH foundation, programmatic generation, and future-ready extension framework.

@@ -66,7 +66,8 @@ docs/adr/ADR-0027-figma-migration-strategy.md
 
 **Required sections:**
 - Status (Accepted, Proposed, Exploratory, Superseded)
-- Date (YYYY-MM-DD)
+- Date (YYYY-MM-DD) - Original creation date
+- Last Updated (YYYY-MM-DD) - Leave blank for new ADRs, update when ADR content changes
 - Owner
 - Related ADRs (with markdown links)
 - Context

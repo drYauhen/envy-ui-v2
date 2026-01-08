@@ -1,12 +1,18 @@
 # ADR-0006: Focus Policy Architecture Driven with System Focus
 
-**Status:** Accepted  
-**Date:** 2025-12-15  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted (Partially Implemented)
 
-- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON  
+**Date:** 2025-12-15
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+
+- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 - [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
 
 ---
@@ -185,8 +191,51 @@ These trade-offs are accepted.
 
 ---
 
-## 11. Status
+## 11. Implementation Notes
 
-This ADR is accepted as a **conceptual and architectural foundation**.
+This ADR has been **partially implemented** with a comprehensive token architecture foundation:
 
-Implementation is intentionally deferred until a dedicated accessibility or policy phase.
+### Current Implementation Status
+- ✅ **Component-Derived Focus Tokens**: Fully implemented across all interactive components
+  - Button: `eui.button.focus.ring.color.derived.base/accessible`
+  - Input, Checkbox, Switch: Complete focus token sets
+  - Context-aware: app, website, report contexts all covered
+
+- ✅ **System-Level Focus Tokens**: Fully implemented with semantic foundation
+  - System focus: `eui.color.focus.ring` → `{eui.color.signal.keyboardFocus}`
+  - Accessible widths: `eui.focus.ring.width.accessible` (3px)
+  - Context-optimized: Separate tokens per context (app/website/report)
+
+- ✅ **Multi-Context Focus Architecture**: Complete across all contexts
+  - Component-specific focus tokens for each context
+  - System focus tokens optimized per context
+  - Future-ready for regulatory/market-specific requirements
+
+- ⚠️ **Runtime Policy Selection**: Architectural foundation ready, implementation deferred
+  - Token references support dynamic policy resolution
+  - Policy selection mechanism intentionally postponed per ADR
+  - Ready for future accessibility/policy phase implementation
+
+### Technical Realization
+- **Token Structure**: Perfect match to ADR specifications with component vs system separation
+- **Context Support**: Focus tokens implemented across app/website/report contexts
+- **WCAG Compliance Ready**: Token foundation supports accessibility requirements
+- **Future Extensible**: Architecture ready for policy-driven focus selection
+
+### Architectural Validation
+The ADR's core decisions remain sound and well-implemented:
+- Policy-driven focus architecture foundation established
+- Clear separation between component and system focus concerns
+- Multi-context support enables regulatory adaptability
+- Token structure supports both focus behavior modes
+
+### Evolution Path
+The implemented token architecture provides:
+- Immediate focus styling through component-derived tokens
+- Foundation for future system focus policy implementation
+- Regulatory compliance readiness across contexts
+- Extensible focus behavior without component refactoring
+
+## 12. Status
+
+**Accepted (Partially Implemented)** - Architectural foundation complete with comprehensive token implementation. Runtime policy selection deferred to future accessibility/policy implementation phase, as originally specified in the ADR.

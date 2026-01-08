@@ -1,9 +1,14 @@
 # ADR-0016: Prefix Unification to eui
 
-**Status:** Accepted  
-**Date:** 2025-12-19  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Accepted (Implemented)
+
+**Date:** 2025-12-19
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
 
 ---
 
@@ -27,3 +32,45 @@ I decided to unify the active prefix usage and token semantic root to a single c
 - Token JSON files now use eui as the semantic root, and emitted artifacts use eui as the prefix.
 - Generators and tooling should treat the token root as the source of truth for the prefix.
 - If multiple prefixes become necessary later, this ADR can be revised to re-enable them.
+
+## Implementation Notes
+
+This ADR has been **fully implemented** with a unified prefix system that eliminates confusion and establishes consistent naming across the entire design system:
+
+### Current Implementation Status
+- ✅ **Single Canonical Source**: `system.meta.json` defines `"prefix": "eui"` as the single source of truth
+- ✅ **Token Semantic Root**: All token JSON files use `"eui": {` as the semantic root namespace
+- ✅ **CSS Custom Properties**: Generated CSS uses `--eui-*` prefix consistently
+- ✅ **Data Attributes**: Components use `data-eui-*` attributes (e.g., `data-eui-intent`, `data-eui-size`)
+- ✅ **Class Names**: Components use `eui-*` class names (e.g., `eui-button`)
+- ✅ **Contracts**: TypeScript contracts are semantic (no prefix needed)
+
+### Technical Realization
+- **Prefix Resolution**: All generators and components read from `system.meta.json` with fallback to `'eui'`
+- **Consistency Enforcement**: Single prefix eliminates divergence between semantic and runtime flows
+- **Future Expansion Ready**: Prefix abstraction remains intact for potential future multi-prefix scenarios
+- **Global Uniqueness**: "eui" is short, readable, and globally unique for the Envisio UI design system
+
+### Architecture Benefits Achieved
+- **Cognitive Load Reduction**: Single prefix eliminates mental overhead of multiple naming schemes
+- **Consistency Guarantee**: No risk of prefix divergence between token root and emitted artifacts
+- **Tool Safety**: Non-Style Dictionary generators can safely rely on the unified prefix
+- **Maintenance Simplicity**: Single source of truth for prefix changes
+
+### Prefix Usage Examples
+- **CSS Variables**: `--eui-card-variant-elevated-shadow`
+- **Data Attributes**: `data-eui-intent="primary"`, `data-eui-hovered=""`
+- **Class Names**: `eui-button`, `eui-card`
+- **Component Props**: Intent values from contracts (semantic, no prefix)
+- **Token Structure**: `"eui": { "color": { "brand": { ... } } }`
+
+### Evolution Path
+The unified prefix system provides:
+- **Immediate Consistency**: All artifacts use the same "eui" prefix
+- **Safe Refactoring**: Prefix changes require only updating `system.meta.json`
+- **Scalability**: Future multi-prefix needs can be accommodated if complexity justifies
+- **Standards Alignment**: Consistent with modern design system naming conventions
+
+## Status
+
+**Accepted (Implemented)** - Prefix unification to eui fully implemented with consistent usage across CSS variables, data attributes, class names, and token structure. Single source of truth established in system.meta.json.

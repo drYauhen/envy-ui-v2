@@ -6,7 +6,6 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-docs',
     '@storybook/addon-a11y',
-    '@storybook/addon-vitest',
     './addons/context-theme-switcher/preset.js'
   ],
   framework: {
@@ -14,7 +13,7 @@ const config: StorybookConfig = {
     options: {}
   },
   docs: {
-    autodocs: true
+    autodocs: 'tag'
   },
   staticDirs: ['../public', '../docs', '../assets', '../tokens'],
   async viteFinal(config) {
@@ -32,43 +31,7 @@ const config: StorybookConfig = {
         },
       })
     );
-    
-    // Add PostCSS support for Tailwind
-    // Use createRequire for CommonJS compatibility
-    const { createRequire } = await import('module');
-    const { resolve } = await import('path');
-    const { fileURLToPath } = await import('url');
-    const require = createRequire(import.meta.url);
-    const tailwindcss = require('tailwindcss');
-    const autoprefixer = require('autoprefixer');
-    const tailwindConfigModule = await import('../packages/tailwind/config/tailwind.config.js');
-    const tailwindConfig = tailwindConfigModule.default || tailwindConfigModule;
-    
-    // Resolve content paths relative to project root
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = resolve(__filename, '..');
-    const projectRoot = resolve(__dirname, '..');
-    
-    const tailwindConfigWithPaths = {
-      ...tailwindConfig,
-      // Resolve content paths to absolute paths
-      content: tailwindConfig.content.map((path: string) => {
-        // Resolve relative to project root
-        if (path.startsWith('./')) {
-          return resolve(projectRoot, path.slice(2));
-        }
-        return resolve(projectRoot, path);
-      }),
-    };
-    
-    config.css = config.css || {};
-    config.css.postcss = {
-      plugins: [
-        tailwindcss(tailwindConfigWithPaths),
-        autoprefixer(),
-      ],
-    };
-    
+
     // Ensure static files from docs/ are served
     // This allows fetch() to load markdown files
     if (config.server) {
@@ -77,12 +40,12 @@ const config: StorybookConfig = {
         allow: ['..']
       };
     }
-    
+
     // Ensure JSON imports are properly handled
     config.optimizeDeps = config.optimizeDeps || {};
     config.optimizeDeps.include = config.optimizeDeps.include || [];
     config.optimizeDeps.include.push('**/*.json');
-    
+
     return config;
   },
 };

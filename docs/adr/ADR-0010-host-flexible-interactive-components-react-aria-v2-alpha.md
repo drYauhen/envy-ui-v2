@@ -1,15 +1,20 @@
 # ADR-0010: Host-Flexible Interactive Components (React Aria v2, Alpha)
 
-**Status:** Accepted (Alpha)  
-**Date:** 2025-12-16  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Accepted (Implemented)
 
-**Related:**  
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering  
-- [ADR-0009](./ADR-0009-ave-token-rule-profile-aware-visual-encoding.md) — AVE Token Rule (Profile-Aware Visual Encoding)  
+**Date:** 2025-12-16
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering
+- [ADR-0009](./ADR-0009-ave-token-rule-profile-aware-visual-encoding.md) — AVE Token Rule (Profile-Aware Visual Encoding)
 
 ---
 
@@ -87,9 +92,56 @@
 
 ---
 
-## 6. Future Work
+## 6. Implementation Notes
 
-- Potential split into simpler wrappers (e.g., SimpleButton, LinkButton) if ergonomics require.  
-- Align component tokens with profile routing (AVE) when profiles are introduced.  
-- Storybook polish (surface size/shape visually via CSS) and stricter asChild host validation.  
+This ADR has been **fully implemented** with the Button component serving as the host-flexible interactive surface baseline:
+
+### Current Implementation Status
+- ✅ **Host-Flexible Interactive Surface**: Button supports 3 host modes (button/link/proxy) exactly as specified
+- ✅ **React Aria Behavior Engine**: Uses `useButton`, `useFocusRing`, `useHover` hooks for accessibility
+- ✅ **Visual Boundary Maintained**: No visual values encoded in TSX - styling via CSS contract only
+- ✅ **Orthogonal Axes Composition**: intent × size × shape with no compound variants
+- ✅ **State Mapping Contract**: Complete data attribute interface (`data-eui-intent/size/shape/hovered/pressed/focus-visible/loading`)
+- ✅ **Loading Semantics**: `isLoading` blocks press, sets `aria-busy="true"`, surfaces `data-loading`
+- ✅ **Icon Support**: `startIcon`/`endIcon` props with proper slotting via `data-eui-slot` spans
+
+### Technical Realization
+- **Component Location**: `src/ui/button.tsx` with comprehensive React Aria integration
+- **Type Safety**: Generated TypeScript contracts from token definitions
+- **Host Flexibility**: Seamless switching between `<button>`, `<a>`, and proxy modes
+- **Accessibility**: Full keyboard navigation, focus management, screen reader support
+- **Edge Case Handling**: Warnings for misused `asChild`, anchor validation
+- **API Compatibility**: Supports both `isDisabled` (React Aria) and `disabled` (DOM) props
+
+### Storybook Coverage
+- **Stories Location**: `stories/tsx/react-aria/button.stories.tsx`
+- **Comprehensive Testing**: Default button, link host, `asChild` proxy, loading states, icons, keyboard focus
+- **Visual Documentation**: Demonstrates all host modes and interaction states
+
+### Architectural Validation
+The ADR's design decisions remain sound and fully implemented:
+- **Single Smart Component**: One Button covers all use cases (button/link/proxy)
+- **Behavior vs Visual Separation**: React Aria handles behavior, CSS handles visuals
+- **Future-Proof**: Ready for AVE rule compliance when profiles are introduced
+- **Composable Design**: Orthogonal axes prevent variant explosion
+
+### Evolution Path
+The implemented Button component establishes patterns for future interactive components:
+- Consistent React Aria integration approach
+- Standardized host-flexible architecture
+- CSS contract preservation
+- Comprehensive accessibility features
+- Icon slotting patterns
+
+## 7. Future Work
+
+- Potential split into simpler wrappers (e.g., SimpleButton, LinkButton) if ergonomics require.
+- Align component tokens with profile routing (AVE) when profiles are introduced.
+- Storybook polish (surface size/shape visually via CSS) and stricter asChild host validation.
 - Evaluate API ergonomics after broader usage; adjust prop surface accordingly.
+
+---
+
+## 8. Status
+
+**Accepted (Implemented)** - Button component fully implemented with host-flexible architecture, React Aria integration, and complete CSS contract compliance. Serves as reference implementation for future interactive components.

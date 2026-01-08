@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import spacingTokens from '../../../../tokens/app/semantic/spacing.json';
-import spacingMetadata from '../../../../tokens/app/semantic/spacing.meta.json';
-import foundationDimensions from '../../../../tokens/app/foundations/dimension.json';
+import spacingTokens from '../../../../tokens/contexts/app/semantics/spacing.json';
+import spacingMetadata from '../../../../tokens/contexts/app/semantics/spacing.meta.json';
+import foundationDimensions from '../../../../tokens/contexts/app/semantics/dimension.json';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
 import { DimensionPreview } from '../../../viewers/tokens/previews';

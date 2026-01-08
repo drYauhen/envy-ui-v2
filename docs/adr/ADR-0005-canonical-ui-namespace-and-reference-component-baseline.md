@@ -1,14 +1,20 @@
 # ADR-0005: Canonical UI Namespace and Reference Component Baseline
 
-**Status:** Accepted  
-**Date:** 2025-12-15  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted (Partially Implemented)
 
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary  
-- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON  
+**Date:** 2025-12-15
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)  
+
+**Related:**
+
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
+- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 - [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
 
 ---
@@ -177,4 +183,37 @@ Next steps (outside the scope of this ADR):
 
 ---
 
-**Status:** Accepted as a record of the completed stage and architectural alignment.
+## 11. Implementation Notes
+
+This ADR has been **partially implemented** with a focus on architectural foundations:
+
+### Current Implementation Status
+- ✅ **Canonical Namespace (`eui`)**: Fully implemented across 800+ CSS variables
+- ✅ **Semantic/Runtime Layering**: Contract generation working (ButtonIntent, ButtonSize, etc.)
+- ✅ **Context Infrastructure**: MultiContextViewer and ContextThemeScope utilities operational
+- ⚠️ **Reference Component**: Baseline established (contracts/tokens), full implementation iterative
+- ⚠️ **Context-Aware Components**: Architectural foundation ready, component adoption ongoing
+
+### Technical Realization
+- **Token System**: Complete `eui` namespace implementation with context-specific tokens
+- **Build Pipeline**: Style Dictionary generates runtime CSS variables from semantic tokens
+- **Storybook Tools**: MultiContextViewer enables side-by-side context testing
+- **Contract Generation**: Automated TypeScript contracts from token definitions
+
+### Architectural Validation
+The ADR's core decisions remain sound:
+- Single namespace reduces cognitive overhead
+- Layer separation prevents semantic logic leakage
+- Context-first approach enables regulatory/market adaptability
+- Reference component baseline provides iterative development foundation
+
+### Evolution Path
+Component implementation follows the established patterns:
+- TSX (Clean) for simple components
+- TSX + React Aria for complex interactive components
+- Web Components for framework-agnostic needs
+- Context-aware rendering through external data attributes
+
+## 12. Status
+
+**Accepted (Partially Implemented)** - Architectural foundations complete with iterative component development in progress. Core namespace and layering decisions fully realized, with component implementation following the established patterns.

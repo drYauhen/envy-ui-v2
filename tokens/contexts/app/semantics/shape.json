@@ -27,7 +27,7 @@
         "$description": "Much larger than default. Used for modals, dialogs, prominent containers. Optimized for app-default context/theme. Other contexts/themes may override this value."
       },
       "full": {
-        "$value": "{eui.radius.full}",
+        "$value": "9999px",
         "$type": "dimension",
         "$description": "Maximum rounding (pill shape). Used for badges, chips, full-rounded buttons."
       }

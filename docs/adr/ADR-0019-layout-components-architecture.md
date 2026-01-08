@@ -1,10 +1,16 @@
 # ADR-0019: Layout Components Architecture
 
-**Status:** Accepted  
-**Date:** 2025-12-21  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
+**Status:** Accepted (Partially Implemented)
+
+**Date:** 2025-12-21
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
 
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
 - [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
@@ -14,131 +20,108 @@
 
 ## 1. Context
 
-The application requires global layout containers to structure the overall application shell. Based on the application structure, the system requires:
+Different contexts require fundamentally different layout approaches. The system serves three distinct contexts with different layout needs and philosophies:
 
-- **Left vertical navigation sidebar** - Expandable/collapsible, brand-colored background
-- **Top application header** - Global header with user info, help, impersonation banner
-- **Global title bar** - Below header, contains breadcrumbs and global actions
-- **Contextual title bar** - Below global title bar, context-specific (page title, filters, search)
-- **Main content area** - Flexible, scrollable content region
-- **Right detail panel** - Contextual panel that opens/closes, has title + body structure, elevated with left-side shadow
+### App Context: Functional Application Shell
+- **Purpose**: Internal application for data management and operations
+- **Layout Needs**: Simple, functional navigation and content layout
+- **Philosophy**: Practical, minimal complexity, focused on productivity
+- **Current State**: Implemented with simple flexbox layout (SideNav + main content)
 
-These components form the application shell and must work together cohesively while maintaining accessibility, responsiveness, and theme support.
+### Website Context: Customizable Marketing/Content Pages
+- **Purpose**: CMS-generated marketing pages, landing pages, documentation
+- **Layout Needs**: Flexible, brand-adaptive layouts using template library
+- **Philosophy**: Customizable, generative, brand-focused
+- **Current State**: Not implemented - requires template system
+
+### Report Context: Structured Data Presentations
+- **Purpose**: Generated reports for printing, digital distribution, compliance
+- **Layout Needs**: Structured, print-optimized layouts using template library
+- **Philosophy**: Data-driven, consistent, accessibility-focused
+- **Current State**: Not implemented - requires template system
 
 ---
 
 ## 2. Decision
 
-I adopt a **component-based layout architecture** using:
+I adopt a **context-specific layout architecture** that recognizes different contexts need fundamentally different layout approaches:
 
-1. **AppShell** - Root container with CSS Grid layout
-2. **Sidebar** - Left navigation (`<nav>`), expandable/collapsible
-3. **Header** - Top application header (`<header>`)
-4. **TitleBarGlobal** - Global title bar (below header)
-5. **TitleBarContextual** - Contextual title bar (above content)
-6. **Content** - Main content area (`<main>`)
-7. **DetailPanel** - Right panel (`<aside>`), contextual, with left-side shadow
+### App Context: Simple Functional Layout
 
-**Key Architectural Decisions:**
-
-### A. CSS Grid for Layout
-
-**Decision:** Use CSS Grid for the overall layout structure.
-
-**Rationale:**
-- Grid provides explicit control over layout regions
-- Natural fit for application shell patterns
-- Responsive by default (grid adapts to container)
-- Clear separation of regions (header, sidebar, content, panel)
-- Better than Flexbox for 2D layouts (rows + columns)
-
-**Alternative Considered:** Flexbox
-- Rejected: Flexbox is 1D (row OR column), Grid is 2D (rows AND columns)
-- Grid is more appropriate for application shell layouts
-
-### B. Semantic HTML + ARIA
-
-**Decision:** Use semantic HTML elements (`<header>`, `<nav>`, `<main>`, `<aside>`) with ARIA attributes for clarity.
-
-**Rationale:**
-- Semantic HTML provides implicit ARIA roles (better than explicit roles)
-- Screen readers understand semantic structure
-- WCAG 2.1 compliance
-- React Aria does NOT provide layout-specific hooks (only interactive element hooks)
-- Semantic HTML is the foundation for accessibility
+**Decision:** App context uses a simple, practical flexbox layout focused on functionality.
 
 **Implementation:**
-- `<header>` for application header (implicit `role="banner"`)
-- `<nav>` for sidebar navigation (implicit `role="navigation"`)
-- `<main>` for main content (implicit `role="main"`)
-- `<aside>` for detail panel (implicit `role="complementary"`)
-- `aria-label` for clarity when needed
-- `aria-expanded` for sidebar state
-- `aria-hidden` for detail panel when closed
-
-### C. Component Composition
-
-**Decision:** Separate components for each layout region, composed within AppShell.
+- **SideNav + Main Content**: Basic flexbox layout (`display: 'flex'`)
+- **Expandable Sidebar**: Smooth collapse/expand with `isCollapsed` state
+- **Context+Theme Support**: Data attributes for theming (`data-eui-context="app"`)
+- **Routing Integration**: Main content area handles page routing
+- **Token-Driven Styling**: Consistent with overall token system
 
 **Rationale:**
-- Clear separation of concerns
-- Each component can be styled independently via tokens
-- Reusable (e.g., TitleBar and Content can be used in DetailPanel)
-- Flexible composition
-- Easier to maintain and extend
+- App context prioritizes functionality over architectural complexity
+- Simple layout reduces maintenance burden
+- Focus on user productivity and data management tasks
+- Current dev app implementation is correct and appropriate
 
-**Alternative Considered:** Single monolithic layout component
-- Rejected: Too rigid, harder to customize, violates composition principle
+**Example Implementation:**
+```tsx
+<div style={{ display: 'flex', height: '100vh' }}>
+  <SideNav sections={sections} isCollapsed={isCollapsed} onCollapsedChange={setIsCollapsed} />
+  <main style={{ flex: 1, padding: '32px', overflow: 'auto' }}>
+    <Routes>{/* Page routing */}</Routes>
+  </main>
+</div>
+```
 
-### D. Token-Driven Styling
+### Website Context: Template-Based Generative Layouts
 
-**Decision:** All layout components use token system for colors, sizes, spacing, shadows.
+**Decision:** Website context uses a library of customizable templates for different page types.
+
+**Future Implementation:**
+- **Template Library**: Pre-built layout templates for marketing pages, landing pages, documentation
+- **Generative Composition**: Templates composed from reusable layout components
+- **Brand Customization**: Templates adapt to brand-specific styling needs
+- **CMS Integration**: Templates work with content management systems
+- **Responsive Design**: Templates handle different screen sizes and devices
 
 **Rationale:**
-- Consistent with existing component architecture
-- Themeable (context + theme combinations)
-- Maintainable (change tokens, not CSS)
-- Aligns with [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) (Layered Token Architecture)
+- Marketing pages need flexible, brand-adaptive layouts
+- CMS-generated content requires template-based approach
+- Different page types (landing, blog, documentation) need different layouts
+- Generative approach allows customization without code changes
 
-### E. Right Panel Elevation
+### Report Context: Template-Based Generative Layouts
 
-**Decision:** DetailPanel has left-side shadow to show elevation relative to main content.
+**Decision:** Report context uses a library of structured templates optimized for data presentation.
+
+**Future Implementation:**
+- **Report Templates**: Specialized templates for different report types (compact, presentation, accessibility)
+- **Print Optimization**: Templates designed for both screen and print output
+- **Data-Driven Layout**: Templates adapt to content structure and length
+- **Compliance Support**: Templates meet accessibility and regulatory requirements
+- **Export Formats**: Templates support PDF, HTML, and other output formats
 
 **Rationale:**
-- Visual hierarchy: panel appears elevated above content
-- Clear separation between main content and detail panel
-- Industry standard for side panels
-- Left-side shadow (negative X offset) creates depth perception
+- Reports need consistent, structured presentation of data
+- Print optimization requires different layout considerations
+- Compliance requirements (accessibility, formal standards) need template enforcement
+- Different report types need specialized layouts
+
+### CSS Grid as Optional Enhancement
+
+**Decision:** CSS Grid layouts are available but not mandatory for app context.
 
 **Implementation:**
-- `box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1)` (or token-based)
-- Shadow only on left side (not all sides)
-
-### F. Sidebar Expand/Collapse
-
-**Decision:** Sidebar supports expanded/collapsed states with smooth transition.
+- **Optional Complexity**: CSS Grid can be used when layout complexity justifies it
+- **Prepared CSS**: Grid-based CSS exists but is not currently integrated
+- **Template Foundation**: Website/report templates can leverage CSS Grid for advanced layouts
+- **Progressive Enhancement**: Start simple, add complexity as needed
 
 **Rationale:**
-- Space efficiency: collapsed shows icons only, expanded shows labels
-- User preference: some prefer compact, others prefer full labels
-- Smooth transition provides visual feedback
-- CSS Grid adapts automatically (content area adjusts)
-
-**Implementation:**
-- `data-eui-collapsed="true|false"` for state
-- `aria-expanded` for accessibility
-- CSS transition for smooth animation
-- Grid column width changes based on state
-
-### G. DetailPanel Structure Reuse
-
-**Decision:** DetailPanel can reuse TitleBar and Content components internally.
-
-**Rationale:**
-- DetailPanel has same structure as main area (title + body)
-- DRY principle: don't duplicate components
-- Consistency: same styling and behavior
-- Simpler API: reuse existing components
+- Not all layouts need CSS Grid complexity
+- Simple flexbox is sufficient for most app use cases
+- CSS Grid should be opt-in, not mandatory
+- Templates benefit from Grid's advanced layout capabilities
 
 ---
 
@@ -146,97 +129,134 @@ I adopt a **component-based layout architecture** using:
 
 ### Positive
 
-- ✅ **Accessible:** Semantic HTML + ARIA provides excellent screen reader support
-- ✅ **Responsive:** CSS Grid adapts to different screen sizes
-- ✅ **Themeable:** Token-driven styling supports context + theme combinations
-- ✅ **Maintainable:** Clear component boundaries, token-based styling
-- ✅ **Flexible:** Components can be composed in different ways
-- ✅ **WCAG 2.1 Compliant:** Proper semantic structure and ARIA usage
+- ✅ **Practical App Layout:** Simple, functional layout meets immediate app needs without over-engineering
+- ✅ **Template System Ready:** Foundation established for sophisticated website/report layouts
+- ✅ **Context-Appropriate:** Each context gets the layout complexity it actually needs
+- ✅ **Maintainable:** Simple app layout reduces maintenance burden
+- ✅ **Extensible:** Template system can grow independently of app layout
 
 ### Negative
 
-- ⚠️ **CSS Grid Browser Support:** Requires modern browsers (but support is excellent now)
-- ⚠️ **Complexity:** Multiple components to coordinate (but necessary for flexibility)
-- ⚠️ **Storybook Integration:** Global layout components are harder to showcase in Storybook (but can use iframe or full-page examples)
+- ⚠️ **Template System Gap:** Website and report contexts lack layout implementation
+- ⚠️ **Inconsistent Complexity:** App context is simple while website/report need complex systems
+- ⚠️ **Future Migration:** May need to evolve app layout if complexity grows
 
 ### Neutral
 
-- Layout components are foundational: changes affect entire application
-- Token system must support layout-specific values (sizes, colors, spacing)
-- Accessibility is built-in, not optional
+- Different contexts having different layout approaches is acceptable and appropriate
+- App layout prioritizes immediate usability over architectural completeness
+- Template systems for website/report contexts represent future investment
+- CSS Grid foundation exists but is opt-in rather than mandatory
 
 ---
 
 ## 4. Implementation Notes
 
-### HTML Structure
+### Current App Context Implementation
 
-```html
-<div class="eui-app-shell">
-  <header class="eui-header" role="banner" aria-label="Application header">
-    <!-- Header content -->
-  </header>
-  
-  <nav 
-    class="eui-sidebar" 
-    role="navigation" 
-    aria-label="Main navigation"
-    aria-expanded="true"
-    data-eui-collapsed="false"
-  >
-    <!-- Navigation items -->
-  </nav>
-  
-  <div class="eui-title-bar eui-title-bar--global" role="region" aria-label="Global navigation">
-    <!-- Global title bar content -->
-  </div>
-  
-  <div class="eui-title-bar eui-title-bar--contextual" role="region" aria-label="Page context">
-    <!-- Contextual title bar content -->
-  </div>
-  
-  <main class="eui-content" role="main" aria-label="Main content">
-    <!-- Main content -->
+**Status:** ✅ **Fully Implemented**
+
+The app context uses a simple, effective layout that serves the current operational needs:
+
+```tsx
+// From apps/dev-app/src/App.tsx
+<div 
+  data-eui-context="app" 
+  data-eui-theme="default" 
+  style={{ 
+    display: 'flex', 
+    height: '100vh',
+    overflow: 'hidden'
+  }}
+>
+  <SideNav
+    sections={sections}
+    footer={footer}
+    isCollapsed={isCollapsed}
+    onCollapsedChange={setIsCollapsed}
+  />
+  <main style={{ 
+    flex: 1, 
+    padding: '32px', 
+    overflow: 'auto',
+    width: '100%',
+    backgroundColor: '#ffffff'
+  }}>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/components" element={<Components />} />
+      <Route path="/:pageKey" element={<PageContent />} />
+    </Routes>
   </main>
-  
-  <aside 
-    class="eui-detail-panel" 
-    role="complementary" 
-    aria-label="Details panel"
-    aria-hidden="true"
-    data-eui-open="false"
-  >
-    <!-- Detail panel content -->
-  </aside>
 </div>
 ```
 
-### CSS Grid Layout
+**Key Features:**
+- Simple flexbox layout (`display: 'flex'`)
+- Expandable/collapsible sidebar with smooth transitions
+- Context+theme data attributes for theming
+- Routing integration in main content area
+- Token-driven styling for SideNav component
+
+### Website Context Template System (Future)
+
+**Status:** ❌ **Not Implemented - Planned**
+
+Website context will require a template library system:
+
+**Template Types Needed:**
+- Landing page templates (hero sections, feature grids, testimonials)
+- Content page templates (blog posts, documentation, articles)
+- Marketing page templates (campaign pages, product pages)
+- Navigation layouts (header variations, footer styles)
+
+**Template Architecture:**
+- Composable layout components (Header, Hero, Content, Footer, Sidebar)
+- Template configuration system (JSON-based layouts)
+- Brand adaptation capabilities
+- Responsive breakpoint handling
+- CMS integration points
+
+### Report Context Template System (Future)
+
+**Status:** ❌ **Not Implemented - Planned**
+
+Report context will require specialized templates for data presentation:
+
+**Template Types Needed:**
+- Compact report templates (maximize data density)
+- Presentation report templates (visual appeal, client-facing)
+- Accessibility report templates (WCAG compliance, screen reader optimized)
+- Print-optimized templates (page breaks, print styles)
+
+**Template Architecture:**
+- Data-aware layout components
+- Print-specific styling rules
+- Compliance validation features
+- Export format support (PDF, HTML, DOCX)
+- Responsive design for digital viewing
+
+### CSS Grid Foundation
+
+**Status:** ✅ **Prepared but Optional**
+
+Advanced CSS Grid layouts are available for complex use cases:
 
 ```css
-.eui-app-shell {
+/* From src/ui/app-shell.css */
+[data-eui-context] .eui-app-shell {
   display: grid;
   grid-template-areas:
     "header header header"
-    "sidebar global-title-bar detail-panel"
-    "sidebar contextual-title-bar detail-panel"
-    "sidebar content detail-panel";
-  grid-template-columns: var(--eui-sidebar-width) 1fr var(--eui-detail-panel-width);
-  grid-template-rows: 
-    var(--eui-header-height) 
-    var(--eui-title-bar-height) 
-    var(--eui-title-bar-height) 
-    1fr;
-  height: 100vh;
+    "sidebar global-title-bar ."
+    "sidebar contextual-title-bar ."
+    "sidebar content .";
+  /* ... complex grid layout ... */
 }
 ```
 
-### Skip Links
-
-```html
-<a href="#main-content" class="eui-skip-link">Skip to main content</a>
-<a href="#main-navigation" class="eui-skip-link">Skip to navigation</a>
-```
+**Current Usage:** CSS Grid foundation exists but is not integrated into the app. It can be adopted when layout complexity justifies it, or used as a foundation for website/report templates.
 
 ---
 
@@ -295,6 +315,6 @@ This architecture will be validated by:
 
 - Layout components are foundational: changes affect entire application
 - Storybook integration may require iframe or full-page examples
-- CSS Grid support is excellent in modern browsers (2017+)
 - Semantic HTML is preferred over ARIA roles (but ARIA labels add clarity)
 
+- All-sides shadow would be too prominent

@@ -13,9 +13,8 @@ export const navigationConfig = {
     "HTML + CSS",
     "TSX (Clean)",
     "TSX + React Aria",
-    "Templates",
-    "Tailwind",
-    "Web Components"
+    "Templates"
+    // "Web Components" // Temporarily disabled - web component stories have import path issues
   ] as const,
 
   // Section status badges (short labels)
@@ -26,7 +25,6 @@ export const navigationConfig = {
     "TSX (Clean)": "future",
     "TSX + React Aria": "active",
     "Templates": "future",
-    "Tailwind": "future",
     "Web Components": "exp"
   } as const,
 

@@ -12,13 +12,10 @@ const THEME_OPTIONS = {
     { value: 'accessibility', label: 'Accessibility' }
   ],
   website: [
-    { value: 'default', label: 'Default' },
-    { value: 'dark', label: 'Dark' },
-    { value: 'toy-r-us', label: 'Toy-R-Us' }
+    { value: 'default', label: 'Default' }
   ],
   report: [
-    { value: 'print', label: 'Print' },
-    { value: 'screen', label: 'Screen' }
+    { value: 'print', label: 'Print' }
   ]
 };
 

@@ -1,13 +1,19 @@
 # ADR-0022: Storybook Model as AI-Agent-Oriented Architecture Layer
 
-**Status:** Proposed (Exploratory)  
-**Date:** 2025-12-25  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering  
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model  
-- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts  
+**Status:** Proposed (Exploratory - Future Vision)
+
+**Date:** 2025-12-25
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering
+- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 
 ---
@@ -318,6 +324,58 @@ This document should:
 - Be updated when storybook-model moves from exploratory to implemented status
 
 The storybook-model is not a replacement for component-model — it extends it with Storybook-specific concerns while maintaining clear separation of concerns. Both layers work together: component-model defines what the component is, storybook-model defines how to demonstrate it in Storybook.
+
+## Implementation Notes
+
+This ADR describes a **forward-thinking architectural vision** for AI-agent-oriented Storybook development, representing **future thinking** rather than current implementation:
+
+### Current Reality vs. Future Vision
+
+**Current Storybook Stories (Today):**
+- Stories use **extensive inline styles** for layout, spacing, typography, and colors
+- No `storybook-model/` layer or declarative component helpers
+- No global storybook manifest with AI agent workflows
+- Stories are created manually without structured AI guidance
+
+**Future Storybook Model (Vision):**
+- **Declarative configuration** via `storybook-model/{component}.storybook.json`
+- **Component-based helpers** instead of inline styles
+- **AI-agent workflows** with predictable, step-by-step story generation
+- **Separation of concerns** between component model and storybook model
+
+### Architectural Positioning
+
+This ADR serves as **strategic guidance** for future evolution:
+
+**1. Future-Proofing:** Establishes patterns that will become relevant as AI-assisted development matures
+
+**2. Architectural Foundation:** Creates conceptual framework for structured story generation
+
+**3. Separation of Concerns:** Defines clear boundaries between renderer-agnostic components and Storybook-specific concerns
+
+**4. AI Agent Orientation:** Provides roadmap for making the design system predictable for AI tooling
+
+### Implementation Readiness
+
+**Not Ready for Implementation:**
+- No `storybook-model/` directory structure
+- No global manifest or schema definitions
+- Current stories contradict the ADR's inline style prohibitions
+- No immediate business need for AI-agent story generation
+
+**When to Implement:**
+- When AI-assisted story generation becomes a priority
+- When manual story maintenance becomes burdensome
+- When multiple developers need consistent story patterns
+- When component complexity requires structured demonstration approaches
+
+### Strategic Value
+
+This ADR provides **long-term architectural thinking** by:
+- Anticipating future AI-assisted development workflows
+- Establishing conceptual foundations for structured story generation
+- Defining separation between component contracts and demonstration patterns
+- Creating roadmap for when AI-agent orientation becomes relevant
 
 **Evolution and Changes:** This initial model serves as a starting point. Changes and refinements are expected as the system matures and learnings from practice inform what works best.
 

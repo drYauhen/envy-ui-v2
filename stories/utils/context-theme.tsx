@@ -1,12 +1,11 @@
 import * as React from 'react';
 
-export type ContextName = 'app' | 'website' | 'report' | 'storybook';
+export type ContextName = 'app' | 'website' | 'report';
 
 export const DEFAULT_CONTEXT_THEMES: Record<ContextName, string> = {
   app: 'default',
   website: 'default',
-  report: 'print',
-  storybook: 'default'
+  report: 'print'
 };
 
 type ContextThemeValues = Record<ContextName, string>;

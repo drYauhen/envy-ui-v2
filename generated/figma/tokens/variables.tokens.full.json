@@ -1650,64 +1650,74 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Focus",
+      "name": "envy-ui-v2 • Colors / Signal",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.button.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.button.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.checkbox.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.checkbox.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
-        },
-        {
-          "path": "eui.color.focus.ring",
+          "path": "eui.color.signal.keyboardFocus",
           "type": "COLOR",
           "value": "oklch(62% 0.26 25)"
-        },
-        {
-          "path": "eui.input.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.input.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
-        },
-        {
-          "path": "eui.switch.focus.ring.color.derived.accessible",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.switch.focus.ring.color.derived.base",
-          "type": "COLOR",
-          "value": "oklch(65% 0.09 231)"
         }
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / System",
+      "name": "envy-ui-v2 • Colors / Neutral",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.color.system.focus",
+          "path": "eui.color.neutral.100",
           "type": "COLOR",
-          "value": "oklch(62% 0.26 25)"
+          "value": "oklch(96.5% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.200",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.300",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.400",
+          "type": "COLOR",
+          "value": "oklch(84% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.50",
+          "type": "COLOR",
+          "value": "oklch(98% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.500",
+          "type": "COLOR",
+          "value": "oklch(75% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.600",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.700",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.800",
+          "type": "COLOR",
+          "value": "oklch(33% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.900",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.color.neutral.white",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
         }
       ]
     },
@@ -1884,74 +1894,205 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Signal",
+      "name": "envy-ui-v2 • Colors / Focus",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.color.signal.keyboardFocus",
+          "path": "eui.button.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.button.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(90% 0.00 0)"
+        },
+        {
+          "path": "eui.checkbox.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.checkbox.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        },
+        {
+          "path": "eui.color.focus.ring",
+          "type": "COLOR",
+          "value": "oklch(62% 0.26 25)"
+        },
+        {
+          "path": "eui.input.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.input.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        },
+        {
+          "path": "eui.switch.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.switch.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(65% 0.09 231)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / System",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.color.system.focus",
           "type": "COLOR",
           "value": "oklch(62% 0.26 25)"
         }
       ]
     },
     {
-      "name": "envy-ui-v2 • Colors / Neutral",
+      "name": "envy-ui-v2 • Size / Spacing",
       "mode": "default",
       "variables": [
         {
-          "path": "eui.color.neutral.100",
-          "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "path": "eui.spacing.0",
+          "type": "FLOAT",
+          "value": 0
         },
         {
-          "path": "eui.color.neutral.200",
-          "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "path": "eui.spacing.1",
+          "type": "FLOAT",
+          "value": 4
         },
         {
-          "path": "eui.color.neutral.300",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "path": "eui.spacing.10",
+          "type": "FLOAT",
+          "value": 40
         },
         {
-          "path": "eui.color.neutral.400",
-          "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
+          "path": "eui.spacing.11",
+          "type": "FLOAT",
+          "value": 44
         },
         {
-          "path": "eui.color.neutral.50",
-          "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "path": "eui.spacing.12",
+          "type": "FLOAT",
+          "value": 48
         },
         {
-          "path": "eui.color.neutral.500",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "path": "eui.spacing.13",
+          "type": "FLOAT",
+          "value": 52
         },
         {
-          "path": "eui.color.neutral.600",
-          "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "path": "eui.spacing.14",
+          "type": "FLOAT",
+          "value": 56
         },
         {
-          "path": "eui.color.neutral.700",
-          "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "path": "eui.spacing.15",
+          "type": "FLOAT",
+          "value": 60
         },
         {
-          "path": "eui.color.neutral.800",
-          "type": "COLOR",
-          "value": "oklch(33% 0.00 0)"
+          "path": "eui.spacing.16",
+          "type": "FLOAT",
+          "value": 64
         },
         {
-          "path": "eui.color.neutral.900",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
+          "path": "eui.spacing.17",
+          "type": "FLOAT",
+          "value": 68
         },
         {
-          "path": "eui.color.neutral.white",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
+          "path": "eui.spacing.18",
+          "type": "FLOAT",
+          "value": 72
+        },
+        {
+          "path": "eui.spacing.19",
+          "type": "FLOAT",
+          "value": 76
+        },
+        {
+          "path": "eui.spacing.2",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.spacing.20",
+          "type": "FLOAT",
+          "value": 80
+        },
+        {
+          "path": "eui.spacing.2xl",
+          "type": "FLOAT",
+          "value": 3.4286
+        },
+        {
+          "path": "eui.spacing.3",
+          "type": "FLOAT",
+          "value": 12
+        },
+        {
+          "path": "eui.spacing.4",
+          "type": "FLOAT",
+          "value": 16
+        },
+        {
+          "path": "eui.spacing.5",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.spacing.6",
+          "type": "FLOAT",
+          "value": 24
+        },
+        {
+          "path": "eui.spacing.7",
+          "type": "FLOAT",
+          "value": 28
+        },
+        {
+          "path": "eui.spacing.8",
+          "type": "FLOAT",
+          "value": 32
+        },
+        {
+          "path": "eui.spacing.9",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.spacing.lg",
+          "type": "FLOAT",
+          "value": 1.7143
+        },
+        {
+          "path": "eui.spacing.md",
+          "type": "FLOAT",
+          "value": 1.1429
+        },
+        {
+          "path": "eui.spacing.sm",
+          "type": "FLOAT",
+          "value": 0.5714
+        },
+        {
+          "path": "eui.spacing.xl",
+          "type": "FLOAT",
+          "value": 2.2857
+        },
+        {
+          "path": "eui.spacing.xs",
+          "type": "FLOAT",
+          "value": 0.2857
         }
       ]
     },
@@ -2008,6 +2149,27 @@
           "path": "eui.radius.xl",
           "type": "FLOAT",
           "value": 12
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Button",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.component.button.bg",
+          "type": "COLOR",
+          "value": "Button background color"
+        },
+        {
+          "path": "eui.component.button.border.color",
+          "type": "COLOR",
+          "value": "Button border color"
+        },
+        {
+          "path": "eui.component.button.color",
+          "type": "COLOR",
+          "value": "Button text color"
         }
       ]
     },
@@ -2201,119 +2363,6 @@
       ]
     },
     {
-      "name": "envy-ui-v2 • Size / Spacing",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.spacing.2xl",
-          "type": "FLOAT",
-          "value": 3.4286
-        },
-        {
-          "path": "eui.spacing.lg",
-          "type": "FLOAT",
-          "value": 1.7143
-        },
-        {
-          "path": "eui.spacing.md",
-          "type": "FLOAT",
-          "value": 1.1429
-        },
-        {
-          "path": "eui.spacing.sm",
-          "type": "FLOAT",
-          "value": 0.5714
-        },
-        {
-          "path": "eui.spacing.xl",
-          "type": "FLOAT",
-          "value": 2.2857
-        },
-        {
-          "path": "eui.spacing.xs",
-          "type": "FLOAT",
-          "value": 0.2857
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Size / Layout",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.layout.container.gutterX",
-          "type": "FLOAT",
-          "value": 1.7143
-        },
-        {
-          "path": "eui.layout.container.standard.maxWidth",
-          "type": "FLOAT",
-          "value": 960
-        },
-        {
-          "path": "eui.layout.container.wide.maxWidth",
-          "type": "FLOAT",
-          "value": 100
-        },
-        {
-          "path": "eui.layout.page.padding.x",
-          "type": "FLOAT",
-          "value": 1.7143
-        },
-        {
-          "path": "eui.layout.page.padding.y",
-          "type": "FLOAT",
-          "value": 1.7143
-        },
-        {
-          "path": "eui.layout.section.gap",
-          "type": "FLOAT",
-          "value": 1.1429
-        },
-        {
-          "path": "eui.layout.section.padding",
-          "type": "FLOAT",
-          "value": 1.1429
-        },
-        {
-          "path": "eui.layout.section.title.gap",
-          "type": "FLOAT",
-          "value": 0.5714
-        },
-        {
-          "path": "eui.layout.toolbar.gap",
-          "type": "FLOAT",
-          "value": 0.5714
-        },
-        {
-          "path": "eui.layout.toolbar.height",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.layout.toolbar.paddingY",
-          "type": "FLOAT",
-          "value": 1.1429
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Focus / Focus",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "value": 3
-        },
-        {
-          "path": "eui.focus.ring.width.base",
-          "type": "FLOAT",
-          "value": 2
-        }
-      ]
-    },
-    {
       "name": "envy-ui-v2 • Dimensions / Z",
       "mode": "default",
       "variables": [
@@ -2483,6 +2532,83 @@
           "path": "eui.breakpoint.wide",
           "type": "FLOAT",
           "value": 1600
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Size / Layout",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.layout.container.gutterX",
+          "type": "FLOAT",
+          "value": 1.7143
+        },
+        {
+          "path": "eui.layout.container.standard.maxWidth",
+          "type": "FLOAT",
+          "value": 960
+        },
+        {
+          "path": "eui.layout.container.wide.maxWidth",
+          "type": "FLOAT",
+          "value": 100
+        },
+        {
+          "path": "eui.layout.page.padding.x",
+          "type": "FLOAT",
+          "value": 1.7143
+        },
+        {
+          "path": "eui.layout.page.padding.y",
+          "type": "FLOAT",
+          "value": 1.7143
+        },
+        {
+          "path": "eui.layout.section.gap",
+          "type": "FLOAT",
+          "value": 1.1429
+        },
+        {
+          "path": "eui.layout.section.padding",
+          "type": "FLOAT",
+          "value": 1.1429
+        },
+        {
+          "path": "eui.layout.section.title.gap",
+          "type": "FLOAT",
+          "value": 0.5714
+        },
+        {
+          "path": "eui.layout.toolbar.gap",
+          "type": "FLOAT",
+          "value": 0.5714
+        },
+        {
+          "path": "eui.layout.toolbar.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.layout.toolbar.paddingY",
+          "type": "FLOAT",
+          "value": 1.1429
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Focus / Focus",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 3
+        },
+        {
+          "path": "eui.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
         }
       ]
     },

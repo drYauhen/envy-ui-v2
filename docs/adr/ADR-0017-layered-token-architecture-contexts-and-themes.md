@@ -1,12 +1,17 @@
 # ADR-0017: Layered Token Architecture for Contexts and Themes
 
-**Status:** Accepted  
-**Date:** 2025-12-20  
-**Last Updated:** 2025-12-26  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
+**Status:** Accepted (Partially Implemented)
+
+**Date:** 2025-12-20
+
+**Last Updated:** 2026-01-08
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
 
@@ -157,4 +162,64 @@ This ensures that:
 - May need component-level context overrides if semantic layer isn't sufficient
 - Theme switching mechanism needs to be performant (CSS variable remapping vs. class swapping)
 - Consider theme inheritance (e.g., dark theme extends default theme and only overrides dark-specific values)
+
+## Implementation Notes
+
+This ADR establishes the **foundation for multi-context, multi-theme design systems** and has been **partially implemented** with the core context+theme mechanism operational:
+
+### Current Implementation Status
+- ✅ **Three Target Contexts**: All three contexts implemented
+  - `tokens/app/` - Application shell (primary destination)
+  - `tokens/website/` - CMS/website generation
+  - `tokens/report/` - Print/digital reports
+
+- ✅ **Context+Theme Control Mechanism**: CSS-based system fully operational
+  - Uses `data-eui-context` and `data-eui-theme` attributes
+  - Works across all implementation layers (HTML+CSS, TSX Clean, TSX React Aria)
+  - No JavaScript dependency for static content
+
+- ✅ **MultiContextViewer**: Demonstrates context+theme switching
+  - Shows badges: "context: {context}" and "theme: {theme}"
+  - Supports up to 3 contexts simultaneously for comparison
+  - Uses `ContextThemeScope` for theme application
+
+- ✅ **Theme Organization**: Themes organized by context
+  - `tokens/themes/app/` - Application themes (default, accessibility)
+  - `tokens/themes/website/` - Website themes (default, dark)
+  - `tokens/themes/report/` - Report themes (print, screen)
+
+- ⚠️ **Independent Context Directories**: Partially implemented
+  - ADR mentions reorganization into fully independent directories
+  - Current structure has some shared directories (`tokens/foundations/`, `tokens/semantic/`)
+  - Individual context directories exist but may need complete internal structure
+
+### Technical Realization
+- **CSS-Anchored Architecture**: Context/theme mechanism based on CSS data attributes and custom properties
+- **Universal Compatibility**: Works in static HTML+CSS, scales to TypeScript/React, ready for future layers
+- **Component Agnosticism**: Components reference semantic tokens, contexts/themes remap them
+- **Maintainable Overrides**: Only override what differs, avoiding duplication
+
+### Architecture Benefits Achieved
+- **Single Codebase**: Same component API works across all contexts/themes
+- **Progressive Enhancement**: Static sites can use full context/theme system
+- **Technology Agnostic**: CSS-based mechanism works everywhere
+- **Scalable Extension**: New contexts/themes only override differences
+
+### Current Architecture Validation
+The layered token architecture successfully demonstrates:
+- **Context/Theme Separation**: Environment constraints vs visual identity clearly distinguished
+- **CSS-Based Universality**: Mechanism works across implementation layers without JavaScript
+- **Component Stability**: Components remain unaware of context/theme changes
+- **Semantic Token Stability**: Base semantic tokens remain stable while contexts/themes remap them
+
+### Evolution Path
+The implemented foundation enables:
+- **Full Directory Reorganization**: Complete independent context structures
+- **Advanced Theme Features**: Theme inheritance, component-level overrides
+- **Performance Optimization**: Efficient theme switching mechanisms
+- **Cross-Context Compatibility**: Component variants that work across contexts
+
+## Status
+
+**Accepted (Partially Implemented)** - Core context+theme architecture implemented with CSS-based mechanism and MultiContextViewer. Directory structure reorganization is partially complete but functional context+theme system is operational.
 

@@ -59,11 +59,11 @@ const ContextWrapper: React.FC<{
         context={context}
         className={className}
         style={style}
+        data-testid="component-under-test"
       >
         {children(context, theme)}
       </ContextThemeScope>
       {/* Only this block should receive dynamic context theme */}
-      <hr className="eui-divider" data-eui-orientation="horizontal" />
     </div>
   );
 };
