@@ -4,11 +4,12 @@
 **Date:** 2025-12-26  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation  
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes  
+**Related:**
+- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0021](./ADR-0021-web-components-framework-agnostic-layer.md) — Web Components Framework-Agnostic Layer
 - [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
+- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
 
@@ -338,7 +339,9 @@ CSS Custom Properties penetrate Shadow DOM boundaries. The `@layer` directive on
 4. **Context Tokens**: Each context in its own `@layer`
 5. **Component Overrides**: Our component styles and third-party overrides in `@layer components` (uses tokens)
 6. **Theme Tokens**: All themes in the highest priority `@layer theme`
-5. **Selector Specificity**: `@layer` order overrides selector specificity
+7. **Selector Specificity**: `@layer` order overrides selector specificity
+8. **No Hardcoded Values in Component CSS**: Component CSS must only map token variables to selectors (see [Component CSS Architecture](../architecture/component-css-architecture.md))
+9. **Theme Overrides via Compound Selectors**: Theme overrides use `[data-eui-context="X"][data-eui-theme="Y"]` pattern, never write to `:root`
 
 ---
 
@@ -422,6 +425,46 @@ The `@layer` order ensures the correct value is resolved, and Custom Properties 
 
 ---
 
+## Implementation Validation
+
+**Badge Refactor (2026-01-09)** validates the CSS layer strategy:
+- ✅ **Compound Selectors**: Accessibility theme uses `[data-eui-context="app"][data-eui-theme="accessibility"]` pattern
+- ✅ **Theme Layer Isolation**: Theme overrides placed in `@layer theme` (highest priority)
+- ✅ **No :root Writes from Themes**: Theme tokens never write to `:root`, only to compound selectors
+- ✅ **Token Variable Mapping**: Component CSS maps token variables to selectors without hardcoded values
+- ✅ **Single Source of Truth**: Eliminated 99 lines of hardcoded CSS, relying on generated `tokens.css`
+
+**Example from Badge Component**:
+```css
+/* ❌ BEFORE: Hardcoded values in component CSS */
+[data-eui-context="app"][data-eui-theme="accessibility"] .eui-badge {
+  --eui-badge-border: #000000;  /* Hardcoded */
+  --eui-badge-background: #ffffff;  /* Hardcoded */
+}
+
+/* ✅ AFTER: Token variables only */
+[data-eui-context] .eui-badge {
+  --eui-badge-background: var(--eui-badge-colors-neutral-background);
+  --eui-badge-border: var(--eui-badge-colors-neutral-border);
+}
+
+/* Theme overrides in generated tokens.css (@layer theme) */
+@layer theme {
+  [data-eui-context="app"][data-eui-theme="accessibility"] {
+    --eui-badge-colors-neutral-background: oklch(100% 0 0);
+    --eui-badge-colors-neutral-border: oklch(25% 0 0);
+  }
+}
+```
+
+**Key Architectural Rules** (see [Component CSS Architecture](../architecture/component-css-architecture.md)):
+1. Component CSS maps to token variables only, no hardcoded values
+2. Theme overrides generated to `@layer theme` with compound selectors
+3. All colors in OKLCH format throughout generated CSS
+4. Single source of truth: token JSON files → generated CSS → component styles
+
+---
+
 ## Notes
 
 This ADR focuses on CSS generation. For Figma Variables integration, see:
@@ -429,3 +472,6 @@ This ADR focuses on CSS generation. For Figma Variables integration, see:
 
 For token organization, see:
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+
+For component CSS implementation rules, see:
+- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules

@@ -14,6 +14,7 @@
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
+- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
 
@@ -219,7 +220,26 @@ The implemented foundation enables:
 - **Performance Optimization**: Efficient theme switching mechanisms
 - **Cross-Context Compatibility**: Component variants that work across contexts
 
+### Implementation Validation
+
+**Badge Refactor (2026-01-09)** serves as validation of this architecture:
+- ✅ **Single Source of Truth**: Eliminated 99 lines of hardcoded CSS by relying on token-generated values
+- ✅ **Semantic Layer Compliance**: All badge tokens properly reference semantic layer
+- ✅ **OKLCH Color Space**: All colors stored and generated in OKLCH format for wider gamut and perceptual uniformity
+- ✅ **Theme Overrides**: Accessibility theme uses compound selectors `[data-eui-context="app"][data-eui-theme="accessibility"]`
+- ✅ **No Hardcoded Values**: Component CSS maps token variables to selectors only, no value definitions
+- ✅ **Theme Independence**: Each theme file overrides only what differs from base context
+
+**Key Architectural Rules** (see [Component CSS Architecture](../architecture/component-css-architecture.md)):
+1. **Token files are authoritative**, not CSS
+2. **All colors in OKLCH format** throughout the system
+3. **Theme overrides via compound selectors only**, never in `:root`
+4. **Component CSS maps to token variables**, no hardcoded values
+5. **Semantic layer resolution** before collision-resolved values
+
+These rules are now mandatory for all component implementations to maintain architectural integrity.
+
 ## Status
 
-**Accepted (Partially Implemented)** - Core context+theme architecture implemented with CSS-based mechanism and MultiContextViewer. Directory structure reorganization is partially complete but functional context+theme system is operational.
+**Accepted (Partially Implemented)** - Core context+theme architecture implemented with CSS-based mechanism and MultiContextViewer. Directory structure reorganization is partially complete but functional context+theme system is operational. Badge component refactor validates architecture correctness and establishes mandatory implementation rules.
 

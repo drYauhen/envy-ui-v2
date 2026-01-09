@@ -11,9 +11,9 @@
 **Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related:**
-
 - [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 - [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
+- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
 
@@ -236,6 +236,70 @@ The implemented token architecture provides:
 - Regulatory compliance readiness across contexts
 - Extensible focus behavior without component refactoring
 
+### Implementation Validation: Two-Layer Focus System
+
+**Badge Refactor (2026-01-09)** implements a comprehensive two-layer focus architecture that validates and extends this ADR:
+
+#### Layer 1: Theme-Dependent Focus (Component-Derived)
+- **Default theme**: Uses `accent-300` (brand-aligned, lighter focus ring)
+- **Accessibility theme**: Uses `accent-700` (WCAG 2.2 AA compliant, high contrast 3:1 ratio)
+- **Width**: 2px focus ring across all themes
+- **Implementation**: Token overrides in theme files, automatically applied based on active theme
+
+**Token Structure**:
+```json
+// Default theme: tokens/app/components/badge/focus.json
+"derived": {
+  "base": {
+    "$value": "{eui.color.accent.300}",
+    "$type": "color"
+  }
+}
+
+// Accessibility theme: tokens/contexts/app/themes/accessibility.json
+"derived": {
+  "base": {
+    "$value": "{eui.color.accent.700}",
+    "$type": "color"
+  }
+}
+```
+
+#### Layer 2: System Focus Override (Optional)
+- **Keyboard focus** (`:focus-visible`): Bright orange `oklch(62% 0.26 25)` for maximum visibility
+- **Mouse focus** (`:focus:not(:focus-visible)`): Remains theme-dependent
+- **Activation**: Via `[data-eui-focus-policy="system"]` attribute on parent element
+
+**CSS Implementation**:
+```css
+/* Layer 1: Theme-dependent (default) */
+[data-eui-context] .eui-badge:is(button, a):focus-visible {
+  box-shadow: 0 0 0 var(--eui-badge-focus-ring-offset)
+              var(--eui-color-background-surface),
+              0 0 0 calc(var(--eui-badge-focus-ring-offset) +
+              var(--eui-badge-focus-ring-width-accessible))
+              var(--eui-badge-focus-ring-color-accessible);
+}
+
+/* Layer 2: System override (optional) */
+[data-eui-focus-policy='system'] [data-eui-context] .eui-badge:is(button, a):focus-visible {
+  box-shadow: 0 0 0 var(--eui-badge-focus-ring-offset)
+              var(--eui-color-background-surface),
+              0 0 0 calc(var(--eui-badge-focus-ring-offset) +
+              var(--eui-badge-focus-ring-width-accessible))
+              var(--eui-color-system-focus);
+}
+```
+
+**Benefits Achieved**:
+- ✅ **Default Experience**: Brand-aligned focus indicators that adapt to theme
+- ✅ **Accessibility Compliance**: WCAG 2.2 AA compliant focus in accessibility theme
+- ✅ **Power User Mode**: Optional high-contrast system focus for keyboard-heavy workflows
+- ✅ **Clean Separation**: Mouse focus stays theme-dependent, keyboard focus can override
+- ✅ **No Component Changes**: Policy controlled at system level, not component level
+
+**Key Architectural Validation**: This implementation proves that policy-driven focus architecture works as designed - components expose token-based focus styles, and system-level policy determines which focus mode is active.
+
 ## 12. Status
 
-**Accepted (Partially Implemented)** - Architectural foundation complete with comprehensive token implementation. Runtime policy selection deferred to future accessibility/policy implementation phase, as originally specified in the ADR.
+**Accepted (Partially Implemented)** - Architectural foundation complete with comprehensive token implementation. Two-layer focus system (theme-dependent + system override) fully implemented and validated in badge component. Runtime policy selection mechanism functional via `data-eui-focus-policy` attribute. Full accessibility/policy implementation phase deferred per original ADR plan.

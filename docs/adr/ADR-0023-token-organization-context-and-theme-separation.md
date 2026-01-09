@@ -9,11 +9,12 @@
 **Owner:** Eugene Goncharov
 
 **Assistance:** AI-assisted drafting (human-reviewed)
-**Related:**  
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes  
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
+**Related:**
+- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
+- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
 
@@ -346,6 +347,17 @@ The transition to fully independent context directories is designed to be **non-
 - Style Dictionary reads from both structures
 - No disruption to existing token usage
 
+### Implementation Validation
+
+**Badge Refactor (2026-01-09)** validates the token organization structure:
+- ✅ **Semantic References**: All badge tokens reference semantic layer (e.g., `{eui.color.status.success.700}`)
+- ✅ **Theme Overrides**: Accessibility theme overrides only what differs (solid variants use colored backgrounds)
+- ✅ **No Hardcoded Values**: Token JSON files contain no hardcoded hex colors or px values (except intentional fixed dimensions per ADR-0018)
+- ✅ **OKLCH Throughout**: All color tokens stored in OKLCH format in token files, generated to CSS in OKLCH
+- ✅ **Single Source of Truth**: Deleted 99 lines of hardcoded CSS, relying exclusively on generated token values
+
+**Key Lesson**: Component CSS must never contain hardcoded values. Token files are the authoritative source. This separation is now mandatory for all components (see [Component CSS Architecture](../architecture/component-css-architecture.md)).
+
 ---
 
 ## Explicit Rules
@@ -355,6 +367,9 @@ The transition to fully independent context directories is designed to be **non-
 3. Contexts are **mutually exclusive** - an element belongs to one context
 4. Themes are **context-specific** - each theme belongs to a specific context
 5. Token resolution always follows: Foundation → Semantic → Context → Theme → Component
+6. **Token files are authoritative** - Component CSS must never contain hardcoded values (see [Component CSS Architecture](../architecture/component-css-architecture.md))
+7. **All colors in OKLCH** - Color tokens must use OKLCH format throughout the system
+8. **Semantic layer references** - Component tokens should reference semantic layer when possible, not skip directly to primitives
 
 **Note:** Some components may define variants within a single theme (for example, a light side-nav or alternate hero variant). Variants live inside component tokens and are selected at the component level; they do not add a new resolution layer. Cross-context variant compatibility is desirable but not defined yet.
 
