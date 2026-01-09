@@ -22,6 +22,7 @@ This directory contains **current architectural rules, standards, and references
 
 **Enforceable rules that must be followed:**
 
+- **[Component CSS Architecture](./component-css-architecture.md)** - Mandatory rules for component CSS implementation (single source of truth, no hardcoded values, OKLCH color space, theme overrides)
 - **[Token Usage Rules](./token-usage-rules.md)** - Rules for using design tokens in CSS, contracts, and generated outputs
 - **[System Prefix](./system-prefix.md)** - Canonical prefix system (`eui`)
 
@@ -37,6 +38,7 @@ This directory contains **current architectural rules, standards, and references
 
 **Architectural guides and patterns:**
 
+- **[ADR Validation and Implementation](./adr-validation-and-implementation.md)** - Process for validating architectural decisions through implementation and maintaining ADR-implementation synchronization
 - **[Hero Section Theme Architecture](./hero-section-theme-architecture.md)** - Theme architecture for hero sections
 - **[Component Naming Conventions](./component-naming-conventions.md)** - Recommended naming patterns for components and variants
 - **[Layout Composition Guide](./layout-composition-guide.md)** - Canonical layout patterns and composition rules
