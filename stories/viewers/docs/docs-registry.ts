@@ -110,6 +110,20 @@ const architectureDocs: DocRegistryItem[] = [
     path: 'theme-structure-analysis.md',
     title: 'Theme Structure Analysis: Composition vs Semantic Breakdown',
     category: 'architecture'
+  },
+  {
+    id: 'arch-component-css',
+    path: 'architecture/component-css-architecture.md',
+    title: 'Component CSS Architecture',
+    category: 'architecture',
+    storybookId: 'docs-architecture--component-css-architecture'
+  },
+  {
+    id: 'arch-adr-validation',
+    path: 'architecture/adr-validation-and-implementation.md',
+    title: 'ADR Validation and Implementation',
+    category: 'architecture',
+    storybookId: 'docs-architecture--adr-validation-and-implementation'
   }
 ];
 
