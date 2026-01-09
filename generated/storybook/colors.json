@@ -466,7 +466,7 @@
           "label": "Disabled",
           "path": "eui.color.text.disabled",
           "cssVar": "--eui-color-text-disabled",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "id": "inverse",
@@ -480,7 +480,7 @@
           "label": "Muted",
           "path": "eui.color.text.muted",
           "cssVar": "--eui-color-text-muted",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "id": "primary",
@@ -494,7 +494,7 @@
           "label": "Subtle",
           "path": "eui.color.text.subtle",
           "cssVar": "--eui-color-text-subtle",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         }
       ]
     },
@@ -521,14 +521,14 @@
           "label": "Muted",
           "path": "eui.color.background.muted",
           "cssVar": "--eui-color-background-muted",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "id": "subtle",
           "label": "Subtle",
           "path": "eui.color.background.subtle",
           "cssVar": "--eui-color-background-subtle",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "id": "surface",
@@ -548,7 +548,7 @@
           "label": "Default",
           "path": "eui.color.border.default",
           "cssVar": "--eui-color-border-default",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "id": "inverse",
@@ -562,14 +562,14 @@
           "label": "Strong",
           "path": "eui.color.border.strong",
           "cssVar": "--eui-color-border-strong",
-          "value": "oklch(84% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "id": "subtle",
           "label": "Subtle",
           "path": "eui.color.border.subtle",
           "cssVar": "--eui-color-border-subtle",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         }
       ]
     },

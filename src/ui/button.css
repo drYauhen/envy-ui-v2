@@ -1,6 +1,7 @@
 [data-eui-context] {
   --eui-button-shape-pill-radius: var(--eui-button-shape-round-radius);
-  /* Focus ring colors: base (less prominent) for mouse focus, accessible (more prominent) for keyboard focus */
+  /* Focus ring colors: theme-dependent (accent-300 default, accent-700 accessibility theme) */
+  /* 2px width for all focus states. Color changes based on active theme. */
   --eui-button-focus-color-base: var(--eui-button-focus-ring-color-derived-base);
   --eui-button-focus-color-accessible: var(--eui-button-focus-ring-color-derived-accessible);
   /* Focus ring offset is already defined in :root from tokens.css, no need to redefine */
@@ -91,36 +92,29 @@
   transform: translateY(1px);
 }
 
-/* Focus ring: solid colors (no transparency) for consistent appearance on any background */
-/* Uses double box-shadow: first creates visual gap using page background, second creates the ring */
+/* Focus ring: theme-dependent color (accent-300 default, accent-700 accessibility) */
+/* Uses double box-shadow: first creates visual gap using page background, second creates the 2px ring */
 [data-eui-context] .eui-button:focus {
-  box-shadow: 
-    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
-    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-base)) var(--eui-button-focus-color-base);
-}
-
-/* Keyboard focus: more prominent solid color for high accessibility contrast */
-[data-eui-context] .eui-button:focus-visible {
-  box-shadow: 
+  box-shadow:
     0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
     0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-focus-color-accessible);
+}
+
+/* System focus policy override: bright orange for keyboard focus */
+[data-eui-focus-policy="system"] [data-eui-context] .eui-button:focus-visible {
+  box-shadow:
+    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-color-system-focus);
 }
 
 /* Override focus ring during finish animation - use same colors as background */
 [data-eui-context] .eui-button[data-eui-intent='accent'][data-eui-finishing]:focus,
 [data-eui-context] .eui-button[data-eui-intent='accent'][data-eui-finishing]:focus-visible {
-  /* Disable standard blue focus ring */
+  /* Disable standard focus ring */
   box-shadow: none !important;
   /* Apply animation with correct colors */
   animation: button-finish-transition 1.2s cubic-bezier(0.4, 0, 0.2, 1),
              button-finish-focus-ring 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Mouse focus (not keyboard): less prominent solid color */
-[data-eui-context] .eui-button:focus:not(:focus-visible) {
-  box-shadow: 
-    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
-    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-base)) var(--eui-button-focus-color-base);
 }
 
 [data-eui-context] .eui-button[data-eui-intent='primary'] {

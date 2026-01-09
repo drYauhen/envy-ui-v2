@@ -134,14 +134,7 @@ export const globalTypes: Preview['globalTypes'] = {
   appTheme: {
     name: 'App Theme',
     description: 'Theme for app context',
-    defaultValue: DEFAULT_CONTEXT_THEMES.app,
-    toolbar: {
-      icon: 'paintbrush',
-      items: [
-        { value: 'default', title: 'Default' },
-        { value: 'accessibility', title: 'Accessibility' }
-      ]
-    }
+    defaultValue: DEFAULT_CONTEXT_THEMES.app
   },
 
   websiteTheme: {
@@ -300,8 +293,8 @@ export const parameters: Preview['parameters'] = {
   // (This is handled in individual story files via meta.parameters)
 };
 
-const preview: Preview = { 
-  decorators, 
+const preview: Preview = {
+  decorators,
   parameters
 };
 

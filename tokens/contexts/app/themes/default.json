@@ -33,10 +33,6 @@
         "$value": "12px",
         "$type": "dimension",
         "$description": "Used for modals, sheets, prominent containers. Maximum rounding for overlay elements."
-      },
-      "full": {
-        "$value": "{eui.radius.full}",
-        "$type": "dimension"
       }
     }
   }

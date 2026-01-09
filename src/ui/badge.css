@@ -95,101 +95,59 @@
 }
 
 /* ============================================================================
-   Accessibility Theme Overrides (WCAG 2.2 AA Compliant)
+   Interactive Badge Focus States (Component-Derived Focus)
    ============================================================================ */
 
-/* High contrast overrides for accessibility theme */
-[data-eui-app-theme="accessibility"] .eui-badge {
-  --eui-badge-border: #000000;
-  --eui-badge-border-width: 2px;
+/* Set up focus color variable (derived focus mode by default) */
+[data-eui-context] {
+  --eui-badge-focus-color: var(--eui-badge-focus-ring-color-derived-accessible);
 }
 
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='neutral'] {
-  --eui-badge-background: #ffffff;
-  --eui-badge-color: #000000;
+/* Reset defaults when badge is used as interactive element (button or link) */
+[data-eui-context] .eui-badge:is(button, a) {
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  border-width: var(--eui-badge-border-width);
+  border-style: var(--eui-badge-border-style);
+  transition: filter 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+  text-decoration: none; /* Remove underline for links */
 }
 
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='neutral'][data-eui-variant='solid'] {
-  --eui-badge-background: #000000;
-  --eui-badge-color: #ffffff;
+/* Focus ring: theme-dependent color (accent-300 default, accent-700 accessibility) */
+/* Uses 2px width for all focus states. Color changes based on active theme. */
+[data-eui-context] .eui-badge:is(button, a):focus {
+  box-shadow:
+    0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width-accessible)) var(--eui-badge-focus-color);
 }
 
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='success'] {
-  --eui-badge-background: #e6f7e6;
-  --eui-badge-color: #000000;
+/* System focus policy override: bright orange for keyboard focus */
+[data-eui-focus-policy="system"] [data-eui-context] .eui-badge:is(button, a):focus-visible {
+  box-shadow:
+    0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width-accessible)) var(--eui-color-system-focus);
 }
 
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='success'][data-eui-variant='solid'] {
-  --eui-badge-background: #006400;
-  --eui-badge-color: #ffffff;
+/* Subtle hover state for interactive badges */
+[data-eui-context] .eui-badge:is(button, a):not(:disabled):hover {
+  filter: brightness(0.96);
 }
 
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='warning'] {
-  --eui-badge-background: #fff8e1;
-  --eui-badge-color: #000000;
+/* Pressed state for interactive badges */
+[data-eui-context] .eui-badge:is(button, a):not(:disabled):active {
+  transform: translateY(1px);
 }
 
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='warning'][data-eui-variant='solid'] {
-  --eui-badge-background: #8b4513;
-  --eui-badge-color: #ffffff;
+/* Disabled state for button badges */
+[data-eui-context] .eui-badge:is(button):disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='error'] {
-  --eui-badge-background: #ffe6e6;
-  --eui-badge-color: #000000;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='error'][data-eui-variant='solid'] {
-  --eui-badge-background: #8b0000;
-  --eui-badge-color: #ffffff;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='info'] {
-  --eui-badge-background: #e6f3ff;
-  --eui-badge-color: #000000;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='info'][data-eui-variant='solid'] {
-  --eui-badge-background: #00008b;
-  --eui-badge-color: #ffffff;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-variant='solid'] {
-  --eui-badge-background: #000000;
-  --eui-badge-color: #ffffff;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='neutral'][data-eui-variant='outline'] {
-  --eui-badge-background: transparent;
-  --eui-badge-color: #000000;
-  --eui-badge-border: #000000;
-  --eui-badge-border-width: 2px;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='success'][data-eui-variant='outline'] {
-  --eui-badge-background: transparent;
-  --eui-badge-color: #006400;
-  --eui-badge-border: #006400;
-  --eui-badge-border-width: 2px;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='warning'][data-eui-variant='outline'] {
-  --eui-badge-background: transparent;
-  --eui-badge-color: #8b4513;
-  --eui-badge-border: #8b4513;
-  --eui-badge-border-width: 2px;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='error'][data-eui-variant='outline'] {
-  --eui-badge-background: transparent;
-  --eui-badge-color: #8b0000;
-  --eui-badge-border: #8b0000;
-  --eui-badge-border-width: 2px;
-}
-
-[data-eui-app-theme="accessibility"] .eui-badge[data-eui-tone='info'][data-eui-variant='outline'] {
-  --eui-badge-background: transparent;
-  --eui-badge-color: #00008b;
-  --eui-badge-border: #00008b;
-  --eui-badge-border-width: 2px;
+/* Disabled-like state for link badges (using aria-disabled) */
+[data-eui-context] .eui-badge:is(a)[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
 }

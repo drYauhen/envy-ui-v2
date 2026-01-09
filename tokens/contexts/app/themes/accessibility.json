@@ -147,9 +147,9 @@
           },
           "solid": {
             "background": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.status.success.700}",
               "$type": "color",
-              "$description": "Success solid badge background for accessibility theme."
+              "$description": "Success solid badge background for accessibility theme - dark colored background for visual distinction from subtle variant."
             },
             "border": {
               "$value": "{eui.color.status.success.700}",
@@ -157,9 +157,9 @@
               "$description": "Success solid badge border for accessibility theme."
             },
             "text": {
-              "$value": "{eui.color.status.success.700}",
+              "$value": "{eui.color.neutral.white}",
               "$type": "color",
-              "$description": "Success solid badge text color for accessibility theme."
+              "$description": "Success solid badge text color for accessibility theme - white for contrast on dark background."
             }
           }
         },
@@ -181,9 +181,9 @@
           },
           "solid": {
             "background": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.status.warning.700}",
               "$type": "color",
-              "$description": "Warning solid badge background for accessibility theme."
+              "$description": "Warning solid badge background for accessibility theme - dark colored background for visual distinction from subtle variant."
             },
             "border": {
               "$value": "{eui.color.status.warning.700}",
@@ -191,9 +191,9 @@
               "$description": "Warning solid badge border for accessibility theme."
             },
             "text": {
-              "$value": "{eui.color.status.warning.700}",
+              "$value": "{eui.color.neutral.white}",
               "$type": "color",
-              "$description": "Warning solid badge text color for accessibility theme."
+              "$description": "Warning solid badge text color for accessibility theme - white for contrast on dark background."
             }
           }
         },
@@ -215,9 +215,9 @@
           },
           "solid": {
             "background": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.status.error.700}",
               "$type": "color",
-              "$description": "Error solid badge background for accessibility theme."
+              "$description": "Error solid badge background for accessibility theme - dark colored background for visual distinction from subtle variant."
             },
             "border": {
               "$value": "{eui.color.status.error.700}",
@@ -225,9 +225,9 @@
               "$description": "Error solid badge border for accessibility theme."
             },
             "text": {
-              "$value": "{eui.color.status.error.700}",
+              "$value": "{eui.color.neutral.white}",
               "$type": "color",
-              "$description": "Error solid badge text color for accessibility theme."
+              "$description": "Error solid badge text color for accessibility theme - white for contrast on dark background."
             }
           }
         },
@@ -249,9 +249,9 @@
           },
           "solid": {
             "background": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.status.info.700}",
               "$type": "color",
-              "$description": "Info solid badge background for accessibility theme."
+              "$description": "Info solid badge background for accessibility theme - dark colored background for visual distinction from subtle variant."
             },
             "border": {
               "$value": "{eui.color.status.info.700}",
@@ -259,9 +259,27 @@
               "$description": "Info solid badge border for accessibility theme."
             },
             "text": {
-              "$value": "{eui.color.status.info.700}",
+              "$value": "{eui.color.neutral.white}",
               "$type": "color",
-              "$description": "Info solid badge text color for accessibility theme."
+              "$description": "Info solid badge text color for accessibility theme - white for contrast on dark background."
+            }
+          }
+        }
+      },
+      "focus": {
+        "ring": {
+          "color": {
+            "derived": {
+              "base": {
+                "$value": "{eui.color.accent.700}",
+                "$type": "color",
+                "$description": "WCAG 2.2 AA compliant focus ring color for badge in accessibility theme. Dark accent with high contrast ratio (>3:1) for maximum visibility."
+              },
+              "accessible": {
+                "$value": "{eui.color.accent.700}",
+                "$type": "color",
+                "$description": "WCAG 2.2 AA compliant focus ring color for badge keyboard focus in accessibility theme."
+              }
             }
           }
         }
@@ -304,10 +322,26 @@
         "$value": "12px",
         "$type": "dimension",
         "$description": "Much larger than default. Used for modals, dialogs. Clear hierarchy: default (8px) < large (10px) < extra-large (12px)."
-      },
-      "full": {
-        "$value": "{eui.radius.full}",
-        "$type": "dimension"
+      }
+    },
+    "button": {
+      "focus": {
+        "ring": {
+          "color": {
+            "derived": {
+              "base": {
+                "$value": "{eui.color.accent.700}",
+                "$type": "color",
+                "$description": "WCAG 2.2 AA compliant focus ring color for button in accessibility theme. Dark accent with high contrast ratio (>3:1) for maximum visibility."
+              },
+              "accessible": {
+                "$value": "{eui.color.accent.700}",
+                "$type": "color",
+                "$description": "WCAG 2.2 AA compliant focus ring color for button keyboard focus in accessibility theme."
+              }
+            }
+          }
+        }
       }
     }
   }

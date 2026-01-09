@@ -1,0 +1,41 @@
+{
+  "eui": {
+    "badge": {
+      "focus": {
+        "ring": {
+          "color": {
+            "derived": {
+              "base": {
+                "$value": "{eui.color.accent.300}",
+                "$type": "color",
+                "$description": "Focus ring color for mouse/pointer focus on interactive badges. Uses accent-300 for brand-aligned focus indication. Theme-dependent."
+              },
+              "accessible": {
+                "$value": "{eui.color.accent.300}",
+                "$type": "color",
+                "$description": "Focus ring color for keyboard focus (focus-visible) on interactive badges. Uses accent-300 for brand-aligned focus indication. Theme-dependent."
+              }
+            }
+          },
+          "width": {
+            "base": {
+              "$value": "{eui.focus.ring.width.base}",
+              "$type": "dimension",
+              "$description": "Focus ring width for mouse/pointer focus on interactive badges. References global focus ring width."
+            },
+            "accessible": {
+              "$value": "{eui.focus.ring.width.accessible}",
+              "$type": "dimension",
+              "$description": "Focus ring width for keyboard focus (focus-visible) on interactive badges. References global accessible focus ring width (3px)."
+            }
+          },
+          "offset": {
+            "$value": "2px",
+            "$type": "dimension",
+            "$description": "Space between badge border and focus ring. Creates visual separation for better clarity."
+          }
+        }
+      }
+    }
+  }
+}

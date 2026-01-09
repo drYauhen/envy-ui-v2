@@ -1,5 +1,38 @@
-/* System focus policy: use solid system focus color (high accessibility orange) for keyboard focus */
-[data-eui-focus-policy='system'] [data-eui-context] {
-  --eui-button-focus-color-accessible: var(--eui-color-system-focus);
-  /* Base focus (mouse) can remain brand color, or use system if desired */
-}
+/* ============================================================================
+   Focus Ring Architecture (Theme-Dependent + System Override)
+   ============================================================================
+
+   LAYER 1: Theme-Dependent Focus (Default)
+   -----------------------------------------
+   Focus rings adapt based on the active theme:
+
+   Default theme:
+   - Color: accent-300 (brand-aligned, lighter)
+   - Width: 2px
+
+   Accessibility theme:
+   - Color: accent-700 (WCAG 2.2 AA compliant, darker, high contrast)
+   - Width: 2px
+
+   Implementation:
+   - Components use --eui-{component}-focus-color-accessible CSS variable
+   - Token overrides in /tokens/contexts/app/themes/accessibility.json
+   - Automatic theme switching via [data-eui-context][data-eui-theme] attributes
+
+   LAYER 2: System Focus Policy Override (Optional)
+   -------------------------------------------------
+   When [data-eui-focus-policy="system"] is set on a parent element:
+   - Keyboard focus (:focus-visible) → bright orange (oklch(62% 0.26 25))
+   - Mouse focus (:focus:not(:focus-visible)) → remains theme-dependent
+   - Overrides theme colors for maximum accessibility
+
+   This creates a visual hierarchy:
+   1. Derived mode (default): theme-dependent colors
+   2. System mode (opt-in): high-contrast orange for keyboard users
+
+   See:
+   - /src/ui/button.css for button focus implementation
+   - /src/ui/badge.css for badge focus implementation
+   - /tokens/app/components/button/focus.json for default tokens
+   - /tokens/contexts/app/themes/accessibility.json for WCAG overrides
+   ============================================================================ */

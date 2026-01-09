@@ -88,7 +88,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           const themeFilesList = fs.readdirSync(contextThemesDir).filter(f => f.endsWith('.json'));
           themeFilesList.forEach(themeFile => {
             const theme = path.basename(themeFile, '.json');
-            const selector = `[data-eui-${context}-theme="${theme}"]`;
+            const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
             const themeFilePath = path.join(contextThemesDir, themeFile);
             try {
               const data = JSON.parse(fs.readFileSync(themeFilePath, 'utf8'));
@@ -127,7 +127,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           if (themeMatch) {
             const context = themeMatch[1];
             const theme = themeMatch[2];
-            const selector = `[data-eui-${context}-theme="${theme}"]`;
+            const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
 
             if (!themeTokens.has(selector)) {
               themeTokens.set(selector, []);
@@ -138,26 +138,35 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         }
       });
 
-      // Helper function to resolve a token value using Style Dictionary's resolved tokens
+      // Map to store semantic base values for reference resolution
+      const semanticBaseValues = new Map(); // Map<tokenPath, value>
+
+      // Helper function to resolve a token value using semantic base values first, then Style Dictionary's resolved tokens
       const resolveTokenValue = (tokenPath, rawValue) => {
         // If it's already a resolved value (not a reference), return as-is
         if (typeof rawValue === 'string' && !rawValue.startsWith('{') && !rawValue.endsWith('}')) {
           return rawValue;
         }
-        
+
         // If it's a reference (e.g., {eui.radius.pill}), extract the path and resolve
         if (typeof rawValue === 'string' && rawValue.startsWith('{') && rawValue.endsWith('}')) {
           const referenceStr = rawValue.slice(1, -1); // eui.radius.pill
           const referencePath = referenceStr.split('.'); // ['eui', 'radius', 'pill']
-          
-          // Try to find the token in dictionary by path (exact match)
+          const referencePathStr = referencePath.join('.');
+
+          // FIRST: Check if this reference exists in semanticBaseValues (semantic base value)
+          if (semanticBaseValues.has(referencePathStr)) {
+            return semanticBaseValues.get(referencePathStr);
+          }
+
+          // SECOND: Try to find the token in dictionary by path (exact match)
           // First, try to find by path array
           let resolvedToken = dictionary.allTokens.find(t => {
             const tPath = t.path || [];
             if (tPath.length !== referencePath.length) return false;
             return tPath.every((seg, i) => seg === referencePath[i]);
           });
-          
+
           // If not found by path, try to find by name (for resolved tokens)
           if (!resolvedToken) {
             const tokenName = referencePath.map(s => s.replace(/\./g, '-')).join('-');
@@ -166,7 +175,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
               return tName === tokenName;
             });
           }
-          
+
           if (resolvedToken) {
             // Get the resolved value (Style Dictionary resolves references)
             const resolvedValue = resolvedToken.value || resolvedToken.$value;
@@ -177,7 +186,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             return resolvedValue;
           }
         }
-        
+
         // Fallback to raw value
         return rawValue;
       };
@@ -239,18 +248,60 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         }
       });
       
-      // Ensure semantic tokens are included in base tokens with original values
-      // Read semantic JSON files directly to get original values (before collision resolution)
+      // Ensure semantic and component tokens are included in base tokens with original values
+      // Read JSON files directly to get original values (before collision resolution)
       // This ensures base values are in :root even if themes override them
-      // New structure: tokens/{context}/semantic/...
-      // For now, we'll use app context semantic tokens as base (can be extended later)
-      const semanticFilesToProcess = [
-        { file: 'app/semantic/shape.json', pathPrefix: ['eui', 'radius'] },
-        { file: 'app/semantic/colors/border.json', pathPrefix: ['eui', 'color', 'border'] },
-        { file: 'app/semantic/colors/text.json', pathPrefix: ['eui', 'color', 'text'] },
-        { file: 'app/semantic/colors/background.json', pathPrefix: ['eui', 'color', 'background'] }
+      // Structure: tokens/contexts/{context}/semantics/... and tokens/app/components/.../
+
+      // FIRST PASS: Process only semantic files to populate semanticBaseValues map
+      const semanticOnlyFiles = [
+        { file: 'contexts/app/semantics/shape.json', pathPrefix: ['eui', 'radius'] },
+        { file: 'contexts/app/semantics/colors/border.json', pathPrefix: ['eui', 'color', 'border'] },
+        { file: 'contexts/app/semantics/colors/text.json', pathPrefix: ['eui', 'color', 'text'] },
+        { file: 'contexts/app/semantics/colors/background.json', pathPrefix: ['eui', 'color', 'background'] }
       ];
-      
+
+      semanticOnlyFiles.forEach(({ file, pathPrefix }) => {
+        const semanticFilePath = path.join(tokensRoot, file);
+        if (fs.existsSync(semanticFilePath)) {
+          try {
+            const semanticData = JSON.parse(fs.readFileSync(semanticFilePath, 'utf8'));
+            const euiData = semanticData.eui || semanticData;
+            let targetData = euiData;
+            for (let i = 1; i < pathPrefix.length; i++) {
+              targetData = targetData?.[pathPrefix[i]];
+            }
+            if (targetData) {
+              // Extract tokens and store in semanticBaseValues map (before resolving references)
+              const extractAndStore = (obj, prefix = []) => {
+                for (const [key, value] of Object.entries(obj)) {
+                  const path = [...prefix, key];
+                  if (value && typeof value === 'object' && '$value' in value) {
+                    const pathStr = path.join('.');
+                    // Store raw value (may contain references)
+                    semanticBaseValues.set(pathStr, value.$value);
+                  } else if (value && typeof value === 'object' && !Array.isArray(value)) {
+                    extractAndStore(value, path);
+                  }
+                }
+              };
+              extractAndStore(targetData, pathPrefix);
+            }
+          } catch (e) {
+            console.warn(`Warning: Could not read semantic file ${file}: ${e.message}`);
+          }
+        }
+      });
+
+      // SECOND PASS: Process all files (semantic + component) to add to baseTokens
+      const semanticFilesToProcess = [
+        { file: 'contexts/app/semantics/shape.json', pathPrefix: ['eui', 'radius'] },
+        { file: 'contexts/app/semantics/colors/border.json', pathPrefix: ['eui', 'color', 'border'] },
+        { file: 'contexts/app/semantics/colors/text.json', pathPrefix: ['eui', 'color', 'text'] },
+        { file: 'contexts/app/semantics/colors/background.json', pathPrefix: ['eui', 'color', 'background'] },
+        { file: 'app/components/badge/shape.json', pathPrefix: ['eui', 'badge', 'shape'] }
+      ];
+
       semanticFilesToProcess.forEach(({ file, pathPrefix }) => {
         const semanticFilePath = path.join(tokensRoot, file);
         if (fs.existsSync(semanticFilePath)) {

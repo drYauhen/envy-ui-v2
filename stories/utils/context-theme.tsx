@@ -57,13 +57,11 @@ export function ContextThemeScope({
 
   const resolvedTheme = theme ?? themeFromContext;
 
-  // Create the context-specific theme attribute
-  const themeAttribute = `data-eui-${resolvedContext}-theme`;
-
   return (
     <Component
       {...rest}
-      {...{ [themeAttribute]: resolvedTheme }}
+      data-eui-context={resolvedContext}
+      data-eui-theme={resolvedTheme}
     />
   );
 }

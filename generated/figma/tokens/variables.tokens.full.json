@@ -62,7 +62,7 @@
         {
           "path": "eui.card.variant.elevated.radius",
           "type": "FLOAT",
-          "value": 8
+          "value": 10
         },
         {
           "path": "eui.card.variant.flat.border.width",
@@ -72,7 +72,7 @@
         {
           "path": "eui.card.variant.flat.radius",
           "type": "FLOAT",
-          "value": 8
+          "value": 10
         },
         {
           "path": "eui.card.variant.muted.border.width",
@@ -82,7 +82,7 @@
         {
           "path": "eui.card.variant.muted.radius",
           "type": "FLOAT",
-          "value": 8
+          "value": 10
         },
         {
           "path": "eui.card.variant.strong.border.width",
@@ -92,7 +92,7 @@
         {
           "path": "eui.card.variant.strong.radius",
           "type": "FLOAT",
-          "value": 8
+          "value": 10
         }
       ]
     },
@@ -108,7 +108,7 @@
         {
           "path": "eui.card.variant.elevated.border.color",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.card.variant.flat.background",
@@ -118,17 +118,17 @@
         {
           "path": "eui.card.variant.flat.border.color",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.card.variant.muted.background",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.card.variant.muted.border.color",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.card.variant.strong.background",
@@ -138,7 +138,7 @@
         {
           "path": "eui.card.variant.strong.border.color",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         }
       ]
     },
@@ -625,7 +625,7 @@
         {
           "path": "eui.calendar.colors.day.text.outsideMonth",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.calendar.colors.day.text.selected",
@@ -680,7 +680,7 @@
         {
           "path": "eui.calendar.colors.weekday.text",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.celebration.colors.shine.end",
@@ -715,12 +715,12 @@
         {
           "path": "eui.chart.colors.axis.grid",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.chart.colors.axis.line",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.chart.colors.series.primary",
@@ -735,7 +735,7 @@
         {
           "path": "eui.chart.colors.text.muted",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "path": "eui.chart.colors.text.primary",
@@ -750,7 +750,7 @@
         {
           "path": "eui.chart.colors.tooltip.border",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.chart.colors.tooltip.text",
@@ -815,7 +815,7 @@
         {
           "path": "eui.counter.colors.pill.disabled.color",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.pill.inverse.background",
@@ -840,7 +840,7 @@
         {
           "path": "eui.counter.colors.text.disabled.color",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.counter.colors.text.inverse.color",
@@ -855,7 +855,7 @@
         {
           "path": "eui.detail-panel.colors.border",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.detail-panel.colors.text",
@@ -865,7 +865,7 @@
         {
           "path": "eui.divider.colors.default",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.header.colors.background",
@@ -875,7 +875,7 @@
         {
           "path": "eui.header.colors.border",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.header.colors.text",
@@ -905,7 +905,7 @@
         {
           "path": "eui.hero-section.colors.text.subheading",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "path": "eui.logo.colors.icon.default",
@@ -935,7 +935,7 @@
         {
           "path": "eui.menu.colors.border",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.background.default",
@@ -945,17 +945,17 @@
         {
           "path": "eui.menu.colors.item.background.focus",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.background.hover",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.background.selected",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.menu.colors.item.text",
@@ -965,7 +965,7 @@
         {
           "path": "eui.menu.colors.item.text-disabled",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.body.background",
@@ -995,12 +995,12 @@
         {
           "path": "eui.modal.colors.footer.background",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.footer.border",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.modal.colors.footer.text",
@@ -1105,7 +1105,7 @@
         {
           "path": "eui.side-nav.colors.item.text.disabled",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.side-nav.colors.item.text.hover",
@@ -1125,7 +1125,7 @@
         {
           "path": "eui.side-nav.colors.separator",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.side-nav.colors.toggle.border",
@@ -1235,7 +1235,7 @@
         {
           "path": "eui.title-bar.colors.border",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.title-bar.colors.text",
@@ -1261,7 +1261,7 @@
         {
           "path": "eui.table.expandable-cell.border.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.table.expandable-cell.panel.max-height",
@@ -1398,7 +1398,7 @@
         {
           "path": "eui.color.text.disabled",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.color.text.inverse",
@@ -1408,7 +1408,7 @@
         {
           "path": "eui.color.text.muted",
           "type": "COLOR",
-          "value": "oklch(48% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "path": "eui.color.text.primary",
@@ -1418,7 +1418,7 @@
         {
           "path": "eui.color.text.subtle",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.input.text.base",
@@ -1428,12 +1428,12 @@
         {
           "path": "eui.input.text.disabled",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.input.text.placeholder",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         }
       ]
     },
@@ -1444,7 +1444,7 @@
         {
           "path": "eui.avatar.background.fallback",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.base",
@@ -1459,7 +1459,7 @@
         {
           "path": "eui.checkbox.background.checkedDisabled",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.checkedHover",
@@ -1469,7 +1469,7 @@
         {
           "path": "eui.checkbox.background.disabled",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.hover",
@@ -1484,7 +1484,7 @@
         {
           "path": "eui.checkbox.background.indeterminateDisabled",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.checkbox.background.indeterminateHover",
@@ -1504,12 +1504,12 @@
         {
           "path": "eui.color.background.muted",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.color.background.subtle",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.color.background.surface",
@@ -1524,7 +1524,7 @@
         {
           "path": "eui.input.background.disabled",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.input.background.focus",
@@ -1600,7 +1600,7 @@
         {
           "path": "eui.color.border.default",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.color.border.inverse",
@@ -1610,17 +1610,17 @@
         {
           "path": "eui.color.border.strong",
           "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "path": "eui.color.border.subtle",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.input.border.base",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.input.border.disabled",
@@ -1640,12 +1640,12 @@
         {
           "path": "eui.input.border.hover",
           "type": "COLOR",
-          "value": "oklch(84% 0.00 0)"
+          "value": "oklch(33% 0.00 0)"
         },
         {
           "path": "eui.menu.border.color",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         }
       ]
     },
@@ -1799,7 +1799,7 @@
         {
           "path": "eui.button.accent.background.disabled",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.button.accent.background.hover",
@@ -1824,7 +1824,7 @@
         {
           "path": "eui.button.accent.label.disabled",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         },
         {
           "path": "eui.button.accent.label.hover",
@@ -1898,14 +1898,24 @@
       "mode": "default",
       "variables": [
         {
+          "path": "eui.badge.focus.ring.color.derived.accessible",
+          "type": "COLOR",
+          "value": "oklch(84% 0.14 236)"
+        },
+        {
+          "path": "eui.badge.focus.ring.color.derived.base",
+          "type": "COLOR",
+          "value": "oklch(84% 0.14 236)"
+        },
+        {
           "path": "eui.button.focus.ring.color.derived.accessible",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(84% 0.14 236)"
         },
         {
           "path": "eui.button.focus.ring.color.derived.base",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(84% 0.14 236)"
         },
         {
           "path": "eui.checkbox.focus.ring.color.derived.accessible",
@@ -2103,7 +2113,7 @@
         {
           "path": "eui.radius.default",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.radius.extra-large",
@@ -2118,7 +2128,7 @@
         {
           "path": "eui.radius.large",
           "type": "FLOAT",
-          "value": 8
+          "value": 10
         },
         {
           "path": "eui.radius.lg",
@@ -2143,7 +2153,7 @@
         {
           "path": "eui.radius.small",
           "type": "FLOAT",
-          "value": 2
+          "value": 4
         },
         {
           "path": "eui.radius.xl",
@@ -2180,7 +2190,7 @@
         {
           "path": "eui.opacity.muted",
           "type": "FLOAT",
-          "value": 0.6
+          "value": 0.75
         }
       ]
     },
@@ -2191,22 +2201,22 @@
         {
           "path": "eui.filter.muted.brightness",
           "type": "FLOAT",
-          "value": 0.95
+          "value": 1
         },
         {
           "path": "eui.filter.muted.contrast",
           "type": "FLOAT",
-          "value": 0.9
+          "value": 0.95
         },
         {
           "path": "eui.filter.muted.grayscale",
           "type": "FLOAT",
-          "value": 1
+          "value": 0.6
         },
         {
           "path": "eui.filter.muted.saturate",
           "type": "FLOAT",
-          "value": 0.35
+          "value": 0.5
         }
       ]
     },
@@ -2220,9 +2230,24 @@
           "value": 1
         },
         {
+          "path": "eui.badge.focus.ring.offset",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.badge.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.badge.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
           "path": "eui.badge.shape.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.badge.spacing.gap",
@@ -2248,12 +2273,12 @@
         {
           "path": "eui.calendar.border.radius.calendar",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.calendar.border.radius.day",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.calendar.border.width",
@@ -2359,6 +2384,445 @@
           "path": "eui.calendar.z-index.selected",
           "type": "FLOAT",
           "value": 2
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Dimensions / Button",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.button.border.width",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.button.focus.ring.offset.base",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.button.focus.ring.width.accessible",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.button.focus.ring.width.base",
+          "type": "FLOAT",
+          "value": 2
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topLeft",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.bottomLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.bottomRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topLeft",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topRight",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topRight",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomRight",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.topLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.topRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.topLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.topRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.topLeft",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.topRight",
+          "type": "FLOAT",
+          "value": 0
+        },
+        {
+          "path": "eui.button.group.position.single.shape.corner.bottomLeft",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.single.shape.corner.bottomRight",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.single.shape.corner.topLeft",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.group.position.single.shape.corner.topRight",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.layout.stack.separator.inset",
+          "type": "FLOAT",
+          "value": 6
+        },
+        {
+          "path": "eui.button.layout.stack.separator.thickness",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.button.separator.inset",
+          "type": "FLOAT",
+          "value": 6
+        },
+        {
+          "path": "eui.button.separator.thickness",
+          "type": "FLOAT",
+          "value": 1
+        },
+        {
+          "path": "eui.button.shape.circle.radius",
+          "type": "FLOAT",
+          "value": 50
+        },
+        {
+          "path": "eui.button.shape.default.radius",
+          "type": "FLOAT",
+          "value": 8
+        },
+        {
+          "path": "eui.button.shape.round.radius",
+          "type": "FLOAT",
+          "value": 9999
+        },
+        {
+          "path": "eui.button.size.lg.gap",
+          "type": "FLOAT",
+          "value": 0.45
+        },
+        {
+          "path": "eui.button.size.lg.height",
+          "type": "FLOAT",
+          "value": 48
+        },
+        {
+          "path": "eui.button.size.lg.padding.inline",
+          "type": "FLOAT",
+          "value": 24
+        },
+        {
+          "path": "eui.button.size.md.gap",
+          "type": "FLOAT",
+          "value": 0.4
+        },
+        {
+          "path": "eui.button.size.md.height",
+          "type": "FLOAT",
+          "value": 40
+        },
+        {
+          "path": "eui.button.size.md.padding.inline",
+          "type": "FLOAT",
+          "value": 20
+        },
+        {
+          "path": "eui.button.size.sm.gap",
+          "type": "FLOAT",
+          "value": 0.35
+        },
+        {
+          "path": "eui.button.size.sm.height",
+          "type": "FLOAT",
+          "value": 36
+        },
+        {
+          "path": "eui.button.size.sm.padding.inline",
+          "type": "FLOAT",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Primary",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.button.primary.background.active",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.button.primary.background.base",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.button.primary.background.disabled",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.button.primary.background.hover",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.button.primary.background.selected",
+          "type": "COLOR",
+          "value": "oklch(49% 0.10 230)"
+        },
+        {
+          "path": "eui.button.primary.label.active",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.primary.label.base",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.primary.label.disabled",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.button.primary.label.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.primary.label.selected",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Secondary",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.button.secondary.background.active",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.secondary.background.base",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.secondary.background.disabled",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.background.hover",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.secondary.background.selected",
+          "type": "COLOR",
+          "value": "oklch(100% 0 0)"
+        },
+        {
+          "path": "eui.button.secondary.border.active",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.border.base",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.border.disabled",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.border.hover",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.border.selected",
+          "type": "COLOR",
+          "value": "oklch(48% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.label.active",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.label.base",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.label.disabled",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.label.hover",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        },
+        {
+          "path": "eui.button.secondary.label.selected",
+          "type": "COLOR",
+          "value": "oklch(25% 0.00 0)"
+        }
+      ]
+    },
+    {
+      "name": "envy-ui-v2 • Colors / Accent Finished",
+      "mode": "default",
+      "variables": [
+        {
+          "path": "eui.button.accent-finished.background.active",
+          "type": "COLOR",
+          "value": "oklch(89% 0.09 236)"
+        },
+        {
+          "path": "eui.button.accent-finished.background.base",
+          "type": "COLOR",
+          "value": "oklch(89% 0.09 236)"
+        },
+        {
+          "path": "eui.button.accent-finished.background.disabled",
+          "type": "COLOR",
+          "value": "oklch(94% 0.00 0)"
+        },
+        {
+          "path": "eui.button.accent-finished.background.hover",
+          "type": "COLOR",
+          "value": "oklch(89% 0.09 236)"
+        },
+        {
+          "path": "eui.button.accent-finished.background.selected",
+          "type": "COLOR",
+          "value": "oklch(89% 0.09 236)"
+        },
+        {
+          "path": "eui.button.accent-finished.label.active",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.button.accent-finished.label.base",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.button.accent-finished.label.disabled",
+          "type": "COLOR",
+          "value": "oklch(63% 0.00 0)"
+        },
+        {
+          "path": "eui.button.accent-finished.label.hover",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
+        },
+        {
+          "path": "eui.button.accent-finished.label.selected",
+          "type": "COLOR",
+          "value": "oklch(63% 0.15 237)"
         }
       ]
     },
@@ -2603,7 +3067,7 @@
         {
           "path": "eui.focus.ring.width.accessible",
           "type": "FLOAT",
-          "value": 3
+          "value": 2
         },
         {
           "path": "eui.focus.ring.width.base",
@@ -2676,7 +3140,7 @@
         {
           "path": "eui.switch.focus.ring.width.accessible",
           "type": "FLOAT",
-          "value": 3
+          "value": 2
         },
         {
           "path": "eui.switch.focus.ring.width.base",
@@ -2772,12 +3236,12 @@
         {
           "path": "eui.switch.track.background.disabled",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.switch.track.background.disabledOn",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.switch.track.background.off",
@@ -2844,7 +3308,7 @@
         {
           "path": "eui.skeleton.shape.rectangular.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.skeleton.shape.text.radius",
@@ -3052,7 +3516,7 @@
         {
           "path": "eui.select.dropdown.radius",
           "type": "FLOAT",
-          "value": 8
+          "value": 10
         },
         {
           "path": "eui.select.dropdown.z-index",
@@ -3072,7 +3536,7 @@
         {
           "path": "eui.select.primitive.badge.shape.radius",
           "type": "FLOAT",
-          "value": 2
+          "value": 4
         },
         {
           "path": "eui.select.primitive.badge.spacing.gap",
@@ -3097,7 +3561,7 @@
         {
           "path": "eui.select.primitive.option.shape.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.select.primitive.option.spacing.padding.horizontal",
@@ -3138,12 +3602,12 @@
         {
           "path": "eui.select.primitive.badge.colors.background",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.select.primitive.badge.colors.remove.icon",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.select.primitive.badge.colors.text",
@@ -3164,7 +3628,7 @@
         {
           "path": "eui.select.dropdown.border.color",
           "type": "COLOR",
-          "value": "oklch(94% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         }
       ]
     },
@@ -3180,22 +3644,22 @@
         {
           "path": "eui.select.option.background.focused",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.select.option.background.hover",
           "type": "COLOR",
-          "value": "oklch(96.5% 0.00 0)"
+          "value": "oklch(90% 0.00 0)"
         },
         {
           "path": "eui.select.option.background.selected",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.select.option.background.selected-focused",
           "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
+          "value": "oklch(94% 0.00 0)"
         },
         {
           "path": "eui.select.option.color.default",
@@ -3205,7 +3669,7 @@
         {
           "path": "eui.select.option.color.disabled",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         }
       ]
     },
@@ -3221,7 +3685,7 @@
         {
           "path": "eui.select.trigger.border",
           "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         }
       ]
     },
@@ -3232,12 +3696,12 @@
         {
           "path": "eui.select.icon.color",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.select.icon.disabled",
           "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
+          "value": "oklch(63% 0.00 0)"
         }
       ]
     },
@@ -3330,7 +3794,7 @@
         {
           "path": "eui.menu.shape.radius",
           "type": "FLOAT",
-          "value": 8
+          "value": 10
         },
         {
           "path": "eui.menu.size.max-height",
@@ -3427,7 +3891,7 @@
         {
           "path": "eui.input.focus.ring.width.accessible",
           "type": "FLOAT",
-          "value": 3
+          "value": 2
         },
         {
           "path": "eui.input.focus.ring.width.base",
@@ -3527,7 +3991,7 @@
         {
           "path": "eui.input.shape.radius",
           "type": "FLOAT",
-          "value": 4
+          "value": 8
         },
         {
           "path": "eui.input.size.lg.height",
@@ -3568,12 +4032,12 @@
         {
           "path": "eui.input.group.colors.prefix.text",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         },
         {
           "path": "eui.input.group.colors.suffix.text",
           "type": "COLOR",
-          "value": "oklch(63% 0.00 0)"
+          "value": "oklch(48% 0.00 0)"
         }
       ]
     },
@@ -3865,7 +4329,7 @@
         {
           "path": "eui.checkbox.focus.ring.width.accessible",
           "type": "FLOAT",
-          "value": 3
+          "value": 2
         },
         {
           "path": "eui.checkbox.focus.ring.width.base",
@@ -3880,7 +4344,7 @@
         {
           "path": "eui.checkbox.shape.radius",
           "type": "FLOAT",
-          "value": 2
+          "value": 4
         },
         {
           "path": "eui.checkbox.size.lg.size",
@@ -3948,445 +4412,6 @@
           "path": "eui.celebration.animation.sparkle.particle.size",
           "type": "FLOAT",
           "value": 2
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Dimensions / Button",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.button.border.width",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.button.focus.ring.offset.base",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.button.focus.ring.width.accessible",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.button.focus.ring.width.base",
-          "type": "FLOAT",
-          "value": 2
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomLeft",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.bottomRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topLeft",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.horizontal.corner.topRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.bottomLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.bottomRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topLeft",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.first.shape.orientation.vertical.corner.topRight",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.bottomRight",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.horizontal.corner.topRight",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomLeft",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.bottomRight",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.topLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.last.shape.orientation.vertical.corner.topRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.bottomRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.topLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.horizontal.corner.topRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.bottomRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.topLeft",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.middle.shape.orientation.vertical.corner.topRight",
-          "type": "FLOAT",
-          "value": 0
-        },
-        {
-          "path": "eui.button.group.position.single.shape.corner.bottomLeft",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.single.shape.corner.bottomRight",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.single.shape.corner.topLeft",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.group.position.single.shape.corner.topRight",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.layout.stack.separator.inset",
-          "type": "FLOAT",
-          "value": 6
-        },
-        {
-          "path": "eui.button.layout.stack.separator.thickness",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.button.separator.inset",
-          "type": "FLOAT",
-          "value": 6
-        },
-        {
-          "path": "eui.button.separator.thickness",
-          "type": "FLOAT",
-          "value": 1
-        },
-        {
-          "path": "eui.button.shape.circle.radius",
-          "type": "FLOAT",
-          "value": 50
-        },
-        {
-          "path": "eui.button.shape.default.radius",
-          "type": "FLOAT",
-          "value": 4
-        },
-        {
-          "path": "eui.button.shape.round.radius",
-          "type": "FLOAT",
-          "value": 9999
-        },
-        {
-          "path": "eui.button.size.lg.gap",
-          "type": "FLOAT",
-          "value": 0.45
-        },
-        {
-          "path": "eui.button.size.lg.height",
-          "type": "FLOAT",
-          "value": 48
-        },
-        {
-          "path": "eui.button.size.lg.padding.inline",
-          "type": "FLOAT",
-          "value": 24
-        },
-        {
-          "path": "eui.button.size.md.gap",
-          "type": "FLOAT",
-          "value": 0.4
-        },
-        {
-          "path": "eui.button.size.md.height",
-          "type": "FLOAT",
-          "value": 40
-        },
-        {
-          "path": "eui.button.size.md.padding.inline",
-          "type": "FLOAT",
-          "value": 20
-        },
-        {
-          "path": "eui.button.size.sm.gap",
-          "type": "FLOAT",
-          "value": 0.35
-        },
-        {
-          "path": "eui.button.size.sm.height",
-          "type": "FLOAT",
-          "value": 36
-        },
-        {
-          "path": "eui.button.size.sm.padding.inline",
-          "type": "FLOAT",
-          "value": 16
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Primary",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.button.primary.background.active",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.button.primary.background.base",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.button.primary.background.disabled",
-          "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
-        },
-        {
-          "path": "eui.button.primary.background.hover",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.button.primary.background.selected",
-          "type": "COLOR",
-          "value": "oklch(49% 0.10 230)"
-        },
-        {
-          "path": "eui.button.primary.label.active",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.primary.label.base",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.primary.label.disabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.button.primary.label.hover",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.primary.label.selected",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Secondary",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.button.secondary.background.active",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.secondary.background.base",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.secondary.background.disabled",
-          "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.background.hover",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.secondary.background.selected",
-          "type": "COLOR",
-          "value": "oklch(100% 0 0)"
-        },
-        {
-          "path": "eui.button.secondary.border.active",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.border.base",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.border.disabled",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.border.hover",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.border.selected",
-          "type": "COLOR",
-          "value": "oklch(90% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.label.active",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.label.base",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.label.disabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.label.hover",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
-        },
-        {
-          "path": "eui.button.secondary.label.selected",
-          "type": "COLOR",
-          "value": "oklch(25% 0.00 0)"
-        }
-      ]
-    },
-    {
-      "name": "envy-ui-v2 • Colors / Accent Finished",
-      "mode": "default",
-      "variables": [
-        {
-          "path": "eui.button.accent-finished.background.active",
-          "type": "COLOR",
-          "value": "oklch(89% 0.09 236)"
-        },
-        {
-          "path": "eui.button.accent-finished.background.base",
-          "type": "COLOR",
-          "value": "oklch(89% 0.09 236)"
-        },
-        {
-          "path": "eui.button.accent-finished.background.disabled",
-          "type": "COLOR",
-          "value": "oklch(98% 0.00 0)"
-        },
-        {
-          "path": "eui.button.accent-finished.background.hover",
-          "type": "COLOR",
-          "value": "oklch(89% 0.09 236)"
-        },
-        {
-          "path": "eui.button.accent-finished.background.selected",
-          "type": "COLOR",
-          "value": "oklch(89% 0.09 236)"
-        },
-        {
-          "path": "eui.button.accent-finished.label.active",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
-        },
-        {
-          "path": "eui.button.accent-finished.label.base",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
-        },
-        {
-          "path": "eui.button.accent-finished.label.disabled",
-          "type": "COLOR",
-          "value": "oklch(75% 0.00 0)"
-        },
-        {
-          "path": "eui.button.accent-finished.label.hover",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
-        },
-        {
-          "path": "eui.button.accent-finished.label.selected",
-          "type": "COLOR",
-          "value": "oklch(63% 0.15 237)"
         }
       ]
     },
