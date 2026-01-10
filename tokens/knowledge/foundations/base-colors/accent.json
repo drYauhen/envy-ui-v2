@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "color": {
+      "accent": {
+        "$value": "oklch(68% 0.15 237)",
+        "$type": "color",
+        "$description": "Viking Blue - base color for accent scale generation",
+        "position": 600
+      }
+    }
+  },
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json"
+}

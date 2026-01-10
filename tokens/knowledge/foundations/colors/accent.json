@@ -1,0 +1,59 @@
+{
+  "eui": {
+    "color": {
+      "accent": {
+        "50": {
+          "$value": "oklch(96% 0.04 236)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
+        },
+        "100": {
+          "$value": "oklch(93% 0.06 236)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
+        },
+        "200": {
+          "$value": "oklch(89% 0.09 236)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
+        },
+        "300": {
+          "$value": "oklch(84% 0.14 236)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
+        },
+        "400": {
+          "$value": "oklch(76% 0.15 237)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, light shades for backgrounds)"
+        },
+        "500": {
+          "$value": "oklch(71% 0.15 237)",
+          "$type": "color",
+          "$description": "Medium accent color - generated from base 600 using status.info algorithm (asymmetric distribution, medium shades)"
+        },
+        "600": {
+          "$value": "oklch(68% 0.15 237)",
+          "$type": "color",
+          "$description": "Base accent color - canonical accent color (anchor) - generated from base-colors/accent"
+        },
+        "700": {
+          "$value": "oklch(63% 0.15 237)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, dark shades for text/icons)"
+        },
+        "800": {
+          "$value": "oklch(58% 0.14 237)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, dark shades for text/icons)"
+        },
+        "900": {
+          "$value": "oklch(53% 0.13 238)",
+          "$type": "color",
+          "$description": "Generated from base 600 using status.info algorithm (asymmetric distribution, dark shades for text/icons)"
+        }
+      }
+    }
+  },
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json"
+}

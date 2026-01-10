@@ -1,0 +1,216 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",  "eui": {
+    "color": {
+      "status": {
+        "success": {
+          "50": {
+            "$value": "oklch(92% 0.10 149)",
+            "$type": "color",
+            "$description": "UI status: success (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "100": {
+            "$value": "oklch(82% 0.17 150)",
+            "$type": "color",
+            "$description": "UI status: success (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "200": {
+            "$value": "oklch(72% 0.19 150)",
+            "$type": "color",
+            "$description": "UI status: success (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "300": {
+            "$value": "oklch(67% 0.19 150)",
+            "$type": "color",
+            "$description": "UI status: success (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "400": {
+            "$value": "oklch(62% 0.19 150)",
+            "$type": "color",
+            "$description": "UI status: success (medium). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "500": {
+            "$value": "oklch(72% 0.19 150)",
+            "$type": "color",
+            "$description": "UI status: success (anchor). Used for general success feedback (alerts, notifications, form validation). Separate from application-specific status colors."
+          },
+          "600": {
+            "$value": "oklch(67% 0.18 150)",
+            "$type": "color",
+            "$description": "UI status: success (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "700": {
+            "$value": "oklch(64% 0.17 150)",
+            "$type": "color",
+            "$description": "UI status: success (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "800": {
+            "$value": "oklch(61% 0.16 150)",
+            "$type": "color",
+            "$description": "UI status: success (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "900": {
+            "$value": "oklch(58% 0.15 150)",
+            "$type": "color",
+            "$description": "UI status: success (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          }
+        },
+        "warning": {
+          "50": {
+            "$value": "oklch(97% 0.08 69)",
+            "$type": "color",
+            "$description": "UI status: warning (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "100": {
+            "$value": "oklch(87% 0.14 70)",
+            "$type": "color",
+            "$description": "UI status: warning (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "200": {
+            "$value": "oklch(77% 0.16 70)",
+            "$type": "color",
+            "$description": "UI status: warning (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "300": {
+            "$value": "oklch(72% 0.16 70)",
+            "$type": "color",
+            "$description": "UI status: warning (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "400": {
+            "$value": "oklch(67% 0.16 70)",
+            "$type": "color",
+            "$description": "UI status: warning (medium). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "500": {
+            "$value": "oklch(77% 0.16 70)",
+            "$type": "color",
+            "$description": "UI status: warning (anchor). Used for general warning feedback (alerts, notifications, form validation). Separate from application-specific status colors."
+          },
+          "600": {
+            "$value": "oklch(72% 0.15 70)",
+            "$type": "color",
+            "$description": "UI status: warning (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "700": {
+            "$value": "oklch(69% 0.15 70)",
+            "$type": "color",
+            "$description": "UI status: warning (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "800": {
+            "$value": "oklch(66% 0.14 70)",
+            "$type": "color",
+            "$description": "UI status: warning (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "900": {
+            "$value": "oklch(63% 0.13 70)",
+            "$type": "color",
+            "$description": "UI status: warning (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          }
+        },
+        "error": {
+          "50": {
+            "$value": "oklch(84% 0.10 24)",
+            "$type": "color",
+            "$description": "UI status: error (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "100": {
+            "$value": "oklch(74% 0.18 25)",
+            "$type": "color",
+            "$description": "UI status: error (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "200": {
+            "$value": "oklch(64% 0.21 25)",
+            "$type": "color",
+            "$description": "UI status: error (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "300": {
+            "$value": "oklch(59% 0.21 25)",
+            "$type": "color",
+            "$description": "UI status: error (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "400": {
+            "$value": "oklch(54% 0.21 25)",
+            "$type": "color",
+            "$description": "UI status: error (medium). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "500": {
+            "$value": "oklch(64% 0.21 25)",
+            "$type": "color",
+            "$description": "UI status: error (anchor). Used for general error feedback (alerts, notifications, form validation). Separate from application-specific status colors."
+          },
+          "600": {
+            "$value": "oklch(59% 0.20 25)",
+            "$type": "color",
+            "$description": "UI status: error (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "700": {
+            "$value": "oklch(56% 0.19 25)",
+            "$type": "color",
+            "$description": "UI status: error (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "800": {
+            "$value": "oklch(53% 0.18 25)",
+            "$type": "color",
+            "$description": "UI status: error (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "900": {
+            "$value": "oklch(50% 0.17 25)",
+            "$type": "color",
+            "$description": "UI status: error (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          }
+        },
+        "info": {
+          "50": {
+            "$value": "oklch(88% 0.07 236)",
+            "$type": "color",
+            "$description": "UI status: info (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "100": {
+            "$value": "oklch(78% 0.13 237)",
+            "$type": "color",
+            "$description": "UI status: info (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "200": {
+            "$value": "oklch(68% 0.15 237)",
+            "$type": "color",
+            "$description": "UI status: info (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "300": {
+            "$value": "oklch(63% 0.15 237)",
+            "$type": "color",
+            "$description": "UI status: info (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "400": {
+            "$value": "oklch(58% 0.15 237)",
+            "$type": "color",
+            "$description": "UI status: info (medium). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "500": {
+            "$value": "oklch(68% 0.15 237)",
+            "$type": "color",
+            "$description": "UI status: info (anchor). Used for general info feedback (alerts, notifications, form validation). Separate from application-specific status colors."
+          },
+          "600": {
+            "$value": "oklch(63% 0.15 237)",
+            "$type": "color",
+            "$description": "UI status: info (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "700": {
+            "$value": "oklch(60% 0.14 237)",
+            "$type": "color",
+            "$description": "UI status: info (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "800": {
+            "$value": "oklch(57% 0.13 237)",
+            "$type": "color",
+            "$description": "UI status: info (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "900": {
+            "$value": "oklch(54% 0.12 237)",
+            "$type": "color",
+            "$description": "UI status: info (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          }
+        }
+      }
+    }
+  }
+}

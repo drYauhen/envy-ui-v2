@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "breakpoint": {
+          "narrow": {
+            "$value": "{eui.breakpoint.narrow}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for breakpoint.narrow"
+          },
+          "desktop": {
+            "$value": "{eui.breakpoint.desktop}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for breakpoint.desktop"
+          },
+          "wide": {
+            "$value": "{eui.breakpoint.wide}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for breakpoint.wide"
+          }
+        }
+      }
+    }
+  }
+}

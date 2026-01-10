@@ -1,18 +1,18 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "layout": {
       "container": {
         "standard": {
           "maxWidth": {
-            "$value": "960px",
+            "$value": "{eui.app.raw.layout.container.standard.maxWidth}",
             "$type": "dimension",
             "$description": "Readable width for forms and detail pages. Optimized for app-default context/theme."
           }
         },
         "wide": {
           "maxWidth": {
-            "$value": "100%",
+            "$value": "{eui.app.raw.layout.container.wide.maxWidth}",
             "$type": "dimension",
             "$description": "Full width for tables and dashboards. Optimized for app-default context/theme."
           }
@@ -26,4 +26,3 @@
     }
   }
 }
-

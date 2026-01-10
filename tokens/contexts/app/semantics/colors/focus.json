@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "color": {
       "focus": {
@@ -20,12 +21,12 @@
       "ring": {
         "width": {
           "base": {
-            "$value": "2px",
+            "$value": "{eui.app.raw.border.width.focus}",
             "$type": "dimension",
             "$description": "Base focus ring width. 2px width for focus appearance. Optimized for app-default context/theme. Other contexts/themes may override this value."
           },
           "accessible": {
-            "$value": "2px",
+            "$value": "{eui.app.raw.border.width.focus}",
             "$type": "dimension",
             "$description": "Accessible focus ring width for keyboard focus. 2px width. Optimized for app-default context/theme. Other contexts/themes may override this value."
           }

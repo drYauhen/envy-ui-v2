@@ -1,0 +1,59 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "color": {
+      "brand": {
+        "50": {
+          "$value": "oklch(97% 0.02 232)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale (asymmetric distribution, chroma reduced for less intense, more pastel appearance, lightness reduced to decrease gap with 100)"
+        },
+        "100": {
+          "$value": "oklch(93% 0.05 232)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale (asymmetric distribution)"
+        },
+        "200": {
+          "$value": "oklch(85% 0.06 231)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale (asymmetric distribution)"
+        },
+        "300": {
+          "$value": "oklch(75% 0.08 231)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale (asymmetric distribution)"
+        },
+        "400": {
+          "$value": "oklch(65% 0.09 231)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale (asymmetric distribution)"
+        },
+        "500": {
+          "$value": "oklch(57% 0.09 231)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale (asymmetric distribution)"
+        },
+        "600": {
+          "$value": "oklch(52% 0.10 230)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale (asymmetric distribution)"
+        },
+        "700": {
+          "$value": "oklch(49% 0.10 230)",
+          "$type": "color",
+          "$description": "Base brand color - canonical brand color (anchor)"
+        },
+        "800": {
+          "$value": "oklch(47% 0.10 230)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale - edge-case dark shade"
+        },
+        "900": {
+          "$value": "oklch(46% 0.09 231)",
+          "$type": "color",
+          "$description": "Generated from base 700 using OKLCH tonal scale - edge-case dark shade"
+        }
+      }
+    }
+  }
+}

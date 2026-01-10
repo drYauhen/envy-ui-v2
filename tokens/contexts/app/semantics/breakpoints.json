@@ -1,23 +1,22 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "breakpoint": {
       "narrow": {
-        "$value": "1024px",
+        "$value": "{eui.app.raw.breakpoint.narrow}",
         "$type": "dimension",
         "$description": "Narrow desktop window. Below this, overflow/wrap behavior is acceptable."
       },
       "desktop": {
-        "$value": "1280px",
+        "$value": "{eui.app.raw.breakpoint.desktop}",
         "$type": "dimension",
         "$description": "Standard desktop target width. Primary design target."
       },
       "wide": {
-        "$value": "1600px",
+        "$value": "{eui.app.raw.breakpoint.wide}",
         "$type": "dimension",
         "$description": "Wide desktop display. Optional optimization target."
       }
     }
   }
 }
-

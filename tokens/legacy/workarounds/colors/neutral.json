@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "color": {
+      "neutral": {
+        "50": {
+          "$value": "oklch(98% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 50 - default to global foundation value"
+        },
+        "100": {
+          "$value": "oklch(96.5% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 100 - default to global foundation value"
+        },
+        "200": {
+          "$value": "oklch(94% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 200 - default to global foundation value"
+        },
+        "300": {
+          "$value": "oklch(90% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 300 - default to global foundation value"
+        },
+        "400": {
+          "$value": "oklch(84% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 400 - default to global foundation value"
+        },
+        "500": {
+          "$value": "oklch(75% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 500 - default to global foundation value"
+        },
+        "600": {
+          "$value": "oklch(63% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 600 - default to global foundation value"
+        },
+        "700": {
+          "$value": "oklch(48% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 700 - default to global foundation value"
+        },
+        "800": {
+          "$value": "oklch(33% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 800 - default to global foundation value"
+        },
+        "900": {
+          "$value": "oklch(25% 0.00 0)",
+          "$type": "color",
+          "$description": "App context neutral 900 - default to global foundation value"
+        },
+        "white": {
+          "$value": "oklch(100% 0 0)",
+          "$type": "color",
+          "$description": "App context neutral white - default to global foundation value"
+        }
+      }
+    }
+  }
+}

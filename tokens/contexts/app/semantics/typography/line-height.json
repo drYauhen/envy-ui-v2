@@ -1,29 +1,29 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
     "typography": {
       "lineHeight": {
         "none": {
-          "$value": "1",
+          "$value": "{eui.app.raw.typography.lineHeight.tight}",
           "$type": "lineHeight",
           "$description": "No line height - for single-line text, avatars, counters"
         },
         "tight": {
-          "$value": "1.25",
+          "$value": "{eui.app.raw.typography.lineHeight.tight}",
           "$type": "lineHeight",
           "$description": "Tight line height - headings, single-line text"
         },
         "normal": {
-          "$value": "1.5",
+          "$value": "{eui.app.raw.typography.lineHeight.normal}",
           "$type": "lineHeight",
           "$description": "Normal line height - body text, default"
         },
         "relaxed": {
-          "$value": "1.75",
+          "$value": "{eui.app.raw.typography.lineHeight.relaxed}",
           "$type": "lineHeight",
           "$description": "Relaxed line height - long-form content, better readability"
         },
         "loose": {
-          "$value": "2",
+          "$value": "{eui.app.raw.typography.lineHeight.loose}",
           "$type": "lineHeight",
           "$description": "Loose line height - very readable, accessibility-focused content"
         }
@@ -31,4 +31,3 @@
     }
   }
 }
-

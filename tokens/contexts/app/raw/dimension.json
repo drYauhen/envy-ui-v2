@@ -1,0 +1,116 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "dimension": {
+          "0": {
+            "$value": "{eui.dimension.0}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.0"
+          },
+          "1": {
+            "$value": "{eui.dimension.1}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.1"
+          },
+          "2": {
+            "$value": "{eui.dimension.2}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.2"
+          },
+          "3": {
+            "$value": "{eui.dimension.3}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.3"
+          },
+          "4": {
+            "$value": "{eui.dimension.4}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.4"
+          },
+          "5": {
+            "$value": "{eui.dimension.5}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.5"
+          },
+          "6": {
+            "$value": "{eui.dimension.6}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.6"
+          },
+          "7": {
+            "$value": "{eui.dimension.7}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.7"
+          },
+          "8": {
+            "$value": "{eui.dimension.8}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.8"
+          },
+          "9": {
+            "$value": "{eui.dimension.9}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.9"
+          },
+          "10": {
+            "$value": "{eui.dimension.10}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.10"
+          },
+          "11": {
+            "$value": "{eui.dimension.11}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.11"
+          },
+          "12": {
+            "$value": "{eui.dimension.12}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.12"
+          },
+          "13": {
+            "$value": "{eui.dimension.13}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.13"
+          },
+          "14": {
+            "$value": "{eui.dimension.14}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.14"
+          },
+          "15": {
+            "$value": "{eui.dimension.15}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.15"
+          },
+          "16": {
+            "$value": "{eui.dimension.16}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.16"
+          },
+          "17": {
+            "$value": "{eui.dimension.17}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.17"
+          },
+          "18": {
+            "$value": "{eui.dimension.18}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.18"
+          },
+          "19": {
+            "$value": "{eui.dimension.19}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.19"
+          },
+          "20": {
+            "$value": "{eui.dimension.20}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for dimension.20"
+          }
+        }
+      }
+    }
+  }
+}

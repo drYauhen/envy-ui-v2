@@ -231,7 +231,7 @@ console.log('  • 500: Anchor (base color)');
 console.log('  • 600: Darker (borders, icons)');
 console.log('  • 700: Darkest (text, active states)');
 
-const statusFile = join(repoRoot, 'tokens/foundations/colors/status.json');
+const statusFile = join(repoRoot, 'tokens/knowledge/foundations/colors/status.json');
 processStatusFile(statusFile);
 
 console.log('\n' + '='.repeat(80));

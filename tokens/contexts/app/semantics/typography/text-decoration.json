@@ -1,19 +1,19 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
     "typography": {
       "textDecoration": {
         "none": {
-          "$value": "none",
+          "$value": "{eui.app.raw.typography.textDecoration.none}",
           "$type": "textDecoration",
           "$description": "No text decoration - default for most text, links without underline"
         },
         "underline": {
-          "$value": "underline",
+          "$value": "{eui.app.raw.typography.textDecoration.underline}",
           "$type": "textDecoration",
           "$description": "Underline decoration - for links, emphasis in content"
         },
         "line-through": {
-          "$value": "line-through",
+          "$value": "{eui.app.raw.typography.textDecoration.line-through}",
           "$type": "textDecoration",
           "$description": "Line-through decoration - for deleted text, strikethrough"
         }
@@ -21,5 +21,3 @@
     }
   }
 }
-
-

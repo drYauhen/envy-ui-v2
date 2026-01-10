@@ -1,38 +1,39 @@
 {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "color": {
       "background": {
         "surface": {
-          "$value": "{eui.color.neutral.white}",
+          "$value": "{eui.app.raw.color.neutral.zero}",
           "$type": "color",
           "$description": "Surface background color. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "muted": {
-          "$value": "{eui.color.neutral.50}",
+          "$value": "{eui.app.raw.color.neutral.50}",
           "$type": "color",
           "$description": "Muted background color for subtle surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "subtle": {
-          "$value": "{eui.color.neutral.100}",
+          "$value": "{eui.app.raw.color.neutral.100}",
           "$type": "color",
           "$description": "Subtle background color for slightly emphasized surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value."
         },
         "inverse": {
-          "$value": "{eui.color.neutral.900}",
+          "$value": "{eui.app.raw.color.neutral.900}",
           "$type": "color",
           "$description": "Inverse background color for dark surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value."
         }
       },
       "brand": {
         "primary": {
-          "$value": "{eui.color.brand.700}",
+          "$value": "{eui.app.raw.color.brand.700}",
           "$type": "color",
           "$description": "Primary brand color. Optimized for app-default context/theme. Uses Brand-700 as the canonical anchor color. Other contexts/themes may override this value."
         }
       },
       "accent": {
         "primary": {
-          "$value": "{eui.color.accent.600}",
+          "$value": "{eui.app.raw.color.accent.600}",
           "$type": "color",
           "$description": "Primary accent color. Optimized for app-default context/theme. Uses Accent-600 (Viking Blue) as the canonical anchor color. Other contexts/themes may override this value."
         }

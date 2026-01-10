@@ -34,8 +34,8 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         }
       }
       
-      // Read foundation and theme JSON files directly to get all values (bypassing Style Dictionary collision resolution)
-      // New structure: tokens/{context}/foundations/*.json, tokens/{context}/semantic/*.json, tokens/{context}/themes/{theme}.json
+      // Read context semantic and theme JSON files directly to get all values (bypassing Style Dictionary collision resolution)
+      // New structure: tokens/primitives/*.json, tokens/contexts/{context}/semantics/*.json, tokens/contexts/{context}/themes/{theme}.json
       const contextFiles = new Map(); // Map<selector, {filePath, data, type}>
 
       // Find all context directories (filter by allowed contexts)
@@ -46,32 +46,14 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       console.log(`Generating CSS for contexts: ${contextDirs.join(', ')}`);
 
       contextDirs.forEach(context => {
-        // Process foundations
-        const contextFoundationsDir = path.join(tokensRoot, context, 'foundations');
-        if (fs.existsSync(contextFoundationsDir)) {
-          const foundationFilesList = fs.readdirSync(contextFoundationsDir).filter(f => f.endsWith('.json'));
-          foundationFilesList.forEach(foundationFile => {
-            const foundationName = path.basename(foundationFile, '.json');
-            const selector = `[data-eui-${context}-theme]`;
-            const foundationFilePath = path.join(contextFoundationsDir, foundationFile);
-            try {
-              const data = JSON.parse(fs.readFileSync(foundationFilePath, 'utf8'));
-              const key = `${selector}:${foundationName}`;
-              contextFiles.set(key, { filePath: foundationFilePath, data, type: 'foundation', context, name: foundationName });
-            } catch (e) {
-              console.warn(`Warning: Could not read foundation file ${foundationFilePath}:`, e.message);
-            }
-          });
-        }
-
-        // Process semantic tokens
-        const contextSemanticDir = path.join(tokensRoot, context, 'semantic');
-        if (fs.existsSync(contextSemanticDir)) {
-          const semanticFilesList = fs.readdirSync(contextSemanticDir).filter(f => f.endsWith('.json'));
+        // Process semantic tokens (new structure: tokens/contexts/{context}/semantics/)
+        const contextSemanticsDir = path.join(tokensRoot, 'contexts', context, 'semantics');
+        if (fs.existsSync(contextSemanticsDir)) {
+          const semanticFilesList = fs.readdirSync(contextSemanticsDir).filter(f => f.endsWith('.json'));
           semanticFilesList.forEach(semanticFile => {
             const semanticName = path.basename(semanticFile, '.json');
-            const selector = `[data-eui-${context}-theme]`;
-            const semanticFilePath = path.join(contextSemanticDir, semanticFile);
+            const selector = `[data-eui-context="${context}"]`;
+            const semanticFilePath = path.join(contextSemanticsDir, semanticFile);
             try {
               const data = JSON.parse(fs.readFileSync(semanticFilePath, 'utf8'));
               const key = `${selector}:${semanticName}`;
@@ -82,8 +64,8 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           });
         }
 
-        // Process themes
-        const contextThemesDir = path.join(tokensRoot, context, 'themes');
+        // Process themes (new structure: tokens/contexts/{context}/themes/)
+        const contextThemesDir = path.join(tokensRoot, 'contexts', context, 'themes');
         if (fs.existsSync(contextThemesDir)) {
           const themeFilesList = fs.readdirSync(contextThemesDir).filter(f => f.endsWith('.json'));
           themeFilesList.forEach(themeFile => {
@@ -118,12 +100,12 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         const tokenName = token.name || (token.path || []).join('.');
 
         // Detect if token is from a theme file
-        // New structure: tokens/{context}/themes/{theme}.json
-        const isThemeToken = /\/themes\/[^/]+\.json$/.test(filePath);
+        // New structure: tokens/contexts/{context}/themes/{theme}.json
+        const isThemeToken = /\/contexts\/[^/]+\/themes\/[^/]+\.json$/.test(filePath);
 
         if (isThemeToken) {
-          // Parse theme path: tokens/app/themes/accessibility.json
-          const themeMatch = filePath.match(/\/(app|website|report)\/themes\/([^/]+)\.json$/);
+          // Parse theme path: tokens/contexts/app/themes/accessibility.json
+          const themeMatch = filePath.match(/\/contexts\/(app|website|report)\/themes\/([^/]+)\.json$/);
           if (themeMatch) {
             const context = themeMatch[1];
             const theme = themeMatch[2];
@@ -248,12 +230,35 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         }
       });
       
-      // Ensure semantic and component tokens are included in base tokens with original values
+      // Ensure primitives, semantic and component tokens are included in base tokens with original values
       // Read JSON files directly to get original values (before collision resolution)
       // This ensures base values are in :root even if themes override them
-      // Structure: tokens/contexts/{context}/semantics/... and tokens/app/components/.../
+      // Structure: tokens/primitives/*.json, tokens/contexts/{context}/semantics/... and tokens/app/components/.../
 
-      // FIRST PASS: Process only semantic files to populate semanticBaseValues map
+      // FIRST PASS: Process primitives files to populate base tokens
+      const primitivesDir = path.join(tokensRoot, 'primitives');
+      if (fs.existsSync(primitivesDir)) {
+        const primitivesFiles = fs.readdirSync(primitivesDir).filter(f => f.endsWith('.json'));
+        primitivesFiles.forEach(primitivesFile => {
+          const primitivesFilePath = path.join(primitivesDir, primitivesFile);
+          try {
+            const primitivesData = JSON.parse(fs.readFileSync(primitivesFilePath, 'utf8'));
+            const primitivesTokens = extractTokensFromJson(primitivesData);
+            primitivesTokens.forEach(({ name, path: tokenPath, value }) => {
+              const tokenPathStr = tokenPath.join('.');
+              // Add primitive token to base tokens
+              baseTokens.push({ name, value, path: tokenPath });
+              if (!baseTokenPaths.has(tokenPathStr)) {
+                baseTokenPaths.add(tokenPathStr);
+              }
+            });
+          } catch (e) {
+            console.warn(`Warning: Could not read primitives file ${primitivesFile}: ${e.message}`);
+          }
+        });
+      }
+
+      // SECOND PASS: Process only semantic files to populate semanticBaseValues map
       const semanticOnlyFiles = [
         { file: 'contexts/app/semantics/shape.json', pathPrefix: ['eui', 'radius'] },
         { file: 'contexts/app/semantics/colors/border.json', pathPrefix: ['eui', 'color', 'border'] },

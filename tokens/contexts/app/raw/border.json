@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "border": {
+          "width": {
+            "thin": {
+              "$value": "{eui.border.width.thin}",
+              "$type": "strokeWidth",
+              "$description": "Context-specific raw alias for border.width.thin"
+            },
+            "default": {
+              "$value": "{eui.border.width.default}",
+              "$type": "strokeWidth",
+              "$description": "Context-specific raw alias for border.width.default"
+            },
+            "thick": {
+              "$value": "{eui.border.width.thick}",
+              "$type": "strokeWidth",
+              "$description": "Context-specific raw alias for border.width.thick"
+            },
+            "focus": {
+              "$value": "{eui.border.width.focus}",
+              "$type": "strokeWidth",
+              "$description": "Context-specific raw alias for border.width.focus"
+            }
+          }
+        }
+      }
+    }
+  }
+}

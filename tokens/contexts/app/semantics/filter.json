@@ -1,24 +1,25 @@
 {
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "filter": {
       "muted": {
         "grayscale": {
-          "$value": 1,
+          "$value": "{eui.app.raw.filter.muted.grayscale}",
           "$type": "number",
           "$description": "Grayscale strength for muted content."
         },
         "saturate": {
-          "$value": 0.35,
+          "$value": "{eui.app.raw.filter.muted.saturate}",
           "$type": "number",
           "$description": "Saturation reduction for muted content."
         },
         "contrast": {
-          "$value": 0.9,
+          "$value": "{eui.app.raw.filter.muted.contrast}",
           "$type": "number",
           "$description": "Contrast reduction for muted content."
         },
         "brightness": {
-          "$value": 0.95,
+          "$value": "{eui.app.raw.filter.muted.brightness}",
           "$type": "number",
           "$description": "Brightness adjustment for muted content."
         }

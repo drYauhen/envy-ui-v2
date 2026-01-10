@@ -1,39 +1,39 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "z": {
       "hide": {
-        "$value": "-1",
+        "$value": "{eui.app.raw.z.hide}",
         "$type": "number",
         "$description": "Hide element behind parent - for hidden states"
       },
       "base": {
-        "$value": "0",
+        "$value": "{eui.app.raw.z.base}",
         "$type": "number",
         "$description": "Base stacking context - default element layer"
       },
       "dropdown": {
-        "$value": "1000",
+        "$value": "{eui.app.raw.z.dropdown}",
         "$type": "number",
         "$description": "Dropdown/popover layer - menus, tooltips, popovers"
       },
       "sticky": {
-        "$value": "100",
+        "$value": "{eui.app.raw.z.sticky}",
         "$type": "number",
         "$description": "Sticky/fixed header layer - navigation, toolbars"
       },
       "overlay": {
-        "$value": "1050",
+        "$value": "{eui.app.raw.z.overlay}",
         "$type": "number",
         "$description": "Overlay layer - above dropdowns, for alerts and notifications"
       },
       "modal": {
-        "$value": "1060",
+        "$value": "{eui.app.raw.z.modal}",
         "$type": "number",
         "$description": "Modal backdrop layer - below modal dialog"
       },
       "dialog": {
-        "$value": "1070",
+        "$value": "{eui.app.raw.z.dialog}",
         "$type": "number",
         "$description": "Modal dialog layer - highest user-facing content layer"
       }

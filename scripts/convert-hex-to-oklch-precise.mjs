@@ -94,11 +94,11 @@ console.log('🎨 Precise HEX to OKLCH Conversion');
 console.log('=====================================\n');
 
 const colorFiles = [
-  'tokens/foundations/colors/brand.json',
-  'tokens/foundations/colors/accent.json',
-  'tokens/foundations/colors/neutral.json',
-  'tokens/foundations/colors/status.json',
-  'tokens/foundations/colors/signal.json'
+  'tokens/knowledge/foundations/colors/brand.json',
+  'tokens/knowledge/foundations/colors/accent.json',
+  'tokens/knowledge/foundations/colors/neutral.json',
+  'tokens/knowledge/foundations/colors/status.json',
+  'tokens/knowledge/foundations/colors/signal.json'
 ];
 
 let totalConverted = 0;

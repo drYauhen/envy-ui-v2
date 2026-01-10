@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "radius": {
+          "none": {
+            "$value": "{eui.radius.none}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for radius.none"
+          },
+          "sm": {
+            "$value": "{eui.radius.sm}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for radius.sm"
+          },
+          "md": {
+            "$value": "{eui.radius.md}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for radius.md"
+          },
+          "lg": {
+            "$value": "{eui.radius.lg}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for radius.lg"
+          },
+          "xl": {
+            "$value": "{eui.radius.xl}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for radius.xl"
+          },
+          "full": {
+            "$value": "{eui.radius.full}",
+            "$type": "dimension",
+            "$description": "Context-specific raw alias for radius.full"
+          }
+        }
+      }
+    }
+  }
+}

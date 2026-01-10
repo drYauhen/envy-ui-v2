@@ -1,19 +1,19 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
     "typography": {
       "fontStyle": {
         "normal": {
-          "$value": "normal",
+          "$value": "{eui.app.raw.typography.fontStyle.normal}",
           "$type": "fontStyle",
           "$description": "Normal font style - default for all text"
         },
         "italic": {
-          "$value": "italic",
+          "$value": "{eui.app.raw.typography.fontStyle.italic}",
           "$type": "fontStyle",
           "$description": "Italic font style - for emphasis, quotes, citations"
         },
         "oblique": {
-          "$value": "oblique",
+          "$value": "{eui.app.raw.typography.fontStyle.oblique}",
           "$type": "fontStyle",
           "$description": "Oblique font style - slanted text (fallback if italic not available)"
         }
@@ -21,5 +21,3 @@
     }
   }
 }
-
-

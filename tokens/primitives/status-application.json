@@ -1,0 +1,96 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "color": {
+      "status": {
+        "application": {
+          "50": {
+            "$value": "oklch(95% 0.05 137)",
+            "$type": "color",
+            "$description": "Application status: 50 (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "100": {
+            "$value": "oklch(85% 0.12 137)",
+            "$type": "color",
+            "$description": "Application status: 100 (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "200": {
+            "$value": "oklch(75% 0.16 137)",
+            "$type": "color",
+            "$description": "Application status: 200 (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "300": {
+            "$value": "oklch(70% 0.17 137)",
+            "$type": "color",
+            "$description": "Application status: 300 (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "400": {
+            "$value": "oklch(65% 0.18 137)",
+            "$type": "color",
+            "$description": "Application status: 400 (medium). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "500": {
+            "$value": "oklch(60% 0.18 137)",
+            "$type": "color",
+            "$description": "Application status: 500 (anchor). Used for general application status feedback. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "600": {
+            "$value": "oklch(55% 0.18 137)",
+            "$type": "color",
+            "$description": "Application status: 600 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "700": {
+            "$value": "oklch(52% 0.17 137)",
+            "$type": "color",
+            "$description": "Application status: 700 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "800": {
+            "$value": "oklch(49% 0.16 137)",
+            "$type": "color",
+            "$description": "Application status: 800 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "900": {
+            "$value": "oklch(46% 0.15 137)",
+            "$type": "color",
+            "$description": "Application status: 900 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+          },
+          "pending": {
+            "$value": "oklch(64% 0.00 326)",
+            "$type": "color",
+            "$description": "Application status: pending state. Used for projects, plans, or items in pending state. Separate from UI status colors (see status.json)."
+          },
+          "onTrack": {
+            "$value": "oklch(66% 0.18 137)",
+            "$type": "color",
+            "$description": "Application status: on track. Used for projects or items progressing as expected."
+          },
+          "completed": {
+            "$value": "oklch(51% 0.16 256)",
+            "$type": "color",
+            "$description": "Application status: completed. Used for finished projects, plans, or items."
+          },
+          "minorDisruption": {
+            "$value": "oklch(89% 0.18 95)",
+            "$type": "color",
+            "$description": "Application status: minor disruption. Used for projects or items with minor issues."
+          },
+          "majorDisruption": {
+            "$value": "oklch(58% 0.23 26)",
+            "$type": "color",
+            "$description": "Application status: major disruption. Used for projects or items with significant issues."
+          },
+          "upcoming": {
+            "$value": "oklch(57% 0.10 312)",
+            "$type": "color",
+            "$description": "Application status: upcoming. Used for future projects, plans, or scheduled items."
+          },
+          "discontinued": {
+            "$value": "oklch(32% 0.01 61)",
+            "$type": "color",
+            "$description": "Application status: discontinued. Used for cancelled or stopped projects/items."
+          }
+        }
+      }
+    }
+  }
+}

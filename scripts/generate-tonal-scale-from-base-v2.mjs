@@ -256,9 +256,9 @@ console.log('  • Base lightness 55-65%: moderate steps [8, 7, 4, 3]');
 console.log('  • Base lightness > 65%: standard steps [10, 10, 5, 3]');
 
 const files = [
-  'tokens/foundations/colors/brand.json',
-  'tokens/foundations/colors/accent.json',
-  'tokens/foundations/colors/neutral.json'
+  'tokens/knowledge/foundations/colors/brand.json',
+  'tokens/knowledge/foundations/colors/accent.json',
+  'tokens/knowledge/foundations/colors/neutral.json'
 ];
 
 files.forEach(relPath => {

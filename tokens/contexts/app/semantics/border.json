@@ -1,20 +1,20 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "border": {
       "width": {
         "thin": {
-          "$value": "1px",
+          "$value": "{eui.app.raw.border.width.thin}",
           "$type": "strokeWidth",
           "$description": "Thin border - subtle dividers and minimal definition"
         },
         "default": {
-          "$value": "2px",
+          "$value": "{eui.app.raw.border.width.default}",
           "$type": "strokeWidth",
           "$description": "Default border - standard component borders and outlines"
         },
         "thick": {
-          "$value": "3px",
+          "$value": "{eui.app.raw.border.width.thick}",
           "$type": "strokeWidth",
           "$description": "Thick border - prominent focus rings and emphasis borders"
         }

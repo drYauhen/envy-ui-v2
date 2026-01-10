@@ -1,29 +1,29 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
     "typography": {
       "fontWeight": {
         "light": {
-          "$value": "300",
+          "$value": "{eui.app.raw.typography.fontWeight.light}",
           "$type": "fontWeight",
           "$description": "Light weight - rarely used in UI, for subtle emphasis"
         },
         "normal": {
-          "$value": "400",
+          "$value": "{eui.app.raw.typography.fontWeight.normal}",
           "$type": "fontWeight",
           "$description": "Regular weight - default for body text"
         },
         "medium": {
-          "$value": "500",
+          "$value": "{eui.app.raw.typography.fontWeight.medium}",
           "$type": "fontWeight",
           "$description": "Medium weight - subtle emphasis, some UI elements"
         },
         "semibold": {
-          "$value": "600",
+          "$value": "{eui.app.raw.typography.fontWeight.semibold}",
           "$type": "fontWeight",
           "$description": "Semi-bold - buttons, labels, emphasis, UI elements"
         },
         "bold": {
-          "$value": "700",
+          "$value": "{eui.app.raw.typography.fontWeight.bold}",
           "$type": "fontWeight",
           "$description": "Bold - headings, strong emphasis"
         }
@@ -31,4 +31,3 @@
     }
   }
 }
-

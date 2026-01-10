@@ -1,60 +1,42 @@
 {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "color": {
       "neutral": {
-        "50": {
-          "$value": "oklch(98% 0.00 0)",
+        "surface": {
+          "$value": "{eui.app.raw.color.neutral.zero}",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps, lightness increased for lighter appearance)"
+          "$description": "Primary surface color for backgrounds"
         },
-        "100": {
-          "$value": "oklch(96.5% 0.00 0)",
+        "text": {
+          "$value": "{eui.app.raw.color.neutral.900}",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
+          "$description": "Primary text color"
         },
-        "200": {
-          "$value": "oklch(94% 0.00 0)",
+        "text-secondary": {
+          "$value": "{eui.app.raw.color.neutral.700}",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
+          "$description": "Secondary text color for less important content"
         },
-        "300": {
-          "$value": "oklch(90% 0.00 0)",
+        "text-muted": {
+          "$value": "{eui.app.raw.color.neutral.500}",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
+          "$description": "Muted text color for captions and metadata"
         },
-        "400": {
-          "$value": "oklch(84% 0.00 0)",
+        "border": {
+          "$value": "{eui.app.raw.color.neutral.300}",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
+          "$description": "Default border color"
         },
-        "500": {
-          "$value": "oklch(75% 0.00 0)",
+        "border-strong": {
+          "$value": "{eui.app.raw.color.neutral.400}",
           "$type": "color",
-          "$description": "Base neutral color - reference tone (progressive intervals: very small near 50, very large near 900)"
+          "$description": "Stronger border color for emphasis"
         },
-        "600": {
-          "$value": "oklch(63% 0.00 0)",
+        "divider": {
+          "$value": "{eui.app.raw.color.neutral.200}",
           "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
-        },
-        "700": {
-          "$value": "oklch(48% 0.00 0)",
-          "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
-        },
-        "800": {
-          "$value": "oklch(33% 0.00 0)",
-          "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (progressive intervals: very small near 50, very large near 900)"
-        },
-        "900": {
-          "$value": "oklch(25% 0.00 0)",
-          "$type": "color",
-          "$description": "Generated from base 500 using OKLCH tonal scale best practices (adaptive steps, lightness increased for lighter scale)"
-        },
-        "white": {
-          "$value": "oklch(100% 0 0)",
-          "$type": "color"
+          "$description": "Divider and separator color"
         }
       }
     }

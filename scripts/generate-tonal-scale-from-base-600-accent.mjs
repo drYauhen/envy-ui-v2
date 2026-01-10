@@ -258,7 +258,7 @@ console.log('\n💡 Asymmetric Logic:');
 console.log('  • Steps up (50-500): [3, 5, 6, 5, 4, 3] - balanced steps (50 ~98-99%)');
 console.log('  • Steps down (700-900): [8, 5, 3] - steps for darker shades');
 
-const accentFile = join(repoRoot, 'tokens/foundations/colors/accent.json');
+const accentFile = join(repoRoot, 'tokens/knowledge/foundations/colors/accent.json');
 processAccentFile(accentFile);
 
 console.log('\n' + '='.repeat(80));

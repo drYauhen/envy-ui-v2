@@ -1,9 +1,10 @@
 {
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "typography": {
       "base": {
         "fontSize": {
-          "$value": "16px",
+          "$value": "{eui.typography.fontSize.lg}",
           "$type": "fontSize",
           "$description": "Base font size for accessibility theme. Overrides app context default (14px) with larger size for better readability and accessibility compliance."
         }
@@ -59,37 +60,6 @@
           "$value": "{eui.color.neutral.300}",
           "$type": "color",
           "$description": "Subtle background with clearer separation for accessibility theme."
-        }
-      }
-    },
-    "opacity": {
-      "muted": {
-        "$value": 0.75,
-        "$type": "number",
-        "$description": "Increase muted content opacity for accessibility theme to preserve readability."
-      }
-    },
-    "filter": {
-      "muted": {
-        "grayscale": {
-          "$value": 0.6,
-          "$type": "number",
-          "$description": "Reduce grayscale strength for accessibility theme."
-        },
-        "saturate": {
-          "$value": 0.5,
-          "$type": "number",
-          "$description": "Allow more saturation for accessibility theme."
-        },
-        "contrast": {
-          "$value": 0.95,
-          "$type": "number",
-          "$description": "Maintain contrast for accessibility theme."
-        },
-        "brightness": {
-          "$value": 1,
-          "$type": "number",
-          "$description": "Avoid darkening muted content in accessibility theme."
         }
       }
     },
@@ -296,32 +266,6 @@
             }
           }
         }
-      }
-    },
-    "radius": {
-      "none": {
-        "$value": "0px",
-        "$type": "dimension"
-      },
-      "small": {
-        "$value": "4px",
-        "$type": "dimension",
-        "$description": "Smaller than default. Still visible but more subtle than baseline in friendly theme."
-      },
-      "default": {
-        "$value": "8px",
-        "$type": "dimension",
-        "$description": "Baseline for accessibility theme. Shifted up from minimal (4px) for softer, friendlier aesthetic. Standard components use this."
-      },
-      "large": {
-        "$value": "10px",
-        "$type": "dimension",
-        "$description": "Larger than default. Used for cards, panels. Hierarchical: default (8px) < large (10px) for nested aesthetics."
-      },
-      "extra-large": {
-        "$value": "12px",
-        "$type": "dimension",
-        "$description": "Much larger than default. Used for modals, dialogs. Clear hierarchy: default (8px) < large (10px) < extra-large (12px)."
       }
     },
     "button": {

@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "shadow": {
+          "none": {
+            "$value": "{eui.shadow.none}",
+            "$type": "boxShadow",
+            "$description": "Context-specific raw alias for shadow.none"
+          },
+          "small": {
+            "$value": "{eui.shadow.small}",
+            "$type": "boxShadow",
+            "$description": "Context-specific raw alias for shadow.small"
+          },
+          "default": {
+            "$value": "{eui.shadow.default}",
+            "$type": "boxShadow",
+            "$description": "Context-specific raw alias for shadow.default"
+          },
+          "large": {
+            "$value": "{eui.shadow.large}",
+            "$type": "boxShadow",
+            "$description": "Context-specific raw alias for shadow.large"
+          },
+          "extra-large": {
+            "$value": "{eui.shadow.extra-large}",
+            "$type": "boxShadow",
+            "$description": "Context-specific raw alias for shadow.extra-large"
+          }
+        }
+      }
+    }
+  }
+}

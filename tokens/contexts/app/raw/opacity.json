@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "opacity": {
+          "muted": {
+            "$value": "{eui.opacity.muted}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for opacity.muted"
+          },
+          "disabled": {
+            "$value": "{eui.opacity.disabled}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for opacity.disabled"
+          },
+          "subtle": {
+            "$value": "{eui.opacity.subtle}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for opacity.subtle"
+          }
+        }
+      }
+    }
+  }
+}

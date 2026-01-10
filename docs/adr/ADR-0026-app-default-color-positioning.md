@@ -1,13 +1,18 @@
 # ADR-0026: App-Default Color Positioning and Semantic Token Optimization
 
-**Status:** Accepted  
-**Date:** 2025-12-29  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes  
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+**Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
+
+**Date:** 2025-12-29
+
+**Owner:** Eugene Goncharov
+
+**Assistance:** AI-assisted drafting (human-reviewed)
+
+**Related:**
+- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
+- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
+- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
 - [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
 
 ---
@@ -29,7 +34,7 @@ Key questions to answer:
 I decided to **optimize semantic tokens for `app-default` context/theme** while keeping foundations context-agnostic:
 
 ### Foundation Layer (Context-Agnostic)
-- **Foundations** (`tokens/foundations/colors/`) remain **context-agnostic**
+- **Foundations** (`tokens/knowledge/foundations/colors/`) remain **context-agnostic**
 - Base color scales (neutral, brand, accent) are shared across all contexts
 - These represent raw color values, not semantic meanings
 - Examples:

@@ -1,64 +1,63 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
     "typography": {
       "fontSize": {
         "xs": {
-          "$value": "0.75rem",
+          "$value": "{eui.app.raw.typography.fontSize.xs}",
           "$type": "fontSize",
-          "$description": "10.5px in app context (14px base). For captions, labels, badges, counters inside buttons."
+          "$description": "Extra small font size. For captions, labels, badges, counters inside buttons."
         },
         "sm": {
-          "$value": "0.875rem",
+          "$value": "{eui.app.raw.typography.fontSize.sm}",
           "$type": "fontSize",
-          "$description": "12.3px in app context (14px base). Secondary body text, helper text, small UI elements."
+          "$description": "Small font size. Secondary body text, helper text, small UI elements."
         },
         "base": {
-          "$value": "1rem",
+          "$value": "{eui.app.raw.typography.fontSize.base}",
           "$type": "fontSize",
-          "$description": "14px in app context (14px base). Default body text size, application baseline."
+          "$description": "Base font size. Default body text size, application baseline."
         },
         "md": {
-          "$value": "1.125rem",
+          "$value": "{eui.app.raw.typography.fontSize.md}",
           "$type": "fontSize",
-          "$description": "15.8px in app context (14px base). Slightly larger body text, emphasized content."
+          "$description": "Medium font size. Slightly larger body text, emphasized content."
         },
         "lg": {
-          "$value": "1.25rem",
+          "$value": "{eui.app.raw.typography.fontSize.lg}",
           "$type": "fontSize",
-          "$description": "17.5px in app context (14px base). Large body text, subheadings."
+          "$description": "Large font size. Large body text, subheadings."
         },
         "xl": {
-          "$value": "1.5rem",
+          "$value": "{eui.app.raw.typography.fontSize.xl}",
           "$type": "fontSize",
-          "$description": "21px in app context (14px base). Heading level 6, card titles."
+          "$description": "Extra large font size. Heading level 6, card titles."
         },
         "2xl": {
-          "$value": "1.875rem",
+          "$value": "{eui.app.raw.typography.fontSize.2xl}",
           "$type": "fontSize",
-          "$description": "26.3px in app context (14px base). Heading level 5."
+          "$description": "2X large font size. Heading level 5."
         },
         "3xl": {
-          "$value": "2.25rem",
+          "$value": "{eui.app.raw.typography.fontSize.3xl}",
           "$type": "fontSize",
-          "$description": "31.5px in app context (14px base). Heading level 4."
+          "$description": "3X large font size. Heading level 4."
         },
         "4xl": {
-          "$value": "3rem",
+          "$value": "{eui.app.raw.typography.fontSize.4xl}",
           "$type": "fontSize",
-          "$description": "42px in app context (14px base). Heading level 3."
+          "$description": "4X large font size. Heading level 3."
         },
         "5xl": {
-          "$value": "3.75rem",
+          "$value": "{eui.app.raw.typography.fontSize.5xl}",
           "$type": "fontSize",
-          "$description": "52.5px in app context (14px base). Heading level 2."
+          "$description": "5X large font size. Heading level 2."
         },
         "6xl": {
-          "$value": "4.5rem",
+          "$value": "{eui.app.raw.typography.fontSize.6xl}",
           "$type": "fontSize",
-          "$description": "63px in app context (14px base). Heading level 1, hero text."
+          "$description": "6X large font size. Heading level 1, hero text."
         }
       }
     }
   }
 }
-

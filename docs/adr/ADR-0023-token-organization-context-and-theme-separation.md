@@ -1,19 +1,20 @@
 # ADR-0023: Token Organization - Context and Theme Separation
 
-**Status:** Accepted (Partially Implemented)
+**Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
 
 **Date:** 2025-12-26
 
-**Last Updated:** 2026-01-08
+**Last Updated:** 2026-01-10
 
 **Owner:** Eugene Goncharov
 
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
+- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
-- [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
+- [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning (superseded)
 - [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
@@ -36,6 +37,8 @@ The goal is to establish a clear, maintainable file structure that reflects the 
 ## Decision
 
 I decided to separate contexts and themes into distinct token directories with clear responsibilities.
+
+**Update (2026-01-10):** The structure described in this ADR was further refined. The current canonical token architecture is now locked in [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md), which establishes the final Primitives → Raw → Semantics → Themes → Components resolution chain with proper directory classification (canon/knowledge/legacy). The structure below describes transitional states that led to the current canonical implementation.
 
 **Note:** This ADR describes the initial separation. The structure was later further reorganized into fully independent context directories (see "Current Structure" below). Each context now has its own complete token structure (foundations, semantic, components, themes) to ensure complete independence and avoid future complexity.
 

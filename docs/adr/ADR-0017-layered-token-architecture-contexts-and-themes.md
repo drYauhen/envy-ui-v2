@@ -1,16 +1,17 @@
 # ADR-0017: Layered Token Architecture for Contexts and Themes
 
-**Status:** Accepted (Partially Implemented)
+**Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
 
 **Date:** 2025-12-20
 
-**Last Updated:** 2026-01-08
+**Last Updated:** 2026-01-10
 
 **Owner:** Eugene Goncharov
 
 **Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related:**
+- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
@@ -191,7 +192,7 @@ This ADR establishes the **foundation for multi-context, multi-theme design syst
 
 - ⚠️ **Independent Context Directories**: Partially implemented
   - ADR mentions reorganization into fully independent directories
-  - Current structure has some shared directories (`tokens/foundations/`, `tokens/semantic/`)
+  - Current structure has some shared directories (`tokens/knowledge/foundations/`, `tokens/semantic/`)
   - Individual context directories exist but may need complete internal structure
 
 ### Technical Realization
@@ -242,4 +243,3 @@ These rules are now mandatory for all component implementations to maintain arch
 ## Status
 
 **Accepted (Partially Implemented)** - Core context+theme architecture implemented with CSS-based mechanism and MultiContextViewer. Directory structure reorganization is partially complete but functional context+theme system is operational. Badge component refactor validates architecture correctness and establishes mandatory implementation rules.
-

@@ -24,7 +24,7 @@ This document establishes **binding architectural rules** for the Envy UI color 
 
 **Structure:**
 ```
-tokens/foundations/
+tokens/knowledge/foundations/
 ├── base-colors/           # ✅ Source anchors
 │   └── [color].json      # Single anchor value
 └── colors/               # ✅ Generated scales
@@ -39,7 +39,7 @@ tokens/foundations/
 
 **Example - Brand Color:**
 ```json
-// tokens/foundations/base-colors/brand.json
+// tokens/knowledge/foundations/base-colors/brand.json
 {
   "eui": {
     "color": {
@@ -50,7 +50,7 @@ tokens/foundations/
   }
 }
 
-// tokens/foundations/colors/brand.json (generated)
+// tokens/knowledge/foundations/colors/brand.json (generated)
 {
   "eui": {
     "color": {
@@ -71,7 +71,7 @@ tokens/foundations/
 
 **Structure:**
 ```
-tokens/foundations/colors/
+tokens/knowledge/foundations/colors/
 └── neutral.json           # ✅ Complete 50-900 scale
 ```
 
@@ -82,7 +82,7 @@ tokens/foundations/colors/
 
 **Example - Neutral Color:**
 ```json
-// tokens/foundations/colors/neutral.json
+// tokens/knowledge/foundations/colors/neutral.json
 {
   "eui": {
     "color": {
@@ -168,7 +168,7 @@ New Color System Addition
 
 1. **Create Base-Color Source:**
    ```bash
-   # Create tokens/foundations/base-colors/[color].json
+   # Create tokens/knowledge/foundations/base-colors/[color].json
    {
      "eui": {
        "color": {
@@ -188,7 +188,7 @@ New Color System Addition
 
 3. **Verify Generation:**
    ```bash
-   # Check generated tokens/foundations/colors/[color].json
+   # Check generated tokens/knowledge/foundations/colors/[color].json
    npm run tokens:build
    ```
 
@@ -211,7 +211,7 @@ New Color System Addition
 
 2. **Create Base-Color:**
    ```json
-   // tokens/foundations/base-colors/status-[name].json
+   // tokens/knowledge/foundations/base-colors/status-[name].json
    {
      "eui": {
        "color": {
@@ -230,7 +230,7 @@ New Color System Addition
 
 4. **Update Status Token File:**
    ```json
-   // tokens/foundations/colors/status.json (updated)
+   // tokens/knowledge/foundations/colors/status.json (updated)
    {
      "eui": {
        "color": {
@@ -255,7 +255,7 @@ New Color System Addition
 
 ```bash
 # 1. Update base-color value
-# tokens/foundations/base-colors/[color].json
+# tokens/knowledge/foundations/base-colors/[color].json
 
 # 2. Regenerate full scale
 npm run generate-tonal-scale-from-base-[step]-[color].mjs
@@ -417,7 +417,7 @@ npm run tokens:generate-types
 **Scenario:** Add "ocean" theme with blue-tinted neutrals
 
 ```json
-// tokens/foundations/base-colors/neutral.json (theme override)
+// tokens/knowledge/foundations/base-colors/neutral.json (theme override)
 {
   "eui": {
     "color": {
@@ -462,7 +462,7 @@ npm run tokens:generate-types
 - **[ADR-0014](../adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md)** - Foundational color architecture decisions
 - **[Token Usage Rules](./token-usage-rules.md)** - How to consume color tokens
 - **[Theme Structure Analysis](../theme-structure-analysis.md)** - Current theme implementation details
-- **[Base Colors README](../../tokens/foundations/base-colors/README.md)** - Technical implementation of base-colors pattern
+- **[Base Colors README](../../tokens/knowledge/foundations/base-colors/README.md)** - Technical implementation of base-colors pattern
 
 ---
 

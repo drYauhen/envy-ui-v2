@@ -1,5 +1,5 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "layout": {
       "toolbar": {
@@ -14,12 +14,11 @@
           "$description": "Vertical padding for toolbar. References foundation spacing."
         },
         "height": {
-          "$value": "{eui.button.size.md.height}",
+          "$value": "{eui.dimension.11}",
           "$type": "dimension",
-          "$description": "Toolbar height matches control height for alignment. References button size token."
+          "$description": "Toolbar height matches control height for alignment. Uses standard dimension for touch targets."
         }
       }
     }
   }
 }
-

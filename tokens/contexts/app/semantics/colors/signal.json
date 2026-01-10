@@ -1,10 +1,10 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "color": {
       "signal": {
         "keyboardFocus": {
-          "$value": "oklch(62% 0.26 25)",
+          "$value": "{eui.app.raw.color.signal.500}",
           "$type": "color",
           "$description": "Keyboard-only focus ring - bright, saturated orange for high contrast accessibility"
         }

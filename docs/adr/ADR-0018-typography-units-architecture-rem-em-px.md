@@ -62,7 +62,7 @@ Foundation → Semantic → Context → Theme → Component
 ```
 
 **Structure:**
-- **Foundations** (`tokens/foundations/typography/`):
+- **Foundations** (`tokens/knowledge/foundations/typography/`):
   - `font-size.json` - Typography scale in REM (xs, sm, base, md, lg, xl, 2xl...6xl)
   - `font-family.json` - Font families (UI, monospace)
   - `font-weight.json` - Font weights (light, normal, medium, semibold, bold)

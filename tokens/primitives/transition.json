@@ -1,0 +1,56 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "transition": {
+      "duration": {
+        "instant": {
+          "$value": "0ms",
+          "$type": "duration",
+          "$description": "Instant transition - no animation delay"
+        },
+        "fast": {
+          "$value": "100ms",
+          "$type": "duration",
+          "$description": "Fast transition - quick feedback for user interactions"
+        },
+        "base": {
+          "$value": "200ms",
+          "$type": "duration",
+          "$description": "Base transition - standard animation duration"
+        },
+        "slow": {
+          "$value": "300ms",
+          "$type": "duration",
+          "$description": "Slow transition - noticeable animation for complex changes"
+        },
+        "slower": {
+          "$value": "500ms",
+          "$type": "duration",
+          "$description": "Slower transition - pronounced animation for major state changes"
+        }
+      },
+      "easing": {
+        "linear": {
+          "$value": "linear",
+          "$type": "cubicBezier",
+          "$description": "Linear easing - constant velocity animation"
+        },
+        "in": {
+          "$value": "ease-in",
+          "$type": "cubicBezier",
+          "$description": "Ease-in - acceleration easing for exit animations"
+        },
+        "out": {
+          "$value": "ease-out",
+          "$type": "cubicBezier",
+          "$description": "Ease-out - deceleration easing for entrance animations"
+        },
+        "inOut": {
+          "$value": "ease-in-out",
+          "$type": "cubicBezier",
+          "$description": "Ease-in-out - smooth acceleration and deceleration"
+        }
+      }
+    }
+  }
+}

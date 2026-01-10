@@ -1,0 +1,123 @@
+{
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "typography": {
+      "textStyle": {
+        "body": {
+          "large": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.md}",
+              "$type": "fontSize",
+              "$description": "Large body text - emphasized content"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for large body"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for large body"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for body text"
+            }
+          },
+          "base": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.base}",
+              "$type": "fontSize",
+              "$description": "Base body text - default for website content"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for body text"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for body text"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for body text"
+            }
+          },
+          "small": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Small body text - helper text, secondary content"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Normal weight for small body"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for small body"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for body text"
+            }
+          }
+        },
+        "bodyStrong": {
+          "base": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.base}",
+              "$type": "fontSize",
+              "$description": "Body strong - emphasized body text"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Semi-bold weight for body strong"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for body strong"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for body strong"
+            }
+          },
+          "small": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Small body strong - emphasized small text"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Semi-bold weight for body strong"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Normal line height for body strong"
+            },
+            "fontFamily": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Primary UI font for body strong"
+            }
+          }
+        }
+      }
+    }
+  }
+}

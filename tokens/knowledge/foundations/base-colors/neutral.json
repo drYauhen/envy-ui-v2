@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "color": {
+      "neutral": {
+        "$value": "oklch(75% 0.00 0)",
+        "$type": "color",
+        "$description": "Neutral gray - base color for neutral scale generation",
+        "position": 500
+      }
+    }
+  },
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json"
+}

@@ -1,136 +1,137 @@
 {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "typography": {
       "textStyle": {
         "heading": {
           "1": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.6xl}",
+              "$value": "{eui.app.raw.typography.fontSize.6xl}",
               "$type": "fontSize",
               "$description": "Heading level 1 - Page title, hero heading"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.bold}",
+              "$value": "{eui.app.raw.typography.fontWeight.bold}",
               "$type": "fontWeight",
               "$description": "Bold weight for heading 1"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for heading 1"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for headings"
             }
           },
           "2": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.5xl}",
+              "$value": "{eui.app.raw.typography.fontSize.5xl}",
               "$type": "fontSize",
               "$description": "Heading level 2 - Section heading"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.bold}",
+              "$value": "{eui.app.raw.typography.fontWeight.bold}",
               "$type": "fontWeight",
               "$description": "Bold weight for heading 2"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for heading 2"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for headings"
             }
           },
           "3": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.4xl}",
+              "$value": "{eui.app.raw.typography.fontSize.4xl}",
               "$type": "fontSize",
               "$description": "Heading level 3 - Subsection heading"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for heading 3"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for heading 3"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for headings"
             }
           },
           "4": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.3xl}",
+              "$value": "{eui.app.raw.typography.fontSize.3xl}",
               "$type": "fontSize",
               "$description": "Heading level 4 - Section heading"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for heading 4"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for heading 4"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for headings"
             }
           },
           "5": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.2xl}",
+              "$value": "{eui.app.raw.typography.fontSize.2xl}",
               "$type": "fontSize",
               "$description": "Heading level 5 - Small heading"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for heading 5"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for heading 5"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for headings"
             }
           },
           "6": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.xl}",
+              "$value": "{eui.app.raw.typography.fontSize.xl}",
               "$type": "fontSize",
               "$description": "Heading level 6 - Smallest heading"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for heading 6"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for heading 6"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for headings"
             }
@@ -139,66 +140,66 @@
         "title": {
           "lg": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.xl}",
+              "$value": "{eui.app.raw.typography.fontSize.xl}",
               "$type": "fontSize",
               "$description": "Large title - section headers, panels"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for titles"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for titles"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for titles"
             }
           },
           "md": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.lg}",
+              "$value": "{eui.app.raw.typography.fontSize.lg}",
               "$type": "fontSize",
               "$description": "Medium title - cards, collapsible headers"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for titles"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for titles"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for titles"
             }
           },
           "sm": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.md}",
+              "$value": "{eui.app.raw.typography.fontSize.md}",
               "$type": "fontSize",
               "$description": "Small title - dense UI headers"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for titles"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.tight}",
+              "$value": "{eui.app.raw.typography.lineHeight.tight}",
               "$type": "lineHeight",
               "$description": "Tight line height for titles"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for titles"
             }
@@ -207,66 +208,66 @@
         "body": {
           "large": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.md}",
+              "$value": "{eui.app.raw.typography.fontSize.md}",
               "$type": "fontSize",
               "$description": "Large body text - emphasized content"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.normal}",
+              "$value": "{eui.app.raw.typography.fontWeight.normal}",
               "$type": "fontWeight",
               "$description": "Normal weight for large body"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for large body"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for body text"
             }
           },
           "base": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.base}",
+              "$value": "{eui.app.raw.typography.fontSize.base}",
               "$type": "fontSize",
               "$description": "Base body text - default for application UI"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.normal}",
+              "$value": "{eui.app.raw.typography.fontWeight.normal}",
               "$type": "fontWeight",
               "$description": "Normal weight for body text"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for body text"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for body text"
             }
           },
           "small": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.sm}",
+              "$value": "{eui.app.raw.typography.fontSize.sm}",
               "$type": "fontSize",
               "$description": "Small body text - helper text, secondary content"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.normal}",
+              "$value": "{eui.app.raw.typography.fontWeight.normal}",
               "$type": "fontWeight",
               "$description": "Normal weight for small body"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for small body"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for body text"
             }
@@ -275,44 +276,44 @@
         "bodyStrong": {
           "base": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.base}",
+              "$value": "{eui.app.raw.typography.fontSize.base}",
               "$type": "fontSize",
               "$description": "Body strong - emphasized body text"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for body strong"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for body strong"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for body strong"
             }
           },
           "small": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.sm}",
+              "$value": "{eui.app.raw.typography.fontSize.sm}",
               "$type": "fontSize",
               "$description": "Small body strong - emphasized small text"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for body strong"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for body strong"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for body strong"
             }
@@ -321,44 +322,44 @@
         "label": {
           "md": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.sm}",
+              "$value": "{eui.app.raw.typography.fontSize.sm}",
               "$type": "fontSize",
               "$description": "Label text - form labels, buttons"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for labels"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for labels"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for labels"
             }
           },
           "sm": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.xs}",
+              "$value": "{eui.app.raw.typography.fontSize.xs}",
               "$type": "fontSize",
               "$description": "Small label text - secondary labels"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.semibold}",
+              "$value": "{eui.app.raw.typography.fontWeight.semibold}",
               "$type": "fontWeight",
               "$description": "Semi-bold weight for small labels"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for small labels"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.ui}",
+              "$value": "{eui.app.raw.typography.fontFamily.ui}",
               "$type": "fontFamily",
               "$description": "Primary UI font for labels"
             }
@@ -366,54 +367,54 @@
         },
         "caption": {
           "fontSize": {
-            "$value": "{eui.typography.fontSize.xs}",
+            "$value": "{eui.app.raw.typography.fontSize.xs}",
             "$type": "fontSize",
             "$description": "Caption text - helper text, metadata"
           },
           "fontWeight": {
-            "$value": "{eui.typography.fontWeight.normal}",
+            "$value": "{eui.app.raw.typography.fontWeight.normal}",
             "$type": "fontWeight",
             "$description": "Normal weight for caption"
           },
           "lineHeight": {
-            "$value": "{eui.typography.lineHeight.normal}",
+            "$value": "{eui.app.raw.typography.lineHeight.normal}",
             "$type": "lineHeight",
             "$description": "Normal line height for caption"
           },
           "fontFamily": {
-            "$value": "{eui.typography.fontFamily.ui}",
+            "$value": "{eui.app.raw.typography.fontFamily.ui}",
             "$type": "fontFamily",
             "$description": "Primary UI font for captions"
           }
         },
         "overline": {
           "fontSize": {
-            "$value": "{eui.typography.fontSize.xs}",
+            "$value": "{eui.app.raw.typography.fontSize.xs}",
             "$type": "fontSize",
             "$description": "Overline text - small uppercase labels"
           },
           "fontWeight": {
-            "$value": "{eui.typography.fontWeight.semibold}",
+            "$value": "{eui.app.raw.typography.fontWeight.semibold}",
             "$type": "fontWeight",
             "$description": "Semi-bold weight for overline"
           },
           "lineHeight": {
-            "$value": "{eui.typography.lineHeight.normal}",
+            "$value": "{eui.app.raw.typography.lineHeight.normal}",
             "$type": "lineHeight",
             "$description": "Normal line height for overline"
           },
           "letterSpacing": {
-            "$value": "{eui.typography.letterSpacing.wider}",
+            "$value": "{eui.app.raw.typography.letterSpacing.wider}",
             "$type": "letterSpacing",
             "$description": "Wider tracking for overline"
           },
           "textTransform": {
-            "$value": "{eui.typography.textTransform.uppercase}",
+            "$value": "{eui.app.raw.typography.textTransform.uppercase}",
             "$type": "textTransform",
             "$description": "Uppercase overline"
           },
           "fontFamily": {
-            "$value": "{eui.typography.fontFamily.ui}",
+            "$value": "{eui.app.raw.typography.fontFamily.ui}",
             "$type": "fontFamily",
             "$description": "Primary UI font for overline"
           }
@@ -421,44 +422,44 @@
         "code": {
           "base": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.sm}",
+              "$value": "{eui.app.raw.typography.fontSize.sm}",
               "$type": "fontSize",
               "$description": "Code inline text - default size"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.normal}",
+              "$value": "{eui.app.raw.typography.fontWeight.normal}",
               "$type": "fontWeight",
               "$description": "Normal weight for code"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for code"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.monospace}",
+              "$value": "{eui.app.raw.typography.fontFamily.monospace}",
               "$type": "fontFamily",
               "$description": "Monospace font for code"
             }
           },
           "small": {
             "fontSize": {
-              "$value": "{eui.typography.fontSize.xs}",
+              "$value": "{eui.app.raw.typography.fontSize.xs}",
               "$type": "fontSize",
               "$description": "Small code text"
             },
             "fontWeight": {
-              "$value": "{eui.typography.fontWeight.normal}",
+              "$value": "{eui.app.raw.typography.fontWeight.normal}",
               "$type": "fontWeight",
               "$description": "Normal weight for small code"
             },
             "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
+              "$value": "{eui.app.raw.typography.lineHeight.normal}",
               "$type": "lineHeight",
               "$description": "Normal line height for small code"
             },
             "fontFamily": {
-              "$value": "{eui.typography.fontFamily.monospace}",
+              "$value": "{eui.app.raw.typography.fontFamily.monospace}",
               "$type": "fontFamily",
               "$description": "Monospace font for small code"
             }

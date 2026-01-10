@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "border": {
+      "width": {
+        "thin": {
+          "$value": "1px",
+          "$type": "strokeWidth",
+          "$description": "Thin border width for subtle dividers"
+        },
+        "default": {
+          "$value": "2px",
+          "$type": "strokeWidth",
+          "$description": "Default border width for standard component borders"
+        },
+        "thick": {
+          "$value": "3px",
+          "$type": "strokeWidth",
+          "$description": "Thick border width for emphasis and focus rings"
+        },
+        "focus": {
+          "$value": "2px",
+          "$type": "strokeWidth",
+          "$description": "Focus ring width for accessibility"
+        }
+      }
+    }
+  }
+}

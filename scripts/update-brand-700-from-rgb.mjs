@@ -42,7 +42,7 @@ console.log(`   Chroma: ${c.toFixed(2)}`);
 console.log(`   Hue: ${h}°`);
 
 // Update brand.json
-const brandFile = join(repoRoot, 'tokens/foundations/colors/brand.json');
+const brandFile = join(repoRoot, 'tokens/knowledge/foundations/colors/brand.json');
 const data = JSON.parse(readFileSync(brandFile, 'utf-8'));
 
 const oldValue = data.eui.color.brand['700'].$value;
@@ -50,7 +50,7 @@ data.eui.color.brand['700'].$value = newBrand700;
 
 writeFileSync(brandFile, JSON.stringify(data, null, 2) + '\n', 'utf-8');
 
-console.log(`\n📝 Updated brand-700 in tokens/foundations/colors/brand.json:`);
+console.log(`\n📝 Updated brand-700 in tokens/knowledge/foundations/colors/brand.json:`);
 console.log(`   Old: ${oldValue}`);
 console.log(`   New: ${newBrand700}`);
 

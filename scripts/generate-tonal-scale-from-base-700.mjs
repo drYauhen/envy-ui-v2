@@ -232,7 +232,7 @@ console.log('\n💡 Asymmetric Logic:');
 console.log('  • Steps up (50-600): [10, 8, 10, 10, 8, 5, 3] - larger steps for more light shades');
 console.log('  • Steps down (800-900): [2, 1] - minimal steps for edge-cases');
 
-const brandFile = join(repoRoot, 'tokens/foundations/colors/brand.json');
+const brandFile = join(repoRoot, 'tokens/knowledge/foundations/colors/brand.json');
 processBrandFile(brandFile);
 
 console.log('\n' + '='.repeat(80));

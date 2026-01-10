@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "z": {
+          "hide": {
+            "$value": "{eui.z.hide}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for z.hide"
+          },
+          "base": {
+            "$value": "{eui.z.base}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for z.base"
+          },
+          "sticky": {
+            "$value": "{eui.z.sticky}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for z.sticky"
+          },
+          "dropdown": {
+            "$value": "{eui.z.dropdown}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for z.dropdown"
+          },
+          "overlay": {
+            "$value": "{eui.z.overlay}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for z.overlay"
+          },
+          "modal": {
+            "$value": "{eui.z.modal}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for z.modal"
+          },
+          "dialog": {
+            "$value": "{eui.z.dialog}",
+            "$type": "number",
+            "$description": "Context-specific raw alias for z.dialog"
+          }
+        }
+      }
+    }
+  }
+}

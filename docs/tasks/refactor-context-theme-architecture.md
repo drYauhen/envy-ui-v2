@@ -420,7 +420,7 @@ Create migration script to:
 
 ### Input Tokens:
 
-**Foundation** (`tokens/foundations/colors/neutral.json`):
+**Foundation** (`tokens/knowledge/foundations/colors/neutral.json`):
 ```json
 {
   "eui": {

@@ -219,9 +219,9 @@ console.log('  • Hue: slight shift at edges for natural appearance');
 console.log('  • Neutral: achromatic (chroma = 0)');
 
 // Read current base colors
-const brandFile = join(repoRoot, 'tokens/foundations/colors/brand.json');
-const accentFile = join(repoRoot, 'tokens/foundations/colors/accent.json');
-const neutralFile = join(repoRoot, 'tokens/foundations/colors/neutral.json');
+const brandFile = join(repoRoot, 'tokens/knowledge/foundations/colors/brand.json');
+const accentFile = join(repoRoot, 'tokens/knowledge/foundations/colors/accent.json');
+const neutralFile = join(repoRoot, 'tokens/knowledge/foundations/colors/neutral.json');
 
 // Extract base 500 colors (use current OKLCH values, not HEX)
 const brandData = JSON.parse(readFileSync(brandFile, 'utf-8'));

@@ -1,0 +1,116 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "spacing": {
+      "0": {
+        "$value": "{eui.spacing.0}",
+        "$type": "dimension",
+        "$description": "Zero spacing"
+      },
+      "1": {
+        "$value": "{eui.spacing.4}",
+        "$type": "dimension",
+        "$description": "4px spacing step"
+      },
+      "2": {
+        "$value": "{eui.spacing.8}",
+        "$type": "dimension",
+        "$description": "8px spacing step"
+      },
+      "3": {
+        "$value": "{eui.spacing.12}",
+        "$type": "dimension",
+        "$description": "12px spacing step"
+      },
+      "4": {
+        "$value": "{eui.spacing.16}",
+        "$type": "dimension",
+        "$description": "16px spacing step"
+      },
+      "5": {
+        "$value": "{eui.spacing.20}",
+        "$type": "dimension",
+        "$description": "20px spacing step"
+      },
+      "6": {
+        "$value": "{eui.spacing.24}",
+        "$type": "dimension",
+        "$description": "24px spacing step"
+      },
+      "7": {
+        "$value": "{eui.spacing.28}",
+        "$type": "dimension",
+        "$description": "28px spacing step"
+      },
+      "8": {
+        "$value": "{eui.spacing.32}",
+        "$type": "dimension",
+        "$description": "32px spacing step"
+      },
+      "9": {
+        "$value": "{eui.spacing.36}",
+        "$type": "dimension",
+        "$description": "36px spacing step"
+      },
+      "10": {
+        "$value": "{eui.spacing.40}",
+        "$type": "dimension",
+        "$description": "40px spacing step"
+      },
+      "11": {
+        "$value": "{eui.spacing.44}",
+        "$type": "dimension",
+        "$description": "44px spacing step"
+      },
+      "12": {
+        "$value": "{eui.spacing.48}",
+        "$type": "dimension",
+        "$description": "48px spacing step"
+      },
+      "13": {
+        "$value": "{eui.spacing.52}",
+        "$type": "dimension",
+        "$description": "52px spacing step"
+      },
+      "14": {
+        "$value": "{eui.spacing.56}",
+        "$type": "dimension",
+        "$description": "56px spacing step"
+      },
+      "15": {
+        "$value": "{eui.spacing.60}",
+        "$type": "dimension",
+        "$description": "60px spacing step"
+      },
+      "16": {
+        "$value": "{eui.spacing.64}",
+        "$type": "dimension",
+        "$description": "64px spacing step"
+      },
+      "17": {
+        "$value": "{eui.spacing.68}",
+        "$type": "dimension",
+        "$description": "68px spacing step"
+      },
+      "18": {
+        "$value": "{eui.spacing.72}",
+        "$type": "dimension",
+        "$description": "72px spacing step"
+      },
+      "19": {
+        "$value": "{eui.spacing.76}",
+        "$type": "dimension",
+        "$description": "76px spacing step"
+      },
+      "20": {
+        "$value": "{eui.spacing.80}",
+        "$type": "dimension",
+        "$description": "80px spacing step"
+      }
+        }
+      }
+    }
+  }
+}

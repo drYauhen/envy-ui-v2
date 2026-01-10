@@ -1,10 +1,11 @@
 # Token Architecture
 
-**Last Updated:** 2026-01-08
+**Last Updated:** 2026-01-10
 **Category:** Reference
 **Related ADR:**
-- [ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture
-- [ADR-0023](./../adr/ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization
+- [ADR-0037](./../adr/ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (Locked)
+- [ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
+- [ADR-0023](./../adr/ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
 - [ADR-0036](./../adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
 - [Theme Structure Analysis](../theme-structure-analysis.md) — Current Theme Architecture Decisions
 
@@ -22,99 +23,148 @@ The Envy UI token system is a comprehensive design token architecture that suppo
 
 ## Core Principles
 
-1. **Layered Architecture** - Foundation → Semantic → Context → Theme → Component
+1. **Canonical Resolution Chain** - Primitives → Raw → Semantics → Themes → Components
 2. **DTCG Compliance** - Follows Design Tokens Community Group 2025.10 specification
 3. **Multi-Context Support** - Independent token structures for different use cases
-4. **Accessibility-First** - WCAG 2.2 AA compliance built into the theme system
-5. **Type Safety** - Generated TypeScript types for all tokens
-6. **Developer Experience** - Rich tooling, validation, and documentation
+4. **Zero Literal Leaks** - All literal values live only in primitives
+5. **Zero Self-Aliases** - No `x -> {x}` references anywhere in canon
+6. **Directory Classification** - Clear separation of canon/knowledge/legacy
+7. **Type Safety** - Generated TypeScript types for all tokens
+8. **Developer Experience** - Rich tooling, validation, and documentation
+
+## Canonical Token Architecture
+
+**Resolution Chain:**
+```
+Primitives → Raw → Semantics → Themes → Components
+```
+
+### Directory Classification
+
+| Directory | Purpose | Render Pipeline | Status |
+|-----------|---------|-----------------|--------|
+| `tokens/primitives/` | Literal source of truth | ✅ Included | Canonical |
+| `tokens/contexts/**/raw/` | Context namespaced aliases | ✅ Included | Canonical |
+| `tokens/contexts/**/semantics/` | Meaning-based aliases | ✅ Included | Canonical |
+| `tokens/contexts/**/themes/` | Override-only aliases | ✅ Included | Canonical |
+| `tokens/contexts/**/components.json` | Component contracts | ✅ Included | Canonical |
+| `tokens/knowledge/` | Documentation/workflow | ❌ Excluded | Workflow |
+| `tokens/legacy/` | Historical quarantine | ❌ Excluded | Legacy |
 
 ## Architecture Layers
 
-### 1. Foundation Layer (`tokens/{context}/foundations/`)
+### 1. Primitives Layer (`tokens/primitives/`)
 
-Base design tokens that are context-neutral within each context:
+**Single source of truth for all literal values.** No literals exist anywhere else in the system.
 
-- **Color** - OKLCH color scales (neutral, brand, accent, status)
-- **Typography** - Font families, sizes, weights, line heights
+- **Colors** - OKLCH color scales (neutral, brand, accent, status)
+- **Typography** - Font families, sizes, weights, line heights, letter spacing
 - **Spacing** - Spacing scale in REM units
+- **Dimension** - Border widths, sizing values
 - **Shape** - Border radius, shadows, borders
+- **Layout** - Container constraints, breakpoints
+- **Interaction** - Opacity, transitions, z-index, filters
 
 **Example Structure:**
 ```
-tokens/app/foundations/
-├── colors/
-│   ├── neutral.json
-│   ├── brand.json
-│   └── accent.json
-├── typography/
-│   ├── font-family.json
-│   ├── font-size.json
-│   └── font-weight.json
-├── spacing.json
-└── shadow.json
+tokens/primitives/
+├── neutral.json     # OKLCH neutral color scale
+├── typography.json  # Font primitives + text properties
+├── spacing.json     # Spacing scale
+├── dimension.json   # Sizing values
+├── border.json      # Border definitions
+├── shadow.json      # Shadow definitions
+├── opacity.json     # Opacity values
+├── transition.json  # Animation definitions
+└── z-index.json     # Z-index scale
 ```
 
-### 2. Semantic Layer (`tokens/{context}/semantic/`)
+### 2. Raw Layer (`tokens/contexts/*/raw/`)
 
-Meaningful design tokens that reference foundations:
+**Context-namespaced aliases to primitives.** Acts as migration buffer and stable interface.
 
-- **Colors** - Background, text, border, focus colors
-- **Typography** - Text styles organized by semantic purpose
-- **Spacing** - Component spacing patterns
+- Uses context namespace: `eui.app.raw.*`
+- Only references primitives: `{eui.typography.fontSize.sm}`
+- Provides stable interface for semantic layer
+- Allows future migration of truth into contexts
+
+**Example Structure:**
+```
+tokens/contexts/app/raw/
+├── typography.json  # {eui.typography.*} → {eui.app.raw.typography.*}
+├── colors.json      # {eui.neutral.*} → {eui.app.raw.color.*}
+├── spacing.json     # {eui.spacing.*} → {eui.app.raw.spacing.*}
+└── opacity.json     # {eui.opacity.*} → {eui.app.raw.opacity.*}
+```
+
+### 3. Semantics Layer (`tokens/contexts/*/semantics/`)
+
+**Meaning-based aliases to raw layer.** Defines semantic purpose, never references primitives directly.
+
+- Only references raw: `{eui.app.raw.*}`
+- Human-readable names: `background`, `text`, `border`, `focus`
+- Stable interface for components and themes
 
 **Typography Organization:**
 ```
-tokens/app/semantic/typography/
+tokens/contexts/app/semantics/typography/
 ├── headings.json     # heading.1-6 (6 tokens)
 ├── titles.json       # title.lg/md/sm (3 tokens)
 ├── body.json         # body.* + bodyStrong.* (5 tokens)
 ├── labels.json       # label.* + caption + overline (4 tokens)
-└── code.json         # code.base/small (2 tokens)
+├── code.json         # code.base/small (2 tokens)
+├── font-size.json    # xs, sm, base, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl
+├── font-weight.json  # thin-light-normal-medium-semibold-bold-extrabold-black
+├── font-family.json  # ui, monospace
+├── letter-spacing.json # tighter-tight-normal-wide-wider-widest
+├── line-height.json  # tight-snug-normal-relaxed-loose
+├── font-style.json   # normal-italic-oblique
+├── text-decoration.json # none-underline-line-through
+└── text-transform.json # none-uppercase-lowercase-capitalize
 ```
 
-### 3. Component Layer (`tokens/{context}/components/`)
+### 4. Themes Layer (`tokens/contexts/*/themes/`)
 
-Component-specific tokens that reference semantic tokens:
+**Override-only aliases to semantics.** Never introduces new values, only changes existing ones.
 
-- **Button** - Colors, spacing, typography
-- **Input** - Colors, spacing, typography
-- **Card** - Colors, spacing, shadows
+- Only references semantics: `{eui.color.*}`, `{eui.focus.*}`, etc.
+- Composable approach: single files with all overrides
+- Accessibility theme provides WCAG 2.2 AA compliance
 
-**Example:**
-```json
-// tokens/app/components/button/colors.json
-{
-  "eui": {
-    "button": {
-      "primary": {
-        "background": { "$value": "{eui.color.brand.600}" },
-        "label": { "$value": "{eui.color.neutral.white}" }
-      }
-    }
-  }
-}
+**Example Structure:**
 ```
+tokens/contexts/app/themes/
+├── default.json      # Base context theme (minimal overrides)
+└── accessibility.json # WCAG 2.2 AA high-contrast theme
+```
+
+### 5. Components Layer (`tokens/contexts/*/components.json`)
+
+**Component-specific contracts** that reference semantic tokens.
+
+- References semantic layer: `{eui.color.*}`, `{eui.focus.*}`, etc.
+- Defines component-specific tokens (button colors, spacing)
+- Context-specific variants when needed
 
 ## Context Structure
 
-Each context (`app`, `website`, `report`) contains a complete, independent token structure:
+Each context (`app`) contains a complete canonical token structure:
 
 ```
-tokens/{context}/
-├── foundations/      # Base tokens
-├── semantic/         # Semantic mappings
-├── components/       # Component tokens
-└── themes/           # Theme variations
-    ├── default.json
-    └── accessibility.json
+tokens/contexts/app/
+├── raw/              # Context-namespaced aliases to primitives
+├── semantics/        # Meaning-based aliases to raw
+├── themes/           # Override-only aliases to semantics
+└── components.json   # Component contracts
 ```
 
 ### Context Responsibilities
 
 - **`app`**: Application shell with compact spacing, standard UI patterns
-- **`website`**: CMS/website content with relaxed spacing, content-optimized patterns
-- **`report`**: Print/report generation with print-safe colors, formal typography
+  - **`raw/`**: Context-specific aliases (`eui.app.raw.*`)
+  - **`semantics/`**: App-appropriate semantic mappings
+  - **`themes/`**: Default + WCAG 2.2 AA accessibility
+  - **`components.json`**: Component contracts for app context
 
 ## Theme System
 
@@ -353,5 +403,14 @@ Each context exports as separate Figma files:
 
 - **[Token Usage Rules](./token-usage-rules.md)** - Enforceable rules for token usage
 - **[Token System Tooling](./../tokens/README.md)** - Developer tools and workflows
-- **[ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)** - Architectural foundation
-- **[ADR-0036](./../adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md)** - Recent improvements
+
+## Architectural Decision Records
+
+### Current Canonical Architecture
+- **[ADR-0037](./../adr/ADR-0037-canonical-token-architecture-locked.md)** - Locked canonical token architecture (current implementation)
+
+### Historical Context & Evolution
+- **[ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)** - Initial layered architecture concept (superseded)
+- **[ADR-0023](./../adr/ADR-0023-token-organization-context-and-theme-separation.md)** - Context/theme separation (superseded)
+- **[ADR-0026](./../adr/ADR-0026-app-default-color-positioning.md)** - App-default positioning (superseded)
+- **[ADR-0036](./../adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md)** - DTCG schema validation implementation

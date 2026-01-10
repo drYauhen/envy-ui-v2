@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "component": {
       "button": {
@@ -20,12 +20,12 @@
             "$description": "App context: Button border matches background"
           },
           "width": {
-            "$value": "1px",
+            "$value": "{eui.app.raw.border.width.thin}",
             "$type": "dimension",
             "$description": "App context: Standard button border width"
           },
           "radius": {
-            "$value": "{eui.radius.default}",
+            "$value": "{eui.dimension.4}",
             "$type": "dimension",
             "$description": "App context: Button uses default border radius"
           }

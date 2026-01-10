@@ -38,7 +38,7 @@ function formatOklch(l, c, h) {
 }
 
 // Read current accent.json
-const accentFile = join(repoRoot, 'tokens/foundations/colors/accent.json');
+const accentFile = join(repoRoot, 'tokens/knowledge/foundations/colors/accent.json');
 const data = JSON.parse(readFileSync(accentFile, 'utf-8'));
 
 const current700 = data.eui.color.accent['700'].$value;

@@ -1,0 +1,486 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "color": {
+          "neutral": {
+            "50": {
+              "$value": "{eui.color.neutral.50}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.50"
+            },
+            "100": {
+              "$value": "{eui.color.neutral.100}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.100"
+            },
+            "200": {
+              "$value": "{eui.color.neutral.200}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.200"
+            },
+            "300": {
+              "$value": "{eui.color.neutral.300}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.300"
+            },
+            "400": {
+              "$value": "{eui.color.neutral.400}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.400"
+            },
+            "500": {
+              "$value": "{eui.color.neutral.500}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.500"
+            },
+            "600": {
+              "$value": "{eui.color.neutral.600}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.600"
+            },
+            "700": {
+              "$value": "{eui.color.neutral.700}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.700"
+            },
+            "800": {
+              "$value": "{eui.color.neutral.800}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.800"
+            },
+            "900": {
+              "$value": "{eui.color.neutral.900}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.900"
+            },
+            "zero": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Raw alias for neutral.zero (pure white anchor)"
+            }
+          },
+          "accent": {
+            "50": {
+              "$value": "{eui.color.accent.50}",
+              "$type": "color",
+              "$description": "Raw alias for accent.50"
+            },
+            "100": {
+              "$value": "{eui.color.accent.100}",
+              "$type": "color",
+              "$description": "Raw alias for accent.100"
+            },
+            "200": {
+              "$value": "{eui.color.accent.200}",
+              "$type": "color",
+              "$description": "Raw alias for accent.200"
+            },
+            "300": {
+              "$value": "{eui.color.accent.300}",
+              "$type": "color",
+              "$description": "Raw alias for accent.300"
+            },
+            "400": {
+              "$value": "{eui.color.accent.400}",
+              "$type": "color",
+              "$description": "Raw alias for accent.400"
+            },
+            "500": {
+              "$value": "{eui.color.accent.500}",
+              "$type": "color",
+              "$description": "Raw alias for accent.500"
+            },
+            "600": {
+              "$value": "{eui.color.accent.600}",
+              "$type": "color",
+              "$description": "Raw alias for accent.600"
+            },
+            "700": {
+              "$value": "{eui.color.accent.700}",
+              "$type": "color",
+              "$description": "Raw alias for accent.700"
+            },
+            "800": {
+              "$value": "{eui.color.accent.800}",
+              "$type": "color",
+              "$description": "Raw alias for accent.800"
+            },
+            "900": {
+              "$value": "{eui.color.accent.900}",
+              "$type": "color",
+              "$description": "Raw alias for accent.900"
+            }
+          },
+          "brand": {
+            "50": {
+              "$value": "{eui.color.brand.50}",
+              "$type": "color",
+              "$description": "Raw alias for brand.50"
+            },
+            "100": {
+              "$value": "{eui.color.brand.100}",
+              "$type": "color",
+              "$description": "Raw alias for brand.100"
+            },
+            "200": {
+              "$value": "{eui.color.brand.200}",
+              "$type": "color",
+              "$description": "Raw alias for brand.200"
+            },
+            "300": {
+              "$value": "{eui.color.brand.300}",
+              "$type": "color",
+              "$description": "Raw alias for brand.300"
+            },
+            "400": {
+              "$value": "{eui.color.brand.400}",
+              "$type": "color",
+              "$description": "Raw alias for brand.400"
+            },
+            "500": {
+              "$value": "{eui.color.brand.500}",
+              "$type": "color",
+              "$description": "Raw alias for brand.500"
+            },
+            "600": {
+              "$value": "{eui.color.brand.600}",
+              "$type": "color",
+              "$description": "Raw alias for brand.600"
+            },
+            "700": {
+              "$value": "{eui.color.brand.700}",
+              "$type": "color",
+              "$description": "Raw alias for brand.700"
+            },
+            "800": {
+              "$value": "{eui.color.brand.800}",
+              "$type": "color",
+              "$description": "Raw alias for brand.800"
+            },
+            "900": {
+              "$value": "{eui.color.brand.900}",
+              "$type": "color",
+              "$description": "Raw alias for brand.900"
+            }
+          },
+          "signal": {
+            "50": {
+              "$value": "{eui.color.signal.50}",
+              "$type": "color",
+              "$description": "Raw alias for signal.50"
+            },
+            "100": {
+              "$value": "{eui.color.signal.100}",
+              "$type": "color",
+              "$description": "Raw alias for signal.100"
+            },
+            "200": {
+              "$value": "{eui.color.signal.200}",
+              "$type": "color",
+              "$description": "Raw alias for signal.200"
+            },
+            "300": {
+              "$value": "{eui.color.signal.300}",
+              "$type": "color",
+              "$description": "Raw alias for signal.300"
+            },
+            "400": {
+              "$value": "{eui.color.signal.400}",
+              "$type": "color",
+              "$description": "Raw alias for signal.400"
+            },
+            "500": {
+              "$value": "{eui.color.signal.500}",
+              "$type": "color",
+              "$description": "Raw alias for signal.500"
+            },
+            "600": {
+              "$value": "{eui.color.signal.600}",
+              "$type": "color",
+              "$description": "Raw alias for signal.600"
+            },
+            "700": {
+              "$value": "{eui.color.signal.700}",
+              "$type": "color",
+              "$description": "Raw alias for signal.700"
+            },
+            "800": {
+              "$value": "{eui.color.signal.800}",
+              "$type": "color",
+              "$description": "Raw alias for signal.800"
+            },
+            "900": {
+              "$value": "{eui.color.signal.900}",
+              "$type": "color",
+              "$description": "Raw alias for signal.900"
+            }
+          },
+          "status": {
+            "info": {
+              "50": {
+                "$value": "{eui.color.status.info.50}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.50"
+              },
+              "100": {
+                "$value": "{eui.color.status.info.100}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.100"
+              },
+              "200": {
+                "$value": "{eui.color.status.info.200}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.200"
+              },
+              "300": {
+                "$value": "{eui.color.status.info.300}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.300"
+              },
+              "400": {
+                "$value": "{eui.color.status.info.400}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.400"
+              },
+              "500": {
+                "$value": "{eui.color.status.info.500}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.500"
+              },
+              "600": {
+                "$value": "{eui.color.status.info.600}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.600"
+              },
+              "700": {
+                "$value": "{eui.color.status.info.700}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.700"
+              },
+              "800": {
+                "$value": "{eui.color.status.info.800}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.800"
+              },
+              "900": {
+                "$value": "{eui.color.status.info.900}",
+                "$type": "color",
+                "$description": "Raw alias for status.info.900"
+              }
+            },
+            "success": {
+              "50": {
+                "$value": "{eui.color.status.success.50}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.50"
+              },
+              "100": {
+                "$value": "{eui.color.status.success.100}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.100"
+              },
+              "200": {
+                "$value": "{eui.color.status.success.200}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.200"
+              },
+              "300": {
+                "$value": "{eui.color.status.success.300}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.300"
+              },
+              "400": {
+                "$value": "{eui.color.status.success.400}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.400"
+              },
+              "500": {
+                "$value": "{eui.color.status.success.500}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.500"
+              },
+              "600": {
+                "$value": "{eui.color.status.success.600}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.600"
+              },
+              "700": {
+                "$value": "{eui.color.status.success.700}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.700"
+              },
+              "800": {
+                "$value": "{eui.color.status.success.800}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.800"
+              },
+              "900": {
+                "$value": "{eui.color.status.success.900}",
+                "$type": "color",
+                "$description": "Raw alias for status.success.900"
+              }
+            },
+            "warning": {
+              "50": {
+                "$value": "{eui.color.status.warning.50}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.50"
+              },
+              "100": {
+                "$value": "{eui.color.status.warning.100}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.100"
+              },
+              "200": {
+                "$value": "{eui.color.status.warning.200}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.200"
+              },
+              "300": {
+                "$value": "{eui.color.status.warning.300}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.300"
+              },
+              "400": {
+                "$value": "{eui.color.status.warning.400}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.400"
+              },
+              "500": {
+                "$value": "{eui.color.status.warning.500}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.500"
+              },
+              "600": {
+                "$value": "{eui.color.status.warning.600}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.600"
+              },
+              "700": {
+                "$value": "{eui.color.status.warning.700}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.700"
+              },
+              "800": {
+                "$value": "{eui.color.status.warning.800}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.800"
+              },
+              "900": {
+                "$value": "{eui.color.status.warning.900}",
+                "$type": "color",
+                "$description": "Raw alias for status.warning.900"
+              }
+            },
+            "error": {
+              "50": {
+                "$value": "{eui.color.status.error.50}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.50"
+              },
+              "100": {
+                "$value": "{eui.color.status.error.100}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.100"
+              },
+              "200": {
+                "$value": "{eui.color.status.error.200}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.200"
+              },
+              "300": {
+                "$value": "{eui.color.status.error.300}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.300"
+              },
+              "400": {
+                "$value": "{eui.color.status.error.400}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.400"
+              },
+              "500": {
+                "$value": "{eui.color.status.error.500}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.500"
+              },
+              "600": {
+                "$value": "{eui.color.status.error.600}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.600"
+              },
+              "700": {
+                "$value": "{eui.color.status.error.700}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.700"
+              },
+              "800": {
+                "$value": "{eui.color.status.error.800}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.800"
+              },
+              "900": {
+                "$value": "{eui.color.status.error.900}",
+                "$type": "color",
+                "$description": "Raw alias for status.error.900"
+              }
+            }
+          },
+          "status-application": {
+            "50": {
+              "$value": "{eui.color.status-application.50}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.50"
+            },
+            "100": {
+              "$value": "{eui.color.status-application.100}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.100"
+            },
+            "200": {
+              "$value": "{eui.color.status-application.200}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.200"
+            },
+            "300": {
+              "$value": "{eui.color.status-application.300}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.300"
+            },
+            "400": {
+              "$value": "{eui.color.status-application.400}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.400"
+            },
+            "500": {
+              "$value": "{eui.color.status-application.500}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.500"
+            },
+            "600": {
+              "$value": "{eui.color.status-application.600}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.600"
+            },
+            "700": {
+              "$value": "{eui.color.status-application.700}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.700"
+            },
+            "800": {
+              "$value": "{eui.color.status-application.800}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.800"
+            },
+            "900": {
+              "$value": "{eui.color.status-application.900}",
+              "$type": "color",
+              "$description": "Raw alias for status-application.900"
+            }
+          }
+        }
+      }
+    }
+  }
+}

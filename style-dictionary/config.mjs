@@ -41,9 +41,13 @@ export default {
   usesDtcg: true,
 
   source: (() => {
-    // Use glob to find all .json files, but exclude .meta.json
+    // Use glob to find all .json files, but exclude .meta.json and raw files
     const allJsonFiles = globSync(path.join(repoRoot, 'tokens', '**', '*.json'), {
-      ignore: [path.join(repoRoot, 'tokens', '**', '*.meta.json')]
+      ignore: [
+        path.join(repoRoot, 'tokens', '**', '*.meta.json'),
+        path.join(repoRoot, 'tokens', 'legacy', '**', '*.json'), // Exclude legacy files
+        path.join(repoRoot, 'tokens', 'knowledge', '**', '*.json') // Exclude knowledge/workflow files
+      ]
     });
     return allJsonFiles;
   })(),
@@ -175,5 +179,3 @@ export default {
     }
   }
 };
-
-

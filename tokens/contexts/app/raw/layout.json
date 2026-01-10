@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "layout": {
+          "container": {
+            "standard": {
+              "maxWidth": {
+                "$value": "{eui.layout.container.standard.maxWidth}",
+                "$type": "dimension",
+                "$description": "Context-specific raw alias for layout.container.standard.maxWidth"
+              }
+            },
+            "wide": {
+              "maxWidth": {
+                "$value": "{eui.layout.container.wide.maxWidth}",
+                "$type": "dimension",
+                "$description": "Context-specific raw alias for layout.container.wide.maxWidth"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

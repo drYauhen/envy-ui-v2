@@ -480,7 +480,7 @@ npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
 2. **Change tokens:**
    ```bash
    # Edit tokens in tokens/
-   vim tokens/foundations/colors/brand.json
+   vim tokens/knowledge/foundations/colors/brand.json
    # Or delete/rename variables, move between collections, etc.
    ```
 

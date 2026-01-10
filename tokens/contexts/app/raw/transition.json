@@ -1,0 +1,60 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "transition": {
+          "duration": {
+            "instant": {
+              "$value": "{eui.transition.duration.instant}",
+              "$type": "duration",
+              "$description": "Context-specific raw alias for transition.duration.instant"
+            },
+            "fast": {
+              "$value": "{eui.transition.duration.fast}",
+              "$type": "duration",
+              "$description": "Context-specific raw alias for transition.duration.fast"
+            },
+            "base": {
+              "$value": "{eui.transition.duration.base}",
+              "$type": "duration",
+              "$description": "Context-specific raw alias for transition.duration.base"
+            },
+            "slow": {
+              "$value": "{eui.transition.duration.slow}",
+              "$type": "duration",
+              "$description": "Context-specific raw alias for transition.duration.slow"
+            },
+            "slower": {
+              "$value": "{eui.transition.duration.slower}",
+              "$type": "duration",
+              "$description": "Context-specific raw alias for transition.duration.slower"
+            }
+          },
+          "easing": {
+            "linear": {
+              "$value": "{eui.transition.easing.linear}",
+              "$type": "cubicBezier",
+              "$description": "Context-specific raw alias for transition.easing.linear"
+            },
+            "in": {
+              "$value": "{eui.transition.easing.in}",
+              "$type": "cubicBezier",
+              "$description": "Context-specific raw alias for transition.easing.in"
+            },
+            "out": {
+              "$value": "{eui.transition.easing.out}",
+              "$type": "cubicBezier",
+              "$description": "Context-specific raw alias for transition.easing.out"
+            },
+            "inOut": {
+              "$value": "{eui.transition.easing.inOut}",
+              "$type": "cubicBezier",
+              "$description": "Context-specific raw alias for transition.easing.inOut"
+            }
+          }
+        }
+      }
+    }
+  }
+}

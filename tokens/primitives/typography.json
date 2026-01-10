@@ -164,6 +164,74 @@
           "$type": "letterSpacing",
           "$description": "Widest letter spacing"
         }
+      },
+      "fontFamily": {
+        "ui": {
+          "$value": "'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          "$type": "fontFamily",
+          "$description": "UI font family stack for readable text"
+        },
+        "monospace": {
+          "$value": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Courier New', monospace",
+          "$type": "fontFamily",
+          "$description": "Monospace font family stack for code and technical content"
+        }
+      },
+      "textDecoration": {
+        "none": {
+          "$value": "none",
+          "$type": "textDecoration",
+          "$description": "No text decoration"
+        },
+        "underline": {
+          "$value": "underline",
+          "$type": "textDecoration",
+          "$description": "Underline text decoration"
+        },
+        "line-through": {
+          "$value": "line-through",
+          "$type": "textDecoration",
+          "$description": "Line-through text decoration"
+        }
+      },
+      "textTransform": {
+        "none": {
+          "$value": "none",
+          "$type": "textTransform",
+          "$description": "No text transformation"
+        },
+        "uppercase": {
+          "$value": "uppercase",
+          "$type": "textTransform",
+          "$description": "Uppercase text transformation"
+        },
+        "lowercase": {
+          "$value": "lowercase",
+          "$type": "textTransform",
+          "$description": "Lowercase text transformation"
+        },
+        "capitalize": {
+          "$value": "capitalize",
+          "$type": "textTransform",
+          "$description": "Capitalize text transformation"
+        }
+      },
+      "fontStyle": {
+        "normal": {
+          "$value": "normal",
+          "$type": "fontStyle",
+          "$description": "Normal font style"
+        },
+        "italic": {
+          "$value": "italic",
+          "$type": "fontStyle",
+          "$description": "Italic font style"
+        },
+        "oblique": {
+          "$value": "oblique",
+          "$type": "fontStyle",
+          "$description": "Oblique font style"
+        }
       }
     }
   }

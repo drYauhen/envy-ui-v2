@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "app": {
+      "raw": {
+        "filter": {
+          "muted": {
+            "grayscale": {
+              "$value": "{eui.filter.muted.grayscale}",
+              "$type": "number",
+              "$description": "Context-specific raw alias for filter.muted.grayscale"
+            },
+            "saturate": {
+              "$value": "{eui.filter.muted.saturate}",
+              "$type": "number",
+              "$description": "Context-specific raw alias for filter.muted.saturate"
+            },
+            "contrast": {
+              "$value": "{eui.filter.muted.contrast}",
+              "$type": "number",
+              "$description": "Context-specific raw alias for filter.muted.contrast"
+            },
+            "brightness": {
+              "$value": "{eui.filter.muted.brightness}",
+              "$type": "number",
+              "$description": "Context-specific raw alias for filter.muted.brightness"
+            }
+          }
+        }
+      }
+    }
+  }
+}

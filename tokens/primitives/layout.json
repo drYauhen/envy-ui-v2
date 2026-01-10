@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "layout": {
+      "container": {
+        "standard": {
+          "maxWidth": {
+            "$value": "960px",
+            "$type": "dimension",
+            "$description": "Readable width for forms and detail pages."
+          }
+        },
+        "wide": {
+          "maxWidth": {
+            "$value": "100%",
+            "$type": "dimension",
+            "$description": "Full width for tables and dashboards."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,24 +1,24 @@
 {
-  "$schema": "./schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
     "typography": {
       "textTransform": {
         "none": {
-          "$value": "none",
+          "$value": "{eui.app.raw.typography.textTransform.none}",
           "$type": "textTransform",
           "$description": "No text transformation - default, preserves original casing"
         },
         "uppercase": {
-          "$value": "uppercase",
+          "$value": "{eui.app.raw.typography.textTransform.uppercase}",
           "$type": "textTransform",
           "$description": "Uppercase transformation - for buttons, labels, navigation"
         },
         "lowercase": {
-          "$value": "lowercase",
+          "$value": "{eui.app.raw.typography.textTransform.lowercase}",
           "$type": "textTransform",
           "$description": "Lowercase transformation - for specific styling needs"
         },
         "capitalize": {
-          "$value": "capitalize",
+          "$value": "{eui.app.raw.typography.textTransform.capitalize}",
           "$type": "textTransform",
           "$description": "Capitalize transformation - first letter of each word uppercase"
         }
@@ -26,5 +26,3 @@
     }
   }
 }
-
-

@@ -1,6 +1,0 @@
-{
-  "$schema": "./schemas/dtcg-2025.10-schema.json",
-  "eui": {
-    "$description": "report context - Foundation typography/letter spacing. This structure is defined but currently empty. Tokens will be added when report context is developed."
-  }
-}

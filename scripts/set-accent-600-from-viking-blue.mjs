@@ -41,7 +41,7 @@ console.log(`   Chroma: ${c.toFixed(2)}`);
 console.log(`   Hue: ${h}°`);
 
 // Update accent.json
-const accentFile = join(repoRoot, 'tokens/foundations/colors/accent.json');
+const accentFile = join(repoRoot, 'tokens/knowledge/foundations/colors/accent.json');
 const data = JSON.parse(readFileSync(accentFile, 'utf-8'));
 
 const old600 = data.eui.color.accent['600'].$value;
@@ -50,7 +50,7 @@ data.eui.color.accent['600'].$description = 'Viking Blue from Envy UI v1 - ancho
 
 writeFileSync(accentFile, JSON.stringify(data, null, 2) + '\n', 'utf-8');
 
-console.log(`\n📝 Updated accent-600 in tokens/foundations/colors/accent.json:`);
+console.log(`\n📝 Updated accent-600 in tokens/knowledge/foundations/colors/accent.json:`);
 console.log(`   Old: ${old600}`);
 console.log(`   New: ${vikingBlueOklch}`);
 

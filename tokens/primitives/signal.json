@@ -1,0 +1,64 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "color": {
+      "signal": {
+        "50": {
+          "$value": "oklch(97% 0.08 25)",
+          "$type": "color",
+          "$description": "Signal color: 50 (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "100": {
+          "$value": "oklch(87% 0.14 25)",
+          "$type": "color",
+          "$description": "Signal color: 100 (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "200": {
+          "$value": "oklch(77% 0.20 25)",
+          "$type": "color",
+          "$description": "Signal color: 200 (light). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "300": {
+          "$value": "oklch(67% 0.24 25)",
+          "$type": "color",
+          "$description": "Signal color: 300 (medium). Used for backgrounds and subtle surfaces. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "400": {
+          "$value": "oklch(57% 0.26 25)",
+          "$type": "color",
+          "$description": "Signal color: 400 (medium). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "500": {
+          "$value": "oklch(62% 0.26 25)",
+          "$type": "color",
+          "$description": "Signal color: 500 (anchor). Used for general signal feedback (focus rings, highlights). Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "600": {
+          "$value": "oklch(57% 0.25 25)",
+          "$type": "color",
+          "$description": "Signal color: 600 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "700": {
+          "$value": "oklch(54% 0.24 25)",
+          "$type": "color",
+          "$description": "Signal color: 700 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "800": {
+          "$value": "oklch(51% 0.23 25)",
+          "$type": "color",
+          "$description": "Signal color: 800 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "900": {
+          "$value": "oklch(48% 0.22 25)",
+          "$type": "color",
+          "$description": "Signal color: 900 (dark). Used for text, icons, and borders. Generated from anchor 500 using OKLCH tonal scale."
+        },
+        "keyboardFocus": {
+          "$value": "{eui.color.signal.500}",
+          "$type": "color",
+          "$description": "Keyboard-only focus ring - bright, saturated orange for high contrast accessibility"
+        }
+      }
+    }
+  }
+}
