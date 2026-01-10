@@ -1,5 +1,10 @@
 # ADR Workflow
 
+**Document ID:** workflow-adr-workflow
+**Last Updated:** 2026-01-10
+**Category:** Workflow
+
+
 Complete guide to writing and managing Architectural Decision Records (ADR) in Envy UI v2.
 
 ## Overview

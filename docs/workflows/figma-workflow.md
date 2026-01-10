@@ -1,5 +1,10 @@
 # Figma Workflow
 
+**Document ID:** workflow-figma-workflow
+**Last Updated:** 2026-01-10
+**Category:** Workflow
+
+
 Complete guide to working with Figma integration in Envy UI v2.
 
 ## Overview

@@ -1,5 +1,10 @@
 # Workflows Documentation
 
+**Document ID:** workflow-workflows-documentation
+**Last Updated:** 2026-01-10
+**Category:** Workflow
+
+
 This directory contains detailed operational workflows for different aspects of the Envy UI v2 design system.
 
 ## Overview

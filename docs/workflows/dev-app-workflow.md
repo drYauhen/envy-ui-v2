@@ -1,5 +1,10 @@
 # Dev App Workflow
 
+**Document ID:** workflow-dev-app-workflow
+**Last Updated:** 2026-01-10
+**Category:** Workflow
+
+
 Complete guide to working with the demonstration application (`apps/dev-app`) in Envy UI v2.
 
 ## Overview

@@ -1,5 +1,10 @@
 # Tokens Workflow
 
+**Document ID:** workflow-tokens-workflow
+**Last Updated:** 2026-01-10
+**Category:** Workflow
+
+
 Complete guide to working with design tokens in Envy UI v2.
 
 ## Overview

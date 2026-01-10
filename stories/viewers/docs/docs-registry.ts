@@ -126,6 +126,12 @@ const architectureDocs: DocRegistryItem[] = [
     storybookId: 'docs-architecture--adr-validation-and-implementation'
   },
   {
+    id: 'arch-token-architecture',
+    path: 'architecture/token-architecture.md',
+    title: 'Token Architecture',
+    category: 'architecture'
+  },
+  {
     id: 'arch-color-system',
     path: 'architecture/color-system-architecture.md',
     title: 'Color System Architecture Rules',
@@ -213,6 +219,12 @@ const adrGuideDocs: DocRegistryItem[] = [
     id: 'adr-template',
     path: 'adr/ADR-TEMPLATE.md',
     title: 'ADR Template',
+    category: 'adr'
+  },
+  {
+    id: 'adr-0036',
+    path: 'adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md',
+    title: 'DTCG Schema Resolution and Token Architecture',
     category: 'adr'
   }
 ];

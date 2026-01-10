@@ -1,5 +1,10 @@
 # Storybook Workflow
 
+**Document ID:** workflow-storybook-workflow
+**Last Updated:** 2026-01-10
+**Category:** Workflow
+
+
 Complete guide to working with Storybook in Envy UI v2.
 
 ## Overview

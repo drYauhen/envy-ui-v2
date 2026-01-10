@@ -1,5 +1,11 @@
 # Documentation Guide
 
+**Document ID:** guide-docs-guide
+**Last Updated:** 2026-01-09
+**Category:** Guide
+
+---
+
 **CRITICAL:** This guide applies to ALL documents in `docs/`, not just ADR.
 
 ## Single Source of Truth

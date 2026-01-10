@@ -6,6 +6,7 @@
     "docs:copy": "node scripts/copy-docs-to-public.mjs",
     "docs:watch": "nodemon --watch docs --ext md --exec \"npm run docs:copy\"",
     "docs:validate": "node scripts/validate-docs-links.mjs",
+    "docs:generate-ids": "node scripts/generate-doc-ids.mjs",
     "adr:generate": "node scripts/generate-adr-stories.mjs",
     "adr:validate": "node scripts/validate-adr.mjs",
     "tokens:build": "style-dictionary build --config style-dictionary/config.mjs",

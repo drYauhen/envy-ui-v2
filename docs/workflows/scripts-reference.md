@@ -1,5 +1,10 @@
 # Scripts Reference
 
+**Document ID:** workflow-scripts-reference
+**Last Updated:** 2026-01-10
+**Category:** Workflow
+
+
 This document lists the root-level npm scripts and how they are intended to be used.
 
 ## Conventions

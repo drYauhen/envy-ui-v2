@@ -1,8 +1,8 @@
 # Theme Structure Analysis: Composition vs Semantic Breakdown
 
-**Author:** AI Assistant (Cline)  
-**Date:** January 8, 2026  
-**Context:** Envy UI Token Architecture Analysis  
+**Document ID:** guide-theme-structure-analysis
+**Last Updated:** 2026-01-09
+**Category:** Guide
 **Related:** [Token Architecture](./architecture/token-architecture.md)
 
 ---
