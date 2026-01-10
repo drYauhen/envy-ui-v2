@@ -1,38 +1,30 @@
 /**
  * Documentation Registry
- * 
+ *
  * ⚠️ SINGLE SOURCE OF TRUTH ⚠️
- * 
- * This file is the SINGLE SOURCE OF TRUTH for all documentation files in docs/.
- * 
+ *
+ * This file aggregates documentation metadata from individual data files.
+ * Each document category has its own data file following the ADR pattern.
+ *
  * **CRITICAL:** When creating, renaming, or moving documents:
- * 1. Update this file FIRST
- * 2. Then run `npm run docs:validate` to check all links
+ * 1. Update the appropriate data file FIRST (e.g., architecture-data.ts)
+ * 2. Run `npm run docs:validate` to check all links
  * 3. Fix any broken links
- * 
- * Structure:
- * - Each document has a unique `id` (used for stable references)
- * - `path` is the relative path from docs/ root
- * - `title` is the document title (from markdown header)
- * - `category` is the directory (adr, architecture, workflows, etc.)
- * - `exportName` (optional) is for Storybook story exports (if applicable)
- * - `storybookId` (optional) is for Storybook story IDs (if applicable)
- * - `aliases` (optional) are alternative paths (for renamed files)
+ *
+ * Data File Organization:
+ * - adr-list-data.ts - ADR documents (existing)
+ * - architecture-data.ts - Architecture documents
+ * - workflow-data.ts - Workflow documents
+ * - guide-data.ts - General guide documents
  */
 
+import { DocRegistryItem } from './doc-types';
 import { adrs } from './adr-list-data';
 import { adrFilenameMap } from './adr-filename-map';
-
-export type DocRegistryItem = {
-  id: string; // Unique identifier (e.g., "adr-0023", "arch-accessibility")
-  path: string; // Relative path from docs/ (e.g., "adr/ADR-0023-title.md")
-  title: string; // Document title
-  category: 'adr' | 'architecture' | 'workflows' | 'tasks' | 'steps' | 'other';
-  exportName?: string; // Optional: Storybook export name
-  storybookId?: string; // Optional: Storybook story id (e.g., "docs-architecture--accessibility-reference")
-  status?: 'in-progress';
-  aliases?: string[]; // Optional: alternative paths (for renamed files)
-};
+import { architectures } from './architecture-data';
+import { workflows } from './workflow-data';
+import { guides } from './guide-data';
+import { tokens } from './tokens-data';
 
 // Auto-generate ADR entries from adr-list-data.ts
 const adrDocs: DocRegistryItem[] = adrs.map(adr => {
@@ -46,160 +38,41 @@ const adrDocs: DocRegistryItem[] = adrs.map(adr => {
   };
 });
 
-// Architecture documents
-const architectureDocs: DocRegistryItem[] = [
-  {
-    id: 'arch-readme',
-    path: 'architecture/README.md',
-    title: 'Architecture Documentation Overview',
-    category: 'architecture',
-    storybookId: 'docs-architecture--architecture-overview'
-  },
-  {
-    id: 'arch-accessibility',
-    path: 'architecture/accessibility-reference.md',
-    title: 'Accessibility Reference',
-    category: 'architecture',
-    storybookId: 'docs-architecture--accessibility-reference'
-  },
-  {
-    id: 'arch-token-usage',
-    path: 'architecture/token-usage-rules.md',
-    title: 'Token Usage Rules',
-    category: 'architecture',
-    storybookId: 'docs-architecture--token-usage-rules'
-  },
-  {
-    id: 'arch-component-naming',
-    path: 'architecture/component-naming-conventions.md',
-    title: 'Component Naming Conventions',
-    category: 'architecture',
-    storybookId: 'docs-architecture--component-naming-conventions'
-  },
-  {
-    id: 'arch-layout-composition',
-    path: 'architecture/layout-composition-guide.md',
-    title: 'Layout Composition Guide',
-    category: 'architecture',
-    storybookId: 'docs-architecture--layout-composition-guide',
-    status: 'in-progress'
-  },
-  {
-    id: 'arch-system-prefix',
-    path: 'architecture/system-prefix.md',
-    title: 'System Prefix',
-    category: 'architecture',
-    storybookId: 'docs-architecture--system-prefix'
-  },
-  {
-    id: 'arch-hero-theme',
-    path: 'architecture/hero-section-theme-architecture.md',
-    title: 'Hero Section Theme Architecture',
-    category: 'architecture',
-    storybookId: 'docs-architecture--hero-section-theme-architecture'
-  },
-  {
-    id: 'arch-dev-app',
-    path: 'architecture/dev-app-architecture.md',
-    title: 'Dev App Architecture',
-    category: 'architecture',
-    storybookId: 'docs-architecture--dev-app-architecture'
-  },
-  {
-    id: 'arch-theme-structure',
-    path: 'theme-structure-analysis.md',
-    title: 'Theme Structure Analysis: Composition vs Semantic Breakdown',
-    category: 'architecture'
-  },
-  {
-    id: 'arch-component-css',
-    path: 'architecture/component-css-architecture.md',
-    title: 'Component CSS Architecture',
-    category: 'architecture',
-    storybookId: 'docs-architecture--component-css-architecture'
-  },
-  {
-    id: 'arch-adr-validation',
-    path: 'architecture/adr-validation-and-implementation.md',
-    title: 'ADR Validation and Implementation',
-    category: 'architecture',
-    storybookId: 'docs-architecture--adr-validation-and-implementation'
-  },
-  {
-    id: 'arch-token-architecture',
-    path: 'architecture/token-architecture.md',
-    title: 'Token Architecture',
-    category: 'architecture'
-  },
-  {
-    id: 'arch-color-system',
-    path: 'architecture/color-system-architecture.md',
-    title: 'Color System Architecture Rules',
-    category: 'architecture',
-    exportName: 'ColorSystemArchitectureRules',
-    storybookId: 'docs-architecture--color-system-architecture-rules'
-  }
-];
+// Transform architecture metadata into registry entries
+const architectureDocs: DocRegistryItem[] = architectures.map(arch => ({
+  id: arch.id,
+  path: arch.filename.startsWith('../')
+    ? arch.filename.substring(3)  // Handle parent directory references
+    : `architecture/${arch.filename}`,
+  title: arch.title,
+  category: 'architecture' as const,
+  storybookId: arch.storybookId,
+  exportName: arch.exportName,
+  status: arch.status,
+  aliases: arch.aliases
+}));
 
-// Workflow documents
-const workflowDocs: DocRegistryItem[] = [
-  {
-    id: 'workflow-adr',
-    path: 'workflows/adr-workflow.md',
-    title: 'ADR Workflow',
-    category: 'workflows',
-    storybookId: 'docs-workflows--adr-workflow'
-  },
-  {
-    id: 'workflow-figma',
-    path: 'workflows/figma-workflow.md',
-    title: 'Figma Workflow',
-    category: 'workflows',
-    storybookId: 'docs-workflows--figma-workflow'
-  },
-  {
-    id: 'workflow-storybook',
-    path: 'workflows/storybook-workflow.md',
-    title: 'Storybook Workflow',
-    category: 'workflows',
-    storybookId: 'docs-workflows--storybook-workflow'
-  },
-  {
-    id: 'workflow-scripts',
-    path: 'workflows/scripts-reference.md',
-    title: 'Scripts Reference',
-    category: 'workflows',
-    storybookId: 'docs-workflows--scripts-reference'
-  },
-  {
-    id: 'workflow-tokens',
-    path: 'workflows/tokens-workflow.md',
-    title: 'Tokens Workflow',
-    category: 'workflows',
-    storybookId: 'docs-workflows--tokens-workflow'
-  },
-  {
-    id: 'workflow-layer-generation',
-    path: 'workflows/layer-generation-workflow.md',
-    title: 'Layer Generation Workflow',
-    category: 'workflows',
-    storybookId: 'docs-workflows--layer-generation-workflow'
-  },
-  {
-    id: 'workflow-dev-app',
-    path: 'workflows/dev-app-workflow.md',
-    title: 'Dev App Workflow',
-    category: 'workflows',
-    storybookId: 'docs-workflows--dev-app-workflow'
-  },
-  {
-    id: 'workflow-readme',
-    path: 'workflows/README.md',
-    title: 'Workflows Documentation',
-    category: 'workflows',
-    storybookId: 'docs-workflows--workflows-documentation'
-  }
-];
+// Transform workflow metadata into registry entries
+const workflowDocs: DocRegistryItem[] = workflows.map(workflow => ({
+  id: workflow.id,
+  path: `workflows/${workflow.filename}`,
+  title: workflow.title,
+  category: 'workflows' as const,
+  storybookId: workflow.storybookId,
+  status: workflow.status,
+  aliases: workflow.aliases
+}));
+
+// Transform guide metadata into registry entries
+const guideDocs: DocRegistryItem[] = guides.map(guide => ({
+  id: guide.id,
+  path: guide.filename,  // Root level files don't need directory prefix
+  title: guide.title,
+  category: 'other' as const,
+  storybookId: guide.storybookId,
+  status: guide.status,
+  aliases: guide.aliases
+}));
 
 // ADR guide documents (in adr/ directory but not ADRs themselves)
 const adrGuideDocs: DocRegistryItem[] = [
@@ -220,65 +93,167 @@ const adrGuideDocs: DocRegistryItem[] = [
     path: 'adr/ADR-TEMPLATE.md',
     title: 'ADR Template',
     category: 'adr'
-  },
-  {
-    id: 'adr-0036',
-    path: 'adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md',
-    title: 'DTCG Schema Resolution and Token Architecture',
-    category: 'adr'
   }
 ];
 
-// Tokens documents
-const tokensDocs: DocRegistryItem[] = [
+// Architecture guide documents (supporting docs for architecture system)
+const architectureGuideDocs: DocRegistryItem[] = [
+  {
+    id: 'architecture-readme',
+    path: 'architecture/README.md',
+    title: 'Architecture Documentation',
+    category: 'architecture'
+  },
+  {
+    id: 'architecture-guide',
+    path: 'architecture/ARCHITECTURE-GUIDE.md',
+    title: 'Architecture Documentation Guide',
+    category: 'architecture'
+  },
+  {
+    id: 'architecture-template',
+    path: 'architecture/ARCHITECTURE-TEMPLATE.md',
+    title: 'Architecture Document Template',
+    category: 'architecture'
+  }
+];
+
+// Workflow guide documents (supporting docs for workflow system)
+const workflowGuideDocs: DocRegistryItem[] = [
+  {
+    id: 'workflows-readme',
+    path: 'workflows/README.md',
+    title: 'Workflows Documentation',
+    category: 'workflows'
+  },
+  {
+    id: 'workflows-guide',
+    path: 'workflows/WORKFLOWS-GUIDE.md',
+    title: 'Workflows Documentation Guide',
+    category: 'workflows'
+  },
+  {
+    id: 'workflows-template',
+    path: 'workflows/WORKFLOWS-TEMPLATE.md',
+    title: 'Workflow Document Template',
+    category: 'workflows'
+  }
+];
+
+// Tokens guide documents (supporting docs for token system)
+const tokensGuideDocs: DocRegistryItem[] = [
   {
     id: 'tokens-readme',
     path: 'tokens/README.md',
-    title: 'Token System Tooling',
-    category: 'other',
-    storybookId: 'docs-tokens--token-tooling'
+    title: 'Token System Documentation',
+    category: 'other'
   },
   {
-    id: 'tokens-reference',
-    path: 'tokens/reference.md',
-    title: 'Token Reference',
-    category: 'other',
-    storybookId: 'docs-tokens--token-reference'
+    id: 'tokens-guide',
+    path: 'tokens/TOKENS-GUIDE.md',
+    title: 'Tokens Documentation Guide',
+    category: 'other'
   },
   {
-    id: 'tokens-use-cases',
-    path: 'tokens/use-cases.md',
-    title: 'Token Utilities Use Cases',
-    category: 'other',
-    storybookId: 'docs-tokens--token-use-cases'
+    id: 'tokens-template',
+    path: 'tokens/TOKENS-TEMPLATE.md',
+    title: 'Token Document Template',
+    category: 'other'
   }
 ];
 
-const generalDocs: DocRegistryItem[] = [
+// Guide guide documents (meta supporting docs for guide system)
+const guideGuideDocs: DocRegistryItem[] = [
   {
-    id: 'docs-guide',
+    id: 'docs-main-guide',
     path: 'DOCS-GUIDE.md',
     title: 'Documentation Guide',
-    category: 'other',
-    storybookId: 'docs-workflows--documentation-guide'
+    category: 'other'
+  },
+  {
+    id: 'guides-guide',
+    path: 'GUIDES-GUIDE.md',
+    title: 'Guides Documentation Guide',
+    category: 'other'
+  },
+  {
+    id: 'guides-template',
+    path: 'GUIDES-TEMPLATE.md',
+    title: 'Guide Document Template',
+    category: 'other'
   }
 ];
 
-// Combine all documents
+// Transform tokens metadata into registry entries
+const tokensDocs: DocRegistryItem[] = tokens.map(token => ({
+  id: token.id,
+  path: `tokens/${token.filename}`,
+  title: token.title,
+  category: 'other' as const,
+  storybookId: token.storybookId,
+  status: token.status,
+  aliases: token.aliases
+}));
+
+// Combine all documents from data files
 export const docsRegistry: DocRegistryItem[] = [
   ...adrDocs,
   ...adrGuideDocs,
   ...architectureDocs,
+  ...architectureGuideDocs,
   ...workflowDocs,
+  ...workflowGuideDocs,
   ...tokensDocs,
-  ...generalDocs
+  ...tokensGuideDocs,
+  ...guideDocs,
+  ...guideGuideDocs
 ];
 
-// Helper functions for lookup
+// =============================================================================
+// 📚 PUBLIC API - Helper Functions for Registry Access
+// =============================================================================
+// These functions provide the public interface for interacting with the docs registry.
+// They can be imported and used by other parts of the system.
+//
+// Example usage:
+// import { getDocById, docsRegistryByPath } from './docs-registry';
+// const doc = getDocById('arch-readme');
+// =============================================================================
+
+/**
+ * Get a document by its unique ID
+ *
+ * @param id - The unique document identifier (e.g., 'arch-readme', 'adr-0023')
+ * @returns The document registry item if found, undefined otherwise
+ *
+ * @example
+ * ```typescript
+ * const doc = getDocById('arch-token-architecture');
+ * if (doc) {
+ *   console.log(`Found: ${doc.title} at ${doc.path}`);
+ * }
+ * ```
+ */
 export function getDocById(id: string): DocRegistryItem | undefined {
   return docsRegistry.find(doc => doc.id === id);
 }
 
+/**
+ * Get a document by its file path
+ *
+ * Searches both the primary path and any alias paths for the document.
+ *
+ * @param path - The file path relative to docs/ (e.g., 'architecture/README.md')
+ * @returns The document registry item if found, undefined otherwise
+ *
+ * @example
+ * ```typescript
+ * const doc = getDocByPath('architecture/token-architecture.md');
+ * if (doc) {
+ *   console.log(`Category: ${doc.category}, Status: ${doc.status || 'active'}`);
+ * }
+ * ```
+ */
 export function getDocByPath(path: string): DocRegistryItem | undefined {
   return docsRegistry.find(doc => {
     if (doc.path === path) return true;
@@ -287,7 +262,26 @@ export function getDocByPath(path: string): DocRegistryItem | undefined {
   });
 }
 
-// Create a map for fast lookup by path
+/**
+ * Fast lookup map for documents by path
+ *
+ * Provides O(1) lookup performance for path-based searches.
+ * Includes both primary paths and alias paths as keys.
+ *
+ * @example
+ * ```typescript
+ * // Check if a path exists
+ * if (docsRegistryByPath.has('architecture/README.md')) {
+ *   const doc = docsRegistryByPath.get('architecture/README.md');
+ *   console.log(`Found document: ${doc.title}`);
+ * }
+ *
+ * // Iterate through all paths
+ * for (const [path, doc] of docsRegistryByPath) {
+ *   console.log(`${path} -> ${doc.title}`);
+ * }
+ * ```
+ */
 export const docsRegistryByPath: Map<string, DocRegistryItem> = new Map(
   docsRegistry.flatMap(doc => {
     const entries: [string, DocRegistryItem][] = [[doc.path, doc]];
