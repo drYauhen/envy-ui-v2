@@ -124,6 +124,14 @@ const architectureDocs: DocRegistryItem[] = [
     title: 'ADR Validation and Implementation',
     category: 'architecture',
     storybookId: 'docs-architecture--adr-validation-and-implementation'
+  },
+  {
+    id: 'arch-color-system',
+    path: 'architecture/color-system-architecture.md',
+    title: 'Color System Architecture Rules',
+    category: 'architecture',
+    exportName: 'ColorSystemArchitectureRules',
+    storybookId: 'docs-architecture--color-system-architecture-rules'
   }
 ];
 

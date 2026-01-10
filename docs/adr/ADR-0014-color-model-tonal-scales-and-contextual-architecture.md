@@ -4,7 +4,7 @@
 
 **Date:** 2025-12-18
 
-**Last Updated:** 2026-01-08
+**Last Updated:** 2026-01-09
 
 **Owner:** Eugene Goncharov
 
@@ -58,6 +58,19 @@ The scale **expresses relative tonal positions, not strict linear mathematical s
 - Neutral-50 is set to 98% lightness for very light backgrounds
 - More granular steps for light shades (50-500), larger steps for dark shades (600-900)
 - This reflects the need for more light color variations in UI design
+
+**Base-Colors Layer Pattern**
+- **Brand/Accent Colors**: Use base-colors layer for source anchors, generate full scales programmatically
+- **Status Colors**: Follow base-colors pattern with semantic anchors (success-500, warning-500, error-500, info-500)
+- **Neutral Colors**: Keep complete scale as-is (no base-colors separation needed)
+- **Signal Colors**: Single-purpose colors remain as direct values
+
+**Context and Theme Adaptability**
+- Current implementation optimized for app context (dashboard/admin interfaces)
+- Architecture designed to adapt for different surfaces: websites, dashboards, reports, print
+- Base-colors pattern allows varying anchor colors per context/theme (accessibility, dark mode, etc.)
+- Foundation scales can be recalibrated or extended based on context requirements
+- Semantic layer provides abstraction for context-specific remapping
 
 **Related:** See [ADR-0026](./ADR-0026-app-default-color-positioning.md) for details on how these anchor colors align with app-default optimization.
 
@@ -120,9 +133,10 @@ This ADR has been **fully implemented** with a comprehensive, perceptually unifo
 ### Current Implementation Status
 - ✅ **OKLCH Color Model**: All foundation tokens use OKLCH format with direct browser support
   - Signal colors: `oklch(62% 0.26 25)` for keyboard focus
-  - Brand colors: Full 50-900 tonal scale generated from anchor
-  - Accent colors: Generated from Viking Blue anchor (600)
-  - Neutral colors: Rebalanced with brighter light shades (50-300)
+  - Brand colors: Base-color anchor (700) → generated full 50-900 scale
+  - Accent colors: Base-color anchor (600) → generated full 50-900 scale
+  - Status colors: Semantic anchors (success/warning/error/info 500s) → generated scales
+  - Neutral colors: Complete 50-900 scale (no base-colors separation needed)
 
 - ✅ **Canonical Tonal Scale**: Complete 50-900 scale with asymmetric anchor points
   - **Brand anchor**: 700 (`oklch(49% 0.10 230)`) - perceptually dark for primary actions
