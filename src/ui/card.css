@@ -7,8 +7,8 @@
   --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
   --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
   --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
-  /* Border color defaults to elevated variant token with fallback to semantic border */
-  --eui-card-border-color: var(--eui-card-variant-elevated-border-color, var(--eui-color-border-default));
+  /* Border color uses semantic border color for consistency and lighter appearance */
+  --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-elevated-background);
   --eui-card-background-image: var(--eui-card-variant-elevated-backgroundImage, none);
   --eui-card-background-repeat: var(--eui-card-variant-elevated-backgroundRepeat, no-repeat);
@@ -39,7 +39,7 @@
   --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
   --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
   --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
-  --eui-card-border-color: var(--eui-card-variant-elevated-border-color, var(--eui-color-border-default));
+  --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-elevated-background);
   --eui-card-background-image: var(--eui-card-variant-elevated-backgroundImage, none);
   --eui-card-background-repeat: var(--eui-card-variant-elevated-backgroundRepeat, no-repeat);
@@ -53,7 +53,7 @@
   --eui-card-shadow: var(--eui-card-variant-flat-shadow);
   --eui-card-border-width: var(--eui-card-variant-flat-border-width);
   --eui-card-border-style: var(--eui-card-variant-flat-border-style);
-  --eui-card-border-color: var(--eui-card-variant-flat-border-color, var(--eui-color-border-default));
+  --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-flat-background);
   --eui-card-background-image: var(--eui-card-variant-flat-backgroundImage, none);
   --eui-card-background-repeat: var(--eui-card-variant-flat-backgroundRepeat, no-repeat);
@@ -81,7 +81,7 @@
   --eui-card-shadow: var(--eui-card-variant-strong-shadow);
   --eui-card-border-width: var(--eui-card-variant-strong-border-width);
   --eui-card-border-style: var(--eui-card-variant-strong-border-style);
-  --eui-card-border-color: var(--eui-card-variant-strong-border-color, var(--eui-color-border-default));
+  --eui-card-border-color: var(--eui-color-border-default);
   --eui-card-background: var(--eui-card-variant-strong-background);
   --eui-card-background-image: var(--eui-card-variant-strong-backgroundImage, none);
   --eui-card-background-repeat: var(--eui-card-variant-strong-backgroundRepeat, no-repeat);
