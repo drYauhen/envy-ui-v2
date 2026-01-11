@@ -53,7 +53,8 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
   }
 
   let output = `/**\n * ${componentName.charAt(0).toUpperCase() + componentName.slice(1)} Component Tokens - Generated from tokens/components/${componentName}.tokens.json\n */\n\n`;
-  output += '@layer eui-components {\n';
+  // Start with context layer for semantic tokens
+  output += '@layer eui-contexts {\n';
 
   try {
     const data = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));

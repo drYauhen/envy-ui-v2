@@ -2,7 +2,7 @@
  * Badge Component Tokens - Generated from tokens/components/badge.tokens.json
  */
 
-@layer eui-components {
+@layer eui-contexts {
   /* Badge color variables - Available globally for component usage */
   :root {
     --eui-badge-colors-neutral-background: var(--eui-color-neutral-50);

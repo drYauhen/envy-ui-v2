@@ -2,7 +2,7 @@
  * Card Component Tokens - Generated from tokens/components/card.tokens.json
  */
 
-@layer eui-components {
+@layer eui-contexts {
   /* Base card variables (default variant) */
   [data-eui-context] .eui-card {
     --eui-card-shadow: var(--eui-shadow-default);
