@@ -70,8 +70,54 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       name.startsWith(`eui-${componentName}-status-`)
     );
 
+    // For badge component, also extract color tokens from variant structure
+    let colorTokens = [];
+    if (componentName === 'badge') {
+      colorTokens = allTokens.filter(({ name }) =>
+        name.includes('-colors-') &&
+        (name.includes('-variant-subtle-') ||
+         name.includes('-variant-solid-') ||
+         name.includes('-variant-outline-'))
+      );
+    }
+
     // Convert token names to runtime variable names (--eui-${componentName}-*)
     const convertToRuntimeVar = (tokenName) => {
+      // Special handling for badge color tokens
+      if (componentName === 'badge' && tokenName.includes('-colors-')) {
+        // eui-badge-variant-subtle-tone-neutral-colors-background → --eui-badge-colors-neutral-background
+        // eui-badge-variant-solid-tone-success-colors-background → --eui-badge-colors-success-solid-background
+        // eui-badge-variant-outline-colors-background → --eui-badge-colors-variant-outline-background
+        const parts = tokenName.split('-');
+        const colorsIndex = parts.indexOf('colors');
+        const property = parts[colorsIndex + 1]; // 'background', 'border', 'text'
+
+        // Find variant and tone
+        const variantIndex = parts.indexOf('variant');
+        const toneIndex = parts.indexOf('tone');
+
+        if (variantIndex !== -1) {
+          const variant = parts[variantIndex + 1]; // 'subtle', 'solid', 'outline'
+
+          if (toneIndex !== -1) {
+            // Has tone (subtle and solid variants)
+            const tone = parts[toneIndex + 1]; // 'neutral', 'success', etc.
+
+            // For subtle variant, tone comes first: --eui-badge-colors-{tone}-{property}
+            // For solid variant, tone comes first then solid: --eui-badge-colors-{tone}-solid-{property}
+            if (variant === 'subtle') {
+              return `--eui-badge-colors-${tone}-${property}`;
+            } else if (variant === 'solid') {
+              return `--eui-badge-colors-${tone}-solid-${property}`;
+            }
+          } else {
+            // No tone (outline variant only)
+            // eui-badge-variant-outline-colors-background → --eui-badge-colors-variant-outline-background
+            return `--eui-badge-colors-variant-outline-${property}`;
+          }
+        }
+      }
+
       // All variants and base tokens become --eui-${componentName}-* runtime variables
       // eui-${componentName}-variant-elevated-shadow → --eui-${componentName}-shadow
       // eui-${componentName}-status-pending-indicator-color → --eui-${componentName}-status-indicator-color
@@ -98,6 +144,30 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
 
       return `--${tokenName}`;
     };
+
+    // Generate color token variables for badge (special handling)
+    if (componentName === 'badge' && colorTokens.length > 0) {
+      // Group color tokens by their expected CSS variable names
+      const colorVarGroups = {};
+
+      colorTokens.forEach(({ name, value }) => {
+        const runtimeVar = convertToRuntimeVar(name);
+        if (!colorVarGroups[runtimeVar]) {
+          colorVarGroups[runtimeVar] = [];
+        }
+        colorVarGroups[runtimeVar].push({ name, value });
+      });
+
+      // Generate color variables at component level (not in selectors)
+      output += `  /* Badge color variables */\n`;
+      output += `  [data-eui-context] {\n`;
+      Object.keys(colorVarGroups).forEach(runtimeVar => {
+        // Use the first value (they should all be the same for the same variable)
+        const firstToken = colorVarGroups[runtimeVar][0];
+        output += `    ${runtimeVar}: ${firstToken.value};\n`;
+      });
+      output += '  }\n\n';
+    }
 
     // Generate base variables (default variant)
     if (baseTokens.length > 0) {

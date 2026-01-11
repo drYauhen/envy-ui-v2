@@ -3,6 +3,41 @@
  */
 
 @layer eui-components {
+  /* Badge color variables */
+  [data-eui-context] {
+    --eui-badge-colors-neutral-background: var(--eui-color-neutral-50);
+    --eui-badge-colors-neutral-border: var(--eui-color-neutral-200);
+    --eui-badge-colors-neutral-text: var(--eui-color-neutral-700);
+    --eui-badge-colors-success-background: var(--eui-color-signal-success-50);
+    --eui-badge-colors-success-border: var(--eui-color-signal-success-200);
+    --eui-badge-colors-success-text: var(--eui-color-signal-success-700);
+    --eui-badge-colors-warning-background: var(--eui-color-signal-warning-50);
+    --eui-badge-colors-warning-border: var(--eui-color-signal-warning-200);
+    --eui-badge-colors-warning-text: var(--eui-color-signal-warning-700);
+    --eui-badge-colors-error-background: var(--eui-color-signal-error-50);
+    --eui-badge-colors-error-border: var(--eui-color-signal-error-200);
+    --eui-badge-colors-error-text: var(--eui-color-signal-error-700);
+    --eui-badge-colors-info-background: var(--eui-color-accent-50);
+    --eui-badge-colors-info-border: var(--eui-color-accent-200);
+    --eui-badge-colors-info-text: var(--eui-color-accent-700);
+    --eui-badge-colors-neutral-solid-background: var(--eui-color-neutral-900);
+    --eui-badge-colors-neutral-solid-border: var(--eui-color-neutral-900);
+    --eui-badge-colors-neutral-solid-text: var(--eui-color-neutral-white);
+    --eui-badge-colors-success-solid-background: var(--eui-color-signal-success-600);
+    --eui-badge-colors-success-solid-border: var(--eui-color-signal-success-600);
+    --eui-badge-colors-success-solid-text: var(--eui-color-neutral-white);
+    --eui-badge-colors-warning-solid-background: var(--eui-color-signal-warning-600);
+    --eui-badge-colors-warning-solid-border: var(--eui-color-signal-warning-600);
+    --eui-badge-colors-warning-solid-text: var(--eui-color-neutral-white);
+    --eui-badge-colors-error-solid-background: var(--eui-color-signal-error-600);
+    --eui-badge-colors-error-solid-border: var(--eui-color-signal-error-600);
+    --eui-badge-colors-error-solid-text: var(--eui-color-neutral-white);
+    --eui-badge-colors-info-solid-background: var(--eui-color-accent-600);
+    --eui-badge-colors-info-solid-border: var(--eui-color-accent-600);
+    --eui-badge-colors-info-solid-text: var(--eui-color-neutral-white);
+    --eui-badge-colors-variant-outline-background: transparent;
+  }
+
   /* Base badge variables (default variant) */
   [data-eui-context] .eui-badge {
     --eui-badge-border-width: var(--eui-border-width-thin);
