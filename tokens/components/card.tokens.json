@@ -1,0 +1,379 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "card": {
+      "variant": {
+        "elevated": {
+          "shadow": {
+            "$value": "{eui.shadow.default}",
+            "$type": "shadow",
+            "$description": "Elevated card variant uses default shadow"
+          },
+          "border": {
+            "width": {
+              "$value": "{eui.border.width.thin}",
+              "$type": "dimension",
+              "$description": "Elevated card uses thin border"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string",
+              "$description": "Elevated card uses solid border style"
+            }
+          },
+          "background": {
+            "color": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Elevated card uses white background"
+            },
+            "image": {
+              "$value": "none",
+              "$type": "string",
+              "$description": "Elevated card has no background image"
+            },
+            "repeat": {
+              "$value": "no-repeat",
+              "$type": "string",
+              "$description": "Background image repeat setting"
+            },
+            "position": {
+              "$value": "center",
+              "$type": "string",
+              "$description": "Background image position"
+            },
+            "size": {
+              "$value": "auto",
+              "$type": "string",
+              "$description": "Background image size"
+            }
+          },
+          "radius": {
+            "$value": "{eui.radius.lg}",
+            "$type": "dimension",
+            "$description": "Elevated card uses large border radius"
+          }
+        },
+        "flat": {
+          "shadow": {
+            "$value": "{eui.shadow.none}",
+            "$type": "shadow",
+            "$description": "Flat card variant has no shadow"
+          },
+          "border": {
+            "width": {
+              "$value": "{eui.border.width.thin}",
+              "$type": "dimension",
+              "$description": "Flat card uses thin border"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string",
+              "$description": "Flat card uses solid border style"
+            }
+          },
+          "background": {
+            "color": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Flat card uses white background"
+            },
+            "image": {
+              "$value": "none",
+              "$type": "string",
+              "$description": "Flat card has no background image"
+            },
+            "repeat": {
+              "$value": "no-repeat",
+              "$type": "string",
+              "$description": "Background image repeat setting"
+            },
+            "position": {
+              "$value": "center",
+              "$type": "string",
+              "$description": "Background image position"
+            },
+            "size": {
+              "$value": "auto",
+              "$type": "string",
+              "$description": "Background image size"
+            }
+          },
+          "radius": {
+            "$value": "{eui.radius.lg}",
+            "$type": "dimension",
+            "$description": "Flat card uses large border radius"
+          }
+        },
+        "muted": {
+          "shadow": {
+            "$value": "{eui.shadow.none}",
+            "$type": "shadow",
+            "$description": "Muted card variant has no shadow"
+          },
+          "border": {
+            "width": {
+              "$value": "{eui.border.width.thin}",
+              "$type": "dimension",
+              "$description": "Muted card uses thin border"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string",
+              "$description": "Muted card uses solid border style"
+            },
+            "color": {
+              "$value": "{eui.color.neutral.300}",
+              "$type": "color",
+              "$description": "Muted card uses neutral border color"
+            }
+          },
+          "background": {
+            "color": {
+              "$value": "{eui.color.neutral.50}",
+              "$type": "color",
+              "$description": "Muted card uses light neutral background"
+            },
+            "image": {
+              "$value": "none",
+              "$type": "string",
+              "$description": "Muted card has no background image"
+            },
+            "repeat": {
+              "$value": "no-repeat",
+              "$type": "string",
+              "$description": "Background image repeat setting"
+            },
+            "position": {
+              "$value": "center",
+              "$type": "string",
+              "$description": "Background image position"
+            },
+            "size": {
+              "$value": "auto",
+              "$type": "string",
+              "$description": "Background image size"
+            }
+          },
+          "radius": {
+            "$value": "{eui.radius.lg}",
+            "$type": "dimension",
+            "$description": "Muted card uses large border radius"
+          }
+        },
+        "strong": {
+          "shadow": {
+            "$value": "{eui.shadow.large}",
+            "$type": "shadow",
+            "$description": "Strong card variant uses large shadow"
+          },
+          "border": {
+            "width": {
+              "$value": "{eui.border.width.thin}",
+              "$type": "dimension",
+              "$description": "Strong card uses thin border"
+            },
+            "style": {
+              "$value": "solid",
+              "$type": "string",
+              "$description": "Strong card uses solid border style"
+            }
+          },
+          "background": {
+            "color": {
+              "$value": "{eui.color.neutral.white}",
+              "$type": "color",
+              "$description": "Strong card uses white background"
+            },
+            "image": {
+              "$value": "none",
+              "$type": "string",
+              "$description": "Strong card has no background image"
+            },
+            "repeat": {
+              "$value": "no-repeat",
+              "$type": "string",
+              "$description": "Background image repeat setting"
+            },
+            "position": {
+              "$value": "center",
+              "$type": "string",
+              "$description": "Background image position"
+            },
+            "size": {
+              "$value": "auto",
+              "$type": "string",
+              "$description": "Background image size"
+            }
+          },
+          "radius": {
+            "$value": "{eui.radius.lg}",
+            "$type": "dimension",
+            "$description": "Strong card uses large border radius"
+          }
+        }
+      },
+      "status": {
+        "pending": {
+          "indicator": {
+            "color": {
+              "$value": "{eui.color.neutral.400}",
+              "$type": "color",
+              "$description": "Pending status indicator color"
+            },
+            "width": {
+              "$value": "4px",
+              "$type": "dimension",
+              "$description": "Pending status indicator width"
+            }
+          }
+        },
+        "onTrack": {
+          "indicator": {
+            "color": {
+              "$value": "{eui.color.brand.500}",
+              "$type": "color",
+              "$description": "On track status indicator color"
+            },
+            "width": {
+              "$value": "4px",
+              "$type": "dimension",
+              "$description": "On track status indicator width"
+            }
+          }
+        },
+        "completed": {
+          "indicator": {
+            "color": {
+              "$value": "{eui.color.signal.success.500}",
+              "$type": "color",
+              "$description": "Completed status indicator color"
+            },
+            "width": {
+              "$value": "4px",
+              "$type": "dimension",
+              "$description": "Completed status indicator width"
+            }
+          }
+        },
+        "minorDisruption": {
+          "indicator": {
+            "color": {
+              "$value": "{eui.color.signal.warning.500}",
+              "$type": "color",
+              "$description": "Minor disruption status indicator color"
+            },
+            "width": {
+              "$value": "4px",
+              "$type": "dimension",
+              "$description": "Minor disruption status indicator width"
+            }
+          }
+        },
+        "majorDisruption": {
+          "indicator": {
+            "color": {
+              "$value": "{eui.color.signal.error.500}",
+              "$type": "color",
+              "$description": "Major disruption status indicator color"
+            },
+            "width": {
+              "$value": "4px",
+              "$type": "dimension",
+              "$description": "Major disruption status indicator width"
+            }
+          }
+        },
+        "upcoming": {
+          "indicator": {
+            "color": {
+              "$value": "{eui.color.accent.500}",
+              "$type": "color",
+              "$description": "Upcoming status indicator color"
+            },
+            "width": {
+              "$value": "4px",
+              "$type": "dimension",
+              "$description": "Upcoming status indicator width"
+            }
+          }
+        },
+        "discontinued": {
+          "indicator": {
+            "color": {
+              "$value": "{eui.color.neutral.600}",
+              "$type": "color",
+              "$description": "Discontinued status indicator color"
+            },
+            "width": {
+              "$value": "4px",
+              "$type": "dimension",
+              "$description": "Discontinued status indicator width"
+            }
+          }
+        }
+      },
+      "base": {
+        "shadow": {
+          "$value": "{eui.shadow.default}",
+          "$type": "shadow",
+          "$description": "Default card shadow"
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Default card border width"
+          },
+          "style": {
+            "$value": "solid",
+            "$type": "string",
+            "$description": "Default card border style"
+          },
+          "color": {
+            "$value": "{eui.color.border.default}",
+            "$type": "color",
+            "$description": "Default card border color"
+          }
+        },
+        "background": {
+          "color": {
+            "$value": "{eui.color.neutral.white}",
+            "$type": "color",
+            "$description": "Default card background color"
+          },
+          "image": {
+            "$value": "none",
+            "$type": "string",
+            "$description": "Default card background image"
+          },
+          "repeat": {
+            "$value": "no-repeat",
+            "$type": "string",
+            "$description": "Default background image repeat"
+          },
+          "position": {
+            "$value": "center",
+            "$type": "string",
+            "$description": "Default background image position"
+          },
+          "size": {
+            "$value": "auto",
+            "$type": "string",
+            "$description": "Default background image size"
+          }
+        },
+        "radius": {
+          "$value": "{eui.radius.lg}",
+          "$type": "dimension",
+          "$description": "Default card border radius"
+        },
+        "padding": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Default card padding for slots"
+        }
+      }
+    }
+  }
+}
