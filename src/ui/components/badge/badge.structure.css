@@ -26,12 +26,12 @@
     padding: var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal);
 
     /* Typography */
-    font-family: var(--eui-badge-typography-font-family);
-    font-size: var(--eui-badge-typography-font-size);
-    font-weight: var(--eui-badge-typography-font-weight);
-    line-height: var(--eui-badge-typography-line-height);
-    letter-spacing: var(--eui-badge-typography-letter-spacing);
-    text-transform: var(--eui-badge-typography-text-transform);
+    font-family: var(--eui-badge-typography-fontFamily);
+    font-size: var(--eui-badge-typography-fontSize);
+    font-weight: var(--eui-badge-typography-fontWeight);
+    line-height: var(--eui-badge-typography-lineHeight);
+    letter-spacing: var(--eui-badge-typography-letterSpacing);
+    text-transform: var(--eui-badge-typography-textTransform);
     white-space: nowrap;
 
     /* Interactive states */
