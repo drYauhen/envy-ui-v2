@@ -1,14 +1,13 @@
 /**
- * Badge Component - Entrypoint
+ * Badge Component - Index
  *
- * This file imports all badge component layers in correct order.
+ * Entry point that imports Badge CSS files in correct order.
  *
- * Component token variables: generated/css/components/badge.tokens.css
- * Component structure/layout: src/ui/components/badge/badge.structure.css
+ * Order: structure rules only (token variables come from generated CSS).
+ *
+ * Generated from: tokens/components/badge.contract.json
+ * Legacy reference: src/ui/badge.css
+ * Token variables: generated/css/components/badge.tokens.css
  */
 
-/* Import component token variables first */
-@import '../../../generated/css/components/badge.tokens.css';
-
-/* Import component structure/layout */
 @import './badge.structure.css';
