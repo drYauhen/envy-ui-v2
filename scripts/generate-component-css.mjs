@@ -158,9 +158,9 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
         colorVarGroups[runtimeVar].push({ name, value });
       });
 
-      // Generate color variables at component level (not in selectors)
-      output += `  /* Badge color variables */\n`;
-      output += `  [data-eui-context] {\n`;
+      // Generate color variables globally available for component usage
+      output += `  /* Badge color variables - Available globally for component usage */\n`;
+      output += `  :root {\n`;
       Object.keys(colorVarGroups).forEach(runtimeVar => {
         // Use the first value (they should all be the same for the same variable)
         const firstToken = colorVarGroups[runtimeVar][0];

@@ -3,8 +3,8 @@
  */
 
 @layer eui-components {
-  /* Badge color variables */
-  [data-eui-context] {
+  /* Badge color variables - Available globally for component usage */
+  :root {
     --eui-badge-colors-neutral-background: var(--eui-color-neutral-50);
     --eui-badge-colors-neutral-border: var(--eui-color-neutral-200);
     --eui-badge-colors-neutral-text: var(--eui-color-neutral-700);
