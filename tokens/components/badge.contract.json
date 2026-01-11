@@ -80,12 +80,12 @@
       "--eui-badge-spacing-gap": { "type": "dimension" }
     },
     "typography": {
-      "--eui-badge-typography-font-family": { "type": "string" },
-      "--eui-badge-typography-font-size": { "type": "dimension" },
-      "--eui-badge-typography-font-weight": { "type": "string" },
-      "--eui-badge-typography-line-height": { "type": "string" },
-      "--eui-badge-typography-letter-spacing": { "type": "dimension" },
-      "--eui-badge-typography-text-transform": { "type": "string" }
+      "--eui-badge-typography-fontFamily": { "type": "string" },
+      "--eui-badge-typography-fontSize": { "type": "dimension" },
+      "--eui-badge-typography-fontWeight": { "type": "string" },
+      "--eui-badge-typography-lineHeight": { "type": "string" },
+      "--eui-badge-typography-letterSpacing": { "type": "dimension" },
+      "--eui-badge-typography-textTransform": { "type": "string" }
     },
     "focus": {
       "--eui-badge-focus-ring-color-derived-accessible": { "type": "color" },
@@ -111,12 +111,12 @@
       "padding": "var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal)"
     },
     "typography": {
-      "fontFamily": "var(--eui-badge-typography-font-family)",
-      "fontSize": "var(--eui-badge-typography-font-size)",
-      "fontWeight": "var(--eui-badge-typography-font-weight)",
-      "lineHeight": "var(--eui-badge-typography-line-height)",
-      "letterSpacing": "var(--eui-badge-typography-letter-spacing)",
-      "textTransform": "var(--eui-badge-typography-text-transform)",
+      "fontFamily": "var(--eui-badge-typography-fontFamily)",
+      "fontSize": "var(--eui-badge-typography-fontSize)",
+      "fontWeight": "var(--eui-badge-typography-fontWeight)",
+      "lineHeight": "var(--eui-badge-typography-lineHeight)",
+      "letterSpacing": "var(--eui-badge-typography-letterSpacing)",
+      "textTransform": "var(--eui-badge-typography-textTransform)",
       "whiteSpace": "nowrap"
     },
     "interactive": {

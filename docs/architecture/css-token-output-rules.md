@@ -13,6 +13,63 @@
 
 These are the normative MUST-level rules for CSS token output generation. They are enforceable invariants that prevent architectural violations and ensure consistent, predictable CSS generation.
 
+## Variable Naming Convention (MUST)
+
+### camelCase Preservation (MUST)
+
+**CSS custom properties MUST preserve camelCase from JSON token structure:**
+
+```json
+// tokens/components/badge.tokens.json - Source of truth
+"typography": {
+  "fontFamily": { "$value": "{eui.typography.fontFamily.ui}" },
+  "fontSize": { "$value": "{eui.typography.fontSize.xs}" },
+  "lineHeight": { "$value": "{eui.typography.lineHeight.tight}" }
+}
+```
+
+```css
+/* generated/css/components/badge.tokens.css - Generated output */
+--eui-badge-typography-fontFamily: var(--eui-typography-fontFamily-ui);
+--eui-badge-typography-fontSize: var(--eui-typography-fontSize-xs);
+--eui-badge-typography-lineHeight: var(--eui-typography-lineHeight-tight);
+```
+
+**Forbidden Patterns:**
+```css
+/* ❌ WRONG - kebab-case variables */
+--eui-badge-typography-font-family: var(--eui-typography-font-family-ui);
+--eui-badge-typography-font-size: var(--eui-typography-font-size-xs);
+
+/* ❌ WRONG - UPPER_CASE variables */
+--eui-badge-typography-FONTFAMILY: var(--eui-typography-FONTFAMILY-UI);
+```
+
+**Rationale:**
+- DTCG (Design Token Community Group) standards preserve JSON structure
+- camelCase matches JavaScript/TypeScript conventions used in tokens
+- Maintains direct mapping between JSON source and CSS output
+- Prevents transformation bugs and naming inconsistencies
+
+### Token Path to Variable Name (MUST)
+
+**Variable names MUST be constructed as: `--eui-{component}-{tokenPath}`**
+
+```javascript
+// Token path: eui.badge.variant.subtle.tone.neutral.colors.background
+// Variable: --eui-badge-colors-neutral-background
+
+// Token path: eui.card.base.shadow
+// Variable: --eui-card-shadow
+```
+
+**Special Rules for Component Variables:**
+- **Variant tokens**: `--eui-{component}-{property}` (variant name removed)
+- **Status tokens**: `--eui-{component}-status-{property}` (status name preserved)
+- **Base tokens**: `--eui-{component}-{property}` (base prefix removed)
+- **Color tokens**: `--eui-{component}-colors-{tone}-{property}` (for variants)
+- **Color tokens**: `--eui-{component}-colors-variant-outline-{property}` (for outline)
+
 ## Core Output Structure
 
 ### Generated Files (MUST)
