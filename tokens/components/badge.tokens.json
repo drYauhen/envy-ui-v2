@@ -27,17 +27,17 @@
             "success": {
               "colors": {
                 "background": {
-                  "$value": "{eui-app-raw-color-status-success-50}",
+                  "$value": "{eui.color.status.success.background}",
                   "$type": "color",
                   "$description": "Success subtle badge background"
                 },
                 "border": {
-                  "$value": "{eui-app-raw-color-status-success-200}",
+                  "$value": "{eui.color.status.success.border}",
                   "$type": "color",
                   "$description": "Success subtle badge border"
                 },
                 "text": {
-                  "$value": "{eui-app-raw-color-status-success-700}",
+                  "$value": "{eui.color.status.success.text}",
                   "$type": "color",
                   "$description": "Success subtle badge text"
                 }
@@ -46,17 +46,17 @@
             "warning": {
               "colors": {
                 "background": {
-                  "$value": "{eui-app-raw-color-status-warning-50}",
+                  "$value": "{eui.color.status.warning.background}",
                   "$type": "color",
                   "$description": "Warning subtle badge background"
                 },
                 "border": {
-                  "$value": "{eui-app-raw-color-status-warning-200}",
+                  "$value": "{eui.color.status.warning.border}",
                   "$type": "color",
                   "$description": "Warning subtle badge border"
                 },
                 "text": {
-                  "$value": "{eui-app-raw-color-status-warning-700}",
+                  "$value": "{eui.color.status.warning.text}",
                   "$type": "color",
                   "$description": "Warning subtle badge text"
                 }
@@ -65,17 +65,17 @@
             "error": {
               "colors": {
                 "background": {
-                  "$value": "{eui-app-raw-color-status-error-50}",
+                  "$value": "{eui.color.status.error.background}",
                   "$type": "color",
                   "$description": "Error subtle badge background"
                 },
                 "border": {
-                  "$value": "{eui-app-raw-color-status-error-200}",
+                  "$value": "{eui.color.status.error.border}",
                   "$type": "color",
                   "$description": "Error subtle badge border"
                 },
                 "text": {
-                  "$value": "{eui-app-raw-color-status-error-700}",
+                  "$value": "{eui.color.status.error.text}",
                   "$type": "color",
                   "$description": "Error subtle badge text"
                 }

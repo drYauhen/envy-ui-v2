@@ -363,6 +363,21 @@ const semanticTokens = tokens.filter(({ name }) => {
 
 ---
 
+## Golden Example: Badge Component 🎯
+
+**Badge is the canonical reference implementation for contract-driven, semantic-only component development.**
+
+**Complete Pattern:**
+- ✅ Contract defines semantic references (`{eui.color.status.success.background}`)
+- ✅ Tokens reference semantic roles (no raw/primitives)
+- ✅ Generated CSS contains zero `--eui-*-raw-*` references
+- ✅ Runtime CSS uses semantic status roles only
+- ✅ Storybook demonstrates tone/variant switching correctly
+
+**Use Badge as the reference pattern for all future component implementations.**
+
+---
+
 **Enforcement Level:** MUST (no exceptions without ADR approval)
 **Last Reviewed:** 2026-01-10
 **Implementation:** `scripts/generate-canonical-css.mjs`

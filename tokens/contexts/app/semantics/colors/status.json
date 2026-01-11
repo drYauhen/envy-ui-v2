@@ -3,52 +3,109 @@
   "eui": {
     "color": {
       "status": {
-        "success": {
-          "primary": {
-            "$value": "{eui-app-raw-color-status-success-500}",
+        "neutral": {
+          "background": {
+            "$value": "{eui-app-raw-color-neutral-50}",
             "$type": "color",
-            "$description": "Primary success status color for alerts and feedback"
+            "$description": "Neutral background color for subtle badges and surfaces"
+          },
+          "border": {
+            "$value": "{eui-app-raw-color-neutral-200}",
+            "$type": "color",
+            "$description": "Neutral border color for subtle badges and outlines"
+          },
+          "text": {
+            "$value": "{eui-app-raw-color-neutral-700}",
+            "$type": "color",
+            "$description": "Neutral text color on light backgrounds"
+          }
+        },
+        "success": {
+          "background": {
+            "$value": "{eui-app-raw-color-status-success-50}",
+            "$type": "color",
+            "$description": "Success background color for subtle badges and surfaces"
+          },
+          "border": {
+            "$value": "{eui-app-raw-color-status-success-200}",
+            "$type": "color",
+            "$description": "Success border color for subtle badges and outlines"
           },
           "text": {
             "$value": "{eui-app-raw-color-status-success-700}",
             "$type": "color",
             "$description": "Success text color on light backgrounds"
+          },
+          "primary": {
+            "$value": "{eui-app-raw-color-status-success-500}",
+            "$type": "color",
+            "$description": "Primary success status color for alerts and feedback"
           }
         },
         "warning": {
-          "primary": {
-            "$value": "{eui-app-raw-color-status-warning-500}",
+          "background": {
+            "$value": "{eui-app-raw-color-status-warning-50}",
             "$type": "color",
-            "$description": "Primary warning status color for alerts and feedback"
+            "$description": "Warning background color for subtle badges and surfaces"
+          },
+          "border": {
+            "$value": "{eui-app-raw-color-status-warning-200}",
+            "$type": "color",
+            "$description": "Warning border color for subtle badges and outlines"
           },
           "text": {
             "$value": "{eui-app-raw-color-status-warning-700}",
             "$type": "color",
             "$description": "Warning text color on light backgrounds"
+          },
+          "primary": {
+            "$value": "{eui-app-raw-color-status-warning-500}",
+            "$type": "color",
+            "$description": "Primary warning status color for alerts and feedback"
           }
         },
         "error": {
-          "primary": {
-            "$value": "{eui-app-raw-color-status-error-500}",
+          "background": {
+            "$value": "{eui-app-raw-color-status-error-50}",
             "$type": "color",
-            "$description": "Primary error status color for alerts and feedback"
+            "$description": "Error background color for subtle badges and surfaces"
+          },
+          "border": {
+            "$value": "{eui-app-raw-color-status-error-200}",
+            "$type": "color",
+            "$description": "Error border color for subtle badges and outlines"
           },
           "text": {
             "$value": "{eui-app-raw-color-status-error-700}",
             "$type": "color",
             "$description": "Error text color on light backgrounds"
+          },
+          "primary": {
+            "$value": "{eui-app-raw-color-status-error-500}",
+            "$type": "color",
+            "$description": "Primary error status color for alerts and feedback"
           }
         },
         "info": {
+          "background": {
+            "$value": "{eui-app-raw-color-accent-50}",
+            "$type": "color",
+            "$description": "Info background color for subtle badges and surfaces"
+          },
+          "border": {
+            "$value": "{eui-app-raw-color-accent-200}",
+            "$type": "color",
+            "$description": "Info border color for subtle badges and outlines"
+          },
+          "text": {
+            "$value": "{eui-app-raw-color-accent-700}",
+            "$type": "color",
+            "$description": "Info text color on light backgrounds"
+          },
           "primary": {
             "$value": "{eui-app-raw-color-status-info-500}",
             "$type": "color",
             "$description": "Primary info status color for alerts and feedback"
-          },
-          "text": {
-            "$value": "{eui-app-raw-color-status-info-700}",
-            "$type": "color",
-            "$description": "Info text color on light backgrounds"
           }
         }
       }
