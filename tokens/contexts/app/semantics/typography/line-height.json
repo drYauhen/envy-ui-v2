@@ -1,29 +1,30 @@
 {
-  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
     "typography": {
       "lineHeight": {
         "none": {
-          "$value": "{eui.app.raw.typography.lineHeight.tight}",
+          "$value": "{eui-app-raw-typography-lineHeight-tight}",
           "$type": "lineHeight",
           "$description": "No line height - for single-line text, avatars, counters"
         },
         "tight": {
-          "$value": "{eui.app.raw.typography.lineHeight.tight}",
+          "$value": "{eui-app-raw-typography-lineHeight-tight}",
           "$type": "lineHeight",
           "$description": "Tight line height - headings, single-line text"
         },
         "normal": {
-          "$value": "{eui.app.raw.typography.lineHeight.normal}",
+          "$value": "{eui-app-raw-typography-lineHeight-normal}",
           "$type": "lineHeight",
           "$description": "Normal line height - body text, default"
         },
         "relaxed": {
-          "$value": "{eui.app.raw.typography.lineHeight.relaxed}",
+          "$value": "{eui-app-raw-typography-lineHeight-relaxed}",
           "$type": "lineHeight",
           "$description": "Relaxed line height - long-form content, better readability"
         },
         "loose": {
-          "$value": "{eui.app.raw.typography.lineHeight.loose}",
+          "$value": "{eui-app-raw-typography-lineHeight-loose}",
           "$type": "lineHeight",
           "$description": "Loose line height - very readable, accessibility-focused content"
         }

@@ -1,29 +1,30 @@
 {
-  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
     "typography": {
       "fontWeight": {
         "light": {
-          "$value": "{eui.app.raw.typography.fontWeight.light}",
+          "$value": "{eui-app-raw-typography-fontWeight-light}",
           "$type": "fontWeight",
           "$description": "Light weight - rarely used in UI, for subtle emphasis"
         },
         "normal": {
-          "$value": "{eui.app.raw.typography.fontWeight.normal}",
+          "$value": "{eui-app-raw-typography-fontWeight-normal}",
           "$type": "fontWeight",
           "$description": "Regular weight - default for body text"
         },
         "medium": {
-          "$value": "{eui.app.raw.typography.fontWeight.medium}",
+          "$value": "{eui-app-raw-typography-fontWeight-medium}",
           "$type": "fontWeight",
           "$description": "Medium weight - subtle emphasis, some UI elements"
         },
         "semibold": {
-          "$value": "{eui.app.raw.typography.fontWeight.semibold}",
+          "$value": "{eui-app-raw-typography-fontWeight-semibold}",
           "$type": "fontWeight",
           "$description": "Semi-bold - buttons, labels, emphasis, UI elements"
         },
         "bold": {
-          "$value": "{eui.app.raw.typography.fontWeight.bold}",
+          "$value": "{eui-app-raw-typography-fontWeight-bold}",
           "$type": "fontWeight",
           "$description": "Bold - headings, strong emphasis"
         }

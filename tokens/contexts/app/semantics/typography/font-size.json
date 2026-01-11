@@ -1,59 +1,60 @@
 {
-  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
     "typography": {
       "fontSize": {
         "xs": {
-          "$value": "{eui.app.raw.typography.fontSize.xs}",
+          "$value": "{eui-app-raw-typography-fontSize-xs}",
           "$type": "fontSize",
           "$description": "Extra small font size. For captions, labels, badges, counters inside buttons."
         },
         "sm": {
-          "$value": "{eui.app.raw.typography.fontSize.sm}",
+          "$value": "{eui-app-raw-typography-fontSize-sm}",
           "$type": "fontSize",
           "$description": "Small font size. Secondary body text, helper text, small UI elements."
         },
         "base": {
-          "$value": "{eui.app.raw.typography.fontSize.base}",
+          "$value": "{eui-app-raw-typography-fontSize-base}",
           "$type": "fontSize",
           "$description": "Base font size. Default body text size, application baseline."
         },
         "md": {
-          "$value": "{eui.app.raw.typography.fontSize.md}",
+          "$value": "{eui-app-raw-typography-fontSize-md}",
           "$type": "fontSize",
           "$description": "Medium font size. Slightly larger body text, emphasized content."
         },
         "lg": {
-          "$value": "{eui.app.raw.typography.fontSize.lg}",
+          "$value": "{eui-app-raw-typography-fontSize-lg}",
           "$type": "fontSize",
           "$description": "Large font size. Large body text, subheadings."
         },
         "xl": {
-          "$value": "{eui.app.raw.typography.fontSize.xl}",
+          "$value": "{eui-app-raw-typography-fontSize-xl}",
           "$type": "fontSize",
           "$description": "Extra large font size. Heading level 6, card titles."
         },
         "2xl": {
-          "$value": "{eui.app.raw.typography.fontSize.2xl}",
+          "$value": "{eui-app-raw-typography-fontSize-2xl}",
           "$type": "fontSize",
           "$description": "2X large font size. Heading level 5."
         },
         "3xl": {
-          "$value": "{eui.app.raw.typography.fontSize.3xl}",
+          "$value": "{eui-app-raw-typography-fontSize-3xl}",
           "$type": "fontSize",
           "$description": "3X large font size. Heading level 4."
         },
         "4xl": {
-          "$value": "{eui.app.raw.typography.fontSize.4xl}",
+          "$value": "{eui-app-raw-typography-fontSize-4xl}",
           "$type": "fontSize",
           "$description": "4X large font size. Heading level 3."
         },
         "5xl": {
-          "$value": "{eui.app.raw.typography.fontSize.5xl}",
+          "$value": "{eui-app-raw-typography-fontSize-5xl}",
           "$type": "fontSize",
           "$description": "5X large font size. Heading level 2."
         },
         "6xl": {
-          "$value": "{eui.app.raw.typography.fontSize.6xl}",
+          "$value": "{eui-app-raw-typography-fontSize-6xl}",
           "$type": "fontSize",
           "$description": "6X large font size. Heading level 1, hero text."
         }

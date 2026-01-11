@@ -3,37 +3,37 @@
   "eui": {
     "z": {
       "hide": {
-        "$value": "{eui.app.raw.z.hide}",
+        "$value": "{eui-app-raw-z-hide}",
         "$type": "number",
         "$description": "Hide element behind parent - for hidden states"
       },
       "base": {
-        "$value": "{eui.app.raw.z.base}",
+        "$value": "{eui-app-raw-z-base}",
         "$type": "number",
         "$description": "Base stacking context - default element layer"
       },
       "dropdown": {
-        "$value": "{eui.app.raw.z.dropdown}",
+        "$value": "{eui-app-raw-z-dropdown}",
         "$type": "number",
         "$description": "Dropdown/popover layer - menus, tooltips, popovers"
       },
       "sticky": {
-        "$value": "{eui.app.raw.z.sticky}",
+        "$value": "{eui-app-raw-z-sticky}",
         "$type": "number",
         "$description": "Sticky/fixed header layer - navigation, toolbars"
       },
       "overlay": {
-        "$value": "{eui.app.raw.z.overlay}",
+        "$value": "{eui-app-raw-z-overlay}",
         "$type": "number",
         "$description": "Overlay layer - above dropdowns, for alerts and notifications"
       },
       "modal": {
-        "$value": "{eui.app.raw.z.modal}",
+        "$value": "{eui-app-raw-z-modal}",
         "$type": "number",
         "$description": "Modal backdrop layer - below modal dialog"
       },
       "dialog": {
-        "$value": "{eui.app.raw.z.dialog}",
+        "$value": "{eui-app-raw-z-dialog}",
         "$type": "number",
         "$description": "Modal dialog layer - highest user-facing content layer"
       }

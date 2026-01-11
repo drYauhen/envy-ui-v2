@@ -5,14 +5,14 @@
       "container": {
         "standard": {
           "maxWidth": {
-            "$value": "{eui.app.raw.layout.container.standard.maxWidth}",
+            "$value": "{eui-app-raw-layout-container-standard-maxWidth}",
             "$type": "dimension",
             "$description": "Readable width for forms and detail pages. Optimized for app-default context/theme."
           }
         },
         "wide": {
           "maxWidth": {
-            "$value": "{eui.app.raw.layout.container.wide.maxWidth}",
+            "$value": "{eui-app-raw-layout-container-wide-maxWidth}",
             "$type": "dimension",
             "$description": "Full width for tables and dashboards. Optimized for app-default context/theme."
           }

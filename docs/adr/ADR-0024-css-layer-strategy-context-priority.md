@@ -1,15 +1,18 @@
 # ADR-0024: CSS Layer Strategy for Context Priority
 
-**Status:** Accepted  
-**Date:** 2025-12-26  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Superseded by [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md)
+**Date:** 2025-12-26
+**Superseded:** 2026-01-10
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0021](./ADR-0021-web-components-framework-agnostic-layer.md) — Web Components Framework-Agnostic Layer
 - [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
+- [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract (superseding)
 - [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
+- [CSS Token Output Rules](../architecture/css-token-output-rules.md) — Enforcement Rules
 
 ---
 

@@ -4,17 +4,17 @@
     "color": {
       "accent": {
         "primary": {
-          "$value": "{eui.app.raw.color.accent.600}",
+          "$value": "{eui-app-raw-color-accent-600}",
           "$type": "color",
           "$description": "Primary accent color for interactive elements and highlights"
         },
         "secondary": {
-          "$value": "{eui.app.raw.color.accent.500}",
+          "$value": "{eui-app-raw-color-accent-500}",
           "$type": "color",
           "$description": "Secondary accent color for supporting elements"
         },
         "muted": {
-          "$value": "{eui.app.raw.color.accent.300}",
+          "$value": "{eui-app-raw-color-accent-300}",
           "$type": "color",
           "$description": "Muted accent color for subtle highlights"
         }

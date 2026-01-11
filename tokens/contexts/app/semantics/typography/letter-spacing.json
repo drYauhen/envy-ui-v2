@@ -1,34 +1,35 @@
 {
-  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
     "typography": {
       "letterSpacing": {
         "tighter": {
-          "$value": "{eui.app.raw.typography.letterSpacing.tighter}",
+          "$value": "{eui-app-raw-typography-letterSpacing-tighter}",
           "$type": "letterSpacing",
           "$description": "Tighter letter spacing - for compact text, headings"
         },
         "tight": {
-          "$value": "{eui.app.raw.typography.letterSpacing.tight}",
+          "$value": "{eui-app-raw-typography-letterSpacing-tight}",
           "$type": "letterSpacing",
           "$description": "Tight letter spacing - for headings, labels"
         },
         "normal": {
-          "$value": "{eui.app.raw.typography.letterSpacing.normal}",
+          "$value": "{eui-app-raw-typography-letterSpacing-normal}",
           "$type": "letterSpacing",
           "$description": "Normal letter spacing - default for body text"
         },
         "wide": {
-          "$value": "{eui.app.raw.typography.letterSpacing.wide}",
+          "$value": "{eui-app-raw-typography-letterSpacing-wide}",
           "$type": "letterSpacing",
           "$description": "Wide letter spacing - for buttons, UI elements"
         },
         "wider": {
-          "$value": "{eui.app.raw.typography.letterSpacing.wider}",
+          "$value": "{eui-app-raw-typography-letterSpacing-wider}",
           "$type": "letterSpacing",
           "$description": "Wider letter spacing - for emphasis, uppercase text"
         },
         "widest": {
-          "$value": "{eui.app.raw.typography.letterSpacing.widest}",
+          "$value": "{eui-app-raw-typography-letterSpacing-widest}",
           "$type": "letterSpacing",
           "$description": "Widest letter spacing - for decorative text, large headings"
         }

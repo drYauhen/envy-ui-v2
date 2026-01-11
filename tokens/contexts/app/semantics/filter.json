@@ -4,22 +4,22 @@
     "filter": {
       "muted": {
         "grayscale": {
-          "$value": "{eui.app.raw.filter.muted.grayscale}",
+          "$value": "{eui-app-raw-filter-muted-grayscale}",
           "$type": "number",
           "$description": "Grayscale strength for muted content."
         },
         "saturate": {
-          "$value": "{eui.app.raw.filter.muted.saturate}",
+          "$value": "{eui-app-raw-filter-muted-saturate}",
           "$type": "number",
           "$description": "Saturation reduction for muted content."
         },
         "contrast": {
-          "$value": "{eui.app.raw.filter.muted.contrast}",
+          "$value": "{eui-app-raw-filter-muted-contrast}",
           "$type": "number",
           "$description": "Contrast reduction for muted content."
         },
         "brightness": {
-          "$value": "{eui.app.raw.filter.muted.brightness}",
+          "$value": "{eui-app-raw-filter-muted-brightness}",
           "$type": "number",
           "$description": "Brightness adjustment for muted content."
         }

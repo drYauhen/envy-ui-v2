@@ -5,48 +5,48 @@
       "status": {
         "success": {
           "primary": {
-            "$value": "{eui.app.raw.color.status.success.500}",
+            "$value": "{eui-app-raw-color-status-success-500}",
             "$type": "color",
             "$description": "Primary success status color for alerts and feedback"
           },
           "text": {
-            "$value": "{eui.app.raw.color.status.success.700}",
+            "$value": "{eui-app-raw-color-status-success-700}",
             "$type": "color",
             "$description": "Success text color on light backgrounds"
           }
         },
         "warning": {
           "primary": {
-            "$value": "{eui.app.raw.color.status.warning.500}",
+            "$value": "{eui-app-raw-color-status-warning-500}",
             "$type": "color",
             "$description": "Primary warning status color for alerts and feedback"
           },
           "text": {
-            "$value": "{eui.app.raw.color.status.warning.700}",
+            "$value": "{eui-app-raw-color-status-warning-700}",
             "$type": "color",
             "$description": "Warning text color on light backgrounds"
           }
         },
         "error": {
           "primary": {
-            "$value": "{eui.app.raw.color.status.error.500}",
+            "$value": "{eui-app-raw-color-status-error-500}",
             "$type": "color",
             "$description": "Primary error status color for alerts and feedback"
           },
           "text": {
-            "$value": "{eui.app.raw.color.status.error.700}",
+            "$value": "{eui-app-raw-color-status-error-700}",
             "$type": "color",
             "$description": "Error text color on light backgrounds"
           }
         },
         "info": {
           "primary": {
-            "$value": "{eui.app.raw.color.status.info.500}",
+            "$value": "{eui-app-raw-color-status-info-500}",
             "$type": "color",
             "$description": "Primary info status color for alerts and feedback"
           },
           "text": {
-            "$value": "{eui.app.raw.color.status.info.700}",
+            "$value": "{eui-app-raw-color-status-info-700}",
             "$type": "color",
             "$description": "Info text color on light backgrounds"
           }

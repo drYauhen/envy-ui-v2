@@ -4,17 +4,17 @@
     "color": {
       "brand": {
         "primary": {
-          "$value": "{eui.app.raw.color.brand.700}",
+          "$value": "{eui-app-raw-color-brand-700}",
           "$type": "color",
           "$description": "Primary brand color for key brand elements"
         },
         "secondary": {
-          "$value": "{eui.app.raw.color.brand.500}",
+          "$value": "{eui-app-raw-color-brand-500}",
           "$type": "color",
           "$description": "Secondary brand color for supporting elements"
         },
         "accent": {
-          "$value": "{eui.app.raw.color.brand.600}",
+          "$value": "{eui-app-raw-color-brand-600}",
           "$type": "color",
           "$description": "Brand accent color for highlights"
         }

@@ -1,0 +1,13 @@
+/**
+ * Card Component - Index
+ *
+ * Entry point that imports Card CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from generated CSS).
+ *
+ * Generated from: tokens/components/card.contract.json
+ * Legacy reference: tokens/knowledge/components/card/legacy.card.css
+ * Token variables: generated/css/components/card.tokens.css
+ */
+
+@import './card.structure.css';

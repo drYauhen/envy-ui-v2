@@ -1,0 +1,19 @@
+/**
+ * Canonical Token CSS - Entry Point
+ * Imports token layers in correct cascade order (3-layer only)
+ */
+
+@layer eui-primitives, eui-contexts, eui-themes, eui-components;
+
+/* 1. Primitives (base values) */
+@import './tokens.primitives.css';
+
+/* 2. Contexts (semantic aliases) */
+@import './tokens.contexts.css';
+
+/* 3. Themes (theme overrides) */
+@import './tokens.themes.css';
+
+/* 4. Components (component-specific tokens) */
+@import './components/card.tokens.css';
+@import './components/badge.tokens.css';

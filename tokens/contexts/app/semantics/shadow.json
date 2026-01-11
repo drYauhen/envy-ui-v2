@@ -3,27 +3,27 @@
   "eui": {
     "shadow": {
       "none": {
-        "$value": "{eui.app.raw.shadow.none}",
+        "$value": "{eui-app-raw-shadow-none}",
         "$type": "boxShadow",
         "$description": "No shadow. Used for flat elements like buttons, inputs, and elements that should appear flush with their container."
       },
       "small": {
-        "$value": "{eui.app.raw.shadow.small}",
+        "$value": "{eui-app-raw-shadow-small}",
         "$type": "boxShadow",
         "$description": "Subtle elevation. Used for cards and containers that need minimal depth separation from background."
       },
       "default": {
-        "$value": "{eui.app.raw.shadow.default}",
+        "$value": "{eui-app-raw-shadow-default}",
         "$type": "boxShadow",
         "$description": "Standard elevation. Baseline for cards, panels, and standard containers. Provides subtle, elegant depth without overwhelming content. Used for elevated cards. Optimized for app-default context/theme. Other contexts/themes may override this value."
       },
       "large": {
-        "$value": "{eui.app.raw.shadow.large}",
+        "$value": "{eui-app-raw-shadow-large}",
         "$type": "boxShadow",
         "$description": "Prominent elevation. Used for strong cards, modals, dialogs, dropdowns, and floating elements that need clear separation and focus. Optimized for app-default context/theme. Other contexts/themes may override this value."
       },
       "extra-large": {
-        "$value": "{eui.app.raw.shadow.extra-large}",
+        "$value": "{eui-app-raw-shadow-extra-large}",
         "$type": "boxShadow",
         "$description": "Maximum elevation. Used for high-priority modals, tooltips, and elements that need maximum visual separation and prominence."
       }

@@ -1,0 +1,388 @@
+#!/usr/bin/env node
+
+/**
+ * Generate Canonical Token CSS
+ *
+ * This script generates the canonical token CSS files directly from JSON,
+ * bypassing Style Dictionary's token processing to preserve reference structure.
+ */
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const repoRoot = path.resolve(__dirname, '..');
+
+// Helper: Convert DTCG reference to CSS var (preserve, don't resolve)
+const preserveReference = (value) => {
+  if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
+    // Convert {eui.color.neutral.300} → var(--eui-color-neutral-300)
+    const ref = value.slice(1, -1); // Remove { }
+    const cssVar = ref.split('.').join('-'); // Convert dots to dashes
+    return `var(--${cssVar})`;
+  }
+  return value; // Literal values pass through unchanged
+};
+
+// Helper: Extract tokens from JSON with preserved references
+const extractTokensPreservingRefs = (obj, prefix = []) => {
+  const tokens = [];
+  for (const [key, value] of Object.entries(obj)) {
+    const path = [...prefix, key];
+    if (value && typeof value === 'object' && '$value' in value) {
+      const tokenName = path.join('-'); // eui-color-neutral-300
+      const preservedValue = preserveReference(value.$value);
+      tokens.push({ name: tokenName, value: preservedValue });
+    } else if (value && typeof value === 'object' && !Array.isArray(value)) {
+      tokens.push(...extractTokensPreservingRefs(value, path));
+    }
+  }
+  return tokens;
+};
+
+// Generate primitives CSS
+function generatePrimitivesCSS() {
+  console.log('📝 Generating tokens.primitives.css...');
+
+  const primitivesDir = path.join(repoRoot, 'tokens', 'primitives');
+  if (!fs.existsSync(primitivesDir)) {
+    console.warn('Warning: primitives directory not found');
+    return '';
+  }
+
+  let output = '/**\n * Canonical Token Primitives - Do not edit directly\n */\n\n';
+
+  const primitiveFiles = fs.readdirSync(primitivesDir).filter(f => f.endsWith('.json'));
+  const allTokens = [];
+
+  primitiveFiles.forEach(file => {
+    const filePath = path.join(primitivesDir, file);
+    try {
+      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      const tokens = extractTokensPreservingRefs(data);
+      allTokens.push(...tokens);
+    } catch (e) {
+      console.warn(`Warning: Could not read primitives file ${file}: ${e.message}`);
+    }
+  });
+
+  // Sort deterministically and generate CSS
+  allTokens.sort((a, b) => a.name.localeCompare(b.name));
+
+  if (allTokens.length > 0) {
+    output += '@layer eui-primitives {\n';
+    output += '  :root {\n';
+    allTokens.forEach(({ name, value }) => {
+      output += `    --${name}: ${value};\n`;
+    });
+    output += '  }\n';
+    output += '}\n';
+  }
+
+  return output;
+}
+
+// Generate raw CSS
+function generateRawCSS() {
+  console.log('📝 Generating tokens.raw.css...');
+
+  const contextsDir = path.join(repoRoot, 'tokens', 'contexts');
+  if (!fs.existsSync(contextsDir)) {
+    console.warn('Warning: contexts directory not found');
+    return '';
+  }
+
+  let output = '/**\n * Canonical Token Raw - Do not edit directly\n */\n\n';
+  output += '@layer eui-raw {\n';
+
+  // Auto-discover contexts
+  const contextDirs = fs.readdirSync(contextsDir)
+    .filter(dir => fs.statSync(path.join(contextsDir, dir)).isDirectory())
+    .filter(context => ['app', 'website', 'report'].includes(context));
+
+  contextDirs.forEach(context => {
+    const rawDir = path.join(contextsDir, context, 'raw');
+    if (fs.existsSync(rawDir)) {
+      const rawFiles = fs.readdirSync(rawDir).filter(f => f.endsWith('.json'));
+      const allTokens = [];
+
+      rawFiles.forEach(file => {
+        const filePath = path.join(rawDir, file);
+        try {
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          const tokens = extractTokensPreservingRefs(data);
+          allTokens.push(...tokens);
+        } catch (e) {
+          console.warn(`Warning: Could not read raw file ${file}: ${e.message}`);
+        }
+      });
+
+      // Sort deterministically and generate CSS
+      allTokens.sort((a, b) => a.name.localeCompare(b.name));
+
+      if (allTokens.length > 0) {
+        output += `  [data-eui-context="${context}"] {\n`;
+        allTokens.forEach(({ name, value }) => {
+          // The name already includes the full path, just add the raw prefix
+          // eui-app-raw-color-neutral-50 → --eui-app-raw-color-neutral-50
+          const cssVarName = `--${name}`;
+          output += `    ${cssVarName}: ${value};\n`;
+        });
+        output += '  }\n\n';
+      }
+    }
+  });
+
+  output += '}\n';
+  return output;
+}
+
+// Helper: Transform raw-proxy variable names to semantic names
+function transformToSemanticName(name) {
+  // Transform raw-proxy exports to semantic names
+  if (name.includes('dimension-')) {
+    return name.replace(/dimension-/g, 'spacing-');
+  }
+  if (name.includes('breakpoint-')) {
+    return name.replace(/breakpoint-/g, 'layout-breakpoint-');
+  }
+  if (name.includes('spacing-')) {
+    return name; // Already semantic
+  }
+  if (name.includes('z-')) {
+    return name.replace(/z-/g, 'layer-');
+  }
+  if (name.includes('transition-')) {
+    return name; // Already semantic
+  }
+  if (name.includes('radius-')) {
+    return name; // Already semantic
+  }
+  if (name.includes('shadow-')) {
+    return name; // Already semantic
+  }
+  if (name.includes('opacity-')) {
+    return name; // Already semantic
+  }
+  if (name.includes('filter-')) {
+    return name; // Already semantic
+  }
+  if (name.includes('border-width-')) {
+    return name; // Keep as-is for now
+  }
+  // For other tokens (colors, layout roles, etc.), keep the original name
+  return name;
+}
+
+// Generate contexts CSS
+function generateContextsCSS() {
+  console.log('📝 Generating tokens.contexts.css...');
+
+  const contextsDir = path.join(repoRoot, 'tokens', 'contexts');
+  if (!fs.existsSync(contextsDir)) {
+    console.warn('Warning: contexts directory not found');
+    return '';
+  }
+
+  let output = '/**\n * Canonical Token Contexts - Do not edit directly\n */\n\n';
+  output += '@layer eui-contexts {\n';
+
+  // Auto-discover contexts
+  const contextDirs = fs.readdirSync(contextsDir)
+    .filter(dir => fs.statSync(path.join(contextsDir, dir)).isDirectory())
+    .filter(context => ['app', 'website', 'report'].includes(context));
+
+  contextDirs.forEach(context => {
+    const semanticsDir = path.join(contextsDir, context, 'semantics');
+    if (fs.existsSync(semanticsDir)) {
+      const semanticFiles = fs.readdirSync(semanticsDir).filter(f => f.endsWith('.json'));
+      const allTokens = [];
+
+      semanticFiles.forEach(file => {
+        const filePath = path.join(semanticsDir, file);
+        try {
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          const tokens = extractTokensPreservingRefs(data);
+          allTokens.push(...tokens);
+        } catch (e) {
+          console.warn(`Warning: Could not read semantic file ${file}: ${e.message}`);
+        }
+      });
+
+      // Transform all tokens to semantic names and filter out identity mappings
+      const semanticTokens = allTokens.map(({ name, value }) => ({
+        name: transformToSemanticName(name),
+        value,
+        originalName: name
+      })).filter(({ name: semanticName, originalName }) => {
+        // Skip identity mappings: if semantic name equals primitive name (after removing context prefix)
+        const primitiveName = originalName.replace(/^eui-app-raw-/, 'eui-');
+        return semanticName !== primitiveName;
+      }).map(({ name, originalName }) => {
+        // Reference primitives directly instead of raw variables
+        const primitiveName = originalName.replace(/^eui-app-raw-/, 'eui-');
+        return {
+          name,
+          value: `var(--${primitiveName})`
+        };
+      });
+
+      // Sort deterministically and generate CSS
+      semanticTokens.sort((a, b) => a.name.localeCompare(b.name));
+
+      if (semanticTokens.length > 0) {
+        output += `  [data-eui-context="${context}"] {\n`;
+        semanticTokens.forEach(({ name, value }) => {
+          output += `    --${name}: ${value};\n`;
+        });
+        output += '  }\n\n';
+      }
+    }
+  });
+
+  output += '}\n';
+  return output;
+}
+
+// Generate themes CSS
+function generateThemesCSS() {
+  console.log('📝 Generating tokens.themes.css...');
+
+  const contextsDir = path.join(repoRoot, 'tokens', 'contexts');
+  if (!fs.existsSync(contextsDir)) {
+    console.warn('Warning: contexts directory not found');
+    return '';
+  }
+
+  let output = '/**\n * Canonical Token Themes - Do not edit directly\n */\n\n';
+  output += '@layer eui-themes {\n';
+
+  // Auto-discover contexts and themes
+  const contextDirs = fs.readdirSync(contextsDir)
+    .filter(dir => fs.statSync(path.join(contextsDir, dir)).isDirectory())
+    .filter(context => ['app', 'website', 'report'].includes(context));
+
+  contextDirs.forEach(context => {
+    const themesDir = path.join(contextsDir, context, 'themes');
+    if (fs.existsSync(themesDir)) {
+      const themeFiles = fs.readdirSync(themesDir).filter(f => f.endsWith('.json'));
+
+      themeFiles.forEach(themeFile => {
+        const theme = path.basename(themeFile, '.json');
+        const filePath = path.join(themesDir, themeFile);
+
+        try {
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          const tokens = extractTokensPreservingRefs(data);
+
+          // Filter out component variables (badge-*, button-*, calendar-*, etc.)
+          // Keep only semantic meaning tokens
+          const semanticTokens = tokens.filter(({ name }) => {
+            // Remove component variables - check for component prefixes
+            const componentPrefixes = [
+              'badge-', 'button-', 'calendar-', 'card-', 'checkbox-',
+              'input-', 'radio-', 'select-', 'switch-', 'tabs-',
+              'textarea-', 'tooltip-', 'dialog-', 'dropdown-', 'menu-',
+              'navigation-', 'sidebar-', 'table-', 'toast-', 'combobox-',
+              'listbox-', 'option-', 'progressbar-', 'scrollbar-',
+              'separator-', 'slider-', 'spinbutton-', 'tabpanel-', 'textbox-',
+              'tree-', 'treeitem-', 'group-', 'radiogroup-', 'tablist-',
+              'grid-', 'gridcell-', 'columnheader-', 'row-', 'rowheader-',
+              'cell-', 'link-', 'heading-', 'img-', 'list-', 'listitem-',
+              'term-', 'definition-'
+            ];
+
+            return !componentPrefixes.some(prefix => name.includes(prefix));
+          });
+
+          // Sort deterministically and generate CSS
+          semanticTokens.sort((a, b) => a.name.localeCompare(b.name));
+
+          if (semanticTokens.length > 0) {
+            output += `  [data-eui-context="${context}"][data-eui-theme="${theme}"] {\n`;
+            semanticTokens.forEach(({ name, value }) => {
+              output += `    --${name}: ${value};\n`;
+            });
+            output += '  }\n\n';
+          }
+        } catch (e) {
+          console.warn(`Warning: Could not read theme file ${themeFile}: ${e.message}`);
+        }
+      });
+    }
+  });
+
+  output += '}\n';
+  return output;
+}
+
+// Generate entrypoint CSS
+function generateEntrypointCSS() {
+  console.log('📝 Generating tokens.css (entrypoint)...');
+
+  return `/**
+ * Canonical Token CSS - Entry Point
+ * Imports token layers in correct cascade order (3-layer only)
+ */
+
+@layer eui-primitives, eui-contexts, eui-themes, eui-components;
+
+/* 1. Primitives (base values) */
+@import './tokens.primitives.css';
+
+/* 2. Contexts (semantic aliases) */
+@import './tokens.contexts.css';
+
+/* 3. Themes (theme overrides) */
+@import './tokens.themes.css';
+
+/* 4. Components (component-specific tokens) */
+@import './components/card.tokens.css';
+@import './components/badge.tokens.css';
+`;
+}
+
+// Main execution
+function main() {
+  console.log('🚀 Generating Canonical Token CSS...');
+
+  const outputDir = path.join(repoRoot, 'generated', 'css');
+
+  // Ensure output directory exists
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  // Generate each file
+  const primitivesCSS = generatePrimitivesCSS();
+  const rawCSS = generateRawCSS();
+  const contextsCSS = generateContextsCSS();
+  const themesCSS = generateThemesCSS();
+  const entrypointCSS = generateEntrypointCSS();
+
+  // Write files
+  const files = [
+    { name: 'tokens.primitives.css', content: primitivesCSS },
+    { name: 'tokens.raw.css', content: rawCSS },
+    { name: 'tokens.contexts.css', content: contextsCSS },
+    { name: 'tokens.themes.css', content: themesCSS },
+    { name: 'tokens.css', content: entrypointCSS }
+  ];
+
+  files.forEach(({ name, content }) => {
+    const filePath = path.join(outputDir, name);
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`✅ Generated ${name}`);
+  });
+
+  console.log('🎉 Canonical Token CSS generation complete!');
+}
+
+// Run if called directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main();
+}
+
+export { generatePrimitivesCSS, generateContextsCSS, generateThemesCSS, generateEntrypointCSS };

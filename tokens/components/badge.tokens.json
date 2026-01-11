@@ -1,0 +1,313 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "badge": {
+      "variant": {
+        "subtle": {
+          "tone": {
+            "neutral": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.neutral.50}",
+                  "$type": "color",
+                  "$description": "Neutral subtle badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.neutral.200}",
+                  "$type": "color",
+                  "$description": "Neutral subtle badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.neutral.700}",
+                  "$type": "color",
+                  "$description": "Neutral subtle badge text"
+                }
+              }
+            },
+            "success": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.signal.success.50}",
+                  "$type": "color",
+                  "$description": "Success subtle badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.signal.success.200}",
+                  "$type": "color",
+                  "$description": "Success subtle badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.signal.success.700}",
+                  "$type": "color",
+                  "$description": "Success subtle badge text"
+                }
+              }
+            },
+            "warning": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.signal.warning.50}",
+                  "$type": "color",
+                  "$description": "Warning subtle badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.signal.warning.200}",
+                  "$type": "color",
+                  "$description": "Warning subtle badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.signal.warning.700}",
+                  "$type": "color",
+                  "$description": "Warning subtle badge text"
+                }
+              }
+            },
+            "error": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.signal.error.50}",
+                  "$type": "color",
+                  "$description": "Error subtle badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.signal.error.200}",
+                  "$type": "color",
+                  "$description": "Error subtle badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.signal.error.700}",
+                  "$type": "color",
+                  "$description": "Error subtle badge text"
+                }
+              }
+            },
+            "info": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.accent.50}",
+                  "$type": "color",
+                  "$description": "Info subtle badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.accent.200}",
+                  "$type": "color",
+                  "$description": "Info subtle badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.accent.700}",
+                  "$type": "color",
+                  "$description": "Info subtle badge text"
+                }
+              }
+            }
+          }
+        },
+        "solid": {
+          "tone": {
+            "neutral": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.neutral.900}",
+                  "$type": "color",
+                  "$description": "Neutral solid badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.neutral.900}",
+                  "$type": "color",
+                  "$description": "Neutral solid badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.neutral.white}",
+                  "$type": "color",
+                  "$description": "Neutral solid badge text"
+                }
+              }
+            },
+            "success": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.signal.success.600}",
+                  "$type": "color",
+                  "$description": "Success solid badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.signal.success.600}",
+                  "$type": "color",
+                  "$description": "Success solid badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.neutral.white}",
+                  "$type": "color",
+                  "$description": "Success solid badge text"
+                }
+              }
+            },
+            "warning": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.signal.warning.600}",
+                  "$type": "color",
+                  "$description": "Warning solid badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.signal.warning.600}",
+                  "$type": "color",
+                  "$description": "Warning solid badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.neutral.white}",
+                  "$type": "color",
+                  "$description": "Warning solid badge text"
+                }
+              }
+            },
+            "error": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.signal.error.600}",
+                  "$type": "color",
+                  "$description": "Error solid badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.signal.error.600}",
+                  "$type": "color",
+                  "$description": "Error solid badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.neutral.white}",
+                  "$type": "color",
+                  "$description": "Error solid badge text"
+                }
+              }
+            },
+            "info": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.accent.600}",
+                  "$type": "color",
+                  "$description": "Info solid badge background"
+                },
+                "border": {
+                  "$value": "{eui.color.accent.600}",
+                  "$type": "color",
+                  "$description": "Info solid badge border"
+                },
+                "text": {
+                  "$value": "{eui.color.neutral.white}",
+                  "$type": "color",
+                  "$description": "Info solid badge text"
+                }
+              }
+            }
+          }
+        },
+        "outline": {
+          "colors": {
+            "background": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Outline badge transparent background"
+            }
+          }
+        }
+      },
+      "base": {
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Badge border width"
+          },
+          "style": {
+            "$value": "solid",
+            "$type": "string",
+            "$description": "Badge border style"
+          }
+        },
+        "shape": {
+          "radius": {
+            "$value": "{eui.radius.lg}",
+            "$type": "dimension",
+            "$description": "Badge border radius"
+          }
+        },
+        "spacing": {
+          "padding": {
+            "vertical": {
+              "$value": "{eui.spacing.1}",
+              "$type": "dimension",
+              "$description": "Badge vertical padding"
+            },
+            "horizontal": {
+              "$value": "{eui.spacing.2}",
+              "$type": "dimension",
+              "$description": "Badge horizontal padding"
+            }
+          },
+          "gap": {
+            "$value": "{eui.spacing.1}",
+            "$type": "dimension",
+            "$description": "Badge gap between elements"
+          }
+        },
+        "typography": {
+          "fontFamily": {
+            "$value": "{eui.typography.fontFamily.ui}",
+            "$type": "string",
+            "$description": "Badge font family"
+          },
+          "fontSize": {
+            "$value": "{eui.typography.fontSize.xs}",
+            "$type": "dimension",
+            "$description": "Badge font size"
+          },
+          "fontWeight": {
+            "$value": "{eui.typography.fontWeight.medium}",
+            "$type": "string",
+            "$description": "Badge font weight"
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.lineHeight.tight}",
+            "$type": "string",
+            "$description": "Badge line height"
+          },
+          "letterSpacing": {
+            "$value": "{eui.typography.letterSpacing.wide}",
+            "$type": "dimension",
+            "$description": "Badge letter spacing"
+          },
+          "textTransform": {
+            "$value": "uppercase",
+            "$type": "string",
+            "$description": "Badge text transform"
+          }
+        },
+        "focus": {
+          "ring": {
+            "color": {
+              "derived": {
+                "accessible": {
+                  "$value": "{eui.color.accent.700}",
+                  "$type": "color",
+                  "$description": "Badge focus ring color (derived, accessible)"
+                }
+              }
+            },
+            "width": {
+              "accessible": {
+                "$value": "2px",
+                "$type": "dimension",
+                "$description": "Badge focus ring width (accessible)"
+              }
+            },
+            "offset": {
+              "$value": "0px",
+              "$type": "dimension",
+              "$description": "Badge focus ring offset"
+            }
+          }
+        }
+      }
+    }
+  }
+}

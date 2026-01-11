@@ -15,7 +15,13 @@ import { isVisualToken } from '../utils/token-filters.js';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default function registerCssVariablesThemedFormat(StyleDictionary, options = {}) {
-  const { allowedContexts = ['app', 'website', 'report', 'storybook'], contextMirrors = {} } = options;
+  const { allowedContexts = ['app', 'website', 'report'], contextMirrors = {} } = options;
+
+  // Check for fail-soft mode (handles missing references gracefully)
+  const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
+
+  // NEW: Register canonical CSS formats for token architecture
+  registerCanonicalFormats(StyleDictionary, options);
 
   StyleDictionary.registerFormat({
     name: 'css/variables-themed',
@@ -166,6 +172,26 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
               return resolveTokenValue([], resolvedValue);
             }
             return resolvedValue;
+          }
+
+          // FAIL-SOFT MODE: If reference cannot be resolved, provide safe fallback
+          if (failSoft) {
+            console.warn(`⚠️  Fail-soft: Unresolved reference {${referenceStr}} - using safe fallback`);
+
+            // Provide type-appropriate fallbacks based on token path
+            if (referenceStr.includes('.color.')) {
+              return 'transparent'; // Safe color fallback
+            } else if (referenceStr.includes('.spacing.') || referenceStr.includes('.dimension.')) {
+              return '0px'; // Safe dimension fallback
+            } else if (referenceStr.includes('.radius.')) {
+              return '0px'; // Safe radius fallback
+            } else if (referenceStr.includes('.fontSize.')) {
+              return '16px'; // Safe font size fallback
+            } else if (referenceStr.includes('.opacity.')) {
+              return '1'; // Safe opacity fallback
+            } else {
+              return 'unset'; // Generic safe fallback
+            }
           }
         }
 
@@ -413,6 +439,206 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
 
 
         output += '}\n\n';
+      }
+
+      return output;
+    }
+  });
+}
+
+// NEW: Canonical CSS formats for token architecture
+function registerCanonicalFormats(StyleDictionary, options = {}) {
+  const { allowedContexts = ['app', 'website', 'report'] } = options;
+
+  // Helper: Convert DTCG reference to CSS var (preserve, don't resolve)
+  const preserveReference = (value) => {
+    if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
+      // Convert {eui.color.neutral.300} → var(--eui-color-neutral-300)
+      const ref = value.slice(1, -1); // Remove { }
+      const cssVar = ref.split('.').join('-'); // Convert dots to dashes
+      return `var(--${cssVar})`;
+    }
+    return value; // Literal values pass through unchanged
+  };
+
+  // Helper: Extract tokens from JSON with preserved references
+  const extractTokensPreservingRefs = (obj, prefix = []) => {
+    const tokens = [];
+    for (const [key, value] of Object.entries(obj)) {
+      const path = [...prefix, key];
+      if (value && typeof value === 'object' && '$value' in value) {
+        const tokenName = path.join('-'); // eui-color-neutral-300
+        const preservedValue = preserveReference(value.$value);
+        tokens.push({ name: tokenName, value: preservedValue });
+      } else if (value && typeof value === 'object' && !Array.isArray(value)) {
+        tokens.push(...extractTokensPreservingRefs(value, path));
+      }
+    }
+    return tokens;
+  };
+
+  // 1. PRIMITIVES FORMAT: literals in :root
+  StyleDictionary.registerFormat({
+    name: 'css/canonical-primitives',
+    format({ dictionary, file }) {
+      const buildPath = file.destination ? path.dirname(file.destination) : process.cwd();
+      let tokensRoot = path.resolve(buildPath, '../../tokens');
+
+      if (!fs.existsSync(tokensRoot)) {
+        const altTokensRoot = path.resolve(__dirname, '../../tokens');
+        if (fs.existsSync(altTokensRoot)) {
+          tokensRoot = altTokensRoot;
+        }
+      }
+
+      let output = '/**\n * Canonical Token Primitives - Do not edit directly\n */\n\n';
+      output += '@layer eui-primitives;\n\n';
+
+      // Process primitives directory
+      const primitivesDir = path.join(tokensRoot, 'primitives');
+      if (fs.existsSync(primitivesDir)) {
+        const primitiveFiles = fs.readdirSync(primitivesDir).filter(f => f.endsWith('.json'));
+        const allTokens = [];
+
+        primitiveFiles.forEach(file => {
+          const filePath = path.join(primitivesDir, file);
+          try {
+            const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            const tokens = extractTokensPreservingRefs(data);
+            allTokens.push(...tokens);
+          } catch (e) {
+            console.warn(`Warning: Could not read primitives file ${file}: ${e.message}`);
+          }
+        });
+
+        // Sort deterministically and generate CSS
+        allTokens.sort((a, b) => a.name.localeCompare(b.name));
+
+        if (allTokens.length > 0) {
+          output += ':root {\n';
+          allTokens.forEach(({ name, value }) => {
+            output += `  --${name}: ${value};\n`;
+          });
+          output += '}\n';
+        }
+      }
+
+      return output;
+    }
+  });
+
+  // 2. CONTEXTS FORMAT: semantic aliases by context
+  StyleDictionary.registerFormat({
+    name: 'css/canonical-contexts',
+    format({ dictionary, file }) {
+      const buildPath = file.destination ? path.dirname(file.destination) : process.cwd();
+      let tokensRoot = path.resolve(buildPath, '../../tokens');
+
+      if (!fs.existsSync(tokensRoot)) {
+        const altTokensRoot = path.resolve(__dirname, '../../tokens');
+        if (fs.existsSync(altTokensRoot)) {
+          tokensRoot = altTokensRoot;
+        }
+      }
+
+      let output = '/**\n * Canonical Token Contexts - Do not edit directly\n */\n\n';
+      output += '@layer eui-contexts;\n\n';
+
+      // Auto-discover contexts
+      const contextsDir = path.join(tokensRoot, 'contexts');
+      if (fs.existsSync(contextsDir)) {
+        const contextDirs = fs.readdirSync(contextsDir)
+          .filter(dir => fs.statSync(path.join(contextsDir, dir)).isDirectory())
+          .filter(context => allowedContexts.includes(context));
+
+        contextDirs.forEach(context => {
+          const semanticsDir = path.join(contextsDir, context, 'semantics');
+          if (fs.existsSync(semanticsDir)) {
+            const semanticFiles = fs.readdirSync(semanticsDir).filter(f => f.endsWith('.json'));
+            const allTokens = [];
+
+            semanticFiles.forEach(file => {
+              const filePath = path.join(semanticsDir, file);
+              try {
+                const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                const tokens = extractTokensPreservingRefs(data);
+                allTokens.push(...tokens);
+              } catch (e) {
+                console.warn(`Warning: Could not read semantic file ${file}: ${e.message}`);
+              }
+            });
+
+            // Sort deterministically and generate CSS
+            allTokens.sort((a, b) => a.name.localeCompare(b.name));
+
+            if (allTokens.length > 0) {
+              output += `[data-eui-context="${context}"] {\n`;
+              allTokens.forEach(({ name, value }) => {
+                output += `  --${name}: ${value};\n`;
+              });
+              output += '}\n\n';
+            }
+          }
+        });
+      }
+
+      return output;
+    }
+  });
+
+  // 3. THEMES FORMAT: theme overrides by context+theme
+  StyleDictionary.registerFormat({
+    name: 'css/canonical-themes',
+    format({ dictionary, file }) {
+      const buildPath = file.destination ? path.dirname(file.destination) : process.cwd();
+      let tokensRoot = path.resolve(buildPath, '../../tokens');
+
+      if (!fs.existsSync(tokensRoot)) {
+        const altTokensRoot = path.resolve(__dirname, '../../tokens');
+        if (fs.existsSync(altTokensRoot)) {
+          tokensRoot = altTokensRoot;
+        }
+      }
+
+      let output = '/**\n * Canonical Token Themes - Do not edit directly\n */\n\n';
+      output += '@layer eui-themes;\n\n';
+
+      // Auto-discover contexts and themes
+      const contextsDir = path.join(tokensRoot, 'contexts');
+      if (fs.existsSync(contextsDir)) {
+        const contextDirs = fs.readdirSync(contextsDir)
+          .filter(dir => fs.statSync(path.join(contextsDir, dir)).isDirectory())
+          .filter(context => allowedContexts.includes(context));
+
+        contextDirs.forEach(context => {
+          const themesDir = path.join(contextsDir, context, 'themes');
+          if (fs.existsSync(themesDir)) {
+            const themeFiles = fs.readdirSync(themesDir).filter(f => f.endsWith('.json'));
+
+            themeFiles.forEach(themeFile => {
+              const theme = path.basename(themeFile, '.json');
+              const filePath = path.join(themesDir, themeFile);
+
+              try {
+                const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                const tokens = extractTokensPreservingRefs(data);
+
+                // Sort deterministically and generate CSS
+                tokens.sort((a, b) => a.name.localeCompare(b.name));
+
+                if (tokens.length > 0) {
+                  output += `[data-eui-context="${context}"][data-eui-theme="${theme}"] {\n`;
+                  tokens.forEach(({ name, value }) => {
+                    output += `  --${name}: ${value};\n`;
+                  });
+                  output += '}\n\n';
+                }
+              } catch (e) {
+                console.warn(`Warning: Could not read theme file ${themeFile}: ${e.message}`);
+              }
+            });
+          }
+        });
       }
 
       return output;

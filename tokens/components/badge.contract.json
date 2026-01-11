@@ -1,0 +1,147 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "badge",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/badge.css",
+    "note": "This contract is derived from legacy CSS to preserve all existing behavior/features during migration."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-badge",
+    "slots": {}
+  },
+
+  "invariants": [
+    "Badge is a presentational component: no theme-specific selectors inside canonical component CSS.",
+    "Component CSS must not leak into token themes/contexts.",
+    "All legacy features must be preserved either in canonical CSS split or in explicit knowledge notes."
+  ],
+
+  "axes": {
+    "tone": {
+      "type": "enum",
+      "default": "neutral",
+      "values": ["success", "warning", "error", "info", "neutral"],
+      "notes": "Badge tone affects background, border, and text colors."
+    },
+    "variant": {
+      "type": "enum",
+      "default": "subtle",
+      "values": ["subtle", "solid", "outline"],
+      "notes": "Subtle (default) has colored background, solid has stronger colors, outline has transparent background with colored border."
+    }
+  },
+
+  "componentVars": {
+    "core": {
+      "--eui-badge-border-width": { "type": "dimension" },
+      "--eui-badge-border-style": { "type": "string" },
+      "--eui-badge-shape-radius": { "type": "dimension" }
+    },
+    "colors": {
+      "--eui-badge-colors-neutral-background": { "type": "color" },
+      "--eui-badge-colors-neutral-border": { "type": "color" },
+      "--eui-badge-colors-neutral-text": { "type": "color" },
+      "--eui-badge-colors-neutral-solid-background": { "type": "color" },
+      "--eui-badge-colors-neutral-solid-border": { "type": "color" },
+      "--eui-badge-colors-neutral-solid-text": { "type": "color" },
+      "--eui-badge-colors-success-background": { "type": "color" },
+      "--eui-badge-colors-success-border": { "type": "color" },
+      "--eui-badge-colors-success-text": { "type": "color" },
+      "--eui-badge-colors-success-solid-background": { "type": "color" },
+      "--eui-badge-colors-success-solid-border": { "type": "color" },
+      "--eui-badge-colors-success-solid-text": { "type": "color" },
+      "--eui-badge-colors-warning-background": { "type": "color" },
+      "--eui-badge-colors-warning-border": { "type": "color" },
+      "--eui-badge-colors-warning-text": { "type": "color" },
+      "--eui-badge-colors-warning-solid-background": { "type": "color" },
+      "--eui-badge-colors-warning-solid-border": { "type": "color" },
+      "--eui-badge-colors-warning-solid-text": { "type": "color" },
+      "--eui-badge-colors-error-background": { "type": "color" },
+      "--eui-badge-colors-error-border": { "type": "color" },
+      "--eui-badge-colors-error-text": { "type": "color" },
+      "--eui-badge-colors-error-solid-background": { "type": "color" },
+      "--eui-badge-colors-error-solid-border": { "type": "color" },
+      "--eui-badge-colors-error-solid-text": { "type": "color" },
+      "--eui-badge-colors-info-background": { "type": "color" },
+      "--eui-badge-colors-info-border": { "type": "color" },
+      "--eui-badge-colors-info-text": { "type": "color" },
+      "--eui-badge-colors-info-solid-background": { "type": "color" },
+      "--eui-badge-colors-info-solid-border": { "type": "color" },
+      "--eui-badge-colors-info-solid-text": { "type": "color" },
+      "--eui-badge-colors-variant-outline-background": { "type": "color" }
+    },
+    "spacing": {
+      "--eui-badge-spacing-padding-vertical": { "type": "dimension" },
+      "--eui-badge-spacing-padding-horizontal": { "type": "dimension" },
+      "--eui-badge-spacing-gap": { "type": "dimension" }
+    },
+    "typography": {
+      "--eui-badge-typography-font-family": { "type": "string" },
+      "--eui-badge-typography-font-size": { "type": "dimension" },
+      "--eui-badge-typography-font-weight": { "type": "string" },
+      "--eui-badge-typography-line-height": { "type": "string" },
+      "--eui-badge-typography-letter-spacing": { "type": "dimension" },
+      "--eui-badge-typography-text-transform": { "type": "string" }
+    },
+    "focus": {
+      "--eui-badge-focus-ring-color-derived-accessible": { "type": "color" },
+      "--eui-badge-focus-ring-width-accessible": { "type": "dimension" },
+      "--eui-badge-focus-ring-offset": { "type": "dimension" }
+    }
+  },
+
+  "behavior": {
+    "layout": {
+      "root": {
+        "display": "inline-flex",
+        "alignItems": "center",
+        "gap": "var(--eui-badge-spacing-gap)"
+      }
+    },
+    "visual": {
+      "borderRadius": "var(--eui-badge-shape-radius)",
+      "borderWidth": "var(--eui-badge-border-width)",
+      "borderStyle": "var(--eui-badge-border-style)",
+      "backgroundColor": "var(--eui-badge-background)",
+      "color": "var(--eui-badge-color)",
+      "padding": "var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal)"
+    },
+    "typography": {
+      "fontFamily": "var(--eui-badge-typography-font-family)",
+      "fontSize": "var(--eui-badge-typography-font-size)",
+      "fontWeight": "var(--eui-badge-typography-font-weight)",
+      "lineHeight": "var(--eui-badge-typography-line-height)",
+      "letterSpacing": "var(--eui-badge-typography-letter-spacing)",
+      "textTransform": "var(--eui-badge-typography-text-transform)",
+      "whiteSpace": "nowrap"
+    },
+    "interactive": {
+      "focusRing": {
+        "color": "var(--eui-badge-focus-color)",
+        "width": "var(--eui-badge-focus-ring-width-accessible)",
+        "offset": "var(--eui-badge-focus-ring-offset)"
+      },
+      "transitions": "filter 120ms ease, transform 120ms ease, box-shadow 120ms ease",
+      "hover": "brightness(0.96)",
+      "active": "translateY(1px)",
+      "disabled": "opacity: 0.6"
+    }
+  },
+
+  "nonCanonicalThemeNotes": [
+    {
+      "context": "app",
+      "theme": "accessibility",
+      "legacyBehavior": [
+        "High-contrast colors for WCAG 2.2 AA compliance",
+        "Focus ring uses accent-700 instead of accent-300",
+        "Neutral badge uses #ffffff background with #000000 text"
+      ],
+      "policy": "Preserve as knowledge note only. Do not include theme-specific selectors in canonical component CSS."
+    }
+  ]
+}

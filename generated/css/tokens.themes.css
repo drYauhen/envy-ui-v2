@@ -1,0 +1,23 @@
+/**
+ * Canonical Token Themes - Do not edit directly
+ */
+
+@layer eui-themes {
+  [data-eui-context="app"][data-eui-theme="accessibility"] {
+    --eui-color-background-muted: var(--eui-color-neutral-200);
+    --eui-color-background-subtle: var(--eui-color-neutral-300);
+    --eui-color-border-default: var(--eui-color-neutral-700);
+    --eui-color-border-strong: var(--eui-color-neutral-800);
+    --eui-color-border-subtle: var(--eui-color-neutral-600);
+    --eui-color-text-disabled: var(--eui-color-neutral-600);
+    --eui-color-text-muted: var(--eui-color-neutral-800);
+    --eui-color-text-primary: var(--eui-color-neutral-900);
+    --eui-color-text-subtle: var(--eui-color-neutral-700);
+    --eui-typography-base-fontSize: var(--eui-typography-fontSize-lg);
+  }
+
+  [data-eui-context="app"][data-eui-theme="default"] {
+    --eui-color-border-default: var(--eui-color-neutral-300);
+  }
+
+}

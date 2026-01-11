@@ -4,17 +4,17 @@
     "border": {
       "width": {
         "thin": {
-          "$value": "{eui.app.raw.border.width.thin}",
+          "$value": "{eui-app-raw-border-width-thin}",
           "$type": "strokeWidth",
           "$description": "Thin border - subtle dividers and minimal definition"
         },
         "default": {
-          "$value": "{eui.app.raw.border.width.default}",
+          "$value": "{eui-app-raw-border-width-default}",
           "$type": "strokeWidth",
           "$description": "Default border - standard component borders and outlines"
         },
         "thick": {
-          "$value": "{eui.app.raw.border.width.thick}",
+          "$value": "{eui-app-raw-border-width-thick}",
           "$type": "strokeWidth",
           "$description": "Thick border - prominent focus rings and emphasis borders"
         }

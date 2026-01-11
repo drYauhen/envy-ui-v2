@@ -3,10 +3,13 @@
 **Last Updated:** 2026-01-10
 **Category:** Reference
 **Related ADR:**
-- [ADR-0037](./../adr/ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (Locked)
+- [ADR-0037](./../adr/ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (JSON structure)
+- [ADR-0038](./../adr/ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract
 - [ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
 - [ADR-0023](./../adr/ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
+- [ADR-0024](./../adr/ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy (superseded)
 - [ADR-0036](./../adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
+- [CSS Token Output Rules](./css-token-output-rules.md) — CSS Generation Rules
 - [Theme Structure Analysis](../theme-structure-analysis.md) — Current Theme Architecture Decisions
 
 ---
@@ -342,6 +345,55 @@ Each context exports as separate Figma files:
 - `generated/figma/app/variables.tokens.scoped.json`
 - `generated/figma/website/variables.tokens.scoped.json`
 - `generated/figma/report/variables.tokens.scoped.json`
+
+## CSS Token Output
+
+The token system generates canonical CSS that reflects the layered architecture structure. CSS output follows strict contracts to ensure predictable cascade order and prevent architectural violations.
+
+### Generated CSS Structure
+
+**4 Files in `generated/css/`:**
+- **`tokens.css`** - Entrypoint with layer order declaration and imports
+- **`tokens.primitives.css`** - Literal values in `@layer eui-primitives`
+- **`tokens.contexts.css`** - Semantic aliases in `@layer eui-contexts`
+- **`tokens.themes.css`** - Theme overrides in `@layer eui-themes`
+
+### Layer Order & Wrapping
+
+**Mandatory layer order declaration:**
+```css
+@layer eui-primitives, eui-contexts, eui-themes;
+```
+
+**Mandatory layer wrapping:**
+```css
+/* Each file wraps rules in its layer block */
+@layer eui-primitives { :root { /* literals */ } }
+@layer eui-contexts { [data-eui-context] { /* semantics */ } }
+@layer eui-themes { [data-eui-context][data-eui-theme] { /* overrides */ } }
+```
+
+### Content Filtering Rules
+
+- **Raw layer NOT materialized** - No raw-proxy exports in contexts
+- **Themes override semantics only** - No component variables in themes
+- **Deterministic output** - Tokens sorted alphabetically
+
+### Forbidden Patterns
+
+```css
+/* ❌ Raw-proxy exports in contexts */
+--eui-dimension-4: var(--eui-app-raw-dimension-4);
+
+/* ❌ Component vars in themes */
+--eui-badge-colors-neutral-background: #ffffff;
+
+/* ❌ Missing layer wrapping */
+@layer eui-primitives;
+:root { /* rules */ }
+```
+
+See **[CSS Token Output Rules](./css-token-output-rules.md)** for complete normative rules and **[ADR-0038](../adr/ADR-0038-canonical-token-css-output-contract.md)** for the authoritative contract.
 
 ## Token Usage Rules
 

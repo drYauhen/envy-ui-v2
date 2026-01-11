@@ -1,0 +1,212 @@
+/**
+ * LEGACY REFERENCE - Card Component CSS
+ *
+ * This file contains the original Card component implementation that served
+ * as the source of truth during the migration to canonical component architecture.
+ *
+ * PRESERVED FOR REFERENCE ONLY - DO NOT MODIFY
+ *
+ * All behavior, variants, axes, and features from this file must be represented
+ * in the new canonical split:
+ * - tokens/components/card.contract.json (contract)
+ * - src/ui/components/card/card.tokens.css (variables/mapping)
+ * - src/ui/components/card/card.structure.css (layout/slots/pseudo-elements)
+ *
+ * Theme-specific rules (e.g., Toy-R-Us) are preserved in knowledge notes only.
+ *
+ * Generated: 2026-01-10
+ * Original Source: src/ui/card.css
+ */
+
+/* ============================================================================
+   Card Component
+   ============================================================================ */
+
+[data-eui-context] .eui-card {
+  /* Base card properties - radius uses large for visual hierarchy above controls */
+  --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
+  --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
+  --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
+  /* Border color uses semantic border color for consistency and lighter appearance */
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-elevated-background);
+  --eui-card-background-image: var(--eui-card-variant-elevated-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-elevated-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-elevated-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-elevated-backgroundSize, auto);
+  /* Radius uses large level: default theme = 8px, accessibility theme = 10px */
+  --eui-card-radius: var(--eui-card-variant-elevated-radius);
+  --eui-card-padding: var(--eui-spacing-md);
+
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--eui-card-radius);
+  border-width: var(--eui-card-border-width);
+  border-style: var(--eui-card-border-style);
+  border-color: var(--eui-card-border-color);
+  background-color: var(--eui-card-background);
+  background-image: var(--eui-card-background-image);
+  background-repeat: var(--eui-card-background-repeat);
+  background-position: var(--eui-card-background-position);
+  background-size: var(--eui-card-background-size);
+  box-shadow: var(--eui-card-shadow);
+}
+
+/* Variant: Elevated (default) */
+/* Note: Always specify data-eui-variant explicitly, even for default variant.
+   Base styles default to elevated for robustness, but explicit specification is required in practice. */
+[data-eui-context] .eui-card[data-eui-variant='elevated'] {
+  --eui-card-shadow: var(--eui-card-variant-elevated-shadow);
+  --eui-card-border-width: var(--eui-card-variant-elevated-border-width);
+  --eui-card-border-style: var(--eui-card-variant-elevated-border-style);
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-elevated-background);
+  --eui-card-background-image: var(--eui-card-variant-elevated-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-elevated-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-elevated-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-elevated-backgroundSize, auto);
+  --eui-card-radius: var(--eui-card-variant-elevated-radius);
+}
+
+/* Variant: Flat (no shadow) */
+[data-eui-context] .eui-card[data-eui-variant='flat'] {
+  --eui-card-shadow: var(--eui-card-variant-flat-shadow);
+  --eui-card-border-width: var(--eui-card-variant-flat-border-width);
+  --eui-card-border-style: var(--eui-card-variant-flat-border-style);
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-flat-background);
+  --eui-card-background-image: var(--eui-card-variant-flat-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-flat-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-flat-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-flat-backgroundSize, auto);
+  --eui-card-radius: var(--eui-card-variant-flat-radius);
+}
+
+/* Variant: Muted (low emphasis) */
+[data-eui-context] .eui-card[data-eui-variant='muted'] {
+  --eui-card-shadow: var(--eui-card-variant-muted-shadow);
+  --eui-card-border-width: var(--eui-card-variant-muted-border-width);
+  --eui-card-border-style: var(--eui-card-variant-muted-border-style);
+  --eui-card-border-color: var(--eui-card-variant-muted-border-color);
+  --eui-card-background: var(--eui-card-variant-muted-background);
+  --eui-card-background-image: var(--eui-card-variant-muted-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-muted-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-muted-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-muted-backgroundSize, auto);
+  --eui-card-radius: var(--eui-card-variant-muted-radius);
+}
+
+/* Variant: Strong (prominent shadow) */
+[data-eui-context] .eui-card[data-eui-variant='strong'] {
+  --eui-card-shadow: var(--eui-card-variant-strong-shadow);
+  --eui-card-border-width: var(--eui-card-variant-strong-border-width);
+  --eui-card-border-style: var(--eui-card-variant-strong-border-style);
+  --eui-card-border-color: var(--eui-color-border-default);
+  --eui-card-background: var(--eui-card-variant-strong-background);
+  --eui-card-background-image: var(--eui-card-variant-strong-backgroundImage, none);
+  --eui-card-background-repeat: var(--eui-card-variant-strong-backgroundRepeat, no-repeat);
+  --eui-card-background-position: var(--eui-card-variant-strong-backgroundPosition, center);
+  --eui-card-background-size: var(--eui-card-variant-strong-backgroundSize, auto);
+  --eui-card-radius: var(--eui-card-variant-strong-radius);
+}
+
+/* ============================================================================
+   Card Component - Layout Zones
+   ============================================================================ */
+
+[data-eui-context] .eui-card__header,
+[data-eui-context] .eui-card__body,
+[data-eui-context] .eui-card__footer {
+  padding: var(--eui-card-padding);
+}
+
+[data-eui-context] .eui-card__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-eui-context] .eui-card__body[data-eui-padding='none'] {
+  padding: 0;
+}
+
+/* ============================================================================
+   Card Component - Toy-R-Us Theme Alignment
+   ============================================================================ */
+
+[data-eui-context='website'][data-eui-theme='toy-r-us'] .eui-card__header {
+  text-align: center;
+}
+
+[data-eui-context='website'][data-eui-theme='toy-r-us'] .eui-card__body {
+  text-align: center;
+  justify-content: center;
+}
+
+[data-eui-context='website'][data-eui-theme='toy-r-us'] .eui-card__body > * {
+  width: 100%;
+}
+
+/* ============================================================================
+   Card Component - Status Indicators (Compositional)
+   ============================================================================ */
+
+/* Base status indicator - uses ::before pseudo-element */
+[data-eui-context] .eui-card[data-eui-status] {
+  position: relative;
+  padding-left: calc(var(--eui-card-status-indicator-width, 4px) + 0px);
+}
+
+[data-eui-context] .eui-card[data-eui-status]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--eui-card-status-indicator-width, 4px);
+  background-color: var(--eui-card-status-indicator-color);
+  border-radius: var(--eui-card-radius) 0 0 var(--eui-card-radius);
+}
+
+/* Status: Pending */
+[data-eui-context] .eui-card[data-eui-status='pending'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-pending-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-pending-indicator-width);
+}
+
+/* Status: On Track */
+[data-eui-context] .eui-card[data-eui-status='onTrack'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-on-track-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-on-track-indicator-width);
+}
+
+/* Status: Completed */
+[data-eui-context] .eui-card[data-eui-status='completed'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-completed-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-completed-indicator-width);
+}
+
+/* Status: Minor Disruption */
+[data-eui-context] .eui-card[data-eui-status='minorDisruption'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-minor-disruption-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-minor-disruption-indicator-width);
+}
+
+/* Status: Major Disruption */
+[data-eui-context] .eui-card[data-eui-status='majorDisruption'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-major-disruption-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-major-disruption-indicator-width);
+}
+
+/* Status: Upcoming */
+[data-eui-context] .eui-card[data-eui-status='upcoming'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-upcoming-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-upcoming-indicator-width);
+}
+
+/* Status: Discontinued */
+[data-eui-context] .eui-card[data-eui-status='discontinued'] {
+  --eui-card-status-indicator-color: var(--eui-card-status-discontinued-indicator);
+  --eui-card-status-indicator-width: var(--eui-card-status-discontinued-indicator-width);
+}

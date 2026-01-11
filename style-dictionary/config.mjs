@@ -27,8 +27,14 @@ const CONTEXT_MIRRORS = {};
 const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
 const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
 
+// Fail-soft mode for build recovery after token refactor
+const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
+
 console.log(`Building CSS for target: ${target}`);
 console.log(`Allowed contexts: ${allowedContexts.join(', ')}`);
+if (failSoft) {
+  console.log(`🛠️  Fail-soft mode enabled: Using safe fallbacks for missing references`);
+}
 
 registerStorybookColorsFormat(StyleDictionary);
 registerFigmaAdapterFormat(StyleDictionary);
@@ -46,7 +52,12 @@ export default {
       ignore: [
         path.join(repoRoot, 'tokens', '**', '*.meta.json'),
         path.join(repoRoot, 'tokens', 'legacy', '**', '*.json'), // Exclude legacy files
-        path.join(repoRoot, 'tokens', 'knowledge', '**', '*.json') // Exclude knowledge/workflow files
+        path.join(repoRoot, 'tokens', 'knowledge', '**', '*.json'), // Exclude knowledge/workflow files
+        path.join(repoRoot, 'tokens', 'components', '**', '*.json'), // Exclude component token files (processed separately)
+        // FAIL-SOFT: Temporarily exclude raw files causing circular references and missing references
+        ...(failSoft ? [
+          path.join(repoRoot, 'tokens', 'contexts', '**', 'raw', '**', '*.json')
+        ] : [])
       ]
     });
     return allJsonFiles;
@@ -174,6 +185,40 @@ export default {
           options: {
             context: 'report'
           }
+        }
+      ]
+    },
+
+    // NEW: Canonical CSS token generation - runs independently
+    canonicalPrimitives: {
+      // No transformGroup needed - canonical formats work directly with JSON
+      buildPath: path.join(repoRoot, 'generated', 'css') + path.sep,
+      files: [
+        {
+          destination: 'tokens.primitives.css',
+          format: 'css/canonical-primitives'
+        }
+      ]
+    },
+
+    canonicalContexts: {
+      // No transformGroup needed - canonical formats work directly with JSON
+      buildPath: path.join(repoRoot, 'generated', 'css') + path.sep,
+      files: [
+        {
+          destination: 'tokens.contexts.css',
+          format: 'css/canonical-contexts'
+        }
+      ]
+    },
+
+    canonicalThemes: {
+      // No transformGroup needed - canonical formats work directly with JSON
+      buildPath: path.join(repoRoot, 'generated', 'css') + path.sep,
+      files: [
+        {
+          destination: 'tokens.themes.css',
+          format: 'css/canonical-themes'
         }
       ]
     }

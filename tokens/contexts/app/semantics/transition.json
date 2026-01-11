@@ -4,49 +4,49 @@
     "transition": {
       "duration": {
         "instant": {
-          "$value": "{eui.app.raw.transition.duration.instant}",
+          "$value": "{eui-app-raw-transition-duration-instant}",
           "$type": "duration",
           "$description": "Instant transition - no animation delay"
         },
         "fast": {
-          "$value": "{eui.app.raw.transition.duration.fast}",
+          "$value": "{eui-app-raw-transition-duration-fast}",
           "$type": "duration",
           "$description": "Fast transition - quick feedback for user interactions"
         },
         "base": {
-          "$value": "{eui.app.raw.transition.duration.base}",
+          "$value": "{eui-app-raw-transition-duration-base}",
           "$type": "duration",
           "$description": "Base transition - standard animation duration"
         },
         "slow": {
-          "$value": "{eui.app.raw.transition.duration.slow}",
+          "$value": "{eui-app-raw-transition-duration-slow}",
           "$type": "duration",
           "$description": "Slow transition - noticeable animation for complex changes"
         },
         "slower": {
-          "$value": "{eui.app.raw.transition.duration.slower}",
+          "$value": "{eui-app-raw-transition-duration-slower}",
           "$type": "duration",
           "$description": "Slower transition - pronounced animation for major state changes"
         }
       },
       "easing": {
         "linear": {
-          "$value": "{eui.app.raw.transition.easing.linear}",
+          "$value": "{eui-app-raw-transition-easing-linear}",
           "$type": "cubicBezier",
           "$description": "Linear easing - constant velocity animation"
         },
         "in": {
-          "$value": "{eui.app.raw.transition.easing.in}",
+          "$value": "{eui-app-raw-transition-easing-in}",
           "$type": "cubicBezier",
           "$description": "Ease-in - acceleration easing for exit animations"
         },
         "out": {
-          "$value": "{eui.app.raw.transition.easing.out}",
+          "$value": "{eui-app-raw-transition-easing-out}",
           "$type": "cubicBezier",
           "$description": "Ease-out - deceleration easing for entrance animations"
         },
         "inOut": {
-          "$value": "{eui.app.raw.transition.easing.inOut}",
+          "$value": "{eui-app-raw-transition-easing-inOut}",
           "$type": "cubicBezier",
           "$description": "Ease-in-out - smooth acceleration and deceleration"
         }

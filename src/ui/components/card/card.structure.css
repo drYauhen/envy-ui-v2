@@ -1,0 +1,83 @@
+/**
+ * Card Component - Layout, Slots & Structure
+ *
+ * This file contains layout rules, flex behavior, and pseudo-elements.
+ * No variable assignments or axis overrides.
+ *
+ * Generated from: tokens/components/card.contract.json
+ * Legacy reference: tokens/knowledge/components/card/legacy.card.css
+ */
+
+@layer eui-components {
+  /* ============================================================================
+     Card Component - Root Layout
+     ============================================================================ */
+
+  [data-eui-context] .eui-card {
+    /* Layout structure */
+    display: flex;
+    flex-direction: column;
+
+    /* Visual properties using component variables */
+    border-radius: var(--eui-card-radius);
+    border-width: var(--eui-card-border-width);
+    border-style: var(--eui-card-border-style);
+    border-color: var(--eui-card-border-color);
+    background-color: var(--eui-card-background-color);
+    background-image: var(--eui-card-background-image);
+    background-repeat: var(--eui-card-background-repeat);
+    background-position: var(--eui-card-background-position);
+    background-size: var(--eui-card-background-size);
+    box-shadow: var(--eui-card-shadow);
+  }
+
+  /* ============================================================================
+     Card Component - Slot Layout & Behavior
+     ============================================================================ */
+
+  /* Header slot */
+  [data-eui-context] .eui-card__header {
+    padding: var(--eui-card-padding);
+  }
+
+  /* Body slot - primary content area */
+  [data-eui-context] .eui-card__body {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: var(--eui-card-padding);
+  }
+
+  /* Body padding override */
+  [data-eui-context] .eui-card__body[data-eui-padding='none'] {
+    padding: 0;
+  }
+
+  /* Footer slot */
+  [data-eui-context] .eui-card__footer {
+    padding: var(--eui-card-padding);
+  }
+
+  /* ============================================================================
+     Card Component - Status Indicator (Pseudo-element Mechanics)
+     ============================================================================ */
+
+  /* Status indicator - base positioning and padding */
+  [data-eui-context] .eui-card[data-eui-status] {
+    position: relative;
+    padding-left: calc(var(--eui-card-status-indicator-width, 4px) + 0px);
+  }
+
+  /* Status indicator - pseudo-element */
+  [data-eui-context] .eui-card[data-eui-status]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--eui-card-status-indicator-width, 4px);
+    background-color: var(--eui-card-status-indicator-color);
+    border-radius: var(--eui-card-radius) 0 0 var(--eui-card-radius);
+  }
+}

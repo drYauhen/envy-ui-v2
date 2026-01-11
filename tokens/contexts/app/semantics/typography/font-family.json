@@ -1,14 +1,15 @@
 {
-  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",  "eui": {
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
     "typography": {
       "fontFamily": {
         "ui": {
-          "$value": "{eui.app.raw.typography.fontFamily.ui}",
+          "$value": "{eui-app-raw-typography-fontFamily-ui}",
           "$type": "fontFamily",
           "$description": "Primary UI font family for application. Matches preview.css configuration."
         },
         "monospace": {
-          "$value": "{eui.app.raw.typography.fontFamily.monospace}",
+          "$value": "{eui-app-raw-typography-fontFamily-monospace}",
           "$type": "fontFamily",
           "$description": "Monospace font for code, technical content, data display."
         }

@@ -1,0 +1,187 @@
+/**
+ * Badge Component - Layout, Slots & Structure
+ *
+ * This file contains layout rules, flex behavior, and pseudo-elements.
+ * No variable assignments or axis overrides.
+ *
+ * Generated from: tokens/components/badge.contract.json
+ * Legacy reference: src/ui/badge.css
+ */
+
+@layer eui-components {
+  /* ============================================================================
+     Badge Component - Root Layout
+     ============================================================================ */
+
+  [data-eui-context] .eui-badge {
+    /* Layout structure */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--eui-badge-spacing-gap);
+
+    /* Visual properties using component variables */
+    border-radius: var(--eui-badge-shape-radius);
+    border-width: var(--eui-badge-border-width);
+    border-style: var(--eui-badge-border-style);
+    padding: var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal);
+
+    /* Typography */
+    font-family: var(--eui-badge-typography-font-family);
+    font-size: var(--eui-badge-typography-font-size);
+    font-weight: var(--eui-badge-typography-font-weight);
+    line-height: var(--eui-badge-typography-line-height);
+    letter-spacing: var(--eui-badge-typography-letter-spacing);
+    text-transform: var(--eui-badge-typography-text-transform);
+    white-space: nowrap;
+
+    /* Interactive states */
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    transition: filter 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+    text-decoration: none; /* Remove underline for links */
+  }
+
+  /* ============================================================================
+     Badge Component - Variant & Tone Styling
+     ============================================================================ */
+
+  /* Default neutral subtle badge */
+  [data-eui-context] .eui-badge {
+    --eui-badge-background: var(--eui-badge-colors-neutral-background);
+    --eui-badge-border: var(--eui-badge-colors-neutral-border);
+    --eui-badge-color: var(--eui-badge-colors-neutral-text);
+    background-color: var(--eui-badge-background);
+    color: var(--eui-badge-color);
+    border-color: var(--eui-badge-border);
+  }
+
+  /* Success tone */
+  [data-eui-context] .eui-badge[data-eui-tone='success'] {
+    --eui-badge-background: var(--eui-badge-colors-success-background);
+    --eui-badge-border: var(--eui-badge-colors-success-border);
+    --eui-badge-color: var(--eui-badge-colors-success-text);
+  }
+
+  /* Success + solid variant */
+  [data-eui-context] .eui-badge[data-eui-tone='success'][data-eui-variant='solid'] {
+    --eui-badge-background: var(--eui-badge-colors-success-solid-background);
+    --eui-badge-border: var(--eui-badge-colors-success-solid-border);
+    --eui-badge-color: var(--eui-badge-colors-success-solid-text);
+  }
+
+  /* Warning tone */
+  [data-eui-context] .eui-badge[data-eui-tone='warning'] {
+    --eui-badge-background: var(--eui-badge-colors-warning-background);
+    --eui-badge-border: var(--eui-badge-colors-warning-border);
+    --eui-badge-color: var(--eui-badge-colors-warning-text);
+  }
+
+  /* Warning + solid variant */
+  [data-eui-context] .eui-badge[data-eui-tone='warning'][data-eui-variant='solid'] {
+    --eui-badge-background: var(--eui-badge-colors-warning-solid-background);
+    --eui-badge-border: var(--eui-badge-colors-warning-solid-border);
+    --eui-badge-color: var(--eui-badge-colors-warning-solid-text);
+  }
+
+  /* Error tone */
+  [data-eui-context] .eui-badge[data-eui-tone='error'] {
+    --eui-badge-background: var(--eui-badge-colors-error-background);
+    --eui-badge-border: var(--eui-badge-colors-error-border);
+    --eui-badge-color: var(--eui-badge-colors-error-text);
+  }
+
+  /* Error + solid variant */
+  [data-eui-context] .eui-badge[data-eui-tone='error'][data-eui-variant='solid'] {
+    --eui-badge-background: var(--eui-badge-colors-error-solid-background);
+    --eui-badge-border: var(--eui-badge-colors-error-solid-border);
+    --eui-badge-color: var(--eui-badge-colors-error-solid-text);
+  }
+
+  /* Info tone */
+  [data-eui-context] .eui-badge[data-eui-tone='info'] {
+    --eui-badge-background: var(--eui-badge-colors-info-background);
+    --eui-badge-border: var(--eui-badge-colors-info-border);
+    --eui-badge-color: var(--eui-badge-colors-info-text);
+  }
+
+  /* Info + solid variant */
+  [data-eui-context] .eui-badge[data-eui-tone='info'][data-eui-variant='solid'] {
+    --eui-badge-background: var(--eui-badge-colors-info-solid-background);
+    --eui-badge-border: var(--eui-badge-colors-info-solid-border);
+    --eui-badge-color: var(--eui-badge-colors-info-solid-text);
+  }
+
+  /* Neutral tone (explicit) */
+  [data-eui-context] .eui-badge[data-eui-tone='neutral'] {
+    --eui-badge-background: var(--eui-badge-colors-neutral-background);
+    --eui-badge-border: var(--eui-badge-colors-neutral-border);
+    --eui-badge-color: var(--eui-badge-colors-neutral-text);
+  }
+
+  /* Neutral + solid variant */
+  [data-eui-context] .eui-badge[data-eui-tone='neutral'][data-eui-variant='solid'] {
+    --eui-badge-background: var(--eui-badge-colors-neutral-solid-background);
+    --eui-badge-border: var(--eui-badge-colors-neutral-solid-border);
+    --eui-badge-color: var(--eui-badge-colors-neutral-solid-text);
+  }
+
+  /* Solid variant (fallback) */
+  [data-eui-context] .eui-badge[data-eui-variant='solid'] {
+    --eui-badge-background: var(--eui-badge-colors-neutral-solid-background);
+    --eui-badge-border: var(--eui-badge-colors-neutral-solid-border);
+    --eui-badge-color: var(--eui-badge-colors-neutral-solid-text);
+  }
+
+  /* Outline variant */
+  [data-eui-context] .eui-badge[data-eui-variant='outline'] {
+    --eui-badge-background: var(--eui-badge-colors-variant-outline-background);
+  }
+
+  /* ============================================================================
+     Badge Component - Interactive States
+     ============================================================================ */
+
+  /* Set up focus color variable (derived focus mode by default) */
+  [data-eui-context] {
+    --eui-badge-focus-color: var(--eui-badge-focus-ring-color-derived-accessible);
+  }
+
+  /* Focus ring: theme-dependent color (accent-300 default, accent-700 accessibility) */
+  /* Uses 2px width for all focus states. Color changes based on active theme. */
+  [data-eui-context] .eui-badge:is(button, a):focus {
+    box-shadow:
+      0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width-accessible)) var(--eui-badge-focus-color);
+  }
+
+  /* System focus policy override: bright orange for keyboard focus */
+  [data-eui-focus-policy="system"] [data-eui-context] .eui-badge:is(button, a):focus-visible {
+    box-shadow:
+      0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width-accessible)) var(--eui-color-system-focus);
+  }
+
+  /* Subtle hover state for interactive badges */
+  [data-eui-context] .eui-badge:is(button, a):not(:disabled):hover {
+    filter: brightness(0.96);
+  }
+
+  /* Pressed state for interactive badges */
+  [data-eui-context] .eui-badge:is(button, a):not(:disabled):active {
+    transform: translateY(1px);
+  }
+
+  /* Disabled state for button badges */
+  [data-eui-context] .eui-badge:is(button):disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  /* Disabled-like state for link badges (using aria-disabled) */
+  [data-eui-context] .eui-badge:is(a)[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}

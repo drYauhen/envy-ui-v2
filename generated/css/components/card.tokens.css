@@ -1,0 +1,116 @@
+/**
+ * Card Component Tokens - Generated from tokens/components/card.tokens.json
+ */
+
+@layer eui-components {
+  /* Base card variables (default variant) */
+  [data-eui-context] .eui-card {
+    --eui-card-shadow: var(--eui-shadow-default);
+    --eui-card-border-width: var(--eui-border-width-thin);
+    --eui-card-border-style: solid;
+    --eui-card-border-color: var(--eui-color-border-default);
+    --eui-card-background-color: var(--eui-color-neutral-white);
+    --eui-card-background-image: none;
+    --eui-card-background-repeat: no-repeat;
+    --eui-card-background-position: center;
+    --eui-card-background-size: auto;
+    --eui-card-radius: var(--eui-radius-lg);
+    --eui-card-padding: var(--eui-spacing-md);
+  }
+
+  /* Variant: elevated */
+  [data-eui-context] .eui-card[data-eui-variant='elevated'] {
+    --eui-card-shadow: var(--eui-shadow-default);
+    --eui-card-border-width: var(--eui-border-width-thin);
+    --eui-card-border-style: solid;
+    --eui-card-background-color: var(--eui-color-neutral-white);
+    --eui-card-background-image: none;
+    --eui-card-background-repeat: no-repeat;
+    --eui-card-background-position: center;
+    --eui-card-background-size: auto;
+    --eui-card-radius: var(--eui-radius-lg);
+  }
+
+  /* Variant: flat */
+  [data-eui-context] .eui-card[data-eui-variant='flat'] {
+    --eui-card-shadow: var(--eui-shadow-none);
+    --eui-card-border-width: var(--eui-border-width-thin);
+    --eui-card-border-style: solid;
+    --eui-card-background-color: var(--eui-color-neutral-white);
+    --eui-card-background-image: none;
+    --eui-card-background-repeat: no-repeat;
+    --eui-card-background-position: center;
+    --eui-card-background-size: auto;
+    --eui-card-radius: var(--eui-radius-lg);
+  }
+
+  /* Variant: muted */
+  [data-eui-context] .eui-card[data-eui-variant='muted'] {
+    --eui-card-shadow: var(--eui-shadow-none);
+    --eui-card-border-width: var(--eui-border-width-thin);
+    --eui-card-border-style: solid;
+    --eui-card-border-color: var(--eui-color-neutral-300);
+    --eui-card-background-color: var(--eui-color-neutral-50);
+    --eui-card-background-image: none;
+    --eui-card-background-repeat: no-repeat;
+    --eui-card-background-position: center;
+    --eui-card-background-size: auto;
+    --eui-card-radius: var(--eui-radius-lg);
+  }
+
+  /* Variant: strong */
+  [data-eui-context] .eui-card[data-eui-variant='strong'] {
+    --eui-card-shadow: var(--eui-shadow-large);
+    --eui-card-border-width: var(--eui-border-width-thin);
+    --eui-card-border-style: solid;
+    --eui-card-background-color: var(--eui-color-neutral-white);
+    --eui-card-background-image: none;
+    --eui-card-background-repeat: no-repeat;
+    --eui-card-background-position: center;
+    --eui-card-background-size: auto;
+    --eui-card-radius: var(--eui-radius-lg);
+  }
+
+  /* Status: pending */
+  [data-eui-context] .eui-card[data-eui-status='pending'] {
+    --eui-card-status-indicator-color: var(--eui-color-neutral-400);
+    --eui-card-status-indicator-width: 4px;
+  }
+
+  /* Status: onTrack */
+  [data-eui-context] .eui-card[data-eui-status='onTrack'] {
+    --eui-card-status-indicator-color: var(--eui-color-brand-500);
+    --eui-card-status-indicator-width: 4px;
+  }
+
+  /* Status: completed */
+  [data-eui-context] .eui-card[data-eui-status='completed'] {
+    --eui-card-status-indicator-color: var(--eui-color-signal-success-500);
+    --eui-card-status-indicator-width: 4px;
+  }
+
+  /* Status: minorDisruption */
+  [data-eui-context] .eui-card[data-eui-status='minorDisruption'] {
+    --eui-card-status-indicator-color: var(--eui-color-signal-warning-500);
+    --eui-card-status-indicator-width: 4px;
+  }
+
+  /* Status: majorDisruption */
+  [data-eui-context] .eui-card[data-eui-status='majorDisruption'] {
+    --eui-card-status-indicator-color: var(--eui-color-signal-error-500);
+    --eui-card-status-indicator-width: 4px;
+  }
+
+  /* Status: upcoming */
+  [data-eui-context] .eui-card[data-eui-status='upcoming'] {
+    --eui-card-status-indicator-color: var(--eui-color-accent-500);
+    --eui-card-status-indicator-width: 4px;
+  }
+
+  /* Status: discontinued */
+  [data-eui-context] .eui-card[data-eui-status='discontinued'] {
+    --eui-card-status-indicator-color: var(--eui-color-neutral-600);
+    --eui-card-status-indicator-width: 4px;
+  }
+
+}

@@ -1,0 +1,25 @@
+/**
+ * Badge Component Tokens - Generated from tokens/components/badge.tokens.json
+ */
+
+@layer eui-components {
+  /* Base badge variables (default variant) */
+  [data-eui-context] .eui-badge {
+    --eui-badge-border-width: var(--eui-border-width-thin);
+    --eui-badge-border-style: solid;
+    --eui-badge-shape-radius: var(--eui-radius-lg);
+    --eui-badge-spacing-padding-vertical: var(--eui-spacing-1);
+    --eui-badge-spacing-padding-horizontal: var(--eui-spacing-2);
+    --eui-badge-spacing-gap: var(--eui-spacing-1);
+    --eui-badge-typography-fontFamily: var(--eui-typography-fontFamily-ui);
+    --eui-badge-typography-fontSize: var(--eui-typography-fontSize-xs);
+    --eui-badge-typography-fontWeight: var(--eui-typography-fontWeight-medium);
+    --eui-badge-typography-lineHeight: var(--eui-typography-lineHeight-tight);
+    --eui-badge-typography-letterSpacing: var(--eui-typography-letterSpacing-wide);
+    --eui-badge-typography-textTransform: uppercase;
+    --eui-badge-focus-ring-color-derived-accessible: var(--eui-color-accent-700);
+    --eui-badge-focus-ring-width-accessible: 2px;
+    --eui-badge-focus-ring-offset: 0px;
+  }
+
+}

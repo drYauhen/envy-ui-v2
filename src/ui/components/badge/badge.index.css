@@ -1,0 +1,14 @@
+/**
+ * Badge Component - Entrypoint
+ *
+ * This file imports all badge component layers in correct order.
+ *
+ * Component token variables: generated/css/components/badge.tokens.css
+ * Component structure/layout: src/ui/components/badge/badge.structure.css
+ */
+
+/* Import component token variables first */
+@import '../../../generated/css/components/badge.tokens.css';
+
+/* Import component structure/layout */
+@import './badge.structure.css';

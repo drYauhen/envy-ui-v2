@@ -1,0 +1,202 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "card",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/card.css",
+    "note": "This contract is derived from legacy CSS to preserve all existing behavior/features during migration."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-card",
+    "slots": {
+      "header": ".eui-card__header",
+      "body": ".eui-card__body",
+      "footer": ".eui-card__footer"
+    }
+  },
+
+  "invariants": [
+    "Card is a container/layout component: no theme-specific selectors inside canonical component CSS.",
+    "Component CSS must not leak into token themes/contexts.",
+    "All legacy features must be preserved either in canonical CSS split or in explicit knowledge notes."
+  ],
+
+  "axes": {
+    "variant": {
+      "type": "enum",
+      "default": "elevated",
+      "values": ["elevated", "flat", "muted", "strong"],
+      "notes": "Legacy base styles default to elevated; in new implementation variant=default may be implicit, but contract preserves axis."
+    },
+    "padding": {
+      "type": "enum",
+      "default": "default",
+      "values": ["default", "none"],
+      "appliesTo": "slot.body",
+      "attribute": "data-eui-padding",
+      "notes": "Legacy supports body padding removal via .eui-card__body[data-eui-padding='none']."
+    },
+    "status": {
+      "type": "enum",
+      "default": null,
+      "values": [
+        "pending",
+        "onTrack",
+        "completed",
+        "minorDisruption",
+        "majorDisruption",
+        "upcoming",
+        "discontinued"
+      ],
+      "attribute": "data-eui-status",
+      "notes": "Status indicator is compositional via ::before pseudo-element and padding-left based on indicator width."
+    }
+  },
+
+  "componentVars": {
+    "core": {
+      "--eui-card-shadow": { "type": "shadow" },
+      "--eui-card-border-width": { "type": "dimension" },
+      "--eui-card-border-style": { "type": "string" },
+      "--eui-card-border-color": { "type": "color" },
+
+      "--eui-card-background": { "type": "color" },
+      "--eui-card-background-image": { "type": "string" },
+      "--eui-card-background-repeat": { "type": "string" },
+      "--eui-card-background-position": { "type": "string" },
+      "--eui-card-background-size": { "type": "string" },
+
+      "--eui-card-radius": { "type": "dimension" },
+      "--eui-card-padding": { "type": "dimension" }
+    },
+    "statusIndicator": {
+      "--eui-card-status-indicator-color": { "type": "color" },
+      "--eui-card-status-indicator-width": { "type": "dimension" }
+    }
+  },
+
+  "legacyTokenRefs": {
+    "variantTokens": {
+      "elevated": {
+        "shadow": "--eui-card-variant-elevated-shadow",
+        "borderWidth": "--eui-card-variant-elevated-border-width",
+        "borderStyle": "--eui-card-variant-elevated-border-style",
+        "background": "--eui-card-variant-elevated-background",
+        "backgroundImage": "--eui-card-variant-elevated-backgroundImage",
+        "backgroundRepeat": "--eui-card-variant-elevated-backgroundRepeat",
+        "backgroundPosition": "--eui-card-variant-elevated-backgroundPosition",
+        "backgroundSize": "--eui-card-variant-elevated-backgroundSize",
+        "radius": "--eui-card-variant-elevated-radius"
+      },
+      "flat": {
+        "shadow": "--eui-card-variant-flat-shadow",
+        "borderWidth": "--eui-card-variant-flat-border-width",
+        "borderStyle": "--eui-card-variant-flat-border-style",
+        "background": "--eui-card-variant-flat-background",
+        "backgroundImage": "--eui-card-variant-flat-backgroundImage",
+        "backgroundRepeat": "--eui-card-variant-flat-backgroundRepeat",
+        "backgroundPosition": "--eui-card-variant-flat-backgroundPosition",
+        "backgroundSize": "--eui-card-variant-flat-backgroundSize",
+        "radius": "--eui-card-variant-flat-radius"
+      },
+      "muted": {
+        "shadow": "--eui-card-variant-muted-shadow",
+        "borderWidth": "--eui-card-variant-muted-border-width",
+        "borderStyle": "--eui-card-variant-muted-border-style",
+        "borderColor": "--eui-card-variant-muted-border-color",
+        "background": "--eui-card-variant-muted-background",
+        "backgroundImage": "--eui-card-variant-muted-backgroundImage",
+        "backgroundRepeat": "--eui-card-variant-muted-backgroundRepeat",
+        "backgroundPosition": "--eui-card-variant-muted-backgroundPosition",
+        "backgroundSize": "--eui-card-variant-muted-backgroundSize",
+        "radius": "--eui-card-variant-muted-radius"
+      },
+      "strong": {
+        "shadow": "--eui-card-variant-strong-shadow",
+        "borderWidth": "--eui-card-variant-strong-border-width",
+        "borderStyle": "--eui-card-variant-strong-border-style",
+        "background": "--eui-card-variant-strong-background",
+        "backgroundImage": "--eui-card-variant-strong-backgroundImage",
+        "backgroundRepeat": "--eui-card-variant-strong-backgroundRepeat",
+        "backgroundPosition": "--eui-card-variant-strong-backgroundPosition",
+        "backgroundSize": "--eui-card-variant-strong-backgroundSize",
+        "radius": "--eui-card-variant-strong-radius"
+      }
+    },
+    "statusTokens": {
+      "pending": {
+        "indicatorColor": "--eui-card-status-pending-indicator",
+        "indicatorWidth": "--eui-card-status-pending-indicator-width"
+      },
+      "onTrack": {
+        "indicatorColor": "--eui-card-status-on-track-indicator",
+        "indicatorWidth": "--eui-card-status-on-track-indicator-width"
+      },
+      "completed": {
+        "indicatorColor": "--eui-card-status-completed-indicator",
+        "indicatorWidth": "--eui-card-status-completed-indicator-width"
+      },
+      "minorDisruption": {
+        "indicatorColor": "--eui-card-status-minor-disruption-indicator",
+        "indicatorWidth": "--eui-card-status-minor-disruption-indicator-width"
+      },
+      "majorDisruption": {
+        "indicatorColor": "--eui-card-status-major-disruption-indicator",
+        "indicatorWidth": "--eui-card-status-major-disruption-indicator-width"
+      },
+      "upcoming": {
+        "indicatorColor": "--eui-card-status-upcoming-indicator",
+        "indicatorWidth": "--eui-card-status-upcoming-indicator-width"
+      },
+      "discontinued": {
+        "indicatorColor": "--eui-card-status-discontinued-indicator",
+        "indicatorWidth": "--eui-card-status-discontinued-indicator-width"
+      }
+    }
+  },
+
+  "behavior": {
+    "layout": {
+      "root": {
+        "display": "flex",
+        "flexDirection": "column"
+      },
+      "body": {
+        "flex": 1,
+        "minHeight": 0,
+        "display": "flex",
+        "flexDirection": "column"
+      }
+    },
+    "slotsPadding": {
+      "default": "var(--eui-card-padding)",
+      "bodyPaddingNone": 0
+    },
+    "statusIndicator": {
+      "enabledWhenAttributePresent": "data-eui-status",
+      "implementation": "pseudo-element ::before",
+      "position": "absolute",
+      "borderRadiusRule": "uses card radius on left corners",
+      "paddingLeftFormula": "calc(var(--eui-card-status-indicator-width, 4px) + 0px)",
+      "defaults": {
+        "widthFallback": "4px"
+      }
+    }
+  },
+
+  "nonCanonicalThemeNotes": [
+    {
+      "context": "website",
+      "theme": "toy-r-us",
+      "legacyBehavior": [
+        "header text-align center",
+        "body text-align center and justify-content center",
+        "body direct children width 100%"
+      ],
+      "policy": "Preserve as knowledge note only. Do not include theme-specific selectors in canonical component CSS."
+    }
+  ]
+}

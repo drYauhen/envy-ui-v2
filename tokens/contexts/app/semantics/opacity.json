@@ -3,7 +3,7 @@
   "eui": {
     "opacity": {
       "muted": {
-        "$value": "{eui.app.raw.opacity.muted}",
+        "$value": "{eui-app-raw-opacity-muted}",
         "$type": "number",
         "$description": "Opacity for muted content blocks that should appear inactive but remain readable."
       }

@@ -4,37 +4,37 @@
     "color": {
       "neutral": {
         "surface": {
-          "$value": "{eui.app.raw.color.neutral.zero}",
+          "$value": "{eui-app-raw-color-neutral-zero}",
           "$type": "color",
           "$description": "Primary surface color for backgrounds"
         },
         "text": {
-          "$value": "{eui.app.raw.color.neutral.900}",
+          "$value": "{eui-app-raw-color-neutral-900}",
           "$type": "color",
           "$description": "Primary text color"
         },
         "text-secondary": {
-          "$value": "{eui.app.raw.color.neutral.700}",
+          "$value": "{eui-app-raw-color-neutral-700}",
           "$type": "color",
           "$description": "Secondary text color for less important content"
         },
         "text-muted": {
-          "$value": "{eui.app.raw.color.neutral.500}",
+          "$value": "{eui-app-raw-color-neutral-500}",
           "$type": "color",
           "$description": "Muted text color for captions and metadata"
         },
         "border": {
-          "$value": "{eui.app.raw.color.neutral.300}",
+          "$value": "{eui-app-raw-color-neutral-300}",
           "$type": "color",
           "$description": "Default border color"
         },
         "border-strong": {
-          "$value": "{eui.app.raw.color.neutral.400}",
+          "$value": "{eui-app-raw-color-neutral-400}",
           "$type": "color",
           "$description": "Stronger border color for emphasis"
         },
         "divider": {
-          "$value": "{eui.app.raw.color.neutral.200}",
+          "$value": "{eui-app-raw-color-neutral-200}",
           "$type": "color",
           "$description": "Divider and separator color"
         }

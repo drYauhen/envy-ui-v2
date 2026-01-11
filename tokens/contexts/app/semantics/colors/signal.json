@@ -4,7 +4,7 @@
     "color": {
       "signal": {
         "keyboardFocus": {
-          "$value": "{eui.app.raw.color.signal.500}",
+          "$value": "{eui-app-raw-color-signal-500}",
           "$type": "color",
           "$description": "Keyboard-only focus ring - bright, saturated orange for high contrast accessibility"
         }

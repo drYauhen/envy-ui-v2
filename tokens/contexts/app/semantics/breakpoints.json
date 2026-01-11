@@ -3,17 +3,17 @@
   "eui": {
     "breakpoint": {
       "narrow": {
-        "$value": "{eui.app.raw.breakpoint.narrow}",
+        "$value": "{eui-app-raw-breakpoint-narrow}",
         "$type": "dimension",
         "$description": "Narrow desktop window. Below this, overflow/wrap behavior is acceptable."
       },
       "desktop": {
-        "$value": "{eui.app.raw.breakpoint.desktop}",
+        "$value": "{eui-app-raw-breakpoint-desktop}",
         "$type": "dimension",
         "$description": "Standard desktop target width. Primary design target."
       },
       "wide": {
-        "$value": "{eui.app.raw.breakpoint.wide}",
+        "$value": "{eui-app-raw-breakpoint-wide}",
         "$type": "dimension",
         "$description": "Wide desktop display. Optional optimization target."
       }
