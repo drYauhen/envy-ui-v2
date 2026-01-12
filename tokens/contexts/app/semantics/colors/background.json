@@ -22,6 +22,11 @@
           "$value": "{eui-app-raw-color-neutral-900}",
           "$type": "color",
           "$description": "Inverse background color for dark surfaces. Optimized for app-default context/theme. Other contexts/themes may override this value."
+        },
+        "transparent": {
+          "$value": "{eui.color.neutral.transparent}",
+          "$type": "color",
+          "$description": "Transparent background color for outline/ghost surfaces"
         }
       },
       "brand": {

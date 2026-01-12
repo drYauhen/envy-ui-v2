@@ -4,26 +4,27 @@ This document explains the developer tools available for working with design tok
 
 ## Overview
 
-The Envy UI token system is a comprehensive design token architecture supporting multiple contexts (app, website, report) with DTCG 2025.10 compliance. The system provides extensive tooling to improve developer experience:
+The Envy UI token system is a comprehensive design token architecture supporting multiple contexts (app, website, report) with DTCG 2025.10 compliance. The old `web` name is deprecated and has been renamed to `website` (legacy artifacts may still exist under `tokens/legacy/contexts/web`). The system provides extensive tooling to improve developer experience:
 
 ### Core Features
 
 1. **Multi-Context Architecture** - Independent token structures for app/website/report contexts
-2. **DTCG 2025.10 Compliance** - Local schema validation with official specification alignment
-3. **Logical Typography Organization** - Typography tokens separated into focused semantic files
-4. **Enhanced Token Viewers** - Display both references and resolved values for transparency
-5. **TypeScript Integration** - Generated types and runtime utilities for type safety
-6. **Token Validation** - Automated validation of token usage in CSS files
-7. **VS Code Autocomplete** - Intelligent autocomplete for CSS custom properties
-8. **Runtime Utilities** - Helper functions for dynamic token access
-9. **Auto-Generated Documentation** - Comprehensive token reference documentation
+2. **Website Context** - Canonical, may temporarily inherit app semantics until specialized tokens are defined
+3. **DTCG 2025.10 Compliance** - Local schema validation with official specification alignment
+4. **Logical Typography Organization** - Typography tokens separated into focused semantic files
+5. **Enhanced Token Viewers** - Display both references and resolved values for transparency
+6. **TypeScript Integration** - Generated types and runtime utilities for type safety
+7. **Token Validation** - Automated validation of token usage in CSS files
+8. **VS Code Autocomplete** - Intelligent autocomplete for CSS custom properties
+9. **Runtime Utilities** - Helper functions for dynamic token access
+10. **Auto-Generated Documentation** - Comprehensive token reference documentation
 
 ### Architecture Highlights
 
-- **Layered System**: Foundation → Semantic → Context → Theme → Component
+- **Layered System**: Primitives → Raw → Semantics → Themes → Components
 - **Local DTCG Schema**: `schemas/dtcg-2025.10-schema.json` provides validation without external dependencies
 - **Typography Structure**: Semantic tokens organized in `headings.json`, `titles.json`, `body.json`, `labels.json`, `code.json`
-- **Context Independence**: Each context (`app/`, `website/`, `report/`) has complete token structure
+- **Context Independence**: Each context (`app/`, `website/`, `report/`) has a complete token structure; website may temporarily inherit app semantics
 - **Resolved Value Display**: Token viewers show actual computed values alongside raw references
 
 ## TypeScript Types
@@ -229,20 +230,26 @@ To generate all token artifacts (CSS, types, VS Code data, docs) and validate:
 npm run tokens:full
 ```
 
-This runs:
-1. `tokens:build` - Generate CSS from tokens
+This runs (Style Dictionary pipeline):
+1. `tokens:build` - Generate platform outputs from tokens (non-canonical CSS)
 2. `tokens:generate-types` - Generate TypeScript types
 3. `tokens:generate-vscode` - Generate VS Code autocomplete
 4. `tokens:generate-docs` - Generate documentation
 5. `tokens:validate` - Validate token usage
 
+Canonical CSS for runtime:
+1. `tokens:build:canonical` - Generate canonical CSS layers
+2. `node scripts/generate-component-css.mjs` - Generate component token CSS
+3. `validate:css-vars` - Validate runtime CSS vars (A/B/C)
+
 ### Development Workflow
 
 1. **Modify tokens** in `tokens/**/*.json`
-2. **Build tokens**: `npm run tokens:build`
-3. **Generate types**: `npm run tokens:generate-types`
-4. **Validate usage**: `npm run tokens:validate`
-5. **Update VS Code data**: `npm run tokens:generate-vscode` (optional, only if needed)
+2. **Build canonical CSS**: `npm run tokens:build:canonical`
+3. **Build component tokens**: `node scripts/generate-component-css.mjs`
+4. **Generate types**: `npm run tokens:generate-types`
+5. **Validate usage**: `npm run tokens:validate`
+6. **Update VS Code data**: `npm run tokens:generate-vscode` (optional, only if needed)
 
 ### CI/CD Integration
 
@@ -313,7 +320,7 @@ setTokenValue('eui-button-primary-label-base', 'oklch(50% 0.1 200)');
 
 If TypeScript types are missing:
 
-1. Ensure `generated/css/tokens.css` exists (run `npm run tokens:build`)
+1. Ensure `generated/css/tokens.css` exists (run `npm run tokens:build:canonical`)
 2. Run `npm run tokens:generate-types`
 3. Check that `generated/tsx/tokens.types.ts` was created
 
@@ -330,7 +337,7 @@ If validation reports errors:
 1. Check the error message for the specific token name
 2. Verify the token exists in `generated/css/tokens.css`
 3. If token is missing, ensure it's defined in `tokens/**/*.json`
-4. Run `npm run tokens:build` to regenerate CSS
+4. Run `npm run tokens:build:canonical` to regenerate CSS
 
 ### TypeScript Errors
 

@@ -16,6 +16,12 @@ This document establishes mandatory rules for component CSS implementation to en
 
 **Core Principle:** Component CSS files must **never contain hardcoded values**. All styling decisions must flow from the design token system through generated CSS variables.
 
+**Reference Pattern:** Badge + Card are the canonical reference components. New components must follow their contract-driven, semantic-only token pattern.
+
+**Component pipeline (current canon):**
+- `tokens/components/*.contract.json` → generated structure CSS (deterministic, strict by default)
+- `tokens/components/*.tokens.json` → `generated/css/components/*.tokens.css` (mapping layer)
+
 ## Architecture Rules
 
 ### Rule 1: Single Source of Truth
@@ -25,8 +31,8 @@ This document establishes mandatory rules for component CSS implementation to en
 **Flow:**
 ```
 Token Files (JSON)
-    ↓ Style Dictionary Build
-Generated CSS Variables (tokens.css)
+    ↓ Canonical CSS Generators (scripts/generate-canonical-css.mjs + scripts/generate-component-css.mjs)
+Generated CSS Variables (tokens.css + components/*.tokens.css)
     ↓ CSS Cascade
 Component CSS (maps variables to selectors)
     ↓ Browser Rendering
@@ -159,7 +165,7 @@ Visual Output
 **Architecture:**
 - **Base tokens**: Define in `tokens/{context}/components/{component}/`
 - **Theme overrides**: Define in `tokens/contexts/{context}/themes/{theme}.json`
-- **CSS generation**: Style Dictionary generates compound selectors automatically
+- **CSS generation**: Canonical generators produce contexts/themes and component token mappings
 - **Component CSS**: Maps variables to element selectors (no theme logic)
 
 ---
@@ -231,16 +237,16 @@ Semantics (meaningful references per context)
 Components (component-specific aliases)
 ```
 
-**Correct Pattern:**
+**Correct Pattern (semantic-only):**
 ```json
 // ✅ Component references semantic
-// tokens/app/components/badge/colors.json
+// tokens/components/badge.tokens.json
 {
   "badge": {
     "colors": {
       "success": {
         "text": {
-          "$value": "{eui.color.status.success.700}",  // Semantic reference
+          "$value": "{eui.color.status.success.text}",  // Semantic reference
           "$type": "color"
         }
       }
@@ -249,15 +255,35 @@ Components (component-specific aliases)
 }
 ```
 
-**Discouraged (but sometimes necessary):**
+**If semantic is missing, add it (alias-only) and reference it:**
 ```json
-// ⚠️ Direct primitive reference (needs justification)
+// tokens/contexts/app/semantics/colors/status.json
+{
+  "eui": {
+    "color": {
+      "status": {
+        "custom": {
+          "text": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+```json
+// tokens/components/badge.tokens.json
 {
   "badge": {
-    "border": {
-      "width": {
-        "$value": "1px",  // Direct value - document why semantic doesn't exist
-        "$type": "dimension"
+    "colors": {
+      "custom": {
+        "text": {
+          "$value": "{eui.color.status.custom.text}",
+          "$type": "color"
+        }
       }
     }
   }
@@ -270,11 +296,10 @@ Component Token → Semantic Token → Primitive Value
 {eui.badge.text} → {eui.color.text.primary} → oklch(25% 0 0)
 ```
 
-**CSS Generator Behavior:**
-The CSS generator must resolve token references in this order:
-1. Check semantic base values first (from `contexts/{context}/semantics/`)
-2. Fall back to collision-resolved values
-3. Never skip semantic layer unless documented
+**CSS Generator Behavior (current canon):**
+1. `scripts/generate-canonical-css.mjs` resolves semantic tokens to final values for contexts/themes (raw is internal and not emitted).
+2. `scripts/generate-component-css.mjs` preserves component references to semantic CSS variables.
+3. Component CSS maps variables to selectors; no values are authored in CSS.
 
 ---
 
@@ -330,6 +355,21 @@ The CSS generator must resolve token references in this order:
 
 ---
 
+### Rule 7: Deterministic Structure CSS (Strict by Default)
+
+**Current strategy:** Contracts fully drive structure CSS (machine-run generation).
+
+**Escape hatch:** A hybrid model (generated mapping + hand-authored structure) may be adopted if generator complexity becomes counterproductive. The boundary trigger is `ALLOW_MANUAL_STRUCTURE_CSS=false` by default and **must remain strict** until this rule is updated.
+
+**Trigger condition examples:**
+- Generator becomes brittle or requires opaque heuristics
+- Edge-cases block component delivery
+- Deterministic output becomes unmaintainable
+
+**Process:** Update ADR/Architecture Rules **before** enabling the escape hatch. No ad-hoc exceptions.
+
+---
+
 ## Implementation Patterns
 
 ### Pattern 1: Component Variable Mapping
@@ -378,17 +418,17 @@ The CSS generator must resolve token references in this order:
 
 **Token Definition:**
 ```json
-// tokens/app/components/component/focus.json
+// tokens/components/component.tokens.json
 {
   "focus": {
     "ring": {
       "color": {
-        "derived": {
-          "accessible": {
-            "$value": "{eui.color.accent.300}",  // Default theme
-            "$type": "color"
-          }
-        }
+        "$value": "{eui.color.focus.ring}",
+        "$type": "color"
+      },
+      "width": {
+        "$value": "{eui.focus.ring.width.accessible}",
+        "$type": "dimension"
       }
     }
   }
@@ -396,16 +436,12 @@ The CSS generator must resolve token references in this order:
 
 // tokens/contexts/app/themes/accessibility.json
 {
-  "component": {
-    "focus": {
-      "ring": {
-        "color": {
-          "derived": {
-            "accessible": {
-              "$value": "{eui.color.accent.700}",  // WCAG 2.2 AA compliant
-              "$type": "color"
-            }
-          }
+  "eui": {
+    "color": {
+      "focus": {
+        "ring": {
+          "$value": "{eui.color.signal.keyboardFocus}",
+          "$type": "color"
         }
       }
     }
@@ -434,21 +470,12 @@ tokens/contexts/app/themes/accessibility.json
 ```json
 {
   "eui": {
-    "component": {
-      "colors": {
-        "variant": {
-          "background": { "$value": "{semantic.reference}" },
-          "text": { "$value": "{semantic.reference}" }
-        }
+    "color": {
+      "text": {
+        "primary": { "$value": "{eui.color.neutral.900}" }
       },
-      "focus": {
-        "ring": {
-          "color": {
-            "derived": {
-              "accessible": { "$value": "{eui.color.accent.700}" }
-            }
-          }
-        }
+      "border": {
+        "default": { "$value": "{eui.color.neutral.700}" }
       }
     }
   }
@@ -457,11 +484,10 @@ tokens/contexts/app/themes/accessibility.json
 
 **Generated CSS:**
 ```css
-@layer theme {
+@layer eui-themes {
   [data-eui-context="app"][data-eui-theme="accessibility"] {
-    --eui-component-colors-variant-background: oklch(100% 0 0);
-    --eui-component-colors-variant-text: oklch(64% 0.17 150);
-    --eui-component-focus-ring-color-derived-accessible: oklch(63% 0.15 237);
+    --eui-color-text-primary: oklch(25% 0 0);
+    --eui-color-border-default: oklch(48% 0 0);
   }
 }
 ```
@@ -482,15 +508,15 @@ Validates:
 - ✅ No hardcoded values in component CSS (with documented exceptions)
 - ✅ Proper selector patterns
 
-**CSS Linting:**
+**Runtime CSS Var Validation:**
 ```bash
-npm run lint:css
+npm run validate:css-vars
 ```
 
-Enforces:
-- ✅ No hex colors in component CSS
-- ✅ No RGB/RGBA in component CSS
-- ✅ Token variable usage
+Validates:
+- ✅ Undefined CSS variables across runtime bundles
+- ✅ Contract-driven coverage for golden components
+- ✅ Status token references exist in contexts CSS
 
 ### Manual Review Checklist
 
@@ -535,7 +561,8 @@ grep -r "[0-9]\+px" src/ui/*.css | grep -v "var("
 
 ### Step 3: Rebuild Tokens
 ```bash
-npm run tokens:build
+npm run tokens:build:canonical
+node scripts/generate-component-css.mjs
 ```
 
 ### Step 4: Replace Hardcoded Values

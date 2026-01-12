@@ -3,7 +3,7 @@
  *
  * Entry point that imports Badge CSS files in correct order.
  *
- * Order: structure rules only (token variables come from generated CSS).
+ * Order: structure rules only (token variables come from global tokens.css).
  *
  * Generated from: tokens/components/badge.contract.json
  * Legacy reference: src/ui/badge.css

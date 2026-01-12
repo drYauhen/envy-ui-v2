@@ -31,11 +31,12 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 
 ## Tokens
 
-- `tokens:build`: Build tokens via Style Dictionary.
+- `tokens:build`: Build tokens via Style Dictionary (platform outputs; not canonical CSS).
+- `tokens:build:canonical`: Build canonical CSS via `scripts/generate-canonical-css.mjs`.
 - `tokens:build:tokenstudio`: Build Token Studio export (legacy/experimental; may be broken).
 - `tokens:build:figma`: Build Figma outputs for all contexts.
 - `tokens:build:figma:app`: Build Figma outputs for app context.
-- `tokens:build:figma:website`: Build Figma outputs for website context.
+- `tokens:build:figma:website`: Build Figma outputs for website context (canonical; `web` renamed to `website`).
 - `tokens:build:figma:report`: Build Figma outputs for report context.
 - `tokens:copy-readme`: Copy tokens README to public docs.
 - `tokens:generate-docs`: Generate token reference docs.
@@ -43,6 +44,7 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 - `tokens:generate-types`: Generate token TypeScript types.
 - `tokens:generate-vscode`: Generate VS Code CSS data.
 - `tokens:validate`: Validate token usage.
+- `validate:css-vars`: Validate runtime CSS variable completeness (A/B/C validators).
 - `tokens:watch`: Watch tokens and rebuild on changes.
 - `tokens:full`: Run the full token pipeline (build + generate + validate).
 
@@ -75,7 +77,7 @@ Note: The dev app has its own scripts inside `apps/dev-app/` (e.g., `npm run dev
 
 - `storybook:sync-nav`: Sync navigation order from config.
 - `storybook:sync-config`: Sync navigation config into preview sorter.
-- `storybook:prepare`: Build tokens + copy docs + generate Tailwind config.
+- `storybook:prepare`: Build canonical tokens + copy docs + copy tokens README.
 - `storybook:dev`: Start Storybook on port 6006.
 - `storybook:restart`: Restart Storybook after adding new story files (manual).
 - `storybook`: Prepare + run Storybook with nodemon restarts and docs/tokens/Tailwind watchers.

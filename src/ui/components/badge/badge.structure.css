@@ -48,9 +48,12 @@
 
   /* Default neutral subtle badge */
   [data-eui-context] .eui-badge {
+    /* Define local variables with defaults */
     --eui-badge-background: var(--eui-badge-colors-neutral-background);
     --eui-badge-border: var(--eui-badge-colors-neutral-border);
     --eui-badge-color: var(--eui-badge-colors-neutral-text);
+
+    /* Use local variables for styling */
     background-color: var(--eui-badge-background);
     color: var(--eui-badge-color);
     border-color: var(--eui-badge-border);

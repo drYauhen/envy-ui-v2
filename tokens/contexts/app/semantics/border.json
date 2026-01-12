@@ -2,6 +2,13 @@
   "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "border": {
+      "style": {
+        "default": {
+          "$value": "{eui.border.style.solid}",
+          "$type": "string",
+          "$description": "Default border style for component outlines"
+        }
+      },
       "width": {
         "thin": {
           "$value": "{eui-app-raw-border-width-thin}",

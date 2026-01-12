@@ -8,17 +8,17 @@
             "neutral": {
               "colors": {
                 "background": {
-                  "$value": "{eui.color.neutral.50}",
+                  "$value": "{eui.color.status.neutral.background}",
                   "$type": "color",
                   "$description": "Neutral subtle badge background"
                 },
                 "border": {
-                  "$value": "{eui.color.neutral.200}",
+                  "$value": "{eui.color.status.neutral.border}",
                   "$type": "color",
                   "$description": "Neutral subtle badge border"
                 },
                 "text": {
-                  "$value": "{eui.color.neutral.700}",
+                  "$value": "{eui.color.status.neutral.text}",
                   "$type": "color",
                   "$description": "Neutral subtle badge text"
                 }
@@ -84,17 +84,17 @@
             "info": {
               "colors": {
                 "background": {
-                  "$value": "{eui.color.accent.50}",
+                  "$value": "{eui.color.status.info.background}",
                   "$type": "color",
                   "$description": "Info subtle badge background"
                 },
                 "border": {
-                  "$value": "{eui.color.accent.200}",
+                  "$value": "{eui.color.status.info.border}",
                   "$type": "color",
                   "$description": "Info subtle badge border"
                 },
                 "text": {
-                  "$value": "{eui.color.accent.700}",
+                  "$value": "{eui.color.status.info.text}",
                   "$type": "color",
                   "$description": "Info subtle badge text"
                 }
@@ -107,17 +107,17 @@
             "neutral": {
               "colors": {
                 "background": {
-                  "$value": "{eui.color.neutral.900}",
+                  "$value": "{eui.color.status.neutral.solid}",
                   "$type": "color",
                   "$description": "Neutral solid badge background"
                 },
                 "border": {
-                  "$value": "{eui.color.neutral.900}",
+                  "$value": "{eui.color.status.neutral.solid}",
                   "$type": "color",
                   "$description": "Neutral solid badge border"
                 },
                 "text": {
-                  "$value": "{eui.color.neutral.white}",
+                  "$value": "{eui.color.text.inverse}",
                   "$type": "color",
                   "$description": "Neutral solid badge text"
                 }
@@ -126,17 +126,17 @@
             "success": {
               "colors": {
                 "background": {
-                  "$value": "{eui-app-raw-color-status-success-600}",
+                  "$value": "{eui.color.status.success.solid}",
                   "$type": "color",
                   "$description": "Success solid badge background"
                 },
                 "border": {
-                  "$value": "{eui-app-raw-color-status-success-600}",
+                  "$value": "{eui.color.status.success.solid}",
                   "$type": "color",
                   "$description": "Success solid badge border"
                 },
                 "text": {
-                  "$value": "{eui.color.neutral.white}",
+                  "$value": "{eui.color.text.inverse}",
                   "$type": "color",
                   "$description": "Success solid badge text"
                 }
@@ -145,17 +145,17 @@
             "warning": {
               "colors": {
                 "background": {
-                  "$value": "{eui-app-raw-color-status-warning-600}",
+                  "$value": "{eui.color.status.warning.solid}",
                   "$type": "color",
                   "$description": "Warning solid badge background"
                 },
                 "border": {
-                  "$value": "{eui-app-raw-color-status-warning-600}",
+                  "$value": "{eui.color.status.warning.solid}",
                   "$type": "color",
                   "$description": "Warning solid badge border"
                 },
                 "text": {
-                  "$value": "{eui.color.neutral.white}",
+                  "$value": "{eui.color.text.inverse}",
                   "$type": "color",
                   "$description": "Warning solid badge text"
                 }
@@ -164,17 +164,17 @@
             "error": {
               "colors": {
                 "background": {
-                  "$value": "{eui-app-raw-color-status-error-600}",
+                  "$value": "{eui.color.status.error.solid}",
                   "$type": "color",
                   "$description": "Error solid badge background"
                 },
                 "border": {
-                  "$value": "{eui-app-raw-color-status-error-600}",
+                  "$value": "{eui.color.status.error.solid}",
                   "$type": "color",
                   "$description": "Error solid badge border"
                 },
                 "text": {
-                  "$value": "{eui.color.neutral.white}",
+                  "$value": "{eui.color.text.inverse}",
                   "$type": "color",
                   "$description": "Error solid badge text"
                 }
@@ -183,17 +183,17 @@
             "info": {
               "colors": {
                 "background": {
-                  "$value": "{eui.color.accent.600}",
+                  "$value": "{eui.color.status.info.solid}",
                   "$type": "color",
                   "$description": "Info solid badge background"
                 },
                 "border": {
-                  "$value": "{eui.color.accent.600}",
+                  "$value": "{eui.color.status.info.solid}",
                   "$type": "color",
                   "$description": "Info solid badge border"
                 },
                 "text": {
-                  "$value": "{eui.color.neutral.white}",
+                  "$value": "{eui.color.text.inverse}",
                   "$type": "color",
                   "$description": "Info solid badge text"
                 }
@@ -204,7 +204,7 @@
         "outline": {
           "colors": {
             "background": {
-              "$value": "transparent",
+              "$value": "{eui.color.background.transparent}",
               "$type": "color",
               "$description": "Outline badge transparent background"
             }
@@ -219,14 +219,14 @@
             "$description": "Badge border width"
           },
           "style": {
-            "$value": "solid",
+            "$value": "{eui.border.style.default}",
             "$type": "string",
             "$description": "Badge border style"
           }
         },
         "shape": {
           "radius": {
-            "$value": "{eui.radius.lg}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
             "$description": "Badge border radius"
           }
@@ -234,18 +234,18 @@
         "spacing": {
           "padding": {
             "vertical": {
-              "$value": "{eui.spacing.1}",
+              "$value": "{eui.spacing.xs}",
               "$type": "dimension",
               "$description": "Badge vertical padding"
             },
             "horizontal": {
-              "$value": "{eui.spacing.2}",
+              "$value": "{eui.spacing.sm}",
               "$type": "dimension",
               "$description": "Badge horizontal padding"
             }
           },
           "gap": {
-            "$value": "{eui.spacing.1}",
+            "$value": "{eui.spacing.xs}",
             "$type": "dimension",
             "$description": "Badge gap between elements"
           }
@@ -277,7 +277,7 @@
             "$description": "Badge letter spacing"
           },
           "textTransform": {
-            "$value": "uppercase",
+            "$value": "{eui.typography.textTransform.uppercase}",
             "$type": "string",
             "$description": "Badge text transform"
           }
@@ -287,7 +287,7 @@
             "color": {
               "derived": {
                 "accessible": {
-                  "$value": "{eui.color.accent.700}",
+                  "$value": "{eui.color.focus.ring}",
                   "$type": "color",
                   "$description": "Badge focus ring color (derived, accessible)"
                 }
@@ -295,16 +295,21 @@
             },
             "width": {
               "accessible": {
-                "$value": "2px",
+                "$value": "{eui.focus.ring.width.accessible}",
                 "$type": "dimension",
                 "$description": "Badge focus ring width (accessible)"
               }
             },
             "offset": {
-              "$value": "0px",
+              "$value": "{eui.focus.ring.offset.default}",
               "$type": "dimension",
               "$description": "Badge focus ring offset"
             }
+          },
+          "color": {
+            "$value": "{eui.color.focus.ring}",
+            "$type": "color",
+            "$description": "Badge focus color"
           }
         }
       }

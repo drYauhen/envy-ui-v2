@@ -1,6 +1,7 @@
 /**
  * Canonical Token CSS - Entry Point
  * Imports token layers in correct cascade order (3-layer only)
+ * Raw layer tokens only exist in JSON files, not exposed to CSS
  */
 
 @layer eui-primitives, eui-contexts, eui-themes, eui-components;
@@ -8,7 +9,7 @@
 /* 1. Primitives (base values) */
 @import './tokens.primitives.css';
 
-/* 2. Contexts (semantic aliases) */
+/* 2. Contexts (semantic aliases - no raw references) */
 @import './tokens.contexts.css';
 
 /* 3. Themes (theme overrides) */

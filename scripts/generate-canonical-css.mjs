@@ -15,6 +15,52 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 
+// Global cache for primitive token values
+let primitiveTokenCache = null;
+
+// Helper: Load all primitive tokens into cache
+const loadPrimitiveTokens = () => {
+  if (primitiveTokenCache) return primitiveTokenCache;
+
+  primitiveTokenCache = new Map();
+
+  const primitivesDir = path.join(repoRoot, 'tokens', 'primitives');
+  if (!fs.existsSync(primitivesDir)) return primitiveTokenCache;
+
+  const primitiveFiles = fs.readdirSync(primitivesDir).filter(f => f.endsWith('.json'));
+
+  primitiveFiles.forEach(file => {
+    const filePath = path.join(primitivesDir, file);
+    try {
+      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      const tokens = extractTokensResolvingRefs(data); // Use resolving version for cache
+      tokens.forEach(({ name, value }) => {
+        primitiveTokenCache.set(name, value);
+      });
+    } catch (e) {
+      console.warn(`Warning: Could not load primitives file ${file}: ${e.message}`);
+    }
+  });
+
+  return primitiveTokenCache;
+};
+
+// Helper: Extract tokens resolving DTCG references to actual values
+const extractTokensResolvingRefs = (obj, prefix = []) => {
+  const tokens = [];
+  for (const [key, value] of Object.entries(obj)) {
+    const path = [...prefix, key];
+    if (value && typeof value === 'object' && '$value' in value) {
+      const tokenName = path.join('-'); // eui-color-neutral-300
+      const resolvedValue = resolveReference(value.$value);
+      tokens.push({ name: tokenName, value: resolvedValue });
+    } else if (value && typeof value === 'object' && !Array.isArray(value)) {
+      tokens.push(...extractTokensResolvingRefs(value, path));
+    }
+  }
+  return tokens;
+};
+
 // Helper: Convert DTCG reference to CSS var (preserve, don't resolve)
 const preserveReference = (value) => {
   if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
@@ -22,6 +68,25 @@ const preserveReference = (value) => {
     const ref = value.slice(1, -1); // Remove { }
     const cssVar = ref.split('.').join('-'); // Convert dots to dashes
     return `var(--${cssVar})`;
+  }
+  return value; // Literal values pass through unchanged
+};
+
+// Helper: Resolve DTCG reference to actual primitive value
+const resolveReference = (value) => {
+  if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
+    // Convert {eui.border.width.thin} → lookup eui-border-width-thin
+    const ref = value.slice(1, -1); // Remove { }
+    let tokenName = ref.split('.').join('-'); // Convert dots to dashes
+
+    // Handle raw token indirection: if it's a raw token reference, strip the raw prefix
+    if (tokenName.includes('eui-app-raw-')) {
+      tokenName = tokenName.replace('eui-app-raw-', 'eui-');
+    }
+
+    // Load primitives and lookup the value
+    const primitives = loadPrimitiveTokens();
+    return primitives.get(tokenName) || `var(--${tokenName})`; // Fallback to var if not found
   }
   return value; // Literal values pass through unchanged
 };
@@ -176,6 +241,23 @@ function transformToSemanticName(name) {
   return name;
 }
 
+// Helper: Recursively find all JSON files in a directory (relative to repo root)
+function findJsonFiles(dir, baseDir = dir) {
+  const files = [];
+  const items = fs.readdirSync(dir);
+  for (const item of items) {
+    const fullPath = path.join(dir, item);
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      files.push(...findJsonFiles(fullPath, baseDir));
+    } else if (item.endsWith('.json')) {
+      // Return relative path from baseDir
+      files.push(path.relative(baseDir, fullPath));
+    }
+  }
+  return files;
+}
+
 // Generate contexts CSS
 function generateContextsCSS() {
   console.log('📝 Generating tokens.contexts.css...');
@@ -197,36 +279,60 @@ function generateContextsCSS() {
   contextDirs.forEach(context => {
     const semanticsDir = path.join(contextsDir, context, 'semantics');
     if (fs.existsSync(semanticsDir)) {
-      const semanticFiles = fs.readdirSync(semanticsDir).filter(f => f.endsWith('.json'));
+      // Recursively find all JSON files in semantics directory and subdirectories
+      const semanticFiles = findJsonFiles(semanticsDir);
+      console.log(`📁 Found ${semanticFiles.length} semantic files for context "${context}":`);
+      semanticFiles.forEach(file => console.log(`  - ${file}`));
+
       const allTokens = [];
 
       semanticFiles.forEach(file => {
         const filePath = path.join(semanticsDir, file);
         try {
           const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-          const tokens = extractTokensPreservingRefs(data);
+          // Use resolving function for all files to resolve all DTCG references to final values
+          // Raw layer tokens should resolve to primitives, semantic tokens should resolve through raw to primitives
+          const tokens = extractTokensResolvingRefs(data);
+          console.log(`📄 Processed ${file}: ${tokens.length} tokens`);
           allTokens.push(...tokens);
         } catch (e) {
           console.warn(`Warning: Could not read semantic file ${file}: ${e.message}`);
         }
       });
 
-      // Transform all tokens to semantic names and filter out identity mappings
+      console.log(`📊 Total tokens extracted for context "${context}": ${allTokens.length}`);
+
+      // Transform all tokens to semantic names
       const semanticTokens = allTokens.map(({ name, value }) => ({
         name: transformToSemanticName(name),
         value,
         originalName: name
-      })).filter(({ name: semanticName, originalName }) => {
-        // Skip identity mappings: if semantic name equals primitive name (after removing context prefix)
-        const primitiveName = originalName.replace(/^eui-app-raw-/, 'eui-');
-        return semanticName !== primitiveName;
-      }).map(({ name, originalName }) => {
-        // Reference primitives directly instead of raw variables
-        const primitiveName = originalName.replace(/^eui-app-raw-/, 'eui-');
-        return {
-          name,
-          value: `var(--${primitiveName})`
-        };
+      })).map(({ name: semanticName, originalName, value }) => {
+        // For tokens from raw files (which reference primitives), resolve to actual primitive values
+        if (originalName.startsWith('eui-app-raw-')) {
+          // Raw tokens should resolve their DTCG references to actual values
+          // The value should already be resolved by extractTokensResolvingRefs
+          return {
+            name: semanticName,
+            value: value // Already resolved to primitive value
+          };
+        }
+
+        // For semantic tokens from semantic files, handle references
+        if (typeof value === 'string' && value.includes('eui-app-raw-')) {
+          // Replace raw references with primitive references
+          const resolvedValue = value.replace(/var\(--eui-app-raw-([^)]+)\)/g, 'var(--eui-$1)');
+          return {
+            name: semanticName,
+            value: resolvedValue
+          };
+        } else {
+          // Use the value directly
+          return {
+            name: semanticName,
+            value: value
+          };
+        }
       });
 
       // Sort deterministically and generate CSS
@@ -325,6 +431,7 @@ function generateEntrypointCSS() {
   return `/**
  * Canonical Token CSS - Entry Point
  * Imports token layers in correct cascade order (3-layer only)
+ * Raw layer tokens only exist in JSON files, not exposed to CSS
  */
 
 @layer eui-primitives, eui-contexts, eui-themes, eui-components;
@@ -332,7 +439,7 @@ function generateEntrypointCSS() {
 /* 1. Primitives (base values) */
 @import './tokens.primitives.css';
 
-/* 2. Contexts (semantic aliases) */
+/* 2. Contexts (semantic aliases - no raw references) */
 @import './tokens.contexts.css';
 
 /* 3. Themes (theme overrides) */
@@ -357,7 +464,6 @@ function main() {
 
   // Generate each file
   const primitivesCSS = generatePrimitivesCSS();
-  const rawCSS = generateRawCSS();
   const contextsCSS = generateContextsCSS();
   const themesCSS = generateThemesCSS();
   const entrypointCSS = generateEntrypointCSS();
@@ -365,7 +471,6 @@ function main() {
   // Write files
   const files = [
     { name: 'tokens.primitives.css', content: primitivesCSS },
-    { name: 'tokens.raw.css', content: rawCSS },
     { name: 'tokens.contexts.css', content: contextsCSS },
     { name: 'tokens.themes.css', content: themesCSS },
     { name: 'tokens.css', content: entrypointCSS }

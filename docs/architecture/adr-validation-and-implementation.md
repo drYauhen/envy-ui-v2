@@ -306,7 +306,8 @@ From [ADR-0023](../adr/ADR-0023-token-organization-context-and-theme-separation.
 **Mixed Architecture (Transitional State)**:
 - ⚠️ Directory structure migration in progress
 - ✅ Old structure continues to work during migration
-- ⚠️ Context directories (`tokens/app/`, `tokens/website/`) created but incomplete
+- ✅ Canonical contexts live under `tokens/contexts/` (app/website/report)
+- ⚠️ Old `web` name preserved under `tokens/legacy/contexts/web` (renamed to `website`)
 ```
 
 ---

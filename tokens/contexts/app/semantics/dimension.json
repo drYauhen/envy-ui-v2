@@ -1,111 +1,36 @@
 {
-  "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
-    "dimension": {
-      "0": {
-        "$value": "{eui-app-raw-dimension-0}",
+    "spacing": {
+      "xs": {
+        "$value": "{eui.spacing.1}",
         "$type": "dimension",
-        "$description": "Zero dimension (0px). Used for collapsing elements or no size."
+        "$description": "Extra small spacing (4px)"
       },
-      "1": {
-        "$value": "{eui-app-raw-dimension-1}",
+      "sm": {
+        "$value": "{eui.spacing.2}",
         "$type": "dimension",
-        "$description": "4px in app context (0.2857rem at 14px base). Used for borders, small icon padding, dividers."
+        "$description": "Small spacing (8px)"
       },
-      "2": {
-        "$value": "{eui-app-raw-dimension-2}",
+      "md": {
+        "$value": "{eui.spacing.4}",
         "$type": "dimension",
-        "$description": "8px in app context (0.5714rem at 14px base). Used for small gaps, minimal padding."
+        "$description": "Medium spacing (16px)"
       },
-      "3": {
-        "$value": "{eui-app-raw-dimension-3}",
+      "lg": {
+        "$value": "{eui.spacing.6}",
         "$type": "dimension",
-        "$description": "12px in app context (0.8571rem at 14px base). Used for small component spacing."
+        "$description": "Large spacing (24px)"
       },
-      "4": {
-        "$value": "{eui-app-raw-dimension-4}",
+      "xl": {
+        "$value": "{eui.spacing.8}",
         "$type": "dimension",
-        "$description": "16px in app context (1.1429rem at 14px base). Used for standard component spacing and padding."
+        "$description": "Extra large spacing (32px)"
       },
-      "5": {
-        "$value": "{eui-app-raw-dimension-5}",
+      "2xl": {
+        "$value": "{eui.spacing.12}",
         "$type": "dimension",
-        "$description": "20px in app context (1.4286rem at 14px base). Used for medium component spacing."
-      },
-      "6": {
-        "$value": "{eui-app-raw-dimension-6}",
-        "$type": "dimension",
-        "$description": "24px in app context (1.7143rem at 14px base). Used for component padding and margins."
-      },
-      "7": {
-        "$value": "{eui-app-raw-dimension-7}",
-        "$type": "dimension",
-        "$description": "28px in app context (2rem at 14px base). Used for small avatars, compact buttons, icon sizes."
-      },
-      "8": {
-        "$value": "{eui-app-raw-dimension-8}",
-        "$type": "dimension",
-        "$description": "32px in app context (2.2857rem at 14px base). Used for medium avatars, icon buttons, default element heights."
-      },
-      "9": {
-        "$value": "{eui-app-raw-dimension-9}",
-        "$type": "dimension",
-        "$description": "36px in app context (2.5714rem at 14px base). Used for small buttons, small form controls."
-      },
-      "10": {
-        "$value": "{eui-app-raw-dimension-10}",
-        "$type": "dimension",
-        "$description": "40px in app context (2.8571rem at 14px base). Used for large avatars, standard buttons, input fields, clickable targets."
-      },
-      "11": {
-        "$value": "{eui-app-raw-dimension-11}",
-        "$type": "dimension",
-        "$description": "44px in app context (3.1429rem at 14px base). Used for navigation items, prominent buttons, recommended touch targets (44px minimum)."
-      },
-      "12": {
-        "$value": "{eui-app-raw-dimension-12}",
-        "$type": "dimension",
-        "$description": "48px in app context (3.4286rem at 14px base). Used for large buttons, headers, title bars, prominent controls."
-      },
-      "13": {
-        "$value": "{eui-app-raw-dimension-13}",
-        "$type": "dimension",
-        "$description": "52px in app context (3.7143rem at 14px base). Used for large form controls, group headers."
-      },
-      "14": {
-        "$value": "{eui-app-raw-dimension-14}",
-        "$type": "dimension",
-        "$description": "56px in app context (4rem at 14px base). Used for larger components, sidebar headers."
-      },
-      "15": {
-        "$value": "{eui-app-raw-dimension-15}",
-        "$type": "dimension",
-        "$description": "60px in app context (4.2857rem at 14px base). Used for large component heights."
-      },
-      "16": {
-        "$value": "{eui-app-raw-dimension-16}",
-        "$type": "dimension",
-        "$description": "64px in app context (4.5714rem at 14px base). Used for large cards, big component areas, side nav items."
-      },
-      "17": {
-        "$value": "{eui-app-raw-dimension-17}",
-        "$type": "dimension",
-        "$description": "68px in app context (4.8571rem at 14px base). Used for extra large component heights."
-      },
-      "18": {
-        "$value": "{eui-app-raw-dimension-18}",
-        "$type": "dimension",
-        "$description": "72px in app context (5.1429rem at 14px base). Used for hero sections, large headers."
-      },
-      "19": {
-        "$value": "{eui-app-raw-dimension-19}",
-        "$type": "dimension",
-        "$description": "76px in app context (5.4286rem at 14px base). Used for very large component areas."
-      },
-      "20": {
-        "$value": "{eui-app-raw-dimension-20}",
-        "$type": "dimension",
-        "$description": "80px in app context (5.7143rem at 14px base). Used for maximum component heights, full-size areas."
+        "$description": "Double extra large spacing (48px)"
       }
     }
   }

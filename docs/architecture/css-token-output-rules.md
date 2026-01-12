@@ -74,19 +74,20 @@ These are the normative MUST-level rules for CSS token output generation. They a
 
 ### Generated Files (MUST)
 
-Token CSS is generated as 4 files in `generated/css/`:
+Token CSS is generated as 4 files in `generated/css/`, plus component token CSS in `generated/css/components/`:
 
 1. **`tokens.css`** - Entrypoint with layer order declaration and imports
 2. **`tokens.primitives.css`** - Literal values in `@layer eui-primitives`
 3. **`tokens.contexts.css`** - Semantic aliases in `@layer eui-contexts`
 4. **`tokens.themes.css`** - Theme overrides in `@layer eui-themes`
+5. **`components/*.tokens.css`** - Component token mappings in `@layer eui-components`
 
 ### Layer Order Declaration (MUST)
 
 **tokens.css MUST declare layer order at the top:**
 
 ```css
-@layer eui-primitives, eui-contexts, eui-themes;
+@layer eui-primitives, eui-contexts, eui-themes, eui-components;
 ```
 
 **Rationale:** Ensures consistent cascade order across all usage contexts.
@@ -173,6 +174,8 @@ Token CSS is generated as 4 files in `generated/css/`:
 - `list-*`, `listitem-*`, `term-*`, `definition-*`
 
 **Rationale:** Components belong in their own CSS layer; prevents theme pollution.
+
+**Implementation note:** `scripts/generate-canonical-css.mjs` filters component-prefixed tokens from theme output. Component overrides placed in theme JSON are ignored and must be moved to component tokens.
 
 ## Output Determinism (MUST)
 
@@ -363,9 +366,9 @@ const semanticTokens = tokens.filter(({ name }) => {
 
 ---
 
-## Golden Example: Badge Component 🎯
+## Golden Example: Badge + Card 🎯
 
-**Badge is the canonical reference implementation for contract-driven, semantic-only component development.**
+**Badge + Card are the canonical reference implementations for contract-driven, semantic-only component development.**
 
 **Complete Pattern:**
 - ✅ Contract defines semantic references (`{eui.color.status.success.background}`)
@@ -374,10 +377,10 @@ const semanticTokens = tokens.filter(({ name }) => {
 - ✅ Runtime CSS uses semantic status roles only
 - ✅ Storybook demonstrates tone/variant switching correctly
 
-**Use Badge as the reference pattern for all future component implementations.**
+**Use Badge + Card as the reference pattern for all future component implementations.**
 
 ---
 
 **Enforcement Level:** MUST (no exceptions without ADR approval)
 **Last Reviewed:** 2026-01-10
-**Implementation:** `scripts/generate-canonical-css.mjs`
+**Implementation:** `scripts/generate-canonical-css.mjs` + `scripts/generate-component-css.mjs`

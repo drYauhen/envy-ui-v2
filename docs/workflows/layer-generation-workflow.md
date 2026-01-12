@@ -4,6 +4,8 @@
 **Last Updated:** 2026-01-10
 **Category:** Workflow
 
+> **Status:** Experimental. HTML/CSS/TSX generators are stubs and this workflow is not the canonical component pipeline.  
+> Canonical CSS uses `tokens:build:canonical` + `scripts/generate-component-css.mjs` and contract-driven structure CSS.
 
 ## Overview
 

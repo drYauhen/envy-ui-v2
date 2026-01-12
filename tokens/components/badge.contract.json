@@ -45,34 +45,34 @@
       "--eui-badge-colors-neutral-background": "{eui.color.status.neutral.background}",
       "--eui-badge-colors-neutral-border": "{eui.color.status.neutral.border}",
       "--eui-badge-colors-neutral-text": "{eui.color.status.neutral.text}",
-      "--eui-badge-colors-neutral-solid-background": "{eui-app-raw-color-neutral-900}",
-      "--eui-badge-colors-neutral-solid-border": "{eui-app-raw-color-neutral-900}",
-      "--eui-badge-colors-neutral-solid-text": "{eui.color.neutral.white}",
+      "--eui-badge-colors-neutral-solid-background": "{eui.color.status.neutral.solid}",
+      "--eui-badge-colors-neutral-solid-border": "{eui.color.status.neutral.solid}",
+      "--eui-badge-colors-neutral-solid-text": "{eui.color.text.inverse}",
       "--eui-badge-colors-success-background": "{eui.color.status.success.background}",
       "--eui-badge-colors-success-border": "{eui.color.status.success.border}",
       "--eui-badge-colors-success-text": "{eui.color.status.success.text}",
-      "--eui-badge-colors-success-solid-background": "{eui-app-raw-color-status-success-600}",
-      "--eui-badge-colors-success-solid-border": "{eui-app-raw-color-status-success-600}",
-      "--eui-badge-colors-success-solid-text": "{eui.color.neutral.white}",
+      "--eui-badge-colors-success-solid-background": "{eui.color.status.success.solid}",
+      "--eui-badge-colors-success-solid-border": "{eui.color.status.success.solid}",
+      "--eui-badge-colors-success-solid-text": "{eui.color.text.inverse}",
       "--eui-badge-colors-warning-background": "{eui.color.status.warning.background}",
       "--eui-badge-colors-warning-border": "{eui.color.status.warning.border}",
       "--eui-badge-colors-warning-text": "{eui.color.status.warning.text}",
-      "--eui-badge-colors-warning-solid-background": "{eui-app-raw-color-status-warning-600}",
-      "--eui-badge-colors-warning-solid-border": "{eui-app-raw-color-status-warning-600}",
-      "--eui-badge-colors-warning-solid-text": "{eui.color.neutral.white}",
+      "--eui-badge-colors-warning-solid-background": "{eui.color.status.warning.solid}",
+      "--eui-badge-colors-warning-solid-border": "{eui.color.status.warning.solid}",
+      "--eui-badge-colors-warning-solid-text": "{eui.color.text.inverse}",
       "--eui-badge-colors-error-background": "{eui.color.status.error.background}",
       "--eui-badge-colors-error-border": "{eui.color.status.error.border}",
       "--eui-badge-colors-error-text": "{eui.color.status.error.text}",
-      "--eui-badge-colors-error-solid-background": "{eui-app-raw-color-status-error-600}",
-      "--eui-badge-colors-error-solid-border": "{eui-app-raw-color-status-error-600}",
-      "--eui-badge-colors-error-solid-text": "{eui.color.neutral.white}",
+      "--eui-badge-colors-error-solid-background": "{eui.color.status.error.solid}",
+      "--eui-badge-colors-error-solid-border": "{eui.color.status.error.solid}",
+      "--eui-badge-colors-error-solid-text": "{eui.color.text.inverse}",
       "--eui-badge-colors-info-background": "{eui.color.status.info.background}",
       "--eui-badge-colors-info-border": "{eui.color.status.info.border}",
       "--eui-badge-colors-info-text": "{eui.color.status.info.text}",
-      "--eui-badge-colors-info-solid-background": "{eui-app-raw-color-accent-600}",
-      "--eui-badge-colors-info-solid-border": "{eui-app-raw-color-accent-600}",
-      "--eui-badge-colors-info-solid-text": "{eui.color.neutral.white}",
-      "--eui-badge-colors-variant-outline-background": "transparent"
+      "--eui-badge-colors-info-solid-background": "{eui.color.status.info.solid}",
+      "--eui-badge-colors-info-solid-border": "{eui.color.status.info.solid}",
+      "--eui-badge-colors-info-solid-text": "{eui.color.text.inverse}",
+      "--eui-badge-colors-variant-outline-background": "{eui.color.background.transparent}"
     },
     "spacing": {
       "--eui-badge-spacing-padding-vertical": { "type": "dimension" },
@@ -90,7 +90,13 @@
     "focus": {
       "--eui-badge-focus-ring-color-derived-accessible": { "type": "color" },
       "--eui-badge-focus-ring-width-accessible": { "type": "dimension" },
-      "--eui-badge-focus-ring-offset": { "type": "dimension" }
+      "--eui-badge-focus-ring-offset": { "type": "dimension" },
+      "--eui-badge-focus-color": { "type": "color" }
+    },
+    "localVars": {
+      "--eui-badge-background": { "type": "color" },
+      "--eui-badge-color": { "type": "color" },
+      "--eui-badge-border": { "type": "color" }
     }
   },
 
@@ -106,8 +112,9 @@
       "borderRadius": "var(--eui-badge-shape-radius)",
       "borderWidth": "var(--eui-badge-border-width)",
       "borderStyle": "var(--eui-badge-border-style)",
-      "backgroundColor": "var(--eui-badge-background)",
-      "color": "var(--eui-badge-color)",
+      "backgroundColor": "var(--eui-badge-colors-neutral-background)",
+      "color": "var(--eui-badge-colors-neutral-text)",
+      "borderColor": "var(--eui-badge-colors-neutral-border)",
       "padding": "var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal)"
     },
     "typography": {

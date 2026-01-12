@@ -24,10 +24,6 @@
     border-style: var(--eui-card-border-style);
     border-color: var(--eui-card-border-color);
     background-color: var(--eui-card-background-color);
-    background-image: var(--eui-card-background-image);
-    background-repeat: var(--eui-card-background-repeat);
-    background-position: var(--eui-card-background-position);
-    background-size: var(--eui-card-background-size);
     box-shadow: var(--eui-card-shadow);
   }
 
@@ -66,7 +62,7 @@
   /* Status indicator - base positioning and padding */
   [data-eui-context] .eui-card[data-eui-status] {
     position: relative;
-    padding-left: calc(var(--eui-card-status-indicator-width, 4px) + 0px);
+    padding-left: var(--eui-card-status-indicator-width);
   }
 
   /* Status indicator - pseudo-element */
@@ -76,7 +72,7 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: var(--eui-card-status-indicator-width, 4px);
+    width: var(--eui-card-status-indicator-width);
     background-color: var(--eui-card-status-indicator-color);
     border-radius: var(--eui-card-radius) 0 0 var(--eui-card-radius);
   }

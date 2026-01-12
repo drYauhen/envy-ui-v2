@@ -29,6 +29,13 @@ Contains workaround files created to fix immediate Storybook startup issues:
 - Semantic tokens should reference global primitives directly
 - No intermediate context-specific color layers
 
+
+### `contexts/`
+Contains deprecated or unused context artifacts moved out of the active system:
+
+- `contexts/web/` - Legacy `web` name (renamed to `website`); retained for historical reference.
+- `contexts/website.meta.json` - Unused artifact retained for reference.
+
 ## Usage Guidelines
 
 - **Do not include** legacy files in builds

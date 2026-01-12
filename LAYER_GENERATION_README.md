@@ -1,5 +1,8 @@
 # Layer Generation System for Envy UI v2
 
+> **Status:** Experimental. HTML/CSS and TSX generators are stubs.  
+> **Canonical component pipeline:** `tokens/components/*.contract.json` + `tokens/components/*.tokens.json` → `generated/css/components/*.tokens.css` + contract-driven structure CSS (strict by default).
+
 ## Overview
 
 This document describes the new **Layer Generation System** implemented for Envy UI v2, which provides a structured approach to managing layered component generation across different technological layers.

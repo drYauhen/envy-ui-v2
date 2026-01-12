@@ -16,40 +16,20 @@
               "$description": "Elevated card uses thin border"
             },
             "style": {
-              "$value": "solid",
+              "$value": "{eui.border.style.default}",
               "$type": "string",
               "$description": "Elevated card uses solid border style"
             }
           },
           "background": {
             "color": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.background.surface}",
               "$type": "color",
               "$description": "Elevated card uses white background"
-            },
-            "image": {
-              "$value": "none",
-              "$type": "string",
-              "$description": "Elevated card has no background image"
-            },
-            "repeat": {
-              "$value": "no-repeat",
-              "$type": "string",
-              "$description": "Background image repeat setting"
-            },
-            "position": {
-              "$value": "center",
-              "$type": "string",
-              "$description": "Background image position"
-            },
-            "size": {
-              "$value": "auto",
-              "$type": "string",
-              "$description": "Background image size"
             }
           },
           "radius": {
-            "$value": "{eui.radius.lg}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
             "$description": "Elevated card uses large border radius"
           }
@@ -67,40 +47,20 @@
               "$description": "Flat card uses thin border"
             },
             "style": {
-              "$value": "solid",
+              "$value": "{eui.border.style.default}",
               "$type": "string",
               "$description": "Flat card uses solid border style"
             }
           },
           "background": {
             "color": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.background.surface}",
               "$type": "color",
               "$description": "Flat card uses white background"
-            },
-            "image": {
-              "$value": "none",
-              "$type": "string",
-              "$description": "Flat card has no background image"
-            },
-            "repeat": {
-              "$value": "no-repeat",
-              "$type": "string",
-              "$description": "Background image repeat setting"
-            },
-            "position": {
-              "$value": "center",
-              "$type": "string",
-              "$description": "Background image position"
-            },
-            "size": {
-              "$value": "auto",
-              "$type": "string",
-              "$description": "Background image size"
             }
           },
           "radius": {
-            "$value": "{eui.radius.lg}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
             "$description": "Flat card uses large border radius"
           }
@@ -118,45 +78,25 @@
               "$description": "Muted card uses thin border"
             },
             "style": {
-              "$value": "solid",
+              "$value": "{eui.border.style.default}",
               "$type": "string",
               "$description": "Muted card uses solid border style"
             },
             "color": {
-              "$value": "{eui.color.neutral.300}",
+              "$value": "{eui.color.border.default}",
               "$type": "color",
               "$description": "Muted card uses neutral border color"
             }
           },
           "background": {
             "color": {
-              "$value": "{eui.color.neutral.50}",
+              "$value": "{eui.color.background.muted}",
               "$type": "color",
               "$description": "Muted card uses light neutral background"
-            },
-            "image": {
-              "$value": "none",
-              "$type": "string",
-              "$description": "Muted card has no background image"
-            },
-            "repeat": {
-              "$value": "no-repeat",
-              "$type": "string",
-              "$description": "Background image repeat setting"
-            },
-            "position": {
-              "$value": "center",
-              "$type": "string",
-              "$description": "Background image position"
-            },
-            "size": {
-              "$value": "auto",
-              "$type": "string",
-              "$description": "Background image size"
             }
           },
           "radius": {
-            "$value": "{eui.radius.lg}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
             "$description": "Muted card uses large border radius"
           }
@@ -174,40 +114,20 @@
               "$description": "Strong card uses thin border"
             },
             "style": {
-              "$value": "solid",
+              "$value": "{eui.border.style.default}",
               "$type": "string",
               "$description": "Strong card uses solid border style"
             }
           },
           "background": {
             "color": {
-              "$value": "{eui.color.neutral.white}",
+              "$value": "{eui.color.background.surface}",
               "$type": "color",
               "$description": "Strong card uses white background"
-            },
-            "image": {
-              "$value": "none",
-              "$type": "string",
-              "$description": "Strong card has no background image"
-            },
-            "repeat": {
-              "$value": "no-repeat",
-              "$type": "string",
-              "$description": "Background image repeat setting"
-            },
-            "position": {
-              "$value": "center",
-              "$type": "string",
-              "$description": "Background image position"
-            },
-            "size": {
-              "$value": "auto",
-              "$type": "string",
-              "$description": "Background image size"
             }
           },
           "radius": {
-            "$value": "{eui.radius.lg}",
+            "$value": "{eui.radius.large}",
             "$type": "dimension",
             "$description": "Strong card uses large border radius"
           }
@@ -217,12 +137,12 @@
         "pending": {
           "indicator": {
             "color": {
-              "$value": "{eui.color.neutral.400}",
+              "$value": "{eui.color.status.application.pending}",
               "$type": "color",
               "$description": "Pending status indicator color"
             },
             "width": {
-              "$value": "4px",
+              "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Pending status indicator width"
             }
@@ -231,12 +151,12 @@
         "onTrack": {
           "indicator": {
             "color": {
-              "$value": "{eui.color.brand.500}",
+              "$value": "{eui.color.status.application.onTrack}",
               "$type": "color",
               "$description": "On track status indicator color"
             },
             "width": {
-              "$value": "4px",
+              "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "On track status indicator width"
             }
@@ -245,12 +165,12 @@
         "completed": {
           "indicator": {
             "color": {
-              "$value": "{eui.color.signal.success.500}",
+              "$value": "{eui.color.status.application.completed}",
               "$type": "color",
               "$description": "Completed status indicator color"
             },
             "width": {
-              "$value": "4px",
+              "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Completed status indicator width"
             }
@@ -259,12 +179,12 @@
         "minorDisruption": {
           "indicator": {
             "color": {
-              "$value": "{eui.color.signal.warning.500}",
+              "$value": "{eui.color.status.application.minorDisruption}",
               "$type": "color",
               "$description": "Minor disruption status indicator color"
             },
             "width": {
-              "$value": "4px",
+              "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Minor disruption status indicator width"
             }
@@ -273,12 +193,12 @@
         "majorDisruption": {
           "indicator": {
             "color": {
-              "$value": "{eui.color.signal.error.500}",
+              "$value": "{eui.color.status.application.majorDisruption}",
               "$type": "color",
               "$description": "Major disruption status indicator color"
             },
             "width": {
-              "$value": "4px",
+              "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Major disruption status indicator width"
             }
@@ -287,12 +207,12 @@
         "upcoming": {
           "indicator": {
             "color": {
-              "$value": "{eui.color.accent.500}",
+              "$value": "{eui.color.status.application.upcoming}",
               "$type": "color",
               "$description": "Upcoming status indicator color"
             },
             "width": {
-              "$value": "4px",
+              "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Upcoming status indicator width"
             }
@@ -301,12 +221,12 @@
         "discontinued": {
           "indicator": {
             "color": {
-              "$value": "{eui.color.neutral.600}",
+              "$value": "{eui.color.status.application.discontinued}",
               "$type": "color",
               "$description": "Discontinued status indicator color"
             },
             "width": {
-              "$value": "4px",
+              "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Discontinued status indicator width"
             }
@@ -326,7 +246,7 @@
             "$description": "Default card border width"
           },
           "style": {
-            "$value": "solid",
+            "$value": "{eui.border.style.default}",
             "$type": "string",
             "$description": "Default card border style"
           },
@@ -338,33 +258,13 @@
         },
         "background": {
           "color": {
-            "$value": "{eui.color.neutral.white}",
+            "$value": "{eui.color.background.surface}",
             "$type": "color",
             "$description": "Default card background color"
-          },
-          "image": {
-            "$value": "none",
-            "$type": "string",
-            "$description": "Default card background image"
-          },
-          "repeat": {
-            "$value": "no-repeat",
-            "$type": "string",
-            "$description": "Default background image repeat"
-          },
-          "position": {
-            "$value": "center",
-            "$type": "string",
-            "$description": "Default background image position"
-          },
-          "size": {
-            "$value": "auto",
-            "$type": "string",
-            "$description": "Default background image size"
           }
         },
         "radius": {
-          "$value": "{eui.radius.lg}",
+          "$value": "{eui.radius.large}",
           "$type": "dimension",
           "$description": "Default card border radius"
         },

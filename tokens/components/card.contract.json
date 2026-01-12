@@ -64,10 +64,6 @@
       "--eui-card-border-color": { "type": "color" },
 
       "--eui-card-background": { "type": "color" },
-      "--eui-card-background-image": { "type": "string" },
-      "--eui-card-background-repeat": { "type": "string" },
-      "--eui-card-background-position": { "type": "string" },
-      "--eui-card-background-size": { "type": "string" },
 
       "--eui-card-radius": { "type": "dimension" },
       "--eui-card-padding": { "type": "dimension" }
@@ -85,10 +81,6 @@
         "borderWidth": "--eui-card-variant-elevated-border-width",
         "borderStyle": "--eui-card-variant-elevated-border-style",
         "background": "--eui-card-variant-elevated-background",
-        "backgroundImage": "--eui-card-variant-elevated-backgroundImage",
-        "backgroundRepeat": "--eui-card-variant-elevated-backgroundRepeat",
-        "backgroundPosition": "--eui-card-variant-elevated-backgroundPosition",
-        "backgroundSize": "--eui-card-variant-elevated-backgroundSize",
         "radius": "--eui-card-variant-elevated-radius"
       },
       "flat": {
@@ -96,10 +88,6 @@
         "borderWidth": "--eui-card-variant-flat-border-width",
         "borderStyle": "--eui-card-variant-flat-border-style",
         "background": "--eui-card-variant-flat-background",
-        "backgroundImage": "--eui-card-variant-flat-backgroundImage",
-        "backgroundRepeat": "--eui-card-variant-flat-backgroundRepeat",
-        "backgroundPosition": "--eui-card-variant-flat-backgroundPosition",
-        "backgroundSize": "--eui-card-variant-flat-backgroundSize",
         "radius": "--eui-card-variant-flat-radius"
       },
       "muted": {
@@ -108,10 +96,6 @@
         "borderStyle": "--eui-card-variant-muted-border-style",
         "borderColor": "--eui-card-variant-muted-border-color",
         "background": "--eui-card-variant-muted-background",
-        "backgroundImage": "--eui-card-variant-muted-backgroundImage",
-        "backgroundRepeat": "--eui-card-variant-muted-backgroundRepeat",
-        "backgroundPosition": "--eui-card-variant-muted-backgroundPosition",
-        "backgroundSize": "--eui-card-variant-muted-backgroundSize",
         "radius": "--eui-card-variant-muted-radius"
       },
       "strong": {
@@ -119,10 +103,6 @@
         "borderWidth": "--eui-card-variant-strong-border-width",
         "borderStyle": "--eui-card-variant-strong-border-style",
         "background": "--eui-card-variant-strong-background",
-        "backgroundImage": "--eui-card-variant-strong-backgroundImage",
-        "backgroundRepeat": "--eui-card-variant-strong-backgroundRepeat",
-        "backgroundPosition": "--eui-card-variant-strong-backgroundPosition",
-        "backgroundSize": "--eui-card-variant-strong-backgroundSize",
         "radius": "--eui-card-variant-strong-radius"
       }
     },
@@ -180,10 +160,7 @@
       "implementation": "pseudo-element ::before",
       "position": "absolute",
       "borderRadiusRule": "uses card radius on left corners",
-      "paddingLeftFormula": "calc(var(--eui-card-status-indicator-width, 4px) + 0px)",
-      "defaults": {
-        "widthFallback": "4px"
-      }
+      "paddingLeftFormula": "var(--eui-card-status-indicator-width)"
     }
   },
 

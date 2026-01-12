@@ -16,13 +16,13 @@
 
 ## Overview
 
-The Envy UI token system is a comprehensive design token architecture that supports multiple contexts (app, website, report) with theme variations, while maintaining DTCG compliance and providing excellent developer experience.
+The Envy UI token system is a comprehensive design token architecture that supports multiple contexts (app, website, report) with theme variations, while maintaining DTCG compliance and providing excellent developer experience. The old `web` name is deprecated and renamed to `website` (legacy artifacts may exist under `tokens/legacy/contexts/web`).
 
 **Key Features:**
 - **WCAG 2.2 AA Accessibility Theme** - Built-in high-contrast theme for accessibility compliance
 - **Composition-Based Themes** - Holistic theme approach for better maintainability
-- **Multi-Context Support** - Independent token structures for different use cases
-- **Scoped Accessibility Testing** - A11y testing focused on component content only
+- **Multi-Context Support** - Independent token structures for app/website/report contexts
+- **Website Context** - Canonical context; may temporarily inherit `app` values until specialized tokens are added
 
 ## Core Principles
 
@@ -50,7 +50,8 @@ Primitives → Raw → Semantics → Themes → Components
 | `tokens/contexts/**/raw/` | Context namespaced aliases | ✅ Included | Canonical |
 | `tokens/contexts/**/semantics/` | Meaning-based aliases | ✅ Included | Canonical |
 | `tokens/contexts/**/themes/` | Override-only aliases | ✅ Included | Canonical |
-| `tokens/contexts/**/components.json` | Component contracts | ✅ Included | Canonical |
+| `tokens/components/*.tokens.json` | Component tokens (semantic-only) | ✅ Included (via component CSS generator) | Canonical |
+| `tokens/components/*.contract.json` | Component contracts (structure/behavior) | ❌ Not rendered | Canonical |
 | `tokens/knowledge/` | Documentation/workflow | ❌ Excluded | Workflow |
 | `tokens/legacy/` | Historical quarantine | ❌ Excluded | Legacy |
 
@@ -141,7 +142,7 @@ tokens/contexts/app/themes/
 └── accessibility.json # WCAG 2.2 AA high-contrast theme
 ```
 
-### 5. Components Layer (`tokens/contexts/*/components.json`)
+### 5. Components Layer (`tokens/components/*.tokens.json`)
 
 **Component-specific contracts** that reference semantic tokens.
 
@@ -149,16 +150,24 @@ tokens/contexts/app/themes/
 - Defines component-specific tokens (button colors, spacing)
 - Context-specific variants when needed
 
+**Contract source of truth:**
+- `tokens/components/*.contract.json` define structure/behavior and variable contracts
+- Structure CSS is generated from contracts (deterministic, strict by default)
+
 ## Context Structure
 
-Each context (`app`) contains a complete canonical token structure:
+Each canonical context (`app`, `website`, `report`) contains a complete token structure:
 
 ```
 tokens/contexts/app/
 ├── raw/              # Context-namespaced aliases to primitives
 ├── semantics/        # Meaning-based aliases to raw
 ├── themes/           # Override-only aliases to semantics
-└── components.json   # Component contracts
+
+tokens/contexts/website/
+├── raw/
+├── semantics/
+├── themes/
 ```
 
 ### Context Responsibilities
@@ -167,7 +176,12 @@ tokens/contexts/app/
   - **`raw/`**: Context-specific aliases (`eui.app.raw.*`)
   - **`semantics/`**: App-appropriate semantic mappings
   - **`themes/`**: Default + WCAG 2.2 AA accessibility
-  - **`components.json`**: Component contracts for app context
+  - **Component tokens**: Live in `tokens/components/*.tokens.json` (semantic-only)
+
+- **`website`**: Generated websites (secondary context)
+  - May temporarily inherit `app` semantics until website-specific tokens are defined
+
+- **`report`**: Report/print context (in progress)
 
 ## Theme System
 
@@ -194,7 +208,7 @@ The accessibility theme provides WCAG 2.2 AA compliance with:
 - **4.5:1 minimum contrast ratios** for normal text
 - **High-contrast color combinations** for all UI elements
 - **Semantic color preservation** while ensuring readability
-- **Badge-specific overrides** for all variants (subtle, solid, outline)
+- **Component overrides belong in component tokens** (theme generator filters component prefixes)
 
 ### Example Theme Override (Accessibility)
 ```json
@@ -203,21 +217,15 @@ The accessibility theme provides WCAG 2.2 AA compliance with:
   "eui": {
     "typography": {
       "base": {
-        "fontSize": { "$value": "16px" }  // Larger for accessibility
+        "fontSize": { "$value": "{eui.typography.fontSize.lg}" }
       }
     },
-    "badge": {
-      "colors": {
-        "neutral": {
-          "background": { "$value": "#ffffff" },  // High contrast
-          "text": { "$value": "#000000" }         // Black text
-        },
-        "success": {
-          "solid": {
-            "background": { "$value": "#006400" }, // Dark green
-            "text": { "$value": "#ffffff" }        // White text
-          }
-        }
+    "color": {
+      "border": {
+        "default": { "$value": "{eui.color.neutral.700}" }
+      },
+      "text": {
+        "primary": { "$value": "{eui.color.neutral.900}" }
       }
     }
   }
@@ -305,7 +313,9 @@ npm run tokens:generate-vscode  # Generates autocomplete data
 
 ### Build Pipeline
 ```bash
-npm run tokens:build     # Generate CSS from tokens
+npm run tokens:build:canonical  # Generate canonical CSS (primitives/contexts/themes)
+npm run tokens:validate         # Validate token usage
+npm run validate:css-vars       # Validate runtime CSS vars (A/B/C)
 npm run tokens:generate-types  # Generate TypeScript types
 npm run tokens:full      # Complete token generation pipeline
 ```
@@ -314,21 +324,21 @@ npm run tokens:full      # Complete token generation pipeline
 
 ### CSS Implementation
 ```css
-/* Base context styles */
+/* Base context styles (generated output; do not edit) */
 [data-eui-context="app"] {
-  --eui-color-background-base: oklch(100% 0 0);
+  --eui-color-background-surface: oklch(100% 0 0);
 }
 
-/* Theme overrides */
-[data-eui-context="app"][data-eui-theme="dark"] {
-  --eui-color-background-base: oklch(15% 0 0);
+/* Theme overrides (generated output; do not edit) */
+[data-eui-context="app"][data-eui-theme="accessibility"] {
+  --eui-color-background-surface: oklch(100% 0 0);
 }
 ```
 
 ### Runtime Switching
 ```typescript
 // Change context/theme at runtime
-document.documentElement.setAttribute('data-eui-context', 'website');
+document.documentElement.setAttribute('data-eui-context', 'app'); // app | website | report
 document.documentElement.setAttribute('data-eui-theme', 'default');
 ```
 
@@ -341,10 +351,11 @@ document.documentElement.setAttribute('data-eui-theme', 'default');
 - **TypeScript** - Type-safe token references
 
 ### Figma Integration
-Each context exports as separate Figma files:
+Each active context exports as separate Figma files:
 - `generated/figma/app/variables.tokens.scoped.json`
 - `generated/figma/website/variables.tokens.scoped.json`
 - `generated/figma/report/variables.tokens.scoped.json`
+Website exports are canonical; the old `web` name is legacy-only.
 
 ## CSS Token Output
 
@@ -358,11 +369,14 @@ The token system generates canonical CSS that reflects the layered architecture 
 - **`tokens.contexts.css`** - Semantic aliases in `@layer eui-contexts`
 - **`tokens.themes.css`** - Theme overrides in `@layer eui-themes`
 
+**Component token CSS in `generated/css/components/`:**
+- **`badge.tokens.css`**, **`card.tokens.css`** - Component mapping tokens in `@layer eui-components`
+
 ### Layer Order & Wrapping
 
 **Mandatory layer order declaration:**
 ```css
-@layer eui-primitives, eui-contexts, eui-themes;
+@layer eui-primitives, eui-contexts, eui-themes, eui-components;
 ```
 
 **Mandatory layer wrapping:**
@@ -371,6 +385,7 @@ The token system generates canonical CSS that reflects the layered architecture 
 @layer eui-primitives { :root { /* literals */ } }
 @layer eui-contexts { [data-eui-context] { /* semantics */ } }
 @layer eui-themes { [data-eui-context][data-eui-theme] { /* overrides */ } }
+@layer eui-components { [data-eui-context] .eui-component { /* component tokens */ } }
 ```
 
 ### Content Filtering Rules
@@ -440,7 +455,7 @@ See **[CSS Token Output Rules](./css-token-output-rules.md)** for complete norma
 
 ## Current Implementation Status
 
-- ✅ **Multi-context architecture** - app/website/report contexts
+- ✅ **Multi-context architecture** - app/website/report contexts (`web` renamed to `website`)
 - ✅ **Composition-based themes** - Holistic theme approach with accessibility theme
 - ✅ **WCAG 2.2 AA compliance** - Built-in high-contrast accessibility theme
 - ✅ **Scoped accessibility testing** - A11y tests focused on component content only

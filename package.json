@@ -28,6 +28,7 @@
     "tokens:generate-vscode": "node scripts/generate-vscode-css-data.mjs",
     "tokens:validate": "node scripts/validate-token-usage.mjs",
     "tokens:validate-architecture": "node scripts/validate-token-architecture.mjs",
+    "validate:css-vars": "node scripts/validate-css-vars.mjs",
     "tokens:watch": "nodemon --watch tokens --ext json --exec \"npm run tokens:build:canonical\"",
     "tokens:full": "npm run tokens:build && npm run tokens:generate-metadata && npm run tokens:generate-types && npm run tokens:generate-vscode && npm run tokens:generate-docs && npm run tokens:validate",
     "icons:normalize": "node scripts/normalize-svg-icons.mjs",

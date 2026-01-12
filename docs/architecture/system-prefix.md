@@ -6,7 +6,7 @@ Definition
 Rule
 - The token JSON root key must match the System Prefix.
 - The token JSON root key must match the System Prefix across all contexts.
-- Context token directories (`tokens/app`, `tokens/website`, `tokens/report`) do not match the prefix; they are environment scopes.
+- Context token directories (`tokens/contexts/app`, `tokens/contexts/website`, `tokens/contexts/report`) do not match the prefix; they are environment scopes. The old `web` name is deprecated and renamed to `website` (legacy artifacts may exist under `tokens/legacy/contexts/web`).
 
 Flows
 - Semantic flow: token folder structure + JSON root define canonical token paths.

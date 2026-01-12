@@ -7,6 +7,9 @@
  * Components generate into generated/css/components/ under @layer eui-components.
  */
 
+// Policy: structure CSS is generated from contracts for machine-run stability.
+// Escape hatch: hybrid/manual structure CSS requires ADR/Rules update (no ad-hoc edits).
+
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -54,7 +57,7 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
 
   let output = `/**\n * ${componentName.charAt(0).toUpperCase() + componentName.slice(1)} Component Tokens - Generated from tokens/components/${componentName}.tokens.json\n */\n\n`;
   // Start with context layer for semantic tokens
-  output += '@layer eui-contexts {\n';
+  output += '@layer eui-components {\n';
 
   try {
     const data = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
@@ -159,9 +162,9 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
         colorVarGroups[runtimeVar].push({ name, value });
       });
 
-      // Generate color variables globally available for component usage
-      output += `  /* Badge color variables - Available globally for component usage */\n`;
-      output += `  :root {\n`;
+      // Generate color variables scoped to the component within context
+      output += `  /* Badge color variables - Scoped to component */\n`;
+      output += `  [data-eui-context] .${baseSelector} {\n`;
       Object.keys(colorVarGroups).forEach(runtimeVar => {
         // Use the first value (they should all be the same for the same variable)
         const firstToken = colorVarGroups[runtimeVar][0];

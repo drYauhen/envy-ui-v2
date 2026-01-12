@@ -4,6 +4,7 @@
 
 @layer eui-primitives {
   :root {
+    --eui-border-style-solid: solid;
     --eui-border-width-default: 2px;
     --eui-border-width-focus: 2px;
     --eui-border-width-thick: 3px;
@@ -41,7 +42,9 @@
     --eui-color-neutral-700: oklch(48% 0.00 0);
     --eui-color-neutral-800: oklch(33% 0.00 0);
     --eui-color-neutral-900: oklch(25% 0.00 0);
+    --eui-color-neutral-transparent: transparent;
     --eui-color-neutral-white: oklch(100% 0 0);
+    --eui-color-neutral-zero: oklch(100% 0.00 0);
     --eui-color-signal-100: oklch(87% 0.14 25);
     --eui-color-signal-200: oklch(77% 0.20 25);
     --eui-color-signal-300: oklch(67% 0.24 25);

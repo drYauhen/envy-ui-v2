@@ -1,5 +1,7 @@
 # Hero Section Theme Architecture
 
+> **Note:** Website is a canonical context (renamed from `web`). It may temporarily inherit app semantics until website-specific tokens are defined.
+
 ## Principle: Structure vs. Visual Parameters
 
 ### What DOES NOT Change with Theme (Template Configuration)

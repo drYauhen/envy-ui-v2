@@ -325,8 +325,8 @@ Docs are organized by section:
 ### Token Documentation
 
 Token documentation is integrated into the token structure:
-- Each context has a README.md file: `tokens/{context}/README.md`
-- Each theme directory has a README.md file: `tokens/{context}/themes/README.md`
+- Each active context has a README.md file: `tokens/contexts/{context}/README.md`
+- Each theme directory has a README.md file: `tokens/contexts/{context}/themes/README.md`
 - These README files are automatically displayed in Storybook within the Tokens section
 - Documentation is shown when viewing context or theme overview stories
 
@@ -338,10 +338,12 @@ Documentation metadata and link resolution are centralized:
 - **Link rendering:** `DocViewer` uses the registry to map markdown links to Storybook routes
 
 **Example locations:**
-- `tokens/app/README.md` - App context documentation
-- `tokens/app/themes/README.md` - App themes documentation
-- `tokens/website/README.md` - Website context documentation
-- `tokens/report/README.md` - Report context documentation
+- `tokens/contexts/app/README.md` - App context documentation
+- `tokens/contexts/app/themes/README.md` - App themes documentation
+- `tokens/contexts/website/README.md` - Website context documentation
+- `tokens/contexts/report/README.md` - Report context documentation
+
+Website docs live under `tokens/contexts/website` (old `web` name is deprecated).
 
 ## Related Documentation
 

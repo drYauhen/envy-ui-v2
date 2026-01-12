@@ -94,7 +94,7 @@ Silent literals outside this list are not allowed.
    ```
 
 3. **Token Creation for Third-Party:**
-   - Create tokens for third-party component values in `tokens/app/components/{library-name}/`
+   - Create tokens for third-party component values in `tokens/components/{library-name}.tokens.json`
    - Map third-party CSS variables to design tokens
    - Document as explicit exceptions in component documentation
 

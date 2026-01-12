@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "layout": {
+      "card": {
+        "statusIndicator": {
+          "width": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Status indicator width for cards. Defaults to 4px via semantic spacing."
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,51 +5,50 @@ import '../generated/css/tokens.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/state.css';
 import '../src/ui/label.css';
-import '../src/ui/button.css';
+// import '../src/ui/button.css'; // LEGACY: Replaced with component CSS - defines old --eui-button-* tokens
 import '../src/ui/components/card/card.index.css';
-// import '../src/ui/badge.css'; // LEGACY: Replaced with component CSS
 import '../src/ui/components/badge/badge.index.css';
-import '../src/ui/checkbox.css';
-import '../src/ui/switch.css';
-import '../src/ui/input.css';
-import '../src/ui/input-group.css';
-import '../src/ui/textarea.css';
-import '../src/ui/select.css';
+// import '../src/ui/checkbox.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/switch.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/input.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/input-group.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/textarea.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/select.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/avatar.css';
 import '../src/ui/avatar-group.css';
 import '../src/ui/counter.css';
 import '../src/ui/related-group.css';
 import '../src/ui/skeleton.css';
 import '../src/ui/celebration.css';
-import '../src/ui/modal.css';
-import '../src/ui/app-shell.css';
-import '../src/ui/sidebar.css';
-import '../src/ui/side-nav.css';
+// import '../src/ui/modal.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/app-shell.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/sidebar.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/side-nav.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/logo.css';
-import '../src/ui/header.css';
-import '../src/ui/title-bar.css';
-import '../src/ui/content.css';
-import '../src/ui/detail-panel.css';
+// import '../src/ui/header.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/title-bar.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/content.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/detail-panel.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/skip-link.css';
-import '../src/ui/table.css';
-import '../src/ui/menu.css';
+// import '../src/ui/table.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/menu.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/divider.css';
 import '../src/ui/icons/_icons.css';
-import '../src/ui/form-field.css';
-import '../src/ui/form-section.css';
-import '../src/ui/form-row.css';
-import '../src/ui/form-group.css';
-import '../src/ui/alert-banner.css';
-import '../src/ui/select-dropdown.css';
-import '../src/ui/select-primitives.css';
+// import '../src/ui/form-field.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/form-section.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/form-row.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/form-group.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/alert-banner.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/select-dropdown.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/select-primitives.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/container.css';
 import '../src/ui/page.css';
 import '../src/ui/section.css';
 import '../src/ui/stack.css';
 import '../src/ui/inline.css';
 import '../src/ui/grid.css';
-import '../src/ui/toolbar.css';
-import '../src/ui/page-header.css';
+// import '../src/ui/toolbar.css'; // LEGACY: Likely defines old component tokens
+// import '../src/ui/page-header.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/typography.css';
 import './preview.css';
 import { ContextThemeProvider, DEFAULT_CONTEXT_THEMES } from '../stories/utils/context-theme';

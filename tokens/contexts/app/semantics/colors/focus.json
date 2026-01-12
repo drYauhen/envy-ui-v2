@@ -30,6 +30,13 @@
             "$type": "dimension",
             "$description": "Accessible focus ring width for keyboard focus. 2px width. Optimized for app-default context/theme. Other contexts/themes may override this value."
           }
+        },
+        "offset": {
+          "default": {
+            "$value": "{eui.dimension.0}",
+            "$type": "dimension",
+            "$description": "Default focus ring offset. Optimized for app-default context/theme."
+          }
         }
       }
     }
