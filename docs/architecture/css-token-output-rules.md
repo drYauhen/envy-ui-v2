@@ -21,25 +21,25 @@ These are the normative MUST-level rules for CSS token output generation. They a
 
 ```json
 // tokens/components/badge.tokens.json - Source of truth
-"typography": {
-  "fontFamily": { "$value": "{eui.typography.fontFamily.ui}" },
-  "fontSize": { "$value": "{eui.typography.fontSize.xs}" },
-  "lineHeight": { "$value": "{eui.typography.lineHeight.tight}" }
+"size": {
+  "default": {
+    "fontSize": { "$value": "{eui.typography.fontSize.xs}" },
+    "lineHeight": { "$value": "{eui.typography.lineHeight.tight}" }
+  }
 }
 ```
 
 ```css
 /* generated/css/components/badge.tokens.css - Generated output */
---eui-badge-typography-fontFamily: var(--eui-typography-fontFamily-ui);
---eui-badge-typography-fontSize: var(--eui-typography-fontSize-xs);
---eui-badge-typography-lineHeight: var(--eui-typography-lineHeight-tight);
+--eui-badge-size-default-fontSize: var(--eui-typography-fontSize-xs);
+--eui-badge-size-default-lineHeight: var(--eui-typography-lineHeight-tight);
 ```
 
 **Forbidden Patterns:**
 ```css
 /* ❌ WRONG - kebab-case variables */
---eui-badge-typography-font-family: var(--eui-typography-font-family-ui);
---eui-badge-typography-font-size: var(--eui-typography-font-size-xs);
+--eui-badge-size-default-font-size: var(--eui-typography-font-size-xs);
+--eui-badge-size-default-line-height: var(--eui-typography-lineHeight-tight);
 
 /* ❌ WRONG - UPPER_CASE variables */
 --eui-badge-typography-FONTFAMILY: var(--eui-typography-FONTFAMILY-UI);
@@ -50,6 +50,10 @@ These are the normative MUST-level rules for CSS token output generation. They a
 - camelCase matches JavaScript/TypeScript conventions used in tokens
 - Maintains direct mapping between JSON source and CSS output
 - Prevents transformation bugs and naming inconsistencies
+
+## Container-Driven Component Sizing (MUST)
+
+Application components are container-driven: size is fixed, typography adapts. Size tokens define height/padding/gap and any size-specific typography (fontSize/lineHeight). Component CSS maps size tokens directly to geometry and type without deriving container size from typography.
 
 ### Token Path to Variable Name (MUST)
 

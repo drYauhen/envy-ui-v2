@@ -279,6 +279,8 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-spacing-20` | `80px` |
 | `--eui-spacing-2xl` | `48px` |
 | `--eui-spacing-2xl` | `3.4286rem` |
+| `--eui-spacing-2xs` | `2px` |
+| `--eui-spacing-2xs` | `0.1429rem` |
 | `--eui-spacing-3` | `12px` |
 | `--eui-spacing-4` | `16px` |
 | `--eui-spacing-5` | `20px` |
@@ -587,15 +589,22 @@ Foundation tokens are base design tokens that are not component-specific.
 | `--eui-badge-focus-ring-color` | `var(--eui-color-focus-ring)` |
 | `--eui-badge-focus-ring-offset` | `var(--eui-focus-ring-offset-default)` |
 | `--eui-badge-focus-ring-width` | `var(--eui-focus-ring-width)` |
-| `--eui-badge-shape-radius` | `var(--eui-radius-large)` |
-| `--eui-badge-spacing-gap` | `var(--eui-spacing-xs)` |
-| `--eui-badge-spacing-padding-horizontal` | `var(--eui-spacing-sm)` |
-| `--eui-badge-spacing-padding-vertical` | `var(--eui-spacing-xs)` |
+| `--eui-badge-shape-radius` | `var(--eui-radius-default)` |
+| `--eui-badge-size-default-fontSize` | `var(--eui-typography-fontSize-xs)` |
+| `--eui-badge-size-default-gap` | `var(--eui-spacing-xs)` |
+| `--eui-badge-size-default-height` | `var(--eui-dimension-6)` |
+| `--eui-badge-size-default-lineHeight` | `var(--eui-typography-lineHeight-tight)` |
+| `--eui-badge-size-default-padding-block` | `var(--eui-spacing-2xs)` |
+| `--eui-badge-size-default-padding-inline` | `var(--eui-spacing-sm)` |
+| `--eui-badge-size-small-fontSize` | `var(--eui-typography-fontSize-xs)` |
+| `--eui-badge-size-small-gap` | `var(--eui-spacing-2xs)` |
+| `--eui-badge-size-small-height` | `var(--eui-dimension-5)` |
+| `--eui-badge-size-small-lineHeight` | `var(--eui-typography-lineHeight-tight)` |
+| `--eui-badge-size-small-padding-block` | `var(--eui-dimension-0)` |
+| `--eui-badge-size-small-padding-inline` | `var(--eui-spacing-xs)` |
 | `--eui-badge-typography-fontFamily` | `var(--eui-typography-fontFamily-ui)` |
-| `--eui-badge-typography-fontSize` | `var(--eui-typography-fontSize-xs)` |
 | `--eui-badge-typography-fontWeight` | `var(--eui-typography-fontWeight-medium)` |
 | `--eui-badge-typography-letterSpacing` | `var(--eui-typography-letterSpacing-wide)` |
-| `--eui-badge-typography-lineHeight` | `var(--eui-typography-lineHeight-tight)` |
 | `--eui-badge-typography-textTransform` | `var(--eui-typography-textTransform-uppercase)` |
 
 ## Breakpoint

@@ -1,6 +1,9 @@
 {
   "eui": {
     "spacing": {
+      "2xs": {
+        "$resolved": "0.1429rem"
+      },
       "xs": {
         "$resolved": "0.2857rem"
       },

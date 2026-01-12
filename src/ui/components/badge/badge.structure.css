@@ -14,22 +14,32 @@
      ============================================================================ */
 
   [data-eui-context] .eui-badge {
+    --eui-badge-size-height: var(--eui-badge-size-default-height);
+    --eui-badge-size-padding-block: var(--eui-badge-size-default-padding-block);
+    --eui-badge-size-padding-inline: var(--eui-badge-size-default-padding-inline);
+    --eui-badge-size-gap: var(--eui-badge-size-default-gap);
+    --eui-badge-size-fontSize: var(--eui-badge-size-default-fontSize);
+    --eui-badge-size-lineHeight: var(--eui-badge-size-default-lineHeight);
+
     /* Layout structure */
     display: inline-flex;
     align-items: center;
-    gap: var(--eui-badge-spacing-gap);
+    gap: var(--eui-badge-size-gap);
+    height: var(--eui-badge-size-height);
 
     /* Visual properties using component variables */
+    box-sizing: border-box;
     border-radius: var(--eui-badge-shape-radius);
     border-width: var(--eui-badge-border-width);
     border-style: var(--eui-badge-border-style);
-    padding: var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal);
+    padding-block: var(--eui-badge-size-padding-block);
+    padding-inline: var(--eui-badge-size-padding-inline);
 
     /* Typography */
     font-family: var(--eui-badge-typography-fontFamily);
-    font-size: var(--eui-badge-typography-fontSize);
+    font-size: var(--eui-badge-size-fontSize);
     font-weight: var(--eui-badge-typography-fontWeight);
-    line-height: var(--eui-badge-typography-lineHeight);
+    line-height: var(--eui-badge-size-lineHeight);
     letter-spacing: var(--eui-badge-typography-letterSpacing);
     text-transform: var(--eui-badge-typography-textTransform);
     white-space: nowrap;
@@ -45,6 +55,16 @@
   /* ============================================================================
      Badge Component - Variant & Tone Styling
      ============================================================================ */
+
+  /* Size: small */
+  [data-eui-context] .eui-badge[data-eui-size='small'] {
+    --eui-badge-size-height: var(--eui-badge-size-small-height);
+    --eui-badge-size-padding-block: var(--eui-badge-size-small-padding-block);
+    --eui-badge-size-padding-inline: var(--eui-badge-size-small-padding-inline);
+    --eui-badge-size-gap: var(--eui-badge-size-small-gap);
+    --eui-badge-size-fontSize: var(--eui-badge-size-small-fontSize);
+    --eui-badge-size-lineHeight: var(--eui-badge-size-small-lineHeight);
+  }
 
   /* Default neutral subtle badge */
   [data-eui-context] .eui-badge {

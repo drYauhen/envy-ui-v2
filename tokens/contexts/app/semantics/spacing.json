@@ -2,6 +2,11 @@
   "$schema": "../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "spacing": {
+      "2xs": {
+        "$value": "{eui.dimension.0-5}",
+        "$type": "dimension",
+        "$description": "Micro spacing - 2px. Used for compact UI geometry (badge padding, micro offsets)."
+      },
       "xs": {
         "$value": "{eui.dimension.1}",
         "$type": "dimension",

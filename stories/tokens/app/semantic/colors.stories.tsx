@@ -3,11 +3,11 @@ import textTokens from '../../../../tokens/contexts/app/semantics/colors/text.js
 import backgroundTokens from '../../../../tokens/contexts/app/semantics/colors/background.json';
 import borderTokens from '../../../../tokens/contexts/app/semantics/colors/border.json';
 import focusTokens from '../../../../tokens/contexts/app/semantics/colors/focus.json';
-import foundationBrand from '../../../../tokens/primitives/colors/brand.json';
-import foundationNeutral from '../../../../tokens/primitives/colors/neutral.json';
-import foundationAccent from '../../../../tokens/primitives/colors/accent.json';
-import foundationSignal from '../../../../tokens/primitives/colors/signal.json';
-import foundationStatus from '../../../../tokens/primitives/colors/status.json';
+import foundationBrand from '../../../../tokens/primitives/brand.json';
+import foundationNeutral from '../../../../tokens/primitives/neutral.json';
+import foundationAccent from '../../../../tokens/primitives/accent.json';
+import foundationSignal from '../../../../tokens/primitives/signal.json';
+import foundationStatus from '../../../../tokens/primitives/status.json';
 import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';

@@ -4,7 +4,7 @@ import { TokenPage, TokenSection } from '../../../viewers/tokens/TokenLayout';
 import { TokenRefTable } from '../../../viewers/tokens/TokenRefTable';
 import { TokenSwatch } from '../../../viewers/tokens/TokenSwatch';
 import { collectRefs, flattenTokens, resolveAlias, type FlatToken, type TokenRef } from '../../../viewers/tokens/token-utils';
-import foundationNeutral from '../../../../tokens/primitives/colors/neutral.json';
+import foundationNeutral from '../../../../tokens/primitives/neutral.json';
 import { getSectionParameters } from '../../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -90,4 +90,3 @@ export const Accessibility: Story = {
     </TokenPage>
   )
 };
-

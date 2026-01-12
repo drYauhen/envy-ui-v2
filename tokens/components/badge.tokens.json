@@ -2,6 +2,76 @@
   "$schema": "../../schemas/dtcg-2025.10-schema.json",
   "eui": {
     "badge": {
+      "size": {
+        "default": {
+          "height": {
+            "$value": "{eui.dimension.6}",
+            "$type": "dimension",
+            "$description": "Default badge height (container-driven)"
+          },
+          "padding": {
+            "block": {
+              "$value": "{eui.spacing.2xs}",
+              "$type": "dimension",
+              "$description": "Default badge vertical padding (container-driven)"
+            },
+            "inline": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Default badge horizontal padding"
+            }
+          },
+          "gap": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Default badge gap between elements"
+          },
+          "fontSize": {
+            "$value": "{eui.typography.fontSize.xs}",
+            "$type": "dimension",
+            "$description": "Default badge font size"
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.lineHeight.tight}",
+            "$type": "string",
+            "$description": "Default badge line height"
+          }
+        },
+        "small": {
+          "height": {
+            "$value": "{eui.dimension.5}",
+            "$type": "dimension",
+            "$description": "Small badge height (compact, container-driven)"
+          },
+          "padding": {
+            "block": {
+              "$value": "{eui.dimension.0}",
+              "$type": "dimension",
+              "$description": "Small badge vertical padding (container-driven)"
+            },
+            "inline": {
+              "$value": "{eui.spacing.xs}",
+              "$type": "dimension",
+              "$description": "Small badge horizontal padding"
+            }
+          },
+          "gap": {
+            "$value": "{eui.spacing.2xs}",
+            "$type": "dimension",
+            "$description": "Small badge gap between elements"
+          },
+          "fontSize": {
+            "$value": "{eui.typography.fontSize.xs}",
+            "$type": "dimension",
+            "$description": "Small badge font size"
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.lineHeight.tight}",
+            "$type": "string",
+            "$description": "Small badge line height"
+          }
+        }
+      },
       "variant": {
         "subtle": {
           "tone": {
@@ -226,28 +296,9 @@
         },
         "shape": {
           "radius": {
-            "$value": "{eui.radius.large}",
+            "$value": "{eui.radius.default}",
             "$type": "dimension",
             "$description": "Badge border radius"
-          }
-        },
-        "spacing": {
-          "padding": {
-            "vertical": {
-              "$value": "{eui.spacing.xs}",
-              "$type": "dimension",
-              "$description": "Badge vertical padding"
-            },
-            "horizontal": {
-              "$value": "{eui.spacing.sm}",
-              "$type": "dimension",
-              "$description": "Badge horizontal padding"
-            }
-          },
-          "gap": {
-            "$value": "{eui.spacing.xs}",
-            "$type": "dimension",
-            "$description": "Badge gap between elements"
           }
         },
         "typography": {
@@ -256,20 +307,10 @@
             "$type": "string",
             "$description": "Badge font family"
           },
-          "fontSize": {
-            "$value": "{eui.typography.fontSize.xs}",
-            "$type": "dimension",
-            "$description": "Badge font size"
-          },
           "fontWeight": {
             "$value": "{eui.typography.fontWeight.medium}",
             "$type": "string",
             "$description": "Badge font weight"
-          },
-          "lineHeight": {
-            "$value": "{eui.typography.lineHeight.tight}",
-            "$type": "string",
-            "$description": "Badge line height"
           },
           "letterSpacing": {
             "$value": "{eui.typography.letterSpacing.wide}",

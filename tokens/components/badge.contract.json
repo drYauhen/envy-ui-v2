@@ -32,6 +32,12 @@
       "default": "subtle",
       "values": ["subtle", "solid", "outline"],
       "notes": "Subtle (default) has colored background, solid has stronger colors, outline has transparent background with colored border."
+    },
+    "size": {
+      "type": "enum",
+      "default": "default",
+      "values": ["default", "small"],
+      "notes": "Size controls container-driven height, padding, and typography."
     }
   },
 
@@ -74,16 +80,23 @@
       "--eui-badge-colors-info-solid-text": "{eui.color.text.inverse}",
       "--eui-badge-colors-variant-outline-background": "{eui.color.background.transparent}"
     },
-    "spacing": {
-      "--eui-badge-spacing-padding-vertical": { "type": "dimension" },
-      "--eui-badge-spacing-padding-horizontal": { "type": "dimension" },
-      "--eui-badge-spacing-gap": { "type": "dimension" }
+    "size": {
+      "--eui-badge-size-default-height": { "type": "dimension" },
+      "--eui-badge-size-default-padding-block": { "type": "dimension" },
+      "--eui-badge-size-default-padding-inline": { "type": "dimension" },
+      "--eui-badge-size-default-gap": { "type": "dimension" },
+      "--eui-badge-size-default-fontSize": { "type": "dimension" },
+      "--eui-badge-size-default-lineHeight": { "type": "string" },
+      "--eui-badge-size-small-height": { "type": "dimension" },
+      "--eui-badge-size-small-padding-block": { "type": "dimension" },
+      "--eui-badge-size-small-padding-inline": { "type": "dimension" },
+      "--eui-badge-size-small-gap": { "type": "dimension" },
+      "--eui-badge-size-small-fontSize": { "type": "dimension" },
+      "--eui-badge-size-small-lineHeight": { "type": "string" }
     },
     "typography": {
       "--eui-badge-typography-fontFamily": { "type": "string" },
-      "--eui-badge-typography-fontSize": { "type": "dimension" },
       "--eui-badge-typography-fontWeight": { "type": "string" },
-      "--eui-badge-typography-lineHeight": { "type": "string" },
       "--eui-badge-typography-letterSpacing": { "type": "dimension" },
       "--eui-badge-typography-textTransform": { "type": "string" }
     },
@@ -96,7 +109,13 @@
     "localVars": {
       "--eui-badge-background": { "type": "color" },
       "--eui-badge-color": { "type": "color" },
-      "--eui-badge-border": { "type": "color" }
+      "--eui-badge-border": { "type": "color" },
+      "--eui-badge-size-height": { "type": "dimension" },
+      "--eui-badge-size-padding-block": { "type": "dimension" },
+      "--eui-badge-size-padding-inline": { "type": "dimension" },
+      "--eui-badge-size-gap": { "type": "dimension" },
+      "--eui-badge-size-fontSize": { "type": "dimension" },
+      "--eui-badge-size-lineHeight": { "type": "string" }
     }
   },
 
@@ -105,7 +124,8 @@
       "root": {
         "display": "inline-flex",
         "alignItems": "center",
-        "gap": "var(--eui-badge-spacing-gap)"
+        "height": "var(--eui-badge-size-height)",
+        "gap": "var(--eui-badge-size-gap)"
       }
     },
     "visual": {
@@ -115,13 +135,13 @@
       "backgroundColor": "var(--eui-badge-colors-neutral-background)",
       "color": "var(--eui-badge-colors-neutral-text)",
       "borderColor": "var(--eui-badge-colors-neutral-border)",
-      "padding": "var(--eui-badge-spacing-padding-vertical) var(--eui-badge-spacing-padding-horizontal)"
+      "padding": "var(--eui-badge-size-padding-block) var(--eui-badge-size-padding-inline)"
     },
     "typography": {
       "fontFamily": "var(--eui-badge-typography-fontFamily)",
-      "fontSize": "var(--eui-badge-typography-fontSize)",
+      "fontSize": "var(--eui-badge-size-fontSize)",
       "fontWeight": "var(--eui-badge-typography-fontWeight)",
-      "lineHeight": "var(--eui-badge-typography-lineHeight)",
+      "lineHeight": "var(--eui-badge-size-lineHeight)",
       "letterSpacing": "var(--eui-badge-typography-letterSpacing)",
       "textTransform": "var(--eui-badge-typography-textTransform)",
       "whiteSpace": "nowrap"

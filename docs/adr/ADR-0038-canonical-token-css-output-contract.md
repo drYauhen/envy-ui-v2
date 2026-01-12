@@ -125,6 +125,10 @@ When component CSS is implemented, it will use:
   - Use component contract variables when appropriate
   - Added "one component at a time" (no big-bang rollout)
 
+### Container-Driven Component Sizing
+
+Application components are container-driven: size is fixed, typography adapts. Size tokens define height/padding/gap and size-specific typography so geometry stays stable as type changes.
+
 ## Rationale
 
 ### Why Lock CSS Output Structure

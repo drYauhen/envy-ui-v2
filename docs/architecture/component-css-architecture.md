@@ -327,6 +327,12 @@ Component Token → Semantic Token → Primitive Value
   --eui-badge-background: var(--eui-badge-colors-neutral-background);
   --eui-badge-color: var(--eui-badge-colors-neutral-text);
   --eui-badge-border: var(--eui-badge-colors-neutral-border);
+  --eui-badge-size-height: var(--eui-badge-size-default-height);
+  --eui-badge-size-padding-block: var(--eui-badge-size-default-padding-block);
+  --eui-badge-size-padding-inline: var(--eui-badge-size-default-padding-inline);
+  --eui-badge-size-gap: var(--eui-badge-size-default-gap);
+  --eui-badge-size-fontSize: var(--eui-badge-size-default-fontSize);
+  --eui-badge-size-lineHeight: var(--eui-badge-size-default-lineHeight);
 
   /* Apply variables to properties */
   background: var(--eui-badge-background);
@@ -336,7 +342,13 @@ Component Token → Semantic Token → Primitive Value
   /* Layout and structure */
   display: inline-flex;
   align-items: center;
-  gap: var(--eui-badge-spacing-gap);
+  height: var(--eui-badge-size-height);
+  padding: var(--eui-badge-size-padding-block) var(--eui-badge-size-padding-inline);
+  gap: var(--eui-badge-size-gap);
+
+  /* Typography */
+  font-size: var(--eui-badge-size-fontSize);
+  line-height: var(--eui-badge-size-lineHeight);
 }
 
 /* Variant mapping */
@@ -352,6 +364,10 @@ Component Token → Semantic Token → Primitive Value
   --eui-badge-color: var(--eui-badge-colors-neutral-solid-text);
 }
 ```
+
+**Container-Driven Sizing (Rule 6a):**
+- Application components are container-driven: size is fixed, typography adapts.
+- Height/padding/gap come from size tokens; typography uses size tokens instead of driving geometry.
 
 ---
 
