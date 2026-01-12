@@ -51,7 +51,7 @@
 /* Option selected state */
 [data-eui-context] .eui-select-option[data-eui-selected="true"] {
   background-color: var(--eui-select-option-background-selected);
-  font-weight: var(--eui-typography-font-weight-medium);
+  font-weight: var(--eui-typography-fontWeight-medium);
 }
 
 /* Option selected + focused state */

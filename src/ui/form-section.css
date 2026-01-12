@@ -40,15 +40,15 @@
 /* Section Title */
 [data-eui-context] .eui-form-section-title {
   margin: 0;
-  font-size: var(--eui-typography-text-style-heading-4-font-size);
-  font-weight: var(--eui-typography-font-weight-semibold);
+  font-size: var(--eui-typography-textStyle-heading-4-fontSize);
+  font-weight: var(--eui-typography-fontWeight-semibold);
   color: var(--eui-color-text-primary);
 }
 
 /* Section Subtitle */
 [data-eui-context] .eui-form-section-subtitle {
   margin: 0;
-  font-size: var(--eui-typography-text-style-body-base-font-size);
+  font-size: var(--eui-typography-textStyle-body-base-fontSize);
   color: var(--eui-color-text-muted);
 }
 

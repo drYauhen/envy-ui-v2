@@ -43,7 +43,7 @@
 
 [data-eui-context] .eui-form-field [data-eui-slot="helper-text"],
 [data-eui-context] .eui-form-field [data-eui-slot="error-text"] {
-  font-size: var(--eui-typography-text-style-body-small-font-size);
+  font-size: var(--eui-typography-textStyle-body-small-fontSize);
   margin-top: calc(var(--eui-form-spacing-field-gap-internal) * -1);
 }
 

@@ -86,7 +86,7 @@ const gridItemStyle = {
 const gridHeaderStyle = {
   fontSize: 'var(--eui-card-header-typography-fontSize, 0.95rem)',
   fontWeight: 'var(--eui-card-header-typography-fontWeight, 600)',
-  fontFamily: 'var(--eui-card-header-typography-fontFamily, var(--eui-typography-font-family-ui))',
+  fontFamily: 'var(--eui-card-header-typography-fontFamily, var(--eui-typography-fontFamily-ui))',
   color: 'var(--eui-card-header-colors-text, var(--eui-color-text-primary))',
   cursor: 'move',
   userSelect: 'none'

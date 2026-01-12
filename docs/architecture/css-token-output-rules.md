@@ -38,7 +38,7 @@ These are the normative MUST-level rules for CSS token output generation. They a
 **Forbidden Patterns:**
 ```css
 /* ❌ WRONG - kebab-case variables */
---eui-badge-size-default-font-size: var(--eui-typography-font-size-xs);
+--eui-badge-size-default-font-size: var(--eui-typography-fontSize-xs);
 --eui-badge-size-default-line-height: var(--eui-typography-lineHeight-tight);
 
 /* ❌ WRONG - UPPER_CASE variables */

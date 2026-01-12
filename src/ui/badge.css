@@ -15,7 +15,7 @@
   border: var(--eui-badge-border-width) var(--eui-badge-border-style) var(--eui-badge-border);
   background-color: var(--eui-badge-background);
   color: var(--eui-badge-color);
-  font-family: var(--eui-badge-typography-font-family, var(--eui-typography-font-family-ui));
+  font-family: var(--eui-badge-typography-font-family, var(--eui-typography-fontFamily-ui));
   font-size: var(--eui-badge-typography-font-size);
   font-weight: var(--eui-badge-typography-font-weight);
   line-height: var(--eui-badge-typography-line-height);

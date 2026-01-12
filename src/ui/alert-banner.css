@@ -53,16 +53,16 @@
 
 [data-eui-context] .eui-alert-banner-text {
   margin: 0;
-  font-size: var(--eui-typography-text-style-body-base-font-size);
-  font-weight: var(--eui-typography-font-weight-normal);
-  line-height: var(--eui-typography-line-height-normal);
+  font-size: var(--eui-typography-textStyle-body-base-fontSize);
+  font-weight: var(--eui-typography-fontWeight-normal);
+  line-height: var(--eui-typography-lineHeight-normal);
   color: inherit;
 }
 
 [data-eui-context] .eui-alert-banner-link {
   color: inherit;
-  text-decoration: var(--eui-typography-text-decoration-underline);
-  font-size: var(--eui-typography-text-style-body-small-font-size);
+  text-decoration: var(--eui-typography-textDecoration-underline);
+  font-size: var(--eui-typography-textStyle-body-small-fontSize);
   cursor: pointer;
   opacity: 0.9;
   transition: opacity 0.2s ease;
@@ -128,8 +128,8 @@
   padding: var(--eui-spacing-xs) var(--eui-spacing-sm);
   cursor: pointer;
   color: inherit;
-  font-size: var(--eui-typography-text-style-body-small-font-size);
-  text-decoration: var(--eui-typography-text-decoration-underline);
+  font-size: var(--eui-typography-textStyle-body-small-fontSize);
+  text-decoration: var(--eui-typography-textDecoration-underline);
   opacity: 0.9;
   transition: opacity 0.2s ease;
   white-space: nowrap;

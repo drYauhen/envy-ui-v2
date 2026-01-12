@@ -222,21 +222,21 @@ graph TD
 /* Context layers */
 @layer context-app {
   [data-eui-context="app"] {
-    --eui-typography-base-font-size: 14px;
+    --eui-typography-base-fontSize: 14px;
     /* ... */
   }
 }
 
 @layer context-website {
   [data-eui-context="website"] {
-    --eui-typography-base-font-size: 16px;
+    --eui-typography-base-fontSize: 16px;
     /* ... */
   }
 }
 
 @layer context-report {
   [data-eui-context="report"] {
-    --eui-typography-base-font-size: 12px;
+    --eui-typography-base-fontSize: 12px;
     /* ... */
   }
 }

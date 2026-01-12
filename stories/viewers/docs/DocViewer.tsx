@@ -281,8 +281,8 @@ const getBadgeIcon = (label: string): string | null => {
 
 const contentStyle: CSSProperties = {
   padding: '32px',
-  fontSize: 'var(--eui-typography-text-style-body-base-font-size)',
-  lineHeight: 'var(--eui-typography-line-height-relaxed)'
+  fontSize: 'var(--eui-typography-textStyle-body-base-fontSize)',
+  lineHeight: 'var(--eui-typography-lineHeight-relaxed)'
 };
 
 const loadingStyle: CSSProperties = {

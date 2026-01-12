@@ -489,7 +489,7 @@ Create migration script to:
 }
 
 [data-eui-context="app"] {
-  --eui-typography-base-font-size: 14px;
+  --eui-typography-base-fontSize: 14px;
 }
 
 [data-eui-context="app"][data-eui-theme="default"] {

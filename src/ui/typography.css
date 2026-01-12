@@ -1,147 +1,147 @@
 .eui-typography-root {
-  font-family: var(--eui-typography-font-family-ui);
-  font-size: var(--eui-typography-font-size-base);
-  line-height: var(--eui-typography-line-height-normal);
+  font-family: var(--eui-typography-fontFamily-ui);
+  font-size: var(--eui-typography-fontSize-base);
+  line-height: var(--eui-typography-lineHeight-normal);
 }
 
 .eui-text-heading-1 {
-  font-family: var(--eui-typography-text-style-heading-1-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-heading-1-font-size);
-  font-weight: var(--eui-typography-text-style-heading-1-font-weight);
-  line-height: var(--eui-typography-text-style-heading-1-line-height);
+  font-family: var(--eui-typography-textStyle-heading-1-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-heading-1-fontSize);
+  font-weight: var(--eui-typography-textStyle-heading-1-fontWeight);
+  line-height: var(--eui-typography-textStyle-heading-1-lineHeight);
 }
 
 .eui-text-heading-2 {
-  font-family: var(--eui-typography-text-style-heading-2-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-heading-2-font-size);
-  font-weight: var(--eui-typography-text-style-heading-2-font-weight);
-  line-height: var(--eui-typography-text-style-heading-2-line-height);
+  font-family: var(--eui-typography-textStyle-heading-2-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-heading-2-fontSize);
+  font-weight: var(--eui-typography-textStyle-heading-2-fontWeight);
+  line-height: var(--eui-typography-textStyle-heading-2-lineHeight);
 }
 
 .eui-text-heading-3 {
-  font-family: var(--eui-typography-text-style-heading-3-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-heading-3-font-size);
-  font-weight: var(--eui-typography-text-style-heading-3-font-weight);
-  line-height: var(--eui-typography-text-style-heading-3-line-height);
+  font-family: var(--eui-typography-textStyle-heading-3-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-heading-3-fontSize);
+  font-weight: var(--eui-typography-textStyle-heading-3-fontWeight);
+  line-height: var(--eui-typography-textStyle-heading-3-lineHeight);
 }
 
 .eui-text-heading-4 {
-  font-family: var(--eui-typography-text-style-heading-4-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-heading-4-font-size);
-  font-weight: var(--eui-typography-text-style-heading-4-font-weight);
-  line-height: var(--eui-typography-text-style-heading-4-line-height);
+  font-family: var(--eui-typography-textStyle-heading-4-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-heading-4-fontSize);
+  font-weight: var(--eui-typography-textStyle-heading-4-fontWeight);
+  line-height: var(--eui-typography-textStyle-heading-4-lineHeight);
 }
 
 .eui-text-heading-5 {
-  font-family: var(--eui-typography-text-style-heading-5-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-heading-5-font-size);
-  font-weight: var(--eui-typography-text-style-heading-5-font-weight);
-  line-height: var(--eui-typography-text-style-heading-5-line-height);
+  font-family: var(--eui-typography-textStyle-heading-5-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-heading-5-fontSize);
+  font-weight: var(--eui-typography-textStyle-heading-5-fontWeight);
+  line-height: var(--eui-typography-textStyle-heading-5-lineHeight);
 }
 
 .eui-text-heading-6 {
-  font-family: var(--eui-typography-text-style-heading-6-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-heading-6-font-size);
-  font-weight: var(--eui-typography-text-style-heading-6-font-weight);
-  line-height: var(--eui-typography-text-style-heading-6-line-height);
+  font-family: var(--eui-typography-textStyle-heading-6-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-heading-6-fontSize);
+  font-weight: var(--eui-typography-textStyle-heading-6-fontWeight);
+  line-height: var(--eui-typography-textStyle-heading-6-lineHeight);
 }
 
 .eui-text-title-lg {
-  font-family: var(--eui-typography-text-style-title-lg-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-title-lg-font-size);
-  font-weight: var(--eui-typography-text-style-title-lg-font-weight);
-  line-height: var(--eui-typography-text-style-title-lg-line-height);
+  font-family: var(--eui-typography-textStyle-title-lg-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-title-lg-fontSize);
+  font-weight: var(--eui-typography-textStyle-title-lg-fontWeight);
+  line-height: var(--eui-typography-textStyle-title-lg-lineHeight);
 }
 
 .eui-text-title-md {
-  font-family: var(--eui-typography-text-style-title-md-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-title-md-font-size);
-  font-weight: var(--eui-typography-text-style-title-md-font-weight);
-  line-height: var(--eui-typography-text-style-title-md-line-height);
+  font-family: var(--eui-typography-textStyle-title-md-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-title-md-fontSize);
+  font-weight: var(--eui-typography-textStyle-title-md-fontWeight);
+  line-height: var(--eui-typography-textStyle-title-md-lineHeight);
 }
 
 .eui-text-title-sm {
-  font-family: var(--eui-typography-text-style-title-sm-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-title-sm-font-size);
-  font-weight: var(--eui-typography-text-style-title-sm-font-weight);
-  line-height: var(--eui-typography-text-style-title-sm-line-height);
+  font-family: var(--eui-typography-textStyle-title-sm-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-title-sm-fontSize);
+  font-weight: var(--eui-typography-textStyle-title-sm-fontWeight);
+  line-height: var(--eui-typography-textStyle-title-sm-lineHeight);
 }
 
 .eui-text-body-lg {
-  font-family: var(--eui-typography-text-style-body-large-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-body-large-font-size);
-  font-weight: var(--eui-typography-text-style-body-large-font-weight);
-  line-height: var(--eui-typography-text-style-body-large-line-height);
+  font-family: var(--eui-typography-textStyle-body-large-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-body-large-fontSize);
+  font-weight: var(--eui-typography-textStyle-body-large-fontWeight);
+  line-height: var(--eui-typography-textStyle-body-large-lineHeight);
 }
 
 .eui-text-body {
-  font-family: var(--eui-typography-text-style-body-base-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-body-base-font-size);
-  font-weight: var(--eui-typography-text-style-body-base-font-weight);
-  line-height: var(--eui-typography-text-style-body-base-line-height);
+  font-family: var(--eui-typography-textStyle-body-base-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-body-base-fontSize);
+  font-weight: var(--eui-typography-textStyle-body-base-fontWeight);
+  line-height: var(--eui-typography-textStyle-body-base-lineHeight);
 }
 
 .eui-text-body-sm {
-  font-family: var(--eui-typography-text-style-body-small-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-body-small-font-size);
-  font-weight: var(--eui-typography-text-style-body-small-font-weight);
-  line-height: var(--eui-typography-text-style-body-small-line-height);
+  font-family: var(--eui-typography-textStyle-body-small-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-body-small-fontSize);
+  font-weight: var(--eui-typography-textStyle-body-small-fontWeight);
+  line-height: var(--eui-typography-textStyle-body-small-lineHeight);
 }
 
 .eui-text-body-strong {
-  font-family: var(--eui-typography-text-style-body-strong-base-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-body-strong-base-font-size);
-  font-weight: var(--eui-typography-text-style-body-strong-base-font-weight);
-  line-height: var(--eui-typography-text-style-body-strong-base-line-height);
+  font-family: var(--eui-typography-textStyle-body-strong-base-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-body-strong-base-fontSize);
+  font-weight: var(--eui-typography-textStyle-body-strong-base-fontWeight);
+  line-height: var(--eui-typography-textStyle-body-strong-base-lineHeight);
 }
 
 .eui-text-body-strong-sm {
-  font-family: var(--eui-typography-text-style-body-strong-small-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-body-strong-small-font-size);
-  font-weight: var(--eui-typography-text-style-body-strong-small-font-weight);
-  line-height: var(--eui-typography-text-style-body-strong-small-line-height);
+  font-family: var(--eui-typography-textStyle-body-strong-small-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-body-strong-small-fontSize);
+  font-weight: var(--eui-typography-textStyle-body-strong-small-fontWeight);
+  line-height: var(--eui-typography-textStyle-body-strong-small-lineHeight);
 }
 
 .eui-text-label-md {
-  font-family: var(--eui-typography-text-style-label-md-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-label-md-font-size);
-  font-weight: var(--eui-typography-text-style-label-md-font-weight);
-  line-height: var(--eui-typography-text-style-label-md-line-height);
+  font-family: var(--eui-typography-textStyle-label-md-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-label-md-fontSize);
+  font-weight: var(--eui-typography-textStyle-label-md-fontWeight);
+  line-height: var(--eui-typography-textStyle-label-md-lineHeight);
 }
 
 .eui-text-label-sm {
-  font-family: var(--eui-typography-text-style-label-sm-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-label-sm-font-size);
-  font-weight: var(--eui-typography-text-style-label-sm-font-weight);
-  line-height: var(--eui-typography-text-style-label-sm-line-height);
+  font-family: var(--eui-typography-textStyle-label-sm-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-label-sm-fontSize);
+  font-weight: var(--eui-typography-textStyle-label-sm-fontWeight);
+  line-height: var(--eui-typography-textStyle-label-sm-lineHeight);
 }
 
 .eui-text-caption {
-  font-family: var(--eui-typography-text-style-caption-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-caption-font-size);
-  font-weight: var(--eui-typography-text-style-caption-font-weight);
-  line-height: var(--eui-typography-text-style-caption-line-height);
+  font-family: var(--eui-typography-textStyle-caption-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-caption-fontSize);
+  font-weight: var(--eui-typography-textStyle-caption-fontWeight);
+  line-height: var(--eui-typography-textStyle-caption-lineHeight);
 }
 
 .eui-text-overline {
-  font-family: var(--eui-typography-text-style-overline-font-family, var(--eui-typography-font-family-ui));
-  font-size: var(--eui-typography-text-style-overline-font-size);
-  font-weight: var(--eui-typography-text-style-overline-font-weight);
-  line-height: var(--eui-typography-text-style-overline-line-height);
-  letter-spacing: var(--eui-typography-text-style-overline-letter-spacing);
-  text-transform: var(--eui-typography-text-style-overline-text-transform);
+  font-family: var(--eui-typography-textStyle-overline-fontFamily, var(--eui-typography-fontFamily-ui));
+  font-size: var(--eui-typography-textStyle-overline-fontSize);
+  font-weight: var(--eui-typography-textStyle-overline-fontWeight);
+  line-height: var(--eui-typography-textStyle-overline-lineHeight);
+  letter-spacing: var(--eui-typography-textStyle-overline-letterSpacing);
+  text-transform: var(--eui-typography-textStyle-overline-textTransform);
 }
 
 .eui-text-code-base {
-  font-family: var(--eui-typography-text-style-code-base-font-family, var(--eui-typography-font-family-monospace));
-  font-size: var(--eui-typography-text-style-code-base-font-size);
-  font-weight: var(--eui-typography-text-style-code-base-font-weight);
-  line-height: var(--eui-typography-text-style-code-base-line-height);
+  font-family: var(--eui-typography-textStyle-code-base-fontFamily, var(--eui-typography-fontFamily-monospace));
+  font-size: var(--eui-typography-textStyle-code-base-fontSize);
+  font-weight: var(--eui-typography-textStyle-code-base-fontWeight);
+  line-height: var(--eui-typography-textStyle-code-base-lineHeight);
 }
 
 .eui-text-code-sm {
-  font-family: var(--eui-typography-text-style-code-small-font-family, var(--eui-typography-font-family-monospace));
-  font-size: var(--eui-typography-text-style-code-small-font-size);
-  font-weight: var(--eui-typography-text-style-code-small-font-weight);
-  line-height: var(--eui-typography-text-style-code-small-line-height);
+  font-family: var(--eui-typography-textStyle-code-small-fontFamily, var(--eui-typography-fontFamily-monospace));
+  font-size: var(--eui-typography-textStyle-code-small-fontSize);
+  font-weight: var(--eui-typography-textStyle-code-small-fontWeight);
+  line-height: var(--eui-typography-textStyle-code-small-lineHeight);
 }

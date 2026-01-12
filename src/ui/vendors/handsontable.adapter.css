@@ -2,7 +2,7 @@
 [data-eui-context] .handsontable,
 [data-eui-context] .handsontable th,
 [data-eui-context] .handsontable td {
-  font-family: var(--eui-typography-font-family-ui);
+  font-family: var(--eui-typography-fontFamily-ui);
 }
 
 .eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-root-wrapper,
@@ -10,7 +10,7 @@
 .eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-theme-main,
 .eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-theme-main-dark,
 .eui-theme[data-eui-context="app"][data-eui-theme="default"] .ht-theme-main-dark-auto {
-  font-family: var(--eui-typography-font-family-ui);
+  font-family: var(--eui-typography-fontFamily-ui);
   --ht-common-accent: var(--eui-color-accent-primary);
   --ht-common-foreground: var(--eui-table-colors-cell-text);
   --ht-common-foreground-secondary: var(--eui-color-text-muted);
@@ -20,15 +20,15 @@
   --ht-common-placeholder: var(--eui-color-text-subtle);
   --ht-common-disabled: var(--eui-color-text-disabled);
   --ht-common-read-only: var(--eui-color-text-muted);
-  --ht-font-size: var(--eui-typography-text-style-body-base-font-size);
+  --ht-font-size: var(--eui-typography-textStyle-body-base-fontSize);
   --ht-line-height: calc(
-    var(--eui-typography-text-style-body-base-line-height) *
-      var(--eui-typography-text-style-body-base-font-size)
+    var(--eui-typography-textStyle-body-base-lineHeight) *
+      var(--eui-typography-textStyle-body-base-fontSize)
   );
-  --ht-font-size-small: var(--eui-typography-text-style-body-small-font-size);
+  --ht-font-size-small: var(--eui-typography-textStyle-body-small-fontSize);
   --ht-line-height-small: calc(
-    var(--eui-typography-text-style-body-small-line-height) *
-      var(--eui-typography-text-style-body-small-font-size)
+    var(--eui-typography-textStyle-body-small-lineHeight) *
+      var(--eui-typography-textStyle-body-small-fontSize)
   );
   --ht-cell-horizontal-padding: var(--eui-table-spacing-cell-padding-right);
   --ht-cell-vertical-padding: var(--eui-spacing-sm);
@@ -40,7 +40,7 @@
   --ht-cell-vertical-border-color: transparent;
   --ht-header-background-color: var(--eui-table-colors-header-background);
   --ht-header-foreground-color: var(--eui-table-colors-header-text);
-  --ht-header-font-weight: var(--eui-typography-font-weight-semibold);
+  --ht-header-font-weight: var(--eui-typography-fontWeight-semibold);
   --ht-row-header-odd-background-color: var(--eui-table-colors-header-background);
   --ht-row-header-even-background-color: var(--eui-table-colors-header-background);
   --ht-row-cell-odd-background-color: var(--eui-table-colors-row-background-default);
@@ -62,7 +62,7 @@
 .eui-theme[data-eui-context="website"] .ht-theme-main,
 .eui-theme[data-eui-context="website"] .ht-theme-main-dark,
 .eui-theme[data-eui-context="website"] .ht-theme-main-dark-auto {
-  font-family: var(--eui-typography-font-family-ui);
+  font-family: var(--eui-typography-fontFamily-ui);
 }
 
 .eui-theme[data-eui-context="website"][data-eui-theme="toy-r-us"] .ht-root-wrapper,
@@ -90,15 +90,15 @@
   --ht-row-cell-even-background-color: var(--eui-table-colors-row-background-default);
   --ht-cell-selection-background-color: var(--eui-table-colors-row-background-selected);
   --ht-cell-selection-border-color: var(--eui-color-accent-primary);
-  --ht-font-size: var(--eui-typography-text-style-body-base-font-size);
+  --ht-font-size: var(--eui-typography-textStyle-body-base-fontSize);
   --ht-line-height: calc(
-    var(--eui-typography-text-style-body-base-line-height) *
-      var(--eui-typography-text-style-body-base-font-size)
+    var(--eui-typography-textStyle-body-base-lineHeight) *
+      var(--eui-typography-textStyle-body-base-fontSize)
   );
-  --ht-font-size-small: var(--eui-typography-text-style-body-small-font-size);
+  --ht-font-size-small: var(--eui-typography-textStyle-body-small-fontSize);
   --ht-line-height-small: calc(
-    var(--eui-typography-text-style-body-small-line-height) *
-      var(--eui-typography-text-style-body-small-font-size)
+    var(--eui-typography-textStyle-body-small-lineHeight) *
+      var(--eui-typography-textStyle-body-small-fontSize)
   );
 }
 
@@ -107,7 +107,7 @@
 .eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-theme-main,
 .eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-theme-main-dark,
 .eui-theme[data-eui-context="app"][data-eui-theme="accessibility"] .ht-theme-main-dark-auto {
-  font-family: var(--eui-typography-font-family-ui);
+  font-family: var(--eui-typography-fontFamily-ui);
   --ht-common-accent: var(--eui-color-accent-primary);
   --ht-common-foreground: var(--eui-color-text-primary);
   --ht-common-foreground-secondary: var(--eui-color-text-muted);
@@ -117,15 +117,15 @@
   --ht-common-placeholder: var(--eui-color-text-subtle);
   --ht-common-disabled: var(--eui-color-text-disabled);
   --ht-common-read-only: var(--eui-color-text-muted);
-  --ht-font-size: var(--eui-typography-text-style-body-base-font-size);
+  --ht-font-size: var(--eui-typography-textStyle-body-base-fontSize);
   --ht-line-height: calc(
-    var(--eui-typography-text-style-body-base-line-height) *
-      var(--eui-typography-text-style-body-base-font-size)
+    var(--eui-typography-textStyle-body-base-lineHeight) *
+      var(--eui-typography-textStyle-body-base-fontSize)
   );
-  --ht-font-size-small: var(--eui-typography-text-style-body-small-font-size);
+  --ht-font-size-small: var(--eui-typography-textStyle-body-small-fontSize);
   --ht-line-height-small: calc(
-    var(--eui-typography-text-style-body-small-line-height) *
-      var(--eui-typography-text-style-body-small-font-size)
+    var(--eui-typography-textStyle-body-small-lineHeight) *
+      var(--eui-typography-textStyle-body-small-fontSize)
   );
   --ht-cell-horizontal-padding: var(--eui-spacing-sm);
   --ht-cell-vertical-padding: var(--eui-spacing-xs);
@@ -155,7 +155,7 @@
 
 .ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single,
 .ht-portal[data-eui-context="app"][data-eui-theme="accessibility"] .pika-single {
-  font-family: var(--eui-typography-font-family-ui);
+  font-family: var(--eui-typography-fontFamily-ui);
 }
 
 .ht-portal[data-eui-context="app"][data-eui-theme="default"] .pika-single .pika-title,

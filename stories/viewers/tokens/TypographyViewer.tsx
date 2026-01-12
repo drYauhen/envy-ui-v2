@@ -77,37 +77,37 @@ type TextStyleExample = {
 const headingExamples: TextStyleExample[] = [
   {
     label: 'Heading 1',
-    token: '--eui-typography-text-style-heading-1-font-size',
+    token: '--eui-typography-textStyle-heading-1-fontSize',
     className: 'eui-text-heading-1',
     description: 'Page title, hero heading'
   },
   {
     label: 'Heading 2',
-    token: '--eui-typography-text-style-heading-2-font-size',
+    token: '--eui-typography-textStyle-heading-2-fontSize',
     className: 'eui-text-heading-2',
     description: 'Section heading'
   },
   {
     label: 'Heading 3',
-    token: '--eui-typography-text-style-heading-3-font-size',
+    token: '--eui-typography-textStyle-heading-3-fontSize',
     className: 'eui-text-heading-3',
     description: 'Subsection heading'
   },
   {
     label: 'Heading 4',
-    token: '--eui-typography-text-style-heading-4-font-size',
+    token: '--eui-typography-textStyle-heading-4-fontSize',
     className: 'eui-text-heading-4',
     description: 'Card title, medium heading'
   },
   {
     label: 'Heading 5',
-    token: '--eui-typography-text-style-heading-5-font-size',
+    token: '--eui-typography-textStyle-heading-5-fontSize',
     className: 'eui-text-heading-5',
     description: 'Small heading'
   },
   {
     label: 'Heading 6',
-    token: '--eui-typography-text-style-heading-6-font-size',
+    token: '--eui-typography-textStyle-heading-6-fontSize',
     className: 'eui-text-heading-6',
     description: 'Smallest heading, emphasized text'
   }
@@ -116,19 +116,19 @@ const headingExamples: TextStyleExample[] = [
 const titleExamples: TextStyleExample[] = [
   {
     label: 'Title Large',
-    token: '--eui-typography-text-style-title-lg-font-size',
+    token: '--eui-typography-textStyle-title-lg-fontSize',
     className: 'eui-text-title-lg',
     description: 'Large title - section headers, panels'
   },
   {
     label: 'Title Medium',
-    token: '--eui-typography-text-style-title-md-font-size',
+    token: '--eui-typography-textStyle-title-md-fontSize',
     className: 'eui-text-title-md',
     description: 'Medium title - cards, collapsible headers'
   },
   {
     label: 'Title Small',
-    token: '--eui-typography-text-style-title-sm-font-size',
+    token: '--eui-typography-textStyle-title-sm-fontSize',
     className: 'eui-text-title-sm',
     description: 'Small title - dense UI headers'
   }
@@ -137,19 +137,19 @@ const titleExamples: TextStyleExample[] = [
 const bodyExamples: TextStyleExample[] = [
   {
     label: 'Body Large',
-    token: '--eui-typography-text-style-body-large-font-size',
+    token: '--eui-typography-textStyle-body-large-fontSize',
     className: 'eui-text-body-lg',
     description: 'Large body text - emphasized content'
   },
   {
     label: 'Body Base',
-    token: '--eui-typography-text-style-body-base-font-size',
+    token: '--eui-typography-textStyle-body-base-fontSize',
     className: 'eui-text-body',
     description: 'Base body text - default for application UI'
   },
   {
     label: 'Body Small',
-    token: '--eui-typography-text-style-body-small-font-size',
+    token: '--eui-typography-textStyle-body-small-fontSize',
     className: 'eui-text-body-sm',
     description: 'Small body text - helper text, secondary content'
   }
@@ -158,13 +158,13 @@ const bodyExamples: TextStyleExample[] = [
 const bodyStrongExamples: TextStyleExample[] = [
   {
     label: 'Body Strong Base',
-    token: '--eui-typography-text-style-body-strong-base-font-size',
+    token: '--eui-typography-textStyle-body-strong-base-fontSize',
     className: 'eui-text-body-strong',
     description: 'Emphasized body text'
   },
   {
     label: 'Body Strong Small',
-    token: '--eui-typography-text-style-body-strong-small-font-size',
+    token: '--eui-typography-textStyle-body-strong-small-fontSize',
     className: 'eui-text-body-strong-sm',
     description: 'Emphasized small text'
   }
@@ -173,13 +173,13 @@ const bodyStrongExamples: TextStyleExample[] = [
 const labelExamples: TextStyleExample[] = [
   {
     label: 'Label Medium',
-    token: '--eui-typography-text-style-label-md-font-size',
+    token: '--eui-typography-textStyle-label-md-fontSize',
     className: 'eui-text-label-md',
     description: 'Form labels, button text'
   },
   {
     label: 'Label Small',
-    token: '--eui-typography-text-style-label-sm-font-size',
+    token: '--eui-typography-textStyle-label-sm-fontSize',
     className: 'eui-text-label-sm',
     description: 'Secondary labels'
   }
@@ -187,14 +187,14 @@ const labelExamples: TextStyleExample[] = [
 
 const captionExample: TextStyleExample = {
   label: 'Caption',
-  token: '--eui-typography-text-style-caption-font-size',
+  token: '--eui-typography-textStyle-caption-fontSize',
   className: 'eui-text-caption',
   description: 'Caption text - labels, metadata, counters in buttons'
 };
 
 const overlineExample: TextStyleExample = {
   label: 'Overline',
-  token: '--eui-typography-text-style-overline-font-size',
+  token: '--eui-typography-textStyle-overline-fontSize',
   className: 'eui-text-overline',
   description: 'Uppercase label for small UI headers'
 };
@@ -202,30 +202,30 @@ const overlineExample: TextStyleExample = {
 const codeExamples: TextStyleExample[] = [
   {
     label: 'Code Base',
-    token: '--eui-typography-text-style-code-base-font-size',
+    token: '--eui-typography-textStyle-code-base-fontSize',
     className: 'eui-text-code-base',
     description: 'Code inline text - default size'
   },
   {
     label: 'Code Small',
-    token: '--eui-typography-text-style-code-small-font-size',
+    token: '--eui-typography-textStyle-code-small-fontSize',
     className: 'eui-text-code-sm',
     description: 'Small code text'
   }
 ];
 
 const fontSizeScale = [
-  { name: 'xs', token: '--eui-typography-font-size-xs', description: '12px at 14px base' },
-  { name: 'sm', token: '--eui-typography-font-size-sm', description: '14px at 16px base' },
-  { name: 'base', token: '--eui-typography-font-size-base', description: '14px at 14px base (adapts to context)' },
-  { name: 'md', token: '--eui-typography-font-size-md', description: '16px at 14px base' },
-  { name: 'lg', token: '--eui-typography-font-size-lg', description: '17.5px at 14px base' },
-  { name: 'xl', token: '--eui-typography-font-size-xl', description: '21px at 14px base' },
-  { name: '2xl', token: '--eui-typography-font-size-2xl', description: '26.25px at 14px base' },
-  { name: '3xl', token: '--eui-typography-font-size-3xl', description: '31.5px at 14px base' },
-  { name: '4xl', token: '--eui-typography-font-size-4xl', description: '42px at 14px base' },
-  { name: '5xl', token: '--eui-typography-font-size-5xl', description: '52.5px at 14px base' },
-  { name: '6xl', token: '--eui-typography-font-size-6xl', description: '63px at 14px base' }
+  { name: 'xs', token: '--eui-typography-fontSize-xs', description: '12px at 14px base' },
+  { name: 'sm', token: '--eui-typography-fontSize-sm', description: '14px at 16px base' },
+  { name: 'base', token: '--eui-typography-fontSize-base', description: '14px at 14px base (adapts to context)' },
+  { name: 'md', token: '--eui-typography-fontSize-md', description: '16px at 14px base' },
+  { name: 'lg', token: '--eui-typography-fontSize-lg', description: '17.5px at 14px base' },
+  { name: 'xl', token: '--eui-typography-fontSize-xl', description: '21px at 14px base' },
+  { name: '2xl', token: '--eui-typography-fontSize-2xl', description: '26.25px at 14px base' },
+  { name: '3xl', token: '--eui-typography-fontSize-3xl', description: '31.5px at 14px base' },
+  { name: '4xl', token: '--eui-typography-fontSize-4xl', description: '42px at 14px base' },
+  { name: '5xl', token: '--eui-typography-fontSize-5xl', description: '52.5px at 14px base' },
+  { name: '6xl', token: '--eui-typography-fontSize-6xl', description: '63px at 14px base' }
 ];
 
 const renderExample = (example: TextStyleExample) => (
