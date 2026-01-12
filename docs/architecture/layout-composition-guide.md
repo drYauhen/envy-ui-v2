@@ -4,7 +4,7 @@
 **Status:** Guide (Advisory)  
 **Context:** Standardize how layout primitives are composed across app, website, and report contexts
 
-This guide defines the **canonical composition patterns** for layout in Envy UI v2. It clarifies when to use the App Shell (`eui-app-shell`) versus Page (`eui-page`), and how to combine containers, sections, and layout primitives consistently.
+This guide defines the **canonical composition patterns** for layout in Envy UI. It clarifies when to use the App Shell (`eui-app-shell`) versus Page (`eui-page`), and how to combine containers, sections, and layout primitives consistently.
 
 ---
 

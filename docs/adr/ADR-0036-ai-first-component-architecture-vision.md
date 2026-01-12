@@ -22,13 +22,13 @@ AI agents have different needs than human developers:
 - **Runtime queryable information** instead of static type analysis only
 - **Discoverable patterns** and component relationships
 
-Current state: Envy UI v2 has AI-friendly patterns (consistent naming, good TypeScript types, predictable structure) but lacks AI-first architecture (no machine-readable metadata layer, no explicit runtime contracts).
+Current state: Envy UI has AI-friendly patterns (consistent naming, good TypeScript types, predictable structure) but lacks AI-first architecture (no machine-readable metadata layer, no explicit runtime contracts).
 
 ---
 
 ## Decision
 
-This ADR establishes a **vision** for building Envy UI v2 as an AI-first component library while maintaining excellent ergonomics for human developers.
+This ADR establishes a **vision** for building Envy UI as an AI-first component library while maintaining excellent ergonomics for human developers.
 
 ### The Vision
 

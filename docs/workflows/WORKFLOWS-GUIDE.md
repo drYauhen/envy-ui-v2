@@ -2,11 +2,11 @@
 
 ## Overview
 
-This guide explains how to contribute to and maintain the Workflows documentation in Envy UI v2.
+This guide explains how to contribute to and maintain the Workflows documentation in Envy UI.
 
 ## Purpose
 
-Workflow documentation captures the processes, tools, and procedures that guide development, deployment, and maintenance of Envy UI v2. These documents ensure consistent practices, efficient collaboration, and reliable operations across the entire development lifecycle.
+Workflow documentation captures the processes, tools, and procedures that guide development, deployment, and maintenance of Envy UI. These documents ensure consistent practices, efficient collaboration, and reliable operations across the entire development lifecycle.
 
 ## Document Types
 
@@ -47,6 +47,7 @@ Each workflow document should include:
 
 ### Naming Conventions
 
+- System name is Envy UI (allowed variants: Envy UI, envy ui, envy-ui)
 - Use descriptive, process-oriented names
 - Follow pattern: `[process]-[aspect]-workflow.md`
 - Examples: `development-setup-workflow.md`, `deployment-pipeline-workflow.md`

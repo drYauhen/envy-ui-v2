@@ -2,11 +2,11 @@
 
 ## Overview
 
-This guide explains how to contribute to and maintain the Guides documentation in Envy UI v2.
+This guide explains how to contribute to and maintain the Guides documentation in Envy UI.
 
 ## Purpose
 
-Guides documentation provides comprehensive tutorials, how-to articles, and explanatory content that helps users understand, implement, and extend Envy UI v2. These guides bridge the gap between technical documentation and practical application, ensuring users can effectively work with the system.
+Guides documentation provides comprehensive tutorials, how-to articles, and explanatory content that helps users understand, implement, and extend Envy UI. These guides bridge the gap between technical documentation and practical application, ensuring users can effectively work with the system.
 
 ## Document Types
 
@@ -71,6 +71,7 @@ Each guide should include:
 
 ### Naming Conventions
 
+- System name is Envy UI (allowed variants: Envy UI, envy ui, envy-ui)
 - Use descriptive, action-oriented names
 - Follow pattern: `[topic]-[action]-guide.md`
 - Examples: `getting-started-guide.md`, `api-integration-guide.md`

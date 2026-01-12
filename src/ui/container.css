@@ -6,22 +6,21 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--eui-layout-container-gutter-x);
-  padding-right: var(--eui-layout-container-gutter-x);
+  padding-left: var(--eui-layout-container-gutterX);
+  padding-right: var(--eui-layout-container-gutterX);
 }
 
 /* Variant: Standard (readable width for forms/detail pages) */
 [data-eui-context] .eui-container[data-eui-container='standard'] {
-  max-width: var(--eui-layout-container-standard-max-width);
+  max-width: var(--eui-layout-container-standard-maxWidth);
 }
 
 /* Variant: Wide (full width for tables/dashboards) */
 [data-eui-context] .eui-container[data-eui-container='wide'] {
-  max-width: var(--eui-layout-container-wide-max-width);
+  max-width: var(--eui-layout-container-wide-maxWidth);
 }
 
 /* Variant: Fluid (no max-width constraint) */
 [data-eui-context] .eui-container[data-eui-container='fluid'] {
   max-width: none;
 }
-

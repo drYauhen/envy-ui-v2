@@ -1,0 +1,240 @@
+/* ============================================================================
+   Docs Shell + Markdown Utilities
+   ============================================================================ */
+
+[data-eui-context] .eui-docs {
+  color: var(--eui-color-text-primary);
+}
+
+[data-eui-context] .eui-docs-container {
+  padding-top: var(--eui-spacing-lg);
+  padding-bottom: var(--eui-spacing-lg);
+}
+
+[data-eui-context] .eui-docs-header {
+  margin-bottom: var(--eui-spacing-lg);
+  padding-bottom: var(--eui-spacing-md);
+  border-bottom: 2px solid var(--eui-color-border-default);
+}
+
+[data-eui-context] .eui-docs-title {
+  margin: 0 0 var(--eui-spacing-xs);
+}
+
+[data-eui-context] .eui-docs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--eui-spacing-md);
+  margin-top: var(--eui-spacing-xs);
+  color: var(--eui-color-text-muted);
+}
+
+[data-eui-context] .eui-docs-content {
+  padding: var(--eui-spacing-xl);
+  line-height: var(--eui-typography-lineHeight-relaxed);
+}
+
+[data-eui-context] .eui-docs-content h1 {
+  margin: var(--eui-spacing-xl) 0 var(--eui-spacing-md);
+  padding-bottom: var(--eui-spacing-xs);
+  border-bottom: 2px solid var(--eui-color-border-default);
+}
+
+[data-eui-context] .eui-docs-content h2 {
+  margin: var(--eui-spacing-lg) 0 var(--eui-spacing-sm);
+}
+
+[data-eui-context] .eui-docs-content h3 {
+  margin: var(--eui-spacing-md) 0 var(--eui-spacing-sm);
+}
+
+[data-eui-context] .eui-docs-content p {
+  margin: 0 0 var(--eui-spacing-md);
+}
+
+[data-eui-context] .eui-docs-content ul,
+[data-eui-context] .eui-docs-content ol {
+  margin: 0 0 var(--eui-spacing-md);
+  padding-left: var(--eui-spacing-xl);
+}
+
+[data-eui-context] .eui-docs-content li {
+  margin-top: var(--eui-spacing-xs);
+}
+
+[data-eui-context] .eui-docs-link {
+  color: var(--eui-color-status-info-text);
+  text-decoration: none;
+  font-weight: var(--eui-typography-fontWeight-medium);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+[data-eui-context] .eui-docs-link:hover {
+  border-bottom-color: currentColor;
+}
+
+[data-eui-context] .eui-docs-code-inline {
+  background: var(--eui-color-background-subtle);
+  color: var(--eui-color-text-primary);
+  padding: var(--eui-spacing-2xs) var(--eui-spacing-xs);
+  border: 1px solid var(--eui-color-border-subtle);
+  border-radius: var(--eui-radius-small);
+  vertical-align: baseline;
+}
+
+[data-eui-context] .eui-docs-code-inline-block {
+  display: inline-block;
+  margin: 0 var(--eui-spacing-2xs);
+}
+
+[data-eui-context] .eui-docs-pre {
+  margin: var(--eui-spacing-lg) 0;
+  overflow-x: auto;
+}
+
+[data-eui-context] .eui-docs-code-block {
+  display: block;
+  background: var(--eui-color-background-inverse);
+  color: var(--eui-color-text-inverse);
+  padding: var(--eui-spacing-lg);
+  border-radius: var(--eui-radius-large);
+  line-height: var(--eui-typography-lineHeight-relaxed);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+[data-eui-context] .eui-docs-table-wrap {
+  margin: var(--eui-spacing-lg) 0;
+  overflow-x: auto;
+}
+
+[data-eui-context] .eui-docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--eui-color-border-default);
+}
+
+[data-eui-context] .eui-docs-table th,
+[data-eui-context] .eui-docs-table td {
+  padding: var(--eui-spacing-sm);
+  border: 1px solid var(--eui-color-border-default);
+}
+
+[data-eui-context] .eui-docs-table th {
+  background: var(--eui-color-background-subtle);
+  text-align: left;
+  font-weight: var(--eui-typography-fontWeight-semibold);
+}
+
+[data-eui-context] .eui-docs-callout {
+  margin: var(--eui-spacing-lg) 0;
+  padding: var(--eui-spacing-md) var(--eui-spacing-lg);
+  border-left: 4px solid var(--eui-color-status-info-border);
+  background: var(--eui-color-status-info-background);
+  color: var(--eui-color-status-info-text);
+  font-style: italic;
+  border-radius: var(--eui-radius-default);
+}
+
+[data-eui-context] .eui-docs-content strong {
+  font-weight: var(--eui-typography-fontWeight-bold);
+}
+
+[data-eui-context] .eui-docs-layout-diagram {
+  margin: var(--eui-spacing-md) 0;
+  padding: var(--eui-spacing-lg);
+}
+
+[data-eui-context] .eui-docs-layout-title {
+  margin-bottom: var(--eui-spacing-sm);
+  color: var(--eui-color-text-muted);
+}
+
+[data-eui-context] .eui-docs-layout-pane {
+  padding: var(--eui-spacing-md);
+  min-height: 96px;
+}
+
+[data-eui-context] .eui-docs-layout-pane-title {
+  margin: 0;
+  font-weight: var(--eui-typography-fontWeight-semibold);
+  color: var(--eui-color-text-primary);
+}
+
+[data-eui-context] .eui-docs-layout-pane-meta {
+  margin-top: var(--eui-spacing-2xs);
+  color: var(--eui-color-text-muted);
+}
+
+[data-eui-context] .eui-docs-layout-region {
+  padding: var(--eui-spacing-sm);
+  min-height: 44px;
+}
+
+[data-eui-context] .eui-docs-loading {
+  text-align: center;
+  padding: var(--eui-spacing-xl) var(--eui-spacing-lg);
+  color: var(--eui-color-text-muted);
+}
+
+[data-eui-context] .eui-docs-loading p {
+  margin: 0;
+}
+
+[data-eui-context] .eui-docs-error {
+  background: var(--eui-color-status-error-background);
+  border: 1px solid var(--eui-color-status-error-border);
+  color: var(--eui-color-status-error-text);
+  padding: var(--eui-spacing-lg);
+}
+
+[data-eui-context] .eui-docs-error p {
+  margin: 0;
+}
+
+[data-eui-context] .eui-docs-error p + p {
+  margin-top: var(--eui-spacing-xs);
+}
+
+[data-eui-context] .eui-docs-description {
+  margin: 0 0 var(--eui-spacing-lg);
+  color: var(--eui-color-text-muted);
+  line-height: var(--eui-typography-lineHeight-relaxed);
+  max-width: 800px;
+}
+
+[data-eui-context] .eui-docs-list {
+  display: grid;
+  gap: var(--eui-spacing-sm);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+[data-eui-context] .eui-docs-list-item {
+  padding: var(--eui-spacing-md);
+}
+
+[data-eui-context] .eui-docs-list-item--disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+[data-eui-context] .eui-docs-list-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+[data-eui-context] .eui-docs-item-meta {
+  display: flex;
+  gap: var(--eui-spacing-sm);
+  margin-top: var(--eui-spacing-sm);
+  color: var(--eui-color-text-muted);
+}
+
+[data-eui-context] .eui-story-section-title {
+  margin: 0;
+  color: var(--eui-color-text-muted);
+}

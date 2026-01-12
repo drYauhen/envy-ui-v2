@@ -1,27 +1,10 @@
 import React from 'react';
-import type { CSSProperties } from 'react';
 import type { DocRegistryItem } from './docs-registry';
-import {
-  docsContainerStyle,
-  docsTitleStyle,
-  docsDescriptionStyle,
-  docsListStyle,
-  docsListItemStyle,
-  docsLinkStyle,
-  docsItemTitleStyle,
-  docsItemMetaStyle
-} from './adr-list-styles';
 
 type DocSectionListViewerProps = {
   title: string;
   description?: React.ReactNode;
   docs: DocRegistryItem[];
-};
-
-const disabledLinkStyle: CSSProperties = {
-  ...docsLinkStyle,
-  cursor: 'default',
-  opacity: 0.7
 };
 
 const sortDocs = (docs: DocRegistryItem[]) => {
@@ -43,18 +26,18 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
   const sortedDocs = sortDocs(docs);
 
   return (
-    <div style={docsContainerStyle}>
-      <h1 style={docsTitleStyle} className="eui-text-heading-5">{title}</h1>
+    <div className="eui-docs eui-docs-container eui-container" data-eui-container="standard">
+      <h1 className="eui-text-heading-5 eui-docs-title">{title}</h1>
       {description ? (
-        <div style={docsDescriptionStyle} className="eui-text-body">
+        <div className="eui-text-body eui-docs-description">
           {description}
         </div>
       ) : null}
-      <ul style={docsListStyle}>
+      <ul className="eui-docs-list">
         {sortedDocs.map((doc) => {
           const storyPath = doc.storybookId ? `?path=/story/${doc.storybookId}` : null;
           const meta = (
-            <div style={docsItemMetaStyle} className="eui-text-caption">
+            <div className="eui-text-caption eui-docs-item-meta">
               <span>Path: {doc.path}</span>
               {!doc.storybookId ? <span>Storybook: not available</span> : null}
             </div>
@@ -65,22 +48,20 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
               {storyPath ? (
                 <a
                   href={storyPath}
-                  style={{ ...docsLinkStyle, ...docsListItemStyle }}
-                  className="eui-card"
+                  className="eui-card eui-docs-list-item eui-docs-list-link"
                   data-eui-variant="elevated"
                 >
-                  <div style={docsItemTitleStyle} className="eui-text-title-md">
+                  <div className="eui-text-title-md">
                     {doc.title}
                   </div>
                   {meta}
                 </a>
               ) : (
                 <div
-                  style={{ ...disabledLinkStyle, ...docsListItemStyle }}
-                  className="eui-card"
+                  className="eui-card eui-docs-list-item eui-docs-list-item--disabled"
                   data-eui-variant="muted"
                 >
-                  <div style={docsItemTitleStyle} className="eui-text-title-md">
+                  <div className="eui-text-title-md">
                     {doc.title}
                   </div>
                   {meta}

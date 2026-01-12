@@ -23,7 +23,7 @@ Without a clear decision framework, the system may:
 - Create inconsistent patterns across components
 - Misapply React Aria hooks vs. custom implementations
 
-This ADR establishes a decision framework for choosing appropriate ARIA roles and patterns in Envy UI v2.
+This ADR establishes a decision framework for choosing appropriate ARIA roles and patterns in Envy UI.
 
 ---
 
@@ -162,7 +162,7 @@ This framework complements ADR-0001's React Aria strategy:
   - ARIA roles by category
   - WAI-ARIA APG patterns
   - React Aria hooks
-  - Current usage in Envy UI v2
+  - Current usage in Envy UI
 
 **Future Decisions:**
 - This framework can be applied when:

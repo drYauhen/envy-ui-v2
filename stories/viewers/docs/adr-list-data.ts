@@ -47,7 +47,7 @@ export const adrs: AdrListItem[] = [
   { number: '0010', title: 'Host-Flexible Interactive Components (React Aria v2, Alpha)', status: 'Accepted', date: '2025-12-16', exportName: 'HostFlexibleInteractiveComponentsReactAriav2Alpha' },
   { number: '0011', title: 'Token-Driven Component Contracts (v1, Exploratory)', status: 'Accepted', date: '2025-12-17', exportName: 'TokenDrivenComponentContractsv1Exploratory' },
   { number: '0012', title: 'Interactive Components Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)', status: 'Accepted', date: '2025-12-17', exportName: 'InteractiveComponentsEvolutionLayeredArchitectureandContextsExploratorySnapshot' },
-  { number: '0013', title: 'Current Architectural Intent (Exploratory) — Envy UI v2', status: 'Accepted', date: '2025-12-17', exportName: 'CurrentArchitecturalIntentExploratoryEnvyUIv2' },
+  { number: '0013', title: 'Current Architectural Intent (Exploratory) — Envy UI', status: 'Accepted', date: '2025-12-17', exportName: 'CurrentArchitecturalIntentExploratoryEnvyUIv2' },
   { number: '0014', title: 'Color Model, Tonal Scales, and Contextual Architecture', status: 'Accepted', date: '2025-12-18', exportName: 'ColorModelTonalScalesandContextualArchitecture' },
   { number: '0015', title: 'Token-First Contract Layer and Renderer-Agnostic Model', status: 'Accepted', date: '2025-12-18', exportName: 'TokenFirstContractLayerandRendererAgnosticModel' },
   { number: '0016', title: 'Prefix Unification to eui', status: 'Accepted', date: '2025-12-19', exportName: 'PrefixUnificationtoeui' },

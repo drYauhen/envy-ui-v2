@@ -18,7 +18,7 @@
 
 ## Context
 
-After completing the initial architectural foundation of Envy UI v2 (design tokens, Style Dictionary, and system-level metadata), the next step was integrating Storybook as a visualization and validation tool.
+After completing the initial architectural foundation of Envy UI (design tokens, Style Dictionary, and system-level metadata), the next step was integrating Storybook as a visualization and validation tool.
 
 Early iterations revealed several architectural issues:
 

@@ -13,7 +13,7 @@
 
 ## Context
 
-After establishing Envy UI v2 as a **token-first system** (JSON tokens, Style Dictionary, system-level metadata) and formalizing Storybook as a pure consumer, the next architectural challenge was integrating **Figma Variables**.
+After establishing Envy UI as a **token-first system** (JSON tokens, Style Dictionary, system-level metadata) and formalizing Storybook as a pure consumer, the next architectural challenge was integrating **Figma Variables**.
 
 Initial experiments exposed several structural risks:
 
@@ -29,7 +29,7 @@ Without a clear strategy, Figma risked becoming an uncontrolled source of truth 
 
 ## Decision
 
-I decided to treat **Figma as a downstream, stateful consumer** of the Envy UI v2 token system, using a **data-driven adapter pipeline**.
+I decided to treat **Figma as a downstream, stateful consumer** of the Envy UI token system, using a **data-driven adapter pipeline**.
 
 I made the following architectural decisions:
 

@@ -9,7 +9,7 @@
 
 ## Overview
 
-The **Layer Generation System** provides a structured approach to managing component development across multiple technological layers in Envy UI v2. This workflow describes how to use the system for efficient component development and maintenance.
+The **Layer Generation System** provides a structured approach to managing component development across multiple technological layers in Envy UI. This workflow describes how to use the system for efficient component development and maintenance.
 
 ## 🎯 Purpose
 

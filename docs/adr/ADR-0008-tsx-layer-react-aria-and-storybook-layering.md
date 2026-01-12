@@ -22,7 +22,7 @@
 
 ## 1. Decision Summary
 
-This ADR records the initial implementation of the **TSX component layer** for Envy UI v2.
+This ADR records the initial implementation of the **TSX component layer** for Envy UI.
 
 Decisions:
 

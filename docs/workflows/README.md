@@ -5,7 +5,7 @@
 **Category:** Workflow
 
 
-This directory contains detailed operational workflows for different aspects of the Envy UI v2 design system.
+This directory contains detailed operational workflows for different aspects of the Envy UI design system.
 
 ## Overview
 

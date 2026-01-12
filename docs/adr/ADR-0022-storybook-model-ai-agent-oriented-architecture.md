@@ -20,7 +20,7 @@
 
 ## Context
 
-Envy UI v2 uses Storybook as both **documentation layer** and **test layer** — stories demonstrate component usage while validating functionality through real-world patterns. The system follows a **token-first, layered architecture** where:
+Envy UI uses Storybook as both **documentation layer** and **test layer** — stories demonstrate component usage while validating functionality through real-world patterns. The system follows a **token-first, layered architecture** where:
 
 - **Tokens** are the single source of truth
 - **Component Model** (`component-model/`) defines renderer-agnostic component anatomy, geometry, variants, and rules
@@ -34,7 +34,7 @@ Envy UI v2 uses Storybook as both **documentation layer** and **test layer** —
 
 **Motivation:**
 
-Envy UI v2 aims to be predictable and self-documenting for both human developers and AI agents. Storybook stories must:
+Envy UI aims to be predictable and self-documenting for both human developers and AI agents. Storybook stories must:
 
 - Use only Envy UI components for structure (no inline styles for layout/spacing)
 - Follow consistent patterns across all components

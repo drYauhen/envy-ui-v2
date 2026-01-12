@@ -5,7 +5,7 @@
 **Category:** Workflow
 
 
-Complete guide to writing and managing Architectural Decision Records (ADR) in Envy UI v2.
+Complete guide to writing and managing Architectural Decision Records (ADR) in Envy UI.
 
 ## Overview
 

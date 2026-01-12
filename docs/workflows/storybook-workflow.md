@@ -5,7 +5,7 @@
 **Category:** Workflow
 
 
-Complete guide to working with Storybook in Envy UI v2.
+Complete guide to working with Storybook in Envy UI.
 
 ## Overview
 

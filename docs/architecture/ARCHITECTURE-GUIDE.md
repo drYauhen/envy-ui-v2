@@ -2,11 +2,11 @@
 
 ## Overview
 
-This guide explains how to contribute to and maintain the Architecture documentation in Envy UI v2.
+This guide explains how to contribute to and maintain the Architecture documentation in Envy UI.
 
 ## Purpose
 
-Architecture documentation captures the foundational decisions, patterns, and principles that guide the development of Envy UI v2. These documents ensure consistency, maintainability, and scalability across the entire system.
+Architecture documentation captures the foundational decisions, patterns, and principles that guide the development of Envy UI. These documents ensure consistency, maintainability, and scalability across the entire system.
 
 ## Document Types
 
@@ -46,6 +46,7 @@ Each architecture document should include:
 
 ### Naming Conventions
 
+- System name is Envy UI (allowed variants: Envy UI, envy ui, envy-ui)
 - Use descriptive, action-oriented names
 - Follow pattern: `[Component]-[Aspect]-architecture.md`
 - Examples: `color-system-architecture.md`, `component-composition-architecture.md`

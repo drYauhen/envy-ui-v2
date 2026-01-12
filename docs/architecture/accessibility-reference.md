@@ -1,6 +1,6 @@
 # Accessibility Reference
 
-**Purpose:** Comprehensive reference for ARIA roles, WAI-ARIA Authoring Practices Guide patterns, and React Aria hooks used in Envy UI v2.
+**Purpose:** Comprehensive reference for ARIA roles, WAI-ARIA Authoring Practices Guide patterns, and React Aria hooks used in Envy UI.
 
 **Last Updated:** 2025-01-21  
 **Related ADR:** [ADR-0029 - Accessibility Architecture and Decision Framework](../adr/ADR-0029-accessibility-architecture-and-decision-framework.md)
@@ -14,7 +14,7 @@ This document provides a complete reference for:
 - **ARIA Roles** (~103 roles total, ~90 practical roles)
 - **WAI-ARIA Authoring Practices Guide Patterns** (~27 patterns)
 - **React Aria Hooks** (~60+ hooks)
-- **Envy UI v2 Usage** (what's currently used in the project)
+- **Envy UI Usage** (what's currently used in the project)
 
 **Note:** This is a living document. Update as React Aria and ARIA standards evolve.
 
@@ -90,7 +90,7 @@ This document provides a complete reference for:
 | `columnheader` | Column header | `<th>` |
 | `rowheader` | Row header | Custom |
 
-**Usage in Envy UI v2:** Many of these roles are used implicitly via React Aria hooks or semantic HTML.
+**Usage in Envy UI:** Many of these roles are used implicitly via React Aria hooks or semantic HTML.
 
 ---
 
@@ -110,7 +110,7 @@ This document provides a complete reference for:
 | `radiogroup` | Radio button group | `radio` |
 | `checkboxgroup` | Checkbox group | `checkbox` |
 
-**Usage in Envy UI v2:**
+**Usage in Envy UI:**
 - `menu` - Used via `useMenu` hook
 - `listbox` - Used via `useSelect` hook
 - `grid` - Used for interactive tables (custom implementation)
@@ -144,7 +144,7 @@ This document provides a complete reference for:
 | `strong` | Strong emphasis | `<strong>` |
 | `emphasis` | Emphasis | `<em>` |
 
-**Usage in Envy UI v2:** Mostly via semantic HTML elements (implicit roles).
+**Usage in Envy UI:** Mostly via semantic HTML elements (implicit roles).
 
 ---
 
@@ -163,7 +163,7 @@ This document provides a complete reference for:
 | `search` | Search region | Custom |
 | `region` | Generic region | `<section>` with `aria-label` |
 
-**Usage in Envy UI v2:** Used in layout components (AppShell) via semantic HTML.
+**Usage in Envy UI:** Used in layout components (AppShell) via semantic HTML.
 
 ---
 
@@ -179,7 +179,7 @@ This document provides a complete reference for:
 | `timer` | Timer/countdown | Countdown timers |
 | `marquee` | Scrolling text | Scrolling announcements |
 
-**Usage in Envy UI v2:** `alert` role used in Alert Banner component.
+**Usage in Envy UI:** `alert` role used in Alert Banner component.
 
 ---
 
@@ -192,7 +192,7 @@ This document provides a complete reference for:
 | `dialog` | Dialog window | `aria-modal="true/false"`, `aria-labelledby` |
 | `alertdialog` | Alert dialog | `aria-modal="true"`, `aria-labelledby` |
 
-**Usage in Envy UI v2:** Used in Modal/Dialog components via `useDialog` hook.
+**Usage in Envy UI:** Used in Modal/Dialog components via `useDialog` hook.
 
 ---
 
@@ -326,7 +326,7 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 
 **Purpose:** Browser-behavior replacements for basic interactive elements.
 
-| Hook | ARIA Role | Usage in Envy UI v2 |
+| Hook | ARIA Role | Usage in Envy UI |
 |------|-----------|---------------------|
 | `useButton` | `button` | ✅ Used (Button component) |
 | `useCheckbox` | `checkbox` | ✅ Used (Checkbox component) |
@@ -352,7 +352,7 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 
 **Purpose:** Building blocks for complex UI patterns.
 
-| Hook | APG Pattern | Usage in Envy UI v2 |
+| Hook | APG Pattern | Usage in Envy UI |
 |------|-------------|---------------------|
 | `useListBox` | Listbox | ✅ Used (via Select component) |
 | `useOption` | Listbox option | ✅ Used (via Select component) |
@@ -383,7 +383,7 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 
 ### Date/Time Primitives (~5 hooks)
 
-| Hook | Pattern | Usage in Envy UI v2 |
+| Hook | Pattern | Usage in Envy UI |
 |------|---------|---------------------|
 | `useCalendar` | Calendar | ✅ Used (Calendar component) |
 | `useCalendarCell` | Calendar cell | ✅ Used (Calendar component) |
@@ -395,9 +395,9 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 
 ### Advanced Patterns (~10 hooks)
 
-**Purpose:** Complex patterns that React Aria provides hooks for (but Envy UI v2 doesn't use high-level components per ADR-0001).
+**Purpose:** Complex patterns that React Aria provides hooks for (but Envy UI doesn't use high-level components per ADR-0001).
 
-| Hook | Pattern | Usage in Envy UI v2 |
+| Hook | Pattern | Usage in Envy UI |
 |------|---------|---------------------|
 | `useDragAndDrop` | Drag and drop | ❌ Not yet used |
 | `useDrag` | Drag | ❌ Not yet used |
@@ -410,13 +410,13 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 | `useTableSelectionCheckbox` | Table row selection | ❌ Not used |
 | `useGrid` | Grid | ❌ Not used (per ADR-0001, high-level components not used) |
 
-**Note:** Per ADR-0001, Envy UI v2 does NOT use React Aria high-level components (Table, Calendar, DatePicker, ComboBox). Instead, custom implementations are built on top of low-level primitives.
+**Note:** Per ADR-0001, Envy UI does NOT use React Aria high-level components (Table, Calendar, DatePicker, ComboBox). Instead, custom implementations are built on top of low-level primitives.
 
 ---
 
 ### Utilities (~10 hooks)
 
-| Hook | Purpose | Usage in Envy UI v2 |
+| Hook | Purpose | Usage in Envy UI |
 |------|---------|---------------------|
 | `useLocale` | Locale information | ✅ Used (Calendar component) |
 | `useLocalizedStringFormatter` | String formatting | ❌ Not yet used |
@@ -431,7 +431,7 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 
 ---
 
-## Envy UI v2 Usage Summary
+## Envy UI Usage Summary
 
 ### Currently Used (Level 1 - Mandatory)
 
@@ -509,4 +509,4 @@ For detailed decision framework, see [ADR-0029](../adr/ADR-0029-accessibility-ar
 ---
 
 **Last Updated:** 2025-01-21  
-**Maintainer:** Update this document as React Aria evolves and new patterns are adopted in Envy UI v2.
+**Maintainer:** Update this document as React Aria evolves and new patterns are adopted in Envy UI.

@@ -1,6 +1,6 @@
 # Architectural Decision Records (ADR)
 
-This directory contains Architectural Decision Records (ADR) for Envy UI v2. ADRs document significant architectural decisions, their context, rationale, and consequences.
+This directory contains Architectural Decision Records (ADR) for Envy UI. ADRs document significant architectural decisions, their context, rationale, and consequences.
 
 **ADR is one section of the broader documentation system.** For general documentation rules (registry, link mapping, mermaid, assets), see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).
 

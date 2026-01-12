@@ -5,7 +5,7 @@
 **Category:** Workflow
 
 
-Complete guide to working with the demonstration application (`apps/dev-app`) in Envy UI v2.
+Complete guide to working with the demonstration application (`apps/dev-app`) in Envy UI.
 
 ## Overview
 

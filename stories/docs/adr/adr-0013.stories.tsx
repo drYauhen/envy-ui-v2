@@ -11,11 +11,11 @@ const meta: Meta = {
 export default meta;
 
 export const CurrentArchitecturalIntentExploratoryEnvyUIv2: Story = {
-  name: 'ADR-0013 Current Architectural Intent (Exploratory) — Envy UI v2',
+  name: 'ADR-0013 Current Architectural Intent (Exploratory) — Envy UI',
   render: () => (
     <AdrViewer
       adrNumber="0013"
-      title="Current Architectural Intent (Exploratory) — Envy UI v2"
+      title="Current Architectural Intent (Exploratory) — Envy UI"
       status="Proposed (Exploratory)"
       date="2025-12-16"
     />

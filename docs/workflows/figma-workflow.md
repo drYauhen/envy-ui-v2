@@ -5,7 +5,7 @@
 **Category:** Workflow
 
 
-Complete guide to working with Figma integration in Envy UI v2.
+Complete guide to working with Figma integration in Envy UI.
 
 ## Overview
 
@@ -359,7 +359,7 @@ npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
 {
   "collections": [
     {
-      "name": "envy-ui-v2 • Colors / Brand",
+      "name": "envy-ui • Colors / Brand",
       "mode": "default",
       "variables": [
         {
@@ -384,7 +384,7 @@ npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
 {
   "collections": [
     {
-      "name": "envy-ui-v2 • Colors / Colors",
+      "name": "envy-ui • Colors / Colors",
       "modes": ["app-default", "website-dark", ...],
       "variables": [
         {
@@ -418,7 +418,7 @@ npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
       "id": "VariableID:1:123",
       "name": "eui/color/brand/700",
       "path": "eui.color.brand.700",
-      "collection": "envy-ui-v2 • Colors / Brand",
+      "collection": "envy-ui • Colors / Brand",
       "type": "COLOR",
       "valuesByMode": {...},
       "usages": [

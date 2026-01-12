@@ -17,7 +17,7 @@
 ---
 ## Purpose of This Document
 
-This document captures an **architectural intention** for how React Aria is used in Envy UI v2.
+This document captures an **architectural intention** for how React Aria is used in Envy UI.
 
 Goals:
 
@@ -31,7 +31,7 @@ This is **not an API specification** and **not an implementation guide**. It is 
 
 ## Core Position
 
-**I use React Aria as an accessibility engine for Envy UI v2, not as a UI kit.**
+**I use React Aria as an accessibility engine for Envy UI, not as a UI kit.**
 
 I deliberately:
 
@@ -69,11 +69,11 @@ Fully custom, div-based components:
 
 ### Headless Accessibility + Custom Rendering
 
-Envy UI v2 follows modern industry practice:
+Envy UI follows modern industry practice:
 
 * accessibility and interaction logic via **headless primitives**,
 * fully custom rendering and DOM structure,
-* visual styling driven entirely by Envy UI v2 tokens.
+* visual styling driven entirely by Envy UI tokens.
 
 React Aria is a strong fit for this model.
 
@@ -114,7 +114,7 @@ Used selectively as building blocks:
 
 Notes:
 
-* DOM structure is defined by Envy UI v2,
+* DOM structure is defined by Envy UI,
 * semantics may be extended or adapted when necessary,
 * visual presentation is fully controlled by the design system.
 
@@ -145,7 +145,7 @@ React Spectrum is:
 * a complete design system,
 * with predefined styles and UX decisions.
 
-Envy UI v2:
+Envy UI:
 
 * has its own design language,
 * its own token system,
@@ -155,9 +155,9 @@ Using Spectrum would conflict with these goals.
 
 ---
 
-## Component Layering in Envy UI v2
+## Component Layering in Envy UI
 
-Envy UI v2 implements a **multi-tier component architecture** with different implementation strategies for different use cases:
+Envy UI implements a **multi-tier component architecture** with different implementation strategies for different use cases:
 
 ### Tier 1: TSX (Clean) Components
 
@@ -195,7 +195,7 @@ Examples:
 
 Implementation:
 * `useButton`, `useCheckbox`, `useFocusRing` hooks
-* Envy UI v2 tokens for visual styling
+* Envy UI tokens for visual styling
 * Custom accessibility enhancements
 
 #### Mid-Level Components (React Aria)
@@ -239,9 +239,9 @@ Implementation:
 
 ---
 
-## Relationship to Envy UI v2 Tokens
+## Relationship to Envy UI Tokens
 
-Envy UI v2 tokens define:
+Envy UI tokens define:
 
 * color
 * spacing
@@ -260,7 +260,7 @@ This separation of responsibilities is intentional.
 
 ## Formal Intention Statement
 
-> **Envy UI v2 adopts React Aria as a headless accessibility foundation.**
+> **Envy UI adopts React Aria as a headless accessibility foundation.**
 > **Only low-level and pattern-level primitives are used.**
 > **All high-level components are custom-built and domain-specific.**
 
@@ -270,7 +270,7 @@ This separation of responsibilities is intentional.
 
 * Document type: **Intention / Architecture Decision**
 * Status: **Accepted (current iteration)**
-* Subject to refinement as Envy UI v2 evolves
+* Subject to refinement as Envy UI evolves
 
 ---
 

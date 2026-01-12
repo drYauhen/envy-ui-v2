@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Layer Generation Manager for Envy UI v2
+ * Layer Generation Manager for Envy UI
  *
  * This script orchestrates the generation of different component layers
  * based on the layer-generation.config.json configuration.
@@ -320,7 +320,7 @@ class LayerGenerationManager {
    */
   showHelp() {
     console.log(`
-🎯 Layer Generation Manager for Envy UI v2
+🎯 Layer Generation Manager for Envy UI
 
 USAGE:
   npm run layers:generate [options]

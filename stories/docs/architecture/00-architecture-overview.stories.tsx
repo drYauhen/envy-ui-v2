@@ -30,7 +30,7 @@ export const Overview: Story = {
       title="Architecture Documentation"
       description={
         <>
-          <p>Current architectural rules, standards, and references for Envy UI v2.</p>
+          <p>Current architectural rules, standards, and references for Envy UI.</p>
           <p>Use this list to navigate all architecture documents in Storybook.</p>
         </>
       }

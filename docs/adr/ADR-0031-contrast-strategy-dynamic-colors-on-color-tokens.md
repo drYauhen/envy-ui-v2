@@ -14,7 +14,7 @@
 
 ## Context
 
-Envy UI v2 must remain readable across contexts (app, website, report) and across dynamic user-driven themes (custom websites, print templates, client-defined palettes).
+Envy UI must remain readable across contexts (app, website, report) and across dynamic user-driven themes (custom websites, print templates, client-defined palettes).
 
 Manual pairing of background and text colors does not scale when colors can be generated or chosen at runtime. We need a system-wide strategy that:
 

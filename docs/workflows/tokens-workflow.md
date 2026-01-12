@@ -7,7 +7,7 @@
 > **Deprecated:** This workflow reflects pre-canonical directory structures (e.g., `tokens/app`, `tokens/website`).  
 > Use `docs/architecture/token-architecture.md` and `docs/architecture/css-token-output-rules.md` for current canon. The `web` name was renamed to `website` (legacy artifacts may exist under `tokens/legacy/contexts/web`).
 
-Complete guide to working with design tokens in Envy UI v2.
+Complete guide to working with design tokens in Envy UI.
 
 ## Overview
 

@@ -2,11 +2,11 @@
 
 ## Overview
 
-This guide explains how to contribute to and maintain the Tokens documentation in Envy UI v2.
+This guide explains how to contribute to and maintain the Tokens documentation in Envy UI.
 
 ## Purpose
 
-Token documentation captures the design system tokens that define visual appearance, interaction patterns, and behavioral characteristics of Envy UI v2. These documents ensure consistent token usage, proper documentation, and clear guidelines for token implementation and extension.
+Token documentation captures the design system tokens that define visual appearance, interaction patterns, and behavioral characteristics of Envy UI. These documents ensure consistent token usage, proper documentation, and clear guidelines for token implementation and extension.
 
 ## Document Types
 
@@ -64,6 +64,7 @@ Each token document should include:
 
 ### Naming Conventions
 
+- System name is Envy UI (allowed variants: Envy UI, envy ui, envy-ui)
 - Use descriptive, category-based names
 - Follow pattern: `[category]-[aspect]-tokens.md`
 - Examples: `color-semantic-tokens.md`, `typography-scale-tokens.md`

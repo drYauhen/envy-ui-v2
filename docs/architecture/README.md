@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-This directory contains **current architectural rules, standards, and references** for Envy UI v2. These documents define how the system works **now**, not historical decisions.
+This directory contains **current architectural rules, standards, and references** for Envy UI. These documents define how the system works **now**, not historical decisions.
 
 ## Difference from ADR
 

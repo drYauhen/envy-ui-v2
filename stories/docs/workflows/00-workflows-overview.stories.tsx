@@ -29,7 +29,7 @@ export const Overview: Story = {
       title="Workflow Documentation"
       description={
         <>
-          <p>Guides for working with core systems and Storybook in Envy UI v2.</p>
+          <p>Guides for working with core systems and Storybook in Envy UI.</p>
           <p>Use this list to navigate workflow documentation in Storybook.</p>
         </>
       }

@@ -1,6 +1,6 @@
 # Design Tokens
 
-This directory contains the canonical token sources for Envy UI v2.
+This directory contains the canonical token sources for Envy UI.
 
 ## Canonical Structure
 

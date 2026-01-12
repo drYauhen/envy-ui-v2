@@ -1,16 +1,5 @@
 import React from 'react';
-import type { CSSProperties } from 'react';
 import { adrs, type AdrListItem } from './adr-list-data';
-import {
-  docsContainerStyle,
-  docsTitleStyle,
-  docsDescriptionStyle,
-  docsListStyle,
-  docsListItemStyle,
-  docsLinkStyle,
-  docsItemTitleStyle,
-  docsItemMetaStyle
-} from './adr-list-styles';
 import { exportNameToSlug, titleToStorySlug } from './adr-links';
 
 type AdrListViewerProps = {
@@ -35,7 +24,7 @@ const statusToTone = (status: string) => {
  * Displays a list of Architectural Decision Records (ADR).
  * 
  * This component follows the pattern for documentation list viewers:
- * - Styles are separated in adr-list-styles.ts (reusable)
+ * - Styles are provided by docs shell utilities in src/ui/docs.css
  * - Data is separated in adr-list-data.ts (easy to update)
  * - Component handles rendering logic only
  * 
@@ -62,12 +51,12 @@ export const AdrListViewer: React.FC<AdrListViewerProps> = ({
   );
 
   return (
-    <div style={docsContainerStyle}>
-      <h1 style={docsTitleStyle} className="eui-text-heading-5">{title}</h1>
-      <div style={docsDescriptionStyle} className="eui-text-body">
+    <div className="eui-docs eui-docs-container eui-container" data-eui-container="standard">
+      <h1 className="eui-text-heading-5 eui-docs-title">{title}</h1>
+      <div className="eui-text-body eui-docs-description">
         {description || defaultDescription}
       </div>
-      <ul style={docsListStyle}>
+      <ul className="eui-docs-list">
         {adrsList.map((adr) => {
           // Use exportName if provided, otherwise generate from title
           let storySlug: string;
@@ -82,14 +71,13 @@ export const AdrListViewer: React.FC<AdrListViewerProps> = ({
             <li key={adr.number}>
               <a 
                 href={storyPath}
-                style={{ ...docsLinkStyle, ...docsListItemStyle }}
-                className="eui-card"
+                className="eui-card eui-docs-list-item eui-docs-list-link"
                 data-eui-variant="elevated"
               >
-                <div style={docsItemTitleStyle} className="eui-text-title-md">
+                <div className="eui-text-title-md">
                   ADR-{adr.number}: {adr.title}
                 </div>
-                <div style={docsItemMetaStyle} className="eui-text-caption">
+                <div className="eui-text-caption eui-docs-item-meta">
                   <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(adr.status)}>
                     {adr.status}
                   </span>

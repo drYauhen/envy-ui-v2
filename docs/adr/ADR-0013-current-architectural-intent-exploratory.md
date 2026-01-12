@@ -1,4 +1,4 @@
-# ADR-0013: Current Architectural Intent (Exploratory) — Envy UI v2
+# ADR-0013: Current Architectural Intent (Exploratory) — Envy UI
 
 **Status:** Proposed (Exploratory)  
 **Date:** 2025-12-16  
@@ -9,10 +9,10 @@
 
 ## 1. Purpose and Scope (Exploratory, not final)
 
-This record captures the **current architectural intent** of Envy UI v2. It is deliberately exploratory and aims to share thinking, assumptions, and open questions. Nothing here should be treated as a final or accepted decision.
+This record captures the **current architectural intent** of Envy UI. It is deliberately exploratory and aims to share thinking, assumptions, and open questions. Nothing here should be treated as a final or accepted decision.
 
 Audience and scope notes:
-- Envy UI v2 is a **specialized internal UI system**, not a broadly public design system.
+- Envy UI is a **specialized internal UI system**, not a broadly public design system.
 - Expected contributors are comfortable with **TypeScript**, **React / React Aria**, and conventional component-based UI development.
 - Non-functional goal: avoid shocking new contributors with excessive abstraction; keep entry points familiar.
 

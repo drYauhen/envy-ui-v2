@@ -50,6 +50,7 @@ import '../src/ui/grid.css';
 // import '../src/ui/toolbar.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/page-header.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/typography.css';
+import '../src/ui/docs.css';
 import './preview.css';
 import { ContextThemeProvider, DEFAULT_CONTEXT_THEMES } from '../stories/utils/context-theme';
 

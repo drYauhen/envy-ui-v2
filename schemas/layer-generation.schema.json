@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://envy-ui.com/schemas/layer-generation.schema.json",
   "title": "Layer Generation Configuration Schema",
-  "description": "Schema for configuring layered component generation in Envy UI v2",
+  "description": "Schema for configuring layered component generation in Envy UI",
   "type": "object",
 
   "properties": {

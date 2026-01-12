@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/layer-generation.schema.json",
   "version": "1.0.0",
-  "description": "Configuration for layered component generation in Envy UI v2",
+  "description": "Configuration for layered component generation in Envy UI",
 
   "layers": {
     "tokens": {

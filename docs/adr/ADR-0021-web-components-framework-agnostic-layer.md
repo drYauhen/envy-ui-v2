@@ -20,7 +20,7 @@
 
 ## Context
 
-Envy UI v2 is designed as a **token-driven, framework-agnostic design system** with multiple implementation layers:
+Envy UI is designed as a **token-driven, framework-agnostic design system** with multiple implementation layers:
 
 - **HTML + CSS** — Static baseline, no JavaScript
 - **TSX Clean** — React/TypeScript without accessibility logic
@@ -35,7 +35,7 @@ The system's core principle is **token-first architecture**: design tokens (DTCG
 - Multiple layers demonstrate universality of the token system
 
 **Motivation:**
-Envy UI v2 is built with a **long-term perspective**: all architectural and design decisions must be **technology-agnostic and future-proof**. Business and design decisions should not be tied to any specific technology stack and should not become obsolete when that stack evolves or is replaced.
+Envy UI is built with a **long-term perspective**: all architectural and design decisions must be **technology-agnostic and future-proof**. Business and design decisions should not be tied to any specific technology stack and should not become obsolete when that stack evolves or is replaced.
 
 To further validate the framework-agnostic nature of the system and demonstrate that tokens can project into **any** runtime environment, I am exploring **Web Components** as an additional implementation layer. This is a **long-term proof of concept** that:
 
@@ -47,17 +47,17 @@ To further validate the framework-agnostic nature of the system and demonstrate 
 6. Validates that design tokens and component contracts outlive any specific implementation layer
 
 **Long-term Vision:**
-This exploration is not a short-term goal but a **strategic validation** that Envy UI v2's architecture can adapt to future technology changes. If React or any other framework becomes obsolete, the design system's core (tokens, contracts, design decisions) remains intact and can be projected into new implementation layers.
+This exploration is not a short-term goal but a **strategic validation** that Envy UI's architecture can adapt to future technology changes. If React or any other framework becomes obsolete, the design system's core (tokens, contracts, design decisions) remains intact and can be projected into new implementation layers.
 
 ---
 
 ## Decision
 
-I decided to **explore Web Components as a long-term proof-of-concept implementation layer** for Envy UI v2, starting with a proof-of-concept implementation of a simple component (e.g., Button).
+I decided to **explore Web Components as a long-term proof-of-concept implementation layer** for Envy UI, starting with a proof-of-concept implementation of a simple component (e.g., Button).
 
 **Scope (Long-term Proof-of-Concept):**
 - **Status:** Long-term strategic validation, not short-term tactical solution
-- **Goal:** Validate that Envy UI v2's architecture is truly technology-agnostic and can survive technology stack changes
+- **Goal:** Validate that Envy UI's architecture is truly technology-agnostic and can survive technology stack changes
 - **Approach:** Start with one component (Button) to establish patterns and prove the concept
 - **Timeline:** Long-term validation of architectural principles, not immediate production requirement
 - **Philosophy:** This exploration ensures that design decisions and tokens are decoupled from any specific technology stack, protecting the system's longevity
@@ -91,7 +91,7 @@ I decided to **explore Web Components as a long-term proof-of-concept implementa
 - Web Components are a **W3C web standard** (not a library or framework)
 - Officially standardized by the World Wide Web Consortium
 - Can be used in React, Vue, Angular, Svelte, or vanilla JavaScript
-- Demonstrates that Envy UI v2 is truly technology-agnostic
+- Demonstrates that Envy UI is truly technology-agnostic
 - No framework-specific wrappers required
 - Long-term stability guaranteed by web standards
 
@@ -139,7 +139,7 @@ Web Components are seeing **significant adoption by major technology companies**
 - **Google** — [Material Web Components](https://github.com/material-components/material-web), official Material Design implementation on Web Components.
 - **Shopify** — [Polaris Web Components](https://polaris.shopify.com/), exploring Web Components as part of their design system strategy.
 
-This demonstrates that Web Components are a **viable, enterprise-grade solution** for design systems, validated by industry leaders. By adopting Web Components, Envy UI v2 aligns with established industry practices and follows the same architectural patterns used by major technology companies.
+This demonstrates that Web Components are a **viable, enterprise-grade solution** for design systems, validated by industry leaders. By adopting Web Components, Envy UI aligns with established industry practices and follows the same architectural patterns used by major technology companies.
 
 **Ecosystem:**
 - Active ecosystem with libraries like Lit, Stencil, and others
@@ -250,7 +250,7 @@ const theme = this.closest('[data-eui-theme]')?.getAttribute('data-eui-theme');
 
 ### Next Steps (Long-term Proof-of-Concept)
 
-**Note:** This is a **long-term strategic validation**, not a short-term tactical solution. The goal is to prove that Envy UI v2's architecture can survive technology stack changes and that design decisions are preserved independently of implementation frameworks.
+**Note:** This is a **long-term strategic validation**, not a short-term tactical solution. The goal is to prove that Envy UI's architecture can survive technology stack changes and that design decisions are preserved independently of implementation frameworks.
 
 1. **Proof-of-Concept Implementation:**
    - Implement `eui-button` as a Web Component
@@ -304,7 +304,7 @@ This proof-of-concept serves a **strategic purpose beyond immediate production n
 
 ## Implementation Notes
 
-This ADR describes a **long-term proof-of-concept** that has been **successfully implemented**, validating Envy UI v2's framework-agnostic architecture:
+This ADR describes a **long-term proof-of-concept** that has been **successfully implemented**, validating Envy UI's framework-agnostic architecture:
 
 ### Current Implementation Status
 - ✅ **Web Components Button**: Complete `EuiButton` implementation in `packages/web-components/button/`
@@ -355,7 +355,7 @@ This ADR describes a **long-term proof-of-concept** that has been **successfully
 - Demonstrates architectural flexibility and longevity
 - Validates renderer-agnostic model ([ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
 - Strengthens positioning as universal, future-proof design system
-- Proves Envy UI v2 can survive technology stack changes
+- Proves Envy UI can survive technology stack changes
 
 ### Usage Example
 ```html
