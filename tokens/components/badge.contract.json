@@ -38,6 +38,12 @@
       "default": "default",
       "values": ["default", "small"],
       "notes": "Size controls container-driven height, padding, and typography."
+    },
+    "interactive": {
+      "type": "enum",
+      "default": "false",
+      "values": ["true", "false"],
+      "notes": "When true, badge becomes interactive with cursor, focus, and hover states via data-eui-interactive attribute."
     }
   },
 

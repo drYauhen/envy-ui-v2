@@ -51,13 +51,13 @@
     --eui-badge-focus-ring-width: var(--eui-focus-ring-width);
     --eui-badge-focus-ring-offset: var(--eui-focus-ring-offset-default);
     --eui-badge-focus-color: var(--eui-color-focus-ring);
-    --eui-badge-size-default-height: var(--eui-dimension-6);
-    --eui-badge-size-default-padding-block: var(--eui-spacing-2xs);
+    --eui-badge-size-default-height: var(--eui-dimension-5);
+    --eui-badge-size-default-padding-block: var(--eui-dimension-0);
     --eui-badge-size-default-padding-inline: var(--eui-spacing-sm);
     --eui-badge-size-default-gap: var(--eui-spacing-xs);
     --eui-badge-size-default-fontSize: var(--eui-typography-fontSize-xs);
     --eui-badge-size-default-lineHeight: var(--eui-typography-lineHeight-tight);
-    --eui-badge-size-small-height: var(--eui-dimension-5);
+    --eui-badge-size-small-height: var(--eui-dimension-4);
     --eui-badge-size-small-padding-block: var(--eui-dimension-0);
     --eui-badge-size-small-padding-inline: var(--eui-spacing-xs);
     --eui-badge-size-small-gap: var(--eui-spacing-2xs);

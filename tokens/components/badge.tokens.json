@@ -5,13 +5,13 @@
       "size": {
         "default": {
           "height": {
-            "$value": "{eui.dimension.6}",
+            "$value": "{eui.dimension.5}",
             "$type": "dimension",
-            "$description": "Default badge height (container-driven)"
+            "$description": "Default badge height (container-driven, 20px)"
           },
           "padding": {
             "block": {
-              "$value": "{eui.spacing.2xs}",
+              "$value": "{eui.dimension.0}",
               "$type": "dimension",
               "$description": "Default badge vertical padding (container-driven)"
             },
@@ -39,9 +39,9 @@
         },
         "small": {
           "height": {
-            "$value": "{eui.dimension.5}",
+            "$value": "{eui.dimension.4}",
             "$type": "dimension",
-            "$description": "Small badge height (compact, container-driven)"
+            "$description": "Small badge height (compact, container-driven, 16px)"
           },
           "padding": {
             "block": {

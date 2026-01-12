@@ -21,11 +21,13 @@
     --eui-badge-size-fontSize: var(--eui-badge-size-default-fontSize);
     --eui-badge-size-lineHeight: var(--eui-badge-size-default-lineHeight);
 
-    /* Layout structure */
+    /* Layout structure - container-driven sizing */
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--eui-badge-size-gap);
     height: var(--eui-badge-size-height);
+    min-height: var(--eui-badge-size-height);
 
     /* Visual properties using component variables */
     box-sizing: border-box;
@@ -43,13 +45,6 @@
     letter-spacing: var(--eui-badge-typography-letterSpacing);
     text-transform: var(--eui-badge-typography-textTransform);
     white-space: nowrap;
-
-    /* Interactive states */
-    cursor: pointer;
-    outline: none;
-    appearance: none;
-    transition: filter 120ms ease, transform 120ms ease, box-shadow 120ms ease;
-    text-decoration: none; /* Remove underline for links */
   }
 
   /* ============================================================================
@@ -162,47 +157,57 @@
   }
 
   /* ============================================================================
-     Badge Component - Interactive States
+     Badge Component - Interactive States (Explicit Opt-in)
      ============================================================================ */
 
-  /* Set up focus color variable (derived focus mode by default) */
-  [data-eui-context] {
+  /* Interactive badges: explicit opt-in required */
+  [data-eui-context] .eui-badge[data-eui-interactive="true"] {
+    /* Interactive appearance */
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    transition: filter 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+    text-decoration: none; /* Remove underline for links */
+  }
+
+  /* Set up focus color variable for interactive badges */
+  [data-eui-context] .eui-badge[data-eui-interactive="true"] {
     --eui-badge-focus-color: var(--eui-badge-focus-ring-color);
   }
 
   /* Focus ring: theme-dependent color (accent-500 default, accent-700 accessibility) */
   /* Uses 2px width for all focus states. Color changes based on active theme. */
-  [data-eui-context] .eui-badge:is(button, a):focus {
+  [data-eui-context] .eui-badge[data-eui-interactive="true"]:is(button, a):focus {
     box-shadow:
       0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
       0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-badge-focus-color);
   }
 
   /* Keyboard focus uses policy-driven color */
-  [data-eui-context] .eui-badge:is(button, a):focus-visible {
+  [data-eui-context] .eui-badge[data-eui-interactive="true"]:is(button, a):focus-visible {
     box-shadow:
       0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
       0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
   }
 
   /* Subtle hover state for interactive badges */
-  [data-eui-context] .eui-badge:is(button, a):not(:disabled):hover {
+  [data-eui-context] .eui-badge[data-eui-interactive="true"]:is(button, a):not(:disabled):hover {
     filter: brightness(0.96);
   }
 
   /* Pressed state for interactive badges */
-  [data-eui-context] .eui-badge:is(button, a):not(:disabled):active {
+  [data-eui-context] .eui-badge[data-eui-interactive="true"]:is(button, a):not(:disabled):active {
     transform: translateY(1px);
   }
 
   /* Disabled state for button badges */
-  [data-eui-context] .eui-badge:is(button):disabled {
+  [data-eui-context] .eui-badge[data-eui-interactive="true"]:is(button):disabled {
     cursor: not-allowed;
     opacity: 0.6;
   }
 
   /* Disabled-like state for link badges (using aria-disabled) */
-  [data-eui-context] .eui-badge:is(a)[aria-disabled="true"] {
+  [data-eui-context] .eui-badge[data-eui-interactive="true"]:is(a)[aria-disabled="true"] {
     cursor: not-allowed;
     opacity: 0.6;
     pointer-events: none;
