@@ -9,6 +9,15 @@
           "$description": "Subtle border color for default theme in app context. More visible than neutral.200 but still minimal. Less prominent than accessibility theme."
         }
       },
+      "status": {
+        "neutral": {
+          "solid": {
+            "$value": "{eui.color.neutral.700}",
+            "$type": "color",
+            "$description": "Neutral solid status color softened for default theme while maintaining AA contrast with inverse text."
+          }
+        }
+      },
       "focus": {
         "ring": {
           "$value": "{eui.color.accent.500}",

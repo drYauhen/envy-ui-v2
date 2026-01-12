@@ -45,7 +45,7 @@
     --eui-color-status-error-border: oklch(64% 0.21 25);
     --eui-color-status-error-primary: oklch(64% 0.21 25);
     --eui-color-status-error-solid: oklch(59% 0.20 25);
-    --eui-color-status-error-text: oklch(56% 0.19 25);
+    --eui-color-status-error-text: oklch(55% 0.19 25);
     --eui-color-status-info-background: oklch(96% 0.04 236);
     --eui-color-status-info-border: oklch(89% 0.09 236);
     --eui-color-status-info-primary: oklch(68% 0.15 237);
@@ -58,13 +58,13 @@
     --eui-color-status-success-background: oklch(92% 0.10 149);
     --eui-color-status-success-border: oklch(72% 0.19 150);
     --eui-color-status-success-primary: oklch(72% 0.19 150);
-    --eui-color-status-success-solid: oklch(67% 0.18 150);
-    --eui-color-status-success-text: oklch(64% 0.17 150);
+    --eui-color-status-success-solid: oklch(66% 0.18 150);
+    --eui-color-status-success-text: oklch(61% 0.17 150);
     --eui-color-status-warning-background: oklch(97% 0.08 69);
     --eui-color-status-warning-border: oklch(77% 0.16 70);
     --eui-color-status-warning-primary: oklch(77% 0.16 70);
-    --eui-color-status-warning-solid: oklch(72% 0.15 70);
-    --eui-color-status-warning-text: oklch(69% 0.15 70);
+    --eui-color-status-warning-solid: oklch(71% 0.15 70);
+    --eui-color-status-warning-text: oklch(65% 0.15 70);
     --eui-color-system-focus: var(--eui-color-signal-500);
     --eui-color-text-disabled: oklch(75% 0.00 0);
     --eui-color-text-inverse: oklch(100% 0 0);

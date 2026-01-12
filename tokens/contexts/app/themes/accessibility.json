@@ -13,19 +13,19 @@
     "color": {
       "border": {
         "default": {
-          "$value": "{eui.color.neutral.700}",
-          "$type": "color",
-          "$description": "Strong border color for maximum contrast in accessibility theme. Dark and highly visible for accessibility needs."
-        },
-        "subtle": {
-          "$value": "{eui.color.neutral.600}",
-          "$type": "color",
-          "$description": "Subtle border color with higher contrast for accessibility theme."
-        },
-        "strong": {
           "$value": "{eui.color.neutral.800}",
           "$type": "color",
-          "$description": "Strong border color for high-contrast separation in accessibility theme."
+          "$description": "Stronger border color for accessibility theme to maximize edge contrast."
+        },
+        "subtle": {
+          "$value": "{eui.color.neutral.700}",
+          "$type": "color",
+          "$description": "Subtle border color with increased contrast for accessibility theme."
+        },
+        "strong": {
+          "$value": "{eui.color.neutral.900}",
+          "$type": "color",
+          "$description": "Strongest border color for high-contrast separation in accessibility theme."
         }
       },
       "text": {
@@ -60,6 +60,83 @@
           "$value": "{eui.color.neutral.300}",
           "$type": "color",
           "$description": "Subtle background with clearer separation for accessibility theme."
+        }
+      },
+      "status": {
+        "neutral": {
+          "border": {
+            "$value": "{eui-color-neutral-700}",
+            "$type": "color",
+            "$description": "Neutral status border with higher contrast for accessibility theme."
+          }
+        },
+        "success": {
+          "border": {
+            "$value": "{eui-color-status-success-900}",
+            "$type": "color",
+            "$description": "Success status border darkened to meet AA edge contrast in accessibility theme."
+          },
+          "text": {
+            "$value": "{eui-color-status-success-900}",
+            "$type": "color",
+            "$description": "Success status text darkened to meet AA contrast using status palette."
+          },
+          "solid": {
+            "$value": "{eui-color-status-success-900}",
+            "$type": "color",
+            "$description": "Success solid background strengthened to maximize contrast with inverse text."
+          }
+        },
+        "warning": {
+          "border": {
+            "$value": "{eui-color-status-warning-900}",
+            "$type": "color",
+            "$description": "Warning status border darkened to meet AA edge contrast in accessibility theme."
+          },
+          "text": {
+            "$value": "{eui-color-status-warning-900}",
+            "$type": "color",
+            "$description": "Warning status text darkened to meet AA contrast using status palette."
+          },
+          "solid": {
+            "$value": "{eui-color-status-warning-900}",
+            "$type": "color",
+            "$description": "Warning solid background strengthened to maximize contrast with inverse text."
+          }
+        },
+        "error": {
+          "border": {
+            "$value": "{eui-color-status-error-900}",
+            "$type": "color",
+            "$description": "Error status border darkened to meet AA edge contrast in accessibility theme."
+          },
+          "text": {
+            "$value": "{eui-color-status-error-900}",
+            "$type": "color",
+            "$description": "Error status text darkened to meet AA contrast using status palette."
+          }
+        },
+        "info": {
+          "background": {
+            "$value": "{eui-color-status-info-50}",
+            "$type": "color",
+            "$description": "Info status background aligned to status palette for accessibility theme."
+          },
+          "border": {
+            "$value": "{eui-color-status-info-900}",
+            "$type": "color",
+            "$description": "Info status border darkened to meet AA edge contrast in accessibility theme."
+          },
+          "text": {
+            "$value": "{eui-color-status-info-900}",
+            "$type": "color",
+            "$description": "Info status text darkened to meet AA contrast using status palette."
+          },
+          "solid": {
+            "$value": "{eui-color-status-info-900}",
+            "$type": "color",
+            "$description": "Info solid background strengthened to maximize contrast with inverse text."
+          }
         }
       },
       "focus": {
