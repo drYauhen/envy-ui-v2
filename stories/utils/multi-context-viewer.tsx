@@ -20,6 +20,7 @@ export type MultiContextViewerProps = {
 };
 
 const defaultContainerStyle: React.CSSProperties | string | undefined = undefined;
+const CONTEXT_ORDER: ContextName[] = ['app', 'website', 'report'];
 
 /**
  * Context Wrapper Component
@@ -34,10 +35,12 @@ const ContextWrapper: React.FC<{
   children: (context: ContextName, theme: string) => React.ReactNode;
 }> = ({ context, label, showLabels, containerStyle, children }) => {
   const theme = useContextTheme(context);
+  const isAppDefault = context === 'app' && theme === 'default';
 
   const isClassName = typeof containerStyle === 'string';
   const className = containerStyle ? (isClassName ? `eui-theme ${containerStyle}` : 'eui-theme') : 'eui-theme';
   const style = containerStyle && !isClassName ? containerStyle : undefined;
+  const content = children(context, theme);
 
   return (
     <div className="eui-stack" data-eui-gap="lg">
@@ -54,16 +57,22 @@ const ContextWrapper: React.FC<{
           </div>
         </div>
       )}
-      {/* Only this block should receive dynamic context theme */}
-      <ContextThemeScope
-        context={context}
-        className={className}
-        style={style}
-        data-testid="component-under-test"
-      >
-        {children(context, theme)}
-      </ContextThemeScope>
-      {/* Only this block should receive dynamic context theme */}
+      {/* Only this block should receive dynamic context theme (app/default passes through). */}
+      {isAppDefault ? (
+        <div className={className} style={style} data-testid="component-under-test">
+          {content}
+        </div>
+      ) : (
+        <ContextThemeScope
+          context={context}
+          className={className}
+          style={style}
+          data-testid="component-under-test"
+        >
+          {content}
+        </ContextThemeScope>
+      )}
+      {/* Only this block should receive dynamic context theme. */}
     </div>
   );
 };
@@ -116,13 +125,16 @@ export const MultiContextViewer: React.FC<MultiContextViewerProps> = ({
   if (contexts.length === 0 || contexts.length > 3) {
     throw new Error('MultiContextViewer requires 1-3 contexts');
   }
+  const orderedContexts = CONTEXT_ORDER
+    .map((context) => contexts.find((ctx) => ctx.context === context))
+    .filter((ctx): ctx is ViewerContext => Boolean(ctx));
 
   return (
     <ContextThemeScope
       style={{ padding: '2rem' }}
     >
       <div className="eui-stack" data-eui-gap="lg">
-        {contexts.map((ctx) => (
+        {orderedContexts.map((ctx) => (
           <ContextWrapper
             key={ctx.context}
             context={ctx.context}
