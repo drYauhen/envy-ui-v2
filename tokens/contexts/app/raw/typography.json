@@ -4,237 +4,237 @@
     "app": {
       "raw": {
         "typography": {
-      "fontSize": {
-        "xs": {
-          "$value": "{eui.typography.fontSize.xs}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.xs"
-        },
-        "sm": {
-          "$value": "{eui.typography.fontSize.sm}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.sm"
-        },
-        "base": {
-          "$value": "{eui.typography.fontSize.base}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.base"
-        },
-        "md": {
-          "$value": "{eui.typography.fontSize.md}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.md"
-        },
-        "lg": {
-          "$value": "{eui.typography.fontSize.lg}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.lg"
-        },
-        "xl": {
-          "$value": "{eui.typography.fontSize.xl}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.xl"
-        },
-        "2xl": {
-          "$value": "{eui.typography.fontSize.2xl}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.2xl"
-        },
-        "3xl": {
-          "$value": "{eui.typography.fontSize.3xl}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.3xl"
-        },
-        "4xl": {
-          "$value": "{eui.typography.fontSize.4xl}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.4xl"
-        },
-        "5xl": {
-          "$value": "{eui.typography.fontSize.5xl}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.5xl"
-        },
-        "6xl": {
-          "$value": "{eui.typography.fontSize.6xl}",
-          "$type": "fontSize",
-          "$description": "Context-specific raw alias for typography.fontSize.6xl"
-        }
-      },
-      "fontWeight": {
-        "thin": {
-          "$value": "{eui.typography.fontWeight.thin}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.thin"
-        },
-        "extralight": {
-          "$value": "{eui.typography.fontWeight.extralight}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.extralight"
-        },
-        "light": {
-          "$value": "{eui.typography.fontWeight.light}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.light"
-        },
-        "normal": {
-          "$value": "{eui.typography.fontWeight.normal}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.normal"
-        },
-        "medium": {
-          "$value": "{eui.typography.fontWeight.medium}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.medium"
-        },
-        "semibold": {
-          "$value": "{eui.typography.fontWeight.semibold}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.semibold"
-        },
-        "bold": {
-          "$value": "{eui.typography.fontWeight.bold}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.bold"
-        },
-        "extrabold": {
-          "$value": "{eui.typography.fontWeight.extrabold}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.extrabold"
-        },
-        "black": {
-          "$value": "{eui.typography.fontWeight.black}",
-          "$type": "fontWeight",
-          "$description": "Context-specific raw alias for typography.fontWeight.black"
-        }
-      },
-      "lineHeight": {
-        "tight": {
-          "$value": "{eui.typography.lineHeight.tight}",
-          "$type": "lineHeight",
-          "$description": "Context-specific raw alias for typography.lineHeight.tight"
-        },
-        "snug": {
-          "$value": "{eui.typography.lineHeight.snug}",
-          "$type": "lineHeight",
-          "$description": "Context-specific raw alias for typography.lineHeight.snug"
-        },
-        "normal": {
-          "$value": "{eui.typography.lineHeight.normal}",
-          "$type": "lineHeight",
-          "$description": "Context-specific raw alias for typography.lineHeight.normal"
-        },
-        "relaxed": {
-          "$value": "{eui.typography.lineHeight.relaxed}",
-          "$type": "lineHeight",
-          "$description": "Context-specific raw alias for typography.lineHeight.relaxed"
-        },
-        "loose": {
-          "$value": "{eui.typography.lineHeight.loose}",
-          "$type": "lineHeight",
-          "$description": "Context-specific raw alias for typography.lineHeight.loose"
-        }
-      },
-      "letterSpacing": {
-        "tighter": {
-          "$value": "{eui.typography.letterSpacing.tighter}",
-          "$type": "letterSpacing",
-          "$description": "Context-specific raw alias for typography.letterSpacing.tighter"
-        },
-        "tight": {
-          "$value": "{eui.typography.letterSpacing.tight}",
-          "$type": "letterSpacing",
-          "$description": "Context-specific raw alias for typography.letterSpacing.tight"
-        },
-        "normal": {
-          "$value": "{eui.typography.letterSpacing.normal}",
-          "$type": "letterSpacing",
-          "$description": "Context-specific raw alias for typography.letterSpacing.normal"
-        },
-        "wide": {
-          "$value": "{eui.typography.letterSpacing.wide}",
-          "$type": "letterSpacing",
-          "$description": "Context-specific raw alias for typography.letterSpacing.wide"
-        },
-        "wider": {
-          "$value": "{eui.typography.letterSpacing.wider}",
-          "$type": "letterSpacing",
-          "$description": "Context-specific raw alias for typography.letterSpacing.wider"
-        },
-        "widest": {
-          "$value": "{eui.typography.letterSpacing.widest}",
-          "$type": "letterSpacing",
-          "$description": "Context-specific raw alias for typography.letterSpacing.widest"
-        }
-      },
-      "fontFamily": {
-        "ui": {
-          "$value": "{eui.typography.fontFamily.ui}",
-          "$type": "fontFamily",
-          "$description": "Context-specific raw alias for typography.fontFamily.ui"
-        },
-        "monospace": {
-          "$value": "{eui.typography.fontFamily.monospace}",
-          "$type": "fontFamily",
-          "$description": "Context-specific raw alias for typography.fontFamily.monospace"
-        }
-      },
-      "fontStyle": {
-        "normal": {
-          "$value": "{eui.typography.fontStyle.normal}",
-          "$type": "fontStyle",
-          "$description": "Context-specific raw alias for typography.fontStyle.normal"
-        },
-        "italic": {
-          "$value": "{eui.typography.fontStyle.italic}",
-          "$type": "fontStyle",
-          "$description": "Context-specific raw alias for typography.fontStyle.italic"
-        },
-        "oblique": {
-          "$value": "{eui.typography.fontStyle.oblique}",
-          "$type": "fontStyle",
-          "$description": "Context-specific raw alias for typography.fontStyle.oblique"
-        }
-      },
-      "textDecoration": {
-        "none": {
-          "$value": "{eui.typography.textDecoration.none}",
-          "$type": "textDecoration",
-          "$description": "Context-specific raw alias for typography.textDecoration.none"
-        },
-        "underline": {
-          "$value": "{eui.typography.textDecoration.underline}",
-          "$type": "textDecoration",
-          "$description": "Context-specific raw alias for typography.textDecoration.underline"
-        },
-        "line-through": {
-          "$value": "{eui.typography.textDecoration.line-through}",
-          "$type": "textDecoration",
-          "$description": "Context-specific raw alias for typography.textDecoration.line-through"
-        }
-      },
-      "textTransform": {
-        "none": {
-          "$value": "{eui.typography.textTransform.none}",
-          "$type": "textTransform",
-          "$description": "Context-specific raw alias for typography.textTransform.none"
-        },
-        "uppercase": {
-          "$value": "{eui.typography.textTransform.uppercase}",
-          "$type": "textTransform",
-          "$description": "Context-specific raw alias for typography.textTransform.uppercase"
-        },
-        "lowercase": {
-          "$value": "{eui.typography.textTransform.lowercase}",
-          "$type": "textTransform",
-          "$description": "Context-specific raw alias for typography.textTransform.lowercase"
-        },
-        "capitalize": {
-          "$value": "{eui.typography.textTransform.capitalize}",
-          "$type": "textTransform",
-          "$description": "Context-specific raw alias for typography.textTransform.capitalize"
-        }
-      }
+          "fontSize": {
+            "xs": {
+              "$value": "{eui.typography.fontSize.xs}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.xs"
+            },
+            "sm": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.sm"
+            },
+            "base": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.base (app base = 14px)"
+            },
+            "md": {
+              "$value": "{eui.typography.fontSize.md}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.md"
+            },
+            "lg": {
+              "$value": "{eui.typography.fontSize.lg}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.lg"
+            },
+            "xl": {
+              "$value": "{eui.typography.fontSize.xl}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.xl"
+            },
+            "2xl": {
+              "$value": "{eui.typography.fontSize.2xl}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.2xl"
+            },
+            "3xl": {
+              "$value": "{eui.typography.fontSize.3xl}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.3xl"
+            },
+            "4xl": {
+              "$value": "{eui.typography.fontSize.4xl}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.4xl"
+            },
+            "5xl": {
+              "$value": "{eui.typography.fontSize.5xl}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.5xl"
+            },
+            "6xl": {
+              "$value": "{eui.typography.fontSize.6xl}",
+              "$type": "fontSize",
+              "$description": "Context-specific raw alias for typography.fontSize.6xl"
+            }
+          },
+          "fontWeight": {
+            "thin": {
+              "$value": "{eui.typography.fontWeight.thin}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.thin"
+            },
+            "extralight": {
+              "$value": "{eui.typography.fontWeight.extralight}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.extralight"
+            },
+            "light": {
+              "$value": "{eui.typography.fontWeight.light}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.light"
+            },
+            "normal": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.normal"
+            },
+            "medium": {
+              "$value": "{eui.typography.fontWeight.medium}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.medium"
+            },
+            "semibold": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.semibold"
+            },
+            "bold": {
+              "$value": "{eui.typography.fontWeight.bold}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.bold"
+            },
+            "extrabold": {
+              "$value": "{eui.typography.fontWeight.extrabold}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.extrabold"
+            },
+            "black": {
+              "$value": "{eui.typography.fontWeight.black}",
+              "$type": "fontWeight",
+              "$description": "Context-specific raw alias for typography.fontWeight.black"
+            }
+          },
+          "lineHeight": {
+            "tight": {
+              "$value": "{eui.typography.lineHeight.tight}",
+              "$type": "lineHeight",
+              "$description": "Context-specific raw alias for typography.lineHeight.tight"
+            },
+            "snug": {
+              "$value": "{eui.typography.lineHeight.snug}",
+              "$type": "lineHeight",
+              "$description": "Context-specific raw alias for typography.lineHeight.snug"
+            },
+            "normal": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Context-specific raw alias for typography.lineHeight.normal"
+            },
+            "relaxed": {
+              "$value": "{eui.typography.lineHeight.relaxed}",
+              "$type": "lineHeight",
+              "$description": "Context-specific raw alias for typography.lineHeight.relaxed"
+            },
+            "loose": {
+              "$value": "{eui.typography.lineHeight.loose}",
+              "$type": "lineHeight",
+              "$description": "Context-specific raw alias for typography.lineHeight.loose"
+            }
+          },
+          "letterSpacing": {
+            "tighter": {
+              "$value": "{eui.typography.letterSpacing.tighter}",
+              "$type": "letterSpacing",
+              "$description": "Context-specific raw alias for typography.letterSpacing.tighter"
+            },
+            "tight": {
+              "$value": "{eui.typography.letterSpacing.tight}",
+              "$type": "letterSpacing",
+              "$description": "Context-specific raw alias for typography.letterSpacing.tight"
+            },
+            "normal": {
+              "$value": "{eui.typography.letterSpacing.normal}",
+              "$type": "letterSpacing",
+              "$description": "Context-specific raw alias for typography.letterSpacing.normal"
+            },
+            "wide": {
+              "$value": "{eui.typography.letterSpacing.wide}",
+              "$type": "letterSpacing",
+              "$description": "Context-specific raw alias for typography.letterSpacing.wide"
+            },
+            "wider": {
+              "$value": "{eui.typography.letterSpacing.wider}",
+              "$type": "letterSpacing",
+              "$description": "Context-specific raw alias for typography.letterSpacing.wider"
+            },
+            "widest": {
+              "$value": "{eui.typography.letterSpacing.widest}",
+              "$type": "letterSpacing",
+              "$description": "Context-specific raw alias for typography.letterSpacing.widest"
+            }
+          },
+          "fontFamily": {
+            "ui": {
+              "$value": "{eui.typography.fontFamily.ui}",
+              "$type": "fontFamily",
+              "$description": "Context-specific raw alias for typography.fontFamily.ui"
+            },
+            "monospace": {
+              "$value": "{eui.typography.fontFamily.monospace}",
+              "$type": "fontFamily",
+              "$description": "Context-specific raw alias for typography.fontFamily.monospace"
+            }
+          },
+          "fontStyle": {
+            "normal": {
+              "$value": "{eui.typography.fontStyle.normal}",
+              "$type": "fontStyle",
+              "$description": "Context-specific raw alias for typography.fontStyle.normal"
+            },
+            "italic": {
+              "$value": "{eui.typography.fontStyle.italic}",
+              "$type": "fontStyle",
+              "$description": "Context-specific raw alias for typography.fontStyle.italic"
+            },
+            "oblique": {
+              "$value": "{eui.typography.fontStyle.oblique}",
+              "$type": "fontStyle",
+              "$description": "Context-specific raw alias for typography.fontStyle.oblique"
+            }
+          },
+          "textDecoration": {
+            "none": {
+              "$value": "{eui.typography.textDecoration.none}",
+              "$type": "textDecoration",
+              "$description": "Context-specific raw alias for typography.textDecoration.none"
+            },
+            "underline": {
+              "$value": "{eui.typography.textDecoration.underline}",
+              "$type": "textDecoration",
+              "$description": "Context-specific raw alias for typography.textDecoration.underline"
+            },
+            "line-through": {
+              "$value": "{eui.typography.textDecoration.line-through}",
+              "$type": "textDecoration",
+              "$description": "Context-specific raw alias for typography.textDecoration.line-through"
+            }
+          },
+          "textTransform": {
+            "none": {
+              "$value": "{eui.typography.textTransform.none}",
+              "$type": "textTransform",
+              "$description": "Context-specific raw alias for typography.textTransform.none"
+            },
+            "uppercase": {
+              "$value": "{eui.typography.textTransform.uppercase}",
+              "$type": "textTransform",
+              "$description": "Context-specific raw alias for typography.textTransform.uppercase"
+            },
+            "lowercase": {
+              "$value": "{eui.typography.textTransform.lowercase}",
+              "$type": "textTransform",
+              "$description": "Context-specific raw alias for typography.textTransform.lowercase"
+            },
+            "capitalize": {
+              "$value": "{eui.typography.textTransform.capitalize}",
+              "$type": "textTransform",
+              "$description": "Context-specific raw alias for typography.textTransform.capitalize"
+            }
+          }
         }
       }
     }

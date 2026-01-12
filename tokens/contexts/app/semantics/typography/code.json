@@ -1,55 +1,6 @@
 {
   "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
   "eui": {
-    "typography": {
-      "textStyle": {
-        "code": {
-          "base": {
-            "fontSize": {
-              "$value": "{eui.typography.fontSize.sm}",
-              "$type": "fontSize",
-              "$description": "Code inline text - default size"
-            },
-            "fontWeight": {
-              "$value": "{eui.typography.fontWeight.normal}",
-              "$type": "fontWeight",
-              "$description": "Normal weight for code"
-            },
-            "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
-              "$type": "lineHeight",
-              "$description": "Normal line height for code"
-            },
-            "fontFamily": {
-              "$value": "{eui.typography.fontFamily.monospace}",
-              "$type": "fontFamily",
-              "$description": "Monospace font for code"
-            }
-          },
-          "small": {
-            "fontSize": {
-              "$value": "{eui.typography.fontSize.xs}",
-              "$type": "fontSize",
-              "$description": "Small code text"
-            },
-            "fontWeight": {
-              "$value": "{eui.typography.fontWeight.normal}",
-              "$type": "fontWeight",
-              "$description": "Normal weight for small code"
-            },
-            "lineHeight": {
-              "$value": "{eui.typography.lineHeight.normal}",
-              "$type": "lineHeight",
-              "$description": "Normal line height for small code"
-            },
-            "fontFamily": {
-              "$value": "{eui.typography.fontFamily.monospace}",
-              "$type": "fontFamily",
-              "$description": "Monospace font for small code"
-            }
-          }
-        }
-      }
-    }
+    "$description": "Deprecated in favor of text-styles.json (single source of truth for typography textStyle)."
   }
 }

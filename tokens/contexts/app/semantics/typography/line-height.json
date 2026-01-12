@@ -4,9 +4,9 @@
     "typography": {
       "lineHeight": {
         "none": {
-          "$value": "{eui-app-raw-typography-lineHeight-tight}",
+          "$value": "1",
           "$type": "lineHeight",
-          "$description": "No line height - for single-line text, avatars, counters"
+          "$description": "Single-line line height for compact elements (line-height: 1)"
         },
         "tight": {
           "$value": "{eui-app-raw-typography-lineHeight-tight}",
