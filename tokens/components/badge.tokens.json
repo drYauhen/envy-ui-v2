@@ -72,6 +72,22 @@
           }
         }
       },
+      "shape": {
+        "pill": {
+          "radius": {
+            "$value": "calc(var(--eui-badge-size-height) / 2)",
+            "$type": "dimension",
+            "$description": "Pill badge radius derived from container height"
+          }
+        },
+        "circle": {
+          "radius": {
+            "$value": "calc(var(--eui-badge-size-height) / 2)",
+            "$type": "dimension",
+            "$description": "Circle badge radius for fully rounded shape"
+          }
+        }
+      },
       "variant": {
         "subtle": {
           "tone": {

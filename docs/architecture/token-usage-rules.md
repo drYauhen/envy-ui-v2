@@ -139,6 +139,8 @@ This ensures that when components are stacked/split (e.g., `[Input] [Button]`), 
 - **Website context:** Primarily reading-focused, minimal form compositions. Design goals prioritize expressive visuals over stackable consistency.
 - **Printable context:** No interactive form elements. Design goals focus on document expressiveness, not component composition.
 
+**Print/Report styling rule:** Component styling for print/report must be handled through the `report` context + theme (e.g., `data-eui-context="report"` + `data-eui-theme="print|screen"`). Use `@media print` only for document-level behavior (page breaks, layout, hiding chrome), not for component styling.
+
 **Non-stackable components** (cards, modals, containers) can use different levels (`large`, `extra-large`) as appropriate for their visual hierarchy, regardless of context.
 
 ## Scope Clarifications

@@ -39,6 +39,12 @@
       "values": ["default", "small"],
       "notes": "Size controls container-driven height, padding, and typography."
     },
+    "shape": {
+      "type": "enum",
+      "default": "rectangular",
+      "values": ["rectangular", "pill", "circle"],
+      "notes": "Shape controls border radius and geometry via data-eui-shape."
+    },
     "interactive": {
       "type": "enum",
       "default": "false",
@@ -99,6 +105,10 @@
       "--eui-badge-size-small-gap": { "type": "dimension" },
       "--eui-badge-size-small-fontSize": { "type": "dimension" },
       "--eui-badge-size-small-lineHeight": { "type": "string" }
+    },
+    "shape": {
+      "--eui-badge-shape-pill-radius": { "type": "dimension" },
+      "--eui-badge-shape-circle-radius": { "type": "dimension" }
     },
     "typography": {
       "--eui-badge-typography-fontFamily": { "type": "string" },

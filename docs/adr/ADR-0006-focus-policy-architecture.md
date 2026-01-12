@@ -273,7 +273,7 @@ The implemented token architecture provides:
 **CSS Implementation**:
 ```css
 /* Layer 1: Theme-dependent (default) */
-[data-eui-context] .eui-badge:is(button, a):focus {
+[data-eui-context] .eui-badge[data-eui-interactive="true"]:focus {
   box-shadow: 0 0 0 var(--eui-badge-focus-ring-offset)
               var(--eui-color-background-surface),
               0 0 0 calc(var(--eui-badge-focus-ring-offset) +
@@ -282,7 +282,7 @@ The implemented token architecture provides:
 }
 
 /* Layer 2: Policy-driven keyboard color */
-[data-eui-context] .eui-badge:is(button, a):focus-visible {
+[data-eui-context] .eui-badge[data-eui-interactive="true"]:focus-visible {
   box-shadow: 0 0 0 var(--eui-badge-focus-ring-offset)
               var(--eui-color-background-surface),
               0 0 0 calc(var(--eui-badge-focus-ring-offset) +
@@ -290,6 +290,8 @@ The implemented token architecture provides:
               var(--eui-focus-ring-color-keyboard);
 }
 ```
+
+**Implementation Note**: CSS only handles visual focus styles. Focusability is provided by markup/runtime (`tabindex`, `role`, native elements).
 
 **Benefits Achieved**:
 - ✅ **Default Experience**: Brand-aligned focus indicators that adapt to theme

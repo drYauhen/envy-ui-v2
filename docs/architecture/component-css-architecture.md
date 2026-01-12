@@ -368,13 +368,14 @@ Component Token → Semantic Token → Primitive Value
 **Container-Driven Sizing (Rule 6a):**
 - Application components are container-driven: size is fixed, typography adapts.
 - Height/padding/gap come from size tokens; typography uses size tokens instead of driving geometry.
-- Badge is the reference implementation: default=20px height, small=16px height using existing dimension tokens.
+- Badge is the reference implementation: default=24px height, small=20px height using existing dimension tokens.
 
 **Explicit Interactivity (Rule 6b):**
 - Components are non-interactive by default; interactivity requires explicit opt-in.
 - Interactive styles (cursor, focus, hover, transitions) apply only with `data-eui-interactive="true"`.
 - Badge is the reference implementation: base badge has no cursor/hover effects; only badges with `data-eui-interactive="true"` show interactive behavior.
 - Independent of HTML element type (works with `<span>`, `<button>`, `<a>`, etc.).
+- CSS controls visual behavior only; markup/runtime is responsible for focusability (`tabindex`, `role`, native elements).
 
 ---
 

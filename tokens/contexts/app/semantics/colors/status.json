@@ -5,12 +5,12 @@
       "status": {
         "neutral": {
           "background": {
-            "$value": "{eui-color-neutral-50}",
+            "$value": "{eui-color-neutral-100}",
             "$type": "color",
             "$description": "Neutral background color for subtle badges and surfaces"
           },
           "border": {
-            "$value": "{eui-color-neutral-200}",
+            "$value": "{eui-color-neutral-400}",
             "$type": "color",
             "$description": "Neutral border color for subtle badges and outlines"
           },
@@ -20,7 +20,7 @@
             "$description": "Neutral text color on light backgrounds"
           },
           "solid": {
-            "$value": "{eui-color-neutral-900}",
+            "$value": "{eui-color-neutral-800}",
             "$type": "color",
             "$description": "Solid variant color for neutral badges"
           }
@@ -113,7 +113,7 @@
             "$description": "Info background color for subtle badges and surfaces"
           },
           "border": {
-            "$value": "{eui-color-accent-200}",
+            "$value": "{eui-color-accent-400}",
             "$type": "color",
             "$description": "Info border color for subtle badges and outlines"
           },

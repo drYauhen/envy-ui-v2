@@ -46,6 +46,7 @@
     --eui-focus-ring-color-keyboard: var(--eui-color-focus-ring);
   }
 
+  [data-eui-focus-policy="system"][data-eui-context],
   [data-eui-focus-policy="system"] [data-eui-context] {
     --eui-focus-ring-color-keyboard: var(--eui-color-system-focus);
   }

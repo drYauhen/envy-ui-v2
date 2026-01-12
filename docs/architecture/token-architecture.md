@@ -182,6 +182,9 @@ tokens/contexts/website/
   - May temporarily inherit `app` semantics until website-specific tokens are defined
 
 - **`report`**: Report/print context (in progress)
+  - Use report themes (e.g., print/screen) to express output differences.
+  - Component styling for print/report is handled via report context + theme, not `@media print`.
+  - `@media print` is reserved for document-level concerns (page breaks, layout, hiding chrome).
 
 ## Theme System
 

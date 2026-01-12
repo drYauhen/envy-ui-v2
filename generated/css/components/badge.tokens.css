@@ -63,6 +63,8 @@
     --eui-badge-size-small-gap: var(--eui-spacing-2xs);
     --eui-badge-size-small-fontSize: var(--eui-typography-fontSize-xs);
     --eui-badge-size-small-lineHeight: var(--eui-typography-lineHeight-tight);
+    --eui-badge-shape-pill-radius: calc(var(--eui-badge-size-height) / 2);
+    --eui-badge-shape-circle-radius: calc(var(--eui-badge-size-height) / 2);
   }
 
 }

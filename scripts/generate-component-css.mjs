@@ -70,6 +70,9 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
     const sizeTokens = allTokens.filter(({ name }) =>
       name.startsWith(`eui-${componentName}-size-`)
     );
+    const shapeTokens = allTokens.filter(({ name }) =>
+      name.startsWith(`eui-${componentName}-shape-`)
+    );
     const variantTokens = allTokens.filter(({ name }) =>
       name.startsWith(`eui-${componentName}-variant-`)
     );
@@ -176,7 +179,7 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       output += '  }\n\n';
     }
 
-    const baseAndSizeTokens = [...baseTokens, ...sizeTokens];
+    const baseAndSizeTokens = [...baseTokens, ...sizeTokens, ...shapeTokens];
 
     // Generate base variables (default variant)
     if (baseAndSizeTokens.length > 0) {

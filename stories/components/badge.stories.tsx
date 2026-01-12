@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { getSectionParameters } from '../../.storybook/preview';
 import { MultiContextViewer } from '../utils/multi-context-viewer';
+import { StorySection, StoryStack } from '../utils/story-layout';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Badge',
@@ -12,7 +13,8 @@ export default meta;
 type Story = StoryObj;
 
 const gridStyle = {
-  display: 'grid',
+  display: 'flex',
+  flexDirection: 'column',
   gap: '1rem',
   padding: '2rem',
   backgroundColor: '#ffffff'
@@ -32,6 +34,67 @@ const labelStyle = {
   minWidth: '100px'
 } as const;
 
+const sizeLabelStyle = {
+  ...labelStyle,
+  minWidth: '80px'
+} as const;
+
+const badgeVariants = [
+  { value: 'subtle', label: 'Subtle' },
+  { value: 'solid', label: 'Solid' },
+  { value: 'outline', label: 'Outline' }
+] as const;
+
+const badgeTones = [
+  { value: 'neutral', label: 'Neutral' },
+  { value: 'success', label: 'Success' },
+  { value: 'warning', label: 'Warning' },
+  { value: 'error', label: 'Error' },
+  { value: 'info', label: 'Info' }
+] as const;
+
+const badgeShapes = [
+  { value: 'rectangular', label: 'Rectangular' },
+  { value: 'pill', label: 'Pill' },
+  { value: 'circle', label: 'Circle' }
+] as const;
+
+export const Overview: Story = {
+  name: 'Overview',
+  parameters: {
+    ...getSectionParameters('HTML + CSS/Components/Badge'),
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={gridStyle}>
+          <StoryStack>
+            <StorySection title="Default">
+              <div style={rowStyle}>
+                <span className="eui-badge" data-eui-variant="subtle" data-eui-tone="neutral">
+                  Neutral
+                </span>
+              </div>
+            </StorySection>
+            <StorySection title="Typical Usage">
+              <div style={rowStyle}>
+                <span style={labelStyle}>Status</span>
+                <span className="eui-badge" data-eui-variant="solid" data-eui-tone="success">
+                  On Track
+                </span>
+              </div>
+            </StorySection>
+          </StoryStack>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
 export const Variants: Story = {
   name: 'Variants',
   parameters: {
@@ -45,32 +108,111 @@ export const Variants: Story = {
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
         <div style={gridStyle}>
-          <div style={rowStyle}>
-            <span style={labelStyle}>Subtle</span>
-            <span className="eui-badge" data-eui-variant="subtle" data-eui-tone="neutral">Neutral</span>
-            <span className="eui-badge" data-eui-variant="subtle" data-eui-tone="success">Success</span>
-            <span className="eui-badge" data-eui-variant="subtle" data-eui-tone="warning">Warning</span>
-            <span className="eui-badge" data-eui-variant="subtle" data-eui-tone="error">Error</span>
-            <span className="eui-badge" data-eui-variant="subtle" data-eui-tone="info">Info</span>
-          </div>
+          <StoryStack>
+            {badgeVariants.map((variant) => (
+              <StorySection key={variant.value} title={`Variant: ${variant.label}`}>
+                <div style={rowStyle}>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`${variant.value}-${tone.value}`}
+                      className="eui-badge"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+              </StorySection>
+            ))}
+          </StoryStack>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
 
-          <div style={rowStyle}>
-            <span style={labelStyle}>Solid</span>
-            <span className="eui-badge" data-eui-variant="solid" data-eui-tone="neutral">Neutral</span>
-            <span className="eui-badge" data-eui-variant="solid" data-eui-tone="success">Success</span>
-            <span className="eui-badge" data-eui-variant="solid" data-eui-tone="warning">Warning</span>
-            <span className="eui-badge" data-eui-variant="solid" data-eui-tone="error">Error</span>
-            <span className="eui-badge" data-eui-variant="solid" data-eui-tone="info">Info</span>
-          </div>
+export const Sizes: Story = {
+  name: 'Sizes',
+  parameters: {
+    ...getSectionParameters('HTML + CSS/Components/Badge'),
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={gridStyle}>
+          <StoryStack>
+            {badgeVariants.map((variant) => (
+              <StorySection key={variant.value} title={`Variant: ${variant.label}`}>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Default</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`${variant.value}-${tone.value}-default`}
+                      className="eui-badge"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Small</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`${variant.value}-${tone.value}-small`}
+                      className="eui-badge"
+                      data-eui-size="small"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+              </StorySection>
+            ))}
+          </StoryStack>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
 
-          <div style={rowStyle}>
-            <span style={labelStyle}>Outline</span>
-            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="neutral">Neutral</span>
-            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="success">Success</span>
-            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="warning">Warning</span>
-            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="error">Error</span>
-            <span className="eui-badge" data-eui-variant="outline" data-eui-tone="info">Info</span>
-          </div>
+export const Shapes: Story = {
+  name: 'Shapes',
+  parameters: {
+    ...getSectionParameters('HTML + CSS/Components/Badge'),
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={gridStyle}>
+          <StoryStack>
+            {badgeShapes.map((shape) => (
+              <StorySection key={shape.value} title={`Shape: ${shape.label}`}>
+                <div style={rowStyle}>
+                  <span
+                    className="eui-badge"
+                    data-eui-shape={shape.value}
+                    data-eui-variant="subtle"
+                    data-eui-tone="neutral"
+                  >
+                    {shape.value === 'circle' ? '1' : shape.label}
+                  </span>
+                </div>
+              </StorySection>
+            ))}
+          </StoryStack>
         </div>
       )}
     </MultiContextViewer>
@@ -96,33 +238,33 @@ const codeBlockStyle = {
 } as const;
 
 export const InteractiveBadges: Story = {
-  name: 'Interactive Badges',
+  name: 'States & Interaction',
   parameters: {
     ...getSectionParameters('HTML + CSS/Components/Badge'),
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false,
       description: {
-        story: 'Badges can be made interactive by using a button element with badge classes. The focus ring automatically matches the badge shape, providing perfect visual alignment.'
+        story: 'Badges become interactive only with data-eui-interactive="true". Focusability comes from markup (button/a/tabindex), while CSS handles visual states.'
       }
     }
   },
   render: () => (
     <>
       <p style={descriptionStyle}>
-        <strong>Pattern:</strong> Use <code>&lt;button class="eui-badge"&gt;</code> for actions or <code>&lt;a class="eui-badge"&gt;</code> for navigation.
-        The badge element becomes the interactive element itself, ensuring the focus ring perfectly matches the badge shape.
-        This follows patterns from Material UI Chips, Polaris Tags, and Shadcn Badges.
+        <strong>Pattern:</strong> Add <code>data-eui-interactive="true"</code> to enable hover/active/cursor/focus visuals.
+        Choose the element based on semantics (<code>&lt;button&gt;</code> for actions, <code>&lt;a&gt;</code> for navigation, or a focusable span with <code>tabindex</code>).
+        CSS does not assume element type; markup controls focusability.
       </p>
 
       <pre style={codeBlockStyle}>
 {`<!-- As Button (for actions) -->
-<button class="eui-badge" data-eui-variant="subtle" data-eui-tone="success" type="button">
+<button class="eui-badge" data-eui-interactive="true" data-eui-variant="subtle" data-eui-tone="success" type="button">
   Clickable Badge
 </button>
 
 <!-- As Link (for navigation) -->
-<a class="eui-badge" data-eui-variant="solid" data-eui-tone="info" href="/tags/info">
+<a class="eui-badge" data-eui-interactive="true" data-eui-variant="solid" data-eui-tone="info" href="/tags/info">
   Info Tag
 </a>`}
       </pre>
@@ -134,6 +276,7 @@ export const InteractiveBadges: Story = {
             <span style={labelStyle}>Subtle (Interactive)</span>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="subtle"
               data-eui-tone="neutral"
               type="button"
@@ -143,6 +286,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="subtle"
               data-eui-tone="success"
               type="button"
@@ -152,6 +296,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="subtle"
               data-eui-tone="warning"
               type="button"
@@ -161,6 +306,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="subtle"
               data-eui-tone="error"
               type="button"
@@ -170,6 +316,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="subtle"
               data-eui-tone="info"
               type="button"
@@ -183,6 +330,7 @@ export const InteractiveBadges: Story = {
             <span style={labelStyle}>Solid (Interactive)</span>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="solid"
               data-eui-tone="neutral"
               type="button"
@@ -192,6 +340,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="solid"
               data-eui-tone="success"
               type="button"
@@ -201,6 +350,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="solid"
               data-eui-tone="warning"
               type="button"
@@ -210,6 +360,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="solid"
               data-eui-tone="error"
               type="button"
@@ -219,6 +370,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="solid"
               data-eui-tone="info"
               type="button"
@@ -232,6 +384,7 @@ export const InteractiveBadges: Story = {
             <span style={labelStyle}>Outline (Interactive)</span>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="outline"
               data-eui-tone="neutral"
               type="button"
@@ -241,6 +394,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="outline"
               data-eui-tone="success"
               type="button"
@@ -250,6 +404,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="outline"
               data-eui-tone="warning"
               type="button"
@@ -259,6 +414,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="outline"
               data-eui-tone="error"
               type="button"
@@ -268,6 +424,7 @@ export const InteractiveBadges: Story = {
             </button>
             <button
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="outline"
               data-eui-tone="info"
               type="button"
@@ -281,6 +438,7 @@ export const InteractiveBadges: Story = {
             <span style={labelStyle}>As Links</span>
             <a
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="subtle"
               data-eui-tone="neutral"
               href="#neutral"
@@ -290,6 +448,7 @@ export const InteractiveBadges: Story = {
             </a>
             <a
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="subtle"
               data-eui-tone="success"
               href="#success"
@@ -299,6 +458,7 @@ export const InteractiveBadges: Story = {
             </a>
             <a
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="solid"
               data-eui-tone="warning"
               href="#warning"
@@ -308,6 +468,7 @@ export const InteractiveBadges: Story = {
             </a>
             <a
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="outline"
               data-eui-tone="error"
               href="#error"
@@ -317,6 +478,7 @@ export const InteractiveBadges: Story = {
             </a>
             <a
               className="eui-badge"
+              data-eui-interactive="true"
               data-eui-variant="solid"
               data-eui-tone="info"
               href="#info"
@@ -338,8 +500,70 @@ export const InteractiveBadges: Story = {
       <li><strong>System override (optional):</strong> Switch Focus Policy to "System" in Storybook toolbar to see bright orange focus for keyboard users</li>
     </ul>
     <p style={{...descriptionStyle, marginTop: '0.5rem', fontSize: '0.8125rem', fontStyle: 'italic'}}>
-      All focus rings are 2px wide and perfectly match badge shape (border-radius). Works with both <code>&lt;button&gt;</code> (actions) and <code>&lt;a&gt;</code> (navigation).
+      All focus rings are 2px wide and match badge shape (border-radius). Works with any focusable element when <code>data-eui-interactive="true"</code> is set.
     </p>
   </>
+  )
+};
+
+export const MultiContextBadge: Story = {
+  name: 'Comprehensive Multi-Context',
+  parameters: {
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false,
+      description: {
+        story: 'Full matrix snapshot across app, website, and report contexts.'
+      }
+    }
+  },
+  render: () => (
+    <MultiContextViewer
+      contexts={[
+        { context: 'app', label: 'App Context' },
+        { context: 'website', label: 'Website Context' },
+        { context: 'report', label: 'Report Context' }
+      ]}
+    >
+      {(context) => (
+        <StoryStack>
+          <StorySection title={`Variants in ${context} context`}>
+            <StoryStack>
+              {badgeVariants.map((variant) => (
+                <div key={`${context}-${variant.value}`} style={rowStyle}>
+                  <span style={sizeLabelStyle}>{variant.label}</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`${context}-${variant.value}-${tone.value}`}
+                      className="eui-badge"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </StoryStack>
+          </StorySection>
+          <StorySection title={`Shapes in ${context} context`}>
+            <StoryStack>
+              {badgeShapes.map((shape) => (
+                <div key={`${context}-${shape.value}`} style={rowStyle}>
+                  <span
+                    className="eui-badge"
+                    data-eui-shape={shape.value}
+                    data-eui-variant="subtle"
+                    data-eui-tone="neutral"
+                  >
+                    {shape.value === 'circle' ? '1' : shape.label}
+                  </span>
+                </div>
+              ))}
+            </StoryStack>
+          </StorySection>
+        </StoryStack>
+      )}
+    </MultiContextViewer>
   )
 };

@@ -208,6 +208,11 @@ export const FigmaVariablesIntegrationStrategy: Story = {
 
 **Note:** Use `node scripts/generate-adr-stories.mjs` to auto-generate ADR stories.
 
+## Story Structure Standard
+
+Use the canonical story structure and layout rules defined in:
+- `docs/architecture/storybook-story-structure.md`
+
 ## Development
 
 ### Primary Development Command

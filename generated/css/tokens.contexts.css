@@ -47,13 +47,13 @@
     --eui-color-status-error-solid: oklch(59% 0.20 25);
     --eui-color-status-error-text: oklch(55% 0.19 25);
     --eui-color-status-info-background: oklch(96% 0.04 236);
-    --eui-color-status-info-border: oklch(89% 0.09 236);
+    --eui-color-status-info-border: oklch(76% 0.15 237);
     --eui-color-status-info-primary: oklch(68% 0.15 237);
     --eui-color-status-info-solid: oklch(68% 0.15 237);
     --eui-color-status-info-text: oklch(63% 0.15 237);
-    --eui-color-status-neutral-background: oklch(98% 0.00 0);
-    --eui-color-status-neutral-border: oklch(94% 0.00 0);
-    --eui-color-status-neutral-solid: oklch(25% 0.00 0);
+    --eui-color-status-neutral-background: oklch(96.5% 0.00 0);
+    --eui-color-status-neutral-border: oklch(84% 0.00 0);
+    --eui-color-status-neutral-solid: oklch(33% 0.00 0);
     --eui-color-status-neutral-text: oklch(48% 0.00 0);
     --eui-color-status-success-background: oklch(92% 0.10 149);
     --eui-color-status-success-border: oklch(72% 0.19 150);
