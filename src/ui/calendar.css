@@ -71,9 +71,18 @@
   cursor: not-allowed;
 }
 
+[data-eui-context] .eui-calendar__header-button:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
+}
+
 [data-eui-context] .eui-calendar__header-button:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 /* Weekday Labels */
@@ -194,10 +203,20 @@
 }
 
 /* Day Cell - Focus State */
-[data-eui-context] .eui-calendar__day:focus,
+[data-eui-context] .eui-calendar__day:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
+  /* Highest elevation to ensure focus ring is never overlapped by neighbors */
+  z-index: var(--eui-calendar-z-index-focus);
+}
+
 [data-eui-context] .eui-calendar__day:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: -2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
   /* Highest elevation to ensure focus ring is never overlapped by neighbors */
   z-index: var(--eui-calendar-z-index-focus);
 }

@@ -190,8 +190,10 @@
 }
 
 [data-eui-context] .eui-select-badge-remove:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
   border-radius: var(--eui-radius-small);
 }
 
@@ -220,4 +222,3 @@
   position: relative;
   width: 100%;
 }
-

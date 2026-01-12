@@ -9,6 +9,7 @@
     --eui-color-border-default: var(--eui-color-neutral-700);
     --eui-color-border-strong: var(--eui-color-neutral-800);
     --eui-color-border-subtle: var(--eui-color-neutral-600);
+    --eui-color-focus-ring: var(--eui-color-accent-700);
     --eui-color-text-disabled: var(--eui-color-neutral-600);
     --eui-color-text-muted: var(--eui-color-neutral-800);
     --eui-color-text-primary: var(--eui-color-neutral-900);
@@ -18,6 +19,7 @@
 
   [data-eui-context="app"][data-eui-theme="default"] {
     --eui-color-border-default: var(--eui-color-neutral-300);
+    --eui-color-focus-ring: var(--eui-color-accent-500);
   }
 
 }

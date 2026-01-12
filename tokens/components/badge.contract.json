@@ -88,8 +88,8 @@
       "--eui-badge-typography-textTransform": { "type": "string" }
     },
     "focus": {
-      "--eui-badge-focus-ring-color-derived-accessible": { "type": "color" },
-      "--eui-badge-focus-ring-width-accessible": { "type": "dimension" },
+      "--eui-badge-focus-ring-color": { "type": "color" },
+      "--eui-badge-focus-ring-width": { "type": "dimension" },
       "--eui-badge-focus-ring-offset": { "type": "dimension" },
       "--eui-badge-focus-color": { "type": "color" }
     },
@@ -129,7 +129,7 @@
     "interactive": {
       "focusRing": {
         "color": "var(--eui-badge-focus-color)",
-        "width": "var(--eui-badge-focus-ring-width-accessible)",
+        "width": "var(--eui-badge-focus-ring-width)",
         "offset": "var(--eui-badge-focus-ring-offset)"
       },
       "transitions": "filter 120ms ease, transform 120ms ease, box-shadow 120ms ease",

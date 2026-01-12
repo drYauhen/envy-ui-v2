@@ -114,6 +114,7 @@
     --eui-color-status-warning-800: oklch(66% 0.14 70);
     --eui-color-status-warning-900: oklch(63% 0.13 70);
     --eui-dimension-0: 0rem;
+    --eui-dimension-0-5: 0.1429rem;
     --eui-dimension-1: 0.2857rem;
     --eui-dimension-10: 2.8571rem;
     --eui-dimension-11: 3.1429rem;

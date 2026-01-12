@@ -8,6 +8,13 @@
           "$type": "color",
           "$description": "Subtle border color for default theme in app context. More visible than neutral.200 but still minimal. Less prominent than accessibility theme."
         }
+      },
+      "focus": {
+        "ring": {
+          "$value": "{eui.color.accent.500}",
+          "$type": "color",
+          "$description": "Theme focus ring color for default theme. Brand-aligned and consistent across components."
+        }
       }
     }
   }

@@ -410,9 +410,19 @@ Component Token → Semantic Token → Primitive Value
 
 **Layer 1: Theme-Dependent Focus (Default)**
 ```css
-/* Component uses theme-dependent focus color */
+/* Component uses theme-driven focus color */
 [data-eui-context] .eui-component:focus {
-  box-shadow: 0 0 0 2px var(--eui-component-focus-color-accessible);
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width))
+      var(--eui-focus-ring-color);
+}
+
+[data-eui-context] .eui-component:focus-visible {
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width))
+      var(--eui-focus-ring-color-keyboard);
 }
 ```
 
@@ -427,7 +437,11 @@ Component Token → Semantic Token → Primitive Value
         "$type": "color"
       },
       "width": {
-        "$value": "{eui.focus.ring.width.accessible}",
+        "$value": "{eui.focus.ring.width}",
+        "$type": "dimension"
+      },
+      "offset": {
+        "$value": "{eui.focus.ring.offset.default}",
         "$type": "dimension"
       }
     }
@@ -440,7 +454,7 @@ Component Token → Semantic Token → Primitive Value
     "color": {
       "focus": {
         "ring": {
-          "$value": "{eui.color.signal.keyboardFocus}",
+          "$value": "{eui.color.accent.700}",
           "$type": "color"
         }
       }
@@ -452,8 +466,8 @@ Component Token → Semantic Token → Primitive Value
 **Layer 2: System Focus Policy Override (Optional)**
 ```css
 /* System focus policy: bright orange for keyboard users */
-[data-eui-focus-policy="system"] [data-eui-context] .eui-component:focus-visible {
-  box-shadow: 0 0 0 2px var(--eui-color-system-focus);
+[data-eui-focus-policy="system"] [data-eui-context] {
+  --eui-focus-ring-color-keyboard: var(--eui-color-system-focus);
 }
 ```
 

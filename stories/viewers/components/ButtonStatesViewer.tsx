@@ -291,7 +291,9 @@ export const ButtonStatesViewer = ({ config, title, description }: ButtonStatesV
             transform: translateY(1px);
           }
           [data-eui-context] .eui-button[data-state='focus'] {
-            box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible) var(--eui-button-focus-color-accessible);
+            box-shadow:
+              0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+              0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-button-focus-color);
             z-index: 1;
           }
         `
@@ -384,4 +386,3 @@ export const ButtonStatesViewer = ({ config, title, description }: ButtonStatesV
     </div>
   );
 };
-

@@ -52,8 +52,8 @@
     --eui-badge-typography-lineHeight: var(--eui-typography-lineHeight-tight);
     --eui-badge-typography-letterSpacing: var(--eui-typography-letterSpacing-wide);
     --eui-badge-typography-textTransform: var(--eui-typography-textTransform-uppercase);
-    --eui-badge-focus-ring-color-derived-accessible: var(--eui-color-focus-ring);
-    --eui-badge-focus-ring-width-accessible: var(--eui-focus-ring-width-accessible);
+    --eui-badge-focus-ring-color: var(--eui-color-focus-ring);
+    --eui-badge-focus-ring-width: var(--eui-focus-ring-width);
     --eui-badge-focus-ring-offset: var(--eui-focus-ring-offset-default);
     --eui-badge-focus-color: var(--eui-color-focus-ring);
   }

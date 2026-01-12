@@ -44,18 +44,19 @@ During initial component implementation work, I needed to:
 
 **System-level**
 - `eui.color.system.focus` — a unique system focus color (intentionally not reused as a brand/semantic component color)
-- `eui.focus.ring.color.system` — references `eui.color.system.focus`
-- `eui.focus.ring.width.*` — global focus ring widths (already present)
+- `eui.color.focus.ring` — theme-driven focus color
+- `eui.focus.ring.width` — global focus ring width (fixed)
+- `eui.focus.ring.offset.default` — global focus ring offset (fixed)
 
 **Component-level (derived)**
-- `eui.button.focus.ring.color.derived` — the button’s derived focus ring color (may reference brand/semantic button tokens)
+- `eui.button.focus.ring.color` — the button’s derived focus ring color (may reference brand/semantic button tokens)
 
 ### 3.2 Runtime Mapping
 
 Components render focus using a component-local CSS variable (e.g. `--eui-button-focus-color`) that defaults to the component-derived token.
 
 The system focus policy overrides that variable at a higher level, for example:
-- when `data-eui-focus-policy="system"` is active, map `--eui-button-focus-color` to `eui.focus.ring.color.system`
+- when `data-eui-focus-policy="system"` is active, map `--eui-focus-ring-color-keyboard` to `eui.color.system.focus`
 
 This preserves the separation of responsibilities:
 - **components** define derived focus styles and expose tokens
@@ -91,7 +92,7 @@ This preserves the separation of responsibilities:
 
 ## 6. Non-Goals / Deferred Items
 
-- Defining final focus ring offsets, styles, and animation rules.
+- Defining specialized focus ring animation rules beyond the standard ring pattern.
 - Defining multiple policy profiles beyond `"derived"` vs `"system"`.
 - Applying the same mapping to all components (Button is the first baseline consumer).
 
@@ -104,12 +105,13 @@ This ADR has been **partially implemented** with comprehensive token architectur
 ### Current Implementation Status
 - ✅ **System-level focus tokens**: Fully implemented with proper naming
   - `--eui-color-system-focus`: `oklch(62% 0.26 25)` (unique, globally consistent)
-  - `--eui-color-focus-ring`: References system focus color
-  - `--eui-focus-ring-width-base/accessible`: Global widths (2px/3px)
+  - `--eui-color-focus-ring`: Theme-driven focus color
+  - `--eui-focus-ring-width`: 2px (fixed)
+  - `--eui-focus-ring-offset-default`: 2px (fixed)
 
 - ✅ **Component-level focus tokens**: Fully implemented for interactive components
-  - `--eui-switch-focus-ring-color-derived-base/accessible`: Component-specific derived colors
-  - Proper separation between system and component focus concerns
+  - Component focus ring colors map to `--eui-color-focus-ring`
+  - No base/accessible split in focus ring geometry
   - Tokens exist across multiple interactive components (button, input, checkbox, switch)
 
 - ✅ **Token naming evolution**: Implemented with dash convention

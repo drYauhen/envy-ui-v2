@@ -135,8 +135,8 @@ The architecture distinguishes between two conceptual token groups:
 ### Component-Level Focus Tokens
 
 Examples:
-- `eui.button.focus.ring.color.derived`
-- `eui.button.focus.ring.width.derived`
+- `eui.button.focus.ring.color`
+- `eui.button.focus.ring.width`
 
 These tokens may depend on intent, scheme, or component-specific rules.
 
@@ -145,9 +145,9 @@ These tokens may depend on intent, scheme, or component-specific rules.
 ### System-Level Focus Tokens
 
 Examples:
-- `eui.focus.ring.color.system`
-- `eui.focus.ring.width.accessible`
-- `eui.focus.ring.offset.accessible`
+- `eui.color.system.focus`
+- `eui.focus.ring.width`
+- `eui.focus.ring.offset.default`
 
 These tokens are global and must not depend on component intent or theme.
 
@@ -168,7 +168,6 @@ Adapting focus behavior for compliance does not require component changes.
 
 This ADR intentionally does **not** define:
 - specific focus colors
-- final focus ring thickness or offsets
 - UI controls for toggling focus policy
 - theme-specific focus implementations
 
@@ -197,13 +196,14 @@ This ADR has been **partially implemented** with a comprehensive token architect
 
 ### Current Implementation Status
 - ✅ **Component-Derived Focus Tokens**: Fully implemented across all interactive components
-  - Button: `eui.button.focus.ring.color.derived.base/accessible`
+  - Button: `eui.button.focus.ring.color` (theme-driven)
   - Input, Checkbox, Switch: Complete focus token sets
   - Context-aware: app, website, report contexts all covered
 
 - ✅ **System-Level Focus Tokens**: Fully implemented with semantic foundation
-  - System focus: `eui.color.focus.ring` → `{eui.color.signal.keyboardFocus}`
-  - Accessible widths: `eui.focus.ring.width.accessible` (3px)
+  - System focus: `eui.color.system.focus` → `{eui.color.signal.keyboardFocus}`
+  - Theme focus: `eui.color.focus.ring` → `{eui.color.accent.500}` (default theme)
+  - Fixed geometry: `eui.focus.ring.width` (2px), `eui.focus.ring.offset.default` (2px)
   - Context-optimized: Separate tokens per context (app/website/report)
 
 - ✅ **Multi-Context Focus Architecture**: Complete across all contexts
@@ -241,24 +241,24 @@ The implemented token architecture provides:
 **Badge Refactor (2026-01-09)** implements a comprehensive two-layer focus architecture that validates and extends this ADR:
 
 #### Layer 1: Theme-Dependent Focus (Component-Derived)
-- **Default theme**: Uses `accent-300` (brand-aligned, lighter focus ring)
+- **Default theme**: Uses `accent-500` (brand-aligned focus ring)
 - **Accessibility theme**: Uses `accent-700` (WCAG 2.2 AA compliant, high contrast 3:1 ratio)
 - **Width**: 2px focus ring across all themes
 - **Implementation**: Token overrides in theme files, automatically applied based on active theme
 
 **Token Structure**:
 ```json
-// Default theme: tokens/app/components/badge/focus.json
-"derived": {
-  "base": {
-    "$value": "{eui.color.accent.300}",
+// Default theme: tokens/contexts/app/themes/default.json
+"focus": {
+  "ring": {
+    "$value": "{eui.color.accent.500}",
     "$type": "color"
   }
 }
 
 // Accessibility theme: tokens/contexts/app/themes/accessibility.json
-"derived": {
-  "base": {
+"focus": {
+  "ring": {
     "$value": "{eui.color.accent.700}",
     "$type": "color"
   }
@@ -273,21 +273,21 @@ The implemented token architecture provides:
 **CSS Implementation**:
 ```css
 /* Layer 1: Theme-dependent (default) */
+[data-eui-context] .eui-badge:is(button, a):focus {
+  box-shadow: 0 0 0 var(--eui-badge-focus-ring-offset)
+              var(--eui-color-background-surface),
+              0 0 0 calc(var(--eui-badge-focus-ring-offset) +
+              var(--eui-badge-focus-ring-width))
+              var(--eui-badge-focus-color);
+}
+
+/* Layer 2: Policy-driven keyboard color */
 [data-eui-context] .eui-badge:is(button, a):focus-visible {
   box-shadow: 0 0 0 var(--eui-badge-focus-ring-offset)
               var(--eui-color-background-surface),
               0 0 0 calc(var(--eui-badge-focus-ring-offset) +
-              var(--eui-badge-focus-ring-width-accessible))
-              var(--eui-badge-focus-ring-color-accessible);
-}
-
-/* Layer 2: System override (optional) */
-[data-eui-focus-policy='system'] [data-eui-context] .eui-badge:is(button, a):focus-visible {
-  box-shadow: 0 0 0 var(--eui-badge-focus-ring-offset)
-              var(--eui-color-background-surface),
-              0 0 0 calc(var(--eui-badge-focus-ring-offset) +
-              var(--eui-badge-focus-ring-width-accessible))
-              var(--eui-color-system-focus);
+              var(--eui-badge-focus-ring-width))
+              var(--eui-focus-ring-color-keyboard);
 }
 ```
 

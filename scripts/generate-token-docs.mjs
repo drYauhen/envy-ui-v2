@@ -13,17 +13,40 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const repoRoot = join(__dirname, '..');
 
-// Read generated CSS tokens file
+// Read generated CSS tokens file (inline @import files if present)
 const tokensCssPath = join(repoRoot, 'generated', 'css', 'tokens.css');
 
-let tokensCss;
-try {
-  tokensCss = readFileSync(tokensCssPath, 'utf-8');
-} catch (error) {
-  console.error(`❌ Error: Could not read ${tokensCssPath}`);
-  console.error(`   Make sure to run 'npm run tokens:build' first`);
-  process.exit(1);
-}
+const loadCssWithImports = (entryPath, visited = new Set()) => {
+  if (visited.has(entryPath)) return '';
+  visited.add(entryPath);
+
+  let content;
+  try {
+    content = readFileSync(entryPath, 'utf-8');
+  } catch (error) {
+    console.error(`❌ Error: Could not read ${entryPath}`);
+    console.error(`   Make sure to run 'npm run tokens:build' first`);
+    process.exit(1);
+  }
+
+  const importRegex = /@import\s+['"](.+?)['"]\s*;/g;
+  let result = '';
+  let lastIndex = 0;
+  let match;
+
+  while ((match = importRegex.exec(content)) !== null) {
+    result += content.slice(lastIndex, match.index);
+    const importPath = match[1];
+    const resolvedPath = join(dirname(entryPath), importPath);
+    result += `\n${loadCssWithImports(resolvedPath, visited)}\n`;
+    lastIndex = importRegex.lastIndex;
+  }
+
+  result += content.slice(lastIndex);
+  return result;
+};
+
+const tokensCss = loadCssWithImports(tokensCssPath);
 
 // Extract tokens with their values
 const tokenRegex = /--([\w-]+):\s*([^;]+);/g;
@@ -188,4 +211,3 @@ writeFileSync(outputPath, docs, 'utf-8');
 console.log(`✅ Generated token documentation: ${outputPath}`);
 console.log(`   Found ${tokens.length} tokens`);
 console.log(`   Organized into ${tokenGroups.size} components + foundation tokens`);
-

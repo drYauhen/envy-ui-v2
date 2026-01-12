@@ -1,10 +1,7 @@
 [data-eui-context] {
   --eui-button-shape-pill-radius: var(--eui-button-shape-round-radius);
-  /* Focus ring colors: theme-dependent (accent-300 default, accent-700 accessibility theme) */
-  /* 2px width for all focus states. Color changes based on active theme. */
-  --eui-button-focus-color-base: var(--eui-button-focus-ring-color-derived-base);
-  --eui-button-focus-color-accessible: var(--eui-button-focus-ring-color-derived-accessible);
-  /* Focus ring offset is already defined in :root from tokens.css, no need to redefine */
+  --eui-button-focus-color: var(--eui-focus-ring-color);
+  --eui-button-focus-color-keyboard: var(--eui-focus-ring-color-keyboard);
 }
 
 [data-eui-context] .eui-button {
@@ -92,19 +89,19 @@
   transform: translateY(1px);
 }
 
-/* Focus ring: theme-dependent color (accent-300 default, accent-700 accessibility) */
+/* Focus ring: theme-dependent color (accent-500 default, accent-700 accessibility) */
 /* Uses double box-shadow: first creates visual gap using page background, second creates the 2px ring */
 [data-eui-context] .eui-button:focus {
   box-shadow:
-    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
-    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-focus-color-accessible);
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-button-focus-color);
 }
 
-/* System focus policy override: bright orange for keyboard focus */
-[data-eui-focus-policy="system"] [data-eui-context] .eui-button:focus-visible {
+/* Keyboard focus uses policy-driven color */
+[data-eui-context] .eui-button:focus-visible {
   box-shadow:
-    0 0 0 var(--eui-button-focus-ring-offset-base) var(--eui-color-background-surface, #ffffff),
-    0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-color-system-focus);
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-button-focus-color-keyboard);
 }
 
 /* Override focus ring during finish animation - use same colors as background */
@@ -198,50 +195,50 @@
 @keyframes button-finish-focus-ring {
   0% {
     box-shadow: 
-      0 0 0 var(--eui-button-focus-ring-offset-base) transparent,
-      0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-accent-background-base);
+      0 0 0 var(--eui-focus-ring-offset-default) transparent,
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-button-accent-background-base);
   }
   10% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.3) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%),
-                0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 0.8) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.3) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%),
+                0 0 0 calc(var(--eui-focus-ring-width) * 0.8) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%);
   }
   20% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.8) color-mix(in srgb, var(--eui-button-accent-background-base) 35%, #f59e0b 65%),
-                0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.2) color-mix(in srgb, var(--eui-button-accent-background-base) 35%, #f59e0b 65%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.8) color-mix(in srgb, var(--eui-button-accent-background-base) 35%, #f59e0b 65%),
+                0 0 0 calc(var(--eui-focus-ring-width) * 1.2) color-mix(in srgb, var(--eui-button-accent-background-base) 35%, #f59e0b 65%);
   }
   30% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 2) color-mix(in srgb, var(--eui-button-accent-background-base) 25%, #f97316 75%),
-                0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.4) color-mix(in srgb, var(--eui-button-accent-background-base) 25%, #f97316 75%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 2) color-mix(in srgb, var(--eui-button-accent-background-base) 25%, #f97316 75%),
+                0 0 0 calc(var(--eui-focus-ring-width) * 1.4) color-mix(in srgb, var(--eui-button-accent-background-base) 25%, #f97316 75%);
   }
   40% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.9) color-mix(in srgb, var(--eui-button-accent-background-base) 30%, #f59e0b 70%),
-                0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.3) color-mix(in srgb, var(--eui-button-accent-background-base) 30%, #f59e0b 70%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.9) color-mix(in srgb, var(--eui-button-accent-background-base) 30%, #f59e0b 70%),
+                0 0 0 calc(var(--eui-focus-ring-width) * 1.3) color-mix(in srgb, var(--eui-button-accent-background-base) 30%, #f59e0b 70%);
   }
   50% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.7) color-mix(in srgb, var(--eui-button-accent-background-base) 40%, #f59e0b 60%),
-                0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.2) color-mix(in srgb, var(--eui-button-accent-background-base) 40%, #f59e0b 60%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.7) color-mix(in srgb, var(--eui-button-accent-background-base) 40%, #f59e0b 60%),
+                0 0 0 calc(var(--eui-focus-ring-width) * 1.2) color-mix(in srgb, var(--eui-button-accent-background-base) 40%, #f59e0b 60%);
   }
   60% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.5) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%),
-                0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.1) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.5) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%),
+                0 0 0 calc(var(--eui-focus-ring-width) * 1.1) color-mix(in srgb, var(--eui-button-accent-background-base) 50%, #fbbf24 50%);
   }
   70% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.4) color-mix(in srgb, var(--eui-button-accent-background-base) 65%, #fbbf24 35%),
-                0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1) color-mix(in srgb, var(--eui-button-accent-background-base) 65%, #fbbf24 35%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.4) color-mix(in srgb, var(--eui-button-accent-background-base) 65%, #fbbf24 35%),
+                0 0 0 calc(var(--eui-focus-ring-width) * 1) color-mix(in srgb, var(--eui-button-accent-background-base) 65%, #fbbf24 35%);
   }
   80% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.3) color-mix(in srgb, var(--eui-button-accent-background-base) 80%, #fbbf24 20%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.3) color-mix(in srgb, var(--eui-button-accent-background-base) 80%, #fbbf24 20%);
   }
   85% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.2) color-mix(in srgb, var(--eui-button-accent-background-base) 90%, var(--eui-button-accent-finished-background-base) 10%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.2) color-mix(in srgb, var(--eui-button-accent-background-base) 90%, var(--eui-button-accent-finished-background-base) 10%);
   }
   90% {
-    box-shadow: 0 0 0 calc(var(--eui-button-focus-ring-width-accessible) * 1.1) color-mix(in srgb, var(--eui-button-accent-background-base) 95%, var(--eui-button-accent-finished-background-base) 5%);
+    box-shadow: 0 0 0 calc(var(--eui-focus-ring-width) * 1.1) color-mix(in srgb, var(--eui-button-accent-background-base) 95%, var(--eui-button-accent-finished-background-base) 5%);
   }
   100% {
     box-shadow: 
-      0 0 0 var(--eui-button-focus-ring-offset-base) transparent,
-      0 0 0 calc(var(--eui-button-focus-ring-offset-base) + var(--eui-button-focus-ring-width-accessible)) var(--eui-button-accent-finished-background-base);
+      0 0 0 var(--eui-focus-ring-offset-default) transparent,
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-button-accent-finished-background-base);
   }
 }
 

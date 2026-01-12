@@ -48,13 +48,17 @@
 [data-eui-context="app"] .eui-textarea:focus,
 [data-eui-context="website"] .eui-textarea:focus {
   border-color: var(--eui-input-border-focus);
-  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
   z-index: 1;
 }
 
 [data-eui-context="app"] .eui-textarea:focus-visible,
 [data-eui-context="website"] .eui-textarea:focus-visible {
-  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-accessible) var(--eui-input-focus-ring-color-derived-accessible);
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
   z-index: 1;
 }
 
@@ -78,7 +82,9 @@
 [data-eui-context="app"] .eui-textarea[data-eui-state="error"]:focus,
 [data-eui-context="website"] .eui-textarea[data-eui-state="error"]:focus {
   border-color: var(--eui-input-border-error);
-  box-shadow: 0 0 0 var(--eui-input-focus-ring-width-base) var(--eui-input-focus-ring-color-derived-base);
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
 }
 
 /* Report context - print styles */
@@ -92,4 +98,3 @@
 [data-eui-context="report"] .eui-textarea:disabled {
   border-style: dashed;
 }
-

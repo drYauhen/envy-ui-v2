@@ -285,20 +285,14 @@
         "focus": {
           "ring": {
             "color": {
-              "derived": {
-                "accessible": {
-                  "$value": "{eui.color.focus.ring}",
-                  "$type": "color",
-                  "$description": "Badge focus ring color (derived, accessible)"
-                }
-              }
+              "$value": "{eui.color.focus.ring}",
+              "$type": "color",
+              "$description": "Badge focus ring color (theme-driven)"
             },
             "width": {
-              "accessible": {
-                "$value": "{eui.focus.ring.width.accessible}",
-                "$type": "dimension",
-                "$description": "Badge focus ring width (accessible)"
-              }
+              "$value": "{eui.focus.ring.width}",
+              "$type": "dimension",
+              "$description": "Badge focus ring width (2px)"
             },
             "offset": {
               "$value": "{eui.focus.ring.offset.default}",

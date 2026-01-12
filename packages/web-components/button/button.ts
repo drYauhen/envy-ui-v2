@@ -195,15 +195,15 @@ export class EuiButton extends HTMLElement {
 
         /* Focus ring */
         :host(:focus) {
-          box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base, 2px) var(--eui-button-focus-color-base, var(--eui-button-focus-ring-color-derived-base));
+          box-shadow:
+            0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+            0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
         }
 
         :host(:focus-visible) {
-          box-shadow: 0 0 0 var(--eui-button-focus-ring-width-accessible, 3px) var(--eui-button-focus-color-accessible, var(--eui-button-focus-ring-color-derived-accessible));
-        }
-
-        :host(:focus:not(:focus-visible)) {
-          box-shadow: 0 0 0 var(--eui-button-focus-ring-width-base, 2px) var(--eui-button-focus-color-base, var(--eui-button-focus-ring-color-derived-base));
+          box-shadow:
+            0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+            0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
         }
 
         /* Button element inside Shadow DOM */
@@ -267,5 +267,4 @@ export class EuiButton extends HTMLElement {
 if (!customElements.get('eui-button')) {
   customElements.define('eui-button', EuiButton);
 }
-
 

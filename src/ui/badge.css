@@ -100,7 +100,7 @@
 
 /* Set up focus color variable (derived focus mode by default) */
 [data-eui-context] {
-  --eui-badge-focus-color: var(--eui-badge-focus-ring-color-derived-accessible);
+  --eui-badge-focus-color: var(--eui-badge-focus-ring-color);
 }
 
 /* Reset defaults when badge is used as interactive element (button or link) */
@@ -114,19 +114,19 @@
   text-decoration: none; /* Remove underline for links */
 }
 
-/* Focus ring: theme-dependent color (accent-300 default, accent-700 accessibility) */
+/* Focus ring: theme-dependent color (accent-500 default, accent-700 accessibility) */
 /* Uses 2px width for all focus states. Color changes based on active theme. */
 [data-eui-context] .eui-badge:is(button, a):focus {
   box-shadow:
     0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
-    0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width-accessible)) var(--eui-badge-focus-color);
+    0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-badge-focus-color);
 }
 
-/* System focus policy override: bright orange for keyboard focus */
-[data-eui-focus-policy="system"] [data-eui-context] .eui-badge:is(button, a):focus-visible {
+/* Keyboard focus uses policy-driven color */
+[data-eui-context] .eui-badge:is(button, a):focus-visible {
   box-shadow:
     0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
-    0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width-accessible)) var(--eui-color-system-focus);
+    0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 /* Subtle hover state for interactive badges */

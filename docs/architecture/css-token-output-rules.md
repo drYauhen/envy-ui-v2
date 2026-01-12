@@ -152,7 +152,7 @@ Token CSS is generated as 4 files in `generated/css/`, plus component token CSS 
 ```css
 /* ❌ FORBIDDEN */
 --eui-badge-colors-neutral-background: #ffffff;
---eui-button-focus-ring-color-derived-base: #000000;
+--eui-badge-focus-ring-color: #000000;
 --eui-calendar-colors-day-border-default: #cccccc;
 
 /* ✅ ALLOWED */

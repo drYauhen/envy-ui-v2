@@ -270,11 +270,16 @@
 
 [data-eui-context] .eui-side-nav__item:focus {
   outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
 }
 
 [data-eui-context] .eui-side-nav__item:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: -2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 [data-eui-context] .eui-side-nav__item[disabled] {
@@ -462,11 +467,16 @@
 
 [data-eui-context] .eui-side-nav__footer:focus {
   outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
 }
 
 [data-eui-context] .eui-side-nav__footer:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: -2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer {
@@ -771,11 +781,16 @@
 
 [data-eui-context] .eui-side-nav__user-action-button:focus {
   outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
 }
 
 [data-eui-context] .eui-side-nav__user-action-button:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: -2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 /* Corporation Info Section */
@@ -856,11 +871,16 @@
 
 [data-eui-context] .eui-side-nav__corporation-action-button:focus {
   outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
 }
 
 [data-eui-context] .eui-side-nav__corporation-action-button:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: -2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 /* Additional Links */
@@ -896,11 +916,16 @@
 
 [data-eui-context] .eui-side-nav__additional-link:focus {
   outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
 }
 
 [data-eui-context] .eui-side-nav__additional-link:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: -2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 /* Sign Out Button */
@@ -938,11 +963,16 @@
 
 [data-eui-context] .eui-side-nav__sign-out-button:focus {
   outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
 }
 
 [data-eui-context] .eui-side-nav__sign-out-button:focus-visible {
-  outline: 2px solid var(--eui-color-focus-ring);
-  outline-offset: -2px;
+  outline: none;
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
 }
 
 /* Footer Back Text and Chevron */

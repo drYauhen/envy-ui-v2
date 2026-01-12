@@ -157,13 +157,17 @@
 /* Focus ring - App/Website */
 [data-eui-context="app"] .eui-checkbox:focus,
 [data-eui-context="website"] .eui-checkbox:focus {
-  box-shadow: 0 0 0 var(--eui-checkbox-focus-ring-width-base) var(--eui-checkbox-focus-ring-color-derived-base);
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
   z-index: 1;
 }
 
 [data-eui-context="app"] .eui-checkbox:focus-visible,
 [data-eui-context="website"] .eui-checkbox:focus-visible {
-  box-shadow: 0 0 0 var(--eui-checkbox-focus-ring-width-accessible) var(--eui-checkbox-focus-ring-color-derived-accessible);
+  box-shadow:
+    0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+    0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
   z-index: 1;
 }
 
@@ -204,4 +208,3 @@
 [data-eui-context="report"] .eui-checkbox:focus-visible {
   outline: none;
 }
-

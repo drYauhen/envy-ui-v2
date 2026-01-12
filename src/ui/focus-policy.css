@@ -7,15 +7,18 @@
    Focus rings adapt based on the active theme:
 
    Default theme:
-   - Color: accent-300 (brand-aligned, lighter)
+   - Color: accent-500 (brand-aligned)
    - Width: 2px
+   - Offset: 2px
 
    Accessibility theme:
    - Color: accent-700 (WCAG 2.2 AA compliant, darker, high contrast)
    - Width: 2px
+   - Offset: 2px
 
    Implementation:
-   - Components use --eui-{component}-focus-color-accessible CSS variable
+   - Components use --eui-focus-ring-color (theme) and --eui-focus-ring-color-keyboard (policy)
+   - Geometry is fixed: --eui-focus-ring-width = 2px, --eui-focus-ring-offset-default = 2px
    - Token overrides in /tokens/contexts/app/themes/accessibility.json
    - Automatic theme switching via [data-eui-context][data-eui-theme] attributes
 
@@ -27,7 +30,7 @@
    - Overrides theme colors for maximum accessibility
 
    This creates a visual hierarchy:
-   1. Derived mode (default): theme-dependent colors
+   1. Theme mode (default): theme-dependent colors
    2. System mode (opt-in): high-contrast orange for keyboard users
 
    See:
@@ -36,3 +39,14 @@
    - /tokens/app/components/button/focus.json for default tokens
    - /tokens/contexts/app/themes/accessibility.json for WCAG overrides
    ============================================================================ */
+
+@layer eui-focus-policy {
+  [data-eui-context] {
+    --eui-focus-ring-color: var(--eui-color-focus-ring);
+    --eui-focus-ring-color-keyboard: var(--eui-color-focus-ring);
+  }
+
+  [data-eui-focus-policy="system"] [data-eui-context] {
+    --eui-focus-ring-color-keyboard: var(--eui-color-system-focus);
+  }
+}

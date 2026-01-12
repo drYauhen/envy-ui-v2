@@ -3,12 +3,12 @@
     "color": {
       "focus": {
         "ring": {
-          "$resolved": "#ff4d00"
+          "$resolved": "oklch(71% 0.15 237)"
         }
       },
       "system": {
         "focus": {
-          "$resolved": "#ff4d00"
+          "$resolved": "oklch(62% 0.26 25)"
         }
       }
     }

@@ -61,6 +61,13 @@
           "$type": "color",
           "$description": "Subtle background with clearer separation for accessibility theme."
         }
+      },
+      "focus": {
+        "ring": {
+          "$value": "{eui.color.accent.700}",
+          "$type": "color",
+          "$description": "Theme focus ring color for accessibility theme. High contrast for WCAG 2.2 AA compliance."
+        }
       }
     },
     "badge": {

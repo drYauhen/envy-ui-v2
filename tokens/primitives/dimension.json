@@ -7,6 +7,11 @@
         "$type": "dimension",
         "$description": "Zero dimension (0px). Used for collapsing elements or no size."
       },
+      "0-5": {
+        "$value": "0.1429rem",
+        "$type": "dimension",
+        "$description": "2px in app context (0.1429rem at 14px base). Used for focus ring offsets and fine visual adjustments."
+      },
       "1": {
         "$value": "0.2857rem",
         "$type": "dimension",

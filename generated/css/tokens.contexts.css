@@ -25,7 +25,7 @@
     --eui-color-brand-primary: oklch(49% 0.10 230);
     --eui-color-brand-primary: oklch(49% 0.10 230);
     --eui-color-brand-secondary: oklch(57% 0.09 231);
-    --eui-color-focus-ring: var(--eui-color-signal-500);
+    --eui-color-focus-ring: oklch(71% 0.15 237);
     --eui-color-neutral-border: oklch(90% 0.00 0);
     --eui-color-neutral-border-strong: oklch(84% 0.00 0);
     --eui-color-neutral-divider: oklch(94% 0.00 0);
@@ -65,7 +65,7 @@
     --eui-color-status-warning-primary: oklch(77% 0.16 70);
     --eui-color-status-warning-solid: oklch(72% 0.15 70);
     --eui-color-status-warning-text: oklch(69% 0.15 70);
-    --eui-color-system-focus: var(--eui-color-focus-ring);
+    --eui-color-system-focus: var(--eui-color-signal-500);
     --eui-color-text-disabled: oklch(75% 0.00 0);
     --eui-color-text-inverse: oklch(100% 0 0);
     --eui-color-text-muted: oklch(48% 0.00 0);
@@ -75,9 +75,8 @@
     --eui-filter-muted-contrast: 0.9;
     --eui-filter-muted-grayscale: 1;
     --eui-filter-muted-saturate: 0.35;
-    --eui-focus-ring-offset-default: 0rem;
-    --eui-focus-ring-width-accessible: 2px;
-    --eui-focus-ring-width-base: 2px;
+    --eui-focus-ring-offset-default: 0.1429rem;
+    --eui-focus-ring-width: 2px;
     --eui-layer-base: var(--eui-z-base);
     --eui-layer-dialog: 1070;
     --eui-layer-dropdown: 1000;
