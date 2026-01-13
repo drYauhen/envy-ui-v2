@@ -16,7 +16,6 @@ export const AdrViewer = ({ adrNumber, title, status, date }: AdrViewerProps) =>
   return (
     <DocViewer
       markdownPath={filePath}
-      title={`ADR-${adrNumber}: ${title}`}
       status={status}
       date={date}
       fallback="Loading ADR document..."
