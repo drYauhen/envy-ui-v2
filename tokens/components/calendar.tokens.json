@@ -1,0 +1,310 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "calendar": {
+      "base": {
+        "colors": {
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Calendar container background color"
+          },
+          "header": {
+            "background": {
+              "$value": "{eui.color.background.surface}",
+              "$type": "color",
+              "$description": "Calendar header background color"
+            },
+            "text": {
+              "$value": "{eui.color.text.primary}",
+              "$type": "color",
+              "$description": "Calendar header text color"
+            },
+            "button": {
+              "text": {
+                "$value": "{eui.color.text.primary}",
+                "$type": "color",
+                "$description": "Calendar header button text color"
+              },
+              "hover": {
+                "background": {
+                  "$value": "{eui.color.background.muted}",
+                  "$type": "color",
+                  "$description": "Calendar header button hover background"
+                }
+              },
+              "active": {
+                "background": {
+                  "$value": "{eui.color.background.subtle}",
+                  "$type": "color",
+                  "$description": "Calendar header button active background"
+                }
+              }
+            }
+          },
+          "weekday": {
+            "text": {
+              "$value": "{eui.color.text.secondary}",
+              "$type": "color",
+              "$description": "Calendar weekday label text color"
+            }
+          },
+          "day": {
+            "background": {
+              "default": {
+                "$value": "{eui.color.background.surface}",
+                "$type": "color",
+                "$description": "Calendar day cell default background"
+              },
+              "hover": {
+                "$value": "{eui.color.background.muted}",
+                "$type": "color",
+                "$description": "Calendar day cell hover background"
+              },
+              "active": {
+                "$value": "{eui.color.background.subtle}",
+                "$type": "color",
+                "$description": "Calendar day cell active background"
+              },
+              "selected": {
+                "$value": "{eui.color.accent.primary}",
+                "$type": "color",
+                "$description": "Calendar selected day background"
+              },
+              "selectedHover": {
+                "$value": "{eui.color.accent.secondary}",
+                "$type": "color",
+                "$description": "Calendar selected day hover background"
+              },
+              "disabled": {
+                "$value": "{eui.color.background.surface}",
+                "$type": "color",
+                "$description": "Calendar disabled day background"
+              },
+              "outsideMonth": {
+                "$value": "{eui.color.background.surface}",
+                "$type": "color",
+                "$description": "Calendar day outside current month background"
+              }
+            },
+            "border": {
+              "default": {
+                "$value": "{eui.color.border.default}",
+                "$type": "color",
+                "$description": "Calendar day cell default border color"
+              },
+              "selected": {
+                "$value": "{eui.color.accent.primary}",
+                "$type": "color",
+                "$description": "Calendar selected day border color"
+              }
+            },
+            "text": {
+              "default": {
+                "$value": "{eui.color.text.primary}",
+                "$type": "color",
+                "$description": "Calendar day cell default text color"
+              },
+              "selected": {
+                "$value": "{eui.color.neutral.white}",
+                "$type": "color",
+                "$description": "Calendar selected day text color"
+              },
+              "disabled": {
+                "$value": "{eui.color.text.disabled}",
+                "$type": "color",
+                "$description": "Calendar disabled day text color"
+              },
+              "outsideMonth": {
+                "$value": "{eui.color.text.muted}",
+                "$type": "color",
+                "$description": "Calendar day outside current month text color"
+              }
+            }
+          },
+          "range": {
+            "background": {
+              "$value": "{eui.color.accent.100}",
+              "$type": "color",
+              "$description": "Calendar range selection background"
+            },
+            "backgroundHover": {
+              "$value": "{eui.color.accent.200}",
+              "$type": "color",
+              "$description": "Calendar range selection hover background"
+            },
+            "text": {
+              "$value": "{eui.color.accent.800}",
+              "$type": "color",
+              "$description": "Calendar range selection text color"
+            }
+          }
+        },
+        "size": {
+          "width": {
+            "$value": "280px",
+            "$type": "dimension",
+            "$description": "Calendar container width"
+          },
+          "minWidth": {
+            "$value": "280px",
+            "$type": "dimension",
+            "$description": "Calendar container minimum width"
+          },
+          "weekday": {
+            "width": {
+              "$value": "40px",
+              "$type": "dimension",
+              "$description": "Calendar weekday label width"
+            },
+            "height": {
+              "$value": "40px",
+              "$type": "dimension",
+              "$description": "Calendar weekday label height"
+            }
+          },
+          "day": {
+            "width": {
+              "$value": "40px",
+              "$type": "dimension",
+              "$description": "Calendar day cell width"
+            },
+            "minHeight": {
+              "$value": "40px",
+              "$type": "dimension",
+              "$description": "Calendar day cell minimum height"
+            },
+            "aspectRatio": {
+              "$value": "1",
+              "$type": "number",
+              "$description": "Calendar day cell aspect ratio"
+            }
+          }
+        },
+        "spacing": {
+          "padding": {
+            "$value": "{eui.spacing.md}",
+            "$type": "dimension",
+            "$description": "Calendar container padding"
+          },
+          "header": {
+            "padding": {
+              "vertical": {
+                "$value": "{eui.spacing.sm}",
+                "$type": "dimension",
+                "$description": "Calendar header vertical padding"
+              },
+              "horizontal": {
+                "$value": "{eui.spacing.md}",
+                "$type": "dimension",
+                "$description": "Calendar header horizontal padding"
+              }
+            }
+          },
+          "weekday": {
+            "padding": {
+              "vertical": {
+                "$value": "{eui.spacing.xs}",
+                "$type": "dimension",
+                "$description": "Calendar weekday label vertical padding"
+              }
+            }
+          },
+          "day": {
+            "padding": {
+              "vertical": {
+                "$value": "{eui.spacing.xs}",
+                "$type": "dimension",
+                "$description": "Calendar day cell vertical padding"
+              },
+              "horizontal": {
+                "$value": "{eui.spacing.xs}",
+                "$type": "dimension",
+                "$description": "Calendar day cell horizontal padding"
+              }
+            },
+            "margin": {
+              "overlap": {
+                "$value": "1px",
+                "$type": "dimension",
+                "$description": "Calendar day cell margin overlap for seamless borders"
+              }
+            }
+          }
+        },
+        "typography": {
+          "header": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.lg}",
+              "$type": "fontSize",
+              "$description": "Calendar header font size"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Calendar header font weight"
+            }
+          },
+          "weekday": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Calendar weekday label font size"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.medium}",
+              "$type": "fontWeight",
+              "$description": "Calendar weekday label font weight"
+            }
+          },
+          "day": {
+            "fontSize": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Calendar day cell font size"
+            },
+            "fontWeight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Calendar day cell font weight"
+            },
+            "lineHeight": {
+              "$value": "{eui.typography.lineHeight.none}",
+              "$type": "lineHeight",
+              "$description": "Calendar day cell line height"
+            }
+          }
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Calendar border width"
+          }
+        },
+        "zIndex": {
+          "default": {
+            "$value": "{eui.z.base}",
+            "$type": "number",
+            "$description": "Calendar default z-index"
+          },
+          "interactive": {
+            "$value": "calc({eui.z.base} + 1)",
+            "$type": "number",
+            "$description": "Calendar interactive state z-index"
+          },
+          "selected": {
+            "$value": "calc({eui.z.base} + 2)",
+            "$type": "number",
+            "$description": "Calendar selected state z-index"
+          },
+          "focus": {
+            "$value": "calc({eui.z.base} + 3)",
+            "$type": "number",
+            "$description": "Calendar focus state z-index"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "component": {
+      "calendar": {
+        "$description": "Calendar component contract defining variants, states, and interaction patterns",
+        "variant": {
+          "surface": {
+            "$description": "Calendar surface variant",
+            "default": {
+              "$value": "default",
+              "$description": "Default calendar with container styling"
+            },
+            "embedded": {
+              "$value": "embedded",
+              "$description": "Embedded calendar without container borders (inline usage)"
+            }
+          }
+        },
+        "state": {
+          "interactive": {
+            "$description": "Interactive states for calendar elements",
+            "default": {
+              "$value": "default",
+              "$description": "Default state"
+            },
+            "hover": {
+              "$value": "hover",
+              "$description": "Hover state for interactive elements"
+            },
+            "active": {
+              "$value": "active",
+              "$description": "Active/pressed state for interactive elements"
+            },
+            "focus": {
+              "$value": "focus",
+              "$description": "Focus state for keyboard navigation"
+            },
+            "disabled": {
+              "$value": "disabled",
+              "$description": "Disabled state for non-interactive elements"
+            }
+          },
+          "selection": {
+            "$description": "Day selection states",
+            "default": {
+              "$value": "default",
+              "$description": "Unselected day"
+            },
+            "selected": {
+              "$value": "selected",
+              "$description": "Selected day"
+            },
+            "today": {
+              "$value": "today",
+              "$description": "Current date indicator"
+            },
+            "outsideMonth": {
+              "$value": "outsideMonth",
+              "$description": "Day outside current month"
+            },
+            "rangeStart": {
+              "$value": "rangeStart",
+              "$description": "Start of date range selection"
+            },
+            "rangeEnd": {
+              "$value": "rangeEnd",
+              "$description": "End of date range selection"
+            },
+            "inRange": {
+              "$value": "inRange",
+              "$description": "Day within date range selection"
+            }
+          }
+        },
+        "element": {
+          "$description": "Calendar structural elements",
+          "container": {
+            "$value": "eui-calendar",
+            "$description": "Root calendar container element"
+          },
+          "header": {
+            "$value": "eui-calendar__header",
+            "$description": "Calendar header with navigation"
+          },
+          "headerLabel": {
+            "$value": "eui-calendar__header-label",
+            "$description": "Month/year label in header"
+          },
+          "headerButton": {
+            "$value": "eui-calendar__header-button",
+            "$description": "Navigation buttons in header"
+          },
+          "weekdays": {
+            "$value": "eui-calendar__weekdays",
+            "$description": "Weekday labels container"
+          },
+          "weekday": {
+            "$value": "eui-calendar__weekday",
+            "$description": "Individual weekday label"
+          },
+          "grid": {
+            "$value": "eui-calendar__grid",
+            "$description": "Calendar days grid container"
+          },
+          "day": {
+            "$value": "eui-calendar__day",
+            "$description": "Individual day cell"
+          }
+        },
+        "dataAttribute": {
+          "$description": "Data attributes for state management",
+          "surface": {
+            "$value": "data-eui-surface",
+            "$description": "Surface variant attribute"
+          },
+          "today": {
+            "$value": "data-eui-today",
+            "$description": "Today's date indicator"
+          },
+          "selected": {
+            "$value": "data-eui-selected",
+            "$description": "Selected date indicator"
+          },
+          "disabled": {
+            "$value": "data-eui-disabled",
+            "$description": "Disabled state indicator"
+          },
+          "outsideMonth": {
+            "$value": "data-eui-outside-month",
+            "$description": "Outside current month indicator"
+          },
+          "rangeStart": {
+            "$value": "data-eui-range-start",
+            "$description": "Range selection start indicator"
+          },
+          "rangeEnd": {
+            "$value": "data-eui-range-end",
+            "$description": "Range selection end indicator"
+          },
+          "inRange": {
+            "$value": "data-eui-in-range",
+            "$description": "Within range selection indicator"
+          }
+        },
+        "accessibility": {
+          "$description": "Accessibility requirements for calendar",
+          "navigation": {
+            "keyboard": {
+              "$value": "true",
+              "$description": "Full keyboard navigation support required"
+            },
+            "arrowKeys": {
+              "$value": "grid",
+              "$description": "Arrow key navigation follows grid pattern"
+            },
+            "enterSpace": {
+              "$value": "select",
+              "$description": "Enter/Space keys select dates"
+            },
+            "escape": {
+              "$value": "close",
+              "$description": "Escape key closes date picker"
+            }
+          },
+          "announcements": {
+            "monthChange": {
+              "$value": "polite",
+              "$description": "Month navigation changes announced"
+            },
+            "selection": {
+              "$value": "assertive",
+              "$description": "Date selections announced immediately"
+            }
+          },
+          "focusManagement": {
+            "visible": {
+              "$value": "ring",
+              "$description": "Visible focus ring for keyboard users"
+            },
+            "autoFocus": {
+              "$value": "today",
+              "$description": "Auto-focus on today's date when opened"
+            }
+          }
+        },
+        "interaction": {
+          "$description": "Interaction patterns and behaviors",
+          "selection": {
+            "single": {
+              "$value": "click",
+              "$description": "Single click selects date"
+            },
+            "range": {
+              "$value": "drag",
+              "$description": "Drag or click+click for range selection"
+            }
+          },
+          "navigation": {
+            "buttons": {
+              "$value": "previous/next",
+              "$description": "Header buttons for month navigation"
+            },
+            "keyboard": {
+              "$value": "arrow/page",
+              "$description": "Keyboard navigation with arrow keys and page up/down"
+            }
+          }
+        }
+      }
+    }
+  }
+}
