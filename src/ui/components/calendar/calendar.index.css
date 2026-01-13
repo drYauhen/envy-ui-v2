@@ -1,0 +1,6 @@
+/* Calendar Component - Canonical Envy UI Implementation */
+
+/* Component tokens are imported in the main calendar.css file */
+
+/* Import component structure (layout and styling) */
+@import url("./calendar.structure.css");

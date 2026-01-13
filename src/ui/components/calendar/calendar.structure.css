@@ -1,0 +1,281 @@
+@layer components {
+  /* Calendar Component Structure */
+  /* Uses only component API variables - no raw token references */
+
+  /* Component API variables setup */
+  [data-eui-context] .eui-calendar {
+    /* Surface variants (default to surface tokens) */
+    --eui-calendar-surface-background: var(--eui-color-background-surface);
+    --eui-calendar-surface-border: var(--eui-color-border-default);
+
+    /* State variables (defaults) */
+    --eui-calendar-day-background: var(--eui-color-background-surface);
+    --eui-calendar-day-border: var(--eui-color-border-default);
+    --eui-calendar-day-text: var(--eui-color-text-primary);
+    --eui-calendar-header-background: var(--eui-color-background-surface);
+    --eui-calendar-header-text: var(--eui-color-text-primary);
+    --eui-calendar-weekday-text: var(--eui-color-text-muted);
+
+    /* Apply to properties */
+    display: flex;
+    flex-direction: column;
+    width: var(--eui-calendar-size-container-width);
+    min-width: var(--eui-calendar-size-container-minWidth);
+    padding: var(--eui-calendar-spacing-container-padding);
+    background-color: var(--eui-calendar-surface-background);
+    border: var(--eui-calendar-border-width) solid var(--eui-calendar-surface-border);
+    border-radius: var(--eui-calendar-shape-radius);
+    overflow: hidden;
+  }
+
+  /* Surface variants */
+  [data-eui-context] .eui-calendar[data-eui-surface="embedded"] {
+    --eui-calendar-surface-background: var(--eui-calendar-surface-embedded-background);
+    --eui-calendar-surface-border: var(--eui-calendar-surface-embedded-border);
+  }
+
+  /* Calendar Header */
+  [data-eui-context] .eui-calendar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--eui-calendar-spacing-header-padding-vertical) var(--eui-calendar-spacing-header-padding-horizontal);
+    background-color: var(--eui-calendar-header-background);
+    border-bottom: var(--eui-calendar-border-width) solid var(--eui-calendar-surface-border);
+  }
+
+  [data-eui-context] .eui-calendar[data-eui-surface="embedded"] .eui-calendar__header {
+    background-color: var(--eui-calendar-surface-background);
+    border-bottom: none;
+  }
+
+  [data-eui-context] .eui-calendar__header-label {
+    font-size: var(--eui-calendar-typography-header-fontSize);
+    font-weight: var(--eui-calendar-typography-header-fontWeight);
+    color: var(--eui-calendar-header-text);
+    flex: 1;
+    text-align: center;
+  }
+
+  [data-eui-context] .eui-calendar__header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--eui-calendar-shape-radius);
+    color: var(--eui-calendar-header-text);
+    cursor: pointer;
+    transition: background-color var(--eui-calendar-transition-duration) var(--eui-calendar-transition-easing);
+  }
+
+  [data-eui-context] .eui-calendar__header-button:hover:not(:disabled) {
+    background-color: var(--eui-color-background-muted);
+  }
+
+  [data-eui-context] .eui-calendar__header-button:active:not(:disabled) {
+    background-color: var(--eui-color-background-subtle);
+  }
+
+  [data-eui-context] .eui-calendar__header-button:disabled {
+    opacity: var(--eui-opacity-disabled);
+    cursor: not-allowed;
+  }
+
+  [data-eui-context] .eui-calendar__header-button:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-calendar-focus-ring-offset) var(--eui-color-background-surface),
+      0 0 0 calc(var(--eui-calendar-focus-ring-offset) + var(--eui-calendar-focus-ring-width)) var(--eui-calendar-focus-ring-color);
+  }
+
+  [data-eui-context] .eui-calendar__header-button:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-calendar-focus-ring-offset) var(--eui-color-background-surface),
+      0 0 0 calc(var(--eui-calendar-focus-ring-offset) + var(--eui-calendar-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+  }
+
+  /* Weekday Labels */
+  [data-eui-context] .eui-calendar__weekdays {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  [data-eui-context] .eui-calendar__weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--eui-calendar-size-weekday-width);
+    height: var(--eui-calendar-size-weekday-height);
+    padding: var(--eui-calendar-spacing-weekday-padding-vertical) 0;
+    font-size: var(--eui-calendar-typography-weekday-fontSize);
+    font-weight: var(--eui-calendar-typography-weekday-fontWeight);
+    color: var(--eui-calendar-weekday-text);
+    text-align: center;
+  }
+
+  /* Calendar Grid */
+  [data-eui-context] .eui-calendar__grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* Negative margin to compensate for day cell overlap */
+    margin-left: calc(var(--eui-calendar-spacing-day-margin-overlap) * -1);
+    margin-top: calc(var(--eui-calendar-spacing-day-margin-overlap) * -1);
+    /* Creates stacking context for z-index */
+    isolation: isolate;
+    position: relative;
+  }
+
+  /* Day Cell */
+  [data-eui-context] .eui-calendar__day {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--eui-calendar-size-day-width);
+    min-height: var(--eui-calendar-size-day-minHeight);
+    aspect-ratio: var(--eui-calendar-size-day-aspectRatio);
+    padding: var(--eui-calendar-spacing-day-padding-vertical) var(--eui-calendar-spacing-day-padding-horizontal);
+    margin: var(--eui-calendar-spacing-day-margin-overlap) 0 0 var(--eui-calendar-spacing-day-margin-overlap);
+    background-color: var(--eui-calendar-day-background);
+    border: var(--eui-calendar-border-width) solid var(--eui-calendar-day-border);
+    border-radius: var(--eui-calendar-shape-radius);
+    font-size: var(--eui-calendar-typography-day-fontSize);
+    font-weight: var(--eui-calendar-typography-day-fontWeight);
+    line-height: var(--eui-calendar-typography-day-lineHeight);
+    color: var(--eui-calendar-day-text);
+    cursor: pointer;
+    transition: background-color var(--eui-calendar-transition-duration) var(--eui-calendar-transition-easing),
+                border-color var(--eui-calendar-transition-duration) var(--eui-calendar-transition-easing),
+                color var(--eui-calendar-transition-duration) var(--eui-calendar-transition-easing),
+                z-index var(--eui-calendar-transition-duration) var(--eui-calendar-transition-easing),
+                border-radius var(--eui-calendar-transition-duration) var(--eui-calendar-transition-easing);
+    user-select: none;
+    /* Default z-index */
+    z-index: var(--eui-calendar-zIndex-default);
+  }
+
+  /* Day Cell - Hover State */
+  [data-eui-context] .eui-calendar__day:hover:not(:disabled):not([data-eui-selected="true"]):not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):not([data-eui-outside-month="true"]) {
+    --eui-calendar-day-background: var(--eui-color-background-muted);
+    /* Raise z-index on hover */
+    z-index: var(--eui-calendar-zIndex-interactive);
+  }
+
+  /* Day Cell - Active/Pressed State */
+  [data-eui-context] .eui-calendar__day:active:not(:disabled):not([data-eui-selected="true"]):not([data-eui-outside-month="true"]) {
+    --eui-calendar-day-background: var(--eui-color-background-subtle);
+    /* Raise z-index on active */
+    z-index: var(--eui-calendar-zIndex-interactive);
+  }
+
+  /* Day Cell - Selected State */
+  [data-eui-context] .eui-calendar__day[data-eui-selected="true"] {
+    --eui-calendar-day-background: var(--eui-color-accent-primary);
+    --eui-calendar-day-border: var(--eui-color-accent-primary);
+    --eui-calendar-day-text: var(--eui-color-text-inverse);
+    /* Raise z-index when selected */
+    z-index: var(--eui-calendar-zIndex-selected);
+  }
+
+  /* Selected day hover */
+  [data-eui-context] .eui-calendar__day[data-eui-selected="true"]:hover:not(:disabled) {
+    --eui-calendar-day-background: var(--eui-color-accent-primary);
+    --eui-calendar-day-border: var(--eui-color-accent-primary);
+  }
+
+  /* Selected day active */
+  [data-eui-context] .eui-calendar__day[data-eui-selected="true"]:active {
+    --eui-calendar-day-background: color-mix(in srgb, var(--eui-color-accent-primary), black 8%);
+    --eui-calendar-day-border: color-mix(in srgb, var(--eui-color-accent-primary), black 12%);
+    transform: translateY(1px);
+  }
+
+  /* Day Cell - Today State */
+  [data-eui-context] .eui-calendar__day[data-eui-today="true"] {
+    font-weight: 600;
+  }
+
+  /* Day Cell - Disabled State */
+  [data-eui-context] .eui-calendar__day:disabled,
+  [data-eui-context] .eui-calendar__day[data-eui-disabled="true"] {
+    opacity: var(--eui-opacity-disabled);
+    cursor: not-allowed;
+    --eui-calendar-day-background: var(--eui-color-background-surface);
+    --eui-calendar-day-text: var(--eui-color-text-disabled);
+  }
+
+  /* Day Cell - Outside Month */
+  [data-eui-context] .eui-calendar__day[data-eui-outside-month="true"] {
+    opacity: 0.6;
+    --eui-calendar-day-background: var(--eui-color-background-surface);
+    --eui-calendar-day-text: var(--eui-color-text-subtle);
+  }
+
+  /* Day Cell - Focus State */
+  [data-eui-context] .eui-calendar__day:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-calendar-focus-ring-offset) var(--eui-color-background-surface),
+      0 0 0 calc(var(--eui-calendar-focus-ring-offset) + var(--eui-calendar-focus-ring-width)) var(--eui-calendar-focus-ring-color);
+    /* Highest elevation to ensure focus ring is never overlapped by neighbors */
+    z-index: var(--eui-calendar-zIndex-focus);
+  }
+
+  [data-eui-context] .eui-calendar__day:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-calendar-focus-ring-offset) var(--eui-color-background-surface),
+      0 0 0 calc(var(--eui-calendar-focus-ring-offset) + var(--eui-calendar-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    /* Highest elevation to ensure focus ring is never overlapped by neighbors */
+    z-index: var(--eui-calendar-zIndex-focus);
+  }
+
+  /* Range Selection States */
+  [data-eui-context] .eui-calendar__day[data-eui-range-start="true"],
+  [data-eui-context] .eui-calendar__day[data-eui-range-end="true"] {
+    --eui-calendar-day-background: var(--eui-calendar-state-selected-day-background);
+    --eui-calendar-day-border: var(--eui-calendar-state-selected-day-border);
+    --eui-calendar-day-text: var(--eui-calendar-state-selected-day-text);
+    /* Same elevation as selected state */
+    z-index: var(--eui-calendar-zIndex-selected);
+  }
+
+  /* Range start/end hover */
+  [data-eui-context] .eui-calendar__day[data-eui-range-start="true"]:hover:not(:disabled),
+  [data-eui-context] .eui-calendar__day[data-eui-range-end="true"]:hover:not(:disabled) {
+    --eui-calendar-day-background: var(--eui-calendar-state-selected-day-background);
+    --eui-calendar-day-border: var(--eui-calendar-state-selected-day-border);
+  }
+
+  /* Range Selection - Days in range (middle days) */
+  [data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]) {
+    --eui-calendar-day-background: var(--eui-color-accent-primary);
+    --eui-calendar-day-text: var(--eui-color-text-inverse);
+    border-radius: 0; /* Remove border-radius for seamless band effect */
+  }
+
+  /* Range Selection - Days in range on hover */
+  [data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):hover:not(:disabled) {
+    --eui-calendar-day-background: var(--eui-color-accent-primary);
+    --eui-calendar-day-text: var(--eui-color-text-inverse);
+    border-radius: var(--eui-calendar-shape-radius); /* Restore border-radius on interaction */
+  }
+
+  /* Range Selection - Days in range on focus */
+  [data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):focus,
+  [data-eui-context] .eui-calendar__day[data-eui-in-range="true"]:not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):focus-visible {
+    --eui-calendar-day-background: var(--eui-color-accent-primary);
+    --eui-calendar-day-text: var(--eui-color-text-inverse);
+    border-radius: var(--eui-calendar-shape-radius);
+    z-index: var(--eui-calendar-zIndex-focus);
+  }
+}

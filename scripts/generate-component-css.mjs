@@ -313,6 +313,10 @@ function generateDividerComponentCSS() {
   return generateComponentCSS('divider', 'eui-divider');
 }
 
+function generateCalendarComponentCSS() {
+  return generateComponentCSS('calendar', 'eui-calendar');
+}
+
 // Main execution
 function main() {
   console.log('🚀 Generating Component Token CSS...');
@@ -339,7 +343,8 @@ function main() {
     { name: 'table-container', css: generateTableContainerComponentCSS() },
     { name: 'callout', css: generateCalloutComponentCSS() },
     { name: 'button', css: generateButtonComponentCSS() },
-    { name: 'divider', css: generateDividerComponentCSS() }
+    { name: 'divider', css: generateDividerComponentCSS() },
+    { name: 'calendar', css: generateCalendarComponentCSS() }
   ];
 
   components.forEach(({ name, css }) => {

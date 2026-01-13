@@ -1,0 +1,42 @@
+/**
+ * Calendar Component Tokens - Generated from tokens/components/calendar.tokens.json
+ */
+
+@layer eui-components {
+  /* Base calendar variables (default variant) */
+  [data-eui-context] .eui-calendar {
+    --eui-calendar-size-container-width: 280px;
+    --eui-calendar-size-container-minWidth: 280px;
+    --eui-calendar-size-day-width: var(--eui-dimension-10);
+    --eui-calendar-size-day-minHeight: var(--eui-dimension-10);
+    --eui-calendar-size-day-aspectRatio: 1;
+    --eui-calendar-size-weekday-width: var(--eui-dimension-10);
+    --eui-calendar-size-weekday-height: var(--eui-dimension-10);
+    --eui-calendar-spacing-container-padding: var(--eui-spacing-md);
+    --eui-calendar-spacing-header-padding-vertical: var(--eui-spacing-xs);
+    --eui-calendar-spacing-header-padding-horizontal: var(--eui-spacing-md);
+    --eui-calendar-spacing-weekday-padding-vertical: var(--eui-spacing-2xs);
+    --eui-calendar-spacing-day-padding-vertical: var(--eui-spacing-2xs);
+    --eui-calendar-spacing-day-padding-horizontal: var(--eui-spacing-2xs);
+    --eui-calendar-spacing-day-margin-overlap: 1px;
+    --eui-calendar-typography-header-fontSize: var(--eui-typography-fontSize-lg);
+    --eui-calendar-typography-header-fontWeight: 600;
+    --eui-calendar-typography-weekday-fontSize: var(--eui-typography-fontSize-sm);
+    --eui-calendar-typography-weekday-fontWeight: 500;
+    --eui-calendar-typography-day-fontSize: var(--eui-typography-fontSize-sm);
+    --eui-calendar-typography-day-fontWeight: 400;
+    --eui-calendar-typography-day-lineHeight: 1;
+    --eui-calendar-border-width: var(--eui-border-width-thin);
+    --eui-calendar-shape-radius: var(--eui-radius-default);
+    --eui-calendar-focus-ring-color: var(--eui-color-focus-ring);
+    --eui-calendar-focus-ring-width: var(--eui-focus-ring-width);
+    --eui-calendar-focus-ring-offset: var(--eui-focus-ring-offset-default);
+    --eui-calendar-zIndex-default: 0;
+    --eui-calendar-zIndex-interactive: 1;
+    --eui-calendar-zIndex-selected: 2;
+    --eui-calendar-zIndex-focus: 3;
+    --eui-calendar-transition-duration: var(--eui-transition-duration-fast);
+    --eui-calendar-transition-easing: var(--eui-transition-easing-default);
+  }
+
+}

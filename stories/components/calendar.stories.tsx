@@ -13,12 +13,19 @@ const meta: Meta = {
     docs: {
       description: {
         component: `
-Calendar component variants demonstrate different architectural approaches to calendar display.
-All variants use the same token system from \`tokens/app/components/calendar/\`.
+Calendar component demonstrates the canonical Envy UI architecture pattern. All styling is derived from the token system at \`tokens/components/calendar/\`, with no hardcoded values.
 
-**Available Variants:**
-- **Double-Faced (Range Picker)**: Two months displayed side-by-side with synchronized navigation. Single header controls both months for date range selection.
-- **Week View**: Week as the navigation unit. Single row of 7 days with week-based navigation instead of month-based.
+**Architecture Pattern:**
+- **Tokens**: \`tokens/components/calendar.tokens.json\` - semantic references only
+- **Generated CSS**: \`generated/css/components/calendar.tokens.css\` - resolved variables
+- **Structure CSS**: \`src/ui/components/calendar/calendar.structure.css\` - component API variables
+- **Index CSS**: \`src/ui/components/calendar/calendar.index.css\` - imports both files
+
+**Component Features:**
+- Surface variants: \`data-eui-surface="default|embedded"\`
+- State handling: today, selected, hover, active, disabled, outside-month
+- Focus management: global focus policy with 2px ring
+- Responsive grid layout with 7-column weekday headers
         `
       }
     }
@@ -607,4 +614,3 @@ export const Weekly: Story = {
     );
   }
 };
-
