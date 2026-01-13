@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCalendarState } from 'react-stately';
 import { useCalendarGrid, useLocale } from 'react-aria';
-import { CalendarDate, getLocalTimeZone } from '@internationalized/date';
+import { CalendarDate, getLocalTimeZone, getWeeksInMonth } from '@internationalized/date';
 import { CalendarCell } from './calendar-cell';
 
 interface CalendarGridProps {
@@ -10,7 +10,7 @@ interface CalendarGridProps {
 
 export function CalendarGrid({ state }: CalendarGridProps) {
   const { locale } = useLocale();
-  const { gridProps, headerProps, weekDays } = useCalendarGrid({}, state);
+  let { gridProps, headerProps, weekDays } = useCalendarGrid({}, state);
 
   const weekdays = weekDays.map((day, index) => (
     <div
@@ -23,27 +23,31 @@ export function CalendarGrid({ state }: CalendarGridProps) {
     </div>
   ));
 
-  const startDate = state.visibleRange.start;
-  const endDate = state.visibleRange.end;
-  
-  // Get the start of the first week (may include days from previous month)
-  // dayOfWeek: 0 = Sunday, 1 = Monday, etc.
-  // We want Monday = 0, so we adjust
-  const firstDayOfWeekIndex = startDate.dayOfWeek === 0 ? 6 : startDate.dayOfWeek - 1;
-  const gridStartDate = startDate.subtract({ days: firstDayOfWeekIndex });
-  
-  // Generate 6 weeks (42 days) for consistent grid
-  const dates: CalendarDate[] = [];
-  let current = gridStartDate;
-  for (let i = 0; i < 42; i++) {
-    dates.push(current);
-    current = current.add({ days: 1 });
-  }
+  // Use React Aria's state to get properly positioned dates
+  let weeks: CalendarDate[][] = [];
+  let date = state.visibleRange.start;
 
-  // Group dates by week (7 days)
-  const weeks: CalendarDate[][] = [];
-  for (let i = 0; i < dates.length; i += 7) {
-    weeks.push(dates.slice(i, i + 7));
+  // Calculate the start of the first week (including days from previous month)
+  const startOfMonth = date;
+  const endOfMonth = state.visibleRange.end;
+
+  // Find the first day to display (start of week containing startOfMonth)
+  const startOfWeek = startOfMonth.subtract({ days: (startOfMonth.toDate(getLocalTimeZone()).getDay() + 6) % 7 });
+
+  // Generate 6 weeks (42 days) to ensure consistent grid
+  date = startOfWeek;
+  for (let weekIndex = 0; weekIndex < 6; weekIndex++) {
+    let week: CalendarDate[] = [];
+    for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
+      week.push(date);
+      date = date.add({ days: 1 });
+    }
+    weeks.push(week);
+
+    // Stop if we've covered the month
+    if (date.compare(endOfMonth) > 0) {
+      break;
+    }
   }
 
   return (
@@ -55,13 +59,13 @@ export function CalendarGrid({ state }: CalendarGridProps) {
         {weeks.map((week, weekIndex) =>
           week.map((date, dayIndex) => {
             const cellDate = date;
-            const isOutsideMonth = cellDate.compare(startDate) < 0 || cellDate.compare(endDate) > 0;
+            const isOutsideMonth = cellDate.compare(state.visibleRange.start) < 0 || cellDate.compare(state.visibleRange.end) > 0;
             const today = new Date();
-            const isToday = 
+            const isToday =
               cellDate.year === today.getFullYear() &&
               cellDate.month === today.getMonth() + 1 &&
               cellDate.day === today.getDate();
-            
+
             return (
               <CalendarCell
                 key={`${weekIndex}-${dayIndex}`}
@@ -77,4 +81,3 @@ export function CalendarGrid({ state }: CalendarGridProps) {
     </>
   );
 }
-
