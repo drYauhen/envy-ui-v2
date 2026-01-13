@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design-tokens.github.io/schemas/foundation-contract.schema.json",
+  "title": "Foundation Contract Schema",
+  "description": "Schema for foundation contracts (reset, base styles) in the token-driven design system",
+  "type": "object",
+
+  "required": [
+    "$schema",
+    "foundation",
+    "version",
+    "status",
+    "selectors",
+    "invariants",
+    "axes",
+    "foundationVars",
+    "behavior"
+  ],
+
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema"
+    },
+
+    "foundation": {
+      "type": "string",
+      "description": "Foundation identifier (e.g., 'reset', 'base')"
+    },
+
+    "version": {
+      "type": "string",
+      "description": "Version identifier"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": ["draft", "proposed", "accepted", "deprecated"],
+      "description": "Development status"
+    },
+
+    "source": {
+      "type": "object",
+      "description": "Source information for legacy CSS",
+      "properties": {
+        "legacyCss": {
+          "type": "string",
+          "description": "Path to legacy CSS file"
+        },
+        "note": {
+          "type": "string",
+          "description": "Additional context about the source"
+        }
+      }
+    },
+
+    "selectors": {
+      "type": "object",
+      "description": "CSS selector definitions",
+      "properties": {
+        "scope": {
+          "type": "string",
+          "description": "Context scope selector (e.g., '[data-eui-context]')"
+        },
+        "root": {
+          "type": "string",
+          "description": "Root selector for the foundation"
+        },
+        "slots": {
+          "type": "object",
+          "description": "Named selector slots",
+          "patternProperties": {
+            "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+              "type": "string",
+              "description": "CSS selector string"
+            }
+          }
+        }
+      },
+      "required": ["scope"]
+    },
+
+    "invariants": {
+      "type": "array",
+      "description": "Architectural constraints that must be maintained",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+
+    "axes": {
+      "type": "object",
+      "description": "Configuration axes for different behaviors",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["enum", "boolean", "string", "number"]
+            },
+            "default": {
+              "description": "Default value for this axis"
+            },
+            "values": {
+              "type": "array",
+              "description": "Allowed values for enum types"
+            },
+            "notes": {
+              "type": "string",
+              "description": "Documentation for this axis"
+            }
+          },
+          "required": ["type"]
+        }
+      }
+    },
+
+    "foundationVars": {
+      "type": "object",
+      "description": "CSS custom properties with token references",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+          "type": "object",
+          "patternProperties": {
+            "^--[a-zA-Z][a-zA-Z0-9_-]*$": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "CSS property type"
+                }
+              },
+              "oneOf": [
+                {
+                  "required": ["type"]
+                },
+                {
+                  "properties": {
+                    "$value": {
+                      "description": "Direct value (not recommended)"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+
+    "behavior": {
+      "type": "object",
+      "description": "CSS behavior definitions organized by category",
+      "properties": {
+        "normalize": {
+          "type": "object",
+          "description": "CSS normalize/reset rules"
+        },
+        "typography": {
+          "type": "object",
+          "description": "Typography baseline rules"
+        },
+        "elements": {
+          "type": "object",
+          "description": "Base element styling rules"
+        },
+        "interactive": {
+          "type": "object",
+          "description": "Interactive element rules"
+        },
+        "context": {
+          "type": "object",
+          "description": "Context-specific behavior rules"
+        }
+      }
+    },
+
+    "nonCanonicalThemeNotes": {
+      "type": "array",
+      "description": "Theme-specific behavior that stays in knowledge only",
+      "items": {
+        "type": "object",
+        "properties": {
+          "context": {
+            "type": "string",
+            "description": "Context identifier"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Theme identifier"
+          },
+          "legacyBehavior": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Legacy behavior documentation"
+          },
+          "policy": {
+            "type": "string",
+            "description": "Why this is not in canonical CSS"
+          }
+        },
+        "required": ["context", "theme", "legacyBehavior", "policy"]
+      }
+    }
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "$schema": "../../schemas/foundation-contract.schema.json",
+  "foundation": "reset",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "note": "Fresh contract-driven implementation. No legacy CSS migration for reset foundation."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ":where([data-eui-context])",
+    "slots": {}
+  },
+
+  "invariants": [
+    "Reset is foundation-level, not component-level",
+    "Reset consumes design tokens for all values",
+    "Reset behavior is context-specific via axes",
+    "No global unscoped selectors (*, body)",
+    "No theme-specific selectors in canonical reset CSS",
+    "Reset loads before components in CSS cascade"
+  ],
+
+  "axes": {
+    "context": {
+      "type": "enum",
+      "default": "application",
+      "values": ["application", "website", "report"],
+      "notes": "Context determines reset behavior philosophy and rules"
+    }
+  },
+
+  "foundationVars": {
+    "typography": {
+      "--eui-reset-fontFamily-base": "{eui.typography.fontFamily.ui}",
+      "--eui-reset-fontFamily-mono": "{eui.typography.fontFamily.mono}",
+      "--eui-reset-fontSize-base": { "type": "dimension" },
+      "--eui-reset-lineHeight-base": { "type": "string" },
+      "--eui-reset-fontWeight-normal": { "type": "string" },
+      "--eui-reset-letterSpacing-normal": { "type": "dimension" }
+    },
+    "colors": {
+      "--eui-reset-color-text": "{eui.color.text.primary}",
+      "--eui-reset-color-link": "{eui.color.interaction.link}",
+      "--eui-reset-color-link-visited": "{eui.color.interaction.linkVisited}",
+      "--eui-reset-color-link-hover": "{eui.color.interaction.linkHover}",
+      "--eui-reset-color-focus": "{eui.color.focus.ring}",
+      "--eui-reset-color-selection": "{eui.color.interaction.selection}"
+    },
+    "spacing": {
+      "--eui-reset-margin-paragraph": { "type": "dimension" },
+      "--eui-reset-margin-heading": { "type": "dimension" }
+    },
+    "dimensions": {
+      "--eui-reset-borderWidth-focus": "{eui.dimension.border.1}",
+      "--eui-reset-focus-ring-offset": { "type": "dimension" }
+    }
+  },
+
+  "behavior": {
+    "normalize": {
+      "*": {
+        "boxSizing": "border-box"
+      },
+      "*:before, *:after": {
+        "boxSizing": "inherit"
+      },
+      "html": {
+        "lineHeight": "1.15",
+        "WebkitTextSizeAdjust": "100%"
+      },
+      "body": {
+        "margin": "0"
+      },
+      "main": {
+        "display": "block"
+      },
+      "h1, h2, h3, h4, h5, h6": {
+        "marginTop": "0",
+        "marginBottom": "0",
+        "fontSize": "inherit",
+        "fontWeight": "inherit",
+        "lineHeight": "inherit"
+      },
+      "p": {
+        "marginTop": "0",
+        "marginBottom": "0"
+      },
+      "b, strong": {
+        "fontWeight": "bolder"
+      },
+      "small": {
+        "fontSize": "80%"
+      },
+      "sub, sup": {
+        "fontSize": "75%",
+        "lineHeight": "0",
+        "position": "relative",
+        "verticalAlign": "baseline"
+      },
+      "sub": {
+        "bottom": "-0.25em"
+      },
+      "sup": {
+        "top": "-0.5em"
+      },
+      "img": {
+        "borderStyle": "none"
+      },
+      "button, input, optgroup, select, textarea": {
+        "fontFamily": "inherit",
+        "fontSize": "100%",
+        "lineHeight": "inherit",
+        "margin": "0"
+      },
+      "button, input": {
+        "overflow": "visible"
+      },
+      "button, select": {
+        "textTransform": "none"
+      },
+      "button, [type=\"button\"], [type=\"reset\"], [type=\"submit\"]": {
+        "WebkitAppearance": "button"
+      },
+      "fieldset": {
+        "padding": "0.35em 0.75em 0.625em"
+      },
+      "legend": {
+        "boxSizing": "border-box",
+        "color": "inherit",
+        "display": "table",
+        "maxWidth": "100%",
+        "padding": "0",
+        "whiteSpace": "normal"
+      },
+      "progress": {
+        "verticalAlign": "baseline"
+      },
+      "textarea": {
+        "overflow": "auto"
+      },
+      "[type=\"checkbox\"], [type=\"radio\"]": {
+        "boxSizing": "border-box",
+        "padding": "0"
+      },
+      "[type=\"number\"]::-webkit-inner-spin-button, [type=\"number\"]::-webkit-outer-spin-button": {
+        "height": "auto"
+      },
+      "[type=\"search\"]": {
+        "WebkitAppearance": "textfield",
+        "outlineOffset": "-2px"
+      },
+      "[type=\"search\"]::-webkit-search-decoration": {
+        "WebkitAppearance": "none"
+      },
+      "::-webkit-file-upload-button": {
+        "WebkitAppearance": "button",
+        "font": "inherit"
+      },
+      "details": {
+        "display": "block"
+      },
+      "summary": {
+        "display": "list-item"
+      },
+      "template": {
+        "display": "none"
+      },
+      "[hidden]": {
+        "display": "none"
+      }
+    },
+
+    "typography": {
+      "body": {
+        "fontFamily": "var(--eui-reset-fontFamily-base)",
+        "fontSize": "var(--eui-reset-fontSize-base)",
+        "lineHeight": "var(--eui-reset-lineHeight-base)",
+        "fontWeight": "var(--eui-reset-fontWeight-normal)",
+        "letterSpacing": "var(--eui-reset-letterSpacing-normal)",
+        "color": "var(--eui-reset-color-text)"
+      },
+      "headings": {
+        "fontFamily": "inherit",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "color": "inherit"
+      },
+      "code": {
+        "fontFamily": "var(--eui-reset-fontFamily-mono)",
+        "fontSize": "0.875em"
+      },
+      "selection": {
+        "backgroundColor": "var(--eui-reset-color-selection)",
+        "color": "var(--eui-reset-color-text)"
+      }
+    },
+
+    "elements": {
+      "a": {
+        "color": "var(--eui-reset-color-link)",
+        "textDecoration": "underline"
+      },
+      "a:visited": {
+        "color": "var(--eui-reset-color-link-visited)"
+      },
+      "a:hover": {
+        "color": "var(--eui-reset-color-link-hover)"
+      },
+      "img, video, canvas, audio, iframe, embed, object": {
+        "display": "block",
+        "maxWidth": "100%"
+      },
+      "iframe, embed, object": {
+        "border": "0"
+      }
+    },
+
+    "interactive": {
+      "button, input, select, textarea": {
+        "font": "inherit"
+      },
+      "button, [role=\"button\"]": {
+        "cursor": "pointer"
+      },
+      "*:focus-visible": {
+        "outline": "2px solid var(--eui-reset-color-focus)",
+        "outlineOffset": "var(--eui-reset-focus-ring-offset)"
+      },
+      "button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible": {
+        "outline": "2px solid var(--eui-reset-color-focus)",
+        "outlineOffset": "2px"
+      }
+    },
+
+    "context": {
+      "application": {
+        "condition": "context === 'application'",
+        "rules": {
+          "p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote, pre, table": {
+            "margin": "0"
+          },
+          "input, button, select, textarea": {
+            "font": "inherit"
+          }
+        }
+      },
+      "website": {
+        "condition": "context === 'website'",
+        "rules": {
+          "p": {
+            "marginBottom": "var(--eui-reset-margin-paragraph)"
+          },
+          "h1, h2, h3, h4, h5, h6": {
+            "marginTop": "var(--eui-reset-margin-heading)",
+            "marginBottom": "calc(var(--eui-reset-margin-heading) * 0.5)"
+          },
+          "ul, ol": {
+            "marginBottom": "var(--eui-reset-margin-paragraph)",
+            "paddingLeft": "1.5rem"
+          },
+          "blockquote": {
+            "margin": "var(--eui-reset-margin-paragraph) 0",
+            "paddingLeft": "1rem",
+            "borderLeft": "4px solid var(--eui-reset-color-text)",
+            "fontStyle": "italic"
+          }
+        }
+      },
+      "report": {
+        "condition": "context === 'report'",
+        "rules": {
+          "@page": {
+            "margin": "1in",
+            "size": "letter"
+          },
+          "html": {
+            "fontSize": "12pt"
+          },
+          "body": {
+            "fontSize": "1rem",
+            "lineHeight": "1.4",
+            "widows": "2",
+            "orphans": "2"
+          },
+          "h1, h2, h3, h4, h5, h6": {
+            "pageBreakAfter": "avoid"
+          },
+          "p": {
+            "marginBottom": "0.5rem"
+          },
+          "table": {
+            "pageBreakInside": "avoid"
+          },
+          "tr": {
+            "pageBreakInside": "avoid",
+            "pageBreakAfter": "auto"
+          }
+        }
+      }
+    }
+  }
+}
