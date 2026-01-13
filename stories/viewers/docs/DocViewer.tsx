@@ -7,10 +7,15 @@ import { MermaidDiagram } from '../shared/MermaidDiagram';
 
 type DocViewerProps = {
   markdownPath: string;
+  content?: string; // Pre-processed content (when provided, skips fetch)
   fallback?: string;
   title?: string;
   status?: string;
   date?: string;
+  showUpdatedDate?: boolean; // Whether to show lastUpdated in header (when different from date)
+  owner?: string;
+  assistance?: string;
+  lastUpdated?: string;
   badges?: Array<{
     label: string;
     tone?: 'success' | 'warning' | 'error' | 'info' | 'neutral';
@@ -247,34 +252,51 @@ const resolveDocStoryPath = (resolvedDocPath: string | null): string | null => {
 
 export const DocViewer = ({
   markdownPath,
+  content: providedContent,
   fallback = 'Loading...',
   title,
   status,
   date,
+  showUpdatedDate,
+  owner,
+  assistance,
+  lastUpdated,
   badges
 }: DocViewerProps) => {
-  const [content, setContent] = useState<string>('');
+  const [fetchedContent, setFetchedContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const isInProgress = badges?.some((badge) => badge.label.trim().toLowerCase() === 'in progress');
 
+  // Use provided content if available, otherwise fetch from markdownPath
+  const content = providedContent || fetchedContent;
+
   useEffect(() => {
-    setLoading(true);
-    setError(null);
-    fetch(markdownPath)
-      .then(res => {
-        if (!res.ok) throw new Error('Failed to load');
-        return res.text();
-      })
-      .then(text => {
-        setContent(text);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message || 'Failed to load');
-        setLoading(false);
-      });
-  }, [markdownPath]);
+    // If content is provided directly, skip fetching
+    if (providedContent) {
+      setLoading(false);
+      return;
+    }
+
+    // Otherwise fetch from markdownPath
+    if (markdownPath) {
+      setLoading(true);
+      setError(null);
+      fetch(markdownPath)
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to load');
+          return res.text();
+        })
+        .then(text => {
+          setFetchedContent(text);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setError(err.message || 'Failed to load');
+          setLoading(false);
+        });
+    }
+  }, [markdownPath, providedContent]);
 
   if (loading) {
     return (
@@ -311,35 +333,46 @@ export const DocViewer = ({
       data-eui-container="standard"
       data-eui-gap="sm"
     >
-      {title || status || date || (badges && badges.length > 0) ? (
+      {title || status || date || owner || assistance || lastUpdated || (badges && badges.length > 0) ? (
         <div className="eui-stack" data-eui-gap="sm">
           {title ? <h1 className="eui-text-heading-5">{title}</h1> : null}
-          {status || date || (badges && badges.length > 0) ? (
-            <div className="eui-inline eui-docs-meta eui-text-caption" data-eui-gap="md" data-eui-wrap="true">
-              {status ? (
-                <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(status)}>
-                  {status}
-                </span>
+          {status || date || owner || assistance || lastUpdated || (badges && badges.length > 0) ? (
+            <div className="eui-stack eui-docs-meta" data-eui-gap="xs">
+              {/* Primary metadata row */}
+              <div className="eui-inline eui-text-caption" data-eui-gap="md" data-eui-wrap="true">
+                {status ? (
+                  <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(status)}>
+                    {status}
+                  </span>
+                ) : null}
+                {badges ? badges.map((badge) => (
+                  <span
+                    key={badge.label}
+                    className="eui-badge"
+                    data-eui-tone={badge.tone ?? 'neutral'}
+                    data-eui-variant={badge.variant}
+                  >
+                    {getBadgeIcon(badge.label) ? (
+                      <span data-eui-icon={getBadgeIcon(badge.label) ?? undefined} data-eui-size="xs" aria-hidden="true" />
+                    ) : null}
+                    {badge.label}
+                  </span>
+                )) : null}
+                {date ? <span>Date: {date}</span> : null}
+                {showUpdatedDate && lastUpdated ? <span>Updated: {lastUpdated}</span> : null}
+              </div>
+              {/* Secondary metadata row */}
+              {(owner || assistance) ? (
+                <div className="eui-inline eui-text-caption eui-text-caption-secondary" data-eui-gap="md" data-eui-wrap="true">
+                  {owner ? <span>Owner: {owner}</span> : null}
+                  {assistance ? <span>Assistance: {assistance}</span> : null}
+                </div>
               ) : null}
-              {badges ? badges.map((badge) => (
-                <span
-                  key={badge.label}
-                  className="eui-badge"
-                  data-eui-tone={badge.tone ?? 'neutral'}
-                  data-eui-variant={badge.variant}
-                >
-                  {getBadgeIcon(badge.label) ? (
-                    <span data-eui-icon={getBadgeIcon(badge.label) ?? undefined} data-eui-size="xs" aria-hidden="true" />
-                  ) : null}
-                  {badge.label}
-                </span>
-              )) : null}
-              {date ? <span>Date: {date}</span> : null}
             </div>
           ) : null}
         </div>
       ) : null}
-      {title || status || date || (badges && badges.length > 0) ? (
+      {title || status || date || owner || assistance || lastUpdated || (badges && badges.length > 0) ? (
         <hr className="eui-divider" data-eui-variant="subtle" />
       ) : null}
       <div

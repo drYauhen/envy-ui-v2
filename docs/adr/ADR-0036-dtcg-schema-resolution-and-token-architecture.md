@@ -1,11 +1,17 @@
 # ADR-0036: DTCG Schema Resolution and Token Architecture Improvements
 
 **Status:** Accepted
+
 **Date:** 2026-01-07
+
 **Last Updated:** 2026-01-07
+
 **Owner:** Eugene Goncharov
+
 **Assistance:** AI-assisted drafting (human-reviewed)
+
 **Related:**
+
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
