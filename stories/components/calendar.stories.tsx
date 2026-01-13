@@ -409,7 +409,7 @@ export const DoubleFaced: Story = {
         </p>
         
         {/* Single calendar component with two months */}
-        <div className="eui-calendar" style={{ width: 'auto', maxWidth: '600px' }}>
+        <div className="eui-calendar">
           {/* Single header for both months */}
           <div className="eui-calendar__header">
             <button className="eui-calendar__header-button" aria-label="Previous months">

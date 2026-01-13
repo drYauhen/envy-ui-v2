@@ -38,9 +38,9 @@
                 "$description": "Calendar day default background"
               },
               "border": {
-                "$value": "{eui.color.border.default}",
+                "$value": "transparent",
                 "$type": "color",
-                "$description": "Calendar day default border"
+                "$description": "Calendar day default border (transparent for clean look)"
               },
               "text": {
                 "$value": "{eui.color.text.primary}",
@@ -151,6 +151,29 @@
                 "$description": "Calendar outside month day opacity (component-specific)"
               }
             }
+          },
+          "range": {
+            "day": {
+              "background": {
+                "$value": "{eui-app-raw-color-accent-50}",
+                "$type": "color",
+                "$description": "Calendar range day background (legacy accent.50)"
+              },
+              "text": {
+                "$value": "{eui.color.text.primary}",
+                "$type": "color",
+                "$description": "Calendar range day text"
+              }
+            }
+          },
+          "rangeHover": {
+            "day": {
+              "background": {
+                "$value": "{eui-app-raw-color-accent-100}",
+                "$type": "color",
+                "$description": "Calendar range day hover background (legacy accent.100)"
+              }
+            }
           }
         }
       },
@@ -158,24 +181,24 @@
         "size": {
           "container": {
             "width": {
-              "$value": "280px",
+              "$value": "fit-content",
               "$type": "dimension",
-              "$description": "Calendar container width (component-specific)"
+              "$description": "Calendar container width (shrink-wraps to content size)"
             },
             "minWidth": {
-              "$value": "280px",
+              "$value": "fit-content",
               "$type": "dimension",
-              "$description": "Calendar container minimum width (component-specific)"
+              "$description": "Calendar container minimum width (shrink-wraps to content size)"
             }
           },
           "day": {
             "width": {
-              "$value": "{eui.dimension.10}",
+              "$value": "{eui.dimension.8}",
               "$type": "dimension",
               "$description": "Calendar day cell width"
             },
             "minHeight": {
-              "$value": "{eui.dimension.10}",
+              "$value": "{eui.dimension.8}",
               "$type": "dimension",
               "$description": "Calendar day cell minimum height"
             },
@@ -187,12 +210,12 @@
           },
           "weekday": {
             "width": {
-              "$value": "{eui.dimension.10}",
+              "$value": "{eui.dimension.8}",
               "$type": "dimension",
               "$description": "Calendar weekday label width"
             },
             "height": {
-              "$value": "{eui.dimension.10}",
+              "$value": "{eui.dimension.8}",
               "$type": "dimension",
               "$description": "Calendar weekday label height"
             }
@@ -244,9 +267,9 @@
             },
             "margin": {
               "overlap": {
-                "$value": "1px",
+                "$value": "0px",
                 "$type": "dimension",
-                "$description": "Calendar day margin overlap for seamless borders (component-specific)"
+                "$description": "Calendar day margin overlap (set to 0 with transparent borders)"
               }
             }
           }

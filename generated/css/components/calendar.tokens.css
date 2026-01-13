@@ -5,20 +5,20 @@
 @layer eui-components {
   /* Base calendar variables (default variant) */
   [data-eui-context] .eui-calendar {
-    --eui-calendar-size-container-width: 280px;
-    --eui-calendar-size-container-minWidth: 280px;
-    --eui-calendar-size-day-width: var(--eui-dimension-10);
-    --eui-calendar-size-day-minHeight: var(--eui-dimension-10);
+    --eui-calendar-size-container-width: fit-content;
+    --eui-calendar-size-container-minWidth: fit-content;
+    --eui-calendar-size-day-width: var(--eui-dimension-8);
+    --eui-calendar-size-day-minHeight: var(--eui-dimension-8);
     --eui-calendar-size-day-aspectRatio: 1;
-    --eui-calendar-size-weekday-width: var(--eui-dimension-10);
-    --eui-calendar-size-weekday-height: var(--eui-dimension-10);
+    --eui-calendar-size-weekday-width: var(--eui-dimension-8);
+    --eui-calendar-size-weekday-height: var(--eui-dimension-8);
     --eui-calendar-spacing-container-padding: var(--eui-spacing-md);
     --eui-calendar-spacing-header-padding-vertical: var(--eui-spacing-xs);
     --eui-calendar-spacing-header-padding-horizontal: var(--eui-spacing-md);
     --eui-calendar-spacing-weekday-padding-vertical: var(--eui-spacing-2xs);
     --eui-calendar-spacing-day-padding-vertical: var(--eui-spacing-2xs);
     --eui-calendar-spacing-day-padding-horizontal: var(--eui-spacing-2xs);
-    --eui-calendar-spacing-day-margin-overlap: 1px;
+    --eui-calendar-spacing-day-margin-overlap: 0px;
     --eui-calendar-typography-header-fontSize: var(--eui-typography-fontSize-lg);
     --eui-calendar-typography-header-fontWeight: 600;
     --eui-calendar-typography-weekday-fontSize: var(--eui-typography-fontSize-sm);
