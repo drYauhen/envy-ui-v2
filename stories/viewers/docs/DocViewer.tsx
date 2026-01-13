@@ -281,7 +281,7 @@ export const DocViewer = ({
       <div
         className="eui-docs eui-docs-container eui-container eui-stack"
         data-eui-container="standard"
-        data-eui-gap="lg"
+        data-eui-gap="sm"
       >
         <div className="eui-card eui-docs-loading" data-eui-variant="elevated">
           <p className="eui-text-body">{fallback}</p>
@@ -295,7 +295,7 @@ export const DocViewer = ({
       <div
         className="eui-docs eui-docs-container eui-container eui-stack"
         data-eui-container="standard"
-        data-eui-gap="lg"
+        data-eui-gap="sm"
       >
         <div className="eui-card eui-docs-error" data-eui-variant="flat">
           <p className="eui-text-body-strong">Error loading document</p>
@@ -309,7 +309,7 @@ export const DocViewer = ({
     <div
       className="eui-docs eui-docs-container eui-container eui-stack"
       data-eui-container="standard"
-      data-eui-gap="lg"
+      data-eui-gap="sm"
     >
       {title || status || date || (badges && badges.length > 0) ? (
         <div className="eui-stack" data-eui-gap="sm">
