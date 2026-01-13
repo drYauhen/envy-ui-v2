@@ -25,10 +25,23 @@ const RUNTIME_CSS_FILES = [
   'generated/css/tokens.contexts.css',
   'generated/css/tokens.themes.css',
   'generated/css/components/badge.tokens.css',
-  'generated/css/components/card.tokens.css'
-  // NOTE: Component structure CSS is not included in runtime bundle
-  // 'src/ui/components/badge/badge.structure.css',
-  // 'src/ui/components/card/card.structure.css'
+  'generated/css/components/card.tokens.css',
+  'generated/css/components/stack.tokens.css',
+  'generated/css/components/inline.tokens.css',
+  'generated/css/components/grid.tokens.css',
+  'generated/css/components/section.tokens.css',
+  'generated/css/components/container.tokens.css',
+  'generated/css/components/page.tokens.css',
+  'generated/css/components/content.tokens.css',
+  'generated/css/components/code-block.tokens.css',
+  'generated/css/components/table.tokens.css',
+  'generated/css/components/table-container.tokens.css',
+  'generated/css/components/callout.tokens.css',
+  'generated/css/components/button.tokens.css',
+  'src/ui/focus-policy.css',
+  // NOTE: Include structure CSS for components that define local vars used by tokens.
+  'src/ui/components/badge/badge.structure.css',
+  'src/ui/components/card/card.structure.css'
 ];
 
 // Golden components for contract validation

@@ -1,150 +1,35 @@
-/* Table Component Styles */
-/* Based on old system: flexbox layout, only horizontal borders (no vertical dividers between cells) */
+/**
+ * Table Component
+ *
+ * Generated from: tokens/components/table.contract.json
+ * Token variables: generated/css/components/table.tokens.css
+ */
 
-[data-eui-context] .eui-table {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--eui-table-colors-background);
-  border-radius: var(--eui-table-border-radius);
-  overflow: hidden;
+@layer eui-components {
+  [data-eui-context] .eui-table {
+    width: var(--eui-table-width);
+    border-collapse: collapse;
+    background-color: var(--eui-table-colors-background);
+    color: var(--eui-table-colors-cellText);
+    border: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
+    font-family: var(--eui-table-typography-fontFamily);
+    font-size: var(--eui-table-typography-fontSize);
+    font-weight: var(--eui-table-typography-fontWeight);
+    line-height: var(--eui-table-typography-lineHeight);
+  }
+
+  [data-eui-context] .eui-table th,
+  [data-eui-context] .eui-table td {
+    padding-block: var(--eui-table-spacing-cell-padding-block);
+    padding-inline: var(--eui-table-spacing-cell-padding-inline);
+    border: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  [data-eui-context] .eui-table th {
+    background-color: var(--eui-table-colors-headerBackground);
+    color: var(--eui-table-colors-headerText);
+    font-weight: var(--eui-table-typography-headerWeight);
+  }
 }
-
-/* Table Header */
-[data-eui-context] .eui-table thead {
-  background-color: var(--eui-table-colors-header-background);
-  border-top: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
-  border-bottom: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
-}
-
-[data-eui-context] .eui-table thead tr {
-  display: flex;
-  height: var(--eui-table-spacing-header-height);
-  flex: 0 0 var(--eui-table-spacing-header-height);
-  padding: var(--eui-table-spacing-header-padding-vertical) 0;
-  overflow: hidden;
-}
-
-[data-eui-context] .eui-table th {
-  padding: 0 var(--eui-table-spacing-header-padding-horizontal);
-  padding-right: 10px;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  text-align: left;
-  font-weight: 600;
-  color: var(--eui-table-colors-header-text);
-  overflow: hidden;
-  line-height: normal;
-}
-
-/* Table Body */
-[data-eui-context] .eui-table tbody {
-  background-color: var(--eui-table-colors-background);
-}
-
-[data-eui-context] .eui-table td {
-  padding: 0 var(--eui-table-spacing-cell-padding-horizontal);
-  padding-right: 10px;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  color: var(--eui-table-colors-cell-text);
-  overflow: hidden;
-  line-height: normal;
-}
-
-/* Table Row States */
-[data-eui-context] .eui-table tbody tr {
-  display: flex;
-  background-color: var(--eui-table-colors-row-background-default);
-  border-bottom: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
-  height: var(--eui-table-spacing-row-height);
-  flex: 0 0 var(--eui-table-spacing-row-height);
-  overflow: hidden;
-  max-width: 100%;
-  transition: background-color 0.15s ease;
-}
-
-[data-eui-context] .eui-table tbody tr:hover {
-  background-color: var(--eui-table-colors-row-background-hover);
-}
-
-[data-eui-context] .eui-table tbody tr[data-eui-selected="true"] {
-  background-color: var(--eui-table-colors-row-background-selected);
-}
-
-/* Subheader Styles */
-[data-eui-context] .eui-table tbody tr[data-eui-subheader="true"] {
-  display: flex;
-  background-color: var(--eui-table-colors-subheader-background);
-  border-bottom: var(--eui-table-border-width) var(--eui-table-border-style) var(--eui-table-colors-border);
-  flex: 0 0 auto;
-  padding: var(--eui-table-spacing-subheader-padding-vertical) 0;
-  overflow: hidden;
-}
-
-[data-eui-context] .eui-table tbody tr[data-eui-subheader="true"] td {
-  font-weight: 600;
-  color: var(--eui-table-colors-subheader-text);
-}
-
-/* Expandable Cell */
-[data-eui-context] .eui-table td[data-eui-expandable="true"] {
-  position: relative;
-}
-
-[data-eui-context] .eui-table td[data-eui-expandable="true"]::after {
-  content: '▼';
-  position: absolute;
-  right: var(--eui-table-spacing-cell-padding-horizontal);
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.75rem;
-  color: var(--eui-color-text-muted);
-  pointer-events: none;
-  transition: transform var(--eui-table-expandable-cell-animation-duration) var(--eui-table-expandable-cell-animation-easing);
-}
-
-[data-eui-context] .eui-table td[data-eui-expandable="true"][data-eui-expanded="true"]::after {
-  transform: translateY(-50%) rotate(180deg);
-}
-
-/* Expandable Cell Panel */
-[data-eui-context] .eui-table-cell-panel {
-  position: absolute;
-  background-color: var(--eui-color-background-surface);
-  border: var(--eui-table-border-width) solid var(--eui-table-colors-border);
-  border-radius: var(--eui-table-expandable-cell-border-radius);
-  box-shadow: var(--eui-table-expandable-cell-shadow);
-  padding: var(--eui-table-expandable-cell-spacing-padding);
-  max-width: var(--eui-table-expandable-cell-panel-max-width);
-  max-height: var(--eui-table-expandable-cell-panel-max-height);
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index: var(--eui-table-expandable-cell-panel-z-index);
-  display: none;
-  opacity: 0;
-  transition: opacity var(--eui-table-expandable-cell-animation-duration) var(--eui-table-expandable-cell-animation-easing);
-  /* Native scrollbar is hidden - using custom overlay scrollbar */
-}
-
-[data-eui-context] .eui-table-cell-panel[data-eui-open="true"] {
-  display: block;
-  opacity: 1;
-}
-
-/* Positioning for expandable cell panel */
-[data-eui-context] .eui-table td[data-eui-expandable="true"] {
-  position: relative;
-}
-
-/* Clickable cells */
-[data-eui-context] .eui-table td[data-eui-clickable="true"] {
-  cursor: pointer;
-}
-
-[data-eui-context] .eui-table td[data-eui-clickable="true"]:hover {
-  background-color: var(--eui-table-colors-row-background-hover);
-}
-

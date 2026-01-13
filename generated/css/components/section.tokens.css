@@ -1,0 +1,13 @@
+/**
+ * Section Component Tokens - Generated from tokens/components/section.tokens.json
+ */
+
+@layer eui-components {
+  /* Base section variables (default variant) */
+  [data-eui-context] .eui-section {
+    --eui-section-gap: var(--eui-layout-section-gap);
+    --eui-section-padding: var(--eui-layout-section-padding);
+    --eui-section-title-gap: var(--eui-layout-section-title-gap);
+  }
+
+}

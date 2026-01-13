@@ -26,18 +26,26 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
   const sortedDocs = sortDocs(docs);
 
   return (
-    <div className="eui-docs eui-docs-container eui-container" data-eui-container="standard">
+    <div
+      className="eui-docs eui-docs-container eui-container eui-stack"
+      data-eui-container="standard"
+      data-eui-gap="lg"
+    >
       <h1 className="eui-text-heading-5 eui-docs-title">{title}</h1>
       {description ? (
         <div className="eui-text-body eui-docs-description">
           {description}
         </div>
       ) : null}
-      <ul className="eui-docs-list">
+      <ul className="eui-docs-list eui-stack" data-eui-gap="sm">
         {sortedDocs.map((doc) => {
           const storyPath = doc.storybookId ? `?path=/story/${doc.storybookId}` : null;
           const meta = (
-            <div className="eui-text-caption eui-docs-item-meta">
+            <div
+              className="eui-inline eui-text-caption eui-docs-item-meta"
+              data-eui-gap="sm"
+              data-eui-wrap="true"
+            >
               <span>Path: {doc.path}</span>
               {!doc.storybookId ? <span>Storybook: not available</span> : null}
             </div>
@@ -48,23 +56,27 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
               {storyPath ? (
                 <a
                   href={storyPath}
-                  className="eui-card eui-docs-list-item eui-docs-list-link"
+                  className="eui-card eui-docs-list-link"
                   data-eui-variant="elevated"
                 >
-                  <div className="eui-text-title-md">
-                    {doc.title}
+                  <div className="eui-card__body eui-stack" data-eui-gap="xs">
+                    <div className="eui-text-title-md">
+                      {doc.title}
+                    </div>
+                    {meta}
                   </div>
-                  {meta}
                 </a>
               ) : (
                 <div
-                  className="eui-card eui-docs-list-item eui-docs-list-item--disabled"
+                  className="eui-card eui-docs-list-item--disabled"
                   data-eui-variant="muted"
                 >
-                  <div className="eui-text-title-md">
-                    {doc.title}
+                  <div className="eui-card__body eui-stack" data-eui-gap="xs">
+                    <div className="eui-text-title-md">
+                      {doc.title}
+                    </div>
+                    {meta}
                   </div>
-                  {meta}
                 </div>
               )}
             </li>

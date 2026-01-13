@@ -1,0 +1,80 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "grid": {
+      "base": {
+        "gap": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Default grid gap."
+        },
+        "columns": {
+          "1": {
+            "$value": 1,
+            "$type": "number",
+            "$description": "Single-column grid."
+          },
+          "2": {
+            "$value": 2,
+            "$type": "number",
+            "$description": "Two-column grid."
+          },
+          "3": {
+            "$value": 3,
+            "$type": "number",
+            "$description": "Three-column grid."
+          },
+          "4": {
+            "$value": 4,
+            "$type": "number",
+            "$description": "Four-column grid."
+          }
+        }
+      },
+      "size": {
+        "xs": {
+          "gap": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Extra-small grid gap."
+          }
+        },
+        "sm": {
+          "gap": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Small grid gap."
+          }
+        },
+        "md": {
+          "gap": {
+            "$value": "{eui.spacing.md}",
+            "$type": "dimension",
+            "$description": "Medium grid gap."
+          }
+        },
+        "lg": {
+          "gap": {
+            "$value": "{eui.spacing.lg}",
+            "$type": "dimension",
+            "$description": "Large grid gap."
+          }
+        },
+        "xl": {
+          "gap": {
+            "$value": "{eui.spacing.xl}",
+            "$type": "dimension",
+            "$description": "Extra-large grid gap."
+          }
+        },
+        "2xl": {
+          "gap": {
+            "$value": "{eui.spacing.2xl}",
+            "$type": "dimension",
+            "$description": "2x-large grid gap."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/**
+ * Table Component Tokens - Generated from tokens/components/table.tokens.json
+ */
+
+@layer eui-components {
+  /* Base table variables (default variant) */
+  [data-eui-context] .eui-table {
+    --eui-table-width: var(--eui-layout-container-wide-maxWidth);
+    --eui-table-colors-background: var(--eui-color-background-surface);
+    --eui-table-colors-border: var(--eui-color-border-default);
+    --eui-table-colors-headerBackground: var(--eui-color-background-subtle);
+    --eui-table-colors-headerText: var(--eui-color-text-primary);
+    --eui-table-colors-cellText: var(--eui-color-text-primary);
+    --eui-table-border-width: var(--eui-border-width-thin);
+    --eui-table-border-style: var(--eui-border-style-solid);
+    --eui-table-spacing-cell-padding-block: var(--eui-spacing-sm);
+    --eui-table-spacing-cell-padding-inline: var(--eui-spacing-sm);
+    --eui-table-typography-fontFamily: var(--eui-typography-textStyle-body-small-fontFamily);
+    --eui-table-typography-fontSize: var(--eui-typography-textStyle-body-small-fontSize);
+    --eui-table-typography-fontWeight: var(--eui-typography-textStyle-body-small-fontWeight);
+    --eui-table-typography-lineHeight: var(--eui-typography-textStyle-body-small-lineHeight);
+    --eui-table-typography-headerWeight: var(--eui-typography-fontWeight-semibold);
+  }
+
+}

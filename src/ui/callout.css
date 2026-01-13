@@ -1,0 +1,94 @@
+/**
+ * Callout Component
+ *
+ * Generated from: tokens/components/callout.contract.json
+ * Token variables: generated/css/components/callout.tokens.css
+ */
+
+@layer eui-components {
+  [data-eui-context] .eui-callout {
+    --eui-callout-background: var(--eui-callout-colors-info-background);
+    --eui-callout-border: var(--eui-callout-colors-info-border);
+    --eui-callout-color: var(--eui-callout-colors-info-text);
+
+    display: block;
+    padding-block: var(--eui-callout-padding-block);
+    padding-inline: var(--eui-callout-padding-inline);
+    border-left: var(--eui-callout-border-width) var(--eui-callout-border-style) var(--eui-callout-border);
+    border-radius: var(--eui-callout-radius);
+    background-color: var(--eui-callout-background);
+    color: var(--eui-callout-color);
+    font-family: var(--eui-callout-typography-fontFamily);
+    font-size: var(--eui-callout-typography-fontSize);
+    font-weight: var(--eui-callout-typography-fontWeight);
+    line-height: var(--eui-callout-typography-lineHeight);
+    font-style: italic;
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='neutral'] {
+    --eui-callout-background: var(--eui-callout-colors-neutral-background);
+    --eui-callout-border: var(--eui-callout-colors-neutral-border);
+    --eui-callout-color: var(--eui-callout-colors-neutral-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='success'] {
+    --eui-callout-background: var(--eui-callout-colors-success-background);
+    --eui-callout-border: var(--eui-callout-colors-success-border);
+    --eui-callout-color: var(--eui-callout-colors-success-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='warning'] {
+    --eui-callout-background: var(--eui-callout-colors-warning-background);
+    --eui-callout-border: var(--eui-callout-colors-warning-border);
+    --eui-callout-color: var(--eui-callout-colors-warning-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='error'] {
+    --eui-callout-background: var(--eui-callout-colors-error-background);
+    --eui-callout-border: var(--eui-callout-colors-error-border);
+    --eui-callout-color: var(--eui-callout-colors-error-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='info'] {
+    --eui-callout-background: var(--eui-callout-colors-info-background);
+    --eui-callout-border: var(--eui-callout-colors-info-border);
+    --eui-callout-color: var(--eui-callout-colors-info-text);
+  }
+
+  /* Solid variant */
+  [data-eui-context] .eui-callout[data-eui-variant='solid'] {
+    --eui-callout-background: var(--eui-callout-colors-info-solid-background);
+    --eui-callout-border: var(--eui-callout-colors-info-solid-border);
+    --eui-callout-color: var(--eui-callout-colors-info-solid-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='neutral'][data-eui-variant='solid'] {
+    --eui-callout-background: var(--eui-callout-colors-neutral-solid-background);
+    --eui-callout-border: var(--eui-callout-colors-neutral-solid-border);
+    --eui-callout-color: var(--eui-callout-colors-neutral-solid-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='success'][data-eui-variant='solid'] {
+    --eui-callout-background: var(--eui-callout-colors-success-solid-background);
+    --eui-callout-border: var(--eui-callout-colors-success-solid-border);
+    --eui-callout-color: var(--eui-callout-colors-success-solid-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='warning'][data-eui-variant='solid'] {
+    --eui-callout-background: var(--eui-callout-colors-warning-solid-background);
+    --eui-callout-border: var(--eui-callout-colors-warning-solid-border);
+    --eui-callout-color: var(--eui-callout-colors-warning-solid-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='error'][data-eui-variant='solid'] {
+    --eui-callout-background: var(--eui-callout-colors-error-solid-background);
+    --eui-callout-border: var(--eui-callout-colors-error-solid-border);
+    --eui-callout-color: var(--eui-callout-colors-error-solid-text);
+  }
+
+  [data-eui-context] .eui-callout[data-eui-tone='info'][data-eui-variant='solid'] {
+    --eui-callout-background: var(--eui-callout-colors-info-solid-background);
+    --eui-callout-border: var(--eui-callout-colors-info-solid-border);
+    --eui-callout-color: var(--eui-callout-colors-info-solid-text);
+  }
+}

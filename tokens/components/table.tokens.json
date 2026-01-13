@@ -1,0 +1,96 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "table": {
+      "base": {
+        "width": {
+          "$value": "{eui.layout.container.wide.maxWidth}",
+          "$type": "dimension",
+          "$description": "Table width (full width)."
+        },
+        "colors": {
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Table background color."
+          },
+          "border": {
+            "$value": "{eui.color.border.default}",
+            "$type": "color",
+            "$description": "Table border color."
+          },
+          "headerBackground": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Table header background color."
+          },
+          "headerText": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Table header text color."
+          },
+          "cellText": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Table cell text color."
+          }
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Table border width."
+          },
+          "style": {
+            "$value": "{eui.border.style.solid}",
+            "$type": "string",
+            "$description": "Table border style."
+          }
+        },
+        "spacing": {
+          "cell": {
+            "padding": {
+              "block": {
+                "$value": "{eui.spacing.sm}",
+                "$type": "dimension",
+                "$description": "Table cell vertical padding."
+              },
+              "inline": {
+                "$value": "{eui.spacing.sm}",
+                "$type": "dimension",
+                "$description": "Table cell horizontal padding."
+              }
+            }
+          }
+        },
+        "typography": {
+          "fontFamily": {
+            "$value": "{eui.typography.textStyle.body-small.fontFamily}",
+            "$type": "fontFamily",
+            "$description": "Table text font family."
+          },
+          "fontSize": {
+            "$value": "{eui.typography.textStyle.body-small.fontSize}",
+            "$type": "fontSize",
+            "$description": "Table text font size."
+          },
+          "fontWeight": {
+            "$value": "{eui.typography.textStyle.body-small.fontWeight}",
+            "$type": "fontWeight",
+            "$description": "Table text font weight."
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.textStyle.body-small.lineHeight}",
+            "$type": "lineHeight",
+            "$description": "Table text line height."
+          },
+          "headerWeight": {
+            "$value": "{eui.typography.fontWeight.semibold}",
+            "$type": "fontWeight",
+            "$description": "Table header font weight."
+          }
+        }
+      }
+    }
+  }
+}

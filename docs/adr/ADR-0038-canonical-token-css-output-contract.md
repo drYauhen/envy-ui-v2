@@ -91,6 +91,17 @@ Each file MUST wrap its rules inside the appropriate layer block:
 --eui-layout-container-maxWidth: var(--eui-breakpoint-desktop);
 ```
 
+#### Raw Resolution (Context Overrides)
+
+Raw tokens are JSON-only context overrides. When semantics reference `{eui.app.raw.*}`, the generator resolves the raw token value and emits the final primitive reference:
+
+```css
+/* ✅ ALLOWED: raw resolved to primitives (no raw CSS variables) */
+--eui-typography-textStyle-body-base-fontSize: var(--eui-typography-fontSize-sm);
+```
+
+This is how App and Website contexts can diverge (e.g., App base = 14px, Website base = 16px) without exposing raw variables in runtime CSS.
+
 ### Themes Override Semantics Only
 
 **tokens.themes.css MUST contain only semantic overrides.** No component variables allowed:

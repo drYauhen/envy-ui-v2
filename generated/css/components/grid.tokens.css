@@ -1,0 +1,21 @@
+/**
+ * Grid Component Tokens - Generated from tokens/components/grid.tokens.json
+ */
+
+@layer eui-components {
+  /* Base grid variables (default variant) */
+  [data-eui-context] .eui-grid {
+    --eui-grid-gap: var(--eui-spacing-md);
+    --eui-grid-columns-1: 1;
+    --eui-grid-columns-2: 2;
+    --eui-grid-columns-3: 3;
+    --eui-grid-columns-4: 4;
+    --eui-grid-size-xs-gap: var(--eui-spacing-xs);
+    --eui-grid-size-sm-gap: var(--eui-spacing-sm);
+    --eui-grid-size-md-gap: var(--eui-spacing-md);
+    --eui-grid-size-lg-gap: var(--eui-spacing-lg);
+    --eui-grid-size-xl-gap: var(--eui-spacing-xl);
+    --eui-grid-size-2xl-gap: var(--eui-spacing-2xl);
+  }
+
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "container",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/container.css",
+    "note": "Canonical container derived from existing styles."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-container",
+    "slots": {}
+  },
+
+  "axes": {
+    "container": {
+      "type": "enum",
+      "default": "standard",
+      "values": ["standard", "wide", "fluid"],
+      "attribute": "data-eui-container",
+      "notes": "Container width preset."
+    }
+  },
+
+  "componentVars": {
+    "layout": {
+      "--eui-container-width": { "type": "dimension" },
+      "--eui-container-gutter-x": { "type": "dimension" },
+      "--eui-container-maxWidth-standard": { "type": "dimension" },
+      "--eui-container-maxWidth-wide": { "type": "dimension" },
+      "--eui-container-maxWidth-fluid": { "type": "dimension" }
+    }
+  }
+}

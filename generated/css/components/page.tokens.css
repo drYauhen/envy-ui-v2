@@ -1,0 +1,12 @@
+/**
+ * Page Component Tokens - Generated from tokens/components/page.tokens.json
+ */
+
+@layer eui-components {
+  /* Base page variables (default variant) */
+  [data-eui-context] .eui-page {
+    --eui-page-padding-x: var(--eui-layout-page-padding-x);
+    --eui-page-padding-y: var(--eui-layout-page-padding-y);
+  }
+
+}

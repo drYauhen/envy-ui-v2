@@ -1,0 +1,58 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "stack": {
+      "base": {
+        "gap": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Default stack gap."
+        }
+      },
+      "size": {
+        "xs": {
+          "gap": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Extra-small stack gap."
+          }
+        },
+        "sm": {
+          "gap": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Small stack gap."
+          }
+        },
+        "md": {
+          "gap": {
+            "$value": "{eui.spacing.md}",
+            "$type": "dimension",
+            "$description": "Medium stack gap."
+          }
+        },
+        "lg": {
+          "gap": {
+            "$value": "{eui.spacing.lg}",
+            "$type": "dimension",
+            "$description": "Large stack gap."
+          }
+        },
+        "xl": {
+          "gap": {
+            "$value": "{eui.spacing.xl}",
+            "$type": "dimension",
+            "$description": "Extra-large stack gap."
+          }
+        },
+        "2xl": {
+          "gap": {
+            "$value": "{eui.spacing.2xl}",
+            "$type": "dimension",
+            "$description": "2x-large stack gap."
+          }
+        }
+      }
+    }
+  }
+}

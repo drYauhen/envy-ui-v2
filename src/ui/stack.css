@@ -1,51 +1,56 @@
-/* ============================================================================
-   Stack Component (Vertical Layout)
-   ============================================================================ */
+/**
+ * Stack Component - Layout (Vertical)
+ *
+ * Generated from: tokens/components/stack.contract.json
+ */
 
-[data-eui-context] .eui-stack {
-  display: flex;
-  flex-direction: column;
+@layer eui-components {
+  [data-eui-context] .eui-stack {
+    --eui-stack-gap: var(--eui-stack-size-md-gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--eui-stack-gap);
+  }
+
+  /* Gap variants - data-attributes for configuration */
+  [data-eui-context] .eui-stack[data-eui-gap='xs'] {
+    --eui-stack-gap: var(--eui-stack-size-xs-gap);
+  }
+
+  [data-eui-context] .eui-stack[data-eui-gap='sm'] {
+    --eui-stack-gap: var(--eui-stack-size-sm-gap);
+  }
+
+  [data-eui-context] .eui-stack[data-eui-gap='md'] {
+    --eui-stack-gap: var(--eui-stack-size-md-gap);
+  }
+
+  [data-eui-context] .eui-stack[data-eui-gap='lg'] {
+    --eui-stack-gap: var(--eui-stack-size-lg-gap);
+  }
+
+  [data-eui-context] .eui-stack[data-eui-gap='xl'] {
+    --eui-stack-gap: var(--eui-stack-size-xl-gap);
+  }
+
+  [data-eui-context] .eui-stack[data-eui-gap='2xl'] {
+    --eui-stack-gap: var(--eui-stack-size-2xl-gap);
+  }
+
+  /* Alignment variants - data-attributes for configuration */
+  [data-eui-context] .eui-stack[data-eui-align='start'] {
+    align-items: flex-start;
+  }
+
+  [data-eui-context] .eui-stack[data-eui-align='center'] {
+    align-items: center;
+  }
+
+  [data-eui-context] .eui-stack[data-eui-align='end'] {
+    align-items: flex-end;
+  }
+
+  [data-eui-context] .eui-stack[data-eui-align='stretch'] {
+    align-items: stretch;
+  }
 }
-
-/* Gap variants - data-attributes for configuration */
-[data-eui-context] .eui-stack[data-eui-gap='xs'] {
-  gap: var(--eui-spacing-xs);
-}
-
-[data-eui-context] .eui-stack[data-eui-gap='sm'] {
-  gap: var(--eui-spacing-sm);
-}
-
-[data-eui-context] .eui-stack[data-eui-gap='md'] {
-  gap: var(--eui-spacing-md);
-}
-
-[data-eui-context] .eui-stack[data-eui-gap='lg'] {
-  gap: var(--eui-spacing-lg);
-}
-
-[data-eui-context] .eui-stack[data-eui-gap='xl'] {
-  gap: var(--eui-spacing-xl);
-}
-
-[data-eui-context] .eui-stack[data-eui-gap='2xl'] {
-  gap: var(--eui-spacing-2xl);
-}
-
-/* Alignment variants - data-attributes for configuration */
-[data-eui-context] .eui-stack[data-eui-align='start'] {
-  align-items: flex-start;
-}
-
-[data-eui-context] .eui-stack[data-eui-align='center'] {
-  align-items: center;
-}
-
-[data-eui-context] .eui-stack[data-eui-align='end'] {
-  align-items: flex-end;
-}
-
-[data-eui-context] .eui-stack[data-eui-align='stretch'] {
-  align-items: stretch;
-}
-

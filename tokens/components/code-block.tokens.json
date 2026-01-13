@@ -1,0 +1,115 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "code-block": {
+      "base": {
+        "colors": {
+          "background": {
+            "$value": "{eui.color.brand.50}",
+            "$type": "color",
+            "$description": "Inline code background color (brand 50)."
+          },
+          "text": {
+            "$value": "{eui.color.accent.900}",
+            "$type": "color",
+            "$description": "Inline code text color (darkest accent)."
+          },
+          "border": {
+            "$value": "{eui.color.accent.300}",
+            "$type": "color",
+            "$description": "Inline code border color (accent 300)."
+          }
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Inline code border width."
+          },
+          "style": {
+            "$value": "{eui.border.style.solid}",
+            "$type": "string",
+            "$description": "Inline code border style."
+          }
+        },
+        "radius": {
+          "$value": "{eui.radius.default}",
+          "$type": "dimension",
+          "$description": "Inline code border radius (aligned with badge)."
+        },
+        "padding": {
+          "block": {
+            "$value": "{eui.dimension.0}",
+            "$type": "dimension",
+            "$description": "Inline code vertical padding (tight)."
+          },
+          "inline": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Inline code horizontal padding."
+          }
+        },
+        "typography": {
+          "fontFamily": {
+            "$value": "{eui.typography.textStyle.code-base.fontFamily}",
+            "$type": "fontFamily",
+            "$description": "Inline code font family."
+          },
+          "fontSize": {
+            "$value": "{eui.typography.textStyle.code.small.fontSize}",
+            "$type": "fontSize",
+            "$description": "Inline code font size (12px)."
+          },
+          "fontWeight": {
+            "$value": "{eui.typography.textStyle.code-base.fontWeight}",
+            "$type": "fontWeight",
+            "$description": "Inline code font weight."
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.textStyle.code-base.lineHeight}",
+            "$type": "lineHeight",
+            "$description": "Inline code line height."
+          }
+        }
+      },
+      "variant": {
+        "block": {
+          "colors": {
+            "background": {
+              "$value": "{eui.color.background.inverse}",
+              "$type": "color",
+              "$description": "Block code background color."
+            },
+            "text": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Block code text color."
+            },
+            "border": {
+              "$value": "{eui.color.background.transparent}",
+              "$type": "color",
+              "$description": "Block code border color."
+            }
+          },
+          "radius": {
+            "$value": "{eui.radius.large}",
+            "$type": "dimension",
+            "$description": "Block code border radius (aligned with card)."
+          },
+          "padding": {
+            "block": {
+              "$value": "{eui.spacing.lg}",
+              "$type": "dimension",
+              "$description": "Block code vertical padding."
+            },
+            "inline": {
+              "$value": "{eui.spacing.lg}",
+              "$type": "dimension",
+              "$description": "Block code horizontal padding."
+            }
+          }
+        }
+      }
+    }
+  }
+}

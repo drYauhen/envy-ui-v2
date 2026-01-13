@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "content",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/content.css",
+    "note": "Canonical content wrapper derived from existing docs usage."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-content",
+    "slots": {}
+  },
+
+  "componentVars": {
+    "spacing": {
+      "--eui-content-padding-block": { "type": "dimension" },
+      "--eui-content-padding-inline": { "type": "dimension" },
+      "--eui-content-gap": { "type": "dimension" },
+      "--eui-content-list-padding": { "type": "dimension" },
+      "--eui-content-list-itemGap": { "type": "dimension" }
+    },
+    "typography": {
+      "--eui-content-lineHeight": { "type": "lineHeight" }
+    },
+    "colors": {
+      "--eui-content-color": { "type": "color" }
+    }
+  }
+}

@@ -145,3 +145,55 @@
   font-weight: var(--eui-typography-textStyle-code-small-fontWeight);
   line-height: var(--eui-typography-textStyle-code-small-lineHeight);
 }
+
+[data-eui-context].eui-typography-root code:not(.eui-code-block) {
+  display: inline-block;
+  font-family: var(--eui-typography-textStyle-code-small-fontFamily);
+  font-size: var(--eui-typography-textStyle-code-small-fontSize);
+  font-weight: var(--eui-typography-textStyle-code-small-fontWeight);
+  line-height: var(--eui-typography-textStyle-code-small-lineHeight);
+  color: var(--eui-color-accent-900);
+  background-color: var(--eui-color-brand-50);
+  border-width: var(--eui-border-width-thin);
+  border-style: var(--eui-border-style-solid);
+  border-color: var(--eui-color-accent-300);
+  border-radius: var(--eui-radius-default);
+  padding-block: var(--eui-dimension-0);
+  padding-inline: var(--eui-spacing-xs);
+  vertical-align: baseline;
+}
+
+[data-eui-context].eui-typography-root pre:not(.eui-code-block) {
+  display: block;
+  font-family: var(--eui-typography-textStyle-code-small-fontFamily);
+  font-size: var(--eui-typography-textStyle-code-small-fontSize);
+  font-weight: var(--eui-typography-textStyle-code-small-fontWeight);
+  line-height: var(--eui-typography-textStyle-code-small-lineHeight);
+  color: var(--eui-color-text-inverse);
+  background-color: var(--eui-color-background-inverse);
+  border-width: var(--eui-border-width-thin);
+  border-style: var(--eui-border-style-solid);
+  border-color: var(--eui-color-background-transparent);
+  border-radius: var(--eui-radius-large);
+  padding-block: var(--eui-spacing-lg);
+  padding-inline: var(--eui-spacing-lg);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+[data-eui-context].eui-typography-root pre:not(.eui-code-block) code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+
+[data-eui-context].eui-typography-root .eui-code-block code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}

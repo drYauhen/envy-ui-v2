@@ -18,3 +18,15 @@
 /* 4. Components (component-specific tokens) */
 @import './components/card.tokens.css';
 @import './components/badge.tokens.css';
+@import './components/stack.tokens.css';
+@import './components/inline.tokens.css';
+@import './components/grid.tokens.css';
+@import './components/section.tokens.css';
+@import './components/container.tokens.css';
+@import './components/page.tokens.css';
+@import './components/content.tokens.css';
+@import './components/code-block.tokens.css';
+@import './components/table.tokens.css';
+@import './components/table-container.tokens.css';
+@import './components/callout.tokens.css';
+@import './components/button.tokens.css';

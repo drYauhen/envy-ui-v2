@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "stack",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/stack.css",
+    "note": "Canonical layout primitive derived from existing stack styles."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-stack",
+    "slots": {}
+  },
+
+  "axes": {
+    "gap": {
+      "type": "enum",
+      "default": "md",
+      "values": ["xs", "sm", "md", "lg", "xl", "2xl"],
+      "attribute": "data-eui-gap",
+      "notes": "Gap controls vertical spacing between stack children."
+    },
+    "align": {
+      "type": "enum",
+      "default": "stretch",
+      "values": ["start", "center", "end", "stretch"],
+      "attribute": "data-eui-align",
+      "notes": "Alignment controls horizontal alignment of stack children."
+    }
+  },
+
+  "componentVars": {
+    "spacing": {
+      "--eui-stack-gap": { "type": "dimension" },
+      "--eui-stack-size-xs-gap": { "type": "dimension" },
+      "--eui-stack-size-sm-gap": { "type": "dimension" },
+      "--eui-stack-size-md-gap": { "type": "dimension" },
+      "--eui-stack-size-lg-gap": { "type": "dimension" },
+      "--eui-stack-size-xl-gap": { "type": "dimension" },
+      "--eui-stack-size-2xl-gap": { "type": "dimension" }
+    }
+  }
+}

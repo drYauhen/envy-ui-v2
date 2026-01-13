@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "table-container",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/docs.css",
+    "note": "Canonical table container wrapper for overflow handling."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-table-container",
+    "slots": {}
+  },
+
+  "componentVars": {
+    "layout": {
+      "--eui-table-container-width": { "type": "dimension" }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "content": {
+      "base": {
+        "padding": {
+          "block": {
+            "$value": "{eui.spacing.xl}",
+            "$type": "dimension",
+            "$description": "Vertical padding for content blocks."
+          },
+          "inline": {
+            "$value": "{eui.spacing.xl}",
+            "$type": "dimension",
+            "$description": "Horizontal padding for content blocks."
+          }
+        },
+        "gap": {
+          "$value": "{eui.spacing.md}",
+          "$type": "dimension",
+          "$description": "Default vertical rhythm between content elements."
+        },
+        "lineHeight": {
+          "$value": "{eui.typography.lineHeight.relaxed}",
+          "$type": "lineHeight",
+          "$description": "Relaxed line height for long-form content."
+        },
+        "color": {
+          "$value": "{eui.color.text.primary}",
+          "$type": "color",
+          "$description": "Default content text color."
+        },
+        "list": {
+          "padding": {
+            "$value": "{eui.spacing.xl}",
+            "$type": "dimension",
+            "$description": "Inline padding for lists inside content."
+          },
+          "itemGap": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Spacing between list items."
+          }
+        }
+      }
+    }
+  }
+}

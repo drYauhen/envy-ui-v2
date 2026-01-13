@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "section": {
+      "base": {
+        "gap": {
+          "$value": "{eui.layout.section.gap}",
+          "$type": "dimension",
+          "$description": "Default gap between section children."
+        },
+        "padding": {
+          "$value": "{eui.layout.section.padding}",
+          "$type": "dimension",
+          "$description": "Default section padding."
+        },
+        "title": {
+          "gap": {
+            "$value": "{eui.layout.section.title.gap}",
+            "$type": "dimension",
+            "$description": "Gap between section title and content."
+          }
+        }
+      }
+    }
+  }
+}

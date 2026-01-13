@@ -1,0 +1,52 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "grid",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/grid.css",
+    "note": "Canonical layout primitive derived from existing grid styles."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-grid",
+    "slots": {}
+  },
+
+  "axes": {
+    "gap": {
+      "type": "enum",
+      "default": "md",
+      "values": ["xs", "sm", "md", "lg", "xl", "2xl"],
+      "attribute": "data-eui-gap",
+      "notes": "Gap controls spacing between grid cells."
+    },
+    "cols": {
+      "type": "enum",
+      "default": "1",
+      "values": ["1", "2", "3", "4"],
+      "attribute": "data-eui-cols",
+      "notes": "Column count for grid layout."
+    }
+  },
+
+  "componentVars": {
+    "spacing": {
+      "--eui-grid-gap": { "type": "dimension" },
+      "--eui-grid-size-xs-gap": { "type": "dimension" },
+      "--eui-grid-size-sm-gap": { "type": "dimension" },
+      "--eui-grid-size-md-gap": { "type": "dimension" },
+      "--eui-grid-size-lg-gap": { "type": "dimension" },
+      "--eui-grid-size-xl-gap": { "type": "dimension" },
+      "--eui-grid-size-2xl-gap": { "type": "dimension" }
+    },
+    "layout": {
+      "--eui-grid-columns": { "type": "number" },
+      "--eui-grid-columns-1": { "type": "number" },
+      "--eui-grid-columns-2": { "type": "number" },
+      "--eui-grid-columns-3": { "type": "number" },
+      "--eui-grid-columns-4": { "type": "number" }
+    }
+  }
+}

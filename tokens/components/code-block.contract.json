@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "code-block",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/docs.css",
+    "note": "Canonical code-block component derived from docs shell usage."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-code-block",
+    "slots": {}
+  },
+
+  "axes": {
+    "variant": {
+      "type": "enum",
+      "default": "inline",
+      "values": ["inline", "block"],
+      "attribute": "data-eui-variant",
+      "notes": "Inline vs block code styling."
+    }
+  },
+
+  "componentVars": {
+    "colors": {
+      "--eui-code-block-colors-background": { "type": "color" },
+      "--eui-code-block-colors-text": { "type": "color" },
+      "--eui-code-block-colors-border": { "type": "color" }
+    },
+    "border": {
+      "--eui-code-block-border-width": { "type": "dimension" },
+      "--eui-code-block-border-style": { "type": "string" }
+    },
+    "shape": {
+      "--eui-code-block-radius": { "type": "dimension" }
+    },
+    "spacing": {
+      "--eui-code-block-padding-block": { "type": "dimension" },
+      "--eui-code-block-padding-inline": { "type": "dimension" }
+    },
+    "typography": {
+      "--eui-code-block-typography-fontFamily": { "type": "fontFamily" },
+      "--eui-code-block-typography-fontSize": { "type": "fontSize" },
+      "--eui-code-block-typography-fontWeight": { "type": "fontWeight" },
+      "--eui-code-block-typography-lineHeight": { "type": "lineHeight" }
+    }
+  }
+}

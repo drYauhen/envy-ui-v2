@@ -1,0 +1,52 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "inline",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/inline.css",
+    "note": "Canonical layout primitive derived from existing inline styles."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-inline",
+    "slots": {}
+  },
+
+  "axes": {
+    "gap": {
+      "type": "enum",
+      "default": "md",
+      "values": ["xs", "sm", "md", "lg", "xl", "2xl"],
+      "attribute": "data-eui-gap",
+      "notes": "Gap controls horizontal spacing between inline children."
+    },
+    "justify": {
+      "type": "enum",
+      "default": "start",
+      "values": ["start", "center", "end", "between"],
+      "attribute": "data-eui-justify",
+      "notes": "Justify controls distribution of inline children."
+    },
+    "wrap": {
+      "type": "enum",
+      "default": "false",
+      "values": ["true", "false"],
+      "attribute": "data-eui-wrap",
+      "notes": "Wrap allows inline children to wrap onto multiple lines."
+    }
+  },
+
+  "componentVars": {
+    "spacing": {
+      "--eui-inline-gap": { "type": "dimension" },
+      "--eui-inline-size-xs-gap": { "type": "dimension" },
+      "--eui-inline-size-sm-gap": { "type": "dimension" },
+      "--eui-inline-size-md-gap": { "type": "dimension" },
+      "--eui-inline-size-lg-gap": { "type": "dimension" },
+      "--eui-inline-size-xl-gap": { "type": "dimension" },
+      "--eui-inline-size-2xl-gap": { "type": "dimension" }
+    }
+  }
+}

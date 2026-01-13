@@ -1,33 +1,68 @@
-/* ============================================================================
-   Grid Component
-   ============================================================================ */
+/**
+ * Grid Component
+ *
+ * Generated from: tokens/components/grid.contract.json
+ */
 
-[data-eui-context] .eui-grid {
-  display: grid;
-  gap: var(--eui-spacing-md);
-}
-
-/* Column presets - data-attributes for configuration */
-[data-eui-context] .eui-grid[data-eui-cols='2'] {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-[data-eui-context] .eui-grid[data-eui-cols='3'] {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-[data-eui-context] .eui-grid[data-eui-cols='4'] {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* Responsive: narrow width - reduce columns */
-@media (max-width: 1279px) {
-  [data-eui-context] .eui-grid[data-eui-cols='4'] {
-    grid-template-columns: repeat(2, 1fr);
+@layer eui-components {
+  [data-eui-context] .eui-grid {
+    --eui-grid-gap: var(--eui-grid-size-md-gap);
+    --eui-grid-columns: var(--eui-grid-columns-1);
+    display: grid;
+    gap: var(--eui-grid-gap);
+    grid-template-columns: repeat(var(--eui-grid-columns), minmax(0, 1fr));
   }
-  
+
+  /* Gap variants - data-attributes for configuration */
+  [data-eui-context] .eui-grid[data-eui-gap='xs'] {
+    --eui-grid-gap: var(--eui-grid-size-xs-gap);
+  }
+
+  [data-eui-context] .eui-grid[data-eui-gap='sm'] {
+    --eui-grid-gap: var(--eui-grid-size-sm-gap);
+  }
+
+  [data-eui-context] .eui-grid[data-eui-gap='md'] {
+    --eui-grid-gap: var(--eui-grid-size-md-gap);
+  }
+
+  [data-eui-context] .eui-grid[data-eui-gap='lg'] {
+    --eui-grid-gap: var(--eui-grid-size-lg-gap);
+  }
+
+  [data-eui-context] .eui-grid[data-eui-gap='xl'] {
+    --eui-grid-gap: var(--eui-grid-size-xl-gap);
+  }
+
+  [data-eui-context] .eui-grid[data-eui-gap='2xl'] {
+    --eui-grid-gap: var(--eui-grid-size-2xl-gap);
+  }
+
+  /* Column presets - data-attributes for configuration */
+  [data-eui-context] .eui-grid[data-eui-cols='1'] {
+    --eui-grid-columns: var(--eui-grid-columns-1);
+  }
+
+  [data-eui-context] .eui-grid[data-eui-cols='2'] {
+    --eui-grid-columns: var(--eui-grid-columns-2);
+  }
+
   [data-eui-context] .eui-grid[data-eui-cols='3'] {
-    grid-template-columns: repeat(2, 1fr);
+    --eui-grid-columns: var(--eui-grid-columns-3);
+  }
+
+  [data-eui-context] .eui-grid[data-eui-cols='4'] {
+    --eui-grid-columns: var(--eui-grid-columns-4);
+  }
+
+  /* Responsive: narrow width - reduce columns */
+  @media (max-width: 1279px) {
+    [data-eui-context] .eui-grid[data-eui-cols='4'] {
+      --eui-grid-columns: var(--eui-grid-columns-2);
+    }
+    
+    [data-eui-context] .eui-grid[data-eui-cols='3'] {
+      --eui-grid-columns: var(--eui-grid-columns-2);
+    }
   }
 }
-

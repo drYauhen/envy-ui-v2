@@ -1,0 +1,17 @@
+/**
+ * Content Component Tokens - Generated from tokens/components/content.tokens.json
+ */
+
+@layer eui-components {
+  /* Base content variables (default variant) */
+  [data-eui-context] .eui-content {
+    --eui-content-padding-block: var(--eui-spacing-xl);
+    --eui-content-padding-inline: var(--eui-spacing-xl);
+    --eui-content-gap: var(--eui-spacing-md);
+    --eui-content-lineHeight: var(--eui-typography-lineHeight-relaxed);
+    --eui-content-color: var(--eui-color-text-primary);
+    --eui-content-list-padding: var(--eui-spacing-xl);
+    --eui-content-list-itemGap: var(--eui-spacing-xs);
+  }
+
+}

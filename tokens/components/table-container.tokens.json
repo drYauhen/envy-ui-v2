@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "table-container": {
+      "base": {
+        "width": {
+          "$value": "{eui.layout.container.wide.maxWidth}",
+          "$type": "dimension",
+          "$description": "Table container width (full width)."
+        }
+      }
+    }
+  }
+}

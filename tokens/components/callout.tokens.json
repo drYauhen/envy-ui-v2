@@ -1,0 +1,260 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "callout": {
+      "base": {
+        "padding": {
+          "block": {
+            "$value": "{eui.spacing.md}",
+            "$type": "dimension",
+            "$description": "Callout vertical padding."
+          },
+          "inline": {
+            "$value": "{eui.spacing.lg}",
+            "$type": "dimension",
+            "$description": "Callout horizontal padding."
+          }
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thick}",
+            "$type": "dimension",
+            "$description": "Callout border width."
+          },
+          "style": {
+            "$value": "{eui.border.style.solid}",
+            "$type": "string",
+            "$description": "Callout border style."
+          }
+        },
+        "radius": {
+          "$value": "{eui.radius.md}",
+          "$type": "dimension",
+          "$description": "Callout border radius."
+        },
+        "typography": {
+          "fontFamily": {
+            "$value": "{eui.typography.textStyle.body-small.fontFamily}",
+            "$type": "fontFamily",
+            "$description": "Callout font family."
+          },
+          "fontSize": {
+            "$value": "{eui.typography.textStyle.body-small.fontSize}",
+            "$type": "fontSize",
+            "$description": "Callout font size."
+          },
+          "fontWeight": {
+            "$value": "{eui.typography.fontWeight.semibold}",
+            "$type": "fontWeight",
+            "$description": "Callout font weight (600)."
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.textStyle.body-small.lineHeight}",
+            "$type": "lineHeight",
+            "$description": "Callout line height."
+          }
+        }
+      },
+      "variant": {
+        "subtle": {
+          "tone": {
+            "neutral": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.neutral.background}",
+                  "$type": "color",
+                  "$description": "Neutral callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.neutral.border}",
+                  "$type": "color",
+                  "$description": "Neutral callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.status.neutral.text}",
+                  "$type": "color",
+                  "$description": "Neutral callout text."
+                }
+              }
+            },
+            "info": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.info.background}",
+                  "$type": "color",
+                  "$description": "Info callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.info.border}",
+                  "$type": "color",
+                  "$description": "Info callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.status.info.text}",
+                  "$type": "color",
+                  "$description": "Info callout text."
+                }
+              }
+            },
+            "success": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.success.background}",
+                  "$type": "color",
+                  "$description": "Success callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.success.border}",
+                  "$type": "color",
+                  "$description": "Success callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.status.success.text}",
+                  "$type": "color",
+                  "$description": "Success callout text."
+                }
+              }
+            },
+            "warning": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.warning.background}",
+                  "$type": "color",
+                  "$description": "Warning callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.warning.border}",
+                  "$type": "color",
+                  "$description": "Warning callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.status.warning.text}",
+                  "$type": "color",
+                  "$description": "Warning callout text."
+                }
+              }
+            },
+            "error": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.error.background}",
+                  "$type": "color",
+                  "$description": "Error callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.error.border}",
+                  "$type": "color",
+                  "$description": "Error callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.status.error.text}",
+                  "$type": "color",
+                  "$description": "Error callout text."
+                }
+              }
+            }
+          }
+        },
+        "solid": {
+          "tone": {
+            "neutral": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.neutral.solid}",
+                  "$type": "color",
+                  "$description": "Neutral solid callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.neutral.solid}",
+                  "$type": "color",
+                  "$description": "Neutral solid callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.text.inverse}",
+                  "$type": "color",
+                  "$description": "Neutral solid callout text."
+                }
+              }
+            },
+            "info": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.info.solid}",
+                  "$type": "color",
+                  "$description": "Info solid callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.info.solid}",
+                  "$type": "color",
+                  "$description": "Info solid callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.text.inverse}",
+                  "$type": "color",
+                  "$description": "Info solid callout text."
+                }
+              }
+            },
+            "success": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.success.solid}",
+                  "$type": "color",
+                  "$description": "Success solid callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.success.solid}",
+                  "$type": "color",
+                  "$description": "Success solid callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.text.inverse}",
+                  "$type": "color",
+                  "$description": "Success solid callout text."
+                }
+              }
+            },
+            "warning": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.warning.solid}",
+                  "$type": "color",
+                  "$description": "Warning solid callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.warning.solid}",
+                  "$type": "color",
+                  "$description": "Warning solid callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.text.inverse}",
+                  "$type": "color",
+                  "$description": "Warning solid callout text."
+                }
+              }
+            },
+            "error": {
+              "colors": {
+                "background": {
+                  "$value": "{eui.color.status.error.solid}",
+                  "$type": "color",
+                  "$description": "Error solid callout background."
+                },
+                "border": {
+                  "$value": "{eui.color.status.error.solid}",
+                  "$type": "color",
+                  "$description": "Error solid callout border."
+                },
+                "text": {
+                  "$value": "{eui.color.text.inverse}",
+                  "$type": "color",
+                  "$description": "Error solid callout text."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

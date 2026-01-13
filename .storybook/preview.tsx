@@ -1,11 +1,12 @@
 import type { Decorator, Preview } from '@storybook/react';
+import { DocsContainer, type DocsContainerProps } from '@storybook/addon-docs/blocks';
 import { getSectionConfig } from './section-config';
 import './mermaid.css';
 import '../generated/css/tokens.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/state.css';
 import '../src/ui/label.css';
-// import '../src/ui/button.css'; // LEGACY: Replaced with component CSS - defines old --eui-button-* tokens
+import '../src/ui/button.css';
 import '../src/ui/components/card/card.index.css';
 import '../src/ui/components/badge/badge.index.css';
 // import '../src/ui/checkbox.css'; // LEGACY: Likely defines old component tokens
@@ -27,10 +28,13 @@ import '../src/ui/celebration.css';
 import '../src/ui/logo.css';
 // import '../src/ui/header.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/title-bar.css'; // LEGACY: Likely defines old component tokens
-// import '../src/ui/content.css'; // LEGACY: Likely defines old component tokens
+import '../src/ui/content.css';
 // import '../src/ui/detail-panel.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/skip-link.css';
-// import '../src/ui/table.css'; // LEGACY: Likely defines old component tokens
+import '../src/ui/code-block.css';
+import '../src/ui/callout.css';
+import '../src/ui/table.css';
+import '../src/ui/table-container.css';
 // import '../src/ui/menu.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/divider.css';
 import '../src/ui/icons/_icons.css';
@@ -93,6 +97,70 @@ export function getSectionParameters(title: string) {
 
 const getGlobalValue = (value: unknown, fallback: string) =>
   value === '_reset' || value == null ? fallback : String(value);
+
+const joinClassNames = (...values: Array<string | undefined>) =>
+  values.filter(Boolean).join(' ');
+
+const isDocsCodeBlock = (className: string | undefined, children: any) => {
+  const text = typeof children === 'string' ? children :
+    Array.isArray(children) ? children.join('') : '';
+  const hasLanguage = typeof className === 'string' && className.includes('language-');
+
+  return hasLanguage || (typeof text === 'string' && text.includes('\n'));
+};
+
+const DocsCode = ({ className, children, ...props }: any) => {
+  if (isDocsCodeBlock(className, children)) {
+    return (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  }
+
+  return (
+    <code
+      className={joinClassNames('eui-code-block', className)}
+      data-eui-variant="inline"
+      {...props}
+    >
+      {children}
+    </code>
+  );
+};
+
+const DocsPre = ({ className, children, ...props }: any) => (
+  <pre
+    className={joinClassNames('eui-code-block', className)}
+    data-eui-variant="block"
+    {...props}
+  >
+    {children}
+  </pre>
+);
+
+const DocsThemeContainer = ({ children, context }: DocsContainerProps) => {
+  const globals = (context as any)?.globals ?? {};
+  const focusPolicy = getGlobalValue(globals.focusPolicy, 'derived');
+  const appTheme = getGlobalValue(globals.appTheme, DEFAULT_CONTEXT_THEMES.app);
+  const websiteTheme = getGlobalValue(globals.websiteTheme, DEFAULT_CONTEXT_THEMES.website);
+  const reportTheme = getGlobalValue(globals.reportTheme, DEFAULT_CONTEXT_THEMES.report);
+
+  return (
+    <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
+      <DocsContainer context={context}>
+        <div
+          className="sb-docs-wrapper eui-typography-root"
+          data-eui-focus-policy={focusPolicy}
+          data-eui-context="app"
+          data-eui-theme={appTheme}
+        >
+          {children}
+        </div>
+      </DocsContainer>
+    </ContextThemeProvider>
+  );
+};
 
 const withPreviewLayout: Decorator = (Story, context) => {
   const focusPolicy = getGlobalValue(context.globals.focusPolicy, 'derived');
@@ -159,6 +227,13 @@ export const globalTypes: Preview['globalTypes'] = {
 
 export const parameters: Preview['parameters'] = {
   layout: 'fullscreen',
+  docs: {
+    container: DocsThemeContainer,
+    components: {
+      code: DocsCode,
+      pre: DocsPre
+    }
+  },
   options: {
     // Custom story sorting function with config embedded inline
     // Note: All values must be embedded directly (not via closure) because Storybook serializes this function

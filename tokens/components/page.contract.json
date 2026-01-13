@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "page",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/page.css",
+    "note": "Canonical page layout derived from existing styles."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-page",
+    "slots": {
+      "header": ".eui-page__header",
+      "body": ".eui-page__body",
+      "footer": ".eui-page__footer"
+    }
+  },
+
+  "componentVars": {
+    "spacing": {
+      "--eui-page-padding-x": { "type": "dimension" },
+      "--eui-page-padding-y": { "type": "dimension" }
+    }
+  }
+}

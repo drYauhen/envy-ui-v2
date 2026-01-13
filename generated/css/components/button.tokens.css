@@ -1,0 +1,75 @@
+/**
+ * Button Component Tokens - Generated from tokens/components/button.tokens.json
+ */
+
+@layer eui-components {
+  /* Base button variables (default variant) */
+  [data-eui-context] .eui-button {
+    --eui-button-colors-background: var(--eui-color-background-surface);
+    --eui-button-colors-text: var(--eui-color-text-primary);
+    --eui-button-colors-border: var(--eui-color-border-default);
+    --eui-button-border-width: var(--eui-border-width-thin);
+    --eui-button-border-style: var(--eui-border-style-solid);
+    --eui-button-radius: var(--eui-radius-md);
+    --eui-button-typography-fontFamily: var(--eui-typography-fontFamily-ui);
+    --eui-button-typography-lineHeight: var(--eui-typography-lineHeight-none);
+    --eui-button-typography-letterSpacing: var(--eui-typography-letterSpacing-wide);
+    --eui-button-size-sm-height: var(--eui-dimension-9);
+    --eui-button-size-sm-padding-inline: var(--eui-dimension-4);
+    --eui-button-size-sm-gap: var(--eui-spacing-xs);
+    --eui-button-size-sm-font-size: var(--eui-typography-textStyle-label-sm-fontSize);
+    --eui-button-size-sm-font-weight: var(--eui-typography-fontWeight-semibold);
+    --eui-button-size-md-height: var(--eui-dimension-10);
+    --eui-button-size-md-padding-inline: var(--eui-dimension-5);
+    --eui-button-size-md-gap: var(--eui-spacing-sm);
+    --eui-button-size-md-font-size: var(--eui-typography-textStyle-label-md-fontSize);
+    --eui-button-size-md-font-weight: var(--eui-typography-fontWeight-semibold);
+    --eui-button-size-lg-height: var(--eui-dimension-12);
+    --eui-button-size-lg-padding-inline: var(--eui-dimension-6);
+    --eui-button-size-lg-gap: var(--eui-spacing-sm);
+    --eui-button-size-lg-font-size: var(--eui-typography-textStyle-body-base-fontSize);
+    --eui-button-size-lg-font-weight: var(--eui-typography-fontWeight-semibold);
+    --eui-button-shape-default-radius: var(--eui-radius-md);
+    --eui-button-shape-round-radius: var(--eui-radius-full);
+    --eui-button-shape-circle-radius: var(--eui-radius-full);
+  }
+
+  /* Variant: primary */
+  [data-eui-context] .eui-button[data-eui-intent='primary'] {
+    --eui-button-colors-background: var(--eui-color-brand-primary);
+    --eui-button-colors-text: var(--eui-color-text-inverse);
+    --eui-button-colors-border: var(--eui-color-brand-primary);
+  }
+
+  /* Variant: secondary */
+  [data-eui-context] .eui-button[data-eui-intent='secondary'] {
+    --eui-button-colors-background: var(--eui-color-background-surface);
+    --eui-button-colors-text: var(--eui-color-text-primary);
+    --eui-button-colors-border: var(--eui-color-border-default);
+  }
+
+  /* Variant: accent */
+  [data-eui-context] .eui-button[data-eui-intent='accent'] {
+    --eui-button-colors-background: var(--eui-color-accent-primary);
+    --eui-button-colors-text: var(--eui-color-text-inverse);
+    --eui-button-colors-border: var(--eui-color-accent-primary);
+    --eui-button-finished-colors-background: var(--eui-color-status-success-solid);
+    --eui-button-finished-colors-text: var(--eui-color-text-inverse);
+    --eui-button-finished-colors-border: var(--eui-color-status-success-solid);
+  }
+
+  /* Variant: accent-finished */
+  [data-eui-context] .eui-button[data-eui-intent='accent-finished'] {
+    --eui-button-finished-colors-background: var(--eui-color-status-success-solid);
+    --eui-button-finished-colors-text: var(--eui-color-text-inverse);
+    --eui-button-finished-colors-border: var(--eui-color-status-success-solid);
+  }
+
+  /* Variant: link */
+  [data-eui-context] .eui-button[data-eui-intent='link'] {
+    --eui-button-colors-background: var(--eui-color-background-transparent);
+    --eui-button-colors-text: var(--eui-color-status-info-text);
+    --eui-button-colors-border: var(--eui-color-background-transparent);
+  }
+
+}

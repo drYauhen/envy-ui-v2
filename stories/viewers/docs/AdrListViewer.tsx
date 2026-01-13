@@ -51,12 +51,16 @@ export const AdrListViewer: React.FC<AdrListViewerProps> = ({
   );
 
   return (
-    <div className="eui-docs eui-docs-container eui-container" data-eui-container="standard">
+    <div
+      className="eui-docs eui-docs-container eui-container eui-stack"
+      data-eui-container="standard"
+      data-eui-gap="lg"
+    >
       <h1 className="eui-text-heading-5 eui-docs-title">{title}</h1>
       <div className="eui-text-body eui-docs-description">
         {description || defaultDescription}
       </div>
-      <ul className="eui-docs-list">
+      <ul className="eui-docs-list eui-stack" data-eui-gap="sm">
         {adrsList.map((adr) => {
           // Use exportName if provided, otherwise generate from title
           let storySlug: string;
@@ -71,17 +75,23 @@ export const AdrListViewer: React.FC<AdrListViewerProps> = ({
             <li key={adr.number}>
               <a 
                 href={storyPath}
-                className="eui-card eui-docs-list-item eui-docs-list-link"
+                className="eui-card eui-docs-list-link"
                 data-eui-variant="elevated"
               >
-                <div className="eui-text-title-md">
-                  ADR-{adr.number}: {adr.title}
-                </div>
-                <div className="eui-text-caption eui-docs-item-meta">
-                  <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(adr.status)}>
-                    {adr.status}
-                  </span>
-                  <span>Date: {adr.date}</span>
+                <div className="eui-card__body eui-stack" data-eui-gap="xs">
+                  <div className="eui-text-title-md">
+                    ADR-{adr.number}: {adr.title}
+                  </div>
+                  <div
+                    className="eui-inline eui-text-caption eui-docs-item-meta"
+                    data-eui-gap="sm"
+                    data-eui-wrap="true"
+                  >
+                    <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(adr.status)}>
+                      {adr.status}
+                    </span>
+                    <span>Date: {adr.date}</span>
+                  </div>
                 </div>
               </a>
             </li>

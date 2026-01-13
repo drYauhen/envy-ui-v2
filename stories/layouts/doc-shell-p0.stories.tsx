@@ -33,12 +33,12 @@ export const DocShellP0: Story = {
                   <div className="eui-section__content">
                     <div className="eui-grid" data-eui-cols="2">
                       <div className="eui-card" data-eui-variant="flat">
-                        <div className="eui-docs-content">
+                        <div className="eui-content">
                           <p className="eui-text-body">Container + section + card</p>
                         </div>
                       </div>
                       <div className="eui-card" data-eui-variant="flat">
-                        <div className="eui-docs-content">
+                        <div className="eui-content">
                           <p className="eui-text-body">Grid column</p>
                         </div>
                       </div>
@@ -56,10 +56,10 @@ export const DocShellP0: Story = {
 
             <StorySection title="Markdown Structure">
               <div className="eui-card" data-eui-variant="elevated">
-                <div className="eui-docs-content">
+                <div className="eui-content">
                   <h1 className="eui-text-heading-5">Documentation Shell</h1>
                   <p className="eui-text-body">
-                    This block uses <code className="eui-text-code-base eui-docs-code-inline">eui-docs-content</code>{' '}
+                    This block uses <code className="eui-code-block" data-eui-variant="inline">eui-content</code>{' '}
                     and semantic text styles.
                   </p>
                   <h2 className="eui-text-heading-6">Lists</h2>
@@ -68,32 +68,32 @@ export const DocShellP0: Story = {
                     <li className="eui-text-body">Inline code uses Envy UI typography tokens.</li>
                   </ul>
                   <h3 className="eui-text-title-md">Table</h3>
-                  <div className="eui-docs-table-wrap">
-                    <table className="eui-docs-table">
+                  <div className="eui-table-container">
+                    <table className="eui-table">
                       <thead>
                         <tr>
-                          <th className="eui-text-body-sm">Token</th>
-                          <th className="eui-text-body-sm">Value</th>
+                          <th>Token</th>
+                          <th>Value</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td className="eui-text-body-sm">--eui-spacing-md</td>
-                          <td className="eui-text-body-sm">16px</td>
+                          <td>--eui-spacing-md</td>
+                          <td>16px</td>
                         </tr>
                         <tr>
-                          <td className="eui-text-body-sm">--eui-color-text-primary</td>
-                          <td className="eui-text-body-sm">Primary text</td>
+                          <td>--eui-color-text-primary</td>
+                          <td>Primary text</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <blockquote className="eui-docs-callout eui-text-body-sm">
+                  <blockquote className="eui-callout" data-eui-tone="info" data-eui-variant="subtle">
                     Callouts use status tokens and inherit typography from the docs shell.
                   </blockquote>
-                  <pre className="eui-docs-pre">
-                    <code className="eui-text-code-base eui-docs-code-block">
-                      {`<div class="eui-docs-content">\n  <h1 class="eui-text-heading-5">Doc Shell</h1>\n</div>`}
+                  <pre className="eui-code-block" data-eui-variant="block">
+                    <code className="language-html">
+                      {`<div class="eui-content">\n  <h1 class="eui-text-heading-5">Doc Shell</h1>\n</div>`}
                     </code>
                   </pre>
                 </div>

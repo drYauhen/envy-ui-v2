@@ -3,7 +3,7 @@
  */
 
 @layer eui-components {
-  /* Badge color variables - Scoped to component */
+  /* badge color variables - Scoped to component */
   [data-eui-context] .eui-badge {
     --eui-badge-colors-neutral-background: var(--eui-color-status-neutral-background);
     --eui-badge-colors-neutral-border: var(--eui-color-status-neutral-border);

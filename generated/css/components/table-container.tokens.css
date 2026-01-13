@@ -1,0 +1,11 @@
+/**
+ * Table-container Component Tokens - Generated from tokens/components/table-container.tokens.json
+ */
+
+@layer eui-components {
+  /* Base table-container variables (default variant) */
+  [data-eui-context] .eui-table-container {
+    --eui-table-container-width: var(--eui-layout-container-wide-maxWidth);
+  }
+
+}

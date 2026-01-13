@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "page": {
+      "base": {
+        "padding": {
+          "x": {
+            "$value": "{eui.layout.page.padding.x}",
+            "$type": "dimension",
+            "$description": "Horizontal page padding."
+          },
+          "y": {
+            "$value": "{eui.layout.page.padding.y}",
+            "$type": "dimension",
+            "$description": "Vertical page padding."
+          }
+        }
+      }
+    }
+  }
+}

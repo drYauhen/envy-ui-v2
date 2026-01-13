@@ -1,30 +1,33 @@
-/* ============================================================================
-   Page Component
-   ============================================================================ */
+/**
+ * Page Component
+ *
+ * Generated from: tokens/components/page.contract.json
+ */
 
-[data-eui-context] .eui-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-left: var(--eui-layout-page-padding-x);
-  padding-right: var(--eui-layout-page-padding-x);
-  padding-top: var(--eui-layout-page-padding-y);
-  padding-bottom: var(--eui-layout-page-padding-y);
+@layer eui-components {
+  [data-eui-context] .eui-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-left: var(--eui-page-padding-x);
+    padding-right: var(--eui-page-padding-x);
+    padding-top: var(--eui-page-padding-y);
+    padding-bottom: var(--eui-page-padding-y);
+  }
+
+  /* Structural parts - BEM classes */
+  [data-eui-context] .eui-page__header {
+    flex: 0 0 auto;
+  }
+
+  [data-eui-context] .eui-page__body {
+    flex: 1 1 auto;
+    overflow-y: auto; /* Page scroll model */
+    overflow-x: hidden;
+    /* Native scrollbar is hidden - using custom overlay scrollbar */
+  }
+
+  [data-eui-context] .eui-page__footer {
+    flex: 0 0 auto;
+  }
 }
-
-/* Structural parts - BEM classes */
-[data-eui-context] .eui-page__header {
-  flex: 0 0 auto;
-}
-
-[data-eui-context] .eui-page__body {
-  flex: 1 1 auto;
-  overflow-y: auto; /* Page scroll model */
-  overflow-x: hidden;
-  /* Native scrollbar is hidden - using custom overlay scrollbar */
-}
-
-[data-eui-context] .eui-page__footer {
-  flex: 0 0 auto;
-}
-

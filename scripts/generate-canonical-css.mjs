@@ -17,6 +17,8 @@ const repoRoot = path.resolve(__dirname, '..');
 
 // Global cache for primitive token values
 let primitiveTokenCache = null;
+// Global cache for raw token values per context
+let rawTokenCache = new Map();
 
 // Helper: Load all primitive tokens into cache
 const loadPrimitiveTokens = () => {
@@ -45,6 +47,35 @@ const loadPrimitiveTokens = () => {
   return primitiveTokenCache;
 };
 
+// Helper: Load raw tokens for a context into cache (preserve $value)
+const loadRawTokens = (context) => {
+  if (rawTokenCache.has(context)) return rawTokenCache.get(context);
+
+  const rawTokens = new Map();
+  const rawDir = path.join(repoRoot, 'tokens', 'contexts', context, 'raw');
+  if (!fs.existsSync(rawDir)) {
+    rawTokenCache.set(context, rawTokens);
+    return rawTokens;
+  }
+
+  const rawFiles = findJsonFiles(rawDir);
+  rawFiles.forEach(file => {
+    const filePath = path.join(rawDir, file);
+    try {
+      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      const tokens = extractTokensRawValues(data);
+      tokens.forEach(({ name, value }) => {
+        rawTokens.set(name, value);
+      });
+    } catch (e) {
+      console.warn(`Warning: Could not read raw file ${file}: ${e.message}`);
+    }
+  });
+
+  rawTokenCache.set(context, rawTokens);
+  return rawTokens;
+};
+
 // Helper: Extract tokens resolving DTCG references to actual values
 const extractTokensResolvingRefs = (obj, prefix = []) => {
   const tokens = [];
@@ -61,6 +92,21 @@ const extractTokensResolvingRefs = (obj, prefix = []) => {
   return tokens;
 };
 
+// Helper: Extract tokens preserving raw $value (no reference conversion)
+const extractTokensRawValues = (obj, prefix = []) => {
+  const tokens = [];
+  for (const [key, value] of Object.entries(obj)) {
+    const path = [...prefix, key];
+    if (value && typeof value === 'object' && '$value' in value) {
+      const tokenName = path.join('-'); // eui-app-raw-typography-fontSize-base
+      tokens.push({ name: tokenName, value: value.$value });
+    } else if (value && typeof value === 'object' && !Array.isArray(value)) {
+      tokens.push(...extractTokensRawValues(value, path));
+    }
+  }
+  return tokens;
+};
+
 // Helper: Convert DTCG reference to CSS var (preserve, don't resolve)
 const preserveReference = (value) => {
   if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
@@ -72,16 +118,44 @@ const preserveReference = (value) => {
   return value; // Literal values pass through unchanged
 };
 
+const resolveRawToken = (tokenName, seen = new Set()) => {
+  const match = tokenName.match(/^eui-(app|website|report)-raw-/);
+  if (!match) return null;
+
+  if (seen.has(tokenName)) {
+    return `var(--${tokenName.replace(/^eui-(app|website|report)-raw-/, 'eui-')})`;
+  }
+
+  const context = match[1];
+  const rawTokens = loadRawTokens(context);
+  const rawValue = rawTokens.get(tokenName);
+
+  if (rawValue == null) {
+    console.warn(`Warning: Raw token ${tokenName} not found for context "${context}".`);
+    return `var(--${tokenName.replace(/^eui-(app|website|report)-raw-/, 'eui-')})`;
+  }
+
+  if (typeof rawValue === 'string' && rawValue.startsWith('{') && rawValue.endsWith('}')) {
+    const ref = rawValue.slice(1, -1);
+    const refTokenName = ref.split('.').join('-');
+    const nestedRaw = resolveRawToken(refTokenName, new Set([...seen, tokenName]));
+    if (nestedRaw != null) return nestedRaw;
+    return `var(--${refTokenName})`;
+  }
+
+  return rawValue;
+};
+
 // Helper: Resolve DTCG reference to actual primitive value
 const resolveReference = (value) => {
   if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
     // Convert {eui.border.width.thin} → lookup eui-border-width-thin
     const ref = value.slice(1, -1); // Remove { }
-    let tokenName = ref.split('.').join('-'); // Convert dots to dashes
+    const tokenName = ref.split('.').join('-'); // Convert dots to dashes
 
-    // Handle raw token indirection: if it's a raw token reference, strip the raw prefix
-    if (tokenName.includes('eui-app-raw-')) {
-      tokenName = tokenName.replace('eui-app-raw-', 'eui-');
+    const rawResolved = resolveRawToken(tokenName);
+    if (rawResolved != null) {
+      return rawResolved;
     }
 
     // Load primitives and lookup the value
@@ -335,12 +409,23 @@ function generateContextsCSS() {
         }
       });
 
-      // Sort deterministically and generate CSS
-      semanticTokens.sort((a, b) => a.name.localeCompare(b.name));
+      const primitives = loadPrimitiveTokens();
+      const normalizedTokens = semanticTokens.map(({ name, value }) => {
+        if (typeof value === 'string' && value === `var(--${name})`) {
+          const primitiveValue = primitives.get(name);
+          if (primitiveValue) {
+            return { name, value: primitiveValue };
+          }
+        }
+        return { name, value };
+      });
 
-      if (semanticTokens.length > 0) {
+      // Sort deterministically and generate CSS
+      normalizedTokens.sort((a, b) => a.name.localeCompare(b.name));
+
+      if (normalizedTokens.length > 0) {
         output += `  [data-eui-context="${context}"] {\n`;
-        semanticTokens.forEach(({ name, value }) => {
+        normalizedTokens.forEach(({ name, value }) => {
           output += `    --${name}: ${value};\n`;
         });
         output += '  }\n\n';
@@ -448,6 +533,18 @@ function generateEntrypointCSS() {
 /* 4. Components (component-specific tokens) */
 @import './components/card.tokens.css';
 @import './components/badge.tokens.css';
+@import './components/stack.tokens.css';
+@import './components/inline.tokens.css';
+@import './components/grid.tokens.css';
+@import './components/section.tokens.css';
+@import './components/container.tokens.css';
+@import './components/page.tokens.css';
+@import './components/content.tokens.css';
+@import './components/code-block.tokens.css';
+@import './components/table.tokens.css';
+@import './components/table-container.tokens.css';
+@import './components/callout.tokens.css';
+@import './components/button.tokens.css';
 `;
 }
 

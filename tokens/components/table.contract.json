@@ -1,0 +1,50 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "table",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/table.css",
+    "note": "Canonical table component for documentation and token tables."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-table",
+    "slots": {
+      "header": "thead",
+      "body": "tbody",
+      "row": "tr",
+      "cell": "td",
+      "headerCell": "th"
+    }
+  },
+
+  "componentVars": {
+    "layout": {
+      "--eui-table-width": { "type": "dimension" }
+    },
+    "colors": {
+      "--eui-table-colors-background": { "type": "color" },
+      "--eui-table-colors-border": { "type": "color" },
+      "--eui-table-colors-headerBackground": { "type": "color" },
+      "--eui-table-colors-headerText": { "type": "color" },
+      "--eui-table-colors-cellText": { "type": "color" }
+    },
+    "border": {
+      "--eui-table-border-width": { "type": "dimension" },
+      "--eui-table-border-style": { "type": "string" }
+    },
+    "spacing": {
+      "--eui-table-spacing-cell-padding-block": { "type": "dimension" },
+      "--eui-table-spacing-cell-padding-inline": { "type": "dimension" }
+    },
+    "typography": {
+      "--eui-table-typography-fontFamily": { "type": "fontFamily" },
+      "--eui-table-typography-fontSize": { "type": "fontSize" },
+      "--eui-table-typography-fontWeight": { "type": "fontWeight" },
+      "--eui-table-typography-lineHeight": { "type": "lineHeight" },
+      "--eui-table-typography-headerWeight": { "type": "fontWeight" }
+    }
+  }
+}

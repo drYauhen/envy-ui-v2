@@ -1,23 +1,26 @@
-/* ============================================================================
-   Section Component
-   ============================================================================ */
+/**
+ * Section Component
+ *
+ * Generated from: tokens/components/section.contract.json
+ */
 
-[data-eui-context] .eui-section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--eui-layout-section-gap);
-  padding: var(--eui-layout-section-padding);
+@layer eui-components {
+  [data-eui-context] .eui-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--eui-section-gap);
+    padding: var(--eui-section-padding);
+  }
+
+  /* Structural parts - BEM classes */
+  [data-eui-context] .eui-section__title {
+    margin: 0;
+    margin-bottom: var(--eui-section-title-gap);
+  }
+
+  [data-eui-context] .eui-section__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--eui-section-gap);
+  }
 }
-
-/* Structural parts - BEM classes */
-[data-eui-context] .eui-section__title {
-  margin: 0;
-  margin-bottom: var(--eui-layout-section-title-gap);
-}
-
-[data-eui-context] .eui-section__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--eui-layout-section-gap);
-}
-

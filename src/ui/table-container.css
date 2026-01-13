@@ -1,0 +1,13 @@
+/**
+ * Table Container Component
+ *
+ * Generated from: tokens/components/table-container.contract.json
+ * Token variables: generated/css/components/table-container.tokens.css
+ */
+
+@layer eui-components {
+  [data-eui-context] .eui-table-container {
+    width: var(--eui-table-container-width);
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,15 @@
+/**
+ * Container Component Tokens - Generated from tokens/components/container.tokens.json
+ */
+
+@layer eui-components {
+  /* Base container variables (default variant) */
+  [data-eui-context] .eui-container {
+    --eui-container-width: var(--eui-layout-container-wide-maxWidth);
+    --eui-container-gutter-x: var(--eui-layout-container-gutterX);
+    --eui-container-maxWidth-standard: var(--eui-layout-container-standard-maxWidth);
+    --eui-container-maxWidth-wide: var(--eui-layout-container-wide-maxWidth);
+    --eui-container-maxWidth-fluid: var(--eui-layout-container-wide-maxWidth);
+  }
+
+}

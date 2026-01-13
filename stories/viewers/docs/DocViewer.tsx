@@ -278,7 +278,11 @@ export const DocViewer = ({
 
   if (loading) {
     return (
-      <div className="eui-docs eui-docs-container eui-container" data-eui-container="standard">
+      <div
+        className="eui-docs eui-docs-container eui-container eui-stack"
+        data-eui-container="standard"
+        data-eui-gap="lg"
+      >
         <div className="eui-card eui-docs-loading" data-eui-variant="elevated">
           <p className="eui-text-body">{fallback}</p>
         </div>
@@ -288,7 +292,11 @@ export const DocViewer = ({
 
   if (error) {
     return (
-      <div className="eui-docs eui-docs-container eui-container" data-eui-container="standard">
+      <div
+        className="eui-docs eui-docs-container eui-container eui-stack"
+        data-eui-container="standard"
+        data-eui-gap="lg"
+      >
         <div className="eui-card eui-docs-error" data-eui-variant="flat">
           <p className="eui-text-body-strong">Error loading document</p>
           <p className="eui-text-body-sm">Failed to load documentation from {markdownPath}</p>
@@ -298,12 +306,16 @@ export const DocViewer = ({
   }
 
   return (
-    <div className="eui-docs eui-docs-container eui-container" data-eui-container="standard">
+    <div
+      className="eui-docs eui-docs-container eui-container eui-stack"
+      data-eui-container="standard"
+      data-eui-gap="lg"
+    >
       {title || status || date || (badges && badges.length > 0) ? (
-        <div className="eui-docs-header">
-          {title ? <h1 className="eui-text-heading-5 eui-docs-title">{title}</h1> : null}
+        <div className="eui-stack" data-eui-gap="sm">
+          {title ? <h1 className="eui-text-heading-5">{title}</h1> : null}
           {status || date || (badges && badges.length > 0) ? (
-            <div className="eui-docs-meta eui-text-caption">
+            <div className="eui-inline eui-docs-meta eui-text-caption" data-eui-gap="md" data-eui-wrap="true">
               {status ? (
                 <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(status)}>
                   {status}
@@ -327,36 +339,40 @@ export const DocViewer = ({
           ) : null}
         </div>
       ) : null}
+      {title || status || date || (badges && badges.length > 0) ? (
+        <hr className="eui-divider" data-eui-variant="subtle" />
+      ) : null}
       <div
-        className="eui-card eui-docs-content"
+        className="eui-card"
         data-eui-variant={isInProgress ? 'muted' : 'elevated'}
         {...(isInProgress ? { 'data-eui-state': 'muted' } : {})}
       >
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            h1: ({node, ...props}: any) => (
-              <h1 className="eui-text-heading-5" {...props} />
-            ),
-            h2: ({node, ...props}: any) => (
-              <h2 className="eui-text-heading-6" {...props} />
-            ),
-            h3: ({node, ...props}: any) => (
-              <h3 className="eui-text-title-md" {...props} />
-            ),
-            p: ({node, ...props}: any) => (
-              <p className="eui-text-body" {...props} />
-            ),
-            ul: ({node, ...props}: any) => (
-              <ul {...props} />
-            ),
-            ol: ({node, ...props}: any) => (
-              <ol {...props} />
-            ),
-            li: ({node, ...props}: any) => (
-              <li className="eui-text-body" {...props} />
-            ),
-            a: ({node, href, children, ...props}: any) => {
+        <div className="eui-content">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h1: ({node, ...props}: any) => (
+                <h1 className="eui-text-heading-5" {...props} />
+              ),
+              h2: ({node, ...props}: any) => (
+                <h2 className="eui-text-heading-6" {...props} />
+              ),
+              h3: ({node, ...props}: any) => (
+                <h3 className="eui-text-title-md" {...props} />
+              ),
+              p: ({node, ...props}: any) => (
+                <p className="eui-text-body" {...props} />
+              ),
+              ul: ({node, ...props}: any) => (
+                <ul {...props} />
+              ),
+              ol: ({node, ...props}: any) => (
+                <ol {...props} />
+              ),
+              li: ({node, ...props}: any) => (
+                <li className="eui-text-body" {...props} />
+              ),
+              a: ({node, href, children, ...props}: any) => {
               let storybookHref = href;
               let targetAdrNumber: string | null = null;
               const resolvedDocPath = href && markdownPath ? resolveDocPath(href, markdownPath) : null;
@@ -402,74 +418,36 @@ export const DocViewer = ({
 
               const dataAttr = storybookHref === '#' && targetAdrNumber ? { 'data-adr-link': targetAdrNumber } : {};
 
-              const resolvedClassName = ['eui-docs-link', props.className].filter(Boolean).join(' ');
+              const resolvedClassName = ['eui-button', props.className].filter(Boolean).join(' ');
 
               return (
                 <a
                   href={storybookHref}
                   {...dataAttr}
                   className={resolvedClassName}
+                  data-eui-intent="link"
                   {...props}
                 >
                   {children}
                 </a>
               );
             },
-            code: ({node, inline, className, children, ...props}: any) => {
-              const inlineClassName = [className, 'eui-text-code-base', 'eui-docs-code-inline']
-                .filter(Boolean)
-                .join(' ');
-              const inlineBlockClassName = [inlineClassName, 'eui-docs-code-inline-block']
-                .filter(Boolean)
-                .join(' ');
-              const blockClassName = [className, 'eui-text-code-base', 'eui-docs-code-block']
-                .filter(Boolean)
-                .join(' ');
+              code: ({node, inline, className, children, ...props}: any) => {
+                if (inline) {
+                  return (
+                    <code className="eui-code-block" data-eui-variant="inline" {...props}>
+                      {children}
+                    </code>
+                  );
+                }
 
-              if (inline) {
                 return (
-                  <code className={inlineClassName} {...props}>
+                  <code className={className} {...props}>
                     {children}
                   </code>
                 );
-              }
-
-              let codeText = '';
-              if (typeof children === 'string') {
-                codeText = children;
-              } else if (Array.isArray(children)) {
-                codeText = children
-                  .map((c: any) => typeof c === 'string' ? c : (c?.props?.children || ''))
-                  .join('');
-              } else {
-                codeText = String(children || '');
-              }
-
-              const trimmedText = codeText.trim();
-              const hasLineBreaks = trimmedText.includes('\n');
-              const hasLanguage = className && /language-\w+/.test(className);
-
-              const shouldBeInlineBlock =
-                trimmedText.length > 0 &&
-                trimmedText.length <= 200 &&
-                !hasLineBreaks &&
-                !hasLanguage;
-
-              if (shouldBeInlineBlock) {
-                return (
-                  <code className={inlineBlockClassName} {...props}>
-                    {children}
-                  </code>
-                );
-              }
-
-              return (
-                <code className={blockClassName} {...props}>
-                  {children}
-                </code>
-              );
-            },
-            pre: ({node, children, ...props}: any) => {
+              },
+              pre: ({node, children, ...props}: any) => {
               const codeElement = React.Children.toArray(children).find(
                 (child: any) => {
                   if (typeof child === 'object' && child?.props) {
@@ -496,36 +474,31 @@ export const DocViewer = ({
                 }
               }
 
-              return (
-                <pre className="eui-docs-pre" {...props}>
-                  {children}
-                </pre>
-              );
-            },
-            table: ({node, ...props}: any) => (
-              <div className="eui-docs-table-wrap">
-                <table className="eui-docs-table" {...props} />
-              </div>
-            ),
-            th: ({node, ...props}: any) => (
-              <th className="eui-text-body-sm" {...props} />
-            ),
-            td: ({node, ...props}: any) => (
-              <td className="eui-text-body-sm" {...props} />
-            ),
-            blockquote: ({node, ...props}: any) => (
-              <blockquote className="eui-docs-callout eui-text-body-sm" {...props} />
-            ),
-            hr: ({node, ...props}: any) => (
-              <hr className="eui-divider" data-eui-variant="subtle" {...props} />
-            ),
-            strong: ({node, ...props}: any) => (
-              <strong {...props} />
-            )
-          }}
-        >
-          {content}
-        </ReactMarkdown>
+                return (
+                  <pre className="eui-code-block" data-eui-variant="block" {...props}>
+                    {children}
+                  </pre>
+                );
+              },
+              table: ({node, ...props}: any) => (
+                <div className="eui-table-container">
+                  <table className="eui-table" {...props} />
+                </div>
+              ),
+              blockquote: ({node, ...props}: any) => (
+                <blockquote className="eui-callout" data-eui-tone="info" data-eui-variant="subtle" {...props} />
+              ),
+              hr: ({node, ...props}: any) => (
+                <hr className="eui-divider" data-eui-variant="subtle" {...props} />
+              ),
+              strong: ({node, ...props}: any) => (
+                <strong {...props} />
+              )
+            }}
+          >
+            {content}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   );

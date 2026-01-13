@@ -1,0 +1,91 @@
+/**
+ * Callout Component Tokens - Generated from tokens/components/callout.tokens.json
+ */
+
+@layer eui-components {
+  /* callout color variables - Scoped to component */
+  [data-eui-context] .eui-callout {
+    --eui-callout-colors-neutral-background: var(--eui-color-status-neutral-background);
+    --eui-callout-colors-neutral-border: var(--eui-color-status-neutral-border);
+    --eui-callout-colors-neutral-text: var(--eui-color-status-neutral-text);
+    --eui-callout-colors-info-background: var(--eui-color-status-info-background);
+    --eui-callout-colors-info-border: var(--eui-color-status-info-border);
+    --eui-callout-colors-info-text: var(--eui-color-status-info-text);
+    --eui-callout-colors-success-background: var(--eui-color-status-success-background);
+    --eui-callout-colors-success-border: var(--eui-color-status-success-border);
+    --eui-callout-colors-success-text: var(--eui-color-status-success-text);
+    --eui-callout-colors-warning-background: var(--eui-color-status-warning-background);
+    --eui-callout-colors-warning-border: var(--eui-color-status-warning-border);
+    --eui-callout-colors-warning-text: var(--eui-color-status-warning-text);
+    --eui-callout-colors-error-background: var(--eui-color-status-error-background);
+    --eui-callout-colors-error-border: var(--eui-color-status-error-border);
+    --eui-callout-colors-error-text: var(--eui-color-status-error-text);
+    --eui-callout-colors-neutral-solid-background: var(--eui-color-status-neutral-solid);
+    --eui-callout-colors-neutral-solid-border: var(--eui-color-status-neutral-solid);
+    --eui-callout-colors-neutral-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-info-solid-background: var(--eui-color-status-info-solid);
+    --eui-callout-colors-info-solid-border: var(--eui-color-status-info-solid);
+    --eui-callout-colors-info-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-success-solid-background: var(--eui-color-status-success-solid);
+    --eui-callout-colors-success-solid-border: var(--eui-color-status-success-solid);
+    --eui-callout-colors-success-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-warning-solid-background: var(--eui-color-status-warning-solid);
+    --eui-callout-colors-warning-solid-border: var(--eui-color-status-warning-solid);
+    --eui-callout-colors-warning-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-error-solid-background: var(--eui-color-status-error-solid);
+    --eui-callout-colors-error-solid-border: var(--eui-color-status-error-solid);
+    --eui-callout-colors-error-solid-text: var(--eui-color-text-inverse);
+  }
+
+  /* Base callout variables (default variant) */
+  [data-eui-context] .eui-callout {
+    --eui-callout-padding-block: var(--eui-spacing-md);
+    --eui-callout-padding-inline: var(--eui-spacing-lg);
+    --eui-callout-border-width: var(--eui-border-width-thick);
+    --eui-callout-border-style: var(--eui-border-style-solid);
+    --eui-callout-radius: var(--eui-radius-md);
+    --eui-callout-typography-fontFamily: var(--eui-typography-textStyle-body-small-fontFamily);
+    --eui-callout-typography-fontSize: var(--eui-typography-textStyle-body-small-fontSize);
+    --eui-callout-typography-fontWeight: var(--eui-typography-fontWeight-semibold);
+    --eui-callout-typography-lineHeight: var(--eui-typography-textStyle-body-small-lineHeight);
+  }
+
+  /* Variant: subtle */
+  [data-eui-context] .eui-callout[data-eui-variant='subtle'] {
+    --eui-callout-colors-neutral-background: var(--eui-color-status-neutral-background);
+    --eui-callout-colors-neutral-border: var(--eui-color-status-neutral-border);
+    --eui-callout-colors-neutral-text: var(--eui-color-status-neutral-text);
+    --eui-callout-colors-info-background: var(--eui-color-status-info-background);
+    --eui-callout-colors-info-border: var(--eui-color-status-info-border);
+    --eui-callout-colors-info-text: var(--eui-color-status-info-text);
+    --eui-callout-colors-success-background: var(--eui-color-status-success-background);
+    --eui-callout-colors-success-border: var(--eui-color-status-success-border);
+    --eui-callout-colors-success-text: var(--eui-color-status-success-text);
+    --eui-callout-colors-warning-background: var(--eui-color-status-warning-background);
+    --eui-callout-colors-warning-border: var(--eui-color-status-warning-border);
+    --eui-callout-colors-warning-text: var(--eui-color-status-warning-text);
+    --eui-callout-colors-error-background: var(--eui-color-status-error-background);
+    --eui-callout-colors-error-border: var(--eui-color-status-error-border);
+    --eui-callout-colors-error-text: var(--eui-color-status-error-text);
+  }
+
+  /* Variant: solid */
+  [data-eui-context] .eui-callout[data-eui-variant='solid'] {
+    --eui-callout-colors-neutral-solid-background: var(--eui-color-status-neutral-solid);
+    --eui-callout-colors-neutral-solid-border: var(--eui-color-status-neutral-solid);
+    --eui-callout-colors-neutral-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-info-solid-background: var(--eui-color-status-info-solid);
+    --eui-callout-colors-info-solid-border: var(--eui-color-status-info-solid);
+    --eui-callout-colors-info-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-success-solid-background: var(--eui-color-status-success-solid);
+    --eui-callout-colors-success-solid-border: var(--eui-color-status-success-solid);
+    --eui-callout-colors-success-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-warning-solid-background: var(--eui-color-status-warning-solid);
+    --eui-callout-colors-warning-solid-border: var(--eui-color-status-warning-solid);
+    --eui-callout-colors-warning-solid-text: var(--eui-color-text-inverse);
+    --eui-callout-colors-error-solid-background: var(--eui-color-status-error-solid);
+    --eui-callout-colors-error-solid-border: var(--eui-color-status-error-solid);
+    --eui-callout-colors-error-solid-text: var(--eui-color-text-inverse);
+  }
+
+}

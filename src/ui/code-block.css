@@ -1,0 +1,35 @@
+/**
+ * Code Block Component
+ *
+ * Generated from: tokens/components/code-block.contract.json
+ * Token variables: generated/css/components/code-block.tokens.css
+ */
+
+@layer eui-components {
+  [data-eui-context] .eui-code-block {
+    display: inline-block;
+    font-family: var(--eui-code-block-typography-fontFamily);
+    font-size: var(
+      --eui-code-block-typography-fontSize,
+      var(--eui-typography-textStyle-code-small-fontSize)
+    );
+    font-weight: var(--eui-code-block-typography-fontWeight);
+    line-height: var(--eui-code-block-typography-lineHeight);
+    color: var(--eui-code-block-colors-text);
+    background-color: var(--eui-code-block-colors-background);
+    border-width: var(--eui-code-block-border-width);
+    border-style: var(--eui-code-block-border-style);
+    border-color: var(--eui-code-block-colors-border);
+    border-radius: var(--eui-code-block-radius);
+    padding-block: var(--eui-code-block-padding-block);
+    padding-inline: var(--eui-code-block-padding-inline);
+    vertical-align: baseline;
+  }
+
+  [data-eui-context] .eui-code-block[data-eui-variant='block'] {
+    display: block;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}

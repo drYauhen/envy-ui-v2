@@ -1,0 +1,81 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "button",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/button.css",
+    "note": "Canonical button component derived from legacy behavior."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-button",
+    "slots": {
+      "startIcon": "[data-eui-slot='start-icon']",
+      "label": "[data-eui-slot='label']",
+      "endIcon": "[data-eui-slot='end-icon']"
+    }
+  },
+
+  "axes": {
+    "intent": {
+      "type": "enum",
+      "default": "primary",
+      "values": ["primary", "secondary", "accent", "accent-finished", "link"],
+      "attribute": "data-eui-intent",
+      "notes": "Intent controls button color system."
+    },
+    "size": {
+      "type": "enum",
+      "default": "md",
+      "values": ["sm", "md", "lg"],
+      "attribute": "data-eui-size",
+      "notes": "Size controls button height, padding, and typography."
+    },
+    "shape": {
+      "type": "enum",
+      "default": "default",
+      "values": ["default", "round", "circle"],
+      "attribute": "data-eui-shape",
+      "notes": "Shape controls button corner radius."
+    }
+  },
+
+  "componentVars": {
+    "colors": {
+      "--eui-button-colors-background": { "type": "color" },
+      "--eui-button-colors-text": { "type": "color" },
+      "--eui-button-colors-border": { "type": "color" }
+    },
+    "border": {
+      "--eui-button-border-width": { "type": "dimension" },
+      "--eui-button-border-style": { "type": "string" }
+    },
+    "shape": {
+      "--eui-button-radius": { "type": "dimension" }
+    },
+    "spacing": {
+      "--eui-button-height": { "type": "dimension" },
+      "--eui-button-padding-inline": { "type": "dimension" },
+      "--eui-button-gap": { "type": "dimension" }
+    },
+    "typography": {
+      "--eui-button-typography-fontFamily": { "type": "fontFamily" },
+      "--eui-button-typography-fontSize": { "type": "fontSize" },
+      "--eui-button-typography-fontWeight": { "type": "fontWeight" },
+      "--eui-button-typography-lineHeight": { "type": "lineHeight" },
+      "--eui-button-typography-letterSpacing": { "type": "letterSpacing" }
+    },
+    "localVars": {
+      "--eui-button-background": { "type": "color" },
+      "--eui-button-color": { "type": "color" },
+      "--eui-button-border-color": { "type": "color" },
+      "--eui-button-size-height": { "type": "dimension" },
+      "--eui-button-size-padding-inline": { "type": "dimension" },
+      "--eui-button-size-gap": { "type": "dimension" },
+      "--eui-button-size-fontSize": { "type": "fontSize" },
+      "--eui-button-size-fontWeight": { "type": "fontWeight" }
+    }
+  }
+}

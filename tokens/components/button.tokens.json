@@ -1,0 +1,275 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "button": {
+      "base": {
+        "colors": {
+          "background": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Default button background."
+          },
+          "text": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Default button text color."
+          },
+          "border": {
+            "$value": "{eui.color.border.default}",
+            "$type": "color",
+            "$description": "Default button border color."
+          }
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Button border width."
+          },
+          "style": {
+            "$value": "{eui.border.style.solid}",
+            "$type": "string",
+            "$description": "Button border style."
+          }
+        },
+        "radius": {
+          "$value": "{eui.radius.md}",
+          "$type": "dimension",
+          "$description": "Default button radius."
+        },
+        "typography": {
+          "fontFamily": {
+            "$value": "{eui.typography.fontFamily.ui}",
+            "$type": "fontFamily",
+            "$description": "Button font family."
+          },
+          "lineHeight": {
+            "$value": "{eui.typography.lineHeight.none}",
+            "$type": "lineHeight",
+            "$description": "Button line height."
+          },
+          "letterSpacing": {
+            "$value": "{eui.typography.letterSpacing.wide}",
+            "$type": "letterSpacing",
+            "$description": "Button letter spacing."
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "height": {
+            "$value": "{eui.dimension.9}",
+            "$type": "dimension",
+            "$description": "Small button height."
+          },
+          "padding": {
+            "inline": {
+              "$value": "{eui.dimension.4}",
+              "$type": "dimension",
+              "$description": "Small button horizontal padding."
+            }
+          },
+          "gap": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Small button content gap."
+          },
+          "font": {
+            "size": {
+              "$value": "{eui.typography.textStyle.label-sm.fontSize}",
+              "$type": "fontSize",
+              "$description": "Small button font size."
+            },
+            "weight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Small button font weight."
+            }
+          }
+        },
+        "md": {
+          "height": {
+            "$value": "{eui.dimension.10}",
+            "$type": "dimension",
+            "$description": "Medium button height."
+          },
+          "padding": {
+            "inline": {
+              "$value": "{eui.dimension.5}",
+              "$type": "dimension",
+              "$description": "Medium button horizontal padding."
+            }
+          },
+          "gap": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Medium button content gap."
+          },
+          "font": {
+            "size": {
+              "$value": "{eui.typography.textStyle.label-md.fontSize}",
+              "$type": "fontSize",
+              "$description": "Medium button font size."
+            },
+            "weight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Medium button font weight."
+            }
+          }
+        },
+        "lg": {
+          "height": {
+            "$value": "{eui.dimension.12}",
+            "$type": "dimension",
+            "$description": "Large button height."
+          },
+          "padding": {
+            "inline": {
+              "$value": "{eui.dimension.6}",
+              "$type": "dimension",
+              "$description": "Large button horizontal padding."
+            }
+          },
+          "gap": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Large button content gap."
+          },
+          "font": {
+            "size": {
+              "$value": "{eui.typography.textStyle.body-base.fontSize}",
+              "$type": "fontSize",
+              "$description": "Large button font size."
+            },
+            "weight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Large button font weight."
+            }
+          }
+        }
+      },
+      "shape": {
+        "default": {
+          "radius": {
+            "$value": "{eui.radius.md}",
+            "$type": "dimension",
+            "$description": "Default button radius."
+          }
+        },
+        "round": {
+          "radius": {
+            "$value": "{eui.radius.full}",
+            "$type": "dimension",
+            "$description": "Round button radius."
+          }
+        },
+        "circle": {
+          "radius": {
+            "$value": "{eui.radius.full}",
+            "$type": "dimension",
+            "$description": "Circle button radius."
+          }
+        }
+      },
+      "variant": {
+        "primary": {
+          "colors": {
+            "background": {
+              "$value": "{eui.color.brand.primary}",
+              "$type": "color",
+              "$description": "Primary button background."
+            },
+            "text": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Primary button text."
+            },
+            "border": {
+              "$value": "{eui.color.brand.primary}",
+              "$type": "color",
+              "$description": "Primary button border."
+            }
+          }
+        },
+        "secondary": {
+          "colors": {
+            "background": {
+              "$value": "{eui.color.background.surface}",
+              "$type": "color",
+              "$description": "Secondary button background."
+            },
+            "text": {
+              "$value": "{eui.color.text.primary}",
+              "$type": "color",
+              "$description": "Secondary button text."
+            },
+            "border": {
+              "$value": "{eui.color.border.default}",
+              "$type": "color",
+              "$description": "Secondary button border."
+            }
+          }
+        },
+        "accent": {
+          "colors": {
+            "background": {
+              "$value": "{eui.color.accent.primary}",
+              "$type": "color",
+              "$description": "Accent button background."
+            },
+            "text": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Accent button text."
+            },
+            "border": {
+              "$value": "{eui.color.accent.primary}",
+              "$type": "color",
+              "$description": "Accent button border."
+            }
+          }
+        },
+        "accent-finished": {
+          "colors": {
+            "background": {
+              "$value": "{eui.color.status.success.solid}",
+              "$type": "color",
+              "$description": "Finished button background."
+            },
+            "text": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Finished button text."
+            },
+            "border": {
+              "$value": "{eui.color.status.success.solid}",
+              "$type": "color",
+              "$description": "Finished button border."
+            }
+          }
+        },
+        "link": {
+          "colors": {
+            "background": {
+              "$value": "{eui.color.background.transparent}",
+              "$type": "color",
+              "$description": "Link button background."
+            },
+            "text": {
+              "$value": "{eui.color.status.info.text}",
+              "$type": "color",
+              "$description": "Link button text."
+            },
+            "border": {
+              "$value": "{eui.color.background.transparent}",
+              "$type": "color",
+              "$description": "Link button border."
+            }
+          }
+        }
+      }
+    }
+  }
+}

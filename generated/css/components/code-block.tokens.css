@@ -1,0 +1,32 @@
+/**
+ * Code-block Component Tokens - Generated from tokens/components/code-block.tokens.json
+ */
+
+@layer eui-components {
+  /* Base code-block variables (default variant) */
+  [data-eui-context] .eui-code-block {
+    --eui-code-block-colors-background: var(--eui-color-brand-50);
+    --eui-code-block-colors-text: var(--eui-color-accent-900);
+    --eui-code-block-colors-border: var(--eui-color-accent-300);
+    --eui-code-block-border-width: var(--eui-border-width-thin);
+    --eui-code-block-border-style: var(--eui-border-style-solid);
+    --eui-code-block-radius: var(--eui-radius-default);
+    --eui-code-block-padding-block: var(--eui-dimension-0);
+    --eui-code-block-padding-inline: var(--eui-spacing-xs);
+    --eui-code-block-typography-fontFamily: var(--eui-typography-textStyle-code-base-fontFamily);
+    --eui-code-block-typography-fontSize: var(--eui-typography-textStyle-code-small-fontSize);
+    --eui-code-block-typography-fontWeight: var(--eui-typography-textStyle-code-base-fontWeight);
+    --eui-code-block-typography-lineHeight: var(--eui-typography-textStyle-code-base-lineHeight);
+  }
+
+  /* Variant: block */
+  [data-eui-context] .eui-code-block[data-eui-variant='block'] {
+    --eui-code-block-colors-background: var(--eui-color-background-inverse);
+    --eui-code-block-colors-text: var(--eui-color-text-inverse);
+    --eui-code-block-colors-border: var(--eui-color-background-transparent);
+    --eui-code-block-radius: var(--eui-radius-large);
+    --eui-code-block-padding-block: var(--eui-spacing-lg);
+    --eui-code-block-padding-inline: var(--eui-spacing-lg);
+  }
+
+}

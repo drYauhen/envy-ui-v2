@@ -1,0 +1,17 @@
+/**
+ * Inline Component Tokens - Generated from tokens/components/inline.tokens.json
+ */
+
+@layer eui-components {
+  /* Base inline variables (default variant) */
+  [data-eui-context] .eui-inline {
+    --eui-inline-gap: var(--eui-spacing-md);
+    --eui-inline-size-xs-gap: var(--eui-spacing-xs);
+    --eui-inline-size-sm-gap: var(--eui-spacing-sm);
+    --eui-inline-size-md-gap: var(--eui-spacing-md);
+    --eui-inline-size-lg-gap: var(--eui-spacing-lg);
+    --eui-inline-size-xl-gap: var(--eui-spacing-xl);
+    --eui-inline-size-2xl-gap: var(--eui-spacing-2xl);
+  }
+
+}

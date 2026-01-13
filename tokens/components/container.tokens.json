@@ -1,0 +1,38 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "container": {
+      "base": {
+        "width": {
+          "$value": "{eui.layout.container.wide.maxWidth}",
+          "$type": "dimension",
+          "$description": "Default container width (full width)."
+        },
+        "gutter": {
+          "x": {
+            "$value": "{eui.layout.container.gutterX}",
+            "$type": "dimension",
+            "$description": "Horizontal container gutter."
+          }
+        },
+        "maxWidth": {
+          "standard": {
+            "$value": "{eui.layout.container.standard.maxWidth}",
+            "$type": "dimension",
+            "$description": "Standard readable width."
+          },
+          "wide": {
+            "$value": "{eui.layout.container.wide.maxWidth}",
+            "$type": "dimension",
+            "$description": "Wide container width for full layouts."
+          },
+          "fluid": {
+            "$value": "{eui.layout.container.wide.maxWidth}",
+            "$type": "dimension",
+            "$description": "Fluid container width (no max constraint)."
+          }
+        }
+      }
+    }
+  }
+}

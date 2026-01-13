@@ -1,0 +1,58 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "callout",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/docs.css",
+    "note": "Canonical callout component derived from docs shell usage."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-callout",
+    "slots": {}
+  },
+
+  "axes": {
+    "tone": {
+      "type": "enum",
+      "default": "info",
+      "values": ["neutral", "info", "success", "warning", "error"],
+      "attribute": "data-eui-tone",
+      "notes": "Callout tone controls status colors."
+    },
+    "variant": {
+      "type": "enum",
+      "default": "subtle",
+      "values": ["subtle", "solid"],
+      "attribute": "data-eui-variant",
+      "notes": "Callout variant controls contrast level."
+    }
+  },
+
+  "componentVars": {
+    "spacing": {
+      "--eui-callout-padding-block": { "type": "dimension" },
+      "--eui-callout-padding-inline": { "type": "dimension" }
+    },
+    "border": {
+      "--eui-callout-border-width": { "type": "dimension" },
+      "--eui-callout-border-style": { "type": "string" }
+    },
+    "shape": {
+      "--eui-callout-radius": { "type": "dimension" }
+    },
+    "typography": {
+      "--eui-callout-typography-fontFamily": { "type": "fontFamily" },
+      "--eui-callout-typography-fontSize": { "type": "fontSize" },
+      "--eui-callout-typography-fontWeight": { "type": "fontWeight" },
+      "--eui-callout-typography-lineHeight": { "type": "lineHeight" }
+    },
+    "localVars": {
+      "--eui-callout-background": { "type": "color" },
+      "--eui-callout-border": { "type": "color" },
+      "--eui-callout-color": { "type": "color" }
+    }
+  }
+}

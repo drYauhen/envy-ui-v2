@@ -1,26 +1,30 @@
-/* ============================================================================
-   Container Component
-   ============================================================================ */
+/**
+ * Container Component
+ *
+ * Generated from: tokens/components/container.contract.json
+ */
 
-[data-eui-context] .eui-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--eui-layout-container-gutterX);
-  padding-right: var(--eui-layout-container-gutterX);
-}
+@layer eui-components {
+  [data-eui-context] .eui-container {
+    width: var(--eui-container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--eui-container-gutter-x);
+    padding-right: var(--eui-container-gutter-x);
+  }
 
-/* Variant: Standard (readable width for forms/detail pages) */
-[data-eui-context] .eui-container[data-eui-container='standard'] {
-  max-width: var(--eui-layout-container-standard-maxWidth);
-}
+  /* Variant: Standard (readable width for forms/detail pages) */
+  [data-eui-context] .eui-container[data-eui-container='standard'] {
+    max-width: var(--eui-container-maxWidth-standard);
+  }
 
-/* Variant: Wide (full width for tables/dashboards) */
-[data-eui-context] .eui-container[data-eui-container='wide'] {
-  max-width: var(--eui-layout-container-wide-maxWidth);
-}
+  /* Variant: Wide (full width for tables/dashboards) */
+  [data-eui-context] .eui-container[data-eui-container='wide'] {
+    max-width: var(--eui-container-maxWidth-wide);
+  }
 
-/* Variant: Fluid (no max-width constraint) */
-[data-eui-context] .eui-container[data-eui-container='fluid'] {
-  max-width: none;
+  /* Variant: Fluid (no max-width constraint) */
+  [data-eui-context] .eui-container[data-eui-container='fluid'] {
+    max-width: var(--eui-container-maxWidth-fluid);
+  }
 }

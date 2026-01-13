@@ -46,7 +46,7 @@ const extractTokensPreservingRefs = (obj, prefix = []) => {
 };
 
 // Generate Component CSS (generic function)
-function generateComponentCSS(componentName, baseSelector, variants = [], statuses = []) {
+function generateComponentCSS(componentName, baseSelector, variants = [], statuses = [], options = {}) {
   console.log(`📝 Generating components/${componentName}.tokens.css...`);
 
   const tokensPath = path.join(repoRoot, 'tokens', 'components', `${componentName}.tokens.json`);
@@ -58,6 +58,8 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
   let output = `/**\n * ${componentName.charAt(0).toUpperCase() + componentName.slice(1)} Component Tokens - Generated from tokens/components/${componentName}.tokens.json\n */\n\n`;
   // Start with context layer for semantic tokens
   output += '@layer eui-components {\n';
+
+  const variantAttribute = options.variantAttribute || 'data-eui-variant';
 
   try {
     const data = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
@@ -80,9 +82,10 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       name.startsWith(`eui-${componentName}-status-`)
     );
 
-    // For badge component, also extract color tokens from variant structure
+    // For tone-based components, also extract color tokens from variant structure
     let colorTokens = [];
-    if (componentName === 'badge') {
+    const toneComponents = new Set(['badge', 'callout']);
+    if (toneComponents.has(componentName)) {
       colorTokens = allTokens.filter(({ name }) =>
         name.includes('-colors-') &&
         (name.includes('-variant-subtle-') ||
@@ -93,8 +96,8 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
 
     // Convert token names to runtime variable names (--eui-${componentName}-*)
     const convertToRuntimeVar = (tokenName) => {
-      // Special handling for badge color tokens
-      if (componentName === 'badge' && tokenName.includes('-colors-')) {
+      // Special handling for tone-based color tokens
+      if (toneComponents.has(componentName) && tokenName.includes('-colors-')) {
         // eui-badge-variant-subtle-tone-neutral-colors-background → --eui-badge-colors-neutral-background
         // eui-badge-variant-solid-tone-success-colors-background → --eui-badge-colors-success-solid-background
         // eui-badge-variant-outline-colors-background → --eui-badge-colors-variant-outline-background
@@ -113,17 +116,17 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
             // Has tone (subtle and solid variants)
             const tone = parts[toneIndex + 1]; // 'neutral', 'success', etc.
 
-            // For subtle variant, tone comes first: --eui-badge-colors-{tone}-{property}
-            // For solid variant, tone comes first then solid: --eui-badge-colors-{tone}-solid-{property}
+            // For subtle variant, tone comes first: --eui-{component}-colors-{tone}-{property}
+            // For solid variant, tone comes first then solid: --eui-{component}-colors-{tone}-solid-{property}
             if (variant === 'subtle') {
-              return `--eui-badge-colors-${tone}-${property}`;
+              return `--eui-${componentName}-colors-${tone}-${property}`;
             } else if (variant === 'solid') {
-              return `--eui-badge-colors-${tone}-solid-${property}`;
+              return `--eui-${componentName}-colors-${tone}-solid-${property}`;
             }
           } else {
             // No tone (outline variant only)
             // eui-badge-variant-outline-colors-background → --eui-badge-colors-variant-outline-background
-            return `--eui-badge-colors-variant-outline-${property}`;
+            return `--eui-${componentName}-colors-variant-outline-${property}`;
           }
         }
       }
@@ -148,15 +151,16 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       } else if (tokenName.startsWith(`eui-${componentName}-base-`)) {
         // eui-${componentName}-base-shadow → --eui-${componentName}-shadow
         const parts = tokenName.split('-');
-        const propertyParts = parts.slice(3); // Skip 'eui', componentName, and 'base'
+        const componentParts = componentName.split('-');
+        const propertyParts = parts.slice(1 + componentParts.length + 1); // Skip 'eui', componentName, and 'base'
         return `--eui-${componentName}-${propertyParts.join('-')}`;
       }
 
       return `--${tokenName}`;
     };
 
-    // Generate color token variables for badge (special handling)
-    if (componentName === 'badge' && colorTokens.length > 0) {
+    // Generate color token variables for tone components (special handling)
+    if (toneComponents.has(componentName) && colorTokens.length > 0) {
       // Group color tokens by their expected CSS variable names
       const colorVarGroups = {};
 
@@ -169,7 +173,7 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       });
 
       // Generate color variables scoped to the component within context
-      output += `  /* Badge color variables - Scoped to component */\n`;
+      output += `  /* ${componentName} color variables - Scoped to component */\n`;
       output += `  [data-eui-context] .${baseSelector} {\n`;
       Object.keys(colorVarGroups).forEach(runtimeVar => {
         // Use the first value (they should all be the same for the same variable)
@@ -201,7 +205,7 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
 
         if (variantTokensForThis.length > 0) {
           output += `  /* Variant: ${variant} */\n`;
-          output += `  [data-eui-context] .${baseSelector}[data-eui-variant='${variant}'] {\n`;
+          output += `  [data-eui-context] .${baseSelector}[${variantAttribute}='${variant}'] {\n`;
           variantTokensForThis.forEach(({ name, value }) => {
             const runtimeVar = convertToRuntimeVar(name);
             output += `    ${runtimeVar}: ${value};\n`;
@@ -249,6 +253,62 @@ function generateBadgeComponentCSS() {
   return generateComponentCSS('badge', 'eui-badge');
 }
 
+// Generate Layout component CSS
+function generateStackComponentCSS() {
+  return generateComponentCSS('stack', 'eui-stack');
+}
+
+function generateInlineComponentCSS() {
+  return generateComponentCSS('inline', 'eui-inline');
+}
+
+function generateGridComponentCSS() {
+  return generateComponentCSS('grid', 'eui-grid');
+}
+
+function generateSectionComponentCSS() {
+  return generateComponentCSS('section', 'eui-section');
+}
+
+function generateContainerComponentCSS() {
+  return generateComponentCSS('container', 'eui-container');
+}
+
+function generatePageComponentCSS() {
+  return generateComponentCSS('page', 'eui-page');
+}
+
+// Generate Docs-oriented component CSS
+function generateContentComponentCSS() {
+  return generateComponentCSS('content', 'eui-content');
+}
+
+function generateCodeBlockComponentCSS() {
+  return generateComponentCSS('code-block', 'eui-code-block', ['block']);
+}
+
+function generateTableComponentCSS() {
+  return generateComponentCSS('table', 'eui-table');
+}
+
+function generateTableContainerComponentCSS() {
+  return generateComponentCSS('table-container', 'eui-table-container');
+}
+
+function generateCalloutComponentCSS() {
+  return generateComponentCSS('callout', 'eui-callout', ['subtle', 'solid']);
+}
+
+function generateButtonComponentCSS() {
+  return generateComponentCSS(
+    'button',
+    'eui-button',
+    ['primary', 'secondary', 'accent', 'accent-finished', 'link'],
+    [],
+    { variantAttribute: 'data-eui-intent' }
+  );
+}
+
 // Main execution
 function main() {
   console.log('🚀 Generating Component Token CSS...');
@@ -260,17 +320,28 @@ function main() {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  // Generate Card component CSS
-  const cardCSS = generateCardComponentCSS();
-  const cardFilePath = path.join(outputDir, 'card.tokens.css');
-  fs.writeFileSync(cardFilePath, cardCSS, 'utf8');
-  console.log(`✅ Generated components/card.tokens.css`);
+  const components = [
+    { name: 'card', css: generateCardComponentCSS() },
+    { name: 'badge', css: generateBadgeComponentCSS() },
+    { name: 'stack', css: generateStackComponentCSS() },
+    { name: 'inline', css: generateInlineComponentCSS() },
+    { name: 'grid', css: generateGridComponentCSS() },
+    { name: 'section', css: generateSectionComponentCSS() },
+    { name: 'container', css: generateContainerComponentCSS() },
+    { name: 'page', css: generatePageComponentCSS() },
+    { name: 'content', css: generateContentComponentCSS() },
+    { name: 'code-block', css: generateCodeBlockComponentCSS() },
+    { name: 'table', css: generateTableComponentCSS() },
+    { name: 'table-container', css: generateTableContainerComponentCSS() },
+    { name: 'callout', css: generateCalloutComponentCSS() },
+    { name: 'button', css: generateButtonComponentCSS() }
+  ];
 
-  // Generate Badge component CSS
-  const badgeCSS = generateBadgeComponentCSS();
-  const badgeFilePath = path.join(outputDir, 'badge.tokens.css');
-  fs.writeFileSync(badgeFilePath, badgeCSS, 'utf8');
-  console.log(`✅ Generated components/badge.tokens.css`);
+  components.forEach(({ name, css }) => {
+    const filePath = path.join(outputDir, `${name}.tokens.css`);
+    fs.writeFileSync(filePath, css, 'utf8');
+    console.log(`✅ Generated components/${name}.tokens.css`);
+  });
 
   console.log('🎉 Component Token CSS generation complete!');
 }

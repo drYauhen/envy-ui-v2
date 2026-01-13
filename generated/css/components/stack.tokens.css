@@ -1,0 +1,17 @@
+/**
+ * Stack Component Tokens - Generated from tokens/components/stack.tokens.json
+ */
+
+@layer eui-components {
+  /* Base stack variables (default variant) */
+  [data-eui-context] .eui-stack {
+    --eui-stack-gap: var(--eui-spacing-md);
+    --eui-stack-size-xs-gap: var(--eui-spacing-xs);
+    --eui-stack-size-sm-gap: var(--eui-spacing-sm);
+    --eui-stack-size-md-gap: var(--eui-spacing-md);
+    --eui-stack-size-lg-gap: var(--eui-spacing-lg);
+    --eui-stack-size-xl-gap: var(--eui-spacing-xl);
+    --eui-stack-size-2xl-gap: var(--eui-spacing-2xl);
+  }
+
+}
