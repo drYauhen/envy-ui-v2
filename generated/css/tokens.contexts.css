@@ -28,7 +28,7 @@
     --eui-color-focus-ring: oklch(71% 0.15 237);
     --eui-color-neutral-border: var(--eui-color-neutral-300);
     --eui-color-neutral-border-strong: var(--eui-color-neutral-400);
-    --eui-color-neutral-divider: var(--eui-color-neutral-200);
+    --eui-color-neutral-divider: var(--eui-color-neutral-300);
     --eui-color-neutral-surface: var(--eui-color-neutral-white);
     --eui-color-neutral-text: var(--eui-color-neutral-900);
     --eui-color-neutral-text-muted: var(--eui-color-neutral-500);

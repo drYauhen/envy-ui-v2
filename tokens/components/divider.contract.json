@@ -1,0 +1,88 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "divider",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/divider.css",
+    "note": "This contract is derived from legacy CSS to preserve all existing behavior/features during migration."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-divider",
+    "slots": {}
+  },
+
+  "invariants": [
+    "Divider is a presentational component: no theme-specific selectors inside canonical component CSS.",
+    "Component CSS must not leak into token themes/contexts.",
+    "All legacy features must be preserved either in canonical CSS split or in explicit knowledge notes."
+  ],
+
+  "axes": {
+    "orientation": {
+      "type": "enum",
+      "default": "horizontal",
+      "values": ["horizontal", "vertical"],
+      "notes": "Orientation controls layout direction and margin application."
+    },
+    "variant": {
+      "type": "enum",
+      "default": "default",
+      "values": ["default", "subtle"],
+      "notes": "Variant controls border style: default (solid) or subtle (dashed)."
+    }
+  },
+
+  "componentVars": {
+    "colors": {
+      "--eui-divider-colors-default": "{eui.divider.base.colors.default}"
+    },
+    "size": {
+      "--eui-divider-size-thickness": "{eui.divider.base.size.thickness}"
+    },
+    "spacing": {
+      "--eui-divider-spacing-margin-vertical": "{eui.divider.base.spacing.margin.vertical}",
+      "--eui-divider-spacing-margin-horizontal": "{eui.divider.base.spacing.margin.horizontal}"
+    }
+  },
+
+  "behavior": {
+    "layout": {
+      "horizontal": {
+        "height": "var(--eui-divider-size-thickness)",
+        "width": "100%",
+        "margin": "var(--eui-divider-spacing-margin-vertical) 0"
+      },
+      "vertical": {
+        "width": "var(--eui-divider-size-thickness)",
+        "height": "100%",
+        "margin": "0 var(--eui-divider-spacing-margin-horizontal)"
+      }
+    },
+    "visual": {
+      "border": "none",
+      "backgroundColor": "var(--eui-divider-colors-default)",
+      "flexShrink": 0
+    },
+    "variants": {
+      "subtle": {
+        "horizontal": {
+          "background": "transparent",
+          "borderTop": "var(--eui-divider-size-thickness) dashed var(--eui-divider-colors-default)",
+          "height": 0
+        },
+        "vertical": {
+          "background": "transparent",
+          "borderLeft": "var(--eui-divider-size-thickness) dashed var(--eui-divider-colors-default)",
+          "borderTop": "none",
+          "width": 0,
+          "height": "100%"
+        }
+      }
+    }
+  },
+
+  "nonCanonicalThemeNotes": []
+}

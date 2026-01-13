@@ -1,0 +1,37 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "divider": {
+      "base": {
+        "colors": {
+          "default": {
+            "$value": "{eui.color.neutral.divider}",
+            "$type": "color",
+            "$description": "Default divider color - subtle neutral separator"
+          }
+        },
+        "size": {
+          "thickness": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Divider line thickness - thin border for subtle separation"
+          }
+        },
+        "spacing": {
+          "margin": {
+            "vertical": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Vertical margin for horizontal dividers"
+            },
+            "horizontal": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Horizontal margin for vertical dividers"
+            }
+          }
+        }
+      }
+    }
+  }
+}

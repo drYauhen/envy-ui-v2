@@ -1,0 +1,14 @@
+/**
+ * Divider Component Tokens - Generated from tokens/components/divider.tokens.json
+ */
+
+@layer eui-components {
+  /* Base divider variables (default variant) */
+  [data-eui-context] .eui-divider {
+    --eui-divider-colors-default: var(--eui-color-neutral-divider);
+    --eui-divider-size-thickness: var(--eui-border-width-thin);
+    --eui-divider-spacing-margin-vertical: var(--eui-spacing-sm);
+    --eui-divider-spacing-margin-horizontal: var(--eui-spacing-sm);
+  }
+
+}

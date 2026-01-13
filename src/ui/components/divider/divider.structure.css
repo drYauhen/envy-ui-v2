@@ -1,0 +1,64 @@
+/**
+ * Divider Component - Layout, Slots & Structure
+ *
+ * This file contains layout rules, flex behavior, and pseudo-elements.
+ * No variable assignments or axis overrides.
+ *
+ * Generated from: tokens/components/divider.contract.json
+ * Legacy reference: src/ui/divider.css
+ */
+
+@layer eui-components {
+  /* ============================================================================
+     Divider Component - Root Layout
+     ============================================================================ */
+
+  [data-eui-context] .eui-divider {
+    /* Base visual properties */
+    border: none;
+    background-color: var(--eui-divider-colors-default);
+    flex-shrink: 0;
+
+    /* Layout structure - defaults to horizontal */
+    height: var(--eui-divider-size-thickness);
+    width: 100%;
+    margin: var(--eui-divider-spacing-margin-vertical) 0;
+  }
+
+  /* ============================================================================
+     Divider Component - Orientation Variants
+     ============================================================================ */
+
+  /* Vertical orientation */
+  [data-eui-context] .eui-divider[data-eui-orientation="vertical"] {
+    width: var(--eui-divider-size-thickness);
+    height: 100%;
+    margin: 0 var(--eui-divider-spacing-margin-horizontal);
+  }
+
+  /* ============================================================================
+     Divider Component - Visual Variants
+     ============================================================================ */
+
+  /* Subtle variant - dashed border instead of solid background */
+  [data-eui-context] .eui-divider[data-eui-variant="subtle"] {
+    /* Remove solid background */
+    background: transparent;
+
+    /* Add dashed border */
+    border-top: var(--eui-divider-size-thickness) dashed var(--eui-divider-colors-default);
+    height: 0;
+  }
+
+  /* Subtle variant - vertical */
+  [data-eui-context] .eui-divider[data-eui-orientation="vertical"][data-eui-variant="subtle"] {
+    /* Remove solid background */
+    background: transparent;
+
+    /* Add dashed border */
+    border-left: var(--eui-divider-size-thickness) dashed var(--eui-divider-colors-default);
+    border-top: none;
+    width: 0;
+    height: 100%;
+  }
+}

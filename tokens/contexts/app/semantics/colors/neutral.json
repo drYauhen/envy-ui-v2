@@ -34,7 +34,7 @@
           "$description": "Stronger border color for emphasis"
         },
         "divider": {
-          "$value": "{eui-app-raw-color-neutral-200}",
+          "$value": "{eui-app-raw-color-neutral-300}",
           "$type": "color",
           "$description": "Divider and separator color"
         }

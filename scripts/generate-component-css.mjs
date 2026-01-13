@@ -309,6 +309,10 @@ function generateButtonComponentCSS() {
   );
 }
 
+function generateDividerComponentCSS() {
+  return generateComponentCSS('divider', 'eui-divider');
+}
+
 // Main execution
 function main() {
   console.log('🚀 Generating Component Token CSS...');
@@ -334,7 +338,8 @@ function main() {
     { name: 'table', css: generateTableComponentCSS() },
     { name: 'table-container', css: generateTableContainerComponentCSS() },
     { name: 'callout', css: generateCalloutComponentCSS() },
-    { name: 'button', css: generateButtonComponentCSS() }
+    { name: 'button', css: generateButtonComponentCSS() },
+    { name: 'divider', css: generateDividerComponentCSS() }
   ];
 
   components.forEach(({ name, css }) => {

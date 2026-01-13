@@ -3,12 +3,14 @@ import { DocsContainer, type DocsContainerProps } from '@storybook/addon-docs/bl
 import { getSectionConfig } from './section-config';
 import './mermaid.css';
 import '../generated/css/tokens.css';
+import '../generated/css/components/divider.tokens.css';
 import '../src/ui/focus-policy.css';
 import '../src/ui/state.css';
 import '../src/ui/label.css';
 import '../src/ui/button.css';
 import '../src/ui/components/card/card.index.css';
 import '../src/ui/components/badge/badge.index.css';
+import '../src/ui/components/divider/divider.index.css';
 // import '../src/ui/checkbox.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/switch.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/input.css'; // LEGACY: Likely defines old component tokens
@@ -36,7 +38,7 @@ import '../src/ui/callout.css';
 import '../src/ui/table.css';
 import '../src/ui/table-container.css';
 // import '../src/ui/menu.css'; // LEGACY: Likely defines old component tokens
-import '../src/ui/divider.css';
+
 import '../src/ui/icons/_icons.css';
 // import '../src/ui/form-field.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/form-section.css'; // LEGACY: Likely defines old component tokens

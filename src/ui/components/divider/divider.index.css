@@ -1,0 +1,13 @@
+/**
+ * Divider Component - Index
+ *
+ * Entry point that imports Divider CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/divider.contract.json
+ * Legacy reference: src/ui/divider.css
+ * Token variables: generated/css/components/divider.tokens.css
+ */
+
+@import './divider.structure.css';
