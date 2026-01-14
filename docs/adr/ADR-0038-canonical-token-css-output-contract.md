@@ -7,9 +7,9 @@
 **Related:**
 - [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (JSON structure)
 - [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy (superseded)
-- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
-- [Token Architecture](../architecture/token-architecture.md) — Token System Overview
-- [CSS Token Output Rules](../architecture/css-token-output-rules.md) — Enforcement Rules
+- [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
+- [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md) — Token System Overview
+- [CSS Token Output Rules](../architecture/ARCH-tokens-002-css-token-output-rules.md) — Enforcement Rules
 
 ---
 

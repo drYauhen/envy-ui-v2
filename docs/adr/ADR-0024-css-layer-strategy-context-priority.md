@@ -11,8 +11,8 @@
 - [ADR-0021](./ADR-0021-web-components-framework-agnostic-layer.md) — Web Components Framework-Agnostic Layer
 - [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
 - [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract (superseding)
-- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
-- [CSS Token Output Rules](../architecture/css-token-output-rules.md) — Enforcement Rules
+- [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
+- [CSS Token Output Rules](../architecture/ARCH-tokens-002-css-token-output-rules.md) — Enforcement Rules
 
 ---
 
@@ -343,7 +343,7 @@ CSS Custom Properties penetrate Shadow DOM boundaries. The `@layer` directive on
 5. **Component Overrides**: Our component styles and third-party overrides in `@layer components` (uses tokens)
 6. **Theme Tokens**: All themes in the highest priority `@layer theme`
 7. **Selector Specificity**: `@layer` order overrides selector specificity
-8. **No Hardcoded Values in Component CSS**: Component CSS must only map token variables to selectors (see [Component CSS Architecture](../architecture/component-css-architecture.md))
+8. **No Hardcoded Values in Component CSS**: Component CSS must only map token variables to selectors (see [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md))
 9. **Theme Overrides via Compound Selectors**: Theme overrides use `[data-eui-context="X"][data-eui-theme="Y"]` pattern, never write to `:root`
 
 ---
@@ -460,7 +460,7 @@ The `@layer` order ensures the correct value is resolved, and Custom Properties 
 }
 ```
 
-**Key Architectural Rules** (see [Component CSS Architecture](../architecture/component-css-architecture.md)):
+**Key Architectural Rules** (see [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md)):
 1. Component CSS maps to token variables only, no hardcoded values
 2. Theme overrides generated to `@layer theme` with compound selectors
 3. All colors in OKLCH format throughout generated CSS
@@ -477,4 +477,4 @@ For token organization, see:
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 For component CSS implementation rules, see:
-- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
+- [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules

@@ -15,7 +15,7 @@
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning (superseded)
-- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
+- [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
 
@@ -359,7 +359,7 @@ The transition to fully independent context directories is designed to be **non-
 - ✅ **OKLCH Throughout**: All color tokens stored in OKLCH format in token files, generated to CSS in OKLCH
 - ✅ **Single Source of Truth**: Deleted 99 lines of hardcoded CSS, relying exclusively on generated token values
 
-**Key Lesson**: Component CSS must never contain hardcoded values. Token files are the authoritative source. This separation is now mandatory for all components (see [Component CSS Architecture](../architecture/component-css-architecture.md)).
+**Key Lesson**: Component CSS must never contain hardcoded values. Token files are the authoritative source. This separation is now mandatory for all components (see [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md)).
 
 ---
 
@@ -370,7 +370,7 @@ The transition to fully independent context directories is designed to be **non-
 3. Contexts are **mutually exclusive** - an element belongs to one context
 4. Themes are **context-specific** - each theme belongs to a specific context
 5. Token resolution always follows: Foundation → Semantic → Context → Theme → Component
-6. **Token files are authoritative** - Component CSS must never contain hardcoded values (see [Component CSS Architecture](../architecture/component-css-architecture.md))
+6. **Token files are authoritative** - Component CSS must never contain hardcoded values (see [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md))
 7. **All colors in OKLCH** - Color tokens must use OKLCH format throughout the system
 8. **Semantic layer references** - Component tokens should reference semantic layer when possible, not skip directly to primitives
 

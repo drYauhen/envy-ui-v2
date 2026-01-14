@@ -45,5 +45,9 @@ export const adrFilenameMap: Record<string, string> = {
   "0033": "ADR-0033-accessibility-strategy-theme-switching-across-contexts.md",
   "0034": "ADR-0034-theme-presets-component-props-extension.md",
   "0035": "ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md",
-  "0036": "ADR-0036-ai-first-component-architecture-vision.md"
+  "0036": "ADR-0036-dtcg-schema-resolution-and-token-architecture.md",
+  "0037": "ADR-0037-canonical-token-architecture-locked.md",
+  "0038": "ADR-0038-canonical-token-css-output-contract.md",
+  "0039": "ADR-0039-context-oriented-reset-foundation-contract.md",
+  "0040": "ADR-0040-focus-ring-geometry-v1.md"
 };

@@ -32,82 +32,114 @@ export type ArchitectureMetadata = {
 };
 
 export const architectures: ArchitectureMetadata[] = [
+  // ACCESSIBILITY (alphabetically sorted)
   {
-    id: 'arch-readme',
-    title: 'Architecture Documentation Overview',
-    filename: 'README.md',
-    storybookId: 'docs-architecture--architecture-overview'
+    id: 'ARCH-accessibility-001-accessibility-reference',
+    title: 'ARCH-Accessibility-001 Accessibility Reference',
+    filename: 'ARCH-accessibility-001-accessibility-reference.md',
+    storybookId: 'docs-architecture--ARCH-accessibility-001-accessibility-reference'
+  },
+  // COMPONENTS (alphabetically sorted)
+  {
+    id: 'ARCH-components-001-component-css-architecture',
+    title: 'ARCH-Components-001 Component Css Architecture',
+    filename: 'ARCH-components-001-component-css-architecture.md',
+    storybookId: 'docs-architecture--ARCH-components-001-component-css-architecture'
   },
   {
-    id: 'arch-accessibility',
-    title: 'Accessibility Reference',
-    filename: 'accessibility-reference.md',
-    storybookId: 'docs-architecture--accessibility-reference'
+    id: 'ARCH-components-002-component-naming-conventions',
+    title: 'ARCH-Components-002 Component Naming Conventions',
+    filename: 'ARCH-components-002-component-naming-conventions.md',
+    storybookId: 'docs-architecture--ARCH-components-002-component-naming-conventions'
   },
   {
-    id: 'arch-token-usage',
-    title: 'Token Usage Rules',
-    filename: 'token-usage-rules.md',
-    storybookId: 'docs-architecture--token-usage-rules'
+    id: 'ARCH-components-003-componentfeature-architecture',
+    title: 'ARCH-Components-003 Componentfeature Architecture',
+    filename: 'ARCH-components-003-componentfeature-architecture.md',
+    storybookId: 'docs-architecture--ARCH-components-003-componentfeature-architecture'
   },
+  // LAYOUT (alphabetically sorted)
   {
-    id: 'arch-component-naming',
-    title: 'Component Naming Conventions',
-    filename: 'component-naming-conventions.md',
-    storybookId: 'docs-architecture--component-naming-conventions'
-  },
-  {
-    id: 'arch-layout-composition',
-    title: 'Layout Composition Guide',
-    filename: 'layout-composition-guide.md',
-    storybookId: 'docs-architecture--layout-composition-guide',
+    id: 'ARCH-layout-001-layout-composition-guide',
+    title: 'ARCH-Layout-001 Layout Composition Guide',
+    filename: 'ARCH-layout-001-layout-composition-guide.md',
+    storybookId: 'docs-architecture--ARCH-layout-001-layout-composition-guide',
     status: 'in-progress'
   },
+  // SYSTEM (alphabetically sorted with sequential numbering)
   {
-    id: 'arch-system-prefix',
-    title: 'System Prefix',
-    filename: 'system-prefix.md',
-    storybookId: 'docs-architecture--system-prefix'
+    id: 'ARCH-system-001-architecture-documentation',
+    title: 'ARCH-System-001 Architecture Documentation',
+    filename: 'ARCH-system-001-architecture-documentation.md',
+    storybookId: 'docs-architecture--ARCH-system-001-architecture-documentation'
   },
   {
-    id: 'arch-hero-theme',
-    title: 'Hero Section Theme Architecture',
-    filename: 'hero-section-theme-architecture.md',
-    storybookId: 'docs-architecture--hero-section-theme-architecture'
+    id: 'ARCH-system-002-architecture-documentation-guide',
+    title: 'ARCH-System-002 Architecture Documentation Guide',
+    filename: 'ARCH-system-002-architecture-documentation-guide.md',
+    storybookId: 'docs-architecture--ARCH-system-002-architecture-documentation-guide'
   },
   {
-    id: 'arch-dev-app',
-    title: 'Dev App Architecture',
-    filename: 'dev-app-architecture.md',
-    storybookId: 'docs-architecture--dev-app-architecture'
+    id: 'ARCH-system-003-architecture-validation-through-implementation',
+    title: 'ARCH-System-003 Architecture Validation Through Implementation',
+    filename: 'ARCH-system-003-architecture-validation-through-implementation.md',
+    storybookId: 'docs-architecture--ARCH-system-003-architecture-validation-through-implementation'
   },
   {
-    id: 'arch-theme-structure',
-    title: 'Theme Structure Analysis: Composition vs Semantic Breakdown',
-    filename: '../theme-structure-analysis.md'  // Note: in parent directory
+    id: 'ARCH-system-004-dev-app-architecture',
+    title: 'ARCH-System-004 Dev App Architecture',
+    filename: 'ARCH-system-004-dev-app-architecture.md',
+    storybookId: 'docs-architecture--ARCH-system-004-dev-app-architecture'
   },
   {
-    id: 'arch-component-css',
-    title: 'Component CSS Architecture',
-    filename: 'component-css-architecture.md',
-    storybookId: 'docs-architecture--component-css-architecture'
+    id: 'ARCH-system-005-storybook-story-structure-standard',
+    title: 'ARCH-System-005 Storybook Story Structure Standard',
+    filename: 'ARCH-system-005-storybook-story-structure-standard.md',
+    storybookId: 'docs-architecture--ARCH-system-005-storybook-story-structure-standard'
   },
   {
-    id: 'arch-adr-validation',
-    title: 'ADR Validation and Implementation',
-    filename: 'adr-validation-and-implementation.md',
-    storybookId: 'docs-architecture--adr-validation-and-implementation'
+    id: 'ARCH-system-006-system-prefix',
+    title: 'ARCH-System-006 System Prefix',
+    filename: 'ARCH-system-006-system-prefix.md',
+    storybookId: 'docs-architecture--ARCH-system-006-system-prefix'
+  },
+  // THEME (alphabetically sorted)
+  {
+    id: 'ARCH-theme-001-hero-section-theme-architecture',
+    title: 'ARCH-Theme-001 Hero Section Theme Architecture',
+    filename: 'ARCH-theme-001-hero-section-theme-architecture.md',
+    storybookId: 'docs-architecture--ARCH-theme-001-hero-section-theme-architecture'
   },
   {
-    id: 'arch-token-architecture',
-    title: 'Token Architecture',
-    filename: 'token-architecture.md'
+    id: 'ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown',
+    title: 'ARCH-Theme-002 Theme Structure Analysis Composition Vs Semantic Breakdown',
+    filename: 'ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown.md',
+    storybookId: 'docs-architecture--ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown'
   },
+  // TOKENS (alphabetically sorted)
   {
-    id: 'arch-color-system',
-    title: 'Color System Architecture Rules',
-    filename: 'color-system-architecture.md',
+    id: 'ARCH-tokens-001-color-system-architecture-rules',
+    title: 'ARCH-Tokens-001 Color System Architecture Rules',
+    filename: 'ARCH-tokens-001-color-system-architecture-rules.md',
     exportName: 'ColorSystemArchitectureRules',
-    storybookId: 'docs-architecture--color-system-architecture-rules'
+    storybookId: 'docs-architecture--ARCH-tokens-001-color-system-architecture-rules'
+  },
+  {
+    id: 'ARCH-tokens-002-css-token-output-rules',
+    title: 'ARCH-Tokens-002 Css Token Output Rules',
+    filename: 'ARCH-tokens-002-css-token-output-rules.md',
+    storybookId: 'docs-architecture--ARCH-tokens-002-css-token-output-rules'
+  },
+  {
+    id: 'ARCH-tokens-003-token-architecture',
+    title: 'ARCH-Tokens-003 Token Architecture',
+    filename: 'ARCH-tokens-003-token-architecture.md',
+    storybookId: 'docs-architecture--ARCH-tokens-003-token-architecture'
+  },
+  {
+    id: 'ARCH-tokens-004-token-usage-rules',
+    title: 'ARCH-Tokens-004 Token Usage Rules',
+    filename: 'ARCH-tokens-004-token-usage-rules.md',
+    storybookId: 'docs-architecture--ARCH-tokens-004-token-usage-rules'
   }
 ];

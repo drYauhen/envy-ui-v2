@@ -791,7 +791,7 @@ Foundation tokens are base design tokens that are not component-specific.
 
 ## Related Documentation
 
-- [Token Usage Rules](../architecture/token-usage-rules.md) - Rules for using tokens in components
+- [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) - Rules for using tokens in components
 - [Token System Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Architecture overview
 - [Token-First Contract Layer](../adr/ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) - Contract layer design
 

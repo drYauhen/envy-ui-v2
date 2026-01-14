@@ -22,7 +22,7 @@ const ROOT_DIR = join(__dirname, '..');
 /**
  * Generate document ID from title and type
  */
-function generateDocumentId(type, title) {
+function generateDocumentId(type, title, filePath = null, allFiles = null) {
   if (!title || typeof title !== 'string') {
     throw new Error('Title is required and must be a string');
   }
@@ -36,7 +36,7 @@ function generateDocumentId(type, title) {
 
   switch(type) {
     case 'architecture':
-      return `arch-${baseSlug}`;
+      return generateArchitectureId(title, filePath);
     case 'workflow':
       return `workflow-${baseSlug}`;
     case 'guide':
@@ -50,18 +50,99 @@ function generateDocumentId(type, title) {
 }
 
 /**
+ * Determine major relation for architecture documents
+ */
+function determineMajorRelation(title, filePath = null) {
+  const filename = filePath ? filePath.split('/').pop().toLowerCase() : '';
+  const titleLower = title.toLowerCase();
+
+  // ACCESSIBILITY category (check first - most specific)
+  if (filename.includes('accessibility') || filename.includes('focus') ||
+      titleLower.includes('accessibility') || titleLower.includes('focus')) {
+    return 'accessibility';
+  }
+
+  // THEME category
+  if (filename.includes('theme') || titleLower.includes('theme')) {
+    return 'theme';
+  }
+
+  // LAYOUT category
+  if (filename.includes('layout') || titleLower.includes('layout')) {
+    return 'layout';
+  }
+
+  // COMPONENTS category (check before tokens to avoid conflicts)
+  if (filename.includes('component') || titleLower.includes('component')) {
+    return 'components';
+  }
+
+  // TOKENS category (check after components to avoid conflicts with component-css-*)
+  if (filename.includes('color') || filename.includes('token') ||
+      titleLower.includes('color') || titleLower.includes('token')) {
+    return 'tokens';
+  }
+
+  // SYSTEM category (catch-all for architecture, dev-app, storybook, system, template, guide, etc.)
+  return 'system';
+}
+
+/**
  * Generate architecture ID with structured naming
  */
-function generateArchitectureId(majorRelation, name, number = 1) {
-  const paddedNumber = String(number).padStart(4, '0');
-  const slug = name
+function generateArchitectureId(title, filePath = null, allFiles = null) {
+  const majorRelation = determineMajorRelation(title, filePath);
+  const baseSlug = title
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
 
-  return `ARCH-${majorRelation}-${paddedNumber}-${slug}`;
+  // Get next sequential number for this major relation
+  const nextNumber = getNextSequentialNumber(majorRelation, allFiles);
+  const paddedNumber = String(nextNumber).padStart(3, '0');
+
+  return `ARCH-${majorRelation}-${paddedNumber}-${baseSlug}`;
+}
+
+/**
+ * Get next sequential number for a major relation
+ * Analyzes existing documents to determine the next number
+ */
+function getNextSequentialNumber(majorRelation, allFiles = null) {
+  if (!allFiles) {
+    // Fallback if no file list provided
+    return 1;
+  }
+
+  // Count how many documents already have ARCH- IDs in this major relation
+  let maxNumber = 0;
+
+  for (const filePath of allFiles) {
+    const type = getDocumentType(filePath);
+    if (type === 'architecture') {
+      const title = extractTitleFromFile(filePath);
+      if (title && determineMajorRelation(title, filePath) === majorRelation) {
+        // Check if this document already has an ARCH- ID
+        const hasId = hasDocumentId(filePath);
+        if (hasId) {
+          try {
+            const content = readFileSync(filePath, 'utf8');
+            const idMatch = content.match(/\*\*Document ID:\*\*\s*(ARCH-[^-]+-(\d+)-.*)/);
+            if (idMatch && idMatch[2]) {
+              const existingNumber = parseInt(idMatch[2], 10);
+              maxNumber = Math.max(maxNumber, existingNumber);
+            }
+          } catch (error) {
+            // Ignore read errors
+          }
+        }
+      }
+    }
+  }
+
+  return maxNumber + 1;
 }
 
 /**
@@ -294,7 +375,7 @@ EXAMPLES:
         // Already has structured naming
         docId = title.split(' ')[0]; // Take first part before space
       } else {
-        docId = generateDocumentId(type, title);
+        docId = generateDocumentId(type, title, filePath, targetFiles);
       }
     } catch (error) {
       console.error(`❌ Error generating ID for ${filePath}:`, error.message);

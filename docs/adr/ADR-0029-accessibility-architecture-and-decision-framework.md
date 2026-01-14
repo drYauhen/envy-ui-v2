@@ -158,7 +158,7 @@ This framework complements ADR-0001's React Aria strategy:
 ### Implementation Notes
 
 **Reference Documentation:**
-- See [Accessibility Reference](../architecture/accessibility-reference.md) for complete lists of:
+- See [Accessibility Reference](../architecture/ARCH-accessibility-001-accessibility-reference.md) for complete lists of:
   - ARIA roles by category
   - WAI-ARIA APG patterns
   - React Aria hooks
@@ -180,7 +180,7 @@ This framework complements ADR-0001's React Aria strategy:
 
 ## Notes
 
-This ADR establishes the decision framework. For comprehensive reference material (complete lists of ARIA roles, patterns, React Aria hooks), see the [Accessibility Reference](../architecture/accessibility-reference.md) document.
+This ADR establishes the decision framework. For comprehensive reference material (complete lists of ARIA roles, patterns, React Aria hooks), see the [Accessibility Reference](../architecture/ARCH-accessibility-001-accessibility-reference.md) document.
 
 **Related Patterns:**
 - ADR-0001 establishes React Aria as the accessibility engine

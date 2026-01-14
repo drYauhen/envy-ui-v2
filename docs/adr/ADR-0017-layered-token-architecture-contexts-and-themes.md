@@ -15,7 +15,7 @@
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
-- [Component CSS Architecture](../architecture/component-css-architecture.md) — Component CSS Implementation Rules
+- [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
 
@@ -231,7 +231,7 @@ The implemented foundation enables:
 - ✅ **No Hardcoded Values**: Component CSS maps token variables to selectors only, no value definitions
 - ✅ **Theme Independence**: Each theme file overrides only what differs from base context
 
-**Key Architectural Rules** (see [Component CSS Architecture](../architecture/component-css-architecture.md)):
+**Key Architectural Rules** (see [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md)):
 1. **Token files are authoritative**, not CSS
 2. **All colors in OKLCH format** throughout the system
 3. **Theme overrides via compound selectors only**, never in `:root`

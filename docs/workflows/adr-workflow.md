@@ -360,8 +360,8 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
 
 3. **Format:**
    ```markdown
-   - [Token Usage Rules](../architecture/token-usage-rules.md) — Current rules
-   - [Accessibility Reference](../architecture/accessibility-reference.md) — Reference documentation
+   - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Current rules
+   - [Accessibility Reference](../architecture/ARCH-accessibility-001-accessibility-reference.md) — Reference documentation
    ```
 
 4. **Path rules:**

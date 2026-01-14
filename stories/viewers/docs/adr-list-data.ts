@@ -71,7 +71,9 @@ export const adrs: AdrListItem[] = [
   { number: '0034', title: 'Theme Presets - Component Props Extension for Third-Party Integration', status: 'Proposed', date: '2026-01-06', exportName: 'ThemePresetsComponentPropsExtensionforThirdPartyIntegration' },
   { number: '0035', title: 'CSS Naming Conventions - Class Names vs Data Attributes', status: 'Accepted', date: '2026-01-07', exportName: 'CSSNamingConventionsClassNamesvsDataAttributes' },
   { number: '0036', title: 'AI-First Component Architecture Vision', status: 'Proposed (Evolutionary)', date: '2026-01-07', exportName: 'AIFirstComponentArchitectureVision' },
+  { number: '0041', title: 'DTCG Schema Resolution and Token Architecture', status: 'Accepted', date: '2026-01-07', exportName: 'DTCGSchemaResolutionAndTokenArchitecture' },
   { number: '0037', title: 'Canonical Token Architecture - Locked', status: 'Accepted (Implemented)', date: '2026-01-10', exportName: 'CanonicalTokenArchitectureLocked' },
   { number: '0038', title: 'Canonical Token CSS Output Contract', status: 'Accepted', date: '2026-01-10', exportName: 'CanonicalTokenCSSOutputContract' },
-  { number: '0039', title: 'Context-Oriented Reset as Foundation Contract', status: 'Accepted', date: '2026-01-13', exportName: 'ContextOrientedResetasFoundationContract' }
+  { number: '0039', title: 'Context-Oriented Reset as Foundation Contract', status: 'Accepted', date: '2026-01-13', exportName: 'ContextOrientedResetasFoundationContract' },
+  { number: '0040', title: 'Focus Ring Geometry Canon v1', status: 'Accepted (v1)', date: '2026-01-15', exportName: 'FocusRingGeometryCanonv1' }
 ];

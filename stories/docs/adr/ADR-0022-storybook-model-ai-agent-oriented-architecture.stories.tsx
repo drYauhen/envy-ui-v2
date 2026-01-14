@@ -1,0 +1,23 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { AdrViewer } from '../../viewers/docs/AdrViewer';
+
+type Story = StoryObj;
+
+const meta: Meta = {
+  title: 'Docs/ADR',
+  parameters: { layout: 'fullscreen' }
+};
+
+export default meta;
+
+export const StorybookModelasAIAgentOrientedArchitectureLayer: Story = {
+  name: 'ADR-0022 Storybook Model as AI-Agent-Oriented Architecture Layer',
+  render: () => (
+    <AdrViewer
+      adrNumber="0022"
+      title="Storybook Model as AI-Agent-Oriented Architecture Layer"
+      status="Proposed (Exploratory - Future Vision)"
+      date="2025-12-25"
+    />
+  )
+};

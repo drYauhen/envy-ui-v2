@@ -11,11 +11,11 @@
 **Assistance:** AI-assisted drafting (human-reviewed)
 
 **Related:**
-- [Token Architecture](../architecture/token-architecture.md) — Canonical architectural rules (normative)
-- [Token Usage Rules](../architecture/token-usage-rules.md) — Enforceable token usage rules
+- [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md) — Canonical architectural rules (normative)
+- [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Enforceable token usage rules
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
-- [ADR-0036](./ADR-0036-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
+- [ADR-0041](./ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
 
 ---
 

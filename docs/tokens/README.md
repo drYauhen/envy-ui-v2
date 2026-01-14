@@ -94,7 +94,7 @@ The script will:
 
 ### Allowed Exceptions
 
-Token validation uses a permissive allowlist of safe CSS keywords and baseline literals to avoid false positives (see `scripts/validate-token-usage.mjs`). However, **policy overrides tooling**: use of literals should follow the rules in [`docs/architecture/token-usage-rules.md`](../architecture/token-usage-rules.md). Only the documented temporary gaps (motion/opacity/press translation) are allowed without explicit approval. Any other literal must be justified and documented.
+Token validation uses a permissive allowlist of safe CSS keywords and baseline literals to avoid false positives (see `scripts/validate-token-usage.mjs`). However, **policy overrides tooling**: use of literals should follow the rules in [`docs/architecture/token-usage-rules.md`](../architecture/ARCH-tokens-004-token-usage-rules.md). Only the documented temporary gaps (motion/opacity/press translation) are allowed without explicit approval. Any other literal must be justified and documented.
 
 ### Example Output
 
@@ -374,8 +374,8 @@ See [use-cases.md](./use-cases.md) for complete examples with code.
 
 ## Related Documentation
 
-- [Token Usage Rules](../architecture/token-usage-rules.md) - Rules for using tokens
-- [Token Architecture](../architecture/token-architecture.md) - Complete current token system architecture
+- [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) - Rules for using tokens
+- [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md) - Complete current token system architecture
 - [Token Reference](./reference.md) - Auto-generated token reference
-- [DTCG Schema Resolution](../adr/ADR-0036-dtcg-schema-resolution-and-token-architecture.md) - Recent improvements
+- [DTCG Schema Resolution](../adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md) - Recent improvements
 - [Layered Token Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Architectural foundation
