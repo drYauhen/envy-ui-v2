@@ -100,7 +100,7 @@ type Story = StoryObj;
 export const AccessibilityReference: Story = {
   name: 'Accessibility Reference',
   render: () => (
-    <DocViewer markdownPath="/docs/architecture/accessibility-reference.md" />
+    <DocViewer markdownPath="/docs/architecture/ARCH-accessibility-001-accessibility-reference.md" />
   )
 };
 ```

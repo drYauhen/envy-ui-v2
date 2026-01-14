@@ -43,7 +43,7 @@ export const ArchitectureOverview: Story = {
   name: 'Architecture Documentation',
   render: () => (
     <DocViewer
-      markdownPath="/docs/architecture/README.md"
+      markdownPath="/docs/architecture/ARCH-system-001-architecture-documentation.md"
       fallback="Loading architecture documentation..."
     />
   )

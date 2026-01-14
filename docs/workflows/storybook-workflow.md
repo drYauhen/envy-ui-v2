@@ -169,7 +169,7 @@ export const AccessibilityReference: Story = {
   name: 'Accessibility Reference',
   render: () => (
     <DocViewer
-      markdownPath="/docs/architecture/accessibility-reference.md"
+      markdownPath="/docs/architecture/ARCH-accessibility-001-accessibility-reference.md"
       fallback="Loading accessibility reference..."
     />
   )
