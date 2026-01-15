@@ -1,4 +1,3 @@
-import { adrFilenameMap } from './adr-filename-map';
 import { adrs } from './adr-list-data';
 
 // Helper function to convert ADR title to Storybook story slug
@@ -48,12 +47,14 @@ export const storySlugFromAdrLinkText = (linkText: string): string | null => {
 // Helper function to convert ADR number to Storybook story path
 export const adrNumberToStoryPath = async (adrNumber: string): Promise<string> => {
   try {
+    // First, try to find the ADR in the data (this should work for all registered ADRs)
     const adrData = adrs.find(adr => adr.number === adrNumber);
     if (adrData?.exportName) {
       const slug = exportNameToSlug(adrData.exportName);
       return `?path=/story/docs-adr--${slug}`;
     }
 
+    // Fallback: Try to fetch the story file
     const storyResponse = await fetch(`/stories/docs/adr/adr-${adrNumber}.stories.tsx`);
     if (storyResponse.ok) {
       const storyText = await storyResponse.text();
@@ -65,7 +66,8 @@ export const adrNumberToStoryPath = async (adrNumber: string): Promise<string> =
       }
     }
 
-    const filename = adrFilenameMap[adrNumber] || `ADR-${adrNumber}.md`;
+    // Final fallback: Try to fetch the markdown file using markdownPath or default pattern
+    const filename = adrData?.markdownPath?.split('/').pop() || `ADR-${adrNumber}.md`;
     const response = await fetch(`/docs/adr/${filename}`);
     if (!response.ok) {
       throw new Error(`Failed to load ADR-${adrNumber}`);
