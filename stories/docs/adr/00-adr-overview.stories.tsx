@@ -21,9 +21,6 @@ const meta: Meta = {
 
 export default meta;
 
-// Filter out ADR-0000 (template document)
-const publishedAdrs = adrs.filter(adr => adr.number !== '0000');
-
 export const Overview: Story = {
   parameters: {
     interactions: { hidden: true },
@@ -32,5 +29,5 @@ export const Overview: Story = {
     a11y: { hidden: true }
   },
   name: 'ADR Overview',
-  render: () => <DocListViewer docs={publishedAdrs} category="adr" />
+  render: () => <DocListViewer docs={adrs} category="adr" />
 };
