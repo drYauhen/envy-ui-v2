@@ -53,15 +53,26 @@ const DocListItem: React.FC<{ doc: DocMetadata; category: string }> = ({ doc, ca
   ) : null;
   const storyPath = getDocStoryPath(doc, category);
 
-  // Render title with styled prefix for ADR
-  const titleElement = category === 'adr' ? (
-    <>
-      <span className="eui-text-muted">ADR-{doc.number}: </span>
-      {doc.title}
-    </>
-  ) : (
-    getDocTitle(doc, category)
-  );
+  // Render title with styled prefix for ADR and Architecture
+  let titleElement: React.ReactNode;
+
+  if (category === 'adr') {
+    titleElement = (
+      <>
+        <span className="eui-text-muted">ADR-{doc.number}: </span>
+        {doc.title}
+      </>
+    );
+  } else if (category === 'architecture') {
+    titleElement = (
+      <>
+        <span className="eui-text-muted">ARCH-{doc.majorCategory}-{doc.number}: </span>
+        {doc.title}
+      </>
+    );
+  } else {
+    titleElement = getDocTitle(doc, category);
+  }
 
   return (
     <li>
