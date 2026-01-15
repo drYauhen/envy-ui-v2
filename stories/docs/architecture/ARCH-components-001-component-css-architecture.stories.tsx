@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchComponents001ComponentCssArchitecture: Story = {
+export const ArchComponentsNum001ComponentCssArchitecture: Story = {
   name: 'ARCH-COMPONENTS-001 Component Css Architecture',
   render: () => (
     <DocViewer

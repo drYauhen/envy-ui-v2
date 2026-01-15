@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchSystem002ArchitectureDocumentationGuide: Story = {
+export const ArchSystemNum002ArchitectureDocumentationGuide: Story = {
   name: 'ARCH-SYSTEM-002 Architecture Documentation Guide',
   render: () => (
     <DocViewer

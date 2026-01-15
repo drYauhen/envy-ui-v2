@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchLayout001LayoutCompositionGuide: Story = {
+export const ArchLayoutNum001LayoutCompositionGuide: Story = {
   name: 'ARCH-LAYOUT-001 Layout Composition Guide',
   render: () => (
     <DocViewer

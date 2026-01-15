@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchSystem003ArchitectureValidationThroughImplementation: Story = {
+export const ArchSystemNum003ArchitectureValidationThroughImplementation: Story = {
   name: 'ARCH-SYSTEM-003 Architecture Validation Through Implementation',
   render: () => (
     <DocViewer

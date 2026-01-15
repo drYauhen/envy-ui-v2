@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchTokens003TokenArchitecture: Story = {
+export const ArchTokensNum003TokenArchitecture: Story = {
   name: 'ARCH-TOKENS-003 Token Architecture',
   render: () => (
     <DocViewer

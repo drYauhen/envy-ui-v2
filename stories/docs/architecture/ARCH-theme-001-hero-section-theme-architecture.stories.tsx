@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchTheme001HeroSectionThemeArchitecture: Story = {
+export const ArchThemeNum001HeroSectionThemeArchitecture: Story = {
   name: 'ARCH-THEME-001 Hero Section Theme Architecture',
   render: () => (
     <DocViewer

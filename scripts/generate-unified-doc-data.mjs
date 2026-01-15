@@ -103,7 +103,8 @@ function generateStorybookId(title, category) {
 
 /**
  * Generate architecture exportName from filename
- * ARCH-category-xxx-title-slug.stories.tsx -> ArchCategoryXxxTitleSlug
+ * ARCH-category-xxx-title-slug.stories.tsx -> ArchCategoryNum###TitleSlug
+ * The "Num" prefix ensures proper kebab-case conversion (arch-category-num-###-title-slug)
  */
 function generateArchitectureExportName(filename) {
   const match = filename.match(/^ARCH-([^-]+)-(\d{3})-(.+)\.stories\.tsx$/);
@@ -120,7 +121,8 @@ function generateArchitectureExportName(filename) {
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join('');
 
-  return `Arch${categoryPascal}${sequential}${titlePascal}`;
+  // Add "Num" prefix to sequential for clear camelCase boundary
+  return `Arch${categoryPascal}Num${sequential}${titlePascal}`;
 }
 
 /**

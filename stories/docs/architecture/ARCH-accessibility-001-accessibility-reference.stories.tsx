@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchAccessibility001AccessibilityReference: Story = {
+export const ArchAccessibilityNum001AccessibilityReference: Story = {
   name: 'ARCH-ACCESSIBILITY-001 Accessibility Reference',
   render: () => (
     <DocViewer

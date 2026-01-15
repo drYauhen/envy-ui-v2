@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchTheme002ThemeStructureAnalysisCompositionVsSemanticBreakdown: Story = {
+export const ArchThemeNum002ThemeStructureAnalysisCompositionVsSemanticBreakdown: Story = {
   name: 'ARCH-THEME-002 Theme Structure Analysis Composition Vs Semantic Breakdown',
   render: () => (
     <DocViewer

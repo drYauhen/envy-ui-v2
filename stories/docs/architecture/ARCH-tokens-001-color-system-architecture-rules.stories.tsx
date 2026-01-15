@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchTokens001ColorSystemArchitectureRules: Story = {
+export const ArchTokensNum001ColorSystemArchitectureRules: Story = {
   name: 'ARCH-TOKENS-001 Color System Architecture Rules',
   render: () => (
     <DocViewer

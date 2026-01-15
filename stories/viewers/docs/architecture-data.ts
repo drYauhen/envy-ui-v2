@@ -12,7 +12,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchAccessibility001AccessibilityReference",
+    "exportName": "ArchAccessibilityNum001AccessibilityReference",
     "markdownPath": "/docs/architecture/ARCH-accessibility-001-accessibility-reference.md"
   },
   {
@@ -23,7 +23,7 @@ export const architectures: DocMetadata[] = [
     "status": "Mandatory",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchComponents001ComponentCssArchitecture",
+    "exportName": "ArchComponentsNum001ComponentCssArchitecture",
     "markdownPath": "/docs/architecture/ARCH-components-001-component-css-architecture.md"
   },
   {
@@ -34,7 +34,7 @@ export const architectures: DocMetadata[] = [
     "status": "Guide (Advisory)",
     "date": "2025-01-21",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchComponents002ComponentNamingConventions",
+    "exportName": "ArchComponentsNum002ComponentNamingConventions",
     "markdownPath": "/docs/architecture/ARCH-components-002-component-naming-conventions.md"
   },
   {
@@ -45,7 +45,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchComponents003ComponentfeatureArchitecture",
+    "exportName": "ArchComponentsNum003ComponentfeatureArchitecture",
     "markdownPath": "/docs/architecture/ARCH-components-003-componentfeature-architecture.md"
   },
   {
@@ -56,7 +56,7 @@ export const architectures: DocMetadata[] = [
     "status": "Guide (Advisory)",
     "date": "2026-01-06",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchLayout001LayoutCompositionGuide",
+    "exportName": "ArchLayoutNum001LayoutCompositionGuide",
     "markdownPath": "/docs/architecture/ARCH-layout-001-layout-composition-guide.md"
   },
   {
@@ -67,7 +67,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchSystem001ArchitectureDocumentation",
+    "exportName": "ArchSystemNum001ArchitectureDocumentation",
     "markdownPath": "/docs/architecture/ARCH-system-001-architecture-documentation.md"
   },
   {
@@ -78,7 +78,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchSystem002ArchitectureDocumentationGuide",
+    "exportName": "ArchSystemNum002ArchitectureDocumentationGuide",
     "markdownPath": "/docs/architecture/ARCH-system-002-architecture-documentation-guide.md"
   },
   {
@@ -90,7 +90,7 @@ export const architectures: DocMetadata[] = [
     "date": "2026-01-09",
     "lastUpdated": "2026-01-14",
     "owner": "Eugene Goncharov",
-    "exportName": "ArchSystem003ArchitectureValidationThroughImplementation",
+    "exportName": "ArchSystemNum003ArchitectureValidationThroughImplementation",
     "markdownPath": "/docs/architecture/ARCH-system-003-architecture-validation-through-implementation.md"
   },
   {
@@ -101,7 +101,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchSystem004DevAppArchitecture",
+    "exportName": "ArchSystemNum004DevAppArchitecture",
     "markdownPath": "/docs/architecture/ARCH-system-004-dev-app-architecture.md"
   },
   {
@@ -112,7 +112,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchSystem005StorybookStoryStructureStandard",
+    "exportName": "ArchSystemNum005StorybookStoryStructureStandard",
     "markdownPath": "/docs/architecture/ARCH-system-005-storybook-story-structure-standard.md"
   },
   {
@@ -123,7 +123,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchSystem006SystemPrefix",
+    "exportName": "ArchSystemNum006SystemPrefix",
     "markdownPath": "/docs/architecture/ARCH-system-006-system-prefix.md"
   },
   {
@@ -134,7 +134,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchTheme001HeroSectionThemeArchitecture",
+    "exportName": "ArchThemeNum001HeroSectionThemeArchitecture",
     "markdownPath": "/docs/architecture/ARCH-theme-001-hero-section-theme-architecture.md"
   },
   {
@@ -145,7 +145,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-09",
     "lastUpdated": "2026-01-09",
-    "exportName": "ArchTheme002ThemeStructureAnalysisCompositionVsSemanticBreakdown",
+    "exportName": "ArchThemeNum002ThemeStructureAnalysisCompositionVsSemanticBreakdown",
     "markdownPath": "/docs/architecture/ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown.md"
   },
   {
@@ -156,7 +156,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchTokens001ColorSystemArchitectureRules",
+    "exportName": "ArchTokensNum001ColorSystemArchitectureRules",
     "markdownPath": "/docs/architecture/ARCH-tokens-001-color-system-architecture-rules.md"
   },
   {
@@ -167,7 +167,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchTokens002CssTokenOutputRules",
+    "exportName": "ArchTokensNum002CssTokenOutputRules",
     "markdownPath": "/docs/architecture/ARCH-tokens-002-css-token-output-rules.md"
   },
   {
@@ -178,7 +178,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchTokens003TokenArchitecture",
+    "exportName": "ArchTokensNum003TokenArchitecture",
     "markdownPath": "/docs/architecture/ARCH-tokens-003-token-architecture.md"
   },
   {
@@ -189,7 +189,7 @@ export const architectures: DocMetadata[] = [
     "status": "Active",
     "date": "2026-01-14",
     "lastUpdated": "2026-01-14",
-    "exportName": "ArchTokens004TokenUsageRules",
+    "exportName": "ArchTokensNum004TokenUsageRules",
     "markdownPath": "/docs/architecture/ARCH-tokens-004-token-usage-rules.md"
   }
 ];

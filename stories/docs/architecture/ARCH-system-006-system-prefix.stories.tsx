@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchSystem006SystemPrefix: Story = {
+export const ArchSystemNum006SystemPrefix: Story = {
   name: 'ARCH-SYSTEM-006 System Prefix',
   render: () => (
     <DocViewer
