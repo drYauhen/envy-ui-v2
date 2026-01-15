@@ -18,18 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const tokenOrganizationContextAndThemeSeparation: Story = {
-  name: 'ADR-0023 Token Organization Context And Theme Separation',
+export const tokenOrganizationContextandThemeSeparation: Story = {
+  name: 'ADR-0023 Token Organization Context and Theme Separation',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0023-token-organization-context-and-theme-separation.md"
-      title="Token Organization Context And Theme Separation"
       status="Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)"
-      date="2025-12-26"
       lastUpdated="2026-01-10"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0023 Token Organization Context And Theme Separation..."
+      fallback="Loading ADR-0023 Token Organization Context and Theme Separation..."
     />
   )
 };

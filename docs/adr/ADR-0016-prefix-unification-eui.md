@@ -1,14 +1,12 @@
 # ADR-0016: Prefix Unification to eui
 
 **Status:** Accepted (Implemented)
-
 **Date:** 2025-12-19
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
+
 
 ---
 

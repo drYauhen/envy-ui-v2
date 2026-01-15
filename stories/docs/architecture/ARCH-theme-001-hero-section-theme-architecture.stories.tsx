@@ -23,9 +23,7 @@ export const ArchThemeNum001HeroSectionThemeArchitecture: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-theme-001-hero-section-theme-architecture.md"
-      title="Hero Section Theme Architecture"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-THEME-001 Hero Section Theme Architecture..."
     />

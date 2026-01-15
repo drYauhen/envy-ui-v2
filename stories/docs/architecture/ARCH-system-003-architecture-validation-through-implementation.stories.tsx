@@ -23,11 +23,8 @@ export const ArchSystemNum003ArchitectureValidationThroughImplementation: Story 
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-system-003-architecture-validation-through-implementation.md"
-      title="Architecture Validation Through Implementation"
       status="Mandatory"
-      date="2026-01-09"
       lastUpdated="2026-01-14"
-      owner="Eugene Goncharov"
       fallback="Loading ARCH-SYSTEM-003 Architecture Validation Through Implementation..."
     />
   )

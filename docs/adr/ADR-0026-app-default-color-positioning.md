@@ -1,13 +1,10 @@
 # ADR-0026: App-Default Color Positioning and Semantic Token Optimization
 
 **Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
-
 **Date:** 2025-12-29
-
+**Last Updated:** 2025-12-29
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)

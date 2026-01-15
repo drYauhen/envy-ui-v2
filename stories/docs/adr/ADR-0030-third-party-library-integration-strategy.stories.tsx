@@ -23,11 +23,8 @@ export const thirdPartyLibraryIntegrationStrategy: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0030-third-party-library-integration-strategy.md"
-      title="Third Party Library Integration Strategy"
       status="Accepted"
-      date="2025-01-02"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2025-01-02"
       fallback="Loading ADR-0030 Third Party Library Integration Strategy..."
     />
   )

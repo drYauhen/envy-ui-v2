@@ -106,3 +106,52 @@
   margin: 0;
   color: var(--eui-color-text-muted);
 }
+
+/* ============================================================================
+   Document Metadata
+   ============================================================================ */
+
+[data-eui-context] .eui-docs-metadata {
+  margin-bottom: var(--eui-spacing-md);
+  font-style: normal; /* Override callout italic */
+}
+
+[data-eui-context] .eui-docs-metadata-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--eui-spacing-xs) var(--eui-spacing-md);
+  margin: 0;
+}
+
+[data-eui-context] .eui-docs-metadata-label {
+  font-weight: var(--eui-typography-fontWeight-semibold);
+  color: var(--eui-color-text-muted);
+  margin: 0;
+  padding: var(--eui-spacing-2xs) 0;
+  white-space: nowrap;
+}
+
+[data-eui-context] .eui-docs-metadata-value {
+  margin: 0;
+  padding: var(--eui-spacing-2xs) 0;
+  color: var(--eui-color-text-primary);
+}
+
+[data-eui-context] .eui-docs-metadata-related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+[data-eui-context] .eui-docs-metadata-related-list li {
+  margin: 0;
+  padding: 0;
+}
+
+[data-eui-context] .eui-docs-metadata-related-list li + li {
+  margin-top: var(--eui-spacing-2xs);
+}
+
+[data-eui-context] .eui-docs-metadata-related-description {
+  color: var(--eui-color-text-muted);
+}

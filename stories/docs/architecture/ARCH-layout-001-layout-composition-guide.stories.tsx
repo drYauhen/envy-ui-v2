@@ -23,9 +23,7 @@ export const ArchLayoutNum001LayoutCompositionGuide: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-layout-001-layout-composition-guide.md"
-      title="Layout Composition Guide"
       status="Guide (Advisory)"
-      date="2026-01-06"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-LAYOUT-001 Layout Composition Guide..."
     />

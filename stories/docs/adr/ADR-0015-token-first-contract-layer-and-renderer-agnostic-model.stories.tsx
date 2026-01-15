@@ -18,18 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const tokenFirstContractLayerAndRendererAgnosticModel: Story = {
-  name: 'ADR-0015 Token First Contract Layer And Renderer Agnostic Model',
+export const tokenFirstContractLayerandRendererAgnosticModel: Story = {
+  name: 'ADR-0015 Token First Contract Layer and Renderer Agnostic Model',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md"
-      title="Token First Contract Layer And Renderer Agnostic Model"
       status="Accepted (Implemented)"
-      date="2025-12-18"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0015 Token First Contract Layer And Renderer Agnostic Model..."
+      fallback="Loading ADR-0015 Token First Contract Layer and Renderer Agnostic Model..."
     />
   )
 };

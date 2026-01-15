@@ -1,15 +1,14 @@
 # Color System Architecture Rules
 
 **Document ID:** ARCH-tokens-001-color-system-architecture-rules
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
-
-**Last Updated:** 2026-01-09
-**Category:** Architecture Rules (Binding)
-**Related ADR:**
-- [ADR-0014](../adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
-- [Token Architecture](./ARCH-tokens-003-token-architecture.md) — Overall Token System
 
 ---
 

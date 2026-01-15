@@ -1,13 +1,14 @@
 # ADR-0030: Third-Party Library Integration Strategy
 
-**Status:** Accepted  
-**Date:** 2025-01-02  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model  
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority  
-- [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model AI Agent-Oriented Architecture  
+**Status:** Accepted
+**Date:** 2025-01-02
+**Last Updated:** 2025-01-02
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
+- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model AI Agent-Oriented Architecture
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Token Usage Rules
 
 ---
@@ -298,4 +299,3 @@ export function ThemedGridLayout({
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) - Updated with third-party exceptions
 - [CSS Layer Strategy](./ADR-0024-css-layer-strategy-context-priority.md) - Layer order includes third-party
 - [Storybook Model](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) - Updated to allow third-party with approval
-

@@ -23,9 +23,7 @@ export const ArchSystemNum006SystemPrefix: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-system-006-system-prefix.md"
-      title="System Prefix"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-SYSTEM-006 System Prefix..."
     />

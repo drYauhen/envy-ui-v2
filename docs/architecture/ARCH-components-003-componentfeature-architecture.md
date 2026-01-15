@@ -1,9 +1,16 @@
 # [Component/Feature] Architecture
 
-**Document ID:** ARCH-components-001-componentfeature-architecture
+**Document ID:** ARCH-components-003-componentfeature-architecture
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
+
+---
 
 ## Status
 **Status**: [Draft | Proposed | Accepted | Deprecated]

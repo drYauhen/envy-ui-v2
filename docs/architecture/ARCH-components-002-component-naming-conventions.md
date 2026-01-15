@@ -1,15 +1,14 @@
 # Component Naming Conventions
 
-**Document ID:** ARCH-components-001-component-naming-conventions
+**Document ID:** ARCH-components-002-component-naming-conventions
+**Status:** Guide (Advisory)
+**Date:** 2025-01-21
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
-
-**Date:** 2025-01-21  
-**Status:** Guide (Advisory)  
-**Context:** Establishing naming conventions for Select component variants
-
-This document is a guide and recommendation, not an enforceable rule. If this evolves into a binding system rule, capture it as an ADR or update an Architecture rule document.
 
 ---
 

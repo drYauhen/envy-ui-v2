@@ -23,12 +23,8 @@ export const aveTokenRuleProfileAwareVisualEncoding: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0009-ave-token-rule-profile-aware-visual-encoding.md"
-      title="Ave Token Rule Profile Aware Visual Encoding"
       status="Accepted (Architectural Rule)"
-      date="2025-12-16"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
       fallback="Loading ADR-0009 Ave Token Rule Profile Aware Visual Encoding..."
     />
   )

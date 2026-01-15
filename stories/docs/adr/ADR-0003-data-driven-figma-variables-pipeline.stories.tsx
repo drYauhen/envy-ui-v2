@@ -23,11 +23,8 @@ export const dataDrivenFigmaVariablesPipeline: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0003-data-driven-figma-variables-pipeline.md"
-      title="Data Driven Figma Variables Pipeline"
       status="Accepted"
-      date="2025-12-15"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2025-12-15"
       fallback="Loading ADR-0003 Data Driven Figma Variables Pipeline..."
     />
   )

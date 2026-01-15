@@ -18,18 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const interactiveComponentsEvolutionLayeredArchitectureAndContexts: Story = {
-  name: 'ADR-0012 Interactive Components Evolution Layered Architecture And Contexts',
+export const interactiveComponentsEvolutionLayeredArchitectureandContexts: Story = {
+  name: 'ADR-0012 Interactive Components Evolution Layered Architecture and Contexts',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md"
-      title="Interactive Components Evolution Layered Architecture And Contexts"
       status="Proposed (Exploratory)"
-      date="2025-12-16"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0012 Interactive Components Evolution Layered Architecture And Contexts..."
+      fallback="Loading ADR-0012 Interactive Components Evolution Layered Architecture and Contexts..."
     />
   )
 };

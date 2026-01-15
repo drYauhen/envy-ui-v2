@@ -18,17 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const figmaFilesStructureAndOrganization: Story = {
-  name: 'ADR-0027 Figma Files Structure And Organization',
+export const figmaFilesStructureandOrganization: Story = {
+  name: 'ADR-0027 Figma Files Structure and Organization',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0027-figma-files-structure-and-organization.md"
-      title="Figma Files Structure And Organization"
       status="Accepted"
-      date="2025-12-31"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0027 Figma Files Structure And Organization..."
+      lastUpdated="2025-12-31"
+      fallback="Loading ADR-0027 Figma Files Structure and Organization..."
     />
   )
 };

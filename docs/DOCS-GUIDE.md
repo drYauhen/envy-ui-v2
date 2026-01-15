@@ -1,12 +1,14 @@
 # Documentation Guide
 
 **Document ID:** guide-docs-guide
-**Last Updated:** 2026-01-09
+**Last Updated:** 2026-01-15
 **Category:** Guide
 
 ---
 
 **CRITICAL:** This guide applies to ALL documents in `docs/`, not just ADR.
+
+**For AI Agents:** See [AI-AGENT-DOCUMENTATION-GUIDE.md](./AI-AGENT-DOCUMENTATION-GUIDE.md) for complete step-by-step workflow instructions.
 
 ## Single Source of Truth
 

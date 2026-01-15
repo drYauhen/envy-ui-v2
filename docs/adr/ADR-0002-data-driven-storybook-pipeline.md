@@ -1,17 +1,11 @@
 # ADR-0002: Data-Driven Storybook Pipeline via Style Dictionary
 
 **Status:** Accepted
-
 **Date:** 2025-12-15
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
-
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — Headless / React Aria strategy
 
 ---

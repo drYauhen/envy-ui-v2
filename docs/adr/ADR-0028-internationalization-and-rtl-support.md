@@ -1,12 +1,13 @@
 # ADR-0028: Internationalization (i18n) and RTL Support Architecture
 
-**Status:** Proposed  
-**Date:** 2025-01-01  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture - REM, EM, and PX  
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation  
+**Status:** Proposed
+**Date:** 2025-01-01
+**Last Updated:** 2025-01-01
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
+- [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture - REM, EM, and PX
+- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 - [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
 
 ---
@@ -657,4 +658,3 @@ For context and theme organization, see:
 - Locale-specific number and date formatting
 - Currency and unit formatting
 - Bi-directional text handling (mixed LTR/RTL content)
-

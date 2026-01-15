@@ -1,7 +1,7 @@
 # Scripts Reference
 
 **Document ID:** workflow-scripts-reference
-**Last Updated:** 2026-01-10
+**Last Updated:** 2026-01-15
 **Category:** Workflow
 
 
@@ -20,14 +20,29 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 
 ## Documentation
 
+### Assets and Validation
 - `docs:copy`: Copy docs assets into `public/docs/` for Storybook.
 - `docs:watch`: Watch docs and re-run `docs:copy`.
 - `docs:validate`: Validate docs links against the registry and Storybook ids.
 
-## ADRs
+### Unified Documentation System
+- `docs:format-headers`: Format all document headers to canonical format.
+- `docs:regenerate-data`: Generate metadata files (`adr-list-data.ts`, `architecture-data.ts`) from markdown files. Applies Title Case conversion.
+- `docs:regenerate-all`: Generate metadata AND story files. Use this after creating/updating documents.
 
-- `adr:generate`: Generate ADR story files from `adr-list-data.ts`.
-- `adr:validate`: Validate ADR consistency and link mapping.
+**Usage:**
+- After creating new document: `npm run docs:regenerate-all`
+- After updating existing document: `npm run docs:regenerate-data`
+- To fix formatting: `npm run docs:format-headers && npm run docs:regenerate-all`
+
+**Note:** `adr-list-data.ts`, `architecture-data.ts`, and story files are AUTO-GENERATED. Never edit manually.
+
+## ADRs (Legacy - Use Unified System Above)
+
+- `adr:generate`: (Legacy) Generate ADR story files from `adr-list-data.ts`.
+- `adr:validate`: (Legacy) Validate ADR consistency and link mapping.
+
+**Recommendation:** Use `docs:regenerate-all` instead of `adr:generate` for new workflow.
 
 ## Tokens
 

@@ -18,17 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const cssNamingConventionsClassNamesVsDataAttributes: Story = {
-  name: 'ADR-0035 Css Naming Conventions Class Names Vs Data Attributes',
+export const cSSNamingConventionsClassNamesvsDataAttributes: Story = {
+  name: 'ADR-0035 CSS Naming Conventions Class Names vs Data Attributes',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md"
-      title="Css Naming Conventions Class Names Vs Data Attributes"
       status="Accepted"
-      date="2026-01-07"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0035 Css Naming Conventions Class Names Vs Data Attributes..."
+      lastUpdated="2026-01-07"
+      fallback="Loading ADR-0035 CSS Naming Conventions Class Names vs Data Attributes..."
     />
   )
 };

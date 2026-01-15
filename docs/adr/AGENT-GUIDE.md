@@ -1,8 +1,16 @@
 # ADR Agent Guide
 
-**CRITICAL:** This guide must be followed when creating or modifying ADRs to prevent broken links.
+**Document ID:** AGENT-GUIDE
+**Status:** Draft
+**Date:** 2026-01-15
+**Last Updated:** 2026-01-15
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Reference
+**Related:**
 
-**Scope:** ADR-specific rules only. For general documentation rules (registry, link mapping, mermaid, assets), see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).
+
+---
 
 ## Single Source of Truth
 

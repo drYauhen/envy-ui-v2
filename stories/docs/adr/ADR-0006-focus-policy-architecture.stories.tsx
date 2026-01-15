@@ -23,12 +23,8 @@ export const focusPolicyArchitecture: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0006-focus-policy-architecture.md"
-      title="Focus Policy Architecture"
       status="Accepted (Partially Implemented)"
-      date="2025-12-15"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
       fallback="Loading ADR-0006 Focus Policy Architecture..."
     />
   )

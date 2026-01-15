@@ -19,15 +19,13 @@ const meta: Meta = {
 export default meta;
 
 export const ArchTokensNum002CssTokenOutputRules: Story = {
-  name: 'ARCH-TOKENS-002 Css Token Output Rules',
+  name: 'ARCH-TOKENS-002 CSS Token Output Rules',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-002-css-token-output-rules.md"
-      title="Css Token Output Rules"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
-      fallback="Loading ARCH-TOKENS-002 Css Token Output Rules..."
+      fallback="Loading ARCH-TOKENS-002 CSS Token Output Rules..."
     />
   )
 };

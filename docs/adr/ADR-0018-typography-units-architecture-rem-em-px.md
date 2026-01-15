@@ -1,15 +1,10 @@
 # ADR-0018: Typography Units Architecture - REM, EM, and PX
 
 **Status:** Accepted (Partially Implemented)
-
 **Date:** 2025-01-21
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture

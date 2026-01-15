@@ -1,9 +1,16 @@
 # Token Usage Rules
 
-**Document ID:** ARCH-tokens-001-token-usage-rules
+**Document ID:** ARCH-tokens-004-token-usage-rules
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
+
+---
 
 This document defines the enforceable rules for how design tokens must be used in runtime styles,
 contracts, and generated outputs. It is not an ADR and does not restate architectural history.

@@ -1,11 +1,11 @@
 # ADR-0036: AI-First Component Architecture Vision
 
-**Status:** Proposed (Evolutionary)  
-**Date:** 2026-01-07  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Proposed (Evolutionary)
+**Date:** 2026-01-07
+**Last Updated:** 2026-01-07
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-
 - [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
 - [ADR-0035](./ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md) — CSS Naming Conventions - Class Names vs Data Attributes
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model

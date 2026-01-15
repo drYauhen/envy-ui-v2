@@ -1,15 +1,10 @@
 # ADR-0022: Storybook Model as AI-Agent-Oriented Architecture Layer
 
 **Status:** Proposed (Exploratory - Future Vision)
-
 **Date:** 2025-12-25
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
@@ -378,5 +373,3 @@ This ADR provides **long-term architectural thinking** by:
 - Creating roadmap for when AI-agent orientation becomes relevant
 
 **Evolution and Changes:** This initial model serves as a starting point. Changes and refinements are expected as the system matures and learnings from practice inform what works best.
-
-

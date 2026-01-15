@@ -1,15 +1,10 @@
 # ADR-0037: Canonical Token Architecture - Locked
 
 **Status:** Accepted (Implemented)
-
 **Date:** 2026-01-10
-
 **Last Updated:** 2026-01-10
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md) — Canonical architectural rules (normative)
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Enforceable token usage rules

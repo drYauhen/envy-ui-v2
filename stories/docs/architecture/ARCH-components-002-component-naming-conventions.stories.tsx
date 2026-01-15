@@ -23,9 +23,7 @@ export const ArchComponentsNum002ComponentNamingConventions: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-components-002-component-naming-conventions.md"
-      title="Component Naming Conventions"
       status="Guide (Advisory)"
-      date="2025-01-21"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-COMPONENTS-002 Component Naming Conventions..."
     />

@@ -1,20 +1,15 @@
 # ADR-0001: React Aria as Headless Accessibility Foundation
 
 **Status:** Accepted
-
 **Date:** 2025-12-15
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
-
 - [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
 
 ---
+
 ## Purpose of This Document
 
 This document captures an **architectural intention** for how React Aria is used in Envy UI.

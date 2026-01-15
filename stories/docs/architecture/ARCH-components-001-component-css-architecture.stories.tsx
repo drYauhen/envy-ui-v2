@@ -19,15 +19,13 @@ const meta: Meta = {
 export default meta;
 
 export const ArchComponentsNum001ComponentCssArchitecture: Story = {
-  name: 'ARCH-COMPONENTS-001 Component Css Architecture',
+  name: 'ARCH-COMPONENTS-001 Component CSS Architecture',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-components-001-component-css-architecture.md"
-      title="Component Css Architecture"
       status="Mandatory"
-      date="2026-01-14"
       lastUpdated="2026-01-14"
-      fallback="Loading ARCH-COMPONENTS-001 Component Css Architecture..."
+      fallback="Loading ARCH-COMPONENTS-001 Component CSS Architecture..."
     />
   )
 };

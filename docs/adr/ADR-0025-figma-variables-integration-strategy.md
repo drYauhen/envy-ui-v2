@@ -1,14 +1,15 @@
 # ADR-0025: Figma Variables Integration Strategy
 
-**Status:** Accepted  
-**Date:** 2025-12-26  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-- [ADR-0027](./ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization  
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation  
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority  
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture  
+**Status:** Accepted
+**Date:** 2025-12-26
+**Last Updated:** 2025-12-26
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
+- [ADR-0027](./ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization
+- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 
 ---
@@ -312,4 +313,3 @@ For token organization, see:
 - [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 For the Figma plugin implementation details, see the plugin code in `figma-plugin/` directory.
-

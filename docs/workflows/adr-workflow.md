@@ -1,7 +1,7 @@
 # ADR Workflow
 
 **Document ID:** workflow-adr-workflow
-**Last Updated:** 2026-01-10
+**Last Updated:** 2026-01-15
 **Category:** Workflow
 
 
@@ -15,27 +15,28 @@ ADRs document significant architectural decisions, their context, rationale, and
 
 ## Single Source of Truth
 
-**⚠️ CRITICAL:** `stories/viewers/docs/adr-list-data.ts` is the **SINGLE SOURCE OF TRUTH** for all ADR metadata.
+**⚠️ CRITICAL:** Document markdown files are the **SINGLE SOURCE OF TRUTH** for ADR content and metadata.
 
-All ADR metadata must be defined here FIRST:
-- Number, title, status, date
-- **exportName** (recommended for reliable linking)
+**Unified Documentation System:**
+- ADR metadata is extracted from markdown files during generation
+- Data files (`adr-list-data.ts`, `architecture-data.ts`) are AUTO-GENERATED
+- Story files are AUTO-GENERATED
+- Never manually edit generated files
 
 **Workflow:**
-1. Update `adr-list-data.ts` FIRST
-2. Create/update ADR markdown file
-3. Run `npm run adr:generate` (reads from adr-list-data.ts)
-4. Run `npm run adr:validate` (verifies consistency)
+1. Create/update ADR markdown file with canonical header format
+2. Run `npm run docs:regenerate-all` to generate data and story files
+3. (Optional) Run `npm run docs:validate` to verify consistency
 
 **Why this matters:**
-- Prevents broken links in overview page
-- Ensures consistency between story files and links
-- Makes it impossible to have mismatched exportName
-- Provides reliable navigation in Storybook
+- Single source of truth is the markdown file itself
+- Automatic Title Case conversion for proper typography
+- Consistent metadata formatting across all documents
+- Reliable navigation in Storybook
 
-**For detailed agent instructions, see:** [`docs/adr/AGENT-GUIDE.md`](../adr/AGENT-GUIDE.md)
+**For complete agent instructions, see:** [`docs/AI-AGENT-DOCUMENTATION-GUIDE.md`](../AI-AGENT-DOCUMENTATION-GUIDE.md)
 
-**Docs registry note:** ADR entries are auto-registered from `adr-list-data.ts`. Do not add individual ADRs to `docs-registry.ts` (only ADR guide docs like README/TEMPLATE belong there). See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md) for non-ADR registry rules.
+**Docs registry note:** ADR entries are auto-registered from generated `adr-list-data.ts`. Do not add individual ADRs to `docs-registry.ts` (only ADR guide docs like README/TEMPLATE belong there). See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md) for non-ADR registry rules.
 
 ## ADR Principles
 
@@ -128,99 +129,58 @@ docs/adr/ADR-0027-figma-migration-strategy.md
    - Without them, fields run together on the same line
    - Validation script checks for this automatically
 
-### Step 3: Add to adr-list-data.ts
+### Step 3: Ensure Canonical Format
 
-**CRITICAL:** Add entry to `stories/viewers/docs/adr-list-data.ts` FIRST:
+**Optional but recommended:** Run formatter to ensure canonical header format:
 
-```typescript
-// In stories/viewers/docs/adr-list-data.ts
-{ 
-  number: '0030', 
-  title: 'Your ADR Title', 
-  status: 'Accepted', 
-  date: '2025-01-02',
-  exportName: 'YourAdrTitle' // Recommended: ensures reliable linking
-}
-```
-
-**exportName rules:**
-- Remove all non-alphanumeric characters from title
-- Remove all spaces
-- Example: "Token Organization - Context" → `TokenOrganizationContext`
-
-### Step 4: Update Filename Map
-
-**CRITICAL:** Add entry to `stories/viewers/docs/adr-filename-map.ts`:
-
-```typescript
-// In stories/viewers/docs/adr-filename-map.ts
-"0030": "ADR-0030-your-title.md"
-```
-
-This maps the ADR number to the actual filename. Required for the ADR viewer to load the correct file.
-
-**Note:** You can auto-generate this file by running the command in the file's comment, or add entries manually.
-
-### Step 5: Generate Storybook Stories
-
-**Use script (recommended):**
 ```bash
-npm run adr:generate
+npm run docs:format-headers
+```
+
+This ensures:
+- All metadata fields are in correct order
+- No blank lines between fields
+- Proper separator line (`---`)
+- Consistent formatting
+
+### Step 4: Generate Data and Story Files
+
+**CRITICAL:** Run generation script to create/update all necessary files:
+
+```bash
+npm run docs:regenerate-all
 ```
 
 This script:
-- Reads `adr-list-data.ts` for exportName (single source of truth)
-- Generates story file with correct export name
-- Ensures links work correctly
+- Extracts metadata from markdown header
+- Applies Title Case conversion to title
+- Generates `adr-list-data.ts` with metadata
+- Generates story file in `stories/docs/adr/`
+- Ensures proper navigation in Storybook
 
-**If script doesn't work or you need manual creation:**
+**What gets generated:**
+- `stories/viewers/docs/adr-list-data.ts` - ADR metadata
+- `stories/docs/adr/ADR-XXXX-title.stories.tsx` - Story file
 
-1. Create story file: `stories/docs/adr/adr-XXXX.stories.tsx`
+**Title Case conversion:** Titles are automatically converted to proper Title Case with acronym preservation (UI, API, CSS, etc.). See [CANONICAL-DOC-FORMAT.md](../CANONICAL-DOC-FORMAT.md#title-case-rules) for details.
 
-```typescript
-import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+### Step 5: Verify in Storybook
 
-const meta: Meta = {
-  title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' },
-  tags: ['autodocs']
-};
+**If Storybook is already running:**
+- ✅ **No manual restart needed** - Changes are detected automatically
+- Wait ~2 seconds for automatic reload
+- Navigate to Docs/ADR section
 
-export default meta;
-type Story = StoryObj;
-
-export const [StoryName]: Story = {
-  name: 'ADR-XXXX [ADR Title]',
-  render: () => (
-    <AdrViewer
-      adrNumber="XXXX"
-      title="[ADR Title]"
-      status="[Status]"
-      date="[YYYY-MM-DD]"
-    />
-  )
-};
+**If Storybook is NOT running:**
+```bash
+npm run storybook
 ```
 
-2. **Important:** Verify auto-reload if Storybook is running:
-
-   **If running `npm run storybook`:**
-   - ✅ **No manual restart needed** - nodemon auto-detects new story files
-   - Wait ~2 seconds for automatic reload
-   - Nodemon watches `stories/viewers/docs/**/*.{ts,tsx,js,jsx,json}`
-
-   **If Storybook is NOT running:**
-   ```bash
-   npm run storybook
-   ```
-
-   **If you see "Couldn't find story matching..." error:**
-   - Wait 2-3 seconds for nodemon to detect changes
-   - Check nodemon is running (part of `npm run storybook`)
-   - Only manually restart if nodemon is not running
-
-3. **Note:** ADR list is now managed in `stories/viewers/docs/adr-list-data.ts` (single source of truth). The overview page reads from this file automatically.
+**Verify:**
+- ADR appears in "Docs/ADR" section
+- Title displays correctly with proper Title Case
+- Metadata renders as structured definition list
+- All links work
 
 ## ADR Status Values
 
@@ -438,39 +398,50 @@ npm run adr:validate
 
 ## Notes for AI Agents
 
+**IMPORTANT:** For complete step-by-step instructions, see [`docs/AI-AGENT-DOCUMENTATION-GUIDE.md`](../AI-AGENT-DOCUMENTATION-GUIDE.md)
+
+### Quick Workflow Summary
+
 When creating a new ADR:
 
-0. **Follow general docs rules:** [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md)
-1. **CRITICAL:** Update `stories/viewers/docs/adr-list-data.ts` FIRST (single source of truth)
-   - Add entry with number, title, status, date, exportName
-   - exportName: Remove all non-alphanumeric chars and spaces from title
-2. **CRITICAL:** Update `stories/viewers/docs/adr-filename-map.ts`
-   - Add entry: `"XXXX": "ADR-XXXX-descriptive-title.md"`
-   - Required for ADR viewer to load the correct file
-3. Always use the template from `ADR-TEMPLATE.md`
-4. Follow existing ADR structure and style
-5. Use impersonal language
-6. Include Related ADRs section with proper markdown links
-7. **CRITICAL:** When linking to Architecture documents:
-   - Check if document exists: `ls docs/architecture/document-name.md`
-   - If missing, CREATE IT FIRST (don't create broken links)
-   - Follow workflow in `docs/architecture/README.md`
-   - Update `docs/architecture/README.md` index
-8. Set the correct date (use current date)
-9. **Generate story file:** Use `npm run adr:generate` (reads from adr-list-data.ts) or create manually
-10. **Verify auto-reload:** If Storybook is running via `npm run storybook`:
-   - **No manual restart needed** - nodemon auto-detects new story files
-   - Wait ~2 seconds for automatic reload
-   - Only restart manually if nodemon is not running
-11. **Validate:** `npm run adr:validate` (checks exportName matches)
-12. For images: Place in `docs/adr/` and reference with relative paths
-13. For Mermaid diagrams:
-    - Always use `graph TD` (vertical orientation)
-    - Use `stroke-width:2px` (with hyphen, NOT `strokeWidth`)
-    - Use quotes around node labels: `A["Label"]`
-    - Test in Mermaid Live Editor before committing
-    - Keep font sizes compact (14px)
-    - Use consistent color scheme
-    - Keep node labels concise
+1. **Follow general docs rules:** [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md)
+2. **Use template:** Copy `ADR-TEMPLATE.md` and fill in all mandatory fields
+3. **Follow canonical format:** See [CANONICAL-DOC-FORMAT.md](../CANONICAL-DOC-FORMAT.md)
+4. **Apply canonical formatting (optional):** `npm run docs:format-headers`
+5. **Generate data and stories:** `npm run docs:regenerate-all`
+6. **Verify in Storybook:** Check title has proper Title Case, metadata renders correctly
+7. **Validate (optional):** `npm run docs:validate`
 
-**For complete agent workflow, see:** [`docs/adr/AGENT-GUIDE.md`](../adr/AGENT-GUIDE.md)
+### Key Points
+
+- **Single source of truth:** Markdown file itself (not data files)
+- **Never manually edit:** Generated files (`adr-list-data.ts`, story files)
+- **Title Case:** Automatically applied during generation (UI, API, CSS, etc.)
+- **Metadata:** Rendered as structured definition list with callout component
+- **Links:** Always verify target files exist before creating links
+
+### Title Case Reminder
+
+Common acronyms that should be uppercase:
+- UI, API, CSS, HTML, ARIA, DOM, JSX, TSX, AI, ML, UX, DX
+
+Common small words that should be lowercase:
+- and, or, the, of, in, on, at, to, for, with, vs, as, by
+
+**See:** [CANONICAL-DOC-FORMAT.md](../CANONICAL-DOC-FORMAT.md#title-case-rules) for complete list.
+
+### Common Mistakes to Avoid
+
+❌ **DON'T:**
+- Manually edit `adr-list-data.ts` or story files
+- Skip regeneration after creating/updating documents
+- Forget to update Last Updated date
+- Create links to non-existent files
+- Use incorrect header formatting
+
+✅ **DO:**
+- Always run `npm run docs:regenerate-all` after changes
+- Follow canonical format for headers
+- Verify Title Case in Storybook menu
+- Check metadata renders as structured definition list
+- Validate links work correctly

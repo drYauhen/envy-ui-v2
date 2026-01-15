@@ -18,18 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const colorModelTonalScalesAndContextualArchitecture: Story = {
-  name: 'ADR-0014 Color Model Tonal Scales And Contextual Architecture',
+export const colorModelTonalScalesandContextualArchitecture: Story = {
+  name: 'ADR-0014 Color Model Tonal Scales and Contextual Architecture',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md"
-      title="Color Model Tonal Scales And Contextual Architecture"
       status="Accepted"
-      date="2025-12-18"
       lastUpdated="2026-01-09"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0014 Color Model Tonal Scales And Contextual Architecture..."
+      fallback="Loading ADR-0014 Color Model Tonal Scales and Contextual Architecture..."
     />
   )
 };

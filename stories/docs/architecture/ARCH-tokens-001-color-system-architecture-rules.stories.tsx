@@ -23,9 +23,7 @@ export const ArchTokensNum001ColorSystemArchitectureRules: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-001-color-system-architecture-rules.md"
-      title="Color System Architecture Rules"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-TOKENS-001 Color System Architecture Rules..."
     />

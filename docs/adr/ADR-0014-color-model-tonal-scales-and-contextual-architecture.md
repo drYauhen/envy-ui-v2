@@ -1,17 +1,11 @@
 # ADR-0014: Color Model, Tonal Scales, and Contextual Architecture
 
 **Status:** Accepted
-
 **Date:** 2025-12-18
-
 **Last Updated:** 2026-01-09
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
-
 - [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
 
 ---

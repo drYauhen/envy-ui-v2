@@ -1,9 +1,16 @@
 # Hero Section Theme Architecture
 
 **Document ID:** ARCH-theme-001-hero-section-theme-architecture
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
+
+---
 
 > **Note:** Website is a canonical context (renamed from `web`). It may temporarily inherit app semantics until website-specific tokens are defined.
 

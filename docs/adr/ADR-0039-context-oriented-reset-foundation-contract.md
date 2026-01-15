@@ -1,15 +1,11 @@
 # ADR-0039: Context-Oriented Reset as Foundation Contract
 
 **Status:** Accepted
-
 **Date:** 2026-01-13
-
+**Last Updated:** 2026-01-13
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
-
 - [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (superseded by ADR-0041)
 - [ADR-0041](./ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution and Token Architecture Improvements
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes

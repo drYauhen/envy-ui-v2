@@ -1,9 +1,16 @@
 # Architecture Documentation Guide
 
-**Document ID:** ARCH-system-001-architecture-documentation-guide
+**Document ID:** ARCH-system-002-architecture-documentation-guide
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
+
+---
 
 ## Overview
 

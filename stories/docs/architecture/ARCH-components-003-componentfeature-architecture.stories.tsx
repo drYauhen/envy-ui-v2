@@ -23,9 +23,7 @@ export const ArchComponentsNum003ComponentfeatureArchitecture: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-components-003-componentfeature-architecture.md"
-      title="Componentfeature Architecture"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-COMPONENTS-003 Componentfeature Architecture..."
     />

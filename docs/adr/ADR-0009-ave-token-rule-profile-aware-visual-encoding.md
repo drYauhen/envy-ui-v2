@@ -1,15 +1,10 @@
 # ADR-0009: AVE Token Rule — Profile-Aware Visual Encoding
 
 **Status:** Accepted (Architectural Rule)
-
 **Date:** 2025-12-16
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
 - [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering

@@ -1,21 +1,14 @@
 # Token Architecture
 
-**Document ID:** ARCH-tokens-001-token-architecture
+**Document ID:** ARCH-tokens-003-token-architecture
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
-
-**Last Updated:** 2026-01-10
-**Category:** Reference
-**Related ADR:**
-- [ADR-0037](./../adr/ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (JSON structure)
-- [ADR-0038](./../adr/ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract
-- [ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
-- [ADR-0023](./../adr/ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
-- [ADR-0024](./../adr/ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy (superseded)
-- [ADR-0041](./../adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
-- [CSS Token Output Rules](./ARCH-tokens-002-css-token-output-rules.md) — CSS Generation Rules
-- [Theme Structure Analysis](./ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown.md) — Current Theme Architecture Decisions
 
 ---
 

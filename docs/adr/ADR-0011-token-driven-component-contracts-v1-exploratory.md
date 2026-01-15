@@ -1,16 +1,16 @@
 # ADR-0011: Token-Driven Component Contracts (v1, Exploratory)
 
-**Status:** Accepted (Exploratory)  
-**Date:** 2025-12-16  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-
-**Related:**  
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation  
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline  
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering  
-- [ADR-0009](./ADR-0009-ave-token-rule-profile-aware-visual-encoding.md) — AVE Token Rule (Profile-Aware Visual Encoding)  
-- [ADR-0010](./ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md) — Host-Flexible Interactive Components (React Aria v2, Alpha)  
+**Status:** Accepted (Exploratory)
+**Date:** 2025-12-16
+**Last Updated:** 2025-12-16
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
+- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
+- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering
+- [ADR-0009](./ADR-0009-ave-token-rule-profile-aware-visual-encoding.md) — AVE Token Rule (Profile-Aware Visual Encoding)
+- [ADR-0010](./ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md) — Host-Flexible Interactive Components (React Aria v2, Alpha)
 
 ---
 

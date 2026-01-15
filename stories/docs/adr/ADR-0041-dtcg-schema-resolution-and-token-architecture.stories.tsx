@@ -18,18 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const dtcgSchemaResolutionAndTokenArchitecture: Story = {
-  name: 'ADR-0041 Dtcg Schema Resolution And Token Architecture',
+export const dtcgSchemaResolutionandTokenArchitecture: Story = {
+  name: 'ADR-0041 Dtcg Schema Resolution and Token Architecture',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md"
-      title="Dtcg Schema Resolution And Token Architecture"
       status="Accepted"
-      date="2026-01-07"
       lastUpdated="2026-01-07"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0041 Dtcg Schema Resolution And Token Architecture..."
+      fallback="Loading ADR-0041 Dtcg Schema Resolution and Token Architecture..."
     />
   )
 };

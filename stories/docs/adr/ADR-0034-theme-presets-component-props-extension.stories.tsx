@@ -23,11 +23,8 @@ export const themePresetsComponentPropsExtension: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0034-theme-presets-component-props-extension.md"
-      title="Theme Presets Component Props Extension"
       status="Proposed"
-      date="2026-01-06"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2026-01-06"
       fallback="Loading ADR-0034 Theme Presets Component Props Extension..."
     />
   )

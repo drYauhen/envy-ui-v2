@@ -3,6 +3,7 @@
 import { readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { toTitleCase } from './utils/title-case.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -58,12 +59,13 @@ function extractAdrTitle(filename) {
   const match = filename.match(/^ADR-\d{4}-(.+)\.md$/);
   if (!match) return 'Unknown';
 
-  return match[1]
+  const titleSlug = match[1]
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
-    .replace(/([a-z0-9])([A-Z])/g, '$1 $2') // Split camelCase
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')  // Split camelCase
     .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2'); // Split abbreviations
+
+  return toTitleCase(titleSlug);
 }
 
 /**
@@ -74,12 +76,13 @@ function extractArchitectureTitle(filename) {
   const match = filename.match(/^ARCH-[^-]+-\d{3}-(.+)\.md$/);
   if (!match) return 'Unknown';
 
-  return match[1]
+  const titleSlug = match[1]
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
-    .replace(/([a-z0-9])([A-Z])/g, '$1 $2') // Split camelCase
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')  // Split camelCase
     .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2'); // Split abbreviations
+
+  return toTitleCase(titleSlug);
 }
 
 /**
@@ -260,15 +263,11 @@ function generateStoryFile(doc, category) {
     displayName = doc.title;
   }
 
-  // Build props array (only include defined values)
+  // Build props array - simplified preview header (only status + lastUpdated)
   const props = [];
   props.push(`markdownPath="${doc.markdownPath}"`);
-  if (doc.title) props.push(`title="${doc.title}"`);
   if (doc.status) props.push(`status="${doc.status}"`);
-  if (doc.date) props.push(`date="${doc.date}"`);
   if (doc.lastUpdated) props.push(`lastUpdated="${doc.lastUpdated}"`);
-  if (doc.owner) props.push(`owner="${doc.owner}"`);
-  if (doc.assistance) props.push(`assistance="${doc.assistance}"`);
   props.push(`fallback="Loading ${displayName}..."`);
 
   const propsString = props.join('\n      ');

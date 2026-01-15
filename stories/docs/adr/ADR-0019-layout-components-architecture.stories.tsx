@@ -23,12 +23,8 @@ export const layoutComponentsArchitecture: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0019-layout-components-architecture.md"
-      title="Layout Components Architecture"
       status="Accepted (Partially Implemented)"
-      date="2025-12-21"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
       fallback="Loading ADR-0019 Layout Components Architecture..."
     />
   )

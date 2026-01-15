@@ -23,11 +23,8 @@ export const currentArchitecturalIntentExploratory: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0013-current-architectural-intent-exploratory.md"
-      title="Current Architectural Intent Exploratory"
       status="Proposed (Exploratory)"
-      date="2025-12-16"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2025-12-16"
       fallback="Loading ADR-0013 Current Architectural Intent Exploratory..."
     />
   )

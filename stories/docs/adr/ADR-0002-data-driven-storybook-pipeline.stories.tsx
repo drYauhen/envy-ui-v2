@@ -23,12 +23,8 @@ export const dataDrivenStorybookPipeline: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0002-data-driven-storybook-pipeline.md"
-      title="Data Driven Storybook Pipeline"
       status="Accepted"
-      date="2025-12-15"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
       fallback="Loading ADR-0002 Data Driven Storybook Pipeline..."
     />
   )

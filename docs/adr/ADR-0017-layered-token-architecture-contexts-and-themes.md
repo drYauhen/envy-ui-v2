@@ -1,15 +1,10 @@
 # ADR-0017: Layered Token Architecture for Contexts and Themes
 
 **Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
-
 **Date:** 2025-12-20
-
 **Last Updated:** 2026-01-10
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
 - [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture

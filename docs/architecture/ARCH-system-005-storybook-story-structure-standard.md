@@ -1,9 +1,16 @@
 # Storybook Story Structure Standard
 
-**Document ID:** ARCH-system-001-storybook-story-structure-standard
+**Document ID:** ARCH-system-005-storybook-story-structure-standard
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
+
+---
 
 This guide defines the canonical, repeatable story structure for all components using the MultiContextViewer model. It exists to keep Storybook stories consistent, mobile-friendly, and easy to scan.
 

@@ -1,15 +1,14 @@
 # Layout Composition Guide
 
 **Document ID:** ARCH-layout-001-layout-composition-guide
+**Status:** Guide (Advisory)
+**Date:** 2026-01-06
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
-
-**Date:** 2026-01-06  
-**Status:** Guide (Advisory)  
-**Context:** Standardize how layout primitives are composed across app, website, and report contexts
-
-This guide defines the **canonical composition patterns** for layout in Envy UI. It clarifies when to use the App Shell (`eui-app-shell`) versus Page (`eui-page`), and how to combine containers, sections, and layout primitives consistently.
 
 ---
 

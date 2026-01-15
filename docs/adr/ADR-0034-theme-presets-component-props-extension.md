@@ -1,11 +1,11 @@
 # ADR-0034: Theme Presets - Component Props Extension for Third-Party Integration
 
-**Status:** Proposed  
-**Date:** 2026-01-06  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-
+**Status:** Proposed
+**Date:** 2026-01-06
+**Last Updated:** 2026-01-06
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
 - [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
 - [ADR-0032](./ADR-0032-token-override-strategy-multi-tenant-generative-ui.md) — Token Override Strategy for Multi-Tenant and Generative UI
 - [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes

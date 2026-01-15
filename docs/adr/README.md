@@ -1,5 +1,17 @@
 # Architectural Decision Records (ADR)
 
+**Document ID:** README
+**Status:** Draft
+**Date:** 2026-01-15
+**Last Updated:** 2026-01-15
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Reference
+**Related:**
+
+
+---
+
 This directory contains Architectural Decision Records (ADR) for Envy UI. ADRs document significant architectural decisions, their context, rationale, and consequences.
 
 **ADR is one section of the broader documentation system.** For general documentation rules (registry, link mapping, mermaid, assets), see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).

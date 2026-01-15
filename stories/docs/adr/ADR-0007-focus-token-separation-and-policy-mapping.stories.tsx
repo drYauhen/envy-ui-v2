@@ -18,18 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const focusTokenSeparationAndPolicyMapping: Story = {
-  name: 'ADR-0007 Focus Token Separation And Policy Mapping',
+export const focusTokenSeparationandPolicyMapping: Story = {
+  name: 'ADR-0007 Focus Token Separation and Policy Mapping',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0007-focus-token-separation-and-policy-mapping.md"
-      title="Focus Token Separation And Policy Mapping"
       status="Accepted (Partially Implemented)"
-      date="2025-12-16"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0007 Focus Token Separation And Policy Mapping..."
+      fallback="Loading ADR-0007 Focus Token Separation and Policy Mapping..."
     />
   )
 };

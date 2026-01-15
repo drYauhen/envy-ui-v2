@@ -23,11 +23,8 @@ export const tokenDrivenComponentContractsV1Exploratory: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0011-token-driven-component-contracts-v1-exploratory.md"
-      title="Token Driven Component Contracts V1 Exploratory"
       status="Accepted (Exploratory)"
-      date="2025-12-16"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2025-12-16"
       fallback="Loading ADR-0011 Token Driven Component Contracts V1 Exploratory..."
     />
   )

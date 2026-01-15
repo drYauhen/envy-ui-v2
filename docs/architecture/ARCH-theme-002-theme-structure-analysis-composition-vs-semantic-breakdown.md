@@ -1,9 +1,14 @@
 # Theme Structure Analysis: Composition vs Semantic Breakdown
 
-**Document ID:** guide-theme-structure-analysis
+**Document ID:** ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-09
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
-**Related:** [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md)
+**Related:**
+
 
 ---
 

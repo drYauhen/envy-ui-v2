@@ -18,17 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const internationalizationAndRtlSupport: Story = {
-  name: 'ADR-0028 Internationalization And Rtl Support',
+export const internationalizationandRtlSupport: Story = {
+  name: 'ADR-0028 Internationalization and Rtl Support',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0028-internationalization-and-rtl-support.md"
-      title="Internationalization And Rtl Support"
       status="Proposed"
-      date="2025-01-01"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0028 Internationalization And Rtl Support..."
+      lastUpdated="2025-01-01"
+      fallback="Loading ADR-0028 Internationalization and Rtl Support..."
     />
   )
 };

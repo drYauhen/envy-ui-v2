@@ -1,14 +1,14 @@
 # Accessibility Reference
 
 **Document ID:** ARCH-accessibility-001-accessibility-reference
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
-
-**Purpose:** Comprehensive reference for ARIA roles, WAI-ARIA Authoring Practices Guide patterns, and React Aria hooks used in Envy UI.
-
-**Last Updated:** 2025-01-21  
-**Related ADR:** [ADR-0029 - Accessibility Architecture and Decision Framework](../adr/ADR-0029-accessibility-architecture-and-decision-framework.md)
 
 ---
 

@@ -1,11 +1,10 @@
 # ADR-0040: Focus Ring Geometry Canon v1
 
 **Status:** Accepted (v1)
-
 **Date:** 2026-01-15
-
+**Last Updated:** 2026-01-15
 **Owner:** Eugene Goncharov
-
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
 - [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus policy architecture
 - [ADR-0007](./ADR-0007-focus-token-separation-and-policy-mapping.md) — Token separation and policy mapping

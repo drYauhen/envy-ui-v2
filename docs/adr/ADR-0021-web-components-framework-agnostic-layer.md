@@ -1,15 +1,10 @@
 # ADR-0021: Web Components as Framework-Agnostic Implementation Layer
 
 **Status:** Exploratory (Proof-of-Concept Implemented)
-
 **Date:** 2025-01-XX
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
 - [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts
@@ -382,4 +377,3 @@ This document should:
 - Guide decisions about whether to pursue Web Components as a full layer
 - Serve as reference for understanding framework-agnostic architecture goals
 - Be updated if Web Components layer moves from exploratory to implemented status
-

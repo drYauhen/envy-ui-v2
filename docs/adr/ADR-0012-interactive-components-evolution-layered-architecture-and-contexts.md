@@ -1,15 +1,10 @@
 # ADR-0012: Interactive Components Evolution, Layered Architecture, and Contexts (Exploratory Snapshot)
 
 **Status:** Proposed (Exploratory)
-
 **Date:** 2025-12-16
-
 **Last Updated:** 2026-01-08
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
-
 **Related:**
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
 - [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline

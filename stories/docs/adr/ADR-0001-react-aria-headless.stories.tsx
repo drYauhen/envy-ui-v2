@@ -18,18 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const reactAriaHeadless: Story = {
-  name: 'ADR-0001 React Aria Headless',
+export const reactARIAHeadless: Story = {
+  name: 'ADR-0001 React ARIA Headless',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0001-react-aria-headless.md"
-      title="React Aria Headless"
       status="Accepted"
-      date="2025-12-15"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0001 React Aria Headless..."
+      fallback="Loading ADR-0001 React ARIA Headless..."
     />
   )
 };

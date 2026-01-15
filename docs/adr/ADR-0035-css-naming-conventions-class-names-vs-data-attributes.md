@@ -1,11 +1,11 @@
 # ADR-0035: CSS Naming Conventions - Class Names vs Data Attributes
 
-**Status:** Accepted  
-**Date:** 2026-01-07  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Accepted
+**Date:** 2026-01-07
+**Last Updated:** 2026-01-07
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-
 - [ADR-0016](./ADR-0016-prefix-unification-eui.md) — Prefix Unification to eui
 - [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
 

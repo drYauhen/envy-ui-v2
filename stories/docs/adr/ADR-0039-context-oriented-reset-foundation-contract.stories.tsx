@@ -23,11 +23,8 @@ export const contextOrientedResetFoundationContract: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0039-context-oriented-reset-foundation-contract.md"
-      title="Context Oriented Reset Foundation Contract"
       status="Accepted"
-      date="2026-01-13"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2026-01-13"
       fallback="Loading ADR-0039 Context Oriented Reset Foundation Contract..."
     />
   )

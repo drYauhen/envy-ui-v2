@@ -23,9 +23,7 @@ export const ArchTokensNum003TokenArchitecture: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-003-token-architecture.md"
-      title="Token Architecture"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-TOKENS-003 Token Architecture..."
     />

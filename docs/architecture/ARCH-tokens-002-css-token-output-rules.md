@@ -1,16 +1,14 @@
 # CSS Token Output Rules
 
-**Document ID:** ARCH-tokens-001-css-token-output-rules
+**Document ID:** ARCH-tokens-002-css-token-output-rules
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
-
-**Last Updated:** 2026-01-10
-**Category:** Reference
-**Related ADR:**
-- [ADR-0038](../adr/ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract
-- [Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md) — Runtime token usage rules
-- [Component CSS Architecture](./ARCH-components-001-component-css-architecture.md) — Component CSS implementation
 
 ---
 

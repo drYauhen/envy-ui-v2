@@ -23,12 +23,8 @@ export const elevationSystemArchitecture: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0020-elevation-system-architecture.md"
-      title="Elevation System Architecture"
       status="Accepted (Implemented)"
-      date="2025-12-20"
       lastUpdated="2026-01-08"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
       fallback="Loading ADR-0020 Elevation System Architecture..."
     />
   )

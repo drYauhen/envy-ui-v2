@@ -1,9 +1,12 @@
 # ADR-0013: Current Architectural Intent (Exploratory) — Envy UI
 
-**Status:** Proposed (Exploratory)  
-**Date:** 2025-12-16  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
+**Status:** Proposed (Exploratory)
+**Date:** 2025-12-16
+**Last Updated:** 2025-12-16
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
+
 
 ---
 

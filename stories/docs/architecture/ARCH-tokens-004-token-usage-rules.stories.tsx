@@ -23,9 +23,7 @@ export const ArchTokensNum004TokenUsageRules: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-004-token-usage-rules.md"
-      title="Token Usage Rules"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-TOKENS-004 Token Usage Rules..."
     />

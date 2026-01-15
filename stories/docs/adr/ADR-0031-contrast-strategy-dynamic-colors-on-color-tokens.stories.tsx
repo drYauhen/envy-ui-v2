@@ -18,17 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const contrastStrategyDynamicColorsOnColorTokens: Story = {
-  name: 'ADR-0031 Contrast Strategy Dynamic Colors On Color Tokens',
+export const contrastStrategyDynamicColorsonColorTokens: Story = {
+  name: 'ADR-0031 Contrast Strategy Dynamic Colors on Color Tokens',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md"
-      title="Contrast Strategy Dynamic Colors On Color Tokens"
       status="Proposed"
-      date="2026-01-05"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0031 Contrast Strategy Dynamic Colors On Color Tokens..."
+      lastUpdated="2026-01-05"
+      fallback="Loading ADR-0031 Contrast Strategy Dynamic Colors on Color Tokens..."
     />
   )
 };

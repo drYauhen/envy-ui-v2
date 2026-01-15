@@ -2,7 +2,7 @@
 
 **Status:** Superseded by [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md)
 **Date:** 2025-12-26
-**Superseded:** 2026-01-10
+**Last Updated:** 2025-12-26
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**

@@ -2,6 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2026-01-10
+**Last Updated:** 2026-01-10
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**

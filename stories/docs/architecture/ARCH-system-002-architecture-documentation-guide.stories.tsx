@@ -23,9 +23,7 @@ export const ArchSystemNum002ArchitectureDocumentationGuide: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-system-002-architecture-documentation-guide.md"
-      title="Architecture Documentation Guide"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-SYSTEM-002 Architecture Documentation Guide..."
     />

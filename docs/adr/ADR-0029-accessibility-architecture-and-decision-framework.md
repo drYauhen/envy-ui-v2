@@ -1,11 +1,11 @@
 # ADR-0029: Accessibility Architecture and Decision Framework
 
-**Status:** Accepted  
-**Date:** 2025-12-31  
-**Owner:** Eugene Goncharov  
-**Assistance:** AI-assisted drafting (human-reviewed)  
-**Related:**  
-
+**Status:** Accepted
+**Date:** 2025-12-31
+**Last Updated:** 2025-12-31
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Related:**
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
 
 ---

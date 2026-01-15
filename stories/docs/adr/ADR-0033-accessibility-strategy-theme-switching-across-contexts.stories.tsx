@@ -23,11 +23,8 @@ export const accessibilityStrategyThemeSwitchingAcrossContexts: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0033-accessibility-strategy-theme-switching-across-contexts.md"
-      title="Accessibility Strategy Theme Switching Across Contexts"
       status="Proposed"
-      date="2026-01-05"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2026-01-05"
       fallback="Loading ADR-0033 Accessibility Strategy Theme Switching Across Contexts..."
     />
   )

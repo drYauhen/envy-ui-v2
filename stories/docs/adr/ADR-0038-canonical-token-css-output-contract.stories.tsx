@@ -18,17 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const canonicalTokenCssOutputContract: Story = {
-  name: 'ADR-0038 Canonical Token Css Output Contract',
+export const canonicalTokenCSSOutputContract: Story = {
+  name: 'ADR-0038 Canonical Token CSS Output Contract',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0038-canonical-token-css-output-contract.md"
-      title="Canonical Token Css Output Contract"
       status="Accepted"
-      date="2026-01-10"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0038 Canonical Token Css Output Contract..."
+      lastUpdated="2026-01-10"
+      fallback="Loading ADR-0038 Canonical Token CSS Output Contract..."
     />
   )
 };

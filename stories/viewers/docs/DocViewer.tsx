@@ -4,23 +4,15 @@ import remarkGfm from 'remark-gfm';
 import { adrNumberToStoryPath, storySlugFromAdrLinkText } from './adr-links';
 import { docsRegistryByPath } from './docs-registry';
 import { MermaidDiagram } from '../shared/MermaidDiagram';
+import { DocumentMetadata } from './DocumentMetadata';
+import { parseDocumentMetadata } from './parse-metadata';
 
 type DocViewerProps = {
   markdownPath: string;
   content?: string; // Pre-processed content (when provided, skips fetch)
   fallback?: string;
-  title?: string;
   status?: string;
-  date?: string;
-  showUpdatedDate?: boolean; // Whether to show lastUpdated in header (when different from date)
-  owner?: string;
-  assistance?: string;
   lastUpdated?: string;
-  badges?: Array<{
-    label: string;
-    tone?: 'success' | 'warning' | 'error' | 'info' | 'neutral';
-    variant?: 'solid' | 'outline';
-  }>;
 };
 
 type LayoutDiagramKind =
@@ -215,12 +207,6 @@ const statusToTone = (status: string) => {
   return 'neutral';
 };
 
-const getBadgeIcon = (label: string): string | null => {
-  const normalized = label.trim().toLowerCase();
-  if (normalized === 'in progress') return 'clock';
-  return null;
-};
-
 const resolveDocPath = (href: string, basePath: string): string | null => {
   if (!href || !basePath || typeof window === 'undefined') {
     return null;
@@ -254,22 +240,21 @@ export const DocViewer = ({
   markdownPath,
   content: providedContent,
   fallback = 'Loading...',
-  title,
   status,
-  date,
-  showUpdatedDate,
-  owner,
-  assistance,
-  lastUpdated,
-  badges
+  lastUpdated
 }: DocViewerProps) => {
   const [fetchedContent, setFetchedContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const isInProgress = badges?.some((badge) => badge.label.trim().toLowerCase() === 'in progress');
 
   // Use provided content if available, otherwise fetch from markdownPath
   const content = providedContent || fetchedContent;
+
+  // Parse metadata from content
+  const parsedDoc = content ? parseDocumentMetadata(content) : null;
+  const documentMetadata = parsedDoc?.metadata;
+  const documentVariant = parsedDoc?.variant || 'adr';
+  const contentToRender = parsedDoc?.contentWithoutMetadata || content;
 
   useEffect(() => {
     // If content is provided directly, skip fetching
@@ -333,54 +318,33 @@ export const DocViewer = ({
       data-eui-container="standard"
       data-eui-gap="sm"
     >
-      {title || status || date || owner || assistance || lastUpdated || (badges && badges.length > 0) ? (
-        <div className="eui-stack" data-eui-gap="sm">
-          {title ? <h1 className="eui-text-heading-5">{title}</h1> : null}
-          {status || date || owner || assistance || lastUpdated || (badges && badges.length > 0) ? (
-            <div className="eui-stack eui-docs-meta" data-eui-gap="xs">
-              {/* Primary metadata row */}
-              <div className="eui-inline eui-text-caption" data-eui-gap="md" data-eui-wrap="true">
-                {status ? (
-                  <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(status)}>
-                    {status}
-                  </span>
-                ) : null}
-                {badges ? badges.map((badge) => (
-                  <span
-                    key={badge.label}
-                    className="eui-badge"
-                    data-eui-tone={badge.tone ?? 'neutral'}
-                    data-eui-variant={badge.variant}
-                  >
-                    {getBadgeIcon(badge.label) ? (
-                      <span data-eui-icon={getBadgeIcon(badge.label) ?? undefined} data-eui-size="xs" aria-hidden="true" />
-                    ) : null}
-                    {badge.label}
-                  </span>
-                )) : null}
-                {date ? <span>Date: {date}</span> : null}
-                {showUpdatedDate && lastUpdated ? <span>Updated: {lastUpdated}</span> : null}
-              </div>
-              {/* Secondary metadata row */}
-              {(owner || assistance) ? (
-                <div className="eui-inline eui-text-caption eui-text-caption-secondary" data-eui-gap="md" data-eui-wrap="true">
-                  {owner ? <span>Owner: {owner}</span> : null}
-                  {assistance ? <span>Assistance: {assistance}</span> : null}
-                </div>
-              ) : null}
-            </div>
-          ) : null}
-        </div>
-      ) : null}
-      {title || status || date || owner || assistance || lastUpdated || (badges && badges.length > 0) ? (
-        <hr className="eui-divider" data-eui-variant="subtle" />
+      {/* Simplified preview header: only status badge + lastUpdated */}
+      {status || lastUpdated ? (
+        <>
+          <div className="eui-inline eui-docs-meta eui-text-caption" data-eui-gap="md" data-eui-wrap="true">
+            {status ? (
+              <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={statusToTone(status)}>
+                {status}
+              </span>
+            ) : null}
+            {lastUpdated ? <span>Last Updated: {lastUpdated}</span> : null}
+          </div>
+          <hr className="eui-divider" data-eui-variant="subtle" />
+        </>
       ) : null}
       <div
         className="eui-card"
-        data-eui-variant={isInProgress ? 'muted' : 'elevated'}
-        {...(isInProgress ? { 'data-eui-state': 'muted' } : {})}
+        data-eui-variant="elevated"
       >
         <div className="eui-content">
+          {/* Document metadata component */}
+          {documentMetadata && (
+            <DocumentMetadata
+              fields={documentMetadata}
+              variant={documentVariant}
+              markdownPath={markdownPath}
+            />
+          )}
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
@@ -529,7 +493,7 @@ export const DocViewer = ({
               )
             }}
           >
-            {content}
+            {contentToRender}
           </ReactMarkdown>
         </div>
       </div>

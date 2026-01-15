@@ -1,9 +1,16 @@
 # System Prefix
 
-**Document ID:** ARCH-system-001-system-prefix
+**Document ID:** ARCH-system-006-system-prefix
+**Status:** Draft
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
+**Related:**
 
+
+---
 
 Definition
 - System Prefix is the single canonical prefix for the system (currently `eui`).

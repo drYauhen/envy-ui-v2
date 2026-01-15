@@ -23,11 +23,8 @@ export const figmaVariablesIntegrationStrategy: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0025-figma-variables-integration-strategy.md"
-      title="Figma Variables Integration Strategy"
       status="Accepted"
-      date="2025-12-26"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
+      lastUpdated="2025-12-26"
       fallback="Loading ADR-0025 Figma Variables Integration Strategy..."
     />
   )

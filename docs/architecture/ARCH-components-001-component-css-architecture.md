@@ -1,17 +1,14 @@
 # Component CSS Architecture
 
 **Document ID:** ARCH-components-001-component-css-architecture
-**Last Updated:** 2026-01-14
-**Category:** Architecture Rules (Binding)
-
-
-**Last Updated:** 2026-01-09
-**Category:** Architectural Rule
 **Status:** Mandatory
-**Related ADR:**
-- [ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture
-- [ADR-0023](../adr/ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization
-- [ADR-0024](../adr/ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy
+**Date:** 2026-01-15
+**Last Updated:** 2026-01-14
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Architecture Rules (Binding)
+**Related:**
+
 
 ---
 

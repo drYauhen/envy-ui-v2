@@ -23,9 +23,7 @@ export const ArchAccessibilityNum001AccessibilityReference: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-accessibility-001-accessibility-reference.md"
-      title="Accessibility Reference"
-      status="Active"
-      date="2026-01-14"
+      status="Draft"
       lastUpdated="2026-01-14"
       fallback="Loading ARCH-ACCESSIBILITY-001 Accessibility Reference..."
     />

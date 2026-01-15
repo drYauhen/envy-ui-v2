@@ -18,17 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const tokenOverrideStrategyMultiTenantGenerativeUi: Story = {
-  name: 'ADR-0032 Token Override Strategy Multi Tenant Generative Ui',
+export const tokenOverrideStrategyMultiTenantGenerativeUI: Story = {
+  name: 'ADR-0032 Token Override Strategy Multi Tenant Generative UI',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0032-token-override-strategy-multi-tenant-generative-ui.md"
-      title="Token Override Strategy Multi Tenant Generative Ui"
       status="Proposed"
-      date="2026-01-06"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0032 Token Override Strategy Multi Tenant Generative Ui..."
+      lastUpdated="2026-01-06"
+      fallback="Loading ADR-0032 Token Override Strategy Multi Tenant Generative UI..."
     />
   )
 };

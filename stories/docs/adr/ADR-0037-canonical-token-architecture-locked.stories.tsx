@@ -23,12 +23,8 @@ export const canonicalTokenArchitectureLocked: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0037-canonical-token-architecture-locked.md"
-      title="Canonical Token Architecture Locked"
       status="Accepted (Implemented)"
-      date="2026-01-10"
       lastUpdated="2026-01-10"
-      owner="Eugene Goncharov"
-      assistance="AI-assisted drafting (human-reviewed)"
       fallback="Loading ADR-0037 Canonical Token Architecture Locked..."
     />
   )

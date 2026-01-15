@@ -23,10 +23,8 @@ export const focusRingGeometryV1: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0040-focus-ring-geometry-v1.md"
-      title="Focus Ring Geometry V1"
       status="Accepted (v1)"
-      date="2026-01-15"
-      owner="Eugene Goncharov"
+      lastUpdated="2026-01-15"
       fallback="Loading ADR-0040 Focus Ring Geometry V1..."
     />
   )

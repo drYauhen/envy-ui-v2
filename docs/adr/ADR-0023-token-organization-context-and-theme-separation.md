@@ -1,13 +1,9 @@
 # ADR-0023: Token Organization - Context and Theme Separation
 
 **Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
-
 **Date:** 2025-12-26
-
 **Last Updated:** 2026-01-10
-
 **Owner:** Eugene Goncharov
-
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
 - [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
