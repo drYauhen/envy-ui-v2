@@ -131,7 +131,11 @@ function generateArchitectureExportName(filename) {
 function generateAdrData() {
   const adrDir = join(repoRoot, 'docs/adr');
   const files = readdirSync(adrDir)
-    .filter(file => file.endsWith('.md') && file.startsWith('ADR-'))
+    .filter(file =>
+      file.endsWith('.md') &&
+      file.startsWith('ADR-') &&
+      !file.includes('TEMPLATE') // Exclude template files
+    )
     .sort();
 
   return files.map(filename => {

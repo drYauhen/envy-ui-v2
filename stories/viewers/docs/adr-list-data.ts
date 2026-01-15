@@ -475,16 +475,5 @@ export const adrs: DocMetadata[] = [
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "dtcgSchemaResolutionAndTokenArchitecture",
     "markdownPath": "/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md"
-  },
-  {
-    "number": "0000",
-    "title": "Unknown",
-    "category": "adr",
-    "status": "<Proposed | Accepted | Superseded>",
-    "date": "2025-01-01",
-    "owner": "Eugene Goncharov",
-    "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "unknown",
-    "markdownPath": "/docs/adr/ADR-TEMPLATE.md"
   }
 ];
