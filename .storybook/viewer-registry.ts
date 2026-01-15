@@ -16,19 +16,16 @@ import { MarkdownViewer } from '../stories/viewers/tokens/MarkdownViewer';
 import { ButtonStatesViewer } from '../stories/viewers/components/ButtonStatesViewer';
 import { ButtonGroupViewer } from '../stories/viewers/components/ButtonGroupViewer';
 import { IconGrid } from '../stories/viewers/components/IconGrid';
-import { AdrViewer } from '../stories/viewers/docs/AdrViewer';
-import { AdrListViewer } from '../stories/viewers/docs/AdrListViewer';
 import { CodeExampleViewer } from '../stories/viewers/code/CodeExampleViewer';
 import { PlaceholderPage } from '../stories/viewers/architecture/PlaceholderPage';
 
 /**
  * Viewer registry mapping viewer names to components
- * 
+ *
  * Viewer names are defined in section-config.ts:
  * - "ColorScaleViewer" - for token color scales
  * - "TypographyViewer" - for typography tokens
  * - "ButtonStatesViewer" - for button component states
- * - "AdrViewer" - for ADR documents
  * - etc.
  */
 export const viewerRegistry: Record<string, ComponentType<any>> = {
@@ -36,23 +33,19 @@ export const viewerRegistry: Record<string, ComponentType<any>> = {
   ColorScaleViewer,
   TypographyViewer,
   MarkdownViewer,
-  
+
   // Component viewers
   ButtonStatesViewer,
   ButtonGroupViewer,
   IconGrid,
   ComponentViewer: ButtonStatesViewer, // Alias for generic component viewer
-  
-  // Documentation viewers
-  AdrViewer,
-  AdrListViewer,
-  
+
   // Code viewers
   CodeExampleViewer,
-  
+
   // Architecture viewers
   PlaceholderPage,
-  
+
   // Placeholder/fallback viewers
   TemplateViewer: PlaceholderPage,
   TailwindViewer: PlaceholderPage,
