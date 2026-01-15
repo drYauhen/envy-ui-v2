@@ -46,13 +46,22 @@ export const DocListViewer: React.FC<DocListViewerProps> = ({
 };
 
 const DocListItem: React.FC<{ doc: DocMetadata; category: string }> = ({ doc, category }) => {
-  const title = getDocTitle(doc, category);
   const statusBadge = doc.status ? (
     <span className="eui-badge" data-eui-variant="subtle" data-eui-tone={getStatusTone(doc.status, category)}>
       {doc.status}
     </span>
   ) : null;
   const storyPath = getDocStoryPath(doc, category);
+
+  // Render title with styled prefix for ADR
+  const titleElement = category === 'adr' ? (
+    <>
+      <span className="eui-text-muted">ADR-{doc.number}: </span>
+      {doc.title}
+    </>
+  ) : (
+    getDocTitle(doc, category)
+  );
 
   return (
     <li>
@@ -63,7 +72,7 @@ const DocListItem: React.FC<{ doc: DocMetadata; category: string }> = ({ doc, ca
       >
         <div className="eui-card__body eui-stack" data-eui-gap="xs">
           <div className="eui-text-title-md">
-            {title}
+            {titleElement}
           </div>
           <div
             className="eui-inline eui-text-caption eui-docs-item-meta"
