@@ -175,8 +175,10 @@ const sanitizeStoryIdPart = (str: string): string => (
 
 const storyNameFromExport = (exportName: string): string => (
   exportName
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')
+    .replace(/([a-z])([A-Z])/g, '$1-$2')          // lowercase to uppercase
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')    // acronym to word
+    .replace(/([0-9])([A-Z])/g, '$1-$2')         // digit to uppercase
+    .replace(/([a-zA-Z])([0-9])/g, '$1-$2')      // letter to digit
     .toLowerCase()
 );
 
