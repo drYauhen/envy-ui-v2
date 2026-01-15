@@ -46,6 +46,33 @@ Docs are organized by section. Each section can have an overview story that list
 - If a section has more than a couple documents, create an overview story that renders a list from the registry.
 - Use the shared list viewer (`DocSectionListViewer`) to keep the UI consistent across sections.
 
+## File Naming Standards
+
+### ADR (Architectural Decision Records):
+- **Markdown:** `docs/adr/ADR-XXXX-description.md`
+- **Stories:** `stories/docs/adr/ADR-XXXX-description.stories.tsx`
+- **Examples:**
+  - `docs/adr/ADR-0001-react-aria-headless.md`
+  - `stories/docs/adr/ADR-0001-react-aria-headless.stories.tsx`
+- **Export names:** camelCase (e.g., `ReactAriaasHeadlessAccessibilityFoundation`)
+
+### Architecture документы:
+- **Markdown:** `docs/architecture/ARCH-category-XXX-description.md`
+- **Stories:** `stories/docs/architecture/ARCH-category-XXX-description.stories.tsx`
+- **Examples:**
+  - `docs/architecture/ARCH-tokens-001-color-system-architecture-rules.md`
+  - `stories/docs/architecture/ARCH-tokens-001-color-system-architecture-rules.stories.tsx`
+- **Export names:** PascalCase с префиксом (e.g., `ARCHTokens001ColorSystemArchitectureRules`)
+
+### Будущие секции:
+Следуют **Architecture паттерну** с соответствующими префиксами:
+- `WORK-*` для workflows
+- `GUIDE-*` для guides
+- `TOKEN-*` для tokens
+- И т.д.
+
+**Все секции должны иметь consistent именование файлов и структуру.**
+
 ## Workflow for New Document
 
 ### Step 1: Add to docs-registry.ts FIRST

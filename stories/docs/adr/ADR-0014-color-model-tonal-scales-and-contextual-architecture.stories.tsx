@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const ColorModelTonalScalesandContextualArchitecture: Story = {
-  name: 'ADR-0014 Color Model, Tonal Scales, and Contextual Architecture',
+export const colorModelTonalScalesAndContextualArchitecture: Story = {
+  name: 'ADR-0014 Color Model Tonal Scales And Contextual Architecture',
   render: () => (
-    <AdrViewer
-      adrNumber="0014"
-      title="Color Model, Tonal Scales, and Contextual Architecture"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md"
+      title="Color Model Tonal Scales And Contextual Architecture"
       status="Accepted"
       date="2025-12-18"
+      lastUpdated="2026-01-09"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0014 Color Model Tonal Scales And Contextual Architecture..."
     />
   )
 };

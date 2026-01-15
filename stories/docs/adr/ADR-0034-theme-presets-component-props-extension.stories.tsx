@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const ThemePresetsComponentPropsExtensionforThirdPartyIntegration: Story = {
-  name: 'ADR-0034 Theme Presets - Component Props Extension for Third-Party Integration',
+export const themePresetsComponentPropsExtension: Story = {
+  name: 'ADR-0034 Theme Presets Component Props Extension',
   render: () => (
-    <AdrViewer
-      adrNumber="0034"
-      title="Theme Presets - Component Props Extension for Third-Party Integration"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0034-theme-presets-component-props-extension.md"
+      title="Theme Presets Component Props Extension"
       status="Proposed"
       date="2026-01-06"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0034 Theme Presets Component Props Extension..."
     />
   )
 };

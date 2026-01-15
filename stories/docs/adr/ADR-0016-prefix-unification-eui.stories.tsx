@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const PrefixUnificationtoeui: Story = {
-  name: 'ADR-0016 Prefix Unification to eui',
+export const prefixUnificationEui: Story = {
+  name: 'ADR-0016 Prefix Unification Eui',
   render: () => (
-    <AdrViewer
-      adrNumber="0016"
-      title="Prefix Unification to eui"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0016-prefix-unification-eui.md"
+      title="Prefix Unification Eui"
       status="Accepted (Implemented)"
       date="2025-12-19"
+      lastUpdated="2026-01-08"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0016 Prefix Unification Eui..."
     />
   )
 };

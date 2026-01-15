@@ -7,7 +7,6 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
@@ -19,12 +18,16 @@ const meta: Meta = {
 
 export default meta;
 
-export const ARCHTokens001ColorSystemArchitectureRules: Story = {
-  name: 'ARCH-Tokens-001 Color System Architecture Rules',
+export const ArchTokens001ColorSystemArchitectureRules: Story = {
+  name: 'ARCH-TOKENS-001 Color System Architecture Rules',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-001-color-system-architecture-rules.md"
-      fallback="Loading arch-tokens-001 color system architecture rules..."
+      title="Color System Architecture Rules"
+      status="Active"
+      date="2026-01-14"
+      lastUpdated="2026-01-14"
+      fallback="Loading ARCH-TOKENS-001 Color System Architecture Rules..."
     />
   )
 };

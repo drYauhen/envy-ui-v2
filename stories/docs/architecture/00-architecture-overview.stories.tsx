@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DocViewer } from '../../viewers/docs/DocViewer';
-import { DocSectionListViewer } from '../../viewers/docs/DocSectionListViewer';
-import { docsRegistry } from '../../viewers/docs/docs-registry';
+import { DocListViewer } from '../../viewers/docs/DocListViewer';
+import { architectures } from '../../viewers/docs/architecture-data';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -10,8 +9,9 @@ const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
     // Apply section-specific parameters automatically
-    ...getSectionParameters('Docs/Architecture'), 
+    ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
+    // Hide addon panels for documentation (not needed for ADR documents)
     controls: { hidden: true },
     actions: { hidden: true },
     interactions: { hidden: true },
@@ -21,30 +21,7 @@ const meta: Meta = {
 
 export default meta;
 
-const architectureDocs = docsRegistry.filter(doc => doc.path.startsWith('architecture/'));
-
 export const Overview: Story = {
   name: 'Architecture Overview',
-  render: () => (
-    <DocSectionListViewer
-      title="Architecture Documentation"
-      description={
-        <>
-          <p>Current architectural rules, standards, and references for Envy UI.</p>
-          <p>Use this list to navigate all architecture documents in Storybook.</p>
-        </>
-      }
-      docs={architectureDocs}
-    />
-  )
-};
-
-export const ArchitectureOverview: Story = {
-  name: 'Architecture Documentation',
-  render: () => (
-    <DocViewer
-      markdownPath="/docs/architecture/ARCH-system-001-architecture-documentation.md"
-      fallback="Loading architecture documentation..."
-    />
-  )
+  render: () => <DocListViewer docs={architectures} category="architecture" />
 };

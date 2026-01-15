@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const HostFlexibleInteractiveComponentsReactAriav2Alpha: Story = {
-  name: 'ADR-0010 Host-Flexible Interactive Components (React Aria v2, Alpha)',
+export const hostFlexibleInteractiveComponentsReactAriaV2Alpha: Story = {
+  name: 'ADR-0010 Host Flexible Interactive Components React Aria V2 Alpha',
   render: () => (
-    <AdrViewer
-      adrNumber="0010"
-      title="Host-Flexible Interactive Components (React Aria v2, Alpha)"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md"
+      title="Host Flexible Interactive Components React Aria V2 Alpha"
       status="Accepted (Implemented)"
       date="2025-12-16"
+      lastUpdated="2026-01-08"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0010 Host Flexible Interactive Components React Aria V2 Alpha..."
     />
   )
 };

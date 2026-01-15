@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const DataDrivenFigmaVariablesPipelineviaAdapterJSON: Story = {
-  name: 'ADR-0003 Data-Driven Figma Variables Pipeline via Adapter JSON',
+export const dataDrivenFigmaVariablesPipeline: Story = {
+  name: 'ADR-0003 Data Driven Figma Variables Pipeline',
   render: () => (
-    <AdrViewer
-      adrNumber="0003"
-      title="Data-Driven Figma Variables Pipeline via Adapter JSON"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0003-data-driven-figma-variables-pipeline.md"
+      title="Data Driven Figma Variables Pipeline"
       status="Accepted"
       date="2025-12-15"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0003 Data Driven Figma Variables Pipeline..."
     />
   )
 };

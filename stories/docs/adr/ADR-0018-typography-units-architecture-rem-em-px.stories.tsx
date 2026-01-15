@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const TypographyUnitsArchitectureREMEMandPX: Story = {
-  name: 'ADR-0018 Typography Units Architecture - REM, EM, and PX',
+export const typographyUnitsArchitectureRemEmPx: Story = {
+  name: 'ADR-0018 Typography Units Architecture Rem Em Px',
   render: () => (
-    <AdrViewer
-      adrNumber="0018"
-      title="Typography Units Architecture - REM, EM, and PX"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0018-typography-units-architecture-rem-em-px.md"
+      title="Typography Units Architecture Rem Em Px"
       status="Accepted (Partially Implemented)"
       date="2025-01-21"
+      lastUpdated="2026-01-08"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0018 Typography Units Architecture Rem Em Px..."
     />
   )
 };

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrListViewer } from '../../viewers/docs/AdrListViewer';
+import { DocListViewer } from '../../viewers/docs/DocListViewer';
+import { adrs } from '../../viewers/docs/adr-list-data';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -8,7 +9,7 @@ const meta: Meta = {
   title: 'Docs/ADR',
   parameters: {
     // Apply section-specific parameters automatically
-    ...getSectionParameters('Docs/ADR'), 
+    ...getSectionParameters('Docs/ADR'),
     layout: 'fullscreen',
     // Hide addon panels for documentation (not needed for ADR documents)
     controls: { hidden: true },
@@ -28,5 +29,5 @@ export const Overview: Story = {
     a11y: { hidden: true }
   },
   name: 'ADR Overview',
-  render: () => <AdrListViewer />
+  render: () => <DocListViewer docs={adrs} category="adr" />
 };

@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const DTCGSchemaResolutionAndTokenArchitecture: Story = {
-  name: 'ADR-0041 DTCG Schema Resolution and Token Architecture Improvements',
+export const dtcgSchemaResolutionAndTokenArchitecture: Story = {
+  name: 'ADR-0041 Dtcg Schema Resolution And Token Architecture',
   render: () => (
-    <AdrViewer
-      adrNumber="0041"
-      title="DTCG Schema Resolution and Token Architecture Improvements"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md"
+      title="Dtcg Schema Resolution And Token Architecture"
       status="Accepted"
       date="2026-01-07"
+      lastUpdated="2026-01-07"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0041 Dtcg Schema Resolution And Token Architecture..."
     />
   )
 };

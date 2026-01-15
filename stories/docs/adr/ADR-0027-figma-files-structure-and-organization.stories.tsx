@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const FigmaFilesStructureandOrganization: Story = {
-  name: 'ADR-0027 Figma Files Structure and Organization',
+export const figmaFilesStructureAndOrganization: Story = {
+  name: 'ADR-0027 Figma Files Structure And Organization',
   render: () => (
-    <AdrViewer
-      adrNumber="0027"
-      title="Figma Files Structure and Organization"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0027-figma-files-structure-and-organization.md"
+      title="Figma Files Structure And Organization"
       status="Accepted"
       date="2025-12-31"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0027 Figma Files Structure And Organization..."
     />
   )
 };

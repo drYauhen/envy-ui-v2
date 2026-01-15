@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const CSSNamingConventionsClassNamesvsDataAttributes: Story = {
-  name: 'ADR-0035 CSS Naming Conventions - Class Names vs Data Attributes',
+export const cssNamingConventionsClassNamesVsDataAttributes: Story = {
+  name: 'ADR-0035 Css Naming Conventions Class Names Vs Data Attributes',
   render: () => (
-    <AdrViewer
-      adrNumber="0035"
-      title="CSS Naming Conventions - Class Names vs Data Attributes"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md"
+      title="Css Naming Conventions Class Names Vs Data Attributes"
       status="Accepted"
       date="2026-01-07"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0035 Css Naming Conventions Class Names Vs Data Attributes..."
     />
   )
 };

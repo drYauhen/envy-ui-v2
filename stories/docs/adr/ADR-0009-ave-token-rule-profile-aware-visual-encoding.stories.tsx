@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const AVETokenRuleProfileAwareVisualEncoding: Story = {
-  name: 'ADR-0009 AVE Token Rule — Profile-Aware Visual Encoding',
+export const aveTokenRuleProfileAwareVisualEncoding: Story = {
+  name: 'ADR-0009 Ave Token Rule Profile Aware Visual Encoding',
   render: () => (
-    <AdrViewer
-      adrNumber="0009"
-      title="AVE Token Rule — Profile-Aware Visual Encoding"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0009-ave-token-rule-profile-aware-visual-encoding.md"
+      title="Ave Token Rule Profile Aware Visual Encoding"
       status="Accepted (Architectural Rule)"
       date="2025-12-16"
+      lastUpdated="2026-01-08"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0009 Ave Token Rule Profile Aware Visual Encoding..."
     />
   )
 };

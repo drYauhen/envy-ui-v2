@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const CanonicalTokenArchitectureLocked: Story = {
-  name: 'ADR-0037 Canonical Token Architecture - Locked',
+export const canonicalTokenArchitectureLocked: Story = {
+  name: 'ADR-0037 Canonical Token Architecture Locked',
   render: () => (
-    <AdrViewer
-      adrNumber="0037"
-      title="Canonical Token Architecture - Locked"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0037-canonical-token-architecture-locked.md"
+      title="Canonical Token Architecture Locked"
       status="Accepted (Implemented)"
       date="2026-01-10"
+      lastUpdated="2026-01-10"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0037 Canonical Token Architecture Locked..."
     />
   )
 };

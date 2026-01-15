@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const Internationalizationi18nandRTLSupportArchitecture: Story = {
-  name: 'ADR-0028 Internationalization (i18n) and RTL Support Architecture',
+export const internationalizationAndRtlSupport: Story = {
+  name: 'ADR-0028 Internationalization And Rtl Support',
   render: () => (
-    <AdrViewer
-      adrNumber="0028"
-      title="Internationalization (i18n) and RTL Support Architecture"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0028-internationalization-and-rtl-support.md"
+      title="Internationalization And Rtl Support"
       status="Proposed"
       date="2025-01-01"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0028 Internationalization And Rtl Support..."
     />
   )
 };

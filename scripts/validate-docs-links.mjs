@@ -9,6 +9,7 @@ const __dirname = dirname(__filename);
 const repoRoot = resolve(__dirname, '..');
 const EXCLUDED_REGISTRY_PREFIXES = ['dirty/', 'tasks/', 'steps/'];
 const STORY_FILE_EXTENSIONS = ['.stories.js', '.stories.jsx', '.stories.mjs', '.stories.ts', '.stories.tsx'];
+const OVERVIEW_FILE_PATTERN = /docs\/[^/]+\/00-[^-]+-overview\.stories\.tsx$/;
 
 const sanitizeStoryIdPart = (input) => input
   .toLowerCase()
@@ -29,83 +30,168 @@ const toStoryId = (title, exportName) => (
 );
 
 /**
- * Parse docs-registry.ts to get all registered documents
- * Uses simple regex parsing (not a full TypeScript parser)
- * Also parses ADR documents from adr-list-data.ts and adr-filename-map.ts
+ * Parse docs registry by loading all data files directly (same as docs-registry.ts)
+ * This ensures we get the complete registry as built dynamically
  */
 function parseDocsRegistry() {
-  const registryPath = join(repoRoot, 'stories/viewers/docs/docs-registry.ts');
-  const adrListPath = join(repoRoot, 'stories/viewers/docs/adr-list-data.ts');
-  const adrFilenameMapPath = join(repoRoot, 'stories/viewers/docs/adr-filename-map.ts');
-  
   const docsMap = new Map(); // path -> DocRegistryItem
   const idMap = new Map(); // id -> DocRegistryItem
-  
-  // First, parse ADR filename map
-  const filenameMapContent = readFileSync(adrFilenameMapPath, 'utf-8');
-  const filenameMap = {};
-  const filenamePattern = /"(\d{4})":\s*"([^"]+)"/g;
-  let match;
-  while ((match = filenamePattern.exec(filenameMapContent)) !== null) {
-    filenameMap[match[1]] = match[2];
-  }
-  
-  // Parse ADR list data
+
+  // Load ADR data
+  const adrListPath = join(repoRoot, 'stories/viewers/docs/adr-list-data.ts');
+
+  // Parse ADR list data (new DocMetadata format with markdownPath)
   const adrListContent = readFileSync(adrListPath, 'utf-8');
-  const adrPattern = /\{\s*number:\s*['"](\d{4})['"],\s*title:\s*['"]([^'"]+)['"],\s*status:\s*['"]([^'"]+)['"],\s*date:\s*['"]([^'"]+)['"](?:,\s*exportName:\s*['"]([^'"]+)['"])?\s*\}/g;
-  
+  const adrPattern = /"markdownPath":\s*"([^"]+)"/g;
+  let match;
+
   while ((match = adrPattern.exec(adrListContent)) !== null) {
-    const [, number, title, status, date, exportName] = match;
-    const filename = filenameMap[number] || `ADR-${number}.md`;
+    const markdownPath = match[1];
+    const path = markdownPath.replace('/docs/', '');
+
+    // Extract number from path (e.g., /docs/adr/ADR-0001-title.md -> 0001)
+    const numberMatch = path.match(/ADR-(\d{4})/);
+    const number = numberMatch ? numberMatch[1] : '0000';
+
     const doc = {
       id: `adr-${number}`,
-      path: `adr/${filename}`,
-      title,
+      path,
+      title: '', // Will be filled from full parse if needed
       category: 'adr',
-      exportName: exportName || null,
+      exportName: null,
       aliases: []
     };
-    
+
     docsMap.set(doc.path, doc);
     idMap.set(doc.id, doc);
   }
-  
-  // Parse registry file for non-ADR documents
-  const registryContent = readFileSync(registryPath, 'utf-8');
-  // Pattern: { id: '...', path: '...', title: '...', category: '...' }
-  const docPattern = /\{\s*id:\s*['"]([^'"]+)['"],\s*path:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*category:\s*['"]([^'"]+)['"](?:,\s*storybookId:\s*['"]([^'"]+)['"])?(?:,\s*exportName:\s*['"]([^'"]+)['"])?(?:,\s*aliases:\s*\[([^\]]+)\])?\s*\}/g;
-  
-  while ((match = docPattern.exec(registryContent)) !== null) {
-    const [, id, path, title, category, storybookId, exportName, aliasesStr] = match;
-    // Skip ADR documents (already parsed)
-    const isAdrDoc = /^adr-\d{4}$/.test(id) && category === 'adr';
-    if (isAdrDoc) {
-      continue;
-    }
-    
-    const aliases = aliasesStr 
-      ? aliasesStr.split(',').map(a => a.trim().replace(/['"]/g, '').trim()).filter(Boolean)
-      : [];
-    
+
+  // Parse architecture data (new DocMetadata format with markdownPath)
+  const archDataPath = join(repoRoot, 'stories/viewers/docs/architecture-data.ts');
+  const archDataContent = readFileSync(archDataPath, 'utf-8');
+  const archPattern = /"markdownPath":\s*"([^"]+)"/g;
+
+  while ((match = archPattern.exec(archDataContent)) !== null) {
+    const markdownPath = match[1];
+    const path = markdownPath.replace('/docs/', '');
+
+    // Extract category and number from path (e.g., /docs/architecture/ARCH-components-001-title.md)
+    const pathMatch = path.match(/ARCH-([^-]+)-(\d{3})/);
+    const majorCategory = pathMatch ? pathMatch[1].toUpperCase() : 'UNKNOWN';
+    const number = pathMatch ? pathMatch[2] : '000';
+
+    const doc = {
+      id: `arch-${majorCategory}-${number}`,
+      path,
+      title: '', // Will be filled from full parse if needed
+      category: 'architecture',
+      exportName: null,
+      status: 'active',
+      aliases: []
+    };
+
+    docsMap.set(path, doc);
+    idMap.set(doc.id, doc);
+  }
+
+  // Parse workflow data
+  const workflowDataPath = join(repoRoot, 'stories/viewers/docs/workflow-data.ts');
+  const workflowDataContent = readFileSync(workflowDataPath, 'utf-8');
+  const workflowPattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"filename":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"(?:,\s*"status":\s*"([^"]+)")?(?:,\s*"aliases":\s*(\[[^\]]*\]))?\s*\}/g;
+
+  while ((match = workflowPattern.exec(workflowDataContent)) !== null) {
+    const [, id, filename, title, storybookId, status, aliasesStr] = match;
+    const path = `workflows/${filename}`;
+    const aliases = aliasesStr ? JSON.parse(aliasesStr) : [];
+
     const doc = {
       id,
       path,
       title,
-      category,
-      storybookId: storybookId || null,
-      exportName: exportName || null,
+      category: 'workflows',
+      storybookId,
+      status: status || 'active',
       aliases
     };
-    
+
     docsMap.set(path, doc);
-    idMap.set(id, doc);
-    
-    // Also register aliases
-    aliases.forEach(alias => {
-      docsMap.set(alias, doc);
-    });
+    idMap.set(doc.id, doc);
+    aliases.forEach(alias => docsMap.set(alias, doc));
   }
-  
+
+  // Parse guide data
+  const guideDataPath = join(repoRoot, 'stories/viewers/docs/guide-data.ts');
+  const guideDataContent = readFileSync(guideDataPath, 'utf-8');
+  const guidePattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"filename":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"(?:,\s*"status":\s*"([^"]+)")?(?:,\s*"aliases":\s*(\[[^\]]*\]))?\s*\}/g;
+
+  while ((match = guidePattern.exec(guideDataContent)) !== null) {
+    const [, id, filename, title, storybookId, status, aliasesStr] = match;
+    const aliases = aliasesStr ? JSON.parse(aliasesStr) : [];
+
+    const doc = {
+      id,
+      path: filename, // Root level files
+      title,
+      category: 'other',
+      storybookId,
+      status: status || 'active',
+      aliases
+    };
+
+    docsMap.set(filename, doc);
+    idMap.set(doc.id, doc);
+    aliases.forEach(alias => docsMap.set(alias, doc));
+  }
+
+  // Parse tokens data
+  const tokensDataPath = join(repoRoot, 'stories/viewers/docs/tokens-data.ts');
+  const tokensDataContent = readFileSync(tokensDataPath, 'utf-8');
+  const tokensPattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"filename":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"(?:,\s*"status":\s*"([^"]+)")?(?:,\s*"aliases":\s*(\[[^\]]*\]))?\s*\}/g;
+
+  while ((match = tokensPattern.exec(tokensDataContent)) !== null) {
+    const [, id, filename, title, storybookId, status, aliasesStr] = match;
+    const path = `tokens/${filename}`;
+    const aliases = aliasesStr ? JSON.parse(aliasesStr) : [];
+
+    const doc = {
+      id,
+      path,
+      title,
+      category: 'other',
+      storybookId,
+      status: status || 'active',
+      aliases
+    };
+
+    docsMap.set(path, doc);
+    idMap.set(doc.id, doc);
+    aliases.forEach(alias => docsMap.set(alias, doc));
+  }
+
+  // Add static guide documents (READMEs, templates, etc.)
+  const staticDocs = [
+    { id: 'adr-readme', path: 'adr/README.md', title: 'Architectural Decision Records (ADR)', category: 'adr' },
+    { id: 'adr-agent-guide', path: 'adr/AGENT-GUIDE.md', title: 'ADR Agent Guide', category: 'adr' },
+    { id: 'adr-template', path: 'adr/ADR-TEMPLATE.md', title: 'ADR Template', category: 'adr' },
+    { id: 'architecture-readme', path: 'architecture/README.md', title: 'Architecture Documentation', category: 'architecture' },
+    { id: 'architecture-guide', path: 'architecture/ARCHITECTURE-GUIDE.md', title: 'Architecture Documentation Guide', category: 'architecture' },
+    { id: 'architecture-template', path: 'architecture/ARCHITECTURE-TEMPLATE.md', title: 'Architecture Document Template', category: 'architecture' },
+    { id: 'workflows-readme', path: 'workflows/README.md', title: 'Workflows Documentation', category: 'workflows' },
+    { id: 'workflows-guide', path: 'workflows/WORKFLOWS-GUIDE.md', title: 'Workflows Documentation Guide', category: 'workflows' },
+    { id: 'workflows-template', path: 'workflows/WORKFLOWS-TEMPLATE.md', title: 'Workflow Document Template', category: 'workflows' },
+    { id: 'tokens-readme', path: 'tokens/README.md', title: 'Token System Documentation', category: 'other' },
+    { id: 'tokens-guide', path: 'tokens/TOKENS-GUIDE.md', title: 'Tokens Documentation Guide', category: 'other' },
+    { id: 'tokens-template', path: 'tokens/TOKENS-TEMPLATE.md', title: 'Token Document Template', category: 'other' },
+    { id: 'docs-main-guide', path: 'DOCS-GUIDE.md', title: 'Documentation Guide', category: 'other' },
+    { id: 'guides-guide', path: 'GUIDES-GUIDE.md', title: 'Guides Documentation Guide', category: 'other' },
+    { id: 'guides-template', path: 'GUIDES-TEMPLATE.md', title: 'Guide Document Template', category: 'other' }
+  ];
+
+  staticDocs.forEach(doc => {
+    docsMap.set(doc.path, doc);
+    idMap.set(doc.id, doc);
+  });
+
   return { docsMap, idMap };
 }
 
@@ -212,6 +298,199 @@ function buildStoryIdSet() {
   });
 
   return { storyIds, missingTitle, missingExports };
+}
+
+/**
+ * Find overview story files
+ */
+function findOverviewStoryFiles() {
+  const storiesDir = join(repoRoot, 'stories');
+  const overviewFiles = [];
+
+  function walkDir(dir) {
+    try {
+      const entries = readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        if (entry.name.startsWith('.') || entry.name === 'node_modules') {
+          continue;
+        }
+        const fullPath = join(dir, entry.name);
+        if (entry.isDirectory()) {
+          walkDir(fullPath);
+          continue;
+        }
+        const relativePath = fullPath.replace(storiesDir + '/', '').replace(/\\/g, '/');
+        if (OVERVIEW_FILE_PATTERN.test(relativePath)) {
+          overviewFiles.push(fullPath);
+        }
+      }
+    } catch (err) {
+      console.warn(`Warning: Could not read directory ${dir}: ${err.message}`);
+    }
+  }
+
+  walkDir(storiesDir);
+  console.log(`Total overview files found: ${overviewFiles.length}`);
+  return overviewFiles;
+}
+
+/**
+ * Parse overview story files to extract DocListViewer usage and data sources
+ */
+function parseOverviewStories() {
+  const overviewFiles = findOverviewStoryFiles();
+  const overviewLinks = [];
+
+  overviewFiles.forEach(filePath => {
+    try {
+      const content = readFileSync(filePath, 'utf-8');
+
+      // Look for DocListViewer or DocSectionListViewer usage
+      const docListViewerMatch = content.match(/<DocListViewer\s+docs=\{([^}]+)\}\s*category="([^"]+)"/);
+      const docSectionListViewerMatch = content.match(/<DocSectionListViewer[\s\S]*?docs=\{([^}]+)\}/);
+      let docsVar, category;
+      if (docListViewerMatch) {
+        [, docsVar, category] = docListViewerMatch;
+      } else if (docSectionListViewerMatch) {
+        [, docsVar] = docSectionListViewerMatch;
+        category = 'workflows'; // Workflows use DocSectionListViewer
+      } else {
+        return; // Not using either viewer
+      }
+
+      // Find the data source (e.g., adrDocs, architectureDocs)
+      const dataSourceMatch = content.match(new RegExp(`${docsVar}\\s*=\\s*([^;]+)\\.map\\(`));
+      if (!dataSourceMatch) {
+        return;
+      }
+
+      const [, sourceVar] = dataSourceMatch;
+
+      // Parse the data source
+      let docsData = [];
+      if (sourceVar === 'adrs') {
+        docsData = parseAdrData();
+      } else if (sourceVar === 'architectures') {
+        docsData = parseArchitectureData();
+      } else if (sourceVar === 'docsRegistry') {
+        // Workflows use docsRegistry.filter() directly
+        docsData = parseWorkflowData();
+      }
+
+      // Generate expected story links for each document
+      docsData.forEach(doc => {
+        const storyId = getStoryIdForDoc(doc, category);
+        const storyPath = `?path=/story/docs-${category}--${storyId}`;
+
+        overviewLinks.push({
+          overviewFile: filePath.replace(repoRoot + '/', ''),
+          doc,
+          category,
+          generatedLink: storyPath,
+          storyId
+        });
+      });
+
+    } catch (err) {
+      console.warn(`Warning: Could not parse overview file ${filePath}: ${err.message}`);
+    }
+  });
+
+  return overviewLinks;
+}
+
+/**
+ * Parse ADR data from adr-list-data.ts
+ */
+function parseAdrData() {
+  const adrListPath = join(repoRoot, 'stories/viewers/docs/adr-list-data.ts');
+  const content = readFileSync(adrListPath, 'utf-8');
+  const docs = [];
+
+  const pattern = /\{\s*number:\s*['"](\d{4})['"],\s*title:\s*['"]([^'"]+)['"],\s*status:\s*['"]([^'"]+)['"],\s*date:\s*['"]([^'"]+)['"](?:,\s*exportName:\s*['"]([^'"]+)['"])?\s*\}/g;
+
+  let match;
+  while ((match = pattern.exec(content)) !== null) {
+    const [, number, title, status, date, exportName] = match;
+    docs.push({
+      number,
+      title,
+      category: 'adr',
+      status,
+      date,
+      exportName: exportName || null
+    });
+  }
+
+  return docs;
+}
+
+/**
+ * Parse architecture data from architecture-data.ts
+ */
+function parseArchitectureData() {
+  const archDataPath = join(repoRoot, 'stories/viewers/docs/architecture-data.ts');
+  const content = readFileSync(archDataPath, 'utf-8');
+  const docs = [];
+
+  // Extract architectures array
+  const arrayMatch = content.match(/export const architectures\s*=\s*\[([\s\S]*?)\];/);
+  if (!arrayMatch) return docs;
+
+  const arrayContent = arrayMatch[1];
+  const itemPattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"\s*\}/g;
+
+  let match;
+  while ((match = itemPattern.exec(arrayContent)) !== null) {
+    const [, id, title, storybookId] = match;
+    docs.push({
+      number: id.split('-').pop() || '001',
+      title,
+      category: 'architecture',
+      status: 'active',
+      id,
+      storybookId
+    });
+  }
+  return docs;
+}
+
+/**
+ * Parse workflow data from docs registry (filtered by workflows/)
+ */
+function parseWorkflowData() {
+  const { docsMap } = parseDocsRegistry();
+  const docs = [];
+
+  docsMap.forEach((doc, path) => {
+    if (path.startsWith('workflows/')) {
+      docs.push({
+        number: doc.id.split('-').pop() || '001',
+        title: doc.title,
+        category: 'workflows',
+        status: 'active',
+        id: doc.id,
+        storybookId: doc.storybookId,
+        path: doc.path
+      });
+    }
+  });
+
+  return docs;
+}
+
+/**
+ * Generate story ID for a document (same logic as DocListViewer)
+ */
+function getStoryIdForDoc(doc, category) {
+  if (category === 'adr') {
+    return doc.exportName || `adr-${doc.number.toLowerCase()}`;
+  } else if (category === 'architecture') {
+    return doc.storybookId?.replace('docs-architecture--', '') || doc.id || doc.number;
+  } else if (category === 'workflows') {
+    return doc.storybookId?.replace('docs-workflows--', '') || doc.id || doc.number;
+  }
+  return doc.number;
 }
 
 /**
@@ -418,6 +697,18 @@ try {
       errors.push(`❌ ADR story missing: expected '${expectedId}' for '${doc.path}'`);
     }
   });
+
+  // Validate overview story links (check DocListViewer generated links)
+  console.log(`🔍 Validating overview story links...\n`);
+  const overviewLinks = parseOverviewStories();
+  console.log(`📋 Found ${overviewLinks.length} overview story links to validate\n`);
+  overviewLinks.forEach(link => {
+    console.log(`   - ${link.overviewFile}: ${link.generatedLink} -> ${link.storyId}`);
+    if (!storyIds.has(link.storyId)) {
+      errors.push(`❌ ${link.overviewFile}: Broken overview link '${link.generatedLink}' - story ID '${link.storyId}' not found in generated stories`);
+    }
+  });
+  console.log(`📋 Validated ${overviewLinks.length} overview story links\n`);
 
   if (missingTitle.length > 0) {
     warnings.push(`⚠️  ${missingTitle.length} story file(s) missing meta title: ${missingTitle.join(', ')}`);

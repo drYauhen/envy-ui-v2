@@ -7,7 +7,6 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
@@ -19,12 +18,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const ARCHSystem003ArchitectureValidationThroughImplementation: Story = {
-  name: 'ARCH-System-003 Architecture Validation Through Implementation',
+export const ArchSystem003ArchitectureValidationThroughImplementation: Story = {
+  name: 'ARCH-SYSTEM-003 Architecture Validation Through Implementation',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-system-003-architecture-validation-through-implementation.md"
-      fallback="Loading arch-system-003 architecture validation through implementation..."
+      title="Architecture Validation Through Implementation"
+      status="Mandatory"
+      date="2026-01-09"
+      lastUpdated="2026-01-14"
+      owner="Eugene Goncharov"
+      fallback="Loading ARCH-SYSTEM-003 Architecture Validation Through Implementation..."
     />
   )
 };

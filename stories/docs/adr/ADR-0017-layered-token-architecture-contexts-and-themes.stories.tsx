@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const LayeredTokenArchitectureforContextsandThemes: Story = {
-  name: 'ADR-0017 Layered Token Architecture for Contexts and Themes',
+export const layeredTokenArchitectureContextsAndThemes: Story = {
+  name: 'ADR-0017 Layered Token Architecture Contexts And Themes',
   render: () => (
-    <AdrViewer
-      adrNumber="0017"
-      title="Layered Token Architecture for Contexts and Themes"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0017-layered-token-architecture-contexts-and-themes.md"
+      title="Layered Token Architecture Contexts And Themes"
       status="Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)"
       date="2025-12-20"
+      lastUpdated="2026-01-10"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0017 Layered Token Architecture Contexts And Themes..."
     />
   )
 };

@@ -18,17 +18,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const accessibilityArchitectureAndDecisionFramework: Story = {
-  name: 'ADR-0029 Accessibility Architecture And Decision Framework',
+export const unknown: Story = {
+  name: 'ADR-0000 Unknown',
   render: () => (
     <DocViewer
-      markdownPath="/docs/adr/ADR-0029-accessibility-architecture-and-decision-framework.md"
-      title="Accessibility Architecture And Decision Framework"
-      status="Accepted"
-      date="2025-12-31"
+      markdownPath="/docs/adr/ADR-TEMPLATE.md"
+      title="Unknown"
+      status="<Proposed | Accepted | Superseded>"
+      date="2025-01-01"
       owner="Eugene Goncharov"
       assistance="AI-assisted drafting (human-reviewed)"
-      fallback="Loading ADR-0029 Accessibility Architecture And Decision Framework..."
+      fallback="Loading ADR-0000 Unknown..."
     />
   )
 };

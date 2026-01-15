@@ -7,7 +7,6 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
@@ -19,12 +18,16 @@ const meta: Meta = {
 
 export default meta;
 
-export const ARCHTokens004TokenUsageRules: Story = {
-  name: 'ARCH-Tokens-004 Token Usage Rules',
+export const ArchTokens004TokenUsageRules: Story = {
+  name: 'ARCH-TOKENS-004 Token Usage Rules',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-004-token-usage-rules.md"
-      fallback="Loading arch-tokens-004 token usage rules..."
+      title="Token Usage Rules"
+      status="Active"
+      date="2026-01-14"
+      lastUpdated="2026-01-14"
+      fallback="Loading ARCH-TOKENS-004 Token Usage Rules..."
     />
   )
 };

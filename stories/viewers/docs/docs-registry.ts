@@ -20,36 +20,29 @@
 
 import { DocRegistryItem } from './doc-types';
 import { adrs } from './adr-list-data';
-import { adrFilenameMap } from './adr-filename-map';
 import { architectures } from './architecture-data';
 import { workflows } from './workflow-data';
 import { guides } from './guide-data';
 import { tokens } from './tokens-data';
 
 // Auto-generate ADR entries from adr-list-data.ts
-const adrDocs: DocRegistryItem[] = adrs.map(adr => {
-  const filename = adrFilenameMap[adr.number] || `ADR-${adr.number}.md`;
-  return {
-    id: `adr-${adr.number}`,
-    path: `adr/${filename}`,
-    title: adr.title,
-    category: 'adr',
-    exportName: adr.exportName
-  };
-});
+const adrDocs: DocRegistryItem[] = adrs.map(adr => ({
+  id: `adr-${adr.number}`,
+  path: adr.markdownPath?.replace('/docs/', '') || `adr/ADR-${adr.number}.md`,
+  title: adr.title,
+  category: adr.category || 'adr',
+  exportName: adr.exportName,
+  status: adr.status
+}));
 
 // Transform architecture metadata into registry entries
 const architectureDocs: DocRegistryItem[] = architectures.map(arch => ({
-  id: arch.id,
-  path: arch.filename.startsWith('../')
-    ? arch.filename.substring(3)  // Handle parent directory references
-    : `architecture/${arch.filename}`,
+  id: `arch-${arch.majorCategory}-${arch.number}`,
+  path: arch.markdownPath?.replace('/docs/', '') || `architecture/ARCH-${arch.majorCategory}-${arch.number}.md`,
   title: arch.title,
-  category: 'architecture' as const,
-  storybookId: arch.storybookId,
+  category: arch.category || 'architecture',
   exportName: arch.exportName,
-  status: arch.status,
-  aliases: arch.aliases
+  status: arch.status
 }));
 
 // Transform workflow metadata into registry entries

@@ -7,7 +7,6 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
@@ -19,12 +18,16 @@ const meta: Meta = {
 
 export default meta;
 
-export const ARCHAccessibility001AccessibilityReference: Story = {
-  name: 'ARCH-Accessibility-001 Accessibility Reference',
+export const ArchAccessibility001AccessibilityReference: Story = {
+  name: 'ARCH-ACCESSIBILITY-001 Accessibility Reference',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-accessibility-001-accessibility-reference.md"
-      fallback="Loading arch-accessibility-001 accessibility reference..."
+      title="Accessibility Reference"
+      status="Active"
+      date="2026-01-14"
+      lastUpdated="2026-01-14"
+      fallback="Loading ARCH-ACCESSIBILITY-001 Accessibility Reference..."
     />
   )
 };

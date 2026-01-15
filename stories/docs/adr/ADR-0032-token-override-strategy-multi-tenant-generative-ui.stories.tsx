@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const TokenOverrideStrategyforMultiTenantandGenerativeUI: Story = {
-  name: 'ADR-0032 Token Override Strategy for Multi-Tenant and Generative UI',
+export const tokenOverrideStrategyMultiTenantGenerativeUi: Story = {
+  name: 'ADR-0032 Token Override Strategy Multi Tenant Generative Ui',
   render: () => (
-    <AdrViewer
-      adrNumber="0032"
-      title="Token Override Strategy for Multi-Tenant and Generative UI"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0032-token-override-strategy-multi-tenant-generative-ui.md"
+      title="Token Override Strategy Multi Tenant Generative Ui"
       status="Proposed"
       date="2026-01-06"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0032 Token Override Strategy Multi Tenant Generative Ui..."
     />
   )
 };

@@ -7,7 +7,6 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
@@ -19,12 +18,16 @@ const meta: Meta = {
 
 export default meta;
 
-export const ARCHSystem002ArchitectureDocumentationGuide: Story = {
-  name: 'ARCH-System-002 Architecture Documentation Guide',
+export const ArchSystem002ArchitectureDocumentationGuide: Story = {
+  name: 'ARCH-SYSTEM-002 Architecture Documentation Guide',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-system-002-architecture-documentation-guide.md"
-      fallback="Loading arch-system-002 architecture documentation guide..."
+      title="Architecture Documentation Guide"
+      status="Active"
+      date="2026-01-14"
+      lastUpdated="2026-01-14"
+      fallback="Loading ARCH-SYSTEM-002 Architecture Documentation Guide..."
     />
   )
 };

@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const TokenDrivenComponentContractsv1Exploratory: Story = {
-  name: 'ADR-0011 Token-Driven Component Contracts (v1, Exploratory)',
+export const tokenDrivenComponentContractsV1Exploratory: Story = {
+  name: 'ADR-0011 Token Driven Component Contracts V1 Exploratory',
   render: () => (
-    <AdrViewer
-      adrNumber="0011"
-      title="Token-Driven Component Contracts (v1, Exploratory)"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0011-token-driven-component-contracts-v1-exploratory.md"
+      title="Token Driven Component Contracts V1 Exploratory"
       status="Accepted (Exploratory)"
       date="2025-12-16"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0011 Token Driven Component Contracts V1 Exploratory..."
     />
   )
 };

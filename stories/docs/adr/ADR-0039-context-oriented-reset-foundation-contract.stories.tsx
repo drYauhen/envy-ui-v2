@@ -1,23 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const ContextOrientedResetasFoundationContract: Story = {
-  name: 'ADR-0039 Context-Oriented Reset as Foundation Contract',
+export const contextOrientedResetFoundationContract: Story = {
+  name: 'ADR-0039 Context Oriented Reset Foundation Contract',
   render: () => (
-    <AdrViewer
-      adrNumber="0039"
-      title="Context-Oriented Reset as Foundation Contract"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0039-context-oriented-reset-foundation-contract.md"
+      title="Context Oriented Reset Foundation Contract"
       status="Accepted"
       date="2026-01-13"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0039 Context Oriented Reset Foundation Contract..."
     />
   )
 };

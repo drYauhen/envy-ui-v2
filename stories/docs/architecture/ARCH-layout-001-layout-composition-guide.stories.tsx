@@ -7,7 +7,6 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
@@ -19,12 +18,16 @@ const meta: Meta = {
 
 export default meta;
 
-export const ARCHLayout001LayoutCompositionGuide: Story = {
-  name: 'ARCH-Layout-001 Layout Composition Guide',
+export const ArchLayout001LayoutCompositionGuide: Story = {
+  name: 'ARCH-LAYOUT-001 Layout Composition Guide',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-layout-001-layout-composition-guide.md"
-      fallback="Loading arch-layout-001 layout composition guide..."
+      title="Layout Composition Guide"
+      status="Guide (Advisory)"
+      date="2026-01-06"
+      lastUpdated="2026-01-14"
+      fallback="Loading ARCH-LAYOUT-001 Layout Composition Guide..."
     />
   )
 };

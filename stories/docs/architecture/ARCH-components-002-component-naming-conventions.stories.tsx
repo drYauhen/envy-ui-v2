@@ -7,7 +7,6 @@ type Story = StoryObj;
 const meta: Meta = {
   title: 'Docs/Architecture',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('Docs/Architecture'),
     layout: 'fullscreen',
     controls: { hidden: true },
@@ -19,12 +18,16 @@ const meta: Meta = {
 
 export default meta;
 
-export const ARCHComponents002ComponentNamingConventions: Story = {
-  name: 'ARCH-Components-002 Component Naming Conventions',
+export const ArchComponents002ComponentNamingConventions: Story = {
+  name: 'ARCH-COMPONENTS-002 Component Naming Conventions',
   render: () => (
     <DocViewer
       markdownPath="/docs/architecture/ARCH-components-002-component-naming-conventions.md"
-      fallback="Loading arch-components-002 component naming conventions..."
+      title="Component Naming Conventions"
+      status="Guide (Advisory)"
+      date="2025-01-21"
+      lastUpdated="2026-01-14"
+      fallback="Loading ARCH-COMPONENTS-002 Component Naming Conventions..."
     />
   )
 };

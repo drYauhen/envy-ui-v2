@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const ReactAriaasHeadlessAccessibilityFoundation: Story = {
-  name: 'ADR-0001 React Aria as Headless Accessibility Foundation',
+export const reactAriaHeadless: Story = {
+  name: 'ADR-0001 React Aria Headless',
   render: () => (
-    <AdrViewer
-      adrNumber="0001"
-      title="React Aria as Headless Accessibility Foundation"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0001-react-aria-headless.md"
+      title="React Aria Headless"
       status="Accepted"
       date="2025-12-15"
+      lastUpdated="2026-01-08"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0001 React Aria Headless..."
     />
   )
 };

@@ -1,23 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdrViewer } from '../../viewers/docs/AdrViewer';
+import { DocViewer } from '../../viewers/docs/DocViewer';
+import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
   title: 'Docs/ADR',
-  parameters: { layout: 'fullscreen' }
+  parameters: {
+    ...getSectionParameters('Docs/ADR'),
+    layout: 'fullscreen',
+    controls: { hidden: true },
+    actions: { hidden: true },
+    interactions: { hidden: true },
+    a11y: { hidden: true }
+  }
 };
 
 export default meta;
 
-export const WebComponentsasFrameworkAgnosticImplementationLayer: Story = {
-  name: 'ADR-0021 Web Components as Framework-Agnostic Implementation Layer',
+export const webComponentsFrameworkAgnosticLayer: Story = {
+  name: 'ADR-0021 Web Components Framework Agnostic Layer',
   render: () => (
-    <AdrViewer
-      adrNumber="0021"
-      title="Web Components as Framework-Agnostic Implementation Layer"
+    <DocViewer
+      markdownPath="/docs/adr/ADR-0021-web-components-framework-agnostic-layer.md"
+      title="Web Components Framework Agnostic Layer"
       status="Exploratory (Proof-of-Concept Implemented)"
-      date="2025-01-XX"
+      date="2025-01-01"
+      lastUpdated="2026-01-08"
+      owner="Eugene Goncharov"
+      assistance="AI-assisted drafting (human-reviewed)"
+      fallback="Loading ADR-0021 Web Components Framework Agnostic Layer..."
     />
   )
 };
