@@ -35,5 +35,29 @@ export const guides: GuideMetadata[] = [
     title: 'Documentation Guide',
     filename: 'DOCS-GUIDE.md',
     storybookId: 'docs-workflows--documentation-guide'
+  },
+  {
+    id: 'guide-guides-guide',
+    title: 'Guides Guide',
+    filename: 'GUIDES-GUIDE.md',
+    status: 'active'
+  },
+  {
+    id: 'guide-ai-agent-documentation',
+    title: 'AI Agent Documentation Guide',
+    filename: 'AI-AGENT-DOCUMENTATION-GUIDE.md',
+    status: 'active'
+  },
+  {
+    id: 'guide-canonical-doc-format',
+    title: 'Canonical Documentation Format',
+    filename: 'CANONICAL-DOC-FORMAT.md',
+    status: 'active'
+  },
+  {
+    id: 'guide-documentation-system-summary',
+    title: 'Documentation System Summary',
+    filename: 'DOCUMENTATION-SYSTEM-SUMMARY.md',
+    status: 'active'
   }
 ];
