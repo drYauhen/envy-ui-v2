@@ -139,8 +139,18 @@ List of related documents with descriptions:
 ```markdown
 **Related:**
 - [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as headless foundation
-- [ARCH-tokens-001](../architecture/ARCH-tokens-001-color-system-architecture-rules.md) — Color system rules
+- [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Enforceable token usage rules
 ```
+
+**Link formatting:**
+- **ADR links:** Include ADR-XXXX in link text (e.g., `[ADR-0001](path)`)
+- **Architecture links:** Use title only in link text (e.g., `[Token Usage Rules](path)`)
+  - System automatically adds ARCH-CATEGORY-NNN prefix when displayed
+  - No need to write `[ARCH-TOKENS-004 — Token Usage Rules](path)` - just `[Token Usage Rules](path)`
+
+**Display format:**
+- Markdown: `[Token Usage Rules](./architecture/ARCH-tokens-004-token-usage-rules.md)`
+- Displays as: `ARCH-TOKENS-004 — Token Usage Rules — Enforceable token usage rules`
 
 If no related documents, leave section empty:
 

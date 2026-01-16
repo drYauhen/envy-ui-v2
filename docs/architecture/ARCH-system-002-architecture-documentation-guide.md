@@ -66,7 +66,7 @@ Each architecture document should include:
 ## Review Process
 
 1. **Draft**: Write initial document following template
-2. **Peer Review**: Get feedback from relevant team members
+2. **Review**: Validate document structure and clarity
 3. **Technical Review**: Validate technical accuracy
 4. **Approval**: Final review and publication
 

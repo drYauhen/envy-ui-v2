@@ -18,9 +18,9 @@ Goals:
 
 * preserve key architectural decisions,
 * prevent loss of context over time,
-* provide a shared reference for future discussions and for coding agents.
+* provide a reference for future work and for coding agents.
 
-This is **not an API specification** and **not an implementation guide**. It is a record of intent and agreed direction.
+This is **not an API specification** and **not an implementation guide**. It is a record of intent and chosen direction.
 
 ---
 

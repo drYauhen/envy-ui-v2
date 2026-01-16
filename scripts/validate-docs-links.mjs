@@ -40,18 +40,15 @@ function parseDocsRegistry() {
   // Load ADR data
   const adrListPath = join(repoRoot, 'stories/viewers/docs/adr-list-data.ts');
 
-  // Parse ADR list data (new DocMetadata format with markdownPath)
+  // Parse ADR list data (new DocMetadata format with markdownPath and storybookId)
   const adrListContent = readFileSync(adrListPath, 'utf-8');
-  const adrPattern = /"markdownPath":\s*"([^"]+)"/g;
+  // Extract each ADR object with markdownPath and storybookId
+  const adrObjectPattern = /\{\s*"number":\s*"([^"]+)",[\s\S]*?"markdownPath":\s*"([^"]+)"[\s\S]*?"storybookId":\s*"([^"]+)"\s*\}/g;
   let match;
 
-  while ((match = adrPattern.exec(adrListContent)) !== null) {
-    const markdownPath = match[1];
+  while ((match = adrObjectPattern.exec(adrListContent)) !== null) {
+    const [, number, markdownPath, storybookId] = match;
     const path = markdownPath.replace('/docs/', '');
-
-    // Extract number from path (e.g., /docs/adr/ADR-0001-title.md -> 0001)
-    const numberMatch = path.match(/ADR-(\d{4})/);
-    const number = numberMatch ? numberMatch[1] : '0000';
 
     const doc = {
       id: `adr-${number}`,
@@ -59,6 +56,7 @@ function parseDocsRegistry() {
       title: '', // Will be filled from full parse if needed
       category: 'adr',
       exportName: null,
+      storybookId,
       aliases: []
     };
 
@@ -66,19 +64,20 @@ function parseDocsRegistry() {
     idMap.set(doc.id, doc);
   }
 
-  // Parse architecture data (new DocMetadata format with markdownPath)
+  // Parse architecture data (new DocMetadata format with markdownPath and storybookId)
   const archDataPath = join(repoRoot, 'stories/viewers/docs/architecture-data.ts');
   const archDataContent = readFileSync(archDataPath, 'utf-8');
-  const archPattern = /"markdownPath":\s*"([^"]+)"/g;
 
-  while ((match = archPattern.exec(archDataContent)) !== null) {
-    const markdownPath = match[1];
+  // Extract each architecture object with markdownPath and storybookId
+  const archObjectPattern = /\{\s*"number":\s*"([^"]+)",[\s\S]*?"markdownPath":\s*"([^"]+)"[\s\S]*?"storybookId":\s*"([^"]+)"\s*\}/g;
+
+  while ((match = archObjectPattern.exec(archDataContent)) !== null) {
+    const [, number, markdownPath, storybookId] = match;
     const path = markdownPath.replace('/docs/', '');
 
     // Extract category and number from path (e.g., /docs/architecture/ARCH-components-001-title.md)
     const pathMatch = path.match(/ARCH-([^-]+)-(\d{3})/);
     const majorCategory = pathMatch ? pathMatch[1].toUpperCase() : 'UNKNOWN';
-    const number = pathMatch ? pathMatch[2] : '000';
 
     const doc = {
       id: `arch-${majorCategory}-${number}`,
@@ -87,6 +86,7 @@ function parseDocsRegistry() {
       category: 'architecture',
       exportName: null,
       status: 'active',
+      storybookId,
       aliases: []
     };
 
@@ -97,50 +97,48 @@ function parseDocsRegistry() {
   // Parse workflow data
   const workflowDataPath = join(repoRoot, 'stories/viewers/docs/workflow-data.ts');
   const workflowDataContent = readFileSync(workflowDataPath, 'utf-8');
-  const workflowPattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"filename":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"(?:,\s*"status":\s*"([^"]+)")?(?:,\s*"aliases":\s*(\[[^\]]*\]))?\s*\}/g;
+  // Support both JSON and TypeScript syntax: "key": "value" or key: 'value'
+  const workflowPattern = /\s*\{\s*(?:")?id(?:")?\s*:\s*['"]([^'"]+)['"]\s*,\s*(?:")?title(?:")?\s*:\s*['"]([^'"]+)['"]\s*,\s*(?:")?filename(?:")?\s*:\s*['"]([^'"]+)['"]\s*(?:,\s*(?:")?storybookId(?:")?\s*:\s*['"]([^'"]+)['"])?/g;
 
   while ((match = workflowPattern.exec(workflowDataContent)) !== null) {
-    const [, id, filename, title, storybookId, status, aliasesStr] = match;
+    const [, id, title, filename, storybookId] = match;
     const path = `workflows/${filename}`;
-    const aliases = aliasesStr ? JSON.parse(aliasesStr) : [];
 
     const doc = {
       id,
       path,
       title,
       category: 'workflows',
-      storybookId,
-      status: status || 'active',
-      aliases
+      storybookId: storybookId || undefined,
+      status: 'active',
+      aliases: []
     };
 
     docsMap.set(path, doc);
     idMap.set(doc.id, doc);
-    aliases.forEach(alias => docsMap.set(alias, doc));
   }
 
   // Parse guide data
   const guideDataPath = join(repoRoot, 'stories/viewers/docs/guide-data.ts');
   const guideDataContent = readFileSync(guideDataPath, 'utf-8');
-  const guidePattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"filename":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"(?:,\s*"status":\s*"([^"]+)")?(?:,\s*"aliases":\s*(\[[^\]]*\]))?\s*\}/g;
+  // Support both JSON and TypeScript syntax: "key": "value" or key: 'value'
+  const guidePattern = /\s*\{\s*(?:")?id(?:")?\s*:\s*['"]([^'"]+)['"]\s*,\s*(?:")?title(?:")?\s*:\s*['"]([^'"]+)['"]\s*,\s*(?:")?filename(?:")?\s*:\s*['"]([^'"]+)['"]\s*(?:,\s*(?:")?storybookId(?:")?\s*:\s*['"]([^'"]+)['"])?/g;
 
   while ((match = guidePattern.exec(guideDataContent)) !== null) {
-    const [, id, filename, title, storybookId, status, aliasesStr] = match;
-    const aliases = aliasesStr ? JSON.parse(aliasesStr) : [];
+    const [, id, title, filename, storybookId] = match;
 
     const doc = {
       id,
       path: filename, // Root level files
       title,
       category: 'other',
-      storybookId,
-      status: status || 'active',
-      aliases
+      storybookId: storybookId || undefined,
+      status: 'active',
+      aliases: []
     };
 
     docsMap.set(filename, doc);
     idMap.set(doc.id, doc);
-    aliases.forEach(alias => docsMap.set(alias, doc));
   }
 
   // Parse tokens data
@@ -182,9 +180,15 @@ function parseDocsRegistry() {
     { id: 'tokens-readme', path: 'tokens/README.md', title: 'Token System Documentation', category: 'other' },
     { id: 'tokens-guide', path: 'tokens/TOKENS-GUIDE.md', title: 'Tokens Documentation Guide', category: 'other' },
     { id: 'tokens-template', path: 'tokens/TOKENS-TEMPLATE.md', title: 'Token Document Template', category: 'other' },
+    { id: 'tokens-use-cases', path: 'tokens/use-cases.md', title: 'Token Use Cases', category: 'other' },
+    { id: 'tokens-reference', path: 'tokens/reference.md', title: 'Token Reference', category: 'other' },
     { id: 'docs-main-guide', path: 'DOCS-GUIDE.md', title: 'Documentation Guide', category: 'other' },
     { id: 'guides-guide', path: 'GUIDES-GUIDE.md', title: 'Guides Documentation Guide', category: 'other' },
-    { id: 'guides-template', path: 'GUIDES-TEMPLATE.md', title: 'Guide Document Template', category: 'other' }
+    { id: 'guides-template', path: 'GUIDES-TEMPLATE.md', title: 'Guide Document Template', category: 'other' },
+    { id: 'guide-ai-agent-documentation', path: 'AI-AGENT-DOCUMENTATION-GUIDE.md', title: 'AI Agent Documentation Guide', category: 'other' },
+    { id: 'guide-canonical-doc-format', path: 'CANONICAL-DOC-FORMAT.md', title: 'Canonical Documentation Format', category: 'other' },
+    { id: 'guide-documentation-system-summary', path: 'DOCUMENTATION-SYSTEM-SUMMARY.md', title: 'Documentation System Summary', category: 'other' },
+    { id: 'migration-unified-doc-processing', path: 'migrations/2026-01-14-unified-doc-processing.md', title: 'Unified Doc Processing Migration', category: 'other' }
   ];
 
   staticDocs.forEach(doc => {
@@ -438,13 +442,17 @@ function parseArchitectureData() {
   if (!arrayMatch) return docs;
 
   const arrayContent = arrayMatch[1];
-  const itemPattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"\s*\}/g;
+
+  // Match objects with all fields, extracting number, title, majorCategory, and storybookId
+  // Pattern matches the full object structure generated by docs:regenerate-data
+  const itemPattern = /\{\s*"number":\s*"([^"]+)",\s*"title":\s*"([^"]+)",[\s\S]*?"majorCategory":\s*"([^"]+)",[\s\S]*?"storybookId":\s*"([^"]+)"\s*\}/g;
 
   let match;
   while ((match = itemPattern.exec(arrayContent)) !== null) {
-    const [, id, title, storybookId] = match;
+    const [, number, title, majorCategory, storybookId] = match;
+    const id = `arch-${majorCategory}-${number}`;
     docs.push({
-      number: id.split('-').pop() || '001',
+      number,
       title,
       category: 'architecture',
       status: 'active',
@@ -662,12 +670,12 @@ try {
         errors.push(`❌ docs-registry.ts: Storybook id '${doc.storybookId}' not found in stories for '${doc.path}'`);
       }
     } else {
-      // Warn if document doesn't have storybookId but should probably have one
+      // Warn/error if document doesn't have storybookId but should have one
       // Categories that typically should have Storybook stories:
-      const shouldHaveStory = ['architecture', 'workflows', 'other'].includes(doc.category);
-      // Skip ADR template/guide files and README files (these are meta-documentation)
+      const shouldHaveStory = ['adr', 'architecture', 'workflows', 'other', 'tokens'].includes(doc.category);
+      // Skip template/guide files and README files (these are meta-documentation)
       const isMetaDoc = doc.path.includes('TEMPLATE') ||
-                        doc.path.includes('AGENT-GUIDE') ||
+                        doc.path.includes('-GUIDE') ||
                         doc.path.includes('README');
 
       // Special handling for root-level guide files (DOCS-GUIDE.md, etc.)
@@ -675,11 +683,20 @@ try {
       const isRootGuide = /^[A-Z-]+\.md$/.test(doc.path);
 
       if (shouldHaveStory && !isMetaDoc) {
-        const severity = isRootGuide ? '⚠️' : 'ℹ️';
-        const message = isRootGuide
-          ? `${severity}  docs-registry.ts: Document '${doc.path}' (${doc.id}) should have storybookId for proper link resolution in Storybook.`
-          : `${severity}  docs-registry.ts: Document '${doc.path}' (${doc.id}) doesn't have storybookId. Links from other docs may not work correctly.`;
-        warnings.push(message);
+        // Critical categories (ADR, Architecture) require storybookId for link resolution
+        const isCritical = ['adr', 'architecture'].includes(doc.category);
+        const severity = isCritical ? '❌' : (isRootGuide ? '⚠️' : 'ℹ️');
+        const message = isCritical
+          ? `${severity} docs-registry.ts: Document '${doc.path}' (${doc.id}) MISSING required storybookId field. Links to this document will be broken in Storybook.`
+          : (isRootGuide
+              ? `${severity}  docs-registry.ts: Document '${doc.path}' (${doc.id}) should have storybookId for proper link resolution in Storybook.`
+              : `${severity}  docs-registry.ts: Document '${doc.path}' (${doc.id}) doesn't have storybookId. Links from other docs may not work correctly.`);
+
+        if (isCritical) {
+          errors.push(message);
+        } else {
+          warnings.push(message);
+        }
       }
     }
   });

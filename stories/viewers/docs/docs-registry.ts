@@ -32,7 +32,8 @@ const adrDocs: DocRegistryItem[] = adrs.map(adr => ({
   title: adr.title,
   category: adr.category || 'adr',
   exportName: adr.exportName,
-  status: adr.status
+  status: adr.status,
+  storybookId: adr.storybookId
 }));
 
 // Transform architecture metadata into registry entries
@@ -42,7 +43,8 @@ const architectureDocs: DocRegistryItem[] = architectures.map(arch => ({
   title: arch.title,
   category: arch.category || 'architecture',
   exportName: arch.exportName,
-  status: arch.status
+  status: arch.status,
+  storybookId: arch.storybookId
 }));
 
 // Transform workflow metadata into registry entries

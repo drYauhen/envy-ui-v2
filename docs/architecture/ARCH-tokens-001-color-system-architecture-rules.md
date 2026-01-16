@@ -163,7 +163,7 @@ New Color System Addition
 │
 └── Is it a SIGNAL color? (special-purpose)
     ├── YES → Pattern 3: Direct values only
-    └── NO → Consult architecture team
+    └── NO → Requires custom architecture decision
 ```
 
 ## Implementation Workflows

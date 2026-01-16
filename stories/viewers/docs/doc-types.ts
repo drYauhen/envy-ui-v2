@@ -38,3 +38,33 @@ export type DocMetadata = {
   aliases?: string[];           // For renamed files
   dependencies?: string[];      // Document dependencies
 };
+
+/**
+ * Document registry item structure
+ * Used in docs-registry.ts to create unified document lookup
+ */
+export type DocRegistryItem = {
+  /** Unique document identifier (e.g., 'adr-0001', 'arch-tokens-001') */
+  id: string;
+
+  /** File path relative to docs/ (e.g., 'adr/ADR-0001-react-aria-headless.md') */
+  path: string;
+
+  /** Document title */
+  title: string;
+
+  /** Document category - allows both DocCategory values and legacy registry values */
+  category: DocCategory | 'workflows' | 'other';
+
+  /** Export name for Storybook story (optional) */
+  exportName?: string;
+
+  /** Document status (optional) */
+  status?: string;
+
+  /** Storybook story ID for link resolution (required for story-backed docs) */
+  storybookId?: string;
+
+  /** Alternative paths that resolve to this document */
+  aliases?: string[];
+};

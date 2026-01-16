@@ -347,6 +347,131 @@ npm run storybook
 - [ ] All links work
 - [ ] No validation errors
 
+### Link Validation Process
+
+**CRITICAL:** Always run link validation after creating, moving, or renaming documents.
+
+#### When to Validate Links
+
+Run `npm run docs:validate` after:
+- Creating new documents
+- Renaming or moving existing documents
+- Adding links to other documents
+- Updating document IDs or paths
+- Regenerating documentation data
+
+#### Understanding Validation Output
+
+**No broken links (✅):**
+```
+✅ All links validated successfully
+Found: 0 error(s), 0 warning(s)
+```
+
+**Broken link error (❌):**
+```
+❌ workflows/adr-workflow.md:123: Broken external link to '../../generated/figma/README.md'
+```
+- **Fix:** Remove the link or create the missing target file
+
+**Unregistered file warning (⚠️):**
+```
+ℹ️ architecture/ARCH-tokens-005-new-doc.md: File exists but is not registered in docs-registry.ts
+```
+- **Fix:** Add the file to the appropriate data file (architecture-data.ts, workflow-data.ts, etc.)
+
+**Missing storybookId warning (⚠️):**
+```
+⚠️ docs-registry.ts: Document 'architecture/ARCH-tokens-005-new-doc.md' (arch-TOKENS-005) doesn't have storybookId
+```
+- **Fix:** Run `npm run docs:regenerate-data` to generate storybookId automatically
+- For manually registered docs: Add `storybookId` field to the registry entry
+
+#### Link Validation Best Practices
+
+**Always verify target files exist:**
+```bash
+# Before adding a link to another document:
+ls docs/architecture/ARCH-tokens-005-token-naming.md
+
+# If file doesn't exist, create it first:
+# 1. Create the markdown file
+# 2. Run npm run docs:regenerate-all
+# 3. Then add the link
+```
+
+**Correct link format:**
+```markdown
+# From ADR to Architecture (relative path)
+[Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md)
+
+# From Architecture to ADR (relative path)
+[Token Organization](../adr/ADR-0012-token-organization-context.md)
+
+# Within same directory
+[Related Document](./ARCH-tokens-003-token-architecture.md)
+```
+
+**Automatic prefix formatting:**
+- **ADR links:** Write as `[ADR-XXXX](path)` - prefix in link text (manual)
+- **Architecture links:** Write as `[Title](path)` - prefix added automatically by system
+  - Markdown: `[Token Usage Rules](./architecture/ARCH-tokens-004-token-usage-rules.md)`
+  - Displays as: `ARCH-TOKENS-004 — Token Usage Rules`
+- No need to manually add ARCH prefix in link text - the DocumentMetadata component adds it automatically
+
+**Path resolution:**
+- `./file.md` - Same directory
+- `../category/file.md` - Parent directory, then category
+- `../../other-category/file.md` - Two levels up, then other-category
+
+#### Common Link Errors and Fixes
+
+**Error: "Broken external link"**
+- **Cause:** Target file doesn't exist
+- **Fix:** Create the target file or remove the link
+
+**Error: "Circular reference detected"**
+- **Cause:** Document A links to B, B links to C, C links back to A
+- **Fix:** Review link structure, break circular references
+
+**Warning: "File not registered"**
+- **Cause:** New file created but not added to data files
+- **Fix:** Run `npm run docs:regenerate-all` to auto-register
+
+**Warning: "Missing storybookId"**
+- **Cause:** Document doesn't have Storybook story ID for link resolution
+- **Fix:** For ADR/Architecture: Regenerate data with `npm run docs:regenerate-all`
+- **Fix:** For other docs: Add `storybookId` field manually or create Storybook story
+
+#### Validation Workflow Example
+
+```bash
+# Scenario: You created a new Architecture document
+
+# 1. Create markdown file
+# docs/architecture/ARCH-tokens-005-token-naming.md
+
+# 2. Regenerate data and stories (includes validation)
+npm run docs:regenerate-all
+
+# 3. Validate links
+npm run docs:validate
+
+# Output should show:
+# ✅ Found 0 error(s), 0 warning(s)
+
+# 4. If you get warnings about missing storybookId:
+# Already handled by step 2! If warnings persist, check:
+# - Did you run docs:regenerate-all (not just docs:regenerate-data)?
+# - Is the file following naming conventions?
+# - Is the file in the correct directory?
+
+# 5. Verify in Storybook
+npm run storybook
+# Navigate to Docs/Architecture
+# Check that new document appears with proper Title Case
+```
+
 ## Troubleshooting
 
 ### Title Not Displaying Correctly

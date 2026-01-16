@@ -130,6 +130,11 @@ function generateArchitectureExportName(filename) {
 
 /**
  * Generate ADR data from docs/adr/ directory
+ *
+ * CRITICAL: All ADR entries MUST include storybookId field.
+ * Without it, links to ADRs in Related sections will be broken.
+ *
+ * Validation: Run `npm run docs:validate` to verify all entries have storybookId.
  */
 function generateAdrData() {
   const adrDir = join(repoRoot, 'docs/adr');
@@ -152,6 +157,9 @@ function generateAdrData() {
     const content = readFileSync(filePath, 'utf-8');
     const metadata = parseMarkdownMetadata(content);
 
+    // Generate storybookId for link resolution
+    const storybookId = toStoryId('Docs/ADR', exportName);
+
     // Return full DocMetadata structure
     return {
       number: number.padStart(4, '0'),
@@ -163,7 +171,8 @@ function generateAdrData() {
       owner: metadata.owner || undefined,
       assistance: metadata.assistance || undefined,
       exportName,
-      markdownPath: `/docs/adr/${filename}`
+      markdownPath: `/docs/adr/${filename}`,
+      storybookId
     };
   });
 }
@@ -171,6 +180,11 @@ function generateAdrData() {
 
 /**
  * Generate Architecture data from docs/architecture/ directory
+ *
+ * CRITICAL: All Architecture entries MUST include storybookId field.
+ * Without it, links to Architecture docs in Related sections will be broken.
+ *
+ * Validation: Run `npm run docs:validate` to verify all entries have storybookId.
  */
 function generateArchitectureData() {
   const archDir = join(repoRoot, 'docs/architecture');
@@ -192,6 +206,9 @@ function generateArchitectureData() {
     const content = readFileSync(filePath, 'utf-8');
     const metadata = parseMarkdownMetadata(content);
 
+    // Generate storybookId for link resolution
+    const storybookId = toStoryId('Docs/Architecture', exportName);
+
     // Return full DocMetadata structure
     return {
       number: sequential,
@@ -204,7 +221,8 @@ function generateArchitectureData() {
       owner: metadata.owner || undefined,
       assistance: metadata.assistance || undefined,
       exportName,
-      markdownPath: `/docs/architecture/${filename}`
+      markdownPath: `/docs/architecture/${filename}`,
+      storybookId
     };
   }).filter(Boolean);
 }

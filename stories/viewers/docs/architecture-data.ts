@@ -15,7 +15,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchAccessibilityNum001AccessibilityReference",
-    "markdownPath": "/docs/architecture/ARCH-accessibility-001-accessibility-reference.md"
+    "markdownPath": "/docs/architecture/ARCH-accessibility-001-accessibility-reference.md",
+    "storybookId": "docs-architecture--arch-accessibility-num-001-accessibility-reference"
   },
   {
     "number": "001",
@@ -28,7 +29,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchComponentsNum001ComponentCssArchitecture",
-    "markdownPath": "/docs/architecture/ARCH-components-001-component-css-architecture.md"
+    "markdownPath": "/docs/architecture/ARCH-components-001-component-css-architecture.md",
+    "storybookId": "docs-architecture--arch-components-num-001-component-css-architecture"
   },
   {
     "number": "002",
@@ -41,7 +43,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchComponentsNum002ComponentNamingConventions",
-    "markdownPath": "/docs/architecture/ARCH-components-002-component-naming-conventions.md"
+    "markdownPath": "/docs/architecture/ARCH-components-002-component-naming-conventions.md",
+    "storybookId": "docs-architecture--arch-components-num-002-component-naming-conventions"
   },
   {
     "number": "003",
@@ -54,7 +57,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchComponentsNum003ComponentfeatureArchitecture",
-    "markdownPath": "/docs/architecture/ARCH-components-003-componentfeature-architecture.md"
+    "markdownPath": "/docs/architecture/ARCH-components-003-componentfeature-architecture.md",
+    "storybookId": "docs-architecture--arch-components-num-003-componentfeature-architecture"
   },
   {
     "number": "001",
@@ -67,7 +71,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchLayoutNum001LayoutCompositionGuide",
-    "markdownPath": "/docs/architecture/ARCH-layout-001-layout-composition-guide.md"
+    "markdownPath": "/docs/architecture/ARCH-layout-001-layout-composition-guide.md",
+    "storybookId": "docs-architecture--arch-layout-num-001-layout-composition-guide"
   },
   {
     "number": "001",
@@ -80,7 +85,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchSystemNum001ArchitectureDocumentation",
-    "markdownPath": "/docs/architecture/ARCH-system-001-architecture-documentation.md"
+    "markdownPath": "/docs/architecture/ARCH-system-001-architecture-documentation.md",
+    "storybookId": "docs-architecture--arch-system-num-001-architecture-documentation"
   },
   {
     "number": "002",
@@ -93,7 +99,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchSystemNum002ArchitectureDocumentationGuide",
-    "markdownPath": "/docs/architecture/ARCH-system-002-architecture-documentation-guide.md"
+    "markdownPath": "/docs/architecture/ARCH-system-002-architecture-documentation-guide.md",
+    "storybookId": "docs-architecture--arch-system-num-002-architecture-documentation-guide"
   },
   {
     "number": "003",
@@ -106,7 +113,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchSystemNum003ArchitectureValidationThroughImplementation",
-    "markdownPath": "/docs/architecture/ARCH-system-003-architecture-validation-through-implementation.md"
+    "markdownPath": "/docs/architecture/ARCH-system-003-architecture-validation-through-implementation.md",
+    "storybookId": "docs-architecture--arch-system-num-003-architecture-validation-through-implementation"
   },
   {
     "number": "004",
@@ -119,7 +127,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchSystemNum004DevAppArchitecture",
-    "markdownPath": "/docs/architecture/ARCH-system-004-dev-app-architecture.md"
+    "markdownPath": "/docs/architecture/ARCH-system-004-dev-app-architecture.md",
+    "storybookId": "docs-architecture--arch-system-num-004-dev-app-architecture"
   },
   {
     "number": "005",
@@ -132,7 +141,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchSystemNum005StorybookStoryStructureStandard",
-    "markdownPath": "/docs/architecture/ARCH-system-005-storybook-story-structure-standard.md"
+    "markdownPath": "/docs/architecture/ARCH-system-005-storybook-story-structure-standard.md",
+    "storybookId": "docs-architecture--arch-system-num-005-storybook-story-structure-standard"
   },
   {
     "number": "006",
@@ -145,7 +155,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchSystemNum006SystemPrefix",
-    "markdownPath": "/docs/architecture/ARCH-system-006-system-prefix.md"
+    "markdownPath": "/docs/architecture/ARCH-system-006-system-prefix.md",
+    "storybookId": "docs-architecture--arch-system-num-006-system-prefix"
   },
   {
     "number": "001",
@@ -158,7 +169,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchThemeNum001HeroSectionThemeArchitecture",
-    "markdownPath": "/docs/architecture/ARCH-theme-001-hero-section-theme-architecture.md"
+    "markdownPath": "/docs/architecture/ARCH-theme-001-hero-section-theme-architecture.md",
+    "storybookId": "docs-architecture--arch-theme-num-001-hero-section-theme-architecture"
   },
   {
     "number": "002",
@@ -171,7 +183,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchThemeNum002ThemeStructureAnalysisCompositionVsSemanticBreakdown",
-    "markdownPath": "/docs/architecture/ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown.md"
+    "markdownPath": "/docs/architecture/ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown.md",
+    "storybookId": "docs-architecture--arch-theme-num-002-theme-structure-analysis-composition-vs-semantic-breakdown"
   },
   {
     "number": "001",
@@ -184,7 +197,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchTokensNum001ColorSystemArchitectureRules",
-    "markdownPath": "/docs/architecture/ARCH-tokens-001-color-system-architecture-rules.md"
+    "markdownPath": "/docs/architecture/ARCH-tokens-001-color-system-architecture-rules.md",
+    "storybookId": "docs-architecture--arch-tokens-num-001-color-system-architecture-rules"
   },
   {
     "number": "002",
@@ -197,7 +211,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchTokensNum002CssTokenOutputRules",
-    "markdownPath": "/docs/architecture/ARCH-tokens-002-css-token-output-rules.md"
+    "markdownPath": "/docs/architecture/ARCH-tokens-002-css-token-output-rules.md",
+    "storybookId": "docs-architecture--arch-tokens-num-002-css-token-output-rules"
   },
   {
     "number": "003",
@@ -210,7 +225,8 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchTokensNum003TokenArchitecture",
-    "markdownPath": "/docs/architecture/ARCH-tokens-003-token-architecture.md"
+    "markdownPath": "/docs/architecture/ARCH-tokens-003-token-architecture.md",
+    "storybookId": "docs-architecture--arch-tokens-num-003-token-architecture"
   },
   {
     "number": "004",
@@ -223,6 +239,7 @@ export const architectures: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "ArchTokensNum004TokenUsageRules",
-    "markdownPath": "/docs/architecture/ARCH-tokens-004-token-usage-rules.md"
+    "markdownPath": "/docs/architecture/ARCH-tokens-004-token-usage-rules.md",
+    "storybookId": "docs-architecture--arch-tokens-num-004-token-usage-rules"
   }
 ];

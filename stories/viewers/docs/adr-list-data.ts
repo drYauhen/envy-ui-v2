@@ -14,7 +14,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "reactARIAHeadless",
-    "markdownPath": "/docs/adr/ADR-0001-react-aria-headless.md"
+    "markdownPath": "/docs/adr/ADR-0001-react-aria-headless.md",
+    "storybookId": "docs-adr--react-aria-headless"
   },
   {
     "number": "0002",
@@ -26,7 +27,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "dataDrivenStorybookPipeline",
-    "markdownPath": "/docs/adr/ADR-0002-data-driven-storybook-pipeline.md"
+    "markdownPath": "/docs/adr/ADR-0002-data-driven-storybook-pipeline.md",
+    "storybookId": "docs-adr--data-driven-storybook-pipeline"
   },
   {
     "number": "0003",
@@ -38,7 +40,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "dataDrivenFigmaVariablesPipeline",
-    "markdownPath": "/docs/adr/ADR-0003-data-driven-figma-variables-pipeline.md"
+    "markdownPath": "/docs/adr/ADR-0003-data-driven-figma-variables-pipeline.md",
+    "storybookId": "docs-adr--data-driven-figma-variables-pipeline"
   },
   {
     "number": "0004",
@@ -50,7 +53,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "contextAwareUIComponentsandProjectionModel",
-    "markdownPath": "/docs/adr/ADR-0004-context-aware-ui-components-and-projection-model.md"
+    "markdownPath": "/docs/adr/ADR-0004-context-aware-ui-components-and-projection-model.md",
+    "storybookId": "docs-adr--context-aware-ui-componentsand-projection-model"
   },
   {
     "number": "0005",
@@ -62,7 +66,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "canonicalUINamespaceandReferenceComponentBaseline",
-    "markdownPath": "/docs/adr/ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md"
+    "markdownPath": "/docs/adr/ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md",
+    "storybookId": "docs-adr--canonical-ui-namespaceand-reference-component-baseline"
   },
   {
     "number": "0006",
@@ -74,7 +79,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "focusPolicyArchitecture",
-    "markdownPath": "/docs/adr/ADR-0006-focus-policy-architecture.md"
+    "markdownPath": "/docs/adr/ADR-0006-focus-policy-architecture.md",
+    "storybookId": "docs-adr--focus-policy-architecture"
   },
   {
     "number": "0007",
@@ -86,7 +92,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "focusTokenSeparationandPolicyMapping",
-    "markdownPath": "/docs/adr/ADR-0007-focus-token-separation-and-policy-mapping.md"
+    "markdownPath": "/docs/adr/ADR-0007-focus-token-separation-and-policy-mapping.md",
+    "storybookId": "docs-adr--focus-token-separationand-policy-mapping"
   },
   {
     "number": "0008",
@@ -98,7 +105,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "tSXLayerReactARIAandStorybookLayering",
-    "markdownPath": "/docs/adr/ADR-0008-tsx-layer-react-aria-and-storybook-layering.md"
+    "markdownPath": "/docs/adr/ADR-0008-tsx-layer-react-aria-and-storybook-layering.md",
+    "storybookId": "docs-adr--t-sx-layer-react-ari-aand-storybook-layering"
   },
   {
     "number": "0009",
@@ -110,7 +118,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "aveTokenRuleProfileAwareVisualEncoding",
-    "markdownPath": "/docs/adr/ADR-0009-ave-token-rule-profile-aware-visual-encoding.md"
+    "markdownPath": "/docs/adr/ADR-0009-ave-token-rule-profile-aware-visual-encoding.md",
+    "storybookId": "docs-adr--ave-token-rule-profile-aware-visual-encoding"
   },
   {
     "number": "0010",
@@ -122,7 +131,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "hostFlexibleInteractiveComponentsReactARIAV2Alpha",
-    "markdownPath": "/docs/adr/ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md"
+    "markdownPath": "/docs/adr/ADR-0010-host-flexible-interactive-components-react-aria-v2-alpha.md",
+    "storybookId": "docs-adr--host-flexible-interactive-components-react-ariav-2-alpha"
   },
   {
     "number": "0011",
@@ -134,7 +144,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "tokenDrivenComponentContractsV1Exploratory",
-    "markdownPath": "/docs/adr/ADR-0011-token-driven-component-contracts-v1-exploratory.md"
+    "markdownPath": "/docs/adr/ADR-0011-token-driven-component-contracts-v1-exploratory.md",
+    "storybookId": "docs-adr--token-driven-component-contracts-v-1-exploratory"
   },
   {
     "number": "0012",
@@ -146,7 +157,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "interactiveComponentsEvolutionLayeredArchitectureandContexts",
-    "markdownPath": "/docs/adr/ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md"
+    "markdownPath": "/docs/adr/ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md",
+    "storybookId": "docs-adr--interactive-components-evolution-layered-architectureand-contexts"
   },
   {
     "number": "0013",
@@ -158,7 +170,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "currentArchitecturalIntentExploratory",
-    "markdownPath": "/docs/adr/ADR-0013-current-architectural-intent-exploratory.md"
+    "markdownPath": "/docs/adr/ADR-0013-current-architectural-intent-exploratory.md",
+    "storybookId": "docs-adr--current-architectural-intent-exploratory"
   },
   {
     "number": "0014",
@@ -170,7 +183,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "colorModelTonalScalesandContextualArchitecture",
-    "markdownPath": "/docs/adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md"
+    "markdownPath": "/docs/adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md",
+    "storybookId": "docs-adr--color-model-tonal-scalesand-contextual-architecture"
   },
   {
     "number": "0015",
@@ -182,7 +196,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "tokenFirstContractLayerandRendererAgnosticModel",
-    "markdownPath": "/docs/adr/ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md"
+    "markdownPath": "/docs/adr/ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md",
+    "storybookId": "docs-adr--token-first-contract-layerand-renderer-agnostic-model"
   },
   {
     "number": "0016",
@@ -194,7 +209,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "prefixUnificationEui",
-    "markdownPath": "/docs/adr/ADR-0016-prefix-unification-eui.md"
+    "markdownPath": "/docs/adr/ADR-0016-prefix-unification-eui.md",
+    "storybookId": "docs-adr--prefix-unification-eui"
   },
   {
     "number": "0017",
@@ -206,7 +222,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "layeredTokenArchitectureContextsandThemes",
-    "markdownPath": "/docs/adr/ADR-0017-layered-token-architecture-contexts-and-themes.md"
+    "markdownPath": "/docs/adr/ADR-0017-layered-token-architecture-contexts-and-themes.md",
+    "storybookId": "docs-adr--layered-token-architecture-contextsand-themes"
   },
   {
     "number": "0018",
@@ -218,7 +235,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "typographyUnitsArchitectureRemEmPx",
-    "markdownPath": "/docs/adr/ADR-0018-typography-units-architecture-rem-em-px.md"
+    "markdownPath": "/docs/adr/ADR-0018-typography-units-architecture-rem-em-px.md",
+    "storybookId": "docs-adr--typography-units-architecture-rem-em-px"
   },
   {
     "number": "0019",
@@ -230,7 +248,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "layoutComponentsArchitecture",
-    "markdownPath": "/docs/adr/ADR-0019-layout-components-architecture.md"
+    "markdownPath": "/docs/adr/ADR-0019-layout-components-architecture.md",
+    "storybookId": "docs-adr--layout-components-architecture"
   },
   {
     "number": "0020",
@@ -242,7 +261,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "elevationSystemArchitecture",
-    "markdownPath": "/docs/adr/ADR-0020-elevation-system-architecture.md"
+    "markdownPath": "/docs/adr/ADR-0020-elevation-system-architecture.md",
+    "storybookId": "docs-adr--elevation-system-architecture"
   },
   {
     "number": "0021",
@@ -254,7 +274,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "webComponentsFrameworkAgnosticLayer",
-    "markdownPath": "/docs/adr/ADR-0021-web-components-framework-agnostic-layer.md"
+    "markdownPath": "/docs/adr/ADR-0021-web-components-framework-agnostic-layer.md",
+    "storybookId": "docs-adr--web-components-framework-agnostic-layer"
   },
   {
     "number": "0022",
@@ -266,7 +287,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "storybookModelAIAgentOrientedArchitecture",
-    "markdownPath": "/docs/adr/ADR-0022-storybook-model-ai-agent-oriented-architecture.md"
+    "markdownPath": "/docs/adr/ADR-0022-storybook-model-ai-agent-oriented-architecture.md",
+    "storybookId": "docs-adr--storybook-model-ai-agent-oriented-architecture"
   },
   {
     "number": "0023",
@@ -278,7 +300,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "tokenOrganizationContextandThemeSeparation",
-    "markdownPath": "/docs/adr/ADR-0023-token-organization-context-and-theme-separation.md"
+    "markdownPath": "/docs/adr/ADR-0023-token-organization-context-and-theme-separation.md",
+    "storybookId": "docs-adr--token-organization-contextand-theme-separation"
   },
   {
     "number": "0024",
@@ -290,7 +313,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "cSSLayerStrategyContextPriority",
-    "markdownPath": "/docs/adr/ADR-0024-css-layer-strategy-context-priority.md"
+    "markdownPath": "/docs/adr/ADR-0024-css-layer-strategy-context-priority.md",
+    "storybookId": "docs-adr--c-ss-layer-strategy-context-priority"
   },
   {
     "number": "0025",
@@ -302,7 +326,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "figmaVariablesIntegrationStrategy",
-    "markdownPath": "/docs/adr/ADR-0025-figma-variables-integration-strategy.md"
+    "markdownPath": "/docs/adr/ADR-0025-figma-variables-integration-strategy.md",
+    "storybookId": "docs-adr--figma-variables-integration-strategy"
   },
   {
     "number": "0026",
@@ -314,7 +339,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "appDefaultColorPositioning",
-    "markdownPath": "/docs/adr/ADR-0026-app-default-color-positioning.md"
+    "markdownPath": "/docs/adr/ADR-0026-app-default-color-positioning.md",
+    "storybookId": "docs-adr--app-default-color-positioning"
   },
   {
     "number": "0027",
@@ -326,7 +352,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "figmaFilesStructureandOrganization",
-    "markdownPath": "/docs/adr/ADR-0027-figma-files-structure-and-organization.md"
+    "markdownPath": "/docs/adr/ADR-0027-figma-files-structure-and-organization.md",
+    "storybookId": "docs-adr--figma-files-structureand-organization"
   },
   {
     "number": "0028",
@@ -338,7 +365,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "internationalizationandRtlSupport",
-    "markdownPath": "/docs/adr/ADR-0028-internationalization-and-rtl-support.md"
+    "markdownPath": "/docs/adr/ADR-0028-internationalization-and-rtl-support.md",
+    "storybookId": "docs-adr--internationalizationand-rtl-support"
   },
   {
     "number": "0029",
@@ -350,7 +378,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "accessibilityArchitectureandDecisionFramework",
-    "markdownPath": "/docs/adr/ADR-0029-accessibility-architecture-and-decision-framework.md"
+    "markdownPath": "/docs/adr/ADR-0029-accessibility-architecture-and-decision-framework.md",
+    "storybookId": "docs-adr--accessibility-architectureand-decision-framework"
   },
   {
     "number": "0030",
@@ -362,7 +391,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "thirdPartyLibraryIntegrationStrategy",
-    "markdownPath": "/docs/adr/ADR-0030-third-party-library-integration-strategy.md"
+    "markdownPath": "/docs/adr/ADR-0030-third-party-library-integration-strategy.md",
+    "storybookId": "docs-adr--third-party-library-integration-strategy"
   },
   {
     "number": "0031",
@@ -374,7 +404,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "contrastStrategyDynamicColorsonColorTokens",
-    "markdownPath": "/docs/adr/ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md"
+    "markdownPath": "/docs/adr/ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md",
+    "storybookId": "docs-adr--contrast-strategy-dynamic-colorson-color-tokens"
   },
   {
     "number": "0032",
@@ -386,7 +417,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "tokenOverrideStrategyMultiTenantGenerativeUI",
-    "markdownPath": "/docs/adr/ADR-0032-token-override-strategy-multi-tenant-generative-ui.md"
+    "markdownPath": "/docs/adr/ADR-0032-token-override-strategy-multi-tenant-generative-ui.md",
+    "storybookId": "docs-adr--token-override-strategy-multi-tenant-generative-ui"
   },
   {
     "number": "0033",
@@ -398,7 +430,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "accessibilityStrategyThemeSwitchingAcrossContexts",
-    "markdownPath": "/docs/adr/ADR-0033-accessibility-strategy-theme-switching-across-contexts.md"
+    "markdownPath": "/docs/adr/ADR-0033-accessibility-strategy-theme-switching-across-contexts.md",
+    "storybookId": "docs-adr--accessibility-strategy-theme-switching-across-contexts"
   },
   {
     "number": "0034",
@@ -410,7 +443,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "themePresetsComponentPropsExtension",
-    "markdownPath": "/docs/adr/ADR-0034-theme-presets-component-props-extension.md"
+    "markdownPath": "/docs/adr/ADR-0034-theme-presets-component-props-extension.md",
+    "storybookId": "docs-adr--theme-presets-component-props-extension"
   },
   {
     "number": "0035",
@@ -422,7 +456,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "cSSNamingConventionsClassNamesvsDataAttributes",
-    "markdownPath": "/docs/adr/ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md"
+    "markdownPath": "/docs/adr/ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md",
+    "storybookId": "docs-adr--c-ss-naming-conventions-class-namesvs-data-attributes"
   },
   {
     "number": "0036",
@@ -434,7 +469,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "aIFirstComponentArchitectureVision",
-    "markdownPath": "/docs/adr/ADR-0036-ai-first-component-architecture-vision.md"
+    "markdownPath": "/docs/adr/ADR-0036-ai-first-component-architecture-vision.md",
+    "storybookId": "docs-adr--a-i-first-component-architecture-vision"
   },
   {
     "number": "0037",
@@ -446,7 +482,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "canonicalTokenArchitectureLocked",
-    "markdownPath": "/docs/adr/ADR-0037-canonical-token-architecture-locked.md"
+    "markdownPath": "/docs/adr/ADR-0037-canonical-token-architecture-locked.md",
+    "storybookId": "docs-adr--canonical-token-architecture-locked"
   },
   {
     "number": "0038",
@@ -458,7 +495,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "canonicalTokenCSSOutputContract",
-    "markdownPath": "/docs/adr/ADR-0038-canonical-token-css-output-contract.md"
+    "markdownPath": "/docs/adr/ADR-0038-canonical-token-css-output-contract.md",
+    "storybookId": "docs-adr--canonical-token-css-output-contract"
   },
   {
     "number": "0039",
@@ -470,7 +508,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "contextOrientedResetFoundationContract",
-    "markdownPath": "/docs/adr/ADR-0039-context-oriented-reset-foundation-contract.md"
+    "markdownPath": "/docs/adr/ADR-0039-context-oriented-reset-foundation-contract.md",
+    "storybookId": "docs-adr--context-oriented-reset-foundation-contract"
   },
   {
     "number": "0040",
@@ -482,7 +521,8 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "focusRingGeometryV1",
-    "markdownPath": "/docs/adr/ADR-0040-focus-ring-geometry-v1.md"
+    "markdownPath": "/docs/adr/ADR-0040-focus-ring-geometry-v1.md",
+    "storybookId": "docs-adr--focus-ring-geometry-v-1"
   },
   {
     "number": "0041",
@@ -494,6 +534,7 @@ export const adrs: DocMetadata[] = [
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "dtcgSchemaResolutionandTokenArchitecture",
-    "markdownPath": "/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md"
+    "markdownPath": "/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md",
+    "storybookId": "docs-adr--dtcg-schema-resolutionand-token-architecture"
   }
 ];

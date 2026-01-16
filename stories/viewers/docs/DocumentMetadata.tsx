@@ -36,6 +36,37 @@ function resolveDocStoryPath(resolvedDocPath: string | null): string | null {
   return null;
 }
 
+/**
+ * Extract ARCH prefix from href if it's an architecture document link
+ * Returns prefix like "ARCH-TOKENS-001" or null if not an architecture link
+ */
+function extractArchPrefix(href: string): string | null {
+  const archMatch = href.match(/ARCH-([^-]+)-(\d{3})/);
+  if (archMatch) {
+    const [, category, number] = archMatch;
+    return `ARCH-${category.toUpperCase()}-${number}`;
+  }
+  return null;
+}
+
+/**
+ * Format link text with ARCH prefix for architecture documents
+ */
+function formatLinkText(text: string, archPrefix: string | null): string {
+  // If no prefix to add, return text as-is
+  if (!archPrefix) {
+    return text;
+  }
+
+  // Check if prefix is already in the text (case-insensitive)
+  if (text.match(/^ARCH-/i)) {
+    return text;
+  }
+
+  // Add prefix
+  return `${archPrefix} — ${text}`;
+}
+
 export type DocumentMetadataFields = {
   // Common fields
   status?: string;
@@ -72,10 +103,19 @@ type DocumentMetadataProps = {
 export const DocumentMetadata = ({ fields, variant = 'adr', markdownPath }: DocumentMetadataProps) => {
   const hasRelated = fields.related && fields.related.length > 0;
 
-  // Resolve links to Storybook paths
+  // Resolve links to Storybook paths and add ARCH prefixes
   const resolvedLinks = fields.related?.map(link => {
+    // Extract ARCH prefix if this is an architecture document link
+    const archPrefix = extractArchPrefix(link.href);
+
+    // Format link text with prefix
+    const formattedText = formatLinkText(link.text, archPrefix);
+
     if (!markdownPath || !link.href.endsWith('.md')) {
-      return link;
+      return {
+        ...link,
+        text: formattedText
+      };
     }
 
     const resolvedDocPath = resolveDocPath(link.href, markdownPath);
@@ -83,6 +123,7 @@ export const DocumentMetadata = ({ fields, variant = 'adr', markdownPath }: Docu
 
     return {
       ...link,
+      text: formattedText,
       href: storybookPath || link.href
     };
   });
