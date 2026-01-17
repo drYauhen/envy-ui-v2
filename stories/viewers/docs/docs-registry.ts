@@ -49,12 +49,13 @@ const architectureDocs: DocRegistryItem[] = architectures.map(arch => ({
 
 // Transform workflow metadata into registry entries
 const workflowDocs: DocRegistryItem[] = workflows.map(workflow => ({
-  id: workflow.id,
-  path: `workflows/${workflow.filename}`,
+  id: `workflow-${workflow.number}`,
+  path: workflow.markdownPath?.replace('/docs/', '') || `workflows/WORKFLOW-${workflow.number}.md`,
   title: workflow.title,
-  category: 'workflows' as const,
-  storybookId: workflow.storybookId,
+  category: workflow.category || 'workflow',
+  exportName: workflow.exportName,
   status: workflow.status,
+  storybookId: workflow.storybookId,
   aliases: workflow.aliases
 }));
 
@@ -181,12 +182,13 @@ const guideGuideDocs: DocRegistryItem[] = [
 
 // Transform tokens metadata into registry entries
 const tokensDocs: DocRegistryItem[] = tokens.map(token => ({
-  id: token.id,
-  path: `tokens/${token.filename}`,
+  id: `tokens-${token.number}`,
+  path: token.markdownPath?.replace('/docs/', '') || `tokens/TOKENS-${token.number}.md`,
   title: token.title,
-  category: 'other' as const,
-  storybookId: token.storybookId,
+  category: token.category || 'token',
+  exportName: token.exportName,
   status: token.status,
+  storybookId: token.storybookId,
   aliases: token.aliases
 }));
 

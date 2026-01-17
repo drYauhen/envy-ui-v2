@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DocListViewer } from '../../viewers/docs/DocListViewer';
-import { workflows } from '../../viewers/docs/workflow-data';
+import { DocViewer } from '../../viewers/docs/DocViewer';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
@@ -19,7 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const Overview: Story = {
-  name: 'Workflows Overview',
-  render: () => <DocListViewer docs={workflows} category="workflow" />
+export const adrWorkflow: Story = {
+  name: 'WORKFLOW-001 ADR Workflow',
+  render: () => (
+    <DocViewer
+      markdownPath="/docs/workflows/WORKFLOW-001-adr-workflow.md"
+      status="Active"
+      lastUpdated="2026-01-15"
+      fallback="Loading WORKFLOW-001 ADR Workflow..."
+    />
+  )
 };

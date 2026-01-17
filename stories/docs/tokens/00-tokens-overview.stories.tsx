@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DocListViewer } from '../../viewers/docs/DocListViewer';
-import { workflows } from '../../viewers/docs/workflow-data';
+import { tokens } from '../../viewers/docs/tokens-data';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/Workflows',
+  title: 'Docs/Tokens',
   parameters: {
-    ...getSectionParameters('Docs/Workflows'),
+    ...getSectionParameters('Docs/Tokens'),
     layout: 'fullscreen',
     controls: { hidden: true },
     actions: { hidden: true },
@@ -20,6 +20,6 @@ const meta: Meta = {
 export default meta;
 
 export const Overview: Story = {
-  name: 'Workflows Overview',
-  render: () => <DocListViewer docs={workflows} category="workflow" />
+  name: 'Tokens Overview',
+  render: () => <DocListViewer docs={tokens} category="token" />
 };
