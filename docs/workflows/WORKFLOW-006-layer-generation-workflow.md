@@ -138,7 +138,7 @@ Shows usage information and examples.
 ## 🔄 Integration with Other Workflows
 
 ### Token Workflow
-- **Before**: Use [Tokens Workflow](./tokens-workflow.md) to modify tokens
+- **Before**: Use [Tokens Workflow](./WORKFLOW-005-tokens-workflow.md) to modify tokens
 - **After**: Run layer generation to propagate changes
 - **Integration**: Layer generation automatically calls token build scripts
 
@@ -278,9 +278,9 @@ Update the `dependsOn` array in `layer-generation.config.json`:
 ## 🔗 Related Documentation
 
 - **[WORKFLOW_MANIFEST.md](../../WORKFLOW_MANIFEST.md)** - Core project rules
-- **[Tokens Workflow](./tokens-workflow.md)** - Token development process
-- **[Storybook Workflow](./storybook-workflow.md)** - Storybook development
-- **[Scripts Reference](./scripts-reference.md)** - All available npm scripts
+- **[Tokens Workflow](./WORKFLOW-005-tokens-workflow.md)** - Token development process
+- **[Storybook Workflow](./WORKFLOW-003-storybook-workflow.md)** - Storybook development
+- **[Scripts Reference](./WORKFLOW-004-scripts-reference.md)** - All available npm scripts
 - **[Architecture Overview](../architecture/)** - System architecture docs
 
 ## 📝 Future Enhancements

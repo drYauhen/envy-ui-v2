@@ -116,7 +116,7 @@ Some components need multiple visual modes inside the same theme (for example, a
 ### Changing Token Structure
 
 1. **Create snapshot (if using Figma):**
-   - See [Figma Workflow](./figma-workflow.md) for details
+   - See [Figma Workflow](./WORKFLOW-002-figma-workflow.md) for details
 
 2. **Make changes:**
    - Edit token JSON files
@@ -318,6 +318,6 @@ Component tokens define component-specific values within each context:
 - [ADR-0017: Layered Token Architecture](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)
 - [ADR-0023: Token Organization - Context and Theme Separation](./../adr/ADR-0023-token-organization-context-and-theme-separation.md)
 - [Token Usage Rules](./../architecture/ARCH-tokens-004-token-usage-rules.md)
-- [Token System Tooling](./../tokens/README.md) - Developer tools for working with tokens
-- [Token Utilities Use Cases](./../tokens/use-cases.md) - Practical examples for AI agents and developers
-- [Token Reference](./../tokens/reference.md) - Complete token reference (auto-generated)
+- [Token System Tooling](./../tokens/TOKENS-001-token-system-tooling.md) - Developer tools for working with tokens
+- [Token Utilities Use Cases](./../tokens/TOKENS-003-token-utilities-use-cases.md) - Practical examples for AI agents and developers
+- [Token Reference](./../tokens/TOKENS-002-token-reference.md) - Complete token reference (auto-generated)

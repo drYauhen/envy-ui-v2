@@ -384,6 +384,6 @@ The automated script handles this automatically.
 ## Related Documentation
 
 - [Dev App Architecture](../architecture/ARCH-system-004-dev-app-architecture.md) - Detailed architecture documentation
-- [Storybook Workflow](./storybook-workflow.md) - Storybook integration
+- [Storybook Workflow](./WORKFLOW-003-storybook-workflow.md) - Storybook integration
 - [Component Naming Conventions](../architecture/ARCH-components-002-component-naming-conventions.md) - Component naming
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) - Token usage guidelines
