@@ -94,28 +94,31 @@ function parseDocsRegistry() {
     idMap.set(doc.id, doc);
   }
 
-  // Parse workflow data
+  // Parse workflow data (new DocMetadata structure)
   const workflowDataPath = join(repoRoot, 'stories/viewers/docs/workflow-data.ts');
   const workflowDataContent = readFileSync(workflowDataPath, 'utf-8');
-  // Support both JSON and TypeScript syntax: "key": "value" or key: 'value'
-  const workflowPattern = /\s*\{\s*(?:")?id(?:")?\s*:\s*['"]([^'"]+)['"]\s*,\s*(?:")?title(?:")?\s*:\s*['"]([^'"]+)['"]\s*,\s*(?:")?filename(?:")?\s*:\s*['"]([^'"]+)['"]\s*(?:,\s*(?:")?storybookId(?:")?\s*:\s*['"]([^'"]+)['"])?/g;
+  // Match new DocMetadata structure: number, title, markdownPath, storybookId, aliases
+  const workflowPattern = /\{\s*number:\s*"(\d+)",\s*title:\s*"([^"]+)",\s*category:\s*"([^"]+)",\s*status:\s*"([^"]+)",\s*date:\s*"[^"]+",\s*lastUpdated:\s*"[^"]+",\s*owner:\s*"[^"]+",\s*assistance:\s*"[^"]+",\s*exportName:\s*"([^"]+)",\s*markdownPath:\s*"([^"]+)",\s*storybookId:\s*"([^"]+)",\s*aliases:\s*(\[[^\]]*\])\s*\}/g;
 
   while ((match = workflowPattern.exec(workflowDataContent)) !== null) {
-    const [, id, title, filename, storybookId] = match;
-    const path = `workflows/${filename}`;
+    const [, number, title, category, status, exportName, markdownPath, storybookId, aliasesStr] = match;
+    const path = markdownPath.replace('/docs/', ''); // Remove /docs/ prefix
+    const aliases = aliasesStr ? JSON.parse(aliasesStr.replace(/'/g, '"')) : [];
 
     const doc = {
-      id,
+      id: `workflow-${number}`,
       path,
       title,
-      category: 'workflows',
-      storybookId: storybookId || undefined,
-      status: 'active',
-      aliases: []
+      category,
+      storybookId,
+      status,
+      exportName,
+      aliases
     };
 
     docsMap.set(path, doc);
     idMap.set(doc.id, doc);
+    aliases.forEach(alias => docsMap.set(alias, doc));
   }
 
   // Parse guide data
@@ -141,23 +144,25 @@ function parseDocsRegistry() {
     idMap.set(doc.id, doc);
   }
 
-  // Parse tokens data
+  // Parse tokens data (new DocMetadata structure)
   const tokensDataPath = join(repoRoot, 'stories/viewers/docs/tokens-data.ts');
   const tokensDataContent = readFileSync(tokensDataPath, 'utf-8');
-  const tokensPattern = /\s*\{\s*"id":\s*"([^"]+)",\s*"filename":\s*"([^"]+)",\s*"title":\s*"([^"]+)",\s*"storybookId":\s*"([^"]+)"(?:,\s*"status":\s*"([^"]+)")?(?:,\s*"aliases":\s*(\[[^\]]*\]))?\s*\}/g;
+  // Match new DocMetadata structure: number, title, markdownPath, storybookId, aliases
+  const tokensPattern = /\{\s*number:\s*"(\d+)",\s*title:\s*"([^"]+)",\s*category:\s*"([^"]+)",\s*status:\s*"([^"]+)",\s*date:\s*"[^"]+",\s*lastUpdated:\s*"[^"]+",\s*owner:\s*"[^"]+",\s*assistance:\s*"[^"]+",\s*exportName:\s*"([^"]+)",\s*markdownPath:\s*"([^"]+)",\s*storybookId:\s*"([^"]+)",\s*aliases:\s*(\[[^\]]*\])\s*\}/g;
 
   while ((match = tokensPattern.exec(tokensDataContent)) !== null) {
-    const [, id, filename, title, storybookId, status, aliasesStr] = match;
-    const path = `tokens/${filename}`;
-    const aliases = aliasesStr ? JSON.parse(aliasesStr) : [];
+    const [, number, title, category, status, exportName, markdownPath, storybookId, aliasesStr] = match;
+    const path = markdownPath.replace('/docs/', ''); // Remove /docs/ prefix
+    const aliases = aliasesStr ? JSON.parse(aliasesStr.replace(/'/g, '"')) : [];
 
     const doc = {
-      id,
+      id: `tokens-${number}`,
       path,
       title,
-      category: 'other',
+      category,
       storybookId,
-      status: status || 'active',
+      status,
+      exportName,
       aliases
     };
 
