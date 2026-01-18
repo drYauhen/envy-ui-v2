@@ -568,7 +568,7 @@ npm run docs:regenerate-all
 
 - [CANONICAL-DOC-FORMAT.md](./CANONICAL-DOC-FORMAT.md) - Canonical format specification
 - [DOCS-GUIDE.md](./DOCS-GUIDE.md) - General documentation guide
-- [workflows/adr-workflow.md](./workflows/adr-workflow.md) - ADR-specific workflow
+- [workflows/adr-workflow.md](./workflows/WORKFLOW-001-adr-workflow.md) - ADR-specific workflow
 
 ## Support
 

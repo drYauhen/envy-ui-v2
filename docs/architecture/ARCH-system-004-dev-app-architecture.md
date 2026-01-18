@@ -448,6 +448,6 @@ Dev-app serves as integration test for:
 
 ## Related Documentation
 
-- [Dev App Workflow](../workflows/dev-app-workflow.md) - Usage guide
-- [Storybook Workflow](../workflows/storybook-workflow.md) - Storybook integration
+- [Dev App Workflow](../workflows/WORKFLOW-007-dev-app-workflow.md) - Usage guide
+- [Storybook Workflow](../workflows/WORKFLOW-003-storybook-workflow.md) - Storybook integration
 - [Component Naming Conventions](./ARCH-components-002-component-naming-conventions.md) - Component naming

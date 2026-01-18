@@ -19,7 +19,7 @@ This directory contains Architectural Decision Records (ADR) for Envy UI. ADRs d
 ## Quick Start
 
 - **Template:** [`ADR-TEMPLATE.md`](./ADR-TEMPLATE.md)
-- **Workflow:** See [ADR Workflow](../workflows/adr-workflow.md) for complete guide
+- **Workflow:** See [ADR Workflow](../workflows/WORKFLOW-001-adr-workflow.md) for complete guide
 - **Agent Guide:** See [ADR Agent Guide](./AGENT-GUIDE.md) for instructions to prevent broken links
 - **General Docs Guide:** See [Documentation Guide](../DOCS-GUIDE.md) for all documentation (not just ADR)
 

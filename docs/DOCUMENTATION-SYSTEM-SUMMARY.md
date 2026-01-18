@@ -301,8 +301,8 @@ This comprehensive guide provides:
 
 **Other References:**
 - [CANONICAL-DOC-FORMAT.md](./CANONICAL-DOC-FORMAT.md) - Format specification
-- [workflows/adr-workflow.md](./workflows/adr-workflow.md) - ADR workflow
-- [workflows/scripts-reference.md](./workflows/scripts-reference.md) - npm scripts
+- [workflows/adr-workflow.md](./workflows/WORKFLOW-001-adr-workflow.md) - ADR workflow
+- [workflows/scripts-reference.md](./workflows/WORKFLOW-004-scripts-reference.md) - npm scripts
 - [DOCS-GUIDE.md](./DOCS-GUIDE.md) - General documentation guide
 
 ## Migration Notes

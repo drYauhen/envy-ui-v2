@@ -470,7 +470,7 @@ See **[CSS Token Output Rules](./ARCH-tokens-002-css-token-output-rules.md)** fo
 ## Related Documentation
 
 - **[Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md)** - Enforceable rules for token usage
-- **[Token System Tooling](./../tokens/README.md)** - Developer tools and workflows
+- **[Token System Tooling](./../tokens/TOKENS-001-token-system-tooling.md)** - Developer tools and workflows
 
 ## Architectural Decision Records
 

@@ -155,4 +155,4 @@ See [Architecture Documentation](../architecture/ARCH-system-001-architecture-do
 
 - **[ADR Documentation](../adr/README.md)** - Historical decision records
 - **[Documentation Guide](../DOCS-GUIDE.md)** - General documentation guidelines
-- **[ADR Workflow](../workflows/adr-workflow.md)** - How to create and manage ADRs
+- **[ADR Workflow](../workflows/WORKFLOW-001-adr-workflow.md)** - How to create and manage ADRs

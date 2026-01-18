@@ -281,4 +281,4 @@ ADR documents are automatically included in the registry from `adr-list-data.ts`
 
 **See also:**
 - [`docs/adr/AGENT-GUIDE.md`](./adr/AGENT-GUIDE.md) - ADR-specific guide
-- [`docs/workflows/adr-workflow.md`](./workflows/adr-workflow.md) - ADR workflow
+- [`docs/workflows/adr-workflow.md`](./workflows/WORKFLOW-001-adr-workflow.md) - ADR workflow
