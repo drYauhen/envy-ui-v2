@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Component - EnvyUI v2</title>
+  <style>
+    /* Import base CSS layers and tokens */
+    @import "../../generated/css/app.css";
+    @import "../../src/ui/button.css";
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 2rem;
+      background: var(--eui-color-background-base);
+      color: var(--eui-color-text-primary);
+    }
+
+    .demo-section {
+      margin-bottom: 3rem;
+    }
+
+    .demo-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .demo-section h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--eui-color-text-secondary);
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .code-block {
+      background: var(--eui-color-background-subtle);
+      border: 1px solid var(--eui-color-border-default);
+      border-radius: 4px;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body data-eui-context="app" data-eui-theme="light">
+  <h1>Button Component</h1>
+  <p>Button component following the canonical architecture pattern with token-driven styling.</p>
+
+  <div class="demo-section">
+    <h2>Intents</h2>
+    <p>Different button intents for various actions and contexts.</p>
+
+    <h3>Primary</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">Primary Button</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md" disabled>Disabled</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-intent="primary" data-eui-size="md"&gt;Primary Button&lt;/button&gt;</code>
+    </div>
+
+    <h3>Secondary</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="secondary" data-eui-size="md">Secondary Button</button>
+      <button class="eui-button" data-eui-intent="secondary" data-eui-size="md" disabled>Disabled</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-intent="secondary" data-eui-size="md"&gt;Secondary Button&lt;/button&gt;</code>
+    </div>
+
+    <h3>Accent</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="accent" data-eui-size="md">Accent Button</button>
+      <button class="eui-button" data-eui-intent="accent" data-eui-size="md" disabled>Disabled</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-intent="accent" data-eui-size="md"&gt;Accent Button&lt;/button&gt;</code>
+    </div>
+
+    <h3>Accent Finished</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="accent-finished" data-eui-size="md">Finished Button</button>
+      <button class="eui-button" data-eui-intent="accent-finished" data-eui-size="md" disabled>Disabled</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-intent="accent-finished" data-eui-size="md"&gt;Finished Button&lt;/button&gt;</code>
+    </div>
+
+    <h3>Link</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="link" data-eui-size="md">Link Button</button>
+      <button class="eui-button" data-eui-intent="link" data-eui-size="md" disabled>Disabled</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-intent="link" data-eui-size="md"&gt;Link Button&lt;/button&gt;</code>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Sizes</h2>
+    <p>Three size variants for different UI densities.</p>
+
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="sm">Small</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">Medium (default)</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="lg">Large</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-intent="primary" data-eui-size="sm"&gt;Small&lt;/button&gt;</code><br>
+      <code>&lt;button class="eui-button" data-eui-intent="primary" data-eui-size="md"&gt;Medium&lt;/button&gt;</code><br>
+      <code>&lt;button class="eui-button" data-eui-intent="primary" data-eui-size="lg"&gt;Large&lt;/button&gt;</code>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Shapes</h2>
+    <p>Different border radius variations for various design contexts.</p>
+
+    <h3>Default</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md" data-eui-shape="default">Default Shape</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-shape="default"&gt;Default Shape&lt;/button&gt;</code>
+    </div>
+
+    <h3>Round</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md" data-eui-shape="round">Round Corners</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-shape="round"&gt;Round Corners&lt;/button&gt;</code>
+    </div>
+
+    <h3>Circle (Icon Only)</h3>
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="sm" data-eui-shape="circle" aria-label="Add">+</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md" data-eui-shape="circle" aria-label="Add">+</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="lg" data-eui-shape="circle" aria-label="Add">+</button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-shape="circle" aria-label="Add"&gt;+&lt;/button&gt;</code>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>With Icon Slots</h2>
+    <p>Buttons support start and end icon slots for enhanced communication.</p>
+
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">
+        <span data-eui-slot="start-icon">←</span>
+        <span data-eui-slot="label">Back</span>
+      </button>
+
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">
+        <span data-eui-slot="label">Next</span>
+        <span data-eui-slot="end-icon">→</span>
+      </button>
+
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">
+        <span data-eui-slot="start-icon">⚙</span>
+        <span data-eui-slot="label">Settings</span>
+        <span data-eui-slot="end-icon">▼</span>
+      </button>
+    </div>
+    <div class="code-block">
+      <code>&lt;button class="eui-button" data-eui-intent="primary"&gt;</code><br>
+      <code>  &lt;span data-eui-slot="start-icon"&gt;←&lt;/span&gt;</code><br>
+      <code>  &lt;span data-eui-slot="label"&gt;Back&lt;/span&gt;</code><br>
+      <code>&lt;/button&gt;</code>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>States</h2>
+    <p>Interactive states demonstrate button behavior.</p>
+
+    <div class="button-grid">
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">Normal</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">Hover (hover over me)</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md">Focus (tab to me)</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md" disabled>Disabled</button>
+      <button class="eui-button" data-eui-intent="primary" data-eui-size="md" aria-disabled="true">Aria Disabled</button>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Component Architecture</h2>
+    <h3>Token Structure</h3>
+    <ul>
+      <li><strong>Tokens:</strong> <code>tokens/components/button.tokens.json</code></li>
+      <li><strong>Contract:</strong> <code>tokens/components/button.contract.json</code></li>
+      <li><strong>Generated CSS:</strong> <code>generated/css/components/button.tokens.css</code></li>
+      <li><strong>Component CSS:</strong> <code>src/ui/button.css</code></li>
+    </ul>
+
+    <h3>Axes (Data Attributes)</h3>
+    <ul>
+      <li><code>data-eui-intent</code>: primary | secondary | accent | accent-finished | link</li>
+      <li><code>data-eui-size</code>: sm | md | lg</li>
+      <li><code>data-eui-shape</code>: default | round | circle</li>
+    </ul>
+
+    <h3>Slots</h3>
+    <ul>
+      <li><code>data-eui-slot="start-icon"</code>: Icon before label</li>
+      <li><code>data-eui-slot="label"</code>: Button text</li>
+      <li><code>data-eui-slot="end-icon"</code>: Icon after label</li>
+    </ul>
+
+    <h3>Key Token Variables</h3>
+    <ul>
+      <li><code>--eui-button-colors-background</code></li>
+      <li><code>--eui-button-colors-text</code></li>
+      <li><code>--eui-button-colors-border</code></li>
+      <li><code>--eui-button-size-height</code></li>
+      <li><code>--eui-button-focus-ring-color</code></li>
+      <li><code>--eui-button-layout-whiteSpace</code></li>
+    </ul>
+  </div>
+
+  <script>
+    // Theme toggle for demonstration
+    const toggleTheme = () => {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-eui-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-eui-theme', newTheme);
+    };
+
+    // Add theme toggle button
+    const themeButton = document.createElement('button');
+    themeButton.className = 'eui-button';
+    themeButton.setAttribute('data-eui-intent', 'secondary');
+    themeButton.setAttribute('data-eui-size', 'sm');
+    themeButton.textContent = 'Toggle Theme';
+    themeButton.style.position = 'fixed';
+    themeButton.style.top = '1rem';
+    themeButton.style.right = '1rem';
+    themeButton.addEventListener('click', toggleTheme);
+    document.body.appendChild(themeButton);
+  </script>
+</body>
+</html>

@@ -53,6 +53,49 @@
             "$type": "letterSpacing",
             "$description": "Button letter spacing."
           }
+        },
+        "focus": {
+          "ring": {
+            "color": {
+              "$value": "{eui.color.focus.ring}",
+              "$type": "color",
+              "$description": "Button focus ring color (theme-driven, brand-aligned)."
+            },
+            "width": {
+              "$value": "{eui.focus.ring.width}",
+              "$type": "dimension",
+              "$description": "Button focus ring width."
+            },
+            "offset": {
+              "$value": "1px",
+              "$type": "dimension",
+              "$description": "Button focus ring offset from border."
+            }
+          }
+        },
+        "layout": {
+          "flex": {
+            "grow": {
+              "$value": "0",
+              "$type": "string",
+              "$description": "Button flex-grow (prevents stretching)."
+            },
+            "shrink": {
+              "$value": "0",
+              "$type": "string",
+              "$description": "Button flex-shrink (prevents compression)."
+            },
+            "basis": {
+              "$value": "auto",
+              "$type": "string",
+              "$description": "Button flex-basis (intrinsic sizing)."
+            }
+          },
+          "whiteSpace": {
+            "$value": "nowrap",
+            "$type": "string",
+            "$description": "Button white-space (prevents text wrapping)."
+          }
         }
       },
       "size": {
@@ -173,7 +216,28 @@
           }
         }
       },
-      "variant": {
+      "state": {
+        "disabled": {
+          "colors": {
+            "background": {
+              "$value": "{eui.color.background.muted}",
+              "$type": "color",
+              "$description": "Disabled button background."
+            },
+            "text": {
+              "$value": "{eui.color.text.disabled}",
+              "$type": "color",
+              "$description": "Disabled button text."
+            },
+            "border": {
+              "$value": "{eui.color.border.default}",
+              "$type": "color",
+              "$description": "Disabled button border."
+            }
+          }
+        }
+      },
+      "intent": {
         "primary": {
           "colors": {
             "background": {

@@ -14,6 +14,13 @@
     --eui-button-typography-fontFamily: var(--eui-typography-fontFamily-ui);
     --eui-button-typography-lineHeight: var(--eui-typography-lineHeight-none);
     --eui-button-typography-letterSpacing: var(--eui-typography-letterSpacing-wide);
+    --eui-button-focus-ring-color: var(--eui-color-focus-ring);
+    --eui-button-focus-ring-width: var(--eui-focus-ring-width);
+    --eui-button-focus-ring-offset: 1px;
+    --eui-button-layout-flex-grow: 0;
+    --eui-button-layout-flex-shrink: 0;
+    --eui-button-layout-flex-basis: auto;
+    --eui-button-layout-whiteSpace: nowrap;
     --eui-button-size-sm-height: var(--eui-dimension-9);
     --eui-button-size-sm-padding-inline: var(--eui-dimension-4);
     --eui-button-size-sm-gap: var(--eui-spacing-xs);
@@ -32,6 +39,9 @@
     --eui-button-shape-default-radius: var(--eui-radius-md);
     --eui-button-shape-round-radius: var(--eui-radius-full);
     --eui-button-shape-circle-radius: var(--eui-radius-full);
+    --eui-button-state-disabled-colors-background: var(--eui-color-background-muted);
+    --eui-button-state-disabled-colors-text: var(--eui-color-text-disabled);
+    --eui-button-state-disabled-colors-border: var(--eui-color-border-default);
   }
 
   /* Variant: primary */
