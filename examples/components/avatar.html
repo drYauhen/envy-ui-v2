@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar & Avatar Group - EnvyUI v2</title>
+  <style>
+    /* Import base CSS layers and tokens */
+    @import "../../generated/css/app.css";
+    @import "../../src/ui/avatar.css";
+    @import "../../src/ui/avatar-group.css";
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 2rem;
+      background: var(--eui-color-background-base);
+      color: var(--eui-color-text-primary);
+    }
+
+    .demo-section {
+      margin-bottom: 3rem;
+    }
+
+    .demo-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .demo-section h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--eui-color-text-secondary);
+    }
+
+    .avatar-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .demo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .demo-label {
+      font-size: 0.875rem;
+      color: var(--eui-color-text-secondary);
+    }
+
+    .code-block {
+      background: var(--eui-color-background-subtle);
+      border: 1px solid var(--eui-color-border-default);
+      border-radius: 4px;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body data-eui-context="app" data-eui-theme="light">
+  <h1>Avatar & Avatar Group Components</h1>
+  <p>Avatar components following the canonical architecture pattern with token-driven styling.</p>
+
+  <div class="demo-section">
+    <h2>Avatar - Sizes</h2>
+    <p>Three size variants for different UI contexts.</p>
+
+    <div class="avatar-row">
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="sm">
+          <span class="eui-avatar-initials">JD</span>
+        </div>
+        <span class="demo-label">Small (28px)</span>
+      </div>
+
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">JD</span>
+        </div>
+        <span class="demo-label">Medium (32px)</span>
+      </div>
+
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="lg">
+          <span class="eui-avatar-initials">JD</span>
+        </div>
+        <span class="demo-label">Large (40px)</span>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <code>&lt;div class="eui-avatar" data-eui-size="sm"&gt;<br>
+  &lt;span class="eui-avatar-initials"&gt;JD&lt;/span&gt;<br>
+&lt;/div&gt;</code>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Avatar - With Images</h2>
+    <p>Avatars displaying profile images.</p>
+
+    <div class="avatar-row">
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="sm">
+          <img src="https://i.pravatar.cc/28?img=1" alt="User avatar">
+        </div>
+        <span class="demo-label">Small</span>
+      </div>
+
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=2" alt="User avatar">
+        </div>
+        <span class="demo-label">Medium</span>
+      </div>
+
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="lg">
+          <img src="https://i.pravatar.cc/40?img=3" alt="User avatar">
+        </div>
+        <span class="demo-label">Large</span>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <code>&lt;div class="eui-avatar" data-eui-size="md"&gt;<br>
+  &lt;img src="avatar.jpg" alt="User avatar"&gt;<br>
+&lt;/div&gt;</code>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Avatar - Lead Role</h2>
+    <p>Lead avatar with accent border to emphasize role.</p>
+
+    <div class="avatar-row">
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="md" data-eui-role="lead">
+          <span class="eui-avatar-initials">TL</span>
+        </div>
+        <span class="demo-label">Team Lead</span>
+      </div>
+
+      <div class="demo-item">
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">TM</span>
+        </div>
+        <span class="demo-label">Team Member</span>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <code>&lt;div class="eui-avatar" data-eui-role="lead"&gt;<br>
+  &lt;span class="eui-avatar-initials"&gt;TL&lt;/span&gt;<br>
+&lt;/div&gt;</code>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Avatar Group - Basic</h2>
+    <p>Overlapping avatars with hover spread animation.</p>
+
+    <h3>Standard Group</h3>
+    <div class="avatar-row">
+      <div class="eui-avatar-group">
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=10" alt="User 1">
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=11" alt="User 2">
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=12" alt="User 3">
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=13" alt="User 4">
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <code>&lt;div class="eui-avatar-group"&gt;<br>
+  &lt;div class="eui-avatar" data-eui-size="md"&gt;<br>
+    &lt;img src="user1.jpg" alt="User 1"&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div class="eui-avatar" data-eui-size="md"&gt;<br>
+    &lt;img src="user2.jpg" alt="User 2"&gt;<br>
+  &lt;/div&gt;<br>
+  ...<br>
+&lt;/div&gt;</code>
+    </div>
+
+    <h3>With Initials</h3>
+    <div class="avatar-row">
+      <div class="eui-avatar-group">
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">AB</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">CD</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">EF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Avatar Group - With Lead</h2>
+    <p>Lead avatar with visual separation from the rest of the group.</p>
+
+    <div class="avatar-row">
+      <div class="eui-avatar-group">
+        <div class="eui-avatar" data-eui-size="md" data-eui-role="lead">
+          <img src="https://i.pravatar.cc/32?img=20" alt="Team Lead">
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=21" alt="Team Member 1">
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=22" alt="Team Member 2">
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <img src="https://i.pravatar.cc/32?img=23" alt="Team Member 3">
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <code>&lt;div class="eui-avatar-group"&gt;<br>
+  &lt;div class="eui-avatar" data-eui-role="lead"&gt;...&lt;/div&gt;<br>
+  &lt;div class="eui-avatar"&gt;...&lt;/div&gt;<br>
+  &lt;div class="eui-avatar"&gt;...&lt;/div&gt;<br>
+&lt;/div&gt;</code>
+    </div>
+
+    <p><strong>Note:</strong> The lead avatar has an accent border, smaller overlap after it for visual separation, and tighter overlap between subsequent avatars.</p>
+  </div>
+
+  <div class="demo-section">
+    <h2>Avatar Group - Size Variants</h2>
+    <p>Avatar groups work with all size variants.</p>
+
+    <h3>Small (28px)</h3>
+    <div class="avatar-row">
+      <div class="eui-avatar-group">
+        <div class="eui-avatar" data-eui-size="sm">
+          <span class="eui-avatar-initials">A</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="sm">
+          <span class="eui-avatar-initials">B</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="sm">
+          <span class="eui-avatar-initials">C</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Medium (32px) - Default</h3>
+    <div class="avatar-row">
+      <div class="eui-avatar-group">
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">A</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">B</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="md">
+          <span class="eui-avatar-initials">C</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Large (40px)</h3>
+    <div class="avatar-row">
+      <div class="eui-avatar-group">
+        <div class="eui-avatar" data-eui-size="lg">
+          <span class="eui-avatar-initials">A</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="lg">
+          <span class="eui-avatar-initials">B</span>
+        </div>
+        <div class="eui-avatar" data-eui-size="lg">
+          <span class="eui-avatar-initials">C</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Hover Interaction</h2>
+    <p>Hover over avatars to see the spread animation (app/website contexts only).</p>
+
+    <div class="avatar-row">
+      <div class="eui-avatar-group">
+        <div class="eui-avatar" data-eui-size="lg">
+          <img src="https://i.pravatar.cc/40?img=30" alt="User 1">
+        </div>
+        <div class="eui-avatar" data-eui-size="lg">
+          <img src="https://i.pravatar.cc/40?img=31" alt="User 2">
+        </div>
+        <div class="eui-avatar" data-eui-size="lg">
+          <img src="https://i.pravatar.cc/40?img=32" alt="User 3">
+        </div>
+        <div class="eui-avatar" data-eui-size="lg">
+          <img src="https://i.pravatar.cc/40?img=33" alt="User 4">
+        </div>
+        <div class="eui-avatar" data-eui-size="lg">
+          <img src="https://i.pravatar.cc/40?img=34" alt="User 5">
+        </div>
+      </div>
+    </div>
+
+    <p><strong>Hover behavior:</strong></p>
+    <ul>
+      <li>Hovered avatar scales up by 1.1x</li>
+      <li>Neighbors spread out by 12px for better visibility</li>
+      <li>Smooth transition with ease-out easing (200ms)</li>
+      <li>No animation in report context (print-friendly)</li>
+    </ul>
+  </div>
+
+  <div class="demo-section">
+    <h2>Component Architecture</h2>
+
+    <h3>Avatar Token Structure</h3>
+    <ul>
+      <li><strong>Tokens:</strong> <code>tokens/components/avatar.tokens.json</code></li>
+      <li><strong>Contract:</strong> <code>tokens/components/avatar.contract.json</code></li>
+      <li><strong>Generated CSS:</strong> <code>generated/css/components/avatar.tokens.css</code></li>
+      <li><strong>Component CSS:</strong> <code>src/ui/avatar.css</code></li>
+    </ul>
+
+    <h3>Avatar Group Token Structure</h3>
+    <ul>
+      <li><strong>Tokens:</strong> <code>tokens/components/avatar-group.tokens.json</code></li>
+      <li><strong>Contract:</strong> <code>tokens/components/avatar-group.contract.json</code></li>
+      <li><strong>Generated CSS:</strong> <code>generated/css/components/avatar-group.tokens.css</code></li>
+      <li><strong>Component CSS:</strong> <code>src/ui/avatar-group.css</code></li>
+    </ul>
+
+    <h3>Avatar Axes</h3>
+    <ul>
+      <li><code>data-eui-size</code>: sm | md | lg</li>
+      <li><code>data-eui-role</code>: lead (optional)</li>
+    </ul>
+
+    <h3>Avatar Slots</h3>
+    <ul>
+      <li><code>img</code>: Profile image</li>
+      <li><code>.eui-avatar-initials</code>: Fallback initials</li>
+    </ul>
+
+    <h3>Key Token Variables - Avatar</h3>
+    <ul>
+      <li><code>--eui-avatar-size-diameter</code></li>
+      <li><code>--eui-avatar-fontSize</code></li>
+      <li><code>--eui-avatar-border-color</code></li>
+      <li><code>--eui-avatar-background-fallback</code></li>
+      <li><code>--eui-avatar-text-fallback</code></li>
+    </ul>
+
+    <h3>Key Token Variables - Avatar Group</h3>
+    <ul>
+      <li><code>--eui-avatar-group-layout-overlap</code> (12px standard)</li>
+      <li><code>--eui-avatar-group-layout-overlap-lead</code> (6px after lead)</li>
+      <li><code>--eui-avatar-group-layout-overlap-tight</code> (16px tight subgroup)</li>
+      <li><code>--eui-avatar-group-layout-hover-spread</code> (12px neighbor spread)</li>
+      <li><code>--eui-avatar-group-layout-hover-scale</code> (1.1 scale factor)</li>
+    </ul>
+  </div>
+
+  <script>
+    // Theme toggle for demonstration
+    const toggleTheme = () => {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-eui-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-eui-theme', newTheme);
+    };
+
+    // Add theme toggle button
+    const themeButton = document.createElement('button');
+    themeButton.className = 'eui-button';
+    themeButton.setAttribute('data-eui-intent', 'secondary');
+    themeButton.setAttribute('data-eui-size', 'sm');
+    themeButton.textContent = 'Toggle Theme';
+    themeButton.style.position = 'fixed';
+    themeButton.style.top = '1rem';
+    themeButton.style.right = '1rem';
+    themeButton.addEventListener('click', toggleTheme);
+    document.body.appendChild(themeButton);
+  </script>
+</body>
+</html>

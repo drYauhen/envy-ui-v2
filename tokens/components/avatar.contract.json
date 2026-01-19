@@ -1,0 +1,62 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "avatar",
+  "version": "v1-canonical",
+  "status": "active",
+  "source": {
+    "legacyTokens": "tokens/legacy/architecture-v1/components/avatar/",
+    "legacyCss": "src/ui/avatar.css",
+    "note": "Canonical avatar component following badge/button architecture pattern"
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-avatar",
+    "slots": {
+      "image": "img",
+      "initials": ".eui-avatar-initials"
+    }
+  },
+
+  "axes": {
+    "size": {
+      "type": "enum",
+      "default": "md",
+      "values": ["sm", "md", "lg"],
+      "attribute": "data-eui-size",
+      "notes": "Size controls avatar diameter and initials font size"
+    },
+    "role": {
+      "type": "enum",
+      "default": null,
+      "values": ["lead"],
+      "attribute": "data-eui-role",
+      "notes": "Role defines special avatar types (lead uses accent border)"
+    }
+  },
+
+  "componentVars": {
+    "size": {
+      "--eui-avatar-size-diameter": { "type": "dimension" },
+      "--eui-avatar-size-fontSize": { "type": "fontSize" }
+    },
+    "shape": {
+      "--eui-avatar-shape-radius": { "type": "dimension" }
+    },
+    "colors": {
+      "--eui-avatar-colors-background-fallback": { "type": "color" },
+      "--eui-avatar-colors-text-fallback": { "type": "color" }
+    },
+    "border": {
+      "--eui-avatar-border-width": { "type": "dimension" },
+      "--eui-avatar-border-style": { "type": "string" },
+      "--eui-avatar-border-color": { "type": "color" }
+    },
+    "typography": {
+      "--eui-avatar-typography-fontFamily": { "type": "fontFamily" },
+      "--eui-avatar-typography-fontWeight": { "type": "fontWeight" },
+      "--eui-avatar-typography-lineHeight": { "type": "lineHeight" },
+      "--eui-avatar-typography-textTransform": { "type": "string" }
+    }
+  }
+}

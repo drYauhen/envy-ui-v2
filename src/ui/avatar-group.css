@@ -1,6 +1,12 @@
-/* AvatarGroup Component Styles */
+/**
+ * Avatar Group Component
+ *
+ * Generated from: tokens/components/avatar-group.contract.json
+ * Token variables: generated/css/components/avatar-group.tokens.css
+ */
 
-[data-eui-context] .eui-avatar-group {
+@layer eui-components {
+  [data-eui-context] .eui-avatar-group {
   display: inline-flex;
   align-items: center;
   gap: 0;
@@ -54,7 +60,7 @@
 
 /* Counter in AvatarGroup - text variant only, positioned after the group (no overlap) */
 [data-eui-context] .eui-avatar-group .eui-counter[data-eui-variant="text"] {
-  margin-left: 0.5rem; /* Small gap after the avatar group, no overlap */
+  margin-left: var(--eui-avatar-group-counter-gap);
   position: relative;
   z-index: 1; /* Same as avatars, no need for higher z-index since no overlap */
   transition: color var(--eui-avatar-group-layout-hover-duration) var(--eui-avatar-group-layout-hover-easing);
@@ -104,4 +110,4 @@
   transform: none;
   z-index: 1;
 }
-
+}

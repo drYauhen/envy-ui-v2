@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "avatar-group",
+  "version": "v1-canonical",
+  "status": "active",
+  "source": {
+    "legacyTokens": "tokens/legacy/architecture-v1/components/avatar-group/",
+    "legacyCss": "src/ui/avatar-group.css",
+    "note": "Canonical avatar-group component for displaying overlapping avatars"
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-avatar-group",
+    "children": {
+      "avatar": ".eui-avatar",
+      "counter": ".eui-counter"
+    }
+  },
+
+  "axes": {
+    "note": "Avatar group has no axes itself; behavior determined by child avatar axes and layout tokens"
+  },
+
+  "componentVars": {
+    "layout": {
+      "--eui-avatar-group-layout-overlap": { "type": "dimension" },
+      "--eui-avatar-group-layout-overlap-lead": { "type": "dimension" },
+      "--eui-avatar-group-layout-overlap-tight": { "type": "dimension" },
+      "--eui-avatar-group-layout-hover-spread": { "type": "dimension" },
+      "--eui-avatar-group-layout-hover-scale": { "type": "number" },
+      "--eui-avatar-group-layout-hover-duration": { "type": "duration" },
+      "--eui-avatar-group-layout-hover-easing": { "type": "string" }
+    },
+    "counter": {
+      "--eui-avatar-group-counter-gap": { "type": "dimension" }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "avatar": {
+      "size": {
+        "sm": {
+          "diameter": {
+            "$value": "28px",
+            "$type": "dimension",
+            "$description": "Small avatar diameter for compact lists and secondary contexts"
+          },
+          "fontSize": {
+            "$value": "0.6875rem",
+            "$type": "dimension",
+            "$description": "Font size for initials in small avatar (11px)"
+          }
+        },
+        "md": {
+          "diameter": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$description": "Medium avatar diameter (default) for standard use cases"
+          },
+          "fontSize": {
+            "$value": "0.75rem",
+            "$type": "dimension",
+            "$description": "Font size for initials in medium avatar (12px)"
+          }
+        },
+        "lg": {
+          "diameter": {
+            "$value": "40px",
+            "$type": "dimension",
+            "$description": "Large avatar diameter for prominent display and featured contexts"
+          },
+          "fontSize": {
+            "$value": "0.875rem",
+            "$type": "dimension",
+            "$description": "Font size for initials in large avatar (14px)"
+          }
+        }
+      },
+      "shape": {
+        "circle": {
+          "radius": {
+            "$value": "50%",
+            "$type": "dimension",
+            "$description": "Circular avatar shape (standard for most design systems)"
+          }
+        }
+      },
+      "colors": {
+        "background": {
+          "fallback": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Background color when no image is provided (initials fallback)"
+          }
+        },
+        "text": {
+          "fallback": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color",
+            "$description": "Text color for avatar initials (subtle appearance on light background)"
+          }
+        }
+      },
+      "border": {
+        "width": {
+          "$value": "2px",
+          "$type": "dimension",
+          "$description": "Border width providing clear visual separation when avatars overlap"
+        },
+        "style": {
+          "$value": "solid",
+          "$type": "string",
+          "$description": "Border style"
+        },
+        "color": {
+          "default": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Default border color (typically white) for visual separation"
+          },
+          "lead": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color",
+            "$description": "Border color for lead avatar to emphasize role"
+          }
+        }
+      },
+      "typography": {
+        "fontFamily": {
+          "$value": "inherit",
+          "$type": "string",
+          "$description": "Font family for initials (inherits from parent for consistency)"
+        },
+        "fontWeight": {
+          "$value": "600",
+          "$type": "string",
+          "$description": "Font weight for initials (semi-bold for better visibility)"
+        },
+        "lineHeight": {
+          "$value": "1",
+          "$type": "string",
+          "$description": "Line height for initials (tight for centered single-line text)"
+        },
+        "textTransform": {
+          "$value": "{eui.typography.textTransform.uppercase}",
+          "$type": "string",
+          "$description": "Text transform for initials (uppercase for visual consistency)"
+        }
+      }
+    }
+  }
+}

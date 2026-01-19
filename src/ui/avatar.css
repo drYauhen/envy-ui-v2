@@ -1,95 +1,76 @@
-/* Avatar Component Styles */
+/**
+ * Avatar Component
+ *
+ * Generated from: tokens/components/avatar.contract.json
+ * Token variables: generated/css/components/avatar.tokens.css
+ */
 
-[data-eui-context] .eui-avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-shrink: 0;
-  
-  /* Size - default to md */
-  width: var(--eui-avatar-size-md-diameter);
-  height: var(--eui-avatar-size-md-diameter);
-  
-  /* Shape */
-  border-radius: var(--eui-avatar-shape-circle-radius);
-  
-  /* Border */
-  border: var(--eui-avatar-border-width) var(--eui-avatar-border-style) var(--eui-avatar-border-color);
-  
-  /* Image styling */
-  overflow: hidden;
-  background-color: var(--eui-avatar-background-fallback);
+@layer eui-components {
+  [data-eui-context] .eui-avatar {
+    --eui-avatar-diameter: var(--eui-avatar-size-md-diameter);
+    --eui-avatar-fontSize: var(--eui-avatar-size-md-fontSize);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    width: var(--eui-avatar-diameter);
+    height: var(--eui-avatar-diameter);
+    border-radius: var(--eui-avatar-shape-circle-radius);
+    border-width: var(--eui-avatar-border-width);
+    border-style: var(--eui-avatar-border-style);
+    border-color: var(--eui-avatar-border-color);
+    overflow: hidden;
+    background-color: var(--eui-avatar-background-fallback);
+  }
+
+  /* Avatar image */
+  [data-eui-context] .eui-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Avatar initials (fallback when no image) */
+  [data-eui-context] .eui-avatar .eui-avatar-initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--eui-avatar-text-fallback);
+    font-family: var(--eui-avatar-typography-fontFamily);
+    font-weight: var(--eui-avatar-typography-fontWeight);
+    font-size: var(--eui-avatar-fontSize);
+    line-height: var(--eui-avatar-typography-lineHeight);
+    text-transform: var(--eui-avatar-typography-textTransform);
+    user-select: none;
+  }
+
+  /* Sizes */
+  [data-eui-context] .eui-avatar[data-eui-size='sm'] {
+    --eui-avatar-diameter: var(--eui-avatar-size-sm-diameter);
+    --eui-avatar-fontSize: var(--eui-avatar-size-sm-fontSize);
+  }
+
+  [data-eui-context] .eui-avatar[data-eui-size='md'] {
+    --eui-avatar-diameter: var(--eui-avatar-size-md-diameter);
+    --eui-avatar-fontSize: var(--eui-avatar-size-md-fontSize);
+  }
+
+  [data-eui-context] .eui-avatar[data-eui-size='lg'] {
+    --eui-avatar-diameter: var(--eui-avatar-size-lg-diameter);
+    --eui-avatar-fontSize: var(--eui-avatar-size-lg-fontSize);
+  }
+
+  /* Report context - print styles */
+  [data-eui-context='report'] .eui-avatar {
+    border-color: var(--eui-color-border-default);
+  }
+
+  [data-eui-context='report'] .eui-avatar .eui-avatar-initials {
+    color: var(--eui-color-text-primary);
+  }
 }
-
-/* Avatar image */
-[data-eui-context] .eui-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Avatar initials (fallback when no image) */
-[data-eui-context] .eui-avatar .eui-avatar-initials {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: var(--eui-avatar-text-fallback);
-  font-family: var(--eui-avatar-typography-font-family, inherit);
-  font-weight: var(--eui-avatar-typography-font-weight);
-  font-size: var(--eui-avatar-typography-font-size-md);
-  line-height: var(--eui-avatar-typography-line-height);
-  text-transform: var(--eui-avatar-typography-text-transform);
-  user-select: none;
-}
-
-/* Sizes */
-[data-eui-context] .eui-avatar[data-eui-size="sm"] {
-  width: var(--eui-avatar-size-sm-diameter);
-  height: var(--eui-avatar-size-sm-diameter);
-}
-
-[data-eui-context] .eui-avatar[data-eui-size="sm"] .eui-avatar-initials {
-  font-size: var(--eui-avatar-typography-font-size-sm);
-}
-
-[data-eui-context] .eui-avatar[data-eui-size="md"] {
-  width: var(--eui-avatar-size-md-diameter);
-  height: var(--eui-avatar-size-md-diameter);
-}
-
-[data-eui-context] .eui-avatar[data-eui-size="md"] .eui-avatar-initials {
-  font-size: var(--eui-avatar-typography-font-size-md);
-}
-
-[data-eui-context] .eui-avatar[data-eui-size="lg"] {
-  width: var(--eui-avatar-size-lg-diameter);
-  height: var(--eui-avatar-size-lg-diameter);
-}
-
-[data-eui-context] .eui-avatar[data-eui-size="lg"] .eui-avatar-initials {
-  font-size: var(--eui-avatar-typography-font-size-lg);
-}
-
-
-/* Lead avatar - accent border to emphasize role */
-[data-eui-context] .eui-avatar[data-eui-role="lead"] {
-  border-color: var(--eui-avatar-border-color-lead);
-}
-
-/* Report context - print styles */
-[data-eui-context="report"] .eui-avatar {
-  border-color: var(--eui-color-border-default);
-}
-
-[data-eui-context="report"] .eui-avatar img {
-  /* Images may not print well, but keep for digital reports */
-}
-
-[data-eui-context="report"] .eui-avatar .eui-avatar-initials {
-  color: var(--eui-color-text-primary);
-}
-

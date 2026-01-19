@@ -24,6 +24,41 @@ The button component follows the canonical architecture pattern established by t
 - **Focus ring** with configurable color, width, and offset
 - **Layout tokens** for flex behavior and white-space
 
+### Avatar & Avatar Group Components
+
+**File:** [avatar.html](./avatar.html)
+
+Avatar and avatar-group components following the canonical architecture pattern, featuring:
+
+#### Avatar Component
+
+- **Token-driven styling** via CSS custom properties
+- **Data attribute-based API** for declarative configuration
+- **Two axes of variation:**
+  - `data-eui-size`: sm (28px), md (32px), lg (40px)
+  - `data-eui-role`: lead (optional, accent border)
+- **Two content modes:**
+  - Image slot: `<img>` for profile photos
+  - Initials slot: `.eui-avatar-initials` for text fallback
+- **Automatic sizing:** diameter, border, and font-size scale together
+- **Theme-aware colors** for fallback background and text
+
+#### Avatar Group Component
+
+- **Overlapping layout** with configurable overlap amounts
+- **Lead avatar support** with visual separation
+- **Hover animations** (app/website contexts):
+  - Hovered avatar scales up (1.1x)
+  - Neighbors spread out (12px) for visibility
+  - Smooth transitions (200ms ease-out)
+- **Context-aware behavior:**
+  - Interactive animations in app/website contexts
+  - Static display in report context (print-friendly)
+- **Smart overlap logic:**
+  - Standard overlap: 12px (37.5% of 32px diameter)
+  - Lead separation: 6px (18.75% after lead avatar)
+  - Tight subgroup: 16px (50% for post-lead avatars)
+
 ## Architecture
 
 Each component follows this structure:
@@ -86,3 +121,5 @@ Follow the button and badge patterns for consistency.
 - [WORKFLOW-005: Tokens Workflow](../../docs/workflows/WORKFLOW-005-tokens-workflow.md)
 - [Badge Component Tokens](../../tokens/components/badge.tokens.json)
 - [Button Component Tokens](../../tokens/components/button.tokens.json)
+- [Avatar Component Tokens](../../tokens/components/avatar.tokens.json)
+- [Avatar Group Component Tokens](../../tokens/components/avatar-group.tokens.json)

@@ -1,0 +1,58 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "avatarGroup": {
+      "layout": {
+        "overlap": {
+          "$value": "12px",
+          "$type": "dimension",
+          "$description": "Overlap between avatars (37.5% of 32px diameter) for tight, cohesive grouping"
+        },
+        "overlapLead": {
+          "$value": "6px",
+          "$type": "dimension",
+          "$description": "Overlap after lead avatar (18.75% of 32px) for visual separation from lead"
+        },
+        "overlapTight": {
+          "$value": "16px",
+          "$type": "dimension",
+          "$description": "Tighter overlap after lead (50% of 32px) creates cohesive subgroup"
+        },
+        "maxVisible": {
+          "$value": "4",
+          "$type": "string",
+          "$description": "Maximum avatars before showing count indicator (component logic reference)"
+        },
+        "hover": {
+          "spread": {
+            "$value": "12px",
+            "$type": "dimension",
+            "$description": "Spacing when hovering (neighbors spread out for visibility)"
+          },
+          "scale": {
+            "$value": "1.1",
+            "$type": "string",
+            "$description": "Scale factor for hovered avatar (slight enlargement for emphasis)"
+          },
+          "duration": {
+            "$value": "200ms",
+            "$type": "string",
+            "$description": "Animation duration for hover spread effect"
+          },
+          "easing": {
+            "$value": "ease-out",
+            "$type": "string",
+            "$description": "Animation easing function for hover spread effect"
+          }
+        }
+      },
+      "counter": {
+        "gap": {
+          "$value": "0.5rem",
+          "$type": "dimension",
+          "$description": "Gap between avatar group and counter (no overlap)"
+        }
+      }
+    }
+  }
+}
