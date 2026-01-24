@@ -6,10 +6,10 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0008](./ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
-- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0008](ADR-0008-tsx-layer-react-aria-and-storybook-layering.md) — TSX Layer (React Aria) and Storybook Layering
+- [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0012](ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 
 ---
 
@@ -98,7 +98,7 @@ A global `storybook.manifest.json` defines:
 **Component Usage:**
 - Use only Envy UI components from helpers
 - If helper component doesn't exist: **ASK USER** (never create inline styles as workaround)
-- **Exception:** Third-party libraries may be used with explicit approval and proper integration (see [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md))
+- **Exception:** Third-party libraries may be used with explicit approval and proper integration (see [ADR-0030](ADR-0030-third-party-library-integration-strategy.md))
 - Follow component-model for component structure, storybook-model for demonstration structure
 
 ---
@@ -147,8 +147,8 @@ A global `storybook.manifest.json` defines:
 **1. Maintains System Integrity**
 - System should use only Envy UI components — no exceptions
 - Missing components indicate gap in system that should be addressed
-- **Exception:** Third-party libraries may be used with explicit approval (see [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md))
-- **Exception:** Third-party libraries may be used with explicit approval (see [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md))
+- **Exception:** Third-party libraries may be used with explicit approval (see [ADR-0030](ADR-0030-third-party-library-integration-strategy.md))
+- **Exception:** Third-party libraries may be used with explicit approval (see [ADR-0030](ADR-0030-third-party-library-integration-strategy.md))
 
 **2. AI Agent Clarity**
 - Unambiguous error handling prevents agents from making architectural decisions

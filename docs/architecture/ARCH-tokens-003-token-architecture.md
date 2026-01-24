@@ -21,11 +21,12 @@ The Envy UI token system is a comprehensive design token architecture that suppo
 - **Composition-Based Themes** - Holistic theme approach for better maintainability
 - **Multi-Context Support** - Independent token structures for app/website/report contexts
 - **Website Context** - Canonical context; may temporarily inherit `app` values until specialized tokens are added
+- **Density Axis (Optional)** - Ergonomic scale controlled by `data-eui-density` (defaulted when absent)
 
 ## Core Principles
 
 1. **Canonical Resolution Chain** - Primitives → Raw → Semantics → Themes → Components
-2. **DTCG Compliance** - Follows Design Tokens Community Group 2025.10 specification
+2. **DTCG Compliance** - Follows Design Tokens Community Group [2025](../steps/2025-12-20-step.md).10 specification
 3. **Multi-Context Support** - Independent token structures for different use cases
 4. **Zero Literal Leaks** - All literal values live only in primitives
 5. **Zero Self-Aliases** - No `x -> {x}` references anywhere in canon
@@ -188,6 +189,24 @@ tokens/contexts/website/
 
 Themes provide visual variations within a context using a **composition-based approach** where all theme overrides are contained in single comprehensive files.
 
+## Density Axis (Optional)
+
+Density is a first-class axis alongside context and theme. It is **optional to declare**, but **always resolved** to a default density (see [ADR-0042](../adr/ADR-0042-density-axis-defaulting-and-inheritance.md)).
+
+**Responsibilities:**
+- Controls ergonomic scale (sizes, spacing, rhythm)
+- Does not change color identity or semantic meaning
+
+**Usage (example):**
+```html
+<div data-eui-context="app" data-eui-theme="default">
+  <!-- default density applied -->
+  <div data-eui-density="compact">
+    <!-- compact density for this subtree -->
+  </div>
+</div>
+```
+
 ### Theme Resolution Order
 1. **Foundation** - Base values (OKLCH colors, spacing)
 2. **Semantic** - Context-specific defaults
@@ -237,7 +256,7 @@ The accessibility theme provides WCAG 2.2 AA compliance with:
 
 ### Local Schema Implementation
 
-All token files reference a local DTCG 2025.10 compliant schema:
+All token files reference a local DTCG [2025](../steps/2025-12-20-step.md).10 compliant schema:
 
 ```json
 {
@@ -249,7 +268,7 @@ All token files reference a local DTCG 2025.10 compliant schema:
 ```
 
 ### Schema Features
-- ✅ **DTCG 2025.10 Compliant** - Based on official specification
+- ✅ **DTCG [2025](../steps/2025-12-20-step.md).10 Compliant** - Based on official specification
 - ✅ **Local Validation** - No external dependencies
 - ✅ **IDE Support** - JSON schema validation in editors
 - ✅ **Future-Proof** - Can be updated when official schema is published
@@ -334,13 +353,19 @@ npm run tokens:full      # Complete token generation pipeline
 [data-eui-context="app"][data-eui-theme="accessibility"] {
   --eui-color-background-surface: oklch(100% 0 0);
 }
+
+/* Density overrides (generated output or utilities; optional) */
+[data-eui-context][data-eui-density="compact"] {
+  --eui-control-height-md: var(--eui-control-density-compact-height-md);
+}
 ```
 
 ### Runtime Switching
 ```typescript
-// Change context/theme at runtime
+// Change context/theme/density at runtime
 document.documentElement.setAttribute('data-eui-context', 'app'); // app | website | report
 document.documentElement.setAttribute('data-eui-theme', 'default');
+document.documentElement.setAttribute('data-eui-density', 'compact'); // default | compact | relaxed
 ```
 
 ## Multi-Platform Export
@@ -357,6 +382,8 @@ Each active context exports as separate Figma files:
 - `generated/figma/website/variables.tokens.scoped.json`
 - `generated/figma/report/variables.tokens.scoped.json`
 Website exports are canonical; the old `web` name is legacy-only.
+
+**Density note:** Density is orthogonal to theme. If density variants are exported to Figma, they must be modeled explicitly (not folded into theme modes).
 
 ## CSS Token Output
 
@@ -384,7 +411,10 @@ The token system generates canonical CSS that reflects the layered architecture 
 ```css
 /* Each file wraps rules in its layer block */
 @layer eui-primitives { :root { /* literals */ } }
-@layer eui-contexts { [data-eui-context] { /* semantics */ } }
+@layer eui-contexts {
+  [data-eui-context] { /* semantics */ }
+  [data-eui-context][data-eui-density] { /* density overrides */ }
+}
 @layer eui-themes { [data-eui-context][data-eui-theme] { /* overrides */ } }
 @layer eui-components { [data-eui-context] .eui-component { /* component tokens */ } }
 ```
@@ -409,7 +439,7 @@ The token system generates canonical CSS that reflects the layered architecture 
 :root { /* rules */ }
 ```
 
-See **[CSS Token Output Rules](./ARCH-tokens-002-css-token-output-rules.md)** for complete normative rules and **[ADR-0038](../adr/ADR-0038-canonical-token-css-output-contract.md)** for the authoritative contract.
+See **[CSS Token Output Rules](ARCH-tokens-002-css-token-output-rules.md)** for complete normative rules and **[ADR-0038](../adr/ADR-0038-canonical-token-css-output-contract.md)** for the authoritative contract.
 
 ## Token Usage Rules
 
@@ -469,16 +499,16 @@ See **[CSS Token Output Rules](./ARCH-tokens-002-css-token-output-rules.md)** fo
 
 ## Related Documentation
 
-- **[Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md)** - Enforceable rules for token usage
-- **[Token System Tooling](./../tokens/TOKENS-001-token-system-tooling.md)** - Developer tools and workflows
+- **[Token Usage Rules](ARCH-tokens-004-token-usage-rules.md)** - Enforceable rules for token usage
+- **[Token System Tooling](../tokens/TOKENS-001-token-system-tooling.md)** - Developer tools and workflows
 
 ## Architectural Decision Records
 
 ### Current Canonical Architecture
-- **[ADR-0037](./../adr/ADR-0037-canonical-token-architecture-locked.md)** - Locked canonical token architecture (current implementation)
+- **[ADR-0037](../adr/ADR-0037-canonical-token-architecture-locked.md)** - Locked canonical token architecture (current implementation)
 
 ### Historical Context & Evolution
-- **[ADR-0017](./../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)** - Initial layered architecture concept (superseded)
-- **[ADR-0023](./../adr/ADR-0023-token-organization-context-and-theme-separation.md)** - Context/theme separation (superseded)
-- **[ADR-0026](./../adr/ADR-0026-app-default-color-positioning.md)** - App-default positioning (superseded)
-- **[ADR-0041](./../adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md)** - DTCG schema validation implementation
+- **[ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)** - Initial layered architecture concept (superseded)
+- **[ADR-0023](../adr/ADR-0023-token-organization-context-and-theme-separation.md)** - Context/theme separation (superseded)
+- **[ADR-0026](../adr/ADR-0026-app-default-color-positioning.md)** - App-default positioning (superseded)
+- **[ADR-0041](../adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md)** - DTCG schema validation implementation

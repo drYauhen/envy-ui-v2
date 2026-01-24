@@ -155,7 +155,7 @@ Extract a pattern into an architectural rule document when:
 
 ### Example: Component CSS Architecture
 
-Created from badge refactor patterns: [Component CSS Architecture](./ARCH-components-001-component-css-architecture.md)
+Created from badge refactor patterns: [Component CSS Architecture](ARCH-components-001-component-css-architecture.md)
 
 ---
 
@@ -221,7 +221,7 @@ Badge refactor (2026-01-09) required coordinated updates to:
 
 All four ADRs received:
 - Implementation Validation sections with badge refactor findings
-- Cross-references to new [Component CSS Architecture](./ARCH-components-001-component-css-architecture.md) document
+- Cross-references to new [Component CSS Architecture](ARCH-components-001-component-css-architecture.md) document
 - Updated explicit rules based on implementation learnings
 - Status updates reflecting partial/full implementation
 
@@ -235,7 +235,7 @@ Documentation updates that reflect on implementation work **should be committed 
 
 ### Rationale
 
-- **Clear History**: Separates "what we built" from "what we learned"
+- **Clear History**: Separates "what was built" from "what was learned"
 - **Review Focus**: Allows architectural review separate from code review
 - **Rollback Safety**: Can revert documentation updates without reverting implementation
 - **Context Preservation**: Commit message can focus entirely on architectural insights
@@ -358,10 +358,10 @@ Include in PR description:
 ### Architectural Validation
 
 **What Was Validated**:
-1. **Single Source of Truth** (ADR-0017) - Proved that token files can be authoritative source
-2. **OKLCH Color Space** (ADR-0014) - Confirmed OKLCH throughout system works correctly
-3. **Theme Override Pattern** (ADR-0024) - Validated compound selector approach
-4. **Focus Architecture** (ADR-0006) - Proved two-layer focus system is implementable
+1. **Single Source of Truth** ([ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)) - Proved that token files can be authoritative source
+2. **OKLCH Color Space** ([ADR-0014](../adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md)) - Confirmed OKLCH throughout system works correctly
+3. **Theme Override Pattern** ([ADR-0024](../adr/ADR-0024-css-layer-strategy-context-priority.md)) - Validated compound selector approach
+4. **Focus Architecture** ([ADR-0006](../adr/ADR-0006-focus-policy-architecture.md)) - Proved two-layer focus system is implementable
 
 **What Was Learned**:
 1. **Component CSS must never contain hardcoded values** - Extracted to architectural rule
@@ -372,13 +372,13 @@ Include in PR description:
 ### Documentation Updates
 
 **Created**:
-- [Component CSS Architecture](./ARCH-components-001-component-css-architecture.md) - 526 lines, 6 mandatory rules
+- [Component CSS Architecture](ARCH-components-001-component-css-architecture.md) - 526 lines, 6 mandatory rules
 
 **Updated**:
-- ADR-0017 - Added Implementation Validation section, 5 key architectural rules
-- ADR-0023 - Added Implementation Validation, 3 new explicit rules
-- ADR-0024 - Added Implementation Validation, before/after examples, 2 new explicit rules
-- ADR-0006 - Added Two-Layer Focus System validation, detailed implementation examples
+- [ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Added Implementation Validation section, 5 key architectural rules
+- [ADR-0023](../adr/ADR-0023-token-organization-context-and-theme-separation.md) - Added Implementation Validation, 3 new explicit rules
+- [ADR-0024](../adr/ADR-0024-css-layer-strategy-context-priority.md) - Added Implementation Validation, before/after examples, 2 new explicit rules
+- [ADR-0006](../adr/ADR-0006-focus-policy-architecture.md) - Added Two-Layer Focus System validation, detailed implementation examples
 
 **Commits**:
 1. Implementation work: `1b736da` - refactor: eliminate hardcoded CSS from badge component
@@ -437,7 +437,7 @@ Include in PR description:
 
 ## Related Documentation
 
-- [Component CSS Architecture](./ARCH-components-001-component-css-architecture.md) - Example of architectural rule extracted from implementation
+- [Component CSS Architecture](ARCH-components-001-component-css-architecture.md) - Example of architectural rule extracted from implementation
 - [ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Example of ADR with Implementation Validation section
 - [ADR Template](../adr/ADR-TEMPLATE.md) - Standard ADR format
 

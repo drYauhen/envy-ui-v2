@@ -116,6 +116,11 @@ Token CSS is generated as 4 files in `generated/css/`, plus component token CSS 
   [data-eui-context="app"] {
     --eui-color-text-primary: var(--eui-color-neutral-900);
   }
+
+  /* Optional density overrides (same layer) */
+  [data-eui-context][data-eui-density="compact"] {
+    --eui-control-height-md: var(--eui-control-density-compact-height-md);
+  }
 }
 
 /* tokens.themes.css - MUST */
@@ -126,7 +131,7 @@ Token CSS is generated as 4 files in `generated/css/`, plus component token CSS 
 }
 ```
 
-**Rationale:** CSS `@layer` requires rules to be inside layer blocks for proper cascade control.
+**Rationale:** CSS `@layer` requires rules to be inside layer blocks for proper cascade control. Density selectors remain in the contexts layer and are resolved independently of theme (see [ADR-0042](../adr/ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 ## Content Filtering Rules
 
@@ -361,15 +366,15 @@ const semanticTokens = tokens.filter(({ name }) => {
 
 **Migration Complete:**
 - ✅ All CSS generation updated to follow new contract
-- ✅ ADR-0024 marked as superseded
+- ✅ [ADR-0024](../adr/ADR-0024-css-layer-strategy-context-priority.md) marked as superseded
 - ✅ Documentation aligned with implementation
 - ✅ Validation rules implemented
 
 ## Related Documentation
 
 - **[ADR-0038](../adr/ADR-0038-canonical-token-css-output-contract.md)** - Authoritative contract definition
-- **[Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md)** - Runtime usage patterns
-- **[Component CSS Architecture](./ARCH-components-001-component-css-architecture.md)** - Component implementation rules
+- **[Token Usage Rules](ARCH-tokens-004-token-usage-rules.md)** - Runtime usage patterns
+- **[Component CSS Architecture](ARCH-components-001-component-css-architecture.md)** - Component implementation rules
 
 ---
 

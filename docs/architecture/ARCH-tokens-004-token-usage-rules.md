@@ -27,6 +27,8 @@ Design tokens are the single source of truth for UI semantics:
 
 Component CSS and contracts must consume tokens; they must not redefine values.
 
+**Density rule:** Ergonomic scale changes must be handled through density-aware tokens and `data-eui-density` selectors, not by theme overrides or component-specific hacks (see [ADR-0042](../adr/ADR-0042-density-axis-defaulting-and-inheritance.md)).
+
 ## Allowed Pattern
 
 Use token variables directly in component selectors and contract examples:
@@ -82,13 +84,13 @@ Silent literals outside this list are not allowed.
 
 ## Third-Party Library Integration
 
-**Context:** Third-party libraries (e.g., React Grid Layout, drag-and-drop libraries) come with their own CSS containing fixed values. These libraries cannot be modified to use our token system directly.
+**Context:** Third-party libraries (e.g., React Grid Layout, drag-and-drop libraries) come with their own CSS containing fixed values. These libraries cannot be modified to use the token system directly.
 
 **Allowed Patterns for Third-Party Integration:**
 
 1. **CSS Variable Mapping:**
    ```css
-   /* Map third-party CSS variables to our tokens */
+   /* Map third-party CSS variables to system tokens */
    [data-eui-context] .third-party-component {
      --third-party-color: var(--eui-color-background-base);
      --third-party-spacing: var(--eui-spacing-md);
@@ -112,8 +114,8 @@ Silent literals outside this list are not allowed.
 
 **Rules:**
 - Third-party CSS must be placed in `@layer third-party` (lowest priority)
-- Our overrides must be in `@layer components` using tokens exclusively
-- No literal values in our override code (only third-party CSS can contain literals)
+- Component overrides must be in `@layer components` using tokens exclusively
+- No literal values in component override code (only third-party CSS can contain literals)
 - All overrides must use `[data-eui-context]` selectors for scoping
 - Each third-party integration must be documented with:
   - Which library is used

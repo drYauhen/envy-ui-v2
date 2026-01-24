@@ -6,8 +6,8 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
-- [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
+- [ADR-0003](ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
+- [ADR-0004](ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
 
 ---

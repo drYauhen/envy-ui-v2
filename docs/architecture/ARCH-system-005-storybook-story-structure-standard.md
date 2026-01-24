@@ -17,6 +17,7 @@ This guide defines the canonical, repeatable story structure for all components 
 ## Fixed Storybook Wrapper Model
 
 - The general wrapper is always Envy UI with `context="app"` and `theme="default"`.
+- Density is implicit by default; only set `data-eui-density` when explicitly demonstrating density variants.
 - Component previews must use `MultiContextViewer` as the only renderer.
 - Themes are controlled only by the global toolbar switcher.
 - Stories must not apply their own context/theme wrappers or overrides.

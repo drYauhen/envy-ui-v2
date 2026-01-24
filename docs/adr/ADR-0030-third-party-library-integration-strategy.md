@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
-- [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model AI Agent-Oriented Architecture
+- [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model AI Agent-Oriented Architecture
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Token Usage Rules
 
 ---
@@ -17,7 +17,7 @@
 
 The design system follows a **token-first architecture** where design tokens are the single source of truth for all UI semantics. All component CSS must consume tokens and cannot redefine values.
 
-However, the system needs to integrate **third-party libraries** (e.g., React Grid Layout for dashboard builders, drag-and-drop libraries, charting libraries) that come with their own CSS containing fixed values. These libraries cannot be modified to use our token system directly.
+However, the system needs to integrate **third-party libraries** (e.g., React Grid Layout for dashboard builders, drag-and-drop libraries, charting libraries) that come with their own CSS containing fixed values. These libraries cannot be modified to use the token system directly.
 
 **Requirements:**
 1. Integrate third-party libraries without breaking token-first principles
@@ -54,7 +54,7 @@ The CSS layer order is extended to include third-party libraries:
 3. `@layer context-app` - Application context styles
 4. `@layer context-website` - Website/CMS context styles
 5. `@layer context-report` - Report context styles
-6. `@layer components` - **Our component overrides** (including third-party customization)
+6. `@layer components` - **Component overrides** (including third-party customization)
 7. `@layer theme` - Theme overrides (highest priority)
 
 ### Integration Patterns
@@ -69,10 +69,10 @@ Map third-party CSS variables to design tokens:
   --third-party-color: #000000; /* Fixed value from library */
 }
 
-/* Our override (in @layer components) */
+/* Component override (in @layer components) */
 [data-eui-context] .third-party-component {
   --third-party-color: var(--eui-color-background-base);
-  /* Map library's CSS variable to our token */
+  /* Map library's CSS variable to a system token */
 }
 ```
 
@@ -103,7 +103,7 @@ import GridLayout from 'react-grid-layout';
 
 function ThemedGridLayout(props) {
   return (
-    <div data-eui-context="app" data-eui-theme="default">
+    <div data-eui-context="app" data-eui-theme="default" data-eui-density="default">
       <GridLayout className="eui-grid-layout" {...props} />
     </div>
   );
@@ -141,12 +141,12 @@ Create design tokens specifically for third-party component values:
 
 **1. Maintains Token-First Principle**
 - Third-party CSS is isolated in its own layer
-- Our overrides use tokens exclusively
-- No literal values in our code (only in third-party CSS, which we don't control)
+- Component overrides use tokens exclusively
+- No literal values in component override code (only in third-party CSS, which is outside system control)
 
 **2. Predictable Cascade**
-- CSS `@layer` ensures our overrides always win
-- Third-party CSS cannot accidentally override our tokens
+- CSS `@layer` ensures component overrides always win
+- Third-party CSS cannot accidentally override system tokens
 - Clear separation of concerns
 
 **3. Context/Theme Compatibility**
@@ -162,7 +162,7 @@ Create design tokens specifically for third-party component values:
 **5. Flexibility**
 - Can customize third-party components without modifying their source
 - Can create tokens for third-party-specific values
-- Can adapt third-party components to our design system
+- Can adapt third-party components to the design system
 
 ### Why Not Modify Third-Party Libraries?
 
@@ -173,8 +173,8 @@ Create design tokens specifically for third-party component values:
 
 **2. Separation of Concerns**
 - Third-party libraries should remain independent
-- Our design system should adapt to libraries, not vice versa
-- Clear boundaries between our code and external dependencies
+- The design system should adapt to libraries, not vice versa
+- Clear boundaries between system code and external dependencies
 
 **3. Upgrade Path**
 - Unmodified libraries can be upgraded easily
@@ -188,7 +188,7 @@ Create design tokens specifically for third-party component values:
 ### Positive
 
 - **Token-First Maintained**: Third-party integration doesn't break token-first principles
-- **Predictable**: CSS layers ensure our overrides always win
+- **Predictable**: CSS layers ensure component overrides always win
 - **Scalable**: Pattern works for any third-party library
 - **Maintainable**: Clear separation and documentation
 - **Flexible**: Can customize third-party components using tokens
@@ -213,8 +213,8 @@ Create design tokens specifically for third-party component values:
 ## Explicit Rules
 
 1. **Third-Party CSS Placement**: All third-party CSS must be in `@layer third-party`
-2. **Our Overrides**: All our overrides must be in `@layer components` using tokens
-3. **No Literal Values**: Our code cannot contain literal values (only third-party CSS can)
+2. **Component Overrides**: All component overrides must be in `@layer components` using tokens
+3. **No Literal Values**: Component override code cannot contain literal values (only third-party CSS can)
 4. **Token Mapping**: Map third-party CSS variables to design tokens where possible
 5. **Explicit Approval**: Third-party libraries require explicit approval before integration
 6. **Documentation**: Each third-party integration must be documented with:
@@ -278,7 +278,7 @@ export function ThemedGridLayout({
   ...props
 }: ThemedGridLayoutProps) {
   return (
-    <div data-eui-context="app" data-eui-theme="default">
+    <div data-eui-context="app" data-eui-theme="default" data-eui-density="default">
       <GridLayout
         className="eui-grid-layout"
         layout={layout}
@@ -297,5 +297,5 @@ export function ThemedGridLayout({
 ## Related Documentation
 
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) - Updated with third-party exceptions
-- [CSS Layer Strategy](./ADR-0024-css-layer-strategy-context-priority.md) - Layer order includes third-party
-- [Storybook Model](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) - Updated to allow third-party with approval
+- [CSS Layer Strategy](ADR-0024-css-layer-strategy-context-priority.md) - Layer order includes third-party
+- [Storybook Model](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) - Updated to allow third-party with approval

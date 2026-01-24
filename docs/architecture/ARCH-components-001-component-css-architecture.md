@@ -8,7 +8,8 @@
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
 **Related:**
-
+- [ADR-0038](../adr/ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract
+- [ADR-0042](../adr/ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
@@ -117,7 +118,7 @@ Visual Output
 }
 ```
 
-**Limited Exceptions (Per ADR-0018):**
+**Limited Exceptions (Per [ADR-0018](../adr/ADR-0018-typography-units-architecture-rem-em-px.md)):**
 - **Border widths**: May use `px` for fixed dimensions (e.g., `1px` border)
 - **Focus offsets**: May use `px` for consistent focus indication
 - **Small padding values**: May use `px` when token doesn't exist, but must be documented
@@ -135,6 +136,8 @@ Visual Output
 ### Rule 3: Theme Overrides via Compound Selectors
 
 **Mandate:** Theme-specific styling must **only** appear in compound selectors combining context and theme attributes.
+
+**Density rule:** Density is an orthogonal axis. Component CSS must **not** encode density with per-component selectors; it should consume semantic tokens that are already density-resolved via `data-eui-density`.
 
 **Correct Selector Pattern:**
 ```css
@@ -563,7 +566,7 @@ Validates:
 When adding or modifying component CSS:
 
 - [ ] No hardcoded colors (hex, rgb, oklch literals)
-- [ ] No hardcoded dimensions (except documented exceptions per ADR-0018)
+- [ ] No hardcoded dimensions (except documented exceptions per [ADR-0018](../adr/ADR-0018-typography-units-architecture-rem-em-px.md))
 - [ ] All values come from `var(--eui-*)` variables
 - [ ] Theme overrides only in token files, not component CSS
 - [ ] Compound selectors `[data-eui-context][data-eui-theme]` for theme overrides
@@ -649,8 +652,8 @@ node scripts/generate-component-css.mjs
 
 ## Related Documentation
 
-- **[Token Architecture](./ARCH-tokens-003-token-architecture.md)** - Overall token system design
-- **[Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md)** - Specific usage patterns
+- **[Token Architecture](ARCH-tokens-003-token-architecture.md)** - Overall token system design
+- **[Token Usage Rules](ARCH-tokens-004-token-usage-rules.md)** - Specific usage patterns
 - **[ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)** - Architectural foundation
 - **[ADR-0018](../adr/ADR-0018-typography-units-architecture-rem-em-px.md)** - Typography unit rules
 - **[ADR-0023](../adr/ADR-0023-token-organization-context-and-theme-separation.md)** - Token organization
@@ -670,4 +673,4 @@ node scripts/generate-component-css.mjs
 
 **Enforcement:** Automated validation + manual code review + architectural guidelines.
 
-**Exceptions:** Documented in ADR-0018 (fixed dimensions) and this document (focus architecture).
+**Exceptions:** Documented in [ADR-0018](../adr/ADR-0018-typography-units-architecture-rem-em-px.md) (fixed dimensions) and this document (focus architecture).

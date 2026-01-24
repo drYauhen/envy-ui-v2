@@ -257,5 +257,5 @@ split-full-width
 
 ## Related Documents
 
-- [Dev App Architecture](./ARCH-system-004-dev-app-architecture.md)
-- [Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md)
+- [Dev App Architecture](ARCH-system-004-dev-app-architecture.md)
+- [Token Usage Rules](ARCH-tokens-004-token-usage-rules.md)

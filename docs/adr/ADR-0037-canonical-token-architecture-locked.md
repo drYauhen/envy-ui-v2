@@ -8,9 +8,10 @@
 **Related:**
 - [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md) — Canonical architectural rules (normative)
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Enforceable token usage rules
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
-- [ADR-0041](./ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
+- [ADR-0041](ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
@@ -97,6 +98,8 @@ tokens/
 ```
 Primitives → Raw → Semantics → Themes → Components
 ```
+
+**Axis note:** Context and Theme remain orthogonal axes. Density is a third, optional axis applied as semantic overrides (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)). It does not change the canonical token chain.
 
 ### Canonical Rules (Non-Negotiable Invariants)
 
@@ -208,8 +211,8 @@ The token system has achieved architectural stability after multiple iterations.
 ### Alignment with Previous ADRs
 
 This ADR supersedes:
-- **ADR-0017**: Described transitional layered architecture
-- **ADR-0023**: Described context/theme separation (now implemented)
+- **[ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md)**: Described transitional layered architecture
+- **[ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md)**: Described context/theme separation (now implemented)
 
 The canonical architecture implements the intent of these ADRs but with refined structure based on implementation experience.
 

@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture - REM, EM, and PX
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0018](ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture - REM, EM, and PX
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
 
 ---
 
@@ -452,7 +452,7 @@ For languages with significantly different text characteristics, optional langua
    - These components don't contain variable-length text
 
 3. **Spacing and Typography**:
-   - Continue using `em`/`rem` as per [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md)
+   - Continue using `em`/`rem` as per [ADR-0018](ADR-0018-typography-units-architecture-rem-em-px.md)
    - Logical properties for spacing: `padding-inline`, `margin-inline`
 
 ### CSS Logical Properties Rules
@@ -635,10 +635,10 @@ With `ch` units and `fit-content`:
 ## Notes
 
 This ADR establishes the i18n and RTL architecture. For typography unit details, see:
-- [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture
+- [ADR-0018](ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture
 
 For context and theme organization, see:
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 **Implementation Timeline:**
 1. **Phase 1**: Update token structure (replace `px` with `ch` for text-based components)

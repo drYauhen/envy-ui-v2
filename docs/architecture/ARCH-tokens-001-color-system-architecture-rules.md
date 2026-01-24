@@ -14,7 +14,7 @@
 
 ## Overview
 
-This document establishes **binding architectural rules** for the Envy UI color system. It provides decision frameworks and implementation guidance for maintaining consistency across our multi-context, multi-theme color architecture.
+This document establishes **binding architectural rules** for the Envy UI color system. It provides decision frameworks and implementation guidance for maintaining consistency across the multi-context, multi-theme color architecture.
 
 **Key Principles:**
 - **Base-Colors Pattern** - Source anchors generate full tonal scales programmatically
@@ -464,8 +464,8 @@ npm run tokens:generate-types
 ## Related Documentation
 
 - **[ADR-0014](../adr/ADR-0014-color-model-tonal-scales-and-contextual-architecture.md)** - Foundational color architecture decisions
-- **[Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md)** - How to consume color tokens
-- **[Theme Structure Analysis](./ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown.md)** - Current theme implementation details
+- **[Token Usage Rules](ARCH-tokens-004-token-usage-rules.md)** - How to consume color tokens
+- **[Theme Structure Analysis](ARCH-theme-002-theme-structure-analysis-composition-vs-semantic-breakdown.md)** - Current theme implementation details
 - **[Base Colors README](../../tokens/knowledge/foundations/base-colors/README.md)** - Technical implementation of base-colors pattern
 
 ---

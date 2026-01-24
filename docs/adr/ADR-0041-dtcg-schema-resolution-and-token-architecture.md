@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
-- [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0018](ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 ---
 
@@ -20,7 +20,7 @@ The design system encountered two critical issues with the DTCG (Design Tokens C
 All token files were referencing a broken external schema URL:
 - `https://schemas.s1seven.com/style-dictionary/v3/schema.json` → 404 Not Found
 - This caused validation errors and build instability
-- Official DTCG specification (2025.10) is published as Technical Reports, not schema files
+- Official DTCG specification ([2025](../steps/2025-12-20-step.md).10) is published as Technical Reports, not schema files
 
 ### Issue 2: Monolithic Typography Token Organization
 Typography semantic tokens were stored in a single monolithic file:
@@ -40,8 +40,8 @@ I decided to implement a comprehensive solution addressing all three issues:
 
 ### 1. DTCG Schema Resolution Strategy
 
-**Create Local DTCG 2025.10 Schema:**
-- Build `schemas/dtcg-2025.10-schema.json` based on official DTCG 2025.10 format module
+**Create Local DTCG [2025](../steps/2025-12-20-step.md).10 Schema:**
+- Build `schemas/dtcg-2025.10-schema.json` based on official DTCG [2025](../steps/2025-12-20-step.md).10 format module
 - Update all 200+ token files to reference the local schema
 - Maintain DTCG compliance while eliminating external dependencies
 
@@ -86,7 +86,7 @@ tokens/app/semantic/typography/
 ### Why Local DTCG Schema (Not Remove Schemas)
 
 **Industry Alignment:**
-- DTCG 2025.10 specification defines JSON structure requirements
+- DTCG [2025](../steps/2025-12-20-step.md).10 specification defines JSON structure requirements
 - Schema validation ensures token format compliance
 - IDE support improves developer experience
 
@@ -138,7 +138,7 @@ tokens/app/semantic/typography/
 ### Implementation Details
 
 **Schema Migration:**
-- Created `schemas/dtcg-2025.10-schema.json` based on DTCG 2025.10 format module
+- Created `schemas/dtcg-2025.10-schema.json` based on DTCG [2025](../steps/2025-12-20-step.md).10 format module
 - Bulk updated 200+ token files from broken URL to local schema
 - Maintained all existing token structures and values
 
@@ -162,8 +162,8 @@ tokens/app/semantic/typography/
 
 ## References
 
-- **DTCG 2025.10 Specification**: https://www.designtokens.org/TR/2025.10/
-- **DTCG Format Module**: https://www.designtokens.org/TR/2025.10/format/
+- **DTCG [2025](../steps/2025-12-20-step.md).10 Specification**: https://www.designtokens.org/TR/[2025](../steps/2025-12-20-step.md).10/
+- **DTCG Format Module**: https://www.designtokens.org/TR/[2025](../steps/2025-12-20-step.md).10/format/
 - **Style Dictionary DTCG Support**: Native DTCG format implementation
 
 ## Changelog

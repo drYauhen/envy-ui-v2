@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
-- [ADR-0035](./ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md) — CSS Naming Conventions - Class Names vs Data Attributes
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
+- [ADR-0035](ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md) — CSS Naming Conventions - Class Names vs Data Attributes
+- [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
 
 ---
 
@@ -46,8 +46,8 @@ This ADR establishes a **vision** for building Envy UI as an AI-first component 
 
 **3. Predictable Patterns**
 - One clear way to do things (minimize ambiguity)
-- Consistent naming conventions (per ADR-0035)
-- Token-driven design (per ADR-0015)
+- Consistent naming conventions (per [ADR-0035](ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md))
+- Token-driven design (per [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
 - Separation of concerns (structure vs behavior)
 
 **4. Discoverable by Design**
@@ -80,7 +80,7 @@ This vision will be achieved incrementally through four phases:
 **Phase 4: Evolution & Documentation**
 - Evaluate what worked
 - Update this ADR based on learnings
-- Update or supersede ADR-0022
+- Update or supersede [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
 - Expand to more components
 
 ---
@@ -109,10 +109,10 @@ This vision will be achieved incrementally through four phases:
 
 ### Why Pragmatic/Incremental?
 
-**Learn as We Go**
+**Learn Through Iteration**
 - Theory vs practice often differ
 - Real usage informs better patterns than speculation
-- Avoid over-engineering before we understand the problem
+- Avoid over-engineering before the problem is fully understood
 - Ship fast, iterate, measure impact
 
 **Low Maintenance Burden**
@@ -127,9 +127,9 @@ This vision will be achieved incrementally through four phases:
 - ADRs evolve with learnings
 - Pragmatism over dogma
 
-### Why Not ADR-0022 Exactly?
+### Why Not [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) Exactly?
 
-ADR-0022 outlined a comprehensive vision with `storybook-model/` JSON schemas and a global manifest. It was well-thought-out but:
+[ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) outlined a comprehensive vision with `storybook-model/` JSON schemas and a global manifest. It was well-thought-out but:
 
 **Never Validated**
 - Proposed separate directory structure and JSON schemas
@@ -144,9 +144,9 @@ ADR-0022 outlined a comprehensive vision with `storybook-model/` JSON schemas an
 - Evolves based on what actually works
 
 **Original Vision Still Informs**
-- ADR-0022's intent guides this pragmatic approach
-- May implement parts of ADR-0022 if they prove valuable
-- Will update ADR-0022 based on learnings
+- [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md)'s intent guides this pragmatic approach
+- May implement parts of [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) if they prove valuable
+- Will update [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) based on learnings
 
 ---
 
@@ -217,14 +217,14 @@ The following will be answered through implementation and real-world usage:
 ### Phase 4 (After Pilots): Evolution
 - Evaluate what worked
 - Update this ADR based on learnings
-- Update or supersede ADR-0022
+- Update or supersede [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
 - Expand to more components
 
 ---
 
-## Relationship to ADR-0022
+## Relationship to [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
 
-### ADR-0022 Vision
+### [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) Vision
 - Comprehensive JSON schemas
 - Separate `storybook-model/` directory
 - Global manifest with AI workflow
@@ -236,7 +236,7 @@ The following will be answered through implementation and real-world usage:
 - Lightweight registry (no separate directory)
 - Learn what rules actually help
 
-### Status of ADR-0022
+### Status of [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
 - Remains "Proposed (Exploratory)"
 - Will be updated or superseded after ADR-0036 pilots complete
 - Original vision informs pragmatic approach
@@ -251,7 +251,7 @@ The following will be answered through implementation and real-world usage:
 **1. Vision over Specification**
 - Describes intent, not exact implementation
 - Allows learning and adaptation
-- Acknowledges we don't have all answers yet
+- Acknowledges that not all answers are known yet
 
 **2. Pragmatism over Dogma**
 - Real-world usage trumps theoretical perfection
@@ -274,8 +274,8 @@ The following will be answered through implementation and real-world usage:
 
 **Why "Evolutionary" Status?**
 
-This ADR is marked as "Proposed (Evolutionary)" to signal that it will change. As we implement and learn:
-- We may discover better approaches
+This ADR is marked as "Proposed (Evolutionary)" to signal that it will change. As implementation proceeds and learnings emerge:
+- Better approaches may emerge
 - Trade-offs may shift
 - Maintenance burden may be different than expected
 - Real-world usage will inform refinement

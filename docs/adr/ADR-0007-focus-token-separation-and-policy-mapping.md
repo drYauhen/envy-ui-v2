@@ -6,8 +6,8 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0005](./ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
-- [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus Policy Architecture Driven with System Focus
+- [ADR-0005](ADR-0005-canonical-ui-namespace-and-reference-component-baseline.md) — Canonical UI Namespace and Reference Component Baseline
+- [ADR-0006](ADR-0006-focus-policy-architecture.md) — Focus Policy Architecture Driven with System Focus
 
 ---
 
@@ -23,7 +23,7 @@ This ADR defines how **system focus** vs **component-derived focus** is represen
 
 ## 2. Problem Statement / Context
 
-Per [ADR-0006](./ADR-0006-focus-policy-architecture.md), keyboard focus behavior must be configurable at the system/application level, and components must not decide the active focus policy.
+Per [ADR-0006](ADR-0006-focus-policy-architecture.md), keyboard focus behavior must be configurable at the system/application level, and components must not decide the active focus policy.
 
 During initial component implementation work, I needed to:
 - make the **system focus color** clearly distinct from component styling
@@ -67,7 +67,7 @@ This preserves the separation of responsibilities:
    - Rejected: system focus must be independent of component intent/styling and globally consistent.
 
 3. **Let components choose policy via props**
-   - Rejected: violates [ADR-0006](./ADR-0006-focus-policy-architecture.md) (policy must be system-selected).
+   - Rejected: violates [ADR-0006](ADR-0006-focus-policy-architecture.md) (policy must be system-selected).
 
 ---
 

@@ -6,10 +6,10 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
-- [ADR-0032](./ADR-0032-token-override-strategy-multi-tenant-generative-ui.md) — Token Override Strategy for Multi-Tenant and Generative UI
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0030](ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
+- [ADR-0032](ADR-0032-token-override-strategy-multi-tenant-generative-ui.md) — Token Override Strategy for Multi-Tenant and Generative UI
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 ---
 
@@ -42,7 +42,7 @@ However, **third-party libraries** (e.g., Handsontable, React Grid Layout, Recha
 2. Make third-party component configuration theme-aware
 3. Maintain token-first principles
 4. Support context/theme switching for props
-5. Enable multi-tenant customization (per ADR-0032)
+5. Enable multi-tenant customization (per [ADR-0032](ADR-0032-token-override-strategy-multi-tenant-generative-ui.md))
 
 ---
 
@@ -156,8 +156,8 @@ tokens/
 - Clear distinction between style and behavior
 
 **3. Compatible with Existing Systems**
-- ADR-0030: Third-party CSS in `@layer third-party`, presets control props
-- ADR-0032: Presets can be per-tenant overrides (same patch pattern)
+- [ADR-0030](ADR-0030-third-party-library-integration-strategy.md): Third-party CSS in `@layer third-party`, presets control props
+- [ADR-0032](ADR-0032-token-override-strategy-multi-tenant-generative-ui.md): Presets can be per-tenant overrides (same patch pattern)
 - No breaking changes to token pipeline
 
 **4. Enables Theme-Aware Components**
@@ -166,7 +166,7 @@ tokens/
 - Example: toy-r-us theme → playful Handsontable theme
 
 **5. Scalable for Multi-Tenant**
-- Tenant-specific presets as JSON patches (per ADR-0032)
+- Tenant-specific presets as JSON patches (per [ADR-0032](ADR-0032-token-override-strategy-multi-tenant-generative-ui.md))
 - Small override files instead of duplicating entire configs
 - Same composition pattern as token overrides
 
@@ -200,7 +200,7 @@ tokens/
 
 - **Theme-Aware Props**: Component configuration changes with themes
 - **Single Source of Truth**: Presets defined alongside theme tokens
-- **Multi-Tenant Ready**: Compatible with ADR-0032 override pattern
+- **Multi-Tenant Ready**: Compatible with [ADR-0032](ADR-0032-token-override-strategy-multi-tenant-generative-ui.md) override pattern
 - **Token-First Maintained**: CSS tokens unchanged, presets are metadata layer
 - **Graceful Degradation**: Missing presets don't break components
 - **Developer Experience**: Clear, predictable pattern for third-party integration
@@ -233,7 +233,7 @@ tokens/
 3. Verify theme switching updates both CSS and props
 
 **New integrations:**
-1. Follow ADR-0030 for CSS integration
+1. Follow [ADR-0030](ADR-0030-third-party-library-integration-strategy.md) for CSS integration
 2. Create preset file for theme-dependent props
 3. Use `useThemePresets` hook in components
 
@@ -336,7 +336,7 @@ const hotPresets = useThemePresets('app', currentTheme, 'handsontable');
 }
 ```
 
-**Tenant override** (per ADR-0032 patch pattern):
+**Tenant override** (per [ADR-0032](ADR-0032-token-override-strategy-multi-tenant-generative-ui.md) patch pattern):
 ```json
 {
   "components": {
@@ -365,7 +365,7 @@ Composed at build/runtime: `base + override → final preset`
 
 **Possible enhancements (not in scope for this ADR):**
 1. **Type generation** from presets to TypeScript types
-2. **AI-generated presets** following ADR-0032 validation patterns
+2. **AI-generated presets** following [ADR-0032](ADR-0032-token-override-strategy-multi-tenant-generative-ui.md) validation patterns
 3. **Preset inheritance** (theme extends base preset)
 4. **Preset variants** (per-component variants within theme)
 5. **Runtime preset switching** without page reload

@@ -15,7 +15,7 @@ Storybook serves as an AI-agent-oriented architecture layer for understanding an
 - Token visualization
 - Architecture and workflow documentation
 
-**Reminder:** Any changes to Storybook-related npm scripts must be documented in [`docs/workflows/WORKFLOW-004-scripts-reference.md`](./WORKFLOW-004-scripts-reference.md).
+**Reminder:** Any changes to Storybook-related npm scripts must be documented in [`docs/workflows/WORKFLOW-004-scripts-reference.md`](WORKFLOW-004-scripts-reference.md).
 
 ## Accessibility Testing
 
@@ -239,7 +239,7 @@ This is the **main core development workflow** that:
 **Auto-prepare includes:**
 - Build tokens → CSS, JS, Figma outputs
 - Copy docs to public directory
-- Copy token README files to public
+- Copy token [README](README.md) files to public
 - Generate Tailwind config from tokens
 
 **Auto-reload on changes:**
@@ -330,9 +330,9 @@ Docs are organized by section:
 ### Token Documentation
 
 Token documentation is integrated into the token structure:
-- Each active context has a README.md file: `tokens/contexts/{context}/README.md`
-- Each theme directory has a README.md file: `tokens/contexts/{context}/themes/README.md`
-- These README files are automatically displayed in Storybook within the Tokens section
+- Each active context has a [README](README.md).md file: `tokens/contexts/{context}/README.md`
+- Each theme directory has a [README](README.md).md file: `tokens/contexts/{context}/themes/README.md`
+- These [README](README.md) files are automatically displayed in Storybook within the Tokens section
 - Documentation is shown when viewing context or theme overview stories
 
 ### Documentation Registry
@@ -352,5 +352,5 @@ Website docs live under `tokens/contexts/website` (old `web` name is deprecated)
 
 ## Related Documentation
 
-- [ADR-0022: Storybook Model as AI-Agent-Oriented Architecture Layer](./../adr/ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
-- [ADR-0002: Data-Driven Storybook Pipeline](./../adr/ADR-0002-data-driven-storybook-pipeline.md)
+- [ADR-0022](../adr/ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
+- [ADR-0002](../adr/ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline

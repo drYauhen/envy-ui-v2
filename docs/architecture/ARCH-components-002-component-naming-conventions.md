@@ -93,12 +93,12 @@
 
 ---
 
-## Recommendation for Our System
+## Recommendation for the System
 
 ### **Hybrid Approach: Separate Components with Modifier Prefix**
 
 **Rationale:**
-1. ✅ **Current Implementation:** We already have separate components (`Select`, `MultiSelect`, `SearchableSelect`)
+1. ✅ **Current Implementation:** Separate components already exist (`Select`, `MultiSelect`, `SearchableSelect`)
 2. ✅ **Type Safety:** Separate components allow better TypeScript inference
 3. ✅ **Clarity:** Component name clearly indicates functionality
 4. ✅ **Industry Alignment:** Matches common React ecosystem patterns
@@ -194,7 +194,7 @@ Apply same pattern to other components:
 
 ## Future Considerations
 
-If we need to support combined features (e.g., multi + searchable), we have options:
+If combined features are required (e.g., multi + searchable), the options are:
 
 1. **Separate Component:** `MultiSearchableSelect`
 2. **Composition:** Use both `MultiSelect` and `SearchableSelect` primitives

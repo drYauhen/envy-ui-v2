@@ -6,10 +6,11 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
-- [ADR-0012](./ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0001](ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0012](ADR-0012-interactive-components-evolution-layered-architecture-and-contexts.md) — Interactive Components Evolution, Layered Architecture and Contexts
+- [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
@@ -25,7 +26,7 @@ The system's core principle is **token-first architecture**: design tokens (DTCG
 
 **Current State:**
 - Tokens drive all visual decisions
-- Context/Theme system works via CSS custom properties and `[data-eui-context]` / `[data-eui-theme]` attributes
+- Context/Theme/Density system works via CSS custom properties and `[data-eui-context]` / `[data-eui-theme]` / `[data-eui-density]` attributes
 - Components are renderer-agnostic at the contract level
 - Multiple layers demonstrate universality of the token system
 
@@ -59,7 +60,7 @@ I decided to **explore Web Components as a long-term proof-of-concept implementa
 
 **Key Requirements:**
 1. Web Components must consume CSS custom properties (tokens) from the parent context
-2. Context/Theme system must work via `[data-eui-context]` and `[data-eui-theme]` attributes
+2. Context/Theme/Density system must work via `[data-eui-context]`, `[data-eui-theme]`, and `[data-eui-density]` attributes
 3. Shadow DOM encapsulation should not break token inheritance
 4. Components should work in any framework or vanilla JavaScript
 5. Accessibility must be maintained (native ARIA or alternative to React Aria)
@@ -68,7 +69,7 @@ I decided to **explore Web Components as a long-term proof-of-concept implementa
 - Use **Custom Elements v1** (standard, widely supported)
 - Use **Shadow DOM v1** for style encapsulation
 - Leverage **CSS custom properties** that penetrate Shadow DOM boundaries
-- Read context/theme from parent elements via `closest('[data-eui-context]')`
+- Read context/theme/density from parent elements via `closest('[data-eui-context]')` and `closest('[data-eui-density]')`
 - Implement accessibility using native ARIA attributes (React Aria is React-specific)
 
 ---
@@ -97,7 +98,7 @@ I decided to **explore Web Components as a long-term proof-of-concept implementa
 - Matches the design system's goal of predictable, isolated components
 
 **4. Context/Theme Compatibility**
-- `[data-eui-context]` and `[data-eui-theme]` attributes work on any element
+- `[data-eui-context]`, `[data-eui-theme]`, and `[data-eui-density]` attributes work on any element
 - Web Components can read parent context via `closest('[data-eui-context]')`
 - CSS custom properties cascade through Shadow DOM
 - Same mechanism as HTML+CSS and TSX layers
@@ -105,7 +106,7 @@ I decided to **explore Web Components as a long-term proof-of-concept implementa
 **5. Proof of Architectural Flexibility and Long-term Viability**
 - Demonstrates that tokens are the true source of truth, independent of any technology stack
 - Shows that implementation layers are projections, not transformations
-- Validates the renderer-agnostic model ([ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
+- Validates the renderer-agnostic model ([ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
 - Strengthens the system's positioning as a universal, long-term design system
 - **Proves future-proofing:** If React or any framework becomes obsolete, the design system survives
 - **Ensures design decisions are preserved:** Business and design choices are not lost when technology stacks change
@@ -157,6 +158,7 @@ This demonstrates that Web Components are a **viable, enterprise-grade solution*
 // Web Component can read context from parent
 const context = this.closest('[data-eui-context]')?.getAttribute('data-eui-context');
 const theme = this.closest('[data-eui-theme]')?.getAttribute('data-eui-theme');
+const density = this.closest('[data-eui-density]')?.getAttribute('data-eui-density');
 ```
 
 **Accessibility:**
@@ -218,7 +220,7 @@ const theme = this.closest('[data-eui-theme]')?.getAttribute('data-eui-theme');
 **Presentation/Demo Value:**
 - Shows the system's flexibility and universality
 - Demonstrates token-driven architecture across multiple runtimes
-- Validates the architectural decisions in [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) and [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md)
+- Validates the architectural decisions in [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) and [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md)
 
 ### Trade-offs
 
@@ -305,7 +307,7 @@ This ADR describes a **long-term proof-of-concept** that has been **successfully
 - ✅ **Web Components Button**: Complete `EuiButton` implementation in `packages/web-components/button/`
   - Custom Elements v1 with Shadow DOM v1
   - Full token integration via CSS custom properties
-  - Context/theme support via `[data-eui-context]` and `[data-eui-theme]`
+  - Context/theme/density support via `[data-eui-context]`, `[data-eui-theme]`, `[data-eui-density]`
   - Native ARIA accessibility implementation
   - Framework-agnostic usage patterns
 
@@ -348,14 +350,14 @@ This ADR describes a **long-term proof-of-concept** that has been **successfully
 
 **🎯 Strategic Purpose Achieved:**
 - Demonstrates architectural flexibility and longevity
-- Validates renderer-agnostic model ([ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
+- Validates renderer-agnostic model ([ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
 - Strengthens positioning as universal, future-proof design system
 - Proves Envy UI can survive technology stack changes
 
 ### Usage Example
 ```html
 <!-- Works in any framework or vanilla JavaScript -->
-<div data-eui-context="app" data-eui-theme="default">
+<div data-eui-context="app" data-eui-theme="default" data-eui-density="default">
   <eui-button data-eui-intent="primary">Framework Agnostic</eui-button>
 </div>
 ```

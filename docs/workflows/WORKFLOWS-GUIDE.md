@@ -19,9 +19,9 @@ Workflow documentation captures the processes, tools, and procedures that guide 
 
 ### Supporting Documents
 
-- **README.md**: Overview and navigation for workflow documentation
+- **[README](README.md).md**: Overview and navigation for workflow documentation
 - **WORKFLOWS-GUIDE.md**: This contribution guide
-- **WORKFLOWS-TEMPLATE.md**: Template for new workflow documents
+- **[WORKFLOWS-TEMPLATE](WORKFLOWS-TEMPLATE.md).md**: Template for new workflow documents
 
 ## Contribution Guidelines
 
@@ -68,7 +68,7 @@ Each workflow document should include:
 
 ## Tools and Resources
 
-- **Template**: Use WORKFLOWS-TEMPLATE.md for new documents
+- **Template**: Use [WORKFLOWS-TEMPLATE](WORKFLOWS-TEMPLATE.md).md for new documents
 - **Validation**: Run `npm run docs:validate` to check links
 - **Testing**: Test workflows on fresh environments
 - **Automation**: Prefer automated validation over manual checks
@@ -99,7 +99,7 @@ Each workflow document should include:
 
 - **Questions**: Ask in #workflows or #devops channels
 - **Reviews**: Tag @workflow-maintainers for reviews
-- **Templates**: See WORKFLOWS-TEMPLATE.md for examples
+- **Templates**: See [WORKFLOWS-TEMPLATE](WORKFLOWS-TEMPLATE.md).md for examples
 - **Examples**: Reference existing workflow docs for patterns
 
 ## Common Workflows

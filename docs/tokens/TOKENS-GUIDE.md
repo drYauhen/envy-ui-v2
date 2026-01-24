@@ -19,9 +19,9 @@ Token documentation captures the design system tokens that define visual appeara
 
 ### Supporting Documents
 
-- **README.md**: Overview and navigation for token documentation
+- **[README](../workflows/README.md).md**: Overview and navigation for token documentation
 - **TOKENS-GUIDE.md**: This contribution guide
-- **TOKENS-TEMPLATE.md**: Template for new token documents
+- **[TOKENS-TEMPLATE](TOKENS-TEMPLATE.md).md**: Template for new token documents
 
 ## Token Categories
 
@@ -160,7 +160,7 @@ Each token entry should include:
 - **Design Questions**: Contact design system team
 - **Technical Issues**: Ask in #tokens or #design-system channels
 - **Implementation Help**: Reference token usage examples
-- **New Tokens**: Follow TOKENS-TEMPLATE.md for creation
+- **New Tokens**: Follow [TOKENS-TEMPLATE](TOKENS-TEMPLATE.md).md for creation
 
 ## Common Token Workflows
 

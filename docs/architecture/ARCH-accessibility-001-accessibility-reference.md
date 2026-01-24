@@ -335,8 +335,8 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 |------|-----------|---------------------|
 | `useButton` | `button` | ✅ Used (Button component) |
 | `useCheckbox` | `checkbox` | ✅ Used (Checkbox component) |
-| `useRadio` | `radio` | ✅ Mentioned in ADR-0001 |
-| `useSwitch` | `switch` | ✅ Mentioned in ADR-0001 |
+| `useRadio` | `radio` | ✅ Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md) |
+| `useSwitch` | `switch` | ✅ Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md) |
 | `useSlider` | `slider` | ❌ Not yet used |
 | `useTextField` | `textbox` | ✅ Used (Input/TextField component) |
 | `useSearchField` | `searchbox` | ❌ Not yet used |
@@ -349,7 +349,7 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 | `useKeyboard` | (utility) | ❌ Not yet used |
 | `useId` | (utility) | ❌ Not yet used (React.useId preferred) |
 
-**Note:** According to ADR-0001, these are mandatory for basic components.
+**Note:** According to [ADR-0001](../adr/ADR-0001-react-aria-headless.md), these are mandatory for basic components.
 
 ---
 
@@ -367,9 +367,9 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 | `useMenuBar` | Menu bar | ❌ Not yet used |
 | `useSelect` | Select/Listbox | ✅ Used (Select, MultiSelect components) |
 | `useComboBox` | Combobox | ✅ Used (SearchableSelect component) |
-| `useDialog` | Dialog | ✅ Mentioned in ADR-0001 |
-| `useModal` | Modal | ✅ Mentioned in ADR-0001 |
-| `usePopover` | Popover | ✅ Mentioned in ADR-0001 |
+| `useDialog` | Dialog | ✅ Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md) |
+| `useModal` | Modal | ✅ Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md) |
+| `usePopover` | Popover | ✅ Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md) |
 | `useTooltip` | Tooltip | ❌ Not yet used |
 | `useDisclosure` | Disclosure | ❌ Not yet used (could be used for Accordion) |
 | `useTabs` | Tabs | ❌ Not yet used |
@@ -382,7 +382,7 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 | `useTreeView` | Tree view | ❌ Not yet used |
 | `useTreeViewItem` | Tree item | ❌ Not yet used |
 
-**Note:** According to ADR-0001, these are used selectively as building blocks.
+**Note:** According to [ADR-0001](../adr/ADR-0001-react-aria-headless.md), these are used selectively as building blocks.
 
 ---
 
@@ -400,22 +400,22 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 
 ### Advanced Patterns (~10 hooks)
 
-**Purpose:** Complex patterns that React Aria provides hooks for (but Envy UI doesn't use high-level components per ADR-0001).
+**Purpose:** Complex patterns that React Aria provides hooks for (but Envy UI doesn't use high-level components per [ADR-0001](../adr/ADR-0001-react-aria-headless.md)).
 
 | Hook | Pattern | Usage in Envy UI |
 |------|---------|---------------------|
 | `useDragAndDrop` | Drag and drop | ❌ Not yet used |
 | `useDrag` | Drag | ❌ Not yet used |
 | `useDrop` | Drop | ❌ Not yet used |
-| `useTable` | Table | ❌ Not used (per ADR-0001, high-level components not used) |
+| `useTable` | Table | ❌ Not used (per [ADR-0001](../adr/ADR-0001-react-aria-headless.md), high-level components not used) |
 | `useTableHeaderRow` | Table header row | ❌ Not used |
 | `useTableRow` | Table row | ❌ Not used |
 | `useTableColumnHeader` | Table column header | ❌ Not used |
 | `useTableSelectAllCheckbox` | Table select all | ❌ Not used |
 | `useTableSelectionCheckbox` | Table row selection | ❌ Not used |
-| `useGrid` | Grid | ❌ Not used (per ADR-0001, high-level components not used) |
+| `useGrid` | Grid | ❌ Not used (per [ADR-0001](../adr/ADR-0001-react-aria-headless.md), high-level components not used) |
 
-**Note:** Per ADR-0001, Envy UI does NOT use React Aria high-level components (Table, Calendar, DatePicker, ComboBox). Instead, custom implementations are built on top of low-level primitives.
+**Note:** Per [ADR-0001](../adr/ADR-0001-react-aria-headless.md), Envy UI does NOT use React Aria high-level components (Table, Calendar, DatePicker, ComboBox). Instead, custom implementations are built on top of low-level primitives.
 
 ---
 
@@ -440,12 +440,12 @@ React Aria provides ~60+ hooks that implement ARIA patterns and accessibility be
 
 ### Currently Used (Level 1 - Mandatory)
 
-Based on ADR-0001 and codebase analysis:
+Based on [ADR-0001](../adr/ADR-0001-react-aria-headless.md) and codebase analysis:
 
 - ✅ `useButton` - Button component
 - ✅ `useCheckbox` - Checkbox component
-- ✅ `useRadio` - (Mentioned in ADR-0001)
-- ✅ `useSwitch` - (Mentioned in ADR-0001)
+- ✅ `useRadio` - (Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md))
+- ✅ `useSwitch` - (Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md))
 - ✅ `useTextField` - Input/TextField component
 - ✅ `useFocusRing` - Focus management
 - ✅ `useHover` - Hover states
@@ -456,8 +456,8 @@ Based on ADR-0001 and codebase analysis:
 - ✅ `useListBox` / `useSelect` - Select, MultiSelect components
 - ✅ `useMenu` / `useMenuItem` - Menu component
 - ✅ `useCalendar` / `useCalendarCell` - Calendar component
-- ✅ `usePopover` - (Mentioned in ADR-0001)
-- ✅ `useDialog` - (Mentioned in ADR-0001)
+- ✅ `usePopover` - (Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md))
+- ✅ `useDialog` - (Mentioned in [ADR-0001](../adr/ADR-0001-react-aria-headless.md))
 - ✅ `useLocale` - Calendar component
 
 ### Future Candidates (Based on Needs)
@@ -469,7 +469,7 @@ Based on ADR-0001 and codebase analysis:
 - `useBreadcrumbs` - For breadcrumb navigation
 - `useTreeView` - For tree/hierarchical navigation
 
-**Will NOT be used (per ADR-0001):**
+**Will NOT be used (per [ADR-0001](../adr/ADR-0001-react-aria-headless.md)):**
 - `useTable` - Custom implementation instead
 - `useGrid` - Custom implementation instead
 - High-level Calendar/DatePicker components - Custom implementation instead
@@ -498,7 +498,7 @@ For detailed decision framework, see [ADR-0029](../adr/ADR-0029-accessibility-ar
 4. **React Aria Usage:**
    - Use low-level primitives for basic components
    - Use pattern primitives selectively for complex patterns
-   - Do NOT use high-level components (per ADR-0001)
+   - Do NOT use high-level components (per [ADR-0001](../adr/ADR-0001-react-aria-headless.md))
    - Build custom implementations on top of primitives
 
 ---
@@ -508,8 +508,8 @@ For detailed decision framework, see [ADR-0029](../adr/ADR-0029-accessibility-ar
 - **WAI-ARIA 1.2 Specification:** https://www.w3.org/TR/wai-aria-1.2/
 - **WAI-ARIA Authoring Practices Guide:** https://www.w3.org/WAI/ARIA/apg/
 - **React Aria Documentation:** https://react-spectrum.adobe.com/react-aria/
-- **ADR-0001:** React Aria as Headless Accessibility Foundation
-- **ADR-0029:** Accessibility Architecture and Decision Framework
+- **[ADR-0001](../adr/ADR-0001-react-aria-headless.md):** React Aria as Headless Accessibility Foundation
+- **[ADR-0029](../adr/ADR-0029-accessibility-architecture-and-decision-framework.md):** Accessibility Architecture and Decision Framework
 
 ---
 

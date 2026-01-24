@@ -1,28 +1,31 @@
 # ADR-0023: Token Organization - Context and Theme Separation
 
-**Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
+**Status:** Superseded by [ADR-0037](ADR-0037-canonical-token-architecture-locked.md)
 **Date:** 2025-12-26
 **Last Updated:** 2026-01-10
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
-- [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning (superseded)
+- [ADR-0037](ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
+- [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0026](ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning (superseded)
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
 ## Context
+
+**Note:** This ADR predates the Density axis. Density is now a first-class, optional axis (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 The UI system serves multiple contexts (application shell, website/CMS, reports) with different visual requirements. Each context may have multiple themes (default, dark, accessibility). The previous architecture mixed context-specific and theme-specific tokens in a single `tokens/themes/` structure, making it unclear which tokens belong to contexts versus themes.
 
 This mixing created several problems:
 
 1. **Unclear Separation**: Context-specific tokens (like `fontSize: 14px` for app) were stored alongside theme-specific tokens (like color overrides)
-2. **Architectural Confusion**: The file structure didn't match the conceptual separation outlined in ADR-0017
+2. **Architectural Confusion**: The file structure didn't match the conceptual separation outlined in [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md)
 3. **Maintenance Difficulty**: Adding new contexts or themes required understanding which tokens should go where
 4. **Platform Export Issues**: Exporting to platforms like Figma required complex logic to separate context from theme
 
@@ -34,7 +37,7 @@ The goal is to establish a clear, maintainable file structure that reflects the 
 
 I decided to separate contexts and themes into distinct token directories with clear responsibilities.
 
-**Update (2026-01-10):** The structure described in this ADR was further refined. The current canonical token architecture is now locked in [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md), which establishes the final Primitives → Raw → Semantics → Themes → Components resolution chain with proper directory classification (canon/knowledge/legacy). The structure below describes transitional states that led to the current canonical implementation.
+**Update (2026-01-10):** The structure described in this ADR was further refined. The current canonical token architecture is now locked in [ADR-0037](ADR-0037-canonical-token-architecture-locked.md), which establishes the final Primitives → Raw → Semantics → Themes → Components resolution chain with proper directory classification (canon/knowledge/legacy). The structure below describes transitional states that led to the current canonical implementation.
 
 **Note:** This ADR describes the initial separation. The structure was later further reorganized into fully independent context directories (see "Current Structure" below). Each context now has its own complete token structure (foundations, semantic, components, themes) to ensure complete independence and avoid future complexity.
 
@@ -225,9 +228,9 @@ Separating contexts from themes makes the architecture more intuitive:
 - **Figma**: Can create separate modes for context+theme combinations
 - **Other Tools**: Can resolve tokens for specific context+theme pairs
 
-### Alignment with ADR-0017
+### Alignment with [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md)
 
-This structure directly implements the layered architecture described in ADR-0017:
+This structure directly implements the layered architecture described in [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md):
 - Foundation → Semantic → Context → Theme → Component
 - Each layer has a clear, dedicated directory
 
@@ -351,7 +354,7 @@ The transition to fully independent context directories is designed to be **non-
 **Badge Refactor (2026-01-09)** validates the token organization structure:
 - ✅ **Semantic References**: All badge tokens reference semantic layer (e.g., `{eui.color.status.success.700}`)
 - ✅ **Theme Overrides**: Accessibility theme overrides only what differs (solid variants use colored backgrounds)
-- ✅ **No Hardcoded Values**: Token JSON files contain no hardcoded hex colors or px values (except intentional fixed dimensions per ADR-0018)
+- ✅ **No Hardcoded Values**: Token JSON files contain no hardcoded hex colors or px values (except intentional fixed dimensions per [ADR-0018](ADR-0018-typography-units-architecture-rem-em-px.md))
 - ✅ **OKLCH Throughout**: All color tokens stored in OKLCH format in token files, generated to CSS in OKLCH
 - ✅ **Single Source of Truth**: Deleted 99 lines of hardcoded CSS, relying exclusively on generated token values
 
@@ -465,5 +468,5 @@ The transition to fully independent context directories is designed to be **non-
 ## Notes
 
 This ADR establishes the file structure. The implementation details for CSS generation, Figma export, and nested context support are documented in:
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
-- [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0025](ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy

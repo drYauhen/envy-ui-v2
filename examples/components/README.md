@@ -49,15 +49,15 @@ Avatar and avatar-group components following the canonical architecture pattern,
 - **Lead avatar support** with visual separation
 - **Hover animations** (app/website contexts):
   - Hovered avatar scales up (1.1x)
-  - Neighbors spread out (12px) for visibility
-  - Smooth transitions (200ms ease-out)
+  - Neighbors spread out using layout tokens
+  - Smooth transitions using transition tokens
 - **Context-aware behavior:**
   - Interactive animations in app/website contexts
   - Static display in report context (print-friendly)
 - **Smart overlap logic:**
-  - Standard overlap: 12px (37.5% of 32px diameter)
-  - Lead separation: 6px (18.75% after lead avatar)
-  - Tight subgroup: 16px (50% for post-lead avatars)
+  - Standard overlap: 12px (dimension.3)
+  - Lead separation: 8px (dimension.2)
+  - Tight subgroup: 16px (dimension.4)
 
 ## Architecture
 

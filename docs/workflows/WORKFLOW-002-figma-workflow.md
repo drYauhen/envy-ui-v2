@@ -34,7 +34,7 @@ Each file contains:
 - **Patterns page**: Component compositions and design patterns
 - **Documentation page**: Context-specific guidelines
 
-For detailed file structure and organization, see [ADR-0027](./../adr/ADR-0027-figma-files-structure-and-organization.md).
+For detailed file structure and organization, see [ADR-0027](../adr/ADR-0027-figma-files-structure-and-organization.md).
 
 ## Quick Start: Migration Workflow
 
@@ -582,7 +582,7 @@ npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
 
 ## Related Documentation
 
-- [ADR-0027: Figma Files Structure and Organization](./../adr/ADR-0027-figma-files-structure-and-organization.md) — File structure, page organization, and Code Connect strategy
-- [ADR-0025: Figma Variables Integration Strategy](./../adr/ADR-0025-figma-variables-integration-strategy.md) — Variables structure, modes, and export strategy
-- [ADR-0003: Data-Driven Figma Variables Pipeline](./../adr/ADR-0003-data-driven-figma-variables-pipeline.md) — Adapter pipeline and plugin architecture
+- [ADR-0027](../adr/ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization — File structure, page organization, and Code Connect strategy
+- [ADR-0025](../adr/ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy — Variables structure, modes, and export strategy
+- [ADR-0003](../adr/ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline — Adapter pipeline and plugin architecture
 

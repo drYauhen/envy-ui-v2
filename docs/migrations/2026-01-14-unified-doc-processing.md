@@ -320,10 +320,10 @@ const storyNameFromExport = (exportName: string): string => (
 
 ### 9. Template Exclusion
 
-**ADR-TEMPLATE** is now excluded from the system:
+**[ADR-TEMPLATE](../adr/ADR-TEMPLATE.md)** is now excluded from the system:
 - Script filters out files with 'TEMPLATE' in filename
 - Story file deleted
-- ADR count: 42 → 41 (ADR-0001 through ADR-0041)
+- ADR count: 42 → 41 ([ADR-0001](../adr/ADR-0001-react-aria-headless.md) through [ADR-0041](../adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md))
 - Template markdown still exists for agent reference
 
 ### 10. Overview Stories Simplified
@@ -524,7 +524,7 @@ After restarting Storybook, verify:
 - [ ] Muted prefixes display correctly
 - [ ] Status badges show correct colors
 - [ ] Cross-document links work
-- [ ] No ADR-TEMPLATE in menu
+- [ ] No [ADR-TEMPLATE](../adr/ADR-TEMPLATE.md) in menu
 - [ ] No console errors
 - [ ] Metadata displays in headers
 - [ ] Link validation passes: `npm run docs:validate`

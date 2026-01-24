@@ -6,11 +6,12 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (JSON structure)
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy (superseded)
+- [ADR-0037](ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (JSON structure)
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy (superseded)
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
 - [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md) — Token System Overview
 - [CSS Token Output Rules](../architecture/ARCH-tokens-002-css-token-output-rules.md) — Enforcement Rules
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
@@ -67,6 +68,11 @@ Each file MUST wrap its rules inside the appropriate layer block:
     --eui-color-text-primary: var(--eui-color-neutral-900);
     /* ... all semantic aliases */
   }
+
+  /* Optional density overrides (same layer) */
+  [data-eui-context][data-eui-density="compact"] {
+    --eui-control-height-md: var(--eui-control-density-compact-height-md);
+  }
 }
 
 /* tokens.themes.css */
@@ -117,6 +123,8 @@ This is how App and Website contexts can diverge (e.g., App base = 14px, Website
 --eui-typography-base-fontSize: var(--eui-typography-fontSize-lg);
 ```
 
+**Density note:** Theme overrides are highest priority for visual identity, but density is orthogonal and resolved independently via `data-eui-density` selectors in the contexts layer (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
+
 ### Deterministic Output
 
 Token CSS must be stable-sorted by token path (alphabetical) to ensure:
@@ -145,7 +153,7 @@ Application components are container-driven: size is fixed, typography adapts. S
 
 ### Why Lock CSS Output Structure
 
-The repeated generation mistakes indicate documentation ambiguity. By establishing a normative contract, we:
+The repeated generation mistakes indicate documentation ambiguity. Establishing a normative contract:
 - Prevent future architectural drift in CSS generation
 - Provide clear validation rules for automated checking
 - Enable reliable tooling and developer expectations
@@ -213,7 +221,7 @@ Stable sorting ensures:
 - ✅ Storybook integration validated
 
 **Documentation Updates:**
-- ✅ ADR-0024 marked as superseded (old layer strategy)
+- ✅ [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) marked as superseded (old layer strategy)
 - ✅ Architectural rules added for enforcement
 - ✅ Component layering policy documented
 
@@ -241,7 +249,7 @@ Stable sorting ensures:
 
 **Documentation Aligned:**
 - ✅ ADR-0038 establishes normative CSS output contract
-- ✅ ADR-0024 marked as superseded
+- ✅ [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) marked as superseded
 - ✅ Architectural rules provide enforcement framework
 - ✅ Component CSS layering policy prevents future ambiguity
 

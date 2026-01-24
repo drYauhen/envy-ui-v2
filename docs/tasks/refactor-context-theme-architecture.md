@@ -18,7 +18,7 @@ The current context/theme architecture has several critical issues:
 
 3. **Not Future-Proof**: Other tools (AI generators, design tools) may not understand CSS selectors or data attributes. They need flat, resolved token structures.
 
-4. **Architectural Confusion**: Current structure mixes contexts and themes in `tokens/themes/` folder. According to ADR-0017, contexts should be separate from themes, but implementation doesn't match the architecture.
+4. **Architectural Confusion**: Current structure mixes contexts and themes in `tokens/themes/` folder. According to [ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md), contexts should be separate from themes, but implementation doesn't match the architecture.
 
 ---
 
@@ -376,7 +376,7 @@ Create migration script to:
 
 ### Step 6: Update Documentation
 
-1. Update ADR-0017 to reflect new structure
+1. Update [ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) to reflect new structure
 2. Document resolution order
 3. Document Figma Variables structure
 4. Add examples of nested contexts
@@ -572,11 +572,10 @@ Create migration script to:
 
 1. Should Figma export convert OKLCH to RGB/HEX? (Check Figma support)
 2. How to handle very large number of mode combinations? (Optimization)
-3. Should we create explicit combined modes for nested contexts in Figma? (e.g., `app-website-default`)
+3. Should explicit combined modes be created for nested contexts in Figma? (e.g., `app-website-default`)
 4. How to handle theme inheritance? (e.g., dark theme extends default)
 
 ---
 
 **End of Task Document**
-
 

@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
-- [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0001](ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0004](ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 
 ---
 
@@ -156,7 +156,8 @@ The app context uses a simple, effective layout that serves the current operatio
 // From apps/dev-app/src/App.tsx
 <div 
   data-eui-context="app" 
-  data-eui-theme="default" 
+  data-eui-theme="default"
+  data-eui-density="default"
   style={{ 
     display: 'flex', 
     height: '100vh',
@@ -288,9 +289,9 @@ Advanced CSS Grid layouts are available for complex use cases:
 
 ## 6. Related Decisions
 
-- **[ADR-0001](./ADR-0001-react-aria-headless.md):** React Aria for interactive elements (not layout)
-- **[ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md):** Context-aware components (layout adapts to context)
-- **[ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md):** Token architecture (layout uses tokens for styling)
+- **[ADR-0001](ADR-0001-react-aria-headless.md):** React Aria for interactive elements (not layout)
+- **[ADR-0004](ADR-0004-context-aware-ui-components-and-projection-model.md):** Context-aware components (layout adapts to context)
+- **[ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md):** Token architecture (layout uses tokens for styling)
 
 ---
 

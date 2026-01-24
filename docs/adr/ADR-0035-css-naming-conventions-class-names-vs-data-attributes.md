@@ -6,8 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0016](./ADR-0016-prefix-unification-eui.md) — Prefix Unification to eui
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0016](ADR-0016-prefix-unification-eui.md) — Prefix Unification to eui
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
@@ -36,6 +37,7 @@ This ADR establishes the use of two complementary CSS naming mechanisms:
 - Interactive states (`data-eui-selected`, `data-eui-active`, `data-eui-disabled`)
 - Configuration (`data-eui-orientation`, `data-eui-shape`)
 - Context scoping (`data-eui-context="app|website|report"`)
+- Density (`data-eui-density="default|compact|relaxed"`)
 
 **BEM modifiers** with double dashes (`--`) are largely avoided in favor of data attributes, with rare exceptions for structural modifiers (e.g., `.eui-side-nav--collapsed`).
 
@@ -333,7 +335,7 @@ When building a new component:
 | Configuration options | Data attribute | `[data-eui-orientation="vertical"]` |
 | Interactive states | Data attribute | `[data-eui-selected]`, `[data-eui-active]` |
 | Size options | Data attribute | `[data-eui-size="md"]` |
-| Context/theme | Data attribute | `[data-eui-context="app"]` |
+| Context/theme/density | Data attribute | `[data-eui-context="app"]`, `[data-eui-density="compact"]` |
 | Structural modifiers | Class with `--` (rare) | `.eui-side-nav--collapsed` |
 
 ## Examples
@@ -361,6 +363,9 @@ When building a new component:
 
 /* Configuration */
 [data-eui-context] .eui-divider[data-eui-orientation="vertical"] { }
+
+/* Density (optional axis) */
+[data-eui-context][data-eui-density="compact"] .eui-button { }
 ```
 
 ### Combined Pattern
@@ -391,10 +396,10 @@ When building a new component:
 ## Notes
 
 **Context Scoping Pattern:**
-All component CSS is scoped within `[data-eui-context]` to enable multi-tenant theming as documented in ADR-0017 and ADR-0024.
+All component CSS is scoped within `[data-eui-context]` to enable multi-tenant theming. Density is an orthogonal axis applied via `data-eui-density` (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 **Prefix System:**
-All components use the `eui` prefix as documented in ADR-0016, ensuring global uniqueness and consistency.
+All components use the `eui` prefix as documented in [ADR-0016](ADR-0016-prefix-unification-eui.md), ensuring global uniqueness and consistency.
 
 **BEM Exception:**
 The only component using traditional BEM `--` modifier is `.eui-side-nav--collapsed`, as this represents a structural state rather than a configurable behavior.

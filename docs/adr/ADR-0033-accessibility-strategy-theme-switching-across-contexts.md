@@ -6,10 +6,11 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
-- [ADR-0029](./ADR-0029-accessibility-architecture-and-decision-framework.md) — Accessibility Architecture and Decision Framework
-- [ADR-0031](./ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) — Contrast Strategy for Dynamic Colors and On-Color Tokens
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0029](ADR-0029-accessibility-architecture-and-decision-framework.md) — Accessibility Architecture and Decision Framework
+- [ADR-0031](ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) — Contrast Strategy for Dynamic Colors and On-Color Tokens
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
@@ -21,7 +22,7 @@ The system is designed to support many contexts; today, three contexts are expec
 - **Website:** Public-facing output with stronger accessibility expectations and compliance risk.
 - **Report:** Generated documents (print/PDF) that may require strict compliance (e.g., PDF/UA).
 
-The product benefits from a consistent, token-driven workflow across all contexts, rather than separate accessibility strategies per context. At the same time, default UI aesthetics and density are a priority for the app context, and overly aggressive accessibility defaults can degrade usability in dense interfaces.
+The product benefits from a consistent, token-driven workflow across all contexts, rather than separate accessibility strategies per context. At the same time, default UI aesthetics and ergonomic density are a priority for the app context, and overly aggressive accessibility defaults can degrade usability in dense interfaces. Density is now a separate axis and must not be encoded into theme overrides (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 Theme switching must therefore:
 - Preserve an elegant default experience.
@@ -34,8 +35,8 @@ Theme switching must therefore:
 
 I decided to define a baseline theme spectrum as a starting point across contexts:
 
-1. **Default theme** prioritizes aesthetic clarity and dense information layout.
-2. **Accessibility theme** prioritizes compliance and cognitive clarity, even at the cost of density.
+1. **Default theme** prioritizes aesthetic clarity and baseline contrast.
+2. **Accessibility theme** prioritizes compliance and cognitive clarity, without changing density.
 
 This baseline is a practical minimum, not a hard requirement. Contexts may add more themes when needed, but aligning on the same baseline keeps the workflow consistent when components span multiple contexts.
 
@@ -46,6 +47,7 @@ This baseline is a practical minimum, not a hard requirement. Contexts may add m
 - **Accessibility themes are opt-in** and should not redefine the core layout structure.
 - **Token scaling should be constrained** to interactive components and focus/contrast tokens.
 - **Layout containers should remain stable** across themes; scaling is not applied to layout primitives by default.
+- **Density changes must use the density axis** (not theme overrides).
 - **Cognitive accessibility is supported** via clear labels, explicit state indications, and reduced reliance on color-only cues.
 
 ### Implementation Mechanics (Baseline)
@@ -54,6 +56,7 @@ This baseline is a practical minimum, not a hard requirement. Contexts may add m
 - **Tokenized size model:** interactive sizes (height, padding, thumb size, focus ring width, etc.) must resolve through tokens that can be multiplied by the interactive scale factor per theme.
 - **Stable layout primitives:** containers, grids, and page shells do not consume the interactive scale factor. This avoids cascading layout breakage when the accessibility theme is enabled.
 - **Theme-scoped overrides:** accessibility themes override interactive tokens and focus/contrast tokens without redefining component structure.
+- **Density overrides remain separate:** compactness is controlled by `data-eui-density`, not the accessibility theme.
 
 ---
 
@@ -83,7 +86,7 @@ Accessibility includes cognitive needs, not just screen reader support. Providin
 ### Trade-offs
 - Additional token sets to maintain for each context where extra themes are introduced.
 - Increased validation burden when switching themes.
-- Some UI density is intentionally reduced in accessibility themes.
+- Density adjustments require separate validation when `data-eui-density` is used.
 
 ### Implementation Notes
 - Introduce constrained scaling tokens for interactive sizes and focus rings (per context).
@@ -95,4 +98,4 @@ Accessibility includes cognitive needs, not just screen reader support. Providin
 
 ## Notes
 
-This ADR establishes the cross-context strategy. Component-level accessibility patterns remain defined by ADR-0029 and the Accessibility Reference.
+This ADR establishes the cross-context strategy. Component-level accessibility patterns remain defined by [ADR-0029](ADR-0029-accessibility-architecture-and-decision-framework.md) and the Accessibility Reference.

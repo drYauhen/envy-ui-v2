@@ -53,7 +53,7 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 - `tokens:build:figma:app`: Build Figma outputs for app context.
 - `tokens:build:figma:website`: Build Figma outputs for website context (canonical; `web` renamed to `website`).
 - `tokens:build:figma:report`: Build Figma outputs for report context.
-- `tokens:copy-readme`: Copy tokens README to public docs.
+- `tokens:copy-readme`: Copy tokens [README](README.md) to public docs.
 - `tokens:generate-docs`: Generate token reference docs.
 - `tokens:generate-metadata`: Generate token metadata files.
 - `tokens:generate-types`: Generate token TypeScript types.
@@ -92,7 +92,7 @@ Note: The dev app has its own scripts inside `apps/dev-app/` (e.g., `npm run dev
 
 - `storybook:sync-nav`: Sync navigation order from config.
 - `storybook:sync-config`: Sync navigation config into preview sorter.
-- `storybook:prepare`: Build canonical tokens + copy docs + copy tokens README.
+- `storybook:prepare`: Build canonical tokens + copy docs + copy tokens [README](README.md).
 - `storybook:dev`: Start Storybook on port 6006.
 - `storybook:restart`: Restart Storybook after adding new story files (manual).
 - `storybook`: Prepare + run Storybook with nodemon restarts and docs/tokens/Tailwind watchers.

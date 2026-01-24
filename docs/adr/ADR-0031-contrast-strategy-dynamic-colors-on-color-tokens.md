@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
-- [ADR-0018](./ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture - REM, EM, and PX
-- [ADR-0029](./ADR-0029-accessibility-architecture-and-decision-framework.md) — Accessibility Architecture and Decision Framework
+- [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0018](ADR-0018-typography-units-architecture-rem-em-px.md) — Typography Units Architecture - REM, EM, and PX
+- [ADR-0029](ADR-0029-accessibility-architecture-and-decision-framework.md) — Accessibility Architecture and Decision Framework
 
 ---
 
@@ -16,7 +16,7 @@
 
 Envy UI must remain readable across contexts (app, website, report) and across dynamic user-driven themes (custom websites, print templates, client-defined palettes).
 
-Manual pairing of background and text colors does not scale when colors can be generated or chosen at runtime. We need a system-wide strategy that:
+Manual pairing of background and text colors does not scale when colors can be generated or chosen at runtime. This decision requires a system-wide strategy that:
 
 - Produces reliable text/background pairs for known palettes.
 - Supports runtime decisions for user-defined colors.
@@ -55,7 +55,7 @@ I decided to adopt a two-path contrast strategy:
 - Token pipeline must generate and expose `on-*` pairs for relevant surfaces.
 - Components should reference tokens rather than compute text colors locally.
 - A shared contrast utility becomes part of the system API for dynamic themes.
-- We must document target thresholds per context (app/site/report) as they are finalized.
+- Target thresholds per context (app/site/report) must be documented as they are finalized.
 
 ---
 

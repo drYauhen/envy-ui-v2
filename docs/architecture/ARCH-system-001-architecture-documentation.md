@@ -26,7 +26,7 @@ This directory contains **current architectural rules, standards, and references
 - 📜 Historical records of decisions
 - 📜 Context for why decisions were made
 - 📜 Not current system documentation
-- 📜 See [`../adr/README.md`](../adr/README.md) for ADR documentation
+- 📜 See [`../adr/README.md`](../workflows/README.md) for ADR documentation
 
 ## Documentation Index
 
@@ -34,26 +34,26 @@ This directory contains **current architectural rules, standards, and references
 
 **Enforceable rules that must be followed:**
 
-- **[Component CSS Architecture](./ARCH-components-001-component-css-architecture.md)** - Mandatory rules for component CSS implementation (single source of truth, no hardcoded values, OKLCH color space, theme overrides)
-- **[Token Usage Rules](./ARCH-tokens-004-token-usage-rules.md)** - Rules for using design tokens in CSS, contracts, and generated outputs
-- **[System Prefix](./ARCH-system-006-system-prefix.md)** - Canonical prefix system (`eui`)
+- **[Component CSS Architecture](ARCH-components-001-component-css-architecture.md)** - Mandatory rules for component CSS implementation (single source of truth, no hardcoded values, OKLCH color space, theme overrides)
+- **[Token Usage Rules](ARCH-tokens-004-token-usage-rules.md)** - Rules for using design tokens in CSS, contracts, and generated outputs
+- **[System Prefix](ARCH-system-006-system-prefix.md)** - Canonical prefix system (`eui`)
 
 ### References
 
 **Comprehensive reference documentation:**
 
-- **[Token Architecture](./ARCH-tokens-003-token-architecture.md)** - Complete token system architecture, DTCG compliance, and developer tooling
-- **[Accessibility Reference](./ARCH-accessibility-001-accessibility-reference.md)** - ARIA roles, WAI-ARIA patterns, and React Aria hooks reference
-- **[Dev App Architecture](./ARCH-system-004-dev-app-architecture.md)** - Architecture of the development application
+- **[Token Architecture](ARCH-tokens-003-token-architecture.md)** - Complete token system architecture, DTCG compliance, and developer tooling
+- **[Accessibility Reference](ARCH-accessibility-001-accessibility-reference.md)** - ARIA roles, WAI-ARIA patterns, and React Aria hooks reference
+- **[Dev App Architecture](ARCH-system-004-dev-app-architecture.md)** - Architecture of the development application
 
 ### Guides
 
 **Architectural guides and patterns:**
 
-- **[ADR Validation and Implementation](./ARCH-system-003-architecture-validation-through-implementation.md)** - Process for validating architectural decisions through implementation and maintaining ADR-implementation synchronization
-- **[Hero Section Theme Architecture](./ARCH-theme-001-hero-section-theme-architecture.md)** - Theme architecture for hero sections
-- **[Component Naming Conventions](./ARCH-components-002-component-naming-conventions.md)** - Recommended naming patterns for components and variants
-- **[Layout Composition Guide](./ARCH-layout-001-layout-composition-guide.md)** - Canonical layout patterns and composition rules
+- **[ADR Validation and Implementation](ARCH-system-003-architecture-validation-through-implementation.md)** - Process for validating architectural decisions through implementation and maintaining ADR-implementation synchronization
+- **[Hero Section Theme Architecture](ARCH-theme-001-hero-section-theme-architecture.md)** - Theme architecture for hero sections
+- **[Component Naming Conventions](ARCH-components-002-component-naming-conventions.md)** - Recommended naming patterns for components and variants
+- **[Layout Composition Guide](ARCH-layout-001-layout-composition-guide.md)** - Canonical layout patterns and composition rules
 
 ## Creating New Architecture Documents
 
@@ -76,7 +76,7 @@ Create an Architecture document when:
    - Use descriptive, kebab-case filename: `my-architectural-rule.md`
    - Follow existing document structure
 
-2. **Add to this README** (index)
+2. **Add to this [README](../workflows/README.md)** (index)
    - Add entry in appropriate category (Rules, References, or Guides)
    - Use format: `- **[Title](./filename.md)** - Brief description`
 
@@ -128,7 +128,7 @@ See [Architecture Documentation](../architecture/ARCH-system-001-architecture-do
 
 3. **When creating new Architecture document:**
    - ✅ Create the markdown file first
-   - ✅ Add entry to this README index (appropriate category)
+   - ✅ Add entry to this [README](../workflows/README.md) index (appropriate category)
    - ✅ Create Storybook story if needed (`stories/docs/architecture/filename.stories.tsx`)
    - ✅ Update `docs-registry.ts` if needed
    - ✅ Add metadata (Last Updated, Related ADR, Category)
@@ -153,6 +153,6 @@ See [Architecture Documentation](../architecture/ARCH-system-001-architecture-do
 
 ## Related Documentation
 
-- **[ADR Documentation](../adr/README.md)** - Historical decision records
+- **[ADR Documentation](../workflows/README.md)** - Historical decision records
 - **[Documentation Guide](../DOCS-GUIDE.md)** - General documentation guidelines
 - **[ADR Workflow](../workflows/WORKFLOW-001-adr-workflow.md)** - How to create and manage ADRs

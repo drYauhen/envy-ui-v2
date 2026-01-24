@@ -145,11 +145,11 @@ All required CSS files are imported in `src/main.tsx` (not `index.css`):
 
 **Important**: CSS must be imported in `main.tsx` in the correct order. See [Dev App Workflow](../../docs/workflows/dev-app-workflow.md#css-imports) for details.
 
-## Context and Themes
+## Context, Themes, and Density
 
-The app uses `data-eui-context="app"` and `data-eui-theme="default"` attributes for proper token resolution.
+The app uses `data-eui-context="app"` and `data-eui-theme="default"` attributes for proper token resolution. Density is optional; when not set, the default density is applied.
 
-To test different contexts/themes, modify the attributes in `src/App.tsx`.
+To test different contexts/themes/density, modify the attributes in `src/App.tsx`.
 
 ## Navigation Data
 
@@ -166,4 +166,3 @@ Navigation data is stored in SQLite database and fetched via GraphQL API. The da
 - **[Dev App Workflow](../../docs/workflows/dev-app-workflow.md)** - Complete usage guide
 - **[Dev App Architecture](../../docs/architecture/dev-app-architecture.md)** - Technical architecture
 - **[Server README](./server/README.md)** - GraphQL server documentation
-

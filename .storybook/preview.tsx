@@ -1,16 +1,22 @@
 import type { Decorator, Preview } from '@storybook/react';
 import { DocsContainer, type DocsContainerProps } from '@storybook/addon-docs/blocks';
+import { useEffect, type ReactNode } from 'react';
 import { getSectionConfig } from './section-config';
 import './mermaid.css';
 import '../generated/css/tokens.css';
 import '../generated/css/components/divider.tokens.css';
 import '../src/ui/focus-policy.css';
+import '../src/ui/control.css';
 import '../src/ui/state.css';
 import '../src/ui/label.css';
 import '../src/ui/button.css';
 import '../src/ui/components/card/card.index.css';
 import '../src/ui/components/badge/badge.index.css';
 import '../src/ui/components/divider/divider.index.css';
+import '../src/ui/components/tooltip/tooltip.index.css';
+import '../src/ui/components/input/input.index.css';
+import '../src/ui/components/input-group/input-group.index.css';
+import '../src/ui/components/form/form.index.css';
 // import '../src/ui/checkbox.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/switch.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/input.css'; // LEGACY: Likely defines old component tokens
@@ -103,6 +109,33 @@ const getGlobalValue = (value: unknown, fallback: string) =>
 const joinClassNames = (...values: Array<string | undefined>) =>
   values.filter(Boolean).join(' ');
 
+const syncHtmlContext = (context: string, theme: string, focusPolicy: string) => {
+  if (typeof document === 'undefined') return;
+  const root = document.documentElement;
+  root.setAttribute('data-eui-context', context);
+  root.setAttribute('data-eui-theme', theme);
+  root.setAttribute('data-eui-focus-policy', focusPolicy);
+  root.style.fontSize = 'var(--eui-typography-fontSize-base)';
+};
+
+const HtmlContextSync = ({
+  context,
+  theme,
+  focusPolicy,
+  children
+}: {
+  context: string;
+  theme: string;
+  focusPolicy: string;
+  children: ReactNode;
+}) => {
+  useEffect(() => {
+    syncHtmlContext(context, theme, focusPolicy);
+  }, [context, theme, focusPolicy]);
+
+  return <>{children}</>;
+};
+
 const isDocsCodeBlock = (className: string | undefined, children: any) => {
   const text = typeof children === 'string' ? children :
     Array.isArray(children) ? children.join('') : '';
@@ -150,16 +183,18 @@ const DocsThemeContainer = ({ children, context }: DocsContainerProps) => {
 
   return (
     <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
-      <DocsContainer context={context}>
-        <div
-          className="sb-docs-wrapper eui-typography-root"
-          data-eui-focus-policy={focusPolicy}
-          data-eui-context="app"
-          data-eui-theme={appTheme}
-        >
-          {children}
-        </div>
-      </DocsContainer>
+      <HtmlContextSync context="app" theme={appTheme} focusPolicy={focusPolicy}>
+        <DocsContainer context={context}>
+          <div
+            className="sb-docs-wrapper eui-typography-root"
+            data-eui-focus-policy={focusPolicy}
+            data-eui-context="app"
+            data-eui-theme={appTheme}
+          >
+            {children}
+          </div>
+        </DocsContainer>
+      </HtmlContextSync>
     </ContextThemeProvider>
   );
 };
@@ -173,14 +208,16 @@ const withPreviewLayout: Decorator = (Story, context) => {
 
   return (
     <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
-      <div
-        className="sb-preview-wrapper eui-typography-root"
-        data-eui-focus-policy={focusPolicy}
-        data-eui-context="app"
-        data-eui-theme="default"
-      >
-        <div className="sb-preview-region">{storyNode}</div>
-      </div>
+      <HtmlContextSync context="app" theme={appTheme} focusPolicy={focusPolicy}>
+        <div
+          className="sb-preview-wrapper eui-typography-root"
+          data-eui-focus-policy={focusPolicy}
+          data-eui-context="app"
+          data-eui-theme={appTheme}
+        >
+          <div className="sb-preview-region">{storyNode}</div>
+        </div>
+      </HtmlContextSync>
     </ContextThemeProvider>
   );
 };

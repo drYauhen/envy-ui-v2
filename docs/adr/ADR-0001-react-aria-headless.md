@@ -6,7 +6,7 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
+- [ADR-0002](ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
 
 ---
 
@@ -135,29 +135,31 @@ Reasoning:
 
 ### React Spectrum
 
-React Spectrum is:
-
-* a complete design system,
-* with predefined styles and UX decisions.
-
-Envy UI:
-
-* has its own design language,
-* its own token system,
-* its own semantic models.
-
-Using Spectrum would conflict with these goals.
+I do **not** use React Spectrum components. Envy UI has its own design language, token system, and semantic models, and Spectrum’s prebuilt components would conflict with those decisions.
 
 ---
 
 ## Component Layering in Envy UI
 
-Envy UI implements a **multi-tier component architecture** with different implementation strategies for different use cases:
+Envy UI implements a **multi-tier component architecture** with different implementation strategies for different use cases.  
+The **primary token rendering layer is HTML + CSS**. That layer is the canonical baseline and is valid for server-rendered and non-JS contexts (e.g., report generation).
+
+### Tier 0: HTML + CSS (Canonical Token Rendering)
+
+**Purpose**: Primary token surface and baseline visual semantics
+**Implementation**: Semantic HTML + CSS using Envy UI tokens
+**Examples**: Static layouts, documentation, server-rendered UI, foundational component styling
+
+**Characteristics**:
+* Token-driven styling without runtime dependencies
+* Semantic HTML with ARIA where applicable
+* Serves as the visual source of truth for higher tiers
+* Supports SSR and static rendering scenarios
 
 ### Tier 1: TSX (Clean) Components
 
 **Purpose**: Basic, lightweight components for simple use cases
-**Implementation**: Plain HTML elements with semantic markup and CSS styling
+**Implementation**: React wrappers over semantic HTML + CSS
 **Examples**: Simple buttons, basic form inputs, layout components
 
 **Characteristics**:
@@ -224,13 +226,16 @@ Implementation:
 
 ### Implementation Strategy by Component Type
 
-| Component Type | TSX (Clean) | TSX + React Aria | Web Components |
-|---|---|---|---|
-| Simple Button | ✅ Primary | ✅ Advanced interactions | ✅ Cross-framework |
-| Basic Input | ✅ Primary | ✅ Complex validation | ❌ Not applicable |
-| Select Dropdown | ❌ Limited | ✅ Primary | ✅ Cross-framework |
-| Data Table | ❌ Limited | ✅ Primary | ❌ Complex |
-| Layout Components | ✅ Primary | ❌ Not needed | ❌ Not applicable |
+All components start with **HTML + CSS** as the canonical token-rendering baseline.  
+The table below describes which higher tiers are primary for interactive behavior.
+
+| Component Type | HTML + CSS (Canonical) | TSX (Clean) | TSX + React Aria | Web Components |
+|---|---|---|---|---|
+| Simple Button | ✅ Baseline | ✅ Primary | ✅ Advanced interactions | ✅ Cross-framework |
+| Basic Input | ✅ Baseline | ✅ Primary | ✅ Complex validation | ❌ Not applicable |
+| Select Dropdown | ✅ Baseline (static) | ❌ Limited | ✅ Primary | ✅ Cross-framework |
+| Data Table | ✅ Baseline (static) | ❌ Limited | ✅ Primary | ❌ Complex |
+| Layout Components | ✅ Baseline | ✅ Primary | ❌ Not needed | ❌ Not applicable |
 
 ---
 

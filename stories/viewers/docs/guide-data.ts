@@ -33,8 +33,7 @@ export const guides: GuideMetadata[] = [
   {
     id: 'guide-docs-guide',
     title: 'Documentation Guide',
-    filename: 'DOCS-GUIDE.md',
-    storybookId: 'docs-workflows--documentation-guide'
+    filename: 'DOCS-GUIDE.md'
   },
   {
     id: 'guide-guides-guide',

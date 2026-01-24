@@ -1,20 +1,23 @@
 # ADR-0017: Layered Token Architecture for Contexts and Themes
 
-**Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
+**Status:** Superseded by [ADR-0037](ADR-0037-canonical-token-architecture-locked.md)
 **Date:** 2025-12-20
 **Last Updated:** 2026-01-10
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
-- [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
-- [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
+- [ADR-0037](ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
+- [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0026](ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
 ## Context
+
+**Note:** This ADR predates the Density axis. Density is now a first-class, optional axis (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 The UI system serves a corporate-level application as its primary destination, but the application contains three distinct sub-contexts with different visual requirements:
 
@@ -39,7 +42,7 @@ Foundation → Semantic → Context → Theme → Component
 
 **Structure (Initial):**
 - **Foundations** - Base color scales, dimensions (neutral, brand, accent families). Shared across all contexts, context-agnostic.
-- **Semantic** - Semantic tokens (text, background, border, focus) that reference foundations. Define "what" not "where". **Optimized for app-default context/theme by default** (see [ADR-0026](./ADR-0026-app-default-color-positioning.md)).
+- **Semantic** - Semantic tokens (text, background, border, focus) that reference foundations. Define "what" not "where". **Optimized for app-default context/theme by default** (see [ADR-0026](ADR-0026-app-default-color-positioning.md)).
 - **Contexts** - Context-specific overrides of semantic tokens (environment defaults):
   - `contexts/app.json` - Application shell semantic overrides (e.g., fontSize: 14px)
   - `contexts/website.json` - Website/CMS semantic overrides (e.g., fontSize: 16px)
@@ -69,7 +72,7 @@ Foundation → Semantic → Context → Theme → Component
   - `components/` - Component tokens for report context
   - `themes/` - Theme overrides (print, screen)
 
-This ensures complete independence between contexts and avoids cross-context dependencies. See [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) for details on the evolution of this structure.
+This ensures complete independence between contexts and avoids cross-context dependencies. See [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) for details on the evolution of this structure.
 
 **Note:** Some components may define variants within a single theme (for example, a light side-nav or alternate hero variant). These variants live within component tokens (for example, `tokens/{context}/components/{component}/variant/*`) and are selected at the component level. They do not introduce a new theme layer. Cross-context variant compatibility is desirable when reuse is needed, but it is not formally defined yet.
 

@@ -6,9 +6,10 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (superseded by ADR-0041)
-- [ADR-0041](./ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution and Token Architecture Improvements
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0037](ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (superseded by [ADR-0041](ADR-0041-dtcg-schema-resolution-and-token-architecture.md))
+- [ADR-0041](ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution and Token Architecture Improvements
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
@@ -42,6 +43,7 @@ This model works for components and must be extended to foundation-level reset.
 4. **Context-owned reset strategy** - Each context (app/website/report) has its own reset
 5. **Scoped selectors only** - No global unscoped reset on `body` or `*`
 6. **Theme-independent** - No theme-specific selectors in canonical reset CSS
+7. **Density-independent** - Reset does not encode density; density overrides apply via `data-eui-density`
 
 ### Reset Contract Structure
 

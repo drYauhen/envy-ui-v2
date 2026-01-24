@@ -8,7 +8,7 @@
 
 **CRITICAL:** This guide applies to ALL documents in `docs/`, not just ADR.
 
-**For AI Agents:** See [AI-AGENT-DOCUMENTATION-GUIDE.md](./AI-AGENT-DOCUMENTATION-GUIDE.md) for complete step-by-step workflow instructions.
+**For AI Agents:** See [AI-AGENT-DOCUMENTATION-GUIDE](AI-AGENT-DOCUMENTATION-GUIDE.md) for complete step-by-step workflow instructions.
 
 ## Single Source of Truth
 
@@ -23,7 +23,7 @@ All non-ADR documentation metadata must be defined here FIRST:
 - `storybookId` (optional, Storybook story id for link mapping)
 - `aliases` (optional, for renamed files)
 
-**ADR exception:** ADR metadata lives in `stories/viewers/docs/adr-list-data.ts` (single source of truth) and is imported into the registry for link mapping and Storybook navigation. Only ADR guide documents (README, AGENT-GUIDE, TEMPLATE) should be registered manually.
+**ADR exception:** ADR metadata lives in `stories/viewers/docs/adr-list-data.ts` (single source of truth) and is imported into the registry for link mapping and Storybook navigation. Only ADR guide documents ([README](workflows/README.md), [AGENT-GUIDE](adr/AGENT-GUIDE.md), TEMPLATE) should be registered manually.
 
 ## Excluded Directories
 
@@ -199,7 +199,7 @@ For any doc that has a Storybook story:
 - Add `storybookId` to its registry entry
 - Use the Storybook story id format, for example: `docs-architecture--accessibility-reference`
 
-However, ADR guide documents (README.md, AGENT-GUIDE.md, TEMPLATE.md) must be manually registered.
+However, ADR guide documents ([README](workflows/README.md).md, [AGENT-GUIDE](adr/AGENT-GUIDE.md).md, TEMPLATE.md) must be manually registered.
 
 ## Mermaid Diagrams (All Docs)
 
@@ -229,7 +229,7 @@ Place images next to the markdown file and reference them with relative paths:
 ## ADR Notes (Section-Specific)
 
 ADR documents are automatically registered from `adr-list-data.ts`. You don't need to manually add them to `docs-registry.ts`.
-ADR guide documents (README.md, AGENT-GUIDE.md, TEMPLATE.md) still require manual registry entries.
+ADR guide documents ([README](workflows/README.md).md, [AGENT-GUIDE](adr/AGENT-GUIDE.md).md, TEMPLATE.md) still require manual registry entries.
 
 ## Common Mistakes
 
@@ -280,5 +280,5 @@ ADR documents are automatically included in the registry from `adr-list-data.ts`
 - Checks links between ADR and other documents
 
 **See also:**
-- [`docs/adr/AGENT-GUIDE.md`](./adr/AGENT-GUIDE.md) - ADR-specific guide
-- [`docs/workflows/adr-workflow.md`](./workflows/WORKFLOW-001-adr-workflow.md) - ADR workflow
+- [`docs/adr/AGENT-GUIDE.md`](adr/AGENT-GUIDE.md) - ADR-specific guide
+- [`docs/workflows/adr-workflow.md`](workflows/WORKFLOW-001-adr-workflow.md) - ADR workflow

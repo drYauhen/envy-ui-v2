@@ -21,6 +21,13 @@ All ADR metadata (number, title, status, date, exportName) must be defined here 
 - Overview links use this data
 - Internal ADR links use this data
 
+## Authorial Voice and Ownership
+
+- Owner is mandatory and must be a named individual responsible for the decision.
+- Decision statements use first-person singular ("I decided...", "I intentionally chose...").
+- System behavior uses neutral language ("The system defines...", "This decision establishes...").
+- Avoid collective language ("we", "our", "we assume") in ADR content.
+
 ## Workflow for New ADR
 
 ### Step 1: Add to adr-list-data.ts FIRST

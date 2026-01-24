@@ -31,7 +31,7 @@ Architecture documentation captures the foundational decisions, patterns, and pr
 
 ### Supporting Documents
 
-- **README.md**: Overview and navigation for architecture documentation
+- **[README](../workflows/README.md).md**: Overview and navigation for architecture documentation
 - **ARCHITECTURE-GUIDE.md**: This contribution guide
 - **ARCHITECTURE-TEMPLATE.md**: Template for new architecture documents
 

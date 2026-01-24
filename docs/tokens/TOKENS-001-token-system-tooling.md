@@ -4,13 +4,13 @@ This document explains the developer tools available for working with design tok
 
 ## Overview
 
-The Envy UI token system is a comprehensive design token architecture supporting multiple contexts (app, website, report) with DTCG 2025.10 compliance. The old `web` name is deprecated and has been renamed to `website` (legacy artifacts may still exist under `tokens/legacy/contexts/web`). The system provides extensive tooling to improve developer experience:
+The Envy UI token system is a comprehensive design token architecture supporting multiple contexts (app, website, report) with DTCG [2025](../steps/2025-12-20-step.md).10 compliance. The old `web` name is deprecated and has been renamed to `website` (legacy artifacts may still exist under `tokens/legacy/contexts/web`). The system provides extensive tooling to improve developer experience:
 
 ### Core Features
 
 1. **Multi-Context Architecture** - Independent token structures for app/website/report contexts
 2. **Website Context** - Canonical, may temporarily inherit app semantics until specialized tokens are defined
-3. **DTCG 2025.10 Compliance** - Local schema validation with official specification alignment
+3. **DTCG [2025](../steps/2025-12-20-step.md).10 Compliance** - Local schema validation with official specification alignment
 4. **Logical Typography Organization** - Typography tokens separated into focused semantic files
 5. **Enhanced Token Viewers** - Display both references and resolved values for transparency
 6. **TypeScript Integration** - Generated types and runtime utilities for type safety
@@ -351,7 +351,7 @@ If TypeScript reports errors on token names:
 
 For detailed examples of how to use token utilities in real-world scenarios, see:
 
-- **[Token Utilities Use Cases](./TOKENS-003-token-utilities-use-cases.md)** - Comprehensive guide with 10+ practical examples
+- **[Token Utilities Use Cases](TOKENS-003-token-utilities-use-cases.md)** - Comprehensive guide with 10+ practical examples
   - Use cases for AI agents (generating components, validating tokens, finding tokens)
   - Use cases for human developers (theme switching, token explorer, consistency checks)
   - Code examples with explanations
@@ -370,12 +370,12 @@ For detailed examples of how to use token utilities in real-world scenarios, see
 - Check design consistency across components
 - Create interactive token editors
 
-See [TOKENS-003-token-utilities-use-cases.md](./TOKENS-003-token-utilities-use-cases.md) for complete examples with code.
+See [TOKENS-003-token-utilities-use-cases](TOKENS-003-token-utilities-use-cases.md) for complete examples with code.
 
 ## Related Documentation
 
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) - Rules for using tokens
 - [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md) - Complete current token system architecture
-- [Token Reference](./TOKENS-002-token-reference.md) - Auto-generated token reference
+- [Token Reference](TOKENS-002-token-reference.md) - Auto-generated token reference
 - [DTCG Schema Resolution](../adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md) - Recent improvements
 - [Layered Token Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) - Architectural foundation

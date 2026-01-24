@@ -1,22 +1,22 @@
 # ADR-0026: App-Default Color Positioning and Semantic Token Optimization
 
-**Status:** Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)
+**Status:** Superseded by [ADR-0037](ADR-0037-canonical-token-architecture-locked.md)
 **Date:** 2025-12-29
 **Last Updated:** 2025-12-29
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
-- [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
+- [ADR-0037](ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture (current implementation)
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture (superseded)
+- [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization (superseded)
+- [ADR-0025](ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
 
 ---
 
 ## Context
 
-After implementing the layered token architecture (Foundation → Semantic → Context → Theme → Component) and completing the color scale re-architecture (Brand-700 anchor, Accent-600 anchor, neutral scale rebalancing), we needed to clarify the positioning of color tokens within the system.
+After implementing the layered token architecture (Foundation → Semantic → Context → Theme → Component) and completing the color scale re-architecture (Brand-700 anchor, Accent-600 anchor, neutral scale rebalancing), a need emerged to clarify the positioning of color tokens within the system.
 
 The system serves multiple contexts (application shell, website/CMS, reports) with different visual requirements. However, the **application shell is the primary destination** and represents the most common use case. This raised the question: **Where should the default color values live, and how should they be positioned?**
 
@@ -57,7 +57,7 @@ I decided to **optimize semantic tokens for `app-default` context/theme** while 
   - `tokens/website/semantic/colors/text.json` might override `eui.color.text.primary` for website context
   - `tokens/app/themes/accessibility.json` might override colors for high contrast
 
-**Note (2025-12-31):** The token structure has been reorganized. Each context now has its own complete structure. Context-specific overrides are within `tokens/{context}/semantic/` and theme overrides are in `tokens/{context}/themes/`. See [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) for details.
+**Note (2025-12-31):** The token structure has been reorganized. Each context now has its own complete structure. Context-specific overrides are within `tokens/{context}/semantic/` and theme overrides are in `tokens/{context}/themes/`. See [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) for details.
 
 ### Default Positioning
 
@@ -142,6 +142,7 @@ These decisions were made with application UI in mind, reinforcing the app-defau
 **Storybook:**
 - Default context: `app`
 - Default theme: `default`
+- Default density: resolved by context (no attribute required)
 - Toolbar allows switching between contexts/themes
 - Color scale stories display context/theme information
 
@@ -157,6 +158,7 @@ These decisions were made with application UI in mind, reinforcing the app-defau
 3. **Other contexts/themes can override** - Only override what differs from app-default
 4. **Figma export uses app-default as mode 0** - Default mode represents app-default
 5. **Storybook displays app-default by default** - Default context/theme is app/default
+6. **Density is orthogonal** - Default density is resolved separately (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md))
 
 ## Examples
 
@@ -214,8 +216,8 @@ These decisions were made with application UI in mind, reinforcing the app-defau
 ## Notes
 
 This ADR documents the positioning strategy. Implementation details for CSS generation, Figma export, and Storybook integration are documented in:
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
-- [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
-- [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model: AI Agent-Oriented Architecture
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0025](ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
+- [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model: AI Agent-Oriented Architecture
 
 The color scale re-architecture (Brand-700, Accent-600 anchors) is documented separately but aligns with this positioning strategy.

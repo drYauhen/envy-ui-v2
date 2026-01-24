@@ -6,10 +6,10 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
-- [ADR-0022](./ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
-- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
+- [ADR-0025](ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
+- [ADR-0003](ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 
 ---
 
@@ -253,7 +253,7 @@ graph TD
 - **Cross-Reference**: Easy to reference between Figma and Storybook
 
 **Storybook as Documentation Layer:**
-- Storybook provides detailed token documentation with README files
+- Storybook provides detailed token documentation with [README](../workflows/README.md) files
 - Each context has its own documentation (`tokens/{context}/README.md`)
 - Theme documentation explains theme-specific overrides
 - Component token stories mirror the token file structure
@@ -573,10 +573,10 @@ Variables Panel
 ## Notes
 
 This ADR establishes the file structure and organization strategy. For Variables structure and export details, see:
-- [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
+- [ADR-0025](ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
 
 For token organization, see:
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 For the Figma plugin implementation, see:
 - `figma-plugin/code.ts` - Plugin logic

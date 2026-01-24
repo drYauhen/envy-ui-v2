@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
-- [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
-- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
+- [ADR-0001](ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0002](ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
+- [ADR-0003](ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 
 ---
 
@@ -18,7 +18,7 @@ I adopt a **context-aware projection model** for UI components, where:
 
 * UI components (e.g. Button, Card) are **semantic invariants**.
 * Visual appearance is a **projection** determined by rendering context and scheme.
-* Context is an explicit, first-class axis, separate from intent, theme, and state.
+* Context is an explicit, first-class axis, separate from intent, theme, density, and state (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 A single component definition must be renderable in multiple contexts (application UI, generated website, report/print preview) **simultaneously**, without duplication of components or design systems.
 
@@ -63,8 +63,9 @@ The system explicitly separates the following concerns:
 | --------- | ---------------------------------------------------- |
 | Component | What the thing is (Button, Card, Input)              |
 | Intent    | Why it exists (primary, secondary, danger)           |
-| Context   | Where it is rendered (app, website, report)             |
-| Scheme    | How it is styled (light, dark, high-contrast, print) |
+| Context   | Where it is rendered (app, website, report)          |
+| Theme     | Visual identity (light, dark, high-contrast, print)  |
+| Density   | Ergonomic scale (compact, default, relaxed)          |
 | State     | How it reacts (hover, active, focus, disabled)       |
 
 No axis may encode responsibilities of another axis.
@@ -81,9 +82,9 @@ Initial conceptual contexts include:
 * `website` – generated website preview
 * `report` – printable / static document (PDF / HTML)
 
-Contexts are **orthogonal** to themes and schemes.
+Contexts are **orthogonal** to themes and density.
 
-A dark theme applied to an application UI does not imply the same styling rules as a dark theme applied to a generated website or report.
+A dark theme applied to an application UI does not imply the same styling rules as a dark theme applied to a generated website or report. Density defaults are resolved independently (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 ---
 
@@ -119,9 +120,10 @@ Rendering follows a layered projection pipeline:
 Component
   → Intent
     → Context
-      → Scheme
-        → Resolved Tokens
-          → CSS / Platform Output
+      → Theme
+        → Density
+          → Resolved Tokens
+            → CSS / Platform Output
 ```
 
 Context influences:
@@ -132,6 +134,7 @@ Context influences:
 * Print-safe or interactive-safe styling
 
 Context does **not** change component semantics or intent.
+Density does **not** change brand identity or semantic meaning.
 
 ---
 
@@ -210,7 +213,7 @@ This ADR has been successfully implemented through a **system-wide context-aware
 ### Core Context System
 - **Context definitions**: app, website, report contexts with orthogonal themes
 - **Token architecture**: Context-specific token sets (`tokens/contexts/{context}/`)
-- **Data attribute system**: `data-eui-{context}-theme` for CSS targeting
+- **Data attribute system**: `data-eui-context`, `data-eui-theme`, `data-eui-density`
 - **Type-safe context management**: ContextName types and validation
 
 ### Storybook Implementation Tools

@@ -235,7 +235,7 @@ CSS must be imported in this exact order in `src/main.tsx`:
 All components must be within a context container:
 
 ```typescript
-<div data-eui-context="app" data-eui-theme="default">
+<div data-eui-context="app" data-eui-theme="default" data-eui-density="default">
   {/* Components here */}
 </div>
 ```
@@ -244,6 +244,7 @@ This ensures:
 - Token resolution works correctly
 - Context-specific styling applies
 - Theme switching works
+- Density defaults are explicit (can be overridden per subtree)
 
 ## Automation Script
 
@@ -450,4 +451,4 @@ Dev-app serves as integration test for:
 
 - [Dev App Workflow](../workflows/WORKFLOW-007-dev-app-workflow.md) - Usage guide
 - [Storybook Workflow](../workflows/WORKFLOW-003-storybook-workflow.md) - Storybook integration
-- [Component Naming Conventions](./ARCH-components-002-component-naming-conventions.md) - Component naming
+- [Component Naming Conventions](ARCH-components-002-component-naming-conventions.md) - Component naming

@@ -6,8 +6,8 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0006](./ADR-0006-focus-policy-architecture.md) — Focus policy architecture
-- [ADR-0007](./ADR-0007-focus-token-separation-and-policy-mapping.md) — Token separation and policy mapping
+- [ADR-0006](ADR-0006-focus-policy-architecture.md) — Focus policy architecture
+- [ADR-0007](ADR-0007-focus-token-separation-and-policy-mapping.md) — Token separation and policy mapping
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Focus state patterns
 
 ---

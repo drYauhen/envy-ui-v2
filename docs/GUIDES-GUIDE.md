@@ -20,9 +20,9 @@ Guides documentation provides comprehensive tutorials, how-to articles, and expl
 
 ### Supporting Documents
 
-- **DOCS-GUIDE.md**: Main documentation guide (already exists)
+- **[DOCS-GUIDE](DOCS-GUIDE.md).md**: Main documentation guide (already exists)
 - **GUIDES-GUIDE.md**: This contribution guide
-- **GUIDES-TEMPLATE.md**: Template for new guide documents
+- **[GUIDES-TEMPLATE](GUIDES-TEMPLATE.md).md**: Template for new guide documents
 
 ## Guide Categories
 
@@ -123,7 +123,7 @@ Each guide should include:
 
 ## Tools and Resources
 
-- **Template**: Use GUIDES-TEMPLATE.md for new guides
+- **Template**: Use [GUIDES-TEMPLATE](GUIDES-TEMPLATE.md).md for new guides
 - **Validation**: Run `npm run docs:validate` to check links
 - **Preview**: Use Storybook to test embedded examples
 - **Analytics**: Track guide usage and effectiveness

@@ -6,8 +6,8 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — Headless / React Aria strategy
-- [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline
+- [ADR-0001](ADR-0001-react-aria-headless.md) — Headless / React Aria strategy
+- [ADR-0002](ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline
 
 ---
 

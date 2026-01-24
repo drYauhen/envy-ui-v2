@@ -18,9 +18,9 @@ This directory contains Architectural Decision Records (ADR) for Envy UI. ADRs d
 
 ## Quick Start
 
-- **Template:** [`ADR-TEMPLATE.md`](./ADR-TEMPLATE.md)
+- **Template:** [`ADR-TEMPLATE.md`](ADR-TEMPLATE.md)
 - **Workflow:** See [ADR Workflow](../workflows/WORKFLOW-001-adr-workflow.md) for complete guide
-- **Agent Guide:** See [ADR Agent Guide](./AGENT-GUIDE.md) for instructions to prevent broken links
+- **Agent Guide:** See [ADR Agent Guide](AGENT-GUIDE.md) for instructions to prevent broken links
 - **General Docs Guide:** See [Documentation Guide](../DOCS-GUIDE.md) for all documentation (not just ADR)
 
 ## ADR Principles
@@ -63,7 +63,7 @@ When creating or modifying ADRs:
 2. Run `npm run adr:generate` to generate story files
 3. Run `npm run adr:validate` to verify consistency
 
-**See:** [`AGENT-GUIDE.md`](./AGENT-GUIDE.md) for complete instructions.
+**See:** [`AGENT-GUIDE.md`](AGENT-GUIDE.md) for complete instructions.
 
 **Docs registry note:** ADR entries are auto-registered from `adr-list-data.ts`. Do not add individual ADRs to `docs-registry.ts` (only ADR guide docs like README/TEMPLATE belong there). See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md) for non-ADR registry rules.
 

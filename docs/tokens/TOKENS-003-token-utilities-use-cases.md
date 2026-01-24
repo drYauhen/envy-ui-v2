@@ -580,7 +580,7 @@ const replacement = suggestTokenReplacement('40px', 'height');
 ## Related Documentation
 
 - [Token System Tooling](../architecture/ARCH-system-001-architecture-documentation.md) - Main tooling documentation
-- [Token Reference](./TOKENS-002-token-reference.md) - Complete token reference
+- [Token Reference](TOKENS-002-token-reference.md) - Complete token reference
 - [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) - Rules for using tokens
 - [Tokens Workflow](../workflows/WORKFLOW-005-tokens-workflow.md) - Complete workflow guide
 

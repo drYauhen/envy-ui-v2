@@ -6,10 +6,10 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
-- [ADR-0002](./ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
-- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
-- [ADR-0004](./ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
+- [ADR-0001](ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0002](ADR-0002-data-driven-storybook-pipeline.md) — Data-Driven Storybook Pipeline via Style Dictionary
+- [ADR-0003](ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
+- [ADR-0004](ADR-0004-context-aware-ui-components-and-projection-model.md) — Context-Aware UI Components and Projection Model
 
 ---
 
@@ -108,13 +108,15 @@ It is **not** considered production-final, and the patterns established apply to
 
 ## 6. Context Handling
 
-Context is a **first-class axis**, separate from intent, theme, and state.
+Context is a **first-class axis**, separate from intent, theme, density, and state.
 
 * Context is applied externally (e.g. via `data-eui-context="app"`).
 * Components do not encode or assume their rendering context.
 * Multiple contexts may coexist on a single screen.
 
-This follows the model established in [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md).
+Density is also a first-class axis. It is optional to declare via `data-eui-density`, but always resolved to a deterministic default (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
+
+This follows the model established in [ADR-0003](ADR-0003-data-driven-figma-variables-pipeline.md).
 
 ---
 
@@ -123,7 +125,8 @@ This follows the model established in [ADR-0003](./ADR-0003-data-driven-figma-va
 Potential future requirements (e.g. EU/Germany accessibility regulations, print/PDF constraints) are addressed through:
 
 * Context
-* Scheme
+* Theme
+* Density
 * Policy profiles
 
 These concerns **do not require new component variants or namespaces**.

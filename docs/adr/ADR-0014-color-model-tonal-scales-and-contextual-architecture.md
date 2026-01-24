@@ -6,7 +6,7 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0026](./ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
+- [ADR-0026](ADR-0026-app-default-color-positioning.md) — App-Default Color Positioning and Semantic Token Optimization
 
 ---
 
@@ -66,7 +66,7 @@ The scale **expresses relative tonal positions, not strict linear mathematical s
 - Foundation scales can be recalibrated or extended based on context requirements
 - Semantic layer provides abstraction for context-specific remapping
 
-**Related:** See [ADR-0026](./ADR-0026-app-default-color-positioning.md) for details on how these anchor colors align with app-default optimization.
+**Related:** See [ADR-0026](ADR-0026-app-default-color-positioning.md) for details on how these anchor colors align with app-default optimization.
 
 ## Decision: Layering and Aliasing
 
@@ -102,7 +102,7 @@ These dimensions remain intentionally unimplemented; they exist to guide future 
 - Accent buttons use `accent.600` (via `accent.primary` semantic token)
 - This ensures components use the canonical anchor colors, optimized for application UI
 
-**Related:** See [ADR-0026](./ADR-0026-app-default-color-positioning.md) for details on semantic token optimization for app-default.
+**Related:** See [ADR-0026](ADR-0026-app-default-color-positioning.md) for details on semantic token optimization for app-default.
 
 ## Consequences
 

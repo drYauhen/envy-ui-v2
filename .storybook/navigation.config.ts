@@ -80,19 +80,23 @@ export const navigationConfig = {
         "Menu",
         "Modal",
         "Skeleton",
+        "Tooltip",
         "Table"
       ]
     },
     "TSX + React Aria": {
       componentGroups: [
+        { components: ["Input", "InputGroup"] },
         { components: ["Select", "MultiSelect", "SearchableSelect"] }
       ],
       otherComponents: [
         "AlertBanner",
+        "Avatar",
         "Button",
         "FormLayout",
         "Icon",
-        "Menu"
+        "Menu",
+        "Tooltip"
       ]
     },
     "Web Components": {

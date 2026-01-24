@@ -231,6 +231,6 @@ Your current structure follows design token best practices and creates a clean s
 
 ## Related Documentation
 
-- [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md)
-- [ADR-0017: Layered Token Architecture](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)
+- [Token Architecture](ARCH-tokens-003-token-architecture.md)
+- [ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture
 - [WCAG 2.2 AA Accessibility Standards](https://www.w3.org/WAI/WCAG22/quickref/)

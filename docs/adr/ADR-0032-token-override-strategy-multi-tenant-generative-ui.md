@@ -6,9 +6,9 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
-- [ADR-0031](./ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) — Contrast Strategy for Dynamic Colors and On-Color Tokens
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0031](ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) — Contrast Strategy for Dynamic Colors and On-Color Tokens
 
 ---
 
@@ -23,7 +23,7 @@ Envy UI is expected to scale into a multi-tenant system where each client can ha
 - Different validation levels for app UI, website CMS templates, and reports (screen vs print).
 - Cultural and country-specific UX requirements (i18n/locale rules, RTL, regional readability norms).
 
-The current token architecture already separates foundation, semantic, context, and theme layers. We need a forward-looking strategy that allows per-client overrides without destabilizing the core system or requiring full rebuilds for each tenant.
+The current token architecture already separates foundation, semantic, context, and theme layers. A forward-looking strategy is required to allow per-client overrides without destabilizing the core system or requiring full rebuilds for each tenant.
 
 ---
 
@@ -61,9 +61,9 @@ I decided to treat **canonical tokens as versioned source code** and define **te
 
 ## Consequences
 
-- We need a formal **override schema** and validation rules (e.g., allowed paths, contrast thresholds, range limits).
-- We need **domain/locale validation profiles** to apply stricter rules for regulated sectors, regional requirements, and report outputs.
-- We need a **composition pipeline** that can generate per-tenant bundles from base + patch.
+- A formal **override schema** and validation rules are required (e.g., allowed paths, contrast thresholds, range limits).
+- **Domain/locale validation profiles** are required to apply stricter rules for regulated sectors, regional requirements, and report outputs.
+- A **composition pipeline** is required to generate per-tenant bundles from base + patch.
 - Tenant-specific metadata (non-visual `.meta.json`) can remain alongside overrides for documentation/agent use.
 - New tooling may be required for preview and change review of per-tenant token sets.
 
@@ -72,6 +72,6 @@ I decided to treat **canonical tokens as versioned source code** and define **te
 ## Notes
 
 - Overrides should remain scoped to context/theme/component variants and avoid foundation edits.
-- The contrast strategy defined in ADR-0031 applies to AI-generated overrides.
+- The contrast strategy defined in [ADR-0031](ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) applies to AI-generated overrides.
 - Domain/locale profiles can include additional compliance checks (e.g., minimum font size for reports, print-safe palettes, sector-specific constraints, RTL or regional typographic rules).
 - This ADR does not mandate a specific database vendor; any JSON-capable store can be used for delivery.

@@ -6,11 +6,11 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0027](./ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
-- [ADR-0003](./ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
+- [ADR-0027](ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0003](ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline via Adapter JSON
 
 ---
 
@@ -258,9 +258,9 @@ contexts.forEach(context => {
 
 ## Color Format Conversion
 
-**Note:** This section addresses a technical detail specific to color tokens. For the full color model strategy, see [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md).
+**Note:** This section addresses a technical detail specific to color tokens. For the full color model strategy, see [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md).
 
-The design system uses OKLCH color format for perceptual uniformity (see [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md)). Figma Variables currently requires RGB/RGBA format for colors. During export, color tokens are converted from OKLCH to RGB using the `culori` library. If conversion fails, the system falls back to the original HEX value (if available).
+The design system uses OKLCH color format for perceptual uniformity (see [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md)). Figma Variables currently requires RGB/RGBA format for colors. During export, color tokens are converted from OKLCH to RGB using the `culori` library. If conversion fails, the system falls back to the original HEX value (if available).
 
 This conversion is handled automatically during the build process and does not affect other token types (spacing, typography, shape, etc.), which are exported directly without conversion.
 
@@ -293,9 +293,9 @@ Consider organizing variables by:
 
 ## Color Format Conversion
 
-**Note:** This section addresses a technical detail specific to color tokens. For the full color model strategy, see [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md).
+**Note:** This section addresses a technical detail specific to color tokens. For the full color model strategy, see [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md).
 
-The design system uses OKLCH color format for perceptual uniformity (see [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md)). Figma Variables currently requires RGB/RGBA format for colors. During export, color tokens are converted from OKLCH to RGB using the `culori` library. If conversion fails, the system falls back to the original HEX value (if available).
+The design system uses OKLCH color format for perceptual uniformity (see [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md)). Figma Variables currently requires RGB/RGBA format for colors. During export, color tokens are converted from OKLCH to RGB using the `culori` library. If conversion fails, the system falls back to the original HEX value (if available).
 
 This conversion is handled automatically during the build process and does not affect other token types (spacing, typography, shape, etc.), which are exported directly without conversion.
 
@@ -304,12 +304,12 @@ This conversion is handled automatically during the build process and does not a
 ## Notes
 
 This ADR focuses on the Figma Variables structure and export strategy. For file structure and organization, see:
-- [ADR-0027](./ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization
+- [ADR-0027](ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization
 
 For CSS generation, see:
-- [ADR-0024](./ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
+- [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) — CSS Layer Strategy for Context Priority
 
 For token organization, see:
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 For the Figma plugin implementation details, see the plugin code in `figma-plugin/` directory.

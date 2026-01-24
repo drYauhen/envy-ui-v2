@@ -36,7 +36,7 @@ ADRs document significant architectural decisions, their context, rationale, and
 
 **For complete agent instructions, see:** [`docs/AI-AGENT-DOCUMENTATION-GUIDE.md`](../AI-AGENT-DOCUMENTATION-GUIDE.md)
 
-**Docs registry note:** ADR entries are auto-registered from generated `adr-list-data.ts`. Do not add individual ADRs to `docs-registry.ts` (only ADR guide docs like README/TEMPLATE belong there). See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md) for non-ADR registry rules.
+**Docs registry note:** ADR entries are auto-registered from generated `adr-list-data.ts`. Do not add individual ADRs to `docs-registry.ts` (only ADR guide docs like [README](README.md)/TEMPLATE belong there). See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md) for non-ADR registry rules.
 
 ## ADR Principles
 
@@ -81,9 +81,12 @@ docs/adr/ADR-0027-figma-migration-strategy.md
 - Rationale
 - Consequences
 
+**Ownership rule:** Owner must be a named individual responsible for the decision.
+
 **Language:**
-- Use impersonal language
-- Avoid "we", "I" - use "This ADR establishes", "The system", etc.
+- Decision statements must reflect the named owner (use first-person singular: "I decided...", "I intentionally chose...")
+- Use impersonal language for system behavior and established facts ("The system assumes...", "This decision establishes...")
+- Avoid collective language ("we", "our", "we assume", "we believe") in all ADR content
 
 ### Formatting Rules
 
@@ -109,7 +112,7 @@ docs/adr/ADR-0027-figma-migration-strategy.md
    ```
 
 3. **Common formatting errors (avoid):**
-   - ❌ `**Related:** [ADR-0001](./file.md) (description)` - Single line format
+   - ❌ `**Related:** [ADR-0001](../adr/ADR-0001-react-aria-headless.md) (description)` - Single line format
    - ❌ `**Related ADRs:**` - Wrong field name (should be `**Related:**`)
    - ❌ Using `*` instead of `-` for list markers
    - ❌ Missing trailing spaces (breaks markdown line breaks)
@@ -162,7 +165,7 @@ This script:
 - `stories/viewers/docs/adr-list-data.ts` - ADR metadata
 - `stories/docs/adr/ADR-XXXX-title.stories.tsx` - Story file
 
-**Title Case conversion:** Titles are automatically converted to proper Title Case with acronym preservation (UI, API, CSS, etc.). See [CANONICAL-DOC-FORMAT.md](../CANONICAL-DOC-FORMAT.md#title-case-rules) for details.
+**Title Case conversion:** Titles are automatically converted to proper Title Case with acronym preservation (UI, API, CSS, etc.). See [CANONICAL-DOC-FORMAT](../CANONICAL-DOC-FORMAT.md) for details.
 
 ### Step 5: Verify in Storybook
 
@@ -193,11 +196,11 @@ Common status values:
 ## Images in ADRs
 
 Place images next to the ADR markdown file and reference them with relative paths.
-For general asset rules, see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md#images-and-assets).
+For general asset rules, see [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).md#images-and-assets).
 
 ## Mermaid Diagrams
 
-Mermaid rules are shared across all documentation. See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md#mermaid-diagrams-all-docs) for syntax, sizing, and max-width guidance.
+Mermaid rules are shared across all documentation. See [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md).md#mermaid-diagrams-all-docs) for syntax, sizing, and max-width guidance.
 
 If a diagram is too narrow or tall, use:
 ```
@@ -406,7 +409,7 @@ When creating a new ADR:
 
 1. **Follow general docs rules:** [`docs/DOCS-GUIDE.md`](../DOCS-GUIDE.md)
 2. **Use template:** Copy `ADR-TEMPLATE.md` and fill in all mandatory fields
-3. **Follow canonical format:** See [CANONICAL-DOC-FORMAT.md](../CANONICAL-DOC-FORMAT.md)
+3. **Follow canonical format:** See [CANONICAL-DOC-FORMAT](../CANONICAL-DOC-FORMAT.md)
 4. **Apply canonical formatting (optional):** `npm run docs:format-headers`
 5. **Generate data and stories:** `npm run docs:regenerate-all`
 6. **Verify in Storybook:** Check title has proper Title Case, metadata renders correctly
@@ -428,7 +431,7 @@ Common acronyms that should be uppercase:
 Common small words that should be lowercase:
 - and, or, the, of, in, on, at, to, for, with, vs, as, by
 
-**See:** [CANONICAL-DOC-FORMAT.md](../CANONICAL-DOC-FORMAT.md#title-case-rules) for complete list.
+**See:** [CANONICAL-DOC-FORMAT](../CANONICAL-DOC-FORMAT.md) for complete list.
 
 ### Common Mistakes to Avoid
 

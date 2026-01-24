@@ -1,22 +1,25 @@
 # ADR-0024: CSS Layer Strategy for Context Priority
 
-**Status:** Superseded by [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md)
+**Status:** Superseded by [ADR-0038](ADR-0038-canonical-token-css-output-contract.md)
 **Date:** 2025-12-26
 **Last Updated:** 2025-12-26
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
-- [ADR-0021](./ADR-0021-web-components-framework-agnostic-layer.md) — Web Components Framework-Agnostic Layer
-- [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
-- [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract (superseding)
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0021](ADR-0021-web-components-framework-agnostic-layer.md) — Web Components Framework-Agnostic Layer
+- [ADR-0030](ADR-0030-third-party-library-integration-strategy.md) — Third-Party Library Integration Strategy
+- [ADR-0038](ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract (superseding)
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
 - [CSS Token Output Rules](../architecture/ARCH-tokens-002-css-token-output-rules.md) — Enforcement Rules
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
 ## Context
+
+**Note:** This ADR predates the Density axis. Density is now a first-class, optional axis (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 The token system supports nested contexts (e.g., a `website` preview embedded within an `app` context). CSS selectors with equal specificity can lead to unpredictable overrides when contexts are nested. The previous approach relied solely on CSS selector specificity, which doesn't provide explicit control over cascade order.
 
@@ -90,7 +93,7 @@ All context layers are generated, but the example above shows the default/priori
 6. **`@layer components`** - Component styles and third-party overrides (uses tokens)
 7. **`@layer theme`** - Theme overrides (highest priority)
 
-**Note:** See [ADR-0030](./ADR-0030-third-party-library-integration-strategy.md) for third-party library integration strategy.
+**Note:** See [ADR-0030](ADR-0030-third-party-library-integration-strategy.md) for third-party library integration strategy.
 
 ### Possible Context Configurations
 
@@ -340,7 +343,7 @@ CSS Custom Properties penetrate Shadow DOM boundaries. The `@layer` directive on
 2. **Base Tokens**: Always in `:root` (no layer)
 3. **Third-Party CSS**: All third-party library CSS in `@layer third-party` (lowest priority)
 4. **Context Tokens**: Each context in its own `@layer`
-5. **Component Overrides**: Our component styles and third-party overrides in `@layer components` (uses tokens)
+5. **Component Overrides**: Component styles and third-party overrides in `@layer components` (uses tokens)
 6. **Theme Tokens**: All themes in the highest priority `@layer theme`
 7. **Selector Specificity**: `@layer` order overrides selector specificity
 8. **No Hardcoded Values in Component CSS**: Component CSS must only map token variables to selectors (see [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md))
@@ -471,10 +474,10 @@ The `@layer` order ensures the correct value is resolved, and Custom Properties 
 ## Notes
 
 This ADR focuses on CSS generation. For Figma Variables integration, see:
-- [ADR-0025](./ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
+- [ADR-0025](ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy
 
 For token organization, see:
-- [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 
 For component CSS implementation rules, see:
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules

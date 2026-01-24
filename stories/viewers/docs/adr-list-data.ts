@@ -536,5 +536,18 @@ export const adrs: DocMetadata[] = [
     "exportName": "dtcgSchemaResolutionandTokenArchitecture",
     "markdownPath": "/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md",
     "storybookId": "docs-adr--dtcg-schema-resolutionand-token-architecture"
+  },
+  {
+    "number": "0042",
+    "title": "Density Axis (Context x Theme x Density)",
+    "category": "adr",
+    "status": "Accepted (Partially Implemented)",
+    "date": "2026-02-05",
+    "lastUpdated": "",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "densityAxisContextThemeDensity",
+    "markdownPath": "/docs/adr/ADR-0042-density-axis-defaulting-and-inheritance.md",
+    "storybookId": "docs-adr--density-axis-context-theme-density"
   }
 ];

@@ -6,7 +6,7 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
+- [ADR-0001](ADR-0001-react-aria-headless.md) — React Aria as Headless Accessibility Foundation
 
 ---
 
@@ -83,9 +83,9 @@ When composing or extending components, the system should:
    - Adding interactive cells to table? → Consider `grid`
 
 4. **Choose React Aria hook (if applicable):**
-   - Use low-level primitives for basic components (per ADR-0001)
-   - Use pattern primitives selectively for complex patterns (per ADR-0001)
-   - Prefer avoiding high-level components (per ADR-0001)
+   - Use low-level primitives for basic components (per [ADR-0001](ADR-0001-react-aria-headless.md))
+   - Use pattern primitives selectively for complex patterns (per [ADR-0001](ADR-0001-react-aria-headless.md))
+   - Prefer avoiding high-level components (per [ADR-0001](ADR-0001-react-aria-headless.md))
 
 ---
 
@@ -113,11 +113,11 @@ By reassessing roles when composing components, the framework:
 - Maintains correct semantics as components evolve
 - Enables accessibility-aware design decisions to be made consistently
 
-### Integration with ADR-0001
+### Integration with [ADR-0001](ADR-0001-react-aria-headless.md)
 
-This framework complements ADR-0001's React Aria strategy:
+This framework complements [ADR-0001](ADR-0001-react-aria-headless.md)'s React Aria strategy:
 - Uses React Aria hooks where appropriate (low-level primitives, pattern primitives)
-- Prefers avoiding high-level React Aria components (per ADR-0001)
+- Prefers avoiding high-level React Aria components (per [ADR-0001](ADR-0001-react-aria-headless.md))
 - Supports custom implementations built on primitives
 
 ---
@@ -153,7 +153,7 @@ This framework complements ADR-0001's React Aria strategy:
 - System would benefit from handling role transitions when components are composed or extended
 - Some components may benefit from role changes when composed (handled by framework)
 - System should account for functional purpose when selecting appropriate roles
-- Complex cases may benefit from custom implementations (built on primitives per ADR-0001)
+- Complex cases may benefit from custom implementations (built on primitives per [ADR-0001](ADR-0001-react-aria-headless.md))
 
 ### Implementation Notes
 
@@ -172,7 +172,7 @@ This framework complements ADR-0001's React Aria strategy:
   - Considering custom implementation vs. React Aria patterns
 
 **Examples:**
-- Table with expandable rows → Use `role="treegrid"` with custom implementation (per ADR-0001, no high-level React Aria Table component)
+- Table with expandable rows → Use `role="treegrid"` with custom implementation (per [ADR-0001](ADR-0001-react-aria-headless.md), no high-level React Aria Table component)
 - Menu with checkboxes → Use `role="listbox"` with `useSelect` hook
 - Static table → Use native `<table>` or `role="table"`
 
@@ -183,7 +183,7 @@ This framework complements ADR-0001's React Aria strategy:
 This ADR establishes the decision framework. For comprehensive reference material (complete lists of ARIA roles, patterns, React Aria hooks), see the [Accessibility Reference](../architecture/ARCH-accessibility-001-accessibility-reference.md) document.
 
 **Related Patterns:**
-- ADR-0001 establishes React Aria as the accessibility engine
+- [ADR-0001](ADR-0001-react-aria-headless.md) establishes React Aria as the accessibility engine
 - This ADR establishes how to choose ARIA roles and patterns
 - Together, they provide complete guidance for accessibility implementation
 

@@ -289,7 +289,7 @@ npm run docs:regenerate-all
 
 ## Documentation for AI Agents
 
-**Primary Reference:** [AI-AGENT-DOCUMENTATION-GUIDE.md](./AI-AGENT-DOCUMENTATION-GUIDE.md)
+**Primary Reference:** [AI-AGENT-DOCUMENTATION-GUIDE](AI-AGENT-DOCUMENTATION-GUIDE.md)
 
 This comprehensive guide provides:
 - Complete workflow instructions
@@ -300,10 +300,10 @@ This comprehensive guide provides:
 - Quick reference card
 
 **Other References:**
-- [CANONICAL-DOC-FORMAT.md](./CANONICAL-DOC-FORMAT.md) - Format specification
-- [workflows/adr-workflow.md](./workflows/WORKFLOW-001-adr-workflow.md) - ADR workflow
-- [workflows/scripts-reference.md](./workflows/WORKFLOW-004-scripts-reference.md) - npm scripts
-- [DOCS-GUIDE.md](./DOCS-GUIDE.md) - General documentation guide
+- [CANONICAL-DOC-FORMAT](CANONICAL-DOC-FORMAT.md) - Format specification
+- [workflows/adr-workflow.md](workflows/WORKFLOW-001-adr-workflow.md) - ADR workflow
+- [workflows/scripts-reference.md](workflows/WORKFLOW-004-scripts-reference.md) - npm scripts
+- [DOCS-GUIDE](DOCS-GUIDE.md) - General documentation guide
 
 ## Migration Notes
 
@@ -357,8 +357,8 @@ Expected results:
 
 For issues or questions:
 
-1. Check [AI-AGENT-DOCUMENTATION-GUIDE.md](./AI-AGENT-DOCUMENTATION-GUIDE.md#troubleshooting)
-2. Review [CANONICAL-DOC-FORMAT.md](./CANONICAL-DOC-FORMAT.md)
+1. Check [AI-AGENT-DOCUMENTATION-GUIDE](AI-AGENT-DOCUMENTATION-GUIDE.md)
+2. Review [CANONICAL-DOC-FORMAT](CANONICAL-DOC-FORMAT.md)
 3. Check script output for error messages
 4. Run `npm run docs:validate` to identify issues
 5. Verify generated files were not manually edited

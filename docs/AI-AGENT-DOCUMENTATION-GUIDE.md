@@ -36,7 +36,7 @@ All document titles follow proper English Title Case with technical acronym pres
 - Applied during: Data generation (`scripts/generate-unified-doc-data.mjs`)
 - Affects: Story names, menu navigation, data files
 
-**See:** [CANONICAL-DOC-FORMAT.md](./CANONICAL-DOC-FORMAT.md#title-case-rules) for complete rules and examples.
+**See:** [CANONICAL-DOC-FORMAT](CANONICAL-DOC-FORMAT.md) for complete rules and examples.
 
 ## Document Types
 
@@ -66,6 +66,11 @@ All document titles follow proper English Title Case with technical acronym pres
 ```
 
 **Mandatory fields:** Status, Date, Last Updated, Owner, Assistance, Related
+
+**Authorial voice rules:**
+- Decision statements use first-person singular to match the named owner ("I decided...", "I intentionally chose...")
+- System behavior uses neutral language ("The system defines...", "This decision establishes...")
+- Avoid collective language ("we", "our", "we assume") in ADRs
 
 ### Architecture Documents
 
@@ -415,7 +420,7 @@ ls docs/architecture/ARCH-tokens-005-token-naming.md
 **Automatic prefix formatting:**
 - **ADR links:** Write as `[ADR-XXXX](path)` - prefix in link text (manual)
 - **Architecture links:** Write as `[Title](path)` - prefix added automatically by system
-  - Markdown: `[Token Usage Rules](./architecture/ARCH-tokens-004-token-usage-rules.md)`
+  - Markdown: `[Token Usage Rules](architecture/ARCH-tokens-004-token-usage-rules.md)`
   - Displays as: `ARCH-TOKENS-004 — Token Usage Rules`
 - No need to manually add ARCH prefix in link text - the DocumentMetadata component adds it automatically
 
@@ -566,9 +571,9 @@ npm run docs:regenerate-all
 
 ## Related Documentation
 
-- [CANONICAL-DOC-FORMAT.md](./CANONICAL-DOC-FORMAT.md) - Canonical format specification
-- [DOCS-GUIDE.md](./DOCS-GUIDE.md) - General documentation guide
-- [workflows/adr-workflow.md](./workflows/WORKFLOW-001-adr-workflow.md) - ADR-specific workflow
+- [CANONICAL-DOC-FORMAT](CANONICAL-DOC-FORMAT.md) - Canonical format specification
+- [DOCS-GUIDE](DOCS-GUIDE.md) - General documentation guide
+- [workflows/adr-workflow.md](workflows/WORKFLOW-001-adr-workflow.md) - ADR-specific workflow
 
 ## Support
 

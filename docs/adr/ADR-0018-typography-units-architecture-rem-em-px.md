@@ -6,14 +6,15 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
-- [ADR-0017](./ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
-- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0014](ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
+- [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
 
 ## Important Note
 
-**⚠️ Disclaimer:** All specific font-size values (e.g., 14px, 16px, 10px) mentioned in this ADR are **example values** for demonstration purposes only. The actual font-size values used in the system are **theme-dependent** and may differ from these examples. The architecture and logic described here (REM, EM, PX unit usage) remains consistent regardless of the specific values chosen. Concrete font-size decisions are made at the theme level and can evolve over time.
+**⚠️ Disclaimer:** All specific font-size values (e.g., 14px, 16px, 10px) mentioned in this ADR are **example values** for demonstration purposes only. The actual font-size values used in the system are **theme- and density-dependent** and may differ from these examples. The architecture and logic described here (REM, EM, PX unit usage) remains consistent regardless of the specific values chosen. Concrete font-size decisions are made at the theme/density level and can evolve over time.
 
 ---
 
@@ -85,7 +86,7 @@ Foundation → Semantic → Context → Theme → Component
 - `tokens/app/themes/` - Theme overrides for app
 - `tokens/app/components/*/typography.json` - Component typography for app
 
-Same structure applies to `website/` and `report/` contexts. See [ADR-0023](./ADR-0023-token-organization-context-and-theme-separation.md) for details.
+Same structure applies to `website/` and `report/` contexts. See [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) for details.
 
 ### Base Font-Size Setup
 
@@ -106,7 +107,7 @@ Same structure applies to `website/` and `report/` contexts. See [ADR-0023](./AD
   --eui-typography-base-fontSize: 16px; /* Example value - actual may differ */
 }
 
-[data-eui-context="report"][data-eui-theme="compact"] {
+[data-eui-context="report"][data-eui-density="compact"] {
   --eui-typography-base-fontSize: 10px; /* Example value - actual may differ */
 }
 ```
@@ -366,7 +367,7 @@ If button font-size = 0.9rem (smaller than base)
 
 **For specific use cases (example: compact reports - all values are examples):**
 ```json
-// tokens/report/themes/compact.json
+// density override (conceptual)
 {
   "eui": {
     "typography": {
@@ -378,7 +379,7 @@ If button font-size = 0.9rem (smaller than base)
       "size": {
         "md": {
           "font": {
-            "size": { "$value": "0.85rem" } // Example: smaller multiplier for compact theme
+            "size": { "$value": "0.85rem" } // Example: smaller multiplier for compact density
           }
         }
       }
@@ -387,7 +388,7 @@ If button font-size = 0.9rem (smaller than base)
 }
 ```
 
-**Rationale:** Component-level overrides allow fine-grained control for specific use cases (e.g., compact reports need smaller components) while maintaining global consistency within a theme.
+**Rationale:** Component-level overrides allow fine-grained control for specific use cases (e.g., compact reports need smaller components) while maintaining global consistency within a theme. Density overrides remain orthogonal to theme (see [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md)).
 
 ---
 
