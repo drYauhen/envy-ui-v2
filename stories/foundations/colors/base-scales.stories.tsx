@@ -3,8 +3,8 @@ import type { CSSProperties } from 'react';
 import neutral from '../../../tokens/primitives/neutral.json';
 import brand from '../../../tokens/primitives/brand.json';
 import accent from '../../../tokens/primitives/accent.json';
-import statusUi from '../../../tokens/contexts/app/semantics/colors/status.json';
-import statusApplication from '../../../tokens/contexts/app/semantics/colors/status-application.json';
+import statusUi from '../../../tokens/primitives/status.json';
+import statusApplication from '../../../tokens/primitives/status-application.json';
 import { ColorScaleViewer } from '../../viewers/tokens/ColorScaleViewer';
 import { converter } from 'culori';
 
@@ -204,7 +204,7 @@ export const Accent: Story = {
 // Render Application Status Colors as vertical list (description on left, color on right)
 const renderApplicationStatusColors = () => {
   const applicationStatusTokens = (statusApplication as any).eui.color.status.application;
-  const applicationStatusKeys = Object.keys(applicationStatusTokens);
+  const applicationStatusKeys = Object.keys(applicationStatusTokens).filter((key) => Number.isNaN(Number(key)));
   
   const pageStyle: CSSProperties = {
     padding: '1.5rem',

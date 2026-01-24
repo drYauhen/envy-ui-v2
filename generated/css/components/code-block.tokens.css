@@ -10,7 +10,7 @@
     --eui-code-block-colors-border: var(--eui-color-accent-300);
     --eui-code-block-border-width: var(--eui-border-width-thin);
     --eui-code-block-border-style: var(--eui-border-style-solid);
-    --eui-code-block-radius: var(--eui-radius-default);
+    --eui-code-block-radius: var(--eui-inline-radius);
     --eui-code-block-padding-block: var(--eui-dimension-0);
     --eui-code-block-padding-inline: var(--eui-spacing-xs);
     --eui-code-block-typography-fontFamily: var(--eui-typography-textStyle-code-base-fontFamily);
@@ -24,7 +24,7 @@
     --eui-code-block-colors-background: var(--eui-color-background-inverse);
     --eui-code-block-colors-text: var(--eui-color-text-inverse);
     --eui-code-block-colors-border: var(--eui-color-background-transparent);
-    --eui-code-block-radius: var(--eui-radius-large);
+    --eui-code-block-radius: var(--eui-surface-radius);
     --eui-code-block-padding-block: var(--eui-spacing-lg);
     --eui-code-block-padding-inline: var(--eui-spacing-lg);
   }

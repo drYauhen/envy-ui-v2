@@ -33,9 +33,9 @@
           }
         },
         "radius": {
-          "$value": "{eui.radius.default}",
+          "$value": "{eui.inline.radius}",
           "$type": "dimension",
-          "$description": "Inline code border radius (aligned with badge)."
+          "$description": "Inline code radius (shared inline radius)."
         },
         "padding": {
           "block": {
@@ -92,9 +92,9 @@
             }
           },
           "radius": {
-            "$value": "{eui.radius.large}",
+            "$value": "{eui.surface.radius}",
             "$type": "dimension",
-            "$description": "Block code border radius (aligned with card)."
+            "$description": "Block code radius (shared surface radius)."
           },
           "padding": {
             "block": {

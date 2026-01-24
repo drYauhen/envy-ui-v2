@@ -10,7 +10,7 @@
     --eui-card-border-style: var(--eui-border-style-default);
     --eui-card-border-color: var(--eui-color-border-default);
     --eui-card-background-color: var(--eui-color-background-surface);
-    --eui-card-radius: var(--eui-radius-large);
+    --eui-card-radius: var(--eui-surface-radius);
     --eui-card-padding: var(--eui-spacing-md);
   }
 
@@ -20,7 +20,7 @@
     --eui-card-border-width: var(--eui-border-width-thin);
     --eui-card-border-style: var(--eui-border-style-default);
     --eui-card-background-color: var(--eui-color-background-surface);
-    --eui-card-radius: var(--eui-radius-large);
+    --eui-card-radius: var(--eui-surface-radius);
   }
 
   /* Variant: flat */
@@ -29,7 +29,7 @@
     --eui-card-border-width: var(--eui-border-width-thin);
     --eui-card-border-style: var(--eui-border-style-default);
     --eui-card-background-color: var(--eui-color-background-surface);
-    --eui-card-radius: var(--eui-radius-large);
+    --eui-card-radius: var(--eui-surface-radius);
   }
 
   /* Variant: muted */
@@ -39,7 +39,7 @@
     --eui-card-border-style: var(--eui-border-style-default);
     --eui-card-border-color: var(--eui-color-border-default);
     --eui-card-background-color: var(--eui-color-background-muted);
-    --eui-card-radius: var(--eui-radius-large);
+    --eui-card-radius: var(--eui-surface-radius);
   }
 
   /* Variant: strong */
@@ -48,7 +48,7 @@
     --eui-card-border-width: var(--eui-border-width-thin);
     --eui-card-border-style: var(--eui-border-style-default);
     --eui-card-background-color: var(--eui-color-background-surface);
-    --eui-card-radius: var(--eui-radius-large);
+    --eui-card-radius: var(--eui-surface-radius);
   }
 
   /* Status: pending */

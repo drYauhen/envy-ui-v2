@@ -28,9 +28,9 @@
           }
         },
         "radius": {
-          "$value": "{eui.radius.md}",
+          "$value": "{eui.overlay.radius}",
           "$type": "dimension",
-          "$description": "Callout border radius."
+          "$description": "Callout border radius (shared overlay radius)."
         },
         "typography": {
           "fontFamily": {

@@ -43,7 +43,7 @@
     --eui-callout-padding-inline: var(--eui-spacing-lg);
     --eui-callout-border-width: var(--eui-border-width-thick);
     --eui-callout-border-style: var(--eui-border-style-solid);
-    --eui-callout-radius: var(--eui-radius-md);
+    --eui-callout-radius: var(--eui-overlay-radius);
     --eui-callout-typography-fontFamily: var(--eui-typography-textStyle-body-small-fontFamily);
     --eui-callout-typography-fontSize: var(--eui-typography-textStyle-body-small-fontSize);
     --eui-callout-typography-fontWeight: var(--eui-typography-fontWeight-semibold);

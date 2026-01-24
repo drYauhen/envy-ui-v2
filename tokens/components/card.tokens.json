@@ -29,9 +29,9 @@
             }
           },
           "radius": {
-            "$value": "{eui.radius.large}",
+            "$value": "{eui.surface.radius}",
             "$type": "dimension",
-            "$description": "Elevated card uses large border radius"
+            "$description": "Card radius (shared surface radius)."
           }
         },
         "flat": {
@@ -60,9 +60,9 @@
             }
           },
           "radius": {
-            "$value": "{eui.radius.large}",
+            "$value": "{eui.surface.radius}",
             "$type": "dimension",
-            "$description": "Flat card uses large border radius"
+            "$description": "Card radius (shared surface radius)."
           }
         },
         "muted": {
@@ -96,9 +96,9 @@
             }
           },
           "radius": {
-            "$value": "{eui.radius.large}",
+            "$value": "{eui.surface.radius}",
             "$type": "dimension",
-            "$description": "Muted card uses large border radius"
+            "$description": "Card radius (shared surface radius)."
           }
         },
         "strong": {
@@ -127,9 +127,9 @@
             }
           },
           "radius": {
-            "$value": "{eui.radius.large}",
+            "$value": "{eui.surface.radius}",
             "$type": "dimension",
-            "$description": "Strong card uses large border radius"
+            "$description": "Card radius (shared surface radius)."
           }
         }
       },
@@ -264,9 +264,9 @@
           }
         },
         "radius": {
-          "$value": "{eui.radius.large}",
+          "$value": "{eui.surface.radius}",
           "$type": "dimension",
-          "$description": "Default card border radius"
+          "$description": "Default card border radius (shared surface radius)."
         },
         "padding": {
           "$value": "{eui.spacing.md}",

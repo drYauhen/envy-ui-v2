@@ -312,9 +312,9 @@
         },
         "shape": {
           "radius": {
-            "$value": "{eui.radius.default}",
+            "$value": "{eui.inline.radius}",
             "$type": "dimension",
-            "$description": "Badge border radius"
+            "$description": "Badge border radius (shared inline radius)."
           }
         },
         "typography": {
