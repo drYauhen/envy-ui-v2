@@ -5,7 +5,6 @@ import { MultiContextViewer } from '../utils/multi-context-viewer';
 const meta: Meta = {
   title: 'HTML + CSS/Components/FormLayout',
   parameters: {
-    // Apply section-specific parameters automatically
     ...getSectionParameters('HTML + CSS/Components/FormLayout'),
     layout: 'padded'
   }
@@ -14,356 +13,228 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-// FormField Examples
-export const FormFieldBasic: Story = {
+const containerStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem',
+  maxWidth: '640px'
+} as const;
+
+const sectionStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.5rem'
+} as const;
+
+const constrainedStyle = {
+  maxWidth: '320px',
+  border: '1px dashed var(--eui-color-border-subtle)',
+  padding: '1rem',
+  borderRadius: '8px'
+} as const;
+
+const buttonStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+} as const;
+
+export const HorizontalDefault: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <>
-          <div className="eui-form-field">
-            <span className="eui-label" data-eui-slot="label">First Name</span>
-            <input type="text" className="eui-input" data-eui-slot="input" placeholder="Enter your first name" />
-            <span data-eui-slot="helper-text">This is your given name</span>
-          </div>
+        <div style={containerStyle}>
+          <form className="eui-form" data-eui-layout="horizontal">
+            <div className="eui-form-section">
+              <div className="eui-form-section-header" data-eui-slot="header">
+                <h3 className="eui-form-section-title">Profile</h3>
+                <p className="eui-form-section-subtitle">Basic account details</p>
+              </div>
+              <div className="eui-form-section-content" data-eui-slot="content">
+                <div data-eui-slot="content">
+                  <div className="eui-form-row" data-eui-columns="2">
+                    <div className="eui-form-field" data-eui-label-position="left">
+                      <label className="eui-label" data-eui-slot="label" htmlFor="first-name-html">
+                        First name
+                      </label>
+                      <div data-eui-slot="input">
+                        <input className="eui-input" id="first-name-html" placeholder="Ada" />
+                      </div>
+                    </div>
+                    <div className="eui-form-field" data-eui-label-position="left">
+                      <label className="eui-label" data-eui-slot="label" htmlFor="last-name-html">
+                        Last name
+                      </label>
+                      <div data-eui-slot="input">
+                        <input className="eui-input" id="last-name-html" placeholder="Lovelace" />
+                      </div>
+                    </div>
+                  </div>
 
-          <div className="eui-form-field">
-            <span className="eui-label" data-eui-slot="label">Email Address</span>
-            <input type="email" className="eui-input" data-eui-slot="input" placeholder="your@email.com" />
-            <span data-eui-slot="helper-text">We'll never share your email</span>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
+                  <div className="eui-form-field" data-eui-label-position="left">
+                    <label className="eui-label" data-eui-slot="label" htmlFor="email-html">
+                      Email
+                    </label>
+                    <div data-eui-slot="input">
+                      <input className="eui-input" id="email-html" placeholder="name@company.com" />
+                    </div>
+                    <span data-eui-slot="helper-text">We will only use this for account updates.</span>
+                  </div>
 
-export const FormFieldWithError: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-          <div className="eui-form-field" data-eui-error="true">
-            <span className="eui-label" data-eui-slot="label">Email Address</span>
-            <input type="email" className="eui-input" data-eui-slot="input" placeholder="your@email.com" value="invalid-email" />
-            <span data-eui-slot="error-text">Please enter a valid email address</span>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
+                  <fieldset className="eui-form-group" data-eui-orientation="vertical">
+                    <legend className="eui-form-group-label" data-eui-slot="label">
+                      Notifications
+                    </legend>
+                    <div className="eui-form-group-items" data-eui-slot="items">
+                      <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <input type="checkbox" className="eui-checkbox" defaultChecked />
+                        <span>Email updates</span>
+                      </label>
+                      <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <input type="checkbox" className="eui-checkbox" />
+                        <span>Product news</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
 
-export const FormFieldLabelPositions: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          <div className="eui-form-field" data-eui-label-position="top">
-            <span className="eui-label" data-eui-slot="label">Top Label</span>
-            <input type="text" className="eui-input" data-eui-slot="input" placeholder="Label on top" />
-          </div>
-
-          <div className="eui-form-field" data-eui-label-position="left">
-            <span className="eui-label" data-eui-slot="label">Left Label</span>
-            <input type="text" className="eui-input" data-eui-slot="input" placeholder="Label on left" />
-          </div>
-
-          <div className="eui-form-field" data-eui-label-position="inline">
-            <input type="checkbox" className="eui-checkbox" data-eui-slot="input" id="inline-checkbox" />
-            <label className="eui-label" data-eui-slot="label" htmlFor="inline-checkbox">Inline Label</label>
-          </div>
+            <div className="eui-form-actions" data-eui-align="end">
+              <button className="eui-button" data-eui-size="md" data-eui-intent="secondary" style={buttonStyle}>
+                Cancel
+              </button>
+              <button className="eui-button" data-eui-size="md" data-eui-intent="primary" style={buttonStyle}>
+                Save changes
+              </button>
+            </div>
+          </form>
         </div>
       )}
     </MultiContextViewer>
   )
 };
 
-// FormSection Examples
-export const FormSectionBasic: Story = {
+export const StackedLayout: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <>
-          <div className="eui-form-section">
-            <div className="eui-form-section-header" data-eui-slot="header">
-              <h3 className="eui-form-section-title">Personal Information</h3>
-            </div>
-            <div className="eui-form-section-content" data-eui-slot="content">
-              <div data-eui-slot="content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div className="eui-form-field">
-                  <span className="eui-label" data-eui-slot="label">First Name</span>
-                  <input type="text" className="eui-input" data-eui-slot="input" />
-                </div>
-                <div className="eui-form-field">
-                  <span className="eui-label" data-eui-slot="label">Last Name</span>
-                  <input type="text" className="eui-input" data-eui-slot="input" />
+        <div style={containerStyle}>
+          <form className="eui-form" data-eui-layout="stacked">
+            <div style={sectionStyle}>
+              <div className="eui-form-field" data-eui-label-position="top">
+                <label className="eui-label" data-eui-slot="label" htmlFor="company-html">
+                  Company name
+                </label>
+                <div data-eui-slot="input">
+                  <input className="eui-input" id="company-html" placeholder="Envy" />
                 </div>
               </div>
+
+              <div className="eui-form-field" data-eui-label-position="top" data-eui-error="true">
+                <label className="eui-label" data-eui-slot="label" htmlFor="domain-html">
+                  Workspace domain
+                </label>
+                <div data-eui-slot="input">
+                  <input className="eui-input" id="domain-html" placeholder="envy-ui" data-eui-state="error" />
+                </div>
+                <span data-eui-slot="error-text">This domain is already taken.</span>
+              </div>
+
+              <div className="eui-form-field" data-eui-label-position="top">
+                <label className="eui-label" data-eui-slot="label" htmlFor="timezone-html">
+                  Timezone
+                </label>
+                <div data-eui-slot="input">
+                  <input className="eui-input" id="timezone-html" placeholder="UTC" />
+                </div>
+                <span data-eui-slot="helper-text">Used for scheduling and reports.</span>
+              </div>
             </div>
-          </div>
-        </>
+          </form>
+        </div>
       )}
     </MultiContextViewer>
   )
 };
 
-export const FormSectionCollapsible: Story = {
+export const MixedLayout: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <>
-          <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="false">
-            <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="false">
-              <div className="eui-form-section-header-content" data-eui-slot="header-content">
-                <h3 className="eui-form-section-title">Collapsed Section</h3>
-              </div>
-              <span className="eui-form-section-chevron" data-eui-slot="header-chevron" aria-hidden="true">
-                <span data-eui-icon="chevron-down"></span>
-              </span>
-            </button>
-            <div className="eui-form-section-content" data-eui-slot="content" hidden>
-              <div data-eui-slot="content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div className="eui-form-field">
-                  <span className="eui-label" data-eui-slot="label">Field 1</span>
-                  <input type="text" className="eui-input" data-eui-slot="input" />
+        <div style={containerStyle}>
+          <form className="eui-form" data-eui-layout="horizontal">
+            <div style={sectionStyle}>
+              <div className="eui-form-field" data-eui-label-position="left">
+                <label className="eui-label" data-eui-slot="label" htmlFor="project-html">
+                  Project
+                </label>
+                <div data-eui-slot="input">
+                  <input className="eui-input" id="project-html" placeholder="Launch" />
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="true" style={{ marginTop: '1.5rem' }}>
-            <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="true">
-              <div className="eui-form-section-header-content" data-eui-slot="header-content">
-                <h3 className="eui-form-section-title">Expanded Section</h3>
-              </div>
-              <span className="eui-form-section-chevron" data-eui-slot="header-chevron" aria-hidden="true">
-                <span data-eui-icon="chevron-down"></span>
-              </span>
-            </button>
-            <div className="eui-form-section-content" data-eui-slot="content">
-              <div data-eui-slot="content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div className="eui-form-field">
-                  <span className="eui-label" data-eui-slot="label">Field 1</span>
-                  <input type="text" className="eui-input" data-eui-slot="input" />
-                </div>
-                <div className="eui-form-field">
-                  <span className="eui-label" data-eui-slot="label">Field 2</span>
-                  <input type="text" className="eui-input" data-eui-slot="input" />
+              <div className="eui-form-field" data-eui-label-position="top">
+                <label className="eui-label" data-eui-slot="label" htmlFor="notes-html">
+                  Notes (stacked override)
+                </label>
+                <div data-eui-slot="input">
+                  <input className="eui-input" id="notes-html" placeholder="Optional" />
                 </div>
               </div>
-            </div>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
 
-export const FormSectionWithHeaderContent: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-          <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="true">
-            <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="true">
-              <div className="eui-form-section-header-content" data-eui-slot="header-content">
-                <h3 className="eui-form-section-title">Team Members</h3>
-                <div className="eui-form-section-header-extra" data-eui-slot="header-extra">
-                  <img src="https://i.pravatar.cc/40?img=1" alt="" style={{ width: '24px', height: '24px', borderRadius: '50%' }} />
-                  <span style={{
-                    fontSize: '0.75rem',
-                    padding: '0.125rem 0.5rem',
-                    background: 'var(--eui-color-accent-100)',
-                    borderRadius: '999px',
-                    color: 'var(--eui-color-accent-900)'
-                  }}>5 members</span>
+              <div className="eui-form-field" data-eui-label-position="inline">
+                <div data-eui-slot="input">
+                  <input type="checkbox" className="eui-checkbox" id="archive-html" />
                 </div>
+                <label className="eui-label" data-eui-slot="label" htmlFor="archive-html">
+                  Archive after publish (inline override)
+                </label>
               </div>
-              <span className="eui-form-section-chevron" data-eui-slot="header-chevron" aria-hidden="true">
-                <span data-eui-icon="chevron-down"></span>
-              </span>
-            </button>
-            <div className="eui-form-section-content" data-eui-slot="content">
-              <div data-eui-slot="content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div className="eui-form-field">
-                  <span className="eui-label" data-eui-slot="label">Team Name</span>
-                  <input type="text" className="eui-input" data-eui-slot="input" />
+            </div>
+          </form>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
+export const ConstrainedContainer: Story = {
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={constrainedStyle}>
+            <form className="eui-form" data-eui-layout="stacked" data-eui-layout-mode="auto">
+              <div style={sectionStyle}>
+                <div className="eui-form-field" data-eui-label-position="top">
+                  <label className="eui-label" data-eui-slot="label" htmlFor="street-html">
+                    Street
+                  </label>
+                  <div data-eui-slot="input">
+                    <input className="eui-input" id="street-html" placeholder="12 Main St" />
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
-
-// FormRow Examples
-export const FormRowTwoColumns: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-          <div className="eui-form-row" data-eui-columns="2">
-            <div className="eui-form-field">
-              <span className="eui-label" data-eui-slot="label">First Name</span>
-              <input type="text" className="eui-input" data-eui-slot="input" />
-            </div>
-            <div className="eui-form-field">
-              <span className="eui-label" data-eui-slot="label">Last Name</span>
-              <input type="text" className="eui-input" data-eui-slot="input" />
-            </div>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
-
-export const FormRowThreeColumns: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-          <div className="eui-form-row" data-eui-columns="3">
-            <div className="eui-form-field">
-              <span className="eui-label" data-eui-slot="label">Day</span>
-              <input type="text" className="eui-input" data-eui-slot="input" placeholder="DD" />
-            </div>
-            <div className="eui-form-field">
-              <span className="eui-label" data-eui-slot="label">Month</span>
-              <input type="text" className="eui-input" data-eui-slot="input" placeholder="MM" />
-            </div>
-            <div className="eui-form-field">
-              <span className="eui-label" data-eui-slot="label">Year</span>
-              <input type="text" className="eui-input" data-eui-slot="input" placeholder="YYYY" />
-            </div>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
-
-// FormGroup Examples
-export const FormGroupVertical: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-          <div className="eui-form-group" data-eui-orientation="vertical">
-            <div className="eui-form-group-label" data-eui-slot="label">Notification Preferences</div>
-            <div className="eui-form-group-items" data-eui-slot="items">
-              <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <input type="checkbox" className="eui-checkbox" />
-                <span>Email notifications</span>
-              </label>
-              <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <input type="checkbox" className="eui-checkbox" />
-                <span>SMS notifications</span>
-              </label>
-              <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <input type="checkbox" className="eui-checkbox" />
-                <span>Push notifications</span>
-              </label>
-            </div>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
-
-export const FormGroupHorizontal: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <>
-          <div className="eui-form-group" data-eui-orientation="horizontal">
-            <div className="eui-form-group-label" data-eui-slot="label">Payment Method</div>
-            <div className="eui-form-group-items" data-eui-slot="items">
-              <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <input type="radio" name="payment" className="eui-radio" />
-                <span>Credit Card</span>
-              </label>
-              <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <input type="radio" name="payment" className="eui-radio" />
-                <span>PayPal</span>
-              </label>
-              <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <input type="radio" name="payment" className="eui-radio" />
-                <span>Bank Transfer</span>
-              </label>
-            </div>
-          </div>
-        </>
-      )}
-    </MultiContextViewer>
-  )
-};
-
-// Complex Form Example
-export const ComplexFormExample: Story = {
-  render: () => (
-    <MultiContextViewer contexts={[{ context: 'app' }]}>
-      {() => (
-        <div style={{ maxWidth: '600px' }}>
-          <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="true">
-            <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="true">
-              <div className="eui-form-section-header-content" data-eui-slot="header-content">
-                <h3 className="eui-form-section-title">Personal Information</h3>
-              </div>
-              <span className="eui-form-section-chevron" data-eui-slot="header-chevron" aria-hidden="true">
-                <span data-eui-icon="chevron-down"></span>
-              </span>
-            </button>
-            <div className="eui-form-section-content" data-eui-slot="content">
-              <div data-eui-slot="content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div className="eui-form-row" data-eui-columns="2">
-                  <div className="eui-form-field">
-                    <span className="eui-label" data-eui-slot="label">First Name</span>
-                    <input type="text" className="eui-input" data-eui-slot="input" />
-                  </div>
-                  <div className="eui-form-field">
-                    <span className="eui-label" data-eui-slot="label">Last Name</span>
-                    <input type="text" className="eui-input" data-eui-slot="input" />
-                  </div>
-                </div>
-                <div className="eui-form-field">
-                  <span className="eui-label" data-eui-slot="label">Email</span>
-                  <input type="email" className="eui-input" data-eui-slot="input" />
-                  <span data-eui-slot="helper-text">We'll never share your email</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="eui-form-section" data-eui-collapsible="true" data-eui-expanded="false" style={{ marginTop: '1.5rem' }}>
-            <button className="eui-form-section-header" data-eui-slot="header" aria-expanded="false">
-              <div className="eui-form-section-header-content" data-eui-slot="header-content">
-                <h3 className="eui-form-section-title">Preferences</h3>
-              </div>
-              <span className="eui-form-section-chevron" data-eui-slot="header-chevron" aria-hidden="true">
-                <span data-eui-icon="chevron-down"></span>
-              </span>
-            </button>
-            <div className="eui-form-section-content" data-eui-slot="content" hidden>
-              <div data-eui-slot="content" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div className="eui-form-group" data-eui-orientation="vertical">
-                  <div className="eui-form-group-label" data-eui-slot="label">Notification Types</div>
-                  <div className="eui-form-group-items" data-eui-slot="items">
-                    <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <input type="checkbox" className="eui-checkbox" />
-                      <span>Email</span>
+                  <div className="eui-form-field" data-eui-label-position="top">
+                    <label className="eui-label" data-eui-slot="label" htmlFor="city-html">
+                      City
                     </label>
-                    <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <input type="checkbox" className="eui-checkbox" />
-                      <span>SMS</span>
+                    <div data-eui-slot="input">
+                      <input className="eui-input" id="city-html" placeholder="Paris" />
+                    </div>
+                  </div>
+                  <div className="eui-form-field" data-eui-label-position="top">
+                    <label className="eui-label" data-eui-slot="label" htmlFor="zip-html">
+                      ZIP
                     </label>
+                    <div data-eui-slot="input">
+                      <input className="eui-input" id="zip-html" placeholder="75001" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       )}

@@ -1,0 +1,151 @@
+/**
+ * Input Component - Layout, Slots & Structure
+ *
+ * This file contains layout rules and state selectors.
+ * No theme-specific selectors beyond context scoping.
+ *
+ * Generated from: tokens/components/input.contract.json
+ * Legacy reference: src/ui/input.css
+ */
+
+@layer eui-components {
+  /* ============================================================================
+     Input Component - Base Styles
+     ============================================================================ */
+
+  [data-eui-context] .eui-input {
+    --eui-input-size-height: var(--eui-input-size-md-height);
+    --eui-input-size-padding-inline: var(--eui-input-size-md-padding-inline);
+    --eui-input-size-font-size: var(--eui-input-size-md-font-size);
+
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0 var(--eui-input-size-padding-inline);
+    border: var(--eui-input-border-width) var(--eui-input-border-style) var(--eui-input-border-base);
+    background-color: var(--eui-input-background-base);
+    color: var(--eui-input-text-base);
+    cursor: text;
+    position: relative;
+
+    height: var(--eui-input-size-height);
+    font-family: var(--eui-input-typography-font-family, inherit);
+    font-size: var(--eui-input-size-font-size);
+    font-weight: var(--eui-input-typography-font-weight);
+    line-height: var(--eui-input-typography-line-height);
+
+    border-radius: var(--eui-input-shape-radius);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  [data-eui-context] .eui-input::placeholder {
+    color: var(--eui-input-text-placeholder);
+    opacity: 1;
+  }
+
+  [data-eui-context] .eui-input[data-eui-input-kind='date'] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  [data-eui-context] .eui-input .eui-input-segment {
+    padding: 0 2px;
+    border-radius: 4px;
+  }
+
+  [data-eui-context] .eui-input .eui-input-segment[data-eui-placeholder] {
+    color: var(--eui-input-text-placeholder);
+  }
+
+  /* ============================================================================
+     Input Component - Sizes
+     ============================================================================ */
+
+  [data-eui-context] .eui-input[data-eui-size='sm'] {
+    --eui-input-size-height: var(--eui-input-size-sm-height);
+    --eui-input-size-padding-inline: var(--eui-input-size-sm-padding-inline);
+    --eui-input-size-font-size: var(--eui-input-size-sm-font-size);
+  }
+
+  [data-eui-context] .eui-input[data-eui-size='md'] {
+    --eui-input-size-height: var(--eui-input-size-md-height);
+    --eui-input-size-padding-inline: var(--eui-input-size-md-padding-inline);
+    --eui-input-size-font-size: var(--eui-input-size-md-font-size);
+  }
+
+  [data-eui-context] .eui-input[data-eui-size='lg'] {
+    --eui-input-size-height: var(--eui-input-size-lg-height);
+    --eui-input-size-padding-inline: var(--eui-input-size-lg-padding-inline);
+    --eui-input-size-font-size: var(--eui-input-size-lg-font-size);
+  }
+
+  /* ============================================================================
+     Input Component - Interactive States
+     ============================================================================ */
+
+  [data-eui-context='app'] .eui-input:not(:disabled):not(:focus):hover,
+  [data-eui-context='website'] .eui-input:not(:disabled):not(:focus):hover {
+    border-color: var(--eui-input-border-hover);
+  }
+
+  [data-eui-context='app'] .eui-input:focus,
+  [data-eui-context='app'] .eui-input:focus-within,
+  [data-eui-context='website'] .eui-input:focus,
+  [data-eui-context='website'] .eui-input:focus-within {
+    border-color: var(--eui-input-border-focus);
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
+    z-index: 1;
+  }
+
+  [data-eui-context='app'] .eui-input:focus-visible,
+  [data-eui-context='website'] .eui-input:focus-visible {
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 1;
+  }
+
+  [data-eui-context='app'] .eui-input:disabled,
+  [data-eui-context='website'] .eui-input:disabled {
+    background-color: var(--eui-input-background-disabled);
+    border-color: var(--eui-input-border-disabled);
+    color: var(--eui-input-text-disabled);
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  [data-eui-context='app'] .eui-input[data-eui-state='error'],
+  [data-eui-context='website'] .eui-input[data-eui-state='error'] {
+    border-color: var(--eui-input-border-error);
+  }
+
+  [data-eui-context='app'] .eui-input[data-eui-state='error']:focus,
+  [data-eui-context='website'] .eui-input[data-eui-state='error']:focus {
+    border-color: var(--eui-input-border-error);
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
+  }
+
+  /* ============================================================================
+     Input Component - Report Context
+     ============================================================================ */
+
+  [data-eui-context='report'] .eui-input {
+    border-color: var(--eui-color-border-default);
+    background-color: transparent;
+    cursor: default;
+  }
+
+  [data-eui-context='report'] .eui-input:disabled {
+    border-style: dashed;
+  }
+}

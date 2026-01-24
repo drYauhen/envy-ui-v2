@@ -159,9 +159,10 @@
 
 /* Focus states for input in group - no box-shadow, handled by group */
 [data-eui-context] .eui-input-group .eui-input:focus,
-[data-eui-context] .eui-input-group .eui-input:focus-visible {
+[data-eui-context] .eui-input-group .eui-input:focus-visible,
+[data-eui-context] .eui-input-group .eui-input:focus-within {
   box-shadow: none;
-  z-index: 1;
+  z-index: auto;
 }
 
 /* Disabled state - handled by group */

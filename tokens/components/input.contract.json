@@ -1,0 +1,80 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "input",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/input.css",
+    "note": "Derived from legacy input styles; group-specific rules live with input-group."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-input",
+    "slots": {}
+  },
+
+  "axes": {
+    "size": {
+      "type": "enum",
+      "default": "md",
+      "values": ["sm", "md", "lg"],
+      "attribute": "data-eui-size",
+      "notes": "Controls input height, padding, and font size."
+    },
+    "state": {
+      "type": "enum",
+      "default": "default",
+      "values": ["default", "error"],
+      "attribute": "data-eui-state",
+      "notes": "Error uses error border color."
+    }
+  },
+
+  "componentVars": {
+    "size": {
+      "--eui-input-size-sm-height": { "type": "dimension" },
+      "--eui-input-size-sm-padding-inline": { "type": "dimension" },
+      "--eui-input-size-sm-font-size": { "type": "fontSize" },
+      "--eui-input-size-md-height": { "type": "dimension" },
+      "--eui-input-size-md-padding-inline": { "type": "dimension" },
+      "--eui-input-size-md-font-size": { "type": "fontSize" },
+      "--eui-input-size-lg-height": { "type": "dimension" },
+      "--eui-input-size-lg-padding-inline": { "type": "dimension" },
+      "--eui-input-size-lg-font-size": { "type": "fontSize" }
+    },
+    "background": {
+      "--eui-input-background-base": { "type": "color" },
+      "--eui-input-background-hover": { "type": "color" },
+      "--eui-input-background-focus": { "type": "color" },
+      "--eui-input-background-disabled": { "type": "color" }
+    },
+    "border": {
+      "--eui-input-border-base": { "type": "color" },
+      "--eui-input-border-hover": { "type": "color" },
+      "--eui-input-border-focus": { "type": "color" },
+      "--eui-input-border-disabled": { "type": "color" },
+      "--eui-input-border-error": { "type": "color" },
+      "--eui-input-border-width": { "type": "dimension" },
+      "--eui-input-border-style": { "type": "string" }
+    },
+    "text": {
+      "--eui-input-text-base": { "type": "color" },
+      "--eui-input-text-placeholder": { "type": "color" },
+      "--eui-input-text-disabled": { "type": "color" }
+    },
+    "shape": {
+      "--eui-input-shape-radius": { "type": "dimension" }
+    },
+    "typography": {
+      "--eui-input-typography-font-family": { "type": "fontFamily" },
+      "--eui-input-typography-font-weight": { "type": "fontWeight" },
+      "--eui-input-typography-line-height": { "type": "lineHeight" }
+    },
+    "localVars": {
+      "--eui-input-size-height": { "type": "dimension" },
+      "--eui-input-size-padding-inline": { "type": "dimension" },
+      "--eui-input-size-font-size": { "type": "fontSize" }
+    }
+  }
+}

@@ -1,16 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Form, FormActions, FormField, FormGroup, FormRow, FormSection, Input } from '../../../src/ui';
+import {
+  Form,
+  FormActions,
+  FormField,
+  FormGroup,
+  FormRow,
+  FormSection,
+  InputClean
+} from '../../../packages/tsx';
 import { getSectionParameters } from '../../../.storybook/preview';
 
 const meta: Meta = {
-  title: 'TSX + React Aria/Components/FormLayout',
+  title: 'TSX (Clean)/Components/FormLayout',
   parameters: {
-    ...getSectionParameters('TSX + React Aria/Components/FormLayout'),
+    ...getSectionParameters('TSX (Clean)/Components/FormLayout'),
     layout: 'padded'
   }
 };
 
 export default meta;
+
 type Story = StoryObj;
 
 const containerStyle = {
@@ -34,14 +43,14 @@ export const HorizontalDefault: Story = {
         <FormSection title="Profile" subtitle="Basic account details">
           <FormRow columns={2}>
             <FormField label="First name">
-              <Input placeholder="Ada" />
+              <InputClean placeholder="Ada" />
             </FormField>
             <FormField label="Last name">
-              <Input placeholder="Lovelace" />
+              <InputClean placeholder="Lovelace" />
             </FormField>
           </FormRow>
           <FormField label="Email" helperText="We will only use this for account updates.">
-            <Input placeholder="name@company.com" />
+            <InputClean placeholder="name@company.com" />
           </FormField>
           <FormGroup label="Notifications" orientation="vertical">
             <label className="eui-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -72,13 +81,13 @@ export const StackedLayout: Story = {
     <div style={containerStyle}>
       <Form layout="stacked">
         <FormField label="Company name" labelPosition="top">
-          <Input placeholder="Envy" />
+          <InputClean placeholder="Envy" />
         </FormField>
         <FormField label="Workspace domain" labelPosition="top" error="This domain is already taken.">
-          <Input placeholder="envy-ui" isInvalid />
+          <InputClean placeholder="envy-ui" data-eui-state="error" />
         </FormField>
         <FormField label="Timezone" labelPosition="top" helperText="Used for scheduling and reports.">
-          <Input placeholder="UTC" />
+          <InputClean placeholder="UTC" />
         </FormField>
       </Form>
     </div>
@@ -90,10 +99,10 @@ export const MixedLayout: Story = {
     <div style={containerStyle}>
       <Form layout="horizontal">
         <FormField label="Project" labelPosition="left">
-          <Input placeholder="Launch" />
+          <InputClean placeholder="Launch" />
         </FormField>
         <FormField label="Notes (stacked override)" labelPosition="top">
-          <Input placeholder="Optional" />
+          <InputClean placeholder="Optional" />
         </FormField>
         <FormField label="Archive after publish" labelPosition="inline">
           <input type="checkbox" className="eui-checkbox" />
@@ -109,14 +118,14 @@ export const ConstrainedContainer: Story = {
       <div style={constrainedStyle}>
         <Form layout="auto">
           <FormField label="Street" labelPosition="top">
-            <Input placeholder="12 Main St" />
+            <InputClean placeholder="12 Main St" />
           </FormField>
           <FormRow columns={2}>
             <FormField label="City" labelPosition="top">
-              <Input placeholder="Paris" />
+              <InputClean placeholder="Paris" />
             </FormField>
             <FormField label="ZIP" labelPosition="top">
-              <Input placeholder="75001" />
+              <InputClean placeholder="75001" />
             </FormField>
           </FormRow>
         </Form>

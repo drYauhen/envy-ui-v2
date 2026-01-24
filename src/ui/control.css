@@ -1,0 +1,9 @@
+@layer eui-contexts {
+  [data-eui-context][data-eui-density='compact'],
+  [data-eui-context] [data-eui-density='compact'],
+  [data-eui-density='compact'] [data-eui-context] {
+    --eui-control-height-sm: var(--eui-control-density-compact-height-sm);
+    --eui-control-height-md: var(--eui-control-density-compact-height-md);
+    --eui-control-height-lg: var(--eui-control-density-compact-height-lg);
+  }
+}

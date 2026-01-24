@@ -1,0 +1,176 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "input": {
+      "size": {
+        "sm": {
+          "height": {
+            "$value": "{eui.control.height.sm}",
+            "$type": "dimension",
+            "$description": "Height for sm input (shared control height)."
+          },
+          "padding": {
+            "inline": {
+              "$value": "{eui.dimension.3}",
+              "$type": "dimension",
+              "$description": "Horizontal padding for small input."
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "{eui.typography.fontSize.sm}",
+              "$type": "fontSize",
+              "$description": "Font size for small input."
+            }
+          }
+        },
+        "md": {
+          "height": {
+            "$value": "{eui.control.height.md}",
+            "$type": "dimension",
+            "$description": "Height for md input (shared control height)."
+          },
+          "padding": {
+            "inline": {
+              "$value": "{eui.dimension.3}",
+              "$type": "dimension",
+              "$description": "Horizontal padding for medium input."
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "{eui.typography.fontSize.base}",
+              "$type": "fontSize",
+              "$description": "Font size for medium input."
+            }
+          }
+        },
+        "lg": {
+          "height": {
+            "$value": "{eui.control.height.lg}",
+            "$type": "dimension",
+            "$description": "Height for lg input (shared control height)."
+          },
+          "padding": {
+            "inline": {
+              "$value": "14px",
+              "$type": "dimension",
+              "$description": "Horizontal padding for large input."
+            }
+          },
+          "font": {
+            "size": {
+              "$value": "{eui.typography.fontSize.base}",
+              "$type": "fontSize",
+              "$description": "Font size for large input."
+            }
+          }
+        }
+      },
+      "background": {
+        "base": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color for input field."
+        },
+        "hover": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color on hover."
+        },
+        "focus": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Background color on focus."
+        },
+        "disabled": {
+          "$value": "{eui.color.background.muted}",
+          "$type": "color",
+          "$description": "Background color for disabled input."
+        }
+      },
+      "border": {
+        "base": {
+          "$value": "{eui.color.border.default}",
+          "$type": "color",
+          "$description": "Border color for input field."
+        },
+        "hover": {
+          "$value": "{eui.color.border.strong}",
+          "$type": "color",
+          "$description": "Border color on hover."
+        },
+        "focus": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Border color on focus."
+        },
+        "disabled": {
+          "$value": "{eui.color.neutral.400}",
+          "$type": "color",
+          "$description": "Border color for disabled input."
+        },
+        "error": {
+          "$value": "{eui.color.status.error.solid}",
+          "$type": "color",
+          "$description": "Border color for error state."
+        },
+        "width": {
+          "$value": "{eui.control.border.width}",
+          "$type": "dimension",
+          "$description": "Border width for input field (shared control border width)."
+        },
+        "style": {
+          "$value": "{eui.border.style.default}",
+          "$type": "string",
+          "$description": "Border style for input field."
+        }
+      },
+      "text": {
+        "base": {
+          "$value": "{eui.color.text.primary}",
+          "$type": "color",
+          "$description": "Text color for input field."
+        },
+        "placeholder": {
+          "$value": "{eui.color.text.subtle}",
+          "$type": "color",
+          "$description": "Placeholder text color."
+        },
+        "disabled": {
+          "$value": "{eui.color.text.disabled}",
+          "$type": "color",
+          "$description": "Text color for disabled input."
+        }
+      },
+      "shape": {
+        "radius": {
+          "$value": "{eui.control.radius}",
+          "$type": "dimension",
+          "$description": "Border radius for input field (shared control radius)."
+        }
+      },
+      "typography": {
+        "font": {
+          "family": {
+            "$value": "inherit",
+            "$type": "fontFamily",
+            "$description": "Font family for input text."
+          },
+          "weight": {
+            "$value": "{eui.typography.fontWeight.normal}",
+            "$type": "fontWeight",
+            "$description": "Font weight for input text."
+          }
+        },
+        "line": {
+          "height": {
+            "$value": "{eui.typography.lineHeight.normal}",
+            "$type": "lineHeight",
+            "$description": "Line height for input text."
+          }
+        }
+      }
+    }
+  }
+}

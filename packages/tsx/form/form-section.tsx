@@ -3,7 +3,7 @@ import { useButton } from 'react-aria';
 import { useToggleState } from 'react-stately';
 import { Icon } from '../icon';
 
-export interface FormSectionProps {
+export interface FormSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
   subtitle?: string;
   collapsible?: boolean;
@@ -12,7 +12,6 @@ export interface FormSectionProps {
   onExpandedChange?: (expanded: boolean) => void;
   headerContent?: React.ReactNode; // Additional content (avatar, metrics, badges)
   children: React.ReactNode;
-  className?: string;
 }
 
 export const FormSection = React.forwardRef<HTMLDivElement, FormSectionProps>(
@@ -127,4 +126,3 @@ export const FormSection = React.forwardRef<HTMLDivElement, FormSectionProps>(
     );
   }
 );
-

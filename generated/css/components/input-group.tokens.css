@@ -1,0 +1,30 @@
+/**
+ * Input-group Component Tokens - Generated from tokens/components/input-group.tokens.json
+ */
+
+@layer eui-components {
+  /* input-group variables */
+  [data-eui-context] .eui-input-group {
+    --eui-input-group-spacing-prefix-padding-left: 0px;
+    --eui-input-group-spacing-prefix-padding-right: 0px;
+    --eui-input-group-spacing-suffix-padding-left: 0px;
+    --eui-input-group-spacing-suffix-padding-right: 0px;
+    --eui-input-group-spacing-input-padding-left: var(--eui-spacing-sm);
+    --eui-input-group-spacing-input-padding-right: var(--eui-spacing-sm);
+    --eui-input-group-size-prefix-width-sm: var(--eui-input-size-sm-height);
+    --eui-input-group-size-prefix-width-md: var(--eui-input-size-md-height);
+    --eui-input-group-size-prefix-width-lg: var(--eui-input-size-lg-height);
+    --eui-input-group-size-prefix-height-sm: var(--eui-input-size-sm-height);
+    --eui-input-group-size-prefix-height-md: var(--eui-input-size-md-height);
+    --eui-input-group-size-prefix-height-lg: var(--eui-input-size-lg-height);
+    --eui-input-group-size-suffix-width-sm: var(--eui-input-size-sm-height);
+    --eui-input-group-size-suffix-width-md: var(--eui-input-size-md-height);
+    --eui-input-group-size-suffix-width-lg: var(--eui-input-size-lg-height);
+    --eui-input-group-size-suffix-height-sm: var(--eui-input-size-sm-height);
+    --eui-input-group-size-suffix-height-md: var(--eui-input-size-md-height);
+    --eui-input-group-size-suffix-height-lg: var(--eui-input-size-lg-height);
+    --eui-input-group-colors-prefix-text: var(--eui-color-text-subtle);
+    --eui-input-group-colors-suffix-text: var(--eui-color-text-subtle);
+  }
+
+}

@@ -1,0 +1,13 @@
+/**
+ * Form Component - Index
+ *
+ * Entry point that imports Form CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/form.contract.json
+ * Legacy reference: src/ui/form-field.css, src/ui/form-section.css, src/ui/form-row.css, src/ui/form-group.css
+ * Token variables: generated/css/components/form.tokens.css
+ */
+
+@import './form.structure.css';

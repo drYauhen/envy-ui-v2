@@ -1,0 +1,90 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "form",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": [
+      "src/ui/form-field.css",
+      "src/ui/form-section.css",
+      "src/ui/form-row.css",
+      "src/ui/form-group.css"
+    ],
+    "note": "Form foundation consolidates legacy form layout primitives into a canonical form container with field, section, row, group, and actions slots."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-form",
+    "slots": {
+      "field": ".eui-form-field",
+      "section": ".eui-form-section",
+      "row": ".eui-form-row",
+      "group": ".eui-form-group",
+      "actions": ".eui-form-actions",
+      "label": "[data-eui-slot='label']",
+      "input": "[data-eui-slot='input']",
+      "helperText": "[data-eui-slot='helper-text']",
+      "errorText": "[data-eui-slot='error-text']"
+    }
+  },
+
+  "axes": {
+    "layout": {
+      "type": "enum",
+      "default": "horizontal",
+      "values": ["horizontal", "stacked", "auto"],
+      "attribute": "data-eui-layout",
+      "notes": "Form layout defaults to horizontal on desktop; auto adapts to container width."
+    },
+    "density": {
+      "type": "enum",
+      "default": "comfortable",
+      "values": ["comfortable", "compact"],
+      "attribute": "data-eui-density",
+      "notes": "Density affects spacing between fields and sections."
+    }
+  },
+
+  "componentVars": {
+    "spacing": {
+      "--eui-form-spacing-field-gap-internal": { "type": "dimension" },
+      "--eui-form-spacing-field-gap-external": { "type": "dimension" },
+      "--eui-form-spacing-section-gap-internal": { "type": "dimension" },
+      "--eui-form-spacing-section-gap-external": { "type": "dimension" },
+      "--eui-form-spacing-section-gap-title": { "type": "dimension" },
+      "--eui-form-spacing-section-header-padding": { "type": "dimension" },
+      "--eui-form-spacing-group-gap": { "type": "dimension" },
+      "--eui-form-spacing-row-gap": { "type": "dimension" },
+      "--eui-form-spacing-actions-gap": { "type": "dimension" },
+      "--eui-form-spacing-actions-padding-top": { "type": "dimension" }
+    },
+    "layout": {
+      "--eui-form-layout-label-width": { "type": "dimension" },
+      "--eui-form-layout-label-gap": { "type": "dimension" },
+      "--eui-form-layout-control-maxWidth": { "type": "dimension" },
+      "--eui-form-layout-breakpoint-stacked": { "type": "dimension" }
+    },
+    "field": {
+      "--eui-form-field-input-padding-top": { "type": "dimension" }
+    },
+    "animation": {
+      "--eui-form-animation-duration": { "type": "duration" },
+      "--eui-form-animation-easing": { "type": "cubicBezier" }
+    },
+    "density": {
+      "--eui-form-density-compact-spacing-field-gap-internal": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-field-gap-external": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-section-gap-internal": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-section-gap-external": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-section-gap-title": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-section-header-padding": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-group-gap": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-row-gap": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-actions-gap": { "type": "dimension" },
+      "--eui-form-density-compact-spacing-actions-padding-top": { "type": "dimension" },
+      "--eui-form-density-compact-layout-label-gap": { "type": "dimension" },
+      "--eui-form-density-compact-field-input-padding-top": { "type": "dimension" }
+    }
+  }
+}

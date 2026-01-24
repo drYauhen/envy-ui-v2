@@ -14,9 +14,9 @@
           "$description": "Vertical padding for toolbar. References foundation spacing."
         },
         "height": {
-          "$value": "{eui.dimension.11}",
+          "$value": "{eui.control.height.lg}",
           "$type": "dimension",
-          "$description": "Toolbar height matches control height for alignment. Uses standard dimension for touch targets."
+          "$description": "Toolbar height matches large control height for alignment."
         }
       }
     }

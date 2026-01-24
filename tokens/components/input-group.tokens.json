@@ -1,0 +1,141 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "input-group": {
+      "spacing": {
+        "prefix": {
+          "padding": {
+            "left": {
+              "$value": "0px",
+              "$type": "dimension",
+              "$description": "Left padding for prefix slot."
+            },
+            "right": {
+              "$value": "0px",
+              "$type": "dimension",
+              "$description": "Right padding for prefix slot (gap between prefix and input text)."
+            }
+          }
+        },
+        "suffix": {
+          "padding": {
+            "left": {
+              "$value": "0px",
+              "$type": "dimension",
+              "$description": "Left padding for suffix slot (gap between input text and suffix)."
+            },
+            "right": {
+              "$value": "0px",
+              "$type": "dimension",
+              "$description": "Right padding for suffix slot."
+            }
+          }
+        },
+        "input": {
+          "padding": {
+            "left": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Left padding for input when prefix is present."
+            },
+            "right": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Right padding for input when suffix is present."
+            }
+          }
+        }
+      },
+      "size": {
+        "prefix": {
+          "width": {
+            "sm": {
+              "$value": "{eui.input.size.sm.height}",
+              "$type": "dimension",
+              "$description": "Width for prefix slot in small input group."
+            },
+            "md": {
+              "$value": "{eui.input.size.md.height}",
+              "$type": "dimension",
+              "$description": "Width for prefix slot in medium input group."
+            },
+            "lg": {
+              "$value": "{eui.input.size.lg.height}",
+              "$type": "dimension",
+              "$description": "Width for prefix slot in large input group."
+            }
+          },
+          "height": {
+            "sm": {
+              "$value": "{eui.input.size.sm.height}",
+              "$type": "dimension",
+              "$description": "Height for prefix slot in small input group."
+            },
+            "md": {
+              "$value": "{eui.input.size.md.height}",
+              "$type": "dimension",
+              "$description": "Height for prefix slot in medium input group."
+            },
+            "lg": {
+              "$value": "{eui.input.size.lg.height}",
+              "$type": "dimension",
+              "$description": "Height for prefix slot in large input group."
+            }
+          }
+        },
+        "suffix": {
+          "width": {
+            "sm": {
+              "$value": "{eui.input.size.sm.height}",
+              "$type": "dimension",
+              "$description": "Width for suffix slot in small input group."
+            },
+            "md": {
+              "$value": "{eui.input.size.md.height}",
+              "$type": "dimension",
+              "$description": "Width for suffix slot in medium input group."
+            },
+            "lg": {
+              "$value": "{eui.input.size.lg.height}",
+              "$type": "dimension",
+              "$description": "Width for suffix slot in large input group."
+            }
+          },
+          "height": {
+            "sm": {
+              "$value": "{eui.input.size.sm.height}",
+              "$type": "dimension",
+              "$description": "Height for suffix slot in small input group."
+            },
+            "md": {
+              "$value": "{eui.input.size.md.height}",
+              "$type": "dimension",
+              "$description": "Height for suffix slot in medium input group."
+            },
+            "lg": {
+              "$value": "{eui.input.size.lg.height}",
+              "$type": "dimension",
+              "$description": "Height for suffix slot in large input group."
+            }
+          }
+        }
+      },
+      "colors": {
+        "prefix": {
+          "text": {
+            "$value": "{eui.color.text.subtle}",
+            "$type": "color",
+            "$description": "Text/icon color for prefix slot."
+          }
+        },
+        "suffix": {
+          "text": {
+            "$value": "{eui.color.text.subtle}",
+            "$type": "color",
+            "$description": "Text/icon color for suffix slot."
+          }
+        }
+      }
+    }
+  }
+}

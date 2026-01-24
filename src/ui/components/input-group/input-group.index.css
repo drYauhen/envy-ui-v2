@@ -1,0 +1,13 @@
+/**
+ * InputGroup Component - Index
+ *
+ * Entry point that imports InputGroup CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/input-group.contract.json
+ * Legacy reference: src/ui/input-group.css
+ * Token variables: generated/css/components/input-group.tokens.css
+ */
+
+@import './input-group.structure.css';

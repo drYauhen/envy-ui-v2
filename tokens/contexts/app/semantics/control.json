@@ -1,0 +1,78 @@
+{
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "control": {
+      "height": {
+        "sm": {
+          "$value": "{eui.dimension.9}",
+          "$type": "dimension",
+          "$description": "Small control height (36px). Shared by inputs and buttons."
+        },
+        "md": {
+          "$value": "{eui.dimension.10}",
+          "$type": "dimension",
+          "$description": "Medium control height (40px). Default for inputs and buttons."
+        },
+        "lg": {
+          "$value": "{eui.dimension.11}",
+          "$type": "dimension",
+          "$description": "Large control height (44px). Shared by inputs and buttons."
+        }
+      },
+      "density": {
+        "compact": {
+          "height": {
+            "sm": {
+              "$value": "{eui.dimension.7}",
+              "$type": "dimension",
+              "$description": "Compact small control height (28px)."
+            },
+            "md": {
+              "$value": "{eui.dimension.8}",
+              "$type": "dimension",
+              "$description": "Compact medium control height (32px)."
+            },
+            "lg": {
+              "$value": "{eui.dimension.9}",
+              "$type": "dimension",
+              "$description": "Compact large control height (36px)."
+            }
+          }
+        }
+      },
+      "radius": {
+        "$value": "{eui.radius.md}",
+        "$type": "dimension",
+        "$description": "Default control radius for interactive components (button, input, select, etc.)."
+      },
+      "border": {
+        "width": {
+          "$value": "{eui.border.width.thin}",
+          "$type": "dimension",
+          "$description": "Default control border width (shared across inputs and buttons)."
+        }
+      }
+    },
+    "overlay": {
+      "radius": {
+        "$value": "{eui.radius.md}",
+        "$type": "dimension",
+        "$description": "Default overlay radius for tooltip, dropdown, popover, and calendar surfaces."
+      }
+    },
+    "surface": {
+      "radius": {
+        "$value": "{eui.radius.large}",
+        "$type": "dimension",
+        "$description": "Default surface radius for cards, panels, and larger containers."
+      }
+    },
+    "inline": {
+      "radius": {
+        "$value": "{eui.radius.default}",
+        "$type": "dimension",
+        "$description": "Default inline radius for badges and inline code tokens."
+      }
+    }
+  }
+}

@@ -1,0 +1,261 @@
+/**
+ * InputGroup Component - Layout, Slots & Structure
+ *
+ * This file contains layout rules, slots, and state selectors.
+ * No theme-specific selectors beyond context scoping.
+ *
+ * Generated from: tokens/components/input-group.contract.json
+ * Legacy reference: src/ui/input-group.css
+ */
+
+@layer eui-components {
+  /* ============================================================================
+     InputGroup Container
+     ============================================================================ */
+
+  [data-eui-context] .eui-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    border: var(--eui-input-border-width) var(--eui-input-border-style) var(--eui-input-border-base);
+    border-radius: var(--eui-input-shape-radius);
+    background-color: var(--eui-input-background-base);
+
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  [data-eui-context='app'] .eui-input-group:not(:has(.eui-input:disabled)):not(:has(.eui-input:focus-within)):hover,
+  [data-eui-context='website'] .eui-input-group:not(:has(.eui-input:disabled)):not(:has(.eui-input:focus-within)):hover {
+    border-color: var(--eui-input-border-hover);
+  }
+
+  [data-eui-context='app'] .eui-input-group:has(.eui-input:focus),
+  [data-eui-context='app'] .eui-input-group:has(.eui-input:focus-within),
+  [data-eui-context='website'] .eui-input-group:has(.eui-input:focus),
+  [data-eui-context='website'] .eui-input-group:has(.eui-input:focus-within) {
+    border-color: var(--eui-input-border-focus);
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
+    z-index: 1;
+  }
+
+  [data-eui-context='app'] .eui-input-group:has(.eui-input:focus-visible),
+  [data-eui-context='website'] .eui-input-group:has(.eui-input:focus-visible) {
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input:disabled) {
+    background-color: var(--eui-input-background-disabled);
+    border-color: var(--eui-input-border-disabled);
+    cursor: not-allowed;
+  }
+
+  [data-eui-context] .eui-input-group[data-eui-state='error'],
+  [data-eui-context] .eui-input-group:has(.eui-input[data-eui-state='error']) {
+    border-color: var(--eui-input-border-error);
+  }
+
+  [data-eui-context='app'] .eui-input-group[data-eui-state='error']:has(.eui-input:focus),
+  [data-eui-context='app'] .eui-input-group[data-eui-state='error']:has(.eui-input:focus-within),
+  [data-eui-context='website'] .eui-input-group[data-eui-state='error']:has(.eui-input:focus),
+  [data-eui-context='website'] .eui-input-group[data-eui-state='error']:has(.eui-input:focus-within) {
+    border-color: var(--eui-input-border-error);
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color);
+  }
+
+  [data-eui-context='report'] .eui-input-group {
+    border-color: var(--eui-color-border-default);
+    background-color: transparent;
+  }
+
+  [data-eui-context='report'] .eui-input-group:has(.eui-input:disabled) {
+    border-style: dashed;
+  }
+
+  /* ============================================================================
+     InputGroup Prefix Slot
+     ============================================================================ */
+
+  [data-eui-context] .eui-input-prefix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--eui-input-group-colors-prefix-text);
+
+    width: var(--eui-input-group-size-prefix-width-md);
+    height: var(--eui-input-group-size-prefix-height-md);
+
+    padding-left: var(--eui-input-group-spacing-prefix-padding-left);
+    padding-right: var(--eui-input-group-spacing-prefix-padding-right);
+
+    border-top-left-radius: var(--eui-input-shape-radius);
+    border-bottom-left-radius: var(--eui-input-shape-radius);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  [data-eui-context] .eui-input-group[data-eui-size='sm'] .eui-input-prefix {
+    width: var(--eui-input-group-size-prefix-width-sm);
+    height: var(--eui-input-group-size-prefix-height-sm);
+  }
+
+  [data-eui-context] .eui-input-group[data-eui-size='md'] .eui-input-prefix {
+    width: var(--eui-input-group-size-prefix-width-md);
+    height: var(--eui-input-group-size-prefix-height-md);
+  }
+
+  [data-eui-context] .eui-input-group[data-eui-size='lg'] .eui-input-prefix {
+    width: var(--eui-input-group-size-prefix-width-lg);
+    height: var(--eui-input-group-size-prefix-height-lg);
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input:disabled) .eui-input-prefix {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* ============================================================================
+     InputGroup Suffix Slot
+     ============================================================================ */
+
+  [data-eui-context] .eui-input-suffix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--eui-input-group-colors-suffix-text);
+
+    width: var(--eui-input-group-size-suffix-width-md);
+    height: var(--eui-input-group-size-suffix-height-md);
+
+    padding-left: var(--eui-input-group-spacing-suffix-padding-left);
+    padding-right: var(--eui-input-group-spacing-suffix-padding-right);
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--eui-input-shape-radius);
+    border-bottom-right-radius: var(--eui-input-shape-radius);
+  }
+
+  [data-eui-context] .eui-input-group[data-eui-size='sm'] .eui-input-suffix {
+    width: var(--eui-input-group-size-suffix-width-sm);
+    height: var(--eui-input-group-size-suffix-height-sm);
+  }
+
+  [data-eui-context] .eui-input-group[data-eui-size='md'] .eui-input-suffix {
+    width: var(--eui-input-group-size-suffix-width-md);
+    height: var(--eui-input-group-size-suffix-height-md);
+  }
+
+  [data-eui-context] .eui-input-group[data-eui-size='lg'] .eui-input-suffix {
+    width: var(--eui-input-group-size-suffix-width-lg);
+    height: var(--eui-input-group-size-suffix-height-lg);
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input:disabled) .eui-input-suffix {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  [data-eui-context] .eui-input-suffix button,
+  [data-eui-context] .eui-input-suffix [role='button'] {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input:disabled) .eui-input-suffix button,
+  [data-eui-context] .eui-input-group:has(.eui-input:disabled) .eui-input-suffix [role='button'] {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* ============================================================================
+     Input Inside Group
+     ============================================================================ */
+
+  [data-eui-context] .eui-input-group .eui-input {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  [data-eui-context] .eui-input-group .eui-input {
+    padding-left: var(--eui-input-size-md-padding-inline);
+    padding-right: var(--eui-input-size-md-padding-inline);
+  }
+
+  [data-eui-context] .eui-input-group .eui-input[data-eui-size='sm'] {
+    padding-left: var(--eui-input-size-sm-padding-inline);
+    padding-right: var(--eui-input-size-sm-padding-inline);
+  }
+
+  [data-eui-context] .eui-input-group .eui-input[data-eui-size='md'] {
+    padding-left: var(--eui-input-size-md-padding-inline);
+    padding-right: var(--eui-input-size-md-padding-inline);
+  }
+
+  [data-eui-context] .eui-input-group .eui-input[data-eui-size='lg'] {
+    padding-left: var(--eui-input-size-lg-padding-inline);
+    padding-right: var(--eui-input-size-lg-padding-inline);
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input-prefix) .eui-input {
+    padding-left: var(--eui-input-group-spacing-input-padding-left);
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input-suffix) .eui-input {
+    padding-right: var(--eui-input-group-spacing-input-padding-right);
+  }
+
+  [data-eui-context] .eui-input-group .eui-input:focus,
+  [data-eui-context] .eui-input-group .eui-input:focus-visible,
+  [data-eui-context] .eui-input-group .eui-input:focus-within {
+    box-shadow: none;
+    z-index: auto;
+  }
+
+  [data-eui-context] .eui-input-group .eui-input:disabled {
+    background-color: transparent;
+    border: none;
+  }
+
+  [data-eui-context] .eui-input-group .eui-input[data-eui-state='error'] {
+    border: none;
+  }
+
+  /* ============================================================================
+     Border Radius Adjustments
+     ============================================================================ */
+
+  [data-eui-context] .eui-input-group:has(.eui-input-prefix) .eui-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input-suffix) .eui-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  [data-eui-context] .eui-input-group:has(.eui-input-prefix):has(.eui-input-suffix) .eui-input {
+    border-radius: 0;
+  }
+}

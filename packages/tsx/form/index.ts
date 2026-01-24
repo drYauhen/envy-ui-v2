@@ -1,3 +1,7 @@
+export { Form, FormActions } from './form';
+export type { FormActionsAlign, FormActionsProps, FormLayoutMode, FormProps } from './form';
+export type { FormDensity, FormLayout } from './form-context';
+
 export { FormField } from './form-field';
 export type { FormFieldProps } from './form-field';
 
@@ -9,7 +13,6 @@ export type { FormRowProps } from './form-row';
 
 export { FormGroup } from './form-group';
 export type { FormGroupProps } from './form-group';
-
 
 
 

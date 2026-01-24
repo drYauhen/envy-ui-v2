@@ -124,6 +124,153 @@ export const InputTypes: Story = {
   )
 };
 
+export const InputDate: Story = {
+  name: 'Date (native + segmented)',
+  parameters: {
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Date Inputs</h3>
+            <div style={formGroupStyle}>
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <span className="eui-label">Native date input</span>
+                <input type="date" className="eui-input" style={{ width: '180px' }} />
+              </label>
+
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <span className="eui-label">Segmented date field (non-native)</span>
+                <div
+                  className="eui-input"
+                  data-eui-input-kind="date"
+                  role="textbox"
+                  aria-label="Date"
+                  style={{ width: '180px' }}
+                >
+                  <span className="eui-input-segment" data-eui-placeholder="">
+                    MM
+                  </span>
+                  <span className="eui-input-segment" aria-hidden="true">
+                    /
+                  </span>
+                  <span className="eui-input-segment" data-eui-placeholder="">
+                    DD
+                  </span>
+                  <span className="eui-input-segment" aria-hidden="true">
+                    /
+                  </span>
+                  <span className="eui-input-segment" data-eui-placeholder="">
+                    YYYY
+                  </span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
+export const InputWithIcons: Story = {
+  name: 'With icons',
+  parameters: {
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <div style={sectionStyle}>
+            <h3 style={sectionTitleStyle}>Input with icons (visual only)</h3>
+            <div style={formGroupStyle}>
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <span className="eui-label">Search (leading icon)</span>
+                <div className="eui-input-group" data-eui-size="md">
+                  <span className="eui-input-prefix" data-eui-slot="prefix" aria-hidden="true">
+                    <span data-eui-icon="search" data-eui-size="sm" />
+                  </span>
+                  <input
+                    type="text"
+                    className="eui-input"
+                    data-eui-size="md"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </div>
+              </label>
+
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <span className="eui-label">Date (trailing icon)</span>
+                <div className="eui-input-group" data-eui-size="md" style={{ width: '220px' }}>
+                  <input
+                    type="text"
+                    className="eui-input"
+                    data-eui-size="md"
+                    placeholder="MM/DD/YYYY"
+                    aria-label="Date"
+                  />
+                  <span className="eui-input-suffix" data-eui-slot="suffix" aria-hidden="true">
+                    <span data-eui-icon="calendar-alt" data-eui-size="sm" />
+                  </span>
+                </div>
+              </label>
+
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <span className="eui-label">Clearable (trailing action)</span>
+                <div className="eui-input-group" data-eui-size="md">
+                  <input
+                    type="text"
+                    className="eui-input"
+                    data-eui-size="md"
+                    defaultValue="Clear me"
+                    aria-label="Clearable"
+                  />
+                  <span className="eui-input-suffix" data-eui-slot="suffix">
+                    <button type="button" aria-label="Clear">
+                      <span data-eui-icon="trash" data-eui-size="sm" />
+                    </button>
+                  </span>
+                </div>
+              </label>
+
+              <label style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <span className="eui-label">Leading + trailing icons</span>
+                <div className="eui-input-group" data-eui-size="md">
+                  <span className="eui-input-prefix" data-eui-slot="prefix" aria-hidden="true">
+                    <span data-eui-icon="search" data-eui-size="sm" />
+                  </span>
+                  <input
+                    type="text"
+                    className="eui-input"
+                    data-eui-size="md"
+                    placeholder="Search query"
+                    aria-label="Search query"
+                  />
+                  <span className="eui-input-suffix" data-eui-slot="suffix">
+                    <button type="button" aria-label="Clear search">
+                      <span data-eui-icon="trash" data-eui-size="sm" />
+                    </button>
+                  </span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
 export const InputContexts: Story = {
   name: 'Contexts (App vs Report)',
   parameters: {

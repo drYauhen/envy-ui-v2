@@ -1,0 +1,37 @@
+/**
+ * Input Component Tokens - Generated from tokens/components/input.tokens.json
+ */
+
+@layer eui-components {
+  /* input variables */
+  [data-eui-context] .eui-input, [data-eui-context] .eui-input-group, [data-eui-context] .eui-select, [data-eui-context] .eui-textarea {
+    --eui-input-size-sm-height: var(--eui-control-height-sm);
+    --eui-input-size-sm-padding-inline: var(--eui-dimension-3);
+    --eui-input-size-sm-font-size: var(--eui-typography-fontSize-sm);
+    --eui-input-size-md-height: var(--eui-control-height-md);
+    --eui-input-size-md-padding-inline: var(--eui-dimension-3);
+    --eui-input-size-md-font-size: var(--eui-typography-fontSize-base);
+    --eui-input-size-lg-height: var(--eui-control-height-lg);
+    --eui-input-size-lg-padding-inline: 14px;
+    --eui-input-size-lg-font-size: var(--eui-typography-fontSize-base);
+    --eui-input-background-base: var(--eui-color-background-surface);
+    --eui-input-background-hover: var(--eui-color-background-surface);
+    --eui-input-background-focus: var(--eui-color-background-surface);
+    --eui-input-background-disabled: var(--eui-color-background-muted);
+    --eui-input-border-base: var(--eui-color-border-default);
+    --eui-input-border-hover: var(--eui-color-border-strong);
+    --eui-input-border-focus: var(--eui-color-brand-primary);
+    --eui-input-border-disabled: var(--eui-color-neutral-400);
+    --eui-input-border-error: var(--eui-color-status-error-solid);
+    --eui-input-border-width: var(--eui-control-border-width);
+    --eui-input-border-style: var(--eui-border-style-default);
+    --eui-input-text-base: var(--eui-color-text-primary);
+    --eui-input-text-placeholder: var(--eui-color-text-subtle);
+    --eui-input-text-disabled: var(--eui-color-text-disabled);
+    --eui-input-shape-radius: var(--eui-control-radius);
+    --eui-input-typography-font-family: inherit;
+    --eui-input-typography-font-weight: var(--eui-typography-fontWeight-normal);
+    --eui-input-typography-line-height: var(--eui-typography-lineHeight-normal);
+  }
+
+}
