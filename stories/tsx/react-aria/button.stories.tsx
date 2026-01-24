@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '../../../src/ui';
+import { Button, ButtonGroup } from '../../../src/ui';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../src/ui';
 import { Icon } from '../../../packages/tsx/icon';
 import { getSectionParameters } from '../../../.storybook/preview';
@@ -221,6 +221,42 @@ export const WithIcons: Story = {
           {label}
         </Button>
       </div>
+    </div>
+  )
+};
+
+export const Grouped: Story = {
+  name: 'Grouped (React Aria)',
+  args: {
+    intent: 'secondary',
+    shape: 'default',
+    size: 'md',
+    label: 'Group'
+  },
+  render: ({ intent, shape, size }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <ButtonGroup>
+        <Button intent={intent} shape={shape} size={size}>
+          One
+        </Button>
+        <Button intent={intent} shape={shape} size={size}>
+          Two
+        </Button>
+        <Button intent={intent} shape={shape} size={size}>
+          Three
+        </Button>
+      </ButtonGroup>
+      <ButtonGroup orientation="vertical" style={{ width: '180px' }}>
+        <Button intent={intent} shape={shape} size={size}>
+          One
+        </Button>
+        <Button intent={intent} shape={shape} size={size}>
+          Two
+        </Button>
+        <Button intent={intent} shape={shape} size={size}>
+          Three
+        </Button>
+      </ButtonGroup>
     </div>
   )
 };

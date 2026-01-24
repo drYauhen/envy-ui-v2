@@ -175,7 +175,7 @@ ${generateHtmlForGroup(groups4)}
   gap: 0;
 }
 
-.eui-button-group[data-orientation='vertical'] {
+.eui-button-group[data-eui-orientation='vertical'] {
   flex-direction: column;
   width: max-content;
 }
@@ -299,5 +299,4 @@ ${generateHtmlForGroup(groups4)}
     </div>
   );
 }
-
 

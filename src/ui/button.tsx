@@ -4,6 +4,8 @@ import type { AriaButtonProps, PressEvent } from 'react-aria';
 import type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/tsx/button.contract';
 export type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/tsx/button.contract';
 import systemMeta from '../../system.meta.json';
+import { ButtonGroup } from '../../packages/tsx/button/button-group';
+import type { ButtonGroupProps } from '../../packages/tsx/button/button-group';
 
 type HostButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 type HostLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -64,6 +66,8 @@ type AsChildProps = {
 };
 
 export type ButtonProps = BaseProps & (ButtonHostProps | AsChildProps);
+export type { ButtonGroupProps };
+export { ButtonGroup };
 
 const dataAttr = (value: boolean) => (value ? '' : undefined);
 const SYSTEM_PREFIX = systemMeta?.tokens?.prefix ?? 'eui';

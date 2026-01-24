@@ -1,9 +1,10 @@
-/// <reference path="../../../packages/web-components/button/button.d.ts" />
+/// <reference path="../../packages/web-components/button/button.d.ts" />
 
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ComponentPropsWithoutRef } from 'react';
 import { MultiContextViewer } from '../utils/multi-context-viewer';
 import { useEffect } from 'react';
-import '../../../packages/web-components/button'; // Registers the custom element
+import '../../packages/web-components/button'; // Registers the custom element
 
 const meta: Meta = {
   title: 'Web Components/Components/Button',
@@ -45,6 +46,34 @@ const buttonGroupStyle = {
   alignItems: 'center'
 };
 
+const tokenBridgeStyles = `
+  eui-button.eui-button {
+    --eui-button-primary-background-base: var(--eui-button-colors-background);
+    --eui-button-primary-label-base: var(--eui-button-colors-text);
+    --eui-button-primary-border-base: var(--eui-button-colors-border);
+    --eui-button-secondary-background-base: var(--eui-button-colors-background);
+    --eui-button-secondary-label-base: var(--eui-button-colors-text);
+    --eui-button-secondary-border-base: var(--eui-button-colors-border);
+    --eui-button-accent-background-base: var(--eui-button-colors-background);
+    --eui-button-accent-label-base: var(--eui-button-colors-text);
+    --eui-button-accent-border-base: var(--eui-button-colors-border);
+    --eui-button-primary-background-selected: var(--eui-button-colors-background);
+    --eui-button-primary-label-selected: var(--eui-button-colors-text);
+    --eui-button-secondary-background-selected: var(--eui-button-colors-background);
+    --eui-button-secondary-label-selected: var(--eui-button-colors-text);
+    --eui-button-accent-background-selected: var(--eui-button-colors-background);
+    --eui-button-accent-label-selected: var(--eui-button-colors-text);
+    --eui-button-layout-default-flex-grow: var(--eui-button-layout-flex-grow);
+    --eui-button-layout-default-flex-shrink: var(--eui-button-layout-flex-shrink);
+    --eui-button-layout-default-flex-basis: var(--eui-button-layout-flex-basis);
+    --eui-button-layout-default-white-space: var(--eui-button-layout-whiteSpace);
+  }
+`;
+
+const EuiButton = (props: ComponentPropsWithoutRef<'eui-button'>) => (
+  <eui-button className="eui-button" {...props} />
+);
+
 export const Button: Story = {
   name: 'Button (Web Components)',
   parameters: {
@@ -63,49 +92,50 @@ export const Button: Story = {
       <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
         <div style={containerStyle}>
+        <style>{tokenBridgeStyles}</style>
 
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Primary Buttons</h3>
           <div style={buttonGroupStyle}>
-            <eui-button data-eui-intent="primary">Primary</eui-button>
-            <eui-button data-eui-intent="primary" disabled>Disabled</eui-button>
-            <eui-button data-eui-intent="primary" data-eui-selected>Selected</eui-button>
+            <EuiButton data-eui-intent="primary">Primary</EuiButton>
+            <EuiButton data-eui-intent="primary" disabled>Disabled</EuiButton>
+            <EuiButton data-eui-intent="primary" data-eui-selected>Selected</EuiButton>
           </div>
         </div>
 
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Secondary Buttons</h3>
           <div style={buttonGroupStyle}>
-            <eui-button data-eui-intent="secondary">Secondary</eui-button>
-            <eui-button data-eui-intent="secondary" disabled>Disabled</eui-button>
-            <eui-button data-eui-intent="secondary" data-eui-selected>Selected</eui-button>
+            <EuiButton data-eui-intent="secondary">Secondary</EuiButton>
+            <EuiButton data-eui-intent="secondary" disabled>Disabled</EuiButton>
+            <EuiButton data-eui-intent="secondary" data-eui-selected>Selected</EuiButton>
           </div>
         </div>
 
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Accent Buttons</h3>
           <div style={buttonGroupStyle}>
-            <eui-button data-eui-intent="accent">Accent</eui-button>
-            <eui-button data-eui-intent="accent" disabled>Disabled</eui-button>
-            <eui-button data-eui-intent="accent" data-eui-selected>Selected</eui-button>
+            <EuiButton data-eui-intent="accent">Accent</EuiButton>
+            <EuiButton data-eui-intent="accent" disabled>Disabled</EuiButton>
+            <EuiButton data-eui-intent="accent" data-eui-selected>Selected</EuiButton>
           </div>
         </div>
 
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Sizes</h3>
           <div style={buttonGroupStyle}>
-            <eui-button data-eui-intent="primary" data-eui-size="sm">Small</eui-button>
-            <eui-button data-eui-intent="primary" data-eui-size="md">Medium</eui-button>
-            <eui-button data-eui-intent="primary" data-eui-size="lg">Large</eui-button>
+            <EuiButton data-eui-intent="primary" data-eui-size="sm">Small</EuiButton>
+            <EuiButton data-eui-intent="primary" data-eui-size="md">Medium</EuiButton>
+            <EuiButton data-eui-intent="primary" data-eui-size="lg">Large</EuiButton>
           </div>
         </div>
 
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Shapes</h3>
           <div style={buttonGroupStyle}>
-            <eui-button data-eui-intent="primary" data-eui-shape="default">Default</eui-button>
-            <eui-button data-eui-intent="primary" data-eui-shape="round">Round</eui-button>
-            <eui-button data-eui-intent="primary" data-eui-shape="circle">○</eui-button>
+            <EuiButton data-eui-intent="primary" data-eui-shape="default">Default</EuiButton>
+            <EuiButton data-eui-intent="primary" data-eui-shape="round">Round</EuiButton>
+            <EuiButton data-eui-intent="primary" data-eui-shape="circle">○</EuiButton>
           </div>
         </div>
       
@@ -123,6 +153,7 @@ export const States: Story = {
       <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
         <div style={containerStyle}>
+        <style>{tokenBridgeStyles}</style>
 
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Interactive States</h3>
@@ -130,9 +161,9 @@ export const States: Story = {
             Hover, focus, and active states are handled by CSS. Disabled state prevents interaction.
           </p>
           <div style={buttonGroupStyle}>
-            <eui-button data-eui-intent="primary">Normal</eui-button>
-            <eui-button data-eui-intent="primary" disabled>Disabled</eui-button>
-            <eui-button data-eui-intent="primary" data-eui-selected>Selected</eui-button>
+            <EuiButton data-eui-intent="primary">Normal</EuiButton>
+            <EuiButton data-eui-intent="primary" disabled>Disabled</EuiButton>
+            <EuiButton data-eui-intent="primary" data-eui-selected>Selected</EuiButton>
           </div>
         </div>
       
@@ -150,13 +181,14 @@ export const WithContent: Story = {
       <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
         <div style={containerStyle}>
+        <style>{tokenBridgeStyles}</style>
 
         <div style={sectionStyle}>
           <h3 style={{ margin: 0 }}>Text Content</h3>
           <div style={buttonGroupStyle}>
-            <eui-button data-eui-intent="primary">Click me</eui-button>
-            <eui-button data-eui-intent="secondary">Save changes</eui-button>
-            <eui-button data-eui-intent="accent">Delete item</eui-button>
+            <EuiButton data-eui-intent="primary">Click me</EuiButton>
+            <EuiButton data-eui-intent="secondary">Save changes</EuiButton>
+            <EuiButton data-eui-intent="accent">Delete item</EuiButton>
           </div>
         </div>
       

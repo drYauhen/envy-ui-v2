@@ -2,7 +2,7 @@
  * EuiButton Web Component
  * 
  * A framework-agnostic button component using Web Components standards.
- * Integrates with the token system via CSS custom properties that penetrate Shadow DOM.
+ * Integrates with the token system via CSS custom properties that penetrapzte Shadow DOM.
  * 
  * Usage:
  *   <eui-button data-eui-intent="primary">Click me</eui-button>

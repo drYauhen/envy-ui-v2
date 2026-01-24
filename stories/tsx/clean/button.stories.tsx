@@ -79,13 +79,13 @@ export const Grouped: Story = {
   args: { intent: 'secondary', shape: 'default', size: 'md' },
   render: ({ intent, shape, size }) => (
     <ButtonGroup>
-      <ButtonClean intent={intent} shape={shape} size={size} data-eui-group-position="first" aria-label="First">
+      <ButtonClean intent={intent} shape={shape} size={size} aria-label="First">
         One
       </ButtonClean>
-      <ButtonClean intent={intent} shape={shape} size={size} data-eui-group-position="middle" aria-label="Middle">
+      <ButtonClean intent={intent} shape={shape} size={size} aria-label="Middle">
         Two
       </ButtonClean>
-      <ButtonClean intent={intent} shape={shape} size={size} data-eui-group-position="last" aria-label="Last" selected>
+      <ButtonClean intent={intent} shape={shape} size={size} aria-label="Last" selected>
         Three
       </ButtonClean>
     </ButtonGroup>
@@ -96,13 +96,11 @@ export const GroupedVertical: Story = {
   name: 'Grouped vertical (visual)',
   args: { intent: 'secondary', shape: 'default', size: 'md' },
   render: ({ intent, shape, size }) => (
-    <ButtonGroup data-eui-orientation="vertical" style={{ width: '180px' }}>
+    <ButtonGroup orientation="vertical" style={{ width: '180px' }}>
       <ButtonClean
         intent={intent}
         shape={shape}
         size={size}
-        data-eui-group-position="first"
-        data-eui-group-orientation="vertical"
         aria-label="First"
       >
         One
@@ -111,8 +109,6 @@ export const GroupedVertical: Story = {
         intent={intent}
         shape={shape}
         size={size}
-        data-eui-group-position="middle"
-        data-eui-group-orientation="vertical"
         aria-label="Middle"
       >
         Two
@@ -121,8 +117,6 @@ export const GroupedVertical: Story = {
         intent={intent}
         shape={shape}
         size={size}
-        data-eui-group-position="last"
-        data-eui-group-orientation="vertical"
         aria-label="Last"
         selected
       >

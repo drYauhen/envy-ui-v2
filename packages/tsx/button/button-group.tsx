@@ -12,6 +12,35 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(fu
   const { classNames, dataAttributes } = buttonGroupContract;
   const orientationValue =
     orientation === 'vertical' ? dataAttributes.orientationValues.vertical : dataAttributes.orientationValues.horizontal;
+  const childArray = React.Children.toArray(children);
+  const validCount = childArray.filter(React.isValidElement).length;
+  let currentIndex = 0;
+
+  const enhancedChildren = childArray.map((child) => {
+    if (!React.isValidElement(child)) {
+      return child;
+    }
+
+    const position =
+      validCount <= 1
+        ? 'first'
+        : currentIndex === 0
+          ? 'first'
+          : currentIndex === validCount - 1
+            ? 'last'
+            : 'middle';
+    currentIndex += 1;
+
+    const existingPosition = child.props['data-eui-group-position'];
+    const existingOrientation = child.props['data-eui-group-orientation'];
+
+    return React.cloneElement(child, {
+      ...(existingPosition == null ? { 'data-eui-group-position': position } : null),
+      ...(existingOrientation == null && orientation === 'vertical'
+        ? { 'data-eui-group-orientation': 'vertical' }
+        : null)
+    });
+  });
 
   return (
     <div
@@ -20,7 +49,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(fu
       {...(orientationValue !== undefined ? { [dataAttributes.orientation]: orientationValue } : {})}
       {...rest}
     >
-      {children}
+      {enhancedChildren}
     </div>
   );
 });

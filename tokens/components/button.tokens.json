@@ -22,9 +22,9 @@
         },
         "border": {
           "width": {
-            "$value": "{eui.border.width.thin}",
+            "$value": "{eui.control.border.width}",
             "$type": "dimension",
-            "$description": "Button border width."
+            "$description": "Button border width (shared control border width)."
           },
           "style": {
             "$value": "{eui.border.style.solid}",
@@ -33,9 +33,9 @@
           }
         },
         "radius": {
-          "$value": "{eui.radius.md}",
+          "$value": "{eui.control.radius}",
           "$type": "dimension",
-          "$description": "Default button radius."
+          "$description": "Default button radius (shared control radius)."
         },
         "typography": {
           "fontFamily": {
@@ -101,9 +101,9 @@
       "size": {
         "sm": {
           "height": {
-            "$value": "{eui.dimension.9}",
+            "$value": "{eui.control.height.sm}",
             "$type": "dimension",
-            "$description": "Small button height."
+            "$description": "Sm button height (shared control height)."
           },
           "padding": {
             "inline": {
@@ -132,9 +132,9 @@
         },
         "md": {
           "height": {
-            "$value": "{eui.dimension.10}",
+            "$value": "{eui.control.height.md}",
             "$type": "dimension",
-            "$description": "Medium button height."
+            "$description": "Md button height (shared control height)."
           },
           "padding": {
             "inline": {
@@ -163,9 +163,9 @@
         },
         "lg": {
           "height": {
-            "$value": "{eui.dimension.12}",
+            "$value": "{eui.control.height.lg}",
             "$type": "dimension",
-            "$description": "Large button height."
+            "$description": "Lg button height (shared control height)."
           },
           "padding": {
             "inline": {
@@ -196,9 +196,9 @@
       "shape": {
         "default": {
           "radius": {
-            "$value": "{eui.radius.md}",
+            "$value": "{eui.control.radius}",
             "$type": "dimension",
-            "$description": "Default button radius."
+            "$description": "Default button radius (shared control radius)."
           }
         },
         "round": {
