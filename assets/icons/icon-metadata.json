@@ -112,5 +112,11 @@
     "subcategory": "actions",
     "tags": ["power-off", "sign-out", "logout", "exit", "shutdown", "off"],
     "description": "Power off icon for sign out and logout actions"
+  },
+  "calendar-alt": {
+    "category": "ui",
+    "subcategory": "status",
+    "tags": ["calendar", "date", "schedule", "event", "month"],
+    "description": "Calendar icon for date selection and scheduling"
   }
 }

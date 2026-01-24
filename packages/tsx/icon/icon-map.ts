@@ -2,6 +2,7 @@
 /* Do not edit manually - regenerate via: npm run icons:generate */
 
 import { IconAlertTriangle } from './generated/IconAlertTriangle';
+import { IconCalendarAlt } from './generated/IconCalendarAlt';
 import { IconCheckCircle } from './generated/IconCheckCircle';
 import { IconChevronDown } from './generated/IconChevronDown';
 import { IconChevronLeft } from './generated/IconChevronLeft';
@@ -38,6 +39,7 @@ import { IconVisuals } from './generated/IconVisuals';
 
 export const iconMap = {
   'alert-triangle': IconAlertTriangle,
+  'calendar-alt': IconCalendarAlt,
   'check-circle': IconCheckCircle,
   'chevron-down': IconChevronDown,
   'chevron-left': IconChevronLeft,
@@ -73,4 +75,4 @@ export const iconMap = {
   'visuals': IconVisuals,
 };
 
-export type IconName = 'alert-triangle' | 'check-circle' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'clock' | 'cog' | 'data-source' | 'ellipsis-v' | 'envisio-logo' | 'exclamation-circle' | 'expand-all' | 'external-link' | 'info-circle' | 'map-marked-alt' | 'org-assessment' | 'pencil-ruler' | 'personal-assessment' | 'plan-dashboards' | 'plan-reports' | 'plan' | 'plus-circle' | 'polco' | 'power-off' | 'search' | 'sitemap' | 'submit-updates' | 'swap' | 'tasks' | 'team-assessment' | 'trash' | 'user-friends' | 'visuals-dashboard' | 'visuals';
+export type IconName = 'alert-triangle' | 'calendar-alt' | 'check-circle' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'clock' | 'cog' | 'data-source' | 'ellipsis-v' | 'envisio-logo' | 'exclamation-circle' | 'expand-all' | 'external-link' | 'info-circle' | 'map-marked-alt' | 'org-assessment' | 'pencil-ruler' | 'personal-assessment' | 'plan-dashboards' | 'plan-reports' | 'plan' | 'plus-circle' | 'polco' | 'power-off' | 'search' | 'sitemap' | 'submit-updates' | 'swap' | 'tasks' | 'team-assessment' | 'trash' | 'user-friends' | 'visuals-dashboard' | 'visuals';
