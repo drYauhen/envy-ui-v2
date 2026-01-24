@@ -326,9 +326,9 @@
         },
         "shape": {
           "radius": {
-            "$value": "{eui.radius.default}",
+            "$value": "{eui.overlay.radius}",
             "$type": "dimension",
-            "$description": "Calendar border radius"
+            "$description": "Calendar border radius (shared overlay radius)."
           }
         },
         "focus": {

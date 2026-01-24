@@ -39,6 +39,10 @@
     --eui-calendar-surface-border: var(--eui-calendar-surface-embedded-border);
   }
 
+  [data-eui-context] .eui-calendar[data-eui-surface='floating'] {
+    box-shadow: var(--eui-shadow-large);
+  }
+
   /* Calendar Header */
   [data-eui-context] .eui-calendar__header {
     display: flex;
@@ -166,7 +170,6 @@
     transition: background-color var(--eui-calendar-transition-duration) var(--eui-transition-easing-inOut),
                 border-color var(--eui-calendar-transition-duration) var(--eui-transition-easing-inOut),
                 color var(--eui-calendar-transition-duration) var(--eui-transition-easing-inOut),
-                z-index var(--eui-calendar-transition-duration) var(--eui-transition-easing-inOut),
                 border-radius var(--eui-calendar-transition-duration) var(--eui-transition-easing-inOut);
     user-select: none;
     /* Default z-index */
@@ -174,14 +177,14 @@
   }
 
   /* Day Cell - Hover State */
-  [data-eui-context] .eui-calendar__day:hover:not(:disabled):not([data-eui-selected="true"]):not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):not([data-eui-in-range="true"]):not([data-eui-outside-month="true"]) {
+  [data-eui-context] .eui-calendar__day:hover:not(:disabled):not(:focus):not(:focus-visible):not([data-eui-selected="true"]):not([data-eui-range-start="true"]):not([data-eui-range-end="true"]):not([data-eui-in-range="true"]):not([data-eui-outside-month="true"]) {
     --eui-calendar-day-background: var(--eui-color-background-muted);
     /* Raise z-index on hover */
     z-index: var(--eui-calendar-zIndex-interactive);
   }
 
   /* Day Cell - Active/Pressed State */
-  [data-eui-context] .eui-calendar__day:active:not(:disabled):not([data-eui-selected="true"]):not([data-eui-outside-month="true"]) {
+  [data-eui-context] .eui-calendar__day:active:not(:disabled):not(:focus):not(:focus-visible):not([data-eui-selected="true"]):not([data-eui-outside-month="true"]) {
     --eui-calendar-day-background: var(--eui-color-background-subtle);
     /* Raise z-index on active */
     z-index: var(--eui-calendar-zIndex-interactive);

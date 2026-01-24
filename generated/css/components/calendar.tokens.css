@@ -27,7 +27,7 @@
     --eui-calendar-typography-day-fontWeight: 400;
     --eui-calendar-typography-day-lineHeight: 1;
     --eui-calendar-border-width: var(--eui-border-width-thin);
-    --eui-calendar-shape-radius: var(--eui-radius-default);
+    --eui-calendar-shape-radius: var(--eui-overlay-radius);
     --eui-calendar-focus-ring-color: var(--eui-color-focus-ring);
     --eui-calendar-focus-ring-width: var(--eui-focus-ring-width);
     --eui-calendar-focus-ring-offset: var(--eui-focus-ring-offset-default);
