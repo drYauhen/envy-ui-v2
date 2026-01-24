@@ -38,10 +38,23 @@ const RUNTIME_CSS_FILES = [
   'generated/css/components/table-container.tokens.css',
   'generated/css/components/callout.tokens.css',
   'generated/css/components/button.tokens.css',
+  'generated/css/components/input.tokens.css',
+  'generated/css/components/input-group.tokens.css',
+  'generated/css/components/avatar.tokens.css',
+  'generated/css/components/avatar-group.tokens.css',
+  'generated/css/components/tooltip.tokens.css',
+  'generated/css/components/side-nav.tokens.css',
+  'generated/css/components/logo.tokens.css',
+  'generated/css/components/form.tokens.css',
   'src/ui/focus-policy.css',
   // NOTE: Include structure CSS for components that define local vars used by tokens.
   'src/ui/components/badge/badge.structure.css',
-  'src/ui/components/card/card.structure.css'
+  'src/ui/components/card/card.structure.css',
+  'src/ui/components/input/input.structure.css',
+  'src/ui/components/input-group/input-group.structure.css',
+  'src/ui/components/form/form.structure.css',
+  'src/ui/components/side-nav/side-nav.structure.css',
+  'src/ui/components/logo/logo.structure.css'
 ];
 
 // Golden components for contract validation

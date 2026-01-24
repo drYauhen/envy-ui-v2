@@ -1,0 +1,362 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "side-nav": {
+      "colors": {
+        "background": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Side navigation background color."
+        },
+        "item": {
+          "background": {
+            "default": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Default navigation item background."
+            },
+            "hover": {
+              "$value": "{eui.color.brand.800}",
+              "$type": "color",
+              "$description": "Navigation item background on hover."
+            },
+            "active": {
+              "$value": "{eui.color.brand.500}",
+              "$type": "color",
+              "$description": "Active navigation item background."
+            },
+            "selected": {
+              "$value": "{eui.color.brand.500}",
+              "$type": "color",
+              "$description": "Selected navigation item background."
+            },
+            "focus": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Navigation item background on focus."
+            },
+            "disabled": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Disabled navigation item background."
+            }
+          },
+          "text": {
+            "default": {
+              "$value": "{eui.color.brand.100}",
+              "$type": "color",
+              "$description": "Default navigation item text color."
+            },
+            "hover": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Navigation item text color on hover."
+            },
+            "disabled": {
+              "$value": "{eui.color.text.disabled}",
+              "$type": "color",
+              "$description": "Disabled navigation item text color."
+            }
+          },
+          "indicator": {
+            "active": {
+              "$value": "{eui.color.brand.200}",
+              "$type": "color",
+              "$description": "Active indicator color."
+            },
+            "selected": {
+              "$value": "{eui.color.brand.300}",
+              "$type": "color",
+              "$description": "Selected indicator color."
+            }
+          },
+          "badge": {
+            "background": {
+              "$value": "{eui.color.brand.200}",
+              "$type": "color",
+              "$description": "Badge background color."
+            },
+            "text": {
+              "$value": "{eui.color.brand.900}",
+              "$type": "color",
+              "$description": "Badge text color."
+            }
+          }
+        },
+        "section": {
+          "title": {
+            "text": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Section title text color."
+            }
+          }
+        },
+        "separator": {
+          "$value": "{eui.color.border.subtle}",
+          "$type": "color",
+          "$description": "Separator color between sections."
+        },
+        "header": {
+          "border": {
+            "$value": "{eui.color.brand.300}",
+            "$type": "color",
+            "$description": "Header border color."
+          }
+        },
+        "footer": {
+          "border": {
+            "$value": "{eui.color.brand.300}",
+            "$type": "color",
+            "$description": "Footer border color."
+          }
+        },
+        "toggle": {
+          "border": {
+            "$value": "{eui.color.brand.200}",
+            "$type": "color",
+            "$description": "Toggle button border color."
+          }
+        },
+        "tooltip": {
+          "background": {
+            "$value": "{eui.color.neutral.900}",
+            "$type": "color",
+            "$description": "Tooltip background color."
+          },
+          "text": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Tooltip text color."
+          }
+        }
+      },
+      "size": {
+        "width": {
+          "expanded": {
+            "$value": "280px",
+            "$type": "dimension",
+            "$description": "Side navigation width when expanded."
+          },
+          "collapsed": {
+            "$value": "{eui.dimension.16}",
+            "$type": "dimension",
+            "$description": "Side navigation width when collapsed."
+          }
+        },
+        "item": {
+          "height": {
+            "$value": "{eui.dimension.11}",
+            "$type": "dimension",
+            "$description": "Height of navigation items."
+          },
+          "indicator": {
+            "width": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Width of active/selected indicator (left border)."
+            }
+          }
+        },
+        "icon": {
+          "width": {
+            "$value": "{eui.dimension.6}",
+            "$type": "dimension",
+            "$description": "Width of navigation item icons."
+          },
+          "height": {
+            "$value": "{eui.dimension.6}",
+            "$type": "dimension",
+            "$description": "Height of navigation item icons."
+          }
+        },
+        "badge": {
+          "min": {
+            "width": {
+              "$value": "{eui.dimension.5}",
+              "$type": "dimension",
+              "$description": "Minimum width for badge."
+            }
+          },
+          "height": {
+            "$value": "{eui.dimension.5}",
+            "$type": "dimension",
+            "$description": "Height of badge."
+          }
+        },
+        "header": {
+          "height": {
+            "$value": "{eui.dimension.16}",
+            "$type": "dimension",
+            "$description": "Height of navigation header (logo/brand area)."
+          }
+        },
+        "footer": {
+          "height": {
+            "$value": "{eui.dimension.16}",
+            "$type": "dimension",
+            "$description": "Height of navigation footer (user profile area)."
+          }
+        },
+        "toggle": {
+          "width": {
+            "$value": "{eui.dimension.7}",
+            "$type": "dimension",
+            "$description": "Width of collapse/expand toggle button."
+          },
+          "height": {
+            "$value": "{eui.dimension.7}",
+            "$type": "dimension",
+            "$description": "Height of collapse/expand toggle button."
+          }
+        }
+      },
+      "spacing": {
+        "padding": {
+          "vertical": {
+            "$value": "{eui.spacing.2}",
+            "$type": "dimension",
+            "$description": "Vertical padding for navigation container."
+          }
+        },
+        "item": {
+          "padding": {
+            "horizontal": {
+              "$value": "{eui.spacing.4}",
+              "$type": "dimension",
+              "$description": "Horizontal padding for navigation items."
+            }
+          },
+          "gap": {
+            "$value": "{eui.spacing.3}",
+            "$type": "dimension",
+            "$description": "Gap between icon and label in navigation items."
+          }
+        },
+        "section": {
+          "padding": {
+            "horizontal": {
+              "$value": "{eui.spacing.4}",
+              "$type": "dimension",
+              "$description": "Horizontal padding for section titles."
+            },
+            "top": {
+              "$value": "{eui.spacing.2}",
+              "$type": "dimension",
+              "$description": "Top padding for section titles."
+            }
+          }
+        },
+        "separator": {
+          "margin": {
+            "vertical": {
+              "$value": "{eui.spacing.3}",
+              "$type": "dimension",
+              "$description": "Vertical margin for separators."
+            }
+          }
+        },
+        "nested": {
+          "indent": {
+            "$value": "{eui.spacing.6}",
+            "$type": "dimension",
+            "$description": "Indentation for nested navigation items."
+          }
+        },
+        "toggle": {
+          "offset": {
+            "right": {
+              "$value": "-12px",
+              "$type": "dimension",
+              "$description": "Right offset for toggle button when collapsed."
+            }
+          }
+        }
+      },
+      "typography": {
+        "item": {
+          "font": {
+            "size": {
+              "$value": "{eui.typography.fontSize.base}",
+              "$type": "fontSize",
+              "$description": "Font size for navigation items."
+            },
+            "weight": {
+              "$value": "{eui.typography.fontWeight.normal}",
+              "$type": "fontWeight",
+              "$description": "Font weight for navigation items."
+            }
+          },
+          "line": {
+            "height": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Line height for navigation items."
+            }
+          }
+        },
+        "section-title": {
+          "font": {
+            "size": {
+              "$value": "{eui.typography.fontSize.xs}",
+              "$type": "fontSize",
+              "$description": "Font size for section titles."
+            },
+            "weight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Font weight for section titles."
+            }
+          },
+          "line": {
+            "height": {
+              "$value": "{eui.typography.lineHeight.normal}",
+              "$type": "lineHeight",
+              "$description": "Line height for section titles."
+            }
+          }
+        },
+        "header": {
+          "font": {
+            "size": {
+              "$value": "{eui.typography.fontSize.lg}",
+              "$type": "fontSize",
+              "$description": "Font size for header logo/brand text."
+            },
+            "weight": {
+              "$value": "{eui.typography.fontWeight.semibold}",
+              "$type": "fontWeight",
+              "$description": "Font weight for header logo/brand text."
+            }
+          }
+        }
+      },
+      "animation": {
+        "item": {
+          "duration": {
+            "$value": "150ms",
+            "$type": "duration",
+            "$description": "Transition duration for navigation item state changes."
+          },
+          "easing": {
+            "$value": "{eui.transition.easing.out}",
+            "$type": "cubicBezier",
+            "$description": "Easing function for navigation item transitions."
+          }
+        },
+        "indicator": {
+          "duration": {
+            "$value": "{eui.transition.duration.base}",
+            "$type": "duration",
+            "$description": "Transition duration for active indicator animation."
+          },
+          "easing": {
+            "$value": "{eui.transition.easing.out}",
+            "$type": "cubicBezier",
+            "$description": "Easing function for active indicator animation."
+          }
+        }
+      }
+    }
+  }
+}

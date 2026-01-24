@@ -1,0 +1,20 @@
+/**
+ * Logo Component Tokens - Generated from tokens/components/logo.tokens.json
+ */
+
+@layer eui-components {
+  /* logo variables */
+  [data-eui-context] .eui-logo {
+    --eui-logo-size-icon-xs: 16px;
+    --eui-logo-size-icon-sm: 24px;
+    --eui-logo-size-icon-md: 32px;
+    --eui-logo-size-icon-lg: 48px;
+    --eui-logo-size-icon-xl: 64px;
+    --eui-logo-colors-icon-default: var(--eui-color-brand-primary);
+    --eui-logo-colors-icon-inverse: var(--eui-color-text-inverse);
+    --eui-logo-colors-icon-grayscale: var(--eui-color-neutral-600);
+    --eui-logo-colors-icon-monochrome: currentColor;
+    --eui-logo-spacing-gap: 0.75rem;
+  }
+
+}

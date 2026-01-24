@@ -14,7 +14,7 @@ import '../../../src/ui/scrollbar.css';
 
 const SYSTEM_PREFIX = systemMeta?.tokens?.prefix ?? 'eui';
 const prefixedDataAttr = (name: string) => `data-${SYSTEM_PREFIX}-${name}`;
-const dataAttr = (value: boolean | undefined) => (value ? '' : undefined);
+const dataAttr = (value: boolean | undefined) => (value ? 'true' : undefined);
 
 // Logo SVG components
 const FullLogoSVG = () => (
@@ -564,7 +564,7 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
 
   // Navigation item component with Menu Bar Pattern
   const NavItem = React.memo(({ item }: { item: SideNavItem }) => {
-    const itemRef = React.useRef<HTMLLIElement>(null);
+    const itemRef = React.useRef<HTMLButtonElement>(null);
     const isSelected = selectedKey === item.key || item.isSelected || item.isActive;
 
     // Generate a stable key for this item (use item.key as the key)
@@ -587,22 +587,20 @@ export const SideNav = React.forwardRef<HTMLElement, SideNavProps>(function Side
     const { focusProps, isFocusVisible } = useFocusRing();
 
     return (
-      <li
-        ref={itemRef}
-        role="menuitem"
-        {...{
-          [prefixedDataAttr('active')]: dataAttr(item.isActive),
-          [prefixedDataAttr('selected')]: dataAttr(isSelected),
-          [prefixedDataAttr('disabled')]: dataAttr(item.isDisabled),
-          [prefixedDataAttr('hovered')]: dataAttr(isHovered),
-          [prefixedDataAttr('focus-visible')]: dataAttr(isFocusVisible)
-        }}
-        {...mergeProps(menuItemProps, hoverProps, focusProps)}
-      >
+      <li role="none">
         <button
+          ref={itemRef}
           className={`${SYSTEM_PREFIX}-side-nav__item`}
           type="button"
-          tabIndex={-1} // Remove from tab order - navigation handled by menuItemProps
+          disabled={item.isDisabled}
+          {...{
+            [prefixedDataAttr('active')]: dataAttr(item.isActive),
+            [prefixedDataAttr('selected')]: dataAttr(isSelected),
+            [prefixedDataAttr('disabled')]: dataAttr(item.isDisabled),
+            [prefixedDataAttr('hovered')]: dataAttr(isHovered),
+            [prefixedDataAttr('focus-visible')]: dataAttr(isFocusVisible)
+          }}
+          {...mergeProps(menuItemProps, hoverProps, focusProps)}
         >
           <div className={`${SYSTEM_PREFIX}-side-nav__item-content`}>
             <span

@@ -1,0 +1,67 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "logo": {
+      "size": {
+        "icon": {
+          "xs": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$description": "Extra small logo icon size (inline text, badges)."
+          },
+          "sm": {
+            "$value": "24px",
+            "$type": "dimension",
+            "$description": "Small logo icon size (collapsed menus)."
+          },
+          "md": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$description": "Medium logo icon size (standard)."
+          },
+          "lg": {
+            "$value": "48px",
+            "$type": "dimension",
+            "$description": "Large logo icon size (hero sections)."
+          },
+          "xl": {
+            "$value": "64px",
+            "$type": "dimension",
+            "$description": "Extra large logo icon size (landing pages)."
+          }
+        }
+      },
+      "colors": {
+        "icon": {
+          "default": {
+            "$value": "{eui.color.brand.primary}",
+            "$type": "color",
+            "$description": "Default logo icon color (brand primary)."
+          },
+          "inverse": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Logo icon color for dark backgrounds."
+          },
+          "grayscale": {
+            "$value": "{eui.color.neutral.600}",
+            "$type": "color",
+            "$description": "Grayscale logo icon color."
+          },
+          "monochrome": {
+            "$value": "currentColor",
+            "$type": "color",
+            "$description": "Monochrome logo icon color (inherits text color)."
+          }
+        }
+      },
+      "spacing": {
+        "gap": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Gap between icon and wordmark in full variant."
+        }
+      }
+    }
+  }
+}

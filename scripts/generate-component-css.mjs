@@ -60,6 +60,7 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
   output += '@layer eui-components {\n';
 
   const variantAttribute = options.variantAttribute || 'data-eui-variant';
+  const variantTokenPrefix = options.variantTokenPrefix || 'variant';
 
   try {
     const data = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
@@ -76,7 +77,10 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       name.startsWith(`eui-${componentName}-shape-`)
     );
     const variantTokens = allTokens.filter(({ name }) =>
-      name.startsWith(`eui-${componentName}-variant-`)
+      name.startsWith(`eui-${componentName}-${variantTokenPrefix}-`)
+    );
+    const stateTokens = allTokens.filter(({ name }) =>
+      name.startsWith(`eui-${componentName}-state-`)
     );
     const statusTokens = allTokens.filter(({ name }) =>
       name.startsWith(`eui-${componentName}-status-`)
@@ -136,10 +140,10 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       // eui-${componentName}-status-pending-indicator-color → --eui-${componentName}-status-indicator-color
       // eui-${componentName}-base-shadow → --eui-${componentName}-shadow
 
-      if (tokenName.startsWith(`eui-${componentName}-variant-`)) {
+      if (tokenName.startsWith(`eui-${componentName}-${variantTokenPrefix}-`)) {
         // eui-${componentName}-variant-elevated-shadow → --eui-${componentName}-shadow
         const parts = tokenName.split('-');
-        const variantIndex = parts.indexOf('variant');
+        const variantIndex = parts.indexOf(variantTokenPrefix);
         const propertyParts = parts.slice(variantIndex + 2); // Skip 'variant' and variant name
         return `--eui-${componentName}-${propertyParts.join('-')}`;
       } else if (tokenName.startsWith(`eui-${componentName}-status-`)) {
@@ -183,7 +187,7 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       output += '  }\n\n';
     }
 
-    const baseAndSizeTokens = [...baseTokens, ...sizeTokens, ...shapeTokens];
+    const baseAndSizeTokens = [...baseTokens, ...sizeTokens, ...shapeTokens, ...stateTokens];
 
     // Generate base variables (default variant)
     if (baseAndSizeTokens.length > 0) {
@@ -200,7 +204,7 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
     if (variants.length > 0) {
       variants.forEach(variant => {
         const variantTokensForThis = variantTokens.filter(({ name }) =>
-          name.includes(`-variant-${variant}-`)
+          name.includes(`-${variantTokenPrefix}-${variant}-`)
         );
 
         if (variantTokensForThis.length > 0) {
@@ -234,6 +238,43 @@ function generateComponentCSS(componentName, baseSelector, variants = [], status
       });
     }
 
+  } catch (e) {
+    console.warn(`Warning: Could not read ${componentName}.tokens.json: ${e.message}`);
+    return '';
+  }
+
+  output += '}\n';
+  return output;
+}
+
+// Generate simple component CSS with a flat variable map (no variants)
+function generateSimpleComponentCSS(componentName, baseSelector) {
+  console.log(`📝 Generating components/${componentName}.tokens.css...`);
+
+  const tokensPath = path.join(repoRoot, 'tokens', 'components', `${componentName}.tokens.json`);
+  if (!fs.existsSync(tokensPath)) {
+    console.warn(`Warning: ${componentName}.tokens.json not found`);
+    return '';
+  }
+
+  let output = `/**\n * ${componentName.charAt(0).toUpperCase() + componentName.slice(1)} Component Tokens - Generated from tokens/components/${componentName}.tokens.json\n */\n\n`;
+  output += '@layer eui-components {\n';
+
+  try {
+    const data = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
+    const allTokens = extractTokensPreservingRefs(data);
+    const componentTokens = allTokens.filter(({ name }) =>
+      name.startsWith(`eui-${componentName}-`)
+    );
+
+    if (componentTokens.length > 0) {
+      output += `  /* ${componentName} variables */\n`;
+      output += `  [data-eui-context] .${baseSelector} {\n`;
+      componentTokens.forEach(({ name, value }) => {
+        output += `    --${name}: ${value};\n`;
+      });
+      output += '  }\n\n';
+    }
   } catch (e) {
     console.warn(`Warning: Could not read ${componentName}.tokens.json: ${e.message}`);
     return '';
@@ -305,7 +346,7 @@ function generateButtonComponentCSS() {
     'eui-button',
     ['primary', 'secondary', 'accent', 'accent-finished', 'link'],
     [],
-    { variantAttribute: 'data-eui-intent' }
+    { variantAttribute: 'data-eui-intent', variantTokenPrefix: 'intent' }
   );
 }
 
@@ -315,6 +356,42 @@ function generateDividerComponentCSS() {
 
 function generateCalendarComponentCSS() {
   return generateComponentCSS('calendar', 'eui-calendar');
+}
+
+function generateAvatarComponentCSS() {
+  return generateSimpleComponentCSS('avatar', 'eui-avatar');
+}
+
+function generateAvatarGroupComponentCSS() {
+  return generateSimpleComponentCSS('avatar-group', 'eui-avatar-group');
+}
+
+function generateTooltipComponentCSS() {
+  return generateSimpleComponentCSS('tooltip', 'eui-tooltip');
+}
+
+function generateSideNavComponentCSS() {
+  return generateSimpleComponentCSS('side-nav', 'eui-side-nav');
+}
+
+function generateLogoComponentCSS() {
+  return generateSimpleComponentCSS('logo', 'eui-logo');
+}
+
+function generateInputComponentCSS() {
+  const selector =
+    'eui-input, [data-eui-context] .eui-input-group, [data-eui-context] .eui-select, [data-eui-context] .eui-textarea';
+  return generateSimpleComponentCSS('input', selector);
+}
+
+function generateInputGroupComponentCSS() {
+  return generateSimpleComponentCSS('input-group', 'eui-input-group');
+}
+
+function generateFormComponentCSS() {
+  const selector =
+    'eui-form, [data-eui-context] .eui-form-field, [data-eui-context] .eui-form-section, [data-eui-context] .eui-form-row, [data-eui-context] .eui-form-group, [data-eui-context] .eui-form-actions';
+  return generateSimpleComponentCSS('form', selector);
 }
 
 // Main execution
@@ -329,8 +406,12 @@ function main() {
   }
 
   const components = [
+    { name: 'avatar', css: generateAvatarComponentCSS() },
+    { name: 'avatar-group', css: generateAvatarGroupComponentCSS() },
     { name: 'card', css: generateCardComponentCSS() },
     { name: 'badge', css: generateBadgeComponentCSS() },
+    { name: 'input', css: generateInputComponentCSS() },
+    { name: 'input-group', css: generateInputGroupComponentCSS() },
     { name: 'stack', css: generateStackComponentCSS() },
     { name: 'inline', css: generateInlineComponentCSS() },
     { name: 'grid', css: generateGridComponentCSS() },
@@ -344,7 +425,11 @@ function main() {
     { name: 'callout', css: generateCalloutComponentCSS() },
     { name: 'button', css: generateButtonComponentCSS() },
     { name: 'divider', css: generateDividerComponentCSS() },
-    { name: 'calendar', css: generateCalendarComponentCSS() }
+    { name: 'calendar', css: generateCalendarComponentCSS() },
+    { name: 'tooltip', css: generateTooltipComponentCSS() },
+    { name: 'side-nav', css: generateSideNavComponentCSS() },
+    { name: 'logo', css: generateLogoComponentCSS() },
+    { name: 'form', css: generateFormComponentCSS() }
   ];
 
   components.forEach(({ name, css }) => {

@@ -1,0 +1,62 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "logo",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyTokens": "tokens/legacy/architecture-v1/components/logo/",
+    "legacyCss": "src/ui/logo.css",
+    "note": "Canonical logo contract derived from legacy tokens and CSS."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-logo",
+    "slots": {
+      "svg": ".eui-logo__svg"
+    }
+  },
+
+  "axes": {
+    "variant": {
+      "type": "enum",
+      "default": "full",
+      "values": ["monochrome", "color", "icon-only", "icon-only-color", "full", "full-color", "loading"],
+      "attribute": "data-eui-variant",
+      "notes": "Variant controls logo rendering and SVG color behavior."
+    },
+    "size": {
+      "type": "enum",
+      "default": "md",
+      "values": ["xs", "sm", "md", "lg", "xl"],
+      "attribute": "data-eui-size",
+      "notes": "Size controls icon height and width."
+    },
+    "color": {
+      "type": "enum",
+      "default": "default",
+      "values": ["default", "inverse", "grayscale", "monochrome"],
+      "attribute": "data-eui-color",
+      "notes": "Color axis applies to monochrome variants only."
+    }
+  },
+
+  "componentVars": {
+    "size": {
+      "--eui-logo-size-icon-xs": { "type": "dimension" },
+      "--eui-logo-size-icon-sm": { "type": "dimension" },
+      "--eui-logo-size-icon-md": { "type": "dimension" },
+      "--eui-logo-size-icon-lg": { "type": "dimension" },
+      "--eui-logo-size-icon-xl": { "type": "dimension" }
+    },
+    "colors": {
+      "--eui-logo-colors-icon-default": { "type": "color" },
+      "--eui-logo-colors-icon-inverse": { "type": "color" },
+      "--eui-logo-colors-icon-grayscale": { "type": "color" },
+      "--eui-logo-colors-icon-monochrome": { "type": "color" }
+    },
+    "spacing": {
+      "--eui-logo-spacing-gap": { "type": "dimension" }
+    }
+  }
+}

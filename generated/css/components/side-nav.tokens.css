@@ -1,0 +1,63 @@
+/**
+ * Side-nav Component Tokens - Generated from tokens/components/side-nav.tokens.json
+ */
+
+@layer eui-components {
+  /* side-nav variables */
+  [data-eui-context] .eui-side-nav {
+    --eui-side-nav-colors-background: var(--eui-color-brand-primary);
+    --eui-side-nav-colors-item-background-default: transparent;
+    --eui-side-nav-colors-item-background-hover: var(--eui-color-brand-800);
+    --eui-side-nav-colors-item-background-active: var(--eui-color-brand-500);
+    --eui-side-nav-colors-item-background-selected: var(--eui-color-brand-500);
+    --eui-side-nav-colors-item-background-focus: transparent;
+    --eui-side-nav-colors-item-background-disabled: transparent;
+    --eui-side-nav-colors-item-text-default: var(--eui-color-brand-100);
+    --eui-side-nav-colors-item-text-hover: var(--eui-color-text-inverse);
+    --eui-side-nav-colors-item-text-disabled: var(--eui-color-text-disabled);
+    --eui-side-nav-colors-item-indicator-active: var(--eui-color-brand-200);
+    --eui-side-nav-colors-item-indicator-selected: var(--eui-color-brand-300);
+    --eui-side-nav-colors-item-badge-background: var(--eui-color-brand-200);
+    --eui-side-nav-colors-item-badge-text: var(--eui-color-brand-900);
+    --eui-side-nav-colors-section-title-text: var(--eui-color-text-inverse);
+    --eui-side-nav-colors-separator: var(--eui-color-border-subtle);
+    --eui-side-nav-colors-header-border: var(--eui-color-brand-300);
+    --eui-side-nav-colors-footer-border: var(--eui-color-brand-300);
+    --eui-side-nav-colors-toggle-border: var(--eui-color-brand-200);
+    --eui-side-nav-colors-tooltip-background: var(--eui-color-neutral-900);
+    --eui-side-nav-colors-tooltip-text: var(--eui-color-text-inverse);
+    --eui-side-nav-size-width-expanded: 280px;
+    --eui-side-nav-size-width-collapsed: var(--eui-dimension-16);
+    --eui-side-nav-size-item-height: var(--eui-dimension-11);
+    --eui-side-nav-size-item-indicator-width: 3px;
+    --eui-side-nav-size-icon-width: var(--eui-dimension-6);
+    --eui-side-nav-size-icon-height: var(--eui-dimension-6);
+    --eui-side-nav-size-badge-min-width: var(--eui-dimension-5);
+    --eui-side-nav-size-badge-height: var(--eui-dimension-5);
+    --eui-side-nav-size-header-height: var(--eui-dimension-16);
+    --eui-side-nav-size-footer-height: var(--eui-dimension-16);
+    --eui-side-nav-size-toggle-width: var(--eui-dimension-7);
+    --eui-side-nav-size-toggle-height: var(--eui-dimension-7);
+    --eui-side-nav-spacing-padding-vertical: var(--eui-spacing-2);
+    --eui-side-nav-spacing-item-padding-horizontal: var(--eui-spacing-4);
+    --eui-side-nav-spacing-item-gap: var(--eui-spacing-3);
+    --eui-side-nav-spacing-section-padding-horizontal: var(--eui-spacing-4);
+    --eui-side-nav-spacing-section-padding-top: var(--eui-spacing-2);
+    --eui-side-nav-spacing-separator-margin-vertical: var(--eui-spacing-3);
+    --eui-side-nav-spacing-nested-indent: var(--eui-spacing-6);
+    --eui-side-nav-spacing-toggle-offset-right: -12px;
+    --eui-side-nav-typography-item-font-size: var(--eui-typography-fontSize-base);
+    --eui-side-nav-typography-item-font-weight: var(--eui-typography-fontWeight-normal);
+    --eui-side-nav-typography-item-line-height: var(--eui-typography-lineHeight-normal);
+    --eui-side-nav-typography-section-title-font-size: var(--eui-typography-fontSize-xs);
+    --eui-side-nav-typography-section-title-font-weight: var(--eui-typography-fontWeight-semibold);
+    --eui-side-nav-typography-section-title-line-height: var(--eui-typography-lineHeight-normal);
+    --eui-side-nav-typography-header-font-size: var(--eui-typography-fontSize-lg);
+    --eui-side-nav-typography-header-font-weight: var(--eui-typography-fontWeight-semibold);
+    --eui-side-nav-animation-item-duration: 150ms;
+    --eui-side-nav-animation-item-easing: var(--eui-transition-easing-out);
+    --eui-side-nav-animation-indicator-duration: var(--eui-transition-duration-base);
+    --eui-side-nav-animation-indicator-easing: var(--eui-transition-easing-out);
+  }
+
+}

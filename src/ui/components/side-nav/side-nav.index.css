@@ -1,0 +1,10 @@
+/**
+ * Side Nav Component - Index
+ *
+ * Entry point for side-nav structure styles.
+ *
+ * Generated from: tokens/components/side-nav.contract.json
+ * Legacy reference: src/ui/side-nav.css
+ */
+
+@import './side-nav.structure.css';

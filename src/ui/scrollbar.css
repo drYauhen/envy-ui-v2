@@ -24,7 +24,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 8px;
+  width: 9px;
   pointer-events: none;
   z-index: 100;
   opacity: 1;
@@ -42,8 +42,8 @@
 [data-eui-context] .eui-scrollbar-thumb {
   position: absolute !important;
   right: 2px;
-  width: 4px;
-  border-radius: 2px;
+  width: 5px;
+  border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.12);
   transition: background-color 0.2s ease;
   pointer-events: auto;
@@ -60,4 +60,3 @@
 [data-eui-context] .eui-scrollbar-container {
   position: relative;
 }
-

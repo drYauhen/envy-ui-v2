@@ -1,0 +1,1076 @@
+/**
+ * Side Nav Component - Layout & Structure
+ *
+ * Generated from: tokens/components/side-nav.contract.json
+ * Legacy reference: src/ui/side-nav.css
+ */
+
+@layer eui-components {
+  /* Side Navigation Component - Enhanced Application Sidebar */
+
+  /* Main container */
+  [data-eui-context] .eui-side-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--eui-side-nav-colors-background);
+    color: var(--eui-side-nav-colors-item-text-default);
+    width: var(--eui-side-nav-size-width-expanded);
+    height: 100%;
+    position: relative;
+    /* Changed to visible to allow toggle button to protrude */
+    overflow: visible;
+    transition: width 150ms ease-in-out;
+    /* Grid area for app-shell layout */
+    grid-area: sidebar;
+    /* Ensure full height in grid */
+    align-self: stretch;
+  }
+
+  /* Collapsed state */
+  [data-eui-context] .eui-side-nav--collapsed {
+    width: var(--eui-side-nav-size-width-collapsed);
+  }
+
+  /* Header (Logo/Brand area) */
+  [data-eui-context] .eui-side-nav__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--eui-side-nav-size-header-height);
+    padding: 0 var(--eui-side-nav-spacing-item-padding-horizontal);
+    border-bottom: 1px solid var(--eui-side-nav-colors-header-border);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden; /* Prevents logo overflow */
+    transition: padding 0.3s ease;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header {
+    justify-content: flex-start; /* Keep flex-start for smoothness */
+    padding: 0;
+  }
+
+  /* Logo container - fixed positioning for alignment */
+  [data-eui-context] .eui-side-nav__header .eui-logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    min-width: 0;
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+  }
+
+  /* In collapsed state, center via margin */
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header .eui-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* SVG container - both overlap, aligned to the left */
+  [data-eui-context] .eui-side-nav__header .eui-logo__svg {
+    display: block;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease, width 0.3s ease, overflow 0.3s ease;
+    /* Both SVGs should have the same height for correct alignment */
+    height: var(--eui-logo-size-icon-md);
+  }
+
+  /* Full logo - visible in expanded state */
+  [data-eui-context] .eui-side-nav__header .eui-logo__svg--full {
+    opacity: 1;
+    position: relative;
+    width: auto;
+    overflow: visible;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header .eui-logo__svg--full {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  /* Icon only - hidden in expanded state, aligned to the left */
+  [data-eui-context] .eui-side-nav__header .eui-logo__svg--icon {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header .eui-logo__svg--icon {
+    opacity: 1;
+    position: relative;
+    width: auto;
+    overflow: visible;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  [data-eui-context] .eui-side-nav__header-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--eui-side-nav-spacing-item-gap);
+    color: var(--eui-side-nav-colors-item-text-default);
+    text-decoration: none;
+    font-size: var(--eui-side-nav-typography-header-font-size);
+    font-weight: var(--eui-side-nav-typography-header-font-weight);
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header-logo-text {
+    display: none;
+  }
+
+  /* Scrollable content area */
+  [data-eui-context] .eui-side-nav__content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--eui-side-nav-spacing-padding-vertical) 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Important for flex scrolling */
+    position: relative; /* Required for overlay scrollbar positioning */
+    /* Native scrollbar is hidden - using custom overlay scrollbar */
+  }
+
+  /* Scroll shadow indicators */
+  [data-eui-context] .eui-side-nav__content {
+    position: relative;
+  }
+
+  /* Top shadow - shows when can scroll up (positioned at top of content area) */
+  [data-eui-context] .eui-side-nav.has-scroll-top::before {
+    content: '';
+    position: absolute;
+    top: var(--eui-side-nav-size-header-height);
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: linear-gradient(to bottom, 
+      rgba(0, 0, 0, 0.28) 0%, 
+      rgba(0, 0, 0, 0.22) 15%,
+      rgba(0, 0, 0, 0.16) 30%,
+      rgba(0, 0, 0, 0.10) 50%,
+      rgba(0, 0, 0, 0.06) 70%,
+      rgba(0, 0, 0, 0.03) 85%,
+      transparent 100%);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Bottom shadow - shows when can scroll down (positioned at bottom of content area) */
+  [data-eui-context] .eui-side-nav.has-scroll-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: var(--eui-side-nav-size-footer-height);
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: linear-gradient(to top, 
+      rgba(0, 0, 0, 0.28) 0%, 
+      rgba(0, 0, 0, 0.22) 15%,
+      rgba(0, 0, 0, 0.16) 30%,
+      rgba(0, 0, 0, 0.10) 50%,
+      rgba(0, 0, 0, 0.06) 70%,
+      rgba(0, 0, 0, 0.03) 85%,
+      transparent 100%);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Navigation list */
+  [data-eui-context] .eui-side-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* List should only take space needed by its items */
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  /* Navigation item */
+  [data-eui-context] .eui-side-nav__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--eui-side-nav-size-item-height);
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: var(--eui-side-nav-colors-item-text-default);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: var(--eui-side-nav-typography-item-font-size);
+    font-weight: var(--eui-side-nav-typography-item-font-weight);
+    line-height: var(--eui-side-nav-typography-item-line-height);
+    transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing),
+                color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+  }
+
+  /* Active indicator (left border) */
+  [data-eui-context] .eui-side-nav__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color: var(--eui-side-nav-colors-item-indicator-active);
+    transition: width var(--eui-side-nav-animation-indicator-duration) var(--eui-side-nav-animation-indicator-easing);
+  }
+
+  [data-eui-context] .eui-side-nav__item[data-eui-active="true"]::before,
+  [data-eui-context] .eui-side-nav__item[data-eui-selected="true"]::before {
+    width: var(--eui-side-nav-size-item-indicator-width);
+  }
+
+  [data-eui-context] .eui-side-nav__item[data-eui-selected="true"]::before {
+    background-color: var(--eui-side-nav-colors-item-indicator-selected);
+  }
+
+  /* Item content */
+  [data-eui-context] .eui-side-nav__item-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 var(--eui-side-nav-spacing-item-padding-horizontal);
+    gap: var(--eui-side-nav-spacing-item-gap);
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__item-content {
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* Item states */
+  [data-eui-context] .eui-side-nav__item:hover {
+    background-color: var(--eui-side-nav-colors-item-background-hover);
+    /* More prominent hover effect - darker background */
+  }
+
+
+  [data-eui-context] .eui-side-nav__item[data-eui-active="true"] {
+    background-color: var(--eui-side-nav-colors-item-background-active);
+    color: var(--eui-color-text-inverse);
+  }
+
+  [data-eui-context] .eui-side-nav__item[data-eui-selected="true"] {
+    background-color: var(--eui-side-nav-colors-item-background-selected);
+    color: var(--eui-color-text-inverse);
+    /* White color for selected items - applies to all children including icons */
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  [data-eui-context] .eui-side-nav__item:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  [data-eui-context] .eui-side-nav__item:focus-visible,
+  [data-eui-context] .eui-side-nav__item[data-eui-focus-visible="true"] {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 1;
+  }
+
+  [data-eui-context] .eui-side-nav__item[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: var(--eui-side-nav-colors-item-text-disabled);
+  }
+
+  /* Icon */
+  [data-eui-context] .eui-side-nav__item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: var(--eui-side-nav-size-icon-width);
+    height: var(--eui-side-nav-size-icon-height);
+    color: inherit;
+    opacity: 1;
+    visibility: visible;
+    /* Hide icons quickly at transition start, show after width transition completes */
+    transition: opacity 50ms ease-in-out 0ms,
+                visibility 50ms ease-in-out 0ms,
+                color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+  }
+
+  /* When menu is transitioning, hide icons immediately and show after transition */
+  [data-eui-context] .eui-side-nav:not(.eui-side-nav--collapsed) .eui-side-nav__item-icon,
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__item-icon {
+    /* Icons fade out quickly at start, fade in after width transition (100ms delay = ~67% of 150ms) */
+    transition: opacity 50ms ease-in-out 100ms,
+                visibility 50ms ease-in-out 100ms,
+                color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+  }
+
+  /* Icon color for default state - brand.100 */
+  [data-eui-context] .eui-side-nav__item-icon[data-eui-icon] {
+    width: var(--eui-side-nav-size-icon-width);
+    height: var(--eui-side-nav-size-icon-height);
+    font-size: var(--eui-side-nav-size-icon-width);
+    background-color: var(--eui-side-nav-colors-item-text-default);
+    color: var(--eui-side-nav-colors-item-text-default);
+  }
+
+  /* Selected/Active item icon - white color (must be after default to override) */
+  [data-eui-context] .eui-side-nav__item[data-eui-selected="true"] .eui-side-nav__item-icon[data-eui-icon],
+  [data-eui-context] .eui-side-nav__item[data-eui-active="true"] .eui-side-nav__item-icon[data-eui-icon] {
+    background-color: var(--eui-color-text-inverse) !important;
+    color: var(--eui-color-text-inverse) !important;
+  }
+
+  /* Label */
+  [data-eui-context] .eui-side-nav__item-label {
+    flex: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__item-label {
+    display: none;
+  }
+
+  /* Badge/Notification */
+  [data-eui-context] .eui-side-nav__item-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--eui-side-nav-size-badge-min-width);
+    height: var(--eui-side-nav-size-badge-height);
+    padding: 0 0.25rem;
+    background-color: var(--eui-side-nav-colors-item-badge-background);
+    color: var(--eui-side-nav-colors-item-badge-text);
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__item-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: var(--eui-side-nav-size-badge-min-width);
+    height: var(--eui-side-nav-size-badge-height);
+    padding: 0 0.25rem;
+    border-radius: 999px;
+    transform: translate(
+      calc(var(--eui-side-nav-size-icon-width) / 2 - var(--eui-side-nav-size-badge-height) / 2),
+      calc(var(--eui-side-nav-size-icon-height) / 2 - var(--eui-side-nav-size-badge-height) / 2)
+    );
+    z-index: 1;
+  }
+
+  /* Expandable item (with submenu) */
+  [data-eui-context] .eui-side-nav__item[data-eui-expandable="true"] {
+    position: relative;
+  }
+
+  [data-eui-context] .eui-side-nav__item-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    transition: transform var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+    opacity: 0.7;
+  }
+
+  [data-eui-context] .eui-side-nav__item[data-eui-expanded="true"] .eui-side-nav__item-chevron {
+    transform: rotate(90deg);
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__item-chevron {
+    display: none;
+  }
+
+  /* Nested items (submenu) */
+  [data-eui-context] .eui-side-nav__submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: var(--eui-side-nav-spacing-nested-indent);
+    display: none;
+  }
+
+  [data-eui-context] .eui-side-nav__item[data-eui-expanded="true"] + .eui-side-nav__submenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__submenu {
+    display: none !important;
+  }
+
+  /* Section title */
+  [data-eui-context] .eui-side-nav__section {
+    padding: var(--eui-side-nav-spacing-section-padding-top) var(--eui-side-nav-spacing-section-padding-horizontal) 0.25rem;
+  }
+
+  [data-eui-context] .eui-side-nav__section-title {
+    font-size: var(--eui-side-nav-typography-section-title-font-size);
+    font-weight: var(--eui-side-nav-typography-section-title-font-weight);
+    line-height: var(--eui-side-nav-typography-section-title-line-height);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--eui-side-nav-colors-section-title-text);
+    opacity: 0.7;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__section-title {
+    display: none;
+  }
+
+  /* Separator */
+  [data-eui-context] .eui-side-nav__separator {
+    height: 1px;
+    margin: var(--eui-side-nav-spacing-separator-margin-vertical) var(--eui-side-nav-spacing-item-padding-horizontal);
+    background-color: var(--eui-side-nav-colors-separator);
+    opacity: 0.2;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__separator {
+    margin: var(--eui-side-nav-spacing-separator-margin-vertical) 0.5rem;
+  }
+
+  /* Footer (User profile area) - Now a button for mode switching */
+  [data-eui-context] .eui-side-nav__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--eui-side-nav-size-footer-height);
+    padding: 0 var(--eui-side-nav-spacing-item-padding-horizontal);
+    border-top: 1px solid var(--eui-side-nav-colors-footer-border);
+    flex-shrink: 0;
+    gap: var(--eui-side-nav-spacing-item-gap);
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    cursor: pointer;
+    color: var(--eui-side-nav-colors-item-text-default);
+    text-align: left;
+    transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+  }
+
+  [data-eui-context] .eui-side-nav__footer:hover {
+    background-color: var(--eui-side-nav-colors-item-background-hover);
+  }
+
+  [data-eui-context] .eui-side-nav__footer:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  [data-eui-context] .eui-side-nav__footer:focus-visible,
+  [data-eui-context] .eui-side-nav__footer[data-eui-focus-visible="true"] {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 1;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer {
+    justify-content: center;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  [data-eui-context] .eui-side-nav__footer-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* Avatar component handles its own sizing and styling */
+  }
+
+  [data-eui-context] .eui-side-nav__footer-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer-info {
+    display: none;
+  }
+
+  [data-eui-context] .eui-side-nav__footer-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  [data-eui-context] .eui-side-nav__footer-role {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Tooltip (shown in collapsed state on hover) */
+  [data-eui-context] .eui-side-nav__tooltip {
+    position: absolute;
+    left: calc(100% + 0.75rem);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5rem 0.75rem;
+    background-color: var(--eui-side-nav-colors-tooltip-background);
+    color: var(--eui-side-nav-colors-tooltip-text);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  [data-eui-context] .eui-side-nav__tooltip::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-right-color: var(--eui-side-nav-colors-tooltip-background);
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__item:hover .eui-side-nav__tooltip,
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__header:hover .eui-side-nav__tooltip,
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer:hover .eui-side-nav__tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Collapse toggle button */
+  [data-eui-context] .eui-side-nav__toggle {
+    position: absolute;
+    top: var(--eui-side-nav-size-header-height);
+    right: var(--eui-side-nav-spacing-item-padding-horizontal);
+    width: var(--eui-side-nav-size-toggle-width);
+    height: var(--eui-side-nav-size-toggle-height);
+    border-radius: 50%;
+    background-color: var(--eui-side-nav-colors-background);
+    border: 1px solid var(--eui-side-nav-colors-toggle-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Increased z-index for elevated effect */
+    z-index: 100;
+    /* Enhanced shadow for elevated appearance */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, right 0.3s ease;
+    color: var(--eui-side-nav-colors-item-text-default);
+    font-size: 0.875rem;
+    /* Center button vertically on the border between header and content */
+    transform: translateY(-50%);
+  }
+
+  /* When expanded - button is inside the menu */
+  [data-eui-context] .eui-side-nav:not(.eui-side-nav--collapsed) .eui-side-nav__toggle {
+    right: 0.75rem; /* Slightly closer to edge than item padding (1rem) */
+  }
+
+  /* When collapsed - button protrudes outside */
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__toggle {
+    right: var(--eui-side-nav-spacing-toggle-offset-right);
+    transform: translateY(-50%);
+  }
+
+  [data-eui-context] .eui-side-nav__toggle:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+    background-color: var(--eui-color-brand-800);
+    border-color: var(--eui-side-nav-colors-item-indicator-active);
+  }
+
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__toggle:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+    background-color: var(--eui-color-brand-800);
+    border-color: var(--eui-side-nav-colors-item-indicator-active);
+  }
+
+  [data-eui-context] .eui-side-nav__toggle:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  [data-eui-context] .eui-side-nav__toggle:focus-visible,
+  [data-eui-context] .eui-side-nav__toggle[data-eui-focus-visible="true"] {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 101;
+  }
+
+  /* Toggle button icon */
+  [data-eui-context] .eui-side-nav__toggle-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  /* Collapsible empty area (clickable zone at bottom of menu) */
+  [data-eui-context] .eui-side-nav__collapse-zone {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    min-height: var(--eui-side-nav-size-item-height);
+    /* Take all available space between list and footer */
+    flex: 1 1 auto;
+    padding: var(--eui-side-nav-spacing-item-padding-horizontal);
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+    /* Ensure it's always visible at bottom of content and expands to fill space */
+    margin-top: auto;
+    /* Make sure it's clickable and visible */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Collapse zone hover - no visual change, only cursor pointer */
+  [data-eui-context] .eui-side-nav__collapse-zone:hover {
+    /* No background change - keep transparent */
+    background-color: transparent;
+  }
+
+  /* Apply toggle button hover styles when collapse zone is hovered - darker background */
+  [data-eui-context] .eui-side-nav:has(.eui-side-nav__collapse-zone:hover) .eui-side-nav__toggle {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+    background-color: var(--eui-color-brand-800);
+    border-color: var(--eui-side-nav-colors-item-indicator-active);
+  }
+
+  /* Fallback for browsers that don't support :has() */
+  [data-eui-context] .eui-side-nav[data-eui-collapse-zone-hover="true"] .eui-side-nav__toggle {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+    background-color: var(--eui-color-brand-800);
+    border-color: var(--eui-side-nav-colors-item-indicator-active);
+  }
+
+  /* Collapse zone should be visible in both expanded and collapsed states */
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__collapse-zone {
+    /* Keep it visible, just adjust padding for collapsed state */
+    padding: var(--eui-side-nav-spacing-item-padding-horizontal);
+  }
+
+  /* Animate toggle button icon when collapse zone is hovered (using :has() selector) */
+  [data-eui-context] .eui-side-nav:has(.eui-side-nav__collapse-zone:hover) .eui-side-nav__toggle-icon {
+    animation: chevron-bounce-left 0.6s ease-in-out infinite;
+  }
+
+  [data-eui-context] .eui-side-nav:has(.eui-side-nav__collapse-zone:hover).eui-side-nav--collapsed .eui-side-nav__toggle-icon {
+    animation: chevron-bounce-right 0.6s ease-in-out infinite;
+  }
+
+  /* Fallback for browsers that don't support :has() - use JavaScript to add data attribute */
+  [data-eui-context] .eui-side-nav[data-eui-collapse-zone-hover="true"] .eui-side-nav__toggle-icon {
+    animation: chevron-bounce-left 0.6s ease-in-out infinite;
+  }
+
+  [data-eui-context] .eui-side-nav[data-eui-collapse-zone-hover="true"].eui-side-nav--collapsed .eui-side-nav__toggle-icon {
+    animation: chevron-bounce-right 0.6s ease-in-out infinite;
+  }
+
+  @keyframes chevron-bounce-left {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-4px);
+    }
+  }
+
+  @keyframes chevron-bounce-right {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(4px);
+    }
+  }
+
+  /* ============================================
+     User Mode (Mode 2) Styles
+     ============================================ */
+
+  /* User Mode Container */
+  [data-eui-context] .eui-side-nav__user-mode {
+    display: flex;
+    flex-direction: column;
+    padding: var(--eui-side-nav-spacing-padding-vertical) 0;
+    gap: var(--eui-side-nav-spacing-separator-margin-vertical);
+  }
+
+  /* User Info Section */
+  [data-eui-context] .eui-side-nav__user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--eui-side-nav-spacing-item-padding-horizontal);
+    gap: var(--eui-side-nav-spacing-item-gap);
+    position: relative;
+  }
+
+  [data-eui-context] .eui-side-nav__user-avatar-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  [data-eui-context] .eui-side-nav__user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  [data-eui-context] .eui-side-nav__user-name {
+    font-size: var(--eui-side-nav-typography-item-font-size);
+    font-weight: 500;
+    color: var(--eui-side-nav-colors-item-text-default);
+    white-space: nowrap;
+  }
+
+  [data-eui-context] .eui-side-nav__user-role {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    color: var(--eui-side-nav-colors-item-text-default);
+    white-space: nowrap;
+  }
+
+  [data-eui-context] .eui-side-nav__user-actions {
+    position: absolute;
+    top: 0;
+    right: var(--eui-side-nav-spacing-item-padding-horizontal);
+    display: flex;
+    align-items: center;
+  }
+
+  [data-eui-context] .eui-side-nav__user-action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--eui-side-nav-size-item-height);
+    height: var(--eui-side-nav-size-item-height);
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--eui-side-nav-colors-item-text-default);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+  }
+
+  [data-eui-context] .eui-side-nav__user-action-button:hover {
+    background-color: var(--eui-side-nav-colors-item-background-hover);
+  }
+
+  [data-eui-context] .eui-side-nav__user-action-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  [data-eui-context] .eui-side-nav__user-action-button:focus-visible,
+  [data-eui-context] .eui-side-nav__user-action-button[data-eui-focus-visible="true"] {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 1;
+  }
+
+  /* Corporation Info Section */
+  [data-eui-context] .eui-side-nav__corporation-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--eui-side-nav-spacing-item-padding-horizontal);
+    gap: var(--eui-side-nav-spacing-item-gap);
+    position: relative;
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-logo img {
+    max-width: 150px;
+    max-height: 60px;
+    object-fit: contain;
+    border-radius: 4px;
+    padding: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-name {
+    font-size: var(--eui-side-nav-typography-item-font-size);
+    font-weight: 500;
+    color: var(--eui-side-nav-colors-item-text-default);
+    white-space: nowrap;
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-context {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    color: var(--eui-side-nav-colors-item-text-default);
+    white-space: nowrap;
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-actions {
+    position: absolute;
+    top: 0;
+    right: var(--eui-side-nav-spacing-item-padding-horizontal);
+    display: flex;
+    align-items: center;
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--eui-side-nav-size-item-height);
+    height: var(--eui-side-nav-size-item-height);
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--eui-side-nav-colors-item-text-default);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-action-button:hover {
+    background-color: var(--eui-side-nav-colors-item-background-hover);
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-action-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  [data-eui-context] .eui-side-nav__corporation-action-button:focus-visible,
+  [data-eui-context] .eui-side-nav__corporation-action-button[data-eui-focus-visible="true"] {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 1;
+  }
+
+  /* Additional Links */
+  [data-eui-context] .eui-side-nav__additional-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  [data-eui-context] .eui-side-nav__additional-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--eui-side-nav-size-item-height);
+    padding: 0 var(--eui-side-nav-spacing-item-padding-horizontal);
+    gap: var(--eui-side-nav-spacing-item-gap);
+    color: var(--eui-side-nav-colors-item-text-default);
+    text-decoration: none;
+    font-size: var(--eui-side-nav-typography-item-font-size);
+    font-weight: var(--eui-side-nav-typography-item-font-weight);
+    line-height: var(--eui-side-nav-typography-item-line-height);
+    transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing),
+                color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+    cursor: pointer;
+  }
+
+  [data-eui-context] .eui-side-nav__additional-link:hover {
+    background-color: var(--eui-side-nav-colors-item-background-hover);
+    color: var(--eui-side-nav-colors-item-text-hover);
+  }
+
+  [data-eui-context] .eui-side-nav__additional-link:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  [data-eui-context] .eui-side-nav__additional-link:focus-visible,
+  [data-eui-context] .eui-side-nav__additional-link[data-eui-focus-visible="true"] {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 1;
+  }
+
+  /* Sign Out Button */
+  [data-eui-context] .eui-side-nav__user-actions-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--eui-side-nav-spacing-item-padding-horizontal);
+    margin-top: auto;
+  }
+
+  [data-eui-context] .eui-side-nav__sign-out-button {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: var(--eui-side-nav-size-item-height);
+    padding: 0 var(--eui-side-nav-spacing-item-padding-horizontal);
+    gap: var(--eui-side-nav-spacing-item-gap);
+    background: transparent;
+    border: none;
+    color: var(--eui-side-nav-colors-item-text-default);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: var(--eui-side-nav-typography-item-font-size);
+    font-weight: var(--eui-side-nav-typography-item-font-weight);
+    line-height: var(--eui-side-nav-typography-item-line-height);
+    transition: background-color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing),
+                color var(--eui-side-nav-animation-item-duration) var(--eui-side-nav-animation-item-easing);
+    border-radius: 4px;
+  }
+
+  [data-eui-context] .eui-side-nav__sign-out-button:hover {
+    background-color: var(--eui-side-nav-colors-item-background-hover);
+    color: var(--eui-side-nav-colors-item-text-hover);
+  }
+
+  [data-eui-context] .eui-side-nav__sign-out-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  [data-eui-context] .eui-side-nav__sign-out-button:focus-visible,
+  [data-eui-context] .eui-side-nav__sign-out-button[data-eui-focus-visible="true"] {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-focus-ring-offset-default) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    z-index: 1;
+  }
+
+  /* Footer Back Text and Chevron */
+  [data-eui-context] .eui-side-nav__footer-back-text {
+    display: inline-block; /* Always in layout for animation */
+    font-size: var(--eui-side-nav-typography-item-font-size);
+    font-weight: var(--eui-side-nav-typography-item-font-weight);
+    color: var(--eui-side-nav-colors-item-text-default);
+    opacity: 0;
+    transform: translateX(25px); /* Increased from 20px to 25px for correct chevron positioning */
+    max-width: 0; /* Hide via max-width so it doesn't take space */
+    min-width: 0; /* Further constrain width */
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: calc(-1 * var(--eui-side-nav-spacing-item-gap)); /* Compensate the gap between chevron and back */
+    margin-right: 0;
+    padding: 0; /* Remove padding so it doesn't take space */
+    visibility: hidden; /* Hide visually, keep element in DOM */
+    /* Animate only container expansion - chevron shifts automatically via flex layout */
+    transition: opacity 250ms var(--eui-side-nav-animation-item-easing),
+                transform 250ms var(--eui-side-nav-animation-item-easing),
+                max-width 250ms var(--eui-side-nav-animation-item-easing),
+                margin-left 250ms var(--eui-side-nav-animation-item-easing),
+                margin-right 250ms var(--eui-side-nav-animation-item-easing),
+                visibility 0s 250ms; /* Visibility delay for smoothness */
+  }
+
+  /* Show Back text when in user mode - slide in from right to left */
+  /* Check parent nav element for absence of collapsed class */
+  /* dataAttr returns empty string for true, so check attribute presence */
+  [data-eui-context] .eui-side-nav:not(.eui-side-nav--collapsed) .eui-side-nav__footer[data-eui-user-mode] .eui-side-nav__footer-back-text {
+    opacity: 1;
+    transform: translateX(0); /* Move into place (to the right of chevron) */
+    max-width: 5rem; /* Expand - chevron shifts left automatically via flex layout */
+    margin-left: calc(-1 * var(--eui-side-nav-spacing-item-gap)); /* Compensate gap - no spacing between chevron and back */
+    margin-right: var(--eui-side-nav-spacing-item-gap); /* Spacing from chevron (to the right of text) */
+    visibility: visible; /* Show */
+    /* Animate only container expansion - chevron shifts automatically */
+    transition: opacity 250ms var(--eui-side-nav-animation-item-easing),
+                transform 250ms var(--eui-side-nav-animation-item-easing),
+                max-width 250ms var(--eui-side-nav-animation-item-easing),
+                margin-left 250ms var(--eui-side-nav-animation-item-easing),
+                margin-right 250ms var(--eui-side-nav-animation-item-easing),
+                visibility 0s 0s; /* Remove delay when showing */
+  }
+
+  /* Hide back text when collapsed */
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer-back-text {
+    display: none;
+  }
+
+  [data-eui-context] .eui-side-nav__footer-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: var(--eui-side-nav-size-icon-width);
+    height: var(--eui-side-nav-size-icon-height);
+    margin-left: auto; /* Always pushed to the right edge - do not change this value */
+    margin-right: 0;
+    /* Optimize for smooth movement when neighboring elements resize */
+    will-change: transform;
+    /* Movement is provided by Back container expansion via flex layout */
+    /* Only rotation remains via Icon component */
+  }
+
+  /* Hide chevron when collapsed */
+  [data-eui-context] .eui-side-nav--collapsed .eui-side-nav__footer-chevron {
+    display: none;
+  }
+}

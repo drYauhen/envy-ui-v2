@@ -83,10 +83,11 @@ type Story = StoryObj;
 
 const containerStyle: React.CSSProperties = {
   position: 'relative',
-  width: '100vw',
+  width: '100%',
+  minHeight: '100vh',
   height: '100vh',
-  margin: '-1rem',
-  background: '#f1f5f9'
+  background: '#f1f5f9',
+  overflow: 'hidden'
 };
 
 // Default sections data
@@ -386,13 +387,13 @@ Demonstrates keyboard navigation patterns according to WAI-ARIA Menu Bar Pattern
       <div
         style={{
           position: 'relative',
-          width: '100vw',
-          height: '100vh',
-          margin: '-1rem',
+          width: '100%',
+          minHeight: '100vh',
           background: '#f1f5f9',
           display: 'flex',
           gap: '2rem',
-          padding: '1rem'
+          padding: '1rem',
+          overflow: 'hidden'
         }}
       >
         <SideNav
@@ -436,4 +437,3 @@ Demonstrates keyboard navigation patterns according to WAI-ARIA Menu Bar Pattern
     );
   }
 };
-

@@ -1,0 +1,10 @@
+/**
+ * Logo Component - Index
+ *
+ * Entry point for logo structure styles.
+ *
+ * Generated from: tokens/components/logo.contract.json
+ * Legacy reference: src/ui/logo.css
+ */
+
+@import './logo.structure.css';
