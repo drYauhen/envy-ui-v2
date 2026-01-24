@@ -1,0 +1,129 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "tooltip": {
+      "layout": {
+        "padding": {
+          "block": {
+            "$value": "{eui.spacing.xs}",
+            "$type": "dimension",
+            "$description": "Vertical padding inside the tooltip"
+          },
+          "inline": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Horizontal padding inside the tooltip"
+          }
+        },
+        "offset": {
+          "$value": "{eui.spacing.xs}",
+          "$type": "dimension",
+          "$description": "Offset distance between trigger and tooltip"
+        }
+      },
+      "size": {
+        "maxWidth": {
+          "$value": "{eui.dimension.20}",
+          "$type": "dimension",
+          "$description": "Maximum tooltip width before wrapping"
+        }
+      },
+      "shape": {
+        "radius": {
+          "$value": "{eui.overlay.radius}",
+          "$type": "dimension",
+          "$description": "Tooltip corner radius (shared overlay radius)."
+        }
+      },
+      "border": {
+        "width": {
+          "$value": "{eui.border.width.thin}",
+          "$type": "dimension",
+          "$description": "Tooltip border width"
+        },
+        "style": {
+          "$value": "{eui.border.style.default}",
+          "$type": "string",
+          "$description": "Tooltip border style"
+        },
+        "color": {
+          "$value": "{eui.color.border.inverse}",
+          "$type": "color",
+          "$description": "Tooltip border color"
+        }
+      },
+      "colors": {
+        "background": {
+          "$value": "{eui.color.background.inverse}",
+          "$type": "color",
+          "$description": "Tooltip background color"
+        },
+        "text": {
+          "$value": "{eui.color.text.inverse}",
+          "$type": "color",
+          "$description": "Tooltip text color"
+        }
+      },
+      "shadow": {
+        "default": {
+          "$value": "{eui.shadow.extra-large}",
+          "$type": "boxShadow",
+          "$description": "Tooltip elevation shadow"
+        }
+      },
+      "typography": {
+        "fontFamily": {
+          "$value": "{eui.typography.fontFamily.ui}",
+          "$type": "fontFamily",
+          "$description": "Tooltip font family"
+        },
+        "fontSize": {
+          "$value": "{eui.typography.fontSize.xs}",
+          "$type": "fontSize",
+          "$description": "Tooltip font size"
+        },
+        "fontWeight": {
+          "$value": "{eui.typography.fontWeight.medium}",
+          "$type": "fontWeight",
+          "$description": "Tooltip font weight"
+        },
+        "lineHeight": {
+          "$value": "{eui.typography.lineHeight.tight}",
+          "$type": "lineHeight",
+          "$description": "Tooltip line height"
+        },
+        "letterSpacing": {
+          "$value": "{eui.typography.letterSpacing.normal}",
+          "$type": "letterSpacing",
+          "$description": "Tooltip letter spacing"
+        }
+      },
+      "motion": {
+        "duration": {
+          "$value": "{eui.transition.duration.fast}",
+          "$type": "duration",
+          "$description": "Tooltip transition duration"
+        },
+        "easing": {
+          "$value": "{eui.transition.easing.out}",
+          "$type": "cubicBezier",
+          "$description": "Tooltip transition easing"
+        }
+      },
+      "arrow": {
+        "size": {
+          "$value": "{eui.dimension.1}",
+          "$type": "dimension",
+          "$description": "Tooltip arrow size"
+        }
+      },
+      "zIndex": {
+        "value": {
+          "$value": "{eui.z.dropdown}",
+          "$type": "number",
+          "$description": "Tooltip stacking order"
+        }
+      }
+    }
+  }
+}

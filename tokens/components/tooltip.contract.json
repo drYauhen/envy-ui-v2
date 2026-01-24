@@ -1,0 +1,72 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "tooltip",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "note": "New tooltip component aligned with canonical badge architecture."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-tooltip",
+    "slots": {}
+  },
+
+  "axes": {
+    "placement": {
+      "type": "enum",
+      "default": "top",
+      "values": ["top", "right", "bottom", "left"],
+      "attribute": "data-eui-placement",
+      "notes": "Placement controls arrow direction and offset orientation."
+    }
+  },
+
+  "componentVars": {
+    "layout": {
+      "--eui-tooltip-padding-block": { "type": "dimension" },
+      "--eui-tooltip-padding-inline": { "type": "dimension" },
+      "--eui-tooltip-layout-offset": { "type": "dimension" }
+    },
+    "size": {
+      "--eui-tooltip-size-maxWidth": { "type": "dimension" }
+    },
+    "shape": {
+      "--eui-tooltip-radius": { "type": "dimension" }
+    },
+    "border": {
+      "--eui-tooltip-border-width": { "type": "dimension" },
+      "--eui-tooltip-border-style": { "type": "string" },
+      "--eui-tooltip-border-color": { "type": "color" }
+    },
+    "colors": {
+      "--eui-tooltip-background": { "type": "color" },
+      "--eui-tooltip-color": { "type": "color" }
+    },
+    "shadow": {
+      "--eui-tooltip-shadow": { "type": "boxShadow" }
+    },
+    "typography": {
+      "--eui-tooltip-typography-fontFamily": { "type": "fontFamily" },
+      "--eui-tooltip-typography-fontSize": { "type": "fontSize" },
+      "--eui-tooltip-typography-fontWeight": { "type": "fontWeight" },
+      "--eui-tooltip-typography-lineHeight": { "type": "lineHeight" },
+      "--eui-tooltip-typography-letterSpacing": { "type": "letterSpacing" }
+    },
+    "motion": {
+      "--eui-tooltip-motion-duration": { "type": "duration" },
+      "--eui-tooltip-motion-easing": { "type": "cubicBezier" }
+    },
+    "arrow": {
+      "--eui-tooltip-arrow-size": { "type": "dimension" }
+    },
+    "zIndex": {
+      "--eui-tooltip-zIndex": { "type": "number" }
+    },
+    "localVars": {
+      "--eui-tooltip-offset-x": { "type": "dimension" },
+      "--eui-tooltip-offset-y": { "type": "dimension" }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+/**
+ * Tooltip Component Tokens - Generated from tokens/components/tooltip.tokens.json
+ */
+
+@layer eui-components {
+  /* tooltip variables */
+  [data-eui-context] .eui-tooltip {
+    --eui-tooltip-layout-padding-block: var(--eui-spacing-xs);
+    --eui-tooltip-layout-padding-inline: var(--eui-spacing-sm);
+    --eui-tooltip-layout-offset: var(--eui-spacing-xs);
+    --eui-tooltip-size-maxWidth: var(--eui-dimension-20);
+    --eui-tooltip-shape-radius: var(--eui-overlay-radius);
+    --eui-tooltip-border-width: var(--eui-border-width-thin);
+    --eui-tooltip-border-style: var(--eui-border-style-default);
+    --eui-tooltip-border-color: var(--eui-color-border-inverse);
+    --eui-tooltip-colors-background: var(--eui-color-background-inverse);
+    --eui-tooltip-colors-text: var(--eui-color-text-inverse);
+    --eui-tooltip-shadow-default: var(--eui-shadow-extra-large);
+    --eui-tooltip-typography-fontFamily: var(--eui-typography-fontFamily-ui);
+    --eui-tooltip-typography-fontSize: var(--eui-typography-fontSize-xs);
+    --eui-tooltip-typography-fontWeight: var(--eui-typography-fontWeight-medium);
+    --eui-tooltip-typography-lineHeight: var(--eui-typography-lineHeight-tight);
+    --eui-tooltip-typography-letterSpacing: var(--eui-typography-letterSpacing-normal);
+    --eui-tooltip-motion-duration: var(--eui-transition-duration-fast);
+    --eui-tooltip-motion-easing: var(--eui-transition-easing-out);
+    --eui-tooltip-arrow-size: var(--eui-dimension-1);
+    --eui-tooltip-zIndex-value: var(--eui-z-dropdown);
+  }
+
+}

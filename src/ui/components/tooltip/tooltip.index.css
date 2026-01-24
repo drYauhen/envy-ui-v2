@@ -1,0 +1,12 @@
+/**
+ * Tooltip Component - Index
+ *
+ * Entry point that imports Tooltip CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/tooltip.contract.json
+ * Token variables: generated/css/components/tooltip.tokens.css
+ */
+
+@import './tooltip.structure.css';
