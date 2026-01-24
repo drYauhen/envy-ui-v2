@@ -11,9 +11,9 @@
     @import "../../src/ui/avatar-group.css";
 
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--eui-typography-fontFamily-ui);
       padding: 2rem;
-      background: var(--eui-color-background-base);
+      background: var(--eui-color-background-surface);
       color: var(--eui-color-text-primary);
     }
 
@@ -32,7 +32,7 @@
       margin-bottom: 0.75rem;
       font-size: 1.125rem;
       font-weight: 500;
-      color: var(--eui-color-text-secondary);
+      color: var(--eui-color-text-muted);
     }
 
     .avatar-row {
@@ -52,7 +52,7 @@
 
     .demo-label {
       font-size: 0.875rem;
-      color: var(--eui-color-text-secondary);
+      color: var(--eui-color-text-muted);
     }
 
     .code-block {
@@ -65,12 +65,12 @@
     }
 
     code {
-      font-family: 'SF Mono', Monaco, monospace;
+      font-family: var(--eui-typography-fontFamily-monospace);
       font-size: 0.875rem;
     }
   </style>
 </head>
-<body data-eui-context="app" data-eui-theme="light">
+<body data-eui-context="app" data-eui-theme="default">
   <h1>Avatar & Avatar Group Components</h1>
   <p>Avatar components following the canonical architecture pattern with token-driven styling.</p>
 
@@ -367,20 +367,23 @@
 
     <h3>Key Token Variables - Avatar</h3>
     <ul>
-      <li><code>--eui-avatar-size-diameter</code></li>
-      <li><code>--eui-avatar-fontSize</code></li>
-      <li><code>--eui-avatar-border-color</code></li>
-      <li><code>--eui-avatar-background-fallback</code></li>
-      <li><code>--eui-avatar-text-fallback</code></li>
+      <li><code>--eui-avatar-size-*-diameter</code></li>
+      <li><code>--eui-avatar-size-*-fontSize</code></li>
+      <li><code>--eui-avatar-colors-background-fallback</code></li>
+      <li><code>--eui-avatar-colors-text-fallback</code></li>
+      <li><code>--eui-avatar-border-color-*</code></li>
     </ul>
 
     <h3>Key Token Variables - Avatar Group</h3>
     <ul>
-      <li><code>--eui-avatar-group-layout-overlap</code> (12px standard)</li>
-      <li><code>--eui-avatar-group-layout-overlap-lead</code> (6px after lead)</li>
-      <li><code>--eui-avatar-group-layout-overlap-tight</code> (16px tight subgroup)</li>
-      <li><code>--eui-avatar-group-layout-hover-spread</code> (12px neighbor spread)</li>
-      <li><code>--eui-avatar-group-layout-hover-scale</code> (1.1 scale factor)</li>
+      <li><code>--eui-avatar-group-layout-overlap</code></li>
+      <li><code>--eui-avatar-group-layout-overlap-lead</code></li>
+      <li><code>--eui-avatar-group-layout-overlap-tight</code></li>
+      <li><code>--eui-avatar-group-layout-hover-spread</code></li>
+      <li><code>--eui-avatar-group-layout-hover-scale</code></li>
+      <li><code>--eui-avatar-group-layout-hover-duration</code></li>
+      <li><code>--eui-avatar-group-layout-hover-easing</code></li>
+      <li><code>--eui-avatar-group-counter-gap</code></li>
     </ul>
   </div>
 
@@ -389,7 +392,7 @@
     const toggleTheme = () => {
       const body = document.body;
       const currentTheme = body.getAttribute('data-eui-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      const newTheme = currentTheme === 'default' ? 'accessibility' : 'default';
       body.setAttribute('data-eui-theme', newTheme);
     };
 

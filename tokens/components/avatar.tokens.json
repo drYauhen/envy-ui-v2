@@ -5,45 +5,45 @@
       "size": {
         "sm": {
           "diameter": {
-            "$value": "28px",
+            "$value": "{eui.dimension.7}",
             "$type": "dimension",
             "$description": "Small avatar diameter for compact lists and secondary contexts"
           },
           "fontSize": {
-            "$value": "0.6875rem",
-            "$type": "dimension",
-            "$description": "Font size for initials in small avatar (11px)"
+            "$value": "{eui.typography.fontSize.xs}",
+            "$type": "fontSize",
+            "$description": "Font size for initials in small avatar"
           }
         },
         "md": {
           "diameter": {
-            "$value": "32px",
+            "$value": "{eui.dimension.8}",
             "$type": "dimension",
             "$description": "Medium avatar diameter (default) for standard use cases"
           },
           "fontSize": {
-            "$value": "0.75rem",
-            "$type": "dimension",
-            "$description": "Font size for initials in medium avatar (12px)"
+            "$value": "{eui.typography.fontSize.sm}",
+            "$type": "fontSize",
+            "$description": "Font size for initials in medium avatar"
           }
         },
         "lg": {
           "diameter": {
-            "$value": "40px",
+            "$value": "{eui.dimension.10}",
             "$type": "dimension",
             "$description": "Large avatar diameter for prominent display and featured contexts"
           },
           "fontSize": {
-            "$value": "0.875rem",
-            "$type": "dimension",
-            "$description": "Font size for initials in large avatar (14px)"
+            "$value": "{eui.typography.fontSize.base}",
+            "$type": "fontSize",
+            "$description": "Font size for initials in large avatar"
           }
         }
       },
       "shape": {
         "circle": {
           "radius": {
-            "$value": "50%",
+            "$value": "{eui.radius.full}",
             "$type": "dimension",
             "$description": "Circular avatar shape (standard for most design systems)"
           }
@@ -59,7 +59,7 @@
         },
         "text": {
           "fallback": {
-            "$value": "{eui.color.neutral.500}",
+            "$value": "{eui.color.text.subtle}",
             "$type": "color",
             "$description": "Text color for avatar initials (subtle appearance on light background)"
           }
@@ -67,12 +67,12 @@
       },
       "border": {
         "width": {
-          "$value": "2px",
+          "$value": "{eui.border.width.default}",
           "$type": "dimension",
           "$description": "Border width providing clear visual separation when avatars overlap"
         },
         "style": {
-          "$value": "solid",
+          "$value": "{eui.border.style.default}",
           "$type": "string",
           "$description": "Border style"
         },
@@ -91,23 +91,23 @@
       },
       "typography": {
         "fontFamily": {
-          "$value": "inherit",
-          "$type": "string",
-          "$description": "Font family for initials (inherits from parent for consistency)"
+          "$value": "{eui.typography.fontFamily.ui}",
+          "$type": "fontFamily",
+          "$description": "Font family for initials"
         },
         "fontWeight": {
-          "$value": "600",
-          "$type": "string",
+          "$value": "{eui.typography.fontWeight.semibold}",
+          "$type": "fontWeight",
           "$description": "Font weight for initials (semi-bold for better visibility)"
         },
         "lineHeight": {
-          "$value": "1",
-          "$type": "string",
+          "$value": "{eui.typography.lineHeight.none}",
+          "$type": "lineHeight",
           "$description": "Line height for initials (tight for centered single-line text)"
         },
         "textTransform": {
           "$value": "{eui.typography.textTransform.uppercase}",
-          "$type": "string",
+          "$type": "textTransform",
           "$description": "Text transform for initials (uppercase for visual consistency)"
         }
       }

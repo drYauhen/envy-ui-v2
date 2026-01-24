@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import { getSectionParameters } from '../../.storybook/preview';
+import { MultiContextViewer } from '../utils/multi-context-viewer';
+import { StorySection, StoryStack } from '../utils/story-layout';
 
 const meta: Meta = {
   title: 'HTML + CSS/Components/Avatar',
@@ -11,32 +12,40 @@ export default meta;
 
 type Story = StoryObj;
 
+const sectionParameters = getSectionParameters('HTML + CSS/Components/Avatar');
+
 const containerStyle = {
   display: 'flex',
-  flexDirection: 'column',
-  gap: '2rem',
-  padding: '1.5rem'
-} as const;
-
-const sectionStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem'
-} as const;
-
-const sectionTitleStyle = {
-  margin: '0 0 0.5rem 0',
-  fontSize: '1.125rem',
-  fontWeight: 600,
-  color: '#0f172a'
-} as const;
+  flexDirection: 'column' as const,
+  gap: '1.5rem',
+  padding: '2rem',
+  backgroundColor: 'var(--eui-color-background-surface)',
+  color: 'var(--eui-color-text-primary)'
+};
 
 const rowStyle = {
   display: 'flex',
   gap: '1.5rem',
-  flexWrap: 'wrap',
+  flexWrap: 'wrap' as const,
   alignItems: 'center'
-} as const;
+};
+
+const helperTextStyle = {
+  margin: '0 0 1rem 0',
+  color: 'var(--eui-color-text-muted)'
+};
+
+const demoItemStyle = {
+  display: 'flex',
+  flexDirection: 'column' as const,
+  alignItems: 'center',
+  gap: '0.5rem'
+};
+
+const labelTextStyle = {
+  fontSize: '0.875rem',
+  color: 'var(--eui-color-text-muted)'
+};
 
 // Helper function to get initials from name
 const getInitials = (name: string): string => {
@@ -50,189 +59,230 @@ const getInitials = (name: string): string => {
 export const AvatarWithImages: Story = {
   name: 'With Images',
   parameters: {
-    // Apply section-specific parameters automatically
-    ...getSectionParameters('HTML + CSS/Components/Avatar'),
+    ...sectionParameters,
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Avatar with Images</h3>
-        <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          Avatars display user profile images. Images fill the entire avatar area with a border for visual separation.
-        </p>
-        <div style={rowStyle}>
-          <div className="eui-avatar" data-eui-size="sm">
-            <img src="https://i.pravatar.cc/150?img=1" alt="User" />
-          </div>
-          <div className="eui-avatar" data-eui-size="md">
-            <img src="https://i.pravatar.cc/150?img=2" alt="User" />
-          </div>
-          <div className="eui-avatar" data-eui-size="lg">
-            <img src="https://i.pravatar.cc/150?img=3" alt="User" />
-          </div>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <StoryStack>
+            <StorySection title="Avatar with Images">
+              <p style={helperTextStyle}>
+                Avatars display profile images. Images fill the avatar area and keep the token-driven border.
+              </p>
+              <div style={rowStyle}>
+                <div className="eui-avatar" data-eui-size="sm">
+                  <img src="https://i.pravatar.cc/150?img=1" alt="User" />
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <img src="https://i.pravatar.cc/150?img=2" alt="User" />
+                </div>
+                <div className="eui-avatar" data-eui-size="lg">
+                  <img src="https://i.pravatar.cc/150?img=3" alt="User" />
+                </div>
+              </div>
+            </StorySection>
+          </StoryStack>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const AvatarWithInitials: Story = {
   name: 'With Initials (Fallback)',
   parameters: {
+    ...sectionParameters,
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Avatar with Initials (Fallback)</h3>
-        <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          When no image is available, avatars display initials extracted from the user's name on a light gray background.
-        </p>
-        <div style={sectionStyle}>
-          <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Default Color</h4>
-          <div style={rowStyle}>
-            <div className="eui-avatar" data-eui-size="sm">
-              <span className="eui-avatar-initials">{getInitials('John Doe')}</span>
-            </div>
-            <div className="eui-avatar" data-eui-size="md">
-              <span className="eui-avatar-initials">{getInitials('Jane Smith')}</span>
-            </div>
-            <div className="eui-avatar" data-eui-size="lg">
-              <span className="eui-avatar-initials">{getInitials('Bob Johnson')}</span>
-            </div>
-          </div>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <StoryStack>
+            <StorySection title="Avatar with Initials">
+              <p style={helperTextStyle}>
+                When no image is available, avatars display initials using fallback background and text tokens.
+              </p>
+              <div style={rowStyle}>
+                <div className="eui-avatar" data-eui-size="sm">
+                  <span className="eui-avatar-initials">{getInitials('John Doe')}</span>
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <span className="eui-avatar-initials">{getInitials('Jane Smith')}</span>
+                </div>
+                <div className="eui-avatar" data-eui-size="lg">
+                  <span className="eui-avatar-initials">{getInitials('Bob Johnson')}</span>
+                </div>
+              </div>
+            </StorySection>
+          </StoryStack>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const AvatarSizes: Story = {
   name: 'Sizes',
   parameters: {
+    ...sectionParameters,
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Avatar Sizes</h3>
-        <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          Avatars come in three sizes: small (28px), medium (32px, default), and large (40px).
-        </p>
-        <div style={rowStyle}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-            <div className="eui-avatar" data-eui-size="sm">
-              <img src="https://i.pravatar.cc/150?img=1" alt="User" />
-            </div>
-            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Small (28px)</span>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-            <div className="eui-avatar" data-eui-size="md">
-              <img src="https://i.pravatar.cc/150?img=2" alt="User" />
-            </div>
-            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Medium (32px)</span>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-            <div className="eui-avatar" data-eui-size="lg">
-              <img src="https://i.pravatar.cc/150?img=3" alt="User" />
-            </div>
-            <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Large (40px)</span>
-          </div>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <StoryStack>
+            <StorySection title="Sizes">
+              <p style={helperTextStyle}>
+                Avatars come in three sizes driven by the component tokens.
+              </p>
+              <div style={rowStyle}>
+                <div style={demoItemStyle}>
+                  <div className="eui-avatar" data-eui-size="sm">
+                    <img src="https://i.pravatar.cc/150?img=1" alt="User" />
+                  </div>
+                  <span style={labelTextStyle}>Small</span>
+                </div>
+                <div style={demoItemStyle}>
+                  <div className="eui-avatar" data-eui-size="md">
+                    <img src="https://i.pravatar.cc/150?img=2" alt="User" />
+                  </div>
+                  <span style={labelTextStyle}>Medium</span>
+                </div>
+                <div style={demoItemStyle}>
+                  <div className="eui-avatar" data-eui-size="lg">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="User" />
+                  </div>
+                  <span style={labelTextStyle}>Large</span>
+                </div>
+              </div>
+            </StorySection>
+          </StoryStack>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const AvatarMixed: Story = {
   name: 'Mixed Examples',
   parameters: {
+    ...sectionParameters,
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Mixed Examples</h3>
-        <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          Real-world usage often includes a mix of avatars with images and initials.
-        </p>
-        <div style={rowStyle}>
-          <div className="eui-avatar" data-eui-size="md">
-            <img src="https://i.pravatar.cc/150?img=4" alt="User" />
-          </div>
-          <div className="eui-avatar" data-eui-size="md">
-            <span className="eui-avatar-initials">{getInitials('Sarah Connor')}</span>
-          </div>
-          <div className="eui-avatar" data-eui-size="md">
-            <img src="https://i.pravatar.cc/150?img=5" alt="User" />
-          </div>
-          <div className="eui-avatar" data-eui-size="md">
-            <span className="eui-avatar-initials">{getInitials('Mike Taylor')}</span>
-          </div>
-          <div className="eui-avatar" data-eui-size="md">
-            <img src="https://i.pravatar.cc/150?img=6" alt="User" />
-          </div>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <StoryStack>
+            <StorySection title="Mixed Examples">
+              <p style={helperTextStyle}>
+                Real-world usage often mixes image avatars with initials fallbacks.
+              </p>
+              <div style={rowStyle}>
+                <div className="eui-avatar" data-eui-size="md">
+                  <img src="https://i.pravatar.cc/150?img=4" alt="User" />
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <span className="eui-avatar-initials">{getInitials('Sarah Connor')}</span>
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <img src="https://i.pravatar.cc/150?img=5" alt="User" />
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <span className="eui-avatar-initials">{getInitials('Mike Taylor')}</span>
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <img src="https://i.pravatar.cc/150?img=6" alt="User" />
+                </div>
+              </div>
+            </StorySection>
+          </StoryStack>
         </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
+export const AvatarLeadRole: Story = {
+  name: 'Lead Role',
+  parameters: {
+    ...sectionParameters,
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <StoryStack>
+            <StorySection title="Lead Role">
+              <p style={helperTextStyle}>
+                Mark a lead avatar with <code>data-eui-role="lead"</code> to use the accent border token.
+              </p>
+              <div style={rowStyle}>
+                <div className="eui-avatar" data-eui-size="md" data-eui-role="lead">
+                  <span className="eui-avatar-initials">{getInitials('Team Lead')}</span>
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <span className="eui-avatar-initials">{getInitials('Team Member')}</span>
+                </div>
+              </div>
+            </StorySection>
+          </StoryStack>
+        </div>
+      )}
+    </MultiContextViewer>
   )
 };
 
 export const AvatarContexts: Story = {
   name: 'Contexts',
   parameters: {
+    ...sectionParameters,
     docs: {
       canvas: { sourceState: 'none' },
       codePanel: false
     }
   },
   render: () => (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h3 style={sectionTitleStyle}>Contexts</h3>
-        <p style={{ margin: '0 0 1rem 0', color: '#64748b' }}>
-          Avatars adapt to different rendering contexts (app, website, report).
-        </p>
-        <div style={sectionStyle}>
-          <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Application Context (app)</h4>
-          <div style={rowStyle}>
-            <div className="eui-avatar" data-eui-size="md">
-              <img src="https://i.pravatar.cc/150?img=7" alt="User" />
-            </div>
-            <div className="eui-avatar" data-eui-size="md">
-              <span className="eui-avatar-initials">{getInitials('App User')}</span>
-            </div>
-          </div>
+    <MultiContextViewer contexts={[{ context: 'app' }, { context: 'website' }, { context: 'report' }]}>
+      {() => (
+        <div style={containerStyle}>
+          <StoryStack>
+            <StorySection title="Context Preview">
+              <p style={helperTextStyle}>
+                Avatars adapt to the active context and theme (app, website, report).
+              </p>
+              <div style={rowStyle}>
+                <div className="eui-avatar" data-eui-size="md">
+                  <img src="https://i.pravatar.cc/150?img=7" alt="User" />
+                </div>
+                <div className="eui-avatar" data-eui-size="md">
+                  <span className="eui-avatar-initials">{getInitials('Context User')}</span>
+                </div>
+              </div>
+            </StorySection>
+          </StoryStack>
         </div>
-        <div style={sectionStyle}>
-          <h4 style={{ margin: '0 0 0.5rem 0', fontSize: '1rem', fontWeight: 600 }}>Report Context (report)</h4>
-          <p style={{ margin: '0 0 0.5rem 0', fontSize: '0.875rem', color: '#64748b' }}>
-            In report context, avatars use print-optimized styling with border colors adapted for document printing.
-          </p>
-          <div style={rowStyle}>
-            <div className="eui-avatar" data-eui-size="md">
-              <img src="https://i.pravatar.cc/150?img=8" alt="User" />
-            </div>
-            <div className="eui-avatar" data-eui-size="md">
-              <span className="eui-avatar-initials">{getInitials('Report User')}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      )}
+    </MultiContextViewer>
   )
 };
-

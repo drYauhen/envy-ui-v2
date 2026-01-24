@@ -1,17 +1,18 @@
 /**
- * Avatar Group Component Tokens - Generated from tokens/components/avatar-group.tokens.json
+ * Avatar-group Component Tokens - Generated from tokens/components/avatar-group.tokens.json
  */
 
 @layer eui-components {
-  /* Avatar group layout variables */
+  /* avatar-group variables */
   [data-eui-context] .eui-avatar-group {
-    --eui-avatar-group-layout-overlap: 12px;
-    --eui-avatar-group-layout-overlap-lead: 6px;
-    --eui-avatar-group-layout-overlap-tight: 16px;
-    --eui-avatar-group-layout-hover-spread: 12px;
+    --eui-avatar-group-layout-overlap: var(--eui-dimension-3);
+    --eui-avatar-group-layout-overlap-lead: var(--eui-dimension-2);
+    --eui-avatar-group-layout-overlap-tight: var(--eui-dimension-4);
+    --eui-avatar-group-layout-hover-spread: var(--eui-dimension-3);
     --eui-avatar-group-layout-hover-scale: 1.1;
-    --eui-avatar-group-layout-hover-duration: 200ms;
-    --eui-avatar-group-layout-hover-easing: ease-out;
-    --eui-avatar-group-counter-gap: 0.5rem;
+    --eui-avatar-group-layout-hover-duration: var(--eui-transition-duration-base);
+    --eui-avatar-group-layout-hover-easing: var(--eui-transition-easing-out);
+    --eui-avatar-group-counter-gap: var(--eui-spacing-sm);
   }
+
 }

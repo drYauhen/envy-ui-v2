@@ -9,6 +9,9 @@
   [data-eui-context] .eui-avatar {
     --eui-avatar-diameter: var(--eui-avatar-size-md-diameter);
     --eui-avatar-fontSize: var(--eui-avatar-size-md-fontSize);
+    --eui-avatar-background-fallback: var(--eui-avatar-colors-background-fallback);
+    --eui-avatar-text-fallback: var(--eui-avatar-colors-text-fallback);
+    --eui-avatar-border-color: var(--eui-avatar-border-color-default);
 
     display: inline-flex;
     align-items: center;
@@ -63,6 +66,11 @@
   [data-eui-context] .eui-avatar[data-eui-size='lg'] {
     --eui-avatar-diameter: var(--eui-avatar-size-lg-diameter);
     --eui-avatar-fontSize: var(--eui-avatar-size-lg-fontSize);
+  }
+
+  /* Lead role - accent border */
+  [data-eui-context] .eui-avatar[data-eui-role='lead'] {
+    --eui-avatar-border-color: var(--eui-avatar-border-color-lead);
   }
 
   /* Report context - print styles */
