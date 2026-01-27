@@ -40,6 +40,17 @@
 
   /* Base badge variables (default variant) */
   [data-eui-context] .eui-badge {
+    --eui-badge-dismiss-size-default-padding-block: var(--eui-dimension-0);
+    --eui-badge-dismiss-size-default-padding-inline: calc((var(--eui-spacing-xs) + var(--eui-spacing-sm)) / 2);
+    --eui-badge-dismiss-size-default-icon-size: var(--eui-typography-fontSize-xs);
+    --eui-badge-dismiss-size-small-padding-block: var(--eui-dimension-0);
+    --eui-badge-dismiss-size-small-padding-inline: var(--eui-spacing-xs);
+    --eui-badge-dismiss-size-small-icon-size: var(--eui-typography-fontSize-xs);
+    --eui-badge-dismiss-divider-width: var(--eui-border-width-thin);
+    --eui-badge-dismiss-icon-opacity: var(--eui-opacity-subtle);
+    --eui-badge-dismiss-icon-opacityHover: 1;
+    --eui-badge-dismiss-state-hover-filter: brightness(0.96);
+    --eui-badge-dismiss-state-active-filter: brightness(0.92);
     --eui-badge-border-width: var(--eui-border-width-thin);
     --eui-badge-border-style: var(--eui-border-style-default);
     --eui-badge-shape-radius: var(--eui-inline-radius);

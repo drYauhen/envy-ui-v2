@@ -1,6 +1,9 @@
 export { Button, ButtonGroup } from './button';
 export type { ButtonGroupProps, ButtonIntent, ButtonProps, ButtonShape, ButtonSize } from './button';
 
+export { Badge } from './badge';
+export type { BadgeProps, BadgeShape, BadgeSize, BadgeTone, BadgeVariant } from './badge';
+
 export { Divider } from './divider';
 export type { DividerOrientation, DividerProps, DividerVariant } from './divider';
 
@@ -14,10 +17,12 @@ export { Input, InputGroup } from './input';
 export type { InputGroupProps, InputProps, InputSize, InputState } from './input';
 export { InputDate } from './input-date';
 export type { InputDateProps } from './input-date';
-export { Switch } from './switch';
-export type { SwitchProps, SwitchSize } from './switch';
 export { Checkbox } from './checkbox';
 export type { CheckboxProps, CheckboxSize } from './checkbox';
+export { Skeleton, SkeletonGroup } from './skeleton';
+export type { SkeletonAnimation, SkeletonGroupAnimation, SkeletonGroupProps, SkeletonProps, SkeletonVariant } from './skeleton';
+export { Switch } from './switch';
+export type { SwitchProps, SwitchSize } from './switch';
 
 export { Form, FormActions, FormField, FormGroup, FormRow, FormSection } from './form';
 export type {

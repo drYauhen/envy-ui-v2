@@ -1,0 +1,61 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "skeleton",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/skeleton.css",
+    "note": "Derived from legacy skeleton styles to preserve shimmer and wave behaviors."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-skeleton",
+    "slots": {
+      "group": ".eui-skeleton-group"
+    }
+  },
+
+  "axes": {
+    "variant": {
+      "type": "enum",
+      "default": "rectangular",
+      "values": ["text", "rectangular", "circular"],
+      "attribute": "data-eui-variant",
+      "notes": "Visual shape and default sizing of the skeleton."
+    },
+    "animation": {
+      "type": "enum",
+      "default": "shimmer",
+      "values": ["shimmer", "none"],
+      "attribute": "data-eui-animation",
+      "notes": "Shimmer animation is default for app/website; report context disables animation."
+    }
+  },
+
+  "componentVars": {
+    "colors": {
+      "--eui-skeleton-colors-background-base": { "type": "color" },
+      "--eui-skeleton-colors-shimmer-start": { "type": "color" },
+      "--eui-skeleton-colors-shimmer-mid": { "type": "color" },
+      "--eui-skeleton-colors-shimmer-end": { "type": "color" }
+    },
+    "size": {
+      "--eui-skeleton-size-text-line-height": { "type": "dimension" },
+      "--eui-skeleton-size-rectangular-default-height": { "type": "dimension" },
+      "--eui-skeleton-size-circular-default-diameter": { "type": "dimension" }
+    },
+    "shape": {
+      "--eui-skeleton-shape-text-radius": { "type": "dimension" },
+      "--eui-skeleton-shape-rectangular-radius": { "type": "dimension" },
+      "--eui-skeleton-shape-circular-radius": { "type": "dimension" }
+    },
+    "animation": {
+      "--eui-skeleton-animation-duration": { "type": "duration" },
+      "--eui-skeleton-animation-easing": { "type": "string" },
+      "--eui-skeleton-animation-shimmer-width": { "type": "dimension" },
+      "--eui-skeleton-animation-stagger-step": { "type": "duration" },
+      "--eui-skeleton-animation-stagger-max": { "type": "duration" }
+    }
+  }
+}

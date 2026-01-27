@@ -20,6 +20,9 @@
     --eui-badge-size-gap: var(--eui-badge-size-default-gap);
     --eui-badge-size-fontSize: var(--eui-badge-size-default-fontSize);
     --eui-badge-size-lineHeight: var(--eui-badge-size-default-lineHeight);
+    --eui-badge-dismiss-padding-block: var(--eui-badge-dismiss-size-default-padding-block);
+    --eui-badge-dismiss-padding-inline: var(--eui-badge-dismiss-size-default-padding-inline);
+    --eui-badge-dismiss-icon-size: var(--eui-badge-dismiss-size-default-icon-size);
 
     /* Layout structure - container-driven sizing */
     display: inline-flex;
@@ -59,6 +62,9 @@
     --eui-badge-size-gap: var(--eui-badge-size-small-gap);
     --eui-badge-size-fontSize: var(--eui-badge-size-small-fontSize);
     --eui-badge-size-lineHeight: var(--eui-badge-size-small-lineHeight);
+    --eui-badge-dismiss-padding-block: var(--eui-badge-dismiss-size-small-padding-block);
+    --eui-badge-dismiss-padding-inline: var(--eui-badge-dismiss-size-small-padding-inline);
+    --eui-badge-dismiss-icon-size: var(--eui-badge-dismiss-size-small-icon-size);
   }
 
   /* Shape: pill */
@@ -165,6 +171,91 @@
   /* Outline variant */
   [data-eui-context] .eui-badge[data-eui-variant='outline'] {
     --eui-badge-background: var(--eui-badge-colors-variant-outline-background);
+  }
+
+  /* ============================================================================
+     Badge Component - Dismissible Variant
+     ============================================================================ */
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] {
+    --eui-badge-focus-color: var(--eui-badge-focus-ring-color);
+    gap: 0;
+    padding-inline: 0;
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"][data-eui-shape='circle'] {
+    inline-size: auto;
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='content'] {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--eui-badge-size-gap);
+    padding-block: var(--eui-badge-size-padding-block);
+    padding-inline: var(--eui-badge-size-padding-inline);
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex: 0 0 auto;
+    padding-block: var(--eui-badge-dismiss-padding-block);
+    padding-inline: var(--eui-badge-dismiss-padding-inline);
+    border: 0;
+    border-left: var(--eui-badge-dismiss-divider-width) var(--eui-badge-border-style) currentColor;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: var(--eui-badge-dismiss-icon-size);
+    font-weight: inherit;
+    line-height: 1;
+    cursor: pointer;
+    opacity: var(--eui-badge-dismiss-icon-opacity);
+    appearance: none;
+    margin: 0;
+    border-top-right-radius: var(--eui-badge-shape-radius);
+    border-bottom-right-radius: var(--eui-badge-shape-radius);
+    transition: filter 120ms ease, opacity 120ms ease, box-shadow 120ms ease;
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"][data-eui-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"][data-eui-disabled="true"] [data-eui-slot='dismiss'] {
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:not(:disabled):hover {
+    opacity: var(--eui-badge-dismiss-icon-opacityHover);
+    filter: var(--eui-badge-dismiss-state-hover-filter);
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:not(:disabled):active {
+    filter: var(--eui-badge-dismiss-state-active-filter);
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-badge-focus-color);
+  }
+
+  [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
   }
 
   /* ============================================================================

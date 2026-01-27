@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "apply": "Anwenden",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  },
+  "messages": {
+    "loading": "Wird geladen…"
+  },
+  "a11y": {
+    "removeItem": "{name} entfernen"
+  }
+}

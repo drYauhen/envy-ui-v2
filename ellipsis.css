@@ -1,0 +1,10 @@
+@layer eui-components {
+  .eui-ellipsis {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    min-width: 0; /* Ensure flex child truncation works */
+  }
+}

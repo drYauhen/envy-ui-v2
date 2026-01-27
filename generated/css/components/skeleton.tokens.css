@@ -1,0 +1,25 @@
+/**
+ * Skeleton Component Tokens - Generated from tokens/components/skeleton.tokens.json
+ */
+
+@layer eui-components {
+  /* Base skeleton variables (default variant) */
+  [data-eui-context] .eui-skeleton, [data-eui-context] .eui-skeleton-group {
+    --eui-skeleton-colors-background-base: var(--eui-color-neutral-200);
+    --eui-skeleton-colors-shimmer-start: rgba(0, 0, 0, 0);
+    --eui-skeleton-colors-shimmer-mid: rgba(255, 255, 255, 0.4);
+    --eui-skeleton-colors-shimmer-end: rgba(0, 0, 0, 0);
+    --eui-skeleton-animation-duration: 1.5s;
+    --eui-skeleton-animation-easing: linear;
+    --eui-skeleton-animation-shimmer-width: 200%;
+    --eui-skeleton-animation-stagger-step: 100ms;
+    --eui-skeleton-animation-stagger-max: 800ms;
+    --eui-skeleton-size-text-lineHeight: 1.25rem;
+    --eui-skeleton-size-rectangular-defaultHeight: 1rem;
+    --eui-skeleton-size-circular-defaultDiameter: 40px;
+    --eui-skeleton-shape-text-radius: 0px;
+    --eui-skeleton-shape-rectangular-radius: var(--eui-radius-default);
+    --eui-skeleton-shape-circular-radius: 50%;
+  }
+
+}

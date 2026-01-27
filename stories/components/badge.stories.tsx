@@ -219,6 +219,554 @@ export const Shapes: Story = {
   )
 };
 
+export const DismissibleBadges: Story = {
+  name: 'Dismissible',
+  parameters: {
+    ...getSectionParameters('HTML + CSS/Components/Badge'),
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false,
+      description: {
+        story: 'Dismissible badges render an integrated close action. Clickable and dismissible modes are mutually exclusive.'
+      }
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={gridStyle}>
+          <StoryStack>
+            <StorySection title="Default size (subtle)">
+              <div style={rowStyle}>
+                {badgeTones.map((tone) => (
+                  <span
+                    key={`dismissible-default-${tone.value}`}
+                    className="eui-badge"
+                    data-eui-dismissible="true"
+                    data-eui-variant="subtle"
+                    data-eui-tone={tone.value}
+                  >
+                    <span data-eui-slot="content">{tone.label}</span>
+                    <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            </StorySection>
+            <StorySection title="Small size (solid)">
+              <div style={rowStyle}>
+                {badgeTones.map((tone) => (
+                  <span
+                    key={`dismissible-small-${tone.value}`}
+                    className="eui-badge"
+                    data-eui-dismissible="true"
+                    data-eui-size="small"
+                    data-eui-variant="solid"
+                    data-eui-tone={tone.value}
+                  >
+                    <span data-eui-slot="content">{tone.label}</span>
+                    <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            </StorySection>
+            <StorySection title="Pill shape">
+              <div style={rowStyle}>
+                {badgeTones.map((tone) => (
+                  <span
+                    key={`dismissible-pill-${tone.value}`}
+                    className="eui-badge"
+                    data-eui-dismissible="true"
+                    data-eui-shape="pill"
+                    data-eui-variant="subtle"
+                    data-eui-tone={tone.value}
+                  >
+                    <span data-eui-slot="content">{tone.label}</span>
+                    <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            </StorySection>
+          </StoryStack>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
+export const DismissibleMatrix: Story = {
+  name: 'Dismissible Matrix',
+  parameters: {
+    ...getSectionParameters('HTML + CSS/Components/Badge'),
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false,
+      description: {
+        story: 'Expanded dismissible matrix across variants, sizes, and shapes for visual QA.'
+      }
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={gridStyle}>
+          <StoryStack>
+            {badgeVariants.map((variant) => (
+              <StorySection key={`dismissible-${variant.value}`} title={`Variant: ${variant.label}`}>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Default / Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`dismissible-${variant.value}-${tone.value}-default-rect`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Default / Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`dismissible-${variant.value}-${tone.value}-default-pill`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Small / Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`dismissible-${variant.value}-${tone.value}-small-rect`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-size="small"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Small / Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`dismissible-${variant.value}-${tone.value}-small-pill`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-size="small"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              </StorySection>
+            ))}
+          </StoryStack>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
+export const VariantGroups: Story = {
+  name: 'Variant Groups (Full)',
+  parameters: {
+    ...getSectionParameters('HTML + CSS/Components/Badge'),
+    docs: {
+      canvas: { sourceState: 'none' },
+      codePanel: false,
+      description: {
+        story: 'Grouped by variant. Each group shows sizes, shapes, and dismissible combinations (circle excluded from dismissible).'
+      }
+    }
+  },
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={gridStyle}>
+          <StoryStack>
+            {badgeVariants.map((variant) => (
+              <StorySection key={`variant-group-${variant.value}`} title={`Variant: ${variant.label}`}>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Default / Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-default-rect`}
+                      className="eui-badge"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Small / Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-small-rect`}
+                      className="eui-badge"
+                      data-eui-size="small"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Default / Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-default-pill`}
+                      className="eui-badge"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Small / Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-small-pill`}
+                      className="eui-badge"
+                      data-eui-size="small"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      {tone.label}
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Default / Circle</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-default-circle`}
+                      className="eui-badge"
+                      data-eui-shape="circle"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      aria-label={`${tone.label} status`}
+                    >
+                      +
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Small / Circle</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-small-circle`}
+                      className="eui-badge"
+                      data-eui-size="small"
+                      data-eui-shape="circle"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      aria-label={`${tone.label} status`}
+                    >
+                      +
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Disabled / Default Rect</span>
+                  {badgeTones.map((tone) => (
+                    <button
+                      key={`group-${variant.value}-${tone.value}-disabled-default-rect`}
+                      className="eui-badge"
+                      data-eui-interactive="true"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      type="button"
+                      disabled
+                    >
+                      {tone.label}
+                    </button>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Disabled / Small Rect</span>
+                  {badgeTones.map((tone) => (
+                    <button
+                      key={`group-${variant.value}-${tone.value}-disabled-small-rect`}
+                      className="eui-badge"
+                      data-eui-interactive="true"
+                      data-eui-size="small"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      type="button"
+                      disabled
+                    >
+                      {tone.label}
+                    </button>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Disabled / Default Pill</span>
+                  {badgeTones.map((tone) => (
+                    <button
+                      key={`group-${variant.value}-${tone.value}-disabled-default-pill`}
+                      className="eui-badge"
+                      data-eui-interactive="true"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      type="button"
+                      disabled
+                    >
+                      {tone.label}
+                    </button>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Disabled / Small Pill</span>
+                  {badgeTones.map((tone) => (
+                    <button
+                      key={`group-${variant.value}-${tone.value}-disabled-small-pill`}
+                      className="eui-badge"
+                      data-eui-interactive="true"
+                      data-eui-size="small"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      type="button"
+                      disabled
+                    >
+                      {tone.label}
+                    </button>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Disabled / Default Circle</span>
+                  {badgeTones.map((tone) => (
+                    <button
+                      key={`group-${variant.value}-${tone.value}-disabled-default-circle`}
+                      className="eui-badge"
+                      data-eui-interactive="true"
+                      data-eui-shape="circle"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      type="button"
+                      aria-label={`${tone.label} status`}
+                      disabled
+                    >
+                      +
+                    </button>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Disabled / Small Circle</span>
+                  {badgeTones.map((tone) => (
+                    <button
+                      key={`group-${variant.value}-${tone.value}-disabled-small-circle`}
+                      className="eui-badge"
+                      data-eui-interactive="true"
+                      data-eui-size="small"
+                      data-eui-shape="circle"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                      type="button"
+                      aria-label={`${tone.label} status`}
+                      disabled
+                    >
+                      +
+                    </button>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss / Default Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-default-rect`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss Disabled / Default Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-disabled-default-rect`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-disabled="true"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`} disabled>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss / Small Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-small-rect`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-size="small"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss Disabled / Small Rect</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-disabled-small-rect`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-disabled="true"
+                      data-eui-size="small"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`} disabled>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss / Default Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-default-pill`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss Disabled / Default Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-disabled-default-pill`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-disabled="true"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`} disabled>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss / Small Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-small-pill`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-size="small"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`}>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <div style={rowStyle}>
+                  <span style={sizeLabelStyle}>Dismiss Disabled / Small Pill</span>
+                  {badgeTones.map((tone) => (
+                    <span
+                      key={`group-${variant.value}-${tone.value}-dismiss-disabled-small-pill`}
+                      className="eui-badge"
+                      data-eui-dismissible="true"
+                      data-eui-disabled="true"
+                      data-eui-size="small"
+                      data-eui-shape="pill"
+                      data-eui-variant={variant.value}
+                      data-eui-tone={tone.value}
+                    >
+                      <span data-eui-slot="content">{tone.label}</span>
+                      <button type="button" data-eui-slot="dismiss" aria-label={`Remove ${tone.label}`} disabled>
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              </StorySection>
+            ))}
+          </StoryStack>
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
 const descriptionStyle = {
   fontSize: '0.875rem',
   color: '#64748b',
@@ -245,7 +793,7 @@ export const InteractiveBadges: Story = {
       canvas: { sourceState: 'none' },
       codePanel: false,
       description: {
-        story: 'Badges become interactive only with data-eui-interactive="true". Focusability comes from markup (button/a/tabindex), while CSS handles visual states.'
+        story: 'Badges become interactive only with data-eui-interactive="true". Focusability comes from markup (button/a/tabindex), while CSS handles visual states. Dismissible badges are a separate mode and should not be combined with interactive roots.'
       }
     }
   },

@@ -5,6 +5,7 @@ import avatarGroupTokens from '../../../tokens/components/avatar-group.tokens.js
 import tooltipTokens from '../../../tokens/components/tooltip.tokens.json';
 import inputTokens from '../../../tokens/components/input.tokens.json';
 import inputGroupTokens from '../../../tokens/components/input-group.tokens.json';
+import skeletonTokens from '../../../tokens/components/skeleton.tokens.json';
 import switchTokens from '../../../tokens/components/switch.tokens.json';
 import neutral from '../../../tokens/primitives/neutral.json';
 import brand from '../../../tokens/primitives/brand.json';
@@ -147,6 +148,7 @@ const avatarGroupRefs = sortRefs(collectRefs(avatarGroupTokens));
 const tooltipRefs = sortRefs(collectRefs(tooltipTokens));
 const inputRefs = sortRefs(collectRefs(inputTokens));
 const inputGroupRefs = sortRefs(collectRefs(inputGroupTokens));
+const skeletonRefs = sortRefs(collectRefs(skeletonTokens));
 const switchRefs = sortRefs(collectRefs(switchTokens));
 
 const renderComponentTokens = (title: string, refs: TokenRef[]) => (
@@ -192,6 +194,12 @@ export const InputGroup: Story = {
   name: 'Input Group Tokens',
   render: () => renderComponentTokens('Input Group Tokens', inputGroupRefs)
 };
+
+export const Skeleton: Story = {
+  name: 'Skeleton Tokens',
+  render: () => renderComponentTokens('Skeleton Tokens', skeletonRefs)
+};
+
 export const Switch: Story = {
   name: 'Switch Tokens',
   render: () => renderComponentTokens('Switch Tokens', switchRefs)

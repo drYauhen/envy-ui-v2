@@ -298,6 +298,87 @@
         }
       },
       "base": {
+        "dismiss": {
+          "size": {
+            "default": {
+              "padding": {
+                "block": {
+                  "$value": "{eui.dimension.0}",
+                  "$type": "dimension",
+                  "$description": "Dismiss action vertical padding for default badge size"
+                },
+                "inline": {
+                  "$value": "calc((var(--eui-spacing-xs) + var(--eui-spacing-sm)) / 2)",
+                  "$type": "dimension",
+                  "$description": "Dismiss action horizontal padding for default badge size"
+                }
+              },
+              "icon": {
+                "size": {
+                  "$value": "{eui.typography.fontSize.xs}",
+                  "$type": "dimension",
+                  "$description": "Dismiss icon size for default badge size"
+                }
+              }
+            },
+            "small": {
+              "padding": {
+                "block": {
+                  "$value": "{eui.dimension.0}",
+                  "$type": "dimension",
+                  "$description": "Dismiss action vertical padding for small badge size"
+                },
+                "inline": {
+                  "$value": "{eui.spacing.xs}",
+                  "$type": "dimension",
+                  "$description": "Dismiss action horizontal padding for small badge size"
+                }
+              },
+              "icon": {
+                "size": {
+                  "$value": "{eui.typography.fontSize.xs}",
+                  "$type": "dimension",
+                  "$description": "Dismiss icon size for small badge size"
+                }
+              }
+            }
+          },
+          "divider": {
+            "width": {
+              "$value": "{eui.border.width.thin}",
+              "$type": "dimension",
+              "$description": "Divider width between badge content and dismiss action"
+            }
+          },
+          "icon": {
+            "opacity": {
+              "$value": "{eui.opacity.subtle}",
+              "$type": "number",
+              "$description": "Dismiss icon opacity in default state"
+            },
+            "opacityHover": {
+              "$value": 1,
+              "$type": "number",
+              "$description": "Dismiss icon opacity on hover"
+            }
+          },
+          "state": {
+            "hover": {
+              "filter": {
+                "$value": "brightness(0.96)",
+                "$type": "string",
+                "$description": "Dismiss action hover filter"
+              }
+            },
+            "active": {
+              "filter": {
+                "$value": "brightness(0.92)",
+                "$type": "string",
+                "$description": "Dismiss action active filter"
+              }
+            }
+          }
+        },
         "border": {
           "width": {
             "$value": "{eui.border.width.thin}",

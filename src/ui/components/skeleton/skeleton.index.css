@@ -1,0 +1,13 @@
+/**
+ * Skeleton Component - Index
+ *
+ * Entry point that imports Skeleton CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/skeleton.contract.json
+ * Legacy reference: src/ui/skeleton.css
+ * Token variables: generated/css/components/skeleton.tokens.css
+ */
+
+@import './skeleton.structure.css';

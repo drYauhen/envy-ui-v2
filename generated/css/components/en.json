@@ -1,0 +1,64 @@
+{
+  "actions": {
+    "apply": "Apply",
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "cancel": "Cancel",
+    "close": "Close",
+    "done": "Done",
+    "ok": "OK",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "edit": "Edit",
+    "add": "Add",
+    "remove": "Remove",
+    "delete": "Delete",
+    "clear": "Clear",
+    "reset": "Reset",
+    "retry": "Retry",
+    "dismiss": "Dismiss"
+  },
+  "labels": {
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "settings": "Settings",
+    "more": "More",
+    "actions": "Actions",
+    "details": "Details",
+    "name": "Name",
+    "description": "Description",
+    "status": "Status",
+    "type": "Type",
+    "category": "Category",
+    "date": "Date",
+    "time": "Time"
+  },
+  "messages": {
+    "loading": "Loading…",
+    "saving": "Saving…",
+    "processing": "Processing…",
+    "noResults": "No results",
+    "noData": "No data",
+    "tryAgain": "Please try again",
+    "optional": "Optional",
+    "required": "Required"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "network": "Network error",
+    "timeout": "Request timed out",
+    "requiredField": "This field is required",
+    "invalidFormat": "Invalid format"
+  },
+  "a11y": {
+    "close": "Close",
+    "dismiss": "Dismiss",
+    "removeItem": "Remove {name}",
+    "openMenu": "Open menu",
+    "moreOptions": "More options"
+  }
+}

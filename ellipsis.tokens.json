@@ -1,0 +1,10 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "ellipsis": {
+      "tooltip": {
+        "delay": { "$value": "{eui.time.delay.default}" }
+      }
+    }
+  }
+}

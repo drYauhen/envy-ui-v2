@@ -1,0 +1,10 @@
+{
+  "ellipsis": {
+    "tooltip": {
+      "delay": {
+        "$type": "duration",
+        "$description": "Delay before the tooltip appears when text is truncated."
+      }
+    }
+  }
+}

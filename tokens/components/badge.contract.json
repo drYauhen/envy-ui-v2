@@ -11,7 +11,10 @@
   "selectors": {
     "scope": "[data-eui-context]",
     "root": ".eui-badge",
-    "slots": {}
+    "slots": {
+      "content": "[data-eui-slot='content']",
+      "dismiss": "[data-eui-slot='dismiss']"
+    }
   },
 
   "invariants": [
@@ -50,6 +53,12 @@
       "default": "false",
       "values": ["true", "false"],
       "notes": "When true, badge becomes interactive with cursor, focus, and hover states via data-eui-interactive attribute."
+    },
+    "dismissible": {
+      "type": "enum",
+      "default": "false",
+      "values": ["true", "false"],
+      "notes": "When true, badge renders an integrated dismiss action on the right side."
     }
   },
 
@@ -106,6 +115,14 @@
       "--eui-badge-size-small-fontSize": { "type": "dimension" },
       "--eui-badge-size-small-lineHeight": { "type": "string" }
     },
+    "dismissSize": {
+      "--eui-badge-dismiss-size-default-padding-block": { "type": "dimension" },
+      "--eui-badge-dismiss-size-default-padding-inline": { "type": "dimension" },
+      "--eui-badge-dismiss-size-default-icon-size": { "type": "dimension" },
+      "--eui-badge-dismiss-size-small-padding-block": { "type": "dimension" },
+      "--eui-badge-dismiss-size-small-padding-inline": { "type": "dimension" },
+      "--eui-badge-dismiss-size-small-icon-size": { "type": "dimension" }
+    },
     "shape": {
       "--eui-badge-shape-pill-radius": { "type": "dimension" },
       "--eui-badge-shape-circle-radius": { "type": "dimension" }
@@ -122,6 +139,13 @@
       "--eui-badge-focus-ring-offset": { "type": "dimension" },
       "--eui-badge-focus-color": { "type": "color" }
     },
+    "dismiss": {
+      "--eui-badge-dismiss-divider-width": { "type": "dimension" },
+      "--eui-badge-dismiss-icon-opacity": { "type": "number" },
+      "--eui-badge-dismiss-icon-opacityHover": { "type": "number" },
+      "--eui-badge-dismiss-state-hover-filter": { "type": "string" },
+      "--eui-badge-dismiss-state-active-filter": { "type": "string" }
+    },
     "localVars": {
       "--eui-badge-background": { "type": "color" },
       "--eui-badge-color": { "type": "color" },
@@ -131,7 +155,10 @@
       "--eui-badge-size-padding-inline": { "type": "dimension" },
       "--eui-badge-size-gap": { "type": "dimension" },
       "--eui-badge-size-fontSize": { "type": "dimension" },
-      "--eui-badge-size-lineHeight": { "type": "string" }
+      "--eui-badge-size-lineHeight": { "type": "string" },
+      "--eui-badge-dismiss-padding-block": { "type": "dimension" },
+      "--eui-badge-dismiss-padding-inline": { "type": "dimension" },
+      "--eui-badge-dismiss-icon-size": { "type": "dimension" }
     }
   },
 

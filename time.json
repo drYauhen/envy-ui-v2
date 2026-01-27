@@ -1,0 +1,11 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "time": {
+      "delay": {
+        "default": { "$value": "1500ms", "$type": "duration" },
+        "short": { "$value": "500ms", "$type": "duration" }
+      }
+    }
+  }
+}

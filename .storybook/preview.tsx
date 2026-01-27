@@ -29,7 +29,7 @@ import '../src/ui/avatar.css';
 import '../src/ui/avatar-group.css';
 import '../src/ui/counter.css';
 import '../src/ui/related-group.css';
-import '../src/ui/skeleton.css';
+import '../src/ui/components/skeleton/skeleton.index.css';
 import '../src/ui/celebration.css';
 // import '../src/ui/modal.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/app-shell.css'; // LEGACY: Likely defines old component tokens

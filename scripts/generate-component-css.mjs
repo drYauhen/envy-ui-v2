@@ -299,6 +299,11 @@ function generateCheckboxComponentCSS() {
   return generateComponentCSS('checkbox', selector);
 }
 
+function generateSkeletonComponentCSS() {
+  const selector = 'eui-skeleton, [data-eui-context] .eui-skeleton-group';
+  return generateComponentCSS('skeleton', selector);
+}
+
 function generateSwitchComponentCSS() {
   const selector = 'eui-switch, [data-eui-context] .eui-switch-wrapper';
   return generateComponentCSS('switch', selector);
@@ -421,6 +426,7 @@ function main() {
     { name: 'card', css: generateCardComponentCSS() },
     { name: 'badge', css: generateBadgeComponentCSS() },
     { name: 'checkbox', css: generateCheckboxComponentCSS() },
+    { name: 'skeleton', css: generateSkeletonComponentCSS() },
     { name: 'switch', css: generateSwitchComponentCSS() },
     { name: 'input', css: generateInputComponentCSS() },
     { name: 'input-group', css: generateInputGroupComponentCSS() },
