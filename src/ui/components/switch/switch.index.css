@@ -1,0 +1,13 @@
+/**
+ * Switch Component - Index
+ *
+ * Entry point that imports Switch CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/switch.contract.json
+ * Legacy reference: src/ui/switch.css
+ * Token variables: generated/css/components/switch.tokens.css
+ */
+
+@import './switch.structure.css';

@@ -294,6 +294,11 @@ function generateBadgeComponentCSS() {
   return generateComponentCSS('badge', 'eui-badge');
 }
 
+function generateSwitchComponentCSS() {
+  const selector = 'eui-switch, [data-eui-context] .eui-switch-wrapper';
+  return generateComponentCSS('switch', selector);
+}
+
 // Generate Layout component CSS
 function generateStackComponentCSS() {
   return generateComponentCSS('stack', 'eui-stack');
@@ -410,6 +415,7 @@ function main() {
     { name: 'avatar-group', css: generateAvatarGroupComponentCSS() },
     { name: 'card', css: generateCardComponentCSS() },
     { name: 'badge', css: generateBadgeComponentCSS() },
+    { name: 'switch', css: generateSwitchComponentCSS() },
     { name: 'input', css: generateInputComponentCSS() },
     { name: 'input-group', css: generateInputGroupComponentCSS() },
     { name: 'stack', css: generateStackComponentCSS() },

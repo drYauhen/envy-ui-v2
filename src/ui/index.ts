@@ -14,6 +14,8 @@ export { Input, InputGroup } from './input';
 export type { InputGroupProps, InputProps, InputSize, InputState } from './input';
 export { InputDate } from './input-date';
 export type { InputDateProps } from './input-date';
+export { Switch } from './switch';
+export type { SwitchProps, SwitchSize } from './switch';
 
 export { Form, FormActions, FormField, FormGroup, FormRow, FormSection } from './form';
 export type {

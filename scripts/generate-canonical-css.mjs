@@ -533,6 +533,7 @@ function generateEntrypointCSS() {
 /* 4. Components (component-specific tokens) */
 @import './components/card.tokens.css';
 @import './components/badge.tokens.css';
+@import './components/switch.tokens.css';
 @import './components/stack.tokens.css';
 @import './components/inline.tokens.css';
 @import './components/grid.tokens.css';

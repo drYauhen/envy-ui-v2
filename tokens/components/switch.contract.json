@@ -1,0 +1,70 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "switch",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/switch.css",
+    "note": "Derived from legacy switch styles to preserve sizing and track/thumb behavior."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-switch",
+    "slots": {
+      "wrapper": ".eui-switch-wrapper"
+    }
+  },
+
+  "axes": {
+    "size": {
+      "type": "enum",
+      "default": "md",
+      "values": ["sm", "md", "lg"],
+      "attribute": "data-eui-size",
+      "notes": "Controls track and thumb sizing."
+    }
+  },
+
+  "componentVars": {
+    "size": {
+      "--eui-switch-size-sm-track-width": { "type": "dimension" },
+      "--eui-switch-size-sm-track-height": { "type": "dimension" },
+      "--eui-switch-size-sm-thumb-size": { "type": "dimension" },
+      "--eui-switch-size-sm-thumb-offset": { "type": "dimension" },
+      "--eui-switch-size-md-track-width": { "type": "dimension" },
+      "--eui-switch-size-md-track-height": { "type": "dimension" },
+      "--eui-switch-size-md-thumb-size": { "type": "dimension" },
+      "--eui-switch-size-md-thumb-offset": { "type": "dimension" },
+      "--eui-switch-size-lg-track-width": { "type": "dimension" },
+      "--eui-switch-size-lg-track-height": { "type": "dimension" },
+      "--eui-switch-size-lg-thumb-size": { "type": "dimension" },
+      "--eui-switch-size-lg-thumb-offset": { "type": "dimension" }
+    },
+    "layout": {
+      "--eui-switch-layout-gap": { "type": "dimension" }
+    },
+    "track": {
+      "--eui-switch-track-background-off": { "type": "color" },
+      "--eui-switch-track-background-on": { "type": "color" },
+      "--eui-switch-track-background-disabled": { "type": "color" },
+      "--eui-switch-track-background-disabled-on": { "type": "color" },
+      "--eui-switch-track-border-off": { "type": "color" },
+      "--eui-switch-track-border-on": { "type": "color" },
+      "--eui-switch-track-border-disabled": { "type": "color" },
+      "--eui-switch-track-border-width": { "type": "dimension" },
+      "--eui-switch-track-border-style": { "type": "string" }
+    },
+    "thumb": {
+      "--eui-switch-thumb-background-base": { "type": "color" },
+      "--eui-switch-thumb-background-disabled": { "type": "color" },
+      "--eui-switch-thumb-border-disabled": { "type": "color" },
+      "--eui-switch-thumb-border-width": { "type": "dimension" },
+      "--eui-switch-thumb-border-style": { "type": "string" }
+    },
+    "shape": {
+      "--eui-switch-shape-radius-track": { "type": "dimension" },
+      "--eui-switch-shape-radius-thumb": { "type": "dimension" }
+    }
+  }
+}

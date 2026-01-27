@@ -1,0 +1,190 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "switch": {
+      "size": {
+        "sm": {
+          "track": {
+            "width": {
+              "$value": "34px",
+              "$type": "dimension",
+              "$description": "Track width for small switch."
+            },
+            "height": {
+              "$value": "18px",
+              "$type": "dimension",
+              "$description": "Track height for small switch."
+            }
+          },
+          "thumb": {
+            "size": {
+              "$value": "12px",
+              "$type": "dimension",
+              "$description": "Thumb diameter for small switch."
+            },
+            "offset": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Thumb offset from track edge for small switch."
+            }
+          }
+        },
+        "md": {
+          "track": {
+            "width": {
+              "$value": "40px",
+              "$type": "dimension",
+              "$description": "Track width for medium (default) switch."
+            },
+            "height": {
+              "$value": "22px",
+              "$type": "dimension",
+              "$description": "Track height for medium switch."
+            }
+          },
+          "thumb": {
+            "size": {
+              "$value": "16px",
+              "$type": "dimension",
+              "$description": "Thumb diameter for medium switch."
+            },
+            "offset": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Thumb offset from track edge for medium switch."
+            }
+          }
+        },
+        "lg": {
+          "track": {
+            "width": {
+              "$value": "52px",
+              "$type": "dimension",
+              "$description": "Track width for large switch."
+            },
+            "height": {
+              "$value": "28px",
+              "$type": "dimension",
+              "$description": "Track height for large switch."
+            }
+          },
+          "thumb": {
+            "size": {
+              "$value": "22px",
+              "$type": "dimension",
+              "$description": "Thumb diameter for large switch."
+            },
+            "offset": {
+              "$value": "3px",
+              "$type": "dimension",
+              "$description": "Thumb offset from track edge for large switch."
+            }
+          }
+        }
+      },
+      "shape": {
+        "radius": {
+          "track": {
+            "$value": "{eui.radius.full}",
+            "$type": "dimension",
+            "$description": "Track border radius (pill)."
+          },
+          "thumb": {
+            "$value": "{eui.radius.full}",
+            "$type": "dimension",
+            "$description": "Thumb border radius (circle)."
+          }
+        }
+      },
+      "base": {
+        "layout": {
+          "gap": {
+            "$value": "0.5em",
+            "$type": "dimension",
+            "$description": "Gap between switch and label."
+          }
+        },
+        "track": {
+          "background": {
+            "off": {
+              "$value": "{eui.color.neutral.300}",
+              "$type": "color",
+              "$description": "Track background color when off."
+            },
+            "on": {
+              "$value": "{eui.color.accent.primary}",
+              "$type": "color",
+              "$description": "Track background color when on."
+            },
+            "disabled": {
+              "$value": "{eui.color.background.muted}",
+              "$type": "color",
+              "$description": "Track background color when disabled."
+            },
+            "disabledOn": {
+              "$value": "{eui.color.background.muted}",
+              "$type": "color",
+              "$description": "Track background color when disabled and on."
+            }
+          },
+          "border": {
+            "off": {
+              "$value": "{eui.color.neutral.400}",
+              "$type": "color",
+              "$description": "Track border color when off."
+            },
+            "on": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Track border color when on."
+            },
+            "disabled": {
+              "$value": "{eui.color.neutral.400}",
+              "$type": "color",
+              "$description": "Track border color when disabled."
+            },
+            "width": {
+              "$value": "{eui.control.border.width}",
+              "$type": "dimension",
+              "$description": "Track border width."
+            },
+            "style": {
+              "$value": "{eui.border.style.default}",
+              "$type": "string"
+            }
+          }
+        },
+        "thumb": {
+          "background": {
+            "base": {
+              "$value": "{eui.color.background.surface}",
+              "$type": "color",
+              "$description": "Thumb background color."
+            },
+            "disabled": {
+              "$value": "transparent",
+              "$type": "color",
+              "$description": "Thumb background color when disabled."
+            }
+          },
+          "border": {
+            "disabled": {
+              "$value": "{eui.color.neutral.400}",
+              "$type": "color",
+              "$description": "Thumb border color when disabled."
+            },
+            "width": {
+              "$value": "{eui.control.border.width}",
+              "$type": "dimension",
+              "$description": "Thumb border width for disabled state."
+            },
+            "style": {
+              "$value": "{eui.border.style.default}",
+              "$type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

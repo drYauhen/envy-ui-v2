@@ -5,6 +5,7 @@ import avatarGroupTokens from '../../../tokens/components/avatar-group.tokens.js
 import tooltipTokens from '../../../tokens/components/tooltip.tokens.json';
 import inputTokens from '../../../tokens/components/input.tokens.json';
 import inputGroupTokens from '../../../tokens/components/input-group.tokens.json';
+import switchTokens from '../../../tokens/components/switch.tokens.json';
 import neutral from '../../../tokens/primitives/neutral.json';
 import brand from '../../../tokens/primitives/brand.json';
 import accent from '../../../tokens/primitives/accent.json';
@@ -146,6 +147,7 @@ const avatarGroupRefs = sortRefs(collectRefs(avatarGroupTokens));
 const tooltipRefs = sortRefs(collectRefs(tooltipTokens));
 const inputRefs = sortRefs(collectRefs(inputTokens));
 const inputGroupRefs = sortRefs(collectRefs(inputGroupTokens));
+const switchRefs = sortRefs(collectRefs(switchTokens));
 
 const renderComponentTokens = (title: string, refs: TokenRef[]) => (
   <TokenPage>
@@ -189,4 +191,8 @@ export const Input: Story = {
 export const InputGroup: Story = {
   name: 'Input Group Tokens',
   render: () => renderComponentTokens('Input Group Tokens', inputGroupRefs)
+};
+export const Switch: Story = {
+  name: 'Switch Tokens',
+  render: () => renderComponentTokens('Switch Tokens', switchRefs)
 };

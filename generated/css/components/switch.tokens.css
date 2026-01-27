@@ -1,0 +1,39 @@
+/**
+ * Switch Component Tokens - Generated from tokens/components/switch.tokens.json
+ */
+
+@layer eui-components {
+  /* Base switch variables (default variant) */
+  [data-eui-context] .eui-switch, [data-eui-context] .eui-switch-wrapper {
+    --eui-switch-layout-gap: 0.5em;
+    --eui-switch-track-background-off: var(--eui-color-neutral-300);
+    --eui-switch-track-background-on: var(--eui-color-accent-primary);
+    --eui-switch-track-background-disabled: var(--eui-color-background-muted);
+    --eui-switch-track-background-disabledOn: var(--eui-color-background-muted);
+    --eui-switch-track-border-off: var(--eui-color-neutral-400);
+    --eui-switch-track-border-on: transparent;
+    --eui-switch-track-border-disabled: var(--eui-color-neutral-400);
+    --eui-switch-track-border-width: var(--eui-control-border-width);
+    --eui-switch-track-border-style: var(--eui-border-style-default);
+    --eui-switch-thumb-background-base: var(--eui-color-background-surface);
+    --eui-switch-thumb-background-disabled: transparent;
+    --eui-switch-thumb-border-disabled: var(--eui-color-neutral-400);
+    --eui-switch-thumb-border-width: var(--eui-control-border-width);
+    --eui-switch-thumb-border-style: var(--eui-border-style-default);
+    --eui-switch-size-sm-track-width: 34px;
+    --eui-switch-size-sm-track-height: 18px;
+    --eui-switch-size-sm-thumb-size: 12px;
+    --eui-switch-size-sm-thumb-offset: 3px;
+    --eui-switch-size-md-track-width: 40px;
+    --eui-switch-size-md-track-height: 22px;
+    --eui-switch-size-md-thumb-size: 16px;
+    --eui-switch-size-md-thumb-offset: 3px;
+    --eui-switch-size-lg-track-width: 52px;
+    --eui-switch-size-lg-track-height: 28px;
+    --eui-switch-size-lg-thumb-size: 22px;
+    --eui-switch-size-lg-thumb-offset: 3px;
+    --eui-switch-shape-radius-track: var(--eui-radius-full);
+    --eui-switch-shape-radius-thumb: var(--eui-radius-full);
+  }
+
+}

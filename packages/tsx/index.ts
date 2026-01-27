@@ -1,6 +1,8 @@
 export { ButtonClean } from './button';
 export { ButtonGroup } from './button';
 export type { ButtonCleanProps } from './button';
+export { SwitchClean } from './switch';
+export type { SwitchCleanProps, SwitchSize } from './switch';
 export { TooltipClean } from './tooltip';
 export type { TooltipCleanProps, TooltipPlacement } from './tooltip';
 export { InputClean, InputDateClean, InputGroupClean } from './input';
