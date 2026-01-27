@@ -1,0 +1,72 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "checkbox",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/checkbox.css",
+    "note": "Derived from legacy checkbox styles to preserve app/website/report behavior."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-checkbox",
+    "slots": {
+      "wrapper": ".eui-checkbox-wrapper"
+    }
+  },
+
+  "axes": {
+    "size": {
+      "type": "enum",
+      "default": "md",
+      "values": ["sm", "md", "lg"],
+      "attribute": "data-eui-size",
+      "notes": "Controls checkbox dimensions."
+    }
+  },
+
+  "componentVars": {
+    "size": {
+      "--eui-checkbox-size-sm-size": { "type": "dimension" },
+      "--eui-checkbox-size-md-size": { "type": "dimension" },
+      "--eui-checkbox-size-lg-size": { "type": "dimension" }
+    },
+    "layout": {
+      "--eui-checkbox-layout-gap": { "type": "dimension" }
+    },
+    "border": {
+      "--eui-checkbox-border-width": { "type": "dimension" },
+      "--eui-checkbox-border-style": { "type": "string" },
+      "--eui-checkbox-border-base": { "type": "color" },
+      "--eui-checkbox-border-hover": { "type": "color" },
+      "--eui-checkbox-border-checked": { "type": "color" },
+      "--eui-checkbox-border-checked-hover": { "type": "color" },
+      "--eui-checkbox-border-disabled": { "type": "color" },
+      "--eui-checkbox-border-checked-disabled": { "type": "color" },
+      "--eui-checkbox-border-indeterminate": { "type": "color" },
+      "--eui-checkbox-border-indeterminate-hover": { "type": "color" },
+      "--eui-checkbox-border-indeterminate-disabled": { "type": "color" }
+    },
+    "background": {
+      "--eui-checkbox-background-base": { "type": "color" },
+      "--eui-checkbox-background-hover": { "type": "color" },
+      "--eui-checkbox-background-checked": { "type": "color" },
+      "--eui-checkbox-background-checked-hover": { "type": "color" },
+      "--eui-checkbox-background-disabled": { "type": "color" },
+      "--eui-checkbox-background-checked-disabled": { "type": "color" },
+      "--eui-checkbox-background-indeterminate": { "type": "color" },
+      "--eui-checkbox-background-indeterminate-hover": { "type": "color" },
+      "--eui-checkbox-background-indeterminate-disabled": { "type": "color" }
+    },
+    "checkmark": {
+      "--eui-checkbox-checkmark-base": { "type": "color" },
+      "--eui-checkbox-checkmark-disabled": { "type": "color" },
+      "--eui-checkbox-checkmark-indeterminate": { "type": "color" },
+      "--eui-checkbox-checkmark-indeterminate-disabled": { "type": "color" }
+    },
+    "shape": {
+      "--eui-checkbox-shape-radius": { "type": "dimension" }
+    }
+  }
+}

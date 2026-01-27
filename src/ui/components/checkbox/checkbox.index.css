@@ -1,0 +1,13 @@
+/**
+ * Checkbox Component - Index
+ *
+ * Entry point that imports Checkbox CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/checkbox.contract.json
+ * Legacy reference: src/ui/checkbox.css
+ * Token variables: generated/css/components/checkbox.tokens.css
+ */
+
+@import './checkbox.structure.css';

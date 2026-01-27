@@ -294,6 +294,11 @@ function generateBadgeComponentCSS() {
   return generateComponentCSS('badge', 'eui-badge');
 }
 
+function generateCheckboxComponentCSS() {
+  const selector = 'eui-checkbox, [data-eui-context] .eui-checkbox-wrapper';
+  return generateComponentCSS('checkbox', selector);
+}
+
 function generateSwitchComponentCSS() {
   const selector = 'eui-switch, [data-eui-context] .eui-switch-wrapper';
   return generateComponentCSS('switch', selector);
@@ -415,6 +420,7 @@ function main() {
     { name: 'avatar-group', css: generateAvatarGroupComponentCSS() },
     { name: 'card', css: generateCardComponentCSS() },
     { name: 'badge', css: generateBadgeComponentCSS() },
+    { name: 'checkbox', css: generateCheckboxComponentCSS() },
     { name: 'switch', css: generateSwitchComponentCSS() },
     { name: 'input', css: generateInputComponentCSS() },
     { name: 'input-group', css: generateInputGroupComponentCSS() },

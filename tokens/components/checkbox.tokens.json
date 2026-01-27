@@ -1,0 +1,171 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "checkbox": {
+      "size": {
+        "md": {
+          "size": {
+            "$value": "1.25em",
+            "$type": "dimension",
+            "$description": "Medium checkbox size (default). ~20px at 16px base font, ~22.5px at 18px base font."
+          }
+        },
+        "sm": {
+          "size": {
+            "$value": "1em",
+            "$type": "dimension",
+            "$description": "Small checkbox size. ~16px at 16px base font, ~18px at 18px base font."
+          }
+        },
+        "lg": {
+          "size": {
+            "$value": "1.5em",
+            "$type": "dimension",
+            "$description": "Large checkbox size. ~24px at 16px base font, ~27px at 18px base font."
+          }
+        }
+      },
+      "shape": {
+        "radius": {
+          "$value": "{eui.radius.small}",
+          "$type": "dimension",
+          "$description": "Checkbox border radius. Uses small radius for subtle rounding."
+        }
+      },
+      "base": {
+        "layout": {
+          "gap": {
+            "$value": "0.5em",
+            "$type": "dimension",
+            "$description": "Gap between checkbox and label. In EMs to adapt to typography scale."
+          }
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.control.border.width}",
+            "$type": "dimension",
+            "$description": "Border width for checkbox. Matches shared control border width."
+          },
+          "style": {
+            "$value": "{eui.border.style.default}",
+            "$type": "string"
+          },
+          "base": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Border color for unchecked checkbox."
+          },
+          "hover": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Border color on hover (unchecked)."
+          },
+          "checked": {
+            "$value": "{eui.color.accent.800}",
+            "$type": "color",
+            "$description": "Border color for checked checkbox."
+          },
+          "checked-hover": {
+            "$value": "{eui.color.accent.800}",
+            "$type": "color",
+            "$description": "Border color on hover (checked)."
+          },
+          "checked-disabled": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color",
+            "$description": "Border color for checked + disabled checkbox."
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color",
+            "$description": "Border color for disabled checkbox."
+          },
+          "indeterminate": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Border color for indeterminate checkbox."
+          },
+          "indeterminate-hover": {
+            "$value": "{eui.color.neutral.400}",
+            "$type": "color",
+            "$description": "Border color on hover (indeterminate)."
+          },
+          "indeterminate-disabled": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color",
+            "$description": "Border color for indeterminate + disabled checkbox."
+          }
+        },
+        "background": {
+          "base": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Background color for unchecked checkbox."
+          },
+          "hover": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Background color on hover (unchecked)."
+          },
+          "checked": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color",
+            "$description": "Background color for checked checkbox."
+          },
+          "checked-hover": {
+            "$value": "{eui.color.accent.primary}",
+            "$type": "color",
+            "$description": "Background color on hover (checked)."
+          },
+          "checked-disabled": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Background color for checked + disabled checkbox."
+          },
+          "disabled": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Background color for disabled checkbox."
+          },
+          "indeterminate": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Background color for indeterminate checkbox."
+          },
+          "indeterminate-hover": {
+            "$value": "{eui.color.background.surface}",
+            "$type": "color",
+            "$description": "Background color on hover (indeterminate)."
+          },
+          "indeterminate-disabled": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Background color for indeterminate + disabled checkbox."
+          }
+        },
+        "checkmark": {
+          "base": {
+            "$value": "{eui.color.text.inverse}",
+            "$type": "color",
+            "$description": "Checkmark color (checked state)."
+          },
+          "disabled": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color",
+            "$description": "Checkmark color for disabled checked state."
+          },
+          "indeterminate": {
+            "$value": "{eui.color.accent.400}",
+            "$type": "color",
+            "$description": "Indeterminate mark color."
+          },
+          "indeterminate-disabled": {
+            "$value": "{eui.color.neutral.500}",
+            "$type": "color",
+            "$description": "Indeterminate mark color for disabled state."
+          }
+        }
+      }
+    }
+  }
+}

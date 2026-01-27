@@ -16,6 +16,8 @@ export { InputDate } from './input-date';
 export type { InputDateProps } from './input-date';
 export { Switch } from './switch';
 export type { SwitchProps, SwitchSize } from './switch';
+export { Checkbox } from './checkbox';
+export type { CheckboxProps, CheckboxSize } from './checkbox';
 
 export { Form, FormActions, FormField, FormGroup, FormRow, FormSection } from './form';
 export type {

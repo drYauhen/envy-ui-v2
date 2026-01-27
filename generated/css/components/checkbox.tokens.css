@@ -1,0 +1,39 @@
+/**
+ * Checkbox Component Tokens - Generated from tokens/components/checkbox.tokens.json
+ */
+
+@layer eui-components {
+  /* Base checkbox variables (default variant) */
+  [data-eui-context] .eui-checkbox, [data-eui-context] .eui-checkbox-wrapper {
+    --eui-checkbox-layout-gap: 0.5em;
+    --eui-checkbox-border-width: var(--eui-control-border-width);
+    --eui-checkbox-border-style: var(--eui-border-style-default);
+    --eui-checkbox-border-base: var(--eui-color-neutral-400);
+    --eui-checkbox-border-hover: var(--eui-color-neutral-400);
+    --eui-checkbox-border-checked: var(--eui-color-accent-800);
+    --eui-checkbox-border-checked-hover: var(--eui-color-accent-800);
+    --eui-checkbox-border-checked-disabled: var(--eui-color-neutral-500);
+    --eui-checkbox-border-disabled: var(--eui-color-neutral-500);
+    --eui-checkbox-border-indeterminate: var(--eui-color-neutral-400);
+    --eui-checkbox-border-indeterminate-hover: var(--eui-color-neutral-400);
+    --eui-checkbox-border-indeterminate-disabled: var(--eui-color-neutral-500);
+    --eui-checkbox-background-base: var(--eui-color-background-surface);
+    --eui-checkbox-background-hover: var(--eui-color-background-surface);
+    --eui-checkbox-background-checked: var(--eui-color-accent-primary);
+    --eui-checkbox-background-checked-hover: var(--eui-color-accent-primary);
+    --eui-checkbox-background-checked-disabled: var(--eui-color-background-muted);
+    --eui-checkbox-background-disabled: var(--eui-color-background-muted);
+    --eui-checkbox-background-indeterminate: var(--eui-color-background-surface);
+    --eui-checkbox-background-indeterminate-hover: var(--eui-color-background-surface);
+    --eui-checkbox-background-indeterminate-disabled: var(--eui-color-background-muted);
+    --eui-checkbox-checkmark-base: var(--eui-color-text-inverse);
+    --eui-checkbox-checkmark-disabled: var(--eui-color-neutral-500);
+    --eui-checkbox-checkmark-indeterminate: var(--eui-color-accent-400);
+    --eui-checkbox-checkmark-indeterminate-disabled: var(--eui-color-neutral-500);
+    --eui-checkbox-size-md-size: 1.25em;
+    --eui-checkbox-size-sm-size: 1em;
+    --eui-checkbox-size-lg-size: 1.5em;
+    --eui-checkbox-shape-radius: var(--eui-radius-small);
+  }
+
+}

@@ -3,6 +3,8 @@ export { ButtonGroup } from './button';
 export type { ButtonCleanProps } from './button';
 export { SwitchClean } from './switch';
 export type { SwitchCleanProps, SwitchSize } from './switch';
+export { CheckboxClean } from './checkbox';
+export type { CheckboxCleanProps, CheckboxSize } from './checkbox';
 export { TooltipClean } from './tooltip';
 export type { TooltipCleanProps, TooltipPlacement } from './tooltip';
 export { InputClean, InputDateClean, InputGroupClean } from './input';
