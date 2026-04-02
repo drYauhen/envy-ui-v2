@@ -176,6 +176,8 @@
     --eui-spacing-7: 28px;
     --eui-spacing-8: 32px;
     --eui-spacing-9: 36px;
+    --eui-time-delay-default: 1500ms;
+    --eui-time-delay-short: 500ms;
     --eui-transition-duration-base: 200ms;
     --eui-transition-duration-fast: 100ms;
     --eui-transition-duration-instant: 0ms;

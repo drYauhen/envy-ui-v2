@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "ellipsis",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "note": "Single-line truncation helper with optional tooltip delay token."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-ellipsis",
+    "slots": {}
+  },
+
+  "axes": {},
+
+  "componentVars": {
+    "tooltip": {
+      "--eui-ellipsis-tooltip-delay": { "type": "duration" }
+    }
+  }
+}

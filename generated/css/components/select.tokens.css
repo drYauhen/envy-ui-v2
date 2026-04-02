@@ -1,0 +1,54 @@
+/**
+ * Select Component Tokens - Generated from tokens/components/select.tokens.json
+ */
+
+@layer eui-components {
+  /* select variables */
+  [data-eui-context] .eui-select-wrapper, [data-eui-context] .eui-select-popover {
+    --eui-select-primitive-trigger-spacing-gap: var(--eui-spacing-sm);
+    --eui-select-primitive-popover-spacing-offset: var(--eui-overlay-offset-dropdown);
+    --eui-select-primitive-popover-spacing-padding: var(--eui-spacing-xs);
+    --eui-select-primitive-popover-size-min-width: 100%;
+    --eui-select-primitive-popover-size-max-height: 20rem;
+    --eui-select-primitive-listbox-spacing-gap: var(--eui-spacing-xs);
+    --eui-select-primitive-tree-indent: var(--eui-spacing-sm);
+    --eui-select-primitive-tree-group-background: var(--eui-color-brand-100);
+    --eui-select-primitive-tree-group-border-color: var(--eui-color-brand-200);
+    --eui-select-primitive-option-spacing-padding-vertical: var(--eui-spacing-xs);
+    --eui-select-primitive-option-spacing-padding-horizontal: var(--eui-spacing-sm);
+    --eui-select-primitive-option-shape-radius: var(--eui-radius-small);
+    --eui-select-primitive-badge-size-max-width: clamp(8ch, 30vw, 28ch);
+    --eui-select-primitive-badge-spacing-gap: var(--eui-dimension-0-5);
+    --eui-select-primitive-badge-spacing-padding-vertical: var(--eui-dimension-0-5);
+    --eui-select-primitive-badge-spacing-padding-horizontal: var(--eui-spacing-xs);
+    --eui-select-primitive-badge-shape-radius: var(--eui-radius-small);
+    --eui-select-primitive-badge-colors-background: var(--eui-color-background-subtle);
+    --eui-select-primitive-badge-colors-text: var(--eui-color-text-primary);
+    --eui-select-primitive-badge-colors-remove-icon: var(--eui-color-text-subtle);
+    --eui-select-dropdown-background: var(--eui-color-background-surface);
+    --eui-select-dropdown-border-width: var(--eui-border-width-thin);
+    --eui-select-dropdown-border-style: var(--eui-border-style-default);
+    --eui-select-dropdown-border-color: var(--eui-color-border-default);
+    --eui-select-dropdown-radius: var(--eui-surface-radius);
+    --eui-select-dropdown-shadow: var(--eui-shadow-default);
+    --eui-select-dropdown-z-index: var(--eui-z-dropdown);
+    --eui-select-option-checkbox-size: 1.25em;
+    --eui-select-option-checkbox-shape-radius: var(--eui-radius-small);
+    --eui-select-option-checkbox-border-width: var(--eui-control-border-width);
+    --eui-select-option-checkbox-border-style: var(--eui-border-style-default);
+    --eui-select-option-checkbox-border-base: var(--eui-color-neutral-400);
+    --eui-select-option-checkbox-border-checked: var(--eui-color-accent-800);
+    --eui-select-option-checkbox-background-base: var(--eui-color-background-surface);
+    --eui-select-option-checkbox-background-checked: var(--eui-color-accent-primary);
+    --eui-select-option-checkbox-checkmark-color: var(--eui-color-text-inverse);
+    --eui-select-option-color-default: var(--eui-color-text-primary);
+    --eui-select-option-color-disabled: var(--eui-color-text-subtle);
+    --eui-select-option-background-default: transparent;
+    --eui-select-option-background-hover: var(--eui-color-background-subtle);
+    --eui-select-option-background-focused: var(--eui-color-background-subtle);
+    --eui-select-option-background-selected: var(--eui-color-background-muted);
+    --eui-select-option-background-selected-focused: var(--eui-color-background-muted);
+    --eui-select-option-min-height: calc((({eui.dimension.7} + ({eui.select.primitive.option.spacing.padding.vertical} * 2)) * 0.8));
+  }
+
+}

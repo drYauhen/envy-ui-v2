@@ -550,9 +550,11 @@ function generateEntrypointCSS() {
 @import './components/button.tokens.css';
 @import './components/input.tokens.css';
 @import './components/input-group.tokens.css';
+@import './components/select.tokens.css';
 @import './components/avatar.tokens.css';
 @import './components/avatar-group.tokens.css';
 @import './components/tooltip.tokens.css';
+@import './components/ellipsis.tokens.css';
 @import './components/side-nav.tokens.css';
 @import './components/logo.tokens.css';
 @import './components/form.tokens.css';

@@ -1,0 +1,117 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "select",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/select-primitives.css",
+    "runtimePositioning": "packages/tsx/select/primitives/select-popover.tsx",
+    "note": "Contract for Select, Multi-Select, Searchable Select, and Multi-Select Tree primitives."
+  },
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-select-wrapper",
+    "slots": {
+      "trigger": ".eui-select-trigger",
+      "value": ".eui-select-value",
+      "popover": ".eui-select-popover",
+      "listbox": ".eui-select-listbox",
+      "option": ".eui-select-option",
+      "search": ".eui-select-search"
+    }
+  },
+  "invariants": [
+    "Select primitives are token-driven: visual literals must not be introduced in runtime logic.",
+    "Trigger-to-dropdown gap must resolve from contract tokens, not hardcoded component constants.",
+    "Default dropdown gap is 5px through eui.overlay.offset.dropdown aliasing."
+  ],
+  "axes": {
+    "mode": {
+      "type": "enum",
+      "default": "single",
+      "values": ["single", "multi", "searchable", "tree"],
+      "attribute": "data-eui-select-mode",
+      "notes": "Semantic mode axis for Select-family components."
+    },
+    "size": {
+      "type": "enum",
+      "default": "md",
+      "values": ["sm", "md", "lg"],
+      "attribute": "data-eui-size",
+      "notes": "Size controls trigger and option geometry."
+    },
+    "placement": {
+      "type": "enum",
+      "default": "bottom-start",
+      "values": ["bottom-start", "bottom-end", "top-start", "top-end"],
+      "notes": "Floating placement for dropdown popover."
+    }
+  },
+  "componentVars": {
+    "trigger": {
+      "--eui-select-primitive-trigger-spacing-gap": {
+        "type": "dimension"
+      }
+    },
+    "popover": {
+      "--eui-select-primitive-popover-spacing-offset": "{eui.overlay.offset.dropdown}",
+      "--eui-select-primitive-popover-spacing-padding": {
+        "type": "dimension"
+      },
+      "--eui-select-primitive-popover-size-min-width": {
+        "type": "dimension"
+      },
+      "--eui-select-primitive-popover-size-max-height": {
+        "type": "dimension"
+      }
+    },
+    "dropdown": {
+      "--eui-select-dropdown-background": {
+        "type": "color"
+      },
+      "--eui-select-dropdown-border-width": {
+        "type": "dimension"
+      },
+      "--eui-select-dropdown-border-style": {
+        "type": "string"
+      },
+      "--eui-select-dropdown-border-color": {
+        "type": "color"
+      },
+      "--eui-select-dropdown-radius": {
+        "type": "dimension"
+      },
+      "--eui-select-dropdown-shadow": {
+        "type": "shadow"
+      },
+      "--eui-select-dropdown-z-index": {
+        "type": "number"
+      }
+    },
+    "listbox": {
+      "--eui-select-primitive-listbox-spacing-gap": {
+        "type": "dimension"
+      }
+    },
+    "semanticDeps": {
+      "--eui-overlay-offset-dropdown": "{eui.overlay.offset.dropdown}",
+      "--eui-focus-ring-offset-default": {
+        "type": "dimension"
+      },
+      "--eui-focus-ring-width": {
+        "type": "dimension"
+      }
+    }
+  },
+  "behavior": {
+    "positioning": {
+      "engine": "floating-ui",
+      "offsetMainAxis": "var(--eui-select-primitive-popover-spacing-offset, var(--eui-overlay-offset-dropdown))",
+      "offsetFallbackPx": 5,
+      "runtimeResolver": "SelectPopover computes mainAxis from CSS variables and applies fallback when unresolved."
+    },
+    "focusClearance": {
+      "policy": "Dropdown offset must preserve visible trigger focus ring."
+    }
+  }
+}

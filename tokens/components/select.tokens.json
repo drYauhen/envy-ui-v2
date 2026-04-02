@@ -1,0 +1,293 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "select": {
+      "primitive": {
+        "trigger": {
+          "spacing": {
+            "gap": {
+              "$value": "{eui.spacing.sm}",
+              "$type": "dimension",
+              "$description": "Gap between trigger content and chevron."
+            }
+          }
+        },
+        "popover": {
+          "spacing": {
+            "offset": {
+              "$value": "{eui.overlay.offset.dropdown}",
+              "$type": "dimension",
+              "$description": "Vertical gap between trigger and popover surface."
+            },
+            "padding": {
+              "$value": "{eui.spacing.xs}",
+              "$type": "dimension",
+              "$description": "Inner padding for the popover container."
+            }
+          },
+          "size": {
+            "min-width": {
+              "$value": "100%",
+              "$type": "dimension",
+              "$description": "Minimum popover width relative to trigger."
+            },
+            "max-height": {
+              "$value": "20rem",
+              "$type": "dimension",
+              "$description": "Maximum popover height before scrolling."
+            }
+          }
+        },
+        "listbox": {
+          "spacing": {
+            "gap": {
+              "$value": "{eui.spacing.xs}",
+              "$type": "dimension",
+              "$description": "Vertical gap between options."
+            }
+          }
+        },
+        "tree": {
+          "indent": {
+            "$value": "{eui.spacing.sm}",
+            "$type": "dimension",
+            "$description": "Indent per tree level."
+          },
+          "group": {
+            "background": {
+              "$value": "{eui.color.brand.100}",
+              "$type": "color",
+              "$description": "Background for tree group rows."
+            },
+            "border": {
+              "color": {
+                "$value": "{eui.color.brand.200}",
+                "$type": "color",
+                "$description": "Top border color for tree group rows."
+              }
+            }
+          }
+        },
+        "option": {
+          "spacing": {
+            "padding": {
+              "vertical": {
+                "$value": "{eui.spacing.xs}",
+                "$type": "dimension",
+                "$description": "Option vertical padding."
+              },
+              "horizontal": {
+                "$value": "{eui.spacing.sm}",
+                "$type": "dimension",
+                "$description": "Option horizontal padding."
+              }
+            }
+          },
+          "shape": {
+            "radius": {
+              "$value": "{eui.radius.small}",
+              "$type": "dimension",
+              "$description": "Option border radius."
+            }
+          }
+        },
+        "badge": {
+          "size": {
+            "max-width": {
+              "$value": "clamp(8ch, 30vw, 28ch)",
+              "$type": "dimension",
+              "$description": "Maximum badge width before truncation."
+            }
+          },
+          "spacing": {
+            "gap": {
+              "$value": "{eui.dimension.0-5}",
+              "$type": "dimension",
+              "$description": "Gap between badge label and remove icon."
+            },
+            "padding": {
+              "vertical": {
+                "$value": "{eui.dimension.0-5}",
+                "$type": "dimension",
+                "$description": "Badge vertical padding."
+              },
+              "horizontal": {
+                "$value": "{eui.spacing.xs}",
+                "$type": "dimension",
+                "$description": "Badge horizontal padding."
+              }
+            }
+          },
+          "shape": {
+            "radius": {
+              "$value": "{eui.radius.small}",
+              "$type": "dimension",
+              "$description": "Badge radius."
+            }
+          },
+          "colors": {
+            "background": {
+              "$value": "{eui.color.background.subtle}",
+              "$type": "color",
+              "$description": "Badge background color."
+            },
+            "text": {
+              "$value": "{eui.color.text.primary}",
+              "$type": "color",
+              "$description": "Badge text color."
+            },
+            "remove": {
+              "icon": {
+                "$value": "{eui.color.text.subtle}",
+                "$type": "color",
+                "$description": "Badge remove icon color."
+              }
+            }
+          }
+        }
+      },
+      "dropdown": {
+        "background": {
+          "$value": "{eui.color.background.surface}",
+          "$type": "color",
+          "$description": "Dropdown background color."
+        },
+        "border": {
+          "width": {
+            "$value": "{eui.border.width.thin}",
+            "$type": "dimension",
+            "$description": "Dropdown border width."
+          },
+          "style": {
+            "$value": "{eui.border.style.default}",
+            "$type": "string",
+            "$description": "Dropdown border style."
+          },
+          "color": {
+            "$value": "{eui.color.border.default}",
+            "$type": "color",
+            "$description": "Dropdown border color."
+          }
+        },
+        "radius": {
+          "$value": "{eui.surface.radius}",
+          "$type": "dimension",
+          "$description": "Dropdown radius."
+        },
+        "shadow": {
+          "$value": "{eui.shadow.default}",
+          "$type": "shadow",
+          "$description": "Dropdown shadow."
+        },
+        "z": {
+          "index": {
+            "$value": "{eui.z.dropdown}",
+            "$type": "number",
+            "$description": "Dropdown stacking context."
+          }
+        }
+      },
+      "option": {
+        "checkbox": {
+          "size": {
+            "$value": "1.25em",
+            "$type": "dimension",
+            "$description": "Option checkbox size (matches md checkbox)."
+          },
+          "shape": {
+            "radius": {
+              "$value": "{eui.radius.small}",
+              "$type": "dimension",
+              "$description": "Option checkbox radius."
+            }
+          },
+          "border": {
+            "width": {
+              "$value": "{eui.control.border.width}",
+              "$type": "dimension",
+              "$description": "Option checkbox border width."
+            },
+            "style": {
+              "$value": "{eui.border.style.default}",
+              "$type": "string",
+              "$description": "Option checkbox border style."
+            },
+            "base": {
+              "$value": "{eui.color.neutral.400}",
+              "$type": "color",
+              "$description": "Option checkbox border color (unchecked)."
+            },
+            "checked": {
+              "$value": "{eui.color.accent.800}",
+              "$type": "color",
+              "$description": "Option checkbox border color (checked)."
+            }
+          },
+          "background": {
+            "base": {
+              "$value": "{eui.color.background.surface}",
+              "$type": "color",
+              "$description": "Option checkbox background (unchecked)."
+            },
+            "checked": {
+              "$value": "{eui.color.accent.primary}",
+              "$type": "color",
+              "$description": "Option checkbox background (checked)."
+            }
+          },
+          "checkmark": {
+            "color": {
+              "$value": "{eui.color.text.inverse}",
+              "$type": "color",
+              "$description": "Option checkbox checkmark color."
+            }
+          }
+        },
+        "color": {
+          "default": {
+            "$value": "{eui.color.text.primary}",
+            "$type": "color",
+            "$description": "Default option text color."
+          },
+          "disabled": {
+            "$value": "{eui.color.text.subtle}",
+            "$type": "color",
+            "$description": "Disabled option text color."
+          }
+        },
+        "background": {
+          "default": {
+            "$value": "transparent",
+            "$type": "color",
+            "$description": "Default option background."
+          },
+          "hover": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Hover option background."
+          },
+          "focused": {
+            "$value": "{eui.color.background.subtle}",
+            "$type": "color",
+            "$description": "Focused option background."
+          },
+          "selected": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Selected option background."
+          },
+          "selected-focused": {
+            "$value": "{eui.color.background.muted}",
+            "$type": "color",
+            "$description": "Selected and focused option background."
+          }
+        },
+        "min-height": {
+          "$value": "calc((({eui.dimension.7} + ({eui.select.primitive.option.spacing.padding.vertical} * 2)) * 0.8))",
+          "$type": "dimension",
+          "$description": "Minimum option height to fit a small avatar with vertical padding."
+        }
+      }
+    }
+  }
+}

@@ -169,6 +169,8 @@
     --eui-app-raw-transition-duration-instant: var(--eui-transition-duration-instant);
     --eui-app-raw-transition-duration-slow: var(--eui-transition-duration-slow);
     --eui-app-raw-transition-duration-slower: var(--eui-transition-duration-slower);
+    --eui-app-raw-time-delay-default: var(--eui-time-delay-default);
+    --eui-app-raw-time-delay-short: var(--eui-time-delay-short);
     --eui-app-raw-transition-easing-in: var(--eui-transition-easing-in);
     --eui-app-raw-transition-easing-inOut: var(--eui-transition-easing-inOut);
     --eui-app-raw-transition-easing-linear: var(--eui-transition-easing-linear);

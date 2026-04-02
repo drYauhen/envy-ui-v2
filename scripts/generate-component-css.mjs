@@ -393,10 +393,20 @@ function generateLogoComponentCSS() {
   return generateSimpleComponentCSS('logo', 'eui-logo');
 }
 
+function generateEllipsisComponentCSS() {
+  return generateSimpleComponentCSS('ellipsis', 'eui-ellipsis');
+}
+
 function generateInputComponentCSS() {
   const selector =
     'eui-input, [data-eui-context] .eui-input-group, [data-eui-context] .eui-select, [data-eui-context] .eui-textarea';
   return generateSimpleComponentCSS('input', selector);
+}
+
+function generateSelectComponentCSS() {
+  const selector =
+    'eui-select-wrapper, [data-eui-context] .eui-select-popover';
+  return generateSimpleComponentCSS('select', selector);
 }
 
 function generateInputGroupComponentCSS() {
@@ -445,6 +455,8 @@ function main() {
     { name: 'divider', css: generateDividerComponentCSS() },
     { name: 'calendar', css: generateCalendarComponentCSS() },
     { name: 'tooltip', css: generateTooltipComponentCSS() },
+    { name: 'ellipsis', css: generateEllipsisComponentCSS() },
+    { name: 'select', css: generateSelectComponentCSS() },
     { name: 'side-nav', css: generateSideNavComponentCSS() },
     { name: 'logo', css: generateLogoComponentCSS() },
     { name: 'form', css: generateFormComponentCSS() }

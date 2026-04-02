@@ -36,13 +36,13 @@
     --eui-color-neutral-text-muted: var(--eui-color-neutral-500);
     --eui-color-neutral-text-secondary: var(--eui-color-neutral-700);
     --eui-color-signal-keyboardFocus: var(--eui-color-signal-500);
-    --eui-color-status-application-completed: var(--eui-color-status-application-500);
-    --eui-color-status-application-discontinued: var(--eui-color-status-application-500);
-    --eui-color-status-application-majorDisruption: var(--eui-color-status-application-500);
-    --eui-color-status-application-minorDisruption: var(--eui-color-status-application-500);
-    --eui-color-status-application-onTrack: var(--eui-color-status-application-500);
-    --eui-color-status-application-pending: var(--eui-color-status-application-500);
-    --eui-color-status-application-upcoming: var(--eui-color-status-application-500);
+    --eui-color-status-application-completed: oklch(51% 0.16 256);
+    --eui-color-status-application-discontinued: oklch(32% 0.01 61);
+    --eui-color-status-application-majorDisruption: oklch(58% 0.23 26);
+    --eui-color-status-application-minorDisruption: oklch(89% 0.18 95);
+    --eui-color-status-application-onTrack: oklch(66% 0.18 137);
+    --eui-color-status-application-pending: oklch(64% 0.00 326);
+    --eui-color-status-application-upcoming: oklch(57% 0.10 312);
     --eui-color-status-error-background: oklch(84% 0.10 24);
     --eui-color-status-error-border: oklch(64% 0.21 25);
     --eui-color-status-error-primary: oklch(64% 0.21 25);
@@ -111,6 +111,7 @@
     --eui-layout-toolbar-height: var(--eui-control-height-lg);
     --eui-layout-toolbar-paddingY: var(--eui-spacing-md);
     --eui-opacity-muted: 0.6;
+    --eui-overlay-offset-dropdown: 5px;
     --eui-overlay-radius: 4px;
     --eui-radius-default: var(--eui-radius-md);
     --eui-radius-extra-large: var(--eui-radius-xl);

@@ -119,9 +119,11 @@
       "--eui-badge-dismiss-size-default-padding-block": { "type": "dimension" },
       "--eui-badge-dismiss-size-default-padding-inline": { "type": "dimension" },
       "--eui-badge-dismiss-size-default-icon-size": { "type": "dimension" },
+      "--eui-badge-dismiss-size-default-min-width": { "type": "dimension" },
       "--eui-badge-dismiss-size-small-padding-block": { "type": "dimension" },
       "--eui-badge-dismiss-size-small-padding-inline": { "type": "dimension" },
-      "--eui-badge-dismiss-size-small-icon-size": { "type": "dimension" }
+      "--eui-badge-dismiss-size-small-icon-size": { "type": "dimension" },
+      "--eui-badge-dismiss-size-small-min-width": { "type": "dimension" }
     },
     "shape": {
       "--eui-badge-shape-pill-radius": { "type": "dimension" },
@@ -158,7 +160,8 @@
       "--eui-badge-size-lineHeight": { "type": "string" },
       "--eui-badge-dismiss-padding-block": { "type": "dimension" },
       "--eui-badge-dismiss-padding-inline": { "type": "dimension" },
-      "--eui-badge-dismiss-icon-size": { "type": "dimension" }
+      "--eui-badge-dismiss-icon-size": { "type": "dimension" },
+      "--eui-badge-dismiss-size-min-width": { "type": "dimension" }
     }
   },
 

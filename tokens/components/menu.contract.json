@@ -1,0 +1,129 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "menu",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "legacyCss": "src/ui/menu.css",
+    "runtimePositioning": "packages/tsx/menu/menu.tsx",
+    "note": "Contract for floating menu trigger/list/menu-item behavior."
+  },
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-menu-list",
+    "slots": {
+      "item": ".eui-menu-item",
+      "divider": ".eui-divider"
+    }
+  },
+  "invariants": [
+    "Menu list is rendered as a floating surface anchored to trigger.",
+    "Trigger-to-menu gap must resolve from semantic overlay token; hardcoded offset is forbidden.",
+    "Menu focus visibility follows system focus policy and canonical focus geometry."
+  ],
+  "axes": {
+    "placement": {
+      "type": "enum",
+      "default": "bottom-start",
+      "values": ["bottom-start", "bottom-end", "top-start", "top-end"],
+      "notes": "Floating placement relative to trigger."
+    },
+    "state": {
+      "type": "enum",
+      "default": "default",
+      "values": ["default", "hover", "focus", "selected", "disabled"],
+      "notes": "Menu item interactive state surface."
+    }
+  },
+  "componentVars": {
+    "surface": {
+      "--eui-menu-colors-background": {
+        "type": "color"
+      },
+      "--eui-menu-border-width": {
+        "type": "dimension"
+      },
+      "--eui-menu-border-style": {
+        "type": "string"
+      },
+      "--eui-menu-border-color": {
+        "type": "color"
+      },
+      "--eui-menu-shape-radius": {
+        "type": "dimension"
+      },
+      "--eui-menu-shadow": {
+        "type": "shadow"
+      }
+    },
+    "size": {
+      "--eui-menu-size-min-width": {
+        "type": "dimension"
+      },
+      "--eui-menu-size-max-width": {
+        "type": "dimension"
+      },
+      "--eui-menu-size-max-height": {
+        "type": "dimension"
+      }
+    },
+    "spacing": {
+      "--eui-menu-spacing-list-padding": {
+        "type": "dimension"
+      },
+      "--eui-menu-spacing-item-gap": {
+        "type": "dimension"
+      },
+      "--eui-menu-spacing-item-padding-vertical": {
+        "type": "dimension"
+      },
+      "--eui-menu-spacing-item-padding-horizontal": {
+        "type": "dimension"
+      },
+      "--eui-menu-spacing-divider-margin": {
+        "type": "dimension"
+      }
+    },
+    "itemColors": {
+      "--eui-menu-colors-item-text": {
+        "type": "color"
+      },
+      "--eui-menu-colors-item-text-disabled": {
+        "type": "color"
+      },
+      "--eui-menu-colors-item-background-default": {
+        "type": "color"
+      },
+      "--eui-menu-colors-item-background-hover": {
+        "type": "color"
+      },
+      "--eui-menu-colors-item-background-focus": {
+        "type": "color"
+      },
+      "--eui-menu-colors-item-background-selected": {
+        "type": "color"
+      }
+    },
+    "semanticDeps": {
+      "--eui-overlay-offset-dropdown": "{eui.overlay.offset.dropdown}",
+      "--eui-focus-ring-offset-default": {
+        "type": "dimension"
+      },
+      "--eui-focus-ring-width": {
+        "type": "dimension"
+      }
+    }
+  },
+  "behavior": {
+    "positioning": {
+      "engine": "floating-ui",
+      "offsetMainAxis": "var(--eui-overlay-offset-dropdown)",
+      "offsetFallbackPx": 5,
+      "runtimeResolver": "Menu computes mainAxis from semantic overlay offset and applies fallback when unresolved."
+    },
+    "interaction": {
+      "dismiss": "Click outside and Escape close the menu.",
+      "focus": "Menu item focus ring uses canonical focus geometry tokens."
+    }
+  }
+}

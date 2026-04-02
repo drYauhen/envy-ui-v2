@@ -1,0 +1,11 @@
+/**
+ * Ellipsis Component Tokens - Generated from tokens/components/ellipsis.tokens.json
+ */
+
+@layer eui-components {
+  /* ellipsis variables */
+  [data-eui-context] .eui-ellipsis {
+    --eui-ellipsis-tooltip-delay: var(--eui-time-delay-default);
+  }
+
+}

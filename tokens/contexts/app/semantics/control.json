@@ -58,6 +58,13 @@
         "$value": "{eui.radius.md}",
         "$type": "dimension",
         "$description": "Default overlay radius for tooltip, dropdown, popover, and calendar surfaces."
+      },
+      "offset": {
+        "dropdown": {
+          "$value": "5px",
+          "$type": "dimension",
+          "$description": "Default vertical gap between a trigger control and its dropdown/popover surface."
+        }
       }
     },
     "surface": {

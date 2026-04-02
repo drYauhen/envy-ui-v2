@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design-tokens.github.io/schemas/component-contract.schema.json",
+  "title": "Component Contract Schema",
+  "description": "Schema for component contracts in the token-driven design system.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "component",
+    "version",
+    "status",
+    "selectors",
+    "axes",
+    "componentVars",
+    "behavior"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema."
+    },
+    "component": {
+      "type": "string",
+      "description": "Component identifier (for example: badge, select, menu)."
+    },
+    "version": {
+      "type": "string",
+      "description": "Contract version identifier."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "proposed", "accepted", "deprecated"],
+      "description": "Contract lifecycle state."
+    },
+    "source": {
+      "type": "object",
+      "description": "Source references and migration notes.",
+      "additionalProperties": true
+    },
+    "selectors": {
+      "type": "object",
+      "description": "Selector contract used by component styles.",
+      "required": ["scope", "root"],
+      "properties": {
+        "scope": {
+          "type": "string"
+        },
+        "root": {
+          "type": "string"
+        },
+        "slots": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "axes": {
+      "type": "object",
+      "description": "Public semantic axes and accepted values.",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+          "type": "object",
+          "required": ["type"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["enum", "boolean", "string", "number"]
+            },
+            "default": {},
+            "values": {
+              "type": "array",
+              "items": {
+                "type": ["string", "number", "boolean"]
+              }
+            },
+            "attribute": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "componentVars": {
+      "type": "object",
+      "description": "Declared component variables grouped by concern.",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+          "type": "object",
+          "patternProperties": {
+            "^--[a-zA-Z][a-zA-Z0-9_-]*$": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "$value": {}
+                  },
+                  "additionalProperties": true
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "behavior": {
+      "type": "object",
+      "description": "Behavioral mapping from contract vars/axes to runtime.",
+      "additionalProperties": true
+    },
+    "nonCanonicalThemeNotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
