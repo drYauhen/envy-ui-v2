@@ -415,14 +415,13 @@ export const DocViewer = ({
 
               const dataAttr = storybookHref === '#' && targetAdrNumber ? { 'data-adr-link': targetAdrNumber } : {};
 
-              const resolvedClassName = ['eui-button', props.className].filter(Boolean).join(' ');
+              const resolvedClassName = ['eui-link', props.className].filter(Boolean).join(' ');
 
               return (
                 <a
                   href={storybookHref}
                   {...dataAttr}
                   className={resolvedClassName}
-                  data-eui-intent="link"
                   {...props}
                 >
                   {children}

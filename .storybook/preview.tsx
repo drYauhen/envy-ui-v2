@@ -15,6 +15,7 @@ import '../src/ui/components/badge/badge.index.css';
 import '../src/ui/components/divider/divider.index.css';
 import '../src/ui/components/tooltip/tooltip.index.css';
 import '../src/ui/components/ellipsis/ellipsis.index.css';
+import '../src/ui/components/link/link.index.css';
 import '../src/ui/components/checkbox/checkbox.index.css';
 import '../src/ui/components/switch/switch.index.css';
 import '../src/ui/components/input/input.index.css';

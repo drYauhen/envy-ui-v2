@@ -38,6 +38,7 @@ const RUNTIME_CSS_FILES = [
   'generated/css/components/table-container.tokens.css',
   'generated/css/components/callout.tokens.css',
   'generated/css/components/button.tokens.css',
+  'generated/css/components/link.tokens.css',
   'generated/css/components/input.tokens.css',
   'generated/css/components/input-group.tokens.css',
   'generated/css/components/avatar.tokens.css',
@@ -50,6 +51,7 @@ const RUNTIME_CSS_FILES = [
   // NOTE: Include structure CSS for components that define local vars used by tokens.
   'src/ui/components/badge/badge.structure.css',
   'src/ui/components/card/card.structure.css',
+  'src/ui/components/link/link.structure.css',
   'src/ui/components/input/input.structure.css',
   'src/ui/components/input-group/input-group.structure.css',
   'src/ui/components/form/form.structure.css',

@@ -365,6 +365,10 @@ function generateButtonComponentCSS() {
   );
 }
 
+function generateLinkComponentCSS() {
+  return generateComponentCSS('link', 'eui-link');
+}
+
 function generateDividerComponentCSS() {
   return generateComponentCSS('divider', 'eui-divider');
 }
@@ -452,6 +456,7 @@ function main() {
     { name: 'table-container', css: generateTableContainerComponentCSS() },
     { name: 'callout', css: generateCalloutComponentCSS() },
     { name: 'button', css: generateButtonComponentCSS() },
+    { name: 'link', css: generateLinkComponentCSS() },
     { name: 'divider', css: generateDividerComponentCSS() },
     { name: 'calendar', css: generateCalendarComponentCSS() },
     { name: 'tooltip', css: generateTooltipComponentCSS() },

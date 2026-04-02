@@ -199,7 +199,7 @@ export const DocumentMetadata = ({ fields, variant = 'adr', markdownPath }: Docu
               <ul className="eui-docs-metadata-related-list">
                 {resolvedLinks!.map((link, index) => (
                   <li key={index}>
-                    <a href={link.href} className="eui-button" data-eui-intent="link">
+                    <a href={link.href} className="eui-link">
                       {link.text}
                     </a>
                     {link.description && (

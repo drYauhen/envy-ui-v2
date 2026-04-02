@@ -1,0 +1,66 @@
+{
+  "$schema": "../../schemas/component-contract.schema.json",
+  "component": "link",
+  "version": "v1-draft",
+  "status": "draft",
+  "source": {
+    "note": "Canonical inline link primitive extracted from docs usage."
+  },
+
+  "selectors": {
+    "scope": "[data-eui-context]",
+    "root": ".eui-link",
+    "slots": {}
+  },
+
+  "invariants": [
+    "Link is a text primitive and must inherit surrounding typography.",
+    "No hardcoded color values in component CSS; only token variables are allowed.",
+    "Focus indication must use token-driven focus ring variables."
+  ],
+
+  "axes": {},
+
+  "componentVars": {
+    "colors": {
+      "--eui-link-colors-text": { "type": "color" },
+      "--eui-link-state-visited-colors-text": { "type": "color" },
+      "--eui-link-state-hover-colors-text": { "type": "color" }
+    },
+    "typography": {
+      "--eui-link-typography-textDecoration": { "type": "textDecoration" }
+    },
+    "shape": {
+      "--eui-link-shape-radius": { "type": "dimension" }
+    },
+    "focus": {
+      "--eui-link-focus-ring-color": { "type": "color" },
+      "--eui-link-focus-ring-width": { "type": "dimension" },
+      "--eui-link-focus-ring-offset": { "type": "dimension" }
+    }
+  },
+
+  "behavior": {
+    "layout": {
+      "display": "inline",
+      "typography": "inherit"
+    },
+    "states": {
+      "default": {
+        "color": "var(--eui-link-colors-text)",
+        "textDecoration": "var(--eui-link-typography-textDecoration)"
+      },
+      "visited": {
+        "color": "var(--eui-link-state-visited-colors-text)"
+      },
+      "hover": {
+        "color": "var(--eui-link-state-hover-colors-text)"
+      },
+      "focusVisible": {
+        "boxShadow": "0 0 0 var(--eui-link-focus-ring-offset) var(--eui-color-background-surface), 0 0 0 calc(var(--eui-link-focus-ring-offset) + var(--eui-link-focus-ring-width)) var(--eui-focus-ring-color-keyboard)"
+      }
+    }
+  },
+
+  "nonCanonicalThemeNotes": []
+}

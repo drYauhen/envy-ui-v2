@@ -1,0 +1,41 @@
+/**
+ * Link Component - Layout & Structure
+ *
+ * This file contains runtime selector mapping for link primitive behavior.
+ *
+ * Generated from: tokens/components/link.contract.json
+ */
+
+@layer eui-components {
+  [data-eui-context] .eui-link {
+    color: var(--eui-link-colors-text);
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    white-space: inherit;
+    border-radius: var(--eui-link-shape-radius);
+    text-decoration: var(--eui-link-typography-textDecoration);
+  }
+
+  [data-eui-context] .eui-link:visited {
+    color: var(--eui-link-state-visited-colors-text);
+  }
+
+  [data-eui-context] .eui-link:hover {
+    color: var(--eui-link-state-hover-colors-text);
+  }
+
+  [data-eui-context] .eui-link:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-link-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-link-focus-ring-offset) + var(--eui-link-focus-ring-width)) var(--eui-link-focus-ring-color);
+  }
+
+  [data-eui-context] .eui-link:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 var(--eui-link-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
+      0 0 0 calc(var(--eui-link-focus-ring-offset) + var(--eui-link-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+  }
+}

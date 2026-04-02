@@ -1,0 +1,69 @@
+{
+  "$schema": "../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "link": {
+      "base": {
+        "colors": {
+          "text": {
+            "$value": "{eui.color.status.info.text}",
+            "$type": "color",
+            "$description": "Default inline link color."
+          }
+        },
+        "shape": {
+          "radius": {
+            "$value": "{eui.inline.radius}",
+            "$type": "dimension",
+            "$description": "Link focus ring radius."
+          }
+        },
+        "typography": {
+          "textDecoration": {
+            "$value": "{eui.typography.textDecoration.underline}",
+            "$type": "textDecoration",
+            "$description": "Inline link underline style."
+          }
+        },
+        "focus": {
+          "ring": {
+            "color": {
+              "$value": "{eui.color.focus.ring}",
+              "$type": "color",
+              "$description": "Link focus ring color."
+            },
+            "width": {
+              "$value": "{eui.focus.ring.width}",
+              "$type": "dimension",
+              "$description": "Link focus ring width."
+            },
+            "offset": {
+              "$value": "{eui.focus.ring.offset.default}",
+              "$type": "dimension",
+              "$description": "Link focus ring offset."
+            }
+          }
+        }
+      },
+      "state": {
+        "visited": {
+          "colors": {
+            "text": {
+              "$value": "{eui.color.status.info.text}",
+              "$type": "color",
+              "$description": "Visited inline link color."
+            }
+          }
+        },
+        "hover": {
+          "colors": {
+            "text": {
+              "$value": "{eui.color.status.info.text}",
+              "$type": "color",
+              "$description": "Hover inline link color."
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -548,6 +548,7 @@ function generateEntrypointCSS() {
 @import './components/table-container.tokens.css';
 @import './components/callout.tokens.css';
 @import './components/button.tokens.css';
+@import './components/link.tokens.css';
 @import './components/input.tokens.css';
 @import './components/input-group.tokens.css';
 @import './components/select.tokens.css';

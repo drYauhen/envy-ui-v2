@@ -7,6 +7,7 @@ import inputTokens from '../../../tokens/components/input.tokens.json';
 import inputGroupTokens from '../../../tokens/components/input-group.tokens.json';
 import skeletonTokens from '../../../tokens/components/skeleton.tokens.json';
 import switchTokens from '../../../tokens/components/switch.tokens.json';
+import linkTokens from '../../../tokens/components/link.tokens.json';
 import neutral from '../../../tokens/primitives/neutral.json';
 import brand from '../../../tokens/primitives/brand.json';
 import accent from '../../../tokens/primitives/accent.json';
@@ -150,6 +151,7 @@ const inputRefs = sortRefs(collectRefs(inputTokens));
 const inputGroupRefs = sortRefs(collectRefs(inputGroupTokens));
 const skeletonRefs = sortRefs(collectRefs(skeletonTokens));
 const switchRefs = sortRefs(collectRefs(switchTokens));
+const linkRefs = sortRefs(collectRefs(linkTokens));
 
 const renderComponentTokens = (title: string, refs: TokenRef[]) => (
   <TokenPage>
@@ -203,4 +205,9 @@ export const Skeleton: Story = {
 export const Switch: Story = {
   name: 'Switch Tokens',
   render: () => renderComponentTokens('Switch Tokens', switchRefs)
+};
+
+export const Link: Story = {
+  name: 'Link Tokens',
+  render: () => renderComponentTokens('Link Tokens', linkRefs)
 };

@@ -1,0 +1,12 @@
+/**
+ * Link Component - Index
+ *
+ * Entry point that imports Link CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/link.contract.json
+ * Token variables: generated/css/components/link.tokens.css
+ */
+
+@import './link.structure.css';
