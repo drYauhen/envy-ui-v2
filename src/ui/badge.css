@@ -84,6 +84,7 @@
   --eui-badge-color: var(--eui-badge-colors-neutral-solid-text);
 }
 
+
 [data-eui-context] .eui-badge[data-eui-variant='solid'] {
   --eui-badge-background: var(--eui-badge-colors-neutral-solid-background);
   --eui-badge-border: var(--eui-badge-colors-neutral-solid-border);
