@@ -2,7 +2,13 @@
   "actions": {
     "apply": "Anwenden",
     "save": "Speichern",
+    "saveChanges": "Änderungen speichern",
     "cancel": "Abbrechen"
+  },
+  "labels": {
+    "settings": "Einstellungen",
+    "status": "Status",
+    "name": "Name"
   },
   "messages": {
     "loading": "Wird geladen…"
