@@ -543,11 +543,37 @@ export const adrs: DocMetadata[] = [
     "category": "adr",
     "status": "Accepted (Partially Implemented)",
     "date": "2026-02-05",
-    "lastUpdated": "",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
+    "lastUpdated": "",
     "exportName": "densityAxisContextThemeDensity",
     "markdownPath": "/docs/adr/ADR-0042-density-axis-defaulting-and-inheritance.md",
     "storybookId": "docs-adr--density-axis-context-theme-density"
+  },
+  {
+    "number": "0043",
+    "title": "Dropdown Trigger Gap and Focus Clearance",
+    "category": "adr",
+    "status": "Accepted",
+    "date": "2026-02-18",
+    "lastUpdated": "2026-02-18",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "dropdownTriggerGapandFocusClearance",
+    "markdownPath": "/docs/adr/ADR-0043-dropdown-trigger-gap-and-focus-clearance.md",
+    "storybookId": "docs-adr--dropdown-trigger-gapand-focus-clearance"
+  },
+  {
+    "number": "0044",
+    "title": "Component Contract Definition and Agent Consumption",
+    "category": "adr",
+    "status": "Accepted",
+    "date": "2026-02-18",
+    "lastUpdated": "2026-02-18",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "componentContractDefinitionandAgentConsumption",
+    "markdownPath": "/docs/adr/ADR-0044-component-contract-definition-and-agent-consumption.md",
+    "storybookId": "docs-adr--component-contract-definitionand-agent-consumption"
   }
 ];

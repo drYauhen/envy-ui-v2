@@ -62,6 +62,17 @@ export const architectures: DocMetadata[] = [
   },
   {
     "number": "001",
+    "title": "Translation Architecture",
+    "category": "architecture",
+    "majorCategory": "I18N",
+    "status": "Proposed",
+    "date": "2026-01-25",
+    "exportName": "ArchI18nNum001TranslationArchitecture",
+    "markdownPath": "/docs/architecture/ARCH-i18n-001-translation-architecture.md",
+    "storybookId": "docs-architecture--arch-i-18-n-num-001-translation-architecture"
+  },
+  {
+    "number": "001",
     "title": "Layout Composition Guide",
     "category": "architecture",
     "majorCategory": "LAYOUT",

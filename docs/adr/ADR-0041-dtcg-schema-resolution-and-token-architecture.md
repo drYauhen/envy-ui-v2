@@ -162,8 +162,8 @@ tokens/app/semantic/typography/
 
 ## References
 
-- **DTCG [2025](../steps/2025-12-20-step.md).10 Specification**: https://www.designtokens.org/TR/[2025](../steps/2025-12-20-step.md).10/
-- **DTCG Format Module**: https://www.designtokens.org/TR/[2025](../steps/2025-12-20-step.md).10/format/
+- **DTCG 2025.10 Specification**: https://www.designtokens.org/TR/2025.10/
+- **DTCG Format Module**: https://www.designtokens.org/TR/2025.10/format/
 - **Style Dictionary DTCG Support**: Native DTCG format implementation
 
 ## Changelog
