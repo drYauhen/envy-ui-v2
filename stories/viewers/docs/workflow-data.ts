@@ -101,5 +101,19 @@ export const workflows: DocMetadata[] = [
     markdownPath: "/docs/workflows/WORKFLOW-007-dev-app-workflow.md",
     storybookId: "docs-workflows--dev-app-workflow",
     aliases: ["workflows/dev-app-workflow.md"]
+  },
+  {
+    number: "008",
+    title: "MCP Configuration Workflow",
+    category: "workflow",
+    status: "Active",
+    date: "2026-04-02",
+    lastUpdated: "2026-04-02",
+    owner: "Eugene Goncharov",
+    assistance: "AI-assisted drafting (human-reviewed)",
+    exportName: "mcpConfigurationWorkflow",
+    markdownPath: "/docs/workflows/WORKFLOW-008-mcp-configuration-workflow.md",
+    storybookId: "docs-workflows--mcp-configuration-workflow",
+    aliases: ["workflows/mcp-configuration-workflow.md"]
   }
 ];

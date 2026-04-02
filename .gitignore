@@ -70,3 +70,8 @@ docs/tasks/
 # Personal workspace (not committed)
 # ===============================
 personal/
+
+# ===============================
+# Local MCP config (machine-specific)
+# ===============================
+.mcp.json

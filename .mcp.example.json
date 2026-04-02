@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "figma-console-local": {
+      "command": "node",
+      "args": [
+        "/ABSOLUTE/PATH/TO/figma-console-mcp/dist/local.js"
+      ]
+    }
+  }
+}

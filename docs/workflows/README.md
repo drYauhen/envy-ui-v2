@@ -20,6 +20,7 @@ Each workflow document describes:
 - **[Layer Generation Workflow](WORKFLOW-006-layer-generation-workflow.md)** - Managing component layers and automated generation
 - **[Tokens Workflow](WORKFLOW-005-tokens-workflow.md)** - Working with design tokens
 - **[Figma Workflow](WORKFLOW-002-figma-workflow.md)** - Figma integration (plugin, scripts, artifacts)
+- **[MCP Configuration Workflow](WORKFLOW-008-mcp-configuration-workflow.md)** - Local/templated MCP server setup and inventory
 - **[Storybook Workflow](WORKFLOW-003-storybook-workflow.md)** - Storybook development and documentation
 - **[Scripts Reference](WORKFLOW-004-scripts-reference.md)** - Root-level npm scripts and usage
 - **[ADR Workflow](WORKFLOW-001-adr-workflow.md)** - Writing and managing Architectural Decision Records
