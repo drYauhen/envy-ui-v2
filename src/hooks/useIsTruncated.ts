@@ -1,9 +1,14 @@
 import { useState, useLayoutEffect, RefObject } from 'react';
 
+const canUseResizeObserver = () => typeof ResizeObserver !== 'undefined';
+
+const isOverflowing = (element: HTMLElement) =>
+  element.scrollWidth > element.clientWidth;
+
 /**
  * Detects if an element's content is truncated (overflowing).
  */
-export function useIsTruncated(ref: RefObject<HTMLElement>, content: any) {
+export function useIsTruncated(ref: RefObject<HTMLElement>, content: unknown) {
   const [isTruncated, setIsTruncated] = useState(false);
 
   useLayoutEffect(() => {
@@ -11,11 +16,15 @@ export function useIsTruncated(ref: RefObject<HTMLElement>, content: any) {
     if (!element) return;
 
     const checkTruncation = () => {
-      // Use a small threshold to avoid false positives due to sub-pixel rendering
-      setIsTruncated(element.scrollWidth > element.clientWidth);
+      setIsTruncated(isOverflowing(element));
     };
 
     checkTruncation();
+
+    if (!canUseResizeObserver()) {
+      return;
+    }
+
     const observer = new ResizeObserver(checkTruncation);
     observer.observe(element);
 

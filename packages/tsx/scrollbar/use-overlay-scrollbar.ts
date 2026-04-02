@@ -33,7 +33,7 @@ export interface UseOverlayScrollbarReturn {
   /**
    * Ref for content container (should have overflow-y: auto)
    */
-  contentRef: React.RefObject<HTMLDivElement>;
+  contentRef: React.RefObject<HTMLElement>;
   /**
    * Ref for track element
    */
@@ -80,7 +80,7 @@ export function useOverlayScrollbar(
     thumbHoverColor = 'rgba(0, 0, 0, 0.2)',
   } = options;
 
-  const contentRef = React.useRef<HTMLDivElement>(null);
+  const contentRef = React.useRef<HTMLElement>(null);
   const trackRef = React.useRef<HTMLDivElement>(null);
   const thumbRef = React.useRef<HTMLDivElement>(null);
   const isDraggingRef = React.useRef(false);
@@ -253,4 +253,3 @@ export function useOverlayScrollbar(
     containerProps,
   };
 }
-

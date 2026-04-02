@@ -51,6 +51,14 @@ export interface SearchableSelectProps extends Omit<AriaComboBoxProps<Searchable
    * Additional CSS class
    */
   className?: string;
+  /**
+   * Max width of the dropdown. Number values are treated as pixels.
+   */
+  popoverMaxWidth?: number | string;
+  /**
+   * Max height of the dropdown. Number values are treated as pixels.
+   */
+  popoverMaxHeight?: number | string;
 }
 
 export const SearchableSelect = React.forwardRef<HTMLDivElement, SearchableSelectProps>(
@@ -66,6 +74,8 @@ export const SearchableSelect = React.forwardRef<HTMLDivElement, SearchableSelec
       error,
       size = 'md',
       className,
+      popoverMaxWidth,
+      popoverMaxHeight,
       ...rest
     },
     ref
@@ -167,6 +177,8 @@ export const SearchableSelect = React.forwardRef<HTMLDivElement, SearchableSelec
           onClose={() => state.setOpen(false)}
           referenceRef={inputRef}
           placement="bottom-start"
+          maxWidth={popoverMaxWidth}
+          maxHeight={popoverMaxHeight}
         >
           <SelectListBox {...listBoxProps} ref={listBoxRef}>
             {state.collection.size === 0 ? (
@@ -224,4 +236,3 @@ function SearchableSelectOptionComponent({ item, state }: SearchableSelectOption
     </SelectOptionPrimitive>
   );
 }
-

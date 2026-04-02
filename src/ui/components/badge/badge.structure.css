@@ -23,6 +23,8 @@
     --eui-badge-dismiss-padding-block: var(--eui-badge-dismiss-size-default-padding-block);
     --eui-badge-dismiss-padding-inline: var(--eui-badge-dismiss-size-default-padding-inline);
     --eui-badge-dismiss-icon-size: var(--eui-badge-dismiss-size-default-icon-size);
+    --eui-badge-dismiss-size-min-width: var(--eui-badge-dismiss-size-default-min-width);
+    --eui-badge-dismiss-divider-color: var(--eui-badge-border);
 
     /* Layout structure - container-driven sizing */
     display: inline-flex;
@@ -65,6 +67,7 @@
     --eui-badge-dismiss-padding-block: var(--eui-badge-dismiss-size-small-padding-block);
     --eui-badge-dismiss-padding-inline: var(--eui-badge-dismiss-size-small-padding-inline);
     --eui-badge-dismiss-icon-size: var(--eui-badge-dismiss-size-small-icon-size);
+    --eui-badge-dismiss-size-min-width: var(--eui-badge-dismiss-size-small-min-width);
   }
 
   /* Shape: pill */
@@ -90,6 +93,7 @@
     color: var(--eui-badge-color);
     border-color: var(--eui-badge-border);
   }
+
 
   /* Success tone */
   [data-eui-context] .eui-badge[data-eui-tone='success'] {
@@ -166,12 +170,14 @@
     --eui-badge-background: var(--eui-badge-colors-neutral-solid-background);
     --eui-badge-border: var(--eui-badge-colors-neutral-solid-border);
     --eui-badge-color: var(--eui-badge-colors-neutral-solid-text);
+    --eui-badge-dismiss-divider-color: var(--eui-badge-color);
   }
 
   /* Outline variant */
   [data-eui-context] .eui-badge[data-eui-variant='outline'] {
     --eui-badge-background: var(--eui-badge-colors-variant-outline-background);
   }
+
 
   /* ============================================================================
      Badge Component - Dismissible Variant
@@ -193,6 +199,8 @@
     gap: var(--eui-badge-size-gap);
     padding-block: var(--eui-badge-size-padding-block);
     padding-inline: var(--eui-badge-size-padding-inline);
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss'] {
@@ -201,10 +209,12 @@
     justify-content: center;
     align-self: stretch;
     flex: 0 0 auto;
+    min-inline-size: var(--eui-badge-dismiss-size-min-width, 1.5em);
     padding-block: var(--eui-badge-dismiss-padding-block);
     padding-inline: var(--eui-badge-dismiss-padding-inline);
     border: 0;
-    border-left: var(--eui-badge-dismiss-divider-width) var(--eui-badge-border-style) currentColor;
+    border-left: var(--eui-badge-dismiss-divider-width) var(--eui-badge-border-style)
+      var(--eui-badge-dismiss-divider-color, currentColor);
     background: transparent;
     color: inherit;
     font-family: inherit;
@@ -238,10 +248,14 @@
   [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:not(:disabled):hover {
     opacity: var(--eui-badge-dismiss-icon-opacityHover);
     filter: var(--eui-badge-dismiss-state-hover-filter);
+    background-color: var(--eui-color-status-error-background);
+    color: var(--eui-color-status-error-text);
   }
 
   [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:not(:disabled):active {
     filter: var(--eui-badge-dismiss-state-active-filter);
+    background-color: var(--eui-color-status-error-solid);
+    color: var(--eui-color-status-error-text);
   }
 
   [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:focus {
@@ -249,6 +263,8 @@
     box-shadow:
       0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
       0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-badge-focus-color);
+    background-color: var(--eui-color-status-error-background);
+    color: var(--eui-color-status-error-text);
   }
 
   [data-eui-context] .eui-badge[data-eui-dismissible="true"] [data-eui-slot='dismiss']:focus-visible {
@@ -256,6 +272,8 @@
     box-shadow:
       0 0 0 var(--eui-badge-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
       0 0 0 calc(var(--eui-badge-focus-ring-offset) + var(--eui-badge-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+    background-color: var(--eui-color-status-error-background);
+    color: var(--eui-color-status-error-text);
   }
 
   /* ============================================================================

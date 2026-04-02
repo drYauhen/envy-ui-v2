@@ -10,6 +10,7 @@
   box-shadow: var(--eui-select-dropdown-shadow);
   padding: var(--eui-select-dropdown-padding);
   min-width: 100%;
+  max-width: var(--eui-select-popover-max-width, 400px);
   max-height: var(--eui-select-dropdown-max-height);
   overflow-y: auto;
   overflow-x: hidden;
@@ -127,4 +128,3 @@
   position: relative;
   width: 100%;
 }
-

@@ -17,7 +17,17 @@
  * ```
  */
 
-import { useFloating, autoUpdate, offset, flip, shift, Placement } from '@floating-ui/react';
+import {
+  useFloating,
+  autoUpdate,
+  offset,
+  flip,
+  shift,
+  Placement,
+  type Strategy,
+  type OffsetOptions,
+  type Middleware
+} from '@floating-ui/react';
 import { useClick, useDismiss, useInteractions } from '@floating-ui/react';
 import React, { useRef, useEffect } from 'react';
 
@@ -29,7 +39,7 @@ export interface UseFloatingPositionOptions {
   /** Placement of the floating element relative to reference */
   placement?: Placement;
   /** Offset in pixels between reference and floating element */
-  offset?: number;
+  offset?: number | OffsetOptions;
   /** Whether clicking outside closes the floating element */
   clickOutsideToClose?: boolean;
   /** Whether pressing Escape closes the floating element */
@@ -38,6 +48,12 @@ export interface UseFloatingPositionOptions {
   clickToToggle?: boolean;
   /** External reference ref (if provided, will be used instead of internal ref) */
   referenceRef?: React.RefObject<HTMLElement> | ((node: HTMLElement | null) => void);
+  /** Positioning strategy for the floating element */
+  strategy?: Strategy;
+  /** Additional Floating UI middleware to apply */
+  middleware?: Middleware[];
+  /** Where to insert additional middleware relative to built-ins */
+  middlewarePosition?: 'beforeFlip' | 'afterShift';
 }
 
 export interface UseFloatingPositionReturn {
@@ -70,24 +86,33 @@ export function useFloatingPosition(
     clickOutsideToClose = true,
     escapeKeyToClose = true,
     clickToToggle = true,
-    referenceRef: externalReferenceRef
+    referenceRef: externalReferenceRef,
+    strategy = 'absolute',
+    middleware: extraMiddleware = [],
+    middlewarePosition = 'afterShift'
   } = options;
+
+  const baseOffset = offset(offsetValue);
+  const baseFlip = flip({
+    fallbackAxisSideDirection: 'start',
+    fallbackPlacements: ['top-start', 'top-end', 'bottom-start', 'bottom-end', 'left-start', 'right-start']
+  });
+  const baseShift = shift({
+    padding: 8,
+    crossAxis: true
+  });
+
+  const middleware =
+    middlewarePosition === 'beforeFlip'
+      ? [baseOffset, ...extraMiddleware, baseFlip, baseShift]
+      : [baseOffset, baseFlip, baseShift, ...extraMiddleware];
 
   const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
     onOpenChange: onOpenChange,
     placement: placement,
-    middleware: [
-      offset(offsetValue),
-      flip({
-        fallbackAxisSideDirection: 'start',
-        fallbackPlacements: ['top-start', 'top-end', 'bottom-start', 'bottom-end', 'left-start', 'right-start']
-      }),
-      shift({
-        padding: 8,
-        crossAxis: true
-      })
-    ]
+    strategy,
+    middleware
   });
 
   // Sync external referenceRef with Floating UI's internal ref
@@ -155,4 +180,3 @@ export function useFloatingPosition(
     context
   };
 }
-

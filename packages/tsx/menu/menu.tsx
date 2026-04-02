@@ -12,6 +12,12 @@ import systemMeta from '../../../system.meta.json';
 const SYSTEM_PREFIX = systemMeta?.tokens?.prefix ?? 'eui';
 const prefixedDataAttr = (name: string) => `data-${SYSTEM_PREFIX}-${name}`;
 const dataAttr = (value: boolean | undefined) => (value ? '' : undefined);
+const DEFAULT_DROPDOWN_OFFSET_PX = 5;
+
+function readCssLengthNumber(styles: CSSStyleDeclaration, variableName: string): number | null {
+  const parsed = Number.parseFloat(styles.getPropertyValue(variableName));
+  return Number.isFinite(parsed) ? parsed : null;
+}
 
 // Menu Context
 interface MenuContextValue {
@@ -72,7 +78,22 @@ export function Menu({ children, isOpen: controlledIsOpen, onOpenChange, placeme
     isOpen: menuTriggerState.isOpen,
     onOpenChange: menuTriggerState.setOpen,
     placement: placement,
-    offset: 8,
+    offset: ({ elements }) => {
+      if (typeof window === 'undefined') {
+        return { mainAxis: DEFAULT_DROPDOWN_OFFSET_PX, crossAxis: 0 };
+      }
+
+      const referenceElement = elements.reference as HTMLElement | null | undefined;
+      if (!referenceElement) {
+        return { mainAxis: DEFAULT_DROPDOWN_OFFSET_PX, crossAxis: 0 };
+      }
+
+      const styles = window.getComputedStyle(referenceElement);
+      const overlayOffset = readCssLengthNumber(styles, '--eui-overlay-offset-dropdown');
+      const mainAxis = overlayOffset ?? DEFAULT_DROPDOWN_OFFSET_PX;
+
+      return { mainAxis, crossAxis: 0 };
+    },
     clickOutsideToClose: true,
     escapeKeyToClose: true,
     clickToToggle: false // MenuList doesn't toggle, trigger does

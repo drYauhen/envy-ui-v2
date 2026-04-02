@@ -1,8 +1,7 @@
 import React, { useRef, Key, useMemo } from 'react';
-import { useSelect, useListBox, useOption, AriaSelectProps, mergeProps, usePress } from 'react-aria';
+import { useSelect, useListBox, useOption, AriaSelectProps, mergeProps, useButton } from 'react-aria';
 import { useSelectState } from 'react-stately';
 import { Item } from '@react-stately/collections';
-import { filterDOMProps } from '@react-aria/utils';
 import { SelectTrigger, SelectPopover, SelectListBox, SelectOption as SelectOptionPrimitive } from './primitives';
 
 export interface SelectItem {
@@ -52,6 +51,14 @@ export interface SelectProps extends Omit<AriaSelectProps<SelectItem>, 'children
    * Additional CSS class
    */
   className?: string;
+  /**
+   * Max width of the dropdown. Number values are treated as pixels.
+   */
+  popoverMaxWidth?: number | string;
+  /**
+   * Max height of the dropdown. Number values are treated as pixels.
+   */
+  popoverMaxHeight?: number | string;
 }
 
 export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
@@ -67,6 +74,8 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       error,
       size = 'md',
       className,
+      popoverMaxWidth,
+      popoverMaxHeight,
       ...rest
     },
     ref
@@ -118,50 +127,7 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     //   console.log('state.isOpen:', state.isOpen);
     // }, [triggerProps, state.isOpen]);
 
-    // React Aria's triggerProps includes onPress which only works for touch events
-    // We need to use usePress to handle all event types (mouse, touch, keyboard)
-    // But triggerProps.onPress has a condition: if (e.pointerType === "touch")
-    // So we need to wrap it to work for all event types
-    const originalOnPress = (triggerProps as any).onPress;
-    const { pressProps } = usePress({
-      onPress: (e: any) => {
-        // Toggle state: if open, close; if closed, open
-        if (e.pointerType !== 'touch') {
-          // For mouse clicks, toggle state directly
-          state.setOpen(!state.isOpen);
-        } else {
-          // For touch events, call original onPress
-          if (originalOnPress) {
-            originalOnPress(e);
-          }
-        }
-      },
-      isDisabled
-    });
-    
-    // Extract event handlers and filter non-DOM props
-    const {
-      onKeyDown,
-      onKeyUp,
-      onFocus,
-      onBlur,
-      ...restTriggerProps
-    } = triggerProps as any;
-    
-    // Filter out non-DOM props
-    const filteredProps = filterDOMProps(restTriggerProps, { labelable: true });
-    
-    // Merge pressProps (handles all event types) with other triggerProps
-    const domTriggerProps = mergeProps(
-      filteredProps,
-      pressProps,
-      {
-        onKeyDown,
-        onKeyUp,
-        onFocus,
-        onBlur
-      }
-    );
+    const { buttonProps } = useButton(triggerProps as any, triggerRef);
 
     // Use useListBox for proper listbox behavior
     const { listBoxProps } = useListBox(
@@ -185,7 +151,7 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         )}
 
         <SelectTrigger
-          {...mergeProps(domTriggerProps, {
+          {...mergeProps(buttonProps, {
             ref: triggerRef,
             size,
             isDisabled,
@@ -203,6 +169,8 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
           onClose={() => state.setOpen(false)}
           referenceRef={triggerRef}
           placement="bottom-start"
+          maxWidth={popoverMaxWidth}
+          maxHeight={popoverMaxHeight}
         >
           <SelectListBox {...listBoxProps} ref={listBoxRef}>
             {Array.from(state.collection).map((item) => (
@@ -254,4 +222,3 @@ function SelectOptionComponent({ item, state }: SelectOptionComponentProps) {
     </SelectOptionPrimitive>
   );
 }
-

@@ -1,0 +1,12 @@
+/**
+ * Ellipsis Component - Index
+ *
+ * Entry point that imports Ellipsis CSS files in correct order.
+ *
+ * Order: structure rules only (token variables come from global tokens.css).
+ *
+ * Generated from: tokens/components/ellipsis.contract.json
+ * Token variables: generated/css/components/ellipsis.tokens.css
+ */
+
+@import './ellipsis.structure.css';

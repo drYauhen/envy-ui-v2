@@ -1,0 +1,17 @@
+/**
+ * Ellipsis Component - Layout & Truncation
+ *
+ * Generated from: tokens/components/ellipsis.contract.json
+ * Token variables: generated/css/components/ellipsis.tokens.css
+ */
+
+@layer eui-components {
+  [data-eui-context] .eui-ellipsis {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-inline-size: 100%;
+    min-inline-size: 0;
+  }
+}

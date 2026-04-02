@@ -14,17 +14,19 @@ import '../src/ui/components/card/card.index.css';
 import '../src/ui/components/badge/badge.index.css';
 import '../src/ui/components/divider/divider.index.css';
 import '../src/ui/components/tooltip/tooltip.index.css';
+import '../src/ui/components/ellipsis/ellipsis.index.css';
 import '../src/ui/components/checkbox/checkbox.index.css';
 import '../src/ui/components/switch/switch.index.css';
 import '../src/ui/components/input/input.index.css';
 import '../src/ui/components/input-group/input-group.index.css';
 import '../src/ui/components/form/form.index.css';
+import '../src/ui/select.css';
+import '../src/ui/select-primitives.css';
 // import '../src/ui/checkbox.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/switch.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/input.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/input-group.css'; // LEGACY: Likely defines old component tokens
 // import '../src/ui/textarea.css'; // LEGACY: Likely defines old component tokens
-// import '../src/ui/select.css'; // LEGACY: Likely defines old component tokens
 import '../src/ui/avatar.css';
 import '../src/ui/avatar-group.css';
 import '../src/ui/counter.css';

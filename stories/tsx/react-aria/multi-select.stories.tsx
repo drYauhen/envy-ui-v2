@@ -17,24 +17,65 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-const basicItems: MultiSelectItem[] = [
-  { key: 'option1', label: 'Option 1' },
-  { key: 'option2', label: 'Option 2' },
-  { key: 'option3', label: 'Option 3' },
-  { key: 'option4', label: 'Option 4' },
-  { key: 'option5', label: 'Option 5' }
+const resizableContainerStyle: React.CSSProperties = {
+  width: '300px',
+  minWidth: '220px',
+  maxWidth: '640px',
+  resize: 'horizontal',
+  overflow: 'auto',
+  padding: '12px',
+  borderRadius: '8px',
+  border: '1px dashed var(--eui-color-border-default, #cbd5e1)'
+};
+
+const makeLongLabel = (index: number) =>
+  `Option ${index} — This is a deliberately long label for testing truncation inside the multi-select dropdown and badges.`;
+
+const makeShortLabel = (index: number) => `Option ${index}`;
+
+const makeSeededRandom = (seed: number) => {
+  let value = seed;
+  return () => {
+    value = (value * 1664525 + 1013904223) % 2 ** 32;
+    return value / 2 ** 32;
+  };
+};
+
+const buildItems = (count: number, seed: number) => {
+  const random = makeSeededRandom(seed);
+  return Array.from({ length: count }, (_, i) => {
+    const index = i + 1;
+    const isLong = random() > 0.5;
+    return {
+      key: `option-${index}`,
+      label: isLong ? makeLongLabel(index) : makeShortLabel(index)
+    };
+  });
+};
+
+const mixedItems: MultiSelectItem[] = [
+  { key: 'ultra-1', label: 'A' },
+  { key: 'ultra-2', label: 'B' },
+  { key: 'ultra-3', label: 'AB' },
+  { key: 'ultra-4', label: 'XYZ' },
+  { key: 'ultra-5', label: 'Alpha' }
 ];
 
-const manyItems: MultiSelectItem[] = Array.from({ length: 20 }, (_, i) => ({
-  key: `option-${i + 1}`,
-  label: `Option ${i + 1}`
-}));
+const basicItems: MultiSelectItem[] = [
+  ...mixedItems,
+  ...buildItems(7, 42)
+];
+
+const manyItems: MultiSelectItem[] = [
+  ...mixedItems,
+  ...buildItems(20, 1337)
+];
 
 export const Basic: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }}>
+        <div style={resizableContainerStyle}>
           <MultiSelect
             label="Choose options"
             placeholder="Select options..."
@@ -50,7 +91,7 @@ export const WithDefaultSelection: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }}>
+        <div style={resizableContainerStyle}>
           <MultiSelect
             label="Choose options"
             items={basicItems}
@@ -69,7 +110,7 @@ export const Controlled: Story = {
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
         {() => (
-          <div style={{ maxWidth: '300px' }}>
+          <div style={resizableContainerStyle}>
             <MultiSelect
               label="Controlled MultiSelect"
               items={basicItems}
@@ -90,7 +131,7 @@ export const ManyOptions: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px' }}>
+        <div style={resizableContainerStyle}>
           <MultiSelect
             label="Choose options"
             placeholder="Select options..."
@@ -102,20 +143,40 @@ export const ManyOptions: Story = {
   )
 };
 
+export const WithSearch: Story = {
+  render: () => (
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
+      {() => (
+        <div style={resizableContainerStyle}>
+          <MultiSelect
+            label="Choose options"
+            placeholder="Select options..."
+            items={manyItems}
+            isSearchable
+            searchPlaceholder="Type to filter..."
+            showSelectionSummary
+            selectionSummaryLabel="Selected"
+          />
+        </div>
+      )}
+    </MultiContextViewer>
+  )
+};
+
 export const WithDisabledOptions: Story = {
   render: () => {
     const itemsWithDisabled: MultiSelectItem[] = [
-      { key: 'option1', label: 'Option 1' },
-      { key: 'option2', label: 'Option 2', disabled: true },
-      { key: 'option3', label: 'Option 3' },
-      { key: 'option4', label: 'Option 4', disabled: true },
-      { key: 'option5', label: 'Option 5' }
-    ];
+      ...mixedItems,
+      ...buildItems(5, 7)
+    ].map((item, index) => ({
+      ...item,
+      disabled: index === 1 || index === 3
+    }));
 
     return (
       <MultiContextViewer contexts={[{ context: 'app' }]}>
         {() => (
-          <div style={{ maxWidth: '300px' }}>
+          <div style={resizableContainerStyle}>
             <MultiSelect
               label="Choose options"
               items={itemsWithDisabled}
@@ -132,7 +193,7 @@ export const Sizes: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <div style={{ ...resizableContainerStyle, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <MultiSelect
             label="Small"
             items={basicItems}
@@ -161,7 +222,7 @@ export const States: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <div style={{ ...resizableContainerStyle, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <MultiSelect
             label="Normal"
             items={basicItems}
@@ -189,7 +250,7 @@ export const InForm: Story = {
   render: () => (
     <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
-        <div style={{ maxWidth: '400px' }}>
+        <div style={resizableContainerStyle}>
           <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <MultiSelect
               label="Select multiple options"

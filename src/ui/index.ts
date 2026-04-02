@@ -24,6 +24,9 @@ export type { SkeletonAnimation, SkeletonGroupAnimation, SkeletonGroupProps, Ske
 export { Switch } from './switch';
 export type { SwitchProps, SwitchSize } from './switch';
 
+export { Ellipsis } from './ellipsis';
+export type { EllipsisProps } from './ellipsis';
+
 export { Form, FormActions, FormField, FormGroup, FormRow, FormSection } from './form';
 export type {
   FormActionsAlign,

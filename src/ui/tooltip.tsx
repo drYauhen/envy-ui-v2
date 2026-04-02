@@ -41,6 +41,17 @@ const prefixedClass = (name: string) => `${SYSTEM_PREFIX}-${name}`;
 const prefixedDataAttr = (name: string) => `data-${SYSTEM_PREFIX}-${name}`;
 const dataAttr = (value: boolean | undefined) => (value ? '' : undefined);
 
+const mergeRefs = <T,>(...refs: Array<React.Ref<T> | undefined>) => (node: T | null) => {
+  refs.forEach((ref) => {
+    if (!ref) return;
+    if (typeof ref === 'function') {
+      ref(node);
+    } else {
+      (ref as React.MutableRefObject<T | null>).current = node;
+    }
+  });
+};
+
 type TooltipContextValue = {
   state: ReturnType<typeof useTooltipTriggerState>;
   placement: TooltipPlacement;
@@ -150,11 +161,13 @@ export function TooltipTrigger({ children, asChild = false, className }: Tooltip
   );
 
   if (asChild && React.isValidElement(children)) {
+    const childRef = (children as React.ReactElement & { ref?: React.Ref<HTMLElement> }).ref;
+    const mergedRef = mergeRefs(childRef, combinedRef);
     return React.cloneElement(children, {
       ...mergeProps(triggerProps, children.props, {
         [prefixedDataAttr('tooltip-trigger')]: ''
       }),
-      ref: combinedRef
+      ref: mergedRef
     } as any);
   }
 
