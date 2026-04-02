@@ -1,6 +1,8 @@
 export { ButtonClean } from './button';
 export { ButtonGroup } from './button';
 export type { ButtonCleanProps } from './button';
+export { LinkClean } from './link';
+export type { LinkCleanProps } from './link';
 export { BadgeClean } from './badge';
 export type { BadgeCleanProps, BadgeShape, BadgeSize, BadgeTone, BadgeVariant } from './badge';
 export { CheckboxClean } from './checkbox';

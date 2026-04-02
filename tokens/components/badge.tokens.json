@@ -313,7 +313,7 @@
                   "$description": "Dismiss action horizontal padding for default badge size"
                 }
               },
-              "minWidth": {
+              "min-width": {
                 "$value": "{eui.dimension.5}",
                 "$type": "dimension",
                 "$description": "Dismiss action minimum width for default badge size"
@@ -339,7 +339,7 @@
                   "$description": "Dismiss action horizontal padding for small badge size"
                 }
               },
-              "minWidth": {
+              "min-width": {
                 "$value": "{eui.dimension.4}",
                 "$type": "dimension",
                 "$description": "Dismiss action minimum width for small badge size"

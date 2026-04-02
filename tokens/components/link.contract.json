@@ -15,6 +15,7 @@
 
   "invariants": [
     "Link is a text primitive and must inherit surrounding typography.",
+    "Link root should not stretch to container width by default in flex/grid layouts.",
     "No hardcoded color values in component CSS; only token variables are allowed.",
     "Focus indication must use token-driven focus ring variables."
   ],
@@ -43,7 +44,10 @@
   "behavior": {
     "layout": {
       "display": "inline",
-      "typography": "inherit"
+      "typography": "inherit",
+      "inlineSize": "fit-content",
+      "maxInlineSize": "100%",
+      "justifySelf": "start"
     },
     "states": {
       "default": {

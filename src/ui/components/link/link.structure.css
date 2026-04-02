@@ -8,6 +8,14 @@
 
 @layer eui-components {
   [data-eui-context] .eui-link {
+    /*
+     * Keep link focus ring scoped to text content even when the link is a direct
+     * child of flex/grid containers with stretch defaults.
+     */
+    display: inline;
+    inline-size: fit-content;
+    max-inline-size: 100%;
+    justify-self: start;
     color: var(--eui-link-colors-text);
     font: inherit;
     line-height: inherit;
