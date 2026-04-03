@@ -2,7 +2,7 @@
 
 **Status:** Accepted  
 **Date:** 2026-04-02  
-**Last Updated:** 2026-04-02  
+**Last Updated:** 2026-04-03  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
@@ -88,6 +88,15 @@ Implementation will follow a phased workflow (WORKFLOW-009). If a future phase c
 - No big-bang migration.
 - No breaking changes to generated CSS/token public contracts without a new ADR.
 - Every migration phase requires explicit validation against current outputs.
+
+### Implementation Update (2026-04-03)
+
+- Canonical CSS orchestration is now **Style Dictionary-first** in default flow:
+  - `tokens:build:canonical` delegates to SD canonical platforms.
+- Legacy canonical generator path is retained only for parity checks:
+  - `tokens:build:canonical:legacy` is marked deprecated and parity-only.
+  - planned removal target: **2026-05-15** (if CI stays green and no parity regressions are found).
+- Resolver integrity checks now include canonical SD parity validation via `resolver:check`.
 
 ---
 

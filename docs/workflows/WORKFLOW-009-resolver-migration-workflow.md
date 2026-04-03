@@ -3,7 +3,7 @@
 **Document ID:** workflow-resolver-migration-workflow  
 **Status:** Active  
 **Date:** 2026-04-02  
-**Last Updated:** 2026-04-02  
+**Last Updated:** 2026-04-03  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Category:** Workflow
@@ -92,7 +92,8 @@ Phase 3 feature flag (migration mode):
 Phase 5 default mode update:
 - Resolver-driven app source selection is now default for canonical and `dev-app` builds.
 - Style Dictionary target builds (`storybook`, `dev-app`, `website-app`, `report-app`) now require resolver source selection and no longer use legacy source discovery fallback.
-- Canonical legacy mode remains available only for internal parity verification (`resolver:verify:canonical-parity`).
+- Canonical generation is SD-first (`tokens:build:canonical` → `tokens:build:canonical:sd`).
+- Canonical legacy mode is parity-only (`tokens:build:canonical:legacy`) and marked deprecated with removal target **2026-05-15**.
 
 ### Phase 4: Expansion and Enforcement
 
@@ -158,7 +159,7 @@ npm run resolver:verify:canonical-parity
 # Build canonical CSS explicitly via SD canonical platforms
 npm run tokens:build:canonical:sd
 
-# Build canonical CSS via legacy generator path (parity-only)
+# Build canonical CSS via legacy generator path (deprecated, parity-only)
 npm run tokens:build:canonical:legacy
 
 # Verify canonical CSS parity between legacy generator and SD canonical path

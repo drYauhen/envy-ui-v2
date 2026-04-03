@@ -49,7 +49,7 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 - `tokens:build`: Build tokens via Style Dictionary (platform outputs; not canonical CSS).
 - `tokens:build:canonical`: Build canonical CSS via Style Dictionary canonical platforms.
 - `tokens:build:canonical:sd`: Explicit canonical build via Style Dictionary canonical platforms.
-- `tokens:build:canonical:legacy`: Legacy canonical generator path (`scripts/generate-canonical-css.mjs`) kept for parity checks.
+- `tokens:build:canonical:legacy`: Deprecated parity-only path to legacy canonical generator (scheduled removal target: `2026-05-15`).
 - `tokens:build:tokenstudio`: Build Token Studio export (legacy/experimental; may be broken).
 - `tokens:build:figma`: Build Figma outputs for all contexts.
 - `tokens:build:figma:app`: Build Figma outputs for app context.

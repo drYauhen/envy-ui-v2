@@ -67,7 +67,7 @@ function compareSnapshots(baseSnapshot, candidateSnapshot) {
 function main() {
   console.log('Verifying canonical CSS parity: legacy generator vs SD canonical platforms');
 
-  run('npm', ['run', '-s', 'tokens:build:canonical:legacy']);
+  run('npm', ['run', '-s', 'tokens:build:canonical:legacy:raw']);
   const legacySnapshot = readCanonicalOutputs();
 
   run('npm', ['run', '-s', 'tokens:build:canonical:sd']);
