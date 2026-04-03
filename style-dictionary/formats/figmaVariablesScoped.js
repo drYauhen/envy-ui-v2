@@ -1,43 +1,21 @@
-import fs from 'fs';
-import path from 'path';
 import { converter } from 'culori';
-import { fileURLToPath } from 'url';
 import { deriveFigmaScopes } from '../figma/figma-scope-rules.js';
 import { isVisualToken } from '../utils/token-filters.js';
+import {
+  getSystemMeta,
+  mapVariableType,
+  resolveCollectionName,
+  resolveNumericValue,
+  resolveRawColorValue
+} from '../utils/figma-format-utils.js';
 
-const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const systemMeta = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../system.meta.json'), 'utf8'));
+const systemMeta = getSystemMeta();
 
 // Setup culori converters
 const toRgb = converter('rgb');
 
-const toTitleCase = (value = '') =>
-  value
-    .replace(/[-_]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\b\w/g, (match) => match.toUpperCase());
-
-function mapVariableType(token) {
-  const t = token.$type || token.type || token.attributes?.category;
-  if (!t) return null;
-  if (t === 'color') return 'COLOR';
-  if (['dimension', 'number', 'float', 'integer'].includes(t)) return 'FLOAT';
-  return null;
-}
-
-function resolveNumericValue(token) {
-  const raw = token.value ?? token.$value ?? token.original?.value;
-  if (typeof raw === 'number') return raw;
-  if (typeof raw === 'string') {
-    const parsed = parseFloat(raw);
-    if (!Number.isNaN(parsed)) return parsed;
-  }
-  return null;
-}
-
 function resolveColorValue(token) {
-  const raw = token.value ?? token.$value ?? token.original?.value;
+  const raw = resolveRawColorValue(token);
   if (typeof raw !== 'string') return null;
   
   // For Figma, convert OKLCH to RGB format
@@ -70,24 +48,6 @@ function resolveColorValue(token) {
   
   // If already RGB/HEX, return as-is (will be handled by convertColorToRGB in plugin as fallback)
   return raw;
-}
-
-function resolveCollectionName(token, variableType) {
-  const systemId = systemMeta?.system?.id ?? 'envy-ui';
-  if (variableType === 'COLOR') {
-    const groupId = token.path[2] || token.path[1] || 'base';
-    return `${systemId} • Colors / ${toTitleCase(groupId)}`;
-  }
-
-  const seg = token.path[1] || 'general';
-  let category = 'Dimensions';
-  if (seg.includes('radius') || seg.includes('shape')) category = 'Shape';
-  else if (seg.includes('border')) category = 'Border';
-  else if (seg.includes('focus')) category = 'Focus';
-  else if (seg.includes('spacing') || seg.includes('gap') || seg.includes('padding') || seg.includes('size') || seg.includes('layout'))
-    category = 'Size';
-
-  return `${systemId} • ${category} / ${toTitleCase(seg || 'Base')}`;
 }
 
 const THEME_FILE_RE = /\/contexts\/(app|website|report)\/themes\/([^/]+)\.json$/;
@@ -175,7 +135,9 @@ export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
 
         const tokenPath = token.path.join('.');
         const scopes = deriveFigmaScopes(tokenPath);
-        const collectionName = resolveCollectionName(token, variableType);
+        const collectionName = resolveCollectionName(token, variableType, {
+          systemId: systemMeta?.system?.id ?? 'envy-ui'
+        });
         
         if (!collectionsMap.has(collectionName)) {
           collectionsMap.set(collectionName, {

@@ -1,17 +1,10 @@
-import { readFileSync } from 'fs';
-import { resolve } from 'path';
-import { fileURLToPath } from 'url';
 import { isVisualToken } from '../utils/token-filters.js';
+import {
+  getSystemMeta,
+  resolveCollectionName
+} from '../utils/figma-format-utils.js';
 
-const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const systemMeta = JSON.parse(readFileSync(resolve(__dirname, '../../system.meta.json'), 'utf8'));
-
-const toTitleCase = (value = '') =>
-  value
-    .replace(/[-_]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\b\w/g, (match) => match.toUpperCase());
+const systemMeta = getSystemMeta();
 
 export default function registerFigmaAdapterFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
@@ -28,8 +21,9 @@ export default function registerFigmaAdapterFormat(StyleDictionary) {
           return token?.path?.[0] === 'eui' && token?.path?.[1] === 'color';
         })
         .forEach((token) => {
-          const groupId = token.path[2] || 'base';
-          const collectionName = `${systemMeta?.system?.id ?? 'System'} • Colors / ${toTitleCase(groupId)}`;
+          const collectionName = resolveCollectionName(token, 'COLOR', {
+            systemId: systemMeta?.system?.id ?? 'System'
+          });
 
           if (!collectionsMap.has(collectionName)) {
             collectionsMap.set(collectionName, {
