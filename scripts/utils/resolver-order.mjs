@@ -4,7 +4,7 @@ import path from 'path';
 const REF_SET_PREFIX = '#/sets/';
 const REF_MODIFIER_PREFIX = '#/modifiers/';
 
-function normalizeSourceRef(source) {
+export function normalizeSourceRef(source) {
   if (!source) return null;
   if (typeof source === 'string') return source;
   if (typeof source === 'object' && typeof source.$ref === 'string') return source.$ref;
@@ -119,4 +119,25 @@ export function loadResolverFile(resolverPath) {
 
 export function resolveSourcePathFromRef(resolverDir, sourceRef) {
   return path.resolve(resolverDir, sourceRef);
+}
+
+export function resolveSourceRefs(resolverDir, sources = [], options = {}) {
+  const {
+    label = 'resolver sources',
+    onMissing = null
+  } = options;
+
+  return sources
+    .map(normalizeSourceRef)
+    .filter(Boolean)
+    .map((sourceRef) => resolveSourcePathFromRef(resolverDir, sourceRef))
+    .filter((absolutePath) => {
+      if (fs.existsSync(absolutePath)) return true;
+      if (typeof onMissing === 'function') {
+        onMissing(absolutePath, label);
+      } else {
+        console.warn(`Warning: Missing ${label} file: ${absolutePath}`);
+      }
+      return false;
+    });
 }

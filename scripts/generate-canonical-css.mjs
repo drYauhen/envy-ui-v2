@@ -10,7 +10,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { loadResolverFile } from './utils/resolver-order.mjs';
+import { loadResolverFile, resolveSourceRefs } from './utils/resolver-order.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,24 +32,6 @@ let rawTokenCache = new Map();
 // Resolver cache
 let appResolverCache = null;
 
-const normalizeSourceRef = (source) => {
-  if (typeof source === 'string') return source;
-  if (source && typeof source === 'object' && typeof source.$ref === 'string') return source.$ref;
-  return null;
-};
-
-const resolveSourceRefs = (resolverDir, sources = [], label = 'resolver sources') => (
-  sources
-    .map(normalizeSourceRef)
-    .filter(Boolean)
-    .map((sourceRef) => path.resolve(resolverDir, sourceRef))
-    .filter((absolutePath) => {
-      if (fs.existsSync(absolutePath)) return true;
-      console.warn(`Warning: Missing ${label} file: ${absolutePath}`);
-      return false;
-    })
-);
-
 const loadAppResolver = () => {
   if (!useAppResolver) return null;
   if (appResolverCache !== null) return appResolverCache;
@@ -57,14 +39,14 @@ const loadAppResolver = () => {
   try {
     const { dir, path: resolverAbsolutePath, resolver } = loadResolverFile(appResolverPath);
 
-    const primitives = resolveSourceRefs(dir, resolver?.sets?.primitives?.sources, 'resolver primitives');
-    const appRaw = resolveSourceRefs(dir, resolver?.sets?.appRaw?.sources, 'resolver appRaw');
-    const appSemantics = resolveSourceRefs(dir, resolver?.sets?.appSemantics?.sources, 'resolver appSemantics');
-    const appComponents = resolveSourceRefs(dir, resolver?.sets?.appComponents?.sources, 'resolver appComponents');
+    const primitives = resolveSourceRefs(dir, resolver?.sets?.primitives?.sources, { label: 'resolver primitives' });
+    const appRaw = resolveSourceRefs(dir, resolver?.sets?.appRaw?.sources, { label: 'resolver appRaw' });
+    const appSemantics = resolveSourceRefs(dir, resolver?.sets?.appSemantics?.sources, { label: 'resolver appSemantics' });
+    const appComponents = resolveSourceRefs(dir, resolver?.sets?.appComponents?.sources, { label: 'resolver appComponents' });
 
     const themeContextSources = resolver?.modifiers?.appTheme?.contexts || {};
     const appThemes = Object.entries(themeContextSources).flatMap(([themeName, sources]) => (
-      resolveSourceRefs(dir, sources, `resolver appTheme.${themeName}`)
+      resolveSourceRefs(dir, sources, { label: `resolver appTheme.${themeName}` })
         .map((absolutePath) => ({ themeName, absolutePath }))
     ));
 
