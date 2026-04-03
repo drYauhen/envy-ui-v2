@@ -25,7 +25,6 @@
     "resolver:generate:app": "node scripts/generate-app-resolver-phase1.mjs",
     "resolver:validate:app": "node scripts/validate-app-resolver-phase1.mjs",
     "resolver:resolve:app": "node scripts/resolve-resolver-order.mjs --resolver tokens/knowledge/resolver/app-core.resolver.json",
-    "resolver:compare:app": "node scripts/compare-app-resolver-legacy-phase2.mjs",
     "resolver:verify:themed-css-snapshot": "node scripts/verify-themed-css-snapshot.mjs",
     "resolver:generate:phase4": "node scripts/generate-resolver-phase4.mjs",
     "resolver:validate:phase4": "node scripts/validate-resolver-phase4.mjs",

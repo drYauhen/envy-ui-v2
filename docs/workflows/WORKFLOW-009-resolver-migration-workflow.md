@@ -150,9 +150,6 @@ npm run resolver:validate:app
 # Print effective source order resolved from app resolver (read-only)
 npm run resolver:resolve:app
 
-# Compare resolver-derived order with legacy app order (read-only)
-npm run resolver:compare:app
-
 # Build Style Dictionary dev-app target (resolver is required)
 npm run tokens:build:dev-app:resolver
 
