@@ -1,0 +1,22 @@
+{
+  "eui": {
+    "color": {
+      "text": {
+        "primary": {
+          "$type": "color",
+          "$value": "{eui.color.neutral.900}"
+        },
+        "link": {
+          "$type": "color",
+          "$value": "{eui.color.accent}"
+        }
+      }
+    },
+    "spacing": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{eui.dimension.1}"
+      }
+    }
+  }
+}

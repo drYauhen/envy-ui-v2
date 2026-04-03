@@ -1,0 +1,22 @@
+{
+  "eui": {
+    "color": {
+      "accent": {
+        "$type": "color",
+        "$value": "oklch(63% 0.15 237)"
+      },
+      "neutral": {
+        "900": {
+          "$type": "color",
+          "$value": "oklch(25% 0 0)"
+        }
+      }
+    },
+    "dimension": {
+      "1": {
+        "$type": "dimension",
+        "$value": "4px"
+      }
+    }
+  }
+}

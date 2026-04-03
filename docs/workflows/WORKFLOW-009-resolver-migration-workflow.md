@@ -177,8 +177,11 @@ npm run resolver:generate:phase4
 # Validate all resolver documents and filesystem alignment
 npm run resolver:validate:phase4
 
-# CI-ready resolver integrity check (phase 1 + phase 4 validations + canonical SD parity)
+# CI-ready resolver integrity check (phase 1 + phase 4 validations + canonical SD parity + themed CSS snapshot)
 npm run resolver:check
+
+# Verify css/variables-themed output against fixture snapshot (use -- --update intentionally)
+npm run resolver:verify:themed-css-snapshot
 
 # Rebuild canonical CSS tokens
 npm run tokens:build:canonical

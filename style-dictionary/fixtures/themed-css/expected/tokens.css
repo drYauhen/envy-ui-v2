@@ -1,0 +1,39 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+/* CSS Cascade Layers - ADR-0024 */
+@layer third-party, context-app, context-website, context-report, components, theme;
+
+:root {
+  --eui-color-accent: oklch(63% 0.15 237);
+  --eui-color-accent: oklch(63% 0.15 237);
+  --eui-color-neutral-900: oklch(25% 0 0);
+  --eui-color-neutral-900: oklch(25% 0 0);
+  --eui-color-text-link: oklch(63% 0.15 237);
+  --eui-color-text-primary: oklch(25% 0 0);
+  --eui-dimension-1: 4px;
+  --eui-dimension-1: 4px;
+  --eui-spacing-sm: 4px;
+}
+
+@layer theme {
+  [data-eui-context="app"][data-eui-theme="light"] {
+    --eui-color-text-link: oklch(70% 0.15 237);
+    --eui-color-text-primary: oklch(20% 0 0);
+  }
+
+  [data-eui-context="app"][data-eui-theme="dark"] {
+    --eui-color-text-link: oklch(63% 0.15 237);
+    --eui-color-text-modeDark: oklch(85% 0.01 270);
+    --eui-color-text-primary: oklch(92% 0 0);
+  }
+
+  [data-eui-context="app"] {
+    --eui-color-text-link: oklch(63% 0.15 237);
+    --eui-color-text-primary: oklch(25% 0 0);
+    --eui-spacing-sm: 4px;
+  }
+
+}
+
