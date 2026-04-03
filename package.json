@@ -31,7 +31,7 @@
     "resolver:verify:canonical-sd-parity": "node scripts/verify-canonical-sd-parity.mjs",
     "resolver:generate:phase4": "node scripts/generate-resolver-phase4.mjs",
     "resolver:validate:phase4": "node scripts/validate-resolver-phase4.mjs",
-    "resolver:check": "npm run resolver:validate:app && npm run resolver:validate:phase4",
+    "resolver:check": "npm run resolver:validate:app && npm run resolver:validate:phase4 && npm run resolver:verify:canonical-sd-parity",
     "tokens:build:tokenstudio": "style-dictionary build --config style-dictionary/config.mjs --platform tokenstudio",
     "tokens:build:figma": "npm run tokens:build:figma:app && npm run tokens:build:figma:website && npm run tokens:build:figma:report",
     "tokens:build:figma:app": "style-dictionary build --config style-dictionary/config.mjs --platform figmaApp",

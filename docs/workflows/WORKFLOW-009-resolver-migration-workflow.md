@@ -170,7 +170,7 @@ npm run resolver:generate:phase4
 # Validate all resolver documents and filesystem alignment
 npm run resolver:validate:phase4
 
-# CI-ready resolver integrity check (phase 1 + phase 4 validations)
+# CI-ready resolver integrity check (phase 1 + phase 4 validations + canonical SD parity)
 npm run resolver:check
 
 # Rebuild canonical CSS tokens
