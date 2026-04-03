@@ -438,7 +438,11 @@ export default {
       files: [
         {
           destination: 'tokens.js',
-          format: 'javascript/es6'
+          format: 'javascript/es6',
+          options: {
+            // Use native Style Dictionary sort support (v5.2+) for deterministic output.
+            sort: 'name'
+          }
         }
       ]
     },

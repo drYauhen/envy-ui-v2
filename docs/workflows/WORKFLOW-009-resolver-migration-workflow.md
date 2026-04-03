@@ -132,6 +132,12 @@ Validation:
 4. Verify no unintended output diffs.
 5. Update workflow/docs metadata if process changed.
 
+## SD-First Guardrail
+
+- Prefer native Style Dictionary features before adding new custom formatter logic.
+- For built-in output formats, use native `options.sort` for deterministic ordering instead of custom sort code.
+- Keep custom logic only where resolver composition or output contract cannot be expressed via built-in SD features.
+
 ## Commands
 
 ```bash
