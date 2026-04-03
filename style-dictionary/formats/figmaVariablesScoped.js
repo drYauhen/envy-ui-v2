@@ -90,47 +90,23 @@ function resolveCollectionName(token, variableType) {
   return `${systemId} • ${category} / ${toTitleCase(seg || 'Base')}`;
 }
 
-// Helper to find tokens root
-function findTokensRoot() {
-  const possiblePaths = [
-    path.resolve(__dirname, '../../tokens'),
-    path.resolve(process.cwd(), 'tokens')
-  ];
-  for (const tokensRoot of possiblePaths) {
-    if (fs.existsSync(tokensRoot)) {
-      return tokensRoot;
-    }
-  }
-  return null;
-}
+const THEME_FILE_RE = /\/contexts\/(app|website|report)\/themes\/([^/]+)\.json$/;
+const CONTEXT_FILE_RE = /\/contexts\/(app|website|report)\//;
+const toPosixPath = (value = '') => value.replace(/\\/g, '/');
 
-// Collect all context+theme combinations
-// New structure: tokens/{context}/themes/{theme}.json
-function collectContextThemeCombinations(tokensRoot) {
-  const combinations = [];
-  
-  // Read themes from each context directory
-  const contextDirs = ['app', 'website', 'report'];
-  
-  contextDirs.forEach(context => {
-    const contextThemesDir = path.join(tokensRoot, context, 'themes');
-    if (fs.existsSync(contextThemesDir)) {
-      const themes = fs.readdirSync(contextThemesDir)
-        .filter(f => f.endsWith('.json'))
-        .map(f => path.basename(f, '.json'));
-      
-      themes.forEach(theme => {
-        combinations.push(`${context}-${theme}`);
-      });
-    }
+function collectContextThemeCombinationsFromDictionary(dictionary) {
+  const combinations = new Set();
+
+  dictionary.allTokens.forEach((token) => {
+    const filePath = toPosixPath(token.filePath || '');
+    const match = filePath.match(THEME_FILE_RE);
+    if (!match) return;
+    const context = match[1];
+    const theme = match[2];
+    combinations.add(`${context}-${theme}`);
   });
-  
-  // Fallback to single default mode
-  if (combinations.length === 0) {
-    combinations.push('default');
-  }
-  
-  return combinations;
+
+  return [...combinations].sort((a, b) => a.localeCompare(b));
 }
 
 // Detect context from modes array
@@ -159,25 +135,35 @@ export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
   StyleDictionary.registerFormat({
     name: 'figma/variables-scoped',
     format({ dictionary, file }) {
-      const tokensRoot = findTokensRoot();
-      const allCombinations = tokensRoot 
-        ? collectContextThemeCombinations(tokensRoot)
-        : ['default'];
-      
       // Get context filter from file options
       const contextFilter = file.options?.context || null;
+      const allCombinations = collectContextThemeCombinationsFromDictionary(dictionary);
       
       // Filter combinations by context if filter is specified
-      const contextThemeCombinations = contextFilter
+      const contextThemeCombinations = (contextFilter
         ? allCombinations.filter(mode => mode.startsWith(`${contextFilter}-`))
-        : allCombinations;
+        : allCombinations);
+      const effectiveModes = contextThemeCombinations.length > 0
+        ? contextThemeCombinations
+        : (contextFilter ? [`${contextFilter}-default`] : ['default']);
       
       const collectionsMap = new Map();
       const variablesMap = new Map(); // Map<tokenPath, variable>
+      const baseTokenByPath = new Map();
+
+      dictionary.allTokens.forEach((token) => {
+        const filePath = toPosixPath(token.filePath || '');
+        if (filePath.includes('/contexts/') || filePath.includes('/themes/')) return;
+        const tokenPath = token.path.join('.');
+        if (!baseTokenByPath.has(tokenPath)) {
+          baseTokenByPath.set(tokenPath, token);
+        }
+      });
 
       // First pass: collect all tokens and create variable entries
       dictionary.allTokens.forEach((token) => {
         const filePath = token.filePath || '';
+        const normalizedFilePath = toPosixPath(filePath);
         
         // Skip non-visual tokens (behavior/, metadata/, etc.)
         if (!isVisualToken(filePath)) {
@@ -194,7 +180,7 @@ export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
         if (!collectionsMap.has(collectionName)) {
           collectionsMap.set(collectionName, {
             name: collectionName,
-            modes: contextThemeCombinations,
+            modes: effectiveModes,
             variables: []
           });
         }
@@ -215,8 +201,8 @@ export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
         // New structure: tokens/{context}/themes/{theme}.json
         let modes = [];
         
-        // Check if token is from a theme file: tokens/{context}/themes/{theme}.json
-        const themeMatch = filePath.match(/\/(app|website|report)\/themes\/([^/]+)\.json$/);
+        // Check if token is from a theme file: tokens/contexts/{context}/themes/{theme}.json
+        const themeMatch = normalizedFilePath.match(THEME_FILE_RE);
         if (themeMatch) {
           // Theme token: applies to specific context+theme
           const context = themeMatch[1];
@@ -226,14 +212,14 @@ export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
           // Base token (foundation/semantic/component): applies to all modes
           // Note: Context-specific tokens are now in foundations/semantic within each context
           // but they still apply to all themes in that context via the filter below
-          const contextMatch = filePath.match(/\/(app|website|report)\//);
+          const contextMatch = normalizedFilePath.match(CONTEXT_FILE_RE);
           if (contextMatch) {
             // Token is from a specific context, apply to all themes in that context
             const context = contextMatch[1];
-            modes = contextThemeCombinations.filter(m => m.startsWith(`${context}-`));
+            modes = effectiveModes.filter(m => m.startsWith(`${context}-`));
           } else {
             // Token is from shared location (shouldn't happen in new structure, but keep for safety)
-            modes = contextThemeCombinations;
+            modes = effectiveModes;
           }
         }
 
@@ -254,14 +240,9 @@ export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
       // Fill in missing mode values with base token values
       collectionsMap.forEach((collection) => {
         collection.variables.forEach((variable) => {
-          contextThemeCombinations.forEach(mode => {
+          effectiveModes.forEach(mode => {
             if (!(mode in variable.valuesByMode)) {
-              // Try to find a base token value for this path
-              const baseToken = dictionary.allTokens.find(t => 
-                t.path.join('.') === variable.path &&
-                !t.filePath?.includes('/themes/') &&
-                !t.filePath?.includes('/contexts/')
-              );
+              const baseToken = baseTokenByPath.get(variable.path);
               if (baseToken) {
                 const value = variable.type === 'COLOR'
                   ? resolveColorValue(baseToken)
@@ -283,7 +264,7 @@ export default function registerScopedFigmaVariablesFormat(StyleDictionary) {
       }));
 
       // Detect context from filtered modes
-      const detectedContext = detectContextFromModes(contextThemeCombinations);
+      const detectedContext = detectContextFromModes(effectiveModes);
 
       return JSON.stringify(
         {
