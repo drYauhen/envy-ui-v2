@@ -86,6 +86,10 @@ Validation:
 - `npm run tokens:build` stable for enabled targets.
 - Storybook token docs render unchanged behaviorally.
 
+Phase 3 feature flag:
+- `CANONICAL_CSS_USE_RESOLVER_APP=true` enables resolver-driven source selection for app context in canonical CSS generation.
+- `STYLE_DICTIONARY_USE_RESOLVER_APP=true` enables resolver-driven source selection for `dev-app` Style Dictionary builds.
+
 ### Phase 4: Expansion and Enforcement
 
 Deliverables:
@@ -130,6 +134,15 @@ npm run resolver:resolve:app
 
 # Compare resolver-derived order with legacy app order (read-only)
 npm run resolver:compare:app
+
+# Build canonical CSS in resolver-driven app mode (feature flag)
+npm run tokens:build:canonical:resolver-app
+
+# Build Style Dictionary dev-app target in resolver mode (feature flag)
+npm run tokens:build:dev-app:resolver
+
+# Verify canonical CSS parity between legacy and resolver mode
+npm run resolver:verify:canonical-parity
 
 # Rebuild canonical CSS tokens
 npm run tokens:build:canonical

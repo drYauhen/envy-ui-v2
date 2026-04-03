@@ -1,6 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { globSync } from 'glob';
+import { existsSync } from 'fs';
 import StyleDictionary from 'style-dictionary';
 import registerStorybookColorsFormat from './formats/storybookColors.js';
 import registerFigmaAdapterFormat from './formats/figmaAdapter.js';
@@ -8,6 +9,7 @@ import registerTokenStudioFormat from './formats/tokenStudio.js';
 import registerFullVariablesFormat from './formats/variablesFull.js';
 import registerScopedFigmaVariablesFormat from './formats/figmaVariablesScoped.js';
 import registerCssVariablesThemedFormat from './formats/cssVariablesThemed.js';
+import { loadResolverFile } from '../scripts/utils/resolver-order.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,6 +28,9 @@ const CONTEXT_MIRRORS = {};
 
 const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
 const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
+const useResolverApp = process.env.STYLE_DICTIONARY_USE_RESOLVER_APP === 'true';
+const appResolverPath = process.env.STYLE_DICTIONARY_APP_RESOLVER_PATH
+  || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 
 // Fail-soft mode for build recovery after token refactor
 const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
@@ -43,10 +48,78 @@ registerFullVariablesFormat(StyleDictionary);
 registerScopedFigmaVariablesFormat(StyleDictionary);
 registerCssVariablesThemedFormat(StyleDictionary, { allowedContexts, contextMirrors: CONTEXT_MIRRORS });
 
+const normalizeSourceRef = (source) => {
+  if (typeof source === 'string') return source;
+  if (source && typeof source === 'object' && typeof source.$ref === 'string') return source.$ref;
+  return null;
+};
+
+function refsToAbsoluteFiles(resolverDir, sources = [], label = 'resolver source') {
+  return sources
+    .map(normalizeSourceRef)
+    .filter(Boolean)
+    .map((sourceRef) => path.resolve(resolverDir, sourceRef))
+    .filter((absolutePath) => {
+      if (existsSync(absolutePath)) return true;
+      console.warn(`Warning: Missing ${label} file: ${absolutePath}`);
+      return false;
+    });
+}
+
+function uniqueInOrder(items) {
+  const seen = new Set();
+  const output = [];
+  items.forEach((item) => {
+    if (seen.has(item)) return;
+    seen.add(item);
+    output.push(item);
+  });
+  return output;
+}
+
+function getResolverAppSourceList() {
+  try {
+    const { dir, path: resolverAbsolutePath, resolver } = loadResolverFile(appResolverPath);
+    const primitives = refsToAbsoluteFiles(dir, resolver?.sets?.primitives?.sources, 'resolver primitives');
+    const appRaw = refsToAbsoluteFiles(dir, resolver?.sets?.appRaw?.sources, 'resolver appRaw');
+    const appSemantics = refsToAbsoluteFiles(dir, resolver?.sets?.appSemantics?.sources, 'resolver appSemantics');
+    const appComponents = refsToAbsoluteFiles(dir, resolver?.sets?.appComponents?.sources, 'resolver appComponents');
+
+    const themeContextSources = resolver?.modifiers?.appTheme?.contexts || {};
+    const appThemes = Object.values(themeContextSources).flatMap((sources) => (
+      refsToAbsoluteFiles(dir, sources, 'resolver appTheme')
+    ));
+
+    const ordered = uniqueInOrder([
+      ...primitives,
+      ...(failSoft ? [] : appRaw),
+      ...appSemantics,
+      ...appThemes,
+      ...appComponents
+    ]);
+
+    console.log(`🧭 Style Dictionary resolver mode enabled: ${resolverAbsolutePath}`);
+    console.log(`🧭 Resolver source files for dev-app: ${ordered.length}`);
+
+    return ordered;
+  } catch (error) {
+    console.warn(`Warning: Failed to load app resolver for Style Dictionary (${appResolverPath})`);
+    console.warn(`  ${error.message}`);
+    return null;
+  }
+}
+
 export default {
   usesDtcg: true,
 
   source: (() => {
+    if (useResolverApp && target === 'dev-app') {
+      const resolverSource = getResolverAppSourceList();
+      if (resolverSource && resolverSource.length > 0) {
+        return resolverSource;
+      }
+    }
+
     // Use glob to find all .json files, but exclude .meta.json and raw files
     const allJsonFiles = globSync(path.join(repoRoot, 'tokens', '**', '*.json'), {
       ignore: [

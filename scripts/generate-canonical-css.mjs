@@ -10,15 +10,76 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { loadResolverFile } from './utils/resolver-order.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
+const useAppResolver = process.env.CANONICAL_CSS_USE_RESOLVER_APP === 'true';
+const appResolverPath = process.env.CANONICAL_CSS_APP_RESOLVER_PATH
+  || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 
 // Global cache for primitive token values
 let primitiveTokenCache = null;
 // Global cache for raw token values per context
 let rawTokenCache = new Map();
+// Resolver cache
+let appResolverCache = null;
+
+const normalizeSourceRef = (source) => {
+  if (typeof source === 'string') return source;
+  if (source && typeof source === 'object' && typeof source.$ref === 'string') return source.$ref;
+  return null;
+};
+
+const resolveSourceRefs = (resolverDir, sources = [], label = 'resolver sources') => (
+  sources
+    .map(normalizeSourceRef)
+    .filter(Boolean)
+    .map((sourceRef) => path.resolve(resolverDir, sourceRef))
+    .filter((absolutePath) => {
+      if (fs.existsSync(absolutePath)) return true;
+      console.warn(`Warning: Missing ${label} file: ${absolutePath}`);
+      return false;
+    })
+);
+
+const loadAppResolver = () => {
+  if (!useAppResolver) return null;
+  if (appResolverCache !== null) return appResolverCache;
+
+  try {
+    const { dir, path: resolverAbsolutePath, resolver } = loadResolverFile(appResolverPath);
+
+    const primitives = resolveSourceRefs(dir, resolver?.sets?.primitives?.sources, 'resolver primitives');
+    const appRaw = resolveSourceRefs(dir, resolver?.sets?.appRaw?.sources, 'resolver appRaw');
+    const appSemantics = resolveSourceRefs(dir, resolver?.sets?.appSemantics?.sources, 'resolver appSemantics');
+    const appComponents = resolveSourceRefs(dir, resolver?.sets?.appComponents?.sources, 'resolver appComponents');
+
+    const themeContextSources = resolver?.modifiers?.appTheme?.contexts || {};
+    const appThemes = Object.entries(themeContextSources).flatMap(([themeName, sources]) => (
+      resolveSourceRefs(dir, sources, `resolver appTheme.${themeName}`)
+        .map((absolutePath) => ({ themeName, absolutePath }))
+    ));
+
+    appResolverCache = {
+      path: resolverAbsolutePath,
+      primitives,
+      appRaw,
+      appSemantics,
+      appThemes,
+      appComponents
+    };
+
+    console.log(`🧭 Resolver mode enabled for app context: ${path.relative(repoRoot, resolverAbsolutePath)}`);
+    return appResolverCache;
+  } catch (error) {
+    console.warn(`Warning: Failed to load app resolver (${appResolverPath}). Falling back to legacy discovery.`);
+    console.warn(`  ${error.message}`);
+    appResolverCache = null;
+    return null;
+  }
+};
 
 // Helper: Load all primitive tokens into cache
 const loadPrimitiveTokens = () => {
@@ -26,13 +87,19 @@ const loadPrimitiveTokens = () => {
 
   primitiveTokenCache = new Map();
 
-  const primitivesDir = path.join(repoRoot, 'tokens', 'primitives');
-  if (!fs.existsSync(primitivesDir)) return primitiveTokenCache;
-
-  const primitiveFiles = fs.readdirSync(primitivesDir).filter(f => f.endsWith('.json'));
+  const resolverConfig = loadAppResolver();
+  const primitiveFiles = resolverConfig
+    ? resolverConfig.primitives
+    : (() => {
+      const primitivesDir = path.join(repoRoot, 'tokens', 'primitives');
+      if (!fs.existsSync(primitivesDir)) return [];
+      return fs.readdirSync(primitivesDir)
+        .filter(f => f.endsWith('.json'))
+        .map((file) => path.join(primitivesDir, file));
+    })();
 
   primitiveFiles.forEach(file => {
-    const filePath = path.join(primitivesDir, file);
+    const filePath = file;
     try {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
       const tokens = extractTokensResolvingRefs(data); // Use resolving version for cache
@@ -40,7 +107,7 @@ const loadPrimitiveTokens = () => {
         primitiveTokenCache.set(name, value);
       });
     } catch (e) {
-      console.warn(`Warning: Could not load primitives file ${file}: ${e.message}`);
+      console.warn(`Warning: Could not load primitives file ${filePath}: ${e.message}`);
     }
   });
 
@@ -52,15 +119,22 @@ const loadRawTokens = (context) => {
   if (rawTokenCache.has(context)) return rawTokenCache.get(context);
 
   const rawTokens = new Map();
-  const rawDir = path.join(repoRoot, 'tokens', 'contexts', context, 'raw');
-  if (!fs.existsSync(rawDir)) {
-    rawTokenCache.set(context, rawTokens);
-    return rawTokens;
+  const resolverConfig = loadAppResolver();
+  let rawFiles = [];
+
+  if (resolverConfig && context === 'app') {
+    rawFiles = resolverConfig.appRaw;
+  } else {
+    const rawDir = path.join(repoRoot, 'tokens', 'contexts', context, 'raw');
+    if (!fs.existsSync(rawDir)) {
+      rawTokenCache.set(context, rawTokens);
+      return rawTokens;
+    }
+    rawFiles = findJsonFiles(rawDir).map((file) => path.join(rawDir, file));
   }
 
-  const rawFiles = findJsonFiles(rawDir);
   rawFiles.forEach(file => {
-    const filePath = path.join(rawDir, file);
+    const filePath = file;
     try {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
       const tokens = extractTokensRawValues(data);
@@ -68,7 +142,7 @@ const loadRawTokens = (context) => {
         rawTokens.set(name, value);
       });
     } catch (e) {
-      console.warn(`Warning: Could not read raw file ${file}: ${e.message}`);
+      console.warn(`Warning: Could not read raw file ${filePath}: ${e.message}`);
     }
   });
 
@@ -185,25 +259,31 @@ const extractTokensPreservingRefs = (obj, prefix = []) => {
 function generatePrimitivesCSS() {
   console.log('📝 Generating tokens.primitives.css...');
 
-  const primitivesDir = path.join(repoRoot, 'tokens', 'primitives');
-  if (!fs.existsSync(primitivesDir)) {
-    console.warn('Warning: primitives directory not found');
-    return '';
-  }
-
   let output = '/**\n * Canonical Token Primitives - Do not edit directly\n */\n\n';
 
-  const primitiveFiles = fs.readdirSync(primitivesDir).filter(f => f.endsWith('.json'));
+  const resolverConfig = loadAppResolver();
+  const primitiveFiles = resolverConfig
+    ? resolverConfig.primitives
+    : (() => {
+      const primitivesDir = path.join(repoRoot, 'tokens', 'primitives');
+      if (!fs.existsSync(primitivesDir)) {
+        console.warn('Warning: primitives directory not found');
+        return [];
+      }
+      return fs.readdirSync(primitivesDir)
+        .filter(f => f.endsWith('.json'))
+        .map((file) => path.join(primitivesDir, file));
+    })();
   const allTokens = [];
 
   primitiveFiles.forEach(file => {
-    const filePath = path.join(primitivesDir, file);
+    const filePath = file;
     try {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
       const tokens = extractTokensPreservingRefs(data);
       allTokens.push(...tokens);
     } catch (e) {
-      console.warn(`Warning: Could not read primitives file ${file}: ${e.message}`);
+      console.warn(`Warning: Could not read primitives file ${filePath}: ${e.message}`);
     }
   });
 
@@ -349,28 +429,47 @@ function generateContextsCSS() {
   const contextDirs = fs.readdirSync(contextsDir)
     .filter(dir => fs.statSync(path.join(contextsDir, dir)).isDirectory())
     .filter(context => ['app', 'website', 'report'].includes(context));
+  const resolverConfig = loadAppResolver();
 
   contextDirs.forEach(context => {
     const semanticsDir = path.join(contextsDir, context, 'semantics');
-    if (fs.existsSync(semanticsDir)) {
+    const hasLegacySemantics = fs.existsSync(semanticsDir);
+    const semanticEntries = [];
+
+    if (resolverConfig && context === 'app') {
+      resolverConfig.appSemantics.forEach((absolutePath) => {
+        semanticEntries.push({
+          label: path.relative(semanticsDir, absolutePath),
+          absolutePath
+        });
+      });
+    } else if (hasLegacySemantics) {
+      findJsonFiles(semanticsDir).forEach((relativePath) => {
+        semanticEntries.push({
+          label: relativePath,
+          absolutePath: path.join(semanticsDir, relativePath)
+        });
+      });
+    }
+
+    if (semanticEntries.length > 0) {
       // Recursively find all JSON files in semantics directory and subdirectories
-      const semanticFiles = findJsonFiles(semanticsDir);
+      const semanticFiles = semanticEntries.map((entry) => entry.label);
       console.log(`📁 Found ${semanticFiles.length} semantic files for context "${context}":`);
       semanticFiles.forEach(file => console.log(`  - ${file}`));
 
       const allTokens = [];
 
-      semanticFiles.forEach(file => {
-        const filePath = path.join(semanticsDir, file);
+      semanticEntries.forEach(({ label, absolutePath }) => {
         try {
-          const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          const data = JSON.parse(fs.readFileSync(absolutePath, 'utf8'));
           // Use resolving function for all files to resolve all DTCG references to final values
           // Raw layer tokens should resolve to primitives, semantic tokens should resolve through raw to primitives
           const tokens = extractTokensResolvingRefs(data);
-          console.log(`📄 Processed ${file}: ${tokens.length} tokens`);
+          console.log(`📄 Processed ${label}: ${tokens.length} tokens`);
           allTokens.push(...tokens);
         } catch (e) {
-          console.warn(`Warning: Could not read semantic file ${file}: ${e.message}`);
+          console.warn(`Warning: Could not read semantic file ${label}: ${e.message}`);
         }
       });
 
@@ -454,15 +553,29 @@ function generateThemesCSS() {
   const contextDirs = fs.readdirSync(contextsDir)
     .filter(dir => fs.statSync(path.join(contextsDir, dir)).isDirectory())
     .filter(context => ['app', 'website', 'report'].includes(context));
+  const resolverConfig = loadAppResolver();
 
   contextDirs.forEach(context => {
     const themesDir = path.join(contextsDir, context, 'themes');
-    if (fs.existsSync(themesDir)) {
-      const themeFiles = fs.readdirSync(themesDir).filter(f => f.endsWith('.json'));
+    const themeEntries = [];
 
-      themeFiles.forEach(themeFile => {
-        const theme = path.basename(themeFile, '.json');
-        const filePath = path.join(themesDir, themeFile);
+    if (resolverConfig && context === 'app') {
+      resolverConfig.appThemes.forEach(({ themeName, absolutePath }) => {
+        themeEntries.push({ theme: themeName, filePath: absolutePath });
+      });
+    } else if (fs.existsSync(themesDir)) {
+      fs.readdirSync(themesDir)
+        .filter(f => f.endsWith('.json'))
+        .forEach((themeFile) => {
+          themeEntries.push({
+            theme: path.basename(themeFile, '.json'),
+            filePath: path.join(themesDir, themeFile)
+          });
+        });
+    }
+
+    if (themeEntries.length > 0) {
+      themeEntries.forEach(({ theme, filePath }) => {
 
         try {
           const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -499,7 +612,7 @@ function generateThemesCSS() {
             output += '  }\n\n';
           }
         } catch (e) {
-          console.warn(`Warning: Could not read theme file ${themeFile}: ${e.message}`);
+          console.warn(`Warning: Could not read theme file ${filePath}: ${e.message}`);
         }
       });
     }
@@ -565,6 +678,9 @@ function generateEntrypointCSS() {
 // Main execution
 function main() {
   console.log('🚀 Generating Canonical Token CSS...');
+  if (useAppResolver) {
+    console.log('🔧 Resolver-driven app source selection: enabled');
+  }
 
   const outputDir = path.join(repoRoot, 'generated', 'css');
 
