@@ -65,6 +65,10 @@ function contextThemeModifierName(context) {
   return `${context}Theme`;
 }
 
+function contextLabel(context) {
+  return `${context[0].toUpperCase()}${context.slice(1)}`;
+}
+
 export function listPrimitiveFiles(repoRoot) {
   return listJsonFiles(path.join(repoRoot, 'tokens', 'primitives'));
 }
@@ -81,6 +85,7 @@ export function listContextInventory(repoRoot, context) {
 }
 
 export function buildContextCoreResolver({ repoRoot, resolverDir, context }) {
+  const label = contextLabel(context);
   const primitives = listPrimitiveFiles(repoRoot);
   const inventory = listContextInventory(repoRoot, context);
   const modifierName = contextThemeModifierName(context);
@@ -97,15 +102,15 @@ export function buildContextCoreResolver({ repoRoot, resolverDir, context }) {
       sources: toSources(resolverDir, primitives)
     },
     [contextRawSetName(context)]: {
-      description: `${context} raw aliases to primitives.`,
+      description: `${label} raw aliases to primitives.`,
       sources: toSources(resolverDir, inventory.raw)
     },
     [contextSemanticsSetName(context)]: {
-      description: `${context} semantic tokens.`,
+      description: `${label} semantic tokens.`,
       sources: toSources(resolverDir, inventory.semantics)
     },
     [contextComponentsSetName(context)]: {
-      description: `${context} component contract tokens.`,
+      description: `${label} component contract tokens.`,
       sources: toSources(resolverDir, inventory.components)
     }
   };
@@ -116,28 +121,37 @@ export function buildContextCoreResolver({ repoRoot, resolverDir, context }) {
     { $ref: `#/sets/${contextSemanticsSetName(context)}` }
   ];
 
-  const resolver = {
-    $schema: 'https://www.designtokens.org/schemas/2025.10/resolver.json',
-    name: `Envy UI ${context[0].toUpperCase()}${context.slice(1)} Core Resolver`,
-    version: '2025.10',
-    description: `Phase 4 resolver for ${context} context. Mirrors current filesystem inventory and ordering.`,
-    sets,
-    resolutionOrder
-  };
-
   if (Object.keys(themeContexts).length > 0) {
-    resolver.modifiers = {
+    const modifiers = {
       [modifierName]: {
-        description: `${context} theme selection.`,
+        description: `${label} theme selection.`,
         contexts: themeContexts,
         default: themeContexts.default ? 'default' : Object.keys(themeContexts)[0]
       }
     };
     resolutionOrder.push({ $ref: `#/modifiers/${modifierName}` });
+    resolutionOrder.push({ $ref: `#/sets/${contextComponentsSetName(context)}` });
+
+    return {
+      $schema: 'https://www.designtokens.org/schemas/2025.10/resolver.json',
+      name: `Envy UI ${label} Core Resolver`,
+      version: '2025.10',
+      description: `Phase 4 resolver for ${context} context. Mirrors current filesystem inventory and ordering.`,
+      sets,
+      modifiers,
+      resolutionOrder
+    };
   }
 
   resolutionOrder.push({ $ref: `#/sets/${contextComponentsSetName(context)}` });
-  return resolver;
+  return {
+    $schema: 'https://www.designtokens.org/schemas/2025.10/resolver.json',
+    name: `Envy UI ${label} Core Resolver`,
+    version: '2025.10',
+    description: `Phase 4 resolver for ${context} context. Mirrors current filesystem inventory and ordering.`,
+    sets,
+    resolutionOrder
+  };
 }
 
 export function buildStorybookResolver({ repoRoot, resolverDir, contexts = SUPPORTED_CONTEXTS }) {
@@ -158,19 +172,19 @@ export function buildStorybookResolver({ repoRoot, resolverDir, contexts = SUPPO
     const componentsSet = contextComponentsSetName(context);
 
     sets[rawSet] = {
-      description: `${context} raw aliases to primitives.`,
+      description: `${contextLabel(context)} raw aliases to primitives.`,
       sources: toSources(resolverDir, inventory.raw)
     };
     sets[semanticsSet] = {
-      description: `${context} semantic tokens.`,
+      description: `${contextLabel(context)} semantic tokens.`,
       sources: toSources(resolverDir, inventory.semantics)
     };
     sets[themesSet] = {
-      description: `${context} theme token files included for multi-theme Storybook docs.`,
+      description: `${contextLabel(context)} theme token files included for multi-theme Storybook docs.`,
       sources: toSources(resolverDir, inventory.themes)
     };
     sets[componentsSet] = {
-      description: `${context} component contract tokens.`,
+      description: `${contextLabel(context)} component contract tokens.`,
       sources: toSources(resolverDir, inventory.components)
     };
 

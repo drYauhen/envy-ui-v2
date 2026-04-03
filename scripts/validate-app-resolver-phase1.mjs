@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildContextCoreResolver } from './utils/resolver-inventory.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,55 +11,6 @@ const repoRoot = path.resolve(__dirname, '..');
 
 const resolverDir = path.join(repoRoot, 'tokens', 'knowledge', 'resolver');
 const resolverPath = path.join(resolverDir, 'app-core.resolver.json');
-
-const toPosix = (value) => value.split(path.sep).join('/');
-const toRef = (absolutePath) => toPosix(path.relative(resolverDir, absolutePath));
-
-const readDirSorted = (dir) => fs.readdirSync(dir).sort((a, b) => a.localeCompare(b));
-
-function listJsonFiles(dir) {
-  if (!fs.existsSync(dir)) return [];
-  return readDirSorted(dir)
-    .filter((name) => name.endsWith('.json') && !name.endsWith('.meta.json'))
-    .map((name) => path.join(dir, name));
-}
-
-function listJsonFilesRecursive(dir) {
-  if (!fs.existsSync(dir)) return [];
-
-  const result = [];
-
-  const walk = (currentDir) => {
-    const entries = readDirSorted(currentDir);
-    entries.forEach((entry) => {
-      const absolute = path.join(currentDir, entry);
-      const stat = fs.statSync(absolute);
-      if (stat.isDirectory()) {
-        walk(absolute);
-        return;
-      }
-      if (!entry.endsWith('.json') || entry.endsWith('.meta.json')) {
-        return;
-      }
-      result.push(absolute);
-    });
-  };
-
-  walk(dir);
-  return result;
-}
-
-function expectedInventory() {
-  const primitives = listJsonFiles(path.join(repoRoot, 'tokens', 'primitives')).map(toRef);
-  const appRaw = listJsonFiles(path.join(repoRoot, 'tokens', 'contexts', 'app', 'raw')).map(toRef);
-  const appSemantics = listJsonFilesRecursive(path.join(repoRoot, 'tokens', 'contexts', 'app', 'semantics')).map(toRef);
-  const appThemes = listJsonFiles(path.join(repoRoot, 'tokens', 'contexts', 'app', 'themes')).map(toRef);
-
-  const componentsPath = path.join(repoRoot, 'tokens', 'contexts', 'app', 'components.json');
-  const appComponents = fs.existsSync(componentsPath) ? [toRef(componentsPath)] : [];
-
-  return { primitives, appRaw, appSemantics, appThemes, appComponents };
-}
 
 function getSetRefs(resolver, setName) {
   const set = resolver?.sets?.[setName];
@@ -101,20 +53,30 @@ function validate() {
   }
 
   const resolver = JSON.parse(fs.readFileSync(resolverPath, 'utf8'));
-  const expected = expectedInventory();
+  const expectedResolver = buildContextCoreResolver({ repoRoot, resolverDir, context: 'app' });
   const errors = [];
 
   if (resolver.version !== '2025.10') {
     errors.push(`version must be 2025.10, got: ${resolver.version}`);
   }
 
-  compareArrays('set:primitives', expected.primitives, getSetRefs(resolver, 'primitives'), errors);
-  compareArrays('set:appRaw', expected.appRaw, getSetRefs(resolver, 'appRaw'), errors);
-  compareArrays('set:appSemantics', expected.appSemantics, getSetRefs(resolver, 'appSemantics'), errors);
-  compareArrays('set:appComponents', expected.appComponents, getSetRefs(resolver, 'appComponents'), errors);
+  compareArrays('set:primitives', getSetRefs(expectedResolver, 'primitives'), getSetRefs(resolver, 'primitives'), errors);
+  compareArrays('set:appRaw', getSetRefs(expectedResolver, 'appRaw'), getSetRefs(resolver, 'appRaw'), errors);
+  compareArrays(
+    'set:appSemantics',
+    getSetRefs(expectedResolver, 'appSemantics'),
+    getSetRefs(resolver, 'appSemantics'),
+    errors
+  );
+  compareArrays(
+    'set:appComponents',
+    getSetRefs(expectedResolver, 'appComponents'),
+    getSetRefs(resolver, 'appComponents'),
+    errors
+  );
 
   const contexts = resolver?.modifiers?.appTheme?.contexts || {};
-  const expectedThemeNames = expected.appThemes.map((ref) => path.basename(ref, '.json')).sort();
+  const expectedThemeNames = Object.keys(expectedResolver?.modifiers?.appTheme?.contexts || {}).sort();
   const actualThemeNames = Object.keys(contexts).sort();
 
   compareArrays('modifier:appTheme contexts', expectedThemeNames, actualThemeNames, errors);
@@ -123,21 +85,19 @@ function validate() {
     const actualRefs = Array.isArray(contexts[themeName])
       ? contexts[themeName].map((source) => source?.$ref).filter(Boolean)
       : [];
-    const expectedRef = expected.appThemes.find((ref) => path.basename(ref, '.json') === themeName);
-    compareArrays(`modifier:appTheme.${themeName}`, expectedRef ? [expectedRef] : [], actualRefs, errors);
+    const expectedRefs = Array.isArray(expectedResolver?.modifiers?.appTheme?.contexts?.[themeName])
+      ? expectedResolver.modifiers.appTheme.contexts[themeName].map((source) => source?.$ref).filter(Boolean)
+      : [];
+    compareArrays(`modifier:appTheme.${themeName}`, expectedRefs, actualRefs, errors);
   });
 
   if (!resolver?.modifiers?.appTheme?.default) {
     errors.push('modifier:appTheme.default is missing');
   }
 
-  const expectedResolutionOrder = [
-    '#/sets/primitives',
-    '#/sets/appRaw',
-    '#/sets/appSemantics',
-    '#/modifiers/appTheme',
-    '#/sets/appComponents'
-  ];
+  const expectedResolutionOrder = Array.isArray(expectedResolver.resolutionOrder)
+    ? expectedResolver.resolutionOrder.map((item) => item?.$ref).filter(Boolean)
+    : [];
   const actualResolutionOrder = Array.isArray(resolver.resolutionOrder)
     ? resolver.resolutionOrder.map((item) => item?.$ref).filter(Boolean)
     : [];
@@ -145,11 +105,11 @@ function validate() {
   compareArrays('resolutionOrder', expectedResolutionOrder, actualResolutionOrder, errors);
 
   console.log('📊 Phase 1 resolver inventory (expected):');
-  console.log(`   primitives:   ${expected.primitives.length}`);
-  console.log(`   appRaw:       ${expected.appRaw.length}`);
-  console.log(`   appSemantics: ${expected.appSemantics.length}`);
-  console.log(`   appThemes:    ${expected.appThemes.length}`);
-  console.log(`   appComponents:${expected.appComponents.length}`);
+  console.log(`   primitives:   ${getSetRefs(expectedResolver, 'primitives').length}`);
+  console.log(`   appRaw:       ${getSetRefs(expectedResolver, 'appRaw').length}`);
+  console.log(`   appSemantics: ${getSetRefs(expectedResolver, 'appSemantics').length}`);
+  console.log(`   appThemes:    ${expectedThemeNames.length}`);
+  console.log(`   appComponents:${getSetRefs(expectedResolver, 'appComponents').length}`);
 
   if (errors.length > 0) {
     console.error('\n❌ Resolver validation failed:\n');

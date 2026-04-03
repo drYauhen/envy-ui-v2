@@ -67,7 +67,7 @@
       ]
     },
     "appRaw": {
-      "description": "app raw aliases to primitives.",
+      "description": "App raw aliases to primitives.",
       "sources": [
         {
           "$ref": "../../contexts/app/raw/border.json"
@@ -111,7 +111,7 @@
       ]
     },
     "appSemantics": {
-      "description": "app semantic tokens.",
+      "description": "App semantic tokens.",
       "sources": [
         {
           "$ref": "../../contexts/app/semantics/border.json"
@@ -236,7 +236,7 @@
       ]
     },
     "appThemes": {
-      "description": "app theme token files included for multi-theme Storybook docs.",
+      "description": "App theme token files included for multi-theme Storybook docs.",
       "sources": [
         {
           "$ref": "../../contexts/app/themes/accessibility.json"
@@ -247,7 +247,7 @@
       ]
     },
     "appComponents": {
-      "description": "app component contract tokens.",
+      "description": "App component contract tokens.",
       "sources": [
         {
           "$ref": "../../contexts/app/components.json"
@@ -255,35 +255,35 @@
       ]
     },
     "websiteRaw": {
-      "description": "website raw aliases to primitives.",
+      "description": "Website raw aliases to primitives.",
       "sources": []
     },
     "websiteSemantics": {
-      "description": "website semantic tokens.",
+      "description": "Website semantic tokens.",
       "sources": []
     },
     "websiteThemes": {
-      "description": "website theme token files included for multi-theme Storybook docs.",
+      "description": "Website theme token files included for multi-theme Storybook docs.",
       "sources": []
     },
     "websiteComponents": {
-      "description": "website component contract tokens.",
+      "description": "Website component contract tokens.",
       "sources": []
     },
     "reportRaw": {
-      "description": "report raw aliases to primitives.",
+      "description": "Report raw aliases to primitives.",
       "sources": []
     },
     "reportSemantics": {
-      "description": "report semantic tokens.",
+      "description": "Report semantic tokens.",
       "sources": []
     },
     "reportThemes": {
-      "description": "report theme token files included for multi-theme Storybook docs.",
+      "description": "Report theme token files included for multi-theme Storybook docs.",
       "sources": []
     },
     "reportComponents": {
-      "description": "report component contract tokens.",
+      "description": "Report component contract tokens.",
       "sources": []
     }
   },

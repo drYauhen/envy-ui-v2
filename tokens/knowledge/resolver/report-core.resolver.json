@@ -67,15 +67,15 @@
       ]
     },
     "reportRaw": {
-      "description": "report raw aliases to primitives.",
+      "description": "Report raw aliases to primitives.",
       "sources": []
     },
     "reportSemantics": {
-      "description": "report semantic tokens.",
+      "description": "Report semantic tokens.",
       "sources": []
     },
     "reportComponents": {
-      "description": "report component contract tokens.",
+      "description": "Report component contract tokens.",
       "sources": []
     }
   },

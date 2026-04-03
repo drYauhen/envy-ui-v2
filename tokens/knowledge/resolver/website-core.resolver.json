@@ -67,15 +67,15 @@
       ]
     },
     "websiteRaw": {
-      "description": "website raw aliases to primitives.",
+      "description": "Website raw aliases to primitives.",
       "sources": []
     },
     "websiteSemantics": {
-      "description": "website semantic tokens.",
+      "description": "Website semantic tokens.",
       "sources": []
     },
     "websiteComponents": {
-      "description": "website component contract tokens.",
+      "description": "Website component contract tokens.",
       "sources": []
     }
   },
