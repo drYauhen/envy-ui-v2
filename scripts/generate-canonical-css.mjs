@@ -15,16 +15,13 @@ import { loadResolverFile } from './utils/resolver-order.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
-const parseBooleanEnv = (name) => {
-  const raw = process.env[name];
-  if (raw === undefined) return null;
-  if (raw === 'true') return true;
-  if (raw === 'false') return false;
-  return null;
-};
-const explicitResolverFlag = parseBooleanEnv('CANONICAL_CSS_USE_RESOLVER_APP');
-const legacyFallbackFlag = parseBooleanEnv('CANONICAL_CSS_USE_LEGACY_APP_SOURCES') === true;
-const useAppResolver = legacyFallbackFlag ? false : (explicitResolverFlag ?? true);
+const sourceMode = process.env.CANONICAL_CSS_SOURCE_MODE || 'resolver';
+if (!['resolver', 'legacy'].includes(sourceMode)) {
+  throw new Error(
+    `Invalid CANONICAL_CSS_SOURCE_MODE: "${sourceMode}". Expected "resolver" or "legacy".`
+  );
+}
+const useAppResolver = sourceMode === 'resolver';
 const appResolverPath = process.env.CANONICAL_CSS_APP_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 
@@ -83,10 +80,7 @@ const loadAppResolver = () => {
     console.log(`🧭 Resolver mode enabled for app context: ${path.relative(repoRoot, resolverAbsolutePath)}`);
     return appResolverCache;
   } catch (error) {
-    console.warn(`Warning: Failed to load app resolver (${appResolverPath}). Falling back to legacy discovery.`);
-    console.warn(`  ${error.message}`);
-    appResolverCache = null;
-    return null;
+    throw new Error(`Failed to load app resolver (${appResolverPath}): ${error.message}`);
   }
 };
 
@@ -688,9 +682,9 @@ function generateEntrypointCSS() {
 function main() {
   console.log('🚀 Generating Canonical Token CSS...');
   if (useAppResolver) {
-    console.log('🔧 Resolver-driven app source selection: enabled (default path)');
+    console.log('🔧 Resolver-driven app source selection: enabled (required path)');
   } else {
-    console.log('⚠️  Resolver-driven app source selection: disabled, using legacy discovery fallback');
+    console.log('⚠️  Resolver-driven app source selection: legacy mode (internal parity check)');
   }
 
   const outputDir = path.join(repoRoot, 'generated', 'css');

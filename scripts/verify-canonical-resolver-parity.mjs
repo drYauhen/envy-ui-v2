@@ -22,7 +22,7 @@ const cssDir = path.join(repoRoot, 'generated', 'css');
 function runCanonicalGeneration(useResolver) {
   const env = {
     ...process.env,
-    CANONICAL_CSS_USE_RESOLVER_APP: useResolver ? 'true' : 'false'
+    CANONICAL_CSS_SOURCE_MODE: useResolver ? 'resolver' : 'legacy'
   };
 
   const result = spawnSync(process.execPath, [generatorScript], {

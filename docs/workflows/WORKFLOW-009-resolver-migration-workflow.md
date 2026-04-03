@@ -87,14 +87,12 @@ Validation:
 - Storybook token docs render unchanged behaviorally.
 
 Phase 3 feature flag (migration mode):
-- `CANONICAL_CSS_USE_RESOLVER_APP=true` enables resolver-driven source selection for app context in canonical CSS generation.
-- `STYLE_DICTIONARY_USE_RESOLVER_APP=true` enables resolver-driven source selection for `dev-app` Style Dictionary builds.
+- canonical generator now defaults to resolver mode for app context.
 
 Phase 5 default mode update:
 - Resolver-driven app source selection is now default for canonical and `dev-app` builds.
-- Legacy fallback remains available via:
-  - `CANONICAL_CSS_USE_LEGACY_APP_SOURCES=true`
-  - `STYLE_DICTIONARY_USE_LEGACY_APP_SOURCES=true`
+- Style Dictionary target builds (`storybook`, `dev-app`, `website-app`, `report-app`) now require resolver source selection and no longer use legacy source discovery fallback.
+- Canonical legacy mode remains available only for internal parity verification (`resolver:verify:canonical-parity`).
 
 ### Phase 4: Expansion and Enforcement
 
@@ -148,17 +146,11 @@ npm run resolver:resolve:app
 # Compare resolver-derived order with legacy app order (read-only)
 npm run resolver:compare:app
 
-# Build canonical CSS in resolver-driven app mode (feature flag)
-npm run tokens:build:canonical:resolver-app
-
-# Build Style Dictionary dev-app target in resolver mode (feature flag)
+# Build Style Dictionary dev-app target (resolver is required)
 npm run tokens:build:dev-app:resolver
 
-# Build canonical CSS with explicit legacy app source discovery fallback
-npm run tokens:build:canonical:legacy-app
-
-# Build Style Dictionary dev-app with explicit legacy source discovery fallback
-npm run tokens:build:dev-app:legacy-app
+# Build canonical CSS (resolver mode is default)
+npm run tokens:build:canonical
 
 # Verify canonical CSS parity between legacy and resolver mode
 npm run resolver:verify:canonical-parity
