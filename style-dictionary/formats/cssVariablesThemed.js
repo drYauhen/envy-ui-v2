@@ -10,9 +10,9 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { formattedVariables, sortByName } from 'style-dictionary/utils';
-import { propertyFormatNames } from 'style-dictionary/enums';
+import { sortByName } from 'style-dictionary/utils';
 import { isVisualToken } from '../utils/token-filters.js';
+import { formatCssTokenDeclarations } from '../utils/css-formatting.js';
 import {
   generateContextsCSS,
   generateEntrypointCSS,
@@ -39,42 +39,6 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         ? sortByName
         : (a, b) => a.name.localeCompare(b.name);
       const sortOption = configuredSort === undefined ? compareByName : configuredSort;
-
-      const formatCssDeclarations = (
-        tokens = [],
-        { indentation = '  ', includeEmptyValues = true } = {}
-      ) => {
-        const normalizedTokens = tokens.flatMap((token) => {
-          const rawValue = token.value ?? token.$value ?? '';
-          if (!includeEmptyValues && !rawValue) {
-            return [];
-          }
-          const normalizedValue = typeof rawValue === 'string' ? rawValue : String(rawValue);
-          return [{
-            ...token,
-            value: normalizedValue,
-            $value: normalizedValue,
-            original: token.original ?? { value: normalizedValue, $value: normalizedValue }
-          }];
-        });
-
-        if (normalizedTokens.length === 0) {
-          return '';
-        }
-
-        return formattedVariables({
-          format: propertyFormatNames.css,
-          dictionary: {
-            ...dictionary,
-            allTokens: normalizedTokens
-          },
-          usesDtcg: false,
-          sort: sortOption,
-          formatting: {
-            indentation
-          }
-        });
-      };
 
       // Find tokens root directory
       // file.destination is like: /path/to/generated/css/tokens.css
@@ -510,7 +474,11 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
 
       // Generate base tokens in :root
       if (baseTokens.length > 0) {
-        const rootDeclarations = formatCssDeclarations(baseTokens);
+        const rootDeclarations = formatCssTokenDeclarations({
+          tokens: baseTokens,
+          dictionary,
+          sort: sortOption
+        });
         output += ':root {\n';
         output += `${rootDeclarations}\n`;
         output += '}\n\n';
@@ -553,7 +521,10 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         // Generate context tokens grouped by selector
         selectorTokens.forEach((tokens, selector) => {
           if (tokens.length > 0) {
-            const selectorDeclarations = formatCssDeclarations(tokens, {
+            const selectorDeclarations = formatCssTokenDeclarations({
+              tokens,
+              dictionary,
+              sort: sortOption,
               indentation: '    ',
               includeEmptyValues: false
             });
