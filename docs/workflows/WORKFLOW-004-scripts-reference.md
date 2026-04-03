@@ -47,12 +47,15 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 ## Tokens
 
 - `tokens:build`: Build tokens via Style Dictionary (platform outputs; not canonical CSS).
-- `tokens:build:canonical`: Build canonical CSS via `scripts/generate-canonical-css.mjs`.
+- `tokens:build:canonical`: Build canonical CSS via Style Dictionary canonical platforms.
+- `tokens:build:canonical:sd`: Explicit canonical build via Style Dictionary canonical platforms.
+- `tokens:build:canonical:legacy`: Legacy canonical generator path (`scripts/generate-canonical-css.mjs`) kept for parity checks.
 - `tokens:build:tokenstudio`: Build Token Studio export (legacy/experimental; may be broken).
 - `tokens:build:figma`: Build Figma outputs for all contexts.
 - `tokens:build:figma:app`: Build Figma outputs for app context.
 - `tokens:build:figma:website`: Build Figma outputs for website context (canonical; `web` renamed to `website`).
 - `tokens:build:figma:report`: Build Figma outputs for report context.
+- `resolver:verify:canonical-sd-parity`: Verify canonical CSS parity between legacy generator and SD canonical path.
 - `tokens:copy-readme`: Copy tokens [README](README.md) to public docs.
 - `tokens:generate-docs`: Generate token reference docs.
 - `tokens:generate-metadata`: Generate token metadata files.

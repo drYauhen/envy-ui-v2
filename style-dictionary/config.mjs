@@ -563,6 +563,17 @@ export default {
           format: 'css/canonical-themes'
         }
       ]
+    },
+
+    canonicalEntrypoint: {
+      // No transformGroup needed - canonical formats work directly with JSON
+      buildPath: path.join(repoRoot, 'generated', 'css') + path.sep,
+      files: [
+        {
+          destination: 'tokens.css',
+          format: 'css/canonical-entrypoint'
+        }
+      ]
     }
   }
 };

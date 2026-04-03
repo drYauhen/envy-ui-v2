@@ -155,6 +155,15 @@ npm run tokens:build:canonical
 # Verify canonical CSS parity between legacy and resolver mode
 npm run resolver:verify:canonical-parity
 
+# Build canonical CSS explicitly via SD canonical platforms
+npm run tokens:build:canonical:sd
+
+# Build canonical CSS via legacy generator path (parity-only)
+npm run tokens:build:canonical:legacy
+
+# Verify canonical CSS parity between legacy generator and SD canonical path
+npm run resolver:verify:canonical-sd-parity
+
 # Generate remaining resolver files (website/report/storybook)
 npm run resolver:generate:phase4
 
