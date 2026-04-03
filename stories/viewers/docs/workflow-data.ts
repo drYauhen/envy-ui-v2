@@ -115,5 +115,19 @@ export const workflows: DocMetadata[] = [
     markdownPath: "/docs/workflows/WORKFLOW-008-mcp-configuration-workflow.md",
     storybookId: "docs-workflows--mcp-configuration-workflow",
     aliases: ["workflows/mcp-configuration-workflow.md"]
+  },
+  {
+    number: "009",
+    title: "Resolver Migration Workflow",
+    category: "workflow",
+    status: "Active",
+    date: "2026-04-02",
+    lastUpdated: "2026-04-02",
+    owner: "Eugene Goncharov",
+    assistance: "AI-assisted drafting (human-reviewed)",
+    exportName: "resolverMigrationWorkflow",
+    markdownPath: "/docs/workflows/WORKFLOW-009-resolver-migration-workflow.md",
+    storybookId: "docs-workflows--resolver-migration-workflow",
+    aliases: ["workflows/resolver-migration-workflow.md"]
   }
 ];

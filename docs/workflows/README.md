@@ -1,7 +1,7 @@
 # Workflows Documentation
 
 **Document ID:** workflow-workflows-documentation
-**Last Updated:** 2026-01-10
+**Last Updated:** 2026-04-02
 **Category:** Workflow
 
 
@@ -19,6 +19,7 @@ Each workflow document describes:
 
 - **[Layer Generation Workflow](WORKFLOW-006-layer-generation-workflow.md)** - Managing component layers and automated generation
 - **[Tokens Workflow](WORKFLOW-005-tokens-workflow.md)** - Working with design tokens
+- **[Resolver Migration Workflow](WORKFLOW-009-resolver-migration-workflow.md)** - Phased adoption of DTCG resolver documents and integration
 - **[Figma Workflow](WORKFLOW-002-figma-workflow.md)** - Figma integration (plugin, scripts, artifacts)
 - **[MCP Configuration Workflow](WORKFLOW-008-mcp-configuration-workflow.md)** - Local/templated MCP server setup and inventory
 - **[Storybook Workflow](WORKFLOW-003-storybook-workflow.md)** - Storybook development and documentation

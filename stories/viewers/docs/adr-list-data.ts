@@ -575,5 +575,18 @@ export const adrs: DocMetadata[] = [
     "exportName": "componentContractDefinitionandAgentConsumption",
     "markdownPath": "/docs/adr/ADR-0044-component-contract-definition-and-agent-consumption.md",
     "storybookId": "docs-adr--component-contract-definitionand-agent-consumption"
+  },
+  {
+    "number": "0045",
+    "title": "Dtcg Resolver Adoption and Phased Migration",
+    "category": "adr",
+    "status": "Accepted",
+    "date": "2026-04-02",
+    "lastUpdated": "2026-04-02",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "dtcgResolverAdoptionandPhasedMigration",
+    "markdownPath": "/docs/adr/ADR-0045-dtcg-resolver-adoption-and-phased-migration.md",
+    "storybookId": "docs-adr--dtcg-resolver-adoptionand-phased-migration"
   }
 ];
