@@ -15,7 +15,16 @@ import { loadResolverFile } from './utils/resolver-order.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
-const useAppResolver = process.env.CANONICAL_CSS_USE_RESOLVER_APP === 'true';
+const parseBooleanEnv = (name) => {
+  const raw = process.env[name];
+  if (raw === undefined) return null;
+  if (raw === 'true') return true;
+  if (raw === 'false') return false;
+  return null;
+};
+const explicitResolverFlag = parseBooleanEnv('CANONICAL_CSS_USE_RESOLVER_APP');
+const legacyFallbackFlag = parseBooleanEnv('CANONICAL_CSS_USE_LEGACY_APP_SOURCES') === true;
+const useAppResolver = legacyFallbackFlag ? false : (explicitResolverFlag ?? true);
 const appResolverPath = process.env.CANONICAL_CSS_APP_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 
@@ -679,7 +688,9 @@ function generateEntrypointCSS() {
 function main() {
   console.log('🚀 Generating Canonical Token CSS...');
   if (useAppResolver) {
-    console.log('🔧 Resolver-driven app source selection: enabled');
+    console.log('🔧 Resolver-driven app source selection: enabled (default path)');
+  } else {
+    console.log('⚠️  Resolver-driven app source selection: disabled, using legacy discovery fallback');
   }
 
   const outputDir = path.join(repoRoot, 'generated', 'css');

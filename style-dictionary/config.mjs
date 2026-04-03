@@ -28,7 +28,18 @@ const CONTEXT_MIRRORS = {};
 
 const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
 const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
-const useResolverApp = process.env.STYLE_DICTIONARY_USE_RESOLVER_APP === 'true';
+const parseBooleanEnv = (name) => {
+  const raw = process.env[name];
+  if (raw === undefined) return null;
+  if (raw === 'true') return true;
+  if (raw === 'false') return false;
+  return null;
+};
+const explicitResolverFlag = parseBooleanEnv('STYLE_DICTIONARY_USE_RESOLVER_APP');
+const legacyFallbackFlag = parseBooleanEnv('STYLE_DICTIONARY_USE_LEGACY_APP_SOURCES') === true;
+const useResolverApp = target === 'dev-app'
+  ? (legacyFallbackFlag ? false : (explicitResolverFlag ?? true))
+  : false;
 const appResolverPath = process.env.STYLE_DICTIONARY_APP_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 
@@ -37,6 +48,13 @@ const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
 
 console.log(`Building CSS for target: ${target}`);
 console.log(`Allowed contexts: ${allowedContexts.join(', ')}`);
+if (target === 'dev-app') {
+  if (useResolverApp) {
+    console.log('🧭 Resolver-driven source selection for dev-app: enabled (default path)');
+  } else {
+    console.log('⚠️  Resolver-driven source selection for dev-app: disabled, using legacy source discovery');
+  }
+}
 if (failSoft) {
   console.log(`🛠️  Fail-soft mode enabled: Using safe fallbacks for missing references`);
 }
