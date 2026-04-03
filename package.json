@@ -21,7 +21,7 @@
     "tokens:build:report-app": "STYLE_DICTIONARY_TARGET=report-app npm run tokens:build:sd",
     "tokens:build:all-targets": "npm run tokens:build:dev-app && npm run tokens:build:website-app && npm run tokens:build:report-app && npm run tokens:build:storybook && npm run tokens:build:canonical",
     "tokens:build:canonical": "npm run tokens:build:canonical:sd",
-    "tokens:build:canonical:sd": "STYLE_DICTIONARY_TARGET=dev-app npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalPrimitives && STYLE_DICTIONARY_TARGET=dev-app npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalContexts && STYLE_DICTIONARY_TARGET=dev-app npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalThemes && STYLE_DICTIONARY_TARGET=dev-app npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalEntrypoint",
+    "tokens:build:canonical:sd": "STYLE_DICTIONARY_TARGET=canonical npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalPrimitives && STYLE_DICTIONARY_TARGET=canonical npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalContexts && STYLE_DICTIONARY_TARGET=canonical npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalThemes && STYLE_DICTIONARY_TARGET=canonical npx style-dictionary build --config style-dictionary/config.mjs --platform canonicalEntrypoint",
     "tokens:build:canonical:legacy": "node scripts/generate-canonical-css.mjs",
     "resolver:generate:app": "node scripts/generate-app-resolver-phase1.mjs",
     "resolver:validate:app": "node scripts/validate-app-resolver-phase1.mjs",

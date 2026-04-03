@@ -1,0 +1,13 @@
+{
+  "eui": {
+    "internal": {
+      "canonicalNoop": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

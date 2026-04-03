@@ -20,6 +20,7 @@ const repoRoot = path.resolve(__dirname, '..');
 const TARGET_CONFIGS = {
   storybook: ['app', 'website', 'report'],
   'dev-app': ['app'],
+  canonical: ['app'],
   'website-app': ['website'],
   'report-app': ['report']
 };
@@ -39,6 +40,7 @@ const reportResolverPath = process.env.STYLE_DICTIONARY_REPORT_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'report-core.resolver.json');
 const storybookResolverPath = process.env.STYLE_DICTIONARY_STORYBOOK_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'storybook.resolver.json');
+const canonicalNoopSourcePath = path.join(repoRoot, 'style-dictionary', 'fixtures', 'canonical.noop.tokens.json');
 
 // Fail-soft mode for build recovery after token refactor
 const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
@@ -378,6 +380,13 @@ export default {
   usesDtcg: true,
 
   source: (() => {
+    if (target === 'canonical') {
+      if (!existsSync(canonicalNoopSourcePath)) {
+        throw new Error(`Missing canonical noop source file: ${canonicalNoopSourcePath}`);
+      }
+      return [canonicalNoopSourcePath];
+    }
+
     const resolverSource = getResolverSourceListForTarget();
     if (resolverSource && resolverSource.length > 0) {
       return resolverSource;
