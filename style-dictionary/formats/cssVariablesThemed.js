@@ -18,7 +18,7 @@ import {
   generateEntrypointCSS,
   generatePrimitivesCSS,
   generateThemesCSS
-} from '../../scripts/generate-canonical-css.mjs';
+} from '../utils/canonical-css-generator.mjs';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
