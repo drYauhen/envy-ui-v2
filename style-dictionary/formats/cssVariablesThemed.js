@@ -10,7 +10,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { sortByName } from 'style-dictionary/utils';
+import { formattedVariables, sortByName } from 'style-dictionary/utils';
+import { propertyFormatNames } from 'style-dictionary/enums';
 import { isVisualToken } from '../utils/token-filters.js';
 import {
   generateContextsCSS,
@@ -37,6 +38,30 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       const compareByName = configuredSort === 'name'
         ? sortByName
         : (a, b) => a.name.localeCompare(b.name);
+      const sortOption = configuredSort === undefined ? compareByName : configuredSort;
+
+      const formatCssDeclarations = (tokens = []) => {
+        const normalizedTokens = tokens.map((token) => {
+          const rawValue = token.value ?? token.$value ?? '';
+          const normalizedValue = typeof rawValue === 'string' ? rawValue : String(rawValue);
+          return {
+            ...token,
+            value: normalizedValue,
+            $value: normalizedValue,
+            original: token.original ?? { value: normalizedValue, $value: normalizedValue }
+          };
+        });
+
+        return formattedVariables({
+          format: propertyFormatNames.css,
+          dictionary: {
+            ...dictionary,
+            allTokens: normalizedTokens
+          },
+          usesDtcg: false,
+          sort: sortOption
+        });
+      };
 
       // Find tokens root directory
       // file.destination is like: /path/to/generated/css/tokens.css
@@ -472,13 +497,9 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
 
       // Generate base tokens in :root
       if (baseTokens.length > 0) {
-        baseTokens.sort(compareByName);
+        const rootDeclarations = formatCssDeclarations(baseTokens);
         output += ':root {\n';
-        baseTokens.forEach((token) => {
-          const name = `--${token.name}`;
-          const value = token.value || token.$value || '';
-          output += `  ${name}: ${value};\n`;
-        });
+        output += `${rootDeclarations}\n`;
         output += '}\n\n';
       }
 
