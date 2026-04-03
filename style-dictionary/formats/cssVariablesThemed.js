@@ -48,89 +48,206 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       // Mirrored contexts (like storybook mirroring app) should not generate their own CSS rules
       // They inherit styles through CSS attribute inheritance
       const contextDirs = allowedContexts.filter(context => !Object.keys(contextMirrors).includes(context));
+      const toPosixPath = (filePath = '') => filePath.replace(/\\/g, '/');
+      const dictionaryFilePaths = Array.from(
+        new Set(dictionary.allTokens.map((token) => token.filePath).filter(Boolean))
+      );
+      const primitiveSourceFiles = dictionaryFilePaths.filter((filePath) => (
+        /\/primitives\/[^/]+\.json$/.test(toPosixPath(filePath))
+      ));
+      const rawSourceFilesByContext = new Map(contextDirs.map((context) => [context, []]));
 
       console.log(`Generating CSS for contexts: ${contextDirs.join(', ')}`);
 
-      contextDirs.forEach(context => {
-        // Process semantic tokens (new structure: tokens/contexts/{context}/semantics/)
-        const contextSemanticsDir = path.join(tokensRoot, 'contexts', context, 'semantics');
-        if (fs.existsSync(contextSemanticsDir)) {
-          const semanticFilesList = fs.readdirSync(contextSemanticsDir).filter(f => f.endsWith('.json'));
-          semanticFilesList.forEach(semanticFile => {
-            const semanticName = path.basename(semanticFile, '.json');
-            const selector = `[data-eui-context="${context}"]`;
-            const semanticFilePath = path.join(contextSemanticsDir, semanticFile);
-            try {
-              const data = JSON.parse(fs.readFileSync(semanticFilePath, 'utf8'));
-              const key = `${selector}:${semanticName}`;
-              contextFiles.set(key, { filePath: semanticFilePath, data, type: 'semantic', context, name: semanticName });
-            } catch (e) {
-              console.warn(`Warning: Could not read semantic file ${semanticFilePath}:`, e.message);
-            }
-          });
-        }
+      dictionaryFilePaths.forEach((filePath) => {
+        const normalizedPath = toPosixPath(filePath);
 
-        // Process themes (new structure: tokens/contexts/{context}/themes/)
-        const contextThemesDir = path.join(tokensRoot, 'contexts', context, 'themes');
-        if (fs.existsSync(contextThemesDir)) {
-          const themeFilesList = fs.readdirSync(contextThemesDir).filter(f => f.endsWith('.json'));
-          themeFilesList.forEach(themeFile => {
-            const theme = path.basename(themeFile, '.json');
-            const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
-            const themeFilePath = path.join(contextThemesDir, themeFile);
-            try {
-              const data = JSON.parse(fs.readFileSync(themeFilePath, 'utf8'));
-              contextFiles.set(selector, { filePath: themeFilePath, data, type: 'theme', context, theme });
-            } catch (e) {
-              console.warn(`Warning: Could not read theme file ${themeFilePath}:`, e.message);
-            }
-          });
-        }
-      });
-      const baseTokens = [];
-      const themeTokens = new Map(); // Map<selector, tokens[]>
-
-      // First pass: collect theme/context tokens
-      // Note: Style Dictionary resolves token collisions, keeping only one value per path
-      // We need to read theme JSON files directly to get all theme-specific values
-      const themeTokenNames = new Set();
-      
-      dictionary.allTokens.forEach((token) => {
-        const filePath = token.filePath || '';
-        
-        // Skip non-visual tokens (behavior/, metadata/, etc.)
-        if (!isVisualToken(filePath)) {
+        const rawMatch = normalizedPath.match(/\/contexts\/([^/]+)\/raw\/.+\.json$/);
+        if (rawMatch) {
+          const context = rawMatch[1];
+          if (rawSourceFilesByContext.has(context)) {
+            rawSourceFilesByContext.get(context).push(filePath);
+          }
           return;
         }
-        
-        const tokenName = token.name || (token.path || []).join('.');
 
-        // Detect if token is from a theme file
-        // New structure: tokens/contexts/{context}/themes/{theme}.json
-        const isThemeToken = /\/contexts\/[^/]+\/themes\/[^/]+\.json$/.test(filePath);
+        const semanticMatch = normalizedPath.match(/\/contexts\/([^/]+)\/semantics\/(.+\.json)$/);
+        if (semanticMatch) {
+          const context = semanticMatch[1];
+          const relativePath = semanticMatch[2];
+          if (!contextDirs.includes(context)) return;
 
-        if (isThemeToken) {
-          // Parse theme path: tokens/contexts/app/themes/accessibility.json
-          const themeMatch = filePath.match(/\/contexts\/(app|website|report)\/themes\/([^/]+)\.json$/);
-          if (themeMatch) {
-            const context = themeMatch[1];
-            const theme = themeMatch[2];
-            const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
+          const selector = `[data-eui-context="${context}"]`;
+          try {
+            const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            const key = `${selector}:${relativePath}`;
+            contextFiles.set(key, {
+              filePath,
+              data,
+              type: 'semantic',
+              context,
+              name: relativePath
+            });
+          } catch (e) {
+            console.warn(`Warning: Could not read semantic file ${filePath}:`, e.message);
+          }
+          return;
+        }
 
-            if (!themeTokens.has(selector)) {
-              themeTokens.set(selector, []);
-            }
-            themeTokens.get(selector).push(token);
-            themeTokenNames.add(tokenName);
+        const themeMatch = normalizedPath.match(/\/contexts\/([^/]+)\/themes\/([^/]+)\.json$/);
+        if (themeMatch) {
+          const context = themeMatch[1];
+          const theme = themeMatch[2];
+          if (!contextDirs.includes(context)) return;
+
+          const selector = `[data-eui-context="${context}"][data-eui-theme="${theme}"]`;
+          try {
+            const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            contextFiles.set(selector, { filePath, data, type: 'theme', context, theme });
+          } catch (e) {
+            console.warn(`Warning: Could not read theme file ${filePath}:`, e.message);
           }
         }
       });
+      const baseTokens = [];
 
-      // Map to store semantic base values for reference resolution
+      // Maps used by the custom resolver path in this formatter
       const semanticBaseValues = new Map(); // Map<tokenPath, value>
+      const primitiveResolvedValues = new Map(); // Map<tokenPath|tokenName, resolvedValue>
+      const rawTokenValues = new Map(); // Map<tokenPath|tokenName, rawValue>
+
+      const isReferenceValue = (value) => (
+        typeof value === 'string' && value.startsWith('{') && value.endsWith('}')
+      );
+
+      const toReferenceVariants = (referenceId) => {
+        const trimmed = (referenceId || '').trim();
+        if (!trimmed) return [];
+        const variants = new Set([trimmed]);
+        if (trimmed.includes('.')) variants.add(trimmed.split('.').join('-'));
+        if (trimmed.includes('-')) variants.add(trimmed.split('-').join('.'));
+        return Array.from(variants);
+      };
+
+      const registerReferenceValue = (map, tokenPath, tokenName, value) => {
+        if (typeof tokenPath === 'string' && tokenPath.length > 0) {
+          map.set(tokenPath, value);
+          map.set(tokenPath.split('.').join('-'), value);
+        }
+        if (typeof tokenName === 'string' && tokenName.length > 0) {
+          map.set(tokenName, value);
+          map.set(tokenName.split('.').join('-'), value);
+        }
+      };
+
+      const collectRawTokensFromJson = (obj, prefix = []) => {
+        const tokens = [];
+        Object.entries(obj || {}).forEach(([key, value]) => {
+          const nextPath = [...prefix, key];
+          if (value && typeof value === 'object' && '$value' in value) {
+            const tokenPath = nextPath.join('.');
+            const tokenName = nextPath.join('-');
+            tokens.push({ tokenPath, tokenName, value: value.$value });
+            return;
+          }
+          if (value && typeof value === 'object' && !Array.isArray(value)) {
+            tokens.push(...collectRawTokensFromJson(value, nextPath));
+          }
+        });
+        return tokens;
+      };
+
+      // Build primitive lookup from raw primitive JSON files (not dictionary) to avoid collision noise
+      const primitiveRawValues = new Map();
+      const primitiveEntries = [];
+      primitiveSourceFiles.forEach((primitiveFilePath) => {
+        try {
+          const primitiveData = JSON.parse(fs.readFileSync(primitiveFilePath, 'utf8'));
+          const primitiveTokens = collectRawTokensFromJson(primitiveData);
+          primitiveTokens.forEach(({ tokenPath, tokenName, value }) => {
+            primitiveEntries.push({ tokenPath, tokenName, value });
+            primitiveRawValues.set(tokenPath, value);
+            primitiveRawValues.set(tokenName, value);
+          });
+        } catch (e) {
+          console.warn(`Warning: Could not read primitive file ${primitiveFilePath}:`, e.message);
+        }
+      });
+
+      const resolvePrimitiveReference = (referenceId, seen = new Set()) => {
+        const normalized = (referenceId || '').trim();
+        if (!normalized) return null;
+        if (seen.has(normalized)) return null;
+
+        const nextSeen = new Set([...seen, normalized]);
+        const variants = toReferenceVariants(normalized);
+        for (const variant of variants) {
+          if (!primitiveRawValues.has(variant)) continue;
+          const primitiveValue = primitiveRawValues.get(variant);
+          if (isReferenceValue(primitiveValue)) {
+            return resolvePrimitiveReference(primitiveValue.slice(1, -1), nextSeen);
+          }
+          return primitiveValue;
+        }
+
+        return null;
+      };
+
+      primitiveEntries.forEach(({ tokenPath, tokenName, value }) => {
+        const resolvedValue = isReferenceValue(value)
+          ? (resolvePrimitiveReference(value.slice(1, -1), new Set([tokenPath])) ?? value)
+          : value;
+        registerReferenceValue(primitiveResolvedValues, tokenPath, tokenName, resolvedValue);
+      });
+
+      // Build raw-token lookup using only files selected into the dictionary (resolver-aware).
+      rawSourceFilesByContext.forEach((rawFiles) => {
+        rawFiles.forEach((rawFilePath) => {
+          try {
+            const rawData = JSON.parse(fs.readFileSync(rawFilePath, 'utf8'));
+            const rawTokens = collectRawTokensFromJson(rawData);
+            rawTokens.forEach(({ tokenPath, tokenName, value }) => {
+              registerReferenceValue(rawTokenValues, tokenPath, tokenName, value);
+            });
+          } catch (e) {
+            console.warn(`Warning: Could not read raw file ${rawFilePath}:`, e.message);
+          }
+        });
+      });
+
+      const resolveReferenceFromMaps = (referenceId, seen = new Set()) => {
+        const normalized = (referenceId || '').trim();
+        if (!normalized) return null;
+        if (seen.has(normalized)) return null;
+
+        const nextSeen = new Set([...seen, normalized]);
+        const variants = toReferenceVariants(normalized);
+
+        for (const variant of variants) {
+          if (!primitiveResolvedValues.has(variant)) continue;
+          const primitiveValue = primitiveResolvedValues.get(variant);
+          if (isReferenceValue(primitiveValue)) {
+            return resolveReferenceFromMaps(primitiveValue.slice(1, -1), nextSeen);
+          }
+          return primitiveValue;
+        }
+
+        for (const variant of variants) {
+          if (!rawTokenValues.has(variant)) continue;
+          const rawValue = rawTokenValues.get(variant);
+          if (isReferenceValue(rawValue)) {
+            const nested = resolveReferenceFromMaps(rawValue.slice(1, -1), nextSeen);
+            if (nested != null) return nested;
+          } else {
+            return rawValue;
+          }
+        }
+
+        return null;
+      };
 
       // Helper function to resolve a token value using semantic base values first, then Style Dictionary's resolved tokens
-      const resolveTokenValue = (tokenPath, rawValue) => {
+      const resolveTokenValue = (rawValue) => {
         // If it's already a resolved value (not a reference), return as-is
         if (typeof rawValue === 'string' && !rawValue.startsWith('{') && !rawValue.endsWith('}')) {
           return rawValue;
@@ -144,7 +261,17 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
 
           // FIRST: Check if this reference exists in semanticBaseValues (semantic base value)
           if (semanticBaseValues.has(referencePathStr)) {
-            return semanticBaseValues.get(referencePathStr);
+            const semanticValue = semanticBaseValues.get(referencePathStr);
+            if (isReferenceValue(semanticValue)) {
+              return resolveTokenValue(semanticValue);
+            }
+            return semanticValue;
+          }
+
+          // FIRST.5: Resolve from raw/primitives lookup maps (supports dot and dash references)
+          const mappedValue = resolveReferenceFromMaps(referenceStr);
+          if (mappedValue != null) {
+            return mappedValue;
           }
 
           // SECOND: Try to find the token in dictionary by path (exact match)
@@ -169,7 +296,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             const resolvedValue = resolvedToken.value || resolvedToken.$value;
             // If the resolved value is still a reference, recursively resolve it
             if (typeof resolvedValue === 'string' && resolvedValue.startsWith('{') && resolvedValue.endsWith('}')) {
-              return resolveTokenValue([], resolvedValue);
+              return resolveTokenValue(resolvedValue);
             }
             return resolvedValue;
           }
@@ -179,15 +306,18 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             console.warn(`⚠️  Fail-soft: Unresolved reference {${referenceStr}} - using safe fallback`);
 
             // Provide type-appropriate fallbacks based on token path
-            if (referenceStr.includes('.color.')) {
+            if (referenceStr.includes('.color.') || referenceStr.includes('-color-')) {
               return 'transparent'; // Safe color fallback
-            } else if (referenceStr.includes('.spacing.') || referenceStr.includes('.dimension.')) {
+            } else if (
+              referenceStr.includes('.spacing.') || referenceStr.includes('.dimension.')
+              || referenceStr.includes('-spacing-') || referenceStr.includes('-dimension-')
+            ) {
               return '0px'; // Safe dimension fallback
-            } else if (referenceStr.includes('.radius.')) {
+            } else if (referenceStr.includes('.radius.') || referenceStr.includes('-radius-')) {
               return '0px'; // Safe radius fallback
-            } else if (referenceStr.includes('.fontSize.')) {
+            } else if (referenceStr.includes('.fontSize.') || referenceStr.includes('-fontSize-')) {
               return '16px'; // Safe font size fallback
-            } else if (referenceStr.includes('.opacity.')) {
+            } else if (referenceStr.includes('.opacity.') || referenceStr.includes('-opacity-')) {
               return '1'; // Safe opacity fallback
             } else {
               return 'unset'; // Generic safe fallback
@@ -208,7 +338,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             // This is a token definition
             // Build token name from full path, ensuring eui prefix is preserved
             const tokenName = path.map(s => s.replace(/\./g, '-')).join('-');
-            const resolvedValue = resolveTokenValue(path, value.$value);
+            const resolvedValue = resolveTokenValue(value.$value);
             tokens.push({ name: tokenName, path: path, value: resolvedValue });
           } else if (value && typeof value === 'object' && !Array.isArray(value)) {
             // Recurse into nested objects (skip arrays)
@@ -218,24 +348,14 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         return tokens;
       };
       
-      // Second pass: collect base tokens (excluding those from themes/contexts)
-      // Collect token names that are defined in themes/contexts to avoid duplicates
-      const themeDefinedTokenNames = new Set();
-      themeTokens.forEach((tokens) => {
-        tokens.forEach((token) => {
-          themeDefinedTokenNames.add(token.name || (token.path || []).join('.'));
-        });
-      });
-      
       // Track which base tokens we've added (by path) to avoid duplicates
       const baseTokenPaths = new Set();
       
       dictionary.allTokens.forEach((token) => {
         const filePath = token.filePath || '';
-        const tokenName = token.name || (token.path || []).join('.');
         const tokenPath = (token.path || []).join('.');
 
-        // Skip tokens from themes files - they're already in themeTokens
+        // Skip tokens from theme files
         // New structure: tokens/{context}/themes/{theme}.json
         if (/\/themes\/[^/]+\.json$/.test(filePath)) {
           return;
@@ -262,107 +382,73 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       // Structure: tokens/primitives/*.json, tokens/contexts/{context}/semantics/... and tokens/app/components/.../
 
       // FIRST PASS: Process primitives files to populate base tokens
-      const primitivesDir = path.join(tokensRoot, 'primitives');
-      if (fs.existsSync(primitivesDir)) {
-        const primitivesFiles = fs.readdirSync(primitivesDir).filter(f => f.endsWith('.json'));
-        primitivesFiles.forEach(primitivesFile => {
-          const primitivesFilePath = path.join(primitivesDir, primitivesFile);
-          try {
-            const primitivesData = JSON.parse(fs.readFileSync(primitivesFilePath, 'utf8'));
-            const primitivesTokens = extractTokensFromJson(primitivesData);
-            primitivesTokens.forEach(({ name, path: tokenPath, value }) => {
-              const tokenPathStr = tokenPath.join('.');
-              // Add primitive token to base tokens
-              baseTokens.push({ name, value, path: tokenPath });
-              if (!baseTokenPaths.has(tokenPathStr)) {
-                baseTokenPaths.add(tokenPathStr);
-              }
-            });
-          } catch (e) {
-            console.warn(`Warning: Could not read primitives file ${primitivesFile}: ${e.message}`);
+      primitiveSourceFiles.forEach((primitivesFilePath) => {
+        try {
+          const primitivesData = JSON.parse(fs.readFileSync(primitivesFilePath, 'utf8'));
+          const primitivesTokens = extractTokensFromJson(primitivesData);
+          primitivesTokens.forEach(({ name, path: tokenPath, value }) => {
+            const tokenPathStr = tokenPath.join('.');
+            baseTokens.push({ name, value, path: tokenPath });
+            if (!baseTokenPaths.has(tokenPathStr)) {
+              baseTokenPaths.add(tokenPathStr);
+            }
+          });
+        } catch (e) {
+          console.warn(`Warning: Could not read primitive file ${primitivesFilePath}: ${e.message}`);
+        }
+      });
+
+      // Build baseline context overlays without hardcoded app-only file paths.
+      // This keeps :root stable while remaining context-agnostic.
+      const baselineContext = contextDirs.includes('app') ? 'app' : (contextDirs[0] || null);
+      const baselineSourceFiles = [];
+
+      if (baselineContext) {
+        const baselinePrefix = `/contexts/${baselineContext}/`;
+        dictionaryFilePaths.forEach((filePath) => {
+          const normalizedPath = toPosixPath(filePath);
+          if (!normalizedPath.includes(baselinePrefix)) return;
+          if (/\/contexts\/[^/]+\/semantics\/.+\.json$/.test(normalizedPath)) {
+            baselineSourceFiles.push(filePath);
+            return;
+          }
+          if (/\/contexts\/[^/]+\/components\.json$/.test(normalizedPath)) {
+            baselineSourceFiles.push(filePath);
           }
         });
       }
 
-      // SECOND PASS: Process only semantic files to populate semanticBaseValues map
-      const semanticOnlyFiles = [
-        { file: 'contexts/app/semantics/shape.json', pathPrefix: ['eui', 'radius'] },
-        { file: 'contexts/app/semantics/colors/border.json', pathPrefix: ['eui', 'color', 'border'] },
-        { file: 'contexts/app/semantics/colors/text.json', pathPrefix: ['eui', 'color', 'text'] },
-        { file: 'contexts/app/semantics/colors/background.json', pathPrefix: ['eui', 'color', 'background'] }
-      ];
-
-      semanticOnlyFiles.forEach(({ file, pathPrefix }) => {
-        const semanticFilePath = path.join(tokensRoot, file);
-        if (fs.existsSync(semanticFilePath)) {
-          try {
-            const semanticData = JSON.parse(fs.readFileSync(semanticFilePath, 'utf8'));
-            const euiData = semanticData.eui || semanticData;
-            let targetData = euiData;
-            for (let i = 1; i < pathPrefix.length; i++) {
-              targetData = targetData?.[pathPrefix[i]];
-            }
-            if (targetData) {
-              // Extract tokens and store in semanticBaseValues map (before resolving references)
-              const extractAndStore = (obj, prefix = []) => {
-                for (const [key, value] of Object.entries(obj)) {
-                  const path = [...prefix, key];
-                  if (value && typeof value === 'object' && '$value' in value) {
-                    const pathStr = path.join('.');
-                    // Store raw value (may contain references)
-                    semanticBaseValues.set(pathStr, value.$value);
-                  } else if (value && typeof value === 'object' && !Array.isArray(value)) {
-                    extractAndStore(value, path);
-                  }
-                }
-              };
-              extractAndStore(targetData, pathPrefix);
-            }
-          } catch (e) {
-            console.warn(`Warning: Could not read semantic file ${file}: ${e.message}`);
-          }
+      // Populate semantic base values from baseline context files (before reference resolution).
+      baselineSourceFiles.forEach((sourcePath) => {
+        try {
+          const payload = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+          const tokens = collectRawTokensFromJson(payload);
+          tokens.forEach(({ tokenPath, value }) => {
+            semanticBaseValues.set(tokenPath, value);
+          });
+        } catch (e) {
+          console.warn(`Warning: Could not read baseline context file ${sourcePath}: ${e.message}`);
         }
       });
 
-      // SECOND PASS: Process all files (semantic + component) to add to baseTokens
-      const semanticFilesToProcess = [
-        { file: 'contexts/app/semantics/shape.json', pathPrefix: ['eui', 'radius'] },
-        { file: 'contexts/app/semantics/colors/border.json', pathPrefix: ['eui', 'color', 'border'] },
-        { file: 'contexts/app/semantics/colors/text.json', pathPrefix: ['eui', 'color', 'text'] },
-        { file: 'contexts/app/semantics/colors/background.json', pathPrefix: ['eui', 'color', 'background'] },
-        { file: 'app/components/badge/shape.json', pathPrefix: ['eui', 'badge', 'shape'] }
-      ];
-
-      semanticFilesToProcess.forEach(({ file, pathPrefix }) => {
-        const semanticFilePath = path.join(tokensRoot, file);
-        if (fs.existsSync(semanticFilePath)) {
-          try {
-            const semanticData = JSON.parse(fs.readFileSync(semanticFilePath, 'utf8'));
-            const euiData = semanticData.eui || semanticData;
-            // Navigate to the nested structure (e.g., eui.color.border or eui.radius)
-            let targetData = euiData;
-            for (let i = 1; i < pathPrefix.length; i++) {
-              targetData = targetData?.[pathPrefix[i]];
+      // Overlay baseline context semantic/component values into :root, replacing collision-prone dictionary values.
+      baselineSourceFiles.forEach((sourcePath) => {
+        try {
+          const payload = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+          const tokens = extractTokensFromJson(payload);
+          tokens.forEach(({ name, path: tokenPath, value }) => {
+            const tokenPathStr = tokenPath.join('.');
+            const existingIndex = baseTokens.findIndex(t => (t.path || []).join('.') === tokenPathStr);
+            if (existingIndex >= 0) {
+              baseTokens.splice(existingIndex, 1);
             }
-            if (targetData) {
-              const semanticTokens = extractTokensFromJson(targetData, pathPrefix);
-              semanticTokens.forEach(({ name, path: tokenPath, value }) => {
-                const tokenPathStr = tokenPath.join('.');
-                // Remove existing token from baseTokens if it exists (may have wrong value due to collisions)
-                const existingIndex = baseTokens.findIndex(t => (t.path || []).join('.') === tokenPathStr);
-                if (existingIndex >= 0) {
-                  baseTokens.splice(existingIndex, 1);
-                }
-                // Add token with original value from semantic file
-                baseTokens.push({ name, value, path: tokenPath });
-                if (!baseTokenPaths.has(tokenPathStr)) {
-                  baseTokenPaths.add(tokenPathStr);
-                }
-              });
+            baseTokens.push({ name, value, path: tokenPath });
+            if (!baseTokenPaths.has(tokenPathStr)) {
+              baseTokenPaths.add(tokenPathStr);
             }
-          } catch (e) {
-            console.warn(`Warning: Could not read ${file}: ${e.message}`);
-          }
+          });
+        } catch (e) {
+          console.warn(`Warning: Could not process baseline context file ${sourcePath}: ${e.message}`);
         }
       });
 
@@ -413,13 +499,8 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       // Check if we have any context tokens
       const hasContextTokens = Array.from(selectorTokens.values()).some(tokens => tokens.length > 0);
 
-      // Check if there are any secondary theme tokens (from dictionary)
-      const hasSecondaryThemeTokens = Array.from(themeTokens.keys()).some(selector =>
-        !selectorTokens.has(selector) && themeTokens.get(selector).length > 0
-      );
-
-      // If we have any context tokens, wrap them in @layer theme
-      if (hasContextTokens || hasSecondaryThemeTokens) {
+      // If we have context/theme tokens, wrap them in @layer theme
+      if (hasContextTokens) {
         output += '@layer theme {\n';
 
         // Generate context tokens grouped by selector
@@ -435,9 +516,6 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             output += '  }\n\n';
           }
         });
-
-
-
         output += '}\n\n';
       }
 
