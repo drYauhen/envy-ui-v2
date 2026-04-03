@@ -10,6 +10,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { sortByName } from 'style-dictionary/utils';
 import { isVisualToken } from '../utils/token-filters.js';
 import {
   generateContextsCSS,
@@ -32,6 +33,11 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
   StyleDictionary.registerFormat({
     name: 'css/variables-themed',
     format({ dictionary, file }) {
+      const configuredSort = file?.options?.sort;
+      const compareByName = configuredSort === 'name'
+        ? sortByName
+        : (a, b) => a.name.localeCompare(b.name);
+
       // Find tokens root directory
       // file.destination is like: /path/to/generated/css/tokens.css
       // tokens should be at: /path/to/tokens
@@ -466,6 +472,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
 
       // Generate base tokens in :root
       if (baseTokens.length > 0) {
+        baseTokens.sort(compareByName);
         output += ':root {\n';
         baseTokens.forEach((token) => {
           const name = `--${token.name}`;
@@ -513,7 +520,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         selectorTokens.forEach((tokens, selector) => {
           if (tokens.length > 0) {
             output += `  ${selector} {\n`;
-            tokens.sort((a, b) => a.name.localeCompare(b.name));
+            tokens.sort(compareByName);
             tokens.forEach(({ name, value }) => {
               if (value) {
                 output += `    --${name}: ${value};\n`;

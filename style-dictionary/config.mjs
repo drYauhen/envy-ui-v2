@@ -427,7 +427,11 @@ export default {
       files: [
         {
           destination: 'tokens.css',
-          format: 'css/variables-themed'
+          format: 'css/variables-themed',
+          options: {
+            // Keep deterministic ordering aligned with Style Dictionary native sort semantics.
+            sort: 'name'
+          }
         }
       ]
     },
