@@ -119,6 +119,12 @@ Validation:
 ## Commands
 
 ```bash
+# Generate app resolver skeleton from current canonical files
+npm run resolver:generate:app
+
+# Validate app resolver against current canonical files/order
+npm run resolver:validate:app
+
 # Rebuild canonical CSS tokens
 npm run tokens:build:canonical
 

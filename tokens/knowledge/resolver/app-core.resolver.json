@@ -1,0 +1,282 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "name": "Envy UI App Core Resolver",
+  "version": "2025.10",
+  "description": "Phase 1 resolver skeleton for app context. Mirrors current app source layering without changing generation behavior.",
+  "sets": {
+    "primitives": {
+      "description": "Design token primitives shared across contexts.",
+      "sources": [
+        {
+          "$ref": "../../primitives/accent.json"
+        },
+        {
+          "$ref": "../../primitives/border.json"
+        },
+        {
+          "$ref": "../../primitives/brand.json"
+        },
+        {
+          "$ref": "../../primitives/breakpoints.json"
+        },
+        {
+          "$ref": "../../primitives/dimension.json"
+        },
+        {
+          "$ref": "../../primitives/filter.json"
+        },
+        {
+          "$ref": "../../primitives/layout.json"
+        },
+        {
+          "$ref": "../../primitives/neutral.json"
+        },
+        {
+          "$ref": "../../primitives/opacity.json"
+        },
+        {
+          "$ref": "../../primitives/shadow.json"
+        },
+        {
+          "$ref": "../../primitives/shape.json"
+        },
+        {
+          "$ref": "../../primitives/signal.json"
+        },
+        {
+          "$ref": "../../primitives/spacing.json"
+        },
+        {
+          "$ref": "../../primitives/status-application.json"
+        },
+        {
+          "$ref": "../../primitives/status.json"
+        },
+        {
+          "$ref": "../../primitives/time.json"
+        },
+        {
+          "$ref": "../../primitives/transition.json"
+        },
+        {
+          "$ref": "../../primitives/typography.json"
+        },
+        {
+          "$ref": "../../primitives/z-index.json"
+        }
+      ]
+    },
+    "appRaw": {
+      "description": "App raw aliases to primitives.",
+      "sources": [
+        {
+          "$ref": "../../contexts/app/raw/border.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/breakpoints.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/colors.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/dimension.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/filter.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/layout.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/opacity.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/shadow.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/shape.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/spacing.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/transition.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/typography.json"
+        },
+        {
+          "$ref": "../../contexts/app/raw/z-index.json"
+        }
+      ]
+    },
+    "appSemantics": {
+      "description": "App semantic tokens.",
+      "sources": [
+        {
+          "$ref": "../../contexts/app/semantics/border.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/breakpoints.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/accent.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/background.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/border.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/brand.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/focus.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/neutral.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/signal.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/status-application.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/status.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/colors/text.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/control.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/dimension.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/filter.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/layout/card.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/layout/container.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/layout/page.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/layout/section.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/layout/toolbar.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/opacity.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/shadow.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/shape.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/spacing.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/transition.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/body.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/code.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/font-family.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/font-size.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/font-style.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/font-weight.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/headings.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/labels.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/letter-spacing.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/line-height.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/text-decoration.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/text-styles.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/text-transform.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/typography/titles.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/z-index.json"
+        }
+      ]
+    },
+    "appComponents": {
+      "description": "App component contract tokens.",
+      "sources": [
+        {
+          "$ref": "../../contexts/app/components.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "appTheme": {
+      "description": "App theme selection.",
+      "contexts": {
+        "accessibility": [
+          {
+            "$ref": "../../contexts/app/themes/accessibility.json"
+          }
+        ],
+        "default": [
+          {
+            "$ref": "../../contexts/app/themes/default.json"
+          }
+        ]
+      },
+      "default": "default"
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/primitives"
+    },
+    {
+      "$ref": "#/sets/appRaw"
+    },
+    {
+      "$ref": "#/sets/appSemantics"
+    },
+    {
+      "$ref": "#/modifiers/appTheme"
+    },
+    {
+      "$ref": "#/sets/appComponents"
+    }
+  ]
+}
