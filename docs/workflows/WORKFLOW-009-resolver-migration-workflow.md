@@ -93,7 +93,7 @@ Phase 5 default mode update:
 - Resolver-driven app source selection is now default for canonical and `dev-app` builds.
 - Style Dictionary target builds (`storybook`, `dev-app`, `website-app`, `report-app`) now require resolver source selection and no longer use legacy source discovery fallback.
 - Canonical generation is SD-first (`tokens:build:canonical` → `tokens:build:canonical:sd`).
-- Canonical legacy mode is parity-only (`tokens:build:canonical:legacy`) and marked deprecated with removal target **2026-05-15**.
+- Legacy canonical parity scripts have been removed from active build flow.
 
 ### Phase 4: Expansion and Enforcement
 
@@ -159,17 +159,8 @@ npm run tokens:build:dev-app:resolver
 # Build canonical CSS (resolver mode is default)
 npm run tokens:build:canonical
 
-# Verify canonical CSS parity between legacy and resolver mode
-npm run resolver:verify:canonical-parity
-
 # Build canonical CSS explicitly via SD canonical platforms
 npm run tokens:build:canonical:sd
-
-# Build canonical CSS via legacy generator path (deprecated, parity-only)
-npm run tokens:build:canonical:legacy
-
-# Verify canonical CSS parity between legacy generator and SD canonical path
-npm run resolver:verify:canonical-sd-parity
 
 # Generate remaining resolver files (website/report/storybook)
 npm run resolver:generate:phase4
@@ -177,7 +168,7 @@ npm run resolver:generate:phase4
 # Validate all resolver documents and filesystem alignment
 npm run resolver:validate:phase4
 
-# CI-ready resolver integrity check (phase 1 + phase 4 validations + canonical SD parity + themed CSS snapshot)
+# CI-ready resolver integrity check (phase 1 + phase 4 validations + canonical build + themed CSS snapshot)
 npm run resolver:check
 
 # Verify css/variables-themed output against fixture snapshot (use -- --update intentionally)

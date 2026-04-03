@@ -15,13 +15,6 @@ import { loadResolverFile, resolveSourceRefs } from './utils/resolver-order.mjs'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
-const sourceMode = process.env.CANONICAL_CSS_SOURCE_MODE || 'resolver';
-if (!['resolver', 'legacy'].includes(sourceMode)) {
-  throw new Error(
-    `Invalid CANONICAL_CSS_SOURCE_MODE: "${sourceMode}". Expected "resolver" or "legacy".`
-  );
-}
-const useAppResolver = sourceMode === 'resolver';
 const appResolverPath = process.env.CANONICAL_CSS_APP_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 
@@ -33,7 +26,6 @@ let rawTokenCache = new Map();
 let appResolverCache = null;
 
 const loadAppResolver = () => {
-  if (!useAppResolver) return null;
   if (appResolverCache !== null) return appResolverCache;
 
   try {
@@ -663,11 +655,7 @@ function generateEntrypointCSS() {
 // Main execution
 function main() {
   console.log('🚀 Generating Canonical Token CSS...');
-  if (useAppResolver) {
-    console.log('🔧 Resolver-driven app source selection: enabled (required path)');
-  } else {
-    console.log('⚠️  Resolver-driven app source selection: legacy mode (internal parity check)');
-  }
+  console.log('🔧 Resolver-driven app source selection: enabled (required path)');
 
   const outputDir = path.join(repoRoot, 'generated', 'css');
 

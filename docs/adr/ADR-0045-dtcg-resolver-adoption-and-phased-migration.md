@@ -93,10 +93,8 @@ Implementation will follow a phased workflow (WORKFLOW-009). If a future phase c
 
 - Canonical CSS orchestration is now **Style Dictionary-first** in default flow:
   - `tokens:build:canonical` delegates to SD canonical platforms.
-- Legacy canonical generator path is retained only for parity checks:
-  - `tokens:build:canonical:legacy` is marked deprecated and parity-only.
-  - planned removal target: **2026-05-15** (if CI stays green and no parity regressions are found).
-- Resolver integrity checks now include canonical SD parity validation via `resolver:check`.
+- Legacy canonical parity scripts are removed from active build flow.
+- Resolver integrity checks keep phase validation + canonical build + themed snapshot coverage via `resolver:check`.
 
 ---
 
