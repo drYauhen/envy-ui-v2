@@ -1,0 +1,51 @@
+name: Tokens CI
+
+on:
+  pull_request:
+    paths:
+      - tokens/**
+      - scripts/**
+      - style-dictionary/**
+      - package.json
+      - package-lock.json
+      - .github/workflows/tokens-ci.yml
+  push:
+    branches:
+      - master
+      - development
+      - wip/**
+    paths:
+      - tokens/**
+      - scripts/**
+      - style-dictionary/**
+      - package.json
+      - package-lock.json
+      - .github/workflows/tokens-ci.yml
+
+concurrency:
+  group: tokens-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tokens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.11.1
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Resolver Integrity Check
+        run: npm run resolver:check
+
+      - name: Build Tokens
+        run: npm run tokens:build
