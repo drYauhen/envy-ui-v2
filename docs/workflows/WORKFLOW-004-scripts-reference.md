@@ -47,6 +47,7 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 ## Tokens
 
 - `tokens:build`: Build tokens via Style Dictionary (platform outputs; not canonical CSS).
+- `tokens:build:sd`: Build Style Dictionary platform outputs. The themed CSS formatter writes `generated/css/tokens.themed.css`.
 - `tokens:build:canonical`: Build canonical CSS via Style Dictionary canonical platforms.
 - `tokens:build:canonical:sd`: Explicit canonical build via Style Dictionary canonical platforms.
 - `tokens:build:canonical:legacy`: Deprecated parity-only path to legacy canonical generator (scheduled removal target: `2026-05-15`).

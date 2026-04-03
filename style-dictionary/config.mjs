@@ -177,7 +177,9 @@ export default {
       buildPath: path.join(repoRoot, 'generated', 'css') + path.sep,
       files: [
         {
-          destination: 'tokens.css',
+          // Keep themed output separate from canonical entrypoint (tokens.css)
+          // to avoid cross-build overwrite when running tokens:build:sd directly.
+          destination: 'tokens.themed.css',
           format: 'css/variables-themed',
           options: {
             // Keep deterministic ordering aligned with Style Dictionary native sort semantics.

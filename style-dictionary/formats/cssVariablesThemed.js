@@ -41,7 +41,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       const sortOption = configuredSort === undefined ? compareByName : configuredSort;
 
       // Find tokens root directory
-      // file.destination is like: /path/to/generated/css/tokens.css
+      // file.destination is like: /path/to/generated/css/tokens.themed.css
       // tokens should be at: /path/to/tokens
       const buildPath = file.destination ? path.dirname(file.destination) : process.cwd();
       let tokensRoot = path.resolve(buildPath, '../../tokens');
