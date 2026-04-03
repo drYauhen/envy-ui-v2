@@ -97,6 +97,13 @@ Deliverables:
 - Validation script ensuring resolver docs stay aligned with filesystem sources.
 - CI check for resolver integrity and deterministic resolution order.
 
+Implemented artifacts:
+- `tokens/knowledge/resolver/website-core.resolver.json`
+- `tokens/knowledge/resolver/report-core.resolver.json`
+- `tokens/knowledge/resolver/storybook.resolver.json`
+- `scripts/generate-resolver-phase4.mjs`
+- `scripts/validate-resolver-phase4.mjs`
+
 Validation:
 - Full target matrix builds successfully.
 - Resolver validation enforced in CI.
@@ -143,6 +150,15 @@ npm run tokens:build:dev-app:resolver
 
 # Verify canonical CSS parity between legacy and resolver mode
 npm run resolver:verify:canonical-parity
+
+# Generate remaining resolver files (website/report/storybook)
+npm run resolver:generate:phase4
+
+# Validate all resolver documents and filesystem alignment
+npm run resolver:validate:phase4
+
+# CI-ready resolver integrity check (phase 1 + phase 4 validations)
+npm run resolver:check
 
 # Rebuild canonical CSS tokens
 npm run tokens:build:canonical

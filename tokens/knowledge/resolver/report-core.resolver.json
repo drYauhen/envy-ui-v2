@@ -1,0 +1,96 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "name": "Envy UI Report Core Resolver",
+  "version": "2025.10",
+  "description": "Phase 4 resolver for report context. Mirrors current filesystem inventory and ordering.",
+  "sets": {
+    "primitives": {
+      "description": "Design token primitives shared across contexts.",
+      "sources": [
+        {
+          "$ref": "../../primitives/accent.json"
+        },
+        {
+          "$ref": "../../primitives/border.json"
+        },
+        {
+          "$ref": "../../primitives/brand.json"
+        },
+        {
+          "$ref": "../../primitives/breakpoints.json"
+        },
+        {
+          "$ref": "../../primitives/dimension.json"
+        },
+        {
+          "$ref": "../../primitives/filter.json"
+        },
+        {
+          "$ref": "../../primitives/layout.json"
+        },
+        {
+          "$ref": "../../primitives/neutral.json"
+        },
+        {
+          "$ref": "../../primitives/opacity.json"
+        },
+        {
+          "$ref": "../../primitives/shadow.json"
+        },
+        {
+          "$ref": "../../primitives/shape.json"
+        },
+        {
+          "$ref": "../../primitives/signal.json"
+        },
+        {
+          "$ref": "../../primitives/spacing.json"
+        },
+        {
+          "$ref": "../../primitives/status-application.json"
+        },
+        {
+          "$ref": "../../primitives/status.json"
+        },
+        {
+          "$ref": "../../primitives/time.json"
+        },
+        {
+          "$ref": "../../primitives/transition.json"
+        },
+        {
+          "$ref": "../../primitives/typography.json"
+        },
+        {
+          "$ref": "../../primitives/z-index.json"
+        }
+      ]
+    },
+    "reportRaw": {
+      "description": "report raw aliases to primitives.",
+      "sources": []
+    },
+    "reportSemantics": {
+      "description": "report semantic tokens.",
+      "sources": []
+    },
+    "reportComponents": {
+      "description": "report component contract tokens.",
+      "sources": []
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/primitives"
+    },
+    {
+      "$ref": "#/sets/reportRaw"
+    },
+    {
+      "$ref": "#/sets/reportSemantics"
+    },
+    {
+      "$ref": "#/sets/reportComponents"
+    }
+  ]
+}
