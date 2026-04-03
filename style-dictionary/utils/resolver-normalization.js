@@ -111,11 +111,11 @@ function collectRawAliasMaps(rawFiles, tokenIndex, primitiveRawValues) {
   return { rawRefByPath, rawResolvedValueByPath };
 }
 
-function resolveRawReferencePath(rawPath, rawRefByPath) {
+function resolveRawReferencePath(rawPath, rawRefByPath, rawPrefix) {
   let current = rawPath;
   const seen = new Set();
 
-  while (typeof current === 'string' && current.startsWith('eui.app.raw.') && rawRefByPath.has(current)) {
+  while (typeof current === 'string' && current.startsWith(rawPrefix) && rawRefByPath.has(current)) {
     if (seen.has(current)) break;
     seen.add(current);
     current = rawRefByPath.get(current);
@@ -128,7 +128,8 @@ function normalizeTokenPayloadReferences(payload, {
   tokenIndex,
   primitiveRawValues,
   rawRefByPath,
-  rawResolvedValueByPath
+  rawResolvedValueByPath,
+  rawPrefix
 }) {
   const primitiveResolvedCache = new Map();
 
@@ -152,13 +153,13 @@ function normalizeTokenPayloadReferences(payload, {
 
         let normalizedRef = normalizeReferenceId(parsedRef, tokenIndex);
 
-        if (normalizedRef.startsWith('eui.app.raw.')) {
+        if (normalizedRef.startsWith(rawPrefix)) {
           if (rawResolvedValueByPath.has(normalizedRef)) {
             result[key] = rawResolvedValueByPath.get(normalizedRef);
             return;
           }
 
-          const resolvedPath = resolveRawReferencePath(normalizedRef, rawRefByPath);
+          const resolvedPath = resolveRawReferencePath(normalizedRef, rawRefByPath, rawPrefix);
           const resolvedLiteral = resolveValueFromMap(
             resolvedPath,
             primitiveRawValues,
@@ -217,25 +218,44 @@ function materializeNormalizedFiles(inputFiles, normalizePayload, repoRoot) {
   });
 }
 
-function isAppRawFile(filePath) {
-  return filePath.includes(`${path.sep}tokens${path.sep}contexts${path.sep}app${path.sep}raw${path.sep}`);
+function toPosix(filePath) {
+  return filePath.replace(/\\/g, '/');
 }
 
-function isAppFileForNormalization(filePath) {
-  if (filePath.includes(`${path.sep}tokens${path.sep}contexts${path.sep}app${path.sep}semantics${path.sep}`)) {
-    return true;
-  }
-  if (filePath.includes(`${path.sep}tokens${path.sep}contexts${path.sep}app${path.sep}themes${path.sep}`)) {
-    return true;
-  }
-  return filePath.endsWith(`${path.sep}tokens${path.sep}contexts${path.sep}app${path.sep}components.json`);
+function isContextRawFile(filePath, context) {
+  const normalizedPath = toPosix(filePath);
+  return normalizedPath.includes(`/tokens/contexts/${context}/raw/`);
 }
 
-export function normalizeAppResolverSources(orderedSourceFiles, { repoRoot }) {
-  const appRawFiles = orderedSourceFiles.filter((filePath) => isAppRawFile(filePath));
-  const appNormalizeFiles = orderedSourceFiles.filter((filePath) => isAppFileForNormalization(filePath));
+function isContextFileForNormalization(filePath, context) {
+  const normalizedPath = toPosix(filePath);
+  if (normalizedPath.includes(`/tokens/contexts/${context}/semantics/`)) {
+    return true;
+  }
+  if (normalizedPath.includes(`/tokens/contexts/${context}/themes/`)) {
+    return true;
+  }
+  return normalizedPath.endsWith(`/tokens/contexts/${context}/components.json`);
+}
 
-  if (appRawFiles.length === 0 || appNormalizeFiles.length === 0) {
+function discoverContextsWithRawFiles(orderedSourceFiles) {
+  const contexts = new Set();
+  orderedSourceFiles.forEach((filePath) => {
+    const normalizedPath = toPosix(filePath);
+    const match = normalizedPath.match(/\/tokens\/contexts\/([^/]+)\/raw\/.+\.json$/);
+    if (match) {
+      contexts.add(match[1]);
+    }
+  });
+  return [...contexts];
+}
+
+export function normalizeResolverSources(orderedSourceFiles, { repoRoot, contexts } = {}) {
+  const contextsToProcess = Array.isArray(contexts) && contexts.length > 0
+    ? [...new Set(contexts)]
+    : discoverContextsWithRawFiles(orderedSourceFiles);
+
+  if (contextsToProcess.length === 0) {
     return {
       orderedSourceFiles,
       normalizationApplied: false,
@@ -248,23 +268,58 @@ export function normalizeAppResolverSources(orderedSourceFiles, { repoRoot }) {
     filePath.includes(`${path.sep}tokens${path.sep}primitives${path.sep}`)
   ));
   const primitiveRawValues = collectPrimitiveRawValues(primitiveFiles);
-  const { rawRefByPath, rawResolvedValueByPath } = collectRawAliasMaps(appRawFiles, tokenIndex, primitiveRawValues);
-  const normalizePayload = (payload) => normalizeTokenPayloadReferences(payload, {
-    tokenIndex,
-    primitiveRawValues,
-    rawRefByPath,
-    rawResolvedValueByPath
-  });
 
-  const normalizedFiles = materializeNormalizedFiles(appNormalizeFiles, normalizePayload, repoRoot);
   const normalizedByOriginal = new Map();
-  appNormalizeFiles.forEach((originalPath, index) => {
-    normalizedByOriginal.set(originalPath, normalizedFiles[index]);
+  const rawFilesToDrop = new Set();
+  let normalizedAliasCount = 0;
+  let contextsApplied = 0;
+
+  contextsToProcess.forEach((context) => {
+    const contextRawFiles = orderedSourceFiles.filter((filePath) => isContextRawFile(filePath, context));
+    const contextNormalizeFiles = orderedSourceFiles.filter((filePath) => (
+      isContextFileForNormalization(filePath, context)
+    ));
+
+    if (contextRawFiles.length === 0 || contextNormalizeFiles.length === 0) {
+      return;
+    }
+
+    const { rawRefByPath, rawResolvedValueByPath } = collectRawAliasMaps(
+      contextRawFiles,
+      tokenIndex,
+      primitiveRawValues
+    );
+    const rawPrefix = `eui.${context}.raw.`;
+    const normalizePayload = (payload) => normalizeTokenPayloadReferences(payload, {
+      tokenIndex,
+      primitiveRawValues,
+      rawRefByPath,
+      rawResolvedValueByPath,
+      rawPrefix
+    });
+
+    const normalizedFiles = materializeNormalizedFiles(contextNormalizeFiles, normalizePayload, repoRoot);
+    contextNormalizeFiles.forEach((originalPath, index) => {
+      normalizedByOriginal.set(originalPath, normalizedFiles[index]);
+    });
+    contextRawFiles.forEach((filePath) => {
+      rawFilesToDrop.add(filePath);
+    });
+
+    normalizedAliasCount += rawResolvedValueByPath.size;
+    contextsApplied += 1;
   });
 
-  const appRawSet = new Set(appRawFiles);
+  if (contextsApplied === 0) {
+    return {
+      orderedSourceFiles,
+      normalizationApplied: false,
+      normalizedAliasCount: 0
+    };
+  }
+
   const normalizedOrderedSourceFiles = orderedSourceFiles.flatMap((filePath) => {
-    if (appRawSet.has(filePath)) return [];
+    if (rawFilesToDrop.has(filePath)) return [];
     if (normalizedByOriginal.has(filePath)) return [normalizedByOriginal.get(filePath)];
     return [filePath];
   });
@@ -272,6 +327,10 @@ export function normalizeAppResolverSources(orderedSourceFiles, { repoRoot }) {
   return {
     orderedSourceFiles: normalizedOrderedSourceFiles,
     normalizationApplied: true,
-    normalizedAliasCount: rawResolvedValueByPath.size
+    normalizedAliasCount
   };
+}
+
+export function normalizeAppResolverSources(orderedSourceFiles, { repoRoot } = {}) {
+  return normalizeResolverSources(orderedSourceFiles, { repoRoot, contexts: ['app'] });
 }

@@ -9,7 +9,7 @@ import registerTokenStudioFormat from './formats/tokenStudio.js';
 import registerFullVariablesFormat from './formats/variablesFull.js';
 import registerScopedFigmaVariablesFormat from './formats/figmaVariablesScoped.js';
 import registerCssVariablesThemedFormat from './formats/cssVariablesThemed.js';
-import { normalizeAppResolverSources } from './utils/resolver-normalization.js';
+import { normalizeResolverSources } from './utils/resolver-normalization.js';
 import {
   flattenResolverSources,
   loadResolverFile,
@@ -109,11 +109,11 @@ function getResolverSourceListForTarget() {
       orderedSourceFiles: ordered,
       normalizationApplied,
       normalizedAliasCount
-    } = normalizeAppResolverSources(orderedSourceFiles, { repoRoot });
+    } = normalizeResolverSources(orderedSourceFiles, { repoRoot });
 
     console.log(`🧭 Style Dictionary resolver mode enabled: ${resolverAbsolutePath}`);
     if (normalizationApplied) {
-      console.log(`🧭 App raw aliases normalized and inlined for resolver mode: ${normalizedAliasCount}`);
+      console.log(`🧭 Raw aliases normalized and inlined for resolver mode: ${normalizedAliasCount}`);
     }
     console.log(`🧭 Resolver source files for ${target}: ${ordered.length}`);
     return ordered;
