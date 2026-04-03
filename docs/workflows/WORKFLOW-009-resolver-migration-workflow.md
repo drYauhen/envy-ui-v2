@@ -125,6 +125,12 @@ npm run resolver:generate:app
 # Validate app resolver against current canonical files/order
 npm run resolver:validate:app
 
+# Print effective source order resolved from app resolver (read-only)
+npm run resolver:resolve:app
+
+# Compare resolver-derived order with legacy app order (read-only)
+npm run resolver:compare:app
+
 # Rebuild canonical CSS tokens
 npm run tokens:build:canonical
 
