@@ -40,17 +40,27 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         : (a, b) => a.name.localeCompare(b.name);
       const sortOption = configuredSort === undefined ? compareByName : configuredSort;
 
-      const formatCssDeclarations = (tokens = []) => {
-        const normalizedTokens = tokens.map((token) => {
+      const formatCssDeclarations = (
+        tokens = [],
+        { indentation = '  ', includeEmptyValues = true } = {}
+      ) => {
+        const normalizedTokens = tokens.flatMap((token) => {
           const rawValue = token.value ?? token.$value ?? '';
+          if (!includeEmptyValues && !rawValue) {
+            return [];
+          }
           const normalizedValue = typeof rawValue === 'string' ? rawValue : String(rawValue);
-          return {
+          return [{
             ...token,
             value: normalizedValue,
             $value: normalizedValue,
             original: token.original ?? { value: normalizedValue, $value: normalizedValue }
-          };
+          }];
         });
+
+        if (normalizedTokens.length === 0) {
+          return '';
+        }
 
         return formattedVariables({
           format: propertyFormatNames.css,
@@ -59,7 +69,10 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             allTokens: normalizedTokens
           },
           usesDtcg: false,
-          sort: sortOption
+          sort: sortOption,
+          formatting: {
+            indentation
+          }
         });
       };
 
@@ -540,13 +553,14 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         // Generate context tokens grouped by selector
         selectorTokens.forEach((tokens, selector) => {
           if (tokens.length > 0) {
-            output += `  ${selector} {\n`;
-            tokens.sort(compareByName);
-            tokens.forEach(({ name, value }) => {
-              if (value) {
-                output += `    --${name}: ${value};\n`;
-              }
+            const selectorDeclarations = formatCssDeclarations(tokens, {
+              indentation: '    ',
+              includeEmptyValues: false
             });
+            output += `  ${selector} {\n`;
+            if (selectorDeclarations) {
+              output += `${selectorDeclarations}\n`;
+            }
             output += '  }\n\n';
           }
         });
