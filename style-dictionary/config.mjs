@@ -108,12 +108,14 @@ function getResolverSourceListForTarget() {
     const {
       orderedSourceFiles: ordered,
       normalizationApplied,
-      normalizedAliasCount
+      normalizedAliasCount,
+      normalizedFileCount
     } = normalizeResolverSources(orderedSourceFiles, { repoRoot });
 
     console.log(`🧭 Style Dictionary resolver mode enabled: ${resolverAbsolutePath}`);
     if (normalizationApplied) {
       console.log(`🧭 Raw aliases normalized and inlined for resolver mode: ${normalizedAliasCount}`);
+      console.log(`🧭 Resolver-normalized files materialized: ${normalizedFileCount}`);
     }
     console.log(`🧭 Resolver source files for ${target}: ${ordered.length}`);
     return ordered;

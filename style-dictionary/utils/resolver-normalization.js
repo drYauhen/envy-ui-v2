@@ -132,6 +132,7 @@ function normalizeTokenPayloadReferences(payload, {
   rawPrefix
 }) {
   const primitiveResolvedCache = new Map();
+  let changed = false;
 
   const rewriteNode = (node, prefix = []) => {
     if (Array.isArray(node)) {
@@ -155,7 +156,9 @@ function normalizeTokenPayloadReferences(payload, {
 
         if (normalizedRef.startsWith(rawPrefix)) {
           if (rawResolvedValueByPath.has(normalizedRef)) {
-            result[key] = rawResolvedValueByPath.get(normalizedRef);
+            const nextValue = rawResolvedValueByPath.get(normalizedRef);
+            if (nextValue !== value) changed = true;
+            result[key] = nextValue;
             return;
           }
 
@@ -167,6 +170,7 @@ function normalizeTokenPayloadReferences(payload, {
             primitiveResolvedCache
           );
           if (resolvedLiteral != null) {
+            if (resolvedLiteral !== value) changed = true;
             result[key] = resolvedLiteral;
             return;
           }
@@ -182,12 +186,15 @@ function normalizeTokenPayloadReferences(payload, {
             primitiveResolvedCache
           );
           if (selfResolved != null) {
+            if (selfResolved !== value) changed = true;
             result[key] = selfResolved;
             return;
           }
         }
 
-        result[key] = `{${normalizedRef}}`;
+        const nextValue = `{${normalizedRef}}`;
+        if (nextValue !== value) changed = true;
+        result[key] = nextValue;
         return;
       }
 
@@ -202,20 +209,31 @@ function normalizeTokenPayloadReferences(payload, {
     return result;
   };
 
-  return rewriteNode(payload, []);
+  return { payload: rewriteNode(payload, []), changed };
 }
 
-function materializeNormalizedFiles(inputFiles, normalizePayload, repoRoot) {
-  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'envy-ui-sd-resolver-'));
-  return inputFiles.map((inputPath) => {
+function materializeChangedNormalizedFiles(inputFiles, normalizePayload, repoRoot) {
+  let tempRoot = null;
+  const normalizedByOriginal = new Map();
+  let materializedFileCount = 0;
+
+  inputFiles.forEach((inputPath) => {
     const payload = JSON.parse(readFileSync(inputPath, 'utf8'));
-    const normalizedPayload = normalizePayload(payload, inputPath);
+    const { payload: normalizedPayload, changed } = normalizePayload(payload, inputPath);
+    if (!changed) return;
+
+    if (!tempRoot) {
+      tempRoot = mkdtempSync(path.join(os.tmpdir(), 'envy-ui-sd-resolver-'));
+    }
     const relativePath = path.relative(repoRoot, inputPath);
     const outputPath = path.join(tempRoot, relativePath);
     mkdirSync(path.dirname(outputPath), { recursive: true });
     writeFileSync(outputPath, `${JSON.stringify(normalizedPayload, null, 2)}\n`, 'utf8');
-    return outputPath;
+    normalizedByOriginal.set(inputPath, outputPath);
+    materializedFileCount += 1;
   });
+
+  return { normalizedByOriginal, materializedFileCount };
 }
 
 function toPosix(filePath) {
@@ -259,7 +277,8 @@ export function normalizeResolverSources(orderedSourceFiles, { repoRoot, context
     return {
       orderedSourceFiles,
       normalizationApplied: false,
-      normalizedAliasCount: 0
+      normalizedAliasCount: 0,
+      normalizedFileCount: 0
     };
   }
 
@@ -272,6 +291,7 @@ export function normalizeResolverSources(orderedSourceFiles, { repoRoot, context
   const normalizedByOriginal = new Map();
   const rawFilesToDrop = new Set();
   let normalizedAliasCount = 0;
+  let normalizedFileCount = 0;
   let contextsApplied = 0;
 
   contextsToProcess.forEach((context) => {
@@ -298,15 +318,16 @@ export function normalizeResolverSources(orderedSourceFiles, { repoRoot, context
       rawPrefix
     });
 
-    const normalizedFiles = materializeNormalizedFiles(contextNormalizeFiles, normalizePayload, repoRoot);
-    contextNormalizeFiles.forEach((originalPath, index) => {
-      normalizedByOriginal.set(originalPath, normalizedFiles[index]);
+    const normalizedResult = materializeChangedNormalizedFiles(contextNormalizeFiles, normalizePayload, repoRoot);
+    normalizedResult.normalizedByOriginal.forEach((normalizedPath, originalPath) => {
+      normalizedByOriginal.set(originalPath, normalizedPath);
     });
     contextRawFiles.forEach((filePath) => {
       rawFilesToDrop.add(filePath);
     });
 
     normalizedAliasCount += rawResolvedValueByPath.size;
+    normalizedFileCount += normalizedResult.materializedFileCount;
     contextsApplied += 1;
   });
 
@@ -314,7 +335,8 @@ export function normalizeResolverSources(orderedSourceFiles, { repoRoot, context
     return {
       orderedSourceFiles,
       normalizationApplied: false,
-      normalizedAliasCount: 0
+      normalizedAliasCount: 0,
+      normalizedFileCount: 0
     };
   }
 
@@ -327,7 +349,8 @@ export function normalizeResolverSources(orderedSourceFiles, { repoRoot, context
   return {
     orderedSourceFiles: normalizedOrderedSourceFiles,
     normalizationApplied: true,
-    normalizedAliasCount
+    normalizedAliasCount,
+    normalizedFileCount
   };
 }
 
