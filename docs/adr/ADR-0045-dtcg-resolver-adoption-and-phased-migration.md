@@ -1,8 +1,8 @@
 # ADR-0045: DTCG Resolver Adoption and Phased Migration
 
-**Status:** Accepted  
+**Status:** Accepted (Implemented)  
 **Date:** 2026-04-02  
-**Last Updated:** 2026-04-03  
+**Last Updated:** 2026-04-04  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
@@ -95,6 +95,13 @@ Implementation will follow a phased workflow (WORKFLOW-009). If a future phase c
   - `tokens:build:canonical` delegates to SD canonical platforms.
 - Legacy canonical parity scripts are removed from active build flow.
 - Resolver integrity checks keep phase validation + canonical build + themed snapshot coverage via `resolver:check`.
+
+### Implementation Update (2026-04-04)
+
+- Added formal JSON schema validation for resolver documents (`schemas/dtcg-resolver-2025.10.schema.json`).
+- Added `resolver:validate:schema` script and wired it into `resolver:check` for CI guardrail.
+- Resolver generation now points to local schema reference for `*.resolver.json`.
+- WORKFLOW-009 migration status moved from active rollout to completed maintenance mode.
 
 ---
 

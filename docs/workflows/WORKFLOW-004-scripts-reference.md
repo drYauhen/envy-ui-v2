@@ -1,7 +1,7 @@
 # Scripts Reference
 
 **Document ID:** workflow-scripts-reference
-**Last Updated:** 2026-04-03
+**Last Updated:** 2026-04-04
 **Category:** Workflow
 
 
@@ -55,7 +55,8 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 - `tokens:build:figma:app`: Build Figma outputs for app context.
 - `tokens:build:figma:website`: Build Figma outputs for website context (canonical; `web` renamed to `website`).
 - `tokens:build:figma:report`: Build Figma outputs for report context.
-- `resolver:check`: CI-ready resolver integrity check (phase validations + canonical build + themed CSS snapshot regression).
+- `resolver:check`: CI-ready resolver integrity check (schema + phase validations + canonical build + themed CSS snapshot regression).
+- `resolver:validate:schema`: Validate all `*.resolver.json` files against local JSON schema (`schemas/dtcg-resolver-2025.10.schema.json`).
 - `resolver:verify:themed-css-snapshot`: Verify `css/variables-themed` output against fixture snapshot (`-- --update` to refresh intentionally).
 - `tokens:copy-readme`: Copy tokens [README](README.md) to public docs.
 - `tokens:generate-docs`: Generate token reference docs.

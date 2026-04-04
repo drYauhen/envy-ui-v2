@@ -1,9 +1,9 @@
 # Resolver Migration Workflow
 
 **Document ID:** workflow-resolver-migration-workflow  
-**Status:** Active  
+**Status:** Completed (Maintenance)  
 **Date:** 2026-04-02  
-**Last Updated:** 2026-04-03  
+**Last Updated:** 2026-04-04  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Category:** Workflow
@@ -125,6 +125,13 @@ Validation:
 - No unresolved migration TODOs in scripts.
 - Resolver path is the canonical composition path.
 
+### Completion Update (2026-04-04)
+
+- Resolver migration path is fully active for canonical and platform builds.
+- Fail-soft and legacy composition fallback branches are removed from active flow.
+- Resolver documents are now validated by local JSON schema (`schemas/dtcg-resolver-2025.10.schema.json`).
+- `resolver:check` enforces schema validation + phase validations + build/snapshot regression.
+
 ## Execution Checklist
 
 1. Update ADRs if any invariant changes are introduced.
@@ -148,6 +155,9 @@ npm run resolver:generate:app
 # Validate app resolver against current canonical files/order
 npm run resolver:validate:app
 
+# Validate resolver documents against local JSON schema
+npm run resolver:validate:schema
+
 # Print effective source order resolved from app resolver (read-only)
 npm run resolver:resolve:app
 
@@ -169,7 +179,7 @@ npm run resolver:generate:phase4
 # Validate all resolver documents and filesystem alignment
 npm run resolver:validate:phase4
 
-# CI-ready resolver integrity check (phase 1 + phase 4 validations + canonical build + themed CSS snapshot)
+# CI-ready resolver integrity check (schema + phase 1 + phase 4 validations + canonical build + themed CSS snapshot)
 npm run resolver:check
 
 # Verify css/variables-themed output against fixture snapshot (use -- --update intentionally)

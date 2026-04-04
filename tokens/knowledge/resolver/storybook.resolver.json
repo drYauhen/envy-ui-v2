@@ -1,5 +1,5 @@
 {
-  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "$schema": "../../../schemas/dtcg-resolver-2025.10.schema.json",
   "name": "Envy UI Storybook Resolver",
   "version": "2025.10",
   "description": "Phase 4 resolver for Storybook aggregation. Includes all discovered context files in deterministic order.",

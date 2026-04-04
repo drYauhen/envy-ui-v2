@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 export const SUPPORTED_CONTEXTS = ['app', 'website', 'report'];
+export const RESOLVER_SCHEMA_REF = '../../../schemas/dtcg-resolver-2025.10.schema.json';
 
 const readDirSorted = (dir) => fs.readdirSync(dir).sort((a, b) => a.localeCompare(b));
 
@@ -133,7 +134,7 @@ export function buildContextCoreResolver({ repoRoot, resolverDir, context }) {
     resolutionOrder.push({ $ref: `#/sets/${contextComponentsSetName(context)}` });
 
     return {
-      $schema: 'https://www.designtokens.org/schemas/2025.10/resolver.json',
+      $schema: RESOLVER_SCHEMA_REF,
       name: `Envy UI ${label} Core Resolver`,
       version: '2025.10',
       description: `Phase 4 resolver for ${context} context. Mirrors current filesystem inventory and ordering.`,
@@ -145,7 +146,7 @@ export function buildContextCoreResolver({ repoRoot, resolverDir, context }) {
 
   resolutionOrder.push({ $ref: `#/sets/${contextComponentsSetName(context)}` });
   return {
-    $schema: 'https://www.designtokens.org/schemas/2025.10/resolver.json',
+    $schema: RESOLVER_SCHEMA_REF,
     name: `Envy UI ${label} Core Resolver`,
     version: '2025.10',
     description: `Phase 4 resolver for ${context} context. Mirrors current filesystem inventory and ordering.`,
@@ -197,7 +198,7 @@ export function buildStorybookResolver({ repoRoot, resolverDir, contexts = SUPPO
   });
 
   return {
-    $schema: 'https://www.designtokens.org/schemas/2025.10/resolver.json',
+    $schema: RESOLVER_SCHEMA_REF,
     name: 'Envy UI Storybook Resolver',
     version: '2025.10',
     description:

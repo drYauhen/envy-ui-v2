@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://envy-ui.com/schemas/dtcg-resolver-2025.10.schema.json",
+  "title": "DTCG Resolver 2025.10 Schema (Envy UI Profile)",
+  "description": "Schema for resolver documents used in Envy UI resolver migration and build orchestration.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "name",
+    "version",
+    "sets",
+    "resolutionOrder"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "const": "2025.10"
+    },
+    "description": {
+      "type": "string"
+    },
+    "sets": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+          "$ref": "#/$defs/setDefinition"
+        }
+      },
+      "additionalProperties": false
+    },
+    "modifiers": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+          "$ref": "#/$defs/modifierDefinition"
+        }
+      },
+      "additionalProperties": false
+    },
+    "resolutionOrder": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/orderRef"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sourceRef": {
+      "type": "object",
+      "required": [
+        "$ref"
+      ],
+      "properties": {
+        "$ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "setDefinition": {
+      "type": "object",
+      "required": [
+        "sources"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "modifierDefinition": {
+      "type": "object",
+      "required": [
+        "contexts"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "default": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contexts": {
+          "type": "object",
+          "minProperties": 1,
+          "patternProperties": {
+            "^[a-zA-Z][a-zA-Z0-9_-]*$": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/sourceRef"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "orderRef": {
+      "type": "object",
+      "required": [
+        "$ref"
+      ],
+      "properties": {
+        "$ref": {
+          "type": "string",
+          "pattern": "^#/(sets|modifiers)/[a-zA-Z][a-zA-Z0-9_-]*$"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
