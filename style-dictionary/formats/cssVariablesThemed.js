@@ -22,11 +22,35 @@ import {
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
+function listJsonFilesRecursive(rootDir) {
+  if (!rootDir || !fs.existsSync(rootDir)) return [];
+  const files = [];
+  const stack = [rootDir];
+
+  while (stack.length > 0) {
+    const currentDir = stack.pop();
+    const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+    entries.forEach((entry) => {
+      const fullPath = path.join(currentDir, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(fullPath);
+        return;
+      }
+      if (entry.isFile() && entry.name.endsWith('.json')) {
+        files.push(fullPath);
+      }
+    });
+  }
+
+  return files.sort((a, b) => a.localeCompare(b));
+}
+
 export default function registerCssVariablesThemedFormat(StyleDictionary, options = {}) {
   const { allowedContexts = ['app', 'website', 'report'], contextMirrors = {} } = options;
 
   // Check for fail-soft mode (handles missing references gracefully)
   const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
+  const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR === 'true';
 
   // NEW: Register canonical CSS formats for token architecture
   registerCanonicalFormats(StyleDictionary, options);
@@ -66,7 +90,12 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       const dictionaryFilePaths = Array.from(
         new Set(dictionary.allTokens.map((token) => token.filePath).filter(Boolean))
       );
-      const primitiveSourceFiles = dictionaryFilePaths.filter((filePath) => (
+      const primitiveLookupSourceFiles = useResolverPreprocessor
+        ? listJsonFilesRecursive(path.join(tokensRoot, 'primitives'))
+        : dictionaryFilePaths.filter((filePath) => (
+          /\/primitives\/[^/]+\.json$/.test(toPosixPath(filePath))
+        ));
+      const primitiveOverlaySourceFiles = dictionaryFilePaths.filter((filePath) => (
         /\/primitives\/[^/]+\.json$/.test(toPosixPath(filePath))
       ));
       const rawSourceFilesByContext = new Map(contextDirs.map((context) => [context, []]));
@@ -123,6 +152,20 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           }
         }
       });
+
+      // In preprocessor mode raw branches can be removed from dictionary tokens.
+      // Fall back to filesystem discovery so manual raw->primitive resolving
+      // stays deterministic and output-parity-safe.
+      contextDirs.forEach((context) => {
+        const collected = rawSourceFilesByContext.get(context) || [];
+        if (collected.length > 0) return;
+        if (!useResolverPreprocessor) return;
+        const rawDir = path.join(tokensRoot, 'contexts', context, 'raw');
+        const discoveredRawFiles = listJsonFilesRecursive(rawDir);
+        if (discoveredRawFiles.length > 0) {
+          rawSourceFilesByContext.set(context, discoveredRawFiles);
+        }
+      });
       const baseTokens = [];
 
       // Maps used by the custom resolver path in this formatter
@@ -141,6 +184,18 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         if (trimmed.includes('.')) variants.add(trimmed.split('.').join('-'));
         if (trimmed.includes('-')) variants.add(trimmed.split('-').join('.'));
         return Array.from(variants);
+      };
+
+      const toPrimitiveAliasReference = (referenceId) => {
+        const trimmed = (referenceId || '').trim();
+        if (!trimmed) return null;
+        if (/^eui\.(app|website|report)\.raw\./.test(trimmed)) {
+          return trimmed.replace(/^eui\.(app|website|report)\.raw\./, 'eui.');
+        }
+        if (/^eui-(app|website|report)-raw-/.test(trimmed)) {
+          return trimmed.replace(/^eui-(app|website|report)-raw-/, 'eui-');
+        }
+        return null;
       };
 
       const registerReferenceValue = (map, tokenPath, tokenName, value) => {
@@ -174,7 +229,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       // Build primitive lookup from raw primitive JSON files (not dictionary) to avoid collision noise
       const primitiveRawValues = new Map();
       const primitiveEntries = [];
-      primitiveSourceFiles.forEach((primitiveFilePath) => {
+      primitiveLookupSourceFiles.forEach((primitiveFilePath) => {
         try {
           const primitiveData = JSON.parse(fs.readFileSync(primitiveFilePath, 'utf8'));
           const primitiveTokens = collectRawTokensFromJson(primitiveData);
@@ -257,6 +312,14 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           }
         }
 
+        const primitiveAliasReference = toPrimitiveAliasReference(normalized);
+        if (primitiveAliasReference && primitiveAliasReference !== normalized) {
+          const aliasResolved = resolveReferenceFromMaps(primitiveAliasReference, nextSeen);
+          if (aliasResolved != null) {
+            return aliasResolved;
+          }
+        }
+
         return null;
       };
 
@@ -273,6 +336,23 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           const referencePath = referenceStr.split('.'); // ['eui', 'radius', 'pill']
           const referencePathStr = referencePath.join('.');
 
+          const findDictionaryTokenByReference = () => {
+            let resolvedToken = dictionary.allTokens.find(t => {
+              const tPath = t.path || [];
+              if (tPath.length !== referencePath.length) return false;
+              return tPath.every((seg, i) => seg === referencePath[i]);
+            });
+
+            if (!resolvedToken) {
+              const tokenName = referencePath.map(s => s.replace(/\./g, '-')).join('-');
+              resolvedToken = dictionary.allTokens.find(t => {
+                const tName = t.name || (t.path || []).map(s => s.replace(/\./g, '-')).join('-');
+                return tName === tokenName;
+              });
+            }
+            return resolvedToken || null;
+          };
+
           // FIRST: Check if this reference exists in semanticBaseValues (semantic base value)
           if (semanticBaseValues.has(referencePathStr)) {
             const semanticValue = semanticBaseValues.get(referencePathStr);
@@ -282,6 +362,34 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             return semanticValue;
           }
 
+          const shouldPreferDictionaryFirstInPreprocessor = (
+            /^eui\.(app|website|report)\.raw\.typography\./.test(referenceStr)
+            || /^eui-(app|website|report)-raw-typography-/.test(referenceStr)
+            || /^eui\.typography\./.test(referenceStr)
+            || /^eui-typography-/.test(referenceStr)
+          );
+
+          // In preprocessor mode, prefer dictionary first only for raw typography
+          // references to preserve current contract where collision resolution
+          // currently drives the final "base" typography values.
+          if (useResolverPreprocessor && shouldPreferDictionaryFirstInPreprocessor) {
+            const resolvedToken = findDictionaryTokenByReference();
+            if (resolvedToken) {
+              const resolvedValue = resolvedToken.value || resolvedToken.$value;
+              if (
+                typeof resolvedValue === 'string'
+                && resolvedValue.startsWith('{')
+                && resolvedValue.endsWith('}')
+              ) {
+                if (resolvedValue !== rawValue) {
+                  return resolveTokenValue(resolvedValue);
+                }
+              } else if (resolvedValue != null) {
+                return resolvedValue;
+              }
+            }
+          }
+
           // FIRST.5: Resolve from raw/primitives lookup maps (supports dot and dash references)
           const mappedValue = resolveReferenceFromMaps(referenceStr);
           if (mappedValue != null) {
@@ -289,21 +397,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           }
 
           // SECOND: Try to find the token in dictionary by path (exact match)
-          // First, try to find by path array
-          let resolvedToken = dictionary.allTokens.find(t => {
-            const tPath = t.path || [];
-            if (tPath.length !== referencePath.length) return false;
-            return tPath.every((seg, i) => seg === referencePath[i]);
-          });
-
-          // If not found by path, try to find by name (for resolved tokens)
-          if (!resolvedToken) {
-            const tokenName = referencePath.map(s => s.replace(/\./g, '-')).join('-');
-            resolvedToken = dictionary.allTokens.find(t => {
-              const tName = t.name || (t.path || []).map(s => s.replace(/\./g, '-')).join('-');
-              return tName === tokenName;
-            });
-          }
+          const resolvedToken = findDictionaryTokenByReference();
 
           if (resolvedToken) {
             // Get the resolved value (Style Dictionary resolves references)
@@ -364,7 +458,6 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       
       // Track which base tokens we've added (by path) to avoid duplicates
       const baseTokenPaths = new Set();
-      
       dictionary.allTokens.forEach((token) => {
         const filePath = token.filePath || '';
         const tokenPath = (token.path || []).join('.');
@@ -396,7 +489,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       // Structure: tokens/primitives/*.json, tokens/contexts/{context}/semantics/... and tokens/app/components/.../
 
       // FIRST PASS: Process primitives files to populate base tokens
-      primitiveSourceFiles.forEach((primitivesFilePath) => {
+      primitiveOverlaySourceFiles.forEach((primitivesFilePath) => {
         try {
           const primitivesData = JSON.parse(fs.readFileSync(primitivesFilePath, 'utf8'));
           const primitivesTokens = extractTokensFromJson(primitivesData);
