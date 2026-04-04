@@ -50,7 +50,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
 
   // Check for fail-soft mode (handles missing references gracefully)
   const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
-  const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR === 'true';
+  const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR !== 'false';
 
   // NEW: Register canonical CSS formats for token architecture
   registerCanonicalFormats(StyleDictionary, options);

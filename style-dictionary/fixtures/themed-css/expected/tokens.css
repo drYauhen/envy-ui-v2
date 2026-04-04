@@ -11,10 +11,10 @@
   --eui-color-neutral-900: oklch(25% 0 0);
   --eui-color-neutral-900: oklch(25% 0 0);
   --eui-color-text-link: oklch(63% 0.15 237);
-  --eui-color-text-primary: oklch(25% 0 0);
+  --eui-color-text-primary: oklch(25% 0.00 0);
   --eui-dimension-1: 4px;
   --eui-dimension-1: 4px;
-  --eui-spacing-sm: 4px;
+  --eui-spacing-sm: 0.2857rem;
 }
 
 @layer theme {
@@ -31,8 +31,8 @@
 
   [data-eui-context="app"] {
     --eui-color-text-link: oklch(63% 0.15 237);
-    --eui-color-text-primary: oklch(25% 0 0);
-    --eui-spacing-sm: 4px;
+    --eui-color-text-primary: oklch(25% 0.00 0);
+    --eui-spacing-sm: 0.2857rem;
   }
 
 }

@@ -9,7 +9,7 @@ import registerTokenStudioFormat from './formats/tokenStudio.js';
 import registerFullVariablesFormat from './formats/variablesFull.js';
 import registerScopedFigmaVariablesFormat from './formats/figmaVariablesScoped.js';
 import registerCssVariablesThemedFormat from './formats/cssVariablesThemed.js';
-import { normalizeResolverSources, normalizeResolverTokenDictionary } from './utils/resolver-normalization.js';
+import { normalizeResolverTokenDictionary } from './utils/resolver-normalization.js';
 import {
   flattenResolverSources,
   loadResolverFile,
@@ -36,7 +36,7 @@ const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
 const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
 const RESOLVER_TARGETS = new Set(['storybook', 'dev-app', 'website-app', 'report-app']);
 const resolverRequiredForTarget = RESOLVER_TARGETS.has(target);
-const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR === 'true';
+const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR !== 'false';
 const appResolverPath = process.env.STYLE_DICTIONARY_APP_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 const websiteResolverPath = process.env.STYLE_DICTIONARY_WEBSITE_RESOLVER_PATH
@@ -69,12 +69,15 @@ StyleDictionary.registerPreprocessor({
   name: 'resolver/raw-alias-normalization',
   preprocessor(tokens, options) {
     if (!resolverRequiredForTarget || !useResolverPreprocessor) return tokens;
+    const sourceFiles = Array.isArray(resolverSourceListForTarget) && resolverSourceListForTarget.length > 0
+      ? resolverSourceListForTarget
+      : options?.source;
     const {
       tokens: normalizedTokens,
       normalizationApplied,
       normalizedAliasCount,
       normalizedContextCount
-    } = normalizeResolverTokenDictionary(tokens, { sourceFiles: options?.source });
+    } = normalizeResolverTokenDictionary(tokens, { sourceFiles });
     if (normalizationApplied) {
       console.log(`🧭 Raw aliases normalized in-memory for resolver mode: ${normalizedAliasCount}`);
       console.log(`🧭 Raw context branches removed after normalization: ${normalizedContextCount}`);
@@ -123,26 +126,9 @@ function getResolverSourceListForTarget() {
       )
     );
 
-    if (useResolverPreprocessor) {
-      console.log(`🧭 Style Dictionary resolver mode enabled: ${resolverAbsolutePath}`);
-      console.log(`🧭 Resolver source files for ${target}: ${orderedSourceFiles.length}`);
-      return orderedSourceFiles;
-    }
-
-    const {
-      orderedSourceFiles: ordered,
-      normalizationApplied,
-      normalizedAliasCount,
-      normalizedFileCount
-    } = normalizeResolverSources(orderedSourceFiles, { repoRoot });
-
     console.log(`🧭 Style Dictionary resolver mode enabled: ${resolverAbsolutePath}`);
-    if (normalizationApplied) {
-      console.log(`🧭 Raw aliases normalized and inlined for resolver mode: ${normalizedAliasCount}`);
-      console.log(`🧭 Resolver-normalized files materialized: ${normalizedFileCount}`);
-    }
-    console.log(`🧭 Resolver source files for ${target}: ${ordered.length}`);
-    return ordered;
+    console.log(`🧭 Resolver source files for ${target}: ${orderedSourceFiles.length}`);
+    return orderedSourceFiles;
   } catch (error) {
     if (resolverRequiredForTarget) {
       throw new Error(`Failed to load resolver for target "${target}" (${resolverPath}): ${error.message}`);
@@ -153,9 +139,13 @@ function getResolverSourceListForTarget() {
   }
 }
 
+const resolverSourceListForTarget = target === 'canonical'
+  ? null
+  : getResolverSourceListForTarget();
+
 export default {
   usesDtcg: true,
-  preprocessors: useResolverPreprocessor ? ['resolver/raw-alias-normalization'] : [],
+  preprocessors: ['resolver/raw-alias-normalization'],
 
   source: (() => {
     if (target === 'canonical') {
@@ -165,9 +155,8 @@ export default {
       return [canonicalNoopSourcePath];
     }
 
-    const resolverSource = getResolverSourceListForTarget();
-    if (resolverSource && resolverSource.length > 0) {
-      return resolverSource;
+    if (resolverSourceListForTarget && resolverSourceListForTarget.length > 0) {
+      return resolverSourceListForTarget;
     }
 
     if (resolverRequiredForTarget) {
