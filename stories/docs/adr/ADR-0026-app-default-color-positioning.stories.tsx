@@ -23,7 +23,7 @@ export const appDefaultColorPositioning: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0026-app-default-color-positioning.md"
-      status="Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)"
+      status="Superseded by [ADR-0037](ADR-0037-canonical-token-architecture-locked.md)"
       lastUpdated="2025-12-29"
       fallback="Loading ADR-0026 App Default Color Positioning..."
     />

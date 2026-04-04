@@ -18,14 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const dtcgResolverAdoptionandPhasedMigration: Story = {
-  name: 'ADR-0045 Dtcg Resolver Adoption and Phased Migration',
+export const dTCGResolverAdoptionandPhasedMigration: Story = {
+  name: 'ADR-0045 DTCG Resolver Adoption and Phased Migration',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0045-dtcg-resolver-adoption-and-phased-migration.md"
-      status="Accepted"
-      lastUpdated="2026-04-02"
-      fallback="Loading ADR-0045 Dtcg Resolver Adoption and Phased Migration..."
+      status="Accepted (Implemented)"
+      lastUpdated="2026-04-04"
+      fallback="Loading ADR-0045 DTCG Resolver Adoption and Phased Migration..."
     />
   )
 };

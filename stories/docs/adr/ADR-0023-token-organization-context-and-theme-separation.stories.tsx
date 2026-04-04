@@ -23,7 +23,7 @@ export const tokenOrganizationContextandThemeSeparation: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0023-token-organization-context-and-theme-separation.md"
-      status="Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)"
+      status="Superseded by [ADR-0037](ADR-0037-canonical-token-architecture-locked.md)"
       lastUpdated="2026-01-10"
       fallback="Loading ADR-0023 Token Organization Context and Theme Separation..."
     />

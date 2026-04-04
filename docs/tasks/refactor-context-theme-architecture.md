@@ -1,13 +1,14 @@
 # Task: Refactor Context & Theme Architecture for Future-Proof Multi-Platform Support
 
-**Status:** Ready for Implementation  
-**Created:** 2025-12-26  
-**Priority:** High  
-**Estimated Complexity:** High  
-**Related ADRs:** [ADR-0017](../adr/ADR-0017-layered-token-architecture-contexts-and-themes.md)
+**Document ID:** task-task-refactor-context-theme-architecture-for-future-proof-multi-platform-support
+**Status:** Ready for Implementation
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Task
 
 ---
-
 ## Problem Statement
 
 The current context/theme architecture has several critical issues:
@@ -578,4 +579,3 @@ Create migration script to:
 ---
 
 **End of Task Document**
-

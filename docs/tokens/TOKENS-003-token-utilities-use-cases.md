@@ -1,24 +1,14 @@
 # Token Utilities Use Cases
 
-This document provides concrete examples of how token utilities can be used in real-world scenarios, especially for AI agents and component development.
-
-## Table of Contents
-
-- [For AI Agents](#for-ai-agents)
-  - [1. Generating New CSS Components](#1-generating-new-css-components)
-  - [2. Validating Token Usage](#2-validating-token-usage)
-  - [3. Finding Appropriate Tokens](#3-finding-appropriate-tokens)
-  - [4. Generating TypeScript Styles](#4-generating-typescript-styles)
-  - [5. Creating Token Documentation](#5-creating-token-documentation)
-- [For Human Developers](#for-human-developers)
-  - [6. Dynamic Theme Switching](#6-dynamic-theme-switching)
-  - [7. Component Token Explorer](#7-component-token-explorer)
-  - [8. Design Consistency Checks](#8-design-consistency-checks)
-  - [9. Interactive Token Editor](#9-interactive-token-editor)
-  - [10. Migration to Token System](#10-migration-to-token-system)
+**Document ID:** tokens-token-utilities-use-cases
+**Status:** Active
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Tokens
 
 ---
-
 ## For AI Agents
 
 ### 1. Generating New CSS Components

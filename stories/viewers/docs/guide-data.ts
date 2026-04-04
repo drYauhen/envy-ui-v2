@@ -51,12 +51,14 @@ export const guides: GuideMetadata[] = [
     id: 'guide-canonical-doc-format',
     title: 'Canonical Documentation Format',
     filename: 'CANONICAL-DOC-FORMAT.md',
+    storybookId: 'docs-guides--canonical-documentation-format',
     status: 'active'
   },
   {
     id: 'guide-documentation-system-summary',
     title: 'Documentation System Summary',
     filename: 'DOCUMENTATION-SYSTEM-SUMMARY.md',
+    storybookId: 'docs-guides--documentation-system-summary',
     status: 'active'
   }
 ];

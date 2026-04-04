@@ -1,10 +1,14 @@
 # Storybook Workflow
 
 **Document ID:** workflow-storybook-workflow
+**Status:** Active
+**Date:** 2026-01-10
 **Last Updated:** 2026-01-10
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
 
-
+---
 Complete guide to working with Storybook in Envy UI.
 
 ## Overview

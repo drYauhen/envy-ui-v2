@@ -19,9 +19,9 @@
 The current token architecture is stable and implemented (Primitives -> Raw -> Semantics -> Themes -> Components), but resolution behavior is split across custom scripts and Style Dictionary behavior.
 
 In particular:
-- `scripts/generate-canonical-css.mjs` contains custom recursive resolution logic for aliases and raw token indirection.
-- Style Dictionary runs in DTCG mode, but context composition rules are not declared as a first-class resolver document.
-- Cross-axis composition (context/theme/density and future axes) is implemented operationally, not yet declared in a dedicated DTCG resolver model.
+- At decision time, `scripts/generate-canonical-css.mjs` contained custom recursive resolution logic for aliases and raw token indirection.
+- At decision time, Style Dictionary composition rules were not declared as first-class resolver documents.
+- At decision time, cross-axis composition (context/theme/density and future axes) was operational, not yet declared in dedicated resolver files.
 
 The DTCG Resolver Module 2025.10 formalizes this layer with explicit constructs such as:
 - `sets`
@@ -81,7 +81,7 @@ Implementation will follow a phased workflow (WORKFLOW-009). If a future phase c
 
 - Additional resolver files must be maintained.
 - Build scripts and validation logic will need incremental updates.
-- During transition, both legacy and resolver paths may coexist temporarily.
+- During transition, both legacy and resolver paths coexisted temporarily; active flow is now resolver-first.
 
 ### Guardrails
 

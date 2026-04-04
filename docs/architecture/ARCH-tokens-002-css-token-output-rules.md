@@ -3,7 +3,7 @@
 **Document ID:** ARCH-tokens-002-css-token-output-rules
 **Status:** Draft
 **Date:** 2026-01-15
-**Last Updated:** 2026-01-14
+**Last Updated:** 2026-04-04
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
@@ -187,7 +187,7 @@ Token CSS is generated as 4 files in `generated/css/`, plus component token CSS 
 
 **Rationale:** Components belong in their own CSS layer; prevents theme pollution.
 
-**Implementation note:** `scripts/generate-canonical-css.mjs` filters component-prefixed tokens from theme output. Component overrides placed in theme JSON are ignored and must be moved to component tokens.
+**Implementation note:** Canonical build path (`npm run tokens:build:canonical`, SD platforms) filters component-prefixed tokens from theme output via shared canonical generator utilities. Component overrides placed in theme JSON are ignored and must be moved to component tokens.
 
 ## Output Determinism (MUST)
 
@@ -313,7 +313,9 @@ Token CSS is generated as 4 files in `generated/css/`, plus component token CSS 
 
 ### Current CSS Generation
 
-Located in: `scripts/generate-canonical-css.mjs`
+Primary path: `npm run tokens:build:canonical` (`tokens:build:canonical:sd`).
+Shared implementation: `style-dictionary/utils/canonical-css-generator.mjs`.
+Compatibility wrapper (non-primary): `scripts/generate-canonical-css.mjs`.
 
 **Key Functions:**
 - `generatePrimitivesCSS()` - Creates `@layer eui-primitives`
@@ -395,4 +397,4 @@ const semanticTokens = tokens.filter(({ name }) => {
 
 **Enforcement Level:** MUST (no exceptions without ADR approval)
 **Last Reviewed:** 2026-01-10
-**Implementation:** `scripts/generate-canonical-css.mjs` + `scripts/generate-component-css.mjs`
+**Implementation:** `tokens:build:canonical:sd` (primary) + `scripts/generate-component-css.mjs`

@@ -24,7 +24,7 @@ export const ArchComponentsNum001ComponentCssArchitecture: Story = {
     <DocViewer
       markdownPath="/docs/architecture/ARCH-components-001-component-css-architecture.md"
       status="Mandatory"
-      lastUpdated="2026-01-14"
+      lastUpdated="2026-04-04"
       fallback="Loading ARCH-COMPONENTS-001 Component CSS Architecture..."
     />
   )

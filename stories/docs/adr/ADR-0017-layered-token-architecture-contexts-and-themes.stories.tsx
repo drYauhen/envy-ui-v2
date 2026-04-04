@@ -23,7 +23,7 @@ export const layeredTokenArchitectureContextsandThemes: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0017-layered-token-architecture-contexts-and-themes.md"
-      status="Superseded by [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md)"
+      status="Superseded by [ADR-0037](ADR-0037-canonical-token-architecture-locked.md)"
       lastUpdated="2026-01-10"
       fallback="Loading ADR-0017 Layered Token Architecture Contexts and Themes..."
     />

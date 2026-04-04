@@ -24,7 +24,7 @@ export const canonicalTokenCSSOutputContract: Story = {
     <DocViewer
       markdownPath="/docs/adr/ADR-0038-canonical-token-css-output-contract.md"
       status="Accepted"
-      lastUpdated="2026-01-10"
+      lastUpdated="2026-04-04"
       fallback="Loading ADR-0038 Canonical Token CSS Output Contract..."
     />
   )

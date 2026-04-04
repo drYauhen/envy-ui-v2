@@ -1,9 +1,14 @@
 # Documentation System Summary
 
+**Document ID:** guide-documentation-system-summary
+**Status:** Active
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-15
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Guide
 
 ---
-
 This document provides a high-level overview of the documentation system architecture and recent updates.
 
 ## System Overview
@@ -29,7 +34,7 @@ The Envy UI documentation system uses a **unified, automated approach** for mana
 **Purpose:** Ensures consistent, professional Title Case formatting across all documentation.
 
 **Rules:**
-- Preserves acronyms in uppercase (UI, API, CSS, HTML, ARIA, AI, ML, etc.)
+- Preserves acronyms in uppercase (UI, API, CSS, HTML, ARIA, AI, ML, DTCG, etc.)
 - Lowercases small words (and, or, the, of, in, on, at, etc.)
 - Always capitalizes first and last word
 

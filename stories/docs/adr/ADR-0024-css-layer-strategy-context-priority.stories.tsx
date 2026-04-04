@@ -23,7 +23,7 @@ export const cSSLayerStrategyContextPriority: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0024-css-layer-strategy-context-priority.md"
-      status="Superseded by [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md)"
+      status="Superseded by [ADR-0038](ADR-0038-canonical-token-css-output-contract.md)"
       lastUpdated="2025-12-26"
       fallback="Loading ADR-0024 CSS Layer Strategy Context Priority..."
     />

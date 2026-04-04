@@ -18,14 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const densityAxisContextThemeDensity: Story = {
-  name: 'ADR-0042 Density Axis (Context x Theme x Density)',
+export const densityAxisDefaultingandInheritance: Story = {
+  name: 'ADR-0042 Density Axis Defaulting and Inheritance',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0042-density-axis-defaulting-and-inheritance.md"
       status="Accepted (Partially Implemented)"
-      lastUpdated=""
-      fallback="Loading ADR-0042 Density Axis (Context x Theme x Density)..."
+      lastUpdated="2026-02-05"
+      fallback="Loading ADR-0042 Density Axis Defaulting and Inheritance..."
     />
   )
 };

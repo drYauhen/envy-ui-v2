@@ -1,11 +1,14 @@
 # Documentation Guide
 
 **Document ID:** guide-docs-guide
+**Status:** Active
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-15
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
 
 ---
-
 **CRITICAL:** This guide applies to ALL documents in `docs/`, not just ADR.
 
 **For AI Agents:** See [AI-AGENT-DOCUMENTATION-GUIDE](AI-AGENT-DOCUMENTATION-GUIDE.md) for complete step-by-step workflow instructions.

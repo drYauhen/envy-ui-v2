@@ -3,7 +3,7 @@
 **Document ID:** ARCH-components-001-component-css-architecture
 **Status:** Mandatory
 **Date:** 2026-01-15
-**Last Updated:** 2026-01-14
+**Last Updated:** 2026-04-04
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
@@ -34,7 +34,7 @@ This document establishes mandatory rules for component CSS implementation to en
 **Flow:**
 ```
 Token Files (JSON)
-    ↓ Canonical CSS Generators (scripts/generate-canonical-css.mjs + scripts/generate-component-css.mjs)
+    ↓ Canonical CSS Build (Style Dictionary canonical platforms + component CSS generator)
 Generated CSS Variables (tokens.css + components/*.tokens.css)
     ↓ CSS Cascade
 Component CSS (maps variables to selectors)
@@ -168,9 +168,9 @@ Visual Output
 ```
 
 **Architecture:**
-- **Base tokens**: Define in `tokens/{context}/components/{component}/`
+- **Base tokens**: Define in `tokens/components/*.tokens.json` (semantic-only component mapping tokens)
 - **Theme overrides**: Define in `tokens/contexts/{context}/themes/{theme}.json`
-- **CSS generation**: Canonical generators produce contexts/themes and component token mappings
+- **CSS generation**: `npm run tokens:build:canonical` (SD canonical platforms) + `node scripts/generate-component-css.mjs`
 - **Component CSS**: Maps variables to element selectors (no theme logic)
 
 ---
@@ -302,7 +302,7 @@ Component Token → Semantic Token → Primitive Value
 ```
 
 **CSS Generator Behavior (current canon):**
-1. `scripts/generate-canonical-css.mjs` resolves semantic tokens to final values for contexts/themes (raw is internal and not emitted).
+1. `npm run tokens:build:canonical` resolves semantic tokens to final values for contexts/themes (raw is internal and not emitted).
 2. `scripts/generate-component-css.mjs` preserves component references to semantic CSS variables.
 3. Component CSS maps variables to selectors; no values are authored in CSS.
 

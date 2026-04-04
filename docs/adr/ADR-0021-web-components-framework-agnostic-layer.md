@@ -1,7 +1,7 @@
 # ADR-0021: Web Components as Framework-Agnostic Implementation Layer
 
 **Status:** Exploratory (Proof-of-Concept Implemented)
-**Date:** 2025-01-XX
+**Date:** 2025-01-01
 **Last Updated:** 2026-01-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
@@ -13,7 +13,6 @@
 - [ADR-0042](ADR-0042-density-axis-defaulting-and-inheritance.md) — Density Axis (Context x Theme x Density)
 
 ---
-
 ## Context
 
 Envy UI is designed as a **token-driven, framework-agnostic design system** with multiple implementation layers:

@@ -1,10 +1,14 @@
 # ADR Workflow
 
 **Document ID:** workflow-adr-workflow
+**Status:** Active
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-15
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
 
-
+---
 Complete guide to writing and managing Architectural Decision Records (ADR) in Envy UI.
 
 ## Overview
@@ -426,7 +430,7 @@ When creating a new ADR:
 ### Title Case Reminder
 
 Common acronyms that should be uppercase:
-- UI, API, CSS, HTML, ARIA, DOM, JSX, TSX, AI, ML, UX, DX
+- UI, API, CSS, HTML, ARIA, DOM, JSX, TSX, AI, ML, UX, DX, DTCG
 
 Common small words that should be lowercase:
 - and, or, the, of, in, on, at, to, for, with, vs, as, by

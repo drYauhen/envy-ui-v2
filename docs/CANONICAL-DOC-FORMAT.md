@@ -1,56 +1,17 @@
 # Canonical Documentation Format
 
-**Last Updated:** 2026-01-15
-
-This document defines the canonical format for all documentation in Envy UI, including ADR (Architectural Decision Records) and Architecture documents.
-
-## Overview
-
-Documentation in Envy UI uses a two-part header system:
-
-1. **Preview Header** (in Storybook) — Minimal metadata displayed above the document
-2. **Document Header** (in markdown file) — Full metadata within the document itself
-
-This separation allows for a clean preview interface while maintaining complete metadata within the source documents.
-
-The document header is automatically parsed and rendered as a structured metadata component (definition list) with labels on the left and values on the right, making it easy to scan key information about the document.
-
-## Preview Header (Storybook)
-
-The preview header displays **only**:
-- **Status badge** — Visual indicator of document status
-- **Last Updated date** — When the document was last modified
-
-```tsx
-<DocViewer
-  markdownPath="/docs/adr/ADR-0001-react-aria-headless.md"
-  status="Accepted"
-  lastUpdated="2026-01-08"
-/>
-```
-
-All other metadata (title, owner, assistance, related links, etc.) is contained within the document itself.
-
-## Document Header Format
-
-### ADR Documents
-
-**Canonical format:**
-
-```markdown
-# ADR-XXXX: Title
-
+**Document ID:** guide-canonical-documentation-format
 **Status:** <Proposed | Accepted | Exploratory | Superseded | Rejected>
-**Date:** <YYYY-MM-DD>
-**Last Updated:** <YYYY-MM-DD>
+**Date:** 2026-01-15
+**Last Updated:** 2026-01-15
 **Owner:** <name>
 **Assistance:** <AI-assisted drafting (human-reviewed) | None>
+**Category:** Guide
 **Related:**
-- [ADR-XXXX](./ADR-XXXX-title.md) — Description
-- [ARCH-XXX](../architecture/ARCH-xxx.md) — Description
+- [ADR-0001](./adr/ADR-0001-react-aria-headless.md) — Description
+- [Token Architecture](./architecture/ARCH-tokens-003-token-architecture.md) — Description
 
 ---
-
 ## Content starts here...
 ```
 
@@ -77,8 +38,8 @@ All other metadata (title, owner, assistance, related links, etc.) is contained 
 **Assistance:** <AI-assisted drafting (human-reviewed) | None>
 **Category:** <Architecture Rules (Binding) | Reference | Guide>
 **Related:**
-- [ADR-XXXX](../adr/ADR-XXXX-title.md) — Description
-- [ARCH-XXX](./ARCH-xxx.md) — Description
+- [ADR-0001](./adr/ADR-0001-react-aria-headless.md) — Description
+- [Token Architecture](./architecture/ARCH-tokens-003-token-architecture.md) — Description
 
 ---
 
@@ -138,8 +99,8 @@ List of related documents with descriptions:
 
 ```markdown
 **Related:**
-- [ADR-0001](./ADR-0001-react-aria-headless.md) — React Aria as headless foundation
-- [Token Usage Rules](../architecture/ARCH-tokens-004-token-usage-rules.md) — Enforceable token usage rules
+- [ADR-0001](./adr/ADR-0001-react-aria-headless.md) — React Aria as headless foundation
+- [Token Usage Rules](./architecture/ARCH-tokens-004-token-usage-rules.md) — Enforceable token usage rules
 ```
 
 **Link formatting:**
@@ -180,7 +141,7 @@ All document titles in the system follow proper English Title Case with technica
 - AI/ML: AI, ML
 - Design: UX, DX
 - Colors: RGB, RGBA, HSL, HSLA
-- Other: ID, IDs, UUID, GUID
+- Other: ID, IDs, UUID, GUID, DTCG
 
 **Small words** (lowercase, unless first/last word):
 - Articles: a, an, the

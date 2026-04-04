@@ -2,7 +2,7 @@
 
 **Status:** Accepted (Partially Implemented)
 **Date:** 2026-02-05
-**Last Updated:**
+**Last Updated:** 2026-02-05
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
@@ -13,7 +13,6 @@
 - [Component CSS Architecture](../architecture/ARCH-components-001-component-css-architecture.md) — Component CSS Implementation Rules
 
 ---
-
 ## Context
 
 The system already treats **Context** and **Theme** as orthogonal axes. The system also includes a third axis: **Density** (`data-eui-density="..."`) to control ergonomic scale (sizes, spacing, rhythm) without changing component semantics or visual identity.

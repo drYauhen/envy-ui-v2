@@ -1,5 +1,14 @@
 # Token System Tooling
 
+**Document ID:** tokens-token-system-tooling
+**Status:** Active
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Tokens
+
+---
 This document explains the developer tools available for working with design tokens in the Envy UI system.
 
 ## Overview
@@ -238,6 +247,22 @@ This runs (Style Dictionary pipeline):
 5. `tokens:validate` - Validate token usage
 
 Canonical CSS for runtime:
+1. `resolver:check` - Validate resolver schema + resolver integrity + canonical/snapshot regression
+2. `tokens:build:canonical` - Generate canonical CSS layers (Style Dictionary canonical platforms)
+3. `node scripts/generate-component-css.mjs` - Generate component token CSS
+4. `validate:css-vars` - Validate runtime CSS vars (A/B/C)
+
+## Resolver Orchestration (Current State)
+
+- Resolver composition is implemented as the canonical orchestration model.
+- Resolver documents live in `tokens/knowledge/resolver/*.resolver.json`.
+- Resolver documents use local schema reference: `schemas/dtcg-resolver-2025.10.schema.json`.
+- Canonical build flow is SD-first: `tokens:build:canonical` → `tokens:build:canonical:sd`.
+- Mandatory checks for resolver health:
+  - `npm run resolver:validate:schema`
+  - `npm run resolver:check`
+
+Canonical CSS for runtime (minimum path):
 1. `tokens:build:canonical` - Generate canonical CSS layers
 2. `node scripts/generate-component-css.mjs` - Generate component token CSS
 3. `validate:css-vars` - Validate runtime CSS vars (A/B/C)
@@ -245,11 +270,12 @@ Canonical CSS for runtime:
 ### Development Workflow
 
 1. **Modify tokens** in `tokens/**/*.json`
-2. **Build canonical CSS**: `npm run tokens:build:canonical`
-3. **Build component tokens**: `node scripts/generate-component-css.mjs`
-4. **Generate types**: `npm run tokens:generate-types`
-5. **Validate usage**: `npm run tokens:validate`
-6. **Update VS Code data**: `npm run tokens:generate-vscode` (optional, only if needed)
+2. **Run resolver guardrails**: `npm run resolver:check`
+3. **Build canonical CSS**: `npm run tokens:build:canonical`
+4. **Build component tokens**: `node scripts/generate-component-css.mjs`
+5. **Generate types**: `npm run tokens:generate-types`
+6. **Validate usage**: `npm run tokens:validate`
+7. **Update VS Code data**: `npm run tokens:generate-vscode` (optional, only if needed)
 
 ### CI/CD Integration
 

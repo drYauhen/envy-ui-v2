@@ -3,10 +3,12 @@
 **Document ID:** ARCH-i18n-001-translation-architecture
 **Status:** Proposed
 **Date:** 2026-01-25
+**Last Updated:** 2026-01-25
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Application Architecture
 
 ---
-
 ## Overview
 
 This document defines the internationalization (i18n) architecture for the application layer. The goal is to provide a scalable, consistent way to handle translations while keeping the Design System (DS) i18n-agnostic.

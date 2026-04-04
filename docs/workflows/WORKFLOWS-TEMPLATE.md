@@ -1,5 +1,14 @@
 # [Process/Task] Workflow
 
+**Document ID:** workflow-workflow
+**Status:** Template
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Workflow
+
+---
 ## Overview
 
 ### Purpose

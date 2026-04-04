@@ -18,14 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const dtcgSchemaResolutionandTokenArchitecture: Story = {
-  name: 'ADR-0041 Dtcg Schema Resolution and Token Architecture',
+export const dTCGSchemaResolutionandTokenArchitecture: Story = {
+  name: 'ADR-0041 DTCG Schema Resolution and Token Architecture',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md"
       status="Accepted"
       lastUpdated="2026-01-07"
-      fallback="Loading ADR-0041 Dtcg Schema Resolution and Token Architecture..."
+      fallback="Loading ADR-0041 DTCG Schema Resolution and Token Architecture..."
     />
   )
 };

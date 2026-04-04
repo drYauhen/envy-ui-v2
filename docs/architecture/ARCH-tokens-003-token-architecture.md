@@ -3,7 +3,7 @@
 **Document ID:** ARCH-tokens-003-token-architecture
 **Status:** Draft
 **Date:** 2026-01-15
-**Last Updated:** 2026-01-14
+**Last Updated:** 2026-04-04
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
@@ -33,6 +33,18 @@ The Envy UI token system is a comprehensive design token architecture that suppo
 6. **Directory Classification** - Clear separation of canon/knowledge/legacy
 7. **Type Safety** - Generated TypeScript types for all tokens
 8. **Developer Experience** - Rich tooling, validation, and documentation
+
+## Resolver Orchestration (Implemented)
+
+- Resolver documents are the canonical composition contract for active targets.
+- Resolver files: `tokens/knowledge/resolver/*.resolver.json`.
+- Resolver schema: `schemas/dtcg-resolver-2025.10.schema.json`.
+- Canonical build path is SD-first: `npm run tokens:build:canonical` (delegates to `tokens:build:canonical:sd`).
+- Resolver validation path:
+  - `npm run resolver:validate:schema`
+  - `npm run resolver:check`
+
+For operational details, use [WORKFLOW-009](../workflows/WORKFLOW-009-resolver-migration-workflow.md).
 
 ## Canonical Token Architecture
 

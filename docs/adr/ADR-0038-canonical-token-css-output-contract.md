@@ -2,7 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2026-01-10
-**Last Updated:** 2026-01-10
+**Last Updated:** 2026-04-04
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
@@ -204,7 +204,7 @@ Stable sorting ensures:
 ### Implementation Requirements
 
 **Immediate (CSS Generation):**
-- Update `scripts/generate-canonical-css.mjs` to implement all rules
+- Keep SD canonical platforms aligned with this contract (`tokens:build:canonical:sd`)
 - Add validation in CI to enforce contract compliance
 - Update documentation to reference this ADR
 
@@ -216,7 +216,7 @@ Stable sorting ensures:
 ### Migration
 
 **Current Implementation:**
-- ✅ All rules implemented in `scripts/generate-canonical-css.mjs`
+- ✅ All rules implemented in the shared canonical generator (`style-dictionary/utils/canonical-css-generator.mjs`)
 - ✅ CSS generation produces compliant output
 - ✅ Storybook integration validated
 
@@ -252,6 +252,12 @@ Stable sorting ensures:
 - ✅ [ADR-0024](ADR-0024-css-layer-strategy-context-priority.md) marked as superseded
 - ✅ Architectural rules provide enforcement framework
 - ✅ Component CSS layering policy prevents future ambiguity
+
+### Implementation Update (2026-04-04)
+
+- Canonical orchestration is SD-first in active flow (`tokens:build:canonical` delegates to SD canonical platforms).
+- Resolver-based composition is now the canonical source-selection model for active targets.
+- `scripts/generate-canonical-css.mjs` remains as compatibility wrapper over shared canonical generator utilities.
 
 ## Examples
 

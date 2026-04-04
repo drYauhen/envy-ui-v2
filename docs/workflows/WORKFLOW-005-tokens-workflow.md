@@ -1,11 +1,15 @@
 # Tokens Workflow
 
 **Document ID:** workflow-tokens-workflow
-**Last Updated:** 2026-01-10
+**Status:** Active
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
 
-> **Deprecated:** This workflow reflects pre-canonical directory structures (e.g., `tokens/app`, `tokens/website`).  
-> Use `docs/architecture/token-architecture.md` and `docs/architecture/css-token-output-rules.md` for current canon. The `web` name was renamed to `website` (legacy artifacts may exist under `tokens/legacy/contexts/web`).
+---
+> Use [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md), [CSS Token Output Rules](../architecture/ARCH-tokens-002-css-token-output-rules.md), and [Resolver Migration Workflow](WORKFLOW-009-resolver-migration-workflow.md) for current canon and resolver-first build flow. The `web` name was renamed to `website` (legacy artifacts may exist under `tokens/legacy/contexts/web`).
 
 Complete guide to working with design tokens in Envy UI.
 

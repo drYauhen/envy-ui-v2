@@ -1,10 +1,14 @@
 # Scripts Reference
 
 **Document ID:** workflow-scripts-reference
+**Status:** Active
+**Date:** 2026-04-04
 **Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
 
-
+---
 This document lists the root-level npm scripts and how they are intended to be used.
 
 ## Conventions

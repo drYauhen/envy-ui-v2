@@ -24,7 +24,7 @@ export const ArchTokensNum002CssTokenOutputRules: Story = {
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-002-css-token-output-rules.md"
       status="Draft"
-      lastUpdated="2026-01-14"
+      lastUpdated="2026-04-04"
       fallback="Loading ARCH-TOKENS-002 CSS Token Output Rules..."
     />
   )

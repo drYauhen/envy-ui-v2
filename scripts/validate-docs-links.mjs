@@ -185,15 +185,44 @@ function parseDocsRegistry() {
     { id: 'tokens-readme', path: 'tokens/README.md', title: 'Token System Documentation', category: 'other' },
     { id: 'tokens-guide', path: 'tokens/TOKENS-GUIDE.md', title: 'Tokens Documentation Guide', category: 'other' },
     { id: 'tokens-template', path: 'tokens/TOKENS-TEMPLATE.md', title: 'Token Document Template', category: 'other' },
-    { id: 'tokens-use-cases', path: 'tokens/use-cases.md', title: 'Token Use Cases', category: 'other' },
-    { id: 'tokens-reference', path: 'tokens/reference.md', title: 'Token Reference', category: 'other' },
+    {
+      id: 'tokens-use-cases',
+      path: 'tokens/use-cases.md',
+      title: 'Token Use Cases',
+      category: 'other',
+      storybookId: 'docs-tokens--token-utilities-use-cases'
+    },
+    {
+      id: 'tokens-reference',
+      path: 'tokens/reference.md',
+      title: 'Token Reference',
+      category: 'other',
+      storybookId: 'docs-tokens--token-reference'
+    },
     { id: 'docs-main-guide', path: 'DOCS-GUIDE.md', title: 'Documentation Guide', category: 'other' },
     { id: 'guides-guide', path: 'GUIDES-GUIDE.md', title: 'Guides Documentation Guide', category: 'other' },
     { id: 'guides-template', path: 'GUIDES-TEMPLATE.md', title: 'Guide Document Template', category: 'other' },
     { id: 'guide-ai-agent-documentation', path: 'AI-AGENT-DOCUMENTATION-GUIDE.md', title: 'AI Agent Documentation Guide', category: 'other' },
-    { id: 'guide-canonical-doc-format', path: 'CANONICAL-DOC-FORMAT.md', title: 'Canonical Documentation Format', category: 'other' },
-    { id: 'guide-documentation-system-summary', path: 'DOCUMENTATION-SYSTEM-SUMMARY.md', title: 'Documentation System Summary', category: 'other' },
-    { id: 'migration-unified-doc-processing', path: 'migrations/2026-01-14-unified-doc-processing.md', title: 'Unified Doc Processing Migration', category: 'other' }
+    {
+      id: 'guide-canonical-doc-format',
+      path: 'CANONICAL-DOC-FORMAT.md',
+      title: 'Canonical Documentation Format',
+      category: 'other',
+      storybookId: 'docs-guides--canonical-documentation-format'
+    },
+    {
+      id: 'guide-documentation-system-summary',
+      path: 'DOCUMENTATION-SYSTEM-SUMMARY.md',
+      title: 'Documentation System Summary',
+      category: 'other',
+      storybookId: 'docs-guides--documentation-system-summary'
+    },
+    {
+      id: 'migration-unified-doc-processing',
+      path: 'migrations/2026-01-14-unified-doc-processing.md',
+      title: 'Unified Doc Processing Migration',
+      category: 'migration'
+    }
   ];
 
   staticDocs.forEach(doc => {

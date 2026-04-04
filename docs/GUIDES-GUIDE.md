@@ -1,5 +1,14 @@
 # Guides Documentation Guide
 
+**Document ID:** guide-guides-documentation-guide
+**Status:** Active
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Guide
+
+---
 ## Overview
 
 This guide explains how to contribute to and maintain the Guides documentation in Envy UI.

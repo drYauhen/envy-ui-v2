@@ -1,10 +1,14 @@
 # Dev App Workflow
 
 **Document ID:** workflow-dev-app-workflow
+**Status:** Active
+**Date:** 2026-01-10
 **Last Updated:** 2026-01-10
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
 
-
+---
 Complete guide to working with the demonstration application (`apps/dev-app`) in Envy UI.
 
 ## Overview

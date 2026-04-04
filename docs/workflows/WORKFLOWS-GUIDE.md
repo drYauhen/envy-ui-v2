@@ -1,5 +1,14 @@
 # Workflows Documentation Guide
 
+**Document ID:** workflow-workflows-documentation-guide
+**Status:** Active
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Workflow
+
+---
 ## Overview
 
 This guide explains how to contribute to and maintain the Workflows documentation in Envy UI.

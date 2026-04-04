@@ -1,17 +1,17 @@
 # ADR-XXXX: <Title>
 
+**Document ID:** template-adr-xxxx-title
 **Status:** <Proposed | Accepted | Superseded>
-**Date:** <YYYY-MM-DD>
-**Last Updated:** <YYYY-MM-DD> (leave blank for new ADRs)
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Template
 **Related:**
-
 - [ADR-XXXX](./ADR-XXXX-title.md) — Related ADR Title
 - [ADR-YYYY](./ADR-YYYY-title.md) — Another Related ADR Title
 
 ---
-
 ## Context
 
 <Problem statement and background.>

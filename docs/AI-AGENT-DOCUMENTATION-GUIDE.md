@@ -1,11 +1,14 @@
 # AI Agent Documentation Guide
 
 **Document ID:** guide-ai-agent-documentation
+**Status:** Active
+**Date:** 2026-01-15
 **Last Updated:** 2026-01-15
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
 
 ---
-
 **Purpose:** Complete reference guide for AI agents working with documentation in Envy UI.
 
 ## Overview
@@ -189,7 +192,7 @@ UX, DX
 RGB, RGBA, HSL, HSLA
 
 **Other:**
-ID, IDs, UUID, GUID
+ID, IDs, UUID, GUID, DTCG
 
 ### Small Words (Lowercase Unless First/Last)
 

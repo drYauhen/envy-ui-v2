@@ -1,55 +1,14 @@
 # Design Tokens Reference
 
-> Auto-generated from design tokens. Last updated: 2026-01-12T02:52:54.863Z
-
-## Overview
-
-This document lists all available CSS custom properties (tokens) organized by component and foundation tokens.
-
-**Total tokens:** 664
-
-## Usage
-
-### In CSS
-
-```css
-/* In component CSS */
-.my-component {
-  color: var(--eui-button-primary-label-base);
-  height: var(--eui-button-size-md-height);
-}
-```
-
-### In TypeScript/React
-
-```typescript
-// Using type-safe token utilities
-import { tokenVar, getTokenValue } from '@/generated/tsx/tokens.types';
-import { getComponentTokens } from '@/utils/tokens';
-
-// Type-safe token reference
-const style = {
-  color: tokenVar('eui-button-primary-label-base'),
-  height: tokenVar('eui-button-size-md-height')
-};
-
-// Get token value at runtime
-const buttonColor = getTokenValue('eui-button-primary-label-base');
-
-// Get all tokens for a component
-const buttonTokens = getComponentTokens('button');
-```
-
-### In Inline Styles
-
-```tsx
-<div style={{ color: 'var(--eui-button-primary-label-base)' }}>
-  Content
-</div>
-```
+**Document ID:** tokens-design-tokens-reference
+**Status:** Active
+**Date:** 2026-04-04
+**Last Updated:** 2026-04-04
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
+**Category:** Tokens
 
 ---
-
 ## Foundation Tokens
 
 Foundation tokens are base design tokens that are not component-specific.

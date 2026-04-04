@@ -1,10 +1,14 @@
 # Figma Workflow
 
 **Document ID:** workflow-figma-workflow
+**Status:** Active
+**Date:** 2026-01-10
 **Last Updated:** 2026-01-10
+**Owner:** Eugene Goncharov
+**Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
 
-
+---
 Complete guide to working with Figma integration in Envy UI.
 
 ## Overview
@@ -585,4 +589,3 @@ npm run figma:migration:generate -- 2025-12-30T19-57-48-snapshot.json
 - [ADR-0027](../adr/ADR-0027-figma-files-structure-and-organization.md) — Figma Files Structure and Organization — File structure, page organization, and Code Connect strategy
 - [ADR-0025](../adr/ADR-0025-figma-variables-integration-strategy.md) — Figma Variables Integration Strategy — Variables structure, modes, and export strategy
 - [ADR-0003](../adr/ADR-0003-data-driven-figma-variables-pipeline.md) — Data-Driven Figma Variables Pipeline — Adapter pipeline and plugin architecture
-
