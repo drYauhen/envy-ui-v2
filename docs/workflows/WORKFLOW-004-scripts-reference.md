@@ -47,7 +47,7 @@ Script groups: Documentation, ADRs, Tokens, Tailwind, Icons, Figma, Dev App, Sto
 ## Tokens
 
 - `tokens:build`: Build tokens via Style Dictionary (platform outputs; not canonical CSS).
-- `tokens:build:sd`: Build Style Dictionary platform outputs. The themed CSS formatter writes `generated/css/tokens.themed.css`. Resolver raw-alias preprocessor path is enabled by default; set `STYLE_DICTIONARY_RESOLVER_PREPROCESSOR=false` only for temporary rollback/debug.
+- `tokens:build:sd`: Build Style Dictionary platform outputs. The themed CSS formatter writes `generated/css/tokens.themed.css`. Resolver raw-alias normalization is always-on for resolver targets.
 - `tokens:build:canonical`: Build canonical CSS via Style Dictionary canonical platforms.
 - `tokens:build:canonical:sd`: Explicit canonical build via Style Dictionary canonical platforms.
 - `tokens:build:tokenstudio`: Build Token Studio export (legacy/experimental; may be broken).

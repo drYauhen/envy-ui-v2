@@ -36,7 +36,6 @@ const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
 const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
 const RESOLVER_TARGETS = new Set(['storybook', 'dev-app', 'website-app', 'report-app']);
 const resolverRequiredForTarget = RESOLVER_TARGETS.has(target);
-const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR !== 'false';
 const appResolverPath = process.env.STYLE_DICTIONARY_APP_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 const websiteResolverPath = process.env.STYLE_DICTIONARY_WEBSITE_RESOLVER_PATH
@@ -68,7 +67,7 @@ registerCssVariablesThemedFormat(StyleDictionary, { allowedContexts, contextMirr
 StyleDictionary.registerPreprocessor({
   name: 'resolver/raw-alias-normalization',
   preprocessor(tokens, options) {
-    if (!resolverRequiredForTarget || !useResolverPreprocessor) return tokens;
+    if (!resolverRequiredForTarget) return tokens;
     const sourceFiles = Array.isArray(resolverSourceListForTarget) && resolverSourceListForTarget.length > 0
       ? resolverSourceListForTarget
       : options?.source;

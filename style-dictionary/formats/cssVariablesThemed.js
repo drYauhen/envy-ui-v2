@@ -50,7 +50,6 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
 
   // Check for fail-soft mode (handles missing references gracefully)
   const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
-  const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR !== 'false';
 
   // NEW: Register canonical CSS formats for token architecture
   registerCanonicalFormats(StyleDictionary, options);
@@ -90,11 +89,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
       const dictionaryFilePaths = Array.from(
         new Set(dictionary.allTokens.map((token) => token.filePath).filter(Boolean))
       );
-      const primitiveLookupSourceFiles = useResolverPreprocessor
-        ? listJsonFilesRecursive(path.join(tokensRoot, 'primitives'))
-        : dictionaryFilePaths.filter((filePath) => (
-          /\/primitives\/[^/]+\.json$/.test(toPosixPath(filePath))
-        ));
+      const primitiveLookupSourceFiles = listJsonFilesRecursive(path.join(tokensRoot, 'primitives'));
       const primitiveOverlaySourceFiles = dictionaryFilePaths.filter((filePath) => (
         /\/primitives\/[^/]+\.json$/.test(toPosixPath(filePath))
       ));
@@ -153,13 +148,12 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
         }
       });
 
-      // In preprocessor mode raw branches can be removed from dictionary tokens.
+      // In resolver mode raw branches can be removed from dictionary tokens.
       // Fall back to filesystem discovery so manual raw->primitive resolving
       // stays deterministic and output-parity-safe.
       contextDirs.forEach((context) => {
         const collected = rawSourceFilesByContext.get(context) || [];
         if (collected.length > 0) return;
-        if (!useResolverPreprocessor) return;
         const rawDir = path.join(tokensRoot, 'contexts', context, 'raw');
         const discoveredRawFiles = listJsonFilesRecursive(rawDir);
         if (discoveredRawFiles.length > 0) {
@@ -369,10 +363,10 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             || /^eui-typography-/.test(referenceStr)
           );
 
-          // In preprocessor mode, prefer dictionary first only for raw typography
+          // In resolver mode, prefer dictionary first only for raw typography
           // references to preserve current contract where collision resolution
           // currently drives the final "base" typography values.
-          if (useResolverPreprocessor && shouldPreferDictionaryFirstInPreprocessor) {
+          if (shouldPreferDictionaryFirstInPreprocessor) {
             const resolvedToken = findDictionaryTokenByReference();
             if (resolvedToken) {
               const resolvedValue = resolvedToken.value || resolvedToken.$value;

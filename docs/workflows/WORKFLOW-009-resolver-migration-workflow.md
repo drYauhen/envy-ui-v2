@@ -93,7 +93,6 @@ Phase 5 default mode update:
 - Resolver-driven app source selection is now default for canonical and `dev-app` builds.
 - Style Dictionary target builds (`storybook`, `dev-app`, `website-app`, `report-app`) now require resolver source selection and no longer use legacy source discovery fallback.
 - Resolver raw-alias normalization now defaults to the in-memory preprocessor path.
-- Temporary rollback switch remains available via `STYLE_DICTIONARY_RESOLVER_PREPROCESSOR=false`.
 - Canonical generation is SD-first (`tokens:build:canonical` → `tokens:build:canonical:sd`).
 - Legacy canonical parity scripts have been removed from active build flow.
 
@@ -157,9 +156,6 @@ npm run tokens:build:dev-app:resolver
 
 # Resolver normalization now uses in-memory preprocessor by default
 npm run tokens:build:sd
-
-# Temporary rollback switch (disable resolver preprocessor path)
-STYLE_DICTIONARY_RESOLVER_PREPROCESSOR=false npm run tokens:build:sd
 
 # Build canonical CSS (resolver mode is default)
 npm run tokens:build:canonical
