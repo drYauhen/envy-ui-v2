@@ -48,9 +48,6 @@ function listJsonFilesRecursive(rootDir) {
 export default function registerCssVariablesThemedFormat(StyleDictionary, options = {}) {
   const { allowedContexts = ['app', 'website', 'report'], contextMirrors = {} } = options;
 
-  // Check for fail-soft mode (handles missing references gracefully)
-  const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
-
   // NEW: Register canonical CSS formats for token architecture
   registerCanonicalFormats(StyleDictionary, options);
 
@@ -356,7 +353,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             return semanticValue;
           }
 
-          const shouldPreferDictionaryFirstInPreprocessor = (
+          const shouldPreferDictionaryFirstInResolverMode = (
             /^eui\.(app|website|report)\.raw\.typography\./.test(referenceStr)
             || /^eui-(app|website|report)-raw-typography-/.test(referenceStr)
             || /^eui\.typography\./.test(referenceStr)
@@ -366,7 +363,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
           // In resolver mode, prefer dictionary first only for raw typography
           // references to preserve current contract where collision resolution
           // currently drives the final "base" typography values.
-          if (shouldPreferDictionaryFirstInPreprocessor) {
+          if (shouldPreferDictionaryFirstInResolverMode) {
             const resolvedToken = findDictionaryTokenByReference();
             if (resolvedToken) {
               const resolvedValue = resolvedToken.value || resolvedToken.$value;
@@ -403,28 +400,7 @@ export default function registerCssVariablesThemedFormat(StyleDictionary, option
             return resolvedValue;
           }
 
-          // FAIL-SOFT MODE: If reference cannot be resolved, provide safe fallback
-          if (failSoft) {
-            console.warn(`⚠️  Fail-soft: Unresolved reference {${referenceStr}} - using safe fallback`);
-
-            // Provide type-appropriate fallbacks based on token path
-            if (referenceStr.includes('.color.') || referenceStr.includes('-color-')) {
-              return 'transparent'; // Safe color fallback
-            } else if (
-              referenceStr.includes('.spacing.') || referenceStr.includes('.dimension.')
-              || referenceStr.includes('-spacing-') || referenceStr.includes('-dimension-')
-            ) {
-              return '0px'; // Safe dimension fallback
-            } else if (referenceStr.includes('.radius.') || referenceStr.includes('-radius-')) {
-              return '0px'; // Safe radius fallback
-            } else if (referenceStr.includes('.fontSize.') || referenceStr.includes('-fontSize-')) {
-              return '16px'; // Safe font size fallback
-            } else if (referenceStr.includes('.opacity.') || referenceStr.includes('-opacity-')) {
-              return '1'; // Safe opacity fallback
-            } else {
-              return 'unset'; // Generic safe fallback
-            }
-          }
+          throw new Error(`Unresolved token reference in css/variables-themed: {${referenceStr}}`);
         }
 
         // Fallback to raw value

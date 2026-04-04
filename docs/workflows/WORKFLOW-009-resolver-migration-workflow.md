@@ -118,7 +118,7 @@ Validation:
 
 Deliverables:
 - Remove obsolete legacy composition branches.
-- Keep fallback only if explicitly justified.
+- Remove fail-soft fallback paths from resolver build flow.
 - Update architecture/workflow docs to final state.
 
 Validation:

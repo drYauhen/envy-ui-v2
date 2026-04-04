@@ -46,16 +46,10 @@ const storybookResolverPath = process.env.STYLE_DICTIONARY_STORYBOOK_RESOLVER_PA
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'storybook.resolver.json');
 const canonicalNoopSourcePath = path.join(repoRoot, 'style-dictionary', 'fixtures', 'canonical.noop.tokens.json');
 
-// Fail-soft mode for build recovery after token refactor
-const failSoft = process.env.STYLE_DICTIONARY_FAIL_SOFT === 'true';
-
 console.log(`Building CSS for target: ${target}`);
 console.log(`Allowed contexts: ${allowedContexts.join(', ')}`);
 if (target === 'dev-app') {
   console.log('🧭 Resolver-driven source selection for dev-app: enabled (required path)');
-}
-if (failSoft) {
-  console.log(`🛠️  Fail-soft mode enabled: Using safe fallbacks for missing references`);
 }
 
 registerStorybookColorsFormat(StyleDictionary);
@@ -164,17 +158,13 @@ export default {
       );
     }
 
-    // Use glob to find all .json files, but exclude .meta.json and raw files
+    // Use glob to find all .json files, but exclude .meta.json and non-token knowledge/legacy branches
     const allJsonFiles = globSync(path.join(repoRoot, 'tokens', '**', '*.json'), {
       ignore: [
         path.join(repoRoot, 'tokens', '**', '*.meta.json'),
         path.join(repoRoot, 'tokens', 'legacy', '**', '*.json'), // Exclude legacy files
         path.join(repoRoot, 'tokens', 'knowledge', '**', '*.json'), // Exclude knowledge/workflow files
-        path.join(repoRoot, 'tokens', 'components', '**', '*.json'), // Exclude component token files (processed separately)
-        // FAIL-SOFT: Temporarily exclude raw files causing circular references and missing references
-        ...(failSoft ? [
-          path.join(repoRoot, 'tokens', 'contexts', '**', 'raw', '**', '*.json')
-        ] : [])
+        path.join(repoRoot, 'tokens', 'components', '**', '*.json') // Exclude component token files (processed separately)
       ]
     });
     return allJsonFiles;
