@@ -9,7 +9,7 @@ import registerTokenStudioFormat from './formats/tokenStudio.js';
 import registerFullVariablesFormat from './formats/variablesFull.js';
 import registerScopedFigmaVariablesFormat from './formats/figmaVariablesScoped.js';
 import registerCssVariablesThemedFormat from './formats/cssVariablesThemed.js';
-import { normalizeResolverSources } from './utils/resolver-normalization.js';
+import { normalizeResolverSources, normalizeResolverTokenDictionary } from './utils/resolver-normalization.js';
 import {
   flattenResolverSources,
   loadResolverFile,
@@ -36,6 +36,7 @@ const target = process.env.STYLE_DICTIONARY_TARGET || 'storybook';
 const allowedContexts = TARGET_CONFIGS[target] || TARGET_CONFIGS.storybook;
 const RESOLVER_TARGETS = new Set(['storybook', 'dev-app', 'website-app', 'report-app']);
 const resolverRequiredForTarget = RESOLVER_TARGETS.has(target);
+const useResolverPreprocessor = process.env.STYLE_DICTIONARY_RESOLVER_PREPROCESSOR === 'true';
 const appResolverPath = process.env.STYLE_DICTIONARY_APP_RESOLVER_PATH
   || path.join(repoRoot, 'tokens', 'knowledge', 'resolver', 'app-core.resolver.json');
 const websiteResolverPath = process.env.STYLE_DICTIONARY_WEBSITE_RESOLVER_PATH
@@ -64,6 +65,23 @@ registerTokenStudioFormat(StyleDictionary);
 registerFullVariablesFormat(StyleDictionary);
 registerScopedFigmaVariablesFormat(StyleDictionary);
 registerCssVariablesThemedFormat(StyleDictionary, { allowedContexts, contextMirrors: CONTEXT_MIRRORS });
+StyleDictionary.registerPreprocessor({
+  name: 'resolver/raw-alias-normalization',
+  preprocessor(tokens, options) {
+    if (!resolverRequiredForTarget || !useResolverPreprocessor) return tokens;
+    const {
+      tokens: normalizedTokens,
+      normalizationApplied,
+      normalizedAliasCount,
+      normalizedContextCount
+    } = normalizeResolverTokenDictionary(tokens, { sourceFiles: options?.source });
+    if (normalizationApplied) {
+      console.log(`🧭 Raw aliases normalized in-memory for resolver mode: ${normalizedAliasCount}`);
+      console.log(`🧭 Raw context branches removed after normalization: ${normalizedContextCount}`);
+    }
+    return normalizedTokens;
+  }
+});
 
 function uniqueInOrder(items) {
   const seen = new Set();
@@ -105,6 +123,12 @@ function getResolverSourceListForTarget() {
       )
     );
 
+    if (useResolverPreprocessor) {
+      console.log(`🧭 Style Dictionary resolver mode enabled: ${resolverAbsolutePath}`);
+      console.log(`🧭 Resolver source files for ${target}: ${orderedSourceFiles.length}`);
+      return orderedSourceFiles;
+    }
+
     const {
       orderedSourceFiles: ordered,
       normalizationApplied,
@@ -131,6 +155,7 @@ function getResolverSourceListForTarget() {
 
 export default {
   usesDtcg: true,
+  preprocessors: useResolverPreprocessor ? ['resolver/raw-alias-normalization'] : [],
 
   source: (() => {
     if (target === 'canonical') {

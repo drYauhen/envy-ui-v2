@@ -153,6 +153,10 @@ npm run resolver:resolve:app
 # Build Style Dictionary dev-app target (resolver is required)
 npm run tokens:build:dev-app:resolver
 
+# Experimental: switch resolver normalization to in-memory preprocessor path
+# (disabled by default; keep default path for stable output parity)
+STYLE_DICTIONARY_RESOLVER_PREPROCESSOR=true npm run tokens:build:sd
+
 # Build canonical CSS (resolver mode is default)
 npm run tokens:build:canonical
 
