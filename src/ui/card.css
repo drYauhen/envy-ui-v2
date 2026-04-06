@@ -136,6 +136,8 @@
 [data-eui-context] .eui-card[data-eui-status] {
   position: relative;
   padding-left: calc(var(--eui-card-status-indicator-width, 4px) + 0px);
+  --eui-card-status-indicator-pattern-cssImage-active: none;
+  --eui-card-status-indicator-pattern-cssSize-active: auto;
 }
 
 [data-eui-context] .eui-card[data-eui-status]::before {
@@ -146,6 +148,9 @@
   bottom: 0;
   width: var(--eui-card-status-indicator-width, 4px);
   background-color: var(--eui-card-status-indicator-color);
+  background-image: var(--eui-card-status-indicator-pattern-cssImage-active);
+  background-size: var(--eui-card-status-indicator-pattern-cssSize-active);
+  background-repeat: repeat;
   border-radius: var(--eui-card-radius) 0 0 var(--eui-card-radius);
 }
 
@@ -153,40 +158,79 @@
 [data-eui-context] .eui-card[data-eui-status='pending'] {
   --eui-card-status-indicator-color: var(--eui-card-status-pending-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-pending-indicator-width);
+  --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-pending-cssImage);
+  --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-pending-cssSize);
 }
 
 /* Status: On Track */
 [data-eui-context] .eui-card[data-eui-status='onTrack'] {
   --eui-card-status-indicator-color: var(--eui-card-status-on-track-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-on-track-indicator-width);
+  --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-onTrack-cssImage);
+  --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-onTrack-cssSize);
 }
 
 /* Status: Completed */
 [data-eui-context] .eui-card[data-eui-status='completed'] {
   --eui-card-status-indicator-color: var(--eui-card-status-completed-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-completed-indicator-width);
+  --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-completed-cssImage);
+  --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-completed-cssSize);
 }
 
 /* Status: Minor Disruption */
 [data-eui-context] .eui-card[data-eui-status='minorDisruption'] {
   --eui-card-status-indicator-color: var(--eui-card-status-minor-disruption-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-minor-disruption-indicator-width);
+  --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-minorDisruption-cssImage);
+  --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-minorDisruption-cssSize);
 }
 
 /* Status: Major Disruption */
 [data-eui-context] .eui-card[data-eui-status='majorDisruption'] {
   --eui-card-status-indicator-color: var(--eui-card-status-major-disruption-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-major-disruption-indicator-width);
+  --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-majorDisruption-cssImage);
+  --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-majorDisruption-cssSize);
 }
 
 /* Status: Upcoming */
 [data-eui-context] .eui-card[data-eui-status='upcoming'] {
   --eui-card-status-indicator-color: var(--eui-card-status-upcoming-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-upcoming-indicator-width);
+  --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-upcoming-cssImage);
+  --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-upcoming-cssSize);
 }
 
 /* Status: Discontinued */
 [data-eui-context] .eui-card[data-eui-status='discontinued'] {
   --eui-card-status-indicator-color: var(--eui-card-status-discontinued-indicator);
   --eui-card-status-indicator-width: var(--eui-card-status-discontinued-indicator-width);
+  --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-discontinued-cssImage);
+  --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-discontinued-cssSize);
+}
+
+/* Global switch: pattern mode ON */
+[data-eui-pattern-mode='on'] [data-eui-context] .eui-card[data-eui-status],
+[data-eui-context][data-eui-pattern-mode='on'] .eui-card[data-eui-status] {
+  --eui-card-status-indicator-pattern-cssImage-active: var(--eui-card-status-indicator-pattern-cssImage, none);
+  --eui-card-status-indicator-pattern-cssSize-active: var(--eui-card-status-indicator-pattern-cssSize, auto);
+}
+
+/* Global switch: pattern mode OFF */
+[data-eui-pattern-mode='off'] [data-eui-context] .eui-card[data-eui-status],
+[data-eui-context][data-eui-pattern-mode='off'] .eui-card[data-eui-status] {
+  --eui-card-status-indicator-pattern-cssImage-active: none;
+  --eui-card-status-indicator-pattern-cssSize-active: auto;
+}
+
+/* Local per-component override */
+[data-eui-context] .eui-card[data-eui-status][data-eui-pattern-mode='on'] {
+  --eui-card-status-indicator-pattern-cssImage-active: var(--eui-card-status-indicator-pattern-cssImage, none);
+  --eui-card-status-indicator-pattern-cssSize-active: var(--eui-card-status-indicator-pattern-cssSize, auto);
+}
+
+[data-eui-context] .eui-card[data-eui-status][data-eui-pattern-mode='off'] {
+  --eui-card-status-indicator-pattern-cssImage-active: none;
+  --eui-card-status-indicator-pattern-cssSize-active: auto;
 }

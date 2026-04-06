@@ -601,5 +601,31 @@ export const adrs: DocMetadata[] = [
     "exportName": "aIAgentReadinessReflectionfromMilestoneDrivenAgentResearch",
     "markdownPath": "/docs/adr/ADR-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research.md",
     "storybookId": "docs-adr--a-i-agent-readiness-reflectionfrom-milestone-driven-agent-research"
+  },
+  {
+    "number": "0047",
+    "title": "Signal Pattern Accessibility and Cross Renderer Parity",
+    "category": "adr",
+    "status": "Accepted (Implemented v1)",
+    "date": "2026-04-05",
+    "lastUpdated": "2026-04-06",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "signalPatternAccessibilityandCrossRendererParity",
+    "markdownPath": "/docs/adr/ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md",
+    "storybookId": "docs-adr--signal-pattern-accessibilityand-cross-renderer-parity"
+  },
+  {
+    "number": "0048",
+    "title": "Chart Like Signal Interaction and Hit Area Policy",
+    "category": "adr",
+    "status": "Accepted",
+    "date": "2026-04-06",
+    "lastUpdated": "2026-04-06",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "chartLikeSignalInteractionandHitAreaPolicy",
+    "markdownPath": "/docs/adr/ADR-0048-chart-like-signal-interaction-and-hit-area-policy.md",
+    "storybookId": "docs-adr--chart-like-signal-interactionand-hit-area-policy"
   }
 ];

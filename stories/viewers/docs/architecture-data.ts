@@ -255,5 +255,19 @@ export const architectures: DocMetadata[] = [
     "exportName": "ArchTokensNum004TokenUsageRules",
     "markdownPath": "/docs/architecture/ARCH-tokens-004-token-usage-rules.md",
     "storybookId": "docs-architecture--arch-tokens-num-004-token-usage-rules"
+  },
+  {
+    "number": "005",
+    "title": "Signal Pattern Authoring Rules",
+    "category": "architecture",
+    "majorCategory": "TOKENS",
+    "status": "Active",
+    "date": "2026-04-06",
+    "lastUpdated": "2026-04-06",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "ArchTokensNum005SignalPatternAuthoringRules",
+    "markdownPath": "/docs/architecture/ARCH-tokens-005-signal-pattern-authoring-rules.md",
+    "storybookId": "docs-architecture--arch-tokens-num-005-signal-pattern-authoring-rules"
   }
 ];

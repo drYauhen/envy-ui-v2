@@ -1,7 +1,7 @@
 /* Calendar Component - Canonical Envy UI Implementation */
 
 /* Import component tokens (generated CSS variables) */
-@import url("./generated/css/components/calendar.tokens.css");
+@import url("../../generated/css/components/calendar.tokens.css");
 
 /* Import component structure (layout and styling) */
 @import url("./components/calendar/calendar.structure.css");

@@ -9,7 +9,7 @@
 **Category:** Workflow
 
 ---
-> Use [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md), [CSS Token Output Rules](../architecture/ARCH-tokens-002-css-token-output-rules.md), and [Resolver Migration Workflow](WORKFLOW-009-resolver-migration-workflow.md) for current canon and resolver-first build flow. The `web` name was renamed to `website` (legacy artifacts may exist under `tokens/legacy/contexts/web`).
+> Use [Token Architecture](../architecture/ARCH-tokens-003-token-architecture.md), [CSS Token Output Rules](../architecture/ARCH-tokens-002-css-token-output-rules.md), [Signal Pattern Token Authoring Rules](../architecture/ARCH-tokens-005-signal-pattern-authoring-rules.md), and [Resolver Migration Workflow](WORKFLOW-009-resolver-migration-workflow.md) for current canon and resolver-first build flow. The `web` name was renamed to `website` (legacy artifacts may exist under `tokens/legacy/contexts/web`).
 
 Complete guide to working with design tokens in Envy UI.
 

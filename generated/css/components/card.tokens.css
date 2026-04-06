@@ -55,42 +55,56 @@
   [data-eui-context] .eui-card[data-eui-status='pending'] {
     --eui-card-status-indicator-color: var(--eui-color-status-application-pending);
     --eui-card-status-indicator-width: var(--eui-layout-card-statusIndicator-width);
+    --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-pending-cssImage);
+    --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-pending-cssSize);
   }
 
   /* Status: onTrack */
   [data-eui-context] .eui-card[data-eui-status='onTrack'] {
     --eui-card-status-indicator-color: var(--eui-color-status-application-onTrack);
     --eui-card-status-indicator-width: var(--eui-layout-card-statusIndicator-width);
+    --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-onTrack-cssImage);
+    --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-onTrack-cssSize);
   }
 
   /* Status: completed */
   [data-eui-context] .eui-card[data-eui-status='completed'] {
     --eui-card-status-indicator-color: var(--eui-color-status-application-completed);
     --eui-card-status-indicator-width: var(--eui-layout-card-statusIndicator-width);
+    --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-completed-cssImage);
+    --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-completed-cssSize);
   }
 
   /* Status: minorDisruption */
   [data-eui-context] .eui-card[data-eui-status='minorDisruption'] {
     --eui-card-status-indicator-color: var(--eui-color-status-application-minorDisruption);
     --eui-card-status-indicator-width: var(--eui-layout-card-statusIndicator-width);
+    --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-minorDisruption-cssImage);
+    --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-minorDisruption-cssSize);
   }
 
   /* Status: majorDisruption */
   [data-eui-context] .eui-card[data-eui-status='majorDisruption'] {
     --eui-card-status-indicator-color: var(--eui-color-status-application-majorDisruption);
     --eui-card-status-indicator-width: var(--eui-layout-card-statusIndicator-width);
+    --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-majorDisruption-cssImage);
+    --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-majorDisruption-cssSize);
   }
 
   /* Status: upcoming */
   [data-eui-context] .eui-card[data-eui-status='upcoming'] {
     --eui-card-status-indicator-color: var(--eui-color-status-application-upcoming);
     --eui-card-status-indicator-width: var(--eui-layout-card-statusIndicator-width);
+    --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-upcoming-cssImage);
+    --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-upcoming-cssSize);
   }
 
   /* Status: discontinued */
   [data-eui-context] .eui-card[data-eui-status='discontinued'] {
     --eui-card-status-indicator-color: var(--eui-color-status-application-discontinued);
     --eui-card-status-indicator-width: var(--eui-layout-card-statusIndicator-width);
+    --eui-card-status-indicator-pattern-cssImage: var(--eui-pattern-signal-status-application-discontinued-cssImage);
+    --eui-card-status-indicator-pattern-cssSize: var(--eui-pattern-signal-status-application-discontinued-cssSize);
   }
 
 }

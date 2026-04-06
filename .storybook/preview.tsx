@@ -114,12 +114,13 @@ const getGlobalValue = (value: unknown, fallback: string) =>
 const joinClassNames = (...values: Array<string | undefined>) =>
   values.filter(Boolean).join(' ');
 
-const syncHtmlContext = (context: string, theme: string, focusPolicy: string) => {
+const syncHtmlContext = (context: string, theme: string, focusPolicy: string, patternMode: string) => {
   if (typeof document === 'undefined') return;
   const root = document.documentElement;
   root.setAttribute('data-eui-context', context);
   root.setAttribute('data-eui-theme', theme);
   root.setAttribute('data-eui-focus-policy', focusPolicy);
+  root.setAttribute('data-eui-pattern-mode', patternMode);
   root.style.fontSize = 'var(--eui-typography-fontSize-base)';
 };
 
@@ -127,16 +128,18 @@ const HtmlContextSync = ({
   context,
   theme,
   focusPolicy,
+  patternMode,
   children
 }: {
   context: string;
   theme: string;
   focusPolicy: string;
+  patternMode: string;
   children: ReactNode;
 }) => {
   useEffect(() => {
-    syncHtmlContext(context, theme, focusPolicy);
-  }, [context, theme, focusPolicy]);
+    syncHtmlContext(context, theme, focusPolicy, patternMode);
+  }, [context, theme, focusPolicy, patternMode]);
 
   return <>{children}</>;
 };
@@ -182,17 +185,19 @@ const DocsPre = ({ className, children, ...props }: any) => (
 const DocsThemeContainer = ({ children, context }: DocsContainerProps) => {
   const globals = (context as any)?.globals ?? {};
   const focusPolicy = getGlobalValue(globals.focusPolicy, 'derived');
+  const patternMode = getGlobalValue(globals.patternMode, 'off');
   const appTheme = getGlobalValue(globals.appTheme, DEFAULT_CONTEXT_THEMES.app);
   const websiteTheme = getGlobalValue(globals.websiteTheme, DEFAULT_CONTEXT_THEMES.website);
   const reportTheme = getGlobalValue(globals.reportTheme, DEFAULT_CONTEXT_THEMES.report);
 
   return (
     <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
-      <HtmlContextSync context="app" theme={appTheme} focusPolicy={focusPolicy}>
+      <HtmlContextSync context="app" theme={appTheme} focusPolicy={focusPolicy} patternMode={patternMode}>
         <DocsContainer context={context}>
           <div
             className="sb-docs-wrapper eui-typography-root"
             data-eui-focus-policy={focusPolicy}
+            data-eui-pattern-mode={patternMode}
             data-eui-context="app"
             data-eui-theme={appTheme}
           >
@@ -206,6 +211,7 @@ const DocsThemeContainer = ({ children, context }: DocsContainerProps) => {
 
 const withPreviewLayout: Decorator = (Story, context) => {
   const focusPolicy = getGlobalValue(context.globals.focusPolicy, 'derived');
+  const patternMode = getGlobalValue(context.globals.patternMode, 'off');
   const appTheme = getGlobalValue(context.globals.appTheme, DEFAULT_CONTEXT_THEMES.app);
   const websiteTheme = getGlobalValue(context.globals.websiteTheme, DEFAULT_CONTEXT_THEMES.website);
   const reportTheme = getGlobalValue(context.globals.reportTheme, DEFAULT_CONTEXT_THEMES.report);
@@ -213,10 +219,11 @@ const withPreviewLayout: Decorator = (Story, context) => {
 
   return (
     <ContextThemeProvider themes={{ app: appTheme, website: websiteTheme, report: reportTheme }}>
-      <HtmlContextSync context="app" theme={appTheme} focusPolicy={focusPolicy}>
+      <HtmlContextSync context="app" theme={appTheme} focusPolicy={focusPolicy} patternMode={patternMode}>
         <div
           className="sb-preview-wrapper eui-typography-root"
           data-eui-focus-policy={focusPolicy}
+          data-eui-pattern-mode={patternMode}
           data-eui-context="app"
           data-eui-theme={appTheme}
         >
@@ -266,6 +273,19 @@ export const globalTypes: Preview['globalTypes'] = {
     name: 'Focus Policy',
     description: 'Select focus styling: Derived (brand color) or System (high accessibility orange).',
     defaultValue: 'derived'
+  },
+
+  patternMode: {
+    name: 'Pattern Mode',
+    description: 'Enable or disable semantic pattern overlays for signal colors.',
+    defaultValue: 'off',
+    toolbar: {
+      icon: 'mirror',
+      items: [
+        { value: 'off', title: 'Patterns Off' },
+        { value: 'on', title: 'Patterns On' }
+      ]
+    }
   }
 };
 

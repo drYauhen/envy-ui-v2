@@ -63,6 +63,8 @@
   [data-eui-context] .eui-card[data-eui-status] {
     position: relative;
     padding-left: var(--eui-card-status-indicator-width);
+    --eui-card-status-indicator-pattern-cssImage-active: none;
+    --eui-card-status-indicator-pattern-cssSize-active: auto;
   }
 
   /* Status indicator - pseudo-element */
@@ -74,6 +76,34 @@
     bottom: 0;
     width: var(--eui-card-status-indicator-width);
     background-color: var(--eui-card-status-indicator-color);
+    background-image: var(--eui-card-status-indicator-pattern-cssImage-active);
+    background-size: var(--eui-card-status-indicator-pattern-cssSize-active);
+    background-repeat: repeat;
     border-radius: var(--eui-card-radius) 0 0 var(--eui-card-radius);
+  }
+
+  /* Global switch: pattern mode ON */
+  [data-eui-pattern-mode='on'] [data-eui-context] .eui-card[data-eui-status],
+  [data-eui-context][data-eui-pattern-mode='on'] .eui-card[data-eui-status] {
+    --eui-card-status-indicator-pattern-cssImage-active: var(--eui-card-status-indicator-pattern-cssImage, none);
+    --eui-card-status-indicator-pattern-cssSize-active: var(--eui-card-status-indicator-pattern-cssSize, auto);
+  }
+
+  /* Global switch: pattern mode OFF */
+  [data-eui-pattern-mode='off'] [data-eui-context] .eui-card[data-eui-status],
+  [data-eui-context][data-eui-pattern-mode='off'] .eui-card[data-eui-status] {
+    --eui-card-status-indicator-pattern-cssImage-active: none;
+    --eui-card-status-indicator-pattern-cssSize-active: auto;
+  }
+
+  /* Local per-component override */
+  [data-eui-context] .eui-card[data-eui-status][data-eui-pattern-mode='on'] {
+    --eui-card-status-indicator-pattern-cssImage-active: var(--eui-card-status-indicator-pattern-cssImage, none);
+    --eui-card-status-indicator-pattern-cssSize-active: var(--eui-card-status-indicator-pattern-cssSize, auto);
+  }
+
+  [data-eui-context] .eui-card[data-eui-status][data-eui-pattern-mode='off'] {
+    --eui-card-status-indicator-pattern-cssImage-active: none;
+    --eui-card-status-indicator-pattern-cssSize-active: auto;
   }
 }

@@ -145,6 +145,18 @@
               "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Pending status indicator width"
+            },
+            "pattern": {
+              "cssImage": {
+                "$value": "{eui.pattern.signal.status.application.pending.cssImage}",
+                "$type": "string",
+                "$description": "Pending status indicator pattern image."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.signal.status.application.pending.cssSize}",
+                "$type": "string",
+                "$description": "Pending status indicator pattern tile size."
+              }
             }
           }
         },
@@ -159,6 +171,18 @@
               "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "On track status indicator width"
+            },
+            "pattern": {
+              "cssImage": {
+                "$value": "{eui.pattern.signal.status.application.onTrack.cssImage}",
+                "$type": "string",
+                "$description": "On-track status indicator pattern image."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.signal.status.application.onTrack.cssSize}",
+                "$type": "string",
+                "$description": "On-track status indicator pattern tile size."
+              }
             }
           }
         },
@@ -173,6 +197,18 @@
               "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Completed status indicator width"
+            },
+            "pattern": {
+              "cssImage": {
+                "$value": "{eui.pattern.signal.status.application.completed.cssImage}",
+                "$type": "string",
+                "$description": "Completed status indicator pattern image."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.signal.status.application.completed.cssSize}",
+                "$type": "string",
+                "$description": "Completed status indicator pattern tile size."
+              }
             }
           }
         },
@@ -187,6 +223,18 @@
               "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Minor disruption status indicator width"
+            },
+            "pattern": {
+              "cssImage": {
+                "$value": "{eui.pattern.signal.status.application.minorDisruption.cssImage}",
+                "$type": "string",
+                "$description": "Minor-disruption status indicator pattern image."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.signal.status.application.minorDisruption.cssSize}",
+                "$type": "string",
+                "$description": "Minor-disruption status indicator pattern tile size."
+              }
             }
           }
         },
@@ -201,6 +249,18 @@
               "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Major disruption status indicator width"
+            },
+            "pattern": {
+              "cssImage": {
+                "$value": "{eui.pattern.signal.status.application.majorDisruption.cssImage}",
+                "$type": "string",
+                "$description": "Major-disruption status indicator pattern image."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.signal.status.application.majorDisruption.cssSize}",
+                "$type": "string",
+                "$description": "Major-disruption status indicator pattern tile size."
+              }
             }
           }
         },
@@ -215,6 +275,18 @@
               "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Upcoming status indicator width"
+            },
+            "pattern": {
+              "cssImage": {
+                "$value": "{eui.pattern.signal.status.application.upcoming.cssImage}",
+                "$type": "string",
+                "$description": "Upcoming status indicator pattern image."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.signal.status.application.upcoming.cssSize}",
+                "$type": "string",
+                "$description": "Upcoming status indicator pattern tile size."
+              }
             }
           }
         },
@@ -229,6 +301,18 @@
               "$value": "{eui.layout.card.statusIndicator.width}",
               "$type": "dimension",
               "$description": "Discontinued status indicator width"
+            },
+            "pattern": {
+              "cssImage": {
+                "$value": "{eui.pattern.signal.status.application.discontinued.cssImage}",
+                "$type": "string",
+                "$description": "Discontinued status indicator pattern image."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.signal.status.application.discontinued.cssSize}",
+                "$type": "string",
+                "$description": "Discontinued status indicator pattern tile size."
+              }
             }
           }
         }

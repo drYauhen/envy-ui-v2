@@ -120,6 +120,9 @@
           "$ref": "../../contexts/app/semantics/breakpoints.json"
         },
         {
+          "$ref": "../../contexts/app/semantics/chart.json"
+        },
+        {
           "$ref": "../../contexts/app/semantics/colors/accent.json"
         },
         {
@@ -175,6 +178,9 @@
         },
         {
           "$ref": "../../contexts/app/semantics/opacity.json"
+        },
+        {
+          "$ref": "../../contexts/app/semantics/patterns/status-application.json"
         },
         {
           "$ref": "../../contexts/app/semantics/shadow.json"

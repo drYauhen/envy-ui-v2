@@ -1,0 +1,533 @@
+{
+  "$schema": "../../../../../schemas/dtcg-2025.10-schema.json",
+  "eui": {
+    "pattern": {
+      "library": {
+        "stripeForward": {
+          "cssImage": {
+            "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M0 8L8 0' stroke='%23FFFFFF6B' stroke-width='2'/%3E%3C/svg%3E\")",
+            "$type": "string",
+            "$description": "Forward diagonal stripe pattern image. SVG geometry mirrors Highcharts pattern."
+          },
+          "cssSize": {
+            "$value": "8px 8px",
+            "$type": "string",
+            "$description": "Tile size for the forward diagonal stripe pattern."
+          },
+          "highchartsPath": {
+            "$value": "M 0 8 L 8 0",
+            "$type": "string",
+            "$description": "Highcharts SVG path for forward diagonal stripes."
+          },
+          "highchartsWidth": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile width for forward diagonal stripes."
+          },
+          "highchartsHeight": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile height for forward diagonal stripes."
+          },
+          "highchartsStrokeWidth": {
+            "$value": "2",
+            "$type": "string",
+            "$description": "Highcharts stroke width for forward diagonal stripes."
+          },
+          "highchartsStrokeColor": {
+            "$value": "#FFFFFF6B",
+            "$type": "string",
+            "$description": "Highcharts stroke color for forward diagonal stripes. Matches CSS pattern opacity."
+          }
+        },
+        "stripeBackward": {
+          "cssImage": {
+            "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M0 0L8 8' stroke='%23FFFFFF6B' stroke-width='2'/%3E%3C/svg%3E\")",
+            "$type": "string",
+            "$description": "Backward diagonal stripe pattern image. SVG geometry mirrors Highcharts pattern."
+          },
+          "cssSize": {
+            "$value": "8px 8px",
+            "$type": "string",
+            "$description": "Tile size for the backward diagonal stripe pattern."
+          },
+          "highchartsPath": {
+            "$value": "M 0 0 L 8 8",
+            "$type": "string",
+            "$description": "Highcharts SVG path for backward diagonal stripes."
+          },
+          "highchartsWidth": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile width for backward diagonal stripes."
+          },
+          "highchartsHeight": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile height for backward diagonal stripes."
+          },
+          "highchartsStrokeWidth": {
+            "$value": "2",
+            "$type": "string",
+            "$description": "Highcharts stroke width for backward diagonal stripes."
+          },
+          "highchartsStrokeColor": {
+            "$value": "#FFFFFF6B",
+            "$type": "string",
+            "$description": "Highcharts stroke color for backward diagonal stripes. Matches CSS pattern opacity."
+          }
+        },
+        "crosshatch": {
+          "cssImage": {
+            "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M0 8L8 0' stroke='%23FFFFFF5C' stroke-width='1.5'/%3E%3Cpath d='M0 0L8 8' stroke='%23FFFFFF5C' stroke-width='1.5'/%3E%3C/svg%3E\")",
+            "$type": "string",
+            "$description": "Crosshatch pattern image. SVG geometry mirrors Highcharts pattern."
+          },
+          "cssSize": {
+            "$value": "8px 8px",
+            "$type": "string",
+            "$description": "Tile size for crosshatch pattern."
+          },
+          "highchartsPath": {
+            "$value": "M 0 8 L 8 0 M 0 0 L 8 8",
+            "$type": "string",
+            "$description": "Highcharts SVG path for crosshatch."
+          },
+          "highchartsWidth": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile width for crosshatch."
+          },
+          "highchartsHeight": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile height for crosshatch."
+          },
+          "highchartsStrokeWidth": {
+            "$value": "1.5",
+            "$type": "string",
+            "$description": "Highcharts stroke width for crosshatch."
+          },
+          "highchartsStrokeColor": {
+            "$value": "#FFFFFF5C",
+            "$type": "string",
+            "$description": "Highcharts stroke color for crosshatch. Matches CSS pattern opacity."
+          }
+        },
+        "horizontal": {
+          "cssImage": {
+            "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M0 4L8 4' stroke='%23FFFFFF75' stroke-width='1.5'/%3E%3C/svg%3E\")",
+            "$type": "string",
+            "$description": "Horizontal line pattern image. SVG geometry mirrors Highcharts pattern."
+          },
+          "cssSize": {
+            "$value": "8px 8px",
+            "$type": "string",
+            "$description": "Tile size for horizontal line pattern."
+          },
+          "highchartsPath": {
+            "$value": "M 0 4 L 8 4",
+            "$type": "string",
+            "$description": "Highcharts SVG path for horizontal line pattern."
+          },
+          "highchartsWidth": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile width for horizontal line pattern."
+          },
+          "highchartsHeight": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile height for horizontal line pattern."
+          },
+          "highchartsStrokeWidth": {
+            "$value": "1.5",
+            "$type": "string",
+            "$description": "Highcharts stroke width for horizontal line pattern."
+          },
+          "highchartsStrokeColor": {
+            "$value": "#FFFFFF75",
+            "$type": "string",
+            "$description": "Highcharts stroke color for horizontal line pattern. Matches CSS pattern opacity."
+          }
+        },
+        "dashHorizontal": {
+          "cssImage": {
+            "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M0 4L2 4 M4 4L6 4' stroke='%23FFFFFF75' stroke-width='1.5'/%3E%3C/svg%3E\")",
+            "$type": "string",
+            "$description": "Dashed horizontal pattern image. Distinct from continuous horizontal pattern."
+          },
+          "cssSize": {
+            "$value": "8px 8px",
+            "$type": "string",
+            "$description": "Tile size for dashed horizontal line pattern."
+          },
+          "highchartsPath": {
+            "$value": "M 0 4 L 2 4 M 4 4 L 6 4",
+            "$type": "string",
+            "$description": "Highcharts SVG path for dashed horizontal pattern."
+          },
+          "highchartsWidth": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile width for dashed horizontal pattern."
+          },
+          "highchartsHeight": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile height for dashed horizontal pattern."
+          },
+          "highchartsStrokeWidth": {
+            "$value": "1.5",
+            "$type": "string",
+            "$description": "Highcharts stroke width for dashed horizontal pattern."
+          },
+          "highchartsStrokeColor": {
+            "$value": "#FFFFFF75",
+            "$type": "string",
+            "$description": "Highcharts stroke color for dashed horizontal pattern. Matches CSS pattern opacity."
+          }
+        },
+        "vertical": {
+          "cssImage": {
+            "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M4 0L4 8' stroke='%23FFFFFF75' stroke-width='1.5'/%3E%3C/svg%3E\")",
+            "$type": "string",
+            "$description": "Vertical line pattern image. SVG geometry mirrors Highcharts pattern."
+          },
+          "cssSize": {
+            "$value": "8px 8px",
+            "$type": "string",
+            "$description": "Tile size for vertical line pattern."
+          },
+          "highchartsPath": {
+            "$value": "M 4 0 L 4 8",
+            "$type": "string",
+            "$description": "Highcharts SVG path for vertical line pattern."
+          },
+          "highchartsWidth": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile width for vertical line pattern."
+          },
+          "highchartsHeight": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile height for vertical line pattern."
+          },
+          "highchartsStrokeWidth": {
+            "$value": "1.5",
+            "$type": "string",
+            "$description": "Highcharts stroke width for vertical line pattern."
+          },
+          "highchartsStrokeColor": {
+            "$value": "#FFFFFF75",
+            "$type": "string",
+            "$description": "Highcharts stroke color for vertical line pattern. Matches CSS pattern opacity."
+          }
+        },
+        "gridTight": {
+          "cssImage": {
+            "$value": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M0 4L8 4' stroke='%23FFFFFF7A' stroke-width='1.4'/%3E%3Cpath d='M4 0L4 8' stroke='%23FFFFFF7A' stroke-width='1.4'/%3E%3C/svg%3E\")",
+            "$type": "string",
+            "$description": "Tight grid pattern image. SVG geometry mirrors Highcharts pattern."
+          },
+          "cssSize": {
+            "$value": "8px 8px",
+            "$type": "string",
+            "$description": "Tile size for tight grid pattern."
+          },
+          "highchartsPath": {
+            "$value": "M 0 4 L 8 4 M 4 0 L 4 8",
+            "$type": "string",
+            "$description": "Highcharts SVG path for tight grid pattern."
+          },
+          "highchartsWidth": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile width for tight grid pattern."
+          },
+          "highchartsHeight": {
+            "$value": "8",
+            "$type": "string",
+            "$description": "Highcharts tile height for tight grid pattern."
+          },
+          "highchartsStrokeWidth": {
+            "$value": "1.4",
+            "$type": "string",
+            "$description": "Highcharts stroke width for tight grid pattern."
+          },
+          "highchartsStrokeColor": {
+            "$value": "#FFFFFF7A",
+            "$type": "string",
+            "$description": "Highcharts stroke color for tight grid pattern. Matches CSS pattern opacity."
+          }
+        }
+      },
+      "signal": {
+        "status": {
+          "application": {
+            "pending": {
+              "cssImage": {
+                "$value": "{eui.pattern.library.horizontal.cssImage}",
+                "$type": "string",
+                "$description": "Pattern for pending status."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.library.horizontal.cssSize}",
+                "$type": "string",
+                "$description": "Pattern tile size for pending status."
+              },
+              "highchartsPath": {
+                "$value": "{eui.pattern.library.horizontal.highchartsPath}",
+                "$type": "string",
+                "$description": "Highcharts pattern path for pending status."
+              },
+              "highchartsWidth": {
+                "$value": "{eui.pattern.library.horizontal.highchartsWidth}",
+                "$type": "string",
+                "$description": "Highcharts pattern width for pending status."
+              },
+              "highchartsHeight": {
+                "$value": "{eui.pattern.library.horizontal.highchartsHeight}",
+                "$type": "string",
+                "$description": "Highcharts pattern height for pending status."
+              },
+              "highchartsStrokeWidth": {
+                "$value": "{eui.pattern.library.horizontal.highchartsStrokeWidth}",
+                "$type": "string",
+                "$description": "Highcharts stroke width for pending status."
+              },
+              "highchartsStrokeColor": {
+                "$value": "{eui.pattern.library.horizontal.highchartsStrokeColor}",
+                "$type": "string",
+                "$description": "Highcharts stroke color for pending status."
+              }
+            },
+            "onTrack": {
+              "cssImage": {
+                "$value": "{eui.pattern.library.stripeForward.cssImage}",
+                "$type": "string",
+                "$description": "Pattern for on-track status."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.library.stripeForward.cssSize}",
+                "$type": "string",
+                "$description": "Pattern tile size for on-track status."
+              },
+              "highchartsPath": {
+                "$value": "{eui.pattern.library.stripeForward.highchartsPath}",
+                "$type": "string",
+                "$description": "Highcharts pattern path for on-track status."
+              },
+              "highchartsWidth": {
+                "$value": "{eui.pattern.library.stripeForward.highchartsWidth}",
+                "$type": "string",
+                "$description": "Highcharts pattern width for on-track status."
+              },
+              "highchartsHeight": {
+                "$value": "{eui.pattern.library.stripeForward.highchartsHeight}",
+                "$type": "string",
+                "$description": "Highcharts pattern height for on-track status."
+              },
+              "highchartsStrokeWidth": {
+                "$value": "{eui.pattern.library.stripeForward.highchartsStrokeWidth}",
+                "$type": "string",
+                "$description": "Highcharts stroke width for on-track status."
+              },
+              "highchartsStrokeColor": {
+                "$value": "{eui.pattern.library.stripeForward.highchartsStrokeColor}",
+                "$type": "string",
+                "$description": "Highcharts stroke color for on-track status."
+              }
+            },
+            "completed": {
+              "cssImage": {
+                "$value": "{eui.pattern.library.crosshatch.cssImage}",
+                "$type": "string",
+                "$description": "Pattern for completed status."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.library.crosshatch.cssSize}",
+                "$type": "string",
+                "$description": "Pattern tile size for completed status."
+              },
+              "highchartsPath": {
+                "$value": "{eui.pattern.library.crosshatch.highchartsPath}",
+                "$type": "string",
+                "$description": "Highcharts pattern path for completed status."
+              },
+              "highchartsWidth": {
+                "$value": "{eui.pattern.library.crosshatch.highchartsWidth}",
+                "$type": "string",
+                "$description": "Highcharts pattern width for completed status."
+              },
+              "highchartsHeight": {
+                "$value": "{eui.pattern.library.crosshatch.highchartsHeight}",
+                "$type": "string",
+                "$description": "Highcharts pattern height for completed status."
+              },
+              "highchartsStrokeWidth": {
+                "$value": "{eui.pattern.library.crosshatch.highchartsStrokeWidth}",
+                "$type": "string",
+                "$description": "Highcharts stroke width for completed status."
+              },
+              "highchartsStrokeColor": {
+                "$value": "{eui.pattern.library.crosshatch.highchartsStrokeColor}",
+                "$type": "string",
+                "$description": "Highcharts stroke color for completed status."
+              }
+            },
+            "minorDisruption": {
+              "cssImage": {
+                "$value": "{eui.pattern.library.vertical.cssImage}",
+                "$type": "string",
+                "$description": "Pattern for minor disruption status."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.library.vertical.cssSize}",
+                "$type": "string",
+                "$description": "Pattern tile size for minor disruption status."
+              },
+              "highchartsPath": {
+                "$value": "{eui.pattern.library.vertical.highchartsPath}",
+                "$type": "string",
+                "$description": "Highcharts pattern path for minor disruption status."
+              },
+              "highchartsWidth": {
+                "$value": "{eui.pattern.library.vertical.highchartsWidth}",
+                "$type": "string",
+                "$description": "Highcharts pattern width for minor disruption status."
+              },
+              "highchartsHeight": {
+                "$value": "{eui.pattern.library.vertical.highchartsHeight}",
+                "$type": "string",
+                "$description": "Highcharts pattern height for minor disruption status."
+              },
+              "highchartsStrokeWidth": {
+                "$value": "{eui.pattern.library.vertical.highchartsStrokeWidth}",
+                "$type": "string",
+                "$description": "Highcharts stroke width for minor disruption status."
+              },
+              "highchartsStrokeColor": {
+                "$value": "{eui.pattern.library.vertical.highchartsStrokeColor}",
+                "$type": "string",
+                "$description": "Highcharts stroke color for minor disruption status."
+              }
+            },
+            "majorDisruption": {
+              "cssImage": {
+                "$value": "{eui.pattern.library.stripeBackward.cssImage}",
+                "$type": "string",
+                "$description": "Pattern for major disruption status."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.library.stripeBackward.cssSize}",
+                "$type": "string",
+                "$description": "Pattern tile size for major disruption status."
+              },
+              "highchartsPath": {
+                "$value": "{eui.pattern.library.stripeBackward.highchartsPath}",
+                "$type": "string",
+                "$description": "Highcharts pattern path for major disruption status."
+              },
+              "highchartsWidth": {
+                "$value": "{eui.pattern.library.stripeBackward.highchartsWidth}",
+                "$type": "string",
+                "$description": "Highcharts pattern width for major disruption status."
+              },
+              "highchartsHeight": {
+                "$value": "{eui.pattern.library.stripeBackward.highchartsHeight}",
+                "$type": "string",
+                "$description": "Highcharts pattern height for major disruption status."
+              },
+              "highchartsStrokeWidth": {
+                "$value": "{eui.pattern.library.stripeBackward.highchartsStrokeWidth}",
+                "$type": "string",
+                "$description": "Highcharts stroke width for major disruption status."
+              },
+              "highchartsStrokeColor": {
+                "$value": "{eui.pattern.library.stripeBackward.highchartsStrokeColor}",
+                "$type": "string",
+                "$description": "Highcharts stroke color for major disruption status."
+              }
+            },
+            "upcoming": {
+              "cssImage": {
+                "$value": "{eui.pattern.library.dashHorizontal.cssImage}",
+                "$type": "string",
+                "$description": "Pattern for upcoming status."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.library.dashHorizontal.cssSize}",
+                "$type": "string",
+                "$description": "Pattern tile size for upcoming status."
+              },
+              "highchartsPath": {
+                "$value": "{eui.pattern.library.dashHorizontal.highchartsPath}",
+                "$type": "string",
+                "$description": "Highcharts pattern path for upcoming status."
+              },
+              "highchartsWidth": {
+                "$value": "{eui.pattern.library.dashHorizontal.highchartsWidth}",
+                "$type": "string",
+                "$description": "Highcharts pattern width for upcoming status."
+              },
+              "highchartsHeight": {
+                "$value": "{eui.pattern.library.dashHorizontal.highchartsHeight}",
+                "$type": "string",
+                "$description": "Highcharts pattern height for upcoming status."
+              },
+              "highchartsStrokeWidth": {
+                "$value": "{eui.pattern.library.dashHorizontal.highchartsStrokeWidth}",
+                "$type": "string",
+                "$description": "Highcharts stroke width for upcoming status."
+              },
+              "highchartsStrokeColor": {
+                "$value": "{eui.pattern.library.dashHorizontal.highchartsStrokeColor}",
+                "$type": "string",
+                "$description": "Highcharts stroke color for upcoming status."
+              }
+            },
+            "discontinued": {
+              "cssImage": {
+                "$value": "{eui.pattern.library.gridTight.cssImage}",
+                "$type": "string",
+                "$description": "Pattern for discontinued status."
+              },
+              "cssSize": {
+                "$value": "{eui.pattern.library.gridTight.cssSize}",
+                "$type": "string",
+                "$description": "Pattern tile size for discontinued status."
+              },
+              "highchartsPath": {
+                "$value": "{eui.pattern.library.gridTight.highchartsPath}",
+                "$type": "string",
+                "$description": "Highcharts pattern path for discontinued status."
+              },
+              "highchartsWidth": {
+                "$value": "{eui.pattern.library.gridTight.highchartsWidth}",
+                "$type": "string",
+                "$description": "Highcharts pattern width for discontinued status."
+              },
+              "highchartsHeight": {
+                "$value": "{eui.pattern.library.gridTight.highchartsHeight}",
+                "$type": "string",
+                "$description": "Highcharts pattern height for discontinued status."
+              },
+              "highchartsStrokeWidth": {
+                "$value": "{eui.pattern.library.gridTight.highchartsStrokeWidth}",
+                "$type": "string",
+                "$description": "Highcharts stroke width for discontinued status."
+              },
+              "highchartsStrokeColor": {
+                "$value": "{eui.pattern.library.gridTight.highchartsStrokeColor}",
+                "$type": "string",
+                "$description": "Highcharts stroke color for discontinued status."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

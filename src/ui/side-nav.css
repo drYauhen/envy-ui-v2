@@ -1,7 +1,7 @@
 /* Side Nav Component - Canonical Envy UI Implementation */
 
 /* Import component tokens (generated CSS variables) */
-@import url("./generated/css/components/side-nav.tokens.css");
+@import url("../../generated/css/components/side-nav.tokens.css");
 
 /* Import component structure (layout and styling) */
 @import url("./components/side-nav/side-nav.structure.css");

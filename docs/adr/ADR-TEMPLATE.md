@@ -7,9 +7,6 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Template
-**Related:**
-- [ADR-XXXX](./ADR-XXXX-title.md) — Related ADR Title
-- [ADR-YYYY](./ADR-YYYY-title.md) — Another Related ADR Title
 
 ---
 ## Context
@@ -35,3 +32,18 @@ I decided to <concise statement of the decision>.
 <Optional: Additional context, examples, or references.>
 
 **For Mermaid diagrams:** Use `graph TD` (vertical orientation), keep font sizes at 14px to match document text, and ensure diagrams integrate seamlessly with surrounding content. See `docs/adr/README.md` for detailed diagram guidelines.
+
+## References
+
+### Internal Documents
+
+- [ADR-XXXX](./ADR-XXXX-title.md) — Related ADR Title
+- [WORKFLOW-005](../workflows/WORKFLOW-005-tokens-workflow.md) — Related Workflow (example)
+- [ARCH-tokens-003](../architecture/ARCH-tokens-003-token-architecture.md) — Related Architecture Rule (example)
+
+### External Standards
+
+- <https://www.w3.org/TR/WCAG22/>
+- <https://www.w3.org/WAI/ARIA/apg/>
+
+**Authoring rule:** Keep the full reference list in this final section. In the body text, add inline links at first mention when a specific statement depends on a document or standard.

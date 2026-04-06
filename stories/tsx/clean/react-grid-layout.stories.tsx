@@ -4,6 +4,8 @@ import { registerAllModules } from 'handsontable/registry';
 import { useEffect, useRef } from 'react';
 import ReactGridLayout, { WidthProvider } from 'react-grid-layout/legacy';
 import Highcharts from 'highcharts';
+import AccessibilityModule from 'highcharts/modules/accessibility';
+import PatternFillModule from 'highcharts/modules/pattern-fill';
 import HighchartsReact, { HighchartsReactRefObject } from 'highcharts-react-official';
 import { getSectionParameters } from '../../../.storybook/preview';
 import { MultiContextViewer } from '../../utils/multi-context-viewer';
@@ -15,6 +17,41 @@ import 'react-resizable/css/styles.css';
 import '../../../src/ui/vendors/handsontable.adapter.css';
 
 registerAllModules();
+
+const highchartsWithModules = Highcharts as typeof Highcharts & {
+  __euiPatternFillLoaded?: boolean;
+  __euiAccessibilityLoaded?: boolean;
+};
+if (!highchartsWithModules.__euiPatternFillLoaded) {
+  const maybeInitializer = PatternFillModule as unknown as
+    | ((highcharts: typeof Highcharts) => void)
+    | { default?: (highcharts: typeof Highcharts) => void };
+  const initPatternFill =
+    typeof maybeInitializer === 'function'
+      ? maybeInitializer
+      : maybeInitializer.default;
+
+  if (typeof initPatternFill === 'function') {
+    initPatternFill(Highcharts);
+  }
+  highchartsWithModules.__euiPatternFillLoaded = true;
+}
+
+if (!highchartsWithModules.__euiAccessibilityLoaded) {
+  const maybeInitializer = AccessibilityModule as unknown as
+    | ((highcharts: typeof Highcharts) => void)
+    | { default?: (highcharts: typeof Highcharts) => void };
+  const initAccessibility =
+    typeof maybeInitializer === 'function'
+      ? maybeInitializer
+      : maybeInitializer.default;
+
+  if (typeof initAccessibility === 'function') {
+    initAccessibility(Highcharts);
+  }
+  highchartsWithModules.__euiAccessibilityLoaded = true;
+}
+
 const GridLayout = WidthProvider(ReactGridLayout);
 
 const meta: Meta = {
@@ -102,9 +139,274 @@ const chartWrapperStyle = {
   minHeight: 0
 } as const;
 
-const ResizableChart = () => {
+type PatternMode = 'auto' | 'on' | 'off';
+type ApplicationStatus =
+  | 'pending'
+  | 'onTrack'
+  | 'completed'
+  | 'minorDisruption'
+  | 'majorDisruption'
+  | 'upcoming'
+  | 'discontinued';
+
+const seriesStatuses: Array<{
+  name: string;
+  status: ApplicationStatus;
+  data: number[];
+}> = [
+  { name: 'On Track', status: 'onTrack', data: [52, 41, 33, 58, 47, 29] },
+  { name: 'Minor Disruption', status: 'minorDisruption', data: [16, 18, 11, 14, 20, 12] },
+  { name: 'Major Disruption', status: 'majorDisruption', data: [8, 12, 7, 10, 9, 11] }
+];
+
+const statusFallbackColors: Record<ApplicationStatus, string> = {
+  pending: '#8f8f95',
+  onTrack: '#2f9e55',
+  completed: '#3d6cd4',
+  minorDisruption: '#e0aa13',
+  majorDisruption: '#d0443c',
+  upcoming: '#7b5cc7',
+  discontinued: '#5f5a52'
+};
+
+const cssVarReferencePattern = /^var\(\s*(--[\w-]+)\s*(?:,\s*([^)]+))?\)$/;
+
+const readCssVarRaw = (scope: HTMLElement | null, name: string): string => {
+  if (!scope) return '';
+  return getComputedStyle(scope).getPropertyValue(name).trim();
+};
+
+const resolveCssValue = (scope: HTMLElement | null, value: string, fallback: string): string => {
+  let current = value.trim();
+  const visited = new Set<string>();
+
+  for (let depth = 0; depth < 10; depth += 1) {
+    const match = current.match(cssVarReferencePattern);
+    if (!match) break;
+
+    const referenceName = match[1];
+    const inlineFallback = (match[2] ?? '').trim();
+    if (visited.has(referenceName)) break;
+
+    visited.add(referenceName);
+    const referencedValue = readCssVarRaw(scope, referenceName);
+    current = (referencedValue || inlineFallback).trim();
+    if (!current) break;
+  }
+
+  return current || fallback;
+};
+
+const readCssVar = (scope: HTMLElement | null, name: string, fallback: string): string => {
+  const value = readCssVarRaw(scope, name);
+  if (!value) return fallback;
+  return resolveCssValue(scope, value, fallback);
+};
+
+const readCssNumber = (scope: HTMLElement | null, name: string, fallback: number): number => {
+  const value = readCssVar(scope, name, String(fallback));
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+};
+
+const isPatternModeEnabled = (scope: HTMLElement | null, localMode: PatternMode): boolean => {
+  if (localMode === 'on') return true;
+  if (localMode === 'off') return false;
+
+  if (typeof document === 'undefined') return false;
+
+  const modeOwner = scope?.closest('[data-eui-pattern-mode]')
+    ?? document.querySelector('[data-eui-pattern-mode]')
+    ?? document.documentElement;
+
+  return modeOwner.getAttribute('data-eui-pattern-mode') === 'on';
+};
+
+const buildSeriesColor = (
+  scope: HTMLElement | null,
+  status: ApplicationStatus,
+  patternMode: PatternMode
+): Highcharts.ColorType => {
+  const fallbackColor = statusFallbackColors[status];
+  const color = readCssVar(scope, `--eui-color-status-application-${status}`, fallbackColor);
+
+  if (!isPatternModeEnabled(scope, patternMode)) {
+    return color;
+  }
+
+  const path = readCssVar(scope, `--eui-pattern-signal-status-application-${status}-highchartsPath`, '');
+  if (!path) {
+    return color;
+  }
+
+  const width = readCssNumber(scope, `--eui-pattern-signal-status-application-${status}-highchartsWidth`, 8);
+  const height = readCssNumber(scope, `--eui-pattern-signal-status-application-${status}-highchartsHeight`, 8);
+  const strokeWidth = readCssNumber(scope, `--eui-pattern-signal-status-application-${status}-highchartsStrokeWidth`, 1.5);
+  const strokeColor = readCssVar(
+    scope,
+    `--eui-pattern-signal-status-application-${status}-highchartsStrokeColor`,
+    '#FFFFFF80'
+  );
+
+  return {
+    pattern: {
+      width,
+      height,
+      backgroundColor: color,
+      path: {
+        d: path,
+        stroke: strokeColor,
+        strokeWidth
+      }
+    }
+  } as Highcharts.ColorType;
+};
+
+const buildChartOptions = (scope: HTMLElement | null, patternMode: PatternMode): Highcharts.Options => {
+  const accessibilityMode = isPatternModeEnabled(scope, patternMode);
+  const textMuted = readCssVar(scope, '--eui-color-text-muted', '#64748b');
+  const textPrimary = readCssVar(scope, '--eui-color-text-primary', '#0f172a');
+  const borderDefault = readCssVar(scope, '--eui-color-border-default', '#cdd3dc');
+  const borderSubtle = readCssVar(scope, '--eui-color-border-subtle', '#e3e8ef');
+  const backgroundSurface = readCssVar(scope, '--eui-color-background-surface', '#ffffff');
+  const legendSymbolSize = readCssNumber(scope, '--eui-chart-legend-symbolSize', 18);
+  const legendItemMinHeight = readCssNumber(scope, '--eui-chart-legend-itemMinHeight', 24);
+  const legendSymbolPadding = readCssNumber(scope, '--eui-chart-legend-symbolPadding', 8);
+  const legendItemDistance = readCssNumber(scope, '--eui-chart-legend-itemDistance', 14);
+  const legendPadding = readCssNumber(scope, '--eui-chart-legend-padding', 8);
+  const legendItemVerticalMargin = Math.max(0, (legendItemMinHeight - legendSymbolSize) / 2);
+
+  return {
+    chart: {
+      type: 'column',
+      backgroundColor: 'transparent',
+      spacingTop: 0,
+      marginTop: 42,
+      spacingRight: 6,
+      spacingBottom: 48,
+      spacingLeft: 6,
+      reflow: true,
+      style: { fontFamily: 'var(--eui-typography-fontFamily-ui)' }
+    },
+    title: {
+      text: undefined
+    },
+    subtitle: {
+      text: 'Last 30 days · signal distribution',
+      align: 'center',
+      style: {
+        color: textMuted,
+        fontSize: 'var(--eui-typography-fontSize-sm)',
+        fontWeight: 'var(--eui-typography-fontWeight-normal)'
+      }
+    },
+    credits: { enabled: false },
+    legend: {
+      enabled: true,
+      align: 'center',
+      verticalAlign: 'bottom',
+      layout: 'horizontal',
+      padding: legendPadding,
+      y: 0,
+      squareSymbol: true,
+      symbolWidth: legendSymbolSize,
+      symbolHeight: legendSymbolSize,
+      symbolRadius: 3,
+      itemDistance: legendItemDistance,
+      symbolPadding: legendSymbolPadding,
+      itemMarginTop: legendItemVerticalMargin,
+      itemMarginBottom: legendItemVerticalMargin,
+      itemStyle: {
+        color: textMuted,
+        fontWeight: 'var(--eui-typography-fontWeight-medium)',
+        fontSize: 'var(--eui-typography-fontSize-sm)',
+        lineHeight: `${legendSymbolSize}px`
+      }
+    },
+    xAxis: {
+      categories: ['Downtown', 'North', 'Central', 'East', 'South', 'West'],
+      title: {
+        text: 'District',
+        style: {
+          color: textMuted,
+          fontSize: 'var(--eui-typography-fontSize-sm)',
+          fontWeight: 'var(--eui-typography-fontWeight-medium)'
+        }
+      },
+      labels: {
+        style: {
+          color: textMuted,
+          fontSize: 'var(--eui-typography-fontSize-sm)',
+          fontWeight: 'var(--eui-typography-fontWeight-normal)'
+        }
+      },
+      lineColor: borderDefault,
+      tickColor: borderDefault
+    },
+    yAxis: {
+      title: {
+        text: 'Items',
+        style: {
+          color: textMuted,
+          fontSize: 'var(--eui-typography-fontSize-sm)',
+          fontWeight: 'var(--eui-typography-fontWeight-medium)'
+        }
+      },
+      gridLineColor: borderSubtle,
+      labels: {
+        style: {
+          color: textMuted,
+          fontSize: 'var(--eui-typography-fontSize-sm)',
+          fontWeight: 'var(--eui-typography-fontWeight-normal)'
+        }
+      },
+      tickAmount: 4
+    },
+    tooltip: {
+      shared: true,
+      valueSuffix: ' items',
+      backgroundColor: backgroundSurface,
+      borderColor: borderDefault,
+      style: {
+        color: textPrimary,
+        fontSize: 'var(--eui-typography-fontSize-sm)',
+        fontWeight: 'var(--eui-typography-fontWeight-normal)',
+        fontFamily: 'var(--eui-typography-fontFamily-ui)'
+      }
+    },
+    accessibility: {
+      enabled: true,
+      keyboardNavigation: { enabled: true },
+      legend: { enabled: true },
+      description: accessibilityMode
+        ? 'Status chart in accessibility mode with pattern fills and enlarged legend symbols.'
+        : 'Status chart in standard mode with color-only series and compact legend symbols.'
+    },
+    plotOptions: {
+      column: {
+        borderWidth: 0,
+        borderRadius: 4,
+        groupPadding: 0.12
+      }
+    },
+    series: seriesStatuses.map(({ status, name, data }) => ({
+      type: 'column',
+      name,
+      color: buildSeriesColor(scope, status, patternMode),
+      data
+    }))
+  };
+};
+
+const ResizableChart = ({ patternMode = 'auto' }: { patternMode?: PatternMode }) => {
   const chartRef = useRef<HighchartsReactRefObject | null>(null);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const contextScope =
+    (typeof document !== 'undefined'
+      ? ((wrapperRef.current?.closest('[data-eui-context]') as HTMLElement | null)
+        ?? (document.querySelector('[data-eui-context]') as HTMLElement | null))
+      : null);
+  const chartOptions = buildChartOptions(contextScope, patternMode);
 
   useEffect(() => {
     if (!wrapperRef.current) return;
@@ -130,7 +432,11 @@ const ResizableChart = () => {
   }, []);
 
   return (
-    <div ref={wrapperRef} style={chartWrapperStyle}>
+    <div
+      ref={wrapperRef}
+      style={chartWrapperStyle}
+      data-eui-pattern-mode={patternMode === 'auto' ? undefined : patternMode}
+    >
       <HighchartsReact
         ref={chartRef}
         highcharts={Highcharts}
@@ -141,122 +447,17 @@ const ResizableChart = () => {
   );
 };
 
-const chartOptions: Highcharts.Options = {
-  chart: {
-    type: 'column',
-    backgroundColor: 'transparent',
-    spacingTop: 0,
-    marginTop: 66,
-    spacingRight: 6,
-    spacingBottom: 0,
-    spacingLeft: 6,
-    reflow: true,
-    style: { fontFamily: 'var(--eui-chart-typography-font-family)' }
-  },
-  title: {
-    text: undefined
-  },
-  subtitle: {
-    text: 'Last 30 days · 311 + web intake',
-    align: 'center',
-    style: {
-      color: 'var(--eui-chart-colors-text-muted)',
-      fontSize: 'var(--eui-chart-typography-subtitle-font-size)',
-      fontWeight: 'var(--eui-chart-typography-subtitle-font-weight)'
-    }
-  },
-  credits: { enabled: false },
-  legend: {
-    enabled: true,
-    align: 'center',
-    verticalAlign: 'top',
-    layout: 'horizontal',
-    y: -6,
-    itemDistance: 6,
-    symbolPadding: 4,
-    itemMarginTop: 1,
-    itemMarginBottom: 1,
-    itemStyle: {
-      color: 'var(--eui-chart-colors-text-muted)',
-      fontWeight: 'var(--eui-chart-typography-legend-font-weight)',
-      fontSize: 'var(--eui-chart-typography-legend-font-size)'
-    }
-  },
-  xAxis: {
-    categories: ['Downtown', 'North', 'Central', 'East', 'South', 'West'],
-    title: {
-      text: 'District',
-      style: {
-        color: 'var(--eui-chart-colors-text-muted)',
-        fontSize: 'var(--eui-chart-typography-axis-font-size)',
-        fontWeight: 'var(--eui-chart-typography-axis-font-weight)'
-      }
-    },
-    labels: {
-      style: {
-        color: 'var(--eui-chart-colors-text-muted)',
-        fontSize: 'var(--eui-chart-typography-axis-font-size)',
-        fontWeight: 'var(--eui-chart-typography-axis-font-weight)'
-      }
-    },
-    lineColor: 'var(--eui-chart-colors-axis-line)',
-    tickColor: 'var(--eui-chart-colors-axis-line)'
-  },
-  yAxis: {
-    title: {
-      text: 'Requests',
-      style: {
-        color: 'var(--eui-chart-colors-text-muted)',
-        fontSize: 'var(--eui-chart-typography-axis-font-size)',
-        fontWeight: 'var(--eui-chart-typography-axis-font-weight)'
-      }
-    },
-    gridLineColor: 'var(--eui-chart-colors-axis-grid)',
-    labels: {
-      style: {
-        color: 'var(--eui-chart-colors-text-muted)',
-        fontSize: 'var(--eui-chart-typography-axis-font-size)',
-        fontWeight: 'var(--eui-chart-typography-axis-font-weight)'
-      }
-    },
-    tickAmount: 3
-  },
-  tooltip: {
-    shared: true,
-    valueSuffix: ' requests',
-    backgroundColor: 'var(--eui-chart-colors-tooltip-background)',
-    borderColor: 'var(--eui-chart-colors-tooltip-border)',
-    style: {
-      color: 'var(--eui-chart-colors-tooltip-text)',
-      fontSize: 'var(--eui-chart-typography-tooltip-font-size)',
-      fontWeight: 'var(--eui-chart-typography-tooltip-font-weight)',
-      fontFamily: 'var(--eui-chart-typography-font-family)'
-    }
-  },
-  plotOptions: {
-    column: {
-      borderWidth: 0,
-      borderRadius: 4,
-      groupPadding: 0.12
-    }
-  },
-  series: [
-    {
-      type: 'column',
-      name: 'New',
-      color: 'var(--eui-chart-colors-series-primary)',
-      data: [52, 41, 33, 58, 47, 29]
-    },
-    {
-      type: 'column',
-      name: 'Resolved',
-      color: 'var(--eui-chart-colors-series-secondary)',
-      data: [36, 30, 28, 44, 39, 22]
-    }
-  ]
+type GridCard = {
+  key: string;
+  title: string;
+  data?: Array<Record<string, unknown>>;
+  colHeaders?: string[];
+  columns?: Array<Record<string, unknown>>;
+  colWidths?: number[];
+  stretchH?: 'all' | 'none' | 'last';
 };
 
-const gridCards = [
+const gridCards: GridCard[] = [
   {
     key: 'top-left',
     title: 'Schedule approvals',
@@ -295,7 +496,7 @@ const gridCards = [
   },
   {
     key: 'bottom-right',
-    title: 'Service Requests by District'
+    title: 'Status Signals by District'
   }
 ];
 
@@ -319,7 +520,7 @@ const syncPortalTheme = (context: 'app' | 'website' | 'report', hotInstance?: { 
 export const ResizableSplitGrid: Story = {
   name: 'Resizable Split Grid',
   render: () => (
-    <MultiContextViewer contexts={[{ context: 'website' }]}>
+    <MultiContextViewer contexts={[{ context: 'app' }]}>
       {() => (
         <div className="eui-theme" style={gridShellStyle}>
           <GridLayout
@@ -352,11 +553,11 @@ export const ResizableSplitGrid: Story = {
                           colWidths={card.colWidths}
                           style={{ height: '100%' }}
                           className="ht-theme-main eui-handsontable--borderless"
-                          afterInit={function () {
-                            syncPortalTheme('website', this);
+                          afterInit={function (this: { rootPortalElement?: HTMLElement | null }) {
+                            syncPortalTheme('app', this);
                           }}
-                          afterSetTheme={function () {
-                            syncPortalTheme('website', this);
+                          afterSetTheme={function (this: { rootPortalElement?: HTMLElement | null }) {
+                            syncPortalTheme('app', this);
                           }}
                           stretchH={card.stretchH}
                           width="100%"
