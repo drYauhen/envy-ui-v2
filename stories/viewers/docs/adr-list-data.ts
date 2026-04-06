@@ -588,5 +588,18 @@ export const adrs: DocMetadata[] = [
     "exportName": "dTCGResolverAdoptionandPhasedMigration",
     "markdownPath": "/docs/adr/ADR-0045-dtcg-resolver-adoption-and-phased-migration.md",
     "storybookId": "docs-adr--d-tcg-resolver-adoptionand-phased-migration"
+  },
+  {
+    "number": "0046",
+    "title": "AI Agent Readiness Reflection from Milestone Driven Agent Research",
+    "category": "adr",
+    "status": "Accepted (Reflective Baseline)",
+    "date": "2026-04-04",
+    "lastUpdated": "2026-04-04",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "aIAgentReadinessReflectionfromMilestoneDrivenAgentResearch",
+    "markdownPath": "/docs/adr/ADR-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research.md",
+    "storybookId": "docs-adr--a-i-agent-readiness-reflectionfrom-milestone-driven-agent-research"
   }
 ];
