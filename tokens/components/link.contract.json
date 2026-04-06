@@ -17,10 +17,19 @@
     "Link is a text primitive and must inherit surrounding typography.",
     "Link root should not stretch to container width by default in flex/grid layouts.",
     "No hardcoded color values in component CSS; only token variables are allowed.",
-    "Focus indication must use token-driven focus ring variables."
+    "Focus indication must use token-driven focus ring variables.",
+    "New-tab variation must append external-link indicator without requiring extra markup."
   ],
 
-  "axes": {},
+  "axes": {
+    "linkTarget": {
+      "type": "enum",
+      "default": "same-tab",
+      "values": ["same-tab", "new-tab"],
+      "attribute": "data-eui-link-target",
+      "notes": "Controls whether link renders external-link indicator."
+    }
+  },
 
   "componentVars": {
     "colors": {
@@ -33,6 +42,11 @@
     },
     "shape": {
       "--eui-link-shape-radius": { "type": "dimension" }
+    },
+    "layout": {
+      "--eui-link-layout-externalIndicator-size": { "type": "dimension" },
+      "--eui-link-layout-externalIndicator-gap": { "type": "dimension" },
+      "--eui-link-layout-externalIndicator-offsetY": { "type": "dimension" }
     },
     "focus": {
       "--eui-link-focus-ring-color": { "type": "color" },

@@ -81,10 +81,21 @@ export const Overview: Story = {
                 className="eui-link"
                 href="https://example.com"
                 target="_blank"
+                data-eui-link-target="new-tab"
                 rel="noopener noreferrer"
                 onClick={(event) => event.preventDefault()}
               >
-                External link
+                External link (new tab indicator)
+              </a>
+              <a
+                className="eui-link"
+                href="https://example.com"
+                target="_blank"
+                data-eui-link-target="same-tab"
+                rel="noopener noreferrer"
+                onClick={(event) => event.preventDefault()}
+              >
+                External link (indicator disabled via override)
               </a>
             </div>
           </div>

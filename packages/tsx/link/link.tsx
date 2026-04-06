@@ -16,15 +16,18 @@ export const LinkClean = React.forwardRef<HTMLAnchorElement, LinkCleanProps>(fun
   { className, target, rel, children, ...rest },
   ref
 ) {
+  const explicitLinkTarget = (rest as LinkCleanProps & { 'data-eui-link-target'?: string })['data-eui-link-target'];
   const resolvedRel = target === '_blank' ? mergeRelWithSecurity(rel) : rel;
+  const resolvedLinkTarget = explicitLinkTarget ?? (target === '_blank' ? 'new-tab' : undefined);
 
   return (
     <a
+      {...rest}
       ref={ref}
       className={[`${SYSTEM_PREFIX}-link`, className].filter(Boolean).join(' ')}
       target={target}
       rel={resolvedRel}
-      {...rest}
+      data-eui-link-target={resolvedLinkTarget}
     >
       {children}
     </a>

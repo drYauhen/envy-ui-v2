@@ -5,14 +5,17 @@
 @layer eui-components {
   /* Base link variables (default variant) */
   [data-eui-context] .eui-link {
-    --eui-link-colors-text: var(--eui-color-status-info-text);
+    --eui-link-colors-text: var(--eui-color-brand-base);
     --eui-link-shape-radius: var(--eui-inline-radius);
     --eui-link-typography-textDecoration: var(--eui-typography-textDecoration-underline);
+    --eui-link-layout-externalIndicator-size: 0.9em;
+    --eui-link-layout-externalIndicator-gap: 0.2143em;
+    --eui-link-layout-externalIndicator-offsetY: 0.0714em;
     --eui-link-focus-ring-color: var(--eui-color-focus-ring);
     --eui-link-focus-ring-width: var(--eui-focus-ring-width);
     --eui-link-focus-ring-offset: var(--eui-focus-ring-offset-default);
-    --eui-link-state-visited-colors-text: var(--eui-color-status-info-text);
-    --eui-link-state-hover-colors-text: var(--eui-color-status-info-text);
+    --eui-link-state-visited-colors-text: var(--eui-color-brand-base);
+    --eui-link-state-hover-colors-text: var(--eui-color-brand-base);
   }
 
 }

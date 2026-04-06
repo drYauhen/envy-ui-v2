@@ -7,6 +7,10 @@
  */
 
 @layer eui-components {
+  [data-eui-context] {
+    --eui-link-external-indicator-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22black%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M%2020.625%2012%20H%2019.875%20A%200.375%200.375%200%200%200%2019.5%2012.375%20V%2021.75%20A%200.75%200.75%200%200%200%2018.75%2022.5%20H%202.25%20A%200.75%200.75%200%200%200%201.5%2021.75%20V%205.25%20A%200.75%200.75%200%200%200%202.25%204.5%20H%2011.625%20A%200.375%200.375%200%200%200%2012%204.125%20V%203.375%20A%200.375%200.375%200%200%200%2011.625%203%20H%202.25%20A%202.25%202.25%200%200%200%200%205.25%20V%2021.75%20A%202.25%202.25%200%200%200%202.25%2024%20H%2018.75%20A%202.25%202.25%200%200%200%2021%2021.75%20V%2012.375%20A%200.375%200.375%200%200%200%2020.625%2012%20Z%20M%2023.4375%200%20L%2017.0625%200.015938%20A%200.5625%200.5625%200%200%200%2016.5%200.578437%20V%201.047187%20A%200.5625%200.5625%200%200%200%2017.0625%201.609688%20L%2021.28125%201.59375%20L%2021.314063%201.627031%20L%206.164531%2016.774687%20A%200.5625%200.5625%200%200%200%206.164531%2017.571563%20L%206.429844%2017.836875%20A%200.5625%200.5625%200%200%200%207.226719%2017.836875%20L%2022.372969%202.687813%20L%2022.40625%202.720625%20L%2022.390313%206.939375%20A%200.5625%200.5625%200%200%200%2022.952813%207.501875%20H%2023.421563%20A%200.5625%200.5625%200%200%200%2023.984063%206.939375%20L%2024%200.5625%20A%200.5625%200.5625%200%200%200%2023.4375%200%20Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+  }
+
   [data-eui-context] .eui-link {
     /*
      * Keep link focus ring scoped to text content even when the link is a direct
@@ -45,5 +49,25 @@
     box-shadow:
       0 0 0 var(--eui-link-focus-ring-offset) var(--eui-color-background-surface, #ffffff),
       0 0 0 calc(var(--eui-link-focus-ring-offset) + var(--eui-link-focus-ring-width)) var(--eui-focus-ring-color-keyboard);
+  }
+
+  [data-eui-context] .eui-link[data-eui-link-target='new-tab']::after,
+  [data-eui-context] .eui-link[target='_blank']:not([data-eui-link-target='same-tab'])::after {
+    content: '';
+    display: inline-block;
+    inline-size: var(--eui-link-layout-externalIndicator-size);
+    block-size: var(--eui-link-layout-externalIndicator-size);
+    margin-inline-start: var(--eui-link-layout-externalIndicator-gap);
+    vertical-align: baseline;
+    transform: translateY(var(--eui-link-layout-externalIndicator-offsetY));
+    background-color: currentColor;
+    mask-image: var(--eui-link-external-indicator-mask-image);
+    -webkit-mask-image: var(--eui-link-external-indicator-mask-image);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
   }
 }

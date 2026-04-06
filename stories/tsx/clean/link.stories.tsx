@@ -73,8 +73,17 @@ export const ExternalTarget: Story = {
       >
         Open external resource in new tab
       </LinkClean>
+      <LinkClean
+        href="https://example.com"
+        target="_blank"
+        data-eui-link-target="same-tab"
+        onClick={(event) => event.preventDefault()}
+      >
+        Open external resource in new tab (indicator disabled)
+      </LinkClean>
       <p style={textStyle}>
-        For `_blank` links, `LinkClean` automatically appends `noopener noreferrer` to `rel`.
+        For `_blank` links, `LinkClean` automatically appends `noopener noreferrer` to `rel`
+        and sets `data-eui-link-target=&quot;new-tab&quot;` unless explicitly overridden.
       </p>
     </div>
   )

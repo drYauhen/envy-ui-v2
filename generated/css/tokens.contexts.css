@@ -29,6 +29,7 @@
     --eui-color-border-strong: oklch(84% 0.00 0);
     --eui-color-border-subtle: oklch(94% 0.00 0);
     --eui-color-brand-accent: var(--eui-color-brand-600);
+    --eui-color-brand-base: var(--eui-color-brand-primary);
     --eui-color-brand-primary: var(--eui-color-brand-700);
     --eui-color-brand-primary: var(--eui-color-brand-700);
     --eui-color-brand-secondary: var(--eui-color-brand-500);

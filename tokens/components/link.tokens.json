@@ -5,9 +5,9 @@
       "base": {
         "colors": {
           "text": {
-            "$value": "{eui.color.status.info.text}",
+            "$value": "{eui.color.brand.base}",
             "$type": "color",
-            "$description": "Default inline link color."
+            "$description": "Default inline link color (brand base)."
           }
         },
         "shape": {
@@ -22,6 +22,25 @@
             "$value": "{eui.typography.textDecoration.underline}",
             "$type": "textDecoration",
             "$description": "Inline link underline style."
+          }
+        },
+        "layout": {
+          "externalIndicator": {
+            "size": {
+              "$value": "0.9em",
+              "$type": "dimension",
+              "$description": "External-link indicator size for new-tab links."
+            },
+            "gap": {
+              "$value": "0.2143em",
+              "$type": "dimension",
+              "$description": "Gap between link text and external-link indicator."
+            },
+            "offsetY": {
+              "$value": "0.0714em",
+              "$type": "dimension",
+              "$description": "Vertical offset for optical alignment of external-link indicator."
+            }
           }
         },
         "focus": {
@@ -48,18 +67,18 @@
         "visited": {
           "colors": {
             "text": {
-              "$value": "{eui.color.status.info.text}",
+              "$value": "{eui.color.brand.base}",
               "$type": "color",
-              "$description": "Visited inline link color."
+              "$description": "Visited inline link color (brand base)."
             }
           }
         },
         "hover": {
           "colors": {
             "text": {
-              "$value": "{eui.color.status.info.text}",
+              "$value": "{eui.color.brand.base}",
               "$type": "color",
-              "$description": "Hover inline link color."
+              "$description": "Hover inline link color (brand base)."
             }
           }
         }

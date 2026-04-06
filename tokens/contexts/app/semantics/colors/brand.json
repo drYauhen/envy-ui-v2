@@ -3,6 +3,11 @@
   "eui": {
     "color": {
       "brand": {
+        "base": {
+          "$value": "{eui.color.brand.primary}",
+          "$type": "color",
+          "$description": "Base brand color alias for default brand-driven UI usage"
+        },
         "primary": {
           "$value": "{eui-app-raw-color-brand-700}",
           "$type": "color",
