@@ -433,10 +433,11 @@ ls docs/architecture/ARCH-tokens-005-token-naming.md
 - `../../other-category/file.md` - Two levels up, then other-category
 
 **Storybook link behavior rule (mandatory):**
-- Write markdown links to documentation using relative `.md` paths.
-- The docs viewer maps registered docs to Storybook story routes and opens them in the current tab.
+- Write markdown links to source files using normal relative paths.
+- Internal documentation links (`.md`) that map to registered docs open in the current tab.
+- Code-file links (for example `.ts`, `.tsx`, `.js`, `.mjs`, `.css`, `.json`) open via Source File Viewer in a new tab.
 - External links and unregistered files open in a new tab with external-link indicator styling.
-- Do not hardcode `?path=/story/...` in markdown documents.
+- Do not hardcode Storybook URLs (`?path=/story/...` or `iframe.html?id=...`) in markdown documents.
 
 #### Common Link Errors and Fixes
 

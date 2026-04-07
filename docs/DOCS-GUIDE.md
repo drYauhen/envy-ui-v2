@@ -203,11 +203,17 @@ For any doc that has a Storybook story:
 - Use the Storybook story id format, for example: `docs-architecture--accessibility-reference`
 
 **Navigation/open behavior (mandatory):**
-- Internal documentation links that resolve to a registered Storybook document open in the current tab and keep Storybook shell navigation.
+- Internal documentation links (`.md`) that resolve to a registered Storybook document open in the current tab and keep Storybook shell navigation.
+- Code-file links (for example `.ts`, `.tsx`, `.js`, `.mjs`, `.css`, `.json`) are routed to Source File Viewer and open in a new tab.
 - External links and links to files not registered in Storybook open in a new tab and are rendered with external-link styling.
-- In markdown, always write normal relative links to source `.md` files. Do not write `?path=/story/...` manually.
+- In markdown, always write normal source links. Do not hardcode Storybook URLs (`?path=/story/...` or `iframe.html?id=...`).
 
-However, ADR guide documents ([README](workflows/README.md).md, [AGENT-GUIDE](adr/AGENT-GUIDE.md).md, TEMPLATE.md) must be manually registered.
+**Examples:**
+- Internal registered doc: `[ADR-0045](adr/ADR-0045-dtcg-resolver-adoption-and-phased-migration.md)`
+- Code file: `[resolver normalization](../style-dictionary/utils/resolver-normalization.js)`
+- External reference: `[WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/)`
+
+However, ADR guide documents ([README](workflows/README.md), [AGENT-GUIDE](adr/AGENT-GUIDE.md), templates) must be manually registered.
 
 ## Mermaid Diagrams (All Docs)
 

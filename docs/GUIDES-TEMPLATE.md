@@ -13,6 +13,7 @@
 
 ## Link Policy
 
-- Use relative `.md` links for internal documentation references.
-- Registered Storybook docs open in the current tab (with Storybook shell).
-- External links and links to unregistered files open in a new tab with external-link indicator.
+- Use normal relative markdown links to source files (do not hardcode Storybook URLs).
+- Internal registered docs (`.md`) open in the current Storybook tab.
+- Code-file links (`.ts/.tsx/.js/.mjs/.css/.json`) open via Source File Viewer in a new tab.
+- External links and unregistered-file links open in a new tab with external-link indicator.

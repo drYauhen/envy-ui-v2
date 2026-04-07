@@ -77,11 +77,11 @@ Each workflow document should include:
 
 ## Tools and Resources
 
-- **Template**: Use [WORKFLOWS-TEMPLATE](WORKFLOWS-TEMPLATE.md).md for new documents
+- **Template**: Use [WORKFLOWS-TEMPLATE](WORKFLOWS-TEMPLATE.md) for new documents
 - **Validation**: Run `npm run docs:validate` to check links
 - **Testing**: Test workflows on fresh environments
 - **Automation**: Prefer automated validation over manual checks
-- **Link behavior**: Internal registered docs open in current Storybook tab; external/unregistered links open in new tab
+- **Link behavior**: Internal registered `.md` docs open in current Storybook tab; code-file links open via Source File Viewer in new tab; external/unregistered links open in new tab
 
 ## Best Practices
 

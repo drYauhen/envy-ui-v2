@@ -143,7 +143,7 @@ Each token entry should include:
 2. **Show Examples**: Provide real usage examples
 3. **Explain Rationale**: Document why tokens exist and their purpose
 4. **Link References**: Reference related tokens and components
-5. **Link Behavior**: Internal registered docs should stay in current Storybook tab; external/unregistered links should open in new tab
+5. **Link Behavior**: Internal registered `.md` docs stay in current Storybook tab; code-file links open via Source File Viewer in new tab; external/unregistered links open in new tab
 
 ### Maintenance Practices
 1. **Regular Audits**: Review token usage quarterly

@@ -132,11 +132,11 @@ Each guide should include:
 
 ## Tools and Resources
 
-- **Template**: Use [GUIDES-TEMPLATE](GUIDES-TEMPLATE.md).md for new guides
+- **Template**: Use [GUIDES-TEMPLATE](GUIDES-TEMPLATE.md) for new guides
 - **Validation**: Run `npm run docs:validate` to check links
 - **Preview**: Use Storybook to test embedded examples
 - **Analytics**: Track guide usage and effectiveness
-- **Link behavior**: Registered Storybook docs open in current tab; external/unregistered links open in new tab
+- **Link behavior**: Registered `.md` docs open in current Storybook tab; code-file links open via Source File Viewer in new tab; external/unregistered links open in new tab
 
 ## Best Practices
 

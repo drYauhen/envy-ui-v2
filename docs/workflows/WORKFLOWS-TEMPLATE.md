@@ -178,7 +178,7 @@ verify --output
 - [Link to specifications]
 - [Link to external documentation]
 
-**Link behavior rule:** Write internal documentation links as relative `.md` paths. Registered Storybook documents open in the current tab. External or unregistered links open in a new tab with external-link indicator.
+**Link behavior rule:** Write links as normal relative source paths (do not hardcode Storybook URLs). Internal registered `.md` docs open in the current Storybook tab. Code-file links (`.ts/.tsx/.js/.mjs/.css/.json`) open via Source File Viewer in a new tab. External or unregistered links open in a new tab with external-link indicator.
 
 ## Change History
 

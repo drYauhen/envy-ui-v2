@@ -227,4 +227,4 @@ describe('Token Usage', () => {
 - [Link to Figma libraries]
 - [Link to design tokens]
 
-**Link behavior rule:** Use relative `.md` links for internal docs. If a target doc is registered in Storybook it opens in current tab; external or unregistered links open in a new tab with external-link indicator.
+**Link behavior rule:** Use normal relative source links (do not hardcode Storybook URLs). Internal registered `.md` docs open in the current Storybook tab. Code-file links (`.ts/.tsx/.js/.mjs/.css/.json`) open via Source File Viewer in a new tab. External or unregistered links open in a new tab with external-link indicator.

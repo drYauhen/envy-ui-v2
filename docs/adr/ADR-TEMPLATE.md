@@ -48,4 +48,4 @@ I decided to <concise statement of the decision>.
 
 **Authoring rule:** Keep the full reference list in this final section. In the body text, add inline links at first mention when a specific statement depends on a document or standard.
 
-**Link behavior rule:** Use normal relative markdown links to internal `.md` docs. Registered Storybook docs open in current tab (with Storybook shell). External or unregistered links open in a new tab with external-link indicator.
+**Link behavior rule:** Use normal relative markdown links (do not hardcode Storybook URLs). Internal registered `.md` docs open in the current Storybook tab. Code-file links (`.ts/.tsx/.js/.mjs/.css/.json`) open via Source File Viewer in a new tab. External or unregistered links open in a new tab with external-link indicator.

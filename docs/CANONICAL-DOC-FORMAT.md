@@ -111,12 +111,19 @@ List of related documents with descriptions:
 - **Do not hardcode Storybook URLs in markdown:** write normal relative links to `.md` files. The docs viewer resolves registered docs to Storybook routes automatically.
 
 **Storybook navigation behavior:**
-- Links to docs that are registered in Storybook open in the current tab (with Storybook shell and browser back/forward navigation).
-- External links or links to unregistered files open in a new tab and show the external-link indicator.
+- Internal documentation links (`.md`) that resolve to registered Storybook docs open in the current tab (with Storybook shell and browser back/forward navigation).
+- Code-file links (for example `.ts`, `.tsx`, `.js`, `.mjs`, `.css`, `.json`) are rendered through Source File Viewer and open in a new tab.
+- External links and unregistered-file links open in a new tab and show the external-link indicator.
+- Do not hardcode Storybook URLs in markdown (`?path=/story/...`, `iframe.html?id=...`).
 
 **Display format:**
 - Markdown: `[Token Usage Rules](architecture/ARCH-tokens-004-token-usage-rules.md)`
 - Displays as: `ARCH-TOKENS-004 — Token Usage Rules — Enforceable token usage rules`
+
+**Authoring examples:**
+- Internal registered doc: `[ADR-0025](./adr/ADR-0025-figma-variables-integration-strategy.md)` (opens in current Storybook tab)
+- Source code reference: `[Card tokens](../tokens/components/card.tokens.json)` (opens Source File Viewer in a new tab)
+- External standard: `[WCAG 2.2](https://www.w3.org/TR/WCAG22/)` (opens in new tab)
 
 If no related documents, leave section empty:
 
