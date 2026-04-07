@@ -210,6 +210,10 @@ const DocsThemeContainer = ({ children, context }: DocsContainerProps) => {
 };
 
 const withPreviewLayout: Decorator = (Story, context) => {
+  if (context.id === 'docs-tools--source-file-viewer') {
+    return <Story />;
+  }
+
   const focusPolicy = getGlobalValue(context.globals.focusPolicy, 'derived');
   const patternMode = getGlobalValue(context.globals.patternMode, 'off');
   const appTheme = getGlobalValue(context.globals.appTheme, DEFAULT_CONTEXT_THEMES.app);

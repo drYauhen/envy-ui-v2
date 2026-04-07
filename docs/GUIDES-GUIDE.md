@@ -3,7 +3,7 @@
 **Document ID:** guide-guides-documentation-guide
 **Status:** Active
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
@@ -136,6 +136,7 @@ Each guide should include:
 - **Validation**: Run `npm run docs:validate` to check links
 - **Preview**: Use Storybook to test embedded examples
 - **Analytics**: Track guide usage and effectiveness
+- **Link behavior**: Registered Storybook docs open in current tab; external/unregistered links open in new tab
 
 ## Best Practices
 

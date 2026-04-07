@@ -3,7 +3,7 @@
 **Document ID:** guide-canonical-documentation-format
 **Status:** <Proposed | Accepted | Exploratory | Superseded | Rejected>
 **Date:** 2026-01-15
-**Last Updated:** 2026-01-15
+**Last Updated:** 2026-04-06
 **Owner:** <name>
 **Assistance:** <AI-assisted drafting (human-reviewed) | None>
 **Category:** Guide
@@ -108,6 +108,11 @@ List of related documents with descriptions:
 - **Architecture links:** Use title only in link text (e.g., `[Token Usage Rules](path)`)
   - System automatically adds ARCH-CATEGORY-NNN prefix when displayed
   - No need to write `[ARCH-TOKENS-004 — Token Usage Rules](path)` - just `[Token Usage Rules](path)`
+- **Do not hardcode Storybook URLs in markdown:** write normal relative links to `.md` files. The docs viewer resolves registered docs to Storybook routes automatically.
+
+**Storybook navigation behavior:**
+- Links to docs that are registered in Storybook open in the current tab (with Storybook shell and browser back/forward navigation).
+- External links or links to unregistered files open in a new tab and show the external-link indicator.
 
 **Display format:**
 - Markdown: `[Token Usage Rules](architecture/ARCH-tokens-004-token-usage-rules.md)`

@@ -13,6 +13,7 @@ type DocViewerProps = {
   fallback?: string;
   status?: string;
   lastUpdated?: string;
+  openLinksInNewTab?: boolean;
 };
 
 type LayoutDiagramKind =
@@ -231,9 +232,48 @@ const resolveDocStoryPath = (resolvedDocPath: string | null): string | null => {
     .replace(/^\/+/, '');
   const docEntry = docsRegistryByPath.get(normalizedPath);
   if (docEntry?.storybookId) {
-    return `?path=/story/${docEntry.storybookId}`;
+    return `./?path=/story/${docEntry.storybookId}`;
   }
   return null;
+};
+
+const CODE_FILE_EXTENSIONS = /\.(ts|tsx|js|jsx|mjs|cjs|css|scss|sass|less|json)$/i;
+const SOURCE_FILE_VIEWER_STORY_ID = 'docs-tools--source-file-viewer';
+
+const resolveCodeFileStoryPath = (resolvedPath: string | null): string | null => {
+  if (!resolvedPath) return null;
+  if (resolvedPath.startsWith('/docs/')) return null;
+  if (!CODE_FILE_EXTENSIONS.test(resolvedPath)) return null;
+
+  return `./iframe.html?id=${SOURCE_FILE_VIEWER_STORY_ID}&viewMode=story&source=${encodeURIComponent(resolvedPath)}`;
+};
+
+const isStorybookStoryHref = (href: string | undefined): boolean => {
+  if (!href) return false;
+
+  if (
+    href.startsWith('./?path=/story/') ||
+    href.startsWith('?path=/story/') ||
+    href.startsWith('/?path=/story/')
+  ) {
+    return true;
+  }
+
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  try {
+    const url = new URL(href, window.location.origin);
+    return url.pathname === '/' && url.searchParams.get('path')?.startsWith('/story/') === true;
+  } catch {
+    return false;
+  }
+};
+
+const isSourceFileViewerHref = (href: string | undefined): boolean => {
+  if (!href) return false;
+  return href.includes(`id=${SOURCE_FILE_VIEWER_STORY_ID}`) || href.includes('/source-file-viewer');
 };
 
 export const DocViewer = ({
@@ -241,7 +281,8 @@ export const DocViewer = ({
   content: providedContent,
   fallback = 'Loading...',
   status,
-  lastUpdated
+  lastUpdated,
+  openLinksInNewTab = true
 }: DocViewerProps) => {
   const [fetchedContent, setFetchedContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
@@ -343,6 +384,7 @@ export const DocViewer = ({
               fields={documentMetadata}
               variant={documentVariant}
               markdownPath={markdownPath}
+              openLinksInNewTab={openLinksInNewTab}
             />
           )}
           <ReactMarkdown
@@ -372,9 +414,17 @@ export const DocViewer = ({
               a: ({node, href, children, ...props}: any) => {
               let storybookHref = href;
               let targetAdrNumber: string | null = null;
+              let forceOpenInNewTab = false;
               const resolvedDocPath = href && markdownPath ? resolveDocPath(href, markdownPath) : null;
+              const resolvedDocStoryPath = resolveDocStoryPath(resolvedDocPath);
+              const resolvedCodeFileStoryPath = resolveCodeFileStoryPath(resolvedDocPath);
 
-              if (href && typeof href === 'string') {
+              if (resolvedCodeFileStoryPath) {
+                storybookHref = resolvedCodeFileStoryPath;
+                forceOpenInNewTab = openLinksInNewTab;
+              } else if (resolvedDocStoryPath) {
+                storybookHref = resolvedDocStoryPath;
+              } else if (href && typeof href === 'string') {
                 const adrMatch = href.match(/ADR-(\d{4})[^/]*\.md$/);
                 if (adrMatch) {
                   targetAdrNumber = adrMatch[1];
@@ -388,7 +438,7 @@ export const DocViewer = ({
                   const storySlug = linkText ? storySlugFromAdrLinkText(linkText) : null;
 
                   if (storySlug) {
-                    storybookHref = `?path=/story/docs-adr--${storySlug}`;
+                    storybookHref = `./?path=/story/docs-adr--${storySlug}`;
                   } else {
                     storybookHref = '#';
                     adrNumberToStoryPath(targetAdrNumber).then(path => {
@@ -406,14 +456,18 @@ export const DocViewer = ({
                 }
               }
 
-              if (!targetAdrNumber) {
-                const docStoryPath = resolveDocStoryPath(resolvedDocPath);
-                if (docStoryPath) {
-                  storybookHref = docStoryPath;
-                }
-              }
-
               const dataAttr = storybookHref === '#' && targetAdrNumber ? { 'data-adr-link': targetAdrNumber } : {};
+              const shouldOpenInNewTab =
+                forceOpenInNewTab || (
+                  openLinksInNewTab &&
+                  typeof storybookHref === 'string' &&
+                  storybookHref.length > 0 &&
+                  !storybookHref.startsWith('#') &&
+                  (!isStorybookStoryHref(storybookHref) || isSourceFileViewerHref(storybookHref))
+                );
+              const resolvedRel = shouldOpenInNewTab
+                ? ['noopener', 'noreferrer', props.rel].filter(Boolean).join(' ')
+                : props.rel;
 
               const resolvedClassName = ['eui-link', props.className].filter(Boolean).join(' ');
 
@@ -423,6 +477,9 @@ export const DocViewer = ({
                   {...dataAttr}
                   className={resolvedClassName}
                   {...props}
+                  target={shouldOpenInNewTab ? '_blank' : props.target}
+                  rel={resolvedRel}
+                  data-eui-link-target={shouldOpenInNewTab ? 'new-tab' : props['data-eui-link-target']}
                 >
                   {children}
                 </a>

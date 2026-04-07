@@ -51,7 +51,7 @@ export const adrNumberToStoryPath = async (adrNumber: string): Promise<string> =
     const adrData = adrs.find(adr => adr.number === adrNumber);
     if (adrData?.exportName) {
       const slug = exportNameToSlug(adrData.exportName);
-      return `?path=/story/docs-adr--${slug}`;
+      return `./?path=/story/docs-adr--${slug}`;
     }
 
     // Fallback: Try to fetch the story file
@@ -62,7 +62,7 @@ export const adrNumberToStoryPath = async (adrNumber: string): Promise<string> =
       if (exportMatch) {
         const exportName = exportMatch[1];
         const slug = exportNameToSlug(exportName);
-        return `?path=/story/docs-adr--${slug}`;
+        return `./?path=/story/docs-adr--${slug}`;
       }
     }
 
@@ -77,7 +77,7 @@ export const adrNumberToStoryPath = async (adrNumber: string): Promise<string> =
     if (titleMatch) {
       const title = titleMatch[1].trim();
       const storySlug = titleToStorySlug(title);
-      return `?path=/story/docs-adr--${storySlug}`;
+      return `./?path=/story/docs-adr--${storySlug}`;
     }
   } catch (err) {
     console.warn(`Could not load ADR-${adrNumber} for link generation:`, err);

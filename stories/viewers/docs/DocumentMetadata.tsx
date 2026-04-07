@@ -31,9 +31,48 @@ function resolveDocStoryPath(resolvedDocPath: string | null): string | null {
     .replace(/^\/+/, '');
   const docEntry = docsRegistryByPath.get(normalizedPath);
   if (docEntry?.storybookId) {
-    return `?path=/story/${docEntry.storybookId}`;
+    return `./?path=/story/${docEntry.storybookId}`;
   }
   return null;
+}
+
+const CODE_FILE_EXTENSIONS = /\.(ts|tsx|js|jsx|mjs|cjs|css|scss|sass|less|json)$/i;
+const SOURCE_FILE_VIEWER_STORY_ID = 'docs-tools--source-file-viewer';
+
+function resolveCodeFileStoryPath(resolvedPath: string | null): string | null {
+  if (!resolvedPath) return null;
+  if (resolvedPath.startsWith('/docs/')) return null;
+  if (!CODE_FILE_EXTENSIONS.test(resolvedPath)) return null;
+
+  return `./iframe.html?id=${SOURCE_FILE_VIEWER_STORY_ID}&viewMode=story&source=${encodeURIComponent(resolvedPath)}`;
+}
+
+function isStorybookStoryHref(href: string | undefined): boolean {
+  if (!href) return false;
+
+  if (
+    href.startsWith('./?path=/story/') ||
+    href.startsWith('?path=/story/') ||
+    href.startsWith('/?path=/story/')
+  ) {
+    return true;
+  }
+
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  try {
+    const url = new URL(href, window.location.origin);
+    return url.pathname === '/' && url.searchParams.get('path')?.startsWith('/story/') === true;
+  } catch {
+    return false;
+  }
+}
+
+function isSourceFileViewerHref(href: string | undefined): boolean {
+  if (!href) return false;
+  return href.includes(`id=${SOURCE_FILE_VIEWER_STORY_ID}`) || href.includes('/source-file-viewer');
 }
 
 /**
@@ -94,13 +133,19 @@ type DocumentMetadataProps = {
   fields: DocumentMetadataFields;
   variant?: 'adr' | 'architecture';
   markdownPath?: string; // Used to resolve relative links
+  openLinksInNewTab?: boolean;
 };
 
 /**
  * Component for displaying document metadata in a structured format.
  * Renders as a definition list with labels on the left and values on the right.
  */
-export const DocumentMetadata = ({ fields, variant = 'adr', markdownPath }: DocumentMetadataProps) => {
+export const DocumentMetadata = ({
+  fields,
+  variant = 'adr',
+  markdownPath,
+  openLinksInNewTab = true
+}: DocumentMetadataProps) => {
   const hasRelated = fields.related && fields.related.length > 0;
 
   // Resolve links to Storybook paths and add ARCH prefixes
@@ -111,7 +156,7 @@ export const DocumentMetadata = ({ fields, variant = 'adr', markdownPath }: Docu
     // Format link text with prefix
     const formattedText = formatLinkText(link.text, archPrefix);
 
-    if (!markdownPath || !link.href.endsWith('.md')) {
+    if (!markdownPath) {
       return {
         ...link,
         text: formattedText
@@ -120,11 +165,12 @@ export const DocumentMetadata = ({ fields, variant = 'adr', markdownPath }: Docu
 
     const resolvedDocPath = resolveDocPath(link.href, markdownPath);
     const storybookPath = resolveDocStoryPath(resolvedDocPath);
+    const codeFileStoryPath = resolveCodeFileStoryPath(resolvedDocPath);
 
     return {
       ...link,
       text: formattedText,
-      href: storybookPath || link.href
+      href: storybookPath || codeFileStoryPath || link.href
     };
   });
 
@@ -197,19 +243,34 @@ export const DocumentMetadata = ({ fields, variant = 'adr', markdownPath }: Docu
             <dt className="eui-docs-metadata-label">Related</dt>
             <dd className="eui-docs-metadata-value eui-text-body-sm">
               <ul className="eui-docs-metadata-related-list">
-                {resolvedLinks!.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="eui-link">
-                      {link.text}
-                    </a>
-                    {link.description && (
-                      <span className="eui-docs-metadata-related-description">
-                        {' — '}
-                        {link.description}
-                      </span>
-                    )}
-                  </li>
-                ))}
+                {resolvedLinks!.map((link, index) => {
+                  const shouldOpenInNewTab =
+                    openLinksInNewTab &&
+                    typeof link.href === 'string' &&
+                    link.href.length > 0 &&
+                    !link.href.startsWith('#') &&
+                    (!isStorybookStoryHref(link.href) || isSourceFileViewerHref(link.href));
+
+                  return (
+                    <li key={index}>
+                      <a
+                        href={link.href}
+                        className="eui-link"
+                        target={shouldOpenInNewTab ? '_blank' : undefined}
+                        rel={shouldOpenInNewTab ? 'noopener noreferrer' : undefined}
+                        data-eui-link-target={shouldOpenInNewTab ? 'new-tab' : undefined}
+                      >
+                        {link.text}
+                      </a>
+                      {link.description && (
+                        <span className="eui-docs-metadata-related-description">
+                          {' — '}
+                          {link.description}
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </dd>
           </>

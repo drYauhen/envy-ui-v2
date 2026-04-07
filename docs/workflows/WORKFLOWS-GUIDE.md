@@ -3,7 +3,7 @@
 **Document ID:** workflow-workflows-documentation-guide
 **Status:** Active
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
@@ -81,6 +81,7 @@ Each workflow document should include:
 - **Validation**: Run `npm run docs:validate` to check links
 - **Testing**: Test workflows on fresh environments
 - **Automation**: Prefer automated validation over manual checks
+- **Link behavior**: Internal registered docs open in current Storybook tab; external/unregistered links open in new tab
 
 ## Best Practices
 

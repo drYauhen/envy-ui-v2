@@ -39,7 +39,7 @@ export const DocSectionListViewer: React.FC<DocSectionListViewerProps> = ({
       ) : null}
       <ul className="eui-docs-list eui-stack" data-eui-gap="sm">
         {sortedDocs.map((doc) => {
-          const storyPath = doc.storybookId ? `?path=/story/${doc.storybookId}` : null;
+          const storyPath = doc.storybookId ? `./?path=/story/${doc.storybookId}` : null;
           const meta = (
             <div
               className="eui-inline eui-text-caption eui-docs-item-meta"

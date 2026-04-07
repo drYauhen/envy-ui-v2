@@ -3,7 +3,7 @@
 **Document ID:** workflow-workflow
 **Status:** Template
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
@@ -177,6 +177,8 @@ verify --output
 ### Reference Materials
 - [Link to specifications]
 - [Link to external documentation]
+
+**Link behavior rule:** Write internal documentation links as relative `.md` paths. Registered Storybook documents open in the current tab. External or unregistered links open in a new tab with external-link indicator.
 
 ## Change History
 

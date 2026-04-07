@@ -3,7 +3,7 @@
 **Document ID:** adr-0048-chart-like-signal-interaction-and-hit-area-policy
 **Status:** Accepted
 **Date:** 2026-04-06
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-07
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Accessibility
@@ -11,7 +11,7 @@
 ---
 ## Context
 
-[`ADR-0047`](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md) introduced semantic signal patterns and cross-renderer parity (CSS + Highcharts).  
+[ADR-0047](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md) introduced semantic signal patterns and cross-renderer parity (CSS + Highcharts).  
 During implementation, a second-level accessibility question appeared: how to size and structure interactive legend items and similar signal controls across visual renderers.
 
 The main tension:
@@ -46,7 +46,7 @@ The policy is:
 
 ## Why New ADR (Instead of Extending ADR-0047)
 
-[`ADR-0047`](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md) is about semantic pattern parity and token contract.  
+[ADR-0047](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md) is about semantic pattern parity and token contract.  
 This ADR introduces a separate governance layer: interaction geometry and hit-area policy for chart-like signal UIs.
 
 Keeping this as a separate ADR makes future reuse easier for non-Highcharts renderers without changing the semantic decisions of [ADR-0047](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md).
@@ -84,6 +84,10 @@ Applied in current Storybook chart examples:
    - same legend policy applied to integration chart;
    - Highcharts accessibility module enabled;
    - bottom legend placement retained.
+3. Source-file documentation links now open through a read-only Storybook shell with syntax highlighting:
+   - [`stories/docs/tools/source-file-viewer.stories.tsx`](../../stories/docs/tools/source-file-viewer.stories.tsx)
+   - [`stories/viewers/code/SourceFileViewer.tsx`](../../stories/viewers/code/SourceFileViewer.tsx)
+   - link resolution integrated in [`stories/viewers/docs/DocViewer.tsx`](../../stories/viewers/docs/DocViewer.tsx)
 
 ## Renderer Adapter Rules
 
@@ -135,6 +139,7 @@ For future hardening:
 2. Add a reusable helper for chart adapters (Highcharts/SVG/CSS) that centralizes legend geometry defaults. *(future implementation)*
 3. Add explicit exception protocol (when a component intentionally deviates from 18x18 symbol baseline). *(future implementation)*
 4. Revisit `Card` status indicator interaction zone in a dedicated ADR/update after separate UX review. *(future implementation)*
+5. Add a read-only code-file viewer shell for documentation links to `.ts/.tsx/.css/.json` adapter files, so implementation references open as syntax-highlighted Storybook pages instead of raw file text. *(implemented)*
 
 ---
 

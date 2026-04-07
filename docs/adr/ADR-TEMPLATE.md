@@ -3,7 +3,7 @@
 **Document ID:** template-adr-xxxx-title
 **Status:** <Proposed | Accepted | Superseded>
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Template
@@ -47,3 +47,5 @@ I decided to <concise statement of the decision>.
 - <https://www.w3.org/WAI/ARIA/apg/>
 
 **Authoring rule:** Keep the full reference list in this final section. In the body text, add inline links at first mention when a specific statement depends on a document or standard.
+
+**Link behavior rule:** Use normal relative markdown links to internal `.md` docs. Registered Storybook docs open in current tab (with Storybook shell). External or unregistered links open in a new tab with external-link indicator.

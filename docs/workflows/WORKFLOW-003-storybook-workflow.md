@@ -3,7 +3,7 @@
 **Document ID:** workflow-storybook-workflow
 **Status:** Active
 **Date:** 2026-01-10
-**Last Updated:** 2026-01-10
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
@@ -345,6 +345,7 @@ Documentation metadata and link resolution are centralized:
 - **Single source of truth:** `stories/viewers/docs/docs-registry.ts`
 - **Storybook link mapping:** Set `storybookId` for any doc that has a Storybook story
 - **Link rendering:** `DocViewer` uses the registry to map markdown links to Storybook routes
+- **Navigation policy:** Registered Storybook docs open in the current tab (Storybook shell preserved); external/unregistered links open in a new tab
 
 **Example locations:**
 - `tokens/contexts/app/README.md` - App context documentation

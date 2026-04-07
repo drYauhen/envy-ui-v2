@@ -3,7 +3,7 @@
 **Document ID:** guide-ai-agent-documentation
 **Status:** Active
 **Date:** 2026-01-15
-**Last Updated:** 2026-01-15
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
@@ -431,6 +431,12 @@ ls docs/architecture/ARCH-tokens-005-token-naming.md
 - `./file.md` - Same directory
 - `../category/file.md` - Parent directory, then category
 - `../../other-category/file.md` - Two levels up, then other-category
+
+**Storybook link behavior rule (mandatory):**
+- Write markdown links to documentation using relative `.md` paths.
+- The docs viewer maps registered docs to Storybook story routes and opens them in the current tab.
+- External links and unregistered files open in a new tab with external-link indicator styling.
+- Do not hardcode `?path=/story/...` in markdown documents.
 
 #### Common Link Errors and Fixes
 

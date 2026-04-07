@@ -3,7 +3,7 @@
 **Document ID:** guide-docs-guide
 **Status:** Active
 **Date:** 2026-01-15
-**Last Updated:** 2026-01-15
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
@@ -202,6 +202,11 @@ For any doc that has a Storybook story:
 - Add `storybookId` to its registry entry
 - Use the Storybook story id format, for example: `docs-architecture--accessibility-reference`
 
+**Navigation/open behavior (mandatory):**
+- Internal documentation links that resolve to a registered Storybook document open in the current tab and keep Storybook shell navigation.
+- External links and links to files not registered in Storybook open in a new tab and are rendered with external-link styling.
+- In markdown, always write normal relative links to source `.md` files. Do not write `?path=/story/...` manually.
+
 However, ADR guide documents ([README](workflows/README.md).md, [AGENT-GUIDE](adr/AGENT-GUIDE.md).md, TEMPLATE.md) must be manually registered.
 
 ## Mermaid Diagrams (All Docs)
@@ -256,6 +261,7 @@ When creating/modifying document:
 - [ ] Created/updated markdown file
 - [ ] Ran `npm run docs:validate` (no broken links)
 - [ ] Verified links work correctly
+- [ ] Verified link behavior: registered docs open same-tab, external/unregistered open new-tab
 - [ ] Checked cross-references are valid
 
 ## Troubleshooting

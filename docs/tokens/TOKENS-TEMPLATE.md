@@ -3,7 +3,7 @@
 **Document ID:** tokens-tokens
 **Status:** Template
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-06
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Tokens
@@ -226,3 +226,5 @@ describe('Token Usage', () => {
 - [Link to design system guidelines]
 - [Link to Figma libraries]
 - [Link to design tokens]
+
+**Link behavior rule:** Use relative `.md` links for internal docs. If a target doc is registered in Storybook it opens in current tab; external or unregistered links open in a new tab with external-link indicator.

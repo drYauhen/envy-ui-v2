@@ -181,7 +181,7 @@ function getStatusTone(status: string, category: string): string {
 
 function getDocStoryPath(doc: DocMetadata, category: string): string {
   const storyId = getStoryId(doc, category);
-  return `?path=/story/docs-${category}--${storyId}`;
+  return `./?path=/story/docs-${category}--${storyId}`;
 }
 
 // Storybook ID generation utilities (same as validation script)
