@@ -3,7 +3,7 @@
 **Document ID:** ARCH-components-001-component-css-architecture
 **Status:** Mandatory
 **Date:** 2026-01-15
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-07
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Architecture Rules (Binding)
@@ -497,6 +497,24 @@ Component Token → Semantic Token → Primitive Value
 /* System focus policy: bright orange for keyboard users */
 [data-eui-focus-policy="system"] [data-eui-context] {
   --eui-focus-ring-color-keyboard: var(--eui-color-system-focus);
+}
+```
+
+**Mandatory Non-Clipping Rule (Focus Footprint):**
+- Canonical focus footprint is `focus ring offset + focus ring width` (currently `2px + 2px = 4px`).
+- If a component surface uses clipping overflow (`hidden`, `auto`, or `clip`) and contains focusable descendants, it must reserve internal safe inset greater than or equal to the focus footprint.
+- Safe inset must be expressed with tokenized/custom properties and reflected in contract behavior (`behavior.focusClearance`) for agent/tooling discoverability.
+- For scroll containers, add corresponding `scroll-padding` so keyboard-focused rows/options are not clipped at viewport edges.
+
+**Reference pattern:**
+```css
+[data-eui-context] .eui-surface {
+  --eui-focus-clearance-inset: calc(
+    var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)
+  );
+  padding: calc(var(--eui-surface-padding) + var(--eui-focus-clearance-inset));
+  scroll-padding-block: var(--eui-focus-clearance-inset);
+  overflow: auto;
 }
 ```
 

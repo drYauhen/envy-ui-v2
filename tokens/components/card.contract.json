@@ -71,6 +71,14 @@
     "statusIndicator": {
       "--eui-card-status-indicator-color": { "type": "color" },
       "--eui-card-status-indicator-width": { "type": "dimension" }
+    },
+    "localVars": {
+      "--eui-card-status-indicator-pattern-cssImage-active": {
+        "type": "string"
+      },
+      "--eui-card-status-indicator-pattern-cssSize-active": {
+        "type": "string"
+      }
     }
   },
 

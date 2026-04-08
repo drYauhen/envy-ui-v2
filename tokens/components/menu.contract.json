@@ -19,7 +19,8 @@
   "invariants": [
     "Menu list is rendered as a floating surface anchored to trigger.",
     "Trigger-to-menu gap must resolve from semantic overlay token; hardcoded offset is forbidden.",
-    "Menu focus visibility follows system focus policy and canonical focus geometry."
+    "Menu focus visibility follows system focus policy and canonical focus geometry.",
+    "If menu list uses clipping overflow, internal safe inset must be at least the focus ring footprint to avoid clipped focus rings on full-width items."
   ],
   "axes": {
     "placement": {
@@ -82,6 +83,9 @@
       },
       "--eui-menu-spacing-divider-margin": {
         "type": "dimension"
+      },
+      "--eui-menu-focus-clearance-inset": {
+        "type": "dimension"
       }
     },
     "itemColors": {
@@ -124,6 +128,15 @@
     "interaction": {
       "dismiss": "Click outside and Escape close the menu.",
       "focus": "Menu item focus ring uses canonical focus geometry tokens."
+    },
+    "focusClearance": {
+      "policy": "Clipping menu surfaces must reserve safe inset for external focus ring rendering.",
+      "ringFootprintPx": 4,
+      "minimumInsetPx": 4,
+      "safeInsetVar": "--eui-menu-focus-clearance-inset",
+      "scrollPaddingVar": "--eui-menu-focus-clearance-inset",
+      "overflowHandling": "Menu list may use overflow clipping; safe inset and scroll padding keep focused full-width rows visible.",
+      "appliesTo": [".eui-menu-list", ".eui-menu-item"]
     }
   }
 }

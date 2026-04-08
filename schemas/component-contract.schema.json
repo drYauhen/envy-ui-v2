@@ -130,6 +130,47 @@
     "behavior": {
       "type": "object",
       "description": "Behavioral mapping from contract vars/axes to runtime.",
+      "properties": {
+        "focusClearance": {
+          "type": "object",
+          "description": "Rules that prevent clipping of external focus rings inside overflow-clipped or scrollable containers.",
+          "required": ["policy"],
+          "properties": {
+            "policy": {
+              "type": "string"
+            },
+            "ringFootprintPx": {
+              "type": "number",
+              "minimum": 0
+            },
+            "minimumInsetPx": {
+              "type": "number",
+              "minimum": 0
+            },
+            "safeInsetVar": {
+              "type": "string",
+              "pattern": "^--[a-zA-Z][a-zA-Z0-9_-]*$"
+            },
+            "scrollPaddingVar": {
+              "type": "string",
+              "pattern": "^--[a-zA-Z][a-zA-Z0-9_-]*$"
+            },
+            "overflowHandling": {
+              "type": "string"
+            },
+            "appliesTo": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
       "additionalProperties": true
     },
     "nonCanonicalThemeNotes": {

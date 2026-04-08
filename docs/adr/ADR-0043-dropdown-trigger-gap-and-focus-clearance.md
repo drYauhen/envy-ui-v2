@@ -2,7 +2,7 @@
 
 **Status:** Accepted  
 **Date:** 2026-02-18  
-**Last Updated:** 2026-02-18  
+**Last Updated:** 2026-04-07  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
@@ -30,6 +30,7 @@ I decided to standardize the trigger-to-dropdown vertical gap at **5px** and exp
 - Canonical semantic token: `eui.overlay.offset.dropdown` (`--eui-overlay-offset-dropdown`)
 - Select primitive token maps to semantic token: `eui.select.primitive.popover.spacing.offset`
 - Floating positioning for `SelectPopover` and `Menu` resolves this token and uses it as `mainAxis` offset.
+- For clipping scroll/list surfaces with full-width focusable rows, internal safe inset must be >= focus footprint (`offset + width`) to avoid clipped focus rings.
 
 ## Rationale
 
@@ -43,3 +44,4 @@ I decided to standardize the trigger-to-dropdown vertical gap at **5px** and exp
 - `Select`, `Multi-Select`, `Searchable Select`, and `Multi-Select Tree` (through `SelectPopover`) now share a consistent token-based dropdown gap.
 - `Menu` no longer uses a hardcoded `8px` offset and now follows the same semantic overlay gap token.
 - Future overlay-capable components should consume `--eui-overlay-offset-dropdown` unless they have an explicit documented exception.
+- Focus clearance is not solved by offset alone: clipping menu/list surfaces must also reserve internal safe inset and scroll padding for focused rows/options.

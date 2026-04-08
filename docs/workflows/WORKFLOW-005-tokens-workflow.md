@@ -3,7 +3,7 @@
 **Document ID:** workflow-tokens-workflow
 **Status:** Active
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-07
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
@@ -47,6 +47,16 @@ Each context is fully independent with its own foundations, semantic, and compon
 ## Non-visual Metadata Files
 
 Non-visual metadata (behavior, implementation notes, etc.) must live under component subdirectories like `behavior/` or `metadata/` and use the `.meta.json` suffix only. These files are excluded from Style Dictionary; do not create `.json` duplicates in those folders or the build will try to resolve strings and fail.
+
+## Component Contract Rule: Focus Clearance
+
+When a component includes clipping/scroll surfaces (`overflow: hidden|auto|clip`) and has focusable descendants, its contract must declare `behavior.focusClearance`:
+- policy statement;
+- minimum inset/footprint requirement;
+- safe inset variable and scroll-padding variable used by CSS/runtime.
+
+Use canonical focus footprint formula:
+`calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width))`.
 
 ## Token Resolution Order
 

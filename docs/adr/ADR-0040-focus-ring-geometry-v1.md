@@ -2,7 +2,7 @@
 
 **Status:** Accepted (v1)
 **Date:** 2026-01-15
-**Last Updated:** 2026-01-15
+**Last Updated:** 2026-04-07
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
@@ -25,6 +25,7 @@ This ADR establishes the **canonical v1 focus ring geometry**.
   - System focus color for keyboard when `data-eui-focus-policy="system"` is active
   - Mouse focus remains visible (never suppressed)
 - **Rendering pattern:** box-shadow with a gap using `--eui-color-background-surface`
+- **Non-clipping invariant:** when focus is rendered outside component bounds, any clipping container around focusable children must reserve an internal safe inset of at least `focus ring offset + focus ring width`.
 
 ## Rationale
 
@@ -62,3 +63,11 @@ This ADR establishes the **canonical v1 focus ring geometry**.
 ## Future Revision Note
 
 If real-world usage shows insufficient visibility or usability issues, this canon may be revisited. Until then, **geometry is fixed for v1**.
+
+## Implementation Constraint (Added)
+
+For canonical geometry (`2px width + 2px offset`), the minimum focus footprint is `4px`.
+
+- Use `calc(var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width))` as the canonical formula.
+- If a surface uses `overflow: hidden|auto|clip` and contains focusable descendants, reserve internal inset (`padding`, `scroll-padding`, or equivalent layout inset) greater than or equal to that footprint.
+- Do not rely on edge-aligned full-width children inside clipping containers without this inset.

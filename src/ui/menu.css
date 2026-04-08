@@ -2,14 +2,22 @@
 
 /* MenuList container */
 [data-eui-context] .eui-menu-list {
+  --eui-menu-focus-clearance-inset: calc(
+    var(--eui-focus-ring-offset-default) + var(--eui-focus-ring-width)
+  );
   background-color: var(--eui-menu-colors-background);
   border: var(--eui-menu-border-width) var(--eui-menu-border-style) var(--eui-menu-border-color);
   border-radius: var(--eui-menu-shape-radius);
   box-shadow: var(--eui-menu-shadow);
-  padding: var(--eui-menu-spacing-list-padding);
+  padding: calc(
+    var(--eui-menu-spacing-list-padding, var(--eui-spacing-xs, 0.5714rem)) +
+    var(--eui-menu-focus-clearance-inset)
+  );
   min-width: var(--eui-menu-size-min-width);
   max-width: var(--eui-menu-size-max-width);
   max-height: var(--eui-menu-size-max-height);
+  scroll-padding-block: var(--eui-menu-focus-clearance-inset);
+  scroll-padding-inline: var(--eui-menu-focus-clearance-inset);
   overflow-y: auto;
   overflow-x: hidden;
   list-style: none;

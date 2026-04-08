@@ -2,7 +2,7 @@
 
 **Status:** Accepted  
 **Date:** 2026-02-18  
-**Last Updated:** 2026-02-18  
+**Last Updated:** 2026-04-07  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
@@ -56,6 +56,13 @@ If a component uses a component-local alias, that alias must resolve to the same
 ### 5) Schema Requirement
 
 Component contracts are standardized by `schemas/component-contract.schema.json`.
+
+### 6) Focus Clearance Rule for Clipping Surfaces
+
+Any component contract that includes a clipping/scrolling surface with focusable descendants must declare `behavior.focusClearance`:
+- policy statement for anti-clipping behavior;
+- minimum inset/footprint requirement;
+- declared variable names used by runtime/CSS for safe inset and scroll padding.
 
 ## Rationale
 

@@ -23,7 +23,8 @@
   "invariants": [
     "Select primitives are token-driven: visual literals must not be introduced in runtime logic.",
     "Trigger-to-dropdown gap must resolve from contract tokens, not hardcoded component constants.",
-    "Default dropdown gap is 5px through eui.overlay.offset.dropdown aliasing."
+    "Default dropdown gap is 5px through eui.overlay.offset.dropdown aliasing.",
+    "Focusable options inside clipping/scroll containers must reserve an internal safe inset that is at least the focus ring footprint."
   ],
   "axes": {
     "mode": {
@@ -111,7 +112,13 @@
       "runtimeResolver": "SelectPopover computes mainAxis from CSS variables and applies fallback when unresolved."
     },
     "focusClearance": {
-      "policy": "Dropdown offset must preserve visible trigger focus ring."
+      "policy": "Dropdown offset and popover/listbox insets must preserve visible external focus ring geometry.",
+      "ringFootprintPx": 4,
+      "minimumInsetPx": 4,
+      "safeInsetVar": "--eui-select-popover-safe-padding",
+      "scrollPaddingVar": "--eui-select-option-focus-padding",
+      "overflowHandling": "Popover shell may clip overflow, but content insets and scroll padding must keep focused options fully visible.",
+      "appliesTo": [".eui-select-popover", ".eui-select-listbox", ".eui-select-option"]
     }
   }
 }
