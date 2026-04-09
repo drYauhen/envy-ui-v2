@@ -38,6 +38,43 @@
             "$value": "{eui-color-status-application-discontinued}",
             "$type": "color",
             "$description": "Application status: discontinued. Used for cancelled or stopped projects/items."
+          },
+          "grayscale": {
+            "pending": {
+              "$value": "{eui-color-status-application-grayscale-pending}",
+              "$type": "color",
+              "$description": "Application status grayscale profile: pending. Intended for print and non-color signal views."
+            },
+            "onTrack": {
+              "$value": "{eui-color-status-application-grayscale-onTrack}",
+              "$type": "color",
+              "$description": "Application status grayscale profile: on track. Intended for print and non-color signal views."
+            },
+            "completed": {
+              "$value": "{eui-color-status-application-grayscale-completed}",
+              "$type": "color",
+              "$description": "Application status grayscale profile: completed. Intended for print and non-color signal views."
+            },
+            "minorDisruption": {
+              "$value": "{eui-color-status-application-grayscale-minorDisruption}",
+              "$type": "color",
+              "$description": "Application status grayscale profile: minor disruption. Intended for print and non-color signal views."
+            },
+            "majorDisruption": {
+              "$value": "{eui-color-status-application-grayscale-majorDisruption}",
+              "$type": "color",
+              "$description": "Application status grayscale profile: major disruption. Intended for print and non-color signal views."
+            },
+            "upcoming": {
+              "$value": "{eui-color-status-application-grayscale-upcoming}",
+              "$type": "color",
+              "$description": "Application status grayscale profile: upcoming. Intended for print and non-color signal views."
+            },
+            "discontinued": {
+              "$value": "{eui-color-status-application-grayscale-discontinued}",
+              "$type": "color",
+              "$description": "Application status grayscale profile: discontinued. Intended for print and non-color signal views."
+            }
           }
         }
       }

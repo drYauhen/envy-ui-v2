@@ -88,6 +88,43 @@
             "$value": "oklch(32% 0.01 61)",
             "$type": "color",
             "$description": "Application status: discontinued. Used for cancelled or stopped projects/items."
+          },
+          "grayscale": {
+            "pending": {
+              "$value": "#BABABA",
+              "$type": "color",
+              "$description": "Application status (grayscale profile): pending. Tuned for print readability with visible pattern overlays."
+            },
+            "onTrack": {
+              "$value": "#A8A8A8",
+              "$type": "color",
+              "$description": "Application status (grayscale profile): on track. Tuned for print readability with visible pattern overlays."
+            },
+            "completed": {
+              "$value": "#969696",
+              "$type": "color",
+              "$description": "Application status (grayscale profile): completed. Tuned for print readability with visible pattern overlays."
+            },
+            "minorDisruption": {
+              "$value": "#848484",
+              "$type": "color",
+              "$description": "Application status (grayscale profile): minor disruption. Tuned for print readability with visible pattern overlays."
+            },
+            "majorDisruption": {
+              "$value": "#737373",
+              "$type": "color",
+              "$description": "Application status (grayscale profile): major disruption. Tuned for print readability with visible pattern overlays."
+            },
+            "upcoming": {
+              "$value": "#626262",
+              "$type": "color",
+              "$description": "Application status (grayscale profile): upcoming. Tuned for print readability with visible pattern overlays."
+            },
+            "discontinued": {
+              "$value": "#515151",
+              "$type": "color",
+              "$description": "Application status (grayscale profile): discontinued. Tuned for print readability with visible pattern overlays."
+            }
           }
         }
       }

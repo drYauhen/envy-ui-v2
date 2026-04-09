@@ -38,6 +38,43 @@
             "$value": "#FFFFFF6B",
             "$type": "string",
             "$description": "Highcharts stroke color for forward diagonal stripes. Matches CSS pattern opacity."
+          },
+          "print": {
+            "cssImage": {
+              "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%208%20L%208%200'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+              "$type": "string",
+              "$description": "Print profile pattern image for stripeForward. Uses dark, thicker strokes for grayscale/PDF readability."
+            },
+            "cssSize": {
+              "$value": "8px 8px",
+              "$type": "string",
+              "$description": "Print profile tile size for stripeForward."
+            },
+            "highchartsPath": {
+              "$value": "M 0 8 L 8 0",
+              "$type": "string",
+              "$description": "Highcharts print profile path for stripeForward."
+            },
+            "highchartsWidth": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile width for stripeForward."
+            },
+            "highchartsHeight": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile height for stripeForward."
+            },
+            "highchartsStrokeWidth": {
+              "$value": "2",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke width for stripeForward."
+            },
+            "highchartsStrokeColor": {
+              "$value": "#111111CC",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke color for stripeForward."
+            }
           }
         },
         "stripeBackward": {
@@ -75,6 +112,43 @@
             "$value": "#FFFFFF6B",
             "$type": "string",
             "$description": "Highcharts stroke color for backward diagonal stripes. Matches CSS pattern opacity."
+          },
+          "print": {
+            "cssImage": {
+              "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%200%20L%208%208'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+              "$type": "string",
+              "$description": "Print profile pattern image for stripeBackward. Uses dark, thicker strokes for grayscale/PDF readability."
+            },
+            "cssSize": {
+              "$value": "8px 8px",
+              "$type": "string",
+              "$description": "Print profile tile size for stripeBackward."
+            },
+            "highchartsPath": {
+              "$value": "M 0 0 L 8 8",
+              "$type": "string",
+              "$description": "Highcharts print profile path for stripeBackward."
+            },
+            "highchartsWidth": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile width for stripeBackward."
+            },
+            "highchartsHeight": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile height for stripeBackward."
+            },
+            "highchartsStrokeWidth": {
+              "$value": "2",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke width for stripeBackward."
+            },
+            "highchartsStrokeColor": {
+              "$value": "#111111CC",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke color for stripeBackward."
+            }
           }
         },
         "crosshatch": {
@@ -112,6 +186,43 @@
             "$value": "#FFFFFF5C",
             "$type": "string",
             "$description": "Highcharts stroke color for crosshatch. Matches CSS pattern opacity."
+          },
+          "print": {
+            "cssImage": {
+              "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%208%20L%208%200%20M%200%200%20L%208%208'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+              "$type": "string",
+              "$description": "Print profile pattern image for crosshatch. Uses dark, thicker strokes for grayscale/PDF readability."
+            },
+            "cssSize": {
+              "$value": "8px 8px",
+              "$type": "string",
+              "$description": "Print profile tile size for crosshatch."
+            },
+            "highchartsPath": {
+              "$value": "M 0 8 L 8 0 M 0 0 L 8 8",
+              "$type": "string",
+              "$description": "Highcharts print profile path for crosshatch."
+            },
+            "highchartsWidth": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile width for crosshatch."
+            },
+            "highchartsHeight": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile height for crosshatch."
+            },
+            "highchartsStrokeWidth": {
+              "$value": "2",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke width for crosshatch."
+            },
+            "highchartsStrokeColor": {
+              "$value": "#111111CC",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke color for crosshatch."
+            }
           }
         },
         "horizontal": {
@@ -149,6 +260,43 @@
             "$value": "#FFFFFF75",
             "$type": "string",
             "$description": "Highcharts stroke color for horizontal line pattern. Matches CSS pattern opacity."
+          },
+          "print": {
+            "cssImage": {
+              "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%204%20L%208%204'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+              "$type": "string",
+              "$description": "Print profile pattern image for horizontal. Uses dark, thicker strokes for grayscale/PDF readability."
+            },
+            "cssSize": {
+              "$value": "8px 8px",
+              "$type": "string",
+              "$description": "Print profile tile size for horizontal."
+            },
+            "highchartsPath": {
+              "$value": "M 0 4 L 8 4",
+              "$type": "string",
+              "$description": "Highcharts print profile path for horizontal."
+            },
+            "highchartsWidth": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile width for horizontal."
+            },
+            "highchartsHeight": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile height for horizontal."
+            },
+            "highchartsStrokeWidth": {
+              "$value": "2",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke width for horizontal."
+            },
+            "highchartsStrokeColor": {
+              "$value": "#111111CC",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke color for horizontal."
+            }
           }
         },
         "dashHorizontal": {
@@ -186,6 +334,43 @@
             "$value": "#FFFFFF75",
             "$type": "string",
             "$description": "Highcharts stroke color for dashed horizontal pattern. Matches CSS pattern opacity."
+          },
+          "print": {
+            "cssImage": {
+              "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%204%20L%202%204%20M%204%204%20L%206%204'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+              "$type": "string",
+              "$description": "Print profile pattern image for dashHorizontal. Uses dark, thicker strokes for grayscale/PDF readability."
+            },
+            "cssSize": {
+              "$value": "8px 8px",
+              "$type": "string",
+              "$description": "Print profile tile size for dashHorizontal."
+            },
+            "highchartsPath": {
+              "$value": "M 0 4 L 2 4 M 4 4 L 6 4",
+              "$type": "string",
+              "$description": "Highcharts print profile path for dashHorizontal."
+            },
+            "highchartsWidth": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile width for dashHorizontal."
+            },
+            "highchartsHeight": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile height for dashHorizontal."
+            },
+            "highchartsStrokeWidth": {
+              "$value": "2",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke width for dashHorizontal."
+            },
+            "highchartsStrokeColor": {
+              "$value": "#111111CC",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke color for dashHorizontal."
+            }
           }
         },
         "vertical": {
@@ -223,6 +408,43 @@
             "$value": "#FFFFFF75",
             "$type": "string",
             "$description": "Highcharts stroke color for vertical line pattern. Matches CSS pattern opacity."
+          },
+          "print": {
+            "cssImage": {
+              "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%204%200%20L%204%208'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+              "$type": "string",
+              "$description": "Print profile pattern image for vertical. Uses dark, thicker strokes for grayscale/PDF readability."
+            },
+            "cssSize": {
+              "$value": "8px 8px",
+              "$type": "string",
+              "$description": "Print profile tile size for vertical."
+            },
+            "highchartsPath": {
+              "$value": "M 4 0 L 4 8",
+              "$type": "string",
+              "$description": "Highcharts print profile path for vertical."
+            },
+            "highchartsWidth": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile width for vertical."
+            },
+            "highchartsHeight": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile height for vertical."
+            },
+            "highchartsStrokeWidth": {
+              "$value": "2",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke width for vertical."
+            },
+            "highchartsStrokeColor": {
+              "$value": "#111111CC",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke color for vertical."
+            }
           }
         },
         "gridTight": {
@@ -260,6 +482,43 @@
             "$value": "#FFFFFF7A",
             "$type": "string",
             "$description": "Highcharts stroke color for tight grid pattern. Matches CSS pattern opacity."
+          },
+          "print": {
+            "cssImage": {
+              "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%204%20L%208%204%20M%204%200%20L%204%208'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+              "$type": "string",
+              "$description": "Print profile pattern image for gridTight. Uses dark, thicker strokes for grayscale/PDF readability."
+            },
+            "cssSize": {
+              "$value": "8px 8px",
+              "$type": "string",
+              "$description": "Print profile tile size for gridTight."
+            },
+            "highchartsPath": {
+              "$value": "M 0 4 L 8 4 M 4 0 L 4 8",
+              "$type": "string",
+              "$description": "Highcharts print profile path for gridTight."
+            },
+            "highchartsWidth": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile width for gridTight."
+            },
+            "highchartsHeight": {
+              "$value": "8",
+              "$type": "string",
+              "$description": "Highcharts print profile tile height for gridTight."
+            },
+            "highchartsStrokeWidth": {
+              "$value": "2",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke width for gridTight."
+            },
+            "highchartsStrokeColor": {
+              "$value": "#111111CC",
+              "$type": "string",
+              "$description": "Highcharts print profile stroke color for gridTight."
+            }
           }
         }
       },
@@ -301,6 +560,43 @@
                 "$value": "{eui.pattern.library.horizontal.highchartsStrokeColor}",
                 "$type": "string",
                 "$description": "Highcharts stroke color for pending status."
+              },
+              "print": {
+                "cssImage": {
+                  "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%204%20L%208%204'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+                  "$type": "string",
+                  "$description": "Print profile pattern image for pending status. Stroke color is contrast-selected for grayscale background."
+                },
+                "cssSize": {
+                  "$value": "{eui.pattern.library.horizontal.print.cssSize}",
+                  "$type": "string",
+                  "$description": "Print profile pattern tile size for pending status."
+                },
+                "highchartsPath": {
+                  "$value": "{eui.pattern.library.horizontal.print.highchartsPath}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern path for pending status."
+                },
+                "highchartsWidth": {
+                  "$value": "{eui.pattern.library.horizontal.print.highchartsWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern width for pending status."
+                },
+                "highchartsHeight": {
+                  "$value": "{eui.pattern.library.horizontal.print.highchartsHeight}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern height for pending status."
+                },
+                "highchartsStrokeWidth": {
+                  "$value": "{eui.pattern.library.horizontal.print.highchartsStrokeWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke width for pending status."
+                },
+                "highchartsStrokeColor": {
+                  "$value": "#111111CC",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke color for pending status. Contrast-selected for grayscale background."
+                }
               }
             },
             "onTrack": {
@@ -338,6 +634,43 @@
                 "$value": "{eui.pattern.library.stripeForward.highchartsStrokeColor}",
                 "$type": "string",
                 "$description": "Highcharts stroke color for on-track status."
+              },
+              "print": {
+                "cssImage": {
+                  "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%208%20L%208%200'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+                  "$type": "string",
+                  "$description": "Print profile pattern image for onTrack status. Stroke color is contrast-selected for grayscale background."
+                },
+                "cssSize": {
+                  "$value": "{eui.pattern.library.stripeForward.print.cssSize}",
+                  "$type": "string",
+                  "$description": "Print profile pattern tile size for onTrack status."
+                },
+                "highchartsPath": {
+                  "$value": "{eui.pattern.library.stripeForward.print.highchartsPath}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern path for onTrack status."
+                },
+                "highchartsWidth": {
+                  "$value": "{eui.pattern.library.stripeForward.print.highchartsWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern width for onTrack status."
+                },
+                "highchartsHeight": {
+                  "$value": "{eui.pattern.library.stripeForward.print.highchartsHeight}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern height for onTrack status."
+                },
+                "highchartsStrokeWidth": {
+                  "$value": "{eui.pattern.library.stripeForward.print.highchartsStrokeWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke width for onTrack status."
+                },
+                "highchartsStrokeColor": {
+                  "$value": "#111111CC",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke color for onTrack status. Contrast-selected for grayscale background."
+                }
               }
             },
             "completed": {
@@ -375,6 +708,43 @@
                 "$value": "{eui.pattern.library.crosshatch.highchartsStrokeColor}",
                 "$type": "string",
                 "$description": "Highcharts stroke color for completed status."
+              },
+              "print": {
+                "cssImage": {
+                  "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%208%20L%208%200%20M%200%200%20L%208%208'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+                  "$type": "string",
+                  "$description": "Print profile pattern image for completed status. Stroke color is contrast-selected for grayscale background."
+                },
+                "cssSize": {
+                  "$value": "{eui.pattern.library.crosshatch.print.cssSize}",
+                  "$type": "string",
+                  "$description": "Print profile pattern tile size for completed status."
+                },
+                "highchartsPath": {
+                  "$value": "{eui.pattern.library.crosshatch.print.highchartsPath}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern path for completed status."
+                },
+                "highchartsWidth": {
+                  "$value": "{eui.pattern.library.crosshatch.print.highchartsWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern width for completed status."
+                },
+                "highchartsHeight": {
+                  "$value": "{eui.pattern.library.crosshatch.print.highchartsHeight}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern height for completed status."
+                },
+                "highchartsStrokeWidth": {
+                  "$value": "{eui.pattern.library.crosshatch.print.highchartsStrokeWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke width for completed status."
+                },
+                "highchartsStrokeColor": {
+                  "$value": "#111111CC",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke color for completed status. Contrast-selected for grayscale background."
+                }
               }
             },
             "minorDisruption": {
@@ -412,6 +782,43 @@
                 "$value": "{eui.pattern.library.vertical.highchartsStrokeColor}",
                 "$type": "string",
                 "$description": "Highcharts stroke color for minor disruption status."
+              },
+              "print": {
+                "cssImage": {
+                  "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%204%200%20L%204%208'%20stroke%3D'%23111111CC'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+                  "$type": "string",
+                  "$description": "Print profile pattern image for minorDisruption status. Stroke color is contrast-selected for grayscale background."
+                },
+                "cssSize": {
+                  "$value": "{eui.pattern.library.vertical.print.cssSize}",
+                  "$type": "string",
+                  "$description": "Print profile pattern tile size for minorDisruption status."
+                },
+                "highchartsPath": {
+                  "$value": "{eui.pattern.library.vertical.print.highchartsPath}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern path for minorDisruption status."
+                },
+                "highchartsWidth": {
+                  "$value": "{eui.pattern.library.vertical.print.highchartsWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern width for minorDisruption status."
+                },
+                "highchartsHeight": {
+                  "$value": "{eui.pattern.library.vertical.print.highchartsHeight}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern height for minorDisruption status."
+                },
+                "highchartsStrokeWidth": {
+                  "$value": "{eui.pattern.library.vertical.print.highchartsStrokeWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke width for minorDisruption status."
+                },
+                "highchartsStrokeColor": {
+                  "$value": "#111111CC",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke color for minorDisruption status. Contrast-selected for grayscale background."
+                }
               }
             },
             "majorDisruption": {
@@ -449,6 +856,43 @@
                 "$value": "{eui.pattern.library.stripeBackward.highchartsStrokeColor}",
                 "$type": "string",
                 "$description": "Highcharts stroke color for major disruption status."
+              },
+              "print": {
+                "cssImage": {
+                  "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%200%20L%208%208'%20stroke%3D'%23FFFFFFE6'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+                  "$type": "string",
+                  "$description": "Print profile pattern image for majorDisruption status. Stroke color is contrast-selected for grayscale background."
+                },
+                "cssSize": {
+                  "$value": "{eui.pattern.library.stripeBackward.print.cssSize}",
+                  "$type": "string",
+                  "$description": "Print profile pattern tile size for majorDisruption status."
+                },
+                "highchartsPath": {
+                  "$value": "{eui.pattern.library.stripeBackward.print.highchartsPath}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern path for majorDisruption status."
+                },
+                "highchartsWidth": {
+                  "$value": "{eui.pattern.library.stripeBackward.print.highchartsWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern width for majorDisruption status."
+                },
+                "highchartsHeight": {
+                  "$value": "{eui.pattern.library.stripeBackward.print.highchartsHeight}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern height for majorDisruption status."
+                },
+                "highchartsStrokeWidth": {
+                  "$value": "{eui.pattern.library.stripeBackward.print.highchartsStrokeWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke width for majorDisruption status."
+                },
+                "highchartsStrokeColor": {
+                  "$value": "#FFFFFFE6",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke color for majorDisruption status. Contrast-selected for grayscale background."
+                }
               }
             },
             "upcoming": {
@@ -486,6 +930,43 @@
                 "$value": "{eui.pattern.library.dashHorizontal.highchartsStrokeColor}",
                 "$type": "string",
                 "$description": "Highcharts stroke color for upcoming status."
+              },
+              "print": {
+                "cssImage": {
+                  "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%204%20L%202%204%20M%204%204%20L%206%204'%20stroke%3D'%23FFFFFFE6'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+                  "$type": "string",
+                  "$description": "Print profile pattern image for upcoming status. Stroke color is contrast-selected for grayscale background."
+                },
+                "cssSize": {
+                  "$value": "{eui.pattern.library.dashHorizontal.print.cssSize}",
+                  "$type": "string",
+                  "$description": "Print profile pattern tile size for upcoming status."
+                },
+                "highchartsPath": {
+                  "$value": "{eui.pattern.library.dashHorizontal.print.highchartsPath}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern path for upcoming status."
+                },
+                "highchartsWidth": {
+                  "$value": "{eui.pattern.library.dashHorizontal.print.highchartsWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern width for upcoming status."
+                },
+                "highchartsHeight": {
+                  "$value": "{eui.pattern.library.dashHorizontal.print.highchartsHeight}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern height for upcoming status."
+                },
+                "highchartsStrokeWidth": {
+                  "$value": "{eui.pattern.library.dashHorizontal.print.highchartsStrokeWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke width for upcoming status."
+                },
+                "highchartsStrokeColor": {
+                  "$value": "#FFFFFFE6",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke color for upcoming status. Contrast-selected for grayscale background."
+                }
               }
             },
             "discontinued": {
@@ -523,6 +1004,43 @@
                 "$value": "{eui.pattern.library.gridTight.highchartsStrokeColor}",
                 "$type": "string",
                 "$description": "Highcharts stroke color for discontinued status."
+              },
+              "print": {
+                "cssImage": {
+                  "$value": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%208%208'%3E%3Cpath%20d%3D'M%200%204%20L%208%204%20M%204%200%20L%204%208'%20stroke%3D'%23FFFFFFE6'%20stroke-width%3D'2'%2F%3E%3C%2Fsvg%3E\")",
+                  "$type": "string",
+                  "$description": "Print profile pattern image for discontinued status. Stroke color is contrast-selected for grayscale background."
+                },
+                "cssSize": {
+                  "$value": "{eui.pattern.library.gridTight.print.cssSize}",
+                  "$type": "string",
+                  "$description": "Print profile pattern tile size for discontinued status."
+                },
+                "highchartsPath": {
+                  "$value": "{eui.pattern.library.gridTight.print.highchartsPath}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern path for discontinued status."
+                },
+                "highchartsWidth": {
+                  "$value": "{eui.pattern.library.gridTight.print.highchartsWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern width for discontinued status."
+                },
+                "highchartsHeight": {
+                  "$value": "{eui.pattern.library.gridTight.print.highchartsHeight}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile pattern height for discontinued status."
+                },
+                "highchartsStrokeWidth": {
+                  "$value": "{eui.pattern.library.gridTight.print.highchartsStrokeWidth}",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke width for discontinued status."
+                },
+                "highchartsStrokeColor": {
+                  "$value": "#FFFFFFE6",
+                  "$type": "string",
+                  "$description": "Highcharts print profile stroke color for discontinued status. Contrast-selected for grayscale background."
+                }
               }
             }
           }

@@ -68,6 +68,13 @@
     --eui-color-status-application-900: oklch(46% 0.15 137);
     --eui-color-status-application-completed: oklch(51% 0.16 256);
     --eui-color-status-application-discontinued: oklch(32% 0.01 61);
+    --eui-color-status-application-grayscale-completed: #969696;
+    --eui-color-status-application-grayscale-discontinued: #515151;
+    --eui-color-status-application-grayscale-majorDisruption: #737373;
+    --eui-color-status-application-grayscale-minorDisruption: #848484;
+    --eui-color-status-application-grayscale-onTrack: #A8A8A8;
+    --eui-color-status-application-grayscale-pending: #BABABA;
+    --eui-color-status-application-grayscale-upcoming: #626262;
     --eui-color-status-application-majorDisruption: oklch(58% 0.23 26);
     --eui-color-status-application-minorDisruption: oklch(89% 0.18 95);
     --eui-color-status-application-onTrack: oklch(66% 0.18 137);

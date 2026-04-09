@@ -121,7 +121,7 @@ const statusFallbackColors: Record<PatternStatus, string> = {
   discontinued: '#5f5a52'
 };
 
-const printGrayscaleColors: Record<PatternStatus, string> = {
+const grayscaleFallbackColors: Record<PatternStatus, string> = {
   pending: '#b9b9b9',
   onTrack: '#a8a8a8',
   completed: '#979797',
@@ -171,8 +171,12 @@ const readCssNumber = (name: string, fallback: number): number => {
   return Number.isFinite(parsed) ? parsed : fallback;
 };
 
-const getStatusColor = (status: PatternStatus): string =>
-  readCssVar(`--eui-color-status-application-${status}`, statusFallbackColors[status]);
+type StatusColorProfile = 'default' | 'grayscale';
+
+const getStatusColor = (status: PatternStatus, profile: StatusColorProfile = 'default'): string =>
+  profile === 'grayscale'
+    ? readCssVar(`--eui-color-status-application-grayscale-${status}`, grayscaleFallbackColors[status])
+    : readCssVar(`--eui-color-status-application-${status}`, statusFallbackColors[status]);
 
 const buildAccessibilityConfig = (description: string): Highcharts.AccessibilityOptions => ({
   enabled: true,
@@ -220,23 +224,29 @@ const buildLegendOptions = (): Highcharts.LegendOptions => {
   };
 };
 
-const buildPatternFill = (status: PatternStatus, baseColor: string) => {
-  const path = readCssVar(`--eui-pattern-signal-status-application-${status}-highchartsPath`, '');
+type PatternProfile = 'default' | 'print';
+
+const buildPatternFill = (status: PatternStatus, baseColor: string, profile: PatternProfile = 'default') => {
+  const profilePrefix =
+    profile === 'print'
+      ? `--eui-pattern-signal-status-application-${status}-print`
+      : `--eui-pattern-signal-status-application-${status}`;
+  const path = readCssVar(`${profilePrefix}-highchartsPath`, '');
   if (!path) return baseColor;
   const patternStroke = readCssVar(
-    `--eui-pattern-signal-status-application-${status}-highchartsStrokeColor`,
-    '#FFFFFF80'
+    `${profilePrefix}-highchartsStrokeColor`,
+    profile === 'print' ? '#111111CC' : '#FFFFFF80'
   );
 
   return {
     pattern: {
-      width: readCssNumber(`--eui-pattern-signal-status-application-${status}-highchartsWidth`, 8),
-      height: readCssNumber(`--eui-pattern-signal-status-application-${status}-highchartsHeight`, 8),
+      width: readCssNumber(`${profilePrefix}-highchartsWidth`, 8),
+      height: readCssNumber(`${profilePrefix}-highchartsHeight`, 8),
       backgroundColor: baseColor,
       path: {
         d: path,
         stroke: patternStroke,
-        strokeWidth: readCssNumber(`--eui-pattern-signal-status-application-${status}-highchartsStrokeWidth`, 1.5)
+        strokeWidth: readCssNumber(`${profilePrefix}-highchartsStrokeWidth`, profile === 'print' ? 2 : 1.5)
       }
     }
   };
@@ -454,10 +464,11 @@ const buildPrintSignalPieOptions = (): Highcharts.Options => ({
       name: 'Items',
       data: statusMapping.map(({ label, status }, index) => {
         const typedStatus = status as PatternStatus;
+        const grayscaleBaseColor = getStatusColor(typedStatus, 'grayscale');
         return {
           name: label,
           y: [18, 22, 14, 12, 10, 13, 11][index],
-          color: buildPatternFill(typedStatus, printGrayscaleColors[typedStatus])
+          color: buildPatternFill(typedStatus, grayscaleBaseColor, 'print')
         };
       })
     }

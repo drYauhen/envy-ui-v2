@@ -3,7 +3,7 @@
 **Document ID:** adr-0048-chart-like-signal-interaction-and-hit-area-policy
 **Status:** Accepted
 **Date:** 2026-04-06
-**Last Updated:** 2026-04-07
+**Last Updated:** 2026-04-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Accessibility
@@ -168,6 +168,8 @@ Note: APG does not define a dedicated chart legend pattern. For interactive lege
 - Understanding SC 1.4.1: <https://www.w3.org/WAI/WCAG22/Understanding/use-of-color>
 - WCAG 2.2 SC 2.5.8 Target Size (Minimum): <https://www.w3.org/TR/WCAG22/#target-size-minimum>
 - Understanding SC 2.5.8: <https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum>
+- WCAG2ICT Group Note: <https://www.w3.org/TR/wcag2ict/>
+- Directive (EU) 2019/882 (EAA) summary: <https://eur-lex.europa.eu/legal-content/ENG/LSU/?uri=CELEX%3A32019L0882>
 - WAI-ARIA APG (informative guidance): <https://www.w3.org/WAI/ARIA/apg/>
 - APG Patterns index: <https://www.w3.org/WAI/ARIA/apg/patterns/>
 - APG Keyboard Interface practices: <https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/>

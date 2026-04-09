@@ -3,7 +3,7 @@
 **Document ID:** adr-0047-signal-pattern-accessibility-and-cross-renderer-parity
 **Status:** Accepted (Implemented v1)
 **Date:** 2026-04-05
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Accessibility
@@ -50,6 +50,8 @@ The decision contains six concrete rules:
 ### 1) Accessibility-first signal encoding
 
 Color remains useful, but accessibility requires an additional visual channel. Pattern overlays provide a non-color-dependent signal and improve interpretability for both UI components and data visualizations, consistent with [WCAG 2.2 SC 1.4.1 Use of Color](https://www.w3.org/TR/WCAG22/#use-of-color) and [SC 1.4.11 Non-text Contrast](https://www.w3.org/TR/WCAG22/#non-text-contrast).
+
+For non-web/report outputs, WCAG interpretation is aligned through WCAG2ICT, while PDF/UA remains the structural document accessibility layer rather than a standalone visual-contrast rulebook.
 
 ### 2) Single-source semantics across renderers
 
@@ -192,6 +194,11 @@ This ADR defines a practical baseline for accessible signal encoding and cross-r
 - Understanding SC 1.4.11: <https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast>
 - WCAG 2.2 SC 2.5.8 Target Size (Minimum): <https://www.w3.org/TR/WCAG22/#target-size-minimum>
 - Understanding SC 2.5.8: <https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum>
+- WCAG2ICT update (21 August 2025): <https://www.w3.org/WAI/news/2025-08-21/wcag2ict/>
+- WCAG2ICT Group Note: <https://www.w3.org/TR/wcag2ict/>
+- Directive (EU) 2019/882 (EAA) summary: <https://eur-lex.europa.eu/legal-content/ENG/LSU/?uri=CELEX%3A32019L0882>
+- EN 301 549 (current published version noted by ETSI): <https://labs.etsi.org/rep/HF/en301549>
+- ISO 14289-2:2024 (PDF/UA-2): <https://www.iso.org/standard/82278.html>
 - WAI-ARIA APG (informative guidance): <https://www.w3.org/WAI/ARIA/apg/>
 - APG Patterns index: <https://www.w3.org/WAI/ARIA/apg/patterns/>
 - APG Keyboard Interface practices: <https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/>
