@@ -51,6 +51,9 @@ export const navigationConfig = {
     "Docs/Architecture": {
       firstItem: "Architecture Overview"
     },
+    "Docs/Migrations": {
+      firstItem: "Migrations Overview"
+    },
     "Docs/Tokens": {
       firstItem: "Tokens Overview"
     },

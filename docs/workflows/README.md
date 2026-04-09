@@ -3,7 +3,7 @@
 **Document ID:** workflow-workflows-documentation
 **Status:** Active
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
@@ -24,6 +24,7 @@ Each workflow document describes:
 - **[Layer Generation Workflow](WORKFLOW-006-layer-generation-workflow.md)** - Managing component layers and automated generation
 - **[Tokens Workflow](WORKFLOW-005-tokens-workflow.md)** - Working with design tokens
 - **[Resolver Migration Workflow](WORKFLOW-009-resolver-migration-workflow.md)** - Resolver composition model (implemented) and maintenance guardrails
+- **[Dependency Upgrade Workflow](WORKFLOW-010-dependency-upgrade-workflow.md)** - Third-party package upgrade lifecycle with risk, validation, and migration logging
 - **[Figma Workflow](WORKFLOW-002-figma-workflow.md)** - Figma integration (plugin, scripts, artifacts)
 - **[MCP Configuration Workflow](WORKFLOW-008-mcp-configuration-workflow.md)** - Local/templated MCP server setup and inventory
 - **[Storybook Workflow](WORKFLOW-003-storybook-workflow.md)** - Storybook development and documentation

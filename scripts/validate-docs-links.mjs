@@ -121,6 +121,33 @@ function parseDocsRegistry() {
     aliases.forEach(alias => docsMap.set(alias, doc));
   }
 
+  // Parse migration data (new DocMetadata structure)
+  const migrationDataPath = join(repoRoot, 'stories/viewers/docs/migration-data.ts');
+  const migrationDataContent = readFileSync(migrationDataPath, 'utf-8');
+  // Match DocMetadata object shape with optional aliases
+  const migrationPattern = /\{\s*number:\s*"([^"]+)"\s*,\s*title:\s*"([^"]+)"\s*,\s*category:\s*"([^"]+)"\s*,\s*status:\s*"([^"]+)"\s*,\s*date:\s*"[^"]+"\s*,\s*lastUpdated:\s*"[^"]+"\s*,\s*owner:\s*"[^"]+"\s*,\s*assistance:\s*"[^"]+"\s*,\s*exportName:\s*"([^"]+)"\s*,\s*markdownPath:\s*"([^"]+)"\s*,\s*storybookId:\s*"([^"]+)"\s*,\s*aliases:\s*(\[[^\]]*\])\s*\}/g;
+
+  while ((match = migrationPattern.exec(migrationDataContent)) !== null) {
+    const [, number, title, category, status, exportName, markdownPath, storybookId, aliasesStr] = match;
+    const path = markdownPath.replace('/docs/', '');
+    const aliases = aliasesStr ? JSON.parse(aliasesStr.replace(/'/g, '"')) : [];
+
+    const doc = {
+      id: `migration-${number}`,
+      path,
+      title,
+      category,
+      storybookId,
+      status,
+      exportName,
+      aliases
+    };
+
+    docsMap.set(path, doc);
+    idMap.set(doc.id, doc);
+    aliases.forEach(alias => docsMap.set(alias, doc));
+  }
+
   // Parse guide data
   const guideDataPath = join(repoRoot, 'stories/viewers/docs/guide-data.ts');
   const guideDataContent = readFileSync(guideDataPath, 'utf-8');
@@ -202,6 +229,7 @@ function parseDocsRegistry() {
     { id: 'docs-main-guide', path: 'DOCS-GUIDE.md', title: 'Documentation Guide', category: 'other' },
     { id: 'guides-guide', path: 'GUIDES-GUIDE.md', title: 'Guides Documentation Guide', category: 'other' },
     { id: 'guides-template', path: 'GUIDES-TEMPLATE.md', title: 'Guide Document Template', category: 'other' },
+    { id: 'migrations-template', path: 'migrations/MIGRATIONS-TEMPLATE.md', title: 'Migration Document Template', category: 'other' },
     { id: 'guide-ai-agent-documentation', path: 'AI-AGENT-DOCUMENTATION-GUIDE.md', title: 'AI Agent Documentation Guide', category: 'other' },
     {
       id: 'guide-canonical-doc-format',
@@ -217,12 +245,6 @@ function parseDocsRegistry() {
       category: 'other',
       storybookId: 'docs-guides--documentation-system-summary'
     },
-    {
-      id: 'migration-unified-doc-processing',
-      path: 'migrations/2026-01-14-unified-doc-processing.md',
-      title: 'Unified Doc Processing Migration',
-      category: 'migration'
-    }
   ];
 
   staticDocs.forEach(doc => {
@@ -639,6 +661,7 @@ try {
         const isExternalLink = !link.resolvedPath.startsWith('adr/') && 
                                !link.resolvedPath.startsWith('architecture/') && 
                                !link.resolvedPath.startsWith('workflows/') &&
+                               !link.resolvedPath.startsWith('migrations/') &&
                                !link.resolvedPath.startsWith('tokens/') &&
                                !link.resolvedPath.startsWith('tasks/') &&
                                !link.resolvedPath.startsWith('steps/') &&
@@ -706,7 +729,7 @@ try {
     } else {
       // Warn/error if document doesn't have storybookId but should have one
       // Categories that typically should have Storybook stories:
-      const shouldHaveStory = ['adr', 'architecture', 'workflows', 'other', 'tokens'].includes(doc.category);
+      const shouldHaveStory = ['adr', 'architecture', 'workflows', 'other', 'tokens', 'migration'].includes(doc.category);
       // Skip template/guide files and README files (these are meta-documentation)
       const isMetaDoc = doc.path.includes('TEMPLATE') ||
                         doc.path.includes('-GUIDE') ||

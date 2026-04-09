@@ -4,6 +4,8 @@ import { CodeBlock } from '../shared/CodeBlock';
 
 const ALLOWED_SOURCE_PREFIXES = [
   '/stories/',
+  '/packages/',
+  '/apps/',
   '/src/',
   '/tokens/',
   '/scripts/',
@@ -12,7 +14,16 @@ const ALLOWED_SOURCE_PREFIXES = [
   '/.storybook/'
 ];
 
+const ALLOWED_ROOT_SOURCE_FILES = new Set([
+  '/package.json',
+  '/package-lock.json',
+  '/tsconfig.json',
+  '/vitest.config.ts',
+  '/layer-generation.config.json'
+]);
+
 const isAllowedSourcePath = (path: string): boolean =>
+  ALLOWED_ROOT_SOURCE_FILES.has(path) ||
   ALLOWED_SOURCE_PREFIXES.some((prefix) => path.startsWith(prefix));
 
 const normalizeSourcePath = (value: string | null): string | null => {
@@ -64,6 +75,9 @@ const getLanguageFromPath = (path: string): Language => {
   }
 };
 
+const buildSourceEndpointHref = (path: string): string =>
+  `/__source-file?path=${encodeURIComponent(path)}`;
+
 export const SourceFileViewer = () => {
   const sourcePath = useMemo(() => getSourcePathFromLocation(), []);
   const sourceLanguage = sourcePath ? getLanguageFromPath(sourcePath) : 'text';
@@ -81,7 +95,7 @@ export const SourceFileViewer = () => {
     setLoading(true);
     setError(null);
 
-    fetch(sourcePath)
+    fetch(buildSourceEndpointHref(sourcePath))
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to load source file (${res.status})`);
@@ -125,7 +139,7 @@ export const SourceFileViewer = () => {
                     {sourcePath ? (
                       <a
                         className="eui-link"
-                        href={sourcePath}
+                        href={buildSourceEndpointHref(sourcePath)}
                         target="_blank"
                         rel="noopener noreferrer"
                         data-eui-link-target="new-tab"

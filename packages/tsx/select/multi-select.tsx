@@ -1,7 +1,8 @@
-import React, { useRef, Key, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useSelect, useListBox, useOption, AriaSelectProps, mergeProps, useButton, useSearchField, useFilter } from 'react-aria';
 import { useSelectState, useSearchFieldState } from 'react-stately';
 import { Item } from '@react-stately/collections';
+import type { Key } from '@react-types/shared';
 import { SelectTrigger, SelectPopover, SelectListBox, SelectOption as SelectOptionPrimitive, SelectBadge } from './primitives';
 import { Icon } from '../icon';
 import { CheckboxClean } from '../checkbox';
@@ -13,7 +14,10 @@ export interface MultiSelectItem {
   disabled?: boolean;
 }
 
-export interface MultiSelectProps extends Omit<AriaSelectProps<MultiSelectItem>, 'children' | 'items' | 'selectionMode'> {
+export interface MultiSelectProps extends Omit<
+  AriaSelectProps<MultiSelectItem, 'multiple'>,
+  'children' | 'items' | 'selectionMode' | 'defaultSelectedKeys' | 'selectedKeys' | 'onSelectionChange'
+> {
   /**
    * Label for the select
    */
@@ -115,12 +119,13 @@ export const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
   ) {
     // Convert items array to children with Item components
     const children = useMemo(() => {
-      return items.map(item => (
-        <Item key={item.key} textValue={item.label} isDisabled={item.disabled}>
+      return items.map((item) => (
+        <Item key={item.key} textValue={item.label}>
           {item.label}
         </Item>
       ));
     }, [items]);
+    const disabledKeys = useMemo(() => new Set(items.filter((item) => item.disabled).map((item) => item.key)), [items]);
     
     const searchState = useSearchFieldState({});
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -148,6 +153,7 @@ export const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
       defaultSelectedKeys,
       selectedKeys: controlledSelectedKeys,
       onSelectionChange: onSelectionChange as any,
+      disabledKeys,
       isDisabled,
       selectionMode: 'multiple',
       ...rest,
@@ -155,8 +161,8 @@ export const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
       allowsEmptyCollection: isSearchable ? true : rest.allowsEmptyCollection
     } as any);
 
-    const triggerRef = useRef<HTMLButtonElement>(null);
-    const listBoxRef = useRef<HTMLUListElement>(null);
+    const triggerRef = useRef<HTMLButtonElement | null>(null);
+    const listBoxRef = useRef<HTMLUListElement | null>(null);
     const badgesRef = useRef<HTMLDivElement>(null);
     const badgeMeasureRef = useRef<HTMLDivElement>(null);
     const overflowMeasureRef = useRef<HTMLSpanElement>(null);
@@ -357,14 +363,14 @@ export const MultiSelect = React.forwardRef<HTMLDivElement, MultiSelectProps>(
         )}
 
         <SelectTrigger
-          {...mergeProps(buttonProps, {
+          {...(mergeProps(buttonProps, {
             ref: triggerRef,
             size,
             isDisabled,
             isOpen: state.isOpen,
             'data-eui-state': error ? 'error' : undefined,
             'data-eui-select-mode': 'multi'
-          })}
+          }) as any)}
         >
           {hasSelection ? (
             <div

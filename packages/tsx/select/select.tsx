@@ -1,7 +1,8 @@
-import React, { useRef, Key, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useSelect, useListBox, useOption, AriaSelectProps, mergeProps, useButton } from 'react-aria';
 import { useSelectState } from 'react-stately';
 import { Item } from '@react-stately/collections';
+import type { Key } from '@react-types/shared';
 import { SelectTrigger, SelectPopover, SelectListBox, SelectOption as SelectOptionPrimitive } from './primitives';
 
 export interface SelectItem {
@@ -26,15 +27,15 @@ export interface SelectProps extends Omit<AriaSelectProps<SelectItem>, 'children
   /**
    * Default selected key (uncontrolled)
    */
-  defaultSelectedKey?: Key;
+  defaultSelectedKey?: Key | null;
   /**
    * Selected key (controlled)
    */
-  selectedKey?: Key;
+  selectedKey?: Key | null;
   /**
    * Callback when selection changes
    */
-  onSelectionChange?: (key: Key) => void;
+  onSelectionChange?: (key: Key | null) => void;
   /**
    * Whether select is disabled
    */
@@ -83,12 +84,13 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
     // React Aria useSelectState expects children with Item components, not items array
     // Convert items array to children with Item components
     const children = useMemo(() => {
-      return items.map(item => (
-        <Item key={item.key} textValue={item.label} isDisabled={item.disabled}>
+      return items.map((item) => (
+        <Item key={item.key} textValue={item.label}>
           {item.label}
         </Item>
       ));
     }, [items]);
+    const disabledKeys = useMemo(() => new Set(items.filter((item) => item.disabled).map((item) => item.key)), [items]);
     
     // React Aria useSelectState - pass children (Item components)
     const state = useSelectState({
@@ -96,12 +98,13 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
       defaultSelectedKey,
       selectedKey,
       onSelectionChange: onSelectionChange as any,
+      disabledKeys,
       isDisabled,
       ...rest
     } as any);
 
-    const triggerRef = useRef<HTMLButtonElement>(null);
-    const listBoxRef = useRef<HTMLUListElement>(null);
+    const triggerRef = useRef<HTMLButtonElement | null>(null);
+    const listBoxRef = useRef<HTMLUListElement | null>(null);
 
     const {
       labelProps,
@@ -151,13 +154,13 @@ export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
         )}
 
         <SelectTrigger
-          {...mergeProps(buttonProps, {
+          {...(mergeProps(buttonProps, {
             ref: triggerRef,
             size,
             isDisabled,
             isOpen: state.isOpen,
             'data-eui-state': error ? 'error' : undefined
-          })}
+          }) as any)}
         >
           <span {...valueProps} className="eui-select-value" data-placeholder={isPlaceholder}>
             {selectedText}

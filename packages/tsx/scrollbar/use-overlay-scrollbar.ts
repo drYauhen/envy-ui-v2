@@ -33,15 +33,15 @@ export interface UseOverlayScrollbarReturn {
   /**
    * Ref for content container (should have overflow-y: auto)
    */
-  contentRef: React.RefObject<HTMLElement>;
+  contentRef: React.RefObject<HTMLDivElement | null>;
   /**
    * Ref for track element
    */
-  trackRef: React.RefObject<HTMLDivElement>;
+  trackRef: React.RefObject<HTMLDivElement | null>;
   /**
    * Ref for thumb element
    */
-  thumbRef: React.RefObject<HTMLDivElement>;
+  thumbRef: React.RefObject<HTMLDivElement | null>;
   /**
    * Props for container (adds position: relative)
    */
@@ -80,9 +80,9 @@ export function useOverlayScrollbar(
     thumbHoverColor = 'rgba(0, 0, 0, 0.2)',
   } = options;
 
-  const contentRef = React.useRef<HTMLElement>(null);
-  const trackRef = React.useRef<HTMLDivElement>(null);
-  const thumbRef = React.useRef<HTMLDivElement>(null);
+  const contentRef = React.useRef<HTMLDivElement | null>(null);
+  const trackRef = React.useRef<HTMLDivElement | null>(null);
+  const thumbRef = React.useRef<HTMLDivElement | null>(null);
   const isDraggingRef = React.useRef(false);
 
   React.useEffect(() => {
@@ -231,13 +231,6 @@ export function useOverlayScrollbar(
       track.removeEventListener('click', handleTrackClick);
       contentResizeObserver.disconnect();
       trackResizeObserver.disconnect();
-    };
-
-    return () => {
-      content.removeEventListener('scroll', updateScrollbar);
-      thumb.removeEventListener('mousedown', handleThumbMouseDown);
-      track.removeEventListener('click', handleTrackClick);
-      resizeObserver.disconnect();
     };
   }, [thumbColor]);
 

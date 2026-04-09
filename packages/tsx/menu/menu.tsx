@@ -24,8 +24,8 @@ interface MenuContextValue {
   menuTriggerState: ReturnType<typeof useMenuTriggerState>;
   treeState: TreeState<object>;
   placement: 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end';
-  triggerRef: React.RefObject<HTMLElement>;
-  listRef: React.RefObject<HTMLUListElement>;
+  triggerRef: React.RefObject<HTMLElement | null>;
+  listRef: React.RefObject<HTMLUListElement | null>;
   triggerCallbackRef: (node: HTMLElement | null) => void;
   referenceRef: ((node: HTMLElement | null) => void) | null;
   floatingRef: ((node: HTMLElement | null) => void) | null;
@@ -57,8 +57,8 @@ export function Menu({ children, isOpen: controlledIsOpen, onOpenChange, placeme
   const isOpen = isControlled ? controlledIsOpen : uncontrolledIsOpen;
   const handleOpenChange = onOpenChange || setUncontrolledIsOpen;
 
-  const triggerRef = React.useRef<HTMLElement>(null);
-  const listRef = React.useRef<HTMLUListElement>(null);
+  const triggerRef = React.useRef<HTMLElement | null>(null);
+  const listRef = React.useRef<HTMLUListElement | null>(null);
 
   const menuTriggerState = useMenuTriggerState({
     isOpen,
@@ -150,15 +150,17 @@ export function MenuTrigger({ children, asChild = false }: MenuTriggerProps) {
   // Combine refs: use callback ref to connect both triggerRef and Floating UI referenceRef
   const combinedRef = React.useCallback((node: HTMLElement | null) => {
     triggerCallbackRef(node);
-    if (node && triggerRef) {
-      (triggerRef as React.MutableRefObject<HTMLElement | null>).current = node;
-    }
+    triggerRef.current = node;
   }, [triggerCallbackRef, triggerRef]);
+  const combinedButtonRef = React.useCallback((node: HTMLButtonElement | null) => {
+    combinedRef(node);
+  }, [combinedRef]);
 
   // Merge menu trigger props with child props (asChild pattern)
   if (asChild && React.isValidElement(children)) {
+    const child = children as React.ReactElement<any>;
     return React.cloneElement(children, {
-      ...mergeProps(menuTriggerProps, children.props),
+      ...mergeProps(menuTriggerProps, child.props),
       ref: combinedRef
     } as any);
   }
@@ -171,7 +173,7 @@ export function MenuTrigger({ children, asChild = false }: MenuTriggerProps) {
   return (
     <button
       {...mergeProps(buttonProps, hoverProps, focusProps)}
-      ref={combinedRef as React.RefObject<HTMLButtonElement>}
+      ref={combinedButtonRef}
       className={`${SYSTEM_PREFIX}-button`}
       data-eui-intent="secondary"
       data-eui-hovered={dataAttr(isHovered)}
@@ -205,8 +207,7 @@ export function MenuList({ children, className }: MenuListProps) {
   // disabledBehavior: 'all' means all items can be disabled
   const { menuProps } = useMenu(
     {
-      'aria-label': 'Menu',
-      disabledBehavior: 'all' as const
+      'aria-label': 'Menu'
     },
     context.treeState,
     listRef

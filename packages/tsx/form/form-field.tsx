@@ -89,7 +89,7 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
     };
 
     const resolvedInputProps = {
-      ...(childElement ? childElement.props : null),
+      ...(childElement ? (childElement.props as Record<string, unknown>) : {}),
       ...(inputProps ?? {}),
       ...(inputClassName ? { className: inputClassName } : null),
       ...(Object.keys(inputStyle).length ? { style: inputStyle } : null),
@@ -119,7 +119,7 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
 
     const inputNode = childElement ? (
       <div data-eui-slot="input">
-        {React.cloneElement(childElement, resolvedInputProps)}
+        {React.cloneElement(childElement as React.ReactElement<any>, resolvedInputProps)}
       </div>
     ) : (
       <div data-eui-slot="input">{children}</div>

@@ -3,7 +3,7 @@
 **Document ID:** workflow-storybook-workflow
 **Status:** Active
 **Date:** 2026-01-10
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
@@ -76,6 +76,13 @@ stories/
 ## Navigation Configuration
 
 Storybook navigation is controlled by `.storybook/navigation.config.ts`.
+
+### Storybook Customization Policy
+
+- Treat `.storybook/main.ts` as a thin wiring/config entrypoint only.
+- Put all custom runtime logic (Vite middleware/plugins, custom endpoints, upgrade-sensitive behavior) into dedicated files under `.storybook/plugins/`.
+- Do not place large custom implementations directly in `main.ts`; import and register plugin modules instead.
+- This policy reduces Storybook upgrade risk by isolating custom code from framework configuration.
 
 ### Section Order
 

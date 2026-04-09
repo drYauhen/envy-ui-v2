@@ -2,7 +2,7 @@ import { ButtonClean } from '@packages/tsx';
 import { Select } from '@packages/tsx/select';
 import { AlertBanner } from '@packages/tsx/alert-banner';
 import { useState } from 'react';
-import type { Key } from 'react';
+import type { Key } from '@react-types/shared';
 
 function Components() {
   const [selectedValue, setSelectedValue] = useState<string>('');
@@ -36,7 +36,7 @@ function Components() {
             label="Select an option"
             items={selectItems}
             selectedKey={selectedValue}
-            onSelectionChange={(key: Key) => setSelectedValue(key as string)}
+            onSelectionChange={(key: Key | null) => setSelectedValue((key ?? '') as string)}
             placeholder="Choose..."
           />
           {selectedValue && (
@@ -89,4 +89,3 @@ function Components() {
 }
 
 export default Components;
-

@@ -3,7 +3,7 @@
 **Document ID:** guide-docs-guide
 **Status:** Active
 **Date:** 2026-01-15
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
@@ -28,6 +28,8 @@ All non-ADR documentation metadata must be defined here FIRST:
 
 **ADR exception:** ADR metadata lives in `stories/viewers/docs/adr-list-data.ts` (single source of truth) and is imported into the registry for link mapping and Storybook navigation. Only ADR guide documents ([README](workflows/README.md), [AGENT-GUIDE](adr/AGENT-GUIDE.md), TEMPLATE) should be registered manually.
 
+**Migrations metadata:** Migration metadata lives in `stories/viewers/docs/migration-data.ts` and is imported into the registry for link mapping and Storybook navigation.
+
 ## Excluded Directories
 
 The following directories are intentionally excluded from Storybook registry and link validation warnings:
@@ -45,6 +47,7 @@ Docs are organized by section. Each section can have an overview story that list
 - `Docs/ADR` - Historical decisions
 - `Docs/Architecture` - Current rules and standards
 - `Docs/Workflows` - How to work with the system
+- `Docs/Migrations` - Third-party dependency migration records
 - `Docs/Tokens` - Token references and tooling
 
 **Overview pages (recommended):**

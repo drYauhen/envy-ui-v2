@@ -5,9 +5,6 @@ import App from './App';
 // Import design tokens first
 import '@generated/css/tokens.css';
 
-// Import Tailwind utilities
-import '@packages/tailwind/tailwind.css';
-
 // Import focus policy
 import '@src/ui/focus-policy.css';
 import '@src/ui/state.css';

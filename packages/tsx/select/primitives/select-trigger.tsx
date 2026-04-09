@@ -6,7 +6,7 @@ export interface SelectTriggerProps extends React.ButtonHTMLAttributes<HTMLButto
   /**
    * Selected value text to display
    */
-  value?: string;
+  value?: React.ButtonHTMLAttributes<HTMLButtonElement>['value'];
   /**
    * Whether value is placeholder
    */
@@ -69,5 +69,4 @@ export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
     );
   }
 );
-
 

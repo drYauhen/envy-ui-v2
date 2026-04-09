@@ -1,7 +1,8 @@
-import React, { useRef, Key, useMemo } from 'react';
-import { useComboBox, useListBox, useOption, AriaComboBoxProps, mergeProps } from 'react-aria';
+import React, { useRef, useMemo } from 'react';
+import { useComboBox, useOption, AriaComboBoxProps, mergeProps } from 'react-aria';
 import { useComboBoxState } from 'react-stately';
 import { Item } from '@react-stately/collections';
+import type { Key } from '@react-types/shared';
 import { SelectPopover, SelectListBox, SelectOption as SelectOptionPrimitive } from './primitives';
 
 export interface SearchableSelectItem {
@@ -26,15 +27,15 @@ export interface SearchableSelectProps extends Omit<AriaComboBoxProps<Searchable
   /**
    * Default selected key (uncontrolled)
    */
-  defaultSelectedKey?: Key;
+  defaultSelectedKey?: Key | null;
   /**
    * Selected key (controlled)
    */
-  selectedKey?: Key;
+  selectedKey?: Key | null;
   /**
    * Callback when selection changes
    */
-  onSelectionChange?: (key: Key) => void;
+  onSelectionChange?: (key: Key | null) => void;
   /**
    * Whether select is disabled
    */
@@ -82,12 +83,13 @@ export const SearchableSelect = React.forwardRef<HTMLDivElement, SearchableSelec
   ) {
     // Convert items array to children with Item components
     const children = useMemo(() => {
-      return items.map(item => (
-        <Item key={item.key} textValue={item.label} isDisabled={item.disabled}>
+      return items.map((item) => (
+        <Item key={item.key} textValue={item.label}>
           {item.label}
         </Item>
       ));
     }, [items]);
+    const disabledKeys = useMemo(() => new Set(items.filter((item) => item.disabled).map((item) => item.key)), [items]);
     
     // Custom filter function: search by contains (not just startsWith)
     // This allows searching anywhere in the text, not just at the beginning
@@ -103,21 +105,21 @@ export const SearchableSelect = React.forwardRef<HTMLDivElement, SearchableSelec
       defaultSelectedKey,
       selectedKey,
       onSelectionChange: onSelectionChange as any,
+      disabledKeys,
       isDisabled,
       defaultFilter: filterFunction, // Use contains filter instead of default startsWith
       allowsEmptyCollection: true, // Allow showing "No results" message
       ...rest
     } as any);
 
-    const inputRef = useRef<HTMLInputElement>(null);
-    const listBoxRef = useRef<HTMLUListElement>(null);
-    const popoverRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement | null>(null);
+    const listBoxRef = useRef<HTMLUListElement | null>(null);
+    const popoverRef = useRef<HTMLDivElement | null>(null);
 
     const {
       labelProps,
       inputProps,
-      listBoxProps,
-      popoverProps
+      listBoxProps
     } = useComboBox(
       {
         label,
@@ -171,7 +173,6 @@ export const SearchableSelect = React.forwardRef<HTMLDivElement, SearchableSelec
         />
 
         <SelectPopover
-          {...(popoverProps as Omit<any, 'ref'>)}
           ref={popoverRef}
           isOpen={state.isOpen}
           onClose={() => state.setOpen(false)}

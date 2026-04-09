@@ -3,7 +3,7 @@
 **Document ID:** workflow-workflow
 **Status:** Template
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Workflow
@@ -103,6 +103,7 @@ verify --output
 - [ ] [Validation item 2]
 - [ ] [Validation item 3]
 - [ ] [Validation item 4]
+- [ ] If this workflow upgrades dependencies/tooling, add a dated migration log in `docs/migrations/`
 
 ## Success Metrics
 

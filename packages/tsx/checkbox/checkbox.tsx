@@ -3,7 +3,7 @@ import systemMeta from '../../../system.meta.json';
 
 export type CheckboxSize = 'sm' | 'md' | 'lg';
 
-export type CheckboxCleanProps = React.InputHTMLAttributes<HTMLInputElement> & {
+export type CheckboxCleanProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   size?: CheckboxSize;
   indeterminate?: boolean;
 };

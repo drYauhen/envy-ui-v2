@@ -1,4 +1,4 @@
-import React, { useRef, Key, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import {
   mergeProps,
   useButton,
@@ -12,6 +12,7 @@ import {
 import { useOverlayTriggerState, useSearchFieldState, useTreeState, type TreeState } from 'react-stately';
 import { useControlledState } from '@react-stately/utils';
 import { Item } from '@react-stately/collections';
+import type { Key } from '@react-types/shared';
 import { SelectTrigger, SelectPopover, SelectListBox, SelectBadge } from './primitives';
 import { Icon } from '../icon';
 import { CheckboxClean } from '../checkbox';
@@ -217,7 +218,7 @@ const collectExpandableKeys = (items: MultiSelectTreeItem[], keys = new Set<Key>
 };
 
 const renderTreeItem = (item: MultiSelectTreeItem) => (
-  <Item key={item.key} textValue={item.label} childItems={item.children} isDisabled={item.disabled}>
+  <Item key={item.key} textValue={item.label} childItems={item.children}>
     {item.label}
   </Item>
 );
@@ -250,8 +251,8 @@ export const MultiSelectTree = React.forwardRef<HTMLDivElement, MultiSelectTreeP
     ref
   ) {
     const overlayState = useOverlayTriggerState({});
-    const triggerRef = useRef<HTMLButtonElement>(null);
-    const treeRef = useRef<HTMLUListElement>(null);
+    const triggerRef = useRef<HTMLButtonElement | null>(null);
+    const treeRef = useRef<HTMLUListElement | null>(null);
     const badgesRef = useRef<HTMLDivElement>(null);
     const badgeMeasureRef = useRef<HTMLDivElement>(null);
     const overflowMeasureRef = useRef<HTMLSpanElement>(null);
@@ -419,7 +420,6 @@ export const MultiSelectTree = React.forwardRef<HTMLDivElement, MultiSelectTreeP
 
     const state = useTreeState<MultiSelectTreeItem>({
       selectionMode: 'multiple',
-      selectionBehavior: 'toggle',
       items: filteredItems,
       children: renderTreeItem,
       disabledKeys,
@@ -677,7 +677,7 @@ export const MultiSelectTree = React.forwardRef<HTMLDivElement, MultiSelectTreeP
         )}
 
         <SelectTrigger
-          {...mergeProps(buttonProps, fieldProps, {
+          {...(mergeProps(buttonProps, fieldProps, {
             ref: triggerRef,
             size,
             isDisabled,
@@ -686,7 +686,7 @@ export const MultiSelectTree = React.forwardRef<HTMLDivElement, MultiSelectTreeP
             'data-eui-select-mode': 'multi',
             'aria-haspopup': 'tree',
             'aria-controls': treeId
-          })}
+          }) as any)}
         >
           {hasSelection ? (
             <div

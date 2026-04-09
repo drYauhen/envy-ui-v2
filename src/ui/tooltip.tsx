@@ -26,7 +26,7 @@ export type TooltipProps = {
 };
 
 export type TooltipTriggerProps = {
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
   /** Apply trigger props to the child instead of wrapping. */
   asChild?: boolean;
   className?: string;
@@ -55,8 +55,8 @@ const mergeRefs = <T,>(...refs: Array<React.Ref<T> | undefined>) => (node: T | n
 type TooltipContextValue = {
   state: ReturnType<typeof useTooltipTriggerState>;
   placement: TooltipPlacement;
-  triggerRef: React.RefObject<HTMLElement>;
-  tooltipRef: React.RefObject<HTMLDivElement>;
+  triggerRef: React.RefObject<HTMLElement | null>;
+  tooltipRef: React.RefObject<HTMLDivElement | null>;
   triggerCallbackRef: (node: HTMLElement | null) => void;
   triggerProps: React.HTMLAttributes<HTMLElement>;
   tooltipProps: React.HTMLAttributes<HTMLElement>;
@@ -92,8 +92,8 @@ export function Tooltip({
     closeDelay
   });
 
-  const triggerRef = React.useRef<HTMLElement>(null);
-  const tooltipRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<HTMLElement | null>(null);
+  const tooltipRef = React.useRef<HTMLDivElement | null>(null);
 
   const { triggerProps, tooltipProps: triggerTooltipProps } = useTooltipTrigger(
     { delay, closeDelay },
@@ -105,7 +105,13 @@ export function Tooltip({
 
   const { referenceRef, floatingRef, floatingStyles, getFloatingProps } = useFloatingPosition({
     isOpen: state.isOpen,
-    onOpenChange: state.setOpen,
+    onOpenChange: (open) => {
+      if (open) {
+        state.open(true);
+      } else {
+        state.close(true);
+      }
+    },
     placement: placement,
     offset: 0,
     clickOutsideToClose: false,
@@ -125,7 +131,7 @@ export function Tooltip({
     [referenceRef]
   );
 
-  const mergedTooltipProps = mergeProps(triggerTooltipProps, ariaTooltipProps);
+  const mergedTooltipProps = mergeProps(triggerTooltipProps, ariaTooltipProps) as React.HTMLAttributes<HTMLElement>;
 
   const value: TooltipContextValue = {
     state,
@@ -161,10 +167,11 @@ export function TooltipTrigger({ children, asChild = false, className }: Tooltip
   );
 
   if (asChild && React.isValidElement(children)) {
-    const childRef = (children as React.ReactElement & { ref?: React.Ref<HTMLElement> }).ref;
+    const child = children as React.ReactElement<any>;
+    const childRef = (child as React.ReactElement<any> & { ref?: React.Ref<HTMLElement> }).ref;
     const mergedRef = mergeRefs(childRef, combinedRef);
     return React.cloneElement(children, {
-      ...mergeProps(triggerProps, children.props, {
+      ...mergeProps(triggerProps, child.props, {
         [prefixedDataAttr('tooltip-trigger')]: ''
       }),
       ref: mergedRef

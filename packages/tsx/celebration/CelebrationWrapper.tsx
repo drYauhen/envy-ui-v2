@@ -11,7 +11,7 @@ interface CelebrationWrapperProps {
   value?: any;
   enabled?: boolean;
   onCelebrate?: () => void;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
 }
 
 export const CelebrationWrapper: React.FC<CelebrationWrapperProps> = ({
@@ -37,4 +37,3 @@ export const CelebrationWrapper: React.FC<CelebrationWrapperProps> = ({
     </Component>
   );
 };
-

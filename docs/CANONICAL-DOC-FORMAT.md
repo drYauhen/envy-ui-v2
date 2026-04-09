@@ -3,7 +3,7 @@
 **Document ID:** guide-canonical-documentation-format
 **Status:** <Proposed | Accepted | Exploratory | Superseded | Rejected>
 **Date:** 2026-01-15
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-08
 **Owner:** <name>
 **Assistance:** <AI-assisted drafting (human-reviewed) | None>
 **Category:** Guide
@@ -55,6 +55,54 @@
 - `Assistance` — AI assistance level
 - `Category` — Document category/type
 - `Related` — Related documents (can be empty section)
+
+### Migration Documents
+
+Scope: third-party dependency upgrade records only.
+
+**Canonical format:**
+
+```markdown
+# Migration: <Title>
+
+**Document ID:** migration-<slug>-<YYYY-MM-DD>
+**Status:** <Planned | In Progress | Completed | Rolled Back>
+**Risk:** <Low | Medium | High>
+**Date:** <YYYY-MM-DD>
+**Last Updated:** <YYYY-MM-DD>
+**Owner:** <name>
+**Assistance:** <AI-assisted drafting (human-reviewed) | None>
+**Category:** Migration
+
+---
+## Summary
+...
+
+## Risk Classification
+...
+
+## Changed Artifacts
+...
+
+## Validation Performed
+...
+
+## Outcome
+...
+```
+
+**Naming convention:**
+- `docs/migrations/YYYY-MM-DD-<scope>.md`
+
+**Mandatory fields:**
+- `Document ID`
+- `Status`
+- `Risk`
+- `Date`
+- `Last Updated`
+- `Owner`
+- `Assistance`
+- `Category`
 
 ## Field Formats
 

@@ -129,5 +129,19 @@ export const workflows: DocMetadata[] = [
     markdownPath: "/docs/workflows/WORKFLOW-009-resolver-migration-workflow.md",
     storybookId: "docs-workflows--resolver-migration-workflow",
     aliases: ["workflows/resolver-migration-workflow.md"]
+  },
+  {
+    number: "010",
+    title: "Dependency Upgrade Workflow",
+    category: "workflow",
+    status: "Active",
+    date: "2026-04-08",
+    lastUpdated: "2026-04-08",
+    owner: "Eugene Goncharov",
+    assistance: "AI-assisted drafting (human-reviewed)",
+    exportName: "dependencyUpgradeWorkflow",
+    markdownPath: "/docs/workflows/WORKFLOW-010-dependency-upgrade-workflow.md",
+    storybookId: "docs-workflows--dependency-upgrade-workflow",
+    aliases: ["workflows/dependency-upgrade-workflow.md"]
   }
 ];

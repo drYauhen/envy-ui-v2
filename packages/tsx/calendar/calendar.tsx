@@ -6,7 +6,7 @@ import { CalendarDate, createCalendar } from '@internationalized/date';
 import { CalendarGrid } from './calendar-grid';
 import { CalendarHeader } from './calendar-header';
 
-export interface CalendarProps extends Omit<AriaCalendarProps<Date>, 'value' | 'defaultValue' | 'onChange'> {
+export interface CalendarProps extends Omit<AriaCalendarProps<CalendarDate>, 'value' | 'defaultValue' | 'onChange' | 'minValue' | 'maxValue'> {
   /**
    * Selected date value (controlled)
    */
@@ -101,4 +101,3 @@ export const Calendar = React.forwardRef<HTMLDivElement, CalendarProps>(
     );
   }
 );
-

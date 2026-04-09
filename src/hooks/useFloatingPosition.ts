@@ -47,7 +47,7 @@ export interface UseFloatingPositionOptions {
   /** Whether clicking the reference toggles the floating element */
   clickToToggle?: boolean;
   /** External reference ref (if provided, will be used instead of internal ref) */
-  referenceRef?: React.RefObject<HTMLElement> | ((node: HTMLElement | null) => void);
+  referenceRef?: React.RefObject<HTMLElement | null> | ((node: HTMLElement | null) => void);
   /** Positioning strategy for the floating element */
   strategy?: Strategy;
   /** Additional Floating UI middleware to apply */

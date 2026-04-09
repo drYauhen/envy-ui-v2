@@ -15,7 +15,7 @@ export interface SelectPopoverProps extends React.HTMLAttributes<HTMLDivElement>
   /**
    * Reference element for positioning (can be RefObject or callback ref)
    */
-  referenceRef?: React.RefObject<HTMLElement> | ((node: HTMLElement | null) => void);
+  referenceRef?: React.RefObject<HTMLElement | null> | ((node: HTMLElement | null) => void);
   /**
    * Placement of popover relative to reference
    */
@@ -74,12 +74,13 @@ export const SelectPopover = forwardRef<HTMLDivElement, SelectPopoverProps>(
       []
     );
 
-    const offsetValue = React.useCallback(({ elements }: { elements: { reference?: Element | null } }) => {
+    const offsetValue = React.useCallback(({ elements }: { elements: { reference?: unknown } }) => {
       if (typeof window === 'undefined') {
         return { mainAxis: DEFAULT_DROPDOWN_OFFSET_PX, crossAxis: 0 };
       }
 
-      const referenceElement = elements.reference as HTMLElement | null | undefined;
+      const referenceElement =
+        elements.reference && elements.reference instanceof Element ? (elements.reference as HTMLElement) : null;
       if (!referenceElement) {
         return { mainAxis: DEFAULT_DROPDOWN_OFFSET_PX, crossAxis: 0 };
       }

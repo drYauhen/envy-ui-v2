@@ -5,7 +5,7 @@
  * in the Envy UI system (ADR, Architecture, Workflow, Token, Guide).
  */
 
-export type DocCategory = 'adr' | 'architecture' | 'workflow' | 'token' | 'guide';
+export type DocCategory = 'adr' | 'architecture' | 'workflow' | 'token' | 'guide' | 'migration';
 
 export type DocMetadata = {
   // Core identification

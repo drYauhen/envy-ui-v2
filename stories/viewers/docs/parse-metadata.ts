@@ -48,6 +48,12 @@ export function parseDocumentMetadata(content: string): {
     metadata.status = statusMatch[1].trim();
   }
 
+  // Risk (Migration records)
+  const riskMatch = metadataText.match(/\*\*Risk:\*\*\s*(.+)/);
+  if (riskMatch) {
+    metadata.risk = riskMatch[1].trim();
+  }
+
   // Date
   const dateMatch = metadataText.match(/\*\*Date:\*\*\s*(\d{4}-\d{2}-\d{2})/);
   if (dateMatch) {

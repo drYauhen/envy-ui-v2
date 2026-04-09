@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { ButtonIntent, ButtonShape, ButtonSize } from '../../../generated/tsx/button.contract';
+import type { ButtonIntent, ButtonShape, ButtonSize } from './button.types';
 import systemMeta from '../../../system.meta.json';
 
 export type ButtonCleanProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {

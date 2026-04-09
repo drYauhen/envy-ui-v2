@@ -20,6 +20,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(fu
     if (!React.isValidElement(child)) {
       return child;
     }
+    const typedChild = child as React.ReactElement<any>;
 
     const position =
       validCount <= 1
@@ -31,8 +32,8 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(fu
             : 'middle';
     currentIndex += 1;
 
-    const existingPosition = child.props['data-eui-group-position'];
-    const existingOrientation = child.props['data-eui-group-orientation'];
+    const existingPosition = typedChild.props['data-eui-group-position'];
+    const existingOrientation = typedChild.props['data-eui-group-orientation'];
 
     return React.cloneElement(child, {
       ...(existingPosition == null ? { 'data-eui-group-position': position } : null),

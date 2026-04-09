@@ -627,5 +627,18 @@ export const adrs: DocMetadata[] = [
     "exportName": "chartLikeSignalInteractionandHitAreaPolicy",
     "markdownPath": "/docs/adr/ADR-0048-chart-like-signal-interaction-and-hit-area-policy.md",
     "storybookId": "docs-adr--chart-like-signal-interactionand-hit-area-policy"
+  },
+  {
+    "number": "0049",
+    "title": "Dependency Upgrade Governance and Traceability",
+    "category": "adr",
+    "status": "Accepted",
+    "date": "2026-04-08",
+    "lastUpdated": "2026-04-08",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "dependencyUpgradeGovernanceandTraceability",
+    "markdownPath": "/docs/adr/ADR-0049-dependency-upgrade-governance-and-traceability.md",
+    "storybookId": "docs-adr--dependency-upgrade-governanceand-traceability"
   }
 ];

@@ -2,11 +2,15 @@ import React, { forwardRef, useCallback } from 'react';
 import { useFocusVisible } from 'react-aria';
 import { useOverlayScrollbar } from '../../scrollbar';
 
-export interface SelectListBoxProps extends React.HTMLAttributes<HTMLUListElement> {
+export interface SelectListBoxProps extends Omit<React.HTMLAttributes<HTMLUListElement>, 'autoFocus'> {
   /**
    * Additional CSS class
    */
   className?: string;
+  /**
+   * React Aria may pass focus strategy values (`first` / `last`) via listBoxProps.
+   */
+  autoFocus?: boolean | 'first' | 'last';
 }
 
 export const SelectListBox = forwardRef<HTMLUListElement, SelectListBoxProps>(
@@ -14,6 +18,7 @@ export const SelectListBox = forwardRef<HTMLUListElement, SelectListBoxProps>(
     {
       className,
       children,
+      autoFocus,
       ...rest
     },
     ref
@@ -44,6 +49,7 @@ export const SelectListBox = forwardRef<HTMLUListElement, SelectListBoxProps>(
             className={`eui-select-listbox ${className || ''}`}
             {...rest}
             data-eui-focus-visible={isFocusVisible || undefined}
+            data-eui-autofocus={typeof autoFocus === 'string' ? autoFocus : undefined}
           >
             {children}
           </ul>

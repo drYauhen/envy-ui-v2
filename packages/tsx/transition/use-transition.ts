@@ -8,8 +8,8 @@ interface UseTransitionOptions {
   onTransitionEnd?: () => void;
   manageFocus: boolean;
   focusSelector: string;
-  primaryRef: React.RefObject<HTMLDivElement>;
-  alternateRef: React.RefObject<HTMLDivElement>;
+  primaryRef: React.RefObject<HTMLDivElement | null>;
+  alternateRef: React.RefObject<HTMLDivElement | null>;
 }
 
 /**

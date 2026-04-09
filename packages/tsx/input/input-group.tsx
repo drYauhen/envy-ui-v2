@@ -26,8 +26,9 @@ export const InputGroupClean = React.forwardRef<HTMLDivElement, InputGroupCleanP
   let inputNode = children;
 
   if (React.isValidElement(children)) {
-    const childProps = children.props as Record<string, unknown>;
-    inputNode = React.cloneElement(children, {
+    const typedChild = children as React.ReactElement<any>;
+    const childProps = typedChild.props as Record<string, unknown>;
+    inputNode = React.cloneElement(typedChild, {
       className: mergeClassNames(prefixedClass('input'), childProps.className as string | undefined),
       [sizeAttr]: size,
       ...(state ? { [stateAttr]: state } : null)

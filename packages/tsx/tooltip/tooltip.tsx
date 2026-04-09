@@ -26,7 +26,7 @@ export type TooltipCleanProps = {
   /**
    * Trigger element that receives aria-describedby.
    */
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
 } & React.HTMLAttributes<HTMLSpanElement>;
 
 const SYSTEM_PREFIX = systemMeta?.tokens?.prefix ?? 'eui';
@@ -49,7 +49,7 @@ export const TooltipClean = React.forwardRef<HTMLSpanElement, TooltipCleanProps>
 ) {
   const tooltipId = React.useId();
 
-  const trigger = React.isValidElement(children) ? children : null;
+  const trigger = React.isValidElement<any>(children) ? (children as React.ReactElement<any>) : null;
   if (!trigger) {
     console.warn('TooltipClean expects a single React element as its child.');
   }

@@ -328,7 +328,8 @@ export const parameters: Preview['parameters'] = {
       
       // Special rules (from navigation.config.ts)
                                                       const specialRules = {
-        "Docs/ADR": { firstItem: "ADR Overview" }
+        "Docs/ADR": { firstItem: "ADR Overview" },
+        "Docs/Migrations": { firstItem: "Migrations Overview" }
       };
       
       // Section configs (from navigation.config.ts)
@@ -371,6 +372,17 @@ export const parameters: Preview['parameters'] = {
         if (aSectionIndex === -1) return 1;
         if (bSectionIndex === -1) return -1;
         return aSectionIndex - bSectionIndex;
+      }
+
+      // Keep Docs/Migrations as the last subsection inside Docs
+      if (aSection === 'Docs' && bSection === 'Docs') {
+        const aSubsection = aParts[1] || '';
+        const bSubsection = bParts[1] || '';
+        const aIsMigrations = aSubsection === 'Migrations';
+        const bIsMigrations = bSubsection === 'Migrations';
+        if (aIsMigrations !== bIsMigrations) {
+          return aIsMigrations ? 1 : -1;
+        }
       }
       
       // Apply special rules

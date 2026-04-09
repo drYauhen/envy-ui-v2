@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { mergeProps, useButton, useFocusRing, useHover } from 'react-aria';
 import type { AriaButtonProps, PressEvent } from 'react-aria';
-import type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/tsx/button.contract';
-export type { ButtonIntent, ButtonShape, ButtonSize } from '../../generated/tsx/button.contract';
+import type { ButtonIntent, ButtonShape, ButtonSize } from '../../packages/tsx/button/button.types';
+export type { ButtonIntent, ButtonShape, ButtonSize } from '../../packages/tsx/button/button.types';
 import systemMeta from '../../system.meta.json';
 import { ButtonGroup } from '../../packages/tsx/button/button-group';
 import type { ButtonGroupProps } from '../../packages/tsx/button/button-group';

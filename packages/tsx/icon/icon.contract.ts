@@ -2,6 +2,7 @@
  * Icon Component Contract
  * Defines the interface for icon components
  */
+import type { CSSProperties } from 'react';
 
 export interface IconProps {
   /**
@@ -20,6 +21,10 @@ export interface IconProps {
    * Additional CSS class name
    */
   className?: string;
+  /**
+   * Inline style for the icon wrapper/svg.
+   */
+  style?: CSSProperties;
   
   /**
    * Accessibility label for the icon
@@ -56,8 +61,6 @@ export interface IconProps {
    */
   rotationEasing?: string;
 }
-
-
 
 
 

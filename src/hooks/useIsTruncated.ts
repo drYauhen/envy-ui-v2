@@ -8,7 +8,7 @@ const isOverflowing = (element: HTMLElement) =>
 /**
  * Detects if an element's content is truncated (overflowing).
  */
-export function useIsTruncated(ref: RefObject<HTMLElement>, content: unknown) {
+export function useIsTruncated(ref: RefObject<HTMLElement | null>, content: unknown) {
   const [isTruncated, setIsTruncated] = useState(false);
 
   useLayoutEffect(() => {

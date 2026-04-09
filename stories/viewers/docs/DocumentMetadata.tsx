@@ -106,9 +106,26 @@ function formatLinkText(text: string, archPrefix: string | null): string {
   return `${archPrefix} — ${text}`;
 }
 
+function getRiskTone(risk: string): 'neutral' | 'success' | 'warning' | 'error' {
+  const normalized = risk.trim().toLowerCase();
+  if (normalized.startsWith('low')) return 'success';
+  if (normalized.startsWith('medium')) return 'warning';
+  if (normalized.startsWith('high')) return 'error';
+  return 'neutral';
+}
+
+function formatRiskLabel(risk: string): string {
+  const normalized = risk.trim().toLowerCase();
+  if (normalized.startsWith('low')) return 'Low';
+  if (normalized.startsWith('medium')) return 'Medium';
+  if (normalized.startsWith('high')) return 'High';
+  return risk.trim();
+}
+
 export type DocumentMetadataFields = {
   // Common fields
   status?: string;
+  risk?: string;
   date?: string;
   lastUpdated?: string;
   owner?: string;
@@ -194,6 +211,22 @@ export const DocumentMetadata = ({
           <>
             <dt className="eui-docs-metadata-label">Status</dt>
             <dd className="eui-docs-metadata-value eui-text-body-sm">{fields.status}</dd>
+          </>
+        )}
+
+        {/* Date */}
+        {fields.risk && (
+          <>
+            <dt className="eui-docs-metadata-label">Risk</dt>
+            <dd className="eui-docs-metadata-value eui-text-body-sm">
+              <span
+                className="eui-badge"
+                data-eui-variant="subtle"
+                data-eui-tone={getRiskTone(fields.risk)}
+              >
+                {formatRiskLabel(fields.risk)}
+              </span>
+            </dd>
           </>
         )}
 

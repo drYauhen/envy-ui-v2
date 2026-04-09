@@ -15,6 +15,7 @@
  * - adr-list-data.ts - ADR documents (existing)
  * - architecture-data.ts - Architecture documents
  * - workflow-data.ts - Workflow documents
+ * - migration-data.ts - Migration documents
  * - guide-data.ts - General guide documents
  */
 
@@ -22,6 +23,7 @@ import { DocRegistryItem } from './doc-types';
 import { adrs } from './adr-list-data';
 import { architectures } from './architecture-data';
 import { workflows } from './workflow-data';
+import { migrations } from './migration-data';
 import { guides } from './guide-data';
 import { tokens } from './tokens-data';
 
@@ -57,6 +59,18 @@ const workflowDocs: DocRegistryItem[] = workflows.map(workflow => ({
   status: workflow.status,
   storybookId: workflow.storybookId,
   aliases: workflow.aliases
+}));
+
+// Transform migration metadata into registry entries
+const migrationDocs: DocRegistryItem[] = migrations.map(migration => ({
+  id: `migration-${migration.number}`,
+  path: migration.markdownPath?.replace('/docs/', '') || `migrations/${migration.number}.md`,
+  title: migration.title,
+  category: migration.category || 'migration',
+  exportName: migration.exportName,
+  status: migration.status,
+  storybookId: migration.storybookId,
+  aliases: migration.aliases
 }));
 
 // Transform guide metadata into registry entries
@@ -177,6 +191,12 @@ const guideGuideDocs: DocRegistryItem[] = [
     path: 'GUIDES-TEMPLATE.md',
     title: 'Guide Document Template',
     category: 'other'
+  },
+  {
+    id: 'migrations-template',
+    path: 'migrations/MIGRATIONS-TEMPLATE.md',
+    title: 'Migration Document Template',
+    category: 'other'
   }
 ];
 
@@ -200,6 +220,7 @@ export const docsRegistry: DocRegistryItem[] = [
   ...architectureGuideDocs,
   ...workflowDocs,
   ...workflowGuideDocs,
+  ...migrationDocs,
   ...tokensDocs,
   ...tokensGuideDocs,
   ...guideDocs,

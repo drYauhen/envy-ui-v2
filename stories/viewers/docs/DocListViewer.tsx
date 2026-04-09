@@ -5,7 +5,7 @@ type DocListViewerProps = {
   title?: string;
   description?: React.ReactNode;
   docs: DocMetadata[];
-  category: 'adr' | 'architecture' | 'workflow' | 'token' | 'guide';
+  category: 'adr' | 'architecture' | 'workflow' | 'token' | 'guide' | 'migration';
 };
 
 /**
@@ -107,6 +107,7 @@ function getDefaultTitle(category: string): string {
     case 'workflow': return 'Workflow Documentation';
     case 'token': return 'Token Documentation';
     case 'guide': return 'Guide Documentation';
+    case 'migration': return 'Migration Documentation';
     default: return `${category.charAt(0).toUpperCase() + category.slice(1)} Documentation`;
   }
 }
@@ -138,6 +139,13 @@ function getDefaultDescription(category: string): React.ReactNode {
         <>
           <p>Workflow documentation for working with the Envy UI system.</p>
           <p>Learn how to contribute, maintain, and extend the design system.</p>
+        </>
+      );
+    case 'migration':
+      return (
+        <>
+          <p>Migration records capture third-party dependency upgrade change logs.</p>
+          <p>Use this section to audit externally driven package/API changes, required code updates, and validation results.</p>
         </>
       );
     default:
@@ -175,11 +183,23 @@ function getStatusTone(status: string, category: string): string {
     if (normalized === 'in-progress') return 'info';
   }
 
+  if (category === 'migration') {
+    if (normalized.startsWith('completed')) return 'success';
+    if (normalized.startsWith('in progress')) return 'info';
+    if (normalized.startsWith('planned')) return 'warning';
+    if (normalized.startsWith('rolled back')) return 'error';
+    if (normalized.startsWith('active')) return 'neutral';
+  }
+
   // Default neutral for unknown status values
   return 'neutral';
 }
 
 function getDocStoryPath(doc: DocMetadata, category: string): string {
+  if (doc.storybookId) {
+    return `./?path=/story/${doc.storybookId}`;
+  }
+
   const storyId = getStoryId(doc, category);
   return `./?path=/story/docs-${category}--${storyId}`;
 }

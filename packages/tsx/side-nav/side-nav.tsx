@@ -241,7 +241,7 @@ const FooterButton = React.memo(({
             name="chevron-right"
             rotate={showUserMode ? 180 : 0}
             animated={false}
-            aria-hidden="true"
+            aria-hidden={true}
           />
         </span>
       )}

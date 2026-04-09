@@ -3,7 +3,7 @@
 **Document ID:** guide-ai-agent-documentation
 **Status:** Active
 **Date:** 2026-01-15
-**Last Updated:** 2026-04-06
+**Last Updated:** 2026-04-08
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Guide
@@ -101,6 +101,24 @@ All document titles follow proper English Title Case with technical acronym pres
 ```
 
 **Mandatory fields:** Document ID, Status, Date, Last Updated, Owner, Assistance, Category, Related
+
+### Migration Logs (Third-Party Dependency Changes)
+
+**Location:** `docs/migrations/`  
+**Naming:** `YYYY-MM-DD-<upgrade-scope>.md`
+
+Use migration logs as the operational change log for third-party package/dependency upgrades only.
+
+Minimum required content:
+- upgraded package versions (`from -> to`);
+- impacted files/modules;
+- risk class (`Low | Medium | High`);
+- validation commands and outcomes;
+- residual risk/follow-up notes.
+
+For governance and process rules, follow:
+- [ADR-0049](adr/ADR-0049-dependency-upgrade-governance-and-traceability.md)
+- [WORKFLOW-010](workflows/WORKFLOW-010-dependency-upgrade-workflow.md)
 
 ## Complete Workflow for Creating/Updating Documents
 

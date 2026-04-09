@@ -1,5 +1,11 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import svgr from 'vite-plugin-svgr';
+import { createSourceFileEndpointPlugin } from './plugins/source-file-endpoint';
+
+const currentFilePath = fileURLToPath(import.meta.url);
+const currentDir = path.dirname(currentFilePath);
 
 const config: StorybookConfig = {
   stories: ['../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -17,8 +23,13 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public', '../docs', '../assets', '../tokens'],
   async viteFinal(config) {
-    // Add SVGR plugin to Vite config
+    const repoRoot = path.resolve(currentDir, '..');
+
     config.plugins = config.plugins || [];
+    // Keep main.ts as a thin wiring layer: custom Storybook behavior must live in .storybook/plugins/*.
+    config.plugins.push(createSourceFileEndpointPlugin(repoRoot));
+
+    // Add SVGR plugin to Vite config
     config.plugins.push(
       svgr({
         svgrOptions: {

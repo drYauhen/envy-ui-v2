@@ -18,6 +18,7 @@ function PageContent() {
       setLoading(false);
       return;
     }
+    const currentPageKey = pageKey;
 
     async function loadContent() {
       try {
@@ -43,7 +44,7 @@ function PageContent() {
         
         // Попытаться загрузить контент из БД
         try {
-          const pageContent = await getPageContent(pageKey);
+          const pageContent = await getPageContent(currentPageKey);
           setContent(pageContent);
         } catch (err) {
           // Если контент не найден, это нормально - покажем placeholder
@@ -163,4 +164,3 @@ function PageContent() {
 }
 
 export default PageContent;
-

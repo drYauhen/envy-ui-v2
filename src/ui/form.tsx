@@ -65,8 +65,7 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(functi
     label,
     description: helperText,
     errorMessage: errorText,
-    isInvalid: hasError,
-    isRequired: requiredState
+    isInvalid: hasError
   });
 
   return (
