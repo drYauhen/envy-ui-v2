@@ -13,13 +13,13 @@ This document explains the developer tools available for working with design tok
 
 ## Overview
 
-The Envy UI token system is a comprehensive design token architecture supporting multiple contexts (app, website, report) with DTCG [2025](../steps/2025-12-20-step.md).10 compliance. The old `web` name is deprecated and has been renamed to `website` (legacy artifacts may still exist under `tokens/legacy/contexts/web`). The system provides extensive tooling to improve developer experience:
+The Envy UI token system is a comprehensive design token architecture supporting multiple contexts (app, website, report) with DTCG [2025.10](../steps/2025-12-20-step.md) compliance. The old `web` name is deprecated and has been renamed to `website` (legacy artifacts may still exist under `tokens/legacy/contexts/web`). The system provides extensive tooling to improve developer experience:
 
 ### Core Features
 
 1. **Multi-Context Architecture** - Independent token structures for app/website/report contexts
 2. **Website Context** - Canonical, may temporarily inherit app semantics until specialized tokens are defined
-3. **DTCG [2025](../steps/2025-12-20-step.md).10 Compliance** - Local schema validation with official specification alignment
+3. **DTCG [2025.10](../steps/2025-12-20-step.md) Compliance** - Local schema validation with official specification alignment
 4. **Logical Typography Organization** - Typography tokens separated into focused semantic files
 5. **Enhanced Token Viewers** - Display both references and resolved values for transparency
 6. **TypeScript Integration** - Generated types and runtime utilities for type safety

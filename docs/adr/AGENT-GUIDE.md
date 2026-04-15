@@ -197,6 +197,52 @@ Links in ADR markdown files use format:
 - ✅ Link uses relative path: `./ADR-XXXX-...`
 - ✅ Title matches actual ADR title
 
+### Related vs References (Required Semantics)
+
+- `**Related:**` in the header is for architectural context only: documents this ADR depends on, extends, constrains, or supersedes.
+- `## References -> ### Internal Documents` is the full internal citation list used in the ADR body.
+- `Related` should stay concise (typically 3-7 links), while `Internal Documents` can be broader.
+- Every link in `Related` must also appear in `References -> Internal Documents`.
+
+### Related Section Formatting (Required)
+
+For `**Related:**`, every list item must include:
+1. a markdown link;
+2. a human-readable document title after the link.
+
+**Required format:**
+```markdown
+- [ADR-XXXX](./ADR-XXXX-title.md) — Document Title
+- [ARCH-category-XXX](../architecture/ARCH-category-XXX-title.md) — Document Title
+- [WORKFLOW-XXX](../workflows/WORKFLOW-XXX-name.md) — Document Title
+```
+
+**Do not use link-only entries:**
+```markdown
+- [ADR-XXXX](./ADR-XXXX-title.md)  ❌
+```
+
+### References Section Formatting (Required)
+
+For `## References -> ### Internal Documents`, every list item must include:
+1. a markdown link;
+2. a human-readable document title after the link.
+
+**Required format:**
+```markdown
+- [ADR-XXXX](./ADR-XXXX-title.md) — Document Title
+- [ARCH-category-XXX](../architecture/ARCH-category-XXX-title.md) — Document Title
+- [WORKFLOW-XXX](../workflows/WORKFLOW-XXX-name.md) — Document Title
+```
+
+**Do not use link-only entries:**
+```markdown
+- [ADR-XXXX](./ADR-XXXX-title.md)  ❌
+```
+
+Separator note:
+- Use em-dash `—` between link and title.
+
 ### Links to Architecture Documents
 
 When ADRs link to Architecture docs:
@@ -250,6 +296,9 @@ When creating/modifying ADR:
 - [ ] Restarted Storybook (if new story file created)
 - [ ] **Checked all Architecture document links exist** (create if missing)
 - [ ] **Updated `docs/architecture/README.md`** if created new Architecture document
+- [ ] Verified `Related` contains only key architectural context links (not full bibliography)
+- [ ] Verified every `Related` link also appears in `References -> Internal Documents`
+- [ ] Verified `References -> Internal Documents` entries are not link-only and include titles
 - [ ] Verified links work in Storybook
 - [ ] Checked overview page links work
 

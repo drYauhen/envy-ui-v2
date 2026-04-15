@@ -24,7 +24,7 @@ export const focusRingGeometryV1: Story = {
     <DocViewer
       markdownPath="/docs/adr/ADR-0040-focus-ring-geometry-v1.md"
       status="Accepted (v1)"
-      lastUpdated="2026-01-15"
+      lastUpdated="2026-04-07"
       fallback="Loading ADR-0040 Focus Ring Geometry V1..."
     />
   )

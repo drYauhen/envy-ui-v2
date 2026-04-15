@@ -5,9 +5,9 @@ import { getSectionParameters } from '../../../.storybook/preview';
 type Story = StoryObj;
 
 const meta: Meta = {
-  title: 'Docs/Architecture',
+  title: 'Docs/ADR',
   parameters: {
-    ...getSectionParameters('Docs/Architecture'),
+    ...getSectionParameters('Docs/ADR'),
     layout: 'fullscreen',
     controls: { hidden: true },
     actions: { hidden: true },
@@ -18,14 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const ArchComponentsNum001ComponentCssArchitecture: Story = {
-  name: 'ARCH-COMPONENTS-001 Component CSS Architecture',
+export const fluent2ReflectionvsEnvyUIV2: Story = {
+  name: 'ADR-0051 Fluent 2 Reflection vs Envy UI V2',
   render: () => (
     <DocViewer
-      markdownPath="/docs/architecture/ARCH-components-001-component-css-architecture.md"
-      status="Mandatory"
-      lastUpdated="2026-04-07"
-      fallback="Loading ARCH-COMPONENTS-001 Component CSS Architecture..."
+      markdownPath="/docs/adr/ADR-0051-fluent-2-reflection-vs-envy-ui-v2.md"
+      status="Proposed (Reflective Benchmark)"
+      lastUpdated="2026-04-14"
+      fallback="Loading ADR-0051 Fluent 2 Reflection vs Envy UI V2..."
     />
   )
 };

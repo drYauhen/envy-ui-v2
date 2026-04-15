@@ -24,7 +24,7 @@ export const componentContractDefinitionandAgentConsumption: Story = {
     <DocViewer
       markdownPath="/docs/adr/ADR-0044-component-contract-definition-and-agent-consumption.md"
       status="Accepted"
-      lastUpdated="2026-02-18"
+      lastUpdated="2026-04-07"
       fallback="Loading ADR-0044 Component Contract Definition and Agent Consumption..."
     />
   )

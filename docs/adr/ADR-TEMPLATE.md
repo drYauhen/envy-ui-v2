@@ -7,6 +7,10 @@
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Template
+**Related:**
+
+- [ADR-XXXX](./ADR-XXXX-title.md) — Example of adjacent architectural context
+- [WORKFLOW-005](../workflows/WORKFLOW-005-tokens-workflow.md) — Example of operational workflow context
 
 ---
 ## Context
@@ -47,5 +51,16 @@ I decided to <concise statement of the decision>.
 - <https://www.w3.org/WAI/ARIA/apg/>
 
 **Authoring rule:** Keep the full reference list in this final section. In the body text, add inline links at first mention when a specific statement depends on a document or standard.
+
+**`Related` vs `References -> Internal Documents` (required intent):**
+- `Related` in the header is a curated architecture-context list for this ADR (documents this decision depends on, extends, constrains, or supersedes).
+- `References -> Internal Documents` is the full internal citation list used across the ADR body.
+- `Related` should be concise (typically 3-7 items) and must be a subset of `References -> Internal Documents`.
+
+**Internal Documents format rule (required):**
+- Each entry must include both link and document title in one line:
+  - `- [DOC-ID](./ADR-0049-dependency-upgrade-governance-and-traceability.md) — Human-readable document title`
+- Do not use link-only entries (for example, `- [ADR-XXXX](./ADR-XXXX-title.md)` without title text).
+- Separator style: use em-dash `—` between link and title.
 
 **Link behavior rule:** Use normal relative markdown links (do not hardcode Storybook URLs). Internal registered `.md` docs open in the current Storybook tab. Code-file links (`.ts/.tsx/.js/.mjs/.css/.json`) open via Source File Viewer in a new tab. External or unregistered links open in a new tab with external-link indicator.

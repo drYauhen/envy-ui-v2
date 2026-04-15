@@ -106,6 +106,7 @@ PDF/UA is necessary for tagged, navigable accessible PDFs, but not sufficient as
 
 ### Internal Documents
 
+- [ADR-0014](./ADR-0014-color-model-tonal-scales-and-contextual-architecture.md) — Color Model, Tonal Scales, and Contextual Architecture
 - [ADR-0029](./ADR-0029-accessibility-architecture-and-decision-framework.md) — Accessibility Architecture and Decision Framework
 - [ADR-0033](./ADR-0033-accessibility-strategy-theme-switching-across-contexts.md) — Accessibility Strategy for Theme Switching Across Contexts
 - [ADR-0047](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md) — Signal Pattern Accessibility and Cross-Renderer Parity

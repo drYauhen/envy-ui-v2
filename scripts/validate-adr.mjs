@@ -54,16 +54,19 @@ adrFiles.forEach(file => {
   }
 
   const [, number, title] = match;
+  const normalizeLinkPath = (value) => value.trim().replace(/^\.\//, '').replace(/\\/g, '/');
 
   // Check ADR list (DocMetadata format now includes "number" field)
   if (!adrListContent.includes(`"number": "${number}"`)) {
     errors.push(`❌ Missing in ADR list: ADR-${number} (${file})`);
   }
   
-  // Check story file
-  const storyFile = `stories/docs/adr/adr-${number.toLowerCase()}.stories.tsx`;
+  // Check story file (current canonical name + legacy fallback)
+  const canonicalStoryFile = `stories/docs/adr/ADR-${number}-${title}.stories.tsx`;
+  const legacyStoryFile = `stories/docs/adr/adr-${number.toLowerCase()}.stories.tsx`;
+  const storyFile = existsSync(canonicalStoryFile) ? canonicalStoryFile : legacyStoryFile;
   if (!existsSync(storyFile)) {
-    warnings.push(`⚠️  Story file missing: ${storyFile}`);
+    warnings.push(`⚠️  Story file missing: ${canonicalStoryFile}`);
   } else {
     // NEW: Validate exportName matches actual export in story file
     const storyContent = readFileSync(storyFile, 'utf-8');
@@ -115,18 +118,9 @@ adrFiles.forEach(file => {
     errors.push(`❌ ADR-${number}: Missing Date field`);
   }
   
-  // Check Assistance field formatting
-  const assistanceMatch = content.match(/\*\*Assistance:\*\*\s*(.+?)(\n|$)/);
-  if (assistanceMatch) {
-    // Check for trailing spaces (should have 2 spaces for markdown line break)
-    const assistanceLine = assistanceMatch[0];
-    if (!assistanceLine.endsWith('  \n') && !assistanceLine.endsWith('  \r\n') && !assistanceLine.endsWith('  ')) {
-      warnings.push(`⚠️  ADR-${number}: Assistance field should end with 2 spaces for markdown line break`);
-    }
-  }
-  
   // Check Related field formatting
-  const relatedMatch = content.match(/\*\*Related:\*\*\s*(.+?)(\n\n|---)/s);
+  const relatedMatch = content.match(/\*\*Related:\*\*[ \t]*\n([\s\S]*?)(\n---|\n## |$)/);
+  const relatedLinkSet = new Set();
   if (relatedMatch) {
     const relatedContent = relatedMatch[1];
     
@@ -149,12 +143,27 @@ adrFiles.forEach(file => {
       errors.push(`❌ ADR-${number}: Should use '**Related:**' not '**Related ADRs:**'`);
     }
     
-    // Check format: should be "- [ADR-XXXX](./file.md) — Title"
-    const relatedLines = relatedContent.split('\n').filter(l => l.trim().startsWith('-'));
+    // Check format: should be "- [DOC-ID](path) — Title"
+    const relatedLines = relatedContent.split('\n').filter(l => /^-\s+/.test(l.trim()));
     relatedLines.forEach((line, index) => {
-      // Allow flexible format but check for basic structure
-      if (!line.match(/^-\s+\[ADR-\d+\]\(\.\/ADR-\d+-.+\.md\)/)) {
-        warnings.push(`⚠️  ADR-${number}: Related link format should be: '- [ADR-XXXX](./file.md) — Title' (line ${index + 1})`);
+      const trimmed = line.trim();
+      const relatedLinkMatch = trimmed.match(/^-\s+\[([^\]]+)\]\(([^)]+)\)(.*)$/);
+      if (!relatedLinkMatch) {
+        warnings.push(`⚠️  ADR-${number}: Related entry should use '- [DOC-ID](path) — Title' format (line ${index + 1})`);
+        return;
+      }
+
+      const [, , linkPath, rawSuffix] = relatedLinkMatch;
+      relatedLinkSet.add(normalizeLinkPath(linkPath));
+
+      const suffix = rawSuffix.trim();
+      const hasTitleAfterLink = /^—\s+\S+/.test(suffix);
+      if (!hasTitleAfterLink) {
+        if (/^-\s+\S+/.test(suffix)) {
+          warnings.push(`⚠️  ADR-${number}: Related entries should use em-dash separator: '- [Link](path) — Title' (line ${index + 1})`);
+        } else {
+          warnings.push(`⚠️  ADR-${number}: Related entry should include title text after link using '— Title' format (line ${index + 1})`);
+        }
       }
     });
   } else {
@@ -163,35 +172,44 @@ adrFiles.forEach(file => {
       errors.push(`❌ ADR-${number}: Should use '**Related:**' not '**Related ADRs:**'`);
     }
   }
-  
-  // Check for proper spacing after header fields
-  const headerSection = content.match(/# ADR-\d+:.*?\n\n(.*?)(\n\n---|\n\n##)/s);
-  if (headerSection) {
-    const headerFields = headerSection[1];
-    // Check that each field ends with 2 spaces (for markdown line break)
-    const fieldPatterns = [
-      { name: 'Status', pattern: /\*\*Status:\*\*\s*(.+?)(\n|$)/ },
-      { name: 'Date', pattern: /\*\*Date:\*\*\s*(.+?)(\n|$)/ },
-      { name: 'Owner', pattern: /\*\*Owner:\*\*\s*(.+?)(\n|$)/ },
-      { name: 'Assistance', pattern: /\*\*Assistance:\*\*\s*(.+?)(\n|$)/ },
-      { name: 'Related', pattern: /\*\*Related:\*\*\s*(.+?)(\n|$)/ }
-    ];
-    
-    fieldPatterns.forEach(({ name, pattern }) => {
-      const match = headerFields.match(pattern);
-      if (match) {
-        const line = match[0];
-        // Check if line doesn't end with 2 spaces (unless it's the last field before blank line)
-        if (!line.endsWith('  \n') && !line.endsWith('  \r\n') && name !== 'Related') {
-          // Allow if next line is blank or Related field
-          const nextLineIndex = headerFields.indexOf(line) + line.length;
-          const nextChar = headerFields[nextLineIndex];
-          if (nextChar !== '\n' && nextChar !== undefined) {
-            warnings.push(`⚠️  ADR-${number}: ${name} field should end with 2 spaces for markdown line break`);
-          }
+
+  // Check References -> Internal Documents formatting
+  const internalDocsSectionMatch = content.match(/### Internal Documents\s*([\s\S]*?)(\n### |\n## |$)/);
+  const internalDocsLinkSet = new Set();
+  if (internalDocsSectionMatch) {
+    const internalDocsContent = internalDocsSectionMatch[1];
+    const internalDocLines = internalDocsContent
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => /^-\s+/.test(line));
+
+    internalDocLines.forEach((line, index) => {
+      // Require: - [LINK](path) — Title
+      const linkLineMatch = line.match(/^-\s+\[([^\]]+)\]\(([^)]+)\)(.*)$/);
+      if (!linkLineMatch) return;
+
+      const [, , linkPath, rawSuffix] = linkLineMatch;
+      internalDocsLinkSet.add(normalizeLinkPath(linkPath));
+
+      const suffix = rawSuffix.trim();
+      const hasTitleAfterLink = /^—\s+\S+/.test(suffix);
+      if (!hasTitleAfterLink) {
+        if (/^-\s+\S+/.test(suffix)) {
+          warnings.push(`⚠️  ADR-${number}: References/Internal Documents should use em-dash separator: '- [Link](path) — Title' (line ${index + 1})`);
+        } else {
+          warnings.push(`⚠️  ADR-${number}: References/Internal Documents entry should include title text after link using '— Title' format (line ${index + 1})`);
         }
       }
     });
+  }
+
+  // If References/Internal Documents exists, Related links must be a subset of it
+  if (relatedLinkSet.size > 0 && internalDocsLinkSet.size > 0) {
+    for (const relatedLink of relatedLinkSet) {
+      if (!internalDocsLinkSet.has(relatedLink)) {
+        warnings.push(`⚠️  ADR-${number}: Related link '${relatedLink}' should also be listed in References -> Internal Documents`);
+      }
+    }
   }
 });
 
@@ -215,4 +233,3 @@ if (errors.length === 0 && warnings.length === 0) {
   console.log(`\nFound ${errors.length} error(s) and ${warnings.length} warning(s).\n`);
   process.exit(errors.length > 0 ? 1 : 0);
 }
-

@@ -53,6 +53,9 @@ Short version:
 2. Create the ADR markdown file from the template
 3. Run `npm run adr:generate` and `npm run adr:validate`
 4. Restart Storybook if a new story file was created
+5. Keep header `Related` curated (architecture context only), not full bibliography
+6. Ensure `Related` links also exist in `References -> Internal Documents`
+7. Ensure `References -> Internal Documents` entries are not link-only and use `—` between link and document title
 
 ## Single Source of Truth
 

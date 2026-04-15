@@ -24,7 +24,7 @@ export const dropdownTriggerGapandFocusClearance: Story = {
     <DocViewer
       markdownPath="/docs/adr/ADR-0043-dropdown-trigger-gap-and-focus-clearance.md"
       status="Accepted"
-      lastUpdated="2026-02-18"
+      lastUpdated="2026-04-07"
       fallback="Loading ADR-0043 Dropdown Trigger Gap and Focus Clearance..."
     />
   )

@@ -26,7 +26,7 @@ The Envy UI token system is a comprehensive design token architecture that suppo
 ## Core Principles
 
 1. **Canonical Resolution Chain** - Primitives → Raw → Semantics → Themes → Components
-2. **DTCG Compliance** - Follows Design Tokens Community Group [2025](../steps/2025-12-20-step.md).10 specification
+2. **DTCG Compliance** - Follows Design Tokens Community Group [2025.10](../steps/2025-12-20-step.md) specification
 3. **Multi-Context Support** - Independent token structures for different use cases
 4. **Zero Literal Leaks** - All literal values live only in primitives
 5. **Zero Self-Aliases** - No `x -> {x}` references anywhere in canon
@@ -268,7 +268,7 @@ The accessibility theme provides WCAG 2.2 AA compliance with:
 
 ### Local Schema Implementation
 
-All token files reference a local DTCG [2025](../steps/2025-12-20-step.md).10 compliant schema:
+All token files reference a local DTCG [2025.10](../steps/2025-12-20-step.md) compliant schema:
 
 ```json
 {
@@ -280,7 +280,7 @@ All token files reference a local DTCG [2025](../steps/2025-12-20-step.md).10 co
 ```
 
 ### Schema Features
-- ✅ **DTCG [2025](../steps/2025-12-20-step.md).10 Compliant** - Based on official specification
+- ✅ **DTCG [2025.10](../steps/2025-12-20-step.md) Compliant** - Based on official specification
 - ✅ **Local Validation** - No external dependencies
 - ✅ **IDE Support** - JSON schema validation in editors
 - ✅ **Future-Proof** - Can be updated when official schema is published

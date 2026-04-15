@@ -24,7 +24,7 @@ export const ArchTokensNum005SignalPatternAuthoringRules: Story = {
     <DocViewer
       markdownPath="/docs/architecture/ARCH-tokens-005-signal-pattern-authoring-rules.md"
       status="Active"
-      lastUpdated="2026-04-06"
+      lastUpdated="2026-04-08"
       fallback="Loading ARCH-TOKENS-005 Signal Pattern Authoring Rules..."
     />
   )

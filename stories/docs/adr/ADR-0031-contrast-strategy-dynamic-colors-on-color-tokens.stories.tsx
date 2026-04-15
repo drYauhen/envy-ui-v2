@@ -23,8 +23,8 @@ export const contrastStrategyDynamicColorsonColorTokens: Story = {
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md"
-      status="Proposed"
-      lastUpdated="2026-01-05"
+      status="Proposed (Regulatory Baseline Revision)"
+      lastUpdated="2026-04-08"
       fallback="Loading ADR-0031 Contrast Strategy Dynamic Colors on Color Tokens..."
     />
   )

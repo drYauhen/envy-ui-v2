@@ -34,7 +34,7 @@ The Envy UI documentation system uses a **unified, automated approach** for mana
 **Purpose:** Ensures consistent, professional Title Case formatting across all documentation.
 
 **Rules:**
-- Preserves acronyms in uppercase (UI, API, CSS, HTML, ARIA, AI, ML, DTCG, etc.)
+- Preserves acronyms in uppercase (UI, API, CSS, HTML, ARIA, AI, ML, DTCG, WCAG, etc.)
 - Lowercases small words (and, or, the, of, in, on, at, etc.)
 - Always capitalizes first and last word
 

@@ -18,14 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const chartLikeSignalInteractionandHitAreaPolicy: Story = {
-  name: 'ADR-0048 Chart Like Signal Interaction and Hit Area Policy',
+export const wCAG3LongTermReadinessVisionandArchitecturalReflection: Story = {
+  name: 'ADR-0050 WCAG 3 Long Term Readiness Vision and Architectural Reflection',
   render: () => (
     <DocViewer
-      markdownPath="/docs/adr/ADR-0048-chart-like-signal-interaction-and-hit-area-policy.md"
-      status="Accepted"
-      lastUpdated="2026-04-08"
-      fallback="Loading ADR-0048 Chart Like Signal Interaction and Hit Area Policy..."
+      markdownPath="/docs/adr/ADR-0050-wcag-3-long-term-readiness-vision-and-architectural-reflection.md"
+      status="Proposed (Exploratory - Long-term Vision)"
+      lastUpdated="2026-04-14"
+      fallback="Loading ADR-0050 WCAG 3 Long Term Readiness Vision and Architectural Reflection..."
     />
   )
 };

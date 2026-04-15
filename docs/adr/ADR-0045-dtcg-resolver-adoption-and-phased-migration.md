@@ -7,10 +7,10 @@
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
 
-- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) - Canonical Token Architecture - Locked  
-- [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md) - Canonical Token CSS Output Contract  
-- [ADR-0041](./ADR-0041-dtcg-schema-resolution-and-token-architecture.md) - DTCG Schema Resolution and Token Architecture Improvements  
-- [WORKFLOW-009](../workflows/WORKFLOW-009-resolver-migration-workflow.md) - Resolver Migration Workflow  
+- [ADR-0037](./ADR-0037-canonical-token-architecture-locked.md) — Canonical Token Architecture - Locked  
+- [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract  
+- [ADR-0041](./ADR-0041-dtcg-schema-resolution-and-token-architecture.md) — DTCG Schema Resolution and Token Architecture Improvements  
+- [WORKFLOW-009](../workflows/WORKFLOW-009-resolver-migration-workflow.md) — Resolver Migration Workflow  
 
 ---
 

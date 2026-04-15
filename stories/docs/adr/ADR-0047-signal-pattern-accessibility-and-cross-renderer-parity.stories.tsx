@@ -24,7 +24,7 @@ export const signalPatternAccessibilityandCrossRendererParity: Story = {
     <DocViewer
       markdownPath="/docs/adr/ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md"
       status="Accepted (Implemented v1)"
-      lastUpdated="2026-04-06"
+      lastUpdated="2026-04-08"
       fallback="Loading ADR-0047 Signal Pattern Accessibility and Cross Renderer Parity..."
     />
   )

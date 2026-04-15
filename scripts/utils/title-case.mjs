@@ -24,7 +24,7 @@ const ACRONYMS = new Set([
   'ux', 'dx',
 
   // Other
-  'id', 'ids', 'uuid', 'guid', 'rgb', 'rgba', 'hsl', 'hsla', 'dtcg'
+  'id', 'ids', 'uuid', 'guid', 'rgb', 'rgba', 'hsl', 'hsla', 'dtcg', 'wcag'
 ]);
 
 /**

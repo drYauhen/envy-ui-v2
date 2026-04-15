@@ -66,9 +66,29 @@ All document titles follow proper English Title Case with technical acronym pres
 
 ## Context
 ...
+
+## References
+
+### Internal Documents
+- [ADR-XXXX](./ADR-XXXX-title.md) — Related ADR Title
+- [ARCH-category-XXX](../architecture/ARCH-category-XXX-title.md) — Related Architecture Document
+
+### External Standards
+- <https://example.com/standard>
 ```
 
 **Mandatory fields:** Status, Date, Last Updated, Owner, Assistance, Related
+
+**`Related` vs `References -> Internal Documents` (required intent):**
+- `Related` is curated architectural context for the decision (depends on, extends, constrains, supersedes).
+- `References -> Internal Documents` is the full internal citation list used in ADR content.
+- Every link in `Related` must also appear in `References -> Internal Documents`.
+
+**ADR reference formatting rule (required):**
+- In `**Related:**`, each item must include link + document title (no link-only entries).
+- In `### Internal Documents`, each item must include link + document title.
+- Do not use link-only entries such as `- [ADR-XXXX](./ADR-XXXX-title.md)`.
+- Use em-dash `—` as the separator between link and title.
 
 **Authorial voice rules:**
 - Decision statements use first-person singular to match the named owner ("I decided...", "I intentionally chose...")
@@ -192,7 +212,7 @@ Checks:
 ### Acronyms (Always Uppercase)
 
 **Technical:**
-UI, API, CSS, HTML, ARIA, DOM, HTTP, HTTPS, URL, URI, SVG, XML, JSON, REST, AJAX, CORS
+UI, API, CSS, HTML, ARIA, DOM, HTTP, HTTPS, URL, URI, SVG, XML, JSON, REST, AJAX, CORS, WCAG, DTCG
 
 **JavaScript/TypeScript:**
 JS, JSX, TS, TSX, NPM, CLI, SDK

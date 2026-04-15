@@ -126,15 +126,24 @@ docs/adr/ADR-0027-figma-migration-strategy.md
 4. **Related field rules:**
    - **Field name:** Always use `**Related:**` (not "Related ADRs" or other variants)
    - **Format:** Multi-line list with `-` markers (not `*`)
-   - **Link format:** `- [ADR-XXXX](./ADR-XXXX-title.md) — Title`
+   - **Link format:** `- [DOC-ID](path) — Title`
    - **Separator:** Use em-dash `—` (not hyphen `-` or parentheses `()`)
    - **Trailing spaces:** Each line should end with 2 spaces for markdown line breaks
    - **Blank line:** Must have blank line after `**Related:**` before list items
+   - **Scope:** Keep `Related` as curated architecture context (typically 3-7 links), not full bibliography
 
 5. **Why trailing spaces matter:**
    - Markdown requires 2 trailing spaces for line breaks
    - Without them, fields run together on the same line
    - Validation script checks for this automatically
+
+6. **References -> Internal Documents format (required):**
+   - Each entry must include link + document title:
+     - `- [DOC-ID](path) — Document Title`
+   - Do not use link-only entries (for example, `- [ADR-XXXX](./ADR-XXXX-title.md)`).
+   - Use em-dash `—` between link and title.
+   - This is the full internal citation list for the ADR body.
+   - Every link listed in `Related` should also appear here.
 
 ### Step 3: Ensure Canonical Format
 
@@ -311,6 +320,21 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
    - List all referenced ADRs
    - Use consistent format with em-dash separator
 
+**When adding links to References -> Internal Documents:**
+1. **Format:**
+   ```markdown
+   - [ADR-XXXX](./ADR-XXXX-descriptive-title.md) — Document Title
+   ```
+2. **Check:**
+   - ✅ Link exists and resolves
+   - ✅ Title text is present after link
+   - ✅ No link-only entries
+
+**When curating header `Related`:**
+1. **Use only architecture-critical context links** (depends on, extends, constrains, supersedes).
+2. **Do not duplicate full bibliography** in header.
+3. **Ensure subset rule:** every `Related` link must also be present in `References -> Internal Documents`.
+
 **When adding links to Architecture documents:**
 
 1. **CRITICAL: Check if document exists FIRST:**
@@ -426,11 +450,13 @@ When creating a new ADR:
 - **Title Case:** Automatically applied during generation (UI, API, CSS, etc.)
 - **Metadata:** Rendered as structured definition list with callout component
 - **Links:** Always verify target files exist before creating links
+- **Related semantics:** Header `Related` is curated architectural context, not a complete source list
+- **References quality:** In `References -> Internal Documents`, every entry must include `- [Link](path) — Document Title` (no link-only lines)
 
 ### Title Case Reminder
 
 Common acronyms that should be uppercase:
-- UI, API, CSS, HTML, ARIA, DOM, JSX, TSX, AI, ML, UX, DX, DTCG
+- UI, API, CSS, HTML, ARIA, DOM, JSX, TSX, AI, ML, UX, DX, DTCG, WCAG
 
 Common small words that should be lowercase:
 - and, or, the, of, in, on, at, to, for, with, vs, as, by

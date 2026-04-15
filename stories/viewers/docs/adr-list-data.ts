@@ -640,5 +640,44 @@ export const adrs: DocMetadata[] = [
     "exportName": "dependencyUpgradeGovernanceandTraceability",
     "markdownPath": "/docs/adr/ADR-0049-dependency-upgrade-governance-and-traceability.md",
     "storybookId": "docs-adr--dependency-upgrade-governanceand-traceability"
+  },
+  {
+    "number": "0050",
+    "title": "WCAG 3 Long Term Readiness Vision and Architectural Reflection",
+    "category": "adr",
+    "status": "Proposed (Exploratory - Long-term Vision)",
+    "date": "2026-04-14",
+    "lastUpdated": "2026-04-14",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "wCAG3LongTermReadinessVisionandArchitecturalReflection",
+    "markdownPath": "/docs/adr/ADR-0050-wcag-3-long-term-readiness-vision-and-architectural-reflection.md",
+    "storybookId": "docs-adr--w-cag-3-long-term-readiness-visionand-architectural-reflection"
+  },
+  {
+    "number": "0051",
+    "title": "Fluent 2 Reflection vs Envy UI V2",
+    "category": "adr",
+    "status": "Proposed (Reflective Benchmark)",
+    "date": "2026-04-14",
+    "lastUpdated": "2026-04-14",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "fluent2ReflectionvsEnvyUIV2",
+    "markdownPath": "/docs/adr/ADR-0051-fluent-2-reflection-vs-envy-ui-v2.md",
+    "storybookId": "docs-adr--fluent-2-reflectionvs-envy-uiv-2"
+  },
+  {
+    "number": "0052",
+    "title": "Ide Agentic Shift Cursor 3 Signal and Envy UI V2",
+    "category": "adr",
+    "status": "Proposed (Reflective Benchmark)",
+    "date": "2026-04-15",
+    "lastUpdated": "2026-04-15",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "ideAgenticShiftCursor3SignalandEnvyUIV2",
+    "markdownPath": "/docs/adr/ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md",
+    "storybookId": "docs-adr--ide-agentic-shift-cursor-3-signaland-envy-uiv-2"
   }
 ];
