@@ -26,7 +26,7 @@ This affects not only Highcharts. The same policy must work for chart-like compo
 
 ## Decision
 
-I decided to define a renderer-agnostic interaction policy for chart-like signal components, with Highcharts as the first concrete adapter.
+I decided to define a renderer-agnostic interaction policy for chart-like signal components, with Highcharts as the first concrete reference adapter (not the policy boundary).
 
 The policy is:
 
@@ -74,14 +74,14 @@ This policy can be adopted incrementally in existing stories and integrations wi
 
 ## Implemented Scope (Current Step)
 
-Applied in current Storybook chart examples:
+Current validation examples (representative adapters):
 
 1. [`stories/architecture/signal-patterns.stories.tsx`](../../stories/architecture/signal-patterns.stories.tsx)
    - unified legend symbol baseline at 18x18;
    - increased legend item spacing/line-height for larger hit-area;
    - bottom legend placement retained.
 2. [`stories/tsx/clean/react-grid-layout.stories.tsx`](../../stories/tsx/clean/react-grid-layout.stories.tsx)
-   - same legend policy applied to integration chart;
+   - same legend policy applied in integration chart adapter;
    - Highcharts accessibility module enabled;
    - bottom legend placement retained.
 3. Source-file documentation links now open through a read-only Storybook shell with syntax highlighting:

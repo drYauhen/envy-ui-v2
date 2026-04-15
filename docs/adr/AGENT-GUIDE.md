@@ -28,6 +28,12 @@ All ADR metadata (number, title, status, date, exportName) must be defined here 
 - System behavior uses neutral language ("The system defines...", "This decision establishes...").
 - Avoid collective language ("we", "our", "we assume") in ADR content.
 
+## Generalization vs Example Boundary (Required)
+
+- Keep architectural decisions and consequences system-level by default.
+- Component mentions are allowed only as representative examples and must be explicitly marked as examples.
+- Avoid wording that makes a general ADR look like a component-only decision unless component-only scope is intentional and explicit.
+
 ## Workflow for New ADR
 
 ### Step 1: Add to adr-list-data.ts FIRST
@@ -299,6 +305,7 @@ When creating/modifying ADR:
 - [ ] Verified `Related` contains only key architectural context links (not full bibliography)
 - [ ] Verified every `Related` link also appears in `References -> Internal Documents`
 - [ ] Verified `References -> Internal Documents` entries are not link-only and include titles
+- [ ] Verified architecture statements are generalized and component mentions are explicitly labeled as representative examples
 - [ ] Verified links work in Storybook
 - [ ] Checked overview page links work
 

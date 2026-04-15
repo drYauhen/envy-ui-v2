@@ -24,7 +24,7 @@ The design system currently lacks formalized reset/base styling. While component
 - **Generation gap** - Components use contracts, but reset does not
 
 ### Architectural Foundation
-The system already implements token-driven component contracts (Badge as reference implementation):
+The system already implements token-driven component contracts (for example, Badge as a representative implementation case):
 - **Design tokens** provide values (colors, typography, spacing, etc.)
 - **Contracts (JSON)** define structure, selectors, invariants, axes, and behavior
 - **CSS generation** from tokens + contract
@@ -47,7 +47,7 @@ This model works for components and must be extended to foundation-level reset.
 
 ### Reset Contract Structure
 
-Following Badge component contract pattern, reset contracts include:
+Following established component contract patterns (with Badge as one representative case), reset contracts include:
 
 - **$schema** reference to foundation contract schema
 - **foundation** identifier (not component)
@@ -122,7 +122,7 @@ Following Badge component contract pattern, reset contracts include:
 - Single contract file to maintain
 - Context-specific behavior variations in one place
 - Easier to ensure consistency across contexts
-- Follows component contract pattern (Badge uses multiple axes)
+- Follows component contract pattern (multi-axis contracts are already proven in representative component cases such as Badge)
 
 ### Token Usage Rules
 
@@ -181,7 +181,7 @@ Following Badge component contract pattern, reset contracts include:
 
 ## References
 
-- **Badge Component Contract** - Reference implementation for contract structure
+- **Badge Component Contract** - Representative implementation example for contract structure
 - **Component Contract Schema** - Base schema to extend for foundation contracts
 - **Context Definitions** - Application/website/report context specifications
 - **Token Architecture** - Design token structure and usage patterns

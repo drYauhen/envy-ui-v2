@@ -26,7 +26,7 @@ This ADR formalizes the v1 architecture that solves those gaps while preserving 
 
 ## Decision
 
-I decided to implement a tokenized signal-pattern system as a first-class semantic layer and make it the single source of truth for both CSS and Highcharts rendering.
+I decided to implement a tokenized signal-pattern system as a first-class semantic layer and make it the single source of truth across renderers, with CSS and Highcharts as the first validated adapters.
 
 The decision contains six concrete rules:
 
@@ -87,7 +87,7 @@ Pattern mode must be optional by product/context. Global and local switching all
 ### Non-Goals (v1)
 
 - Automatic rollout to every component that uses status colors.
-- Pattern support for Badge (explicitly excluded in this phase).
+- Full pattern rollout across all status-bearing components (Badge and other component families) is excluded in this phase.
 - Full export pipeline for every charting library beyond the current Highcharts integration path.
 
 ## Implemented Scope (v1)
@@ -106,6 +106,8 @@ Pattern mode must be optional by product/context. Global and local switching all
   - [`tokens/knowledge/resolver/storybook.resolver.json`](../../tokens/knowledge/resolver/storybook.resolver.json)
 
 ### Component Integration
+
+Card integration is the first representative component-level adapter for this policy (not the architecture boundary).
 
 - Added status pattern variables to card tokens:
   - [`tokens/components/card.tokens.json`](../../tokens/components/card.tokens.json)

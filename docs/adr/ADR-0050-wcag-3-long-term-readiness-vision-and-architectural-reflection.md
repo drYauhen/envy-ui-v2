@@ -65,8 +65,8 @@ This shifts accessibility evaluation from "are UI rules satisfied per element" t
 ### Concrete Example: Signal Semantics Coverage
 
 Current system state is intentionally uneven:
-- [ADR-0047](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md) implemented color+pattern semantics for Card and Highcharts paths.
-- Badge rollout was explicitly out of scope in v1.
+- [ADR-0047](./ADR-0047-signal-pattern-accessibility-and-cross-renderer-parity.md) implemented color+pattern semantics first on Card and Highcharts as representative surfaces for broader rollout.
+- Badge and other status-bearing component rollouts were intentionally out of scope in v1 initial rollout wave.
 
 **WCAG 2.2 style interpretation (today):**
 - A criterion such as non-color signal communication can end up as `Partially Supports`: some surfaces are compliant, but system-wide consistency is incomplete.

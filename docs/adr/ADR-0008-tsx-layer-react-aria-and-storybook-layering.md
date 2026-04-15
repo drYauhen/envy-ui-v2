@@ -122,7 +122,7 @@ Story order is enforced as: `Tokens` → `CSS` → `TSX`.
 
 ## 7. Implementation Notes
 
-This ADR has been **fully implemented** with the Button component serving as the reference TSX baseline:
+This ADR has been **fully implemented**, with Button used as the initial reference implementation for TSX layer patterns (not as a scope boundary for the architecture):
 
 ### Current Implementation Status
 - ✅ **React Aria Integration**: Button component uses `useButton`, `useFocusRing`, `useHover` hooks
@@ -157,7 +157,7 @@ The ADR's decisions remain sound and well-implemented:
 - Storybook layering makes architectural boundaries clear
 
 ### Evolution Path
-The Button component establishes patterns for future TSX components:
+The initial Button reference implementation establishes reusable patterns for the broader TSX component family:
 - Consistent React Aria hook usage
 - Standardized prop patterns (DOM + React Aria)
 - CSS contract preservation
@@ -166,4 +166,4 @@ The Button component establishes patterns for future TSX components:
 
 ## 8. Status
 
-**Accepted (Implemented)** - Button component fully implemented with React Aria integration, dual API support, CSS independence, and proper Storybook layering. Serves as reference implementation for future TSX components.
+**Accepted (Implemented)** - TSX + React Aria architecture is implemented and validated, using Button as the initial reference implementation for reusable patterns across future TSX components.

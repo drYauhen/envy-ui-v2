@@ -64,7 +64,7 @@ This vision will be achieved incrementally through four phases:
 - Export variant enums as const arrays
 - Create lightweight component registry
 - Make types runtime-queryable
-- Pilot with Button, Divider components
+- Pilot with Button and Divider as representative components (architecture scope is broader than these examples)
 
 **Phase 2: Story Metadata Enhancement**
 - Add aiMetadata to story parameters
@@ -198,13 +198,13 @@ The following will be answered through implementation and real-world usage:
 ## Implementation Roadmap
 
 ### Phase 1 (Week 1): Type Export Strategy
-- Export variant const arrays in Button, Divider
+- Export variant const arrays in representative pilot components (Button, Divider), then apply the pattern across the component set
 - Create `src/ui/registry.ts` with lightweight metadata
 - Update exports in `src/ui/index.ts`
 - Validate with actual usage
 
 ### Phase 2 (Week 2-3): Story Metadata
-- Add `aiMetadata` to Button, Divider stories
+- Add `aiMetadata` to representative pilot stories (Button, Divider), then generalize to additional stories
 - Document common patterns
 - Include accessibility info
 - Test with AI agents
@@ -214,7 +214,7 @@ The following will be answered through implementation and real-world usage:
 - Based on real story usage
 - Add to registry as `compositionPatterns`
 
-### Phase 4 (After Pilots): Evolution
+### Phase 4 (After Representative Pilots): Evolution
 - Evaluate what worked
 - Update this ADR based on learnings
 - Update or supersede [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
@@ -238,7 +238,7 @@ The following will be answered through implementation and real-world usage:
 
 ### Status of [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md)
 - Remains "Proposed (Exploratory)"
-- Will be updated or superseded after ADR-0036 pilots complete
+- Will be updated or superseded after ADR-0036 representative pilots complete
 - Original vision informs pragmatic approach
 - Common sense over rigid implementation
 

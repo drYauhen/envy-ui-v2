@@ -155,7 +155,7 @@ A global `storybook.manifest.json` defines:
 
 ### Examples
 
-**Example 1: Switch with Label**
+**Example 1 (Representative): Switch with Label**
 
 ```tsx
 // Uses universal form structure
@@ -252,7 +252,7 @@ A global `storybook.manifest.json` defines:
    - Define `storybook-model/schema.json`
    - Create `storybook.manifest.json` with global rules and universal helpers
 
-**2. Pilot Implementation (Switch Component)**
+**2. Pilot Implementation (Representative Component: Switch)**
    - Create `storybook-model/switch.storybook.json`
    - Reference `component-model/switch.json`
    - Define helpers (container, wrapper, layout)
@@ -264,7 +264,7 @@ A global `storybook.manifest.json` defines:
    - Ensure all structure uses Envy UI components
 
 **4. Iterate and Improve**
-   - Test approach with Switch
+   - Test approach with Switch as a representative component, then generalize patterns
    - Refine storybook-model structure based on learnings
    - Update storybook.manifest.json with improved rules
    - Document patterns and best practices
@@ -299,13 +299,13 @@ The structured patterns established in Storybook Model may inform future system 
 ## Status
 
 * Document type: **Architecture Decision / Exploratory Analysis**
-* Status: **Proposed (Exploratory)** — early-stage analysis, pilot phase
+* Status: **Proposed (Exploratory)** — early-stage analysis, representative-pilot phase
 * **Initial Model:** This represents the starting architecture — not a final, immutable design. The model will evolve based on:
-  - Learnings from pilot implementation (Switch component)
+  - Learnings from representative pilot implementation (Switch as reference component)
   - Real-world usage patterns
   - Feedback from AI agent interactions
   - System growth and new requirements
-* Subject to validation through pilot implementation (Switch component)
+* Subject to validation through representative pilot implementation (Switch as reference component)
 * Will be updated and refined based on learnings from pilot and ongoing usage
 
 ---
@@ -313,7 +313,7 @@ The structured patterns established in Storybook Model may inform future system 
 ## Notes
 
 This document should:
-- Be revisited after pilot implementation (Switch component)
+- Be revisited after representative pilot implementation (Switch as reference component)
 - Guide decisions about storybook-model structure and rules
 - Serve as reference for understanding AI-agent-oriented architecture goals
 - Be updated when storybook-model moves from exploratory to implemented status

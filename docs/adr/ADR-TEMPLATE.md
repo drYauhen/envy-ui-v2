@@ -21,6 +21,14 @@
 
 I decided to <concise statement of the decision>.
 
+### General Rule (Required)
+
+<State architecture-wide rule in component-agnostic form.>
+
+### Representative Examples (Optional)
+
+<If you include component/library examples, explicitly mark them as representative validation cases, not as scope boundaries of the decision.>
+
 ## Rationale
 
 <Why this decision was made; key drivers and constraints.>
@@ -64,3 +72,8 @@ I decided to <concise statement of the decision>.
 - Separator style: use em-dash `—` between link and title.
 
 **Link behavior rule:** Use normal relative markdown links (do not hardcode Storybook URLs). Internal registered `.md` docs open in the current Storybook tab. Code-file links (`.ts/.tsx/.js/.mjs/.css/.json`) open via Source File Viewer in a new tab. External or unregistered links open in a new tab with external-link indicator.
+
+**Generalization rule (required):**
+- Architecture decisions must be phrased in system-level terms.
+- Component-specific references are allowed only as representative examples.
+- If examples are present, explicitly label them as representative/reference (for example: "Button as representative implementation case").

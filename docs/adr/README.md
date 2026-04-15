@@ -56,6 +56,7 @@ Short version:
 5. Keep header `Related` curated (architecture context only), not full bibliography
 6. Ensure `Related` links also exist in `References -> Internal Documents`
 7. Ensure `References -> Internal Documents` entries are not link-only and use `—` between link and document title
+8. Keep `Decision`/`Consequences` architecture-wide; if components are mentioned, mark them as representative examples
 
 ## Single Source of Truth
 

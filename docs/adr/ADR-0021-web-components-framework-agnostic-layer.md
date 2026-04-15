@@ -97,12 +97,12 @@ Accessibility can be implemented with native HTML semantics and WAI-ARIA Authori
 
 Exploratory implementation is completed for baseline validation:
 
-- `packages/web-components/button/` contains `eui-button` implementation.
+- `packages/web-components/button/` contains `eui-button` implementation as the initial reference adapter.
 - Token-driven styling works through CSS variables in Shadow DOM.
 - Context/theme/density model is compatible with Envy UI data attributes.
 - Storybook coverage exists under `stories/web-components/`.
 
-Result: Web Components are validated as a viable renderer in the Envy UI architecture.
+Result: Web Components are validated as a viable renderer in the Envy UI architecture; the decision scope targets component families, not only the initial button adapter.
 
 ---
 ## Scope Boundaries

@@ -89,7 +89,7 @@
 
 ## 6. Implementation Notes
 
-This ADR has been **fully implemented** with the Button component serving as the host-flexible interactive surface baseline:
+This ADR has been **fully implemented**, with Button used as the initial reference implementation for host-flexible interactive-surface patterns (not as an architecture scope limit):
 
 ### Current Implementation Status
 - ✅ **Host-Flexible Interactive Surface**: Button supports 3 host modes (button/link/proxy) exactly as specified
@@ -121,7 +121,7 @@ The ADR's design decisions remain sound and fully implemented:
 - **Composable Design**: Orthogonal axes prevent variant explosion
 
 ### Evolution Path
-The implemented Button component establishes patterns for future interactive components:
+The implemented Button reference establishes reusable patterns for the broader interactive component model:
 - Consistent React Aria integration approach
 - Standardized host-flexible architecture
 - CSS contract preservation
@@ -139,4 +139,4 @@ The implemented Button component establishes patterns for future interactive com
 
 ## 8. Status
 
-**Accepted (Implemented)** - Button component fully implemented with host-flexible architecture, React Aria integration, and complete CSS contract compliance. Serves as reference implementation for future interactive components.
+**Accepted (Implemented)** - Host-flexible interactive-surface architecture is implemented and validated, with Button as the initial reference implementation for wider interactive component adoption.

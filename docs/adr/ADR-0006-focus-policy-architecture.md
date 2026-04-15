@@ -233,7 +233,7 @@ The implemented token architecture provides:
 
 ### Implementation Validation: Two-Layer Focus System
 
-**Badge Refactor (2026-01-09)** implements a comprehensive two-layer focus architecture that validates and extends this ADR:
+**Badge Refactor (2026-01-09)** implements a comprehensive two-layer focus architecture as a representative validation case that validates and extends this ADR:
 
 #### Layer 1: Theme-Dependent Focus (Component-Derived)
 - **Default theme**: Uses `accent-500` (brand-aligned focus ring)
@@ -299,4 +299,4 @@ The implemented token architecture provides:
 
 ## 12. Status
 
-**Accepted (Partially Implemented)** - Architectural foundation complete with comprehensive token implementation. Two-layer focus system (theme-dependent + system override) fully implemented and validated in badge component. Runtime policy selection mechanism functional via `data-eui-focus-policy` attribute. Full accessibility/policy implementation phase deferred per original ADR plan.
+**Accepted (Partially Implemented)** - Architectural foundation complete with comprehensive token implementation. Two-layer focus system (theme-dependent + system override) is fully implemented and first validated in Badge as a representative interactive component. Runtime policy selection mechanism is functional via `data-eui-focus-policy` attribute. Full accessibility/policy implementation phase is deferred per original ADR plan.

@@ -76,7 +76,7 @@ When a dependency introduces official MCP support:
 
 ## Implementation Notes (Initial Rollout)
 
-This ADR starts with React Aria as pilot ecosystem:
+This ADR uses React Aria as the initial reference ecosystem for rollout, while the adoption pattern is intentionally ecosystem-agnostic:
 - Add `react-aria` MCP server to `.mcp.example.json`.
 - Update local `.mcp.json` for immediate development usage.
 - Update [WORKFLOW-008](../workflows/WORKFLOW-008-mcp-configuration-workflow.md) inventory and adoption rule.

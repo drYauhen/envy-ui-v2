@@ -91,6 +91,12 @@ docs/adr/ADR-0027-figma-migration-strategy.md
 - Decision statements must reflect the named owner (use first-person singular: "I decided...", "I intentionally chose...")
 - Use impersonal language for system behavior and established facts ("The system assumes...", "This decision establishes...")
 - Avoid collective language ("we", "our", "we assume", "we believe") in all ADR content
+- When examples use a specific component (for example Button, Switch, chart adapter), explicitly label it as a **representative/reference implementation** so the ADR is read as architecture-wide, not component-limited.
+
+**Generalization vs example boundary (required):**
+- Architecture decisions and consequences must be phrased in system-level terms.
+- Component/library names are allowed only as representative validation examples and must be explicitly marked as such.
+- Do not frame a general ADR as if its scope is only one component unless the ADR is intentionally component-scoped.
 
 ### Formatting Rules
 
@@ -287,6 +293,11 @@ All ADR stories use `title: 'Docs/ADR'` to group them together.
    - ✅ Overview page link works
    - ✅ Mermaid diagrams render correctly
    - ✅ Links to other ADRs work
+
+8. **Validate generalization clarity:**
+   - ✅ `Decision` and `Consequences` remain architecture-wide
+   - ✅ Component mentions are labeled as representative examples
+   - ✅ No accidental component-only framing in a general ADR
 
 ### File Naming Consistency
 

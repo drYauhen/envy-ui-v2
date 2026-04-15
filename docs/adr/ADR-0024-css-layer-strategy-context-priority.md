@@ -433,14 +433,14 @@ The `@layer` order ensures the correct value is resolved, and Custom Properties 
 
 ## Implementation Validation
 
-**Badge Refactor (2026-01-09)** validates the CSS layer strategy:
+**Badge Refactor (2026-01-09)** provides representative validation for the CSS layer strategy:
 - ✅ **Compound Selectors**: Accessibility theme uses `[data-eui-context="app"][data-eui-theme="accessibility"]` pattern
 - ✅ **Theme Layer Isolation**: Theme overrides placed in `@layer theme` (highest priority)
 - ✅ **No :root Writes from Themes**: Theme tokens never write to `:root`, only to compound selectors
 - ✅ **Token Variable Mapping**: Component CSS maps token variables to selectors without hardcoded values
 - ✅ **Single Source of Truth**: Eliminated 99 lines of hardcoded CSS, relying on generated `tokens.css`
 
-**Example from Badge Component**:
+**Representative example from Badge component**:
 ```css
 /* ❌ BEFORE: Hardcoded values in component CSS */
 [data-eui-context="app"][data-eui-theme="accessibility"] .eui-badge {

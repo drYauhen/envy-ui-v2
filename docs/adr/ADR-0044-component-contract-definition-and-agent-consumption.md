@@ -44,7 +44,7 @@ Every active interactive component must have a contract file in `tokens/componen
 
 When creating or modifying components, agents must read relevant existing contracts first and reuse established patterns before introducing new axes or variables.
 
-### 4) Dropdown/Popover Offset Rule
+### 4) Overlay Offset Rule (Dropdown/Popover/Menu as Representative Cases)
 
 Any component with trigger-attached floating surfaces (dropdown/popover/menu) must expose offset behavior in contract form:
 - declare the offset dependency in contract vars;
@@ -75,5 +75,5 @@ Any component contract that includes a clipping/scrolling surface with focusable
 
 - Contract files become the canonical technical interface for component behavior modeling.
 - Missing contract coverage is treated as architecture debt, not as acceptable temporary state.
-- Dropdown offset consistency is now enforceable by reading contracts, not only by inspecting runtime code.
+- Contract-level behavior consistency (for example overlay offsets, focus-clearance, and comparable runtime mappings) is enforceable by reading contracts, not only by inspecting runtime code.
 - Future generation and analysis workflows can rely on deterministic contract structure.
