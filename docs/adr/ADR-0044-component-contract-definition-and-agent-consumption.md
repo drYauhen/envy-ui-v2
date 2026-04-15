@@ -2,7 +2,7 @@
 
 **Status:** Accepted  
 **Date:** 2026-02-18  
-**Last Updated:** 2026-04-07  
+**Last Updated:** 2026-04-15  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Related:**  
@@ -10,6 +10,8 @@
 - [ADR-0015](./ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model  
 - [ADR-0038](./ADR-0038-canonical-token-css-output-contract.md) — Canonical Token CSS Output Contract  
 - [ADR-0043](./ADR-0043-dropdown-trigger-gap-and-focus-clearance.md) — Dropdown Trigger Gap and Focus Clearance  
+- [ADR-0046](./ADR-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research.md) — AI Agent Readiness Reflection from Milestone-Driven Agent Research
+- [ADR-0052](./ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md) — IDE Agentic Shift (Cursor 3 Signal) and Envy UI v2
 
 ---
 

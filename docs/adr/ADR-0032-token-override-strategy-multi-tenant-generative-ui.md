@@ -2,13 +2,15 @@
 
 **Status:** Proposed
 **Date:** 2026-01-06
-**Last Updated:** 2026-01-06
+**Last Updated:** 2026-04-15
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
 - [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
 - [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
 - [ADR-0031](ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) — Contrast Strategy for Dynamic Colors and On-Color Tokens
+- [ADR-0036](ADR-0036-ai-first-component-architecture-vision.md) — AI-First Component Architecture Vision
+- [ADR-0052](./ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md) — IDE Agentic Shift (Cursor 3 Signal) and Envy UI v2
 
 ---
 
@@ -75,3 +77,13 @@ I decided to treat **canonical tokens as versioned source code** and define **te
 - The contrast strategy defined in [ADR-0031](ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) applies to AI-generated overrides.
 - Domain/locale profiles can include additional compliance checks (e.g., minimum font size for reports, print-safe palettes, sector-specific constraints, RTL or regional typographic rules).
 - This ADR does not mandate a specific database vendor; any JSON-capable store can be used for delivery.
+
+## References
+
+### Internal Documents
+
+- [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md) — Layered Token Architecture for Contexts and Themes
+- [ADR-0023](ADR-0023-token-organization-context-and-theme-separation.md) — Token Organization - Context and Theme Separation
+- [ADR-0031](ADR-0031-contrast-strategy-dynamic-colors-on-color-tokens.md) — Contrast Strategy for Dynamic Colors and On-Color Tokens
+- [ADR-0036](ADR-0036-ai-first-component-architecture-vision.md) — AI-First Component Architecture Vision
+- [ADR-0052](./ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md) — IDE Agentic Shift (Cursor 3 Signal) and Envy UI v2

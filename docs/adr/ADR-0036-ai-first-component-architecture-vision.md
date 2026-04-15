@@ -2,13 +2,17 @@
 
 **Status:** Proposed (Evolutionary)
 **Date:** 2026-01-07
-**Last Updated:** 2026-01-07
+**Last Updated:** 2026-04-15
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
 - [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
 - [ADR-0035](ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md) — CSS Naming Conventions - Class Names vs Data Attributes
 - [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0044](./ADR-0044-component-contract-definition-and-agent-consumption.md) — Component Contract Definition and Agent Consumption
+- [ADR-0046](./ADR-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research.md) — AI Agent Readiness Reflection from Milestone-Driven Agent Research
+- [ADR-0052](./ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md) — IDE Agentic Shift (Cursor 3 Signal) and Envy UI v2
+- [ADR-0053](./ADR-0053-mcp-knowledge-layer-integration-for-dependency-ecosystems.md) — MCP Knowledge-Layer Integration for Dependency Ecosystems
 
 ---
 
@@ -22,7 +26,7 @@ AI agents have different needs than human developers:
 - **Runtime queryable information** instead of static type analysis only
 - **Discoverable patterns** and component relationships
 
-Current state: Envy UI has AI-friendly patterns (consistent naming, good TypeScript types, predictable structure) but lacks AI-first architecture (no machine-readable metadata layer, no explicit runtime contracts).
+Current state: Envy UI has AI-friendly patterns (consistent naming, good TypeScript types, predictable structure) but lacks AI-first architecture (no machine-readable metadata layer, no explicit runtime contracts). Later architectural follow-ups partially close this gap through contract formalization and agent-readiness governance (see [ADR-0044](./ADR-0044-component-contract-definition-and-agent-consumption.md), [ADR-0046](./ADR-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research.md), [ADR-0052](./ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md), [ADR-0053](./ADR-0053-mcp-knowledge-layer-integration-for-dependency-ecosystems.md)).
 
 ---
 
@@ -291,3 +295,15 @@ When implementing phases 1-4:
 - Update this ADR with learnings
 
 This ensures future decisions are based on experience, not theory.
+
+## References
+
+### Internal Documents
+
+- [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) — Token-First Contract Layer and Renderer-Agnostic Model
+- [ADR-0022](ADR-0022-storybook-model-ai-agent-oriented-architecture.md) — Storybook Model as AI-Agent-Oriented Architecture Layer
+- [ADR-0035](ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md) — CSS Naming Conventions - Class Names vs Data Attributes
+- [ADR-0044](./ADR-0044-component-contract-definition-and-agent-consumption.md) — Component Contract Definition and Agent Consumption
+- [ADR-0046](./ADR-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research.md) — AI Agent Readiness Reflection from Milestone-Driven Agent Research
+- [ADR-0052](./ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md) — IDE Agentic Shift (Cursor 3 Signal) and Envy UI v2
+- [ADR-0053](./ADR-0053-mcp-knowledge-layer-integration-for-dependency-ecosystems.md) — MCP Knowledge-Layer Integration for Dependency Ecosystems

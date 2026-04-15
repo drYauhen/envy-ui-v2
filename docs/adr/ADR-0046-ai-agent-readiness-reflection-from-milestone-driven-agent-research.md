@@ -3,7 +3,7 @@
 **Document ID:** adr-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research
 **Status:** Accepted (Reflective Baseline)
 **Date:** 2026-04-04
-**Last Updated:** 2026-04-04
+**Last Updated:** 2026-04-15
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Category:** Reflection
@@ -11,6 +11,8 @@
 - [ADR-0036](./ADR-0036-ai-first-component-architecture-vision.md) — AI-First Component Architecture Vision
 - [ADR-0044](./ADR-0044-component-contract-definition-and-agent-consumption.md) — Component Contract Definition and Agent Consumption
 - [ADR-0045](./ADR-0045-dtcg-resolver-adoption-and-phased-migration.md) — DTCG Resolver Adoption and Phased Migration
+- [ADR-0052](./ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md) — IDE Agentic Shift (Cursor 3 Signal) and Envy UI v2
+- [ADR-0053](./ADR-0053-mcp-knowledge-layer-integration-for-dependency-ecosystems.md) — MCP Knowledge-Layer Integration for Dependency Ecosystems
 - [WORKFLOW-005](../workflows/WORKFLOW-005-tokens-workflow.md) — Tokens Workflow
 - [WORKFLOW-009](../workflows/WORKFLOW-009-resolver-migration-workflow.md) — Resolver Migration Workflow
 
