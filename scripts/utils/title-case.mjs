@@ -2,30 +2,9 @@
  * Title Case Utility
  * Converts text to proper English Title Case following typographic conventions
  */
+import { isTechnicalAcronym } from './acronyms.mjs';
 
-/**
- * Common technical acronyms that should always be uppercase
- */
-const ACRONYMS = new Set([
-  // Web/Browser
-  'ui', 'api', 'css', 'html', 'aria', 'dom', 'http', 'https', 'url', 'uri',
-  'svg', 'xml', 'json', 'rest', 'ajax', 'cors',
-
-  // JavaScript/TypeScript
-  'js', 'jsx', 'ts', 'tsx', 'npm', 'cli', 'sdk',
-
-  // React ecosystem
-  'ssr', 'csr',
-
-  // AI/ML
-  'ai', 'ml',
-
-  // Design/UX
-  'ux', 'dx',
-
-  // Other
-  'id', 'ids', 'uuid', 'guid', 'rgb', 'rgba', 'hsl', 'hsla', 'dtcg', 'wcag'
-]);
+// Acronym list lives in scripts/utils/acronyms.mjs (single source of truth).
 
 /**
  * Small words that should be lowercase (unless first/last word)
@@ -83,11 +62,11 @@ export function toTitleCase(text) {
 
       // Always capitalize first and last word
       if (isFirst || isLast) {
-        return ACRONYMS.has(lower) ? lower.toUpperCase() : capitalize(word);
+        return isTechnicalAcronym(lower) ? lower.toUpperCase() : capitalize(word);
       }
 
       // Check for acronyms - always uppercase
-      if (ACRONYMS.has(lower)) {
+      if (isTechnicalAcronym(lower)) {
         return lower.toUpperCase();
       }
 

@@ -18,14 +18,14 @@ const meta: Meta = {
 
 export default meta;
 
-export const dtcgSchemaResolutionandTokenArchitecture: Story = {
-  name: 'ADR-0041 DTCG Schema Resolution and Token Architecture',
+export const mcpKnowledgeLayerIntegrationforDependencyEcosystems: Story = {
+  name: 'ADR-0053 MCP Knowledge Layer Integration for Dependency Ecosystems',
   render: () => (
     <DocViewer
-      markdownPath="/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md"
-      status="Accepted"
-      lastUpdated="2026-01-07"
-      fallback="Loading ADR-0041 DTCG Schema Resolution and Token Architecture..."
+      markdownPath="/docs/adr/ADR-0053-mcp-knowledge-layer-integration-for-dependency-ecosystems.md"
+      status="Accepted (Implementation Started)"
+      lastUpdated="2026-04-15"
+      fallback="Loading ADR-0053 MCP Knowledge Layer Integration for Dependency Ecosystems..."
     />
   )
 };

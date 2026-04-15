@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const aIAgentReadinessReflectionfromMilestoneDrivenAgentResearch: Story = {
+export const aiAgentReadinessReflectionfromMilestoneDrivenAgentResearch: Story = {
   name: 'ADR-0046 AI Agent Readiness Reflection from Milestone Driven Agent Research',
   render: () => (
     <DocViewer

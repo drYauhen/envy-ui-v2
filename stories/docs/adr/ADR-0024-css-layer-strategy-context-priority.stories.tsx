@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const cSSLayerStrategyContextPriority: Story = {
+export const cssLayerStrategyContextPriority: Story = {
   name: 'ADR-0024 CSS Layer Strategy Context Priority',
   render: () => (
     <DocViewer

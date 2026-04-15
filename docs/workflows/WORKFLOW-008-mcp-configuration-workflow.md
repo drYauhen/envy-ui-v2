@@ -3,7 +3,7 @@
 **Document ID:** workflow-mcp-configuration-workflow  
 **Status:** Active  
 **Date:** 2026-04-02  
-**Last Updated:** 2026-04-02  
+**Last Updated:** 2026-04-15  
 **Owner:** Eugene Goncharov  
 **Assistance:** AI-assisted drafting (human-reviewed)  
 **Category:** Workflow
@@ -17,6 +17,7 @@ This document defines how MCP (Model Context Protocol) configuration is organize
 - Keep local MCP runtime paths and secrets out of git.
 - Provide a stable onboarding template for MCP setup.
 - Maintain an explicit inventory of MCP-related configuration used by the project.
+- Standardize how new third-party MCP knowledge sources are adopted.
 
 ## Repository Convention
 
@@ -25,15 +26,17 @@ This document defines how MCP (Model Context Protocol) configuration is organize
 
 ## Current MCP Inventory
 
-Based on repository search (`.mcp.json` + docs references), current MCP-related configuration is:
+Based on repository configuration and documentation, current MCP-related setup is:
 
 | Server Name | Type | Status | Source |
 | :--- | :--- | :--- | :--- |
-| `figma-console-local` | Local MCP server (Node script) | Active locally (machine-specific) | `.mcp.json` (ignored) |
+| `react-aria` | External package MCP server (`npx @react-aria/mcp@latest`) | Baseline-enabled | `.mcp.example.json` + local `.mcp.json` |
+| `figma-console-local` | Local MCP server (Node script) | Active locally (machine-specific path) | `.mcp.json` (ignored), template in `.mcp.example.json` |
 
 Additional notes:
-- No cloud MCP server config is tracked in this repository right now.
-- ADR references to Figma MCP exist in [ADR-0025](../adr/ADR-0025-figma-variables-integration-strategy.md) and describe forward-looking architecture.
+- `react-aria` MCP is used as a documentation/knowledge access layer for agentic coding workflows.
+- Local machine paths and local env overrides remain local-only.
+- ADR references to Figma MCP exist in [ADR-0025](../adr/ADR-0025-figma-variables-integration-strategy.md).
 
 ## Setup Steps (Local Machine)
 
@@ -43,9 +46,11 @@ Additional notes:
 cp .mcp.example.json .mcp.json
 ```
 
-2. Edit `.mcp.json` and set real absolute paths for your machine.
+2. Edit `.mcp.json` and set real absolute paths for local servers (for example `figma-console-local`).
 
-3. If needed, add environment variables in local config only (do not commit secrets/tokens/host-specific values).
+3. Keep shared package MCP entries (for example `react-aria`) unless there is an explicit local incompatibility.
+
+4. Add environment variables in local config only when required (do not commit secrets/tokens/host-specific values).
 
 ## Example Configuration
 
@@ -54,6 +59,12 @@ Canonical tracked example:
 ```json
 {
   "mcpServers": {
+    "react-aria": {
+      "command": "npx",
+      "args": [
+        "@react-aria/mcp@latest"
+      ]
+    },
     "figma-console-local": {
       "command": "node",
       "args": [
@@ -64,10 +75,20 @@ Canonical tracked example:
 }
 ```
 
+## MCP Adoption Rule (For New Integrations)
+
+When a dependency ecosystem introduces an agent-facing MCP layer, use this adoption rule:
+
+1. **Detect:** Identify new MCP capabilities during dependency upgrades and release reviews.
+2. **Evaluate:** Check relevance for Envy UI workflows (API accuracy, speed, agent usability, maintenance cost).
+3. **Adopt baseline:** Add safe shared config to `.mcp.example.json` if value is confirmed.
+4. **Document:** Update MCP inventory in this workflow and reference the architectural decision in ADRs.
+5. **Validate:** Ensure local setup instructions stay executable and no secrets leak into git.
+
 ## Change Management Rules
 
 - Any new shared MCP integration must be reflected in `.mcp.example.json`.
-- Any new MCP-related workflow/decision should be documented in this file and linked from `docs/workflows/README.md`.
+- Any new MCP-related workflow/decision should be documented in this file and linked from `docs/workflows/README.md` and related ADRs.
 - `.mcp.json` remains local-only; do not stage or commit it.
 
 ## Validation Checklist

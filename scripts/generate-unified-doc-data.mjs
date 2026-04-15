@@ -4,6 +4,7 @@ import { readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { toTitleCase } from './utils/title-case.mjs';
+import { isTechnicalAcronym } from './utils/acronyms.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -89,11 +90,20 @@ function extractArchitectureTitle(filename) {
  * Generate consistent exportName from title
  */
 function generateExportName(title) {
-  return title
-    .replace(/[^a-zA-Z0-9\s]/g, '') // Remove special chars
-    .replace(/\s+/g, '') // Remove spaces
-    .replace(/([a-z0-9])([A-Z])/g, '$1$2') // Keep camelCase
-    .replace(/^(.)/, (match) => match.toLowerCase()); // Start with lowercase
+  const words = title
+    .replace(/[^a-zA-Z0-9\s]/g, ' ') // Remove special chars
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  if (words.length === 0) return '';
+
+  const [firstWord, ...restWords] = words;
+  const first = isTechnicalAcronym(firstWord)
+    ? firstWord.toLowerCase()
+    : firstWord.charAt(0).toLowerCase() + firstWord.slice(1);
+
+  return [first, ...restWords].join('');
 }
 
 /**

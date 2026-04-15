@@ -19,13 +19,13 @@ const meta: Meta = {
 export default meta;
 
 export const ideAgenticShiftCursor3SignalandEnvyUIV2: Story = {
-  name: 'ADR-0052 Ide Agentic Shift Cursor 3 Signal and Envy UI V2',
+  name: 'ADR-0052 IDE Agentic Shift Cursor 3 Signal and Envy UI V2',
   render: () => (
     <DocViewer
       markdownPath="/docs/adr/ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md"
       status="Proposed (Reflective Benchmark)"
       lastUpdated="2026-04-15"
-      fallback="Loading ADR-0052 Ide Agentic Shift Cursor 3 Signal and Envy UI V2..."
+      fallback="Loading ADR-0052 IDE Agentic Shift Cursor 3 Signal and Envy UI V2..."
     />
   )
 };

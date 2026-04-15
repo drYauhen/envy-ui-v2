@@ -24,7 +24,7 @@ export const webComponentsFrameworkAgnosticLayer: Story = {
     <DocViewer
       markdownPath="/docs/adr/ADR-0021-web-components-framework-agnostic-layer.md"
       status="Exploratory (Proof-of-Concept Implemented)"
-      lastUpdated="2026-01-08"
+      lastUpdated="2026-04-15"
       fallback="Loading ADR-0021 Web Components Framework Agnostic Layer..."
     />
   )

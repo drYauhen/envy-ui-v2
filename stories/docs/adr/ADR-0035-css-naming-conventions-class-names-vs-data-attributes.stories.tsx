@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const cSSNamingConventionsClassNamesvsDataAttributes: Story = {
+export const cssNamingConventionsClassNamesvsDataAttributes: Story = {
   name: 'ADR-0035 CSS Naming Conventions Class Names vs Data Attributes',
   render: () => (
     <DocViewer

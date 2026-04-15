@@ -104,9 +104,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2026-01-08",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "tSXLayerReactARIAandStorybookLayering",
+    "exportName": "tsxLayerReactARIAandStorybookLayering",
     "markdownPath": "/docs/adr/ADR-0008-tsx-layer-react-aria-and-storybook-layering.md",
-    "storybookId": "docs-adr--t-sx-layer-react-ari-aand-storybook-layering"
+    "storybookId": "docs-adr--tsx-layer-react-ari-aand-storybook-layering"
   },
   {
     "number": "0009",
@@ -270,7 +270,7 @@ export const adrs: DocMetadata[] = [
     "category": "adr",
     "status": "Exploratory (Proof-of-Concept Implemented)",
     "date": "2025-01-01",
-    "lastUpdated": "2026-01-08",
+    "lastUpdated": "2026-04-15",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
     "exportName": "webComponentsFrameworkAgnosticLayer",
@@ -312,9 +312,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2025-12-26",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "cSSLayerStrategyContextPriority",
+    "exportName": "cssLayerStrategyContextPriority",
     "markdownPath": "/docs/adr/ADR-0024-css-layer-strategy-context-priority.md",
-    "storybookId": "docs-adr--c-ss-layer-strategy-context-priority"
+    "storybookId": "docs-adr--css-layer-strategy-context-priority"
   },
   {
     "number": "0025",
@@ -455,9 +455,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2026-01-07",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "cSSNamingConventionsClassNamesvsDataAttributes",
+    "exportName": "cssNamingConventionsClassNamesvsDataAttributes",
     "markdownPath": "/docs/adr/ADR-0035-css-naming-conventions-class-names-vs-data-attributes.md",
-    "storybookId": "docs-adr--c-ss-naming-conventions-class-namesvs-data-attributes"
+    "storybookId": "docs-adr--css-naming-conventions-class-namesvs-data-attributes"
   },
   {
     "number": "0036",
@@ -468,9 +468,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2026-01-07",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "aIFirstComponentArchitectureVision",
+    "exportName": "aiFirstComponentArchitectureVision",
     "markdownPath": "/docs/adr/ADR-0036-ai-first-component-architecture-vision.md",
-    "storybookId": "docs-adr--a-i-first-component-architecture-vision"
+    "storybookId": "docs-adr--ai-first-component-architecture-vision"
   },
   {
     "number": "0037",
@@ -533,9 +533,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2026-01-07",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "dTCGSchemaResolutionandTokenArchitecture",
+    "exportName": "dtcgSchemaResolutionandTokenArchitecture",
     "markdownPath": "/docs/adr/ADR-0041-dtcg-schema-resolution-and-token-architecture.md",
-    "storybookId": "docs-adr--d-tcg-schema-resolutionand-token-architecture"
+    "storybookId": "docs-adr--dtcg-schema-resolutionand-token-architecture"
   },
   {
     "number": "0042",
@@ -585,9 +585,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2026-04-04",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "dTCGResolverAdoptionandPhasedMigration",
+    "exportName": "dtcgResolverAdoptionandPhasedMigration",
     "markdownPath": "/docs/adr/ADR-0045-dtcg-resolver-adoption-and-phased-migration.md",
-    "storybookId": "docs-adr--d-tcg-resolver-adoptionand-phased-migration"
+    "storybookId": "docs-adr--dtcg-resolver-adoptionand-phased-migration"
   },
   {
     "number": "0046",
@@ -598,9 +598,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2026-04-04",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "aIAgentReadinessReflectionfromMilestoneDrivenAgentResearch",
+    "exportName": "aiAgentReadinessReflectionfromMilestoneDrivenAgentResearch",
     "markdownPath": "/docs/adr/ADR-0046-ai-agent-readiness-reflection-from-milestone-driven-agent-research.md",
-    "storybookId": "docs-adr--a-i-agent-readiness-reflectionfrom-milestone-driven-agent-research"
+    "storybookId": "docs-adr--ai-agent-readiness-reflectionfrom-milestone-driven-agent-research"
   },
   {
     "number": "0047",
@@ -650,9 +650,9 @@ export const adrs: DocMetadata[] = [
     "lastUpdated": "2026-04-14",
     "owner": "Eugene Goncharov",
     "assistance": "AI-assisted drafting (human-reviewed)",
-    "exportName": "wCAG3LongTermReadinessVisionandArchitecturalReflection",
+    "exportName": "wcag3LongTermReadinessVisionandArchitecturalReflection",
     "markdownPath": "/docs/adr/ADR-0050-wcag-3-long-term-readiness-vision-and-architectural-reflection.md",
-    "storybookId": "docs-adr--w-cag-3-long-term-readiness-visionand-architectural-reflection"
+    "storybookId": "docs-adr--wcag-3-long-term-readiness-visionand-architectural-reflection"
   },
   {
     "number": "0051",
@@ -669,7 +669,7 @@ export const adrs: DocMetadata[] = [
   },
   {
     "number": "0052",
-    "title": "Ide Agentic Shift Cursor 3 Signal and Envy UI V2",
+    "title": "IDE Agentic Shift Cursor 3 Signal and Envy UI V2",
     "category": "adr",
     "status": "Proposed (Reflective Benchmark)",
     "date": "2026-04-15",
@@ -679,5 +679,18 @@ export const adrs: DocMetadata[] = [
     "exportName": "ideAgenticShiftCursor3SignalandEnvyUIV2",
     "markdownPath": "/docs/adr/ADR-0052-ide-agentic-shift-cursor-3-signal-and-envy-ui-v2.md",
     "storybookId": "docs-adr--ide-agentic-shift-cursor-3-signaland-envy-uiv-2"
+  },
+  {
+    "number": "0053",
+    "title": "MCP Knowledge Layer Integration for Dependency Ecosystems",
+    "category": "adr",
+    "status": "Accepted (Implementation Started)",
+    "date": "2026-04-15",
+    "lastUpdated": "2026-04-15",
+    "owner": "Eugene Goncharov",
+    "assistance": "AI-assisted drafting (human-reviewed)",
+    "exportName": "mcpKnowledgeLayerIntegrationforDependencyEcosystems",
+    "markdownPath": "/docs/adr/ADR-0053-mcp-knowledge-layer-integration-for-dependency-ecosystems.md",
+    "storybookId": "docs-adr--mcp-knowledge-layer-integrationfor-dependency-ecosystems"
   }
 ];

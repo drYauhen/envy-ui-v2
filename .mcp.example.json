@@ -1,5 +1,11 @@
 {
   "mcpServers": {
+    "react-aria": {
+      "command": "npx",
+      "args": [
+        "@react-aria/mcp@latest"
+      ]
+    },
     "figma-console-local": {
       "command": "node",
       "args": [

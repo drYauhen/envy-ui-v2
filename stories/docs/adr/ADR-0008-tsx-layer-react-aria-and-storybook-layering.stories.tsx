@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const tSXLayerReactARIAandStorybookLayering: Story = {
+export const tsxLayerReactARIAandStorybookLayering: Story = {
   name: 'ADR-0008 TSX Layer React ARIA and Storybook Layering',
   render: () => (
     <DocViewer

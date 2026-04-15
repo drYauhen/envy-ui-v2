@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const aIFirstComponentArchitectureVision: Story = {
+export const aiFirstComponentArchitectureVision: Story = {
   name: 'ADR-0036 AI First Component Architecture Vision',
   render: () => (
     <DocViewer

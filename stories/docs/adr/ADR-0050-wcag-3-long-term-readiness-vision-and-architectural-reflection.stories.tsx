@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const wCAG3LongTermReadinessVisionandArchitecturalReflection: Story = {
+export const wcag3LongTermReadinessVisionandArchitecturalReflection: Story = {
   name: 'ADR-0050 WCAG 3 Long Term Readiness Vision and Architectural Reflection',
   render: () => (
     <DocViewer

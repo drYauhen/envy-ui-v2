@@ -18,7 +18,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const dTCGResolverAdoptionandPhasedMigration: Story = {
+export const dtcgResolverAdoptionandPhasedMigration: Story = {
   name: 'ADR-0045 DTCG Resolver Adoption and Phased Migration',
   render: () => (
     <DocViewer

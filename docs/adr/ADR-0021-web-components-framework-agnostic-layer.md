@@ -2,7 +2,7 @@
 
 **Status:** Exploratory (Proof-of-Concept Implemented)
 **Date:** 2025-01-01
-**Last Updated:** 2026-01-08
+**Last Updated:** 2026-04-15
 **Owner:** Eugene Goncharov
 **Assistance:** AI-assisted drafting (human-reviewed)
 **Related:**
@@ -15,366 +15,112 @@
 ---
 ## Context
 
-Envy UI is designed as a **token-driven, framework-agnostic design system** with multiple implementation layers:
+Envy UI is a token-driven, renderer-agnostic design system.
 
-- **HTML + CSS** — Static baseline, no JavaScript
-- **TSX Clean** — React/TypeScript without accessibility logic
-- **TSX + React Aria** — React with accessibility engine
+Active implementation layers include:
+- **HTML + CSS** for static baseline rendering
+- **TSX Clean** for React/TypeScript rendering without accessibility engine coupling
+- **TSX + React Aria** for React rendering with accessibility primitives
 
-The system's core principle is **token-first architecture**: design tokens (DTCG format) are the single source of truth, and multiple implementation layers project these tokens into different runtime environments.
+To keep design decisions independent from any single framework lifecycle, Envy UI also needs a standards-based runtime layer that can be consumed across framework boundaries.
 
-**Current State:**
-- Tokens drive all visual decisions
-- Context/Theme/Density system works via CSS custom properties and `[data-eui-context]` / `[data-eui-theme]` / `[data-eui-density]` attributes
-- Components are renderer-agnostic at the contract level
-- Multiple layers demonstrate universality of the token system
-
-**Motivation:**
-Envy UI is built with a **long-term perspective**: all architectural and design decisions must be **technology-agnostic and future-proof**. Business and design decisions should not be tied to any specific technology stack and should not become obsolete when that stack evolves or is replaced.
-
-To further validate the framework-agnostic nature of the system and demonstrate that tokens can project into **any** runtime environment, I am exploring **Web Components** as an additional implementation layer. This is a **long-term proof of concept** that:
-
-1. Proves that the token system is truly technology-agnostic and will survive technology stack changes
-2. Ensures design decisions are decoupled from implementation frameworks
-3. Enables component usage in any framework (React, Vue, Angular) or vanilla JavaScript, now and in the future
-4. Provides a standard-based solution (W3C standards) that doesn't require framework-specific wrappers
-5. Demonstrates that the system's architecture is built for longevity, not tied to current technology trends
-6. Validates that design tokens and component contracts outlive any specific implementation layer
-
-**Long-term Vision:**
-This exploration is not a short-term goal but a **strategic validation** that Envy UI's architecture can adapt to future technology changes. If React or any other framework becomes obsolete, the design system's core (tokens, contracts, design decisions) remains intact and can be projected into new implementation layers.
+Web Components provide that layer through browser standards (Custom Elements and Shadow DOM) while preserving token-driven styling.
 
 ---
-
 ## Decision
 
-I decided to **explore Web Components as a long-term proof-of-concept implementation layer** for Envy UI, starting with a proof-of-concept implementation of a simple component (e.g., Button).
+I decided to use **Web Components** as an **exploratory implementation layer** in Envy UI.
 
-**Scope (Long-term Proof-of-Concept):**
-- **Status:** Long-term strategic validation, not short-term tactical solution
-- **Goal:** Validate that Envy UI's architecture is truly technology-agnostic and can survive technology stack changes
-- **Approach:** Start with one component (Button) to establish patterns and prove the concept
-- **Timeline:** Long-term validation of architectural principles, not immediate production requirement
-- **Philosophy:** This exploration ensures that design decisions and tokens are decoupled from any specific technology stack, protecting the system's longevity
+This decision defines Web Components as:
+- A validation layer for renderer-agnostic architecture
+- A framework-neutral runtime option (React, Vue, Angular, vanilla JS)
+- A standards-based projection of the same token and contract model
 
-**Key Requirements:**
-1. Web Components must consume CSS custom properties (tokens) from the parent context
-2. Context/Theme/Density system must work via `[data-eui-context]`, `[data-eui-theme]`, and `[data-eui-density]` attributes
-3. Shadow DOM encapsulation should not break token inheritance
-4. Components should work in any framework or vanilla JavaScript
-5. Accessibility must be maintained (native ARIA or alternative to React Aria)
+This decision does **not** declare Web Components as the default renderer for all components.
 
-**Implementation Strategy:**
-- Use **Custom Elements v1** (standard, widely supported)
-- Use **Shadow DOM v1** for style encapsulation
-- Leverage **CSS custom properties** that penetrate Shadow DOM boundaries
-- Read context/theme/density from parent elements via `closest('[data-eui-context]')` and `closest('[data-eui-density]')`
-- Implement accessibility using native ARIA attributes (React Aria is React-specific)
+### Requirements
+
+1. Components consume existing CSS custom properties (`--eui-*`) without token duplication.
+2. Context, theme, and density behavior remains compatible with `[data-eui-context]`, `[data-eui-theme]`, `[data-eui-density]`.
+3. Shadow DOM encapsulation must not break token inheritance.
+4. Accessibility is implemented with native semantics and WAI-ARIA patterns.
+5. Component APIs remain aligned with contract-level semantics used across layers.
+
+### Implementation Approach
+
+- Use **Custom Elements v1** and **Shadow DOM v1**.
+- Keep visual styling token-first through CSS variables.
+- Read environment configuration from host/ancestor attributes when required.
+- Keep event behavior interoperable with host frameworks.
 
 ---
-
 ## Rationale
 
-### Why Web Components Fit the Architecture
+### 1) Standards Longevity
 
-**1. Alignment with Token-First Philosophy**
-- CSS custom properties **penetrate Shadow DOM boundaries** by design
-- Tokens defined at the document level automatically flow into Shadow DOM
-- No special bridging needed — the existing token system works as-is
+Web Components are web-platform standards, not framework-specific abstractions. This reduces coupling to a single UI framework roadmap.
 
-**2. Framework-Agnostic Nature**
-- Web Components are a **W3C web standard** (not a library or framework)
-- Officially standardized by the World Wide Web Consortium
-- Can be used in React, Vue, Angular, Svelte, or vanilla JavaScript
-- Demonstrates that Envy UI is truly technology-agnostic
-- No framework-specific wrappers required
-- Long-term stability guaranteed by web standards
+### 2) Token Compatibility
 
-**3. Style Encapsulation Benefits**
-- Shadow DOM provides true style isolation
-- Prevents CSS conflicts in complex applications
-- Still allows token inheritance via CSS custom properties
-- Matches the design system's goal of predictable, isolated components
+CSS custom properties cascade into Shadow DOM, so the existing token system can be reused directly.
 
-**4. Context/Theme Compatibility**
-- `[data-eui-context]`, `[data-eui-theme]`, and `[data-eui-density]` attributes work on any element
-- Web Components can read parent context via `closest('[data-eui-context]')`
-- CSS custom properties cascade through Shadow DOM
-- Same mechanism as HTML+CSS and TSX layers
+### 3) Architectural Consistency
 
-**5. Proof of Architectural Flexibility and Long-term Viability**
-- Demonstrates that tokens are the true source of truth, independent of any technology stack
-- Shows that implementation layers are projections, not transformations
-- Validates the renderer-agnostic model ([ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
-- Strengthens the system's positioning as a universal, long-term design system
-- **Proves future-proofing:** If React or any framework becomes obsolete, the design system survives
-- **Ensures design decisions are preserved:** Business and design choices are not lost when technology stacks change
+The decision reinforces renderer-agnostic principles from [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md): tokens and contracts remain the source of truth, renderers are projections.
 
-### Current State of Web Components (2024-2025)
+### 4) Interoperability
 
-**W3C Standard Status:**
-- Web Components are an **official W3C web standard**, not a library or framework
-- Custom Elements and Shadow DOM are part of the HTML Living Standard
-- Standards are stable, mature, and production-ready
-- Long-term browser support guaranteed by web standards process
+A Web Components layer enables integration in mixed technology environments and simplifies cross-framework consumption.
 
-**Browser Support:**
-- **Custom Elements v1:** Stable, supported in all modern browsers
-- **Shadow DOM v1:** Stable, supported in all modern browsers
-- **Constructable Stylesheets:** Growing support (Chrome, Firefox, Safari)
-- **Declarative Shadow DOM:** Growing support (for SSR)
-- No polyfills needed for modern browsers
+### 5) Accessibility Viability
 
-**Industry Adoption:**
-Web Components are seeing **significant adoption by major technology companies** for design systems, demonstrating this is an established industry trend, not an experimental approach:
-
-- **Microsoft** — [FAST (Fluent UI Web Components)](https://github.com/microsoft/fast), used in Microsoft 365 and Teams. Production-ready design system built entirely on Web Components.
-- **Adobe** — [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), official Web Components implementation of Adobe Spectrum design system.
-- **Salesforce** — [Lightning Web Components](https://developer.salesforce.com/docs/component-library/documentation/en/lwc), core of the Salesforce platform, powering millions of enterprise applications.
-- **Google** — [Material Web Components](https://github.com/material-components/material-web), official Material Design implementation on Web Components.
-- **Shopify** — [Polaris Web Components](https://polaris.shopify.com/), exploring Web Components as part of their design system strategy.
-
-This demonstrates that Web Components are a **viable, enterprise-grade solution** for design systems, validated by industry leaders. By adopting Web Components, Envy UI aligns with established industry practices and follows the same architectural patterns used by major technology companies.
-
-**Ecosystem:**
-- Active ecosystem with libraries like Lit, Stencil, and others
-- However, vanilla Web Components (without libraries) are sufficient for this proof-of-concept
-- Growing community and resources for Web Components development
-
-### Technical Feasibility
-
-**Token Integration:**
-```css
-/* CSS custom properties automatically penetrate Shadow DOM */
-:host {
-  background: var(--eui-button-bg-base);
-  color: var(--eui-button-label-base);
-}
-```
-
-**Context/Theme Reading:**
-```javascript
-// Web Component can read context from parent
-const context = this.closest('[data-eui-context]')?.getAttribute('data-eui-context');
-const theme = this.closest('[data-eui-theme]')?.getAttribute('data-eui-theme');
-const density = this.closest('[data-eui-density]')?.getAttribute('data-eui-density');
-```
-
-**Accessibility:**
-- Native ARIA attributes work in Shadow DOM
-- Can implement keyboard navigation using established WAI-ARIA patterns
-- All major Web Components design systems (Microsoft FAST, Adobe Spectrum, Salesforce Lightning) successfully implement full accessibility
-- Implementation follows WAI-ARIA Authoring Practices Guide, the same standard used by React Aria
-- While more manual than React Aria, this approach is proven and widely adopted in the industry
-
-### Implementation Considerations
-
-**1. Accessibility Implementation**
-- React Aria is React-specific and cannot be used in Web Components
-- **Industry-standard approach:** Implement accessibility using WAI-ARIA Authoring Practices Guide (the same standard React Aria follows)
-- **Proven in production:** All major Web Components design systems (Microsoft FAST, Adobe Spectrum, Salesforce Lightning) successfully implement full accessibility using this approach
-- **Solution:** Follow established WAI-ARIA patterns, same as industry leaders
-- **Note:** While more manual than React Aria, this is the standard approach used across all Web Components implementations
-
-**2. Shadow DOM Event Handling**
-- Events from Shadow DOM are isolated by default (by design, for encapsulation)
-- **Standard solution:** Use `composed: true` for events that need to bubble (e.g., `click`)
-- This is a well-documented pattern used across all Web Components implementations
-
-**3. SSR Considerations**
-- Shadow DOM requires JavaScript to render
-- **Modern solution:** Declarative Shadow DOM provides SSR support (growing browser support)
-- **Fallback:** For static HTML+CSS use cases, HTML+CSS layer remains the solution (as intended in the layered architecture)
-
-**4. Framework Integration**
-- Some frameworks (especially React) require specific patterns for Web Components integration
-- **Industry practice:** This is expected and well-documented — Web Components are framework-agnostic by design
-- Major companies successfully integrate Web Components with React, Vue, Angular in production
-
-**5. Industry Alignment**
-- Web Components are **established standard** for framework-agnostic design systems
-- **Proven track record:** Used in production by Microsoft, Adobe, Salesforce, Google
-- **Growing ecosystem:** Active development, improving tooling, and expanding community
-- **For this use case:** Aligning with industry leaders validates the framework-agnostic architecture approach
+Accessibility can be implemented with native HTML semantics and WAI-ARIA Authoring Practices, without React-specific dependencies.
 
 ---
-
 ## Consequences
 
 ### Benefits
 
-**Architectural Validation:**
-- Proves that token system is truly universal and technology-agnostic
-- Demonstrates that implementation layers are projections, not transformations
-- Strengthens the system's positioning as framework-agnostic and future-proof
-- **Long-term value:** Validates that design decisions and tokens will survive technology stack changes
-- **Strategic investment:** Ensures the design system is not tied to any specific technology stack
-
-**Practical Benefits:**
-- Components can be used in any framework or vanilla JavaScript
-- True style encapsulation via Shadow DOM
-- No framework-specific dependencies
-- Standard-based solution (web standards, not library-specific)
-
-**Presentation/Demo Value:**
-- Shows the system's flexibility and universality
-- Demonstrates token-driven architecture across multiple runtimes
-- Validates the architectural decisions in [ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md) and [ADR-0017](ADR-0017-layered-token-architecture-contexts-and-themes.md)
+- Confirms token portability across runtimes.
+- Adds a framework-neutral distribution path.
+- Improves long-term resilience of design-system decisions.
+- Supports integration scenarios where React is not the host framework.
 
 ### Trade-offs
 
-**Accessibility Implementation:**
-- Cannot use React Aria (React-specific)
-- Must implement ARIA and keyboard navigation using WAI-ARIA patterns (same standard as React Aria)
-- **Industry-standard approach:** This is how all major Web Components design systems implement accessibility
-- More manual work than React Aria, but follows proven industry patterns
-
-**Framework Integration:**
-- Some frameworks require specific integration patterns (well-documented)
-- React requires special handling for events and props (standard practice)
-- **Proven in production:** Major companies successfully integrate Web Components with all major frameworks
-
-**SSR Considerations:**
-- Shadow DOM requires JavaScript (by design)
-- Declarative Shadow DOM provides modern SSR solution (growing support)
-- **Layered architecture benefit:** HTML+CSS layer remains the solution for static/SSR use cases (as intended)
-
-**Maintenance:**
-- Additional implementation layer to maintain
-- Different accessibility patterns than React Aria (but same WAI-ARIA standard)
-- **Strategic value:** Demonstrates universality and aligns with industry leaders
-
-### Next Steps (Long-term Proof-of-Concept)
-
-**Note:** This is a **long-term strategic validation**, not a short-term tactical solution. The goal is to prove that Envy UI's architecture can survive technology stack changes and that design decisions are preserved independently of implementation frameworks.
-
-1. **Proof-of-Concept Implementation:**
-   - Implement `eui-button` as a Web Component
-   - Validate token consumption via CSS custom properties
-   - Test context/theme reading from parent elements
-   - Verify Shadow DOM style encapsulation
-   - **Purpose:** Prove that design tokens and contracts work independently of React/TypeScript stack
-
-2. **Pattern Establishment:**
-   - Document how tokens flow into Shadow DOM
-   - Establish context/theme reading patterns
-   - Create accessibility implementation guidelines
-   - Define component API conventions
-   - **Purpose:** Create reusable patterns that validate long-term architecture viability
-
-3. **Storybook Integration:**
-   - Add "Web Components" section to Storybook navigation
-   - Create stories demonstrating Web Component usage
-   - Show framework-agnostic nature (React, Vue, vanilla JS examples)
-   - **Purpose:** Demonstrate that the design system works across technology boundaries
-
-4. **Documentation:**
-   - Document Web Component implementation patterns
-   - Explain differences from React Aria layer
-   - Provide integration guides for different frameworks
-   - **Purpose:** Preserve knowledge and patterns for future technology transitions
-
-### Future Considerations
-
-**Long-term Strategic Value:**
-This proof-of-concept serves a **strategic purpose beyond immediate production needs**:
-- Validates that design decisions and tokens are preserved independently of technology stacks
-- Ensures the design system can adapt to future technology changes
-- Proves that business and design choices are not lost when frameworks evolve or are replaced
-- Demonstrates architectural longevity and future-proofing
-
-**If Successful (Beyond Proof-of-Concept):**
-- Expand to more components (Select, Input, etc.) as needed
-- Consider using Constructable Stylesheets for performance
-- Explore Declarative Shadow DOM for SSR
-- Create framework-specific wrappers if needed (e.g., React wrapper for Web Components)
-- **Strategic benefit:** Provides a migration path if React or current stack becomes obsolete
-
-**If Not Pursued Further:**
-- This ADR serves as a record of architectural validation
-- Proof-of-concept validates the principle even if not fully implemented
-- **Key achievement:** Proves that the architecture is technology-agnostic and future-proof
-- No impact on existing layers (HTML+CSS, TSX, TSX+React Aria) — they continue to work
+- Accessibility behavior is implemented manually compared to React Aria helpers.
+- Framework integrations may require adapter patterns for props/events.
+- Adds maintenance surface for an additional renderer.
 
 ---
+## Implementation Status
 
-## Implementation Notes
+Exploratory implementation is completed for baseline validation:
 
-This ADR describes a **long-term proof-of-concept** that has been **successfully implemented**, validating Envy UI's framework-agnostic architecture:
+- `packages/web-components/button/` contains `eui-button` implementation.
+- Token-driven styling works through CSS variables in Shadow DOM.
+- Context/theme/density model is compatible with Envy UI data attributes.
+- Storybook coverage exists under `stories/web-components/`.
 
-### Current Implementation Status
-- ✅ **Web Components Button**: Complete `EuiButton` implementation in `packages/web-components/button/`
-  - Custom Elements v1 with Shadow DOM v1
-  - Full token integration via CSS custom properties
-  - Context/theme/density support via `[data-eui-context]`, `[data-eui-theme]`, `[data-eui-density]`
-  - Native ARIA accessibility implementation
-  - Framework-agnostic usage patterns
-
-- ✅ **Token Penetration**: CSS custom properties automatically flow into Shadow DOM
-  - `:host` selector consumes `var(--eui-button-bg-base)` etc.
-  - No special bridging needed - tokens work natively
-  - Context/theme attributes cascade through Shadow DOM boundaries
-
-- ✅ **Storybook Integration**: Complete stories in `stories/web-components/`
-  - MultiContextViewer demonstrates framework-agnostic usage
-  - Shows usage in React, Vue, Angular, or vanilla JavaScript
-  - Validates token system across technology boundaries
-
-- ✅ **Accessibility**: Native ARIA implementation (not React Aria)
-  - `aria-disabled`, `aria-expanded` attributes
-  - Keyboard navigation support
-  - Focus management with `:focus` and `:focus-visible`
-  - Follows WAI-ARIA Authoring Practices Guide (same standard as React Aria)
-
-### Technical Architecture Validated
-- **Custom Elements v1**: `customElements.define('eui-button', EuiButton)`
-- **Shadow DOM v1**: `this.attachShadow({ mode: 'open' })`
-- **Observed Attributes**: `static get observedAttributes()` for reactive updates
-- **Style Encapsulation**: Shadow DOM prevents CSS conflicts while allowing token inheritance
-- **Event Handling**: Standard event bubbling with `composed: true` when needed
-
-### Strategic Validation Achieved
-- **Framework Agnostic**: Proves components work in any framework or vanilla JavaScript
-- **Token Universality**: Validates tokens as true source of truth across runtimes
-- **Contract Preservation**: Component contracts survive technology stack changes
-- **Future-Proofing**: Migration path available if React/current stack becomes obsolete
-- **Industry Alignment**: Uses same patterns as Microsoft FAST, Adobe Spectrum, Salesforce Lightning
-
-### Proof-of-Concept Results
-**✅ Successful Validation:**
-- Token system works across technology boundaries
-- Design decisions are preserved independently of implementation frameworks
-- Business and design choices are not lost when technology stacks change
-- Architecture supports long-term evolution and technology stack migration
-
-**🎯 Strategic Purpose Achieved:**
-- Demonstrates architectural flexibility and longevity
-- Validates renderer-agnostic model ([ADR-0015](ADR-0015-token-first-contract-layer-and-renderer-agnostic-model.md))
-- Strengthens positioning as universal, future-proof design system
-- Proves Envy UI can survive technology stack changes
-
-### Usage Example
-```html
-<!-- Works in any framework or vanilla JavaScript -->
-<div data-eui-context="app" data-eui-theme="default" data-eui-density="default">
-  <eui-button data-eui-intent="primary">Framework Agnostic</eui-button>
-</div>
-```
-
-## Status
-
-* Document type: **Architecture Decision / Exploratory Analysis**
-* Status: **Exploratory (Proof-of-Concept Implemented)** - Proof-of-concept successfully completed, validating framework-agnostic architecture
-* Strategic validation achieved - tokens and contracts survive technology stack changes
-* No commitment to full production implementation beyond proof-of-concept
-* Serves as architectural validation and future migration reference
+Result: Web Components are validated as a viable renderer in the Envy UI architecture.
 
 ---
+## Scope Boundaries
 
-## Notes
+This ADR validates feasibility and architectural fit. It does not, by itself, require:
 
-This document should:
-- Be revisited after proof-of-concept implementation
-- Guide decisions about whether to pursue Web Components as a full layer
-- Serve as reference for understanding framework-agnostic architecture goals
-- Be updated if Web Components layer moves from exploratory to implemented status
+- Full component-library parity in Web Components
+- Immediate migration away from existing TSX layers
+- Web Components-first prioritization for all feature work
+
+Any move from exploratory validation to full production parity requires a separate decision.
+
+---
+## Future Considerations
+
+If Web Components move beyond exploratory scope, define:
+
+- A parity roadmap per component family
+- Accessibility verification matrix per component type
+- Performance and SSR strategy (including Declarative Shadow DOM where relevant)
+- Versioning and distribution model for framework consumers
